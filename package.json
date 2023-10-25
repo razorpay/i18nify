@@ -1,0 +1,43 @@
+{
+  "name": "i18nify",
+  "version": "1.0.0",
+  "author": "tarun khanna <tarun.khanna@razorpay.com>",
+  "license": "MIT",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.min.js",
+  "types": "lib/types/index.d.ts",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/index.js"
+    },
+    "./currency": {
+      "import": "./lib/esm/currency/index.js"
+    },
+    "./phoneNumber": {
+      "import": "./lib/esm/phoneNumber/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "npm run clean && rollup -c",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.19.4",
+    "rollup": "^4.0.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  }
+}
