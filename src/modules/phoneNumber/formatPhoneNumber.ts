@@ -1,6 +1,6 @@
 import { phoneFormatterMapper } from "./data/phoneFormatterMapper";
 
- const formatPhoneNumber = (
+const formatPhoneNumber = (
   phone_number: string,
   country_code: string
 ): string => {
