@@ -1,1 +1,2 @@
-export { default as validatePhone } from "./validatePhone";
+export { default as validatePhoneNumber } from "./validatePhoneNumber";
+export { default as formatPhoneNumber } from "./formatPhoneNumber";
