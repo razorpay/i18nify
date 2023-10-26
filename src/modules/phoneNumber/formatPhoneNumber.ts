@@ -3,8 +3,10 @@ import { phoneFormatterMapper } from "./data/phoneFormatterMapper";
 const formatPhoneNumber = (
   phone_number: string,
   country_code: string
-): string => {
+): string | null => {
   const pattern = phoneFormatterMapper[country_code];
+
+  if (!pattern) return null;
 
   let charCountInFormatterPattern = 0;
   for (let i = 0; i < pattern.length; i++) {
