@@ -25,6 +25,15 @@ const moduleBundles = modules.map((_module) => ({
   plugins: [typescript(), resolve(), commonjs()],
 }));
 
+const declarationTypes = modules.map((_module) => ({
+  input: _module.input,
+  output: {
+    file: `lib/esm/${_module.name}/index.d.ts`,
+    format: "es",
+  },
+  plugins: [dts()],
+}));
+
 export default [
   // ESM (ES6 module) build
   ...moduleBundles,
@@ -78,6 +87,7 @@ export default [
     plugins: [typescript(), resolve(), commonjs()],
   },
   // Declaration types
+  ...declarationTypes,
   {
     input: "src/index.ts",
     output: {
