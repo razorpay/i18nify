@@ -37,7 +37,8 @@ describe("formatAmount", () => {
   });
 
   it("should handle invalid inputs gracefully", () => {
-    expect(() => formatAmount("USD", "invalid-amount")).toThrow("Parameter `amount` is not a number!");
-    
+    expect(() => formatAmount("USD", "invalid-amount")).toThrow(
+      "Parameter `amount` is not a number!"
+    );
   });
 });
