@@ -45,6 +45,6 @@ describe("formatAmount", () => {
 
   it("should handle invalid inputs gracefully", () => {
     const result = formatAmount("USD", "invalid-amount");
-    expect(result).toBe('');
+    expect(result).toBe('Parameter `amount` is not a number!');
   });
 });
