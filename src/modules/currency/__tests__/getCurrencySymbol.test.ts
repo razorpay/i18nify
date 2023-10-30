@@ -8,27 +8,25 @@ describe("getCurrencySymbol", () => {
     expect(symbol).toBe(expectedSymbol);
   });
 
-  it("should return undefined for an invalid currency code", () => {
+  it("should throw Error for an invalid currency code", () => {
     const currencyCode = "XYZ"; // An invalid code
-    const symbol = getCurrencySymbol(currencyCode);
-    expect(symbol).toBeUndefined();
+    expect(() => getCurrencySymbol(currencyCode)).toThrow("Invalid currencyCode!");
   });
 
-  it("should return undefined for an empty string", () => {
+  it("should throw Error for an empty string", () => {
     const currencyCode = "";
-    const symbol = getCurrencySymbol(currencyCode);
-    expect(symbol).toBeUndefined();
+    expect(() => getCurrencySymbol(currencyCode)).toThrow("Invalid currencyCode!");
   });
 
-  it("should return undefined for a non-existent currency code", () => {
+  it("should throw Error for a non-existent currency code", () => {
     const currencyCode = "ZZZ"; // A code that doesn't exist in the data
-    const symbol = getCurrencySymbol(currencyCode);
-    expect(symbol).toBeUndefined();
+    expect(() => getCurrencySymbol(currencyCode)).toThrow("Invalid currencyCode!");
   });
 
   it("should handle special characters in currency codes", () => {
     const currencyCode = "د.ك"; // A code with special characters
-    const symbol = getCurrencySymbol(currencyCode);
-    expect(symbol).toBeUndefined();
+    expect(() => getCurrencySymbol(currencyCode)).toThrow(
+        "Invalid currencyCode!"
+      );
   });
 });
