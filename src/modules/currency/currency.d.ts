@@ -20,5 +20,5 @@ declare module "i18nify/currency" {
 
   export function getCurrencyList(): GetCurrencyListOutput;
 
-  export function getCurrencySymbol(currency_code: string): string | undefined;
+  export function getCurrencySymbol(currency_code: string): string;
 }
