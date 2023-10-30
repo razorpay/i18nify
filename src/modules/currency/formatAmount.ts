@@ -7,6 +7,8 @@ const formatAmount = (
     currencyDisplay?: "code" | "symbol" | "narrowSymbol" | "name";
   } = {}
 ): string => {
+  if (!Number(amount)) throw new Error("Parameter `amount` is not a number!");
+
   const { withSymbol = true, currencyDisplay = "symbol" } = options;
   let { locale } = options;
 
