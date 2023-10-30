@@ -1,12 +1,5 @@
 import formatAmount from "../formatAmount";
 
-const mockNavigatorLanguage = (navigatorLanguage: string = "en-In"): void => {
-  Object.defineProperty(window.navigator, "language", {
-    value: navigatorLanguage,
-    writable: true,
-  });
-};
-
 describe("formatAmount", () => {
   it("should format the amount with default options", () => {
     const result = formatAmount("USD", "1000.5");
@@ -45,6 +38,6 @@ describe("formatAmount", () => {
 
   it("should handle invalid inputs gracefully", () => {
     const result = formatAmount("USD", "invalid-amount");
-    expect(result).toBe('Parameter `amount` is not a number!');
+    expect(result).toBe("Parameter `amount` is not a number!");
   });
 });
