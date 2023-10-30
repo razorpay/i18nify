@@ -11,7 +11,6 @@ describe("formatAmount", () => {
       locale: "fr-FR",
       currencyDisplay: "code",
     });
-
     expect(result).toBe("1 500,00 EUR");
   });
 
