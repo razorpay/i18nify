@@ -11,7 +11,8 @@ describe("formatAmount", () => {
       locale: "fr-FR",
       currencyDisplay: "code",
     });
-    expect(result).toBe("1 500,00 EUR");
+
+    expect(result).toBe("1 500,00 EUR");
   });
 
   it("should format the amount without currency symbol", () => {
