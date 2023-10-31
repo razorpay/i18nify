@@ -3,7 +3,8 @@
 Please include a summary of the changes and the related issue. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
 | JIRA link | Slack thread (if any) | Product spec | Tech spec/One-pager | Bundle Size Difference |
-| --------- | --------------------- | ------------ | ------------------- | ---------------------- |
+| -------- | --------------------- | ------------ | ------------------- | ---------------------- |
+| NA | NA | NA | NA | NA |
 
 Fixes # (issue)
 
