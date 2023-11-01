@@ -1,21 +1,29 @@
+import { CURRENCIES } from "./data/currencies";
+
+// this function formats amount based on locale and options provided
 const formatAmount = (
-  currency_code: string,
-  amount: string,
+  currencyCode: keyof typeof CURRENCIES,
+  amount: string | number,
   options: {
     locale?: string;
     withSymbol?: boolean;
     currencyDisplay?: "code" | "symbol" | "narrowSymbol" | "name";
+    currencySign?: "standard" | "accounting";
   } = {}
 ): string => {
   if (!Number(amount)) throw new Error("Parameter `amount` is not a number!");
 
-  const { withSymbol = true, currencyDisplay = "symbol" } = options;
+  const {
+    withSymbol = true,
+    currencyDisplay = "symbol",
+    currencySign = "standard",
+  } = options;
   let { locale } = options;
 
-  // Set the locale for number formatting
   const numberFormatOptions: Intl.NumberFormatOptions = {
     style: withSymbol ? "currency" : "decimal",
-    currency: currency_code,
+    currency: currencyCode as string,
+    currencySign: currencySign,
   };
 
   // Define a separate options object for currencyDisplay
@@ -34,10 +42,16 @@ const formatAmount = (
     locale = window.navigator.language;
   }
 
-  const formattedAmount = new Intl.NumberFormat(
-    locale || undefined,
-    mergedOptions
-  ).format(parseFloat(amount));
+  let formattedAmount = "";
+
+  try {
+    formattedAmount = new Intl.NumberFormat(
+      locale || undefined,
+      mergedOptions
+    ).format(parseFloat(amount as string));
+  } catch (err) {
+    throw new Error(err.message);
+  }
 
   return formattedAmount;
 };
