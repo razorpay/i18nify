@@ -1,0 +1,25 @@
+import { describe, expect, it } from "@jest/globals";
+import formatPhoneNumber from "../formatPhoneNumber";
+
+describe("formatPhoneNumber", () => {
+  it("should format an Indian phone number", () => {
+    const phoneNumber = "+917394926646";
+    const countryCode = "IN";
+    const formatted = formatPhoneNumber(phoneNumber, countryCode);
+    expect(formatted).toBe("+91 7394 926646");
+  });
+
+  it("should format a Malaysian phone number", () => {
+    const phoneNumber = "+60123456789";
+    const countryCode = "MY";
+    const formatted = formatPhoneNumber(phoneNumber, countryCode);
+    expect(formatted).toBe("+60 12 34567 89");
+  });
+
+  it("should handle a missing country code", () => {
+    const phoneNumber = "1234567890";
+    const countryCode = "US"; // Assuming US is not in phoneFormatterMapper
+    const formatted = formatPhoneNumber(phoneNumber, countryCode);
+    expect(formatted).toBe(null);
+  });
+});
