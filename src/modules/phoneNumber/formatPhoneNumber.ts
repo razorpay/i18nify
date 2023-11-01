@@ -1,13 +1,15 @@
 import { PHONE_FORMATTER_MAPPER } from "./data/phoneFormatterMapper";
 
 const formatPhoneNumber = (
-  phoneNumber: string,
-  countryCode: string
+  phoneNumber: string | number,
+  countryCode: keyof typeof PHONE_FORMATTER_MAPPER
 ): string => {
   const pattern = PHONE_FORMATTER_MAPPER[countryCode];
 
   if (!pattern) throw new Error("Parameter `countryCode` is invalid!");
   if (!phoneNumber) throw new Error("Parameter `phoneNumber` is invalid!");
+
+  phoneNumber = phoneNumber.toString();
 
   let charCountInFormatterPattern = 0;
   for (let i = 0; i < pattern.length; i++) {
