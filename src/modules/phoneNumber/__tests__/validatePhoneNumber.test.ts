@@ -32,14 +32,14 @@ describe("validatePhoneNumber", () => {
 
   it("should handle a missing country code", () => {
     const phoneNumber = "1234567890";
-    const countryCode = "US"; // Assuming US is not in phoneRegexMapper
+    const countryCode = "XYZ"; // Assuming XYZ is not in phoneRegexMapper
     const isValid = validatePhoneNumber(phoneNumber, countryCode);
     expect(isValid).toBe(false);
   });
 
   it("should handle a missing phoneNumber", () => {
     const phoneNumber = "";
-    const countryCode = "US"; // Assuming US is not in phoneRegexMapper
+    const countryCode = "MY";
     expect(() => validatePhoneNumber(phoneNumber, countryCode)).toThrow(
       "Parameter `phoneNumber` is invalid!"
     );
