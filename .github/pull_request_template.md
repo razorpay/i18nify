@@ -6,8 +6,9 @@ Please include a summary of the changes and the related issue. Please also inclu
 
 List the main changes made in this pull request.
 
-| JIRA link              |     |
+| Title                  | --- |
 | ---------------------- | --- |
+| JIRA link              | NA  |
 | Slack thread (if any)  | NA  |
 | Product spec           | NA  |
 | Tech spec/One-pager    | NA  |
