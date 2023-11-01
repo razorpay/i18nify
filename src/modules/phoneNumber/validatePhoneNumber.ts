@@ -1,12 +1,15 @@
-import { phoneRegexMapper } from "./data/phoneRegexMapper";
+import { PHONE_REGEX_MAPPER } from "./data/phoneRegexMapper";
 
 const validatePhoneNumber = (
-  phone_number: string,
-  country_code: string
+  phoneNumber: string,
+  countryCode: string
 ): boolean => {
-  if (phoneRegexMapper.hasOwnProperty(country_code)) {
-    const regex = phoneRegexMapper[country_code];
-    return regex.test(phone_number);
+  if (!countryCode) throw new Error("Parameter `countryCode` is invalid!");
+  if (!phoneNumber) throw new Error("Parameter `phoneNumber` is invalid!");
+
+  if (PHONE_REGEX_MAPPER.hasOwnProperty(countryCode)) {
+    const regex = PHONE_REGEX_MAPPER[countryCode];
+    return regex.test(phoneNumber);
   }
 
   // Return false if the country code is not supported

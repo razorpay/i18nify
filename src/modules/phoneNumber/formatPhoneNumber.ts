@@ -1,12 +1,13 @@
-import { phoneFormatterMapper } from "./data/phoneFormatterMapper";
+import { PHONE_FORMATTER_MAPPER } from "./data/phoneFormatterMapper";
 
 const formatPhoneNumber = (
-  phone_number: string,
-  country_code: string
-): string | null => {
-  const pattern = phoneFormatterMapper[country_code];
+  phoneNumber: string,
+  countryCode: string
+): string => {
+  const pattern = PHONE_FORMATTER_MAPPER[countryCode];
 
-  if (!pattern) return null;
+  if (!pattern) throw new Error("Parameter `countryCode` is invalid!");
+  if (!phoneNumber) throw new Error("Parameter `phoneNumber` is invalid!");
 
   let charCountInFormatterPattern = 0;
   for (let i = 0; i < pattern.length; i++) {
@@ -15,8 +16,8 @@ const formatPhoneNumber = (
     }
   }
 
-  const diff = phone_number.length - charCountInFormatterPattern;
-  const phoneNumberWithoutPrefix = phone_number.slice(diff);
+  const diff = phoneNumber.length - charCountInFormatterPattern;
+  const phoneNumberWithoutPrefix = phoneNumber.slice(diff);
   const formattedNumber: string[] = [];
   let numberIndex = 0;
 
@@ -34,7 +35,7 @@ const formatPhoneNumber = (
 
   const formattedPhoneNumberWithoutPrefix = formattedNumber.join("");
   const formattedPhoneNumberWithPrefix =
-    phone_number.slice(0, diff) + " " + formattedPhoneNumberWithoutPrefix;
+    phoneNumber.slice(0, diff) + " " + formattedPhoneNumberWithoutPrefix;
 
   return formattedPhoneNumberWithPrefix.trim();
 };

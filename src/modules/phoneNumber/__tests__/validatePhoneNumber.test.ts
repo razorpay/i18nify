@@ -36,4 +36,12 @@ describe("validatePhoneNumber", () => {
     const isValid = validatePhoneNumber(phoneNumber, countryCode);
     expect(isValid).toBe(false);
   });
+
+  it("should handle a missing phoneNumber", () => {
+    const phoneNumber = "";
+    const countryCode = "US"; // Assuming US is not in phoneRegexMapper
+    expect(() => validatePhoneNumber(phoneNumber, countryCode)).toThrow(
+      "Parameter `phoneNumber` is invalid!"
+    );
+  });
 });

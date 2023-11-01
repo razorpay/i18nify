@@ -19,7 +19,16 @@ describe("formatPhoneNumber", () => {
   it("should handle a missing country code", () => {
     const phoneNumber = "1234567890";
     const countryCode = "US"; // Assuming US is not in phoneFormatterMapper
-    const formatted = formatPhoneNumber(phoneNumber, countryCode);
-    expect(formatted).toBe(null);
+    expect(() => formatPhoneNumber(phoneNumber, countryCode)).toThrow(
+      "Parameter `countryCode` is invalid!"
+    );
+  });
+
+  it("should handle a missing phoneNumber", () => {
+    const phoneNumber = "";
+    const countryCode = "MY";
+    expect(() => formatPhoneNumber(phoneNumber, countryCode)).toThrow(
+      "Parameter `phoneNumber` is invalid!"
+    );
   });
 });
