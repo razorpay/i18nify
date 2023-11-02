@@ -5,7 +5,7 @@ on:
 jobs:
   lint:
     name: Run eslint
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -17,7 +17,7 @@ jobs:
         run: yarn lint
   tsc:
     name: Run tsc
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
