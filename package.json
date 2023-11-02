@@ -25,6 +25,7 @@
   "scripts": {
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
+    "validate": "tsc --noEmit && npm run lint:fix",
     "format": "prettier src --write",
     "format:check": "prettier src --check",
     "clean": "rm -rf lib",
