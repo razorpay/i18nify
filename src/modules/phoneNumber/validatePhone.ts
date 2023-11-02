@@ -4,7 +4,7 @@ const COUNTRY_PHONE_REGEX = {
 
 export default function (
   phone: string,
-  country: keyof typeof COUNTRY_PHONE_REGEX
+  country: keyof typeof COUNTRY_PHONE_REGEX,
 ) {
   const regex = COUNTRY_PHONE_REGEX[country];
 
