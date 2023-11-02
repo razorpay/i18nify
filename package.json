@@ -4,7 +4,7 @@
   "author": "tarun khanna <tarun.khanna@razorpay.com>",
   "license": "MIT",
   "main": "lib/cjs/index.js",
-  "module": "lib/esm/index.min.js",
+  "module": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
   "files": [
     "src",
