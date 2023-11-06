@@ -24,7 +24,7 @@ concurrency:
 jobs:
   sonar:
     name: Sonar Scanner
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     continue-on-error: true
     if: ${{ github.ref == 'refs/heads/master' && github.event.head_commit.author.name != 'rzpcibot'}}
     steps:
