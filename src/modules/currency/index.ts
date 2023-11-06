@@ -1,5 +1,5 @@
-export { default as formatAmount } from "./formatAmount";
+export { default as formatNumber } from "./formatNumber";
 export { default as getCurrencyList } from "./getCurrencyList";
 export { default as getCurrencySymbol } from "./getCurrencySymbol";
-export { default as formatAmountByParts } from "./formatAmountByParts";
+export { default as formatNumberByParts } from "./formatNumberByParts";
 export { default as logger } from "./logger";

@@ -5,9 +5,9 @@ export interface Currency {
   name: string;
 }
 
-export interface GetCurrencyListOutput {
-  [currencyCode: keyof typeof CURRENCIES]: Currency;
-}
+export type GetCurrencyListOutput = {
+  [currencyCode in keyof typeof CURRENCIES]: Currency;
+};
 
 export interface ByParts {
   currencySymbol: string;

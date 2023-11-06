@@ -1,4 +1,4 @@
-export const CURRENCIES: { [key: string]: {symbol:string, name: string} } = {
+export const CURRENCIES = {
   AED: { symbol: "د.إ", name: "United Arab Emirates Dirham" },
   ALL: { symbol: "Lek", name: "Albanian Lek" },
   AMD: { symbol: "֏", name: "Armenian Dram" },

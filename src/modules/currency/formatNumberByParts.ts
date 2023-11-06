@@ -1,23 +1,35 @@
 import { CURRENCIES } from "./data/currencies";
 import { ByParts } from "./types";
 
-const formatAmountByParts = (
-  currencyCode: keyof typeof CURRENCIES,
+const formatNumberByParts = (
   amount: string | number,
-  locale?: string
+  options?: {
+    currency?: keyof typeof CURRENCIES;
+    locale?: string;
+    intlOptions?: Intl.NumberFormatOptions;
+  }
 ): ByParts => {
   if (!Number(amount)) throw new Error("Parameter `amount` is not a number!");
+
+  let locale = options?.locale;
 
   // If a specific locale is provided, use it; otherwise, use the browser's locale
   if (!locale) {
     locale = window.navigator.language;
   }
 
+  const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
+
+  if (options.currency || intlOptions.currency) {
+    intlOptions.style = "currency";
+    intlOptions.currency = (options.currency || intlOptions.currency) as string;
+  }
+
   try {
-    const formattedAmount = new Intl.NumberFormat(locale || undefined, {
-      style: "currency",
-      currency: currencyCode as string,
-    }).formatToParts(Number(amount));
+    const formattedAmount = new Intl.NumberFormat(
+      locale || undefined,
+      intlOptions
+    ).formatToParts(Number(amount));
 
     const parts = formattedAmount;
     let integerValue = "";
@@ -48,4 +60,4 @@ const formatAmountByParts = (
   }
 };
 
-export default formatAmountByParts;
+export default formatNumberByParts;
