@@ -46,6 +46,7 @@ export default [
     },
     plugins: [typescript(), resolve(), commonjs()],
   },
+  // ESM (ES6 module) minified build
   {
     input: "src/index.ts",
     output: {
