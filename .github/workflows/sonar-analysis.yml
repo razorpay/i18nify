@@ -1,0 +1,76 @@
+name: Sonar Code Coverage PR Analysis
+
+on:
+  pull_request:
+    branches:
+      - master
+
+env:
+  HOME: /actions-runner/_work
+  GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+  SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+  REPORT_PORTAL_TOKEN: ${{ secrets.REPORT_PORTAL_TOKEN }}
+  REPORT_PORTAL_HOST: ${{ secrets.REPORT_PORTAL_HOST }}
+  REPORT_PORTAL_PROJECT: ${{ secrets.REPORT_PORTAL_PROJECT }}
+  COMMIT_ID: ${{ github.event.pull_request.head.sha }}
+  PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number}}
+  NODE_VERSION: 20.3.1
+jobs:
+  coverage:
+    name: Sonar analysis on coverage
+    runs-on: self-hosted
+    if: |
+      !(github.head_ref	== 'changeset-release/master' && github.actor == 'rzpcibot') &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.CI_BOT_TOKEN }}
+      - name: Setup Node v20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.3.1
+
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: Setup Cache & Install Dependencies
+        uses: bahmutov/npm-install@v1.8.15
+        with:
+          install-command: yarn --frozen-lockfile
+      - name: Run Tests
+        run: yarn test
+      - name: Run SonarQube PR analysis on Dev Project
+        id: pr_sonarqube_analysis
+        uses: sonarsource/sonarcloud-github-action@v1.6
+        if: ${{ github.ref != 'refs/heads/master' }}
+        env:
+          SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+          SONARCLOUD_URL: ${{ secrets.SONARQUBE_HOST }}
+        with:
+          args: >
+            -Dsonar.projectKey=I18NIFY_DEV
+            -Dsonar.projectName=I18NIFY_DEV
+            -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }}
+            -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }}
+            -Dsonar.projectVersion=${{ github.sha }}
+
+      # Perform code coverage check on PR changes vs master
+      - name: PR code coverage check
+        id: pr-code-coverage-check
+        if: ${{ github.ref != 'refs/heads/master' }}
+        run: cd .. && scripts/sonar-analysis.sh
+        continue-on-error: false
+        env:
+          SONAR_HOST: ${{ secrets.SONARQUBE_HOST }}
+          SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+          PROJECT_KEY_DEV: I18NIFY_DEV
+          PROJECT_KEY_PROD: I18NIFY
+          CODE_COVERAGE_THRESHOLD: 0
+          COMMENT_FILE: comment.txt
+
+      - name: Update Sonar Analysis Comment
+        if: ${{ github.ref != 'refs/heads/master' }}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: comment.txt
