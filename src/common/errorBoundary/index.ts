@@ -23,7 +23,7 @@ export const withErrorBoundary = <T extends (...args: unknown[]) => void>(
 ): ((...args: Parameters<T>) => void) => {
   return function (...rest: Parameters<T>) {
     try {
-      fn.call(this, ...rest);
+      return fn.call(this, ...rest);
     } catch (err) {
       // Currently, we are throwing the error as it is to consumers.
       // In the future, this can be modified as per our requirement, like an error logging service.

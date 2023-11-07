@@ -11,7 +11,8 @@ const formatNumber = (
     intlOptions?: Intl.NumberFormatOptions;
   } = {},
 ): string => {
-  if (!Number(amount)) throw new Error('Parameter `amount` is not a number!');
+  if (!Number(amount) && Number(amount) !== 0)
+    throw new Error('Parameter `amount` is not a number!');
 
   let locale = options?.locale;
 

@@ -1,6 +1,4 @@
-const config = {
+module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
 };
-
-export default config;
