@@ -25,11 +25,12 @@
   "scripts": {
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "validate": "tsc --noEmit && npm run lint:fix",
+    "tsc": "tsc --noEmit",
+    "validate": "yarn tsc && yarn lint:fix",
     "format": "prettier src --write",
     "format:check": "prettier src --check",
     "clean": "rm -rf lib",
-    "build": "npm run clean && rollup -c",
+    "build": "yarn clean && rollup -c",
     "test": "jest",
     "prepare": "husky install",
     "lint-staged": "lint-staged -c .lintstagedrc.json"
