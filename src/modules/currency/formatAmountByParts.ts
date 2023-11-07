@@ -1,5 +1,6 @@
 import { CURRENCIES } from "./data/currencies";
 import { ByParts } from "./types";
+import { withErrorBoundary } from "../../common/errorBoundary";
 
 const formatAmountByParts = (
   currencyCode: keyof typeof CURRENCIES,
@@ -48,4 +49,4 @@ const formatAmountByParts = (
   }
 };
 
-export default formatAmountByParts;
+export default withErrorBoundary(formatAmountByParts);

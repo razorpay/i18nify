@@ -1,4 +1,5 @@
 import { CURRENCIES } from "./data/currencies";
+import { withErrorBoundary } from "../../common/errorBoundary";
 
 // this function formats amount based on locale and options provided
 const formatAmount = (
@@ -56,4 +57,4 @@ const formatAmount = (
   return formattedAmount;
 };
 
-export default formatAmount;
+export default withErrorBoundary(formatAmount);
