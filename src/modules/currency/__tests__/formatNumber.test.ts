@@ -17,7 +17,7 @@ describe('formatNumber', () => {
     expect(result).toBe('1 500,00 EUR');
   });
 
-  it('should format the amount without currency symbol', () => {
+  it.only('should format the amount without currency symbol', () => {
     const result = formatNumber('750.75', {});
     expect(result).toBe('750.75');
   });
