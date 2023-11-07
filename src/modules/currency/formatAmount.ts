@@ -1,7 +1,8 @@
 import { CURRENCIES } from "./data/currencies";
 import { withErrorBoundary } from "../../common/errorBoundary";
+import { getLocale } from "../shared/utils";
 
-// this function formats amount based on locale and options provided
+// this function formats amount based on locale, currencyCode and options provided
 const formatAmount = (
   currencyCode: keyof typeof CURRENCIES,
   amount: string | number,
@@ -25,22 +26,12 @@ const formatAmount = (
     style: withSymbol ? "currency" : "decimal",
     currency: currencyCode as string,
     currencySign: currencySign,
-  };
-
-  // Define a separate options object for currencyDisplay
-  const currencyDisplayOptions: Record<string, string> = {
     currencyDisplay: currencyDisplay,
-  };
-
-  // Merge the two options objects
-  const mergedOptions = {
-    ...numberFormatOptions,
-    ...currencyDisplayOptions,
   };
 
   // If a specific locale is provided, use it; otherwise, use the browser's locale
   if (!locale) {
-    locale = window.navigator.language;
+    locale = getLocale();
   }
 
   let formattedAmount = "";
@@ -48,8 +39,8 @@ const formatAmount = (
   try {
     formattedAmount = new Intl.NumberFormat(
       locale || undefined,
-      mergedOptions
-    ).format(parseFloat(amount as string));
+      numberFormatOptions
+    ).format(Number(amount));
   } catch (err) {
     throw new Error(err.message);
   }

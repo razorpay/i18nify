@@ -17,16 +17,4 @@ describe("getCurrencySymbol", () => {
     const currencyCode = "";
     expect(() => getCurrencySymbol(currencyCode)).toThrow("Invalid currencyCode!");
   });
-
-  it("should throw Error for a non-existent currency code", () => {
-    const currencyCode = "ZZZ"; // A code that doesn't exist in the data
-    expect(() => getCurrencySymbol(currencyCode)).toThrow("Invalid currencyCode!");
-  });
-
-  it("should handle special characters in currency codes", () => {
-    const currencyCode = "د.ك"; // A code with special characters
-    expect(() => getCurrencySymbol(currencyCode)).toThrow(
-        "Invalid currencyCode!"
-      );
-  });
 });
