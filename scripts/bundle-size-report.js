@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 
 function safeChunkSize(size) {
   const isNumber = (v) => typeof v === 'number';
@@ -21,24 +20,14 @@ function extractStatsForChunk(chunkName, baseStats, prStats) {
     safeChunkSize(prStats[chunkName] && prStats[chunkName].parsed),
   );
 
-  //gzipped
-  const baseGzipSize = round(
-    safeChunkSize(baseStats[chunkName] && baseStats[chunkName].gzip),
-  );
-  const prGzipSize = round(
-    safeChunkSize(prStats[chunkName] && prStats[chunkName].gzip),
-  );
-
   return {
-    baseSize: { parsed: baseParseSize, gzip: baseGzipSize },
-    prSize: { parsed: prParseSize, gzip: prGzipSize },
+    baseSize: { parsed: baseParseSize },
+    prSize: { parsed: prParseSize },
     difference: {
       parsed: round(prParseSize - baseParseSize),
-      gzip: round(prGzipSize - baseGzipSize),
     },
     differencePercent: {
       parsed: round(((prParseSize - baseParseSize) * 100) / baseParseSize),
-      gzip: round(((prGzipSize - baseGzipSize) * 100) / baseGzipSize),
     },
   };
 }
@@ -46,24 +35,20 @@ function extractStatsForChunk(chunkName, baseStats, prStats) {
 /**
  * output
  * {
- *   initial: { abc.js: { base, pr, diff, diff% } },
+ *   abc.js: { base, pr, diff, diff% },
  * }
  */
 function calculateDifferences(baseStats, prStats) {
   const initialChunks = Array.from(
-    new Set([
-      ...Object.keys(baseStats.initial).concat(Object.keys(prStats.initial)),
-    ]),
+    new Set([...Object.keys(baseStats).concat(Object.keys(prStats))]),
   ).sort();
 
-  const report = {
-    initial: Object.fromEntries(
-      initialChunks.map((chunkName) => [
-        chunkName,
-        extractStatsForChunk(chunkName, baseStats.initial, prStats.initial),
-      ]),
-    ),
-  };
+  const report = Object.fromEntries(
+    initialChunks.map((chunkName) => [
+      chunkName,
+      extractStatsForChunk(chunkName, baseStats, prStats),
+    ]),
+  );
 
   return report;
 }
@@ -92,41 +77,19 @@ function differenceToSymbol(v) {
   return '🟢';
 }
 
-function splitByFormat(fullPath, stats, file) {
-  const parentKey = 'initial';
+function traverseFileAndGenerateStats(dir) {
+  const filesToTrack = ['esm/index.js', 'cjs/index.js', 'umd/index.js'];
 
-  stats[parentKey][file] = {
-    parsed: fs.lstatSync(fullPath).size,
-    gzip: fs.existsSync(fullPath + '.gz')
-      ? fs.lstatSync(fullPath + '.gz').size
-      : 0,
-  };
-
-  return stats;
-}
-
-function defaultStruct() {
-  return {
-    initial: {},
-  };
-}
-
-function traverseFileAndGenerateStats(dir, stats) {
-  fs.readdirSync(dir).forEach((file) => {
-    const fullPath = path.join(dir, file);
-    if (fs.lstatSync(fullPath).isDirectory()) {
-      traverseFileAndGenerateStats(fullPath, stats);
-    } else {
-      stats = splitByFormat(fullPath, stats, file);
-    }
-  });
-
-  return stats;
+  return filesToTrack.reduce((acc, curr) => {
+    const fullPath = `${dir}/${curr}`;
+    acc[curr] = { parsed: fs.lstatSync(fullPath).size };
+    return acc;
+  }, {});
 }
 
 function formatToTable(stat, statName) {
   return [
-    `<details ${statName.startsWith('Initial') ? 'open' : ''}>`,
+    `<details open>`,
     `<summary><h3>${statName}</h3> <em>click to expand/collapse</em></summary>`,
     '',
     '| 🟢 No Change | 🗑 File Deleted | 🆕 New File | 📈 Size Increased | 👍 Size Reduced |',
@@ -134,33 +97,21 @@ function formatToTable(stat, statName) {
     '',
     '<table>',
     '<tbody>',
-    '<tr> <td></td> <td></td> <th colspan="4">Gzip (kb)</th> <th colspan="4">Parsed (kb)</th> </tr>',
+    '<tr> <td></td> <td></td> <th colspan="4">Parsed (kb)</th> </tr>',
     '<tr>' +
       ' <td>🚦</td>' +
-      ' <th>Chunk Name</th>' +
-      ' <th>Base</th>' +
-      ' <th>PR</th>' +
-      ' <th>Diff</th>' +
-      ' <th>%</th>' +
+      ' <th>File Name</th>' +
       ' <th>Base</th>' +
       ' <th>PR</th>' +
       ' <th>Diff</th>' +
       ' <th>%</th>' +
       '</tr>',
     ...Object.entries(stat).map(([filename, fileStat]) => {
-      const diffColor = fileStat.difference.gzip <= 0 ? 'green' : 'red';
+      const diffColor = fileStat.difference.parsed <= 0 ? 'green' : 'red';
       return `<tr>
-        <td>${differenceToSymbol(fileStat.differencePercent.gzip)}</td>
+        <td>${differenceToSymbol(fileStat.differencePercent.parsed)}</td>
         <td><strong><code>${filename} </code></strong></td>
-        <td><code>${fileStat.baseSize.gzip} </code></td>
-        <td><code>${fileStat.prSize.gzip} </code></td>
-        <td> $\\textcolor{${diffColor}}{${fileStat.difference.gzip}}$ </td>
-        <td><code>${
-          isFinite(fileStat.differencePercent.gzip)
-            ? fileStat.differencePercent.gzip
-            : '—'
-        } </code></td>
-        <td><code> ${fileStat.baseSize.parsed} </code></td>
+        <td><code>${fileStat.baseSize.parsed} </code></td>
         <td><code> ${fileStat.prSize.parsed} </code></td>
         <td> $\\textcolor{${diffColor}}{${fileStat.difference.parsed}}$ </td>
         <td><code> ${
@@ -180,15 +131,12 @@ function generateTableReport() {
   const baseBuildPath = 'build/base';
   const prBuildPath = 'build/pr';
 
-  const baseStats = traverseFileAndGenerateStats(
-    baseBuildPath,
-    defaultStruct(),
-  );
-  const prStats = traverseFileAndGenerateStats(prBuildPath, defaultStruct());
+  const baseStats = traverseFileAndGenerateStats(baseBuildPath);
+  const prStats = traverseFileAndGenerateStats(prBuildPath);
 
   const rawStats = calculateDifferences(baseStats, prStats);
 
-  return [formatToTable(rawStats.initial, 'Initial Chunks')].join('\n');
+  return [formatToTable(rawStats, 'Files')].join('\n');
 }
 
 module.exports.generateTableReport = generateTableReport;
