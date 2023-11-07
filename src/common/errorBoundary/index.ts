@@ -1,5 +1,5 @@
 // Custom Error class to extend properties to error object
-export class i18nifyError extends Error {
+export class I18nifyError extends Error {
   timestamp: Date;
   constructor(message) {
     super(message);
@@ -25,7 +25,7 @@ export const withErrorBoundary = (fn: Function): Function => {
     } catch (err) {
       // Currently, we are throwing the error as it is to consumers.
       // In future, this can be modified as per our requirement like an error logging service.
-      throw new i18nifyError(err);
+      throw new I18nifyError(err);
     }
   };
 };

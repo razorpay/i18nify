@@ -1,4 +1,4 @@
-import { withErrorBoundary, i18nifyError } from "../";
+import { withErrorBoundary, I18nifyError } from "../";
 
 describe("withErrorBoundary", () => {
   it("should call the wrapped function and not throw an error if there are no exceptions", () => {
@@ -11,7 +11,7 @@ describe("withErrorBoundary", () => {
     expect(() => wrappedUtilityFn("arg1", "arg2")).not.toThrow();
   });
 
-  it("should throw an i18nifyError when an exception is thrown in the wrapped function", () => {
+  it("should throw an I18nifyError when an exception is thrown in the wrapped function", () => {
     const exceptionMessage = "Test error message";
     const throwingFunction = () => {
       throw new Error(exceptionMessage);
@@ -19,6 +19,6 @@ describe("withErrorBoundary", () => {
 
     const wrappedUtilityFn = withErrorBoundary(throwingFunction);
 
-    expect(() => wrappedUtilityFn()).toThrow(i18nifyError);
+    expect(() => wrappedUtilityFn()).toThrow(I18nifyError);
   });
 });
