@@ -1,4 +1,5 @@
-import { CURRENCIES } from "./data/currencies";
+import { withErrorBoundary } from '../../common/errorBoundary';
+import { CURRENCIES } from './data/currencies';
 
 // this function formats amount based on locale and options provided
 const formatNumber = (
@@ -7,9 +8,9 @@ const formatNumber = (
     currency?: keyof typeof CURRENCIES;
     locale?: string;
     intlOptions?: Intl.NumberFormatOptions;
-  } = {}
+  } = {},
 ): string => {
-  if (!Number(amount)) throw new Error("Parameter `amount` is not a number!");
+  if (!Number(amount)) throw new Error('Parameter `amount` is not a number!');
 
   let locale = options?.locale;
 
@@ -18,21 +19,21 @@ const formatNumber = (
     locale = window.navigator.language;
   }
 
-  let formattedAmount = "";
+  let formattedAmount = '';
 
   const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
 
   if (options?.currency || intlOptions.currency) {
-    intlOptions.style = "currency";
+    intlOptions.style = 'currency';
     intlOptions.currency = (options.currency || intlOptions.currency) as string;
   }
 
-  if (!locale) throw new Error("Pass valid locale !");
+  if (!locale) throw new Error('Pass valid locale !');
 
   try {
     formattedAmount = new Intl.NumberFormat(
       locale || undefined,
-      intlOptions
+      intlOptions,
     ).format(parseFloat(amount as string));
   } catch (err) {
     throw new Error(err.message);
@@ -41,4 +42,4 @@ const formatNumber = (
   return formattedAmount;
 };
 
-export default formatNumber;
+export default withErrorBoundary(formatNumber);

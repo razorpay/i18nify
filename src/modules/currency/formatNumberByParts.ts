@@ -1,5 +1,5 @@
-import { CURRENCIES } from "./data/currencies";
-import { ByParts } from "./types";
+import { CURRENCIES } from './data/currencies';
+import { ByParts } from './types';
 
 const formatNumberByParts = (
   amount: string | number,
@@ -7,9 +7,9 @@ const formatNumberByParts = (
     currency?: keyof typeof CURRENCIES;
     locale?: string;
     intlOptions?: Intl.NumberFormatOptions;
-  }
+  },
 ): ByParts => {
-  if (!Number(amount)) throw new Error("Parameter `amount` is not a number!");
+  if (!Number(amount)) throw new Error('Parameter `amount` is not a number!');
 
   let locale = options?.locale;
 
@@ -21,27 +21,27 @@ const formatNumberByParts = (
   const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
 
   if (options.currency || intlOptions.currency) {
-    intlOptions.style = "currency";
+    intlOptions.style = 'currency';
     intlOptions.currency = (options.currency || intlOptions.currency) as string;
   }
 
   try {
     const formattedAmount = new Intl.NumberFormat(
       locale || undefined,
-      intlOptions
+      intlOptions,
     ).formatToParts(Number(amount));
 
     const parts = formattedAmount;
-    let integerValue = "";
-    let decimalValue = "";
-    let currencySymbol = "";
-    let separator = "";
+    let integerValue = '';
+    let decimalValue = '';
+    let currencySymbol = '';
+    let separator = '';
     let symbolAtFirst = true;
-    const partValues = parts.map((p: any) => {
-      if (p.type === "integer" || p.type === "group") integerValue += p.value;
-      else if (p.type === "fraction") decimalValue += p.value;
-      else if (p.type === "currency") currencySymbol += p.value;
-      else if (p.type === "decimal") separator += p.value;
+    const partValues = parts.map((p) => {
+      if (p.type === 'integer' || p.type === 'group') integerValue += p.value;
+      else if (p.type === 'fraction') decimalValue += p.value;
+      else if (p.type === 'currency') currencySymbol += p.value;
+      else if (p.type === 'decimal') separator += p.value;
       return p.value;
     });
 
