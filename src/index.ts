@@ -1,2 +1,2 @@
-export * from "./modules/currency";
-export * from "./modules/phoneNumber";
+export * from './modules/currency';
+export * from './modules/phoneNumber';

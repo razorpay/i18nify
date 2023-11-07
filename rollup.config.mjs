@@ -1,17 +1,17 @@
-import typescript from "@rollup/plugin-typescript";
-import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
-import dts from "rollup-plugin-dts";
-import terser from "@rollup/plugin-terser";
+import typescript from '@rollup/plugin-typescript';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import dts from 'rollup-plugin-dts';
+import terser from '@rollup/plugin-terser';
 
 const modules = [
   {
-    input: "src/modules/currency/index.ts",
-    name: "currency",
+    input: 'src/modules/currency/index.ts',
+    name: 'currency',
   },
   {
-    input: "src/modules/phoneNumber/index.ts",
-    name: "phoneNumber",
+    input: 'src/modules/phoneNumber/index.ts',
+    name: 'phoneNumber',
   },
 ];
 
@@ -19,7 +19,7 @@ const moduleBundles = modules.map((_module) => ({
   input: _module.input,
   output: {
     file: `lib/esm/${_module.name}/index.js`,
-    format: "es",
+    format: 'es',
     sourcemap: true,
   },
   plugins: [typescript(), resolve(), commonjs()],
@@ -29,7 +29,7 @@ const declarationTypes = modules.map((_module) => ({
   input: _module.input,
   output: {
     file: `lib/esm/${_module.name}/index.d.ts`,
-    format: "es",
+    format: 'es',
   },
   plugins: [dts()],
 }));
@@ -38,62 +38,62 @@ export default [
   // ESM (ES6 module) build
   ...moduleBundles,
   {
-    input: "src/index.ts",
+    input: 'src/index.ts',
     output: {
-      file: "lib/esm/index.js",
-      format: "es",
+      file: 'lib/esm/index.js',
+      format: 'es',
       sourcemap: true,
     },
     plugins: [typescript(), resolve(), commonjs()],
   },
   // ESM (ES6 module) minified build
   {
-    input: "src/index.ts",
+    input: 'src/index.ts',
     output: {
-      file: "lib/esm/index.min.js",
-      format: "es",
+      file: 'lib/esm/index.min.js',
+      format: 'es',
       sourcemap: true,
     },
     plugins: [typescript(), resolve(), commonjs(), terser()],
   },
   // Universal Module Definition (UMD) build
   {
-    input: "src/index.ts",
+    input: 'src/index.ts',
     output: {
-      file: "lib/umd/index.js",
-      format: "umd",
+      file: 'lib/umd/index.js',
+      format: 'umd',
       sourcemap: true,
-      name: "i18nify",
+      name: 'i18nify',
     },
     plugins: [typescript(), resolve(), commonjs()],
   },
   // Universal Module Definition (UMD) minified build
   {
-    input: "src/index.ts",
+    input: 'src/index.ts',
     output: {
-      file: "lib/umd/index.min.js",
-      format: "umd",
+      file: 'lib/umd/index.min.js',
+      format: 'umd',
       sourcemap: true,
-      name: "i18nify",
+      name: 'i18nify',
     },
     plugins: [typescript(), resolve(), commonjs(), terser()],
   },
   // CommonJS (CJS) build
   {
-    input: "src/index.ts",
+    input: 'src/index.ts',
     output: {
-      file: "lib/cjs/index.js",
-      format: "cjs",
+      file: 'lib/cjs/index.js',
+      format: 'cjs',
     },
     plugins: [typescript(), resolve(), commonjs()],
   },
   // Declaration types
   ...declarationTypes,
   {
-    input: "src/index.ts",
+    input: 'src/index.ts',
     output: {
-      file: "lib/types/index.d.ts",
-      format: "es",
+      file: 'lib/types/index.d.ts',
+      format: 'es',
     },
     plugins: [dts()],
   },
