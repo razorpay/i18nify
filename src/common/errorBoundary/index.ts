@@ -3,7 +3,7 @@ export class I18nifyError extends Error {
   timestamp: Date;
   constructor(message) {
     super(message);
-    this.name = "i18nify Error";
+    this.name = 'i18nify Error';
     this.timestamp = new Date();
     // more params like type of error/severity can be added in future for better debugging.
   }
@@ -18,13 +18,15 @@ export class I18nifyError extends Error {
  * @param fn utility that is wrapped in error boundary
  * @returns {Function} returns the function wrapped in try/catch block
  */
-export const withErrorBoundary = (fn: Function): Function => {
-  return function (...rest) {
+export const withErrorBoundary = <T extends (...args: unknown[]) => void>(
+  fn: T,
+): ((...args: Parameters<T>) => void) => {
+  return function (...rest: Parameters<T>) {
     try {
       fn.call(this, ...rest);
     } catch (err) {
       // Currently, we are throwing the error as it is to consumers.
-      // In future, this can be modified as per our requirement like an error logging service.
+      // In the future, this can be modified as per our requirement, like an error logging service.
       throw new I18nifyError(err);
     }
   };
