@@ -108,7 +108,6 @@ function splitByFormat(fullPath, stats, file) {
 function defaultStruct() {
   return {
     initial: {},
-    async: {},
   };
 }
 
@@ -189,10 +188,7 @@ function generateTableReport() {
 
   const rawStats = calculateDifferences(baseStats, prStats);
 
-  return [
-    formatToTable(rawStats.initial, 'Initial Chunks'),
-    formatToTable(rawStats.async, 'Async Chunks'),
-  ].join('\n');
+  return [formatToTable(rawStats.initial, 'Initial Chunks')].join('\n');
 }
 
 module.exports.generateTableReport = generateTableReport;
