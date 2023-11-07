@@ -1,4 +1,4 @@
-import { CURRENCIES } from "./data/currencies";
+import { CURRENCIES } from './data/currencies';
 
 export interface Currency {
   symbol: string;
