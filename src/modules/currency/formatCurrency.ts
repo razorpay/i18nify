@@ -12,8 +12,3 @@ export default function (currency: keyof typeof CURRENCIES, amount: number) {
     amount,
   );
 }
-
-export const test = (inp) => {
-  if (inp === 1) return 'a';
-  return 'b';
-};
