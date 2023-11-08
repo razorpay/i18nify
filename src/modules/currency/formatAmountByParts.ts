@@ -1,17 +1,19 @@
 import { CURRENCIES } from './data/currencies';
 import { ByParts } from './types';
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { getLocale } from '../shared/utils';
 
 const formatAmountByParts = (
   currencyCode: keyof typeof CURRENCIES,
   amount: string | number,
   locale?: string,
 ): ByParts => {
-  if (!Number(amount)) throw new Error('Parameter `amount` is not a number!');
+  if (!Number(amount) && Number(amount) !== 0)
+    throw new Error('Parameter `amount` is not a number!');
 
   // If a specific locale is provided, use it; otherwise, use the browser's locale
   if (!locale) {
-    locale = window.navigator.language;
+    locale = getLocale();
   }
 
   try {
@@ -45,7 +47,7 @@ const formatAmountByParts = (
       symbolAtFirst,
     };
   } catch (error: unknown) {
-    throw new Error(`Something went wrong`);
+    throw new Error('Something went wrong');
   }
 };
 
