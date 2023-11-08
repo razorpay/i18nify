@@ -6,6 +6,7 @@ describe('formatNumber', () => {
     expect(result).toBe('$1,000.50');
   });
 
+  //   FAILING
   it('should format the amount with custom locale and currency display', () => {
     const result = formatNumber('1500', {
       currency: 'EUR',
@@ -17,7 +18,7 @@ describe('formatNumber', () => {
     expect(result).toBe('1 500,00 EUR');
   });
 
-  it.only('should format the amount without currency symbol', () => {
+  it('should format the amount without currency symbol', () => {
     const result = formatNumber('750.75', {});
     expect(result).toBe('750.75');
   });
@@ -78,12 +79,14 @@ describe('formatNumber', () => {
     expect(result).toBe('12,345.679');
   });
 
+  //   FAILING
   it('should handle input with thousands separators', () => {
     expect(formatNumber('1,234,567.89', { currency: 'USD' })).toThrow(
       'Parameter `amount` is not a number!',
     );
   });
 
+  //   FAILING
   it('should handle input with a different decimal separator', () => {
     const result = formatNumber('1000,5', {
       currency: 'USD',
@@ -92,12 +95,14 @@ describe('formatNumber', () => {
     expect(result).toThrow('Parameter `amount` is not a number!');
   });
 
+  //   FAILING
   it('should handle extremely large numbers with precision', () => {
     const input = '1234567890123456.7890123456789012345678901234567890123456';
     const result = formatNumber(input, { currency: 'USD' });
     expect(result).toBe('$1,234,567,890,123,456.79');
   });
 
+  //   FAILING
   it('should handle a large number of digits in the integer part', () => {
     const input = '1234567890123456789012345678901234567.89';
     const result = formatNumber(input, { currency: 'USD' });
@@ -106,6 +111,7 @@ describe('formatNumber', () => {
     );
   });
 
+  //   FAILING
   it('should handle custom currency symbol and placement', () => {
     const result = formatNumber('1000', {
       currency: 'XYZ',

@@ -19,12 +19,6 @@ describe('formatAmountByParts', () => {
     );
   });
 
-  it('should handle an invalid currency code', () => {
-    expect(() => formatAmountByParts('XYZ', 12345.67, 'en-US')).toThrow(
-      'Something went wrong',
-    );
-  });
-
   it('should use the default locale if locale is not provided', () => {
     // Replace 'en-US' with the default locale in your environment
     const result = formatAmountByParts('USD', 12345.67);
@@ -50,17 +44,11 @@ describe('formatAmountByParts', () => {
     );
   });
 
+  //   FAILING
   it('should handle an invalid currency code', () => {
     expect(() => formatAmountByParts('XYZ', 12345.67, 'en-US')).toThrow(
       'Something went wrong',
     );
-  });
-
-  it('should use the default locale if locale is not provided', () => {
-    // Replace 'en-US' with the default locale in your environment
-    const result = formatAmountByParts('USD', 12345.67);
-
-    expect(result).toBeDefined();
   });
 
   it('should handle different locales', () => {
