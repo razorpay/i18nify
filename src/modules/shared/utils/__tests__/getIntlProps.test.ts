@@ -29,7 +29,6 @@ describe('getIntlProps', () => {
   });
 
   it('should throw an error if Intl is not supported', () => {
-    // Mocking the browser environment to trigger the error
     delete window.Intl;
     expect(() => getIntlProps()).toThrow('Intl is not defined');
   });

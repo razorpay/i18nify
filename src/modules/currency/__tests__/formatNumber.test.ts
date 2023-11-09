@@ -81,14 +81,14 @@ describe('formatNumber', () => {
   });
 
   //   FAILING
-  it('should handle input with thousands separators', () => {
+  it('should throw error with thousands separators', () => {
     expect(formatNumber('1,234,567.89', { currency: 'USD' })).toThrow(
       'i18nify Error: Error: Parameter `amount` is not a number!',
     );
   });
 
   //   FAILING
-  it('should handle input with a different decimal separator', () => {
+  it('should throw error with a different decimal separator', () => {
     const result = formatNumber('1000,5', {
       currency: 'USD',
       intlOptions: { useGrouping: false },
