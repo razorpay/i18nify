@@ -45,7 +45,7 @@ describe('formatNumberByParts', () => {
   });
 
   //   FAILING
-  it.only('should throw error on invalid currency code', () => {
+  it('should throw error on invalid currency code', () => {
     expect(() => formatNumberByParts('XYZ', 12345.67, 'en-US')).toThrow(
       'Something went wrong',
     );
