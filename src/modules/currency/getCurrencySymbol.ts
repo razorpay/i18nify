@@ -6,4 +6,4 @@ const getCurrencySymbol = (currencyCode: keyof typeof CURRENCIES): string => {
   else throw new Error('Invalid currencyCode!');
 };
 
-export default withErrorBoundary(getCurrencySymbol);
+export default withErrorBoundary<typeof getCurrencySymbol>(getCurrencySymbol);

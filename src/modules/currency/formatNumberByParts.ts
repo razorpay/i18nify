@@ -46,4 +46,6 @@ const formatNumberByParts = (
   }
 };
 
-export default withErrorBoundary(formatNumberByParts);
+export default withErrorBoundary<typeof formatNumberByParts>(
+  formatNumberByParts,
+);

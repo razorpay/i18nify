@@ -6,4 +6,4 @@ const getCurrencyList = (): GetCurrencyListOutput => {
   return CURRENCIES;
 };
 
-export default withErrorBoundary(getCurrencyList);
+export default withErrorBoundary<typeof getCurrencyList>(getCurrencyList);

@@ -3,7 +3,8 @@ import { withErrorBoundary, I18nifyError } from '../';
 describe('withErrorBoundary', () => {
   it('should call the wrapped function and not throw an error if there are no exceptions', () => {
     const wrappedFunction = jest.fn();
-    const wrappedUtilityFn = withErrorBoundary(wrappedFunction);
+    const wrappedUtilityFn =
+      withErrorBoundary<typeof wrappedFunction>(wrappedFunction);
 
     wrappedUtilityFn('arg1', 'arg2');
 
@@ -17,7 +18,8 @@ describe('withErrorBoundary', () => {
       throw new Error(exceptionMessage);
     };
 
-    const wrappedUtilityFn = withErrorBoundary(throwingFunction);
+    const wrappedUtilityFn =
+      withErrorBoundary<typeof throwingFunction>(throwingFunction);
 
     expect(() => wrappedUtilityFn()).toThrow(I18nifyError);
   });
