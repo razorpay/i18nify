@@ -25,7 +25,7 @@ const formatNumberByParts = (
     let currencySymbol = '';
     let separator = '';
     let symbolAtFirst = true;
-    const partValues = parts.map((p: any) => {
+    const partValues = parts.map((p) => {
       if (p.type === 'integer' || p.type === 'group') integerValue += p.value;
       else if (p.type === 'fraction') decimalValue += p.value;
       else if (p.type === 'currency') currencySymbol += p.value;
@@ -43,7 +43,7 @@ const formatNumberByParts = (
       separator,
       symbolAtFirst,
     };
-  } catch (error: any) {
+  } catch (error) {
     throw new Error(`Something went wrong- ${error.message}`);
   }
 };

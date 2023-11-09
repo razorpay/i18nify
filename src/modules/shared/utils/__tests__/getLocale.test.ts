@@ -33,7 +33,7 @@ describe('getLocale', () => {
     // Simulate browser environment without Intl object support
     mockNavigatorLanguage('fr-FR');
     mockNavigatorLanguages(['fr-FR', 'es-US']);
-    (global as any).Intl = undefined;
+    global.Intl = undefined;
 
     const result = getLocale();
 
@@ -42,10 +42,6 @@ describe('getLocale', () => {
 
   it('returns default locale when user language preferences are not available', () => {
     // Simulate browser environment without user language preferences
-    (global as any).navigator = {
-      languages: undefined,
-      language: undefined,
-    };
 
     mockNavigatorLanguage(undefined);
     mockNavigatorLanguages(undefined);
