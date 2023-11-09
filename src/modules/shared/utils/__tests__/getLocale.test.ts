@@ -42,7 +42,6 @@ describe('getLocale', () => {
 
   it('returns default locale when user language preferences are not available', () => {
     // Simulate browser environment without user language preferences
-
     mockNavigatorLanguage(undefined);
     mockNavigatorLanguages(undefined);
 
