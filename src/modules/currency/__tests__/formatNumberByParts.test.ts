@@ -1,8 +1,8 @@
-import formatAmountByParts from '../formatAmountByParts';
+import formatNumberByParts from '../formatNumberByParts';
 
-describe('formatAmountByParts', () => {
+describe('formatNumberByParts', () => {
   it('should format the amount correctly for a given currency', () => {
-    const result = formatAmountByParts('USD', 12345.67, 'en-US');
+    const result = formatNumberByParts('USD', 12345.67, 'en-US');
 
     expect(result).toEqual({
       currencySymbol: '$',
@@ -14,20 +14,20 @@ describe('formatAmountByParts', () => {
   });
 
   it('should handle non-numeric input', () => {
-    expect(() => formatAmountByParts('USD', 'not a number', 'en-US')).toThrow(
+    expect(() => formatNumberByParts('USD', 'not a number', 'en-US')).toThrow(
       'Parameter `amount` is not a number!',
     );
   });
 
   it('should use the default locale if locale is not provided', () => {
     // Replace 'en-US' with the default locale in your environment
-    const result = formatAmountByParts('USD', 12345.67);
+    const result = formatNumberByParts('USD', 12345.67);
 
     expect(result).toBeDefined();
   });
 
   it('should format the amount correctly for a given currency and locale', () => {
-    const result = formatAmountByParts('USD', 12345.67, 'en-US');
+    const result = formatNumberByParts('USD', 12345.67, 'en-US');
 
     expect(result).toEqual({
       currencySymbol: '$',
@@ -38,21 +38,21 @@ describe('formatAmountByParts', () => {
     });
   });
 
-  it('should handle non-numeric input', () => {
-    expect(() => formatAmountByParts('USD', 'not a number', 'en-US')).toThrow(
+  it('should throw error on non-numeric input', () => {
+    expect(() => formatNumberByParts('USD', 'not a number', 'en-US')).toThrow(
       'Parameter `amount` is not a number!',
     );
   });
 
   //   FAILING
-  it('should handle an invalid currency code', () => {
-    expect(() => formatAmountByParts('XYZ', 12345.67, 'en-US')).toThrow(
+  it.only('should throw error on invalid currency code', () => {
+    expect(() => formatNumberByParts('XYZ', 12345.67, 'en-US')).toThrow(
       'Something went wrong',
     );
   });
 
   it('should handle different locales', () => {
-    const result = formatAmountByParts('EUR', 12345.67, 'fr-FR');
+    const result = formatNumberByParts('EUR', 12345.67, 'fr-FR');
 
     expect(result).toEqual({
       currencySymbol: '€',
@@ -64,7 +64,7 @@ describe('formatAmountByParts', () => {
   });
 
   it('should handle a currency with symbol at the end', () => {
-    const result = formatAmountByParts('JPY', 12345.67, 'ja-JP');
+    const result = formatNumberByParts('JPY', 12345.67, 'ja-JP');
 
     expect(result).toEqual({
       currencySymbol: '￥',
@@ -76,7 +76,7 @@ describe('formatAmountByParts', () => {
   });
 
   it('should handle a currency with decimal value and symbol at the end', () => {
-    const result = formatAmountByParts('OMR', 12345.67, 'ar-OM');
+    const result = formatNumberByParts('OMR', 12345.67, 'ar-OM');
 
     expect(result).toEqual({
       currencySymbol: 'ر.ع.',

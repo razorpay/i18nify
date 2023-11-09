@@ -1,26 +1,21 @@
 import { CURRENCIES } from './data/currencies';
 import { ByParts } from './types';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { getLocale } from '../shared/utils';
+import { getIntlProps } from '../shared/utils/getIntlProps';
 
-const formatAmountByParts = (
-  currencyCode: keyof typeof CURRENCIES,
+const formatNumberByParts = (
   amount: string | number,
-  locale?: string,
+  options: {
+    currency?: keyof typeof CURRENCIES;
+    locale?: string;
+    intlOptions?: Intl.NumberFormatOptions;
+  } = {},
 ): ByParts => {
   if (!Number(amount) && Number(amount) !== 0)
     throw new Error('Parameter `amount` is not a number!');
 
-  // If a specific locale is provided, use it; otherwise, use the browser's locale
-  if (!locale) {
-    locale = getLocale();
-  }
-
   try {
-    const formattedAmount = new Intl.NumberFormat(locale || undefined, {
-      style: 'currency',
-      currency: currencyCode as string,
-    }).formatToParts(Number(amount));
+    const formattedAmount = getIntlProps(options).formatToParts(Number(amount));
 
     const parts = formattedAmount;
     let integerValue = '';
@@ -47,8 +42,8 @@ const formatAmountByParts = (
       symbolAtFirst,
     };
   } catch (error: unknown) {
-    throw new Error('Something went wrong');
+    throw new Error(`Something went wrong- ${error?.message}`);
   }
 };
 
-export default withErrorBoundary(formatAmountByParts);
+export default withErrorBoundary(formatNumberByParts);

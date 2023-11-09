@@ -1,3 +1,4 @@
+import { getLocale } from '../../shared/utils/getLocale';
 import formatNumber from '../formatNumber';
 
 describe('formatNumber', () => {
@@ -19,7 +20,7 @@ describe('formatNumber', () => {
   });
 
   it('should format the amount without currency symbol', () => {
-    const result = formatNumber('750.75', {});
+    const result = formatNumber('750.75');
     expect(result).toBe('750.75');
   });
 
@@ -37,7 +38,7 @@ describe('formatNumber', () => {
     const result = formatNumber('2000', {
       currency: 'CAD',
     });
-    const expectedLocale = window.navigator.language;
+    const expectedLocale = getLocale();
     const formattedAmount = new Intl.NumberFormat(expectedLocale, {
       style: 'currency',
       currency: 'CAD',
