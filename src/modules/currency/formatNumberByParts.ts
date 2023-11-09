@@ -1,7 +1,7 @@
 import { CURRENCIES } from './data/currencies';
 import { ByParts } from './types';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { getIntlProps } from '../shared/utils/getIntlProps';
+import { getIntlInstanceWithOptions } from '../shared/utils/getIntlInstanceWithOptions';
 
 const formatNumberByParts = (
   amount: string | number,
@@ -15,7 +15,9 @@ const formatNumberByParts = (
     throw new Error('Parameter `amount` is not a number!');
 
   try {
-    const formattedAmount = getIntlProps(options).formatToParts(Number(amount));
+    const formattedAmount = getIntlInstanceWithOptions(options).formatToParts(
+      Number(amount),
+    );
 
     const parts = formattedAmount;
     let integerValue = '';

@@ -1,6 +1,6 @@
 import { CURRENCIES } from './data/currencies';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { getIntlProps } from '../shared/utils/getIntlProps';
+import { getIntlInstanceWithOptions } from '../shared/utils/getIntlInstanceWithOptions';
 
 // this function formats number based on different arguments passed
 const formatNumber = (
@@ -17,7 +17,9 @@ const formatNumber = (
   let formattedAmount = '';
 
   try {
-    formattedAmount = getIntlProps(options).format(Number(amount));
+    formattedAmount = getIntlInstanceWithOptions(options).format(
+      Number(amount),
+    );
   } catch (err) {
     throw new Error(err.message);
   }

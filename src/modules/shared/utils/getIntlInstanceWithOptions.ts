@@ -1,7 +1,7 @@
 import { CURRENCIES } from '../../currency/data/currencies';
 import { getLocale } from './getLocale';
 
-export const getIntlProps = (
+export const getIntlInstanceWithOptions = (
   options: {
     currency?: keyof typeof CURRENCIES;
     locale?: string;
