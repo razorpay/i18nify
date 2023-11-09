@@ -25,4 +25,4 @@ const formatNumber = (
   return formattedAmount;
 };
 
-export default withErrorBoundary(formatNumber);
+export default withErrorBoundary<typeof formatNumber>(formatNumber);

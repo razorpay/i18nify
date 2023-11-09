@@ -18,9 +18,9 @@ export class I18nifyError extends Error {
  * @param fn utility that is wrapped in error boundary
  * @returns {Function} returns the function wrapped in try/catch block
  */
-export const withErrorBoundary = <T extends (...args: unknown[]) => void>(
+export const withErrorBoundary = <T extends (...args: unknown[]) => unknown>(
   fn: T,
-): ((...args: Parameters<T>) => void) => {
+): ((...args: Parameters<T>) => ReturnType<T>) => {
   return function (...rest: Parameters<T>) {
     try {
       return fn.call(this, ...rest);
