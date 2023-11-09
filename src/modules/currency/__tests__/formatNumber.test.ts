@@ -83,7 +83,7 @@ describe('formatNumber', () => {
   //   FAILING
   it('should handle input with thousands separators', () => {
     expect(formatNumber('1,234,567.89', { currency: 'USD' })).toThrow(
-      'Parameter `amount` is not a number!',
+      'i18nify Error: Error: Parameter `amount` is not a number!',
     );
   });
 
@@ -93,7 +93,9 @@ describe('formatNumber', () => {
       currency: 'USD',
       intlOptions: { useGrouping: false },
     });
-    expect(result).toThrow('Parameter `amount` is not a number!');
+    expect(result).toThrow(
+      'i18nify Error: Error: Parameter `amount` is not a number!',
+    );
   });
 
   //   FAILING

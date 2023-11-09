@@ -41,8 +41,8 @@ const formatNumberByParts = (
       separator,
       symbolAtFirst,
     };
-  } catch (error: unknown) {
-    throw new Error(`Something went wrong- ${error?.message}`);
+  } catch (error: any) {
+    throw new Error(`Something went wrong- ${error.message}`);
   }
 };
 
