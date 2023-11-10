@@ -1,0 +1,59 @@
+name: CodeCov Code Coverage PR Analysis
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  coverage:
+    name: CodeCov analysis on coverage
+    runs-on: ubuntu-latest
+    if: |
+      !(github.head_ref	== 'changeset-release/master' && github.actor == 'rzpcibot') &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.CI_BOT_TOKEN }}
+      - name: Setup Node v20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.3.1
+      - name: Setup Cache & Install Dependencies
+        uses: bahmutov/npm-install@v1.8.15
+        with:
+          install-command: yarn --frozen-lockfile
+      - name: Run Tests
+        run: yarn test
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          fail_ci_if_error: false
+          verbose: true
+      - name: Upload Unit Test Results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Unit Test Results
+          path: src/coverage/**/*.xml
+
+  publish-test-results:
+    name: 'Publish Unit Tests Results'
+    needs: coverage
+    runs-on: ubuntu-latest
+    # Only run if prereq jobs completed - successfully or not
+    if: success() || failure()
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          path: artifacts
+
+      - name: Publish Unit Test Results
+        uses: docker://ghcr.io/enricomi/publish-unit-test-result-action:v1.6
+        continue-on-error: true
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: artifacts/**/*.xml

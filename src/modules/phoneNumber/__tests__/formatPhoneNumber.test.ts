@@ -1,34 +1,34 @@
-import { describe, expect, it } from "@jest/globals";
-import formatPhoneNumber from "../formatPhoneNumber";
+import { describe, expect, it } from '@jest/globals';
+import formatPhoneNumber from '../formatPhoneNumber';
 
-describe("formatPhoneNumber", () => {
-  it("should format an Indian phone number", () => {
-    const phoneNumber = "+917394926646";
-    const countryCode = "IN";
+describe('formatPhoneNumber', () => {
+  it('should format an Indian phone number', () => {
+    const phoneNumber = '+917394926646';
+    const countryCode = 'IN';
     const formatted = formatPhoneNumber(phoneNumber, countryCode);
-    expect(formatted).toBe("+91 7394 926646");
+    expect(formatted).toBe('+91 7394 926646');
   });
 
-  it("should format a Malaysian phone number", () => {
-    const phoneNumber = "+60123456789";
-    const countryCode = "MY";
+  it('should format a Malaysian phone number', () => {
+    const phoneNumber = '+60123456789';
+    const countryCode = 'MY';
     const formatted = formatPhoneNumber(phoneNumber, countryCode);
-    expect(formatted).toBe("+60 12 34567 89");
+    expect(formatted).toBe('+60 12 34567 89');
   });
 
-  it("should handle a missing country code", () => {
-    const phoneNumber = "1234567890";
-    const countryCode = "XYZ"; // Assuming XYZ is not in phoneFormatterMapper
+  it('should handle a missing country code', () => {
+    const phoneNumber = '1234567890';
+    const countryCode = 'XYZ'; // Assuming XYZ is not in phoneFormatterMapper
     expect(() => formatPhoneNumber(phoneNumber, countryCode)).toThrow(
-      "Parameter `countryCode` is invalid!"
+      'Parameter `countryCode` is invalid!',
     );
   });
 
-  it("should handle a missing phoneNumber", () => {
-    const phoneNumber = "";
-    const countryCode = "MY";
+  it('should handle a missing phoneNumber', () => {
+    const phoneNumber = '';
+    const countryCode = 'MY';
     expect(() => formatPhoneNumber(phoneNumber, countryCode)).toThrow(
-      "Parameter `phoneNumber` is invalid!"
+      'Parameter `phoneNumber` is invalid!',
     );
   });
 });
