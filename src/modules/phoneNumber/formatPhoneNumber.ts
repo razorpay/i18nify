@@ -1,3 +1,4 @@
+import { withErrorBoundary } from '../../common/errorBoundary';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
 
 const formatPhoneNumber = (
@@ -42,4 +43,4 @@ const formatPhoneNumber = (
   return formattedPhoneNumberWithPrefix.trim();
 };
 
-export default formatPhoneNumber;
+export default withErrorBoundary<typeof formatPhoneNumber>(formatPhoneNumber);

@@ -1,5 +1,6 @@
 import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
+import { withErrorBoundary } from '../../common/errorBoundary';
 
 const validatePhoneNumber = (
   phoneNumber: string | number,
@@ -17,4 +18,6 @@ const validatePhoneNumber = (
   return false;
 };
 
-export default validatePhoneNumber;
+export default withErrorBoundary<typeof validatePhoneNumber>(
+  validatePhoneNumber,
+);
