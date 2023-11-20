@@ -14,10 +14,10 @@ export const detectCountryCodeFromDialCode = (
   throw new Error('Unable to detect `country code` from phone number.');
 };
 
-export const removeNonNumericChars = (phoneNumber: string) => {
+export const cleanPhoneNumber = (phoneNumber: string) => {
   // Regular expression to match all characters except numbers and + sign at the start
-  const regex = /[^0-9+]|(?!\A)\+/g;
+  const regex = /[^0-9+]|(?!A)\+/g;
   // Replace matched characters with an empty string
-  const cleanedString = phoneNumber.replace(regex, '');
-  return cleanedString;
+  const cleanedPhoneNumber = phoneNumber.replace(regex, '');
+  return phoneNumber[0] === '+' ? `+${cleanedPhoneNumber}` : cleanedPhoneNumber;
 };
