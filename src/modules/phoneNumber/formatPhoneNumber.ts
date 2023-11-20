@@ -1,10 +1,12 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
+import { detectCountryCodeFromDialCode } from './utils';
 
 const formatPhoneNumber = (
   phoneNumber: string | number,
-  countryCode: keyof typeof PHONE_FORMATTER_MAPPER,
+  countryCode?: keyof typeof PHONE_FORMATTER_MAPPER,
 ): string => {
+  if (!countryCode) countryCode = detectCountryCodeFromDialCode(phoneNumber);
   const pattern = PHONE_FORMATTER_MAPPER[countryCode];
 
   if (!pattern) throw new Error('Parameter `countryCode` is invalid!');
