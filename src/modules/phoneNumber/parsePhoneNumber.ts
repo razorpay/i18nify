@@ -1,7 +1,7 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
 import formatPhoneNumber from './formatPhoneNumber';
-import { detectCountryCodeFromDialCode, removeNonNumericChars } from './utils';
+import { detectCountryCodeFromDialCode, cleanPhoneNumber } from './utils';
 
 interface PhoneInfo {
   countryCode: string;
@@ -19,7 +19,7 @@ const parsePhoneNumber = (phoneNumber: string): PhoneInfo | null => {
   if (!phoneNumber) throw new Error('Parameter `phoneNumber` is invalid!');
 
   phoneNumber = phoneNumber.toString();
-  phoneNumber = removeNonNumericChars(phoneNumber);
+  phoneNumber = cleanPhoneNumber(phoneNumber);
 
   let charCountInFormatterPattern = 0;
   for (let i = 0; i < pattern.length; i++) {
