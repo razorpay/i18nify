@@ -3,6 +3,7 @@ import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
 export const detectCountryCodeFromDialCode = (
   phoneNumber: string | number,
 ): string => {
+  phoneNumber = removeNonNumericChars(phoneNumber.toString());
   for (const countryCode in PHONE_REGEX_MAPPER) {
     if (Object.prototype.hasOwnProperty.call(PHONE_REGEX_MAPPER, countryCode)) {
       const regex = PHONE_REGEX_MAPPER[countryCode];
