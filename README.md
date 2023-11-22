@@ -4,9 +4,14 @@ A one-stop solution built in javascript to provide internationalization support.
 
 ## Install
 
-```
-yarn add i18nify
-```
+`yarn add i18nify`
+
+## Local Setup / Want to Contribute ?
+
+- Clone this repository.
+- After cloning this repo, ensure dependencies are installed by running: `yarn install`
+- You are good to go, go ahead find issues and raise your PR to fix those. Happy coding!!
+- To create a build run following command: `yarn build`
 
 ## Modules
 
