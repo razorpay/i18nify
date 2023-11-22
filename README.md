@@ -10,7 +10,7 @@ yarn add i18nify
 
 ## Modules
 
-### Currency
+### Module 01: Currency
 
 Module that deals with formatting, validations and all other related utilities focused on Currency. Below are the APIs/Utilities that Currency Module exposes for consumers.
 
@@ -240,6 +240,18 @@ console.log(
     } */
 ```
 
-### Phone Number
+### Module 02: Phone Number
 
-Module that deals with formatting, validations and all other related utilities focused on Phone Number.
+Module that deals with formatting, validations and all other related utilities focused on Phone Number. Below are the APIs/Utilities that Phone Number Module exposes for consumers.
+
+#### validatePhoneNumber(phoneNumber, countryCode)
+
+The **_validatePhoneNumber_** function serves the purpose of determining the validity of a provided phone number against predefined regular expression patterns specific to various country codes. This function returns a boolean value, true indicating the phone number's validity for the specified country code and false otherwise.
+
+#### formatPhoneNumber(phoneNumber, countryCode)
+
+The **_formatPhoneNumber_** function is designed to format a given phone number based on the specified country code or infers the country code from the provided phone number. This function returns a formatted phone number string that aligns with the conventional format of the detected or specified country.
+
+#### parsePhoneNumber(phoneNumber)
+
+The **_parsePhoneNumber_** function undertakes the task of extracting comprehensive information from a given phone number. This information includes the country code, dial code, formatted number, and the format template employed. This function returns an object containing these extracted details, allowing easy access and reference to the pertinent information related to the provided phone number.
