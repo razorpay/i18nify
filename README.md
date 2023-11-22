@@ -1,6 +1,6 @@
 # i18nify
 
-A one-stop solution built in javascript to provide internationalization support.
+A one-stop solution built in javascript to provide internationalization support. This library contains various modules like phoneNumber, currency, date etc each dealing with certain functionalities that consumer can use to provide localisation support in the application. Each of these modules are discussed in great detail in the sections below
 
 ## Install
 
