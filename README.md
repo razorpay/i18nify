@@ -21,7 +21,7 @@ Module that deals with formatting, validations and all other related utilities f
 
 #### formatNumber(amount, options)
 
-The **_formatNumber_** function is designed to format numerical values, allowing customization based on various options. It leverages the Internationalization API (Intl) to generate locale-specific representations of numbers, particularly for currencies. This function takes an amount (either a string or a number) and optional parameters such as currency type, locale, and additional formatting options. Finally, it formats the amount according to the defined options and returns the formatted string representation.
+The **_formatNumber_** function is designed to format numerical values, allowing customization based on various options. It leverages the Internationalization API (Intl) to generate locale-specific representations of numbers, particularly for currencies.
 
 ##### Examples
 
@@ -50,7 +50,7 @@ console.log(
 
 #### getCurrencyList()
 
-The **_getCurrencyList_** function is a simple retrieval function that returns a list of currencies along with their respective symbols and names. This function does not modify the data but serves to provide access to the entire currency list defined within the application.
+The **_getCurrencyList_** function is a simple retrieval function that returns a list of currencies along with their respective symbols and names.
 
 ##### Examples
 
@@ -156,7 +156,7 @@ console.log(getCurrencyList()); /* {
 
 #### getCurrencySymbol(currencyCode)
 
-The **_getCurrencySymbol_** function retrieves the symbol associated with a given currency code from a predefined list of currencies. It takes a currency code as an argument and checks if it exists within the currency list. If the code is valid, it returns the corresponding symbol for that currency. If the provided currency code is not found in the list, it throws an error indicating an invalid currency code.
+Fetches the symbol for a currency code from a predefined list, ensuring accuracy or signaling an error for invalid codes.
 
 ##### Examples
 
@@ -170,11 +170,7 @@ console.log(getCurrencySymbol('OMR')); // ر.ع.
 
 #### formatNumberByParts(amount, options)
 
-The **_formatNumberByParts_** function is a utility that formats a numerical value into its constituent parts based on specified options. It uses the Intl.NumberFormat API's formatToParts method to break down the formatted number into separate components such as integer, decimal, currency symbol, and separator.
-
-This function takes an amount (either a string or a number) and optional parameters such as currency type, locale, and additional formatting options.
-
-The output object structure adheres to the defined interface, providing access to individual components of the formatted number, including the currency symbol, integer part, decimal part, separator, and a boolean flag indicating whether the currency symbol appears at the beginning of the formatted string. If any errors occur during the formatting process, it throws an error with an accompanying message.
+The **_formatNumberByParts_** function dissects numerical values using Intl.NumberFormat, delivering separate components like currency symbol, integer, decimal, separator, and placement indication, with error handling for formatting issues.
 
 ##### Examples
 
@@ -249,14 +245,14 @@ console.log(
 
 Module that deals with formatting, validations and all other related utilities focused on Phone Number. Below are the APIs/Utilities that Phone Number Module exposes for consumers.
 
-#### validatePhoneNumber(phoneNumber, countryCode)
+#### isValidPhoneNumber(phoneNumber, countryCode)
 
-The **_validatePhoneNumber_** function serves the purpose of determining the validity of a provided phone number against predefined regular expression patterns specific to various country codes. This function returns a boolean value, true indicating the phone number's validity for the specified country code and false otherwise.
+The **isValidPhoneNumber** function serves the purpose of determining the validity of a provided phone number against predefined regular expression patterns specific to various country codes. This function returns a boolean value, true indicating the phone number's validity for the specified country code and false otherwise.
 
 #### formatPhoneNumber(phoneNumber, countryCode)
 
 The **_formatPhoneNumber_** function is designed to format a given phone number based on the specified country code or infers the country code from the provided phone number. This function returns a formatted phone number string that aligns with the conventional format of the detected or specified country.
 
-#### parsePhoneNumber(phoneNumber)
+#### parsePhoneNumber(phoneNumber, country)
 
 The **_parsePhoneNumber_** function undertakes the task of extracting comprehensive information from a given phone number. This information includes the country code, dial code, formatted number, and the format template employed. This function returns an object containing these extracted details, allowing easy access and reference to the pertinent information related to the provided phone number.
