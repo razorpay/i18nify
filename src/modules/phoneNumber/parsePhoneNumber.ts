@@ -10,8 +10,14 @@ interface PhoneInfo {
   formatTemplate: string;
 }
 
-const parsePhoneNumber = (phoneNumber: string): PhoneInfo | null => {
-  const countryCode = detectCountryCodeFromDialCode(phoneNumber);
+const parsePhoneNumber = (
+  phoneNumber: string,
+  country?: string,
+): PhoneInfo | null => {
+  const countryCode =
+    country in Object.keys(PHONE_FORMATTER_MAPPER)
+      ? country
+      : detectCountryCodeFromDialCode(phoneNumber);
   const formattedPhoneNumber = formatPhoneNumber(phoneNumber, countryCode);
   const pattern = PHONE_FORMATTER_MAPPER[countryCode];
 

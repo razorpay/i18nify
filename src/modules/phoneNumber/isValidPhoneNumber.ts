@@ -3,7 +3,7 @@ import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { detectCountryCodeFromDialCode, cleanPhoneNumber } from './utils';
 
-const validatePhoneNumber = (
+const isValidPhoneNumber = (
   phoneNumber: string | number,
   countryCode?: keyof typeof PHONE_FORMATTER_MAPPER,
 ): boolean => {
@@ -21,6 +21,4 @@ const validatePhoneNumber = (
   return false;
 };
 
-export default withErrorBoundary<typeof validatePhoneNumber>(
-  validatePhoneNumber,
-);
+export default withErrorBoundary<typeof isValidPhoneNumber>(isValidPhoneNumber);
