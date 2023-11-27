@@ -32,7 +32,7 @@
     "clean": "rm -rf lib",
     "build": "yarn clean && rollup -c",
     "test": "jest",
-    "prepare": "husky install",
+    "prepare": "husky install && yarn build",
     "lint-staged": "lint-staged -c .lintstagedrc.json",
     "release": "node ./scripts/generateGitHubRegistryNpmrc.js && changeset publish",
     "publish-npm": "node ./scripts/publishToNpm.js"
