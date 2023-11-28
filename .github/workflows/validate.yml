@@ -1,4 +1,4 @@
-name: Validate
+name: Build & Validate
 on:
   pull_request:
 jobs:

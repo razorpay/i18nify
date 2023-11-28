@@ -1,5 +1,5 @@
 {
-  "name": "i18nify",
+  "name": "@razorpay/i18nify",
   "version": "1.0.0",
   "author": "tarun khanna <tarun.khanna@razorpay.com>",
   "license": "MIT",
@@ -32,10 +32,13 @@
     "clean": "rm -rf lib",
     "build": "yarn clean && rollup -c",
     "test": "jest",
-    "prepare": "husky install",
-    "lint-staged": "lint-staged -c .lintstagedrc.json"
+    "prepare": "husky install && yarn build",
+    "lint-staged": "lint-staged -c .lintstagedrc.json",
+    "release": "node ./scripts/generateGitHubRegistryNpmrc.js && changeset publish",
+    "publish-npm": "node ./scripts/publishToNpm.js"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
