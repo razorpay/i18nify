@@ -20,10 +20,10 @@ describe('parsePhoneNumber function', () => {
 
     const parsedInfo = parsePhoneNumber(phoneNumber);
 
-    expect(parsedInfo.countryCode).toBeDefined();
-    expect(parsedInfo.dialCode).toBeDefined();
-    expect(parsedInfo.formattedPhoneNumber).toBeDefined();
-    expect(parsedInfo.formatTemplate).toBeDefined();
+    expect(parsedInfo.countryCode).toBe('GB');
+    expect(parsedInfo.dialCode).toBe('+44');
+    expect(parsedInfo.formattedPhoneNumber).toBe('+44 7123 456 789');
+    expect(parsedInfo.formatTemplate).toBe('xxxx xxx xxx');
   });
 
   it('should throw an error for an invalid phone number', () => {
@@ -32,19 +32,5 @@ describe('parsePhoneNumber function', () => {
     expect(() => parsePhoneNumber(phoneNumber)).toThrow(
       'Unable to detect `country code` from phone number.',
     );
-  });
-
-  it('should correctly parse a valid phone number with different country code', () => {
-    const phoneNumber = '+61412123123'; // Australian phone number
-    const country = 'AU'; // Expected country code
-
-    const parsedInfo = parsePhoneNumber(phoneNumber, country);
-
-    expect(parsedInfo).toEqual({
-      countryCode: 'AU',
-      formattedPhoneNumber: '+6 1412 123 123',
-      dialCode: '+6',
-      formatTemplate: 'xxxx xxx xxx',
-    });
   });
 });

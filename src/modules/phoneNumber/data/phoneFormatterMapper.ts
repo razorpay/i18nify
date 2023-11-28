@@ -5,7 +5,7 @@ export const PHONE_FORMATTER_MAPPER: { [key: string]: string } = {
   AL: 'xxx xx xxxx',
   AM: 'xx xx xx xx',
   AR: 'xxxx-xxxx',
-  AU: 'xxxx xxx xxx',
+  AU: 'xxx xxx xxx',
   AW: 'xxx-xxxx',
   BB: 'xxx-xxxx',
   BD: 'xxxx-xxxxxx',

@@ -10,23 +10,32 @@ interface PhoneInfo {
   formatTemplate: string;
 }
 
+// Parses a given phone number, identifies its country code (if not provided), and returns an object with details including the country code, formatted phone number, dial code, and format template.
 const parsePhoneNumber = (
   phoneNumber: string,
   country?: string,
 ): PhoneInfo | null => {
+  // Detect or validate the country code
   const countryCode =
-    country in Object.keys(PHONE_FORMATTER_MAPPER)
+    country in PHONE_FORMATTER_MAPPER
       ? country
       : detectCountryCodeFromDialCode(phoneNumber);
+
+  // Format the phone number using the detected/validated country code
   const formattedPhoneNumber = formatPhoneNumber(phoneNumber, countryCode);
+
+  // Fetch the pattern associated with the countryCode from the PHONE_FORMATTER_MAPPER
   const pattern = PHONE_FORMATTER_MAPPER[countryCode];
 
+  // Throw errors if countryCode or phoneNumber is invalid
   if (!pattern) throw new Error('Parameter `countryCode` is invalid!');
   if (!phoneNumber) throw new Error('Parameter `phoneNumber` is invalid!');
 
+  // Clean the phoneNumber by removing non-numeric characters
   phoneNumber = phoneNumber.toString();
   phoneNumber = cleanPhoneNumber(phoneNumber);
 
+  // Count the number of 'x' characters in the format pattern
   let charCountInFormatterPattern = 0;
   for (let i = 0; i < pattern.length; i++) {
     if (pattern[i] === 'x') {
@@ -34,10 +43,16 @@ const parsePhoneNumber = (
     }
   }
 
+  // Calculate the difference between phoneNumber length and 'x' characters count in pattern
   const diff = phoneNumber.length - charCountInFormatterPattern;
+
+  // Extract the dialCode from the phoneNumber
   const dialCode = phoneNumber.slice(0, diff);
+
+  // Obtain the format template associated with the countryCode
   const formatTemplate = PHONE_FORMATTER_MAPPER[countryCode];
 
+  // Return the parsed phone number information
   return {
     countryCode,
     formattedPhoneNumber,

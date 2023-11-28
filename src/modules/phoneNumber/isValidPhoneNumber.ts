@@ -3,21 +3,30 @@ import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { detectCountryCodeFromDialCode, cleanPhoneNumber } from './utils';
 
+// Validates whether a given phone number is valid based on the provided country code or auto-detects the country code and checks if the number matches the defined regex pattern for that country.
 const isValidPhoneNumber = (
   phoneNumber: string | number,
   countryCode?: keyof typeof PHONE_FORMATTER_MAPPER,
 ): boolean => {
+  // Clean the provided phoneNumber by removing non-numeric characters
   const cleanedPhoneNumber = cleanPhoneNumber(phoneNumber.toString());
+
+  // If countryCode is not provided, detect it from the cleanedPhoneNumber
   if (!countryCode)
     countryCode = detectCountryCodeFromDialCode(cleanedPhoneNumber);
-  if (!phoneNumber) throw new Error('Parameter `phoneNumber` is invalid!');
 
-  if (Object.prototype.hasOwnProperty.call(PHONE_REGEX_MAPPER, countryCode)) {
+  // Return false if phoneNumber is empty
+  if (!phoneNumber) return false;
+
+  // Check if the countryCode exists in the PHONE_REGEX_MAPPER
+  if (countryCode in PHONE_REGEX_MAPPER) {
+    // Fetch the regex pattern for the countryCode
     const regex = PHONE_REGEX_MAPPER[countryCode];
+    // Test if the cleanedPhoneNumber matches the regex pattern
     return regex.test(cleanedPhoneNumber as string);
   }
 
-  // Return false if the country code is not supported
+  // Return false if the countryCode is not supported
   return false;
 };
 

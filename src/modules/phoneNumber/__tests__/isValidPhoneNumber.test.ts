@@ -2,32 +2,34 @@ import { describe, expect, it } from '@jest/globals';
 import isValidPhoneNumber from '../isValidPhoneNumber';
 
 describe('isValidPhoneNumber', () => {
-  it('should validate a valid Indian phone number', () => {
-    const phoneNumber = '+917394926646';
-    const countryCode = 'IN';
-    const isValid = isValidPhoneNumber(phoneNumber, countryCode);
-    expect(isValid).toBe(true);
+  const validTestDataSet = [
+    { countryCode: 'IN', phoneNumber: '+917394926646' },
+    { countryCode: 'MY', phoneNumber: '+60123456789' },
+  ];
+
+  const invalidTestDataSet = [
+    { countryCode: 'IN', phoneNumber: '1234' },
+    { countryCode: 'MY', phoneNumber: '60123' },
+  ];
+
+  validTestDataSet.map((dataset) => {
+    it(`should validate a valid phone number for ${dataset.countryCode}`, () => {
+      const isValid = isValidPhoneNumber(
+        dataset.phoneNumber,
+        dataset.countryCode,
+      );
+      expect(isValid).toBe(true);
+    });
   });
 
-  it('should validate a valid Malaysian phone number', () => {
-    const phoneNumber = '+60123456789';
-    const countryCode = 'MY';
-    const isValid = isValidPhoneNumber(phoneNumber, countryCode);
-    expect(isValid).toBe(true);
-  });
-
-  it('should reject an invalid Indian phone number', () => {
-    const phoneNumber = '1234'; // Invalid Indian number
-    const countryCode = 'IN';
-    const isValid = isValidPhoneNumber(phoneNumber, countryCode);
-    expect(isValid).toBe(false);
-  });
-
-  it('should reject an invalid Malaysian phone number', () => {
-    const phoneNumber = '60123'; // Invalid Malaysian number
-    const countryCode = 'MY';
-    const isValid = isValidPhoneNumber(phoneNumber, countryCode);
-    expect(isValid).toBe(false);
+  invalidTestDataSet.map((dataset) => {
+    it(`should reject an invalid phone number for ${dataset.countryCode}`, () => {
+      const isValid = isValidPhoneNumber(
+        dataset.phoneNumber,
+        dataset.countryCode,
+      );
+      expect(isValid).toBe(false);
+    });
   });
 
   it('should handle a missing country code', () => {
@@ -40,8 +42,7 @@ describe('isValidPhoneNumber', () => {
   it('should handle a missing phoneNumber', () => {
     const phoneNumber = '';
     const countryCode = 'MY';
-    expect(() => isValidPhoneNumber(phoneNumber, countryCode)).toThrow(
-      'Parameter `phoneNumber` is invalid!',
-    );
+    const isValid = isValidPhoneNumber(phoneNumber, countryCode);
+    expect(isValid).toBe(false);
   });
 });
