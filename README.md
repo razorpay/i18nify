@@ -1,6 +1,10 @@
 # i18nify
 
-A one-stop solution built in javascript to provide internationalization support. This library contains various modules like phoneNumber, currency, date etc each dealing with certain functionalities that consumer can use to provide localisation support in the application. Each of these modules are discussed in great detail in the sections below
+_A one-stop solution built in javascript to provide internationalization support._
+
+Hey, dive into this JavaScript toolkit—it’s like having a magic kit for your app! 🪄✨ Picture this: modules for phoneNumber, currency, date—they’re like enchanted tools that make your app talk fluently in any language, anywhere! It’s your ticket to making your app a global citizen, no matter where it goes!
+
+And hey, hang tight—I’ll break down each of these enchanting modules in the sections coming up! 🌍📱💸🗓️
 
 ## Install
 
@@ -8,20 +12,24 @@ A one-stop solution built in javascript to provide internationalization support.
 
 ## Local Setup / Want to Contribute ?
 
-- Clone this repository.
-- After cloning this repo, ensure dependencies are installed by running: `yarn install`
+Here’s your roadmap to getting this party started:
+
+- First things first, clone this treasure trove of code (repository).
+- Once you’ve done that, make sure all the buddies (dependencies) are in place by hitting `yarn install`
 - You are good to go, go ahead find issues and raise your PR to fix those. Happy coding!!
 - To create a build run following command: `yarn build`
+
+Go on, code conqueror, the adventure awaits!
 
 ## Modules
 
 ### Module 01: Currency
 
-Module that deals with formatting, validations and all other related utilities focused on Currency. Below are the APIs/Utilities that Currency Module exposes for consumers.
+This module's your go-to guru for everything currency/number-related. 🤑 It's all about formatting, validations, and handy tricks to make dealing with money/numbers a breeze. Here are the cool APIs and utilities this Currency Module gives you to play with! 🚀💸
 
 #### formatNumber(amount, options)
 
-The **_formatNumber_** function is designed to format numerical values, allowing customization based on various options. It leverages the Internationalization API (Intl) to generate locale-specific representations of numbers, particularly for currencies.
+🎩✨ This little wizard helps you jazz up numerical values in all sorts of fancy ways. And guess what? It uses the Internationalization API (Intl) to sprinkle that magic dust and give you snazzy, locale-specific number formats—especially for currencies! 🌟💸
 
 ##### Examples
 
@@ -50,7 +58,7 @@ console.log(
 
 #### getCurrencyList()
 
-The **_getCurrencyList_** function is a simple retrieval function that returns a list of currencies along with their respective symbols and names.
+🌍💰 It’s your easy-peasy way to snag a whole list of currencies with their symbols and names. Simple, straightforward, and totally handy!
 
 ##### Examples
 
@@ -156,7 +164,7 @@ console.log(getCurrencyList()); /* {
 
 #### getCurrencySymbol(currencyCode)
 
-Fetches the symbol for a currency code from a predefined list, ensuring accuracy or signaling an error for invalid codes.
+Picture this: it's like having a cool decoder ring for currency codes! 🔍💰 This little guy, grabs the symbol for a currency code from its secret stash.
 
 ##### Examples
 
@@ -170,7 +178,7 @@ console.log(getCurrencySymbol('OMR')); // ر.ع.
 
 #### formatNumberByParts(amount, options)
 
-The **_formatNumberByParts_** function dissects numerical values using Intl.NumberFormat, delivering separate components like currency symbol, integer, decimal, separator, and placement indication, with error handling for formatting issues.
+This slick function breaks down numbers into separate pieces using Intl.NumberFormat. It's like taking apart a puzzle 🧩 — currency symbol here, integers there, decimals in their place—with a fail-proof system to handle any formatting hiccups 🥴 along the way. Smooth operator, right?
 
 ##### Examples
 
@@ -243,16 +251,16 @@ console.log(
 
 ### Module 02: Phone Number
 
-Module that deals with formatting, validations and all other related utilities focused on Phone Number. Below are the APIs/Utilities that Phone Number Module exposes for consumers.
+This module’s your phone’s best friend, handling all things phone number-related. 📱 It’s the go-to for formatting, checking if those digits are legit, and all those handy phone-related tricks. And guess what? It’s got a bunch of cool stuff—APIs and utilities—just waiting for you to dive in and make your phone game strong! 🚀🔢
 
 #### isValidPhoneNumber(phoneNumber, countryCode)
 
-The **isValidPhoneNumber** function serves the purpose of determining the validity of a provided phone number against predefined regular expression patterns specific to various country codes. This function returns a boolean value, true indicating the phone number's validity for the specified country code and false otherwise.
+📞 It’s like the phone number detective, using fancy patterns to check if a number is the real deal for a specific country code. So, it’s pretty simple: if it says true, your number’s good to go for that country; if it’s false, time to double-check those digits! 🕵️‍♂️🔍
 
 #### formatPhoneNumber(phoneNumber, countryCode)
 
-The **_formatPhoneNumber_** function is designed to format a given phone number based on the specified country code or infers the country code from the provided phone number. This function returns a formatted phone number string that aligns with the conventional format of the detected or specified country.
+📞 It’s like your personal phone number stylist, working its magic to make those digits look all snazzy. You can tell it the country code, or it’ll figure it out itself—then presto! It hands you back a phone number looking sharp and dapper in that country’s typical style. ✨🌍
 
 #### parsePhoneNumber(phoneNumber, country)
 
-The **_parsePhoneNumber_** function undertakes the task of extracting comprehensive information from a given phone number. This information includes the country code, dial code, formatted number, and the format template employed. This function returns an object containing these extracted details, allowing easy access and reference to the pertinent information related to the provided phone number.
+🕵️‍♂️📞 This clever function digs deep into a phone number, pulling out all the juicy details: country code, dial code, the number all dolled up, and even the format it follows. What’s cool? It hands you back an object filled with all these deets, making it a breeze to access everything about that phone number. It’s like having the ultimate phone number cheat sheet! 🌟
