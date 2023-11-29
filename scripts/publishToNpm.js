@@ -15,10 +15,9 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 const execa = require('execa');
 
-const NPMRC_PATH = path.join('../.npmrc');
+const NPMRC_PATH = '../.npmrc';
 
 const npmRcContent = `@razorpay:registry=https://registry.npmjs.org/
 //registry.npmjs.org/:always-auth=true
