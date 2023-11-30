@@ -9,7 +9,7 @@
 
 const fs = require('fs');
 
-const NPMRC_PATH = '../.npmrc';
+const NPMRC_PATH = './.npmrc';
 
 const npmRcContent = `@razorpay:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:always-auth=true
