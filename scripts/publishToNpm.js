@@ -29,7 +29,7 @@ console.log('[i18nify]: Publishing on NPM ✨');
 fs.writeFileSync(NPMRC_PATH, npmRcContent);
 
 try {
-  execa.commandSync('npm publish', {
+  execa.commandSync('npm publish --access public', {
     cwd: './',
     stdio: 'inherit',
   });
