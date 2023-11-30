@@ -6,6 +6,10 @@
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:razorpay/i18nify.git"
+  },
   "files": [
     "src",
     "lib"
