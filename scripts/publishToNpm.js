@@ -30,7 +30,7 @@ fs.writeFileSync(NPMRC_PATH, npmRcContent);
 
 try {
   execa.commandSync('npm publish', {
-    cwd: '../',
+    cwd: './',
     stdio: 'inherit',
   });
 } finally {
