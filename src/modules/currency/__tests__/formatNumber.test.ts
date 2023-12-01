@@ -1,4 +1,4 @@
-import { getLocale } from '../../shared/utils/getLocale';
+import { getLocale } from '../../.internal/utils/getLocale';
 import formatNumber from '../formatNumber';
 
 const nbsp = String.fromCharCode(160);

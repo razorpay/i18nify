@@ -1,7 +1,7 @@
 import { CURRENCIES } from './data/currencies';
 import { ByParts } from './types';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { getIntlInstanceWithOptions } from '../shared/utils/getIntlInstanceWithOptions';
+import { getIntlInstanceWithOptions } from '../.internal/utils/getIntlInstanceWithOptions';
 
 const formatNumberByParts = (
   amount: string | number,
@@ -43,8 +43,12 @@ const formatNumberByParts = (
       separator,
       symbolAtFirst,
     };
-  } catch (error) {
-    throw new Error(`Something went wrong- ${error.message}`);
+  } catch (err) {
+    if (err instanceof Error) {
+      throw new Error(err.message);
+    } else {
+      throw new Error(`An unknown error occurred = ${err}`);
+    }
   }
 };
 

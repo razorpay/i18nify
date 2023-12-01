@@ -3,17 +3,30 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
+import { readdirSync } from 'fs';
+import { basename, extname, join } from 'path';
 
-const modules = [
-  {
-    input: 'src/modules/currency/index.ts',
-    name: 'currency',
-  },
-  {
-    input: 'src/modules/phoneNumber/index.ts',
-    name: 'phoneNumber',
-  },
-];
+// Function to get modules dynamically from a directory
+const getModules = (directory) => {
+  const moduleFiles = readdirSync(directory);
+
+  return moduleFiles
+    .filter((file) => !file.startsWith('.')) // Exclude internal hidden files
+    .map((file) => {
+      const moduleName = basename(file, extname(file));
+      const filePath = join(directory, file, '/index.ts');
+
+      return {
+        input: filePath,
+        name: moduleName,
+      };
+    });
+};
+
+const MODULES_DIR = 'src/modules';
+
+// Get modules dynamically from the specified directory
+const modules = getModules(MODULES_DIR);
 
 const moduleBundles = modules.map((_module) => ({
   input: _module.input,
@@ -25,6 +38,7 @@ const moduleBundles = modules.map((_module) => ({
   plugins: [typescript(), resolve(), commonjs()],
 }));
 
+// Create declaration files for each module
 const declarationTypes = modules.map((_module) => ({
   input: _module.input,
   output: {
@@ -87,8 +101,9 @@ export default [
     },
     plugins: [typescript(), resolve(), commonjs()],
   },
-  // Declaration types
+  // Declaration types (.d.ts) for modules
   ...declarationTypes,
+  // Single Declaration type file for all modules
   {
     input: 'src/index.ts',
     output: {
