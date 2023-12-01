@@ -1,4 +1,5 @@
 import { getIntlInstanceWithOptions } from '../getIntlInstanceWithOptions';
+import { setState } from '../../../core';
 import { getLocale } from '../getLocale';
 
 describe('getIntlInstanceWithOptions', () => {
@@ -14,6 +15,7 @@ describe('getIntlInstanceWithOptions', () => {
   });
 
   it('should use the browser locale if no locale is provided', () => {
+    setState({ locale: '' });
     const intlProps = getIntlInstanceWithOptions();
     const browserLocale = getLocale();
     expect(intlProps.resolvedOptions().locale).toBe(browserLocale);
@@ -28,7 +30,7 @@ describe('getIntlInstanceWithOptions', () => {
   });
 
   it('should throw an error if Intl is not supported', () => {
-    delete window.Intl;
+    delete (window as any).Intl;
     expect(() => getIntlInstanceWithOptions()).toThrow('Intl is not defined');
   });
 });

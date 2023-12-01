@@ -1,7 +1,7 @@
 import { I18nState } from './types';
 
-class I18nStateManager {
-  private static instance: I18nStateManager;
+export class I18nStateManager {
+  private static instance: I18nStateManager | undefined;
   private state: I18nState;
 
   private constructor() {
@@ -19,6 +19,10 @@ class I18nStateManager {
     }
 
     return I18nStateManager.instance;
+  }
+
+  public static resetInstance(): void {
+    I18nStateManager.instance = undefined;
   }
 
   public getState(): I18nState {
