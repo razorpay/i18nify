@@ -1,5 +1,11 @@
 # @razorpay/i18nify
 
+## 1.0.3
+
+### Patch Changes
+
+- 1e1b8d8: [fix]: redundant types deleted
+
 ## 1.0.2
 
 ### Patch Changes
