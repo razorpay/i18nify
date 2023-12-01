@@ -1,6 +1,6 @@
 import { CURRENCIES } from './data/currencies';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { getIntlInstanceWithOptions } from '../shared/utils/getIntlInstanceWithOptions';
+import { getIntlInstanceWithOptions } from '../.internal/utils/getIntlInstanceWithOptions';
 
 // this function formats number based on different arguments passed
 const formatNumber = (
@@ -21,7 +21,11 @@ const formatNumber = (
       Number(amount),
     );
   } catch (err) {
-    throw new Error(err.message);
+    if (err instanceof Error) {
+      throw new Error(err.message);
+    } else {
+      throw new Error(`An unknown error occurred = ${err}`);
+    }
   }
 
   return formattedAmount;

@@ -1,4 +1,5 @@
-import { getLocale } from '../../shared/utils/getLocale';
+import { getLocale } from '../../.internal/utils/getLocale';
+import { setState } from '../../core';
 import formatNumber from '../formatNumber';
 
 const nbsp = String.fromCharCode(160);
@@ -100,6 +101,7 @@ describe('formatNumber', () => {
 
   it('should handle extremely large numbers with precision', () => {
     const input = '1234567890123456.7890123456789012345678901234567890123456';
+    setState({ locale: 'en-US' });
     const result = formatNumber(input, { currency: 'USD' });
     expect(result).toBe('$1,234,567,890,123,456.80');
   });
