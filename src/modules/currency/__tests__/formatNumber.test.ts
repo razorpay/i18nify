@@ -1,4 +1,4 @@
-import { getLocale } from '../../.internal/utils/getLocale';
+import { getLocale } from '../../.internal/utils';
 import { setState } from '../../core';
 import formatNumber from '../formatNumber';
 

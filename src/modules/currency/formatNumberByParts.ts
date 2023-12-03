@@ -1,7 +1,7 @@
 import { CURRENCIES } from './data/currencies';
 import { ByParts } from './types';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { getIntlInstanceWithOptions } from '../.internal/utils/getIntlInstanceWithOptions';
+import { getIntlInstanceWithOptions } from '../.internal/utils';
 
 const formatNumberByParts = (
   amount: string | number,

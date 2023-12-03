@@ -1,6 +1,6 @@
 import { CURRENCIES } from './data/currencies';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { getIntlInstanceWithOptions } from '../.internal/utils/getIntlInstanceWithOptions';
+import { getIntlInstanceWithOptions } from '../.internal/utils';
 
 // this function formats number based on different arguments passed
 const formatNumber = (

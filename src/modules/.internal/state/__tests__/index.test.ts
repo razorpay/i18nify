@@ -1,4 +1,5 @@
 import { I18nStateManager } from '../';
+import { getDefaultState } from '../../utils';
 import { I18nState } from '../types';
 
 describe('I18nStateManager', () => {
@@ -15,11 +16,7 @@ describe('I18nStateManager', () => {
 
   it('should have default state when getting the state', () => {
     const instance = I18nStateManager.getInstance();
-    const defaultState = {
-      locale: 'en-IN',
-      direction: 'ltr',
-      country: 'IN',
-    };
+    const defaultState = getDefaultState();
 
     expect(instance.getState()).toEqual(defaultState);
   });
@@ -35,6 +32,21 @@ describe('I18nStateManager', () => {
     instance.setState(newState as I18nState);
 
     expect(instance.getState()).toEqual(newState);
+  });
+
+  it('should reset the state when calling resetState', () => {
+    const instance = I18nStateManager.getInstance();
+    const newState = {
+      locale: 'en-US',
+      direction: 'ltr',
+      country: 'US',
+    };
+
+    instance.setState(newState);
+    instance.resetState();
+
+    const defaultState = getDefaultState();
+    expect(instance.getState()).toEqual(defaultState);
   });
 
   it('should create a new instance after resetting', () => {
