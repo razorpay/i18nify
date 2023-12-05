@@ -4,7 +4,7 @@ import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
 export const detectCountryCodeFromDialCode = (
   phoneNumber: string | number,
 ): string => {
-  if (phoneNumber[0] === '+') {
+  if (phoneNumber.toString().charAt(0) === '+') {
     const cleanedPhoneNumberWithoutPlusPrefix = phoneNumber
       .toString()
       .replace(/\D/g, '');
