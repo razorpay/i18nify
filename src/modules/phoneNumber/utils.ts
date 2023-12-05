@@ -19,10 +19,11 @@ export const detectCountryCodeFromDialCode = (
 
     const matchedCountryCodes = matchingCountries.map((countryCode: string) => {
       const regex = PHONE_REGEX_MAPPER[countryCode];
-      if (regex.test(phoneNumber.toString())) {
+      if (regex && regex.test(phoneNumber.toString())) {
         return countryCode;
       }
     });
+
     return matchedCountryCodes[0];
   } else {
     for (const countryCode in PHONE_REGEX_MAPPER) {

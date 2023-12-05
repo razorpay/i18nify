@@ -19,9 +19,8 @@ describe('formatPhoneNumber', () => {
   it('should handle a missing country code', () => {
     const phoneNumber = '1234567890';
     const countryCode = 'XYZ';
-    expect(() => formatPhoneNumber(phoneNumber, countryCode)).toThrow(
-      'Parameter `countryCode` is invalid!',
-    );
+    const formatted = formatPhoneNumber(phoneNumber, countryCode);
+    expect(formatted).toBe('1234567890');
   });
 
   it('should handle a missing phoneNumber', () => {

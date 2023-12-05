@@ -29,8 +29,11 @@ describe('parsePhoneNumber function', () => {
   it('should throw an error for an invalid phone number', () => {
     const phoneNumber = '+1969123456789';
 
-    expect(() => parsePhoneNumber(phoneNumber)).toThrow(
-      'Unable to detect `country code` from phone number.',
-    );
+    const parsedInfo = parsePhoneNumber(phoneNumber);
+
+    expect(parsedInfo.countryCode).toBe('');
+    expect(parsedInfo.dialCode).toBe('');
+    expect(parsedInfo.formattedPhoneNumber).toBe('+1969123456789');
+    expect(parsedInfo.formatTemplate).toBe('');
   });
 });

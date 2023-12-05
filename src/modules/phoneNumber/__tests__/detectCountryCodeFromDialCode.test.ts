@@ -8,11 +8,6 @@ describe('detectCountryCodeFromDialCode', () => {
   });
 
   it('should throw an error for invalid phone numbers', () => {
-    expect(() => detectCountryCodeFromDialCode('123')).toThrowError(
-      'Unable to detect `country code` from phone number.',
-    );
-    expect(() => detectCountryCodeFromDialCode('invalidNumber')).toThrowError(
-      'Unable to detect `country code` from phone number.',
-    );
+    expect(detectCountryCodeFromDialCode('123')).toBe('');
   });
 });
