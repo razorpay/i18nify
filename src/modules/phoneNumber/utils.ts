@@ -24,7 +24,7 @@ export const detectCountryCodeFromDialCode = (
       }
     });
 
-    return matchedCountryCodes[0];
+    return matchedCountryCodes.length >= 0 ? matchedCountryCodes[0] : '';
   } else {
     for (const countryCode in PHONE_REGEX_MAPPER) {
       if (countryCode in PHONE_REGEX_MAPPER) {
