@@ -7,18 +7,19 @@ const formatPhoneNumber = (
   phoneNumber: string | number,
   countryCode?: keyof typeof PHONE_FORMATTER_MAPPER,
 ): string => {
-  // If countryCode is not provided, detect it from the phoneNumber using regex
-  if (!countryCode) countryCode = detectCountryCodeFromDialCode(phoneNumber);
-  // Fetch the pattern for the countryCode from the PHONE_FORMATTER_MAPPER
-  const pattern = PHONE_FORMATTER_MAPPER[countryCode];
-
-  // Throw errors if countryCode or phoneNumber is invalid
-  if (!pattern) throw new Error('Parameter `countryCode` is invalid!');
+  // Throw errors if phoneNumber is invalid
   if (!phoneNumber) throw new Error('Parameter `phoneNumber` is invalid!');
 
   // Convert phoneNumber to string and clean it by removing non-numeric characters
   phoneNumber = phoneNumber.toString();
   phoneNumber = cleanPhoneNumber(phoneNumber);
+
+  // If countryCode is not provided, detect it from the phoneNumber using regex
+  if (!countryCode) countryCode = detectCountryCodeFromDialCode(phoneNumber);
+  // Fetch the pattern for the countryCode from the PHONE_FORMATTER_MAPPER
+  const pattern = PHONE_FORMATTER_MAPPER[countryCode];
+
+  if (!pattern) return phoneNumber;
 
   // Count the number of 'x' characters in the format pattern
   let charCountInFormatterPattern = 0;

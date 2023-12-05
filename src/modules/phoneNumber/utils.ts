@@ -1,17 +1,41 @@
+import { dialCodeMapper } from './data/dialCodeMapper';
 import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
 
 export const detectCountryCodeFromDialCode = (
   phoneNumber: string | number,
 ): string => {
-  for (const countryCode in PHONE_REGEX_MAPPER) {
-    if (Object.prototype.hasOwnProperty.call(PHONE_REGEX_MAPPER, countryCode)) {
+  if (phoneNumber[0] === '+') {
+    const cleanedPhoneNumberWithoutPlusPrefix = phoneNumber
+      .toString()
+      .replace(/\D/g, '');
+
+    const matchingCountries: string[] = [];
+
+    for (const code in dialCodeMapper) {
+      if (cleanedPhoneNumberWithoutPlusPrefix.startsWith(code)) {
+        matchingCountries.push(...dialCodeMapper[code]);
+      }
+    }
+
+    const matchedCountryCodes = matchingCountries.map((countryCode: string) => {
       const regex = PHONE_REGEX_MAPPER[countryCode];
       if (regex.test(phoneNumber.toString())) {
         return countryCode;
       }
+    });
+    return matchedCountryCodes[0];
+  } else {
+    for (const countryCode in PHONE_REGEX_MAPPER) {
+      if (countryCode in PHONE_REGEX_MAPPER) {
+        const regex = PHONE_REGEX_MAPPER[countryCode];
+        if (regex.test(phoneNumber.toString())) {
+          return countryCode;
+        }
+      }
     }
   }
-  throw new Error('Unable to detect `country code` from phone number.');
+
+  return '';
 };
 
 export const cleanPhoneNumber = (phoneNumber: string) => {

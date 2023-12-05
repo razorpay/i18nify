@@ -14,7 +14,14 @@ interface PhoneInfo {
 const parsePhoneNumber = (
   phoneNumber: string,
   country?: string,
-): PhoneInfo | null => {
+): PhoneInfo | null | string => {
+  // Throw errors if phoneNumber is invalid
+  if (!phoneNumber) throw new Error('Parameter `phoneNumber` is invalid!');
+
+  // Clean the phoneNumber by removing non-numeric characters
+  phoneNumber = phoneNumber.toString();
+  phoneNumber = cleanPhoneNumber(phoneNumber);
+
   // Detect or validate the country code
   const countryCode =
     country in PHONE_FORMATTER_MAPPER
@@ -27,13 +34,7 @@ const parsePhoneNumber = (
   // Fetch the pattern associated with the countryCode from the PHONE_FORMATTER_MAPPER
   const pattern = PHONE_FORMATTER_MAPPER[countryCode];
 
-  // Throw errors if countryCode or phoneNumber is invalid
-  if (!pattern) throw new Error('Parameter `countryCode` is invalid!');
-  if (!phoneNumber) throw new Error('Parameter `phoneNumber` is invalid!');
-
-  // Clean the phoneNumber by removing non-numeric characters
-  phoneNumber = phoneNumber.toString();
-  phoneNumber = cleanPhoneNumber(phoneNumber);
+  if (!pattern) return phoneNumber;
 
   // Count the number of 'x' characters in the format pattern
   let charCountInFormatterPattern = 0;
