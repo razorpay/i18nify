@@ -24,7 +24,7 @@ const parsePhoneNumber = (
 
   // Detect or validate the country code
   const countryCode =
-    country in PHONE_FORMATTER_MAPPER
+    country && country in PHONE_FORMATTER_MAPPER
       ? country
       : detectCountryCodeFromDialCode(phoneNumber);
 
