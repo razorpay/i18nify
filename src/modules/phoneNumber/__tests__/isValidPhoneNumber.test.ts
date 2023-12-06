@@ -1,4 +1,3 @@
-import { describe, expect, it } from '@jest/globals';
 import isValidPhoneNumber from '../isValidPhoneNumber';
 
 describe('isValidPhoneNumber', () => {
@@ -32,11 +31,11 @@ describe('isValidPhoneNumber', () => {
     });
   });
 
-  it('should handle a missing country code', () => {
+  it('should handle a invalid country code and detect it from phone number to validate it', () => {
     const phoneNumber = '1234567890';
     const countryCode = 'XYZ';
     const isValid = isValidPhoneNumber(phoneNumber, countryCode);
-    expect(isValid).toBe(false);
+    expect(isValid).toBe(true);
   });
 
   it('should handle a missing phoneNumber', () => {

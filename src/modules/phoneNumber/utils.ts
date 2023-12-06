@@ -1,9 +1,23 @@
-import { dialCodeMapper } from './data/dialCodeMapper';
+import { DIAL_CODE_MAPPER } from './data/dialCodeMapper';
 import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
 
+/**
+ * Determines the country code based on the provided phone number.
+ * This function employs a multi-step approach to identify the country code:
+ * - If the phone number starts with '+', it extracts the numeric characters
+ *   and matches the leading digits with known dial codes mapped to countries.
+ * - For matched dial codes, it further filters based on country-specific regex patterns
+ *   to validate the phone number format for those countries.
+ * - If the phone number doesn't start with '+', it directly matches the number
+ *   against regular expressions associated with various countries to identify the code.
+ *
+ * @param phoneNumber The input phone number (string or number).
+ * @returns The detected country code or an empty string if not found.
+ */
 export const detectCountryCodeFromDialCode = (
   phoneNumber: string | number,
 ): string => {
+  // If the phone number starts with '+', extract numeric characters
   if (phoneNumber.toString().charAt(0) === '+') {
     const cleanedPhoneNumberWithoutPlusPrefix = phoneNumber
       .toString()
@@ -11,32 +25,33 @@ export const detectCountryCodeFromDialCode = (
 
     const matchingCountries: string[] = [];
 
-    for (const code in dialCodeMapper) {
+    // Iterate through dial codes and check for matches with cleaned phone number
+    for (const code in DIAL_CODE_MAPPER) {
       if (cleanedPhoneNumberWithoutPlusPrefix.startsWith(code)) {
-        matchingCountries.push(...dialCodeMapper[code]);
+        matchingCountries.push(...DIAL_CODE_MAPPER[code]);
       }
     }
 
-    const matchedCountryCodes = matchingCountries.filter(
-      (countryCode: string) => {
-        const regex = PHONE_REGEX_MAPPER[countryCode];
-        if (regex && regex.test(phoneNumber.toString())) return countryCode;
-        return undefined;
-      },
-    );
+    // Filter matching countries based on phone number validation regex
+    const matchedCountryCode = matchingCountries.find((countryCode: string) => {
+      const regex = PHONE_REGEX_MAPPER[countryCode];
+      if (regex && regex.test(phoneNumber.toString())) return countryCode;
+      return undefined;
+    });
 
-    return matchedCountryCodes.length >= 0 ? matchedCountryCodes[0] : '';
+    // Return the first matched country code, if any
+    return matchedCountryCode ? matchedCountryCode : '';
   } else {
+    // If phone number doesn't start with '+', directly match against country regexes
     for (const countryCode in PHONE_REGEX_MAPPER) {
-      if (countryCode in PHONE_REGEX_MAPPER) {
-        const regex = PHONE_REGEX_MAPPER[countryCode];
-        if (regex.test(phoneNumber.toString())) {
-          return countryCode;
-        }
+      const regex = PHONE_REGEX_MAPPER[countryCode];
+      if (regex.test(phoneNumber.toString())) {
+        return countryCode;
       }
     }
   }
 
+  // Return empty string if no country code is detected
   return '';
 };
 

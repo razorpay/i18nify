@@ -14,8 +14,12 @@ const formatPhoneNumber = (
   phoneNumber = phoneNumber.toString();
   phoneNumber = cleanPhoneNumber(phoneNumber);
 
-  // If countryCode is not provided, detect it from the phoneNumber using regex
-  if (!countryCode) countryCode = detectCountryCodeFromDialCode(phoneNumber);
+  // Detect or validate the country code
+  countryCode =
+    countryCode && countryCode in PHONE_FORMATTER_MAPPER
+      ? countryCode
+      : detectCountryCodeFromDialCode(phoneNumber);
+
   // Fetch the pattern for the countryCode from the PHONE_FORMATTER_MAPPER
   const pattern = PHONE_FORMATTER_MAPPER[countryCode];
 

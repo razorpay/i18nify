@@ -11,9 +11,11 @@ const isValidPhoneNumber = (
   // Clean the provided phoneNumber by removing non-numeric characters
   const cleanedPhoneNumber = cleanPhoneNumber(phoneNumber.toString());
 
-  // If countryCode is not provided, detect it from the cleanedPhoneNumber
-  if (!countryCode)
-    countryCode = detectCountryCodeFromDialCode(cleanedPhoneNumber);
+  // Detect or validate the country code
+  countryCode =
+    countryCode && countryCode in PHONE_FORMATTER_MAPPER
+      ? countryCode
+      : detectCountryCodeFromDialCode(cleanedPhoneNumber);
 
   // Return false if phoneNumber is empty
   if (!phoneNumber) return false;

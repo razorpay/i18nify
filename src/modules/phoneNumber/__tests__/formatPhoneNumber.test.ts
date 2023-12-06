@@ -1,4 +1,3 @@
-import { describe, expect, it } from '@jest/globals';
 import formatPhoneNumber from '../formatPhoneNumber';
 
 describe('formatPhoneNumber', () => {
@@ -16,11 +15,11 @@ describe('formatPhoneNumber', () => {
     expect(formatted).toBe('+60 12 34567 89');
   });
 
-  it('should handle a missing country code', () => {
-    const phoneNumber = '1234567890';
+  it('should handle a invalid country code and detect it from phone number to format', () => {
+    const phoneNumber = '+917394926646';
     const countryCode = 'XYZ';
     const formatted = formatPhoneNumber(phoneNumber, countryCode);
-    expect(formatted).toBe('1234567890');
+    expect(formatted).toBe('+91 7394 926646');
   });
 
   it('should handle a missing phoneNumber', () => {

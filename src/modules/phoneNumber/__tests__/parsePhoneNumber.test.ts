@@ -26,7 +26,7 @@ describe('parsePhoneNumber function', () => {
     expect(parsedInfo.formatTemplate).toBe('xxxx xxx xxx');
   });
 
-  it('should throw an error for an invalid phone number', () => {
+  it('should return unformatted number for invalid phone number', () => {
     const phoneNumber = '+1969123456789';
 
     const parsedInfo = parsePhoneNumber(phoneNumber);
