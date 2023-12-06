@@ -40,7 +40,7 @@ export const detectCountryCodeFromDialCode = (
     });
 
     // Return the first matched country code, if any
-    return matchedCountryCode ? matchedCountryCode : '';
+    return matchedCountryCode || '';
   } else {
     // If phone number doesn't start with '+', directly match against country regexes
     for (const countryCode in PHONE_REGEX_MAPPER) {
