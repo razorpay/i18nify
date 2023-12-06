@@ -1,5 +1,11 @@
 # @razorpay/i18nify
 
+## 1.2.1
+
+### Patch Changes
+
+- 3d3c1c8: [feat]: resetState function exposed to consumers
+
 ## 1.2.0
 
 ### Minor Changes
