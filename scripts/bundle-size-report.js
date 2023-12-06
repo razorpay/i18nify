@@ -20,14 +20,24 @@ function extractStatsForChunk(chunkName, baseStats, prStats) {
     safeChunkSize(prStats[chunkName] && prStats[chunkName].parsed),
   );
 
+  //gzipped
+  const baseGzipSize = round(
+    safeChunkSize(baseStats[chunkName] && baseStats[chunkName].gzip),
+  );
+  const prGzipSize = round(
+    safeChunkSize(prStats[chunkName] && prStats[chunkName].gzip),
+  );
+
   return {
-    baseSize: { parsed: baseParseSize },
+    baseSize: { parsed: baseParseSize, gzip: baseGzipSize },
     prSize: { parsed: prParseSize },
     difference: {
       parsed: round(prParseSize - baseParseSize),
+      gzip: round(prGzipSize - baseGzipSize),
     },
     differencePercent: {
       parsed: round(((prParseSize - baseParseSize) * 100) / baseParseSize),
+      gzip: round(((prGzipSize - baseGzipSize) * 100) / baseGzipSize),
     },
   };
 }
@@ -97,7 +107,7 @@ function formatToTable(stat, statName) {
     '',
     '<table>',
     '<tbody>',
-    '<tr> <td></td> <td></td> <th colspan="4">Parsed (kb)</th> </tr>',
+    '<tr> <td></td> <td></td> <th colspan="4">Gzip (kb)</th> <th colspan="4">Parsed (kb)</th> </tr>',
     '<tr>' +
       ' <td>🚦</td>' +
       ' <th>File Name</th>' +
@@ -107,11 +117,19 @@ function formatToTable(stat, statName) {
       ' <th>%</th>' +
       '</tr>',
     ...Object.entries(stat).map(([filename, fileStat]) => {
-      const diffColor = fileStat.difference.parsed <= 0 ? 'green' : 'red';
+      const diffColor = fileStat.difference.gzip <= 0 ? 'green' : 'red';
       return `<tr>
-        <td>${differenceToSymbol(fileStat.differencePercent.parsed)}</td>
+        <td>${differenceToSymbol(fileStat.differencePercent.gzip)}</td>
         <td><strong><code>${filename} </code></strong></td>
-        <td><code>${fileStat.baseSize.parsed} </code></td>
+        <td><code>${fileStat.baseSize.gzip} </code></td>
+        <td><code>${fileStat.prSize.gzip} </code></td>
+        <td> $\\textcolor{${diffColor}}{${fileStat.difference.gzip}}$ </td>
+        <td><code>${
+          isFinite(fileStat.differencePercent.gzip)
+            ? fileStat.differencePercent.gzip
+            : '—'
+        } </code></td>
+        <td><code> ${fileStat.baseSize.parsed} </code></td>
         <td><code> ${fileStat.prSize.parsed} </code></td>
         <td> $\\textcolor{${diffColor}}{${fileStat.difference.parsed}}$ </td>
         <td><code> ${
