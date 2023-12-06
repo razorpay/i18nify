@@ -92,7 +92,12 @@ function traverseFileAndGenerateStats(dir) {
 
   return filesToTrack.reduce((acc, curr) => {
     const fullPath = `${dir}/${curr}`;
-    acc[curr] = { parsed: fs.lstatSync(fullPath).size };
+    acc[curr] = {
+      parsed: fs.lstatSync(fullPath).size,
+      gzip: fs.existsSync(fullPath + '.gz')
+        ? fs.lstatSync(fullPath + '.gz').size
+        : 0,
+    };
     return acc;
   }, {});
 }
@@ -111,6 +116,10 @@ function formatToTable(stat, statName) {
     '<tr>' +
       ' <td>🚦</td>' +
       ' <th>File Name</th>' +
+      ' <th>Base</th>' +
+      ' <th>PR</th>' +
+      ' <th>Diff</th>' +
+      ' <th>%</th>' +
       ' <th>Base</th>' +
       ' <th>PR</th>' +
       ' <th>Diff</th>' +
