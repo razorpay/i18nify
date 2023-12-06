@@ -1,5 +1,11 @@
 # @razorpay/i18nify
 
+## 1.2.0
+
+### Minor Changes
+
+- b381506: Publish phone number module
+
 ## 1.1.0
 
 ### Minor Changes
