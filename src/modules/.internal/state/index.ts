@@ -1,16 +1,12 @@
 import { I18nState } from './types';
+import { getDefaultState } from '../utils';
 
 export class I18nStateManager {
   private static instance: I18nStateManager | undefined;
   private state: I18nState;
 
   private constructor() {
-    // default state
-    this.state = {
-      locale: 'en-IN',
-      direction: 'ltr',
-      country: 'IN',
-    };
+    this.state = getDefaultState();
   }
 
   public static getInstance(): I18nStateManager {
@@ -31,6 +27,10 @@ export class I18nStateManager {
 
   public setState(newState: Partial<I18nState>): void {
     this.state = { ...this.state, ...newState };
+  }
+
+  public resetState(): void {
+    this.state = getDefaultState();
   }
 }
 
