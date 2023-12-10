@@ -13,6 +13,7 @@ List the main changes made in this pull request.
 | Product spec           | NA  |
 | Tech spec/One-pager    | NA  |
 | Bundle Size Difference | NA  |
+| Fixes Issue            | NA  |
 
 ## Type of change
 
