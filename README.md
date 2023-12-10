@@ -257,10 +257,100 @@ This module’s your phone’s best friend, handling all things phone number-rel
 
 📞 It’s like the phone number detective, using fancy patterns to check if a number is the real deal for a specific country code. So, it’s pretty simple: if it says true, your number’s good to go for that country; if it’s false, time to double-check those digits! 🕵️‍♂️🔍
 
+##### Examples
+
+```
+--> Basic Validation
+console.log(isValidPhoneNumber('+14155552671')); // true
+
+--> Specifying Country Code for Validation
+console.log(isValidPhoneNumber('0501234567', 'AE')); // true
+
+--> Auto-Detecting Country Code
+console.log(isValidPhoneNumber('+447700900123')); // true
+
+--> Handling Invalid Numbers
+console.log(isValidPhoneNumber('123456789', 'US')); // false
+
+--> Invalid Country Code
+console.log(isValidPhoneNumber('+123456789')); // false
+
+--> Empty Phone Number
+console.log(isValidPhoneNumber('')); // false
+
+--> Non-Standard Formatting
+console.log(isValidPhoneNumber('(555) 555-5555')); // true
+```
+
 #### formatPhoneNumber(phoneNumber, countryCode)
 
 📞 It’s like your personal phone number stylist, working its magic to make those digits look all snazzy. You can tell it the country code, or it’ll figure it out itself—then presto! It hands you back a phone number looking sharp and dapper in that country’s typical style. ✨🌍
 
+##### Examples
+
+```
+--> Basic Formatting
+console.log(formatPhoneNumber('+14155552671')); // '+1 415-555-2671'
+
+--> Specifying Country Code for Formatting
+console.log(formatPhoneNumber('0501234567', 'AE')); // '050 123 4567'
+
+--> Auto-Detecting Country Code for Formatting
+console.log(formatPhoneNumber('+447700900123')); // '+44 7700 900123'
+
+--> Handling Invalid Numbers for Formatting
+console.log(formatPhoneNumber('123456789', 'US')); // '123456789'
+
+--> Invalid Country Code for Formatting
+console.log(formatPhoneNumber('+123456789')); // '+123456789'
+
+--> Empty Phone Number
+console.log(formatPhoneNumber('')); // Throws an Error: 'Parameter `phoneNumber` is invalid!'
+
+--> Non-Standard Formatting
+console.log(formatPhoneNumber('(555) 555-5555')); // '555 555 5555'
+```
+
 #### parsePhoneNumber(phoneNumber, country)
 
 🕵️‍♂️📞 This clever function digs deep into a phone number, pulling out all the juicy details: country code, dial code, the number all dolled up, and even the format it follows. What’s cool? It hands you back an object filled with all these deets, making it a breeze to access everything about that phone number. It’s like having the ultimate phone number cheat sheet! 🌟
+
+##### Examples
+
+```
+--> Formatting a Phone Number
+const phoneNumber = '+1 (555) 123-4567';
+const parsedInfo = parsePhoneNumber(phoneNumber);
+console.log('Country Code:', parsedInfo.countryCode); // 'US'
+console.log('Formatted Number:', parsedInfo.formattedPhoneNumber); // '555-123-4567'
+console.log('Dial Code:', parsedInfo.dialCode); // '+1'
+console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxx-xxxx'
+
+--> Parsing a Phone Number with Specified Country Code
+const phoneNumber = '987654321'; // Phone number without country code
+const countryCode = 'IN'; // Specifying the country code (India)
+const parsedInfo = parsePhoneNumber(phoneNumber, countryCode);
+console.log('Country Code:', parsedInfo.countryCode); // 'IN'
+console.log('Formatted Number:', parsedInfo.formattedPhoneNumber); // '98-765-4321'
+console.log('Dial Code:', parsedInfo.dialCode); ''
+console.log('Format Template:', parsedInfo.formatTemplate); 'xxxx xxxxxx'
+
+--> Handling Invalid Phone Numbers
+try {
+  const invalidPhoneNumber = ''; // Empty phone number
+  // This will throw an error since the phone number is empty
+  const parsedInfo = parsePhoneNumber(invalidPhoneNumber);
+  // If the parsePhoneNumber function succeeds, log the parsed information
+  console.log('Country Code:', parsedInfo.countryCode);
+  console.log('Formatted Number:', parsedInfo.formattedPhoneNumber);
+} catch (error) {
+  console.error('Error:', error.message); // 'Parameter `phoneNumber` is invalid!'
+}
+
+--> Obtaining Format Information for a Country Code
+const countryCode = 'JP'; // Country code for Japan
+// Get the format information without providing a phone number
+const parsedInfo = parsePhoneNumber('', countryCode);
+console.log('Country Code:', parsedInfo.countryCode); // 'JP'
+console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxxx-xxxx'
+```
