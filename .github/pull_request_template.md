@@ -61,7 +61,7 @@ Any additional information that would be helpful for the reviewer.
 
 Format: `<type>: <subject>`
 
-## PR Title Types
+Types can be as follows:
 
 - `feat`: (new feature for the user, not a new feature for build script)
 - `fix`: (bug fix for the user, not a fix to a build script)
