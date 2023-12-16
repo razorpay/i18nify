@@ -1,6 +1,6 @@
 export const getLocale = (): string => {
   // Check if running in a non-browser environment (e.g., Node.js or older browsers).
-  if (typeof navigator !== undefined) {
+  if (typeof navigator === 'undefined') {
     return 'en-IN';
   }
 
