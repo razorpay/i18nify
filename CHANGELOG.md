@@ -1,5 +1,13 @@
 # @razorpay/i18nify
 
+## 1.2.2
+
+### Patch Changes
+
+- 45ef401: [fix]:
+  - redundant token removed from coverage workflow
+  - cjs exports added for sub-modules
+
 ## 1.2.1
 
 ### Patch Changes
