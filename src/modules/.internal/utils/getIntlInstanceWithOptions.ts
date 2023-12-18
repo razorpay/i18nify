@@ -1,4 +1,5 @@
 import { CURRENCIES } from '../../currency/data/currencies';
+import state from '../state';
 import { getLocale } from './getLocale';
 
 export const getIntlInstanceWithOptions = (
@@ -8,7 +9,12 @@ export const getIntlInstanceWithOptions = (
     intlOptions?: Intl.NumberFormatOptions;
   } = {},
 ) => {
-  let locale = options?.locale;
+  /** retrieve locale from below areas in order of preference
+   * 1. options.locale (used in case if someone wants to override locale just for a specific area and not globally)
+   * 2. i18nState.locale (uses locale set globally)
+   * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
+   * */
+  let locale = options?.locale || state.getState().locale;
 
   // If a specific locale is provided, use it; otherwise, use the browser's locale
   if (!locale) {
