@@ -1,5 +1,11 @@
 # @razorpay/i18nify
 
+## 1.2.3
+
+### Patch Changes
+
+- 562b692: fix : #36 corrected getLocal function.
+
 ## 1.2.2
 
 ### Patch Changes
