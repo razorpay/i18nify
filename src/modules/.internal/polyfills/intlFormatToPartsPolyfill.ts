@@ -27,44 +27,41 @@ function mapToNumberFormatPart(
 
 // Export a default function for the Intl polyfill
 export default function intlFormatToPartsPolyfill() {
-  // Check if the Intl object and Intl.NumberFormat function are available
-  if (typeof Intl !== 'undefined' && typeof Intl.NumberFormat === 'function') {
-    const numberFormat = new Intl.NumberFormat(); // Create an instance to access the prototype
+  const numberFormat = new Intl.NumberFormat(); // Create an instance to access the prototype
 
-    // Check if the formatToParts method is not defined
-    if (!numberFormat.formatToParts) {
-      // Define the formatToParts method as a polyfill for environments that lack it
-      Object.defineProperty(numberFormat, 'formatToParts', {
-        value: function (number: number): Intl.NumberFormatPart[] {
-          // Check if the input is a valid number
-          if (typeof number !== 'number') {
-            throw new TypeError('Argument should be a valid number');
-          }
+  // Check if the formatToParts method is not defined
+  if (!numberFormat.formatToParts) {
+    // Define the formatToParts method as a polyfill for environments that lack it
+    Object.defineProperty(numberFormat, 'formatToParts', {
+      value: function (number: number): Intl.NumberFormatPart[] {
+        // Check if the input is a valid number
+        if (typeof number !== 'number') {
+          throw new TypeError('Argument should be a valid number');
+        }
 
-          // Format the number using the available formatting
-          const formattedNumber: string = this.format(number);
-          const parts: CustomNumberFormatPart[] = [];
+        // Format the number using the available formatting
+        const formattedNumber: string = this.format(number);
+        const parts: CustomNumberFormatPart[] = [];
 
-          // Use regex to match string and number parts in the formatted output
-          const regex = /(\D+)|(\d+)/g;
-          let match;
-          while ((match = regex.exec(formattedNumber)) !== null) {
-            // Determine the type of the matched part (string or integer)
-            const type: CustomNumberFormatPartType = match[1]
-              ? 'string'
-              : 'integer';
-            parts.push({
-              type,
-              value: match[0],
-            });
-          }
+        // Use regex to match string and number parts in the formatted output
+        const regex = /(\D+)|(\d+)/g;
+        let match;
+        while ((match = regex.exec(formattedNumber)) !== null) {
+          // Determine the type of the matched part (string or integer)
+          const type: CustomNumberFormatPartType = match[1]
+            ? 'string'
+            : 'integer';
+          parts.push({
+            type,
+            value: match[0],
+          });
+        }
 
-          // Map the custom parts to standard Intl.NumberFormatPart
-          return mapToNumberFormatPart(parts);
-        },
-        writable: true,
-        configurable: true,
-      });
-    }
+        // Map the custom parts to standard Intl.NumberFormatPart
+        return mapToNumberFormatPart(parts);
+      },
+      writable: true,
+      configurable: true,
+    });
   }
 }
