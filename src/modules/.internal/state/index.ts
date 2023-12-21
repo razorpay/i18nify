@@ -1,5 +1,5 @@
 import { I18nState } from './types';
-import { getDefaultState } from '../utils';
+import { getDefaultState } from '../utils/getDefaultState';
 
 export class I18nStateManager {
   private static instance: I18nStateManager | undefined;
