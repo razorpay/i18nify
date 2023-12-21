@@ -7,7 +7,6 @@ const loadPolyfills = async () => {
       typeof Intl.NumberFormat().formatToParts === 'function'
     )
   ) {
-    console.log('Hola');
     const { default: intlFormatToPartsPolyfill } = await import(
       './intlFormatToPartsPolyfill'
     );
