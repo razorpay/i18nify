@@ -23,7 +23,7 @@ describe('intlFormatToPartsPolyfill', () => {
     global.Intl = originalIntl;
   });
 
-  test('should polyfill formatToParts method if not available', () => {
+  test('polyfill should add formatToParts method if not natively available', () => {
     // Mock NumberFormat with formatToParts unavailable
     const mockNumberFormat: MockNumberFormat = {
       format: jest.fn().mockReturnValue('123,456.78'),

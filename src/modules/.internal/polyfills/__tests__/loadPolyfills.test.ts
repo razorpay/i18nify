@@ -44,7 +44,7 @@ class MockNumberFormat {
 }
 
 describe('loadPolyfills', () => {
-  it('should not modify Intl.NumberFormat if formatToParts is already available', async () => {
+  test('should not modify Intl.NumberFormat if formatToParts is already available', async () => {
     // Mock the import function
     const importMock = jest.fn().mockResolvedValue({
       default: jest.fn(),
@@ -74,7 +74,7 @@ describe('loadPolyfills', () => {
     expect(intlFormatToPartsPolyfill).not.toHaveBeenCalled();
   });
 
-  it('should define formatToParts on Intl.NumberFormat if not available', async () => {
+  test('should define formatToParts on Intl.NumberFormat if not available', async () => {
     // Mock the global Intl object
     (globalThis as any).Intl.NumberFormat.prototype.formatToParts = undefined;
 
