@@ -7,7 +7,7 @@ const loadPolyfills = async () => {
     intlFormatToPartsPolyfill();
   }
 
-  // Add other polyfills hin similar fashion as above
+  // Add other polyfills here in similar fashion as above
 };
 
 export default loadPolyfills;
