@@ -257,4 +257,37 @@ describe('intlFormatToPartsPolyfill', () => {
       { type: 'integer', value: '78' },
     ]);
   });
+
+  test('should handle formatting if formatToParts is not available', () => {
+    // Validate if formatToParts is available in NumberFormat
+    const numberFormatWithFormatToParts = new Intl.NumberFormat();
+    expect(numberFormatWithFormatToParts.formatToParts).toBeDefined();
+
+    // Mock the global Intl object
+    (globalThis as any).Intl.NumberFormat.prototype.formatToParts = undefined;
+
+    // Validate if formatToParts is not available in NumberFormat
+    const numberFormatWithoutFormatToPartsBeforePolyfill =
+      new Intl.NumberFormat();
+    expect(
+      numberFormatWithoutFormatToPartsBeforePolyfill.formatToParts,
+    ).toBeUndefined();
+
+    // Apply the polyfill function
+    intlFormatToPartsPolyfill();
+
+    // Validate if formatToParts is available in NumberFormat
+    const numberFormatWithFormatToPartsAfterPolyfill = new Intl.NumberFormat(
+      'en-US',
+    );
+    expect(
+      numberFormatWithFormatToPartsAfterPolyfill.formatToParts,
+    ).toBeDefined();
+
+    // Test the output of formatToParts with a numeric input
+    const parts =
+      numberFormatWithFormatToPartsAfterPolyfill.formatToParts(123456.789);
+
+    expect(parts.map((p) => p.value)).toEqual(['123', ',', '456', '.', '789']);
+  });
 });

@@ -27,12 +27,10 @@ function mapToNumberFormatPart(
 
 // Export a default function for the Intl polyfill
 export default function intlFormatToPartsPolyfill() {
-  const numberFormat = new Intl.NumberFormat(); // Create an instance to access the prototype
-
   // Check if the formatToParts method is not defined
-  if (!numberFormat.formatToParts) {
+  if (!Intl.NumberFormat.prototype.formatToParts) {
     // Define the formatToParts method as a polyfill for environments that lack it
-    Object.defineProperty(numberFormat, 'formatToParts', {
+    Object.defineProperty(Intl.NumberFormat.prototype, 'formatToParts', {
       value: function (number: number): Intl.NumberFormatPart[] {
         // Check if the input is a valid number
         if (typeof number !== 'number') {
