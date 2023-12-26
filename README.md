@@ -23,6 +23,47 @@ Go on, code conqueror, the adventure awaits!
 
 ## Modules
 
+### Core Module
+
+Welcome to the command center for your i18n experience! This module serves as the control hub, housing the essential functions to manage your i18n settings seamlessly. This module offers a trio of functions to handle all your i18n needs. Whether it's checking the current state, customizing settings, or starting afresh, this module has got you covered in managing your i18n world! 🚀
+
+#### Functions
+
+**setState(newState: Partial`<I18nState>`):** Customize and update your i18n state with ease! Whether you're changing locales or tweaking directions, this function is your ticket to tailor your i18n experience precisely how you want it! 🎨
+
+```
+import { setState } from "@razorpay/i18nify/core";
+
+// Set a new locale
+setState({ locale: 'en-US' });
+```
+
+**getState():** Peek into the current i18n state – the active locale, direction, and country settings – at any time, giving you a snapshot of your i18n setup! 📸
+
+```
+import { getState } from '@razorpay/i18nify/core';
+
+// Get the current state
+const currentState = getState();
+console.log(currentState);
+    /*
+    {
+        locale: 'en-US',
+        direction: '',
+        country: '',
+      }
+    */
+```
+
+**resetState():** Made a mess? No worries! Hit the reset button with this function. It's the ultimate undo for your i18n adjustments, whisking your settings back to their pristine defaults. Fresh start, anyone? 🆕
+
+```
+import { resetState } from "@razorpay/i18nify/core";
+
+// Reset everything!
+resetState();
+```
+
 ### Module 01: Currency
 
 This module's your go-to guru for everything currency/number-related. 🤑 It's all about formatting, validations, and handy tricks to make dealing with money/numbers a breeze. Here are the cool APIs and utilities this Currency Module gives you to play with! 🚀💸
