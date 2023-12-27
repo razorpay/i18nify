@@ -2,12 +2,15 @@ import { test } from '@playwright/test';
 import formatNumberByParts from '../formatNumberByParts';
 import { assertScriptText, injectScript } from '../../../blackbox/utils';
 
-function generateByPartsString(options) {
+function generateByPartsString(options: string) {
   const methodCallStr = `(await formatNumberByParts(${options}))`;
   return `${methodCallStr}.currencySymbol + ${methodCallStr}.integerValue + ${methodCallStr}.separator + ${methodCallStr}.decimalValue`;
 }
 
-function generateOptionsString(number, options) {
+function generateOptionsString(
+  number: number,
+  options: { currency: string; locale?: string },
+) {
   return `${number}, { currency: '${options.currency}', ${
     options.locale ? `locale: '${options.locale}'` : ''
   } }`;

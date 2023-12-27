@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import parsePhoneNumber from '../parsePhoneNumber';
 import { assertScriptText, injectScript } from '../../../blackbox/utils';
 
-function generateParseString(phoneNumber, country = '') {
+function generateParseString(phoneNumber: string, country = '') {
   const methodCallStr = `(await parsePhoneNumber('${phoneNumber}' ${
     country ? `, '${country}'` : ''
   }))`;
