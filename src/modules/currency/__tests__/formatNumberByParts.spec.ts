@@ -31,6 +31,10 @@ test.describe('formatNumberByParts', () => {
       ),
     );
 
+    /**
+     * Since comparing objects on the rendered UI is not possible,
+     * we render and compare each key in the parsed object in the final string .
+     */
     await assertScriptText(page, '$12,345.67');
   });
 
