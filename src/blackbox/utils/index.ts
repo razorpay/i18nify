@@ -10,7 +10,7 @@ export async function injectScript(page: Page, script: string) {
   return await page.setContent(`
   <script>
     async function main() {
-      const amount = await ${script};
+      const amount = ${script};
       document.querySelector('div').textContent = amount;
     }
     main()

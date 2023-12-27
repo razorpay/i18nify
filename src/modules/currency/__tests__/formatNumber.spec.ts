@@ -11,7 +11,10 @@ test.describe('formatNumber', () => {
   });
 
   test('should format the amount with default options', async ({ page }) => {
-    await injectScript(page, `formatNumber('1000.5', { currency: 'USD' })`);
+    await injectScript(
+      page,
+      `await formatNumber('1000.5', { currency: 'USD' })`,
+    );
     await assertScriptText(page, '$1,000.50');
   });
 
@@ -20,7 +23,7 @@ test.describe('formatNumber', () => {
   }) => {
     await injectScript(
       page,
-      `formatNumber('1500', {
+      `await formatNumber('1500', {
       currency: 'EUR',
       locale: 'fr-FR',
       intlOptions: {
@@ -33,7 +36,7 @@ test.describe('formatNumber', () => {
   });
 
   test('should format the amount without currency symbol', async ({ page }) => {
-    await injectScript(page, `formatNumber('750.75')`);
+    await injectScript(page, `await formatNumber('750.75')`);
     await assertScriptText(page, '750.75');
   });
 
@@ -42,7 +45,7 @@ test.describe('formatNumber', () => {
   }) => {
     await injectScript(
       page,
-      `formatNumber('5000', {
+      `await formatNumber('5000', {
       currency: 'JPY',
       intlOptions: {
         currencyDisplay: 'narrowSymbol',
@@ -53,7 +56,7 @@ test.describe('formatNumber', () => {
   });
 
   test('should format a negative amount', async ({ page }) => {
-    await injectScript(page, `formatNumber('-500', { currency: 'USD' })`);
+    await injectScript(page, `await formatNumber('-500', { currency: 'USD' })`);
     await assertScriptText(page, '-$500.00');
   });
 
@@ -62,7 +65,7 @@ test.describe('formatNumber', () => {
   }) => {
     await injectScript(
       page,
-      `formatNumber('42.12345', {
+      `await formatNumber('42.12345', {
       currency: 'USD',
       intlOptions: {
         minimumFractionDigits: 2,
@@ -75,7 +78,7 @@ test.describe('formatNumber', () => {
   });
 
   test('should format with all default options', async ({ page }) => {
-    await injectScript(page, `formatNumber(12345.6789)`);
+    await injectScript(page, `await formatNumber(12345.6789)`);
     await assertScriptText(page, '12,345.679');
   });
 
@@ -84,7 +87,7 @@ test.describe('formatNumber', () => {
   }) => {
     await injectScript(
       page,
-      `formatNumber('1000', {
+      `await formatNumber('1000', {
     currency: 'XYZ',
     intlOptions: {
       style: 'currency',
