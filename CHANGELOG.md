@@ -1,5 +1,15 @@
 # @razorpay/i18nify
 
+## 1.3.0
+
+### Minor Changes
+
+- 665a9cc: [feat]: playwright setup added for cross browser testing
+
+### Patch Changes
+
+- 8a6c15b: [fix]: circular dependency fixed
+
 ## 1.2.3
 
 ### Patch Changes
