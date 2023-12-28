@@ -57,16 +57,19 @@
     "prepare": "husky install && yarn build",
     "lint-staged": "lint-staged -c .lintstagedrc.json",
     "release": "node ./scripts/generateGitHubRegistryNpmrc.js && changeset publish",
-    "publish-npm": "node ./scripts/publishToNpm.js"
+    "publish-npm": "node ./scripts/publishToNpm.js",
+    "test:browser": "npx playwright test"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
+    "@playwright/test": "^1.40.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/jest": "^29.5.7",
+    "@types/node": "^20.10.5",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.1",
     "cross-env": "^7.0.3",
