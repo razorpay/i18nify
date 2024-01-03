@@ -27,10 +27,13 @@ const npmRcContent = `@razorpay:registry=https://registry.npmjs.org/
 fs.writeFileSync(NPMRC_PATH, npmRcContent);
 
 try {
-  execa.commandSync('npm unpublish -f @razorpay/i18nify', {
-    cwd: './',
-    stdio: 'inherit',
-  });
+  execa.commandSync(
+    'npm deprecate @razorpay/i18nify "This package has been deprecated, use @razorpay/i18nify-js instead."',
+    {
+      cwd: './',
+      stdio: 'inherit',
+    },
+  );
 } finally {
   fs.rmSync(NPMRC_PATH);
 }
