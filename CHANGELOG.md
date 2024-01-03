@@ -1,4 +1,4 @@
-# @razorpay/i18nify
+# @razorpay/i18nify-js
 
 ## 1.3.0
 
@@ -42,7 +42,7 @@
 
 - b0fcee0: [feat]:
   1. Introduced StateManager, getters and setters to handle i18n global state
-  2. added support for sub-module import(@razorpay/i18nify/currency, @razorpay/i18nify/phoneNumber)
+  2. added support for sub-module import(@razorpay/i18nify-js/currency, @razorpay/i18nify-js/phoneNumber)
 
 ## 1.0.3
 

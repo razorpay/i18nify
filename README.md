@@ -32,7 +32,7 @@ Welcome to the command center for your i18n experience! This module serves as th
 **setState(newState: Partial`<I18nState>`):** Customize and update your i18n state with ease! Whether you're changing locales or tweaking directions, this function is your ticket to tailor your i18n experience precisely how you want it! 🎨
 
 ```
-import { setState } from "@razorpay/i18nify/core";
+import { setState } from "@razorpay/i18nify-js/core";
 
 // Set a new locale
 setState({ locale: 'en-US' });
@@ -41,7 +41,7 @@ setState({ locale: 'en-US' });
 **getState():** Peek into the current i18n state – the active locale, direction, and country settings – at any time, giving you a snapshot of your i18n setup! 📸
 
 ```
-import { getState } from '@razorpay/i18nify/core';
+import { getState } from '@razorpay/i18nify-js/core';
 
 // Get the current state
 const currentState = getState();
@@ -58,7 +58,7 @@ console.log(currentState);
 **resetState():** Made a mess? No worries! Hit the reset button with this function. It's the ultimate undo for your i18n adjustments, whisking your settings back to their pristine defaults. Fresh start, anyone? 🆕
 
 ```
-import { resetState } from "@razorpay/i18nify/core";
+import { resetState } from "@razorpay/i18nify-js/core";
 
 // Reset everything!
 resetState();
