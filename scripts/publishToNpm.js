@@ -24,12 +24,10 @@ const npmRcContent = `@razorpay:registry=https://registry.npmjs.org/
 //registry.npmjs.org/:_authToken=\${NPM_TOKEN}
 `;
 
-console.log('[i18nify]: Publishing on NPM ✨');
-
 fs.writeFileSync(NPMRC_PATH, npmRcContent);
 
 try {
-  execa.commandSync('npm publish --access public', {
+  execa.commandSync('npm unpublish -f @razorpay/i18nify', {
     cwd: './',
     stdio: 'inherit',
   });
