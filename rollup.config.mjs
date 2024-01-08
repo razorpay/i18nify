@@ -34,6 +34,7 @@ const moduleBundles = modules.map((_module) => ({
     file: `lib/esm/${_module.name}/index.js`,
     format: 'es',
     sourcemap: true,
+    inlineDynamicImports: true,
   },
   plugins: [typescript(), resolve(), commonjs()],
 }));
@@ -44,6 +45,7 @@ const declarationTypes = modules.map((_module) => ({
   output: {
     file: `lib/esm/${_module.name}/index.d.ts`,
     format: 'es',
+    inlineDynamicImports: true,
   },
   plugins: [dts()],
 }));
@@ -57,6 +59,7 @@ export default [
       file: 'lib/esm/index.js',
       format: 'es',
       sourcemap: true,
+      inlineDynamicImports: true,
     },
     plugins: [typescript(), resolve(), commonjs()],
   },
@@ -67,6 +70,7 @@ export default [
       file: 'lib/esm/index.min.js',
       format: 'es',
       sourcemap: true,
+      inlineDynamicImports: true,
     },
     plugins: [typescript(), resolve(), commonjs(), terser()],
   },
@@ -78,6 +82,7 @@ export default [
       format: 'umd',
       sourcemap: true,
       name: 'i18nify',
+      inlineDynamicImports: true,
     },
     plugins: [typescript(), resolve(), commonjs()],
   },
@@ -89,6 +94,7 @@ export default [
       format: 'umd',
       sourcemap: true,
       name: 'i18nify',
+      inlineDynamicImports: true,
     },
     plugins: [typescript(), resolve(), commonjs(), terser()],
   },
@@ -98,6 +104,7 @@ export default [
     output: {
       file: 'lib/cjs/index.js',
       format: 'cjs',
+      inlineDynamicImports: true,
     },
     plugins: [typescript(), resolve(), commonjs()],
   },
@@ -109,6 +116,7 @@ export default [
     output: {
       file: 'lib/types/index.d.ts',
       format: 'es',
+      inlineDynamicImports: true,
     },
     plugins: [dts()],
   },
