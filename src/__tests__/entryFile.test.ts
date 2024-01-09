@@ -20,7 +20,7 @@ describe('Entry File - index.js', () => {
     // Assertions
     expect(loadPolyfills).toHaveBeenCalledTimes(1);
     expect(consoleInfoMock).toHaveBeenCalledWith(
-      'Polyfills loaded successfully!',
+      'i18nify polyfills loaded successfully !',
     );
   });
 });
