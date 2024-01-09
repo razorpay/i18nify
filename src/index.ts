@@ -4,11 +4,11 @@ import loadPolyfills from './modules/.internal/polyfills/index';
 loadPolyfills()
   .then(() => {
     // Polyfills loaded successfully
-    console.info('Polyfills loaded successfully!');
+    console.info('i18nify polyfills loaded successfully !');
   })
   .catch((error) => {
     // Handle any errors that occurred while loading polyfills
-    console.error('Error loading polyfills:', error);
+    console.error('Error loading i18nify polyfills:', error);
   });
 
 export * from './modules/core';
