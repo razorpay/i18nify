@@ -5,7 +5,7 @@ import state from '../.internal/state';
  * Function to reset the active state in i18nify SDK
  *
  * ===== USAGE =====
- * import { resetState } from "@razorpay/i18nify";
+ * import { resetState } from "@razorpay/i18nify-js";
  * resetState()
  *
  * @param newState data to set in i18nState instance

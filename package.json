@@ -1,6 +1,6 @@
 {
-  "name": "@razorpay/i18nify",
-  "version": "1.3.0",
+  "name": "@razorpay/i18nify-js",
+  "version": "1.0.0",
   "author": "tarun khanna <tarun.khanna@razorpay.com>",
   "license": "MIT",
   "main": "lib/cjs/index.js",
