@@ -230,12 +230,38 @@ console.log(
     locale: "en-US",
   })
 ); /* {
-      currencySymbol: '$',
-      integerValue: '12,345',
-      decimalValue: '67',
-      separator: '.',
-      symbolAtFirst: true,
-    } */
+    "currency": "$",
+    "integer": "12,345",
+    "decimal": ".",
+    "fraction": "67",
+    "isPrefixSymbol": true,
+    "parts": [
+        {
+            "type": "currency",
+            "value": "$"
+        },
+        {
+            "type": "integer",
+            "value": "12"
+        },
+        {
+            "type": "group",
+            "value": ","
+        },
+        {
+            "type": "integer",
+            "value": "345"
+        },
+        {
+            "type": "decimal",
+            "value": "."
+        },
+        {
+            "type": "fraction",
+            "value": "67"
+        }
+    ]
+} */
 
 console.log(
   formatNumberByParts(12345.67, {
@@ -243,12 +269,42 @@ console.log(
     locale: "en-US",
   })
 ); /* {
-      currencySymbol: 'XYZ',
-      decimalValue: '67',
-      integerValue: '12,345',
-      separator: '.',
-      symbolAtFirst: true,
-    } */
+    "currency": "XYZ",
+    "integer": "12,345",
+    "decimal": ".",
+    "fraction": "67",
+    "isPrefixSymbol": true,
+    "parts": [
+        {
+            "type": "currency",
+            "value": "XYZ"
+        },
+        {
+            "type": "literal",
+            "value": " "
+        },
+        {
+            "type": "integer",
+            "value": "12"
+        },
+        {
+            "type": "group",
+            "value": ","
+        },
+        {
+            "type": "integer",
+            "value": "345"
+        },
+        {
+            "type": "decimal",
+            "value": "."
+        },
+        {
+            "type": "fraction",
+            "value": "67"
+        }
+    ]
+} */
 
 console.log(
   formatNumberByParts(12345.67, {
@@ -256,12 +312,42 @@ console.log(
     locale: "fr-FR",
   })
 ); /* {
-      currencySymbol: '€',
-      decimalValue: '67',
-      integerValue: '12 345',
-      separator: ',',
-      symbolAtFirst: false,
-    } */
+    "integer": "12 345",
+    "decimal": ",",
+    "fraction": "67",
+    "currency": "€",
+    "isPrefixSymbol": false,
+    "parts": [
+        {
+            "type": "integer",
+            "value": "12"
+        },
+        {
+            "type": "group",
+            "value": " "
+        },
+        {
+            "type": "integer",
+            "value": "345"
+        },
+        {
+            "type": "decimal",
+            "value": ","
+        },
+        {
+            "type": "fraction",
+            "value": "67"
+        },
+        {
+            "type": "literal",
+            "value": " "
+        },
+        {
+            "type": "currency",
+            "value": "€"
+        }
+    ]
+} */
 
 console.log(
   formatNumberByParts(12345.67, {
@@ -269,12 +355,28 @@ console.log(
     locale: "ja-JP",
   })
 ); /* {
-      currencySymbol: '￥',
-      decimalValue: '',
-      integerValue: '12,346',
-      separator: '',
-      symbolAtFirst: true,
-    } */
+    "currency": "￥",
+    "integer": "12,346",
+    "isPrefixSymbol": true,
+    "parts": [
+        {
+            "type": "currency",
+            "value": "￥"
+        },
+        {
+            "type": "integer",
+            "value": "12"
+        },
+        {
+            "type": "group",
+            "value": ","
+        },
+        {
+            "type": "integer",
+            "value": "346"
+        }
+    ]
+} */
 
 console.log(
   formatNumberByParts(12345.67, {
@@ -282,12 +384,50 @@ console.log(
     locale: "ar-OM",
   })
 ); /* {
-      currencySymbol: 'ر.ع.',
-      decimalValue: '٦٧٠',
-      integerValue: '١٢٬٣٤٥',
-      separator: '٫',
-      symbolAtFirst: false,
-    } */
+    "integer": "١٢٬٣٤٥",
+    "decimal": "٫",
+    "fraction": "٦٧٠",
+    "currency": "ر.ع.",
+    "isPrefixSymbol": false,
+    "parts": [
+        {
+            "type": "literal",
+            "value": " "
+        },
+        {
+            "type": "integer",
+            "value": "١٢"
+        },
+        {
+            "type": "group",
+            "value": "٬"
+        },
+        {
+            "type": "integer",
+            "value": "٣٤٥"
+        },
+        {
+            "type": "decimal",
+            "value": "٫"
+        },
+        {
+            "type": "fraction",
+            "value": "٦٧٠"
+        },
+        {
+            "type": "literal",
+            "value": " "
+        },
+        {
+            "type": "currency",
+            "value": "ر.ع."
+        },
+        {
+            "type": "literal",
+            "value": " "
+        }
+    ]
+} */
 ```
 
 ### Module 02: Phone Number

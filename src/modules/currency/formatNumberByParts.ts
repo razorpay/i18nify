@@ -1,7 +1,8 @@
 import { CURRENCIES } from './data/currencies';
-import { ByParts } from './types';
+import { ByParts, FormattedPartsObject } from './types';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getIntlInstanceWithOptions } from '../.internal/utils';
+import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
 
 const formatNumberByParts = (
   amount: string | number,
@@ -20,28 +21,24 @@ const formatNumberByParts = (
     );
 
     const parts = formattedAmount;
-    let integerValue = '';
-    let decimalValue = '';
-    let currencySymbol = '';
-    let separator = '';
-    let symbolAtFirst = true;
-    const partValues = parts.map((p) => {
-      if (p.type === 'integer' || p.type === 'group') integerValue += p.value;
-      else if (p.type === 'fraction') decimalValue += p.value;
-      else if (p.type === 'currency') currencySymbol += p.value;
-      else if (p.type === 'decimal') separator += p.value;
-      return p.value;
+
+    const formattedObj: FormattedPartsObject = {};
+
+    parts.forEach((p) => {
+      if (p.type === 'group') {
+        formattedObj.integer = (formattedObj.integer || '') + p.value;
+      } else if (
+        ALLOWED_FORMAT_PARTS_KEYS.findIndex((item) => item === p.type) != -1
+      ) {
+        // @ts-expect-error only allowed keys are added to the formattedObj. For eg, key 'literal' is skipped
+        formattedObj[p.type] = (formattedObj[p.type] || '') + p.value;
+      }
     });
 
-    if (currencySymbol.toString() !== partValues[0].toString())
-      symbolAtFirst = false;
-
     return {
-      currencySymbol,
-      decimalValue,
-      integerValue,
-      separator,
-      symbolAtFirst,
+      ...formattedObj,
+      isPrefixSymbol: parts[0].type === 'currency',
+      parts,
     };
   } catch (err) {
     if (err instanceof Error) {

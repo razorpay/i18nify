@@ -1,5 +1,7 @@
 import formatNumberByParts from '../formatNumberByParts';
 
+const nbsp = String.fromCharCode(160);
+
 describe('formatNumberByParts', () => {
   it('should format the amount correctly for a given currency', () => {
     const result = formatNumberByParts(12345.67, {
@@ -8,11 +10,37 @@ describe('formatNumberByParts', () => {
     });
 
     expect(result).toEqual({
-      currencySymbol: '$',
-      integerValue: '12,345',
-      decimalValue: '67',
-      separator: '.',
-      symbolAtFirst: true,
+      currency: '$',
+      decimal: '.',
+      fraction: '67',
+      integer: '12,345',
+      isPrefixSymbol: true,
+      parts: [
+        {
+          type: 'currency',
+          value: '$',
+        },
+        {
+          type: 'integer',
+          value: '12',
+        },
+        {
+          type: 'group',
+          value: ',',
+        },
+        {
+          type: 'integer',
+          value: '345',
+        },
+        {
+          type: 'decimal',
+          value: '.',
+        },
+        {
+          type: 'fraction',
+          value: '67',
+        },
+      ],
     });
   });
 
@@ -39,11 +67,41 @@ describe('formatNumberByParts', () => {
       locale: 'en-US',
     });
     expect(result).toEqual({
-      currencySymbol: 'XYZ',
-      decimalValue: '67',
-      integerValue: '12,345',
-      separator: '.',
-      symbolAtFirst: true,
+      currency: 'XYZ',
+      decimal: '.',
+      fraction: '67',
+      integer: '12,345',
+      isPrefixSymbol: true,
+      parts: [
+        {
+          type: 'currency',
+          value: 'XYZ',
+        },
+        {
+          type: 'literal',
+          value: nbsp,
+        },
+        {
+          type: 'integer',
+          value: '12',
+        },
+        {
+          type: 'group',
+          value: ',',
+        },
+        {
+          type: 'integer',
+          value: '345',
+        },
+        {
+          type: 'decimal',
+          value: '.',
+        },
+        {
+          type: 'fraction',
+          value: '67',
+        },
+      ],
     });
   });
 
@@ -54,11 +112,41 @@ describe('formatNumberByParts', () => {
     });
 
     expect(result).toEqual({
-      currencySymbol: '€',
-      decimalValue: '67',
-      integerValue: '12 345',
-      separator: ',',
-      symbolAtFirst: false,
+      currency: '€',
+      decimal: ',',
+      fraction: '67',
+      integer: '12 345',
+      isPrefixSymbol: false,
+      parts: [
+        {
+          type: 'integer',
+          value: '12',
+        },
+        {
+          type: 'group',
+          value: ' ',
+        },
+        {
+          type: 'integer',
+          value: '345',
+        },
+        {
+          type: 'decimal',
+          value: ',',
+        },
+        {
+          type: 'fraction',
+          value: '67',
+        },
+        {
+          type: 'literal',
+          value: nbsp,
+        },
+        {
+          type: 'currency',
+          value: '€',
+        },
+      ],
     });
   });
 
@@ -69,26 +157,72 @@ describe('formatNumberByParts', () => {
     });
 
     expect(result).toEqual({
-      currencySymbol: '￥',
-      decimalValue: '',
-      integerValue: '12,346',
-      separator: '',
-      symbolAtFirst: true,
+      currency: '￥',
+      integer: '12,346',
+      isPrefixSymbol: true,
+      parts: [
+        {
+          type: 'currency',
+          value: '￥',
+        },
+        {
+          type: 'integer',
+          value: '12',
+        },
+        {
+          type: 'group',
+          value: ',',
+        },
+        {
+          type: 'integer',
+          value: '346',
+        },
+      ],
     });
   });
 
   it('should handle a currency with decimal value and symbol at the end', () => {
     const result = formatNumberByParts(12345.67, {
-      currency: 'OMR',
-      locale: 'ar-OM',
+      currency: 'EUR',
+      locale: 'de-DE',
     });
 
     expect(result).toEqual({
-      currencySymbol: 'ر.ع.',
-      decimalValue: '٦٧٠',
-      integerValue: '١٢٬٣٤٥',
-      separator: '٫',
-      symbolAtFirst: false,
+      currency: '€',
+      decimal: ',',
+      fraction: '67',
+      integer: '12.345',
+      isPrefixSymbol: false,
+      parts: [
+        {
+          type: 'integer',
+          value: '12',
+        },
+        {
+          type: 'group',
+          value: '.',
+        },
+        {
+          type: 'integer',
+          value: '345',
+        },
+        {
+          type: 'decimal',
+          value: ',',
+        },
+        {
+          type: 'fraction',
+          value: '67',
+        },
+        {
+          type: 'literal',
+          value: nbsp,
+        },
+        {
+          type: 'currency',
+          value: '€',
+        },
+      ],
     });
   });
 });
