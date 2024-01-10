@@ -4,7 +4,7 @@ import { assertScriptText, injectScript } from '../../../blackbox/utils';
 
 function generateByPartsString(options: string) {
   const methodCallStr = `(await formatNumberByParts(${options}))`;
-  return `${methodCallStr}.currencySymbol + ${methodCallStr}.integerValue + ${methodCallStr}.separator + ${methodCallStr}.decimalValue`;
+  return `${methodCallStr}.currency + ${methodCallStr}.integer + ${methodCallStr}.decimal + ${methodCallStr}.fraction`;
 }
 
 function generateOptionsString(

@@ -1,7 +1,9 @@
-export interface ByParts {
-  currencySymbol: string;
-  integerValue: string;
-  decimalValue: string;
-  separator: string;
-  symbolAtFirst: boolean;
+import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
+
+export type FormattedPartsObject = {
+  [key in (typeof ALLOWED_FORMAT_PARTS_KEYS)[number]]?: string | undefined;
+};
+export interface ByParts extends FormattedPartsObject {
+  isPrefixSymbol: boolean;
+  rawParts: Array<{ type: string; value: unknown }>;
 }
