@@ -235,7 +235,7 @@ console.log(
     "decimal": ".",
     "fraction": "67",
     "isPrefixSymbol": true,
-    "parts": [
+    "rawParts": [
         {
             "type": "currency",
             "value": "$"
@@ -274,7 +274,7 @@ console.log(
     "decimal": ".",
     "fraction": "67",
     "isPrefixSymbol": true,
-    "parts": [
+    "rawParts": [
         {
             "type": "currency",
             "value": "XYZ"
@@ -317,7 +317,7 @@ console.log(
     "fraction": "67",
     "currency": "€",
     "isPrefixSymbol": false,
-    "parts": [
+    "rawParts": [
         {
             "type": "integer",
             "value": "12"
@@ -358,7 +358,7 @@ console.log(
     "currency": "￥",
     "integer": "12,346",
     "isPrefixSymbol": true,
-    "parts": [
+    "rawParts": [
         {
             "type": "currency",
             "value": "￥"
@@ -389,7 +389,7 @@ console.log(
     "fraction": "٦٧٠",
     "currency": "ر.ع.",
     "isPrefixSymbol": false,
-    "parts": [
+    "rawParts": [
         {
             "type": "literal",
             "value": " "
