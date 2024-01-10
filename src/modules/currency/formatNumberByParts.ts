@@ -38,7 +38,7 @@ const formatNumberByParts = (
     return {
       ...formattedObj,
       isPrefixSymbol: parts[0].type === 'currency',
-      parts,
+      rawParts: parts,
     };
   } catch (err) {
     if (err instanceof Error) {

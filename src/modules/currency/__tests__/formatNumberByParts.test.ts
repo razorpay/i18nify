@@ -15,7 +15,7 @@ describe('formatNumberByParts', () => {
       fraction: '67',
       integer: '12,345',
       isPrefixSymbol: true,
-      parts: [
+      rawParts: [
         {
           type: 'currency',
           value: '$',
@@ -72,7 +72,7 @@ describe('formatNumberByParts', () => {
       fraction: '67',
       integer: '12,345',
       isPrefixSymbol: true,
-      parts: [
+      rawParts: [
         {
           type: 'currency',
           value: 'XYZ',
@@ -117,7 +117,7 @@ describe('formatNumberByParts', () => {
       fraction: '67',
       integer: '12 345',
       isPrefixSymbol: false,
-      parts: [
+      rawParts: [
         {
           type: 'integer',
           value: '12',
@@ -160,7 +160,7 @@ describe('formatNumberByParts', () => {
       currency: '￥',
       integer: '12,346',
       isPrefixSymbol: true,
-      parts: [
+      rawParts: [
         {
           type: 'currency',
           value: '￥',
@@ -193,7 +193,7 @@ describe('formatNumberByParts', () => {
       fraction: '67',
       integer: '12.345',
       isPrefixSymbol: false,
-      parts: [
+      rawParts: [
         {
           type: 'integer',
           value: '12',

@@ -5,5 +5,5 @@ export type FormattedPartsObject = {
 };
 export interface ByParts extends FormattedPartsObject {
   isPrefixSymbol: boolean;
-  parts: Array<{ type: string; value: unknown }>;
+  rawParts: Array<{ type: string; value: unknown }>;
 }
