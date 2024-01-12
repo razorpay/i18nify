@@ -54,7 +54,6 @@
     "clean": "rm -rf lib",
     "build": "yarn clean && rollup -c",
     "test": "jest",
-    "prepare": "husky install && yarn build",
     "lint-staged": "lint-staged -c .lintstagedrc.json",
     "test:browser": "npx playwright test"
   },
