@@ -1,6 +1,7 @@
 name: Build & Validate
 on:
   pull_request:
+  push:
 jobs:
   validate:
     name: Validate Source code
