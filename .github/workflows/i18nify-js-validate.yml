@@ -5,6 +5,9 @@ jobs:
   validate:
     name: Validate Source code
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/i18nify-js
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
