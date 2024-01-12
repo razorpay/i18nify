@@ -1,0 +1,41 @@
+name: Build & Validate
+on:
+  pull_request:
+
+env:
+  GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+
+jobs:
+  validate:
+    name: Validate Source code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 20.3.1
+      - name: Install dependencies
+        run: yarn install
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+          NPM_RAZORPAY_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+
+      - name: run eslint
+        run: yarn lint
+      - name: run tsc
+        run: yarn tsc
+  build:
+    name: Run Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 20.3.1
+      - name: Install dependencies
+        run: yarn install
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+          NPM_RAZORPAY_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+      - name: run build
+        run: yarn build
