@@ -6,7 +6,7 @@ import { I18nState } from '../.internal/state/types';
  * function to return active i18n state
  *
  *  ===== USAGE =====
- * import { getState } from '@razorpay/i18nify';
+ * import { getState } from '@razorpay/i18nify-js';
  *
  * console.log(getState())
  *

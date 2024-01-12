@@ -11,7 +11,7 @@ describe('isValidPhoneNumber', () => {
     { countryCode: 'MY', phoneNumber: '60123' },
   ];
 
-  validTestDataSet.map((dataset) => {
+  validTestDataSet.forEach((dataset) => {
     it(`should validate a valid phone number for ${dataset.countryCode}`, () => {
       const isValid = isValidPhoneNumber(
         dataset.phoneNumber,
@@ -21,7 +21,7 @@ describe('isValidPhoneNumber', () => {
     });
   });
 
-  invalidTestDataSet.map((dataset) => {
+  invalidTestDataSet.forEach((dataset) => {
     it(`should reject an invalid phone number for ${dataset.countryCode}`, () => {
       const isValid = isValidPhoneNumber(
         dataset.phoneNumber,

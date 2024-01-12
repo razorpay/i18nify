@@ -6,7 +6,7 @@ import { I18nState } from '../.internal/state/types';
  * Function to set and override the active state in i18nify SDK
  *
  * ===== USAGE =====
- * import { setState } from "@razorpay/i18nify";
+ * import { setState } from "@razorpay/i18nify-js";
  * setState({locale: 'en-US'})
  *
  * @param newState data to set in i18nState instance

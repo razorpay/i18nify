@@ -1,4 +1,34 @@
-# @razorpay/i18nify
+# @razorpay/i18nify-js
+
+## 1.1.0
+
+### Minor Changes
+
+- 61774b3: feat: API contract for formatNumberByParts updated
+
+## 1.3.0
+
+### Minor Changes
+
+- 665a9cc: [feat]: playwright setup added for cross browser testing
+
+### Patch Changes
+
+- 8a6c15b: [fix]: circular dependency fixed
+
+## 1.2.3
+
+### Patch Changes
+
+- 562b692: fix : #36 corrected getLocal function.
+
+## 1.2.2
+
+### Patch Changes
+
+- 45ef401: [fix]:
+  - redundant token removed from coverage workflow
+  - cjs exports added for sub-modules
 
 ## 1.2.1
 
@@ -18,7 +48,7 @@
 
 - b0fcee0: [feat]:
   1. Introduced StateManager, getters and setters to handle i18n global state
-  2. added support for sub-module import(@razorpay/i18nify/currency, @razorpay/i18nify/phoneNumber)
+  2. added support for sub-module import(@razorpay/i18nify-js/currency, @razorpay/i18nify-js/phoneNumber)
 
 ## 1.0.3
 
