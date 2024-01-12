@@ -1,10 +1,16 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { useI18nContext } from "@razorpay/i18nify-react";
+import React from 'react';
+import './App.css';
+import logo from './logo.svg';
+import { useI18nContext } from '@razorpay/i18nify-react';
+import { formatNumber } from '@razorpay/i18nify-js';
 
 function App() {
-  console.log("🚀 ~ useI18nContext:", useI18nContext());
+  const { setI18nState } = useI18nContext();
+
+  function handleChange() {
+    setI18nState?.({ locale: 'de-DE' });
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,14 +18,8 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Formatted Amount: {formatNumber(200000.34)}
+        <button onClick={handleChange}>Change locale to german</button>
       </header>
     </div>
   );

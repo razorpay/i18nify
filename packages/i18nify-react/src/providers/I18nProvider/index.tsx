@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createContext, useContext, useState } from 'react';
-import { setState, getState } from '@razorpay/i18nify';
+import { setState, getState } from '@razorpay/i18nify-js';
 
 interface ContextValueType {
   i18nState?: ReturnType<typeof getState>;
@@ -18,8 +18,20 @@ const I18nContext = createContext({});
  *  <YourComponent />
  * </I18nProvider>
  */
-export const I18nProvider = ({ children }: { children: JSX.Element }) => {
-  const [i18nState, setI18nState] = useState(getState());
+export const I18nProvider = ({
+  children,
+  initData = {},
+}: {
+  children: JSX.Element;
+  initData?: Record<string, unknown>;
+}) => {
+  // initialising state by an initializer function so as to call i18nify.setState method here.
+  // This is required as we need to run setState method only once and useEffect doesn't run on SSR.
+  const [i18nState, setI18nState] = useState(() => {
+    const data = { ...getState(), ...initData };
+    setState(data);
+    return data;
+  });
 
   /**
    * This function sets new data into i18nState.
