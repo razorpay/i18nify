@@ -23,9 +23,7 @@
     "clean": "rm -rf lib",
     "build": "yarn clean && rollup -c",
     "prepare": "husky install && yarn build",
-    "lint-staged": "lint-staged -c .lintstagedrc.json",
-    "release": "node ./scripts/generateGitHubRegistryNpmrc.js && changeset publish",
-    "publish-npm": "node ./scripts/publishToNpm.js"
+    "lint-staged": "lint-staged -c .lintstagedrc.json"
   },
   "license": "MIT",
   "dependencies": {},

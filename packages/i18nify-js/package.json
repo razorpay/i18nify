@@ -56,8 +56,6 @@
     "test": "jest",
     "prepare": "husky install && yarn build",
     "lint-staged": "lint-staged -c .lintstagedrc.json",
-    "release": "node ./scripts/generateGitHubRegistryNpmrc.js && changeset publish",
-    "publish-npm": "node ./scripts/publishToNpm.js",
     "test:browser": "npx playwright test"
   },
   "devDependencies": {
