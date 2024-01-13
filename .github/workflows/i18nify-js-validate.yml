@@ -1,7 +1,6 @@
 name: Build & Validate
 on:
   pull_request:
-  push:
 
 defaults:
   run:

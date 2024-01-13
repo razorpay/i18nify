@@ -2,8 +2,9 @@ name: Build & Validate
 on:
   pull_request:
 
-env:
-  GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+defaults:
+  run:
+    working-directory: packages/i18nify-react
 
 jobs:
   validate:
@@ -15,11 +16,7 @@ jobs:
         with:
           node-version: 20.3.1
       - name: Install dependencies
-        run: yarn install
-        env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
-          NPM_RAZORPAY_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-
+        run: yarn
       - name: run eslint
         run: yarn lint
       - name: run tsc
@@ -33,9 +30,6 @@ jobs:
         with:
           node-version: 20.3.1
       - name: Install dependencies
-        run: yarn install
-        env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
-          NPM_RAZORPAY_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+        run: yarn
       - name: run build
         run: yarn build
