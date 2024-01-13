@@ -2,10 +2,6 @@ name: Build & Validate
 on:
   pull_request:
 
-defaults:
-  run:
-    working-directory: packages/i18nify-react
-
 jobs:
   validate:
     name: Validate Source code
@@ -19,8 +15,10 @@ jobs:
         run: yarn
       - name: run eslint
         run: yarn lint
+        working-directory: packages/i18nify-react
       - name: run tsc
         run: yarn tsc
+        working-directory: packages/i18nify-react
   build:
     name: Run Build
     runs-on: ubuntu-latest
@@ -33,3 +31,4 @@ jobs:
         run: yarn
       - name: run build
         run: yarn build
+        working-directory: packages/i18nify-react
