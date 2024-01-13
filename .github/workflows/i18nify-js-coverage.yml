@@ -6,10 +6,6 @@ on:
     branches:
       - master
 
-defaults:
-  run:
-    working-directory: packages/i18nify-js
-
 jobs:
   coverage:
     name: CodeCov analysis on coverage
@@ -29,6 +25,7 @@ jobs:
         with:
           install-command: yarn --frozen-lockfile
       - name: Run Tests
+        working-directory: packages/i18nify-js
         run: yarn test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
@@ -40,6 +37,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Unit Test Results
+          working-directory: packages/i18nify-js
           path: src/coverage/**/*.xml
 
   publish-test-results:

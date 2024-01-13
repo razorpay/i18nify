@@ -1,4 +1,4 @@
-name: Build & Validate
+name: (i18nify-js) Build & Validate
 on:
   pull_request:
 

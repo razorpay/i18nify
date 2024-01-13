@@ -1,4 +1,4 @@
-name: Build & Validate
+name: (i18nify-react) Build & Validate
 on:
   pull_request:
 
@@ -14,11 +14,11 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: run eslint
+        working-directory: packages/i18nify-react
         run: yarn lint
-        working-directory: packages/i18nify-react
       - name: run tsc
-        run: yarn tsc
         working-directory: packages/i18nify-react
+        run: yarn tsc
   build:
     name: Run Build
     runs-on: ubuntu-latest

@@ -18,10 +18,6 @@ on:
         review_request_removed,
       ]
 
-defaults:
-  run:
-    working-directory: packages/i18nify-js
-
 jobs:
   build-base:
     name: Generate Base Build
@@ -38,7 +34,8 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Make Build
-        run: npm run build
+        working-directory: packages/i18nify-js
+        run: yarn build
       - name: Upload base stats
         uses: actions/upload-artifact@v3
         with:
@@ -61,7 +58,8 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Make Build
-        run: npm run build
+        working-directory: packages/i18nify-js
+        run: yarn build
       - name: Upload pr build
         uses: actions/upload-artifact@v3
         with:
