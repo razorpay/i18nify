@@ -4,7 +4,30 @@
     "packages/*"
   ],
   "scripts": {
+    "format": "yarn workspace @razorpay/i18nify-js run format && yarn workspace @razorpay/i18nify-react run format",
+    "validate": "yarn workspace @razorpay/i18nify-js run validate && yarn workspace @razorpay/i18nify-react run validate",
+    "lint-staged": "lint-staged -c .lintstagedrc.json",
     "release": "node ./scripts/generateGitHubRegistryNpmrc.js && changeset publish",
-    "publish-npm": "node ./scripts/publishToNpm.js"
+    "publish-npm": "node ./scripts/publishToNpm.js",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.0",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "rollup": "^4.0.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "execa": "5.0.0"
   }
 }

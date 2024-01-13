@@ -14,48 +14,37 @@
     "lib"
   ],
   "scripts": {
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format:check": "prettier --check",
+    "format": "prettier src --write",
     "tsc": "tsc --noEmit",
     "validate": "yarn tsc && yarn lint:fix",
-    "format": "prettier src --write",
-    "format:check": "prettier src --check",
     "clean": "rm -rf lib",
     "build": "yarn clean && rollup -c",
-    "prepare": "husky install && yarn build",
-    "lint-staged": "lint-staged -c .lintstagedrc.json"
+    "prepare": "yarn build"
+  },
+  "dependencies": {
+    "@razorpay/i18nify-js": "1.1.0"
   },
   "license": "MIT",
-  "dependencies": {},
   "peerDependencies": {
-    "@razorpay/i18nify-js": "^1.0.0",
+    "@razorpay/i18nify-js": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
-    "@razorpay/i18nify-js": "^1.0.0",
+    "@razorpay/i18nify-js": "^1.1.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/react": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.1",
-    "eslint": "^8.55.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
-    "execa": "5.0.0",
-    "husky": "^8.0.0",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^4.6.1",
     "rollup-plugin-dts": "^6.1.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "ts-node": "^10.9.1",
-    "tslib": "^2.6.2",
-    "typescript": "^5.3.2"
+    "rollup-plugin-peer-deps-external": "^2.2.4"
   }
 }
