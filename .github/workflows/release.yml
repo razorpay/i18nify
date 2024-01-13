@@ -3,6 +3,7 @@ name: i18nify Release
 on:
   workflow_dispatch:
   push:
+    branches: [master]
 
 env:
   GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
@@ -30,8 +31,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
         with:
           publish: yarn release
-          commit: "build(i18nify): update version"
-          title: "build(i18nify): update version"
+          commit: 'build(i18nify): update version'
+          title: 'build(i18nify): update version'
       - name: Publish to public npm registry
         if: steps.changesets.outputs.published == 'true' || github.event_name == 'workflow_dispatch' # run when the package is published via changeset or if a release is triggered manually.
         env:
