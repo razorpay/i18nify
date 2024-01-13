@@ -18,6 +18,10 @@ on:
         review_request_removed,
       ]
 
+defaults:
+  run:
+    working-directory: packages/i18nify-js
+
 jobs:
   build-base:
     name: Generate Base Build
