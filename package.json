@@ -9,7 +9,9 @@
     "lint-staged": "lint-staged -c .lintstagedrc.json",
     "release": "node ./scripts/generateGitHubRegistryNpmrc.js && changeset publish",
     "publish-npm": "node ./scripts/publishToNpm.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build-js": "yarn workspace @razorpay/i18nify-js run build",
+    "build-react": "yarn build-js && yarn workspace @razorpay/i18nify-react run build"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",

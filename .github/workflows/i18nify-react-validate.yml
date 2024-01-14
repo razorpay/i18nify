@@ -13,24 +13,11 @@ jobs:
           node-version: 20.3.1
       - name: Install dependencies
         run: yarn install
-      - name: Check Yarn version
-        run: yarn --version
+      - name: run build
+        run: yarn build-react
       - name: run eslint
         working-directory: packages/i18nify-react
         run: yarn lint
       - name: run tsc
         working-directory: packages/i18nify-react
         run: yarn tsc
-  build:
-    name: Run Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 20.3.1
-      - name: Install dependencies
-        run: yarn
-      - name: run build
-        run: yarn build
-        working-directory: packages/i18nify-react
