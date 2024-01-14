@@ -34,8 +34,7 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Make Build
-        working-directory: packages/i18nify-js
-        run: yarn build
+        run: yarn build-js
       - name: Upload base stats
         uses: actions/upload-artifact@v3
         with:
@@ -58,8 +57,7 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Make Build
-        working-directory: packages/i18nify-js
-        run: yarn build
+        run: yarn build-js
       - name: Upload pr build
         uses: actions/upload-artifact@v3
         with:
