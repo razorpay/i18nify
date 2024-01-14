@@ -16,6 +16,8 @@ jobs:
       - name: Install dependencies
         working-directory: packages/i18nify-react
         run: yarn install
+      - name: Install root dependencies
+        run: yarn install --frozen-lockfile
       - name: run eslint
         working-directory: packages/i18nify-react
         run: yarn lint
