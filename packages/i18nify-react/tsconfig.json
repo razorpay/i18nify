@@ -2,9 +2,6 @@
   "extends": "../../tsconfig.json",
   "exclude": ["node_modules", "examples"],
   "compilerOptions": {
-    "jsx": "react" /* Specify what JSX code is generated. */,
-    "paths": {
-      "@razorpay/i18nify-js": ["../i18nify-js"]
-    }
+    "jsx": "react" /* Specify what JSX code is generated. */
   }
 }

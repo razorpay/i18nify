@@ -12,7 +12,10 @@ jobs:
         with:
           node-version: 20.3.1
       - name: Install dependencies
-        run: yarn
+        run: yarn install
+      - name: Install dependencies
+        working-directory: packages/i18nify-react
+        run: yarn install
       - name: run eslint
         working-directory: packages/i18nify-react
         run: yarn lint
