@@ -13,9 +13,6 @@ jobs:
           node-version: 20.3.1
       - name: Install dependencies
         run: yarn install
-      - name: Install dependencies
-        working-directory: packages/i18nify-react
-        run: yarn install
       - name: Install root dependencies
         run: yarn install --frozen-lockfile
       - name: run eslint
