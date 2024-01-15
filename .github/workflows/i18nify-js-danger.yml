@@ -38,8 +38,8 @@ jobs:
         with:
           name: base
           path: |
-            ./lib
-            !./lib/**/*.map
+            ./packages/i18nify-js/lib
+            !./packages/i18nify-js/lib/**/*.map
           retention-days: 1
 
   build-pr:
@@ -61,8 +61,8 @@ jobs:
         with:
           name: pr
           path: |
-            ./lib
-            !./lib/**/*.map
+            ./packages/i18nify-js/lib
+            !./packages/i18nify-js/lib/**/*.map
           retention-days: 1
 
   Danger:
