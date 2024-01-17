@@ -2,7 +2,7 @@ name: (i18nify-js) Build & Validate
 on:
   pull_request:
     paths:
-      - packages/i18nify-js
+      - 'packages/i18nify-js/**'
 
 defaults:
   run:

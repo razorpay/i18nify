@@ -18,7 +18,7 @@ on:
         review_request_removed,
       ]
     paths:
-      - packages/i18nify-js
+      - 'packages/i18nify-js/**'
 
 jobs:
   build-base:

@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - packages/i18nify-js
+      - 'packages/i18nify-js/**'
 
 jobs:
   coverage:
