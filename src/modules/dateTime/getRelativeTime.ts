@@ -1,4 +1,7 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import state from '../.internal/state';
+import { getLocale } from '../.internal/utils';
+import { Locale } from './types';
 
 /**
  * Provides a relative time string (e.g., '3 hours ago', 'in 2 days').
@@ -8,16 +11,23 @@ import { withErrorBoundary } from '../../common/errorBoundary';
  *
  * @param date - The date to compare.
  * @param baseDate - The date to compare against (default: current date).
- * @param locale - The locale to use for formatting (default: 'en-IN').
+ * @param locale - The locale to use for formatting.
  * @param options - Options for the Intl.RelativeTimeFormat (optional).
  * @returns The relative time as a string.
  */
 const getRelativeTime = (
   date: Date,
   baseDate: Date = new Date(),
-  locale: string = 'en-IN',
+  locale: Locale,
   options?: Intl.RelativeTimeFormatOptions,
 ): string => {
+  /** retrieve locale from below areas in order of preference
+   * 1. locale (used in case if someone wants to override locale just for a specific area and not globally)
+   * 2. i18nState.locale (uses locale set globally)
+   * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
+   * */
+  if (!locale) locale = state.getState().locale || getLocale();
+
   const diffInSeconds = (date.getTime() - baseDate.getTime()) / 1000;
 
   // Define time units in seconds
@@ -54,8 +64,20 @@ const getRelativeTime = (
     unit = 'year';
   }
 
-  const rtf = new Intl.RelativeTimeFormat(locale, options);
-  return rtf.format(Math.round(value), unit);
+  let relativeTime;
+
+  try {
+    const rtf = new Intl.RelativeTimeFormat(locale, options);
+    relativeTime = rtf.format(Math.round(value), unit);
+  } catch (err) {
+    if (err instanceof Error) {
+      throw new Error(err.message);
+    } else {
+      throw new Error(`An unknown error occurred = ${err}`);
+    }
+  }
+
+  return relativeTime;
 };
 
 export default withErrorBoundary<typeof getRelativeTime>(getRelativeTime);
