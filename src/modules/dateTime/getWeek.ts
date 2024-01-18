@@ -12,7 +12,7 @@ const getWeek = (date: DateInput): number => {
   date =
     typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
   const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
-  const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;
+  const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000; //  86400000 represents the number of milliseconds in a day
   return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
 };
 

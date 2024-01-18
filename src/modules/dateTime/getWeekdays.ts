@@ -11,7 +11,7 @@ import { Locale } from './types';
  * @returns An array of weekday names.
  */
 const getWeekdays = (
-  locale: Locale,
+  locale?: Locale,
   intlOptions: Intl.DateTimeFormatOptions = {},
 ): string[] => {
   try {

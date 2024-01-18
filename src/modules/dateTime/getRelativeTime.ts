@@ -13,14 +13,14 @@ import { stringToDate } from './utils';
  * @param date - The date to compare.
  * @param baseDate - The date to compare against (default: current date).
  * @param locale - The locale to use for formatting.
- * @param options - Options for the Intl.RelativeTimeFormat (optional).
+ * @param intlOptions - Options for the Intl.RelativeTimeFormat (optional).
  * @returns The relative time as a string.
  */
 const getRelativeTime = (
   date: DateInput,
   baseDate: DateInput = new Date(),
-  locale: Locale,
-  options?: Intl.RelativeTimeFormatOptions,
+  locale?: Locale,
+  intlOptions?: Intl.RelativeTimeFormatOptions,
 ): string => {
   date =
     typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
@@ -75,7 +75,7 @@ const getRelativeTime = (
   let relativeTime;
 
   try {
-    const rtf = new Intl.RelativeTimeFormat(locale, options);
+    const rtf = new Intl.RelativeTimeFormat(locale, intlOptions);
     relativeTime = rtf.format(Math.round(value), unit);
   } catch (err) {
     if (err instanceof Error) {

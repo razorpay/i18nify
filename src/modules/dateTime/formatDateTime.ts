@@ -8,12 +8,12 @@ import { stringToDate } from './utils';
  * Formats date and time based on the locale.
  * @param {DateInput} date - Date object or date string.
  * @param {Locale} locale - Locale string.
- * @param {DateTimeFormatOptions} options - Intl.DateTimeFormat options (optional).
+ * @param {Intl.DateTimeFormatOptions} intlOptions - Intl.DateTimeFormat options (optional).
  * @returns {string} Formatted date and time string.
  */
 const formatDateTime = (
   date: DateInput,
-  locale: Locale,
+  locale?: Locale,
   intlOptions: Intl.DateTimeFormatOptions = {},
 ): string => {
   /** retrieve locale from below areas in order of preference

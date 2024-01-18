@@ -13,13 +13,13 @@ import {
  * Formats date based on the locale.
  * @param {DateInput} date - Date object or date string.
  * @param {Locale} locale - Locale string.
- * @param {DateFormatOptions} options - Intl.DateTimeFormat options for date formatting (optional).
+ * @param {DateFormatOptions} intlOptions - Intl.DateTimeFormat options for date formatting (optional).
  * @returns {string} Formatted date string.
  */
 const formatDate = (
   date: DateInput,
-  locale: Locale,
-  options: DateFormatOptions = {},
+  locale?: Locale,
+  intlOptions: DateFormatOptions = {},
 ): string => {
   /** retrieve locale from below areas in order of preference
    * 1. locale (used in case if someone wants to override locale just for a specific area and not globally)
@@ -29,7 +29,7 @@ const formatDate = (
   if (!locale) locale = state.getState().locale || getLocale();
 
   const fullOptions: DateTimeFormatOptions = {
-    ...options,
+    ...intlOptions,
     timeStyle: undefined,
   };
 
