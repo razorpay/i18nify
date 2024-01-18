@@ -15,8 +15,8 @@ const parseDateWithFormat = (
   const separator = format.includes('/')
     ? '/'
     : format.includes('.')
-    ? '.'
-    : '-';
+    ? `.`
+    : `-`;
   const formatParts = format.split(separator);
   const dateParts = dateString.split(separator).map((num) => parseInt(num, 10));
 
