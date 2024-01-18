@@ -1,5 +1,5 @@
 node_modules
-# lib
+lib
 .DS_Store
 coverage
 /test-results/

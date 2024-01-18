@@ -56,31 +56,29 @@ interface PhoneInfo {
 }
 declare const _default$g: (phoneNumber: string, country?: string | undefined) => PhoneInfo;
 
-declare const _default$f: (date: Date, value: number, unit: "days" | "months" | "years") => Date;
-
 type DateInput = Date | string;
-interface DateTimeFormatOptions extends Intl.DateTimeFormatOptions {
-}
 interface DateFormatOptions extends Omit<Intl.DateTimeFormatOptions, 'timeStyle'> {
 }
 interface TimeFormatOptions extends Omit<Intl.DateTimeFormatOptions, 'dateStyle'> {
 }
 
+declare const _default$f: (date: DateInput, value: number, unit: "days" | "months" | "years") => Date;
+
 declare const _default$e: (date: DateInput, locale: string, options?: DateFormatOptions | undefined) => string;
 
-declare const _default$d: (date: DateInput, locale: string, options?: DateTimeFormatOptions | undefined) => string;
+declare const _default$d: (date: DateInput, locale: string, intlOptions?: Intl.DateTimeFormatOptions | undefined) => string;
 
 declare const _default$c: (date: DateInput, locale: string, options?: TimeFormatOptions | undefined) => string;
 
-declare const _default$b: (locale: string) => number;
+declare const _default$b: (locale: string, intlOptions?: Intl.DateTimeFormatOptions | undefined) => string;
 
-declare const _default$a: (date: Date) => number;
+declare const _default$a: (date: DateInput) => number;
 
-declare const _default$9: (date: Date, baseDate: Date | undefined, locale: string, options?: Intl.RelativeTimeFormatOptions | undefined) => string;
+declare const _default$9: (date: DateInput, baseDate: DateInput | undefined, locale: string, options?: Intl.RelativeTimeFormatOptions | undefined) => string;
 
-declare const _default$8: (date: Date) => number;
+declare const _default$8: (date: DateInput) => number;
 
-declare const _default$7: (locale: string) => string[];
+declare const _default$7: (locale: string, intlOptions?: Intl.DateTimeFormatOptions | undefined) => string[];
 
 declare const _default$6: (date1: DateInput, date2: DateInput) => boolean;
 
@@ -94,6 +92,6 @@ declare const _default$2: (date: any) => boolean;
 
 declare const _default$1: (dateString: string, locale: string) => Date | null;
 
-declare const _default: (date: Date, value: number, unit: "days" | "months" | "years") => Date;
+declare const _default: (date: DateInput, value: number, unit: "days" | "months" | "years") => Date;
 
 export { _default$f as add, _default$e as formatDate, _default$d as formatDateTime, _default$m as formatNumber, _default$j as formatNumberByParts, _default$h as formatPhoneNumber, _default$c as formatTime, _default$l as getCurrencyList, _default$k as getCurrencySymbol, _default$b as getFirstDayOfWeek, _default$a as getQuarter, _default$9 as getRelativeTime, _default$p as getState, _default$8 as getWeek, _default$7 as getWeekdays, _default$6 as isAfter, _default$5 as isBefore, _default$4 as isLeapYear, _default$3 as isSameDay, _default$2 as isValidDate, _default$i as isValidPhoneNumber, _default$1 as parseDate, _default$g as parsePhoneNumber, _default$n as resetState, _default$o as setState, _default as subtract };

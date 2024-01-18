@@ -1,7 +1,8 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import state from '../.internal/state';
 import { getLocale } from '../.internal/utils';
-import { DateInput, Locale, DateTimeFormatOptions } from './types';
+import { DateInput, Locale } from './types';
+import { stringToDate } from './utils';
 
 /**
  * Formats date and time based on the locale.
@@ -13,7 +14,7 @@ import { DateInput, Locale, DateTimeFormatOptions } from './types';
 const formatDateTime = (
   date: DateInput,
   locale: Locale,
-  options: DateTimeFormatOptions = {},
+  intlOptions: Intl.DateTimeFormatOptions = {},
 ): string => {
   /** retrieve locale from below areas in order of preference
    * 1. locale (used in case if someone wants to override locale just for a specific area and not globally)
@@ -22,11 +23,14 @@ const formatDateTime = (
    * */
   if (!locale) locale = state.getState().locale || getLocale();
 
+  date =
+    typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
+
   const dateObj: Date = date instanceof Date ? date : new Date(date);
   let formatter;
 
   try {
-    formatter = new Intl.DateTimeFormat(locale, options);
+    formatter = new Intl.DateTimeFormat(locale, intlOptions);
   } catch (err) {
     if (err instanceof Error) {
       throw new Error(err.message);

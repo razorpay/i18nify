@@ -1,4 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { DateInput } from './types';
+import { stringToDate } from './utils';
 
 /**
  * Adds a specified amount of time to a date.
@@ -9,23 +11,25 @@ import { withErrorBoundary } from '../../common/errorBoundary';
  * @returns A new Date object with the time added.
  */
 const add = (
-  date: Date,
+  date: DateInput,
   value: number,
   unit: 'days' | 'months' | 'years',
 ): Date => {
-  const result = new Date(date);
+  date =
+    typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
+
   switch (unit) {
     case 'days':
-      result.setDate(result.getDate() + value);
+      date.setDate(date.getDate() + value);
       break;
     case 'months':
-      result.setMonth(result.getMonth() + value);
+      date.setMonth(date.getMonth() + value);
       break;
     case 'years':
-      result.setFullYear(result.getFullYear() + value);
+      date.setFullYear(date.getFullYear() + value);
       break;
   }
-  return result;
+  return date;
 };
 
 export default withErrorBoundary<typeof add>(add);

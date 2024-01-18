@@ -1,7 +1,8 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import state from '../.internal/state';
 import { getLocale } from '../.internal/utils';
-import { Locale } from './types';
+import { DateInput, Locale } from './types';
+import { stringToDate } from './utils';
 
 /**
  * Provides a relative time string (e.g., '3 hours ago', 'in 2 days').
@@ -16,11 +17,18 @@ import { Locale } from './types';
  * @returns The relative time as a string.
  */
 const getRelativeTime = (
-  date: Date,
-  baseDate: Date = new Date(),
+  date: DateInput,
+  baseDate: DateInput = new Date(),
   locale: Locale,
   options?: Intl.RelativeTimeFormatOptions,
 ): string => {
+  date =
+    typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
+
+  baseDate =
+    typeof baseDate === 'string'
+      ? new Date(stringToDate(baseDate))
+      : new Date(baseDate);
   /** retrieve locale from below areas in order of preference
    * 1. locale (used in case if someone wants to override locale just for a specific area and not globally)
    * 2. i18nState.locale (uses locale set globally)
