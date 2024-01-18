@@ -8,6 +8,6 @@ import { withErrorBoundary } from '../../common/errorBoundary';
  */
 const isValidDate = (date: any): boolean => {
   return date instanceof Date && !isNaN(date.getTime());
-}
+};
 
 export default withErrorBoundary<typeof isValidDate>(isValidDate);

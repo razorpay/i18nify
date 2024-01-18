@@ -56,6 +56,6 @@ const getRelativeTime = (
 
   const rtf = new Intl.RelativeTimeFormat(locale, options);
   return rtf.format(Math.round(value), unit);
-}
+};
 
 export default withErrorBoundary<typeof getRelativeTime>(getRelativeTime);

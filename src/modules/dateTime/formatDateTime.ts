@@ -16,6 +16,6 @@ const formatDateTime = (
   const dateObj: Date = date instanceof Date ? date : new Date(date);
   const formatter = new Intl.DateTimeFormat(locale, options);
   return formatter.format(dateObj);
-}
+};
 
 export default withErrorBoundary<typeof formatDateTime>(formatDateTime);
