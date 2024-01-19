@@ -3,6 +3,7 @@ name: i18nify Release
 on:
   workflow_dispatch:
   push:
+    branches: [master]
 
 env:
   GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
