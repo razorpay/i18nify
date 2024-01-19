@@ -1,5 +1,16 @@
 # @razorpay/i18nify-react
 
+## 2.0.0
+
+### Minor Changes
+
+- b897c4e: Feat: Mono-repo setup added for i18nify and i18nify plugins
+
+### Patch Changes
+
+- Updated dependencies [b897c4e]
+  - @razorpay/i18nify-js@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes
