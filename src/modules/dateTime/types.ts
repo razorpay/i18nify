@@ -1,3 +1,5 @@
+import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
+
 export type DateInput = Date | string;
 export type Locale = string;
 
@@ -8,3 +10,14 @@ export interface DateFormatOptions
 
 export interface TimeFormatOptions
   extends Omit<Intl.DateTimeFormatOptions, 'dateStyle'> {}
+
+export type FormattedPartsObject = {
+  [key in (typeof ALLOWED_FORMAT_PARTS_KEYS)[number]]?: string | undefined;
+};
+
+export interface ParsedDateTime extends FormattedPartsObject {
+  rawParts: Array<{ type: string; value: unknown }>;
+  formattedDate: string;
+  dateObj: Date | null;
+};
+

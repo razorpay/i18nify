@@ -20,31 +20,31 @@ export const stringToDate = (dateString: string): Date => {
       dayIndex: 3,
     }, // YYYY.MM.DD
     {
-      regex: /^(\d{4})\.(\d{2})\.(\d{2})$/,
+      regex: /^(\d{2})-(\d{2})-(\d{4})$/,
       yearIndex: 1,
       monthIndex: 2,
       dayIndex: 3,
     }, // DD-MM-YYYY
     {
-      regex: /^(\d{4})\.(\d{2})\.(\d{2})$/,
+      regex: /^(\d{2})\/(\d{2})\/(\d{4})$/,
       yearIndex: 1,
       monthIndex: 2,
       dayIndex: 3,
     }, // MM/DD/YYYY
     {
-      regex: /^(\d{4})\.(\d{2})\.(\d{2})$/,
+      regex: /^(\d{4})-(\d{2})-(\d{2})$/,
       yearIndex: 1,
       monthIndex: 2,
       dayIndex: 3,
     }, // YYYY-MM-DD
     {
-      regex: /^(\d{4})\.(\d{2})\.(\d{2})$/,
+      regex: /^(\d{4})\.\s*(\d{2})\.\s*(\d{2})\.\s*$/,
       yearIndex: 1,
       monthIndex: 2,
       dayIndex: 3,
     }, // YYYY. MM. DD.
     {
-      regex: /^(\d{4})\.(\d{2})\.(\d{2})$/,
+      regex: /^(\d{2})\.(\d{2})\.(\d{4})$/,
       yearIndex: 1,
       monthIndex: 2,
       dayIndex: 3,
