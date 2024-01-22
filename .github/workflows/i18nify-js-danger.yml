@@ -17,6 +17,8 @@ on:
         review_requested,
         review_request_removed,
       ]
+    paths:
+      - 'packages/i18nify-js/**'
 
 jobs:
   build-base:
@@ -25,8 +27,6 @@ jobs:
     steps:
       - name: Checkout Codebase
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.base_ref }}
       - name: Use Node v20
         uses: actions/setup-node@v2
         with:
@@ -34,14 +34,14 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Make Build
-        run: npm run build
+        run: yarn build-js
       - name: Upload base stats
         uses: actions/upload-artifact@v3
         with:
           name: base
           path: |
-            ./lib
-            !./lib/**/*.map
+            ./packages/i18nify-js/lib
+            !./packages/i18nify-js/lib/**/*.map
           retention-days: 1
 
   build-pr:
@@ -57,14 +57,14 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Make Build
-        run: npm run build
+        run: yarn build-js
       - name: Upload pr build
         uses: actions/upload-artifact@v3
         with:
           name: pr
           path: |
-            ./lib
-            !./lib/**/*.map
+            ./packages/i18nify-js/lib
+            !./packages/i18nify-js/lib/**/*.map
           retention-days: 1
 
   Danger:

@@ -1,6 +1,12 @@
 name: Playwright Tests
 on:
   pull_request:
+    paths:
+      - 'packages/i18nify-js/**'
+
+defaults:
+  run:
+    working-directory: packages/i18nify-js
 
 jobs:
   test:

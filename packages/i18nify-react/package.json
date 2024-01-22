@@ -1,0 +1,50 @@
+{
+  "name": "@razorpay/i18nify-react",
+  "version": "2.0.0",
+  "description": "",
+  "author": "tarun khanna <tarun.khanna@razorpay.com>",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:razorpay/i18nify.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format:check": "prettier --check",
+    "format": "prettier src --write",
+    "tsc": "tsc --noEmit",
+    "validate": "yarn tsc && yarn lint:fix",
+    "clean": "rm -rf lib",
+    "build": "yarn clean && rollup -c",
+    "prepare": "yarn build"
+  },
+  "dependencies": {
+    "@razorpay/i18nify-js": "^1.2.0"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@razorpay/i18nify-js": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@razorpay/i18nify-js": "^1.2.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/react": "^18.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.6.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
+  }
+}
