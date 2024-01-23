@@ -95,4 +95,6 @@ export const LOCALE_DATE_FORMATS: { [key: string]: string } = {
   'ar-BH': 'DD/MM/YYYY', // Arabic (Bahrain)
   'ar-OM': 'DD/MM/YYYY', // Arabic (Oman)
   'fr-FR': 'DD/MM/YYYY', // French (France)
+  'it-IT': 'DD/MM/YYYY', // Italian (Italy)
+  'es-ES': 'DD/MM/YYYY', // Spanish (Spain)
 };
