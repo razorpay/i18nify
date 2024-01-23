@@ -17,5 +17,5 @@ export { default as isBefore } from './isBefore';
 export { default as isLeapYear } from './isLeapYear';
 export { default as isSameDay } from './isSameDay';
 export { default as isValidDate } from './isValidDate';
-export { default as parseDate } from './parseDate';
+export { default as parseDateTime } from './parseDateTime';
 export { default as subtract } from './subtract';

@@ -1,92 +1,34 @@
 {
-  "name": "@razorpay/i18nify-js",
-  "version": "1.1.0",
-  "author": "tarun khanna <tarun.khanna@razorpay.com>",
-  "license": "MIT",
-  "main": "lib/cjs/index.js",
-  "module": "lib/esm/index.js",
-  "types": "lib/types/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com:razorpay/i18nify.git"
-  },
-  "files": [
-    "lib"
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
-  "exports": {
-    ".": {
-      "require": "./lib/cjs/index.js",
-      "import": "./lib/esm/index.js"
-    },
-    "./core": {
-      "require": "./lib/cjs/index.js",
-      "import": "./lib/esm/core/index.js"
-    },
-    "./currency": {
-      "require": "./lib/cjs/index.js",
-      "import": "./lib/esm/currency/index.js"
-    },
-    "./phoneNumber": {
-      "require": "./lib/cjs/index.js",
-      "import": "./lib/esm/phoneNumber/index.js"
-    }
-  },
-  "typesVersions": {
-    "*": {
-      "core": [
-        "./lib/esm/core/index.d.ts"
-      ],
-      "currency": [
-        "./lib/esm/currency/index.d.ts"
-      ],
-      "phoneNumber": [
-        "./lib/esm/phoneNumber/index.d.ts"
-      ]
-    }
-  },
   "scripts": {
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix",
-    "tsc": "tsc --noEmit",
-    "validate": "yarn tsc && yarn lint:fix",
-    "format": "prettier src --write",
-    "format:check": "prettier src --check",
-    "clean": "rm -rf lib",
-    "build": "yarn clean && rollup -c",
-    "test": "jest",
-    "prepare": "husky install && yarn build",
+    "format": "yarn workspace @razorpay/i18nify-js run format && yarn workspace @razorpay/i18nify-react run format",
+    "validate": "yarn workspace @razorpay/i18nify-js run validate && yarn workspace @razorpay/i18nify-react run validate",
     "lint-staged": "lint-staged -c .lintstagedrc.json",
     "release": "node ./scripts/generateGitHubRegistryNpmrc.js && changeset publish",
     "publish-npm": "node ./scripts/publishToNpm.js",
-    "test:browser": "npx playwright test"
+    "prepare": "husky install",
+    "build-js": "yarn workspace @razorpay/i18nify-js run build",
+    "build-react": "yarn build-js && yarn workspace @razorpay/i18nify-react run build"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "@playwright/test": "^1.40.1",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.5",
-    "@types/jest": "^29.5.7",
     "@types/node": "^20.10.5",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.1",
-    "cross-env": "^7.0.3",
-    "esbuild": "^0.19.4",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "husky": "^8.0.0",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
     "rollup": "^4.0.2",
     "rollup-plugin-dts": "^6.1.0",
-    "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "execa": "5.0.0"
   }
 }

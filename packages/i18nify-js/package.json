@@ -1,0 +1,74 @@
+{
+  "name": "@razorpay/i18nify-js",
+  "version": "1.2.0",
+  "author": "tarun khanna <tarun.khanna@razorpay.com>",
+  "license": "MIT",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:razorpay/i18nify.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/index.js"
+    },
+    "./core": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/core/index.js"
+    },
+    "./currency": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/currency/index.js"
+    },
+    "./phoneNumber": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/phoneNumber/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "core": [
+        "./lib/esm/core/index.d.ts"
+      ],
+      "currency": [
+        "./lib/esm/currency/index.d.ts"
+      ],
+      "phoneNumber": [
+        "./lib/esm/phoneNumber/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format:check": "prettier --check",
+    "format": "prettier src --write",
+    "tsc": "tsc --noEmit",
+    "validate": "yarn tsc && yarn lint:fix",
+    "clean": "rm -rf lib",
+    "build": "yarn clean && rollup -c",
+    "test": "jest",
+    "prepare": "yarn build",
+    "test:browser": "npx playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/jest": "^29.5.7",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "jest-environment-jsdom": "^29.7.0",
+    "rollup": "^4.0.2",
+    "rollup-plugin-dts": "^6.1.0"
+  }
+}

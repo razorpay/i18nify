@@ -1,7 +1,9 @@
 // refer file: https://gist.github.com/kkemple/998aad9f2b25520c916b00891abb6543
 import { danger, fail, warn, markdown } from 'danger';
 
-const { generateTableReport } = require('./scripts/bundle-size-report');
+const {
+  generateTableReport,
+} = require('./packages/i18nify-js/scripts/bundle-size-report');
 
 const modifiedFiles = danger.git.modified_files;
 const newFiles = danger.git.created_files;
