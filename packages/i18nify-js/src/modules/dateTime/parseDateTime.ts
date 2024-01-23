@@ -39,14 +39,6 @@ const parseDateTime = (
     const formattedParts = dateTimeFormat.formatToParts(date);
     const formattedObj: FormattedPartsObject = {};
 
-    // Initialize date components with default or zero values
-    let year = 0,
-      month = 1, // Default to January
-      day = 1, // Default to the 1st day of the month
-      hours = 0,
-      minutes = 0,
-      seconds = 0;
-
     // Iterate over each part of the formatted date
     formattedParts.forEach((part) => {
       // If the part is allowed, add it to the formatted object
@@ -55,48 +47,14 @@ const parseDateTime = (
         // @ts-expect-error only allowed keys are added to the formattedObj. For eg, key 'literal', 'unknown' is skipped
         formattedObj[part.type] = (formattedObj[part.type] || '') + part.value;
       }
-
-      // For other components, parse and assign them to the respective variables
-      const value = parseInt(part.value, 10);
-      switch (part.type) {
-        case 'year':
-          year = value;
-          break;
-        case 'month':
-          month = value; // Keep month 1-indexed (January = 1)
-          break;
-        case 'day':
-          day = value;
-          break;
-        case 'hour':
-          hours = value;
-          break;
-        case 'minute':
-          minutes = value;
-          break;
-        case 'second':
-          seconds = value;
-          break;
-        default:
-          // Ignore other parts
-          break;
-      }
     });
-
-    // Construct the parsed date
-    const parsedDate = new Date(year, month - 1, day, hours, minutes, seconds);
-
-    // If the constructed date is invalid, throw an error
-    if (isNaN(parsedDate.getTime())) {
-      throw new Error('Invalid date');
-    }
 
     // Return the detailed parsed date object
     return {
       ...formattedObj,
       rawParts: formattedParts,
       formattedDate: formattedParts.map((p) => p.value).join(''),
-      dateObj: parsedDate,
+      dateObj: date,
     };
   } catch (err) {
     // Handle any errors that occur during parsing
