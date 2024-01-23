@@ -26,11 +26,22 @@ const formatDateTime = (
   date =
     typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
 
-  const dateObj: Date = date instanceof Date ? date : new Date(date);
+  // Ensure default options include date and time components
+  const defaultOptions: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true, // Use 12-hour format by default, can be overridden by intlOptions
+    ...intlOptions,
+  };
+
   let formatter;
 
   try {
-    formatter = new Intl.DateTimeFormat(locale, intlOptions);
+    formatter = new Intl.DateTimeFormat(locale, defaultOptions);
   } catch (err) {
     if (err instanceof Error) {
       throw new Error(err.message);
@@ -39,7 +50,7 @@ const formatDateTime = (
     }
   }
 
-  return formatter.format(dateObj);
+  return formatter.format(date);
 };
 
 export default withErrorBoundary<typeof formatDateTime>(formatDateTime);

@@ -117,6 +117,17 @@ export const stringToDate = (dateString: string): Date => {
       minuteIndex: 5,
       secondIndex: 6,
     }, // DD.MM.YYYY HH:MM:SS
+
+    // ISO 8601 Timestamp format
+    {
+      regex: /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/,
+      yearIndex: 1,
+      monthIndex: 2,
+      dayIndex: 3,
+      hourIndex: 4,
+      minuteIndex: 5,
+      secondIndex: 6,
+    }, // YYYY-MM-DDTHH:MM:SS
   ];
 
   // Iterate through each supported date format.
