@@ -1,6 +1,6 @@
 import getQuarter from '../getQuarter';
 
-describe('getQuarter function', () => {
+describe('dateTime - getQuarter', () => {
   test('returns 1 for dates in the first quarter', () => {
     expect(getQuarter('2024-01-01')).toBe(1); // Beginning of Q1
     expect(getQuarter('2024-02-15')).toBe(1); // Middle of Q1
