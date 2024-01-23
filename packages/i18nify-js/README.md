@@ -563,18 +563,6 @@ console.log(add(new Date(2024, 0, 23), 3, 'years')); // Outputs a date 3 years a
 
 🌍📆 This global time stylist effortlessly turns your dates into beautifully formatted strings, tailored to different locales. Whether you're dealing with international clients or just love the beauty of diverse date formats, `formatDate` is your go-to function. It leverages the power of the Intl.DateTimeFormat API, ensuring that your dates always dress to impress, no matter where they're displayed. 🎩🌟
 
-##### Features
-
-- 🌐 **Global Savvy:** Supports various locales, making it perfect for international applications.
-- ⚙️ **Customizable:** Offers a wide range of formatting options through `intlOptions`.
-- 🔄 **Flexible Inputs:** Accepts both Date objects and date strings in recognized formats.
-
-##### Parameters
-
-1. `date` (DateInput): The date to format. It can be a Date object or a string in a supported format.
-2. `locale` (Locale): The locale string to use for formatting. If not provided, the function tries to use the global locale or the browser's default.
-3. `intlOptions` (DateFormatOptions): Optional configuration for additional formatting options.
-
 ##### Examples
 
 ```javascript
