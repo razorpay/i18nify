@@ -15,7 +15,11 @@ const add = (
   value: number,
   unit: 'days' | 'months' | 'years',
 ): Date => {
-  if ((value !== 0 && !Number(value)) || value === Infinity)
+  if (
+    (value !== 0 && !Number(value)) ||
+    value === Infinity ||
+    value === -Infinity
+  )
     throw new Error('Invalid value passed!');
 
   date =
