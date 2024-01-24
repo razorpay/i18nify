@@ -1,4 +1,4 @@
-# i18nify
+# i18nify-JS
 
 _A one-stop solution built in javascript to provide internationalization support._
 
@@ -8,7 +8,7 @@ And hey, hang tight—I’ll break down each of these enchanting modules in the 
 
 ## Install
 
-`yarn add i18nify`
+`yarn add @razorpay/i18nify-js`
 
 ## Local Setup / Want to Contribute ?
 

@@ -36,7 +36,9 @@ const formatTime = (
   let formattedTime;
 
   try {
-    formattedTime = formatDateTime(date, locale, fullOptions);
+    formattedTime = formatDateTime(date, locale, fullOptions)
+      .split(',')[1]
+      .trim();
   } catch (err) {
     if (err instanceof Error) {
       throw new Error(err.message);
