@@ -1,3 +1,5 @@
+import { supportedDateFormats } from './data/supportedDateFormats';
+
 /**
  * Converts a string representation of a date into a Date object.
  * The function supports various date and timestamp formats,
@@ -10,132 +12,6 @@
  * @throws {Error} If the date format is not recognized.
  */
 export const stringToDate = (dateString: string): Date => {
-  // List of supported date and timestamp formats.
-  const supportedDateFormats = [
-    // Date formats
-    {
-      regex: /^(\d{4})\/(\d{2})\/(\d{2})$/,
-      yearIndex: 1,
-      monthIndex: 2,
-      dayIndex: 3,
-    }, // YYYY/MM/DD
-    {
-      regex: /^(\d{2})\/(\d{2})\/(\d{4})$/,
-      yearIndex: 3,
-      monthIndex: 2,
-      dayIndex: 1,
-    }, // DD/MM/YYYY
-    {
-      regex: /^(\d{4})\.(\d{2})\.(\d{2})$/,
-      yearIndex: 1,
-      monthIndex: 2,
-      dayIndex: 3,
-    }, // YYYY.MM.DD
-    {
-      regex: /^(\d{2})-(\d{2})-(\d{4})$/,
-      yearIndex: 3,
-      monthIndex: 2,
-      dayIndex: 1,
-    }, // DD-MM-YYYY
-    {
-      regex: /^(\d{2})\/(\d{2})\/(\d{4})$/,
-      yearIndex: 3,
-      monthIndex: 1,
-      dayIndex: 2,
-    }, // MM/DD/YYYY
-    {
-      regex: /^(\d{4})-(\d{2})-(\d{2})$/,
-      yearIndex: 1,
-      monthIndex: 2,
-      dayIndex: 3,
-    }, // YYYY-MM-DD
-    {
-      regex: /^(\d{4})\.\s*(\d{2})\.\s*(\d{2})\.\s*$/,
-      yearIndex: 1,
-      monthIndex: 2,
-      dayIndex: 3,
-    }, // YYYY. MM. DD.
-    {
-      regex: /^(\d{2})\.(\d{2})\.(\d{4})$/,
-      yearIndex: 3,
-      monthIndex: 2,
-      dayIndex: 1,
-    }, // DD.MM.YYYY
-    {
-      regex: /^(\d{2})\.(\d{2})\.(\d{4})$/,
-      yearIndex: 3,
-      monthIndex: 1,
-      dayIndex: 2,
-    }, // MM.DD.YYYY
-
-    // Timestamp formats
-    {
-      regex: /^(\d{4})\/(\d{2})\/(\d{2}) (\d{2}):(\d{2}):(\d{2})$/,
-      yearIndex: 1,
-      monthIndex: 2,
-      dayIndex: 3,
-      hourIndex: 4,
-      minuteIndex: 5,
-      secondIndex: 6,
-    }, // YYYY/MM/DD HH:MM:SS
-    {
-      regex: /^(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
-      yearIndex: 3,
-      monthIndex: 2,
-      dayIndex: 1,
-      hourIndex: 4,
-      minuteIndex: 5,
-      secondIndex: 6,
-    }, // DD/MM/YYYY HH:MM:SS
-    {
-      regex: /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/,
-      yearIndex: 1,
-      monthIndex: 2,
-      dayIndex: 3,
-      hourIndex: 4,
-      minuteIndex: 5,
-      secondIndex: 6,
-    }, // YYYY-MM-DD HH:MM:SS
-    {
-      regex: /^(\d{2})-(\d{2})-(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
-      yearIndex: 3,
-      monthIndex: 2,
-      dayIndex: 1,
-      hourIndex: 4,
-      minuteIndex: 5,
-      secondIndex: 6,
-    }, // DD-MM-YYYY HH:MM:SS
-    {
-      regex: /^(\d{4})\.(\d{2})\.(\d{2}) (\d{2}):(\d{2}):(\d{2})$/,
-      yearIndex: 1,
-      monthIndex: 2,
-      dayIndex: 3,
-      hourIndex: 4,
-      minuteIndex: 5,
-      secondIndex: 6,
-    }, // YYYY.MM.DD HH:MM:SS
-    {
-      regex: /^(\d{2})\.(\d{2})\.(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
-      yearIndex: 3,
-      monthIndex: 2,
-      dayIndex: 1,
-      hourIndex: 4,
-      minuteIndex: 5,
-      secondIndex: 6,
-    }, // DD.MM.YYYY HH:MM:SS
-
-    // ISO 8601 Timestamp format
-    {
-      regex: /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/,
-      yearIndex: 1,
-      monthIndex: 2,
-      dayIndex: 3,
-      hourIndex: 4,
-      minuteIndex: 5,
-      secondIndex: 6,
-    }, // YYYY-MM-DDTHH:MM:SS
-  ];
-
   // Iterate through each supported date format.
   for (const format of supportedDateFormats) {
     const match = dateString.match(format.regex);
@@ -151,7 +27,20 @@ export const stringToDate = (dateString: string): Date => {
       const second = format.secondIndex ? match[format.secondIndex] : '00';
 
       // Construct and return the Date object.
-      return new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}`);
+      try {
+        const dateObj = new Date(
+          `${year}-${month}-${day}T${hour}:${minute}:${second}`,
+        );
+
+        if (dateObj.getTime()) return dateObj;
+        else throw new Error('Invalid Date!');
+      } catch (err) {
+        if (err instanceof Error) {
+          throw new Error(err.message);
+        } else {
+          throw new Error(`An unknown error occurred = ${err}`);
+        }
+      }
     }
   }
 

@@ -19,5 +19,15 @@ export interface ParsedDateTime extends FormattedPartsObject {
   rawParts: Array<{ type: string; value: unknown }>;
   formattedDate: string;
   dateObj: Date | null;
-};
+}
 
+export interface SupportedDateFormats {
+  regex: RegExp;
+  yearIndex: number;
+  monthIndex: number;
+  dayIndex: number;
+  hourIndex?: number;
+  minuteIndex?: number;
+  secondIndex?: number;
+  format: string;
+}
