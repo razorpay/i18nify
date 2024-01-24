@@ -33,15 +33,15 @@ export const stringToDate = (dateString: string): Date => {
     }, // YYYY.MM.DD
     {
       regex: /^(\d{2})-(\d{2})-(\d{4})$/,
-      yearIndex: 1,
+      yearIndex: 3,
       monthIndex: 2,
-      dayIndex: 3,
+      dayIndex: 1,
     }, // DD-MM-YYYY
     {
       regex: /^(\d{2})\/(\d{2})\/(\d{4})$/,
-      yearIndex: 1,
-      monthIndex: 2,
-      dayIndex: 3,
+      yearIndex: 3,
+      monthIndex: 1,
+      dayIndex: 2,
     }, // MM/DD/YYYY
     {
       regex: /^(\d{4})-(\d{2})-(\d{2})$/,
@@ -57,10 +57,16 @@ export const stringToDate = (dateString: string): Date => {
     }, // YYYY. MM. DD.
     {
       regex: /^(\d{2})\.(\d{2})\.(\d{4})$/,
-      yearIndex: 1,
+      yearIndex: 3,
       monthIndex: 2,
-      dayIndex: 3,
+      dayIndex: 1,
     }, // DD.MM.YYYY
+    {
+      regex: /^(\d{2})\.(\d{2})\.(\d{4})$/,
+      yearIndex: 3,
+      monthIndex: 1,
+      dayIndex: 2,
+    }, // MM.DD.YYYY
 
     // Timestamp formats
     {
