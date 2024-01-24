@@ -1,6 +1,9 @@
 name: (i18nify-react) Build & Validate
 on:
   pull_request:
+    paths:
+      - 'packages/i18nify-js/**'
+      - 'packages/i18nify-react/**'
 
 jobs:
   validate:
