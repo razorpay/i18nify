@@ -30,7 +30,11 @@ fs.writeFileSync(NPMRC_PATH, npmRcContent);
 
 try {
   execa.commandSync('npm publish --access public', {
-    cwd: './',
+    cwd: './packages/i18nify-js',
+    stdio: 'inherit',
+  });
+  execa.commandSync('npm publish --access public', {
+    cwd: './packages/i18nify-react',
     stdio: 'inherit',
   });
 } finally {
