@@ -1,4 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { DateInput } from './types';
 import { stringToDate } from './utils';
 
 /**
@@ -8,7 +9,7 @@ import { stringToDate } from './utils';
  * @param date2 The second date.
  * @returns True if both dates are on the same day, false otherwise.
  */
-const isSameDay = (date1: Date, date2: Date): boolean => {
+const isSameDay = (date1: DateInput, date2: DateInput): boolean => {
   date1 =
     typeof date1 === 'string' ? new Date(stringToDate(date1)) : new Date(date1);
   date2 =
