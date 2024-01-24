@@ -1,4 +1,4 @@
-# i18nify-JS
+# i18nify
 
 _A one-stop solution built in javascript to provide internationalization support._
 
@@ -8,7 +8,7 @@ And hey, hang tight—I’ll break down each of these enchanting modules in the 
 
 ## Install
 
-`yarn add @razorpay/i18nify-js`
+`yarn add i18nify`
 
 ## Local Setup / Want to Contribute ?
 
@@ -824,28 +824,27 @@ console.log(isSameDay('2022-04-15', '2022-04-15')); // Outputs true, both repres
 
 💡 Handy Tip: Use `isSameDay` to avoid double-booking, remember anniversaries, or even to trigger daily reminders. It's your silent guardian in the realm of dates, ensuring you're always on top of your day-to-day adventures. 🎯📆🚀
 
-#### isValidDate(date)
+#### isValidDate(dateString, countryCode)
 
-🕵️‍♂️🗓️ The `isValidDate` function is like your personal detective for dates, adept at sniffing out the real from the imposters. It's an essential tool for ensuring that the date objects your application juggles are genuine and error-free. Whether it's user input, parsed data, or just a sanity check, `isValidDate` is your reliable sidekick in the world of dates and times. 🛡️⏳
+🕵️‍♂️🗓️ The `isValidDate` function now comes with an international flair! It's a robust date validator that not only checks if a date is valid but also ensures it aligns with the date format of a specific locale. Perfect for applications catering to a global audience, it scrutinizes dates against various international formats, making it a versatile tool in your date validation arsenal. 🌍⏳
 
 ##### Examples
 
 ```javascript
-// Checking a valid date object
-const validDate = new Date(2022, 3, 15);
-console.log(isValidDate(validDate)); // Outputs true
+// Validating a date string against a specific locale
+console.log(isValidDate('15/04/2022', 'GB')); // Outputs true for DD/MM/YYYY format (UK)
 
-// Testing a string that can be converted to a valid date
-console.log(isValidDate('2022-04-15')); // Outputs true
+// Checking a date string in American format
+console.log(isValidDate('04-15-2022', 'US')); // Outputs true for MM-DD-YYYY format (USA)
 
-// Trying out an invalid date string
-console.log(isValidDate('Invalid Date String')); // Outputs false
+// Testing an invalid date string for a given locale
+console.log(isValidDate('2022-15-04', 'US')); // Outputs false, incorrect format for USA
 
-// Testing with an invalid object
-console.log(isValidDate({ year: 2022, month: 4, day: 15 })); // Outputs false
+// Attempting to validate a date with an unsupported country code
+console.log(isValidDate('15.04.2022', 'ZZ')); // Outputs false, 'ZZ' is not a recognized country code
 ```
 
-💡 Pro Tip: Use `isValidDate` to validate dates in forms, when parsing data, or before performing operations that require a valid date. It’s your trusty gatekeeper, ensuring that only true dates pass through. 🚦🔍📆
+💡 Pro Tip: Employ `isValidDate` for validating user inputs in internationalized applications, ensuring compatibility with locale-specific date formats. It’s your trusty guardian, assuring that dates align with regional norms. 🚦🔍🌐
 
 #### parseDateTime(dateInput, intlOptions, locale)
 
