@@ -1,7 +1,7 @@
 import formatDateTime from '../formatDateTime';
 import { DateTimeFormatOptions } from '../types';
 
-describe('dateTime - formatDateTime function', () => {
+describe('dateTime - formatDateTime', () => {
   // Basic Functionality Tests
   test.each([
     ['2024-01-01T12:00:00', 'en-US', undefined, '1/1/2024, 12:00:00 PM'], // US format with time

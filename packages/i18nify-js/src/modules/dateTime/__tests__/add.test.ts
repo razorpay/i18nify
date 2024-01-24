@@ -17,7 +17,6 @@ describe('dateTime - add', () => {
     expect(add(startDate, 1, 'years')).toEqual(new Date(2025, 0, 1));
   });
 
-  // Edge Cases
   test('handles negative values', () => {
     const startDate = new Date(2024, 0, 10);
     expect(add(startDate, -5, 'days')).toEqual(new Date(2024, 0, 5));

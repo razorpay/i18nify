@@ -86,7 +86,7 @@ export const LOCALE_DATE_FORMATS: { [key: string]: string } = {
   'th-TH': 'DD/MM/YYYY', // Thai (Thailand)
   'en-TT': 'MM/DD/YYYY', // English (Trinidad and Tobago)
   'sw-TZ': 'DD/MM/YYYY', // Swahili (Tanzania)
-  'en-US': 'MM/DD/YYYY', // English (United States)
+  'en-US': 'MM-DD-YYYY', // English (United States)
   'es-UY': 'DD/MM/YYYY', // Spanish (Uruguay)
   'uz-UZ': 'DD/MM/YYYY', // Uzbek (Uzbekistan)
   'ar-YE': 'DD/MM/YYYY', // Arabic (Yemen)

@@ -18,7 +18,7 @@ describe('isSameDay function', () => {
     expect(isSameDay(new Date(2024, 0, 1), new Date(2024, 0, 2))).toBe(false);
   });
 
-  test('handles edge cases around month and year transitions', () => {
+  test('handles cases around month and year transitions', () => {
     expect(isSameDay('2024-01-01', '2023-12-31')).toBe(false); // Year transition
     expect(isSameDay('2024-01-31', '2024-02-01')).toBe(false); // Month transition
   });

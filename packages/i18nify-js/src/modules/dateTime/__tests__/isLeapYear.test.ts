@@ -1,6 +1,6 @@
 import isLeapYear from '../isLeapYear';
 
-describe('isLeapYear function', () => {
+describe('dateTime - isLeapYear', () => {
   test('returns true for leap years', () => {
     expect(isLeapYear(2024)).toBe(true); // Divisible by 4
     expect(isLeapYear(2000)).toBe(true); // Divisible by 100 and 400
@@ -16,7 +16,7 @@ describe('isLeapYear function', () => {
     expect(isLeapYear(2000)).toBe(true); // Century year, divisible by 100 and 400
   });
 
-  test('handles edge cases', () => {
+  test('handles cases like Year 0 is considered a leap year, Negative leap year, Negative non-leap century year', () => {
     expect(isLeapYear(0)).toBe(true); // Year 0 is considered a leap year
     expect(isLeapYear(-4)).toBe(true); // Negative leap year
     expect(isLeapYear(-100)).toBe(false); // Negative non-leap century year
