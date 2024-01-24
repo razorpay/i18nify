@@ -23,6 +23,8 @@ jobs:
           node-version: 20.3.1
       - name: Install dependencies
         run: yarn
+      - name: Build core package
+        run: yarn build-js
       - name: Create Release Pull Request & Publish packages
         id: changesets
         uses: changesets/action@v1
