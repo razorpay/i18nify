@@ -650,25 +650,6 @@ console.log(
 
 💡 Pro Tip: `formatTime` isn't just about showing the time; it's about presenting it in a way that's intuitive and familiar to your audience, wherever they may be. 🌍🕒
 
-#### getFirstDayOfWeek(locale, intlOptions)
-
-🌏📅 This global calendar guide is your key to unlocking the mysteries of the weekly cycle around the world! `getFirstDayOfWeek` dives into the diverse world of timekeeping, using the Internationalization API (Intl) to reveal which day each culture marks as the beginning of the week. Whether you're scheduling international events or just curious about global customs, this function is your go-to for aligning with local time traditions! 🔄🗓️
-
-##### Examples
-
-```javascript
-// Discovering the first day of the week in the United States
-console.log(getFirstDayOfWeek('en-US')); // Outputs 'Sunday'
-
-// Finding out the first day of the week in France
-console.log(getFirstDayOfWeek('fr-FR')); // Outputs 'Monday'
-
-// Exploring the start of the week in Egypt
-console.log(getFirstDayOfWeek('ar-EG')); // Outputs 'Saturday'
-```
-
-💡 Fun Fact: Did you know that while most of the world starts their week on Monday, some cultures consider Sunday or even Saturday as the first day? With `getFirstDayOfWeek`, you'll always be in sync with local weekly rhythms! 🌍🔍
-
 #### getQuarter(date)
 
 🗓️🌷🍂 This calendar connoisseur takes any date and magically determines its quarter, effortlessly dividing the year into four distinct parts. Whether you're tracking financial quarters, academic periods, or just curious about the season, `getQuarter` is your key to easily navigating through the year's chapters. A handy tool for anyone dealing with dates, from accountants to students! 🌟📚
