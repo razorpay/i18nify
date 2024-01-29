@@ -7,7 +7,6 @@ export { default as add } from './add';
 export { default as formatDate } from './formatDate';
 export { default as formatDateTime } from './formatDateTime';
 export { default as formatTime } from './formatTime';
-export { default as getFirstDayOfWeek } from './getFirstDayOfWeek';
 export { default as getQuarter } from './getQuarter';
 export { default as getRelativeTime } from './getRelativeTime';
 export { default as getWeek } from './getWeek';
