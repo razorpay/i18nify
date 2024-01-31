@@ -6,7 +6,7 @@ loadPolyfills()
     // Polyfills loaded successfully
     console.info('i18nify polyfills loaded successfully !');
   })
-  .catch((error) => {
+  .catch((error: any) => {
     // Handle any errors that occurred while loading polyfills
     console.error('Error loading i18nify polyfills:', error);
   });
