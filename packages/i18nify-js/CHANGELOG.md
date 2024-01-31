@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.3.0
+
+### Minor Changes
+
+- bb2a1d7: [fix]: generic type from CURRENCIES list removed
+
 ## 1.2.0
 
 ### Minor Changes

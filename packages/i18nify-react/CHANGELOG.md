@@ -1,5 +1,12 @@
 # @razorpay/i18nify-react
 
+## 3.0.0
+
+### Patch Changes
+
+- Updated dependencies [bb2a1d7]
+  - @razorpay/i18nify-js@1.3.0
+
 ## 2.0.0
 
 ### Minor Changes
