@@ -95,4 +95,4 @@ export const CURRENCIES = {
   BHD: { symbol: 'د.ب.', name: 'Bahraini Dinar' },
   OMR: { symbol: 'ر.ع.', name: 'Omani Rial' },
   JPY: { symbol: '¥', name: 'Japanese Yen' },
-};
+} as const;
