@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
 import { readdirSync } from 'fs';
@@ -31,12 +32,12 @@ const modules = getModules(MODULES_DIR);
 const moduleBundles = modules.map((_module) => ({
   input: _module.input,
   output: {
-    file: `lib/esm/${_module.name}/index.js`,
+    dir: `lib/esm/${_module.name}`,
     format: 'es',
     sourcemap: true,
-    inlineDynamicImports: true,
   },
-  plugins: [typescript(), resolve(), commonjs()],
+  plugins: [typescript(), resolve(), commonjs(), dynamicImportVars()], // Add dynamic import plugin for ESM
+  preserveModules: true, // Preserve modules for tree shaking
 }));
 
 // Create declaration files for each module
@@ -56,23 +57,23 @@ export default [
   {
     input: 'src/index.ts',
     output: {
-      file: 'lib/esm/index.js',
+      dir: 'lib/esm',
       format: 'es',
       sourcemap: true,
-      inlineDynamicImports: true,
     },
-    plugins: [typescript(), resolve(), commonjs()],
+    plugins: [typescript(), resolve(), commonjs(), dynamicImportVars()],
+    preserveModules: true, // Preserve modules for tree shaking
   },
   // ESM (ES6 module) minified build
   {
     input: 'src/index.ts',
     output: {
-      file: 'lib/esm/index.min.js',
+      dir: 'lib/esm',
       format: 'es',
       sourcemap: true,
-      inlineDynamicImports: true,
     },
     plugins: [typescript(), resolve(), commonjs(), terser()],
+    preserveModules: true, // Preserve modules for tree shaking
   },
   // Universal Module Definition (UMD) build
   {
@@ -116,7 +117,6 @@ export default [
     output: {
       file: 'lib/types/index.d.ts',
       format: 'es',
-      inlineDynamicImports: true,
     },
     plugins: [dts()],
   },
