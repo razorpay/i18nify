@@ -1,6 +1,13 @@
-name: Build & Validate
+name: (i18nify-js) Build & Validate
 on:
   pull_request:
+    paths:
+      - 'packages/i18nify-js/**'
+
+defaults:
+  run:
+    working-directory: packages/i18nify-js
+
 jobs:
   validate:
     name: Validate Source code

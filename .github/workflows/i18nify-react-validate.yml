@@ -1,0 +1,26 @@
+name: (i18nify-react) Build & Validate
+on:
+  pull_request:
+    paths:
+      - 'packages/i18nify-js/**'
+      - 'packages/i18nify-react/**'
+
+jobs:
+  validate:
+    name: Validate Source code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 20.3.1
+      - name: Install dependencies
+        run: yarn install
+      - name: run build
+        run: yarn build-react
+      - name: run eslint
+        working-directory: packages/i18nify-react
+        run: yarn lint
+      - name: run tsc
+        working-directory: packages/i18nify-react
+        run: yarn tsc

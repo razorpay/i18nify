@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.json",
+  "exclude": ["node_modules", "examples"],
+  "compilerOptions": {
+    "jsx": "react" /* Specify what JSX code is generated. */
+  }
+}
