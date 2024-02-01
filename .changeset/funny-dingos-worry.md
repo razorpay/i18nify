@@ -2,4 +2,4 @@
 "@razorpay/i18nify-js": patch
 ---
 
-[feat]: add currency conversion from lower unit to higher unit apis
+[feat]: add denomination conversion apis in currency module
