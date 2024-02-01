@@ -7,3 +7,10 @@ export interface ByParts extends FormattedPartsObject {
   isPrefixSymbol: boolean;
   rawParts: Array<{ type: string; value: unknown }>;
 }
+
+export interface CurrencyType {
+  symbol: string;
+  name: string;
+  lowerUnitName: string;
+  minorUnitMultiplier?: number;
+}

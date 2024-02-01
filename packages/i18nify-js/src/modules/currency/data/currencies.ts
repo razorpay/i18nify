@@ -463,31 +463,24 @@ export const CURRENCIES = {
     symbol: 'د.ك',
     name: 'Kuwaiti Dinar',
     lowerUnitName: 'Fils',
-    denominationMultiplier: 1000,
+    minorUnitMultiplier: 1000,
   },
   BHD: {
     symbol: 'د.ب.',
     name: 'Bahraini Dinar',
     lowerUnitName: 'Fils',
-    denominationMultiplier: 1000,
+    minorUnitMultiplier: 1000,
   },
   OMR: {
     symbol: 'ر.ع.',
     name: 'Omani Rial',
     lowerUnitName: 'Baisa',
-    denominationMultiplier: 1000,
+    minorUnitMultiplier: 1000,
   },
   JPY: {
     symbol: '¥',
     name: 'Japanese Yen',
     lowerUnitName: '',
-    denominationMultiplier: 1,
+    minorUnitMultiplier: 1,
   },
 } as const;
-
-export interface CurrencyType {
-  symbol: string;
-  name: string;
-  lowerUnitName: string;
-  denominationMultiplier?: number;
-}

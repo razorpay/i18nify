@@ -68,26 +68,26 @@ resetState();
 
 This module's your go-to guru for everything currency/number-related. 🤑 It's all about formatting, validations, and handy tricks to make dealing with money/numbers a breeze. Here are the cool APIs and utilities this Currency Module gives you to play with! 🚀💸
 
-#### convertToUpperDenomination(amount, options)
+#### convertToMajorUnit(amount, options)
 
-💵🔄 This function is your go-to tool for scaling currency values from lower to higher denominations. Just input the amount in a lower denomination (like cents or pence) along with the currency code, and voilà! You get the amount in a higher denomination (like dollars or pounds). And if you stumble upon an unsupported currency code, it'll promptly let you know by throwing an error.
+💵🔄 This function is your go-to tool for scaling currency values from lower to major units. Just input the amount in a minor unit (like cents or pence) along with the currency code, and voilà! You get the amount in a major unit (like dollars or pounds). And if you stumble upon an unsupported currency code, it'll promptly let you know by throwing an error.
 
 ##### Examples
 
 ```javascript
-console.log(convertToUpperDenomination(10000, 'USD')); // Outputs the amount in dollars for 10000 cents (e.g., 100.00)
-console.log(convertToUpperDenomination(5000, 'GBP')); // Converts 5000 pence to pounds (e.g., 50.00)
+console.log(convertToMajorUnit(10000, 'USD')); // Outputs the amount in dollars for 10000 cents (e.g., 100.00)
+console.log(convertToMajorUnit(5000, 'GBP')); // Converts 5000 pence to pounds (e.g., 50.00)
 ```
 
-#### convertToLowerDenomination(amount, options)
+#### convertToMinorUnit(amount, options)
 
-💵🔄 This function is your go-to tool for scaling currency values from higher to lower denominations. Just input the amount in a higher denomination (like dollars or pounds) along with the currency code, and voilà! You get the amount in a lower denomination (like cents or pence). And if you stumble upon an unsupported currency code, it'll promptly let you know by throwing an error.
+💵🔄 This function is your go-to tool for scaling currency values from higher to minor units. Just input the amount in a major unit (like dollars or pounds) along with the currency code, and voilà! You get the amount in a minor unit (like cents or pence). And if you stumble upon an unsupported currency code, it'll promptly let you know by throwing an error.
 
 ##### Examples
 
 ```javascript
-console.log(convertToLowerDenomination(100, 'USD')); // Outputs the amount in cents for 10000 dollars (e.g., 10000)
-console.log(convertToLowerDenomination(50, 'GBP')); // Converts 50 pounds to pence (e.g., 5000)
+console.log(convertToMinorUnit(100, 'USD')); // Outputs the amount in cents for 10000 dollars (e.g., 10000)
+console.log(convertToMinorUnit(50, 'GBP')); // Converts 50 pounds to pence (e.g., 5000)
 ```
 
 #### formatNumber(amount, options)
