@@ -75,8 +75,8 @@ This module's your go-to guru for everything currency/number-related. 🤑 It's 
 ##### Examples
 
 ```javascript
-console.log(convertToUpperDenomination(10000, 'USD')); // Outputs the amount in dollars for 10000 cents (e.g., 100.00 if the conversion rate is 100)
-console.log(convertToUpperDenomination(5000, 'GBP')); // Converts 5000 pence to pounds (e.g., 50.00 if the conversion rate is 100)
+console.log(convertToUpperDenomination(10000, 'USD')); // Outputs the amount in dollars for 10000 cents (e.g., 100.00)
+console.log(convertToUpperDenomination(5000, 'GBP')); // Converts 5000 pence to pounds (e.g., 50.00)
 ```
 
 #### convertToLowerDenomination(amount, options)
@@ -86,8 +86,8 @@ console.log(convertToUpperDenomination(5000, 'GBP')); // Converts 5000 pence to 
 ##### Examples
 
 ```javascript
-console.log(convertToLowerDenomination(100, 'USD')); // Outputs the amount in cents for 10000 dollars (e.g., 10000 if the conversion rate is 100)
-console.log(convertToLowerDenomination(50, 'GBP')); // Converts 50 pounds to pence (e.g., 5000 if the conversion rate is 100)
+console.log(convertToLowerDenomination(100, 'USD')); // Outputs the amount in cents for 10000 dollars (e.g., 10000)
+console.log(convertToLowerDenomination(50, 'GBP')); // Converts 50 pounds to pence (e.g., 5000)
 ```
 
 #### formatNumber(amount, options)
