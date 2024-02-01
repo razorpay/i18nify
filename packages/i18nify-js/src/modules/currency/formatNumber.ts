@@ -1,6 +1,7 @@
 import { CURRENCIES } from './data/currencies';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getIntlInstanceWithOptions } from '../.internal/utils';
+import { I18nifyNumberFormatOptions } from './types';
 
 // this function formats number based on different arguments passed
 const formatNumber = (
@@ -8,7 +9,7 @@ const formatNumber = (
   options: {
     currency?: keyof typeof CURRENCIES;
     locale?: string;
-    intlOptions?: Intl.NumberFormatOptions;
+    intlOptions?: I18nifyNumberFormatOptions;
   } = {},
 ): string => {
   if (!Number(amount) && Number(amount) !== 0)

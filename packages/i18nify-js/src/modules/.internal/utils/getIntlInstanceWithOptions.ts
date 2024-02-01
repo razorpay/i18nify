@@ -1,4 +1,5 @@
 import { CURRENCIES } from '../../currency/data/currencies';
+import type { I18nifyNumberFormatOptions } from '../../currency/types';
 import state from '../state';
 import { getLocale } from './getLocale';
 
@@ -6,7 +7,7 @@ export const getIntlInstanceWithOptions = (
   options: {
     currency?: keyof typeof CURRENCIES;
     locale?: string;
-    intlOptions?: Intl.NumberFormatOptions;
+    intlOptions?: I18nifyNumberFormatOptions;
   } = {},
 ) => {
   /** retrieve locale from below areas in order of preference
@@ -30,5 +31,8 @@ export const getIntlInstanceWithOptions = (
 
   if (!locale) throw new Error('Pass valid locale !');
 
-  return new Intl.NumberFormat(locale || undefined, intlOptions);
+  return new Intl.NumberFormat(
+    locale || undefined,
+    intlOptions as Intl.NumberFormatOptions,
+  );
 };
