@@ -1,0 +1,1 @@
+export { default as getDefaultLocaleForAllCountries } from './getDefaultLocaleForAllCountries';
