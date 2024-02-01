@@ -15,9 +15,7 @@ import { CURRENCIES } from "./data/currencies";
 const getCurrencyConversionRate = (currencyCode: keyof typeof CURRENCIES): number => {
     const currencyInfo = CURRENCIES[currencyCode];
     
-    if (!currencyInfo) {
-        throw new Error(`Unsupported currency ${currencyCode}`);
-    }
+    if (!currencyInfo) throw new Error(`Unsupported currency ${currencyCode}`);
 
     return currencyInfo.conversionRate;
 }

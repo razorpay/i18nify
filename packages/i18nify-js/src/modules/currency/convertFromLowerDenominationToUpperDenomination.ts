@@ -16,10 +16,8 @@ import { CURRENCIES } from "./data/currencies";
 const convertFromLowerDenominationToUpperDenomination = (amount: number, currencyCode: keyof typeof CURRENCIES): number => {
     const currencyInfo = CURRENCIES[currencyCode];
     
-    if (!currencyInfo) {
-        throw new Error(`Unsupported currency ${currencyCode}`);
-    }
-
+    if (!currencyInfo) throw new Error(`Unsupported currency ${currencyCode}`);
+    
     const higherCurrencyValue = amount / currencyInfo.conversionRate;
     return higherCurrencyValue;
 }
