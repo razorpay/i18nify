@@ -29,7 +29,7 @@ Welcome to the command center for your i18n experience! This module serves as th
 
 #### Functions
 
-**setState(newState: Partial`<I18nState>`):** Customize and update your i18n state with ease! Whether you're changing locales or tweaking directions, this function is your ticket to tailor your i18n experience precisely how you want it! 🎨
+**setState(newState: Partial `<I18nState>`):** Customize and update your i18n state with ease! Whether you're changing locales or tweaking directions, this function is your ticket to tailor your i18n experience precisely how you want it! 🎨
 
 ```
 import { setState } from "@razorpay/i18nify-js/core";
@@ -63,6 +63,24 @@ import { resetState } from "@razorpay/i18nify-js/core";
 // Reset everything!
 resetState();
 ```
+
+**getDefaultLocales():** 🌐 This powerhouse function is like the United Nations of locales, bringing together a world of country codes and their corresponding default locales. It's simple: call it, and you get an object packed with every country code linked to its default locale. From 'IN' to 'MY', and beyond, gearing up your app to go global has never been easier! 🌍✨
+
+##### Examples
+
+```javascript
+// Retrieve default locales for all countries
+const locales = getDefaultLocales();
+console.log(locales); // { IN: 'en-IN', MY: 'ms-MY', ... }
+
+// Accessing the default locale for India
+console.log(locales.IN); // 'en-IN'
+
+// Accessing the default locale for Malaysia
+console.log(locales.MY); // 'ms-MY'
+```
+
+With this module, localizing your application is straightforward and efficient. It's like having a world map of languages and cultures right at your fingertips. Dive in and give your users the local touch they deserve! 🌐✨
 
 ### Module 01: Currency
 
