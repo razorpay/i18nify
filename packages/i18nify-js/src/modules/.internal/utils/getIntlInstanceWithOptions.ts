@@ -1,11 +1,10 @@
-import { CURRENCIES } from '../../currency/data/currencies';
-import type { I18nifyNumberFormatOptions } from '../../currency/types';
+import type { CurrencyCodeType, I18nifyNumberFormatOptions } from '../../currency/types';
 import state from '../state';
 import { getLocale } from './getLocale';
 
 export const getIntlInstanceWithOptions = (
   options: {
-    currency?: keyof typeof CURRENCIES;
+    currency?: CurrencyCodeType;
     locale?: string;
     intlOptions?: I18nifyNumberFormatOptions;
   } = {},

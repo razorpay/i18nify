@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CURRENCIES } from './data/currencies';
-import { CurrencyType } from './types';
+import { CurrencyCodeType, CurrencyType } from './types';
 
 /**
  * Converts an amount from a minor currency unit to a major currency unit.
@@ -17,7 +17,7 @@ import { CurrencyType } from './types';
 const convertToMajorUnit = (
   amount: number,
   options: {
-    currency: keyof typeof CURRENCIES;
+    currency: CurrencyCodeType;
   },
 ): number => {
   const currencyInfo = CURRENCIES[options.currency] as CurrencyType;

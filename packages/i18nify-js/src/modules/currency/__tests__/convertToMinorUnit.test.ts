@@ -1,10 +1,10 @@
 import convertToMinorUnit from '../convertToMinorUnit';
-import { CURRENCIES } from '../data/currencies';
+import { CurrencyCodeType } from '../types';
 
 describe('currency - convertToMinorUnit', () => {
   const testCases: {
     amount: number;
-    currency: keyof typeof CURRENCIES;
+    currency: CurrencyCodeType;
     expectedResult: number;
   }[] = [
     { amount: 1, currency: 'USD', expectedResult: 100 },

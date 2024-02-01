@@ -1,6 +1,6 @@
-import { CURRENCIES } from './data/currencies';
 import {
   ByParts,
+  CurrencyCodeType,
   FormattedPartsObject,
   I18nifyNumberFormatOptions,
 } from './types';
@@ -11,7 +11,7 @@ import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
 const formatNumberByParts = (
   amount: string | number,
   options: {
-    currency?: keyof typeof CURRENCIES;
+    currency?: CurrencyCodeType;
     locale?: string;
     intlOptions?: I18nifyNumberFormatOptions;
   } = {},

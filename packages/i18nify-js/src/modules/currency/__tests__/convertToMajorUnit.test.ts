@@ -1,10 +1,10 @@
 import convertToMajorUnit from '../convertToMajorUnit';
-import { CURRENCIES } from '../data/currencies';
+import { CurrencyCodeType } from '../types';
 
 describe('currency - convertToMajorUnit', () => {
   const testCases: {
     amount: number;
-    currency: keyof typeof CURRENCIES;
+    currency: CurrencyCodeType;
     expectedResult: number;
   }[] = [
     { amount: 100, currency: 'USD', expectedResult: 1 },
