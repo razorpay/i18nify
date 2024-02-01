@@ -1,5 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { CURRENCIES } from './data/currencies';
+import { CURRENCIES, CurrencyType } from './data/currencies';
 
 /**
  * Converts an amount from a lower currency denomination to a higher currency denomination.
@@ -19,13 +19,12 @@ const convertToUpperDenomination = (
     currency: keyof typeof CURRENCIES;
   },
 ): number => {
-  const currencyInfo = CURRENCIES[options.currency];
+  const currencyInfo = CURRENCIES[options.currency] as CurrencyType;
 
   if (!currencyInfo)
     throw new Error(`Unsupported currency ${options.currency}`);
 
-  const denominationMultiplier =
-    ((currencyInfo as any).denominationMultiplier as number | undefined) || 100;
+  const denominationMultiplier = currencyInfo.denominationMultiplier || 100;
 
   const higherCurrencyValue = amount / denominationMultiplier;
   return higherCurrencyValue;

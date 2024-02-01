@@ -127,7 +127,7 @@ export const CURRENCIES = {
   ETB: {
     symbol: 'ብር',
     name: 'Ethiopian Birr',
-    lowerUnitName:'Santim',
+    lowerUnitName: 'Santim',
   },
   EUR: {
     symbol: '€',
@@ -463,24 +463,31 @@ export const CURRENCIES = {
     symbol: 'د.ك',
     name: 'Kuwaiti Dinar',
     lowerUnitName: 'Fils',
-    denominationMultiplier: 1000
+    denominationMultiplier: 1000,
   },
   BHD: {
     symbol: 'د.ب.',
     name: 'Bahraini Dinar',
     lowerUnitName: 'Fils',
-    denominationMultiplier: 1000
+    denominationMultiplier: 1000,
   },
   OMR: {
     symbol: 'ر.ع.',
     name: 'Omani Rial',
     lowerUnitName: 'Baisa',
-    denominationMultiplier: 1000
+    denominationMultiplier: 1000,
   },
   JPY: {
     symbol: '¥',
     name: 'Japanese Yen',
     lowerUnitName: '',
-    denominationMultiplier: 1
-  }
+    denominationMultiplier: 1,
+  },
 } as const;
+
+export interface CurrencyType {
+  symbol: string;
+  name: string;
+  lowerUnitName: string;
+  denominationMultiplier?: number;
+}

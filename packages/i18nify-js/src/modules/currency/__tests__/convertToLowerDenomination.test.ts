@@ -19,8 +19,9 @@ describe('currency - convertToLowerDenomination', () => {
   });
 
   it('should throw an error for unsupported currency codes', () => {
-    const unsupportedCurrencyCode = 'XXX' as any; // Casting to 'any' to simulate runtime scenario
+    const unsupportedCurrencyCode = 'XXX';
     expect(() => {
+      // @ts-expect-error intented invalid currencyCode for testing
       convertToLowerDenomination(100, { currency: unsupportedCurrencyCode });
     }).toThrow('Unsupported currency XXX');
   });

@@ -1,5 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { CURRENCIES } from './data/currencies';
+import { CURRENCIES, CurrencyType } from './data/currencies';
 
 /**
  * Converts an amount from a higher currency denomination to a lower currency denomination.
@@ -19,13 +19,12 @@ const convertToLowerDenomination = (
     currency: keyof typeof CURRENCIES;
   },
 ): number => {
-  const currencyInfo = CURRENCIES[options.currency];
+  const currencyInfo = CURRENCIES[options.currency] as CurrencyType;
 
   if (!currencyInfo)
     throw new Error(`Unsupported currency ${options.currency}`);
 
-  const denominationMultiplier =
-    ((currencyInfo as any).denominationMultiplier as number | undefined) || 100;
+  const denominationMultiplier = currencyInfo.denominationMultiplier || 100;
 
   const lowerCurrencyValue = amount * denominationMultiplier;
   return lowerCurrencyValue;

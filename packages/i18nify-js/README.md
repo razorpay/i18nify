@@ -131,31 +131,26 @@ console.log(getCurrencyList()); /* {
     symbol: 'د.إ',
     name: 'United Arab Emirates Dirham',
     lowerUnitName: 'Fils',
-    conversionRate: 100
   },
   ALL: {
     symbol: 'Lek',
     name: 'Albanian Lek',
     lowerUnitName: 'Qindarka',
-    conversionRate: 100
   },
   AMD: {
     symbol: '֏',
     name: 'Armenian Dram',
     lowerUnitName: 'Luma',
-    conversionRate: 100
   },
   ARS: {
     symbol: 'ARS',
     name: 'Argentine Peso',
     lowerUnitName: 'Centavo',
-    conversionRate: 100
   },
   AUD: {
     symbol: 'A$',
     name: 'Australian Dollar',
     lowerUnitName: 'Cent',
-    conversionRate: 100
   },
   ... rest of the country
 } */
