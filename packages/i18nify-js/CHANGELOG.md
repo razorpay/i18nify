@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.3.1
+
+### Patch Changes
+
+- 41852b9: [feat]: add major/minor conversion apis in currency module
+
 ## 1.3.0
 
 ### Minor Changes
