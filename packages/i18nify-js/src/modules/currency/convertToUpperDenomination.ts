@@ -24,7 +24,8 @@ const convertToUpperDenomination = (
   if (!currencyInfo)
     throw new Error(`Unsupported currency ${options.currency}`);
 
-  const denominationMultiplier =  currencyInfo.denominationMultiplier || 100;
+  const denominationMultiplier =
+    ((currencyInfo as any).denominationMultiplier as number | undefined) || 100;
 
   const higherCurrencyValue = amount / denominationMultiplier;
   return higherCurrencyValue;

@@ -17,13 +17,15 @@ const convertToLowerDenomination = (
   amount: number,
   options: {
     currency: keyof typeof CURRENCIES;
-  }
+  },
 ): number => {
   const currencyInfo = CURRENCIES[options.currency];
 
-  if (!currencyInfo) throw new Error(`Unsupported currency ${options.currency}`);
+  if (!currencyInfo)
+    throw new Error(`Unsupported currency ${options.currency}`);
 
-  const denominationMultiplier =  currencyInfo.denominationMultiplier || 100;
+  const denominationMultiplier =
+    ((currencyInfo as any).denominationMultiplier as number | undefined) || 100;
 
   const lowerCurrencyValue = amount * denominationMultiplier;
   return lowerCurrencyValue;
