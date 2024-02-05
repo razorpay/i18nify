@@ -11,7 +11,7 @@ const getCountryFlagAsSvg = async (countryCode: string): Promise<string> => {
   const code = countryCode.toUpperCase();
 
   try {
-    const svgModule = await import(`./data/${code}.svg`);
+    const svgModule = await import(`./data/${code}.ts`);
     return svgModule.default;
   } catch (error) {
     throw new Error(`Error loading the SVG for ${countryCode}: ${error}`);
