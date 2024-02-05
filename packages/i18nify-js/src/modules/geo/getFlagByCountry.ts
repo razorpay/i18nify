@@ -7,17 +7,17 @@ import { withErrorBoundary } from '../../common/errorBoundary';
  * @param countryCode The country code of the flag to retrieve.
  * @returns A promise that resolves to the SVG string for the given country code.
  */
-const getCountryFlagAsSvg = async (countryCode: string): Promise<string> => {
+const getFlagByCountry = async (countryCode: string): Promise<string> => {
   const code = countryCode.toUpperCase();
 
   try {
-    const svgModule = await import(`./data/${code}.ts`);
+    const svgModule = await import(`./data/${code}.mjs`);
     return svgModule.default;
   } catch (error) {
     throw new Error(`Error loading the SVG for ${countryCode}: ${error}`);
   }
 };
 
-export default withErrorBoundary<typeof getCountryFlagAsSvg>(
-  getCountryFlagAsSvg,
+export default withErrorBoundary<typeof getFlagByCountry>(
+  getFlagByCountry,
 );
