@@ -64,6 +64,56 @@ import { resetState } from "@razorpay/i18nify-js/core";
 resetState();
 ```
 
+**getAllLocales():** 🌍 The Global Gathering. Dive into the diversity of our planet with getAllLocales! This function is your atlas, mapping out a rich array of locales for each country. With a simple call, embark on a journey through countries and their multiple locales, from the peaks of Peru to the sands of Saudi Arabia. Whether it's for localization, cultural exploration, or linguistic curiosity, getAllLocales is your ticket to a world tour of languages! 🗺️✨
+
+##### Examples
+
+```javascript
+// Retrieve all locales for every country
+const allLocales = getAllLocales();
+console.log(allLocales); // { AE: ['ar_AE', 'en_AE'], AL: ['sq_AL'], ... }
+
+// Exploring locales for United Arab Emirates
+console.log(allLocales.AE); // ['ar_AE', 'en_AE']
+
+// Checking out the locales for Albania
+console.log(allLocales.AL); // ['sq_AL']
+```
+
+Embrace the linguistic landscape of our world. getAllLocales is your guide to the rich tapestry of languages that paint our global village. 🌐📚
+
+**getDefaultLocaleByCountry(countryCode):** 📌 Pinpoint Precision. When precision matters, getDefaultLocaleByCountry is your meticulous matchmaker, pairing country codes with their default locales. This function is like having a linguistic concierge for each country, ensuring you deliver the right cultural context straight out of the box. From the bustling streets of Tokyo to the serene fjords of Norway, setting the scene for your users has never been more accurate. 🎯✨
+
+##### Examples
+
+```javascript
+// Get the default locale for Japan
+const japanLocale = getDefaultLocaleByCountry('JP');
+console.log(japanLocale); // 'ja-JP'
+
+// Get the default locale for Norway
+const norwayLocale = getDefaultLocaleByCountry('NO');
+console.log(norwayLocale); // 'no-NO'
+```
+
+With getDefaultLocaleByCountry, you're not just coding; you're curating cultural experiences. Fine-tune your application's language settings and celebrate the diversity of your user base! 🌍💬
+
+**getLocalesByCountry(countryCode):** 🧭 Locale Explorer. Set sail on a linguistic expedition with getLocalesByCountry! This function is your compass, pointing to all the locales a country embraces. Whether you're tailoring content for the cosmopolitan cities of Canada or the traditional towns of Tanzania, this function ensures you have the full list of linguistic lanes to traverse. It's not just a function; it's your passport to personalization and precision. 🛤️✨
+
+##### Examples
+
+```javascript
+// Retrieve locales for Canada
+const canadaLocales = getLocalesByCountry('CA');
+console.log(canadaLocales); // ['en_CA', 'fr_CA', ...]
+
+// Retrieve locales for Tanzania
+const tanzaniaLocales = getLocalesByCountry('TZ');
+console.log(tanzaniaLocales); // ['sw_TZ', 'en_TZ']
+```
+
+With getLocalesByCountry, your application doesn't just speak languages; it speaks cultures. Navigate the nuances of localization and give your users a home feeling, no matter where they are. 🌍🔍
+
 **getDefaultLocales():** 🌐 This powerhouse function is like the United Nations of locales, bringing together a world of country codes and their corresponding default locales. It's simple: call it, and you get an object packed with every country code linked to its default locale. From 'IN' to 'MY', and beyond, gearing up your app to go global has never been easier! 🌍✨
 
 ##### Examples
