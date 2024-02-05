@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 300">
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 300">
 <rect fill="#3A75C4" width="500" height="300"/>
 <rect fill="#CE1126" width="500" height="225"/>
 <rect fill="#FFF" width="500" height="150"/>
@@ -11,3 +11,6 @@
 <use xlink:href="#star" y="64.4166"/>
 <use xlink:href="#star" y="96.625"/>
 </svg>
+`;
+
+export default svg;

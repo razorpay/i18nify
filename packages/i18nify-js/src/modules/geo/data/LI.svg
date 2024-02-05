@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" viewBox="0 0 1000 600">
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" viewBox="0 0 1000 600">
 <rect width="1000" height="600" fill="#002b7f"/>
 <rect y="300" width="1000" height="300" fill="#ce1126"/>
 <g fill="#ffd83d" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -54,3 +54,6 @@
 </g>
 </g>
 </svg>
+`;
+
+export default svg;

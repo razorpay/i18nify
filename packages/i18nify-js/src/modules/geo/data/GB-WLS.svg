@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 498">
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 498">
 <rect width="830" height="249" y="249" fill="#00ab39"/>
 <rect width="830" height="249" fill="#fff"/>
 <g transform="translate(1.72,0.97)" stroke="#000" stroke-width="1.8">
@@ -7,3 +7,6 @@
 <path d="m 234.76,68.178 12.02,2.225 c 0,0 -8.46,11.349 -12.02,-2.225 z" fill="#000" stroke-linejoin="round"/>
 </g>
 </svg>
+`;
+
+export default svg;

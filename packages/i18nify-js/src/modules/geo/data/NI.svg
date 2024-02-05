@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 600">
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 600">
 <defs>
 <linearGradient id="cap1" gradientUnits="userSpaceOnUse" x1="498.738" y1="289.055" x2="500.626" y2="283.42">
 <stop stop-color="#510000" offset="0"/>
@@ -159,3 +159,6 @@
 </g>
 <path fill="#c8a400" d="m500,224.874 -32.1418,55.6856 -32.8579,56.8991 64.2977,-0.007 65.7018,0.007 -32.153,-55.683 -32.847,-56.902zm0,3.00212 31.5491,54.652 30.8506,53.4278 -63.1018,-0.004 -61.7012,0.004 31.5597,-54.6448z"/>
 </svg>
+`;
+
+export default svg;
