@@ -27,26 +27,32 @@ Go on, code conqueror, the adventure awaits!
 
 Welcome to the command center for your i18n experience! This module serves as the control hub, housing the essential functions to manage your i18n settings seamlessly. This module offers a trio of functions to handle all your i18n needs. Whether it's checking the current state, customizing settings, or starting afresh, this module has got you covered in managing your i18n world! 🚀
 
-#### Functions
+#### setState(newState)
 
-**setState(newState: Partial `<I18nState>`):** Customize and update your i18n state with ease! Whether you're changing locales or tweaking directions, this function is your ticket to tailor your i18n experience precisely how you want it! 🎨
+Customize and update your i18n state with ease! Whether you're changing locales or tweaking directions, this function is your ticket to tailor your i18n experience precisely how you want it! 🎨
 
-```
-import { setState } from "@razorpay/i18nify-js/core";
+##### Examples
+
+```javascript
+import { setState } from '@razorpay/i18nify-js/core';
 
 // Set a new locale
 setState({ locale: 'en-US' });
 ```
 
-**getState():** Peek into the current i18n state – the active locale, direction, and country settings – at any time, giving you a snapshot of your i18n setup! 📸
+#### getState()
 
-```
+Peek into the current i18n state – the active locale, direction, and country settings – at any time, giving you a snapshot of your i18n setup! 📸
+
+##### Examples
+
+```javascript
 import { getState } from '@razorpay/i18nify-js/core';
 
 // Get the current state
 const currentState = getState();
 console.log(currentState);
-    /*
+/*
     {
         locale: 'en-US',
         direction: '',
@@ -55,16 +61,22 @@ console.log(currentState);
     */
 ```
 
-**resetState():** Made a mess? No worries! Hit the reset button with this function. It's the ultimate undo for your i18n adjustments, whisking your settings back to their pristine defaults. Fresh start, anyone? 🆕
+#### resetState()
 
-```
-import { resetState } from "@razorpay/i18nify-js/core";
+Made a mess? No worries! Hit the reset button with this function. It's the ultimate undo for your i18n adjustments, whisking your settings back to their pristine defaults. Fresh start, anyone? 🆕
+
+##### Examples
+
+```javascript
+import { resetState } from '@razorpay/i18nify-js/core';
 
 // Reset everything!
 resetState();
 ```
 
-**getAllLocales():** 🌍 The Global Gathering. Dive into the diversity of our planet with getAllLocales! This function is your atlas, mapping out a rich array of locales for each country. With a simple call, embark on a journey through countries and their multiple locales, from the peaks of Peru to the sands of Saudi Arabia. Whether it's for localization, cultural exploration, or linguistic curiosity, getAllLocales is your ticket to a world tour of languages! 🗺️✨
+#### getAllLocales()
+
+🌍 The Global Gathering. Dive into the diversity of our planet with getAllLocales! This function is your atlas, mapping out a rich array of locales for each country. With a simple call, embark on a journey through countries and their multiple locales, from the peaks of Peru to the sands of Saudi Arabia. Whether it's for localization, cultural exploration, or linguistic curiosity, getAllLocales is your ticket to a world tour of languages! 🗺️✨
 
 ##### Examples
 
@@ -82,7 +94,9 @@ console.log(allLocales.AL); // ['sq_AL']
 
 Embrace the linguistic landscape of our world. getAllLocales is your guide to the rich tapestry of languages that paint our global village. 🌐📚
 
-**getDefaultLocaleByCountry(countryCode):** 📌 Pinpoint Precision. When precision matters, getDefaultLocaleByCountry is your meticulous matchmaker, pairing country codes with their default locales. This function is like having a linguistic concierge for each country, ensuring you deliver the right cultural context straight out of the box. From the bustling streets of Tokyo to the serene fjords of Norway, setting the scene for your users has never been more accurate. 🎯✨
+#### getDefaultLocaleByCountry(countryCode)
+
+📌 Pinpoint Precision. When precision matters, getDefaultLocaleByCountry is your meticulous matchmaker, pairing country codes with their default locales. This function is like having a linguistic concierge for each country, ensuring you deliver the right cultural context straight out of the box. From the bustling streets of Tokyo to the serene fjords of Norway, setting the scene for your users has never been more accurate. 🎯✨
 
 ##### Examples
 
@@ -98,7 +112,9 @@ console.log(norwayLocale); // 'no-NO'
 
 With getDefaultLocaleByCountry, you're not just coding; you're curating cultural experiences. Fine-tune your application's language settings and celebrate the diversity of your user base! 🌍💬
 
-**getLocalesByCountry(countryCode):** 🧭 Locale Explorer. Set sail on a linguistic expedition with getLocalesByCountry! This function is your compass, pointing to all the locales a country embraces. Whether you're tailoring content for the cosmopolitan cities of Canada or the traditional towns of Tanzania, this function ensures you have the full list of linguistic lanes to traverse. It's not just a function; it's your passport to personalization and precision. 🛤️✨
+#### getLocalesByCountry(countryCode)
+
+🧭 Locale Explorer. Set sail on a linguistic expedition with getLocalesByCountry! This function is your compass, pointing to all the locales a country embraces. Whether you're tailoring content for the cosmopolitan cities of Canada or the traditional towns of Tanzania, this function ensures you have the full list of linguistic lanes to traverse. It's not just a function; it's your passport to personalization and precision. 🛤️✨
 
 ##### Examples
 
@@ -114,7 +130,9 @@ console.log(tanzaniaLocales); // ['sw_TZ', 'en_TZ']
 
 With getLocalesByCountry, your application doesn't just speak languages; it speaks cultures. Navigate the nuances of localization and give your users a home feeling, no matter where they are. 🌍🔍
 
-**getDefaultLocales():** 🌐 This powerhouse function is like the United Nations of locales, bringing together a world of country codes and their corresponding default locales. It's simple: call it, and you get an object packed with every country code linked to its default locale. From 'IN' to 'MY', and beyond, gearing up your app to go global has never been easier! 🌍✨
+#### getDefaultLocales()
+
+🌐 This powerhouse function is like the United Nations of locales, bringing together a world of country codes and their corresponding default locales. It's simple: call it, and you get an object packed with every country code linked to its default locale. From 'IN' to 'MY', and beyond, gearing up your app to go global has never been easier! 🌍✨
 
 ##### Examples
 
