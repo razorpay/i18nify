@@ -488,3 +488,21 @@ const parsedInfo = parsePhoneNumber('', countryCode);
 console.log('Country Code:', parsedInfo.countryCode); // 'JP'
 console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxxx-xxxx'
 ```
+
+### Module 03: Geo
+
+#### getFlagSvg(countryCode)
+
+Imagine a globe-trotting adventure right at your fingertips! 🌍✨ This nifty function is your digital passport, fetching the flag of a country faster than you can say "Bon Voyage!" It dives into a treasure trove of SVGs, each tied to a unique country code, ensuring your application waves the right flag every time.
+
+##### Examples
+
+```javascript
+getFlagSvg('US').then(svg => console.log(svg)); // Logs the SVG string for the United States flag
+
+getFlagSvg('JP').then(svg => console.log(svg)); // Logs the SVG string for the Japan flag
+
+getFlagSvg('BR').then(svg => console.log(svg)); // Logs the SVG string for the Brazil flag
+```
+
+Just pass the two-letter country code to `getFlagSvg`, and like magic, you'll get the SVG you need. If the code's a miss, it'll let you know, keeping your app sailing smooth!
