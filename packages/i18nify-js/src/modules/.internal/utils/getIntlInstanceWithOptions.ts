@@ -1,4 +1,7 @@
-import type { CurrencyCodeType, I18nifyNumberFormatOptions } from '../../currency/types';
+import type {
+  CurrencyCodeType,
+  I18nifyNumberFormatOptions,
+} from '../../currency/types';
 import state from '../state';
 import { getLocale } from './getLocale';
 

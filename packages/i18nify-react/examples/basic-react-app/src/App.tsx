@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import logo from './logo.svg';
 import { useI18nContext } from '@razorpay/i18nify-react';
-import { formatNumber } from '@razorpay/i18nify-js';
+import { formatNumber } from '@razorpay/i18nify-js/currency';
 
 function App() {
   const { setI18nState } = useI18nContext();
