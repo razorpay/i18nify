@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { withErrorBoundary } from '../../common/errorBoundary';
 
 /**
@@ -7,14 +8,17 @@ import { withErrorBoundary } from '../../common/errorBoundary';
  * @param countryCode The country code of the flag to retrieve.
  * @returns A promise that resolves to the SVG string for the given country code.
  */
-const getFlagByCountry = async (countryCode: string): Promise<string> => {
+const getFlagByCountry = async (countryCode: string) => {
   const code = countryCode.toUpperCase();
 
+  const filePath = `packages/i18nify-js/src/modules/geo/data/countryFlagSvgs/${code}.svg`;
+
   try {
-    const svgModule = await import(`./data/${code}.mjs`);
-    return svgModule.default;
+    const svgContent = fs.readFileSync(filePath, 'utf8');
+    return svgContent;
   } catch (error) {
-    throw new Error(`Error loading the SVG for ${countryCode}: ${error}`);
+    console.error(`Couldn't find svg for ${countryCode}`);
+    throw error;
   }
 };
 

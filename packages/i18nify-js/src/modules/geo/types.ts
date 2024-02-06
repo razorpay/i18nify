@@ -1,3 +1,3 @@
-export type SvgCollection = {
-    [countryCode: string]: string;
-  };
+export interface SvgObject {
+    [key: string]: string;
+  }
