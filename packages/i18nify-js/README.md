@@ -491,18 +491,30 @@ console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxxx-xxxx'
 
 ### Module 03: Geo
 
-#### getFlagSvg(countryCode)
+#### getFlagByCountry(countryCode)
 
-Imagine a globe-trotting adventure right at your fingertips! 🌍✨ This nifty function is your digital passport, fetching the flag of a country faster than you can say "Bon Voyage!" It dives into a treasure trove of SVGs, each tied to a unique country code, ensuring your application waves the right flag every time.
+🏳️‍🌈✨ Fetching country flags has never been easier! Just hand over a country code to this function, and it will retrieve the SVG content of the corresponding flag for you. Whether it's for displaying patriotic flair or for an international project, this function handles the lookup and ensures you get the exact visual representation of the nation's pride. In case it can't find the flag, it won't leave you hanging; it'll let you know something went wrong.
 
 ##### Examples
 
 ```javascript
-getFlagSvg('US').then(svg => console.log(svg)); // Logs the SVG string for the United States flag
+getFlagByCountry('US')
+  .then((svgContent) => console.log(svgContent)) // Logs the SVG content for the United States flag
+  .catch((error) => console.error(error));
 
-getFlagSvg('JP').then(svg => console.log(svg)); // Logs the SVG string for the Japan flag
-
-getFlagSvg('BR').then(svg => console.log(svg)); // Logs the SVG string for the Brazil flag
+getFlagByCountry('FR')
+  .then((svgContent) => console.log(svgContent)) // Logs the SVG content for the France flag
+  .catch((error) => console.error(error));
 ```
 
-Just pass the two-letter country code to `getFlagSvg`, and like magic, you'll get the SVG you need. If the code's a miss, it'll let you know, keeping your app sailing smooth!
+#### getListOfAllFlags()
+
+🌍🚩 Imagine a virtual globe where you can spin and pick any country – that's what `getListOfAllFlags` brings to your codebase. This function maps out the whole world by returning an object with country codes as keys and their respective flag SVGs as values. It's like having a world atlas in your hands, but instead of pages, you get digital, vibrant flags of each nation. If any issue arises during this global flag gathering, the function won't just sweep it under the rug; it'll raise a flag (pun intended) to let you know.
+
+##### Examples
+
+```javascript
+getListOfAllFlags()
+  .then((flags) => console.log(flags))
+  .catch((error) => console.error(error)); // Logs an object with country codes as keys and SVG content as values
+```
