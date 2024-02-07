@@ -61,5 +61,8 @@ export default function intlFormatToPartsPolyfill() {
       writable: true,
       configurable: true,
     });
+
+    // Polyfills loaded successfully
+    console.info('i18nify polyfills loaded successfully !');
   }
 }
