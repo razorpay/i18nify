@@ -1,5 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { COUNTRY_TO_DEFAULT_LOCALES } from "./data/countryToDefaultLocales";
+import { COUNTRY_TO_ALL_LOCALES } from './data/countryToAllLocales';
 
 /**
  * Retrieves the default locale for a given country.
@@ -7,9 +7,14 @@ import { COUNTRY_TO_DEFAULT_LOCALES } from "./data/countryToDefaultLocales";
  * @returns The default locale string for the given country.
  * @throws An error if the provided country code does not exist in the map.
  */
-const getDefaultLocaleByCountry = (countryCode: keyof typeof COUNTRY_TO_DEFAULT_LOCALES): string => {
-    if (countryCode in COUNTRY_TO_DEFAULT_LOCALES) return COUNTRY_TO_DEFAULT_LOCALES[countryCode];
-    else throw new Error('Invalid countryCode!');
+const getDefaultLocaleByCountry = (
+  countryCode: keyof typeof COUNTRY_TO_ALL_LOCALES,
+): string => {
+  if (countryCode in COUNTRY_TO_ALL_LOCALES)
+    return COUNTRY_TO_ALL_LOCALES[countryCode][0];
+  else throw new Error('Invalid countryCode!');
 };
 
-export default withErrorBoundary<typeof getDefaultLocaleByCountry>(getDefaultLocaleByCountry);
+export default withErrorBoundary<typeof getDefaultLocaleByCountry>(
+  getDefaultLocaleByCountry,
+);
