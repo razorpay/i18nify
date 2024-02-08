@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.4.0
+
+### Minor Changes
+
+- 5c6b356: [feat]: shared chunk created for common modules in esm
+
 ## 1.3.1
 
 ### Patch Changes
