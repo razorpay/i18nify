@@ -74,13 +74,13 @@ import { resetState } from '@razorpay/i18nify-js/core';
 resetState();
 ```
 
-### getAllLocales()
+#### getAllLocales()
 
 The `getAllLocales` function 🌐🔍 is your comprehensive guide to the linguistic landscape of the world. Acting as a detailed atlas, it provides a panoramic view of the diverse locales across all countries, from the bustling cities of Japan to the tranquil countryside of France. This function is a treasure trove for anyone engaged in localization, cultural exploration, or linguistic curiosity, offering a passport to embark on a global journey through languages and dialects.
 
 By invoking `getAllLocales`, you gain access to an extensive map detailing the array of locales for each country. It’s like unlocking a global directory, where every entry points to a unique cultural and linguistic setting 🗺️📖. This functionality enables developers and content creators to tailor experiences that resonate on a personal level with users worldwide, fostering inclusivity and understanding across borders.
 
-#### Example Usage
+##### Examples
 
 ```javascript
 // Retrieve all locales for every country
@@ -96,13 +96,13 @@ console.log(allLocales.AL); // Outputs ['sq_AL']
 
 Utilizing `getAllLocales` in your projects opens up a world of possibilities, allowing you to navigate through the rich and varied linguistic landscape of our planet 🌍💡. It serves not just as a tool for technical implementation, but as a bridge connecting the myriad cultures and languages that enrich our global village.
 
-### getDefaultLocaleByCountry(countryCode)
+#### getDefaultLocaleByCountry(countryCode)
 
 The `getDefaultLocaleByCountry` function 🌍🔧 is an essential utility designed for applications requiring localization precision. It maps a given ISO country code to its corresponding default locale, facilitating a culturally accurate and linguistically tailored user experience. This function serves as a crucial component in internationalizing applications, ensuring that content is presented in the most appropriate language and format based on the user's geographic location.
 
 By accepting a country code as its single argument, this function delivers the default locale, embodying the primary language or dialect spoken within that territory 🗣️🌐. This enables developers to automatically adjust the language settings of their application or website, promoting accessibility and enhancing user engagement across diverse cultural contexts.
 
-#### Example Usage
+##### Examples
 
 ```javascript
 // Retrieving the default locale for Germany
@@ -154,25 +154,20 @@ console.log(locales.MY); // 'ms-MY'
 
 With this module, localizing your application is straightforward and efficient. It's like having a world map of languages and cultures right at your fingertips. Dive in and give your users the local touch they deserve! 🌐✨
 
-### getLocale()
+#### getLocale()
 
 The `getLocale` function 🌍🔧 is a sleek and intelligent utility crafted to seamlessly identify and retrieve the user's current locale setting. Whether your application is scaling the digital heights of global markets or fine-tuning the nuances of local user experiences, `getLocale` serves as your navigator through the intricate web of regional language settings. This function is invaluable for developers aiming to create applications that adapt dynamically to the user's linguistic and cultural environment, offering a personalized touch right from the start.
 
-#### Example
+##### Example
 
 ```javascript
 // Dynamically retrieve the user's current locale
-
 const userLocale = getLocale();
-
 console.log(userLocale); // Outputs the detected locale, e.g., 'en-US' for a user in the United States
 
 // Example in a non-browser or unsupported environment
-
 // The output defaults to 'en-IN', ensuring broad compatibility
-
 const defaultLocale = getLocale();
-
 console.log(defaultLocale); // Outputs 'en-IN'
 ```
 
