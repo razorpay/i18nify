@@ -21,10 +21,7 @@ const getFlagByCountry = async (countryCode: string): Promise<string> => {
     return countryFlagSvgContent;
   } catch (error) {
     // Log an error message for debugging purposes if the SVG cannot be found.
-    console.error(`Couldn't find svg for ${countryCode}`);
-
-    // Rethrow the error to allow for further handling by the caller.
-    throw error;
+    throw new Error(`Couldn't find svg for ${countryCode}`);
   }
 };
 
