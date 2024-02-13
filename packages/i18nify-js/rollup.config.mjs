@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
 import { readdirSync } from 'fs';
@@ -67,7 +68,7 @@ export default [
       format: 'es',
       sourcemap: true,
     },
-    plugins: [typescript(), resolve(), commonjs()],
+    plugins: [typescript(), resolve(), commonjs(), dynamicImportVars()],
   },
   // ESM (ES6 module) minified build
   {
@@ -77,7 +78,7 @@ export default [
       format: 'es',
       sourcemap: true,
     },
-    plugins: [typescript(), resolve(), commonjs(), terser()],
+    plugins: [typescript(), resolve(), commonjs(), terser(), dynamicImportVars()],
   },
   // Universal Module Definition (UMD) build
   {
@@ -87,6 +88,7 @@ export default [
       format: 'umd',
       sourcemap: true,
       name: 'i18nify',
+      inlineDynamicImports: true,
     },
     plugins: [typescript(), resolve(), commonjs()],
   },
@@ -98,6 +100,7 @@ export default [
       format: 'umd',
       sourcemap: true,
       name: 'i18nify',
+      inlineDynamicImports: true,
     },
     plugins: [typescript(), resolve(), commonjs(), terser()],
   },
@@ -107,6 +110,7 @@ export default [
     output: {
       file: 'lib/cjs/index.js',
       format: 'cjs',
+      inlineDynamicImports: true,
     },
     plugins: [typescript(), resolve(), commonjs()],
   },

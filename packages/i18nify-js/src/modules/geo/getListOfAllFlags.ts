@@ -1,33 +1,22 @@
-import fs from 'fs';
-import path from 'path';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { SvgObject } from './types';
+import * as flags from './data/countryFlagSvgs';
+import { FlagMap } from './types';
 
 /**
- * Reads all SVG files from a given directory and returns an object with country codes as keys and SVG content as values.
- * @returns {Promise<Object>} A promise that resolves to an object containing the country codes and SVG content.
+ * Constructs and returns an object mapping country codes to their respective flag SVG content.
+ * It iterates over all exported flags from a predefined object and populates a new FlagMap object.
+ * 
+ * @returns {FlagMap} An object where each key is a country code and each value is the SVG content of that country's flag.
  */
-const getListOfAllFlags = async (): Promise<SvgObject> => {
-  const directoryPath = 'packages/i18nify-js/src/modules/geo/data/countryFlagSvgs';
+const getListOfAllFlags = (): FlagMap => {
+  const flagMap: FlagMap = {};
 
-  try {
-    const files = fs.readdirSync(directoryPath);
-    const svgObject: SvgObject = {};
+  Object.keys(flags).forEach((countryCode) => {
+    const flagContent: string = (flags as any)[countryCode];
+    flagMap[countryCode] = flagContent;
+  });
 
-    for (const file of files) {
-      if (path.extname(file) === '.svg') {
-        const countryCode = path.basename(file, '.svg');
-        const filePath = path.join(directoryPath, file);
-        const svgContent = fs.readFileSync(filePath, 'utf8');
-        svgObject[countryCode.toUpperCase()] = svgContent;
-      }
-    }
-
-    return svgObject;
-  } catch (error) {
-    console.error(`Error loading SVG files: ${error}`);
-    throw error;
-  }
+  return flagMap;
 };
 
 export default withErrorBoundary<typeof getListOfAllFlags>(getListOfAllFlags);

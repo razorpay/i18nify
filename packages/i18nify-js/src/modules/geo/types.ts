@@ -1,3 +1,1 @@
-export interface SvgObject {
-    [key: string]: string;
-  }
+export type FlagMap = Record<string, string>;
