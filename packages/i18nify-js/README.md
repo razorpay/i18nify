@@ -488,3 +488,443 @@ const parsedInfo = parsePhoneNumber('', countryCode);
 console.log('Country Code:', parsedInfo.countryCode); // 'JP'
 console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxxx-xxxx'
 ```
+
+### Module 03: Date & Time Module
+
+This module provides functions for formatting and manipulating dates and times in a locale-sensitive manner using the JavaScript Intl API & Date object.
+
+#### add(date, options:)
+
+🕒🚀 This nifty time traveler lets you leap through the calendar with ease! Whether you're planning future events or reminiscing the past, it swiftly adds days, months, or years to any given date. No more manual date calculations; this function uses JavaScript's Date object to fast-forward or rewind your dates seamlessly. 🗓️⏭️
+
+##### Examples
+
+```javascript
+// Adding 10 days to today
+console.log(add(new Date(), {value: 10, unit: 'days'})); // Outputs a date 10 days from now
+
+// Fast-forwarding 5 months from a specific date
+console.log(add('2024-01-23', {value: 5, unit: 'months'})); // Outputs a date 5 months after January 23, 2024
+
+// Jumping 3 years into the future from a date object
+console.log(add(new Date(2024, 0, 23), {value: 3, unit: 'years'})); // Outputs a date 3 years after January 23, 2024
+```
+
+💡 No matter the format of your starting date—a string or a Date object—this function handles it. Just make sure your date string matches one of the recognized formats, or else you'll be time-traveling to the era of error messages! 🛑📅
+
+#### formatDate(date, options:)
+
+🌍📆 This global time stylist effortlessly turns your dates into beautifully formatted strings, tailored to different locales. Whether you're dealing with international clients or just love the beauty of diverse date formats, `formatDate` is your go-to function. It leverages the power of the Intl.DateTimeFormat API, ensuring that your dates always dress to impress, no matter where they're displayed. 🎩🌟
+
+##### Examples
+
+```javascript
+// Basic date formatting
+console.log(formatDate(new Date(), {locale: 'en-US'})); // Outputs today's date in 'MM/DD/YYYY' format
+
+// Formatting with different locale
+console.log(formatDate('2024-05-20', {locale: 'de-DE'})); // Outputs '20.05.2024'
+
+// Using Intl.DateTimeFormat options
+console.log(
+  formatDate('2024-05-20', {locale: 'en-GB', intlOptions: {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }}),
+); // Outputs 'Monday, 20 May 2024'
+```
+
+💡 Remember, if the date string doesn't match any supported formats, the function raises the curtain on an error message! 🛑🎭
+
+#### formatDateTime(date, options:)
+
+🕰️🌍 This savvy time tailor is your go-to for dressing up dates and times in locale-specific styles. Whether you're marking milestones, scheduling global meetings, or just need that perfect date-time format, `formatDateTime` uses the Internationalization API (Intl) to translate your dates and times into the local lingo. It's like having a linguistic time machine at your fingertips! 🌟🗓️
+
+##### Examples
+
+```javascript
+// Standard date-time formatting
+console.log(formatDateTime(new Date(), {locale: 'en-US'})); // Outputs something like '1/23/2024, 10:00 AM'
+
+// Custom date-time formatting in French
+console.log(
+  formatDateTime('2024-05-20 15:00', {locale: 'fr-FR', intlOptions: {
+    weekday: 'long',
+    hour: '2-digit',
+    minute: '2-digit',
+  }}),
+); // Outputs 'lundi, 15:00'
+
+// Locale-specific date-time formatting with extended options
+console.log(
+  formatDateTime('2024-12-31 23:59', {locale: 'ja-JP', intlOptions: {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }}),
+); // Outputs '2024年12月31日 23:59:00'
+```
+
+💡 Remember, it's not just about translating the date and time; it's about presenting them in a way that feels natural and familiar to the user, no matter where they are in the world. 🌐⌚
+
+#### formatTime(date, options:)
+
+⏰🌐 This timely charmer is your key to unlocking the secrets of time presentation across different cultures. Using the wizardry of the Internationalization API (Intl), `formatTime` translates your time into a format that resonates with local customs and practices. Whether it's for scheduling international calls or just making sure you're in sync with the world's timezones, this function is your trusty sidekick in the realm of time formatting! 🌟⌚
+
+##### Examples
+
+```javascript
+// Simple time formatting
+console.log(formatTime(new Date(), {locale: 'en-US'})); // Outputs something like '10:00 AM'
+
+// Time formatting with extended options in French
+console.log(
+  formatTime('2024-05-20 15:00', {locale: 'fr-FR', intlOptions: {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }}),
+); // Outputs '15:00:00'
+
+// Custom time formatting in Japanese
+console.log(
+  formatTime('2024-05-20 23:59', {locale: 'ja-JP', intlOptions: {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  }}),
+); // Outputs '11:59 午後'
+```
+
+💡 Pro Tip: `formatTime` isn't just about showing the time; it's about presenting it in a way that's intuitive and familiar to your audience, wherever they may be. 🌍🕒
+
+#### getQuarter(date)
+
+🗓️🌷🍂 This calendar connoisseur takes any date and magically determines its quarter, effortlessly dividing the year into four distinct parts. Whether you're tracking financial quarters, academic periods, or just curious about the season, `getQuarter` is your key to easily navigating through the year's chapters. A handy tool for anyone dealing with dates, from accountants to students! 🌟📚
+
+##### Examples
+
+```javascript
+// Determining the quarter for a date in April
+console.log(getQuarter('2024-04-15')); // Outputs 2 (Q2)
+
+// Finding out the quarter for a date in November
+console.log(getQuarter(new Date(2024, 10, 25))); // Outputs 4 (Q4)
+
+// Identifying the quarter for a date in January
+console.log(getQuarter('2024-01-01')); // Outputs 1 (Q1)
+```
+
+💡 Fun Fact: Did you know that quarters are not only useful in business and academia, but also in various forms of planning and analysis? With `getQuarter`, you'll always know where you stand in the rhythm of the year! 📈🍁
+
+#### getRelativeTime(date, baseDate, options:)
+
+⏳🌏 This time-traveling virtuoso effortlessly bridges the gap between dates, offering a glimpse into the past or a peek into the future. With the help of the Internationalization API (Intl), `getRelativeTime` transforms absolute dates into relatable, human-friendly phrases like '3 hours ago' or 'in 2 days'. Whether you're reminiscing the past or anticipating the future, this function keeps you connected to time in the most intuitive way! 🚀🕰️
+
+##### Examples
+
+```javascript
+// How long ago was a past date?
+console.log(getRelativeTime('2024-01-20', new Date())); // Outputs something like '3 days ago'
+
+// How much time until a future date?
+console.log(getRelativeTime('2024-01-26', new Date())); // Outputs 'in 3 days'
+
+// Customizing output for different locales
+console.log(getRelativeTime('2024-01-26', '2024-01-23', {locale: 'fr-FR'})); // Outputs 'dans 3 jours' (in 3 days in French)
+```
+
+💡 Pro Tip: `getRelativeTime` is not just a way to express time differences; it's a bridge that connects your users to the temporal context in a way that's both meaningful and culturally aware. Time is more than seconds and minutes; it's a story, and this function helps you tell it! 📖⌚
+
+#### getWeek(date)
+
+📅🔢 This clever calendar companion swiftly calculates the week number for any given date, placing you precisely within the tapestry of the year. It's like having a bird's-eye view of the calendar, helping you navigate through the weeks with ease. Whether you're planning projects, tracking milestones, or simply curious about where you stand in the year, `getWeek` is your reliable guide through the annual journey! 🌟🗓️
+
+##### Examples
+
+```javascript
+// Finding the week number for a date in January
+console.log(getWeek('2024-01-15')); // Outputs the week number in January 2024
+
+// Determining the week number for a date in mid-year
+console.log(getWeek(new Date(2024, 5, 20))); // Outputs the week number in June 2024
+
+// Calculating the week number for a date towards the end of the year
+console.log(getWeek('2024-12-31')); // Outputs the week number at the end of December 2024
+```
+
+💡 Did You Know? The concept of week numbers is especially popular in business and academia for organizing schedules and events. With `getWeek`, staying on top of your plans becomes a breeze, giving you a clear view of your year at a glance! 🌍📊
+
+#### getWeekdays(options:)
+
+📅🌐 This global day-namer is your trusty guide through the week, no matter where you are in the world. Using the power of the Internationalization API (Intl), `getWeekdays` serves up the names of all seven days tailored to your chosen locale. From planning international meetings to creating a multilingual planner, this function provides the perfect blend of cultural awareness and practical utility, keeping you in sync with the local rhythm of life, one day at a time! 🌟🗓️
+
+##### Examples
+
+```javascript
+// Getting weekdays in English
+console.log(getWeekdays({locale: 'en-US'})); // Outputs ['Sunday', 'Monday', ..., 'Saturday']
+
+// Discovering weekdays in French
+console.log(getWeekdays({locale: 'fr-FR'})); // Outputs ['dimanche', 'lundi', ..., 'samedi']
+
+// Exploring weekdays in Japanese
+console.log(getWeekdays({locale: 'ja-JP'})); // Outputs ['日曜日', '月曜日', ..., '土曜日']
+```
+
+💡 Did You Know? The order and names of weekdays vary across cultures and languages. With `getWeekdays`, you can easily cater to a global audience, ensuring that your application speaks their language, quite literally! 🌍🗣️
+
+#### isAfter(date1, date2)
+
+⏱️🔍 This temporal detective is your go-to for solving date mysteries! `isAfter` takes two dates and cleverly reveals whether the first is indeed later than the second. It's like having a time-traveling magnifying glass, making it super easy to compare dates in your applications. Whether you're scheduling deadlines, organizing events, or just curious about the order of things, `isAfter` is your trusty sidekick in the world of time! 🌟📅
+
+##### Examples
+
+```javascript
+// Checking if one date is after another
+console.log(isAfter('2024-01-25', '2024-01-20')); // Outputs true (Jan 25, 2024 is after Jan 20, 2024)
+
+// Comparing today with a future date
+console.log(isAfter(new Date(), '2024-12-31')); // Outputs false if today is before Dec 31, 2024
+
+// Comparing dates in different years
+console.log(isAfter('2025-01-01', '2024-12-31')); // Outputs true (Jan 1, 2025 is after Dec 31, 2024)
+```
+
+💡 Pro Tip: `isAfter` isn't just a function; it's a time machine in your coding toolbox! Use it to prevent past dates in booking systems, validate deadlines, or even in time-sensitive games and activities. Time is in your hands now, code it wisely! 🎩⏳
+
+#### isBefore(date1, date2)
+
+⏳🔎 This is your chronological compass, guiding you through the timelines with ease! `isBefore` is the function that answers one of time's classic questions: Is this date before that one? It's an essential tool for applications dealing with deadlines, scheduling, and historical data. With `isBefore`, you can effortlessly determine the sequence of events, plan ahead, and ensure that you're not mixing up your yesterdays and tomorrows. 🌟📆
+
+##### Examples
+
+```javascript
+// Checking if a date is before another
+console.log(isBefore('2024-01-10', '2024-01-15')); // Outputs true if Jan 10, 2024 is before Jan 15, 2024
+
+// Verifying if today is before a specific date
+console.log(isBefore(new Date(), '2024-12-31')); // Outputs true if today is before Dec 31, 2024
+
+// Comparing two dates in different years
+console.log(isBefore('2023-12-31', '2024-01-01')); // Outputs true since Dec 31, 2023 is before Jan 1, 2024
+```
+
+💡 Pro Tip: `isBefore` is not just about past and future. It's about making informed decisions, managing timelines efficiently, and ensuring that everything happens at the right moment. Use it to navigate through the complexities of time with confidence and precision! 🎩⌛
+
+#### isLeapYear(year)
+
+🌌📅 Leap into the fascinating world of calendars with `isLeapYear`! This function is your trusty sidekick in unraveling the mysteries of the Gregorian calendar. It answers the question: Is this year a leap year? Leap years, with their extra day in February, keep our calendars aligned with Earth's orbit around the Sun. Whether you're scheduling events, programming a calendar application, or just satisfying your curiosity, `isLeapYear` is an essential tool. 🚀🗓️
+
+##### Examples
+
+```javascript
+// Check if 2020 is a leap year
+console.log(isLeapYear(2020)); // Outputs true, as 2020 is a leap year
+
+// Verify if 2023 is a leap year
+console.log(isLeapYear(2023)); // Outputs false, as 2023 is not a leap year
+
+// Determine if 1900 is a leap year (it's not, despite being divisible by 4!)
+console.log(isLeapYear(1900)); // Outputs false, as 1900 is not a leap year by Gregorian rules
+```
+
+💡 Pro Tip: `isLeapYear` not only simplifies date calculations but also serves as a fun fact generator! Impress your friends and colleagues with your knowledge about leap years and why they exist. Remember, every four years, we get that extra day, thanks to the quirks of our solar system and the way we track time! 🌍⏰🎉
+
+#### isSameDay(date1, date2)
+
+🌞📅 The `isSameDay` function is a calendar wizard's dream! It’s like having an eagle-eye view of your calendar, helping you pinpoint if two dates fall on the same glorious day. Whether you're organizing events, tracking special occasions, or coding up the next great scheduling app, `isSameDay` is your go-to for aligning dates with cosmic precision. 🌌🔍
+
+##### Examples
+
+```javascript
+// Compare two dates for the same day
+const firstDate = new Date(2022, 3, 15); // April 15, 2022
+const secondDate = new Date(2022, 3, 15); // April 15, 2022
+console.log(isSameDay(firstDate, secondDate)); // Outputs true, both dates are April 15, 2022
+
+// Checking different days
+const anotherDate = new Date(2022, 3, 16); // April 16, 2022
+console.log(isSameDay(firstDate, anotherDate)); // Outputs false, different days!
+
+// Works with string inputs too!
+console.log(isSameDay('2022-04-15', '2022-04-15')); // Outputs true, both represent April 15, 2022
+```
+
+💡 Handy Tip: Use `isSameDay` to avoid double-booking, remember anniversaries, or even to trigger daily reminders. It's your silent guardian in the realm of dates, ensuring you're always on top of your day-to-day adventures. 🎯📆🚀
+
+#### isValidDate(dateString, options:)
+
+🕵️‍♂️🗓️ The `isValidDate` function now comes with an international flair! It's a robust date validator that not only checks if a date is valid but also ensures it aligns with the date format of a specific locale. Perfect for applications catering to a global audience, it scrutinizes dates against various international formats, making it a versatile tool in your date validation arsenal. 🌍⏳
+
+##### Examples
+
+```javascript
+// Validating a date string against a specific locale
+console.log(isValidDate('15/04/2022', {countryCode: 'GB'})); // Outputs true for DD/MM/YYYY format (UK)
+
+// Checking a date string in American format
+console.log(isValidDate('04-15-2022', {countryCode: 'US'})); // Outputs true for MM-DD-YYYY format (USA)
+
+// Testing an invalid date string for a given locale
+console.log(isValidDate('2022-15-04', {countryCode: 'US'})); // Outputs false, incorrect format for USA
+
+// Attempting to validate a date with an unsupported country code
+console.log(isValidDate('15.04.2022', {countryCode: 'ZZ'})); // Outputs false, 'ZZ' is not a recognized country code
+```
+
+💡 Pro Tip: Employ `isValidDate` for validating user inputs in internationalized applications, ensuring compatibility with locale-specific date formats. It’s your trusty guardian, assuring that dates align with regional norms. 🚦🔍🌐
+
+#### parseDateTime(dateInput, options:)
+
+🔍🗓️ The `parseDateTime` function is like a time-traveler's best friend, expertly navigating the complex world of dates and times. Whether it's a string or a Date object you're dealing with, this function seamlessly transforms it into a comprehensive, easy-to-digest package of date information, tailored to any locale you desire. 🌍⏲️
+
+##### Examples
+
+```javascript
+// Parsing a date string with default locale and options
+const parsed1 = parseDateTime('18/01/2024');
+console.log(parsed1); // Outputs object with detailed date components
+/*
+    {
+        "day": "18",
+        "month": "01",
+        "year": "2024",
+        "rawParts": [
+            {
+                "type": "day",
+                "value": "18"
+            },
+            {
+                "type": "literal",
+                "value": "/"
+            },
+            {
+                "type": "month",
+                "value": "01"
+            },
+            {
+                "type": "literal",
+                "value": "/"
+            },
+            {
+                "type": "year",
+                "value": "2024"
+            }
+        ],
+        "formattedDate": "18/01/2024",
+        "dateObj": "2024-01-17T18:30:00.000Z"
+    }
+*/
+
+// Parsing with specific locale and formatting options
+const parsed2 = parseDateTime(
+  '2024-01-23',
+  {
+    intlOptions: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' },
+    locale: 'fr-FR',
+  }
+);
+console.log(parsed2); // Outputs object with formatted date in French
+/*
+    {
+        "weekday": "mardi",
+        "day": "23",
+        "month": "janvier",
+        "year": "2024",
+        "rawParts": [
+            {
+                "type": "weekday",
+                "value": "mardi"
+            },
+            {
+                "type": "literal",
+                "value": " "
+            },
+            {
+                "type": "day",
+                "value": "23"
+            },
+            {
+                "type": "literal",
+                "value": " "
+            },
+            {
+                "type": "month",
+                "value": "janvier"
+            },
+            {
+                "type": "literal",
+                "value": " "
+            },
+            {
+                "type": "year",
+                "value": "2024"
+            }
+        ],
+        "formattedDate": "mardi 23 janvier 2024",
+        "dateObj": "2024-01-22T18:30:00.000Z"
+    }
+*/
+
+// Parsing a Date object
+const parsed3 = parseDateTime(new Date(2024, 0, 23));
+console.log(parsed3); // Outputs object with date components for January 23, 2024
+/*
+    {
+        "day": "23",
+        "month": "01",
+        "year": "2024",
+        "rawParts": [
+            {
+                "type": "day",
+                "value": "23"
+            },
+            {
+                "type": "literal",
+                "value": "/"
+            },
+            {
+                "type": "month",
+                "value": "01"
+            },
+            {
+                "type": "literal",
+                "value": "/"
+            },
+            {
+                "type": "year",
+                "value": "2024"
+            }
+        ],
+        "formattedDate": "23/01/2024",
+        "dateObj": "2024-01-22T18:30:00.000Z"
+    }
+*/
+```
+
+💡 Pro Tip: Leverage `parseDateTime` in applications where detailed date analysis and manipulation are key, such as in calendar apps, scheduling tools, or date-sensitive data processing. It's like having a Swiss Army knife for all things related to dates and times! 📅🛠️
+
+#### subtract(date, options:)
+
+🕒🔙 The `subtract` function is like your personal time machine, allowing you to step back in time with ease. It's perfect for those moments when you need to calculate past dates, like figuring out what day it was 'x' days, months, or years ago. Simply tell it the time unit and how far back you want to go, and voilà! You're traveling back in time! 🚀🗓️
+
+##### Examples
+
+```javascript
+// Subtracting days
+console.log(subtract(new Date(2024, 0, 23), {value: 10, unit: 'days'})); // Go back 10 days from Jan 23, 2024
+
+// Subtracting months
+console.log(subtract('2024-01-23', {value: 2, unit: 'months'})); // Go back 2 months from Jan 23, 2024
+
+// Subtracting years
+console.log(subtract(new Date(2024, 0, 23), {value: 5, unit: 'years'})); // Go back 5 years from Jan 23, 2024
+```
+
+💡 Pro Tip: Use the `subtract` function in applications like reminder services, historical data analysis, or anywhere you need to calculate past dates. It's a handy tool to have in your developer toolkit for managing date-based logic! 📅⏮️
