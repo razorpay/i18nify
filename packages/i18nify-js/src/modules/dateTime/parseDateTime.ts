@@ -1,5 +1,4 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import state from '../.internal/state';
 import { getLocale } from '../.internal/utils';
 import {
   DateInput,
@@ -31,12 +30,11 @@ const parseDateTime = (
       ? new Date(stringToDate(dateInput))
       : new Date(dateInput);
 
-  // Use the provided locale or fallback to the system's default locale
-  options.locale = options.locale || state.getState().locale || getLocale();
+  const locale = getLocale(options);
 
   try {
     // Create an Intl.DateTimeFormat instance for formatting
-    const dateTimeFormat = new Intl.DateTimeFormat(options.locale, options.intlOptions);
+    const dateTimeFormat = new Intl.DateTimeFormat(locale, options.intlOptions);
     const formattedParts = dateTimeFormat.formatToParts(date);
     const formattedObj: FormattedPartsObject = {};
 

@@ -1,5 +1,4 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import state from '../.internal/state';
 import { getLocale } from '../.internal/utils';
 import { Locale } from './types';
 
@@ -16,15 +15,10 @@ const getWeekdays = (
   },
 ): string[] => {
   try {
-    /** retrieve locale from below areas in order of preference
-     * 1. locale (used in case if someone wants to override locale just for a specific area and not globally)
-     * 2. i18nState.locale (uses locale set globally)
-     * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
-     * */
-    if (!options.locale) options.locale = state.getState().locale || getLocale();
+    const locale = getLocale(options);
     if (!options.intlOptions.weekday) options.intlOptions.weekday = 'long';
 
-    const formatter = new Intl.DateTimeFormat(options.locale, options.intlOptions);
+    const formatter = new Intl.DateTimeFormat(locale, options.intlOptions);
 
     /** The date January 1, 1970, is a well-known reference point in computing known as the Unix epoch.
      * It's the date at which time is measured for Unix systems, making it a consistent and reliable choice for date calculations.

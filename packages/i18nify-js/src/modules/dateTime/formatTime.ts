@@ -1,5 +1,4 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import state from '../.internal/state';
 import { getLocale } from '../.internal/utils';
 import formatDateTime from './formatDateTime';
 import {
@@ -22,12 +21,7 @@ const formatTime = (
     intlOptions?: TimeFormatOptions,
   } = {},
 ): string => {
-  /** retrieve locale from below areas in order of preference
-   * 1. locale (used in case if someone wants to override locale just for a specific area and not globally)
-   * 2. i18nState.locale (uses locale set globally)
-   * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
-   * */
-  if (!options.locale) options.locale = state.getState().locale || getLocale();
+  const locale = getLocale(options);
 
   const fullOptions: DateTimeFormatOptions = {
     ...options.intlOptions,
@@ -37,7 +31,7 @@ const formatTime = (
   let formattedTime;
 
   try {
-    formattedTime = formatDateTime(date, {locale: options.locale, intlOptions: fullOptions})
+    formattedTime = formatDateTime(date, {locale, intlOptions: fullOptions})
       .split(',')[1]
       .trim();
   } catch (err) {

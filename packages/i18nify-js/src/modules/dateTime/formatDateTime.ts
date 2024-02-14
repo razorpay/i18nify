@@ -1,5 +1,4 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import state from '../.internal/state';
 import { getLocale } from '../.internal/utils';
 import { DateInput, Locale } from './types';
 import { stringToDate } from './utils';
@@ -22,7 +21,7 @@ const formatDateTime = (
    * 2. i18nState.locale (uses locale set globally)
    * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
    * */
-  if (!options.locale) options.locale = state.getState().locale || getLocale();
+  const locale = getLocale(options);
 
   date =
     typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
@@ -42,7 +41,7 @@ const formatDateTime = (
   let formatter;
 
   try {
-    formatter = new Intl.DateTimeFormat(options.locale, defaultOptions);
+    formatter = new Intl.DateTimeFormat(locale, defaultOptions);
   } catch (err) {
     if (err instanceof Error) {
       throw new Error(err.message);

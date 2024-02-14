@@ -1,5 +1,4 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import state from '../.internal/state';
 import { getLocale } from '../.internal/utils';
 import { DateInput, Locale } from './types';
 import { stringToDate } from './utils';
@@ -35,7 +34,7 @@ const getRelativeTime = (
    * 2. i18nState.locale (uses locale set globally)
    * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
    * */
-  if (!options.locale) options.locale = state.getState().locale || getLocale();
+  const locale = getLocale(options);
 
   const diffInSeconds = (date.getTime() - baseDate.getTime()) / 1000;
 
@@ -76,7 +75,7 @@ const getRelativeTime = (
   let relativeTime;
 
   try {
-    const rtf = new Intl.RelativeTimeFormat(options.locale, options.intlOptions);
+    const rtf = new Intl.RelativeTimeFormat(locale, options.intlOptions);
     relativeTime = rtf.format(Math.round(value), unit);
   } catch (err) {
     if (err instanceof Error) {
