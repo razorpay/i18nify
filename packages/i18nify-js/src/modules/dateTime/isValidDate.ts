@@ -6,11 +6,11 @@ import { LOCALE_DATE_FORMATS } from './data/localeDateFormats';
  * Checks if a given string is a valid date according to a specific locale's date format.
  *
  * @param dateString The date string to validate.
- * @param countryCode The countryCode to use for the date format.
+ * @param options Config object
  * @returns True if the dateString is a valid date according to the locale's format, false otherwise.
  */
-const isValidDate = (dateString: string, countryCode: string): boolean => {
-  const locale = COUNTRY_CODES_TO_LOCALE[countryCode];
+const isValidDate = (dateString: string, options: {countryCode: string}): boolean => {
+  const locale = COUNTRY_CODES_TO_LOCALE[options.countryCode];
 
   // Type guard to ensure dateString is a string
   if (typeof dateString !== 'string') {
