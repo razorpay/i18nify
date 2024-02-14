@@ -15,14 +15,15 @@ import { stringToDate } from './utils';
  * and their formatted representations.
  *
  * @param {DateInput} dateInput - The date input, can be a string or a Date object.
- * @param {Intl.DateTimeFormatOptions} [intlOptions={}] - Internationalization options for date formatting.
- * @param {Locale} [locale] - The locale to use for formatting. Defaults to system locale if not provided.
+ * @param options - Config object.
  * @returns {ParsedDateTime} An object containing the parsed date and its components.
  */
 const parseDateTime = (
   dateInput: DateInput,
-  intlOptions: Intl.DateTimeFormatOptions = {},
-  locale?: Locale,
+  options: {
+    locale?: Locale,
+    intlOptions?: Intl.DateTimeFormatOptions,
+  } = {},
 ): ParsedDateTime => {
   // Parse the input date, converting strings to Date objects if necessary
   const date =
@@ -31,11 +32,11 @@ const parseDateTime = (
       : new Date(dateInput);
 
   // Use the provided locale or fallback to the system's default locale
-  locale = locale || state.getState().locale || getLocale();
+  options.locale = options.locale || state.getState().locale || getLocale();
 
   try {
     // Create an Intl.DateTimeFormat instance for formatting
-    const dateTimeFormat = new Intl.DateTimeFormat(locale, intlOptions);
+    const dateTimeFormat = new Intl.DateTimeFormat(options.locale, options.intlOptions);
     const formattedParts = dateTimeFormat.formatToParts(date);
     const formattedObj: FormattedPartsObject = {};
 

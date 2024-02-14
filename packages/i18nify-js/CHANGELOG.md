@@ -1,5 +1,23 @@
 # @razorpay/i18nify-js
 
+## 1.4.0
+
+### Minor Changes
+
+- 5c6b356: [feat]: shared chunk created for common modules in esm
+
+## 1.3.1
+
+### Patch Changes
+
+- 41852b9: [feat]: add major/minor conversion apis in currency module
+
+## 1.3.0
+
+### Minor Changes
+
+- bb2a1d7: [fix]: generic type from CURRENCIES list removed
+
 ## 1.2.0
 
 ### Minor Changes

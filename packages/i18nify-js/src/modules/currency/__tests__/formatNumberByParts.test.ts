@@ -63,6 +63,7 @@ describe('formatNumberByParts', () => {
 
   it('should handle invalid currency code', () => {
     const result = formatNumberByParts(12345.67, {
+      // @ts-expect-error invalid currency for testing
       currency: 'XYZ',
       locale: 'en-US',
     });
