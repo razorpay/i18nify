@@ -493,7 +493,7 @@ console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxxx-xxxx'
 
 This module provides functions for formatting and manipulating dates and times in a locale-sensitive manner using the JavaScript Intl API & Date object.
 
-#### formatDate(date, options:)
+#### formatDate(date, options)
 
 🌍📆 This global time stylist effortlessly turns your dates into beautifully formatted strings, tailored to different locales. Whether you're dealing with international clients or just love the beauty of diverse date formats, `formatDate` is your go-to function. It leverages the power of the Intl.DateTimeFormat API, ensuring that your dates always dress to impress, no matter where they're displayed. 🎩🌟
 
@@ -519,7 +519,7 @@ console.log(
 
 💡 Remember, if the date string doesn't match any supported formats, the function raises the curtain on an error message! 🛑🎭
 
-#### formatDateTime(date, options:)
+#### formatDateTime(date, options)
 
 🕰️🌍 This savvy time tailor is your go-to for dressing up dates and times in locale-specific styles. Whether you're marking milestones, scheduling global meetings, or just need that perfect date-time format, `formatDateTime` uses the Internationalization API (Intl) to translate your dates and times into the local lingo. It's like having a linguistic time machine at your fingertips! 🌟🗓️
 
@@ -553,7 +553,7 @@ console.log(
 
 💡 Remember, it's not just about translating the date and time; it's about presenting them in a way that feels natural and familiar to the user, no matter where they are in the world. 🌐⌚
 
-#### formatTime(date, options:)
+#### formatTime(date, options)
 
 ⏰🌐 This timely charmer is your key to unlocking the secrets of time presentation across different cultures. Using the wizardry of the Internationalization API (Intl), `formatTime` translates your time into a format that resonates with local customs and practices. Whether it's for scheduling international calls or just making sure you're in sync with the world's timezones, this function is your trusty sidekick in the realm of time formatting! 🌟⌚
 
@@ -584,7 +584,7 @@ console.log(
 
 💡 Pro Tip: `formatTime` isn't just about showing the time; it's about presenting it in a way that's intuitive and familiar to your audience, wherever they may be. 🌍🕒
 
-#### getRelativeTime(date, baseDate, options:)
+#### getRelativeTime(date, baseDate, options)
 
 ⏳🌏 This time-traveling virtuoso effortlessly bridges the gap between dates, offering a glimpse into the past or a peek into the future. With the help of the Internationalization API (Intl), `getRelativeTime` transforms absolute dates into relatable, human-friendly phrases like '3 hours ago' or 'in 2 days'. Whether you're reminiscing the past or anticipating the future, this function keeps you connected to time in the most intuitive way! 🚀🕰️
 
@@ -603,7 +603,7 @@ console.log(getRelativeTime('2024-01-26', '2024-01-23', {locale: 'fr-FR'})); // 
 
 💡 Pro Tip: `getRelativeTime` is not just a way to express time differences; it's a bridge that connects your users to the temporal context in a way that's both meaningful and culturally aware. Time is more than seconds and minutes; it's a story, and this function helps you tell it! 📖⌚
 
-#### getWeekdays(options:)
+#### getWeekdays(options)
 
 📅🌐 This global day-namer is your trusty guide through the week, no matter where you are in the world. Using the power of the Internationalization API (Intl), `getWeekdays` serves up the names of all seven days tailored to your chosen locale. From planning international meetings to creating a multilingual planner, this function provides the perfect blend of cultural awareness and practical utility, keeping you in sync with the local rhythm of life, one day at a time! 🌟🗓️
 
