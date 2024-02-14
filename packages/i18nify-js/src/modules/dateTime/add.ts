@@ -6,15 +6,17 @@ import { stringToDate } from './utils';
  * Adds a specified amount of time to a date.
  *
  * @param date The original date.
- * @param value The amount to add.
- * @param unit The unit of time to add (e.g., 'days', 'months', 'years').
+ * @param options config object.
  * @returns A new Date object with the time added.
  */
 const add = (
   date: DateInput,
-  value: number,
-  unit: 'days' | 'months' | 'years',
+  options: {
+    value: number,
+    unit: 'days' | 'months' | 'years',
+  },
 ): Date => {
+  const {value, unit} = options;
   if (
     (value !== 0 && !Number(value)) ||
     value === Infinity ||

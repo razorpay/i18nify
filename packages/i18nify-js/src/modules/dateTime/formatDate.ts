@@ -12,31 +12,32 @@ import {
 /**
  * Formats date based on the locale.
  * @param {DateInput} date - Date object or date string.
- * @param {Locale} locale - Locale string.
- * @param {DateFormatOptions} intlOptions - Intl.DateTimeFormat options for date formatting (optional).
+ * @param options - config object.
  * @returns {string} Formatted date string.
  */
 const formatDate = (
   date: DateInput,
-  locale?: Locale,
-  intlOptions: DateFormatOptions = {},
+  options: {
+    locale?: Locale,
+    intlOptions?: DateFormatOptions,
+  } = {},
 ): string => {
   /** retrieve locale from below areas in order of preference
    * 1. locale (used in case if someone wants to override locale just for a specific area and not globally)
    * 2. i18nState.locale (uses locale set globally)
    * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
    * */
-  if (!locale) locale = state.getState().locale || getLocale();
+  if (!options.locale) options.locale = state.getState().locale || getLocale();
 
   const fullOptions: DateTimeFormatOptions = {
-    ...intlOptions,
+    ...options.intlOptions,
     timeStyle: undefined,
   };
 
   let formattedDate;
 
   try {
-    formattedDate = formatDateTime(date, locale, fullOptions).split(',')[0];
+    formattedDate = formatDateTime(date, options.locale, fullOptions).split(',')[0];
   } catch (err) {
     if (err instanceof Error) {
       throw new Error(err.message);

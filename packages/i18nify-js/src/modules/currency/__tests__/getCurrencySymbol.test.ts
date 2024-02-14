@@ -10,6 +10,7 @@ describe('getCurrencySymbol', () => {
 
   it('should throw Error for an invalid currency code', () => {
     const currencyCode = 'XYZ'; // An invalid code
+    // @ts-expect-error invalid currency code for testing
     expect(() => getCurrencySymbol(currencyCode)).toThrow(
       'Invalid currencyCode!',
     );
@@ -17,6 +18,7 @@ describe('getCurrencySymbol', () => {
 
   it('should throw Error for an empty string', () => {
     const currencyCode = '';
+    // @ts-expect-error invalid currency code for testing
     expect(() => getCurrencySymbol(currencyCode)).toThrow(
       'Invalid currencyCode!',
     );

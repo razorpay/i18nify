@@ -28,15 +28,22 @@ const MODULES_DIR = 'src/modules';
 // Get modules dynamically from the specified directory
 const modules = getModules(MODULES_DIR);
 
-const moduleBundles = modules.map((_module) => ({
-  input: _module.input,
-  output: {
-    file: `lib/esm/${_module.name}/index.js`,
-    format: 'es',
-    sourcemap: true,
-  },
-  plugins: [typescript(), resolve(), commonjs()],
-}));
+/**
+ * Generates input objects in below format
+ * {
+ *  currency/index: 'src/modules/currency/index.ts',
+ *  core/index: 'src/modules/core/index.ts',
+ *  phoneNumber/index: 'src/modules/phoneNumber/index.ts',
+ *  ... etc
+ * }
+ */
+const moduleInputs = modules.reduce((acc, curr) => {
+  acc = {
+    ...acc,
+    [`${curr.name}/index`]: curr.input,
+  };
+  return acc;
+}, {});
 
 // Create declaration files for each module
 const declarationTypes = modules.map((_module) => ({
@@ -50,11 +57,13 @@ const declarationTypes = modules.map((_module) => ({
 
 export default [
   // ESM (ES6 module) build
-  ...moduleBundles,
   {
-    input: 'src/index.ts',
+    input: {
+      index: 'src/index.ts',
+      ...moduleInputs,
+    },
     output: {
-      file: 'lib/esm/index.js',
+      dir: 'lib/esm',
       format: 'es',
       sourcemap: true,
     },

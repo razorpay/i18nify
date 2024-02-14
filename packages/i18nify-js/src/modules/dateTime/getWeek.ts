@@ -8,7 +8,6 @@ import { stringToDate } from './utils';
  * @param date The date to calculate the week number for.
  * @returns The week number of the year.
  */
-// [TODO:] Recheck the logic here for Last day of a non-leap year (2023-12-31)
 const getWeek = (date: DateInput): number => {
   date =
     typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);

@@ -1,5 +1,9 @@
-import { CURRENCIES } from './data/currencies';
-import { ByParts, FormattedPartsObject } from './types';
+import {
+  ByParts,
+  CurrencyCodeType,
+  FormattedPartsObject,
+  I18nifyNumberFormatOptions,
+} from './types';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getIntlInstanceWithOptions } from '../.internal/utils';
 import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
@@ -7,9 +11,9 @@ import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
 const formatNumberByParts = (
   amount: string | number,
   options: {
-    currency?: keyof typeof CURRENCIES;
+    currency?: CurrencyCodeType;
     locale?: string;
-    intlOptions?: Intl.NumberFormatOptions;
+    intlOptions?: I18nifyNumberFormatOptions;
   } = {},
 ): ByParts => {
   if (!Number(amount) && Number(amount) !== 0)
