@@ -29,6 +29,10 @@
     "./phoneNumber": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/phoneNumber/index.js"
+    },
+    "./geo": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/geo/index.js"
     }
   },
   "typesVersions": {
