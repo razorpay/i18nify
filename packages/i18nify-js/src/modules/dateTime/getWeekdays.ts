@@ -6,13 +6,14 @@ import { Locale } from './types';
 /**
  * Returns an array of weekdays according to the specified locale.
  *
- * @param locale The locale to get weekdays for.
- * @param intlOptions Optional Intl.DateTimeFormatOptions for customization.
+ * @param options Config object
  * @returns An array of weekday names.
  */
 const getWeekdays = (
-  locale?: Locale,
-  intlOptions: Intl.DateTimeFormatOptions = {},
+  options: {
+    locale?: Locale,
+    intlOptions: Intl.DateTimeFormatOptions,
+  },
 ): string[] => {
   try {
     /** retrieve locale from below areas in order of preference
@@ -20,10 +21,10 @@ const getWeekdays = (
      * 2. i18nState.locale (uses locale set globally)
      * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
      * */
-    if (!locale) locale = state.getState().locale || getLocale();
-    if (!intlOptions.weekday) intlOptions.weekday = 'long';
+    if (!options.locale) options.locale = state.getState().locale || getLocale();
+    if (!options.intlOptions.weekday) options.intlOptions.weekday = 'long';
 
-    const formatter = new Intl.DateTimeFormat(locale, intlOptions);
+    const formatter = new Intl.DateTimeFormat(options.locale, options.intlOptions);
 
     /** The date January 1, 1970, is a well-known reference point in computing known as the Unix epoch.
      * It's the date at which time is measured for Unix systems, making it a consistent and reliable choice for date calculations.

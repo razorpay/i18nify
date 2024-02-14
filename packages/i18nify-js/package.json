@@ -41,6 +41,9 @@
       ],
       "phoneNumber": [
         "./lib/esm/phoneNumber/index.d.ts"
+      ],
+      "dateTime": [
+        "./lib/esm/dateTime/index.d.ts"
       ]
     }
   },
