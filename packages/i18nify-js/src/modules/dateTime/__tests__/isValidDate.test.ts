@@ -23,12 +23,12 @@ describe('dateTime - isValidDate', () => {
   ])(
     'validates date "%s" for countryCode "%s"',
     (dateString, countryCode, expected) => {
-      expect(isValidDate(dateString, countryCode)).toBe(expected);
+      expect(isValidDate(dateString, {countryCode})).toBe(expected);
     },
   );
 
   test('handles non-string inputs gracefully', () => {
-    expect(isValidDate(null as unknown as string, 'GB')).toBe(false);
-    expect(isValidDate(12345 as unknown as string, 'GB')).toBe(false);
+    expect(isValidDate(null as unknown as string, {countryCode: 'GB'})).toBe(false);
+    expect(isValidDate(12345 as unknown as string, {countryCode: 'GB'})).toBe(false);
   });
 });

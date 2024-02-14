@@ -23,7 +23,7 @@ const parseDateTime = (
   options: {
     locale?: Locale,
     intlOptions?: Intl.DateTimeFormatOptions,
-  },
+  } = {},
 ): ParsedDateTime => {
   // Parse the input date, converting strings to Date objects if necessary
   const date =

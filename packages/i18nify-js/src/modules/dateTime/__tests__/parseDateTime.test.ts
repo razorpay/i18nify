@@ -4,11 +4,11 @@ import { DateTimeFormatOptions } from '../types';
 describe('dateTime - parseDateTime', () => {
   test('parses standard date input correctly', () => {
     const date = '2024-01-01';
-    const result = parseDateTime(date, {
+    const result = parseDateTime(date, {intlOptions: {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
-    });
+    }});
     expect(result.dateObj).toBeDefined();
     expect(result.formattedDate).toBe('January 1, 2024');
     expect(result.year).toBe('2024');
@@ -22,11 +22,13 @@ describe('dateTime - parseDateTime', () => {
     const result = parseDateTime(
       date,
       {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      },
+        intlOptions: {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        },
       locale,
+    }
     );
     expect(result.formattedDate).toBe('1. Januar 2024'); // Format in German
   });
@@ -48,12 +50,12 @@ describe('dateTime - parseDateTime', () => {
 
   test('parses time components correctly', () => {
     const dateTime = '2024-01-01 23:59:59';
-    const result = parseDateTime(dateTime, {
+    const result = parseDateTime(dateTime, {intlOptions: {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
       hour12: false,
-    });
+    }});
     expect(result.hour).toBe('23');
     expect(result.minute).toBe('59');
     expect(result.second).toBe('59');
@@ -61,11 +63,11 @@ describe('dateTime - parseDateTime', () => {
 
   test('verifies each date component', () => {
     const date = '2024-01-01';
-    const result = parseDateTime(date, {
+    const result = parseDateTime(date, {intlOptions: {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
-    });
+  }});
     expect(result.year).toBe('2024');
     expect(result.month).toBe('January');
     expect(result.day).toBe('1');
@@ -74,7 +76,7 @@ describe('dateTime - parseDateTime', () => {
   test('respects intlOptions settings', () => {
     const date = '2024-01-01';
     const intlOptions = { year: '2-digit', month: '2-digit', day: '2-digit' };
-    const result = parseDateTime(date, intlOptions as DateTimeFormatOptions);
+    const result = parseDateTime(date, {intlOptions: intlOptions as DateTimeFormatOptions});
     expect(result.formattedDate).toBe('01/01/24');
   });
 
@@ -88,11 +90,11 @@ describe('dateTime - parseDateTime', () => {
   test('handles different date formats', () => {
     const dates = ['2024-01-01', '01/01/2024', '01.01.2024'];
     dates.forEach((date) => {
-      const result = parseDateTime(date, {
+      const result = parseDateTime(date, {intlOptions: {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-      });
+      }});
       expect(result.year).toBe('2024');
       expect(result.month).toBe('January');
       expect(result.day).toBe('1');

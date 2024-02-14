@@ -51,9 +51,10 @@ describe('dateTime - getWeekdays', () => {
 
   testCases.forEach(({ locale, expected, options }) => {
     test(`returns correct weekdays for ${locale} locale`, () => {
-      const weekdays = getWeekdays(
+      const weekdays = getWeekdays({
         locale,
-        options as DateTimeFormatOptions | undefined,
+        intlOptions :options as DateTimeFormatOptions,
+      }
       );
       expect(weekdays).toHaveLength(7);
       expect(weekdays).toEqual(expected);

@@ -33,8 +33,8 @@ describe('dateTime - getRelativeTime', () => {
 
   test('handles different locales', () => {
     const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-    expect(getRelativeTime(oneDayAgo, now, 'en-US')).toBe('1 day ago');
-    expect(getRelativeTime(oneDayAgo, now, 'fr-FR')).toBe('il y a 1 jour');
+    expect(getRelativeTime(oneDayAgo, now, {locale: 'en-US'})).toBe('1 day ago');
+    expect(getRelativeTime(oneDayAgo, now, {locale: 'fr-FR'})).toBe('il y a 1 jour');
   });
 
   test('throws an error for invalid date inputs', () => {
