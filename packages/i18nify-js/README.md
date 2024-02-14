@@ -622,7 +622,7 @@ console.log(getWeekdays({locale: 'ja-JP'})); // Outputs ['日曜日', '月曜日
 
 💡 Did You Know? The order and names of weekdays vary across cultures and languages. With `getWeekdays`, you can easily cater to a global audience, ensuring that your application speaks their language, quite literally! 🌍🗣️
 
-#### isValidDate(dateString, options:)
+#### isValidDate(dateString, options)
 
 🕵️‍♂️🗓️ The `isValidDate` function now comes with an international flair! It's a robust date validator that not only checks if a date is valid but also ensures it aligns with the date format of a specific locale. Perfect for applications catering to a global audience, it scrutinizes dates against various international formats, making it a versatile tool in your date validation arsenal. 🌍⏳
 

@@ -1,6 +1,8 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { COUNTRY_CODES_TO_LOCALE } from '../.internal/constants';
+import state from '../.internal/state';
+import { getLocale } from '../.internal/utils';
 import { LOCALE_DATE_FORMATS } from './data/localeDateFormats';
+import { Locale } from './types';
 
 /**
  * Checks if a given string is a valid date according to a specific locale's date format.
@@ -9,8 +11,9 @@ import { LOCALE_DATE_FORMATS } from './data/localeDateFormats';
  * @param options Config object
  * @returns True if the dateString is a valid date according to the locale's format, false otherwise.
  */
-const isValidDate = (dateString: string, options: {countryCode: string}): boolean => {
-  const locale = COUNTRY_CODES_TO_LOCALE[options.countryCode];
+const isValidDate = (dateString: string, options: {locale?: Locale}): boolean => {
+  // Use the provided locale or fallback to the system's default locale
+  options.locale = options.locale || state.getState().locale || getLocale();
 
   // Type guard to ensure dateString is a string
   if (typeof dateString !== 'string') {
@@ -18,7 +21,7 @@ const isValidDate = (dateString: string, options: {countryCode: string}): boolea
   }
 
   // Determine the date format based on the given locale
-  const dateFormat = LOCALE_DATE_FORMATS[locale];
+  const dateFormat = LOCALE_DATE_FORMATS[options.locale];
   const delimiter = /[-/.]/;
   const [part1, part2, part3] = dateString.split(delimiter);
 
