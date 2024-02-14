@@ -42,7 +42,7 @@ describe('formatNumber', () => {
     const result = formatNumber('2000', {
       currency: 'CAD',
     });
-    const expectedLocale = getLocale({});
+    const expectedLocale = getLocale();
     const formattedAmount = new Intl.NumberFormat(expectedLocale, {
       style: 'currency',
       currency: 'CAD',

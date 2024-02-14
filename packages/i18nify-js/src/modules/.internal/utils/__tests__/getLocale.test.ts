@@ -26,7 +26,7 @@ describe('getLocale', () => {
     // Mocking browser environment with user language preference
     mockNavigatorLanguage('');
     mockNavigatorLanguages(['fr-FR', 'es-ES']);
-    expect(getLocale({})).toBe('fr-FR');
+    expect(getLocale()).toBe('fr-FR');
   });
 
   it('returns default locale when Intl object is not supported', () => {
@@ -35,7 +35,7 @@ describe('getLocale', () => {
     mockNavigatorLanguages(['fr-FR', 'es-US']);
     (global as any).Intl = undefined;
 
-    const result = getLocale({});
+    const result = getLocale();
 
     expect(result).toBe('en-IN');
   });
@@ -45,7 +45,7 @@ describe('getLocale', () => {
     mockNavigatorLanguage('');
     mockNavigatorLanguages(['']);
 
-    const result = getLocale({});
+    const result = getLocale();
 
     expect(result).toBe('en-IN');
   });
@@ -53,6 +53,6 @@ describe('getLocale', () => {
   it('should return "en-IN" for non-browser environment', () => {
     // Mocking a non-browser environment
     mockNavigator('');
-    expect(getLocale({})).toBe('en-IN');
+    expect(getLocale()).toBe('en-IN');
   });
 });

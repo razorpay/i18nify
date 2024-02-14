@@ -17,7 +17,7 @@ describe('getIntlInstanceWithOptions', () => {
   it('should use the browser locale if no locale is provided', () => {
     setState({ locale: '' });
     const intlProps = getIntlInstanceWithOptions();
-    const browserLocale = getLocale({});
+    const browserLocale = getLocale();
     expect(intlProps.resolvedOptions().locale).toBe(browserLocale);
   });
 
