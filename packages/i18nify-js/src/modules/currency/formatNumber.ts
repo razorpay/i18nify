@@ -1,14 +1,14 @@
-import { CURRENCIES } from './data/currencies';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getIntlInstanceWithOptions } from '../.internal/utils';
+import { CurrencyCodeType, I18nifyNumberFormatOptions } from './types';
 
 // this function formats number based on different arguments passed
 const formatNumber = (
   amount: string | number,
   options: {
-    currency?: keyof typeof CURRENCIES;
+    currency?: CurrencyCodeType;
     locale?: string;
-    intlOptions?: Intl.NumberFormatOptions;
+    intlOptions?: I18nifyNumberFormatOptions;
   } = {},
 ): string => {
   if (!Number(amount) && Number(amount) !== 0)
