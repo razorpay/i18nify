@@ -1,6 +1,7 @@
+import { Locale } from '../../dateTime/types';
 import state from '../state';
 
-export const getLocale = (options: any): string => {
+export const getLocale = (options: {locale?: Locale}): string => {
  /** retrieve locale from below areas in order of preference
    * 1. options.locale (used in case if someone wants to override locale just for a specific area and not globally)
    * 2. i18nState.locale (uses locale set globally)

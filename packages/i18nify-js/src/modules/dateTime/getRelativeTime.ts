@@ -29,11 +29,7 @@ const getRelativeTime = (
     typeof baseDate === 'string'
       ? new Date(stringToDate(baseDate))
       : new Date(baseDate);
-  /** retrieve locale from below areas in order of preference
-   * 1. locale (used in case if someone wants to override locale just for a specific area and not globally)
-   * 2. i18nState.locale (uses locale set globally)
-   * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
-   * */
+      
   const locale = getLocale(options);
 
   const diffInSeconds = (date.getTime() - baseDate.getTime()) / 1000;

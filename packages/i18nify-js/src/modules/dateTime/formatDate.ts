@@ -1,6 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getLocale } from '../.internal/utils';
-import formatDateTime from './formatDateTime';
 import {
   DateInput,
   Locale,
@@ -24,14 +23,16 @@ const formatDate = (
   const locale = getLocale(options);
 
   const fullOptions: DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
     ...options.intlOptions,
-    timeStyle: undefined,
   };
 
   let formattedDate;
 
   try {
-    formattedDate = formatDateTime(date, {locale, intlOptions: fullOptions}).split(',')[0];
+    formattedDate = new Intl.DateTimeFormat(locale, fullOptions).format(new Date(date));
   } catch (err) {
     if (err instanceof Error) {
       throw new Error(err.message);

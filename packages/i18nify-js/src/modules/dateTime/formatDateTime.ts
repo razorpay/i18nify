@@ -16,11 +16,6 @@ const formatDateTime = (
     intlOptions?: Intl.DateTimeFormatOptions,
   } = {},
 ): string => {
-  /** retrieve locale from below areas in order of preference
-   * 1. locale (used in case if someone wants to override locale just for a specific area and not globally)
-   * 2. i18nState.locale (uses locale set globally)
-   * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
-   * */
   const locale = getLocale(options);
 
   date =
@@ -31,10 +26,9 @@ const formatDateTime = (
     year: 'numeric',
     month: 'numeric',
     day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true, // Use 12-hour format by default, can be overridden by intlOptions
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
     ...options.intlOptions,
   };
 
