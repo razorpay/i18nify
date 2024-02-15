@@ -18,8 +18,8 @@ const getRelativeTime = (
   date: DateInput,
   baseDate: DateInput = new Date(),
   options: {
-    locale?: Locale,
-    intlOptions?: Intl.RelativeTimeFormatOptions,
+    locale?: Locale;
+    intlOptions?: Intl.RelativeTimeFormatOptions;
   } = {},
 ): string => {
   date =
@@ -29,7 +29,7 @@ const getRelativeTime = (
     typeof baseDate === 'string'
       ? new Date(stringToDate(baseDate))
       : new Date(baseDate);
-      
+
   const locale = getLocale(options);
 
   const diffInSeconds = (date.getTime() - baseDate.getTime()) / 1000;

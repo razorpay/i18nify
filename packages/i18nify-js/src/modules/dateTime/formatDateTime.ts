@@ -12,8 +12,8 @@ import { stringToDate } from './utils';
 const formatDateTime = (
   date: DateInput,
   options: {
-    locale?: Locale,
-    intlOptions?: Intl.DateTimeFormatOptions,
+    locale?: Locale;
+    intlOptions?: Intl.DateTimeFormatOptions;
   } = {},
 ): string => {
   const locale = getLocale(options);

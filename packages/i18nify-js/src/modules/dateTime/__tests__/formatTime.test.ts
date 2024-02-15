@@ -10,16 +10,20 @@ describe('formatTime function', () => {
   ])(
     'formats time "%s" with locale "%s" and options %o to "%s"',
     (date, locale, options, expected) => {
-      expect(formatTime(date, {locale, intlOptions :options})).toBe(expected);
+      expect(formatTime(date, { locale, intlOptions: options })).toBe(expected);
     },
   );
 
   test('formats midnight time', () => {
-    expect(formatTime('2024-01-01T00:00:00', {locale: 'en-US'})).toBe('12:00:00 AM');
+    expect(formatTime('2024-01-01T00:00:00', { locale: 'en-US' })).toBe(
+      '12:00:00 AM',
+    );
   });
 
   test('formats end of day time', () => {
-    expect(formatTime('2024-01-01T23:59:59', {locale: 'en-US'})).toBe('11:59:59 PM');
+    expect(formatTime('2024-01-01T23:59:59', { locale: 'en-US' })).toBe(
+      '11:59:59 PM',
+    );
   });
 
   test('formats time with different options', () => {
@@ -36,8 +40,8 @@ describe('formatTime function', () => {
       second: '2-digit',
       hour12: false,
     } as Omit<DateTimeFormatOptions, 'dateStyle'>;
-    expect(formatTime(date, {locale: 'en-US', intlOptions :options1})).not.toBe(
-      formatTime(date, {locale: 'en-US', intlOptions: options2}),
-    );
+    expect(
+      formatTime(date, { locale: 'en-US', intlOptions: options1 }),
+    ).not.toBe(formatTime(date, { locale: 'en-US', intlOptions: options2 }));
   });
 });

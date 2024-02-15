@@ -10,25 +10,27 @@ describe('dateTime - formatDateTime', () => {
   ])(
     'formats date "%s" with locale "%s" and options %o to "%s"',
     (date, locale, options, expected) => {
-      expect(formatDateTime(date, {locale: locale, intlOptions :options})).toBe(expected);
+      expect(
+        formatDateTime(date, { locale: locale, intlOptions: options }),
+      ).toBe(expected);
     },
   );
 
   test('formats end of year date with time', () => {
-    expect(formatDateTime('2024-12-31T23:59:59', {locale: 'en-US'})).toBe(
+    expect(formatDateTime('2024-12-31T23:59:59', { locale: 'en-US' })).toBe(
       '12/31/2024, 11:59:59 PM',
     );
   });
 
   test('handles invalid date strings', () => {
-    expect(() => formatDateTime('invalid-date', {locale: 'en-US'})).toThrow();
+    expect(() => formatDateTime('invalid-date', { locale: 'en-US' })).toThrow();
   });
 
   // Locale and Option Variations
   test('formats date and time with different locales', () => {
     const date = '2024-03-01T20:00:00';
-    expect(formatDateTime(date, {locale: 'fr-FR'})).not.toBe(
-      formatDateTime(date, {locale: 'de-DE'}),
+    expect(formatDateTime(date, { locale: 'fr-FR' })).not.toBe(
+      formatDateTime(date, { locale: 'de-DE' }),
     );
   });
 
@@ -46,8 +48,10 @@ describe('dateTime - formatDateTime', () => {
       second: '2-digit',
       hour12: false,
     } as DateTimeFormatOptions;
-    expect(formatDateTime(date, {locale: 'en-US', intlOptions :options1})).not.toBe(
-      formatDateTime(date, {locale: 'en-US', intlOptions: options2}),
+    expect(
+      formatDateTime(date, { locale: 'en-US', intlOptions: options1 }),
+    ).not.toBe(
+      formatDateTime(date, { locale: 'en-US', intlOptions: options2 }),
     );
   });
 });

@@ -1,16 +1,16 @@
 import { Locale } from '../../dateTime/types';
 import state from '../state';
 
-export const getLocale = (options: {locale?: Locale} = {}): string => {
- /** retrieve locale from below areas in order of preference
+export const getLocale = (options: { locale?: Locale } = {}): string => {
+  /** retrieve locale from below areas in order of preference
    * 1. options.locale (used in case if someone wants to override locale just for a specific area and not globally)
    * 2. i18nState.locale (uses locale set globally)
    * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
    * */
- let locale = options?.locale || state.getState().locale;
+  let locale = options?.locale || state.getState().locale;
 
   // If a specific locale is provided, use it; otherwise, use the browser's locale
-  if(locale){
+  if (locale) {
     return locale;
   }
 

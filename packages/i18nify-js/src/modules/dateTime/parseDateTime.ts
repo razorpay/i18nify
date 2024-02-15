@@ -20,8 +20,8 @@ import { stringToDate } from './utils';
 const parseDateTime = (
   dateInput: DateInput,
   options: {
-    locale?: Locale,
-    intlOptions?: Intl.DateTimeFormatOptions,
+    locale?: Locale;
+    intlOptions?: Intl.DateTimeFormatOptions;
   } = {},
 ): ParsedDateTime => {
   // Parse the input date, converting strings to Date objects if necessary

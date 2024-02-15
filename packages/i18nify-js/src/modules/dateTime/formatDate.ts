@@ -16,8 +16,8 @@ import {
 const formatDate = (
   date: DateInput,
   options: {
-    locale?: Locale,
-    intlOptions?: DateFormatOptions,
+    locale?: Locale;
+    intlOptions?: DateFormatOptions;
   } = {},
 ): string => {
   const locale = getLocale(options);
@@ -32,7 +32,9 @@ const formatDate = (
   let formattedDate;
 
   try {
-    formattedDate = new Intl.DateTimeFormat(locale, fullOptions).format(new Date(date));
+    formattedDate = new Intl.DateTimeFormat(locale, fullOptions).format(
+      new Date(date),
+    );
   } catch (err) {
     if (err instanceof Error) {
       throw new Error(err.message);
