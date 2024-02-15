@@ -1,4 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { JSON_BASE_URL } from './constants';
 import { COUNTRY_CODE } from './types';
 
 /**
@@ -26,9 +27,9 @@ const getCitiesByState = async (
   if (!countryCode || !stateCode) {
     throw new Error(`Invalid parameters = ${countryCode}, ${stateCode}`);
   }
-  const res = await fetch(`./${countryCode.toUpperCase()}.json`).then((res) =>
-    res.json(),
-  );
+  const res = await fetch(
+    `${JSON_BASE_URL}/${countryCode.toUpperCase()}.json`,
+  ).then((res) => res.json());
   if (!res?.states?.[stateCode]) {
     throw new Error('Error fetching data');
   }

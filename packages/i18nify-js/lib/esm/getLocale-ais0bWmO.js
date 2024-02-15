@@ -2,10 +2,10 @@ import { s as state } from './index-fuw8iepm.js';
 
 const getLocale = (options = {}) => {
     /** retrieve locale from below areas in order of preference
-      * 1. options.locale (used in case if someone wants to override locale just for a specific area and not globally)
-      * 2. i18nState.locale (uses locale set globally)
-      * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
-      * */
+     * 1. options.locale (used in case if someone wants to override locale just for a specific area and not globally)
+     * 2. i18nState.locale (uses locale set globally)
+     * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
+     * */
     let locale = (options === null || options === void 0 ? void 0 : options.locale) || state.getState().locale;
     // If a specific locale is provided, use it; otherwise, use the browser's locale
     if (locale) {
@@ -29,4 +29,4 @@ const getLocale = (options = {}) => {
 };
 
 export { getLocale as g };
-//# sourceMappingURL=getLocale-lXmQK92B.js.map
+//# sourceMappingURL=getLocale-ais0bWmO.js.map

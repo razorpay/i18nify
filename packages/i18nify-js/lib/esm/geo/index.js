@@ -5406,5 +5406,190 @@ const getListOfAllFlags = () => {
 };
 var getListOfAllFlags$1 = withErrorBoundary(getListOfAllFlags);
 
-export { getFlagByCountry$1 as getFlagByCountry, getListOfAllFlags$1 as getListOfAllFlags };
+const JSON_BASE_URL = 'https://raw.githubusercontent.com/razorpay/i18nify/ftx-testing-branch/packages/i18nify-js/src/modules/geo/data/json';
+
+/**
+ * Returns data configuration mapping for continents and countries.
+ * Sample response =>
+ * {
+  "AF": {
+    "name": "Africa",
+    "countries": [
+      {
+        "code": "AO",
+        "name": "Angola"
+      },
+      {
+        "code": "BI",
+        "name": "Burundi"
+      },...
+    ]
+  },
+  "AN": {
+    "name": "Antarctica",
+    "countries": [
+      {
+        "code": "AQ",
+        "name": "Antarctica"
+      },
+      {
+        "code": "BV",
+        "name": "Bouvet Island"
+      },...
+  }...
+}
+ */
+const getAllContinents = () => {
+    // TODO: Replace this with hosted json config
+    return fetch(`${JSON_BASE_URL}/continents.json`).then((res) => res.json());
+};
+var getAllContinents$1 = withErrorBoundary(getAllContinents);
+
+/**
+ * Returns countries for the provided continent_code
+ * For eg,
+ * getCountriesByContinent('AN') => [
+      {
+        "code": "AQ",
+        "name": "Antarctica"
+      },
+      {
+        "code": "BV",
+        "name": "Bouvet Island"
+      },
+      {
+        "code": "GS",
+        "name": "South Georgia and the South Sandwich Islands"
+      },
+      {
+        "code": "HM",
+        "name": "Heard and McDonald Islands"
+      },
+      {
+        "code": "TF",
+        "name": "French Southern Territories"
+      }
+    ]
+}
+ */
+const getCountriesByContinent = (continentCode) => __awaiter(void 0, void 0, void 0, function* () {
+    if (!continentCode) {
+        throw new Error(`Invalid continent code = ${continentCode}`);
+    }
+    // TODO: Replace this with hosted json config
+    const res = yield fetch(`${JSON_BASE_URL}/continents.json`).then((res) => res.json());
+    if (!res[continentCode]) {
+        throw new Error('Error fetching data');
+    }
+    return res[continentCode].countries;
+});
+var getCountriesByContinent$1 = withErrorBoundary(getCountriesByContinent);
+
+/**
+ * Returns list of all countries from all continents
+ * For eg,
+ * getAllCountries() =>
+[
+    {
+        "code": "AO",
+        "name": "Angola"
+    },
+    {
+        "code": "BF",
+        "name": "Burkina Faso"
+    },
+    {
+        "code": "BI",
+        "name": "Burundi"
+    },
+    {
+        "code": "BJ",
+        "name": "Benin"
+    },...
+]
+}
+ */
+const getAllCountries = () => {
+    // TODO: Replace this with hosted json config
+    return fetch(`${JSON_BASE_URL}/continents.json`)
+        .then((res) => res.json())
+        .then((res) => {
+        return Object.keys(res).reduce((acc, curr) => {
+            // @ts-expect-error ignore
+            acc = [...acc, ...res[curr].countries];
+            return acc;
+        }, []);
+    });
+};
+var getAllCountries$1 = withErrorBoundary(getAllCountries);
+
+/**
+ * Returns states for the provided country_code
+ * For eg,
+ * getStatesByCountry('IN') => {
+    "TN": {
+      "name": "Tamil Nadu",
+      "cities": [
+        "Sengottai",
+        "Kandamanadi",
+        "Kallakurichi"...
+      ]
+    },
+    "UP": {
+      "name": "Uttar Pradesh",
+      "cities": [
+        "Zamānia",
+        "Zafarābād",
+        "Vrindāvan",
+        "Varanasi",
+      ]
+    },
+    ...
+  }
+ */
+const getStatesByCountry = (countryCode) => __awaiter(void 0, void 0, void 0, function* () {
+    if (!countryCode) {
+        throw new Error(`Invalid country code = ${countryCode}`);
+    }
+    // TODO: Replace this with hosted json config
+    const data = yield fetch(`${JSON_BASE_URL}/${countryCode.toUpperCase()}.json`).then((res) => res.json());
+    if (!(data === null || data === void 0 ? void 0 : data.states)) {
+        throw new Error('Error fetching data');
+    }
+    return data.states;
+});
+var getStatesByCountry$1 = withErrorBoundary(getStatesByCountry);
+
+/**
+ * Returns cities for the provided state_code
+ * For eg,
+ * getCitiesByState('DL') => [
+      "Pitampura",
+      "Pahar Ganj",
+      "Dwarka",
+      "Libaspur",
+      "Burari",
+      "Punjabi Bagh",
+      "Moti Bagh",
+      "Gharroli",
+      "Rohini",
+      "Saket",
+      ...
+    ]
+ */
+const getCitiesByState = (countryCode, stateCode) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
+    // TODO: Replace this with hosted json config
+    if (!countryCode || !stateCode) {
+        throw new Error(`Invalid parameters = ${countryCode}, ${stateCode}`);
+    }
+    const res = yield fetch(`${JSON_BASE_URL}/${countryCode.toUpperCase()}.json`).then((res) => res.json());
+    if (!((_a = res === null || res === void 0 ? void 0 : res.states) === null || _a === void 0 ? void 0 : _a[stateCode])) {
+        throw new Error('Error fetching data');
+    }
+    return res.states[stateCode].cities;
+});
+var getCitiesByState$1 = withErrorBoundary(getCitiesByState);
+
+export { getAllContinents$1 as getAllContinents, getAllCountries$1 as getAllCountries, getCitiesByState$1 as getCitiesByState, getCountriesByContinent$1 as getCountriesByContinent, getFlagByCountry$1 as getFlagByCountry, getListOfAllFlags$1 as getListOfAllFlags, getStatesByCountry$1 as getStatesByCountry };
 //# sourceMappingURL=index.js.map

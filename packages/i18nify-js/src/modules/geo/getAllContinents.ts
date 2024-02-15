@@ -1,4 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { JSON_BASE_URL } from './constants';
 
 /**
  * Returns data configuration mapping for continents and countries. 
@@ -33,7 +34,7 @@ import { withErrorBoundary } from '../../common/errorBoundary';
  */
 const getAllContinents = () => {
   // TODO: Replace this with hosted json config
-  return fetch('./continents.json').then((res) => res.json());
+  return fetch(`${JSON_BASE_URL}/continents.json`).then((res) => res.json());
 };
 
 export default withErrorBoundary<typeof getAllContinents>(getAllContinents);

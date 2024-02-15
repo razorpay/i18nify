@@ -1,4 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { JSON_BASE_URL } from './constants';
 
 /**
  * Returns list of all countries from all continents
@@ -26,7 +27,7 @@ import { withErrorBoundary } from '../../common/errorBoundary';
  */
 const getAllCountries = () => {
   // TODO: Replace this with hosted json config
-  return fetch('./continents.json')
+  return fetch(`${JSON_BASE_URL}/continents.json`)
     .then((res) => res.json())
     .then((res) => {
       return Object.keys(res).reduce((acc, curr) => {

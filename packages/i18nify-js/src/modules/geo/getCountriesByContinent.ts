@@ -1,4 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { JSON_BASE_URL } from './constants';
 import { CONTINENT_CODE } from './types';
 
 /**
@@ -33,7 +34,9 @@ const getCountriesByContinent = async (continentCode: CONTINENT_CODE) => {
     throw new Error(`Invalid continent code = ${continentCode}`);
   }
   // TODO: Replace this with hosted json config
-  const res = await fetch('./continents.json').then((res) => res.json());
+  const res = await fetch(`${JSON_BASE_URL}/continents.json`).then((res) =>
+    res.json(),
+  );
 
   if (!res[continentCode]) {
     throw new Error('Error fetching data');

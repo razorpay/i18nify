@@ -1,5 +1,5 @@
 import { w as withErrorBoundary } from '../index-0rEDS6JS.js';
-import { g as getLocale } from '../getLocale-lXmQK92B.js';
+import { g as getLocale } from '../getLocale-ais0bWmO.js';
 import '../index-fuw8iepm.js';
 
 const getIntlInstanceWithOptions = (options = {}) => {

@@ -110,10 +110,10 @@ var resetState$1 = withErrorBoundary(resetState);
 
 const getLocale = (options = {}) => {
     /** retrieve locale from below areas in order of preference
-      * 1. options.locale (used in case if someone wants to override locale just for a specific area and not globally)
-      * 2. i18nState.locale (uses locale set globally)
-      * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
-      * */
+     * 1. options.locale (used in case if someone wants to override locale just for a specific area and not globally)
+     * 2. i18nState.locale (uses locale set globally)
+     * 3. navigator (in case locale is not passed or set, use it from browser's navigator)
+     * */
     let locale = (options === null || options === void 0 ? void 0 : options.locale) || state.getState().locale;
     // If a specific locale is provided, use it; otherwise, use the browser's locale
     if (locale) {
@@ -1843,7 +1843,7 @@ const isValidDate = (dateString) => {
         const formattedDateStr = new Intl.DateTimeFormat('en-IN', {
             year: 'numeric',
             month: 'numeric',
-            day: 'numeric'
+            day: 'numeric',
         }).format(date);
         // Create a date string for comparison in YYYY-MM-DD format
         // This step is necessary because the input format should match the expected format
@@ -5781,6 +5781,191 @@ const getListOfAllFlags = () => {
 };
 var getListOfAllFlags$1 = withErrorBoundary(getListOfAllFlags);
 
+const JSON_BASE_URL = 'https://raw.githubusercontent.com/razorpay/i18nify/ftx-testing-branch/packages/i18nify-js/src/modules/geo/data/json';
+
+/**
+ * Returns data configuration mapping for continents and countries.
+ * Sample response =>
+ * {
+  "AF": {
+    "name": "Africa",
+    "countries": [
+      {
+        "code": "AO",
+        "name": "Angola"
+      },
+      {
+        "code": "BI",
+        "name": "Burundi"
+      },...
+    ]
+  },
+  "AN": {
+    "name": "Antarctica",
+    "countries": [
+      {
+        "code": "AQ",
+        "name": "Antarctica"
+      },
+      {
+        "code": "BV",
+        "name": "Bouvet Island"
+      },...
+  }...
+}
+ */
+const getAllContinents = () => {
+    // TODO: Replace this with hosted json config
+    return fetch(`${JSON_BASE_URL}/continents.json`).then((res) => res.json());
+};
+var getAllContinents$1 = withErrorBoundary(getAllContinents);
+
+/**
+ * Returns countries for the provided continent_code
+ * For eg,
+ * getCountriesByContinent('AN') => [
+      {
+        "code": "AQ",
+        "name": "Antarctica"
+      },
+      {
+        "code": "BV",
+        "name": "Bouvet Island"
+      },
+      {
+        "code": "GS",
+        "name": "South Georgia and the South Sandwich Islands"
+      },
+      {
+        "code": "HM",
+        "name": "Heard and McDonald Islands"
+      },
+      {
+        "code": "TF",
+        "name": "French Southern Territories"
+      }
+    ]
+}
+ */
+const getCountriesByContinent = (continentCode) => __awaiter(void 0, void 0, void 0, function* () {
+    if (!continentCode) {
+        throw new Error(`Invalid continent code = ${continentCode}`);
+    }
+    // TODO: Replace this with hosted json config
+    const res = yield fetch(`${JSON_BASE_URL}/continents.json`).then((res) => res.json());
+    if (!res[continentCode]) {
+        throw new Error('Error fetching data');
+    }
+    return res[continentCode].countries;
+});
+var getCountriesByContinent$1 = withErrorBoundary(getCountriesByContinent);
+
+/**
+ * Returns list of all countries from all continents
+ * For eg,
+ * getAllCountries() =>
+[
+    {
+        "code": "AO",
+        "name": "Angola"
+    },
+    {
+        "code": "BF",
+        "name": "Burkina Faso"
+    },
+    {
+        "code": "BI",
+        "name": "Burundi"
+    },
+    {
+        "code": "BJ",
+        "name": "Benin"
+    },...
+]
+}
+ */
+const getAllCountries = () => {
+    // TODO: Replace this with hosted json config
+    return fetch(`${JSON_BASE_URL}/continents.json`)
+        .then((res) => res.json())
+        .then((res) => {
+        return Object.keys(res).reduce((acc, curr) => {
+            // @ts-expect-error ignore
+            acc = [...acc, ...res[curr].countries];
+            return acc;
+        }, []);
+    });
+};
+var getAllCountries$1 = withErrorBoundary(getAllCountries);
+
+/**
+ * Returns states for the provided country_code
+ * For eg,
+ * getStatesByCountry('IN') => {
+    "TN": {
+      "name": "Tamil Nadu",
+      "cities": [
+        "Sengottai",
+        "Kandamanadi",
+        "Kallakurichi"...
+      ]
+    },
+    "UP": {
+      "name": "Uttar Pradesh",
+      "cities": [
+        "Zamānia",
+        "Zafarābād",
+        "Vrindāvan",
+        "Varanasi",
+      ]
+    },
+    ...
+  }
+ */
+const getStatesByCountry = (countryCode) => __awaiter(void 0, void 0, void 0, function* () {
+    if (!countryCode) {
+        throw new Error(`Invalid country code = ${countryCode}`);
+    }
+    // TODO: Replace this with hosted json config
+    const data = yield fetch(`${JSON_BASE_URL}/${countryCode.toUpperCase()}.json`).then((res) => res.json());
+    if (!(data === null || data === void 0 ? void 0 : data.states)) {
+        throw new Error('Error fetching data');
+    }
+    return data.states;
+});
+var getStatesByCountry$1 = withErrorBoundary(getStatesByCountry);
+
+/**
+ * Returns cities for the provided state_code
+ * For eg,
+ * getCitiesByState('DL') => [
+      "Pitampura",
+      "Pahar Ganj",
+      "Dwarka",
+      "Libaspur",
+      "Burari",
+      "Punjabi Bagh",
+      "Moti Bagh",
+      "Gharroli",
+      "Rohini",
+      "Saket",
+      ...
+    ]
+ */
+const getCitiesByState = (countryCode, stateCode) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
+    // TODO: Replace this with hosted json config
+    if (!countryCode || !stateCode) {
+        throw new Error(`Invalid parameters = ${countryCode}, ${stateCode}`);
+    }
+    const res = yield fetch(`${JSON_BASE_URL}/${countryCode.toUpperCase()}.json`).then((res) => res.json());
+    if (!((_a = res === null || res === void 0 ? void 0 : res.states) === null || _a === void 0 ? void 0 : _a[stateCode])) {
+        throw new Error('Error fetching data');
+    }
+    return res.states[stateCode].cities;
+});
+var getCitiesByState$1 = withErrorBoundary(getCitiesByState);
+
 exports.convertToMajorUnit = convertToMajorUnit$1;
 exports.convertToMinorUnit = convertToMinorUnit$1;
 exports.formatDate = formatDate$1;
@@ -5789,12 +5974,17 @@ exports.formatNumber = formatNumber$1;
 exports.formatNumberByParts = formatNumberByParts$1;
 exports.formatPhoneNumber = formatPhoneNumber$1;
 exports.formatTime = formatTime$1;
+exports.getAllContinents = getAllContinents$1;
+exports.getAllCountries = getAllCountries$1;
+exports.getCitiesByState = getCitiesByState$1;
+exports.getCountriesByContinent = getCountriesByContinent$1;
 exports.getCurrencyList = getCurrencyList$1;
 exports.getCurrencySymbol = getCurrencySymbol$1;
 exports.getFlagByCountry = getFlagByCountry$1;
 exports.getListOfAllFlags = getListOfAllFlags$1;
 exports.getRelativeTime = getRelativeTime$1;
 exports.getState = getState$1;
+exports.getStatesByCountry = getStatesByCountry$1;
 exports.getWeekdays = getWeekdays$1;
 exports.isValidDate = isValidDate$1;
 exports.isValidPhoneNumber = isValidPhoneNumber$1;

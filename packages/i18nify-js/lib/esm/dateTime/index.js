@@ -1,5 +1,5 @@
 import { w as withErrorBoundary } from '../index-0rEDS6JS.js';
-import { g as getLocale } from '../getLocale-lXmQK92B.js';
+import { g as getLocale } from '../getLocale-ais0bWmO.js';
 import '../index-fuw8iepm.js';
 
 /**
@@ -392,7 +392,7 @@ const isValidDate = (dateString) => {
         const formattedDateStr = new Intl.DateTimeFormat('en-IN', {
             year: 'numeric',
             month: 'numeric',
-            day: 'numeric'
+            day: 'numeric',
         }).format(date);
         // Create a date string for comparison in YYYY-MM-DD format
         // This step is necessary because the input format should match the expected format

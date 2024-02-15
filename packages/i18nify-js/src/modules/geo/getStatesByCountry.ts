@@ -1,4 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { JSON_BASE_URL } from './constants';
 import { COUNTRY_CODE } from './types';
 
 /**
@@ -30,9 +31,9 @@ const getStatesByCountry = async (countryCode: COUNTRY_CODE) => {
     throw new Error(`Invalid country code = ${countryCode}`);
   }
   // TODO: Replace this with hosted json config
-  const data = await fetch(`./${countryCode.toUpperCase()}.json`).then((res) =>
-    res.json(),
-  );
+  const data = await fetch(
+    `${JSON_BASE_URL}/${countryCode.toUpperCase()}.json`,
+  ).then((res) => res.json());
   if (!data?.states) {
     throw new Error('Error fetching data');
   }
