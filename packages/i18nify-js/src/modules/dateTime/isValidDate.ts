@@ -17,7 +17,7 @@ const isValidDate = (dateString: string): boolean => {
    const formattedDateStr = new Intl.DateTimeFormat('en-IN', {
      year: 'numeric',
      month: 'numeric',
-     day: '2-digit'
+     day: 'numeric'
    }).format(date);
 
    // Create a date string for comparison in YYYY-MM-DD format

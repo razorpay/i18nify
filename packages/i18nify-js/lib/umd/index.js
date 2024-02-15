@@ -1847,7 +1847,7 @@
             const formattedDateStr = new Intl.DateTimeFormat('en-IN', {
                 year: 'numeric',
                 month: 'numeric',
-                day: '2-digit'
+                day: 'numeric'
             }).format(date);
             // Create a date string for comparison in YYYY-MM-DD format
             // This step is necessary because the input format should match the expected format
