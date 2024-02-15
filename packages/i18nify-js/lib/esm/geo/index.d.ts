@@ -16,4 +16,4 @@ declare const _default$1: (countryCode: COUNTRY_CODE) => Promise<any>;
 
 declare const _default: (countryCode: COUNTRY_CODE, stateCode: string) => Promise<any>;
 
-export { _default$4 as getAllContinents, _default$2 as getAllCountries, _default as getCitiesByState, _default$3 as getCountriesByContinent, _default$6 as getFlagByCountry, _default$5 as getListOfAllFlags, _default$1 as getStatesByCountry };
+export { _default$4 as getAllContinents, _default$2 as getAllCountries, _default as getCities, _default$3 as getCountriesByContinent, _default$6 as getFlagByCountry, _default$5 as getListOfAllFlags, _default$1 as getStatesByCountry };

@@ -5938,7 +5938,7 @@ var getStatesByCountry$1 = withErrorBoundary(getStatesByCountry);
 /**
  * Returns cities for the provided state_code
  * For eg,
- * getCitiesByState('DL') => [
+ * getCities('DL') => [
       "Pitampura",
       "Pahar Ganj",
       "Dwarka",
@@ -5952,7 +5952,7 @@ var getStatesByCountry$1 = withErrorBoundary(getStatesByCountry);
       ...
     ]
  */
-const getCitiesByState = (countryCode, stateCode) => __awaiter(void 0, void 0, void 0, function* () {
+const getCities = (countryCode, stateCode) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     // TODO: Replace this with hosted json config
     if (!countryCode || !stateCode) {
@@ -5964,7 +5964,7 @@ const getCitiesByState = (countryCode, stateCode) => __awaiter(void 0, void 0, v
     }
     return res.states[stateCode].cities;
 });
-var getCitiesByState$1 = withErrorBoundary(getCitiesByState);
+var getCities$1 = withErrorBoundary(getCities);
 
 exports.convertToMajorUnit = convertToMajorUnit$1;
 exports.convertToMinorUnit = convertToMinorUnit$1;
@@ -5976,7 +5976,7 @@ exports.formatPhoneNumber = formatPhoneNumber$1;
 exports.formatTime = formatTime$1;
 exports.getAllContinents = getAllContinents$1;
 exports.getAllCountries = getAllCountries$1;
-exports.getCitiesByState = getCitiesByState$1;
+exports.getCities = getCities$1;
 exports.getCountriesByContinent = getCountriesByContinent$1;
 exports.getCurrencyList = getCurrencyList$1;
 exports.getCurrencySymbol = getCurrencySymbol$1;

@@ -5563,7 +5563,7 @@ var getStatesByCountry$1 = withErrorBoundary(getStatesByCountry);
 /**
  * Returns cities for the provided state_code
  * For eg,
- * getCitiesByState('DL') => [
+ * getCities('DL') => [
       "Pitampura",
       "Pahar Ganj",
       "Dwarka",
@@ -5577,7 +5577,7 @@ var getStatesByCountry$1 = withErrorBoundary(getStatesByCountry);
       ...
     ]
  */
-const getCitiesByState = (countryCode, stateCode) => __awaiter(void 0, void 0, void 0, function* () {
+const getCities = (countryCode, stateCode) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     // TODO: Replace this with hosted json config
     if (!countryCode || !stateCode) {
@@ -5589,7 +5589,7 @@ const getCitiesByState = (countryCode, stateCode) => __awaiter(void 0, void 0, v
     }
     return res.states[stateCode].cities;
 });
-var getCitiesByState$1 = withErrorBoundary(getCitiesByState);
+var getCities$1 = withErrorBoundary(getCities);
 
-export { getAllContinents$1 as getAllContinents, getAllCountries$1 as getAllCountries, getCitiesByState$1 as getCitiesByState, getCountriesByContinent$1 as getCountriesByContinent, getFlagByCountry$1 as getFlagByCountry, getListOfAllFlags$1 as getListOfAllFlags, getStatesByCountry$1 as getStatesByCountry };
+export { getAllContinents$1 as getAllContinents, getAllCountries$1 as getAllCountries, getCities$1 as getCities, getCountriesByContinent$1 as getCountriesByContinent, getFlagByCountry$1 as getFlagByCountry, getListOfAllFlags$1 as getListOfAllFlags, getStatesByCountry$1 as getStatesByCountry };
 //# sourceMappingURL=index.js.map

@@ -5,7 +5,7 @@ import { COUNTRY_CODE } from './types';
 /**
  * Returns cities for the provided state_code
  * For eg, 
- * getCitiesByState('DL') => [
+ * getCities('DL') => [
       "Pitampura",
       "Pahar Ganj",
       "Dwarka",
@@ -19,10 +19,7 @@ import { COUNTRY_CODE } from './types';
       ...
     ]
  */
-const getCitiesByState = async (
-  countryCode: COUNTRY_CODE,
-  stateCode: string,
-) => {
+const getCities = async (countryCode: COUNTRY_CODE, stateCode: string) => {
   // TODO: Replace this with hosted json config
   if (!countryCode || !stateCode) {
     throw new Error(`Invalid parameters = ${countryCode}, ${stateCode}`);
@@ -36,4 +33,4 @@ const getCitiesByState = async (
   return res.states[stateCode].cities;
 };
 
-export default withErrorBoundary<typeof getCitiesByState>(getCitiesByState);
+export default withErrorBoundary<typeof getCities>(getCities);
