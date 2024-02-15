@@ -1,68 +1,34 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { getLocale } from '../.internal/utils';
-import { LOCALE_DATE_FORMATS } from './data/localeDateFormats';
-import { Locale } from './types';
 
 /**
  * Checks if a given string is a valid date according to a specific locale's date format.
  *
  * @param dateString The date string to validate.
- * @param options Config object
  * @returns True if the dateString is a valid date according to the locale's format, false otherwise.
  */
-const isValidDate = (dateString: string, options: {locale?: Locale}): boolean => {
-  // Use the provided locale or fallback to the system's default locale
-  const locale = getLocale(options);
+const isValidDate = (dateString: string): boolean => {
+ // Try to parse the date string using the Date object
+ const date = new Date(dateString);
+ // Check if the date is an invalid Date object (e.g., new Date('invalid') -> NaN)
+ if (isNaN(date.getTime())) {
+   return false; // The date is invalid
+ } else {
+   // Use Intl.DateTimeFormat to format the date back to a string
+   const formattedDateStr = new Intl.DateTimeFormat('en-IN', {
+     year: 'numeric',
+     month: 'numeric',
+     day: '2-digit'
+   }).format(date);
 
-  // Type guard to ensure dateString is a string
-  if (typeof dateString !== 'string') {
-    return false;
-  }
+   // Create a date string for comparison in YYYY-MM-DD format
+   // This step is necessary because the input format should match the expected format
+   const [day, month, year] = formattedDateStr.split('/');
+   const formattedInputDate = `${year}-${month}-${day}`;
+   const inputedDate = `${new Date(dateString).getFullYear()}-${new Date(dateString).getMonth()+1}-${new Date(dateString).getDate()}`;
 
-  // Determine the date format based on the given locale
-  const dateFormat = LOCALE_DATE_FORMATS[locale];
-  const delimiter = /[-/.]/;
-  const [part1, part2, part3] = dateString.split(delimiter);
-
-  let year: string, month: string, day: string;
-  switch (dateFormat) {
-    case 'DD/MM/YYYY':
-    case 'DD.MM.YYYY':
-    case 'DD-MM-YYYY':
-      // Extract day, month, and year for formats where the day comes first
-      [day, month, year] = [part1, part2, part3];
-      break;
-    case 'YYYY/MM/DD':
-    case 'YYYY-MM-DD':
-    case 'YYYY.MM.DD':
-      // Extract year, month, and day for formats where the year comes first
-      [year, month, day] = [part1, part2, part3];
-      break;
-    case 'MM-DD-YYYY':
-      // Extract month, day and year for formats where the year comes first
-      [month, day, year] = [part1, part2, part3];
-      break;
-    default:
-      // Return false for unrecognized formats
-      return false;
-  }
-
-  try {
-    // Parsing and validating the date components
-    const parsedDate = new Date(
-      parseInt(year),
-      parseInt(month) - 1,
-      parseInt(day),
-    );
-    return (
-      parsedDate.getFullYear() === parseInt(year) &&
-      parsedDate.getMonth() === parseInt(month) - 1 &&
-      parsedDate.getDate() === parseInt(day)
-    );
-  } catch (e) {
-    // Return false in case of any parsing errors
-    return false;
-  }
+   // Compare the formatted date with the original date string
+   return inputedDate === formattedInputDate;
+ }
 };
 
 export default withErrorBoundary<typeof isValidDate>(isValidDate);

@@ -622,24 +622,20 @@ console.log(getWeekdays({locale: 'ja-JP'})); // Outputs ['日曜日', '月曜日
 
 💡 Did You Know? The order and names of weekdays vary across cultures and languages. With `getWeekdays`, you can easily cater to a global audience, ensuring that your application speaks their language, quite literally! 🌍🗣️
 
-#### isValidDate(dateString, options)
+#### isValidDate(dateString)
 
 🕵️‍♂️🗓️ The `isValidDate` function now comes with an international flair! It's a robust date validator that not only checks if a date is valid but also ensures it aligns with the date format of a specific locale. Perfect for applications catering to a global audience, it scrutinizes dates against various international formats, making it a versatile tool in your date validation arsenal. 🌍⏳
 
 ##### Examples
 
 ```javascript
-// Validating a date string against a specific locale
-console.log(isValidDate('15/04/2022', {countryCode: 'GB'})); // Outputs true for DD/MM/YYYY format (UK)
+console.log(isValidDate('15/04/2022')); // Outputs false
 
-// Checking a date string in American format
-console.log(isValidDate('04-15-2022', {countryCode: 'US'})); // Outputs true for MM-DD-YYYY format (USA)
+console.log(isValidDate('04-15-2022')); // Outputs true
 
-// Testing an invalid date string for a given locale
-console.log(isValidDate('2022-15-04', {countryCode: 'US'})); // Outputs false, incorrect format for USA
+console.log(isValidDate('2022-15-04')); // Outputs false
 
-// Attempting to validate a date with an unsupported country code
-console.log(isValidDate('15.04.2022', {countryCode: 'ZZ'})); // Outputs false, 'ZZ' is not a recognized country code
+console.log(isValidDate('15.04.2022')); // Outputs false
 ```
 
 💡 Pro Tip: Employ `isValidDate` for validating user inputs in internationalized applications, ensuring compatibility with locale-specific date formats. It’s your trusty guardian, assuring that dates align with regional norms. 🚦🔍🌐
