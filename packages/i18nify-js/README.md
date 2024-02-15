@@ -489,7 +489,36 @@ console.log('Country Code:', parsedInfo.countryCode); // 'JP'
 console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxxx-xxxx'
 ```
 
-### Module 03: Date & Time Module
+### Module 03: Geo
+
+#### getFlagByCountry(countryCode)
+
+🏳️‍🌈✨ Fetching country flags has never been easier! Just hand over a country code to this function, and it will retrieve the SVG content of the corresponding flag for you. Whether it's for displaying patriotic flair or for an international project, this function handles the lookup and ensures you get the exact visual representation of the nation's pride. In case it can't find the flag, it won't leave you hanging; it'll let you know something went wrong.
+
+##### Examples
+
+```javascript
+getFlagByCountry('US')
+  .then((svgContent) => console.log(svgContent)) // Logs the SVG content for the United States flag
+  .catch((error) => console.error(error));
+
+getFlagByCountry('FR')
+  .then((svgContent) => console.log(svgContent)) // Logs the SVG content for the France flag
+  .catch((error) => console.error(error));
+```
+
+#### getListOfAllFlags()
+
+🌍🚩 Imagine a virtual globe where you can spin and pick any country – that's what `getListOfAllFlags` brings to your codebase. This function maps out the whole world by returning an object with country codes as keys and their respective flag SVGs as values. It's like having a world atlas in your hands, but instead of pages, you get digital, vibrant flags of each nation. If any issue arises during this global flag gathering, the function won't just sweep it under the rug; it'll raise a flag (pun intended) to let you know.
+
+##### Examples
+
+```javascript
+getListOfAllFlags()
+  .then((flags) => console.log(flags))
+  .catch((error) => console.error(error)); // Logs an object with country codes as keys and SVG content as values
+```
+### Module 04: Date & Time Module
 
 This module provides functions for formatting and manipulating dates and times in a locale-sensitive manner using the JavaScript Intl API & Date object.
 

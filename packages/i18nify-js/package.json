@@ -33,6 +33,10 @@
     "./dateTime": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/dateTime/index.js"
+    },
+    "./geo": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/geo/index.js"
     }
   },
   "typesVersions": {
@@ -48,6 +52,9 @@
       ],
       "dateTime": [
         "./lib/esm/dateTime/index.d.ts"
+      ],
+      "geo": [
+        "./lib/esm/geo/index.d.ts"
       ]
     }
   },
@@ -77,5 +84,8 @@
     "jest-environment-jsdom": "^29.7.0",
     "rollup": "^4.0.2",
     "rollup-plugin-dts": "^6.1.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-dynamic-import-vars": "^2.1.2"
   }
 }

@@ -1,0 +1,1 @@
+export type FlagMap = Record<string, string>;
