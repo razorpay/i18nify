@@ -1,0 +1,8 @@
+Data Source:
+The data in this version has been sourced from ISO 3166, the International Organization for Standardization's standard for country codes and names.
+
+Conversion to JSON Format:
+We have meticulously converted the ISO 3166 data into a structured JSON format. Each country entry includes its unique country code, commonly used country name, country Alpha3 Code, country Numeric code, country sovereignty.
+
+Purpose:
+The primary goal of this version is to establish a foundational dataset for country attributes, ensuring consistency and accuracy across various applications and platforms. By leveraging ISO 3166 as our source, we aim to provide a reliable and standardized reference for country-related information.
