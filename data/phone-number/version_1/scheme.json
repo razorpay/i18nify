@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "country_Tele_Information": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Z]{2}$": {
+          "type": "object",
+          "properties": {
+            "Dial code": { "type": "string" },
+            "Format": { "type": "string" },
+            "Regex": { "type": "string" }
+          },
+          "required": ["Dial code", "Format", "Regex"]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["country_Tele_Information"]
+}

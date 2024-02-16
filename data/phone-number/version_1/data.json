@@ -1,0 +1,644 @@
+{
+  "country_Tele_Information": {
+    "US": {
+      "Dial code": "1",
+      "Format": "'xxx-xxx-xxxx'",
+      "Regex": "/^(\\+\\d{12}\\s?)?([2-9]{1}\\d{2}[2-9]{1}\\d{6})$/"
+    },
+    "BB": {
+      "Dial code": "1",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+1)?246)?(?:\\d{3})?\\d{7}$/"
+    },
+    "BM": {
+      "Dial code": "1",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+1)?441)?(?:\\d{2})?\\d{7}$/"
+    },
+    "BS": {
+      "Dial code": "1",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+1)?242)?(?:\\d{3})?\\d{7}$/"
+    },
+    "CA": {
+      "Dial code": "1",
+      "Format": "'xxx-xxx-xxxx'",
+      "Regex": "/^(\\+\\d{12}\\s?)?([2-9]{1}\\d{2}[2-9]{1}\\d{6})$/"
+    },
+    "DO": {
+      "Dial code": "1",
+      "Format": "'xxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+1)?809|1-8(?:00|88|89))(?:\\d{7})$/"
+    },
+    "JM": {
+      "Dial code": "1",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+1876))\\d{710}$/"
+    },
+    "KY": {
+      "Dial code": "1",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:\\+?1\\s?(345))\\d{6}$/"
+    },
+    "PR": {
+      "Dial code": "1",
+      "Format": "'xxx-xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+1)?787|939)\\d{7}$/"
+    },
+    "TT": {
+      "Dial code": "1",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+?1-868)|\\(?868\\)?)(\\d{7})$/"
+    },
+    "VC": {
+      "Dial code": "1",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+1)?784)?(?:\\d{3})?\\d{7}$/"
+    },
+    "RU": {
+      "Dial code": "7",
+      "Format": "'xxxxxx-xx-xx'",
+      "Regex": "/^(?:\\+?7|8)?[-]?\\(?9\\d{2}\\)?[-]?\\d{3}[-]?\\d{2}[-]?\\d{2}$/"
+    },
+    "KZ": {
+      "Dial code": "7",
+      "Format": "'xxx-xxx-xx-xx'",
+      "Regex": "/^(?:\\+?7|8)?7\\d{9}$/"
+    },
+    "EG": {
+      "Dial code": "20",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+20|20)?(\\d{10}))$/"
+    },
+    "ZA": {
+      "Dial code": "27",
+      "Format": "'xxx-xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+27)|0)(\\d{9})$/"
+    },
+    "NL": {
+      "Dial code": "31",
+      "Format": "'xxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+31)|0(6(?:\\d{8})|[1-9](?:(?:\\d{8})|(?:\\s\\d{3}\\s\\d{4}))|(?:\\d{8})))$/"
+    },
+    "HU": {
+      "Dial code": "36",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+36))(\\s?\\d{2}\\s?\\d{3}\\s?\\d{4})$/"
+    },
+    "RO": {
+      "Dial code": "40",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+40|0))(?:7[2-8]\\d{7}|21\\d{8})$/"
+    },
+    "CH": {
+      "Dial code": "41",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+41|0)(?:\\s*\\(?0\\)?\\s*))?(?:\\d{2}\\s*)?\\d{3}\\s*\\d{2}\\s*\\d{2}$/"
+    },
+    "GB": {
+      "Dial code": "44",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+44\\s?|0)7\\d{3}(\\s?\\d{4})?)$/"
+    },
+    "DK": {
+      "Dial code": "45",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:\\+?45)?(?:\\d{8})$/"
+    },
+    "SE": {
+      "Dial code": "46",
+      "Format": "'xxx-xxxxxxx'",
+      "Regex": "/^(?:\\+?46|0)\\s?[1-57-9](?:[0-9]\\s?){8}$/"
+    },
+    "NO": {
+      "Dial code": "47",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+?47)|\\d{2}|\\d{3})\\s?\\d{2}\\s?\\d{3}$/"
+    },
+    "PL": {
+      "Dial code": "48",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+48)?(?:\\s?\\d{3}\\s?\\d{3}\\s?\\d{3}|(?:\\d{2}\\s?){4}\\d{2}|\\d{3}-\\d{3}-\\d{3}))$/"
+    },
+    "PE": {
+      "Dial code": "51",
+      "Format": "'xxx-xxx-xxx'",
+      "Regex": "/^(?:(?:\\+51)|0)?(?:9\\d{8})$/"
+    },
+    "MX": {
+      "Dial code": "52",
+      "Format": "'xxx-xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+?52)?\\s?(?:1|01)?\\s?)?(?:\\d{3}\\s?\\d{3}\\s?\\d{4})$/"
+    },
+    "CU": {
+      "Dial code": "53",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:\\+?53)?(?:[5-8]\\d{7})$/"
+    },
+    "AR": {
+      "Dial code": "54",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:(?:\\+|0{02})54)?(?:11|[2368]\\d)(?:(?=\\d{02}15)\\d{2})??\\d{8}$/"
+    },
+    "CO": {
+      "Dial code": "57",
+      "Format": "'xxxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+57|0057)?)?[1-8]{1}\\d{67}$/"
+    },
+    "VE": {
+      "Dial code": "58",
+      "Format": "'xxxx-xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+58)|0)?4\\d{9}$/"
+    },
+    "MY": {
+      "Dial code": "60",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(\\+?6?0)?(\\d{13})[-.]?(\\d{78})$/"
+    },
+    "AU": {
+      "Dial code": "61",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:\\+?61|0)4\\d{8}$/"
+    },
+    "ID": {
+      "Dial code": "62",
+      "Format": "'xxxx-xxxx-xxxx'",
+      "Regex": "/^(?:\\+?62|0[1-9])[\\s-]?\\d{24}[\\s-]?\\d{34}[\\s-]?\\d{34}$/"
+    },
+    "PH": {
+      "Dial code": "63",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+?63)|0)(?:\\d{10})$/"
+    },
+    "NZ": {
+      "Dial code": "64",
+      "Format": "'xxx-xxxxxxx'",
+      "Regex": "/^(?:\\+?64|0)(\\d{25}\\d{48}|\\d{34}\\d{4})$/"
+    },
+    "SG": {
+      "Dial code": "65",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+65)|(?:\\(\\+65\\))|(?:65))\\d{4}\\d{4}$/"
+    },
+    "TH": {
+      "Dial code": "66",
+      "Format": "'xxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+66)|0)\\d{9}$/"
+    },
+    "VN": {
+      "Dial code": "84",
+      "Format": "'xxxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+84)|0)?[1-9]\\d{8}$/"
+    },
+    "CN": {
+      "Dial code": "86",
+      "Format": "'xxxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+|00)86)?1\\d{10}$/"
+    },
+    "TR": {
+      "Dial code": "90",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+90)|(0))\\s?5\\d{9}$/"
+    },
+    "IN": {
+      "Dial code": "91",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+|0{02})91\\s*[-]?\\s*|[0]?)?[6789]\\d{9}$/"
+    },
+    "PK": {
+      "Dial code": "92",
+      "Format": "'xxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+92)|0)?[345]\\d{9}$/"
+    },
+    "LK": {
+      "Dial code": "94",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+94)|0)(?:\\d{9})$/"
+    },
+    "MM": {
+      "Dial code": "95",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+?95)|0)?[1-9]\\d{9}$/"
+    },
+    "SS": {
+      "Dial code": "211",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:\\+211|0)?[1-9]\\d{79}$/"
+    },
+    "MA": {
+      "Dial code": "212",
+      "Format": "'xxxx-xxxxxx'",
+      "Regex": "/^(?:(?:\\+?212(\\s*[-|\\s*]?\\d{19})?)|(?:0))(?:\\d{9})$/"
+    },
+    "DZ": {
+      "Dial code": "213",
+      "Format": "'xxxx-xxxx-xxx'",
+      "Regex": "/^(?:\\+?213|0)([567]\\d{8})$/"
+    },
+    "TN": {
+      "Dial code": "216",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+216)|22|9[1-9])\\d{7}$/"
+    },
+    "GM": {
+      "Dial code": "220",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:\\+220)?\\d{57}$/"
+    },
+    "SN": {
+      "Dial code": "221",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+221)|0)?[3679]\\d{7}$/"
+    },
+    "TG": {
+      "Dial code": "228",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+228))\\d{8}$/"
+    },
+    "MU": {
+      "Dial code": "230",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:\\+230|0)?\\d{8}$/"
+    },
+    "LR": {
+      "Dial code": "231",
+      "Format": "'xxx-xxx-xxxx'",
+      "Regex": "/^(?:\\+231)[-\\d]{4}[-\\d]{4}$/"
+    },
+    "SL": {
+      "Dial code": "232",
+      "Format": "'xxx-xxxxxx'",
+      "Regex": "/^(?:(?:\\+232)|(?:0))?\\d{9}$/"
+    },
+    "GH": {
+      "Dial code": "233",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+233)|0)?(?:\\d{9})$/"
+    },
+    "NG": {
+      "Dial code": "234",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+234)|(?:0))(?:\\d{78})$/"
+    },
+    "SC": {
+      "Dial code": "248",
+      "Format": "'xxxxxxx'",
+      "Regex": "/^(?:(?:\\+248)|\\d{4})\\d{5}$/"
+    },
+    "RW": {
+      "Dial code": "250",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+250)|(0))\\d{9}$/"
+    },
+    "ET": {
+      "Dial code": "251",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:\\+?251)?[1-59]\\d{8}$/"
+    },
+    "SO": {
+      "Dial code": "252",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:\\+252|0)?[567]\\d{7}$/"
+    },
+    "KE": {
+      "Dial code": "254",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+254)|(?:0))(?:\\d{67})$/"
+    },
+    "TZ": {
+      "Dial code": "255",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+?255)|0)?[67]\\d{8}$/"
+    },
+    "UG": {
+      "Dial code": "256",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+256)|0)?[39]\\d{8}$/"
+    },
+    "MZ": {
+      "Dial code": "258",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+258)|(?:258))?8[234567]\\d{78}$/"
+    },
+    "ZM": {
+      "Dial code": "260",
+      "Format": "'xxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+260)|0)?[123456789]\\d{89}$/"
+    },
+    "MG": {
+      "Dial code": "261",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+261)?3[234568]\\d{7})$/"
+    },
+    "ZW": {
+      "Dial code": "263",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+263)|0)?(?:\\d{910})$/"
+    },
+    "NA": {
+      "Dial code": "264",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+264)|0)?\\d{8}$/"
+    },
+    "MW": {
+      "Dial code": "265",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:\\+265)[1-9]\\d{6}$/"
+    },
+    "LS": {
+      "Dial code": "266",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+?266)|0)?[56]\\d{7}$/"
+    },
+    "BW": {
+      "Dial code": "267",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+267)?\\s?)?[74]\\d{7}$/"
+    },
+    "SZ": {
+      "Dial code": "268",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:\\+?268)?\\d{78}$/"
+    },
+    "AW": {
+      "Dial code": "297",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+297)?(?!0)\\d{7})$/"
+    },
+    "GI": {
+      "Dial code": "350",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:\\+350)?\\d{5}$/"
+    },
+    "PT": {
+      "Dial code": "351",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+351)?9(1\\d|2[1-9]|6[12345789]|7[12345789])\\d{7})$/"
+    },
+    "LU": {
+      "Dial code": "352",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+352)?(6|2(6|7|8|9))\\d{6})$/"
+    },
+    "AL": {
+      "Dial code": "355",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:\\+?355)?(?:[4-9]\\d{7}|6\\d{8})$/"
+    },
+    "LT": {
+      "Dial code": "370",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+370)|8)\\d{8}$/"
+    },
+    "LV": {
+      "Dial code": "371",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+371)?2\\d{7})$/"
+    },
+    "MD": {
+      "Dial code": "373",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+373)|(?:0))(?:\\d{78})$/"
+    },
+    "AM": {
+      "Dial code": "374",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:\\+?374)?(?:[0-9]{8}|[0-9]{6}[0-9]{2})$/"
+    },
+    "SM": {
+      "Dial code": "378",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+378)|(0549|6\\d{4}))\\d{5}$/"
+    },
+    "UA": {
+      "Dial code": "380",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+380)|(0))?(39|50|63|66|67|68|91|92|93|94|95|96|97|98|99)\\d{7}$/"
+    },
+    "RS": {
+      "Dial code": "381",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+381)|0)([0-6]|[7][012345])[0-9]{510}$/"
+    },
+    "ME": {
+      "Dial code": "382",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+382)?[67]\\d{720})$/"
+    },
+    "HR": {
+      "Dial code": "385",
+      "Format": "'xxxxxxxxxx'",
+      "Regex": "/^(?:\\+?385)?\\d{89}$/"
+    },
+    "SI": {
+      "Dial code": "386",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+386)|0)?[1-59]\\d{78}$/"
+    },
+    "MK": {
+      "Dial code": "389",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:\\+389|0)(?:(?:2[0-4]|[3-9])\\s?)?\\d{6}$/"
+    },
+    "CZ": {
+      "Dial code": "420",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:\\+?420)?(?:\\d{9})$/"
+    },
+    "SK": {
+      "Dial code": "421",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+421))?(0|9[0-8])\\d{8}$/"
+    },
+    "BZ": {
+      "Dial code": "501",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+501)?\\s?)?[622]\\d{4}$/"
+    },
+    "GT": {
+      "Dial code": "502",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:\\+502)?[2468]\\d{78}$/"
+    },
+    "SV": {
+      "Dial code": "503",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:(?:\\+?503)|(?:0))(?:\\d{8})$/"
+    },
+    "HN": {
+      "Dial code": "504",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:\\+504)?[89]\\d{7}$/"
+    },
+    "NI": {
+      "Dial code": "505",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:(?:\\+505))?(?:\\d{8})$/"
+    },
+    "CR": {
+      "Dial code": "506",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:(?:\\+506)?\\s*|0)?[1-9]\\d{7}$/"
+    },
+    "PA": {
+      "Dial code": "507",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+507)\\s?)?[46]\\d{67}$/"
+    },
+    "HT": {
+      "Dial code": "509",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:\\+?509)?\\d{8}$/"
+    },
+    "BO": {
+      "Dial code": "591",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:(?:\\+|0{02})591)?(?:(?:2|3|7|6)\\d{7})$/"
+    },
+    "GY": {
+      "Dial code": "592",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+592)?(?:(?:\\s)?[2-9])(?:(?:\\s)?\\d))?(?:(?:\\s)?\\d{4})$/"
+    },
+    "PY": {
+      "Dial code": "595",
+      "Format": "'xxx-xxxxxx'",
+      "Regex": "/^(?:(?:\\+595|0)9[9876]\\d{7})$/"
+    },
+    "SR": {
+      "Dial code": "597",
+      "Format": "'xxx-xxxx'",
+      "Regex": "/^(?:(?:\\+597))\\d{7}$/"
+    },
+    "UY": {
+      "Dial code": "598",
+      "Format": "'xxx-xxxxx'",
+      "Regex": "/^(?:(?:\\+598|0)\\s?(9\\d{3}|2\\d{2}|[4-9]\\d{6}))$/"
+    },
+    "TL": {
+      "Dial code": "670",
+      "Format": "'xxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+670)\\s?)?[0-9]{3}\\s?[0-9]{34}$/"
+    },
+    "BN": {
+      "Dial code": "673",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:\\+?673)?(?:\\d{3})?\\d{4}$/"
+    },
+    "PG": {
+      "Dial code": "675",
+      "Format": "'xxx-xxxxxx'",
+      "Regex": "/^(?:\\+?675)?(?:[7-9]\\d{7})$/"
+    },
+    "FJ": {
+      "Dial code": "679",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+?679)?\\s?\\d{3}\\s?\\d{4})?$/"
+    },
+    "HK": {
+      "Dial code": "852",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:\\+852\\s?)?[456789]\\d{3}\\s?\\d{4}$/"
+    },
+    "MO": {
+      "Dial code": "853",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:(?:\\+?853)|[0-9])?\\d{8}$/"
+    },
+    "KH": {
+      "Dial code": "855",
+      "Format": "'xxx-xxx-xxx'",
+      "Regex": "/^(?:(?:\\+855)|(?:0))(?:\\s?[1-9]\\d{78})$/"
+    },
+    "LA": {
+      "Dial code": "856",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+?856)|0)(20\\d{79})$/"
+    },
+    "BD": {
+      "Dial code": "880",
+      "Format": "'xxxx-xxxxxx'",
+      "Regex": "/^(?:\\+?880|0)1[13456789]\\d{8}$/"
+    },
+    "TW": {
+      "Dial code": "886",
+      "Format": "'xxxx-xxxxxx'",
+      "Regex": "/^(?:(?:\\+886)|0)?9\\d{8}$/"
+    },
+    "MV": {
+      "Dial code": "960",
+      "Format": "'xxxxxx'",
+      "Regex": "/^(?:(?:\\+?960)|0)?\\d{7}$/"
+    },
+    "KW": {
+      "Dial code": "965",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:\\+?965)[569]\\d{7}$/"
+    },
+    "SA": {
+      "Dial code": "966",
+      "Format": "'xxx-xxxxxxx'",
+      "Regex": "/^(?:\\+?966)?\\s?1?[\\s-]?(?:[45]\\d{2}|5\\d{3})[\\s-]?\\d{4}$/"
+    },
+    "YE": {
+      "Dial code": "967",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:\\+?967)?(?:\\d{78})$/"
+    },
+    "OM": {
+      "Dial code": "968",
+      "Format": "'xxxx-xxxx'",
+      "Regex": "/^(?:\\+?968)?(?:95|96|97|98)\\d{6}$/"
+    },
+    "PS": {
+      "Dial code": "970",
+      "Format": "'xxxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+970))(5[2349])\\d{7}$/"
+    },
+    "AE": {
+      "Dial code": "971",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:\\+?971|0)?(?:2|3|4|6|7|9)\\d{8}$/"
+    },
+    "IL": {
+      "Dial code": "972",
+      "Format": "'xxxx-xxx-xxx'",
+      "Regex": "/^(?:(?:\\+972|0)(?:-)?)[23489]\\d{7}$/"
+    },
+    "BH": {
+      "Dial code": "973",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:\\+?973)?[356]\\d{7}$/"
+    },
+    "QA": {
+      "Dial code": "974",
+      "Format": "'xxxxxxxx'",
+      "Regex": "/^(?:\\+?974)?-?33\\d{5}$/"
+    },
+    "MN": {
+      "Dial code": "976",
+      "Format": "'xxx-xx-xxxx'",
+      "Regex": "/^(?:\\+976|0)\\d{8}$/"
+    },
+    "NP": {
+      "Dial code": "977",
+      "Format": "'xxxx-xxxxxxx'",
+      "Regex": "/^(?:(?:\\+977))?(\\d{910})$/"
+    },
+    "TJ": {
+      "Dial code": "992",
+      "Format": "'xxxxxxxxx'",
+      "Regex": "/^(?:(?:\\+992))(37|55|77)\\d{7}$/"
+    },
+    "KG": {
+      "Dial code": "996",
+      "Format": "'xxx-xx-xx-xx'",
+      "Regex": "/^(?:\\+996)?\\s?\\d{9}$/"
+    },
+    "UZ": {
+      "Dial code": "998",
+      "Format": "'xxx-xxx-xx-xx'",
+      "Regex": "/^(?:\\+?998)?\\s?[3456789]\\d{8}$/"
+    }
+  }
+}

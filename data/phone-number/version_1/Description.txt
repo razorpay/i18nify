@@ -1,0 +1,13 @@
+Data Source:
+The phone number data, including dial codes and phone number patterns, has been sourced from Google's libPhoneNumber library, a comprehensive tool for parsing, formatting, and validating international phone numbers.
+
+Conversion to JSON Format:
+We meticulously converted the phone number data obtained from Google's libPhoneNumber into a structured JSON format. Each country entry includes its unique dial code, phone number pattern, and any additional attributes deemed pertinent for our dataset.
+
+Purpose:
+The primary objective of this version is to establish a comprehensive dataset for country phone number attributes, facilitating accurate parsing, formatting, and validation of international phone numbers. By leveraging Google's libPhoneNumber as our source, we aim to provide a reliable and standardized reference for phone number-related information across diverse regions and telecommunications systems.
+
+Future Considerations:
+While Version 1 serves as an initial framework, we anticipate future iterations to incorporate additional enhancements, including:
+- Integration of supplementary data sources to enrich the dataset with more detailed phone number attributes and telecommunications standards.
+- Expansion of the dataset to encompass broader phone number-related metadata.
