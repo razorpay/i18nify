@@ -1,0 +1,1104 @@
+{
+  "country_language_info": {
+    "AF": {
+      "languages": ["Afghan Persian or Dari", "Pashto", "Uzbeki", "English", "Turkmani", "Urdu", "Pachaie", "Nuristani", "Arabic", "Balochi", "other"],
+      "preferred_language": "Dari",
+      "language_code": "prs"
+    },
+    "AL": {
+      "languages": ["Albanian", "Greek", "other"],
+      "preferred_language": "Albanian",
+      "language_code": "sq"
+    },
+    "AS": {
+      "languages": ["Samoan", "English", "Tongan", "other Pacific Islander", "Asian languages", "other"],
+      "preferred_language": "Samoan",
+      "language_code": "sm"
+    },
+    "AD": {
+      "languages": ["Catalan", "Castilian", "Portuguese", "French", "English", "other"],
+      "preferred_language": "Catalan",
+      "language_code": "ca"
+    },
+    "AO": {
+      "languages": ["Portuguese", "Umbundu", "Kikongo", "Kimbundu", "Chokwe", "Nhaneca", "Nganguela", "Fiote", "Kwanhama", "Muhumbi", "Luvale", "other"],
+      "preferred_language": "Portuguese",
+      "language_code": "pt"
+    },
+    "AQ": {
+      "languages": ["English"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "AG": {
+      "languages": ["English", "Antiguan Creole"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "AR": {
+      "languages": ["Spanish", "Italian", "English", "German", "French", "indigenous"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "AM": {
+      "languages": ["Armenian", "Kurmanji", "other", "Russian"],
+      "preferred_language": "Armenian",
+      "language_code": "hy"
+    },
+    "AW": {
+      "languages": ["Papiamento", "Spanish", "English", "Dutch", "Chinese", "other"],
+      "preferred_language": "Papiamento",
+      "language_code": "pap"
+    },
+    "AU": {
+      "languages": ["English", "Mandarin", "Arabic", "Vietnamese", "Cantonese", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "AT": {
+      "languages": ["German", "Turkish", "Serbian", "Croatian", "other"],
+      "preferred_language": "German",
+      "language_code": "de"
+    },
+    "AZ": {
+      "languages": ["Azerbaijani", "Russian", "Armenian", "other"],
+      "preferred_language": "Azerbaijani",
+      "language_code": "az"
+    },
+    "BS": {
+      "languages": ["English", "Creole"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "BH": {
+      "languages": ["Arabic", "English", "Farsi", "Urdu"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "BD": {
+      "languages": ["Bangla", "other"],
+      "preferred_language": "Bangla",
+      "language_code": "bn"
+    },
+    "BB": {
+      "languages": ["English", "Bajan"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "BY": {
+      "languages": ["Russian", "Belarusian", "other"],
+      "preferred_language": "Russian",
+      "language_code": "ru"
+    },
+    "BE": {
+      "languages": ["Dutch", "French", "German"],
+      "preferred_language": "Dutch",
+      "language_code": "nl"
+    },
+    "BZ": {
+      "languages": ["English", "Spanish", "Creole", "Maya", "German", "Garifuna", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "BJ": {
+      "languages": ["Fon", "Yom", "Yoruba", "Bariba", "Fula", "other"],
+      "preferred_language": "Fon",
+      "language_code": "fr"
+    },
+    "BM": {
+      "languages": ["English", "Portuguese", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "BT": {
+      "languages": ["Dzongkha", "other"],
+      "preferred_language": "Dzongkha",
+      "language_code": "dz"
+    },
+    "BO": {
+      "languages": ["Spanish", "Quechua", "Aymara"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "BA": {
+      "languages": ["Bosnian", "Croatian", "Serbian"],
+      "preferred_language": "Bosnian",
+      "language_code": "bs"
+    },
+    "BW": {
+      "languages": ["Setswana", "Kalanga", "Sekgalagadi", "English", "other"],
+      "preferred_language": "Setswana",
+      "language_code": "tn"
+    },
+    "BR": {
+      "languages": ["Portuguese", "Spanish", "English", "French", "other"],
+      "preferred_language": "Portuguese",
+      "language_code": "pt"
+    },
+    "IO": {
+      "languages": ["English", "Spanish", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "BN": {
+      "languages": ["Malay", "English", "Chinese", "other"],
+      "preferred_language": "Malay",
+      "language_code": "ms"
+    },
+    "BG": {
+      "languages": ["Bulgarian", "Turkish", "Romani", "other"],
+      "preferred_language": "Bulgarian",
+      "language_code": "bg"
+    },
+    "BF": {
+      "languages": ["French", "indigenous", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "BI": {
+      "languages": ["Kirundi", "Kirundi and other language", "French", "Swahili", "English"],
+      "preferred_language": "Kirundi",
+      "language_code": "rn"
+    },
+    "KH": {
+      "languages": ["Khmer", "French", "English", "other"],
+      "preferred_language": "Khmer",
+      "language_code": "km"
+    },
+    "CM": {
+      "languages": ["English", "French", "Cameroonian Pidgin"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "CA": {
+      "languages": ["English", "French", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "KY": {
+      "languages": ["English", "French", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "CF": {
+      "languages": ["French", "Sango", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "TD": {
+      "languages": ["French", "Arabic", "Sara", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "CL": {
+      "languages": ["Spanish", "Mapudungun", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "CN": {
+      "languages": ["Mandarin", "Yue", "Wu", "Minbei", "Xiang", "Gan", "other"],
+      "preferred_language": "Mandarin",
+      "language_code": "zh"
+    },
+    "CX": {
+      "languages": ["English"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "CC": {
+      "languages": ["English"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "CO": {
+      "languages": ["Spanish"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "KM": {
+      "languages": ["Arabic", "French", "Shikomoro", "other"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "CG": {
+      "languages": ["French", "Lingala", "Kingwana", "Kikongo", "Tshiluba", "Swahili", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "CD": {
+      "languages": ["French", "Lingala", "Monokutuba", "Kikongo", "Kituba", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "CK": {
+      "languages": ["English", "Cook Islands Maori"],
+      "preferred_language": "Cook Islands Maori",
+      "language_code": "en"
+    },
+    "CR": {
+      "languages": ["Spanish", "English", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "HR": {
+      "languages": ["Croatian", "Serbian", "other"],
+      "preferred_language": "Croatian",
+      "language_code": "hr"
+    },
+    "GR": {
+      "languages": ["Greek", "Turkish", "English", "other"],
+      "preferred_language": "Greek",
+      "language_code": "el"
+    },
+    "CZ": {
+      "languages": ["Czech", "Slovak", "other"],
+      "preferred_language": "Czech",
+      "language_code": "cs"
+    },
+    "DK": {
+      "languages": ["Danish", "Faroese", "Greenlandic", "German", "English", "other"],
+      "preferred_language": "Danish",
+      "language_code": "da"
+    },
+    "DJ": {
+      "languages": ["French", "Arabic", "Somali", "Afar"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "AI": {
+      "languages": ["English", "French patois"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "DO": {
+      "languages": ["Spanish", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "EC": {
+      "languages": ["Spanish", "Quechua", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "EG": {
+      "languages": ["Arabic", "English", "French"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "SV": {
+      "languages": ["Spanish", "Nahua", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "GQ": {
+      "languages": ["French", "Spanish", "Portuguese", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "ER": {
+      "languages": ["Afar", "Arabic", "Beja", "Tigre", "Tigrinya", "other"],
+      "preferred_language": "Afar",
+      "language_code": "aa"
+    },
+    "EE": {
+      "languages": ["Estonian", "Russian", "Ukrainian", "other"],
+      "preferred_language": "Estonian",
+      "language_code": "et"
+    },
+    "ET": {
+      "languages": ["Amharic", "Tigrinya", "Orominga", "Somali", "other"],
+      "preferred_language": "Amharic",
+      "language_code": "am"
+    },
+    "FO": {
+      "languages": ["Faroese", "Danish", "other"],
+      "preferred_language": "Faroese",
+      "language_code": "fo"
+    },
+    "FJ": {
+      "languages": ["English", "Fijian", "Hindustani", "Fiji Hindi", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "FI": {
+      "languages": ["Finnish", "Swedish", "Sami", "Russian", "other"],
+      "preferred_language": "Finnish",
+      "language_code": "fi"
+    },
+    "FR": {
+      "languages": ["French", "German", "Italian", "Breton", "Catalan", "Corsican", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "PF": {
+      "languages": ["French", "Polynesian"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "GA": {
+      "languages": ["French", "Fang", "Myene", "Nzebi", "Bapounou", "Eshira", "Bandjabi"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "GM": {
+      "languages": ["English", "Mandinka", "Wolof", "Fula", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "GZ": {
+      "languages": ["Arabic", "Hebrew"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "GE": {
+      "languages": ["Georgian", "Russian", "Armenian", "Azeri", "other"],
+      "preferred_language": "Georgian",
+      "language_code": "ka"
+    },
+    "DE": {
+      "languages": ["German", "Turkish", "other"],
+      "preferred_language": "German",
+      "language_code": "de"
+    },
+    "GI": {
+      "languages": ["English", "Spanish", "Italian", "Portuguese"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "GL": {
+      "languages": ["Greenlandic", "Danish", "other"],
+      "preferred_language": "Greenlandic",
+      "language_code": "kl"
+    },
+    "GD": {
+      "languages": ["English", "French patois"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "GU": {
+      "languages": ["English", "Chamorro", "Spanish"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "GT": {
+      "languages": ["Spanish", "Quiche", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "JE": {
+      "languages": ["English", "French", "Norman-French", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "GN": {
+      "languages": ["French", "Malinke", "Peul", "Soussou", "Kissi", "Toma", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "CV": {
+      "languages": ["Portuguese", "Crioulo", "African languages"],
+      "preferred_language": "Portuguese",
+      "language_code": "pt"
+    },
+    "GY": {
+      "languages": ["English", "Amerindian dialects", "Creole", "Hindi", "Urdu"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "HT": {
+      "languages": ["French", "Creole"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "VA": {
+      "languages": ["Italian", "Latin", "French", "other"],
+      "preferred_language": "Italian",
+      "language_code": "it"
+    },
+    "HN": {
+      "languages": ["Spanish", "Amerindian dialects", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "HK": {
+      "languages": ["Cantonese", "English", "Mandarin", "other"],
+      "preferred_language": "Cantonese",
+      "language_code": "zh"
+    },
+    "HU": {
+      "languages": ["Hungarian", "other"],
+      "preferred_language": "Hungarian",
+      "language_code": "hu"
+    },
+    "IS": {
+      "languages": ["Icelandic", "English", "Nordic languages", "German"],
+      "preferred_language": "Icelandic",
+      "language_code": "is"
+    },
+    "IN": {
+      "languages": ["Hindi", "Bengali", "Telugu", "Marathi", "Tamil", "other"],
+      "preferred_language": "Hindi",
+      "language_code": "hi"
+    },
+    "ID": {
+      "languages": ["Bahasa Indonesia", "English", "Dutch", "local dialects", "other"],
+      "preferred_language": "Bahasa Indonesia",
+      "language_code": "id"
+    },
+    "IR": {
+      "languages": ["Persian", "Azeri", "Kurdish", "Gilaki and Mazandarani", "Luri", "Balochi", "Arabic", "other"],
+      "preferred_language": "Persian",
+      "language_code": "fa"
+    },
+    "IQ": {
+      "languages": ["Arabic", "Kurdish", "Turkmen", "Syriac", "other"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "IE": {
+      "languages": ["English", "Irish"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "IL": {
+      "languages": ["Hebrew", "Arabic", "other"],
+      "preferred_language": "Hebrew",
+      "language_code": "he"
+    },
+    "IT": {
+      "languages": ["Italian", "German", "French", "Slovene"],
+      "preferred_language": "Italian",
+      "language_code": "it"
+    },
+    "JM": {
+      "languages": ["English", "Jamaican Creole"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "JP": {
+      "languages": ["Japanese", "Ainu", "other"],
+      "preferred_language": "Japanese",
+      "language_code": "ja"
+    },
+    "JO": {
+      "languages": ["Arabic", "English", "other"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "KZ": {
+      "languages": ["Kazakh", "Russian", "other"],
+      "preferred_language": "Kazakh",
+      "language_code": "kk"
+    },
+    "KE": {
+      "languages": ["English", "Kiswahili", "Kikuyu", "Kalenjin", "Luo", "Luhya", "Kamba", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "KI": {
+      "languages": ["I-Kiribati", "English"],
+      "preferred_language": "I-Kiribati",
+      "language_code": "en"
+    },
+    "KR": {
+      "languages": ["Korean"],
+      "preferred_language": "Korean",
+      "language_code": "ko"
+    },
+    "KP": {
+      "languages": ["Korean", "English"],
+      "preferred_language": "Korean",
+      "language_code": "ko"
+    },
+    "XK": {
+      "languages": ["Albanian", "Serbian"],
+      "preferred_language": "Albanian",
+      "language_code": "sq"
+    },
+    "KW": {
+      "languages": ["Arabic", "English"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "KG": {
+      "languages": ["Kyrgyz", "Russian", "Uzbek", "other"],
+      "preferred_language": "Kyrgyz",
+      "language_code": "ky"
+    },
+    "LA": {
+      "languages": ["Lao", "French", "English", "other"],
+      "preferred_language": "Lao",
+      "language_code": "lo"
+    },
+    "LV": {
+      "languages": ["Latvian", "Russian", "other"],
+      "preferred_language": "Latvian",
+      "language_code": "lv"
+    },
+    "LB": {
+      "languages": ["Arabic", "French", "English", "Armenian"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "LS": {
+      "languages": ["Sesotho", "English", "Zulu", "Xhosa", "other"],
+      "preferred_language": "Sesotho",
+      "language_code": "st"
+    },
+    "LR": {
+      "languages": ["English", "indigenous"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "LY": {
+      "languages": ["Arabic", "Italian", "English", "other"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "LI": {
+      "languages": ["German", "Alemannic"],
+      "preferred_language": "German",
+      "language_code": "de"
+    },
+    "LT": {
+      "languages": ["Lithuanian", "Russian", "Polish"],
+      "preferred_language": "Lithuanian",
+      "language_code": "lt"
+    },
+    "LU": {
+      "languages": ["Luxembourgish", "French", "German"],
+      "preferred_language": "Luxembourgish",
+      "language_code": "lb"
+    },
+    "MO": {
+      "languages": ["Cantonese", "Mandarin", "other"],
+      "preferred_language": "Cantonese",
+      "language_code": "zh"
+    },
+    "MK": {
+      "languages": ["Macedonian", "Albanian", "Turkish", "Roma", "Serbian"],
+      "preferred_language": "Macedonian",
+      "language_code": "mk"
+    },
+    "MG": {
+      "languages": ["French", "Malagasy", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "MW": {
+      "languages": ["Chichewa", "Chinyanja", "Chiyao", "Chitumbuka", "other"],
+      "preferred_language": "Chichewa",
+      "language_code": "ny"
+    },
+    "MY": {
+      "languages": ["Bahasa Malaysia", "English", "Chinese", "Tamil", "Telugu", "Malayalam", "Panjabi", "Thai"],
+      "preferred_language": "Bahasa Malaysia",
+      "language_code": "ms"
+    },
+    "MV": {
+      "languages": ["Dhivehi", "English"],
+      "preferred_language": "Dhivehi",
+      "language_code": "dv"
+    },
+    "ML": {
+      "languages": ["French", "Bambara", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "MT": {
+      "languages": ["Maltese", "English"],
+      "preferred_language": "Maltese",
+      "language_code": "mt"
+    },
+    "MH": {
+      "languages": ["Marshallese", "English", "other"],
+      "preferred_language": "Marshallese",
+      "language_code": "mh"
+    },
+    "MR": {
+      "languages": ["Arabic", "Pulaar", "Soninke", "Wolof", "French", "other"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "MU": {
+      "languages": ["Creole", "Bhojpuri", "French", "English", "other"],
+      "preferred_language": "Creole",
+      "language_code": "en"
+    },
+    "MX": {
+      "languages": ["Spanish", "indigenous", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "FM": {
+      "languages": ["English", "Chuukese", "Pohnpeian", "Kosrean", "Yapese", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "MD": {
+      "languages": ["Moldovan", "Russian", "Gagauz", "Ukrainian", "Bulgarian"],
+      "preferred_language": "Moldovan",
+      "language_code": "ro"
+    },
+    "MC": {
+      "languages": ["French", "English", "Italian"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "MN": {
+      "languages": ["Khalkha Mongol", "other"],
+      "preferred_language": "Khalkha Mongol",
+      "language_code": "mn"
+    },
+    "ME": {
+      "languages": ["Montenegrin", "Serbian", "Bosnian", "Albanian", "Croatian"],
+      "preferred_language": "Montenegrin",
+      "language_code": "srp"
+    },
+    "DZ": {
+      "languages": ["Arabic", "Berber languages", "French", "Spanish"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "MZ": {
+      "languages": ["Portuguese", "indigenous", "other"],
+      "preferred_language": "Portuguese",
+      "language_code": "pt"
+    },
+    "NA": {
+      "languages": ["English", "Afrikaans", "German", "Oshivambo", "Herero", "Nama", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "NR": {
+      "languages": ["Nauruan", "English"],
+      "preferred_language": "Nauruan",
+      "language_code": "en"
+    },
+    "NP": {
+      "languages": ["Nepali", "Maithali", "Bhojpuri", "Tharu", "Tamang", "Newar", "Magar", "Bajjika", "other"],
+      "preferred_language": "Nepali",
+      "language_code": "ne"
+    },
+    "NL": {
+      "languages": ["Dutch", "Frisian", "English", "Turkish", "other"],
+      "preferred_language": "Dutch",
+      "language_code": "nl"
+    },
+    "NC": {
+      "languages": ["French", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "NZ": {
+      "languages": ["English", "Maori", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "NI": {
+      "languages": ["Spanish", "Miskito", "Creole", "Spanish Creole"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "NE": {
+      "languages": ["French", "Hausa", "Djerma"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "NG": {
+      "languages": ["English", "Hausa", "Yoruba", "Igbo", "Fulani", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "NU": {
+      "languages": ["Niue", "English"],
+      "preferred_language": "Niue",
+      "language_code": "niu"
+    },
+    "NF": {
+      "languages": ["English"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "MP": {
+      "languages": ["Chamorro", "Carolinian", "English"],
+      "preferred_language": "Chamorro",
+      "language_code": "ch"
+    },
+    "NO": {
+      "languages": ["Bokmal Norwegian", "Nynorsk Norwegian", "other"],
+      "preferred_language": "Bokmal Norwegian",
+      "language_code": "no"
+    },
+    "OM": {
+      "languages": ["Arabic", "English", "Baluchi", "Urdu", "Indian dialects"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "PK": {
+      "languages": ["Punjabi", "Sindhi", "Siraiki", "Pashtu", "Urdu", "Balochi", "Hindko", "Brahui", "English", "other"],
+      "preferred_language": "Punjabi",
+      "language_code": "ur"
+    },
+    "PW": {
+      "languages": ["Palauan", "English", "other"],
+      "preferred_language": "Palauan",
+      "language_code": "pau"
+    },
+    "PA": {
+      "languages": ["Spanish", "English", "indigenous languages", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "PG": {
+      "languages": ["Tok Pisin", "English", "Hiri Motu", "indigenous languages"],
+      "preferred_language": "Tok Pisin",
+      "language_code": "tpi"
+    },
+    "PY": {
+      "languages": ["Spanish", "Guarani"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "PE": {
+      "languages": ["Spanish", "Quechua", "Aymara"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "PH": {
+      "languages": ["Filipino", "English", "other"],
+      "preferred_language": "Filipino",
+      "language_code": "fil"
+    },
+    "PN": {
+      "languages": ["Pitkern", "English"],
+      "preferred_language": "Pitkern",
+      "language_code": "en"
+    },
+    "PL": {
+      "languages": ["Polish", "Silesian", "Kashubian"],
+      "preferred_language": "Polish",
+      "language_code": "pl"
+    },
+    "PT": {
+      "languages": ["Portuguese", "Mirandese"],
+      "preferred_language": "Portuguese",
+      "language_code": "pt"
+    },
+    "PR": {
+      "languages": ["Spanish", "English"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "PS": {
+      "languages": ["Arabic", "English"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "RO": {
+      "languages": ["Romanian", "Hungarian", "German", "Romany", "other"],
+      "preferred_language": "Romanian",
+      "language_code": "ro"
+    },
+    "RU": {
+      "languages": ["Russian", "Tatar", "Ukrainian", "Bashkir", "Chuvash", "Chechen", "other"],
+      "preferred_language": "Russian",
+      "language_code": "ru"
+    },
+    "RW": {
+      "languages": ["Kinyarwanda", "French", "English", "Swahili"],
+      "preferred_language": "Kinyarwanda",
+      "language_code": "rw"
+    },
+    "MF": {
+      "languages": ["French"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "SH": {
+      "languages": ["English"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "KN": {
+      "languages": ["English"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "LC": {
+      "languages": ["English", "French patois"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "PM": {
+      "languages": ["French", "Dutch", "English"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "VC": {
+      "languages": ["English", "French patois"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "WS": {
+      "languages": ["Samoan", "English"],
+      "preferred_language": "Samoan",
+      "language_code": "sm"
+    },
+    "SM": {
+      "languages": ["Italian"],
+      "preferred_language": "Italian",
+      "language_code": "it"
+    },
+    "ST": {
+      "languages": ["Portuguese"],
+      "preferred_language": "Portuguese",
+      "language_code": "pt"
+    },
+    "SA": {
+      "languages": ["Arabic", "English"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "SN": {
+      "languages": ["French", "Wolof", "Pulaar", "Jola", "Mandinka", "Serer", "Toucouleur", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "RS": {
+      "languages": ["Serbian", "Hungarian", "Bosnian", "Romanian", "Croatian", "other"],
+      "preferred_language": "Serbian",
+      "language_code": "sr"
+    },
+    "SC": {
+      "languages": ["Seselwa", "French", "English"],
+      "preferred_language": "Seselwa",
+      "language_code": "crs"
+    },
+    "SL": {
+      "languages": ["English", "Mende", "Temne", "Krio", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "SG": {
+      "languages": ["Mandarin", "English", "Malay", "Hokkien", "Cantonese", "Teochew", "other"],
+      "preferred_language": "Mandarin",
+      "language_code": "zh"
+    },
+    "CW": {
+      "languages": ["Dutch", "English"],
+      "preferred_language": "Dutch",
+      "language_code": "nl"
+    },
+    "SK": {
+      "languages": ["Slovak", "Hungarian", "Romany", "other"],
+      "preferred_language": "Slovak",
+      "language_code": "sk"
+    },
+    "SI": {
+      "languages": ["Slovene", "Serbo-Croatian", "other"],
+      "preferred_language": "Slovene",
+      "language_code": "sl"
+    },
+    "SB": {
+      "languages": ["Melanesian pidgin", "English"],
+      "preferred_language": "Melanesian pidgin",
+      "language_code": "en"
+    },
+    "SO": {
+      "languages": ["Somali", "Arabic", "Italian", "English"],
+      "preferred_language": "Somali",
+      "language_code": "so"
+    },
+    "ZA": {
+      "languages": ["Afrikaans", "English", "Zulu", "Xhosa", "Tswana", "Southern Sotho", "Northern Sotho", "Swati", "Venda", "Tsonga", "Ndebele", "other"],
+      "preferred_language": "Afrikaans",
+      "language_code": "af"
+    },
+    "GS": {
+      "languages": ["English"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "ES": {
+      "languages": ["Castilian Spanish", "Catalan", "Galician", "Basque", "Occitan"],
+      "preferred_language": "Castilian Spanish",
+      "language_code": "es"
+    },
+    "LK": {
+      "languages": ["Sinhala", "Tamil", "English", "other"],
+      "preferred_language": "Sinhala",
+      "language_code": "si"
+    },
+    "SD": {
+      "languages": ["Arabic", "Nubian", "Ta Bedawie", "Fur"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "SR": {
+      "languages": ["Dutch", "Hindustani", "Javanese", "Sranan Tongo"],
+      "preferred_language": "Dutch",
+      "language_code": "nl"
+    },
+    "SZ": {
+      "languages": ["English", "SiSwati"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "SE": {
+      "languages": ["Swedish", "Finnish", "Saami", "Arabic", "Kurdish", "Serbo-Croatian", "other"],
+      "preferred_language": "Swedish",
+      "language_code": "sv"
+    },
+    "CH": {
+      "languages": ["German", "French", "Italian", "Romansch"],
+      "preferred_language": "German",
+      "language_code": "de"
+    },
+    "SY": {
+      "languages": ["Arabic", "Kurdish", "Armenian", "Aramaic", "Circassian", "French", "other"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "TW": {
+      "languages": ["Mandarin", "Min", "Hakka", "Formosan languages"],
+      "preferred_language": "Mandarin",
+      "language_code": "zh"
+    },
+    "TJ": {
+      "languages": ["Tajik", "Russian"],
+      "preferred_language": "Tajik",
+      "language_code": "tg"
+    },
+    "TZ": {
+      "languages": ["Swahili", "English", "Arabic", "many local languages"],
+      "preferred_language": "Swahili",
+      "language_code": "sw"
+    },
+    "TH": {
+      "languages": ["Thai", "English", "other"],
+      "preferred_language": "Thai",
+      "language_code": "th"
+    },
+    "TG": {
+      "languages": ["French", "Ewe", "Mina", "Kabye", "Dagomba", "other"],
+      "preferred_language": "French",
+      "language_code": "fr"
+    },
+    "TK": {
+      "languages": ["Tokelau", "English"],
+      "preferred_language": "Tokelau",
+      "language_code": "tkl"
+    },
+    "TO": {
+      "languages": ["Tongan", "English"],
+      "preferred_language": "Tongan",
+      "language_code": "to"
+    },
+    "TT": {
+      "languages": ["English", "Hindi", "French", "Spanish", "Chinese"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "TN": {
+      "languages": ["Arabic", "French", "Berber"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "TR": {
+      "languages": ["Turkish", "Kurdish", "other"],
+      "preferred_language": "Turkish",
+      "language_code": "tr"
+    },
+    "TM": {
+      "languages": ["Turkmen", "Russian", "Uzbek", "other"],
+      "preferred_language": "Turkmen",
+      "language_code": "tk"
+    },
+    "TC": {
+      "languages": ["English"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "TV": {
+      "languages": ["Tuvaluan", "English"],
+      "preferred_language": "Tuvaluan",
+      "language_code": "tvl"
+    },
+    "UG": {
+      "languages": ["English", "Ganda", "Luganda", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "UA": {
+      "languages": ["Ukrainian", "Russian", "Romanian", "Polish", "other"],
+      "preferred_language": "Ukrainian",
+      "language_code": "uk"
+    },
+    "AE": {
+      "languages": ["Arabic", "Persian", "English", "Hindi", "Urdu"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "GB": {
+      "languages": ["English", "Welsh", "Scots", "Scottish Gaelic", "Irish", "Cornish", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "US": {
+      "languages": ["English", "Spanish", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "UY": {
+      "languages": ["Spanish", "Portunol", "Brazilero"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "UZ": {
+      "languages": ["Uzbek", "Russian", "Tajik", "other"],
+      "preferred_language": "Uzbek",
+      "language_code": "uz"
+    },
+    "VU": {
+      "languages": ["Bislama", "English", "French"],
+      "preferred_language": "Bislama",
+      "language_code": "bi"
+    },
+    "VE": {
+      "languages": ["Spanish", "indigenous", "other"],
+      "preferred_language": "Spanish",
+      "language_code": "es"
+    },
+    "VN": {
+      "languages": ["Vietnamese", "English", "French", "Chinese", "Khmer", "Mon", "Muong", "other"],
+      "preferred_language": "Vietnamese",
+      "language_code": "vi"
+    },
+    "VG": {
+      "languages": ["English", "Spanish", "Creole"],
+      "preferred_language": "English",
+      "language_code": "en"
+    },
+    "WF": {
+      "languages": ["Wallisian", "Futunian", "French"],
+      "preferred_language": "Wallisian",
+      "language_code": "wls"
+    },
+    "YE": {
+      "languages": ["Arabic", "Soqutri", "Mahri", "other"],
+      "preferred_language": "Arabic",
+      "language_code": "ar"
+    },
+    "ZM": {
+      "languages": ["Bemba", "Kaonde", "Lozi", "Lunda", "Luvale", "Nyanja", "Tonga", "other"],
+      "preferred_language": "Bemba",
+      "language_code": "en"
+    },
+    "ZW": {
+      "languages": ["English", "Shona", "Sindebele", "other"],
+      "preferred_language": "English",
+      "language_code": "en"
+    }
+  }
+}

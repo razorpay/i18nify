@@ -1,0 +1,15 @@
+Data Source:
+The language data included in this version has been sourced from the CIA World Factbook, a comprehensive resource providing information on countries and territories worldwide.
+
+Conversion to JSON Format:
+We meticulously transformed the language data obtained from the CIA World Factbook into a structured JSON format. Each country language entry includes its name, code, and all languages that was spoken in the region  which are relevant for our dataset.
+
+Purpose:
+The primary objective of this version is to establish a comprehensive dataset for country language attributes, facilitating multilingual analysis. By leveraging the CIA World Factbook as our source, we aim to provide a reliable and standardized reference for language-related information across diverse regions and populations.
+
+
+Future Considerations:
+While Version 1 represents an initial milestone, we anticipate future iterations to incorporate additional enhancements, including:
+- Integration of supplementary data sources to enrich the dataset with more detailed language attributes and linguistic features.
+- Ongoing validation and updates to reflect any revisions or additions to language information in the CIA World Factbook.
+- Expansion of the dataset to encompass broader language-related metadata and support diverse linguistic analysis.

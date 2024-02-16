@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "country_language_info": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Z]{2}$": {
+          "type": "object",
+          "properties": {
+            "languages": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "preferred_language": { "type": "string" },
+            "language_code": { "type": "string" }
+          },
+          "required": ["languages", "preferred_language", "language_code"]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["country_language_info"]
+}
