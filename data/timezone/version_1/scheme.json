@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "country_timezone": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Z]{2}$": {
+          "type": "object",
+          "properties": {
+            "available_time_zones": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "capital_city_time_zone": { "type": "string" }
+          },
+          "required": ["available_time_zones", "capital_city_time_zone"]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["country_timezone"]
+}

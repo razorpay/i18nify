@@ -1,0 +1,13 @@
+Data Source:
+The timezone data has been meticulously sourced from Wikipedia, a widely recognized and authoritative online encyclopedia.
+
+Conversion to JSON Format:
+We diligently converted the timezone data obtained from Wikipedia into a structured JSON format. Each country entry includes its respective timezone information, including al available timezones in the country, and offsets
+
+Purpose:
+The primary objective of this version is to establish a comprehensive dataset for country timezone attributes, facilitating accurate timekeeping and scheduling across various regions and applications. By leveraging Wikipedia as our source, we aim to provide a reliable and standardized reference for timezone-related information globally.
+
+Future Considerations:
+While Version 1 represents a foundational step, we anticipate future iterations to incorporate additional enhancements, including:
+- Integration of supplementary data sources to enrich the dataset with more detailed timezone attributes and daylight saving time transitions.
+- Expansion of the dataset to encompass broader timezone-related metadata.

@@ -1,0 +1,784 @@
+{
+  "country_timezone" : {
+    "FR": {
+      "available_time_zones" : ["UTC−10:00", "UTC−09:30", "UTC−09:00", "UTC−08:00", "UTC−04:00", "UTC−03:00", "UTC+01:00", "UTC+03:00", "UTC+04:00", "UTC+05:00", "UTC+11:00", "UTC+12:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "RU": {
+      "available_time_zones" : ["UTC+02:00", "UTC+03:00", "UTC+04:00", "UTC+05:00", "UTC+06:00", "UTC+07:00", "UTC+08:00", "UTC+09:00", "UTC+10:00", "UTC+11:00", "UTC+12:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "US": {
+      "available_time_zones" : ["UTC−12:00", "UTC−11:00", "UTC−10:00", "UTC−09:00", "UTC−08:00", "UTC−07:00", "UTC−06:00", "UTC−05:00", "UTC−04:00", "UTC+10:00", "UTC+12:00"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "AQ": {
+      "available_time_zones" : ["UTC−03:00", "UTC±00:00", "UTC+03:00", "UTC+05:00", "UTC+06:00", "UTC+07:00", "UTC+10:00", "UTC+11:00", "UTC+12:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "AU": {
+      "available_time_zones" : ["UTC+05:00", "UTC+06:30", "UTC+07:00", "UTC+08:00", "UTC+08:45", "UTC+09:30", "UTC+10:00", "UTC+10:30", "UTC+11:00"],
+      "capital_city_time_zone" : "UTC+08:00"
+    },
+    "GB": {
+      "available_time_zones" : ["UTC−08:00", "UTC−05:00", "UTC−04:00", "UTC−03:00", "UTC−02:00", "UTC±00:00", "UTC+01:00", "UTC+02:00", "UTC+06:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "CA": {
+      "available_time_zones" : ["UTC−08:00", "UTC−07:00", "UTC−06:00", "UTC−05:00", "UTC−04:00", "UTC−03:30"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "DK": {
+      "available_time_zones" : ["UTC−04:00", "UTC−03:00", "UTC−01:00", "UTC±00:00", "UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "NZ": {
+      "available_time_zones" : ["UTC−11:00", "UTC−10:00", "UTC+12:00", "UTC+12:45", "UTC+13:00"],
+      "capital_city_time_zone" : "UTC+12:00"
+    },
+    "BR": {
+      "available_time_zones" : ["UTC−05:00", "UTC−04:00", "UTC−03:00", "UTC−02:00"],
+      "capital_city_time_zone" : "UTC-03:00"
+    },
+    "MX": {
+      "available_time_zones" : ["UTC−08:00", "UTC−07:00", "UTC−06:00", "UTC−05:00"],
+      "capital_city_time_zone" : "UTC-06:00"
+    },
+    "CL": {
+      "available_time_zones" : ["UTC−06:00", "UTC−04:00", "UTC−03:00"],
+      "capital_city_time_zone" : "UTC-03:00"
+    },
+    "ID": {
+      "available_time_zones" : ["UTC+07:00", "UTC+08:00", "UTC+09:00"],
+      "capital_city_time_zone" : "UTC+07:00"
+    },
+    "KI": {
+      "available_time_zones" : ["UTC+12:00", "UTC+13:00", "UTC+14:00"],
+      "capital_city_time_zone" : "UTC+12:00"
+    },
+    "CD": {
+      "available_time_zones" : ["UTC+01:00", "UTC+02:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "EC": {
+      "available_time_zones" : ["UTC−06:00", "UTC−05:00"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "FM": {
+      "available_time_zones" : ["UTC+10:00", "UTC+11:00"],
+      "capital_city_time_zone" : "UTC+10:00"
+    },
+    "KZ": {
+      "available_time_zones" : ["UTC+05:00", "UTC+06:00"],
+      "capital_city_time_zone" : "UTC+06:00"
+    },
+    "NL": {
+      "available_time_zones" : ["UTC−04:00", "UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "MN": {
+      "available_time_zones" : ["UTC+07:00", "UTC+08:00"],
+      "capital_city_time_zone" : "UTC+08:00"
+    },
+    "PG": {
+      "available_time_zones" : ["UTC+10:00", "UTC+11:00"],
+      "capital_city_time_zone" : "UTC+10:00"
+    },
+    "PT": {
+      "available_time_zones" : ["UTC−01:00", "UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "ZA": {
+      "available_time_zones" : ["UTC+02:00", "UTC+03:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "ES": {
+      "available_time_zones" : ["UTC±00:00", "UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "AF": {
+      "available_time_zones" : ["UTC+04:30"],
+      "capital_city_time_zone" : "UTC+04:30"
+    },
+    "AL": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "DZ": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "AD": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "AO": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "AG": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "AM": {
+      "available_time_zones" : ["UTC+04:00"],
+      "capital_city_time_zone" : "UTC+04:00"
+    },
+    "AT": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "AZ": {
+      "available_time_zones" : ["UTC+04:00"],
+      "capital_city_time_zone" : "UTC+04:00"
+    },
+    "BS": {
+      "available_time_zones" : ["UTC−05:00"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "BH": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "BD": {
+      "available_time_zones" : ["UTC+06:00"],
+      "capital_city_time_zone" : "UTC+06:00"
+    },
+    "BB": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "BY": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "BE": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "BZ": {
+      "available_time_zones" : ["UTC−06:00"],
+      "capital_city_time_zone" : "UTC-06:00"
+    },
+    "BJ": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "BT": {
+      "available_time_zones" : ["UTC+06:00"],
+      "capital_city_time_zone" : "UTC+06:00"
+    },
+    "BO": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "BA": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "BW": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "BN": {
+      "available_time_zones" : ["UTC+08:00"],
+      "capital_city_time_zone" : "UTC+08:00"
+    },
+    "BG": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "BF": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "BI": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "CV": {
+      "available_time_zones" : ["UTC−01:00"],
+      "capital_city_time_zone" : "UTC-01:00"
+    },
+    "KH": {
+      "available_time_zones" : ["UTC+07:00"],
+      "capital_city_time_zone" : "UTC+07:00"
+    },
+    "CM": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "CF": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "TD": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "CN": {
+      "available_time_zones" : ["UTC+08:00"],
+      "capital_city_time_zone" : "UTC+08:00"
+    },
+    "CO": {
+      "available_time_zones" : ["UTC−05:00"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "KM": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "CR": {
+      "available_time_zones" : ["UTC−06:00"],
+      "capital_city_time_zone" : "UTC-06:00"
+    },
+    "CI": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "HR": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "CU": {
+      "available_time_zones" : ["UTC−05:00"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "CY": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "CZ": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "DJ": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "DM": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "DO": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "TL": {
+      "available_time_zones" : ["UTC+09:00"],
+      "capital_city_time_zone" : "UTC+09:00"
+    },
+    "EG": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "SV": {
+      "available_time_zones" : ["UTC−06:00"],
+      "capital_city_time_zone" : "UTC-06:00"
+    },
+    "GQ": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "ER": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "EE": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "SZ": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "ET": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "FJ": {
+      "available_time_zones" : ["UTC+12:00"],
+      "capital_city_time_zone" : "UTC+12:00"
+    },
+    "FI": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "GA": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "GM": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "GE": {
+      "available_time_zones" : ["UTC+04:00"],
+      "capital_city_time_zone" : "UTC+04:00"
+    },
+    "DE": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "GH": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "GR": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "GD": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "GT": {
+      "available_time_zones" : ["UTC−06:00"],
+      "capital_city_time_zone" : "UTC-06:00"
+    },
+    "GN": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "GW": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "GY": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "HT": {
+      "available_time_zones" : ["UTC−05:00"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "HN": {
+      "available_time_zones" : ["UTC−06:00"],
+      "capital_city_time_zone" : "UTC-06:00"
+    },
+    "HU": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "IS": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "IN": {
+      "available_time_zones" : ["UTC+05:30"],
+      "capital_city_time_zone" : "UTC+05:30"
+    },
+    "IR": {
+      "available_time_zones" : ["UTC+03:30"],
+      "capital_city_time_zone" : "UTC+03:30"
+    },
+    "IQ": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "IE": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "IL": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "IT": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "JM": {
+      "available_time_zones" : ["UTC−05:00"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "JP": {
+      "available_time_zones" : ["UTC+09:00"],
+      "capital_city_time_zone" : "UTC+09:00"
+    },
+    "JO": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "KE": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "KP": {
+      "available_time_zones" : ["UTC+09:00"],
+      "capital_city_time_zone" : "UTC+09:00"
+    },
+    "KR": {
+      "available_time_zones" : ["UTC+09:00"],
+      "capital_city_time_zone" : "UTC+09:00"
+    },
+    "KW": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "KG": {
+      "available_time_zones" : ["UTC+06:00"],
+      "capital_city_time_zone" : "UTC+06:00"
+    },
+    "LA": {
+      "available_time_zones" : ["UTC+07:00"],
+      "capital_city_time_zone" : "UTC+07:00"
+    },
+    "LV": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "LB": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "LS": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "LR": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "LY": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "LI": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "LT": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "LU": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "MG": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "MW": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "MY": {
+      "available_time_zones" : ["UTC+08:00"],
+      "capital_city_time_zone" : "UTC+08:00"
+    },
+    "MV": {
+      "available_time_zones" : ["UTC+05:00"],
+      "capital_city_time_zone" : "UTC+05:00"
+    },
+    "ML": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "MT": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "MH": {
+      "available_time_zones" : ["UTC+12:00"],
+      "capital_city_time_zone" : "UTC+12:00"
+    },
+    "MR": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "MU": {
+      "available_time_zones" : ["UTC+04:00"],
+      "capital_city_time_zone" : "UTC+04:00"
+    },
+    "MD": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "MC": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "ME": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "MA": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "MZ": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "MM": {
+      "available_time_zones" : ["UTC+06:30"],
+      "capital_city_time_zone" : "UTC+06:30"
+    },
+    "NA": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "NR": {
+      "available_time_zones" : ["UTC+12:00"],
+      "capital_city_time_zone" : "UTC+12:00"
+    },
+    "NP": {
+      "available_time_zones" : ["UTC+05:45"],
+      "capital_city_time_zone" : "UTC+05:45"
+    },
+    "NI": {
+      "available_time_zones" : ["UTC−06:00"],
+      "capital_city_time_zone" : "UTC-06:00"
+    },
+    "NE": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "NG": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "MK": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "NO": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "OM": {
+      "available_time_zones" : ["UTC+04:00"],
+      "capital_city_time_zone" : "UTC+04:00"
+    },
+    "PK": {
+      "available_time_zones" : ["UTC+05:00"],
+      "capital_city_time_zone" : "UTC+05:00"
+    },
+    "PW": {
+      "available_time_zones" : ["UTC+09:00"],
+      "capital_city_time_zone" : "UTC+09:00"
+    },
+    "PS": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "PA": {
+      "available_time_zones" : ["UTC−05:00"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "PY": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "PE": {
+      "available_time_zones" : ["UTC−05:00"],
+      "capital_city_time_zone" : "UTC-05:00"
+    },
+    "PH": {
+      "available_time_zones" : ["UTC+08:00"],
+      "capital_city_time_zone" : "UTC+08:00"
+    },
+    "PL": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "QA": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "RO": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "RW": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "KN": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "LC": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "VC": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "WS": {
+      "available_time_zones" : ["UTC+13:00"],
+      "capital_city_time_zone" : "UTC+13:00"
+    },
+    "SM": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "ST": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "SA": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "SN": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "RS": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "SC": {
+      "available_time_zones" : ["UTC+04:00"],
+      "capital_city_time_zone" : "UTC+04:00"
+    },
+    "SL": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "SG": {
+      "available_time_zones" : ["UTC+08:00"],
+      "capital_city_time_zone" : "UTC+08:00"
+    },
+    "SK": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "SI": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "SB": {
+      "available_time_zones" : ["UTC+11:00"],
+      "capital_city_time_zone" : "UTC+11:00"
+    },
+    "SO": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "SS": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "LK": {
+      "available_time_zones" : ["UTC+05:30"],
+      "capital_city_time_zone" : "UTC+05:30"
+    },
+    "SD": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "SR": {
+      "available_time_zones" : ["UTC−03:00"],
+      "capital_city_time_zone" : "UTC-03:00"
+    },
+    "SE": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "CH": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "SY": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "TW": {
+      "available_time_zones" : ["UTC+08:00"],
+      "capital_city_time_zone" : "UTC+08:00"
+    },
+    "TJ": {
+      "available_time_zones" : ["UTC+05:00"],
+      "capital_city_time_zone" : "UTC+05:00"
+    },
+    "TZ": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "TH": {
+      "available_time_zones" : ["UTC+07:00"],
+      "capital_city_time_zone" : "UTC+07:00"
+    },
+    "TG": {
+      "available_time_zones" : ["UTC±00:00"],
+      "capital_city_time_zone" : "UTC±00:00"
+    },
+    "TO": {
+      "available_time_zones" : ["UTC+13:00"],
+      "capital_city_time_zone" : "UTC+13:00"
+    },
+    "TT": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "TN": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "TR": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "TM": {
+      "available_time_zones" : ["UTC+05:00"],
+      "capital_city_time_zone" : "UTC+05:00"
+    },
+    "TV": {
+      "available_time_zones" : ["UTC+12:00"],
+      "capital_city_time_zone" : "UTC+12:00"
+    },
+    "UG": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "UA": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "AE": {
+      "available_time_zones" : ["UTC+04:00"],
+      "capital_city_time_zone" : "UTC+04:00"
+    },
+    "UY": {
+      "available_time_zones" : ["UTC−03:00"],
+      "capital_city_time_zone" : "UTC-03:00"
+    },
+    "UZ": {
+      "available_time_zones" : ["UTC+05:00"],
+      "capital_city_time_zone" : "UTC+05:00"
+    },
+    "VU": {
+      "available_time_zones" : ["UTC+11:00"],
+      "capital_city_time_zone" : "UTC+11:00"
+    },
+    "VA": {
+      "available_time_zones" : ["UTC+01:00"],
+      "capital_city_time_zone" : "UTC+01:00"
+    },
+    "VE": {
+      "available_time_zones" : ["UTC−04:00"],
+      "capital_city_time_zone" : "UTC-04:00"
+    },
+    "VN": {
+      "available_time_zones" : ["UTC+07:00"],
+      "capital_city_time_zone" : "UTC+07:00"
+    },
+    "YE": {
+      "available_time_zones" : ["UTC+03:00"],
+      "capital_city_time_zone" : "UTC+03:00"
+    },
+    "ZM": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    },
+    "ZW": {
+      "available_time_zones" : ["UTC+02:00"],
+      "capital_city_time_zone" : "UTC+02:00"
+    }
+  }
+}
