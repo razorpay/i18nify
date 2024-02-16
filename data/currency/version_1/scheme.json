@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "currency_information": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Z]{2}$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "patternProperties": {
+              "^[A-Z]{3}$": {
+                "type": "object",
+                "properties": {
+                  "ENTITY": { "type": "string" },
+                  "Currency": { "type": "string" },
+                  "Numeric Code": { "type": "string" },
+                  "Minor unit": { "type": "string" },
+                  "Symbol": { "type": "string" },
+                  "Denominations": { "type": "string" }
+                },
+                "required": ["ENTITY", "Currency", "Numeric Code", "Minor unit", "Symbol", "Denominations"]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["currency_information"]
+}

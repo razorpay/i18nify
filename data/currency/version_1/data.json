@@ -1,0 +1,3138 @@
+{
+  "currency_information": {
+    "AF": [
+      {
+        "AFN": {
+          "ENTITY": "AFGHANISTAN",
+          "Currency": "Afghani",
+          "Numeric Code": "971",
+          "Minor unit": "2",
+          "Symbol": "؋",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 500, 1000"
+        }
+      }
+    ],
+    "AX": [
+      {
+        "EUR": {
+          "ENTITY": "ÅLAND ISLANDS",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "AL": [
+      {
+        "ALL": {
+          "ENTITY": "ALBANIA",
+          "Currency": "Lek",
+          "Numeric Code": "8",
+          "Minor unit": "2",
+          "Symbol": "L",
+          "Denominations": "1, 5, 10, 20, 50, 100, 200, 500, 1000, 5000"
+        }
+      }
+    ],
+    "DZ": [
+      {
+        "DZD": {
+          "ENTITY": "ALGERIA",
+          "Currency": "Algerian Dinar",
+          "Numeric Code": "12",
+          "Minor unit": "2",
+          "Symbol": "د.ج",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "AS": [
+      {
+        "USD": {
+          "ENTITY": "AMERICAN SAMOA",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "AD": [
+      {
+        "EUR": {
+          "ENTITY": "ANDORRA",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "AO": [
+      {
+        "AOA": {
+          "ENTITY": "ANGOLA",
+          "Currency": "Kwanza",
+          "Numeric Code": "973",
+          "Minor unit": "2",
+          "Symbol": "Kz",
+          "Denominations": "1, 5, 10, 50, 100, 200, 500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "AI": [
+      {
+        "XCD": {
+          "ENTITY": "ANGUILLA",
+          "Currency": "East Caribbean Dollar",
+          "Numeric Code": "951",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "AG": [
+      {
+        "XCD": {
+          "ENTITY": "ANTIGUA AND BARBUDA",
+          "Currency": "East Caribbean Dollar",
+          "Numeric Code": "951",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 25, 50"
+        }
+      }
+    ],
+    "AR": [
+      {
+        "ARS": {
+          "ENTITY": "ARGENTINA",
+          "Currency": "Argentine Peso",
+          "Numeric Code": "32",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "AM": [
+      {
+        "AMD": {
+          "ENTITY": "ARMENIA",
+          "Currency": "Armenian Dram",
+          "Numeric Code": "51",
+          "Minor unit": "2",
+          "Symbol": "֏",
+          "Denominations": "10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "AW": [
+      {
+        "AWG": {
+          "ENTITY": "ARUBA",
+          "Currency": "Aruban Florin",
+          "Numeric Code": "533",
+          "Minor unit": "2",
+          "Symbol": "ƒ",
+          "Denominations": "5, 10, 25, 50, 100, 250, 500, 1000, 5000, 10000"
+        }
+      }
+    ],
+    "AU": [
+      {
+        "AUD": {
+          "ENTITY": "AUSTRALIA",
+          "Currency": "Australian Dollar",
+          "Numeric Code": "36",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "AT": [
+      {
+        "EUR": {
+          "ENTITY": "AUSTRIA",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "AZ": [
+      {
+        "AZN": {
+          "ENTITY": "AZERBAIJAN",
+          "Currency": "Azerbaijan Manat",
+          "Numeric Code": "944",
+          "Minor unit": "2",
+          "Symbol": "₼",
+          "Denominations": "1, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "BS": [
+      {
+        "BSD": {
+          "ENTITY": "BAHAMAS (THE)",
+          "Currency": "Bahamian Dollar",
+          "Numeric Code": "44",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "BH": [
+      {
+        "BHD": {
+          "ENTITY": "BAHRAIN",
+          "Currency": "Bahraini Dinar",
+          "Numeric Code": "48",
+          "Minor unit": "3",
+          "Symbol": ".د.ب",
+          "Denominations": "0.5, 1, 5, 10, 20, 50, 100, 500"
+        }
+      }
+    ],
+    "BD": [
+      {
+        "BDT": {
+          "ENTITY": "BANGLADESH",
+          "Currency": "Taka",
+          "Numeric Code": "50",
+          "Minor unit": "2",
+          "Symbol": "৳",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 500, 1000"
+        }
+      }
+    ],
+    "BB": [
+      {
+        "BBD": {
+          "ENTITY": "BARBADOS",
+          "Currency": "Barbados Dollar",
+          "Numeric Code": "52",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25"
+        }
+      }
+    ],
+    "BY": [
+      {
+        "BYN": {
+          "ENTITY": "BELARUS",
+          "Currency": "Belarusian Ruble",
+          "Numeric Code": "933",
+          "Minor unit": "2",
+          "Symbol": "Br",
+          "Denominations": "1, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "BE": [
+      {
+        "EUR": {
+          "ENTITY": "BELGIUM",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "BZ": [
+      {
+        "BZD": {
+          "ENTITY": "BELIZE",
+          "Currency": "Belize Dollar",
+          "Numeric Code": "84",
+          "Minor unit": "2",
+          "Symbol": "BZ$",
+          "Denominations": "1, 5, 10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "BJ": [
+      {
+        "XOF": {
+          "ENTITY": "BENIN",
+          "Currency": "CFA Franc BCEAO",
+          "Numeric Code": "952",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "1, 2, 5, 10, 25, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000"
+        }
+      }
+    ],
+    "BM": [
+      {
+        "BMD": {
+          "ENTITY": "BERMUDA",
+          "Currency": "Bermudian Dollar",
+          "Numeric Code": "60",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "BT": [
+      {
+        "INR": {
+          "ENTITY": "BHUTAN",
+          "Currency": "Indian Rupee",
+          "Numeric Code": "356",
+          "Minor unit": "2",
+          "Symbol": "₹",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200, 500, 1000"
+        }
+      },
+      {
+        "BTN": {
+          "ENTITY": "BHUTAN",
+          "Currency": "Ngultrum",
+          "Numeric Code": "64",
+          "Minor unit": "2",
+          "Symbol": "Nu.",
+          "Denominations": "1, 5, 10, 20, 50, 100, 500, 1000"
+        }
+      }
+    ],
+    "BO": [
+      {
+        "BOB": {
+          "ENTITY": "BOLIVIA (PLURINATIONAL STATE OF)",
+          "Currency": "Boliviano",
+          "Numeric Code": "68",
+          "Minor unit": "2",
+          "Symbol": "Bs.",
+          "Denominations": "10, 20, 50, 100, 200"
+        }
+      },
+      {
+        "BOV": {
+          "ENTITY": "BOLIVIA (PLURINATIONAL STATE OF)",
+          "Currency": "Mvdol",
+          "Numeric Code": "984",
+          "Minor unit": "2",
+          "Symbol": "nan",
+          "Denominations": "10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "BQ": [
+      {
+        "USD": {
+          "ENTITY": "BONAIRE, SINT EUSTATIUS AND SABA",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "BA": [
+      {
+        "BAM": {
+          "ENTITY": "BOSNIA AND HERZEGOVINA",
+          "Currency": "Convertible Mark",
+          "Numeric Code": "977",
+          "Minor unit": "2",
+          "Symbol": "KM",
+          "Denominations": "1, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "BW": [
+      {
+        "BWP": {
+          "ENTITY": "BOTSWANA",
+          "Currency": "Pula",
+          "Numeric Code": "72",
+          "Minor unit": "2",
+          "Symbol": "P",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "BV": [
+      {
+        "NOK": {
+          "ENTITY": "BOUVET ISLAND",
+          "Currency": "Norwegian Krone",
+          "Numeric Code": "578",
+          "Minor unit": "2",
+          "Symbol": "kr",
+          "Denominations": "1, 5, 10, 20, 50, 100, 200, 500, 1000, 2000"
+        }
+      }
+    ],
+    "BR": [
+      {
+        "BRL": {
+          "ENTITY": "BRAZIL",
+          "Currency": "Brazilian Real",
+          "Numeric Code": "986",
+          "Minor unit": "2",
+          "Symbol": "R$",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "IO": [
+      {
+        "USD": {
+          "ENTITY": "BRITISH INDIAN OCEAN TERRITORY (THE)",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "BN": [
+      {
+        "BND": {
+          "ENTITY": "BRUNEI DARUSSALAM",
+          "Currency": "Brunei Dollar",
+          "Numeric Code": "96",
+          "Minor unit": "2",
+          "Symbol": "B$",
+          "Denominations": "1, 5, 10, 20, 50, 100, 500, 1000, 10000, 100000"
+        }
+      }
+    ],
+    "BG": [
+      {
+        "BGN": {
+          "ENTITY": "BULGARIA",
+          "Currency": "Bulgarian Lev",
+          "Numeric Code": "975",
+          "Minor unit": "2",
+          "Symbol": "лв.",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "BF": [
+      {
+        "XOF": {
+          "ENTITY": "BURKINA FASO",
+          "Currency": "CFA Franc BCEAO",
+          "Numeric Code": "952",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "1, 2, 5, 10, 25, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000"
+        }
+      }
+    ],
+    "BI": [
+      {
+        "BIF": {
+          "ENTITY": "BURUNDI",
+          "Currency": "Burundi Franc",
+          "Numeric Code": "108",
+          "Minor unit": "0",
+          "Symbol": "FBu",
+          "Denominations": "10, 20, 50, 100, 500, 1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "CV": [
+      {
+        "CVE": {
+          "ENTITY": "CABO VERDE",
+          "Currency": "Cabo Verde Escudo",
+          "Numeric Code": "132",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "200, 500, 1000, 2000, 2500, 5000"
+        }
+      }
+    ],
+    "KH": [
+      {
+        "KHR": {
+          "ENTITY": "CAMBODIA",
+          "Currency": "Riel",
+          "Numeric Code": "116",
+          "Minor unit": "2",
+          "Symbol": "៛",
+          "Denominations": "50, 100, 500, 1000, 2000, 5000, 10000, 50000, 100000"
+        }
+      }
+    ],
+    "CM": [
+      {
+        "XAF": {
+          "ENTITY": "CAMEROON",
+          "Currency": "CFA Franc BEAC",
+          "Numeric Code": "950",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "CA": [
+      {
+        "CAD": {
+          "ENTITY": "CANADA",
+          "Currency": "Canadian Dollar",
+          "Numeric Code": "124",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "KY": [
+      {
+        "KYD": {
+          "ENTITY": "CAYMAN ISLANDS (THE)",
+          "Currency": "Cayman Islands Dollar",
+          "Numeric Code": "136",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "CF": [
+      {
+        "XAF": {
+          "ENTITY": "CENTRAL AFRICAN REPUBLIC (THE)",
+          "Currency": "CFA Franc BEAC",
+          "Numeric Code": "950",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "TD": [
+      {
+        "XAF": {
+          "ENTITY": "CHAD",
+          "Currency": "CFA Franc BEAC",
+          "Numeric Code": "950",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "CL": [
+      {
+        "CLP": {
+          "ENTITY": "CHILE",
+          "Currency": "Chilean Peso",
+          "Numeric Code": "152",
+          "Minor unit": "0",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 50, 100, 500, 1000, 5000, 10000"
+        }
+      },
+      {
+        "CLF": {
+          "ENTITY": "CHILE",
+          "Currency": "Unidad de Fomento",
+          "Numeric Code": "990",
+          "Minor unit": "4",
+          "Symbol": "UF",
+          "Denominations": "nan"
+        }
+      }
+    ],
+    "CN": [
+      {
+        "CNY": {
+          "ENTITY": "CHINA",
+          "Currency": "Yuan Renminbi",
+          "Numeric Code": "156",
+          "Minor unit": "2",
+          "Symbol": "¥",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "CX": [
+      {
+        "AUD": {
+          "ENTITY": "CHRISTMAS ISLAND",
+          "Currency": "Australian Dollar",
+          "Numeric Code": "36",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "CC": [
+      {
+        "AUD": {
+          "ENTITY": "COCOS (KEELING) ISLANDS (THE)",
+          "Currency": "Australian Dollar",
+          "Numeric Code": "36",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "CO": [
+      {
+        "COP": {
+          "ENTITY": "COLOMBIA",
+          "Currency": "Colombian Peso",
+          "Numeric Code": "170",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1000, 2000, 5000, 10000, 20000, 50000"
+        }
+      },
+      {
+        "COU": {
+          "ENTITY": "COLOMBIA",
+          "Currency": "Unidad de Valor Real",
+          "Numeric Code": "970",
+          "Minor unit": "2",
+          "Symbol": "UVR",
+          "Denominations": "nan"
+        }
+      }
+    ],
+    "KM": [
+      {
+        "KMF": {
+          "ENTITY": "COMOROS (THE)",
+          "Currency": "Comorian Franc",
+          "Numeric Code": "174",
+          "Minor unit": "0",
+          "Symbol": "CF",
+          "Denominations": "25, 50, 100, 200, 500, 1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "CG": [
+      {
+        "CDF": {
+          "ENTITY": "CONGO (THE DEMOCRATIC REPUBLIC OF THE)",
+          "Currency": "Congolese Franc",
+          "Numeric Code": "976",
+          "Minor unit": "2",
+          "Symbol": "FC",
+          "Denominations": "1, 5, 10, 20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "CD": [
+      {
+        "XAF": {
+          "ENTITY": "CONGO (THE)",
+          "Currency": "CFA Franc BEAC",
+          "Numeric Code": "950",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "CK": [
+      {
+        "NZD": {
+          "ENTITY": "COOK ISLANDS",
+          "Currency": "New Zealand Dollar",
+          "Numeric Code": "554",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 20"
+        }
+      }
+    ],
+    "CR": [
+      {
+        "CRC": {
+          "ENTITY": "COSTA RICA",
+          "Currency": "Costa Rican Colon",
+          "Numeric Code": "188",
+          "Minor unit": "2",
+          "Symbol": "₡",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 500000"
+        }
+      }
+    ],
+    "CI": [
+      {
+        "XOF": {
+          "ENTITY": "CÔTE D'IVOIRE",
+          "Currency": "CFA Franc BCEAO",
+          "Numeric Code": "952",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "1, 2, 5, 10, 25, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000"
+        }
+      }
+    ],
+    "HR": [
+      {
+        "HRK": {
+          "ENTITY": "CROATIA",
+          "Currency": "Kuna",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "kn",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "CU": [
+      {
+        "CUP": {
+          "ENTITY": "CUBA",
+          "Currency": "Cuban Peso",
+          "Numeric Code": "192",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 3, 5, 10, 20, 50"
+        }
+      },
+      {
+        "CUC": {
+          "ENTITY": "CUBA",
+          "Currency": "Peso Convertible",
+          "Numeric Code": "931",
+          "Minor unit": "2",
+          "Symbol": "CUC$",
+          "Denominations": "1, 3, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "CW": [
+      {
+        "ANG": {
+          "ENTITY": "CURAÇAO",
+          "Currency": "Netherlands Antillean Guilder",
+          "Numeric Code": "532",
+          "Minor unit": "2",
+          "Symbol": "ƒ",
+          "Denominations": "1, 2.5, 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000"
+        }
+      }
+    ],
+    "CY": [
+      {
+        "EUR": {
+          "ENTITY": "CYPRUS",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "CZ": [
+      {
+        "CZK": {
+          "ENTITY": "CZECH REPUBLIC (THE)",
+          "Currency": "Czech Koruna",
+          "Numeric Code": "203",
+          "Minor unit": "2",
+          "Symbol": "Kč",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "DK": [
+      {
+        "DKK": {
+          "ENTITY": "DENMARK",
+          "Currency": "Danish Krone",
+          "Numeric Code": "208",
+          "Minor unit": "2",
+          "Symbol": "kr",
+          "Denominations": "50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "DJ": [
+      {
+        "DJF": {
+          "ENTITY": "DJIBOUTI",
+          "Currency": "Djibouti Franc",
+          "Numeric Code": "262",
+          "Minor unit": "0",
+          "Symbol": "Fdj",
+          "Denominations": "1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "DM": [
+      {
+        "XCD": {
+          "ENTITY": "DOMINICA",
+          "Currency": "East Caribbean Dollar",
+          "Numeric Code": "951",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "DO": [
+      {
+        "DOP": {
+          "ENTITY": "DOMINICAN REPUBLIC (THE)",
+          "Currency": "Dominican Peso",
+          "Numeric Code": "214",
+          "Minor unit": "2",
+          "Symbol": "RD$",
+          "Denominations": "1, 5, 10, 25, 50"
+        }
+      }
+    ],
+    "EC": [
+      {
+        "USD": {
+          "ENTITY": "ECUADOR",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "EG": [
+      {
+        "EGP": {
+          "ENTITY": "EGYPT",
+          "Currency": "Egyptian Pound",
+          "Numeric Code": "818",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "25, 50, 100, 200"
+        }
+      }
+    ],
+    "SV": [
+      {
+        "SVC": {
+          "ENTITY": "EL SALVADOR",
+          "Currency": "El Salvador Colon",
+          "Numeric Code": "222",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "0.01, 0.05, 0.10, 0.25, 0.50, 1, 5, 10, 25, 50, 100"
+        }
+      },
+      {
+        "USD": {
+          "ENTITY": "EL SALVADOR",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "GQ": [
+      {
+        "XAF": {
+          "ENTITY": "EQUATORIAL GUINEA",
+          "Currency": "CFA Franc BEAC",
+          "Numeric Code": "950",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "ER": [
+      {
+        "ERN": {
+          "ENTITY": "ERITREA",
+          "Currency": "Nakfa",
+          "Numeric Code": "232",
+          "Minor unit": "2",
+          "Symbol": "Nfk",
+          "Denominations": "1, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "EE": [
+      {
+        "EUR": {
+          "ENTITY": "ESTONIA",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "SZ": [
+      {
+        "SZL": {
+          "ENTITY": "ESWATINI",
+          "Currency": "Lilangeni",
+          "Numeric Code": "748",
+          "Minor unit": "2",
+          "Symbol": "E",
+          "Denominations": "2"
+        }
+      }
+    ],
+    "ET": [
+      {
+        "ETB": {
+          "ENTITY": "ETHIOPIA",
+          "Currency": "Ethiopian Birr",
+          "Numeric Code": "230",
+          "Minor unit": "2",
+          "Symbol": "Br",
+          "Denominations": "1, 5, 10, 50, 100"
+        }
+      }
+    ],
+    "EU": [
+      {
+        "EUR": {
+          "ENTITY": "EUROPEAN UNION",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "FK": [
+      {
+        "FKP": {
+          "ENTITY": "FALKLAND ISLANDS (THE)",
+          "Currency": "Falkland Islands Pound",
+          "Numeric Code": "238",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "1, 2, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "FO": [
+      {
+        "DKK": {
+          "ENTITY": "FAROE ISLANDS",
+          "Currency": "Danish Krone",
+          "Numeric Code": "208",
+          "Minor unit": "2",
+          "Symbol": "kr",
+          "Denominations": "50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "FJ": [
+      {
+        "FJD": {
+          "ENTITY": "FIJI",
+          "Currency": "Fiji Dollar",
+          "Numeric Code": "242",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "FI": [
+      {
+        "EUR": {
+          "ENTITY": "FINLAND",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "FR": [
+      {
+        "EUR": {
+          "ENTITY": "FRANCE",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "GF": [
+      {
+        "EUR": {
+          "ENTITY": "FRENCH GUIANA",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "PF": [
+      {
+        "XPF": {
+          "ENTITY": "FRENCH POLYNESIA",
+          "Currency": "CFP Franc",
+          "Numeric Code": "953",
+          "Minor unit": "0",
+          "Symbol": "F",
+          "Denominations": "500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "TF": [
+      {
+        "EUR": {
+          "ENTITY": "FRENCH SOUTHERN TERRITORIES (THE)",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "GA": [
+      {
+        "XAF": {
+          "ENTITY": "GABON",
+          "Currency": "CFA Franc BEAC",
+          "Numeric Code": "950",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "GM": [
+      {
+        "GMD": {
+          "ENTITY": "GAMBIA (THE)",
+          "Currency": "Dalasi",
+          "Numeric Code": "270",
+          "Minor unit": "2",
+          "Symbol": "D",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "GE": [
+      {
+        "GEL": {
+          "ENTITY": "GEORGIA",
+          "Currency": "Lari",
+          "Numeric Code": "981",
+          "Minor unit": "2",
+          "Symbol": "₾",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "DE": [
+      {
+        "EUR": {
+          "ENTITY": "GERMANY",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "GH": [
+      {
+        "GHS": {
+          "ENTITY": "GHANA",
+          "Currency": "Ghana Cedi",
+          "Numeric Code": "936",
+          "Minor unit": "2",
+          "Symbol": "GH₵",
+          "Denominations": "1, 2, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "GI": [
+      {
+        "GIP": {
+          "ENTITY": "GIBRALTAR",
+          "Currency": "Gibraltar Pound",
+          "Numeric Code": "292",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "5, 10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "GR": [
+      {
+        "EUR": {
+          "ENTITY": "GREECE",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "GL": [
+      {
+        "DKK": {
+          "ENTITY": "GREENLAND",
+          "Currency": "Danish Krone",
+          "Numeric Code": "208",
+          "Minor unit": "2",
+          "Symbol": "kr",
+          "Denominations": "50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "GD": [
+      {
+        "XCD": {
+          "ENTITY": "GRENADA",
+          "Currency": "East Caribbean Dollar",
+          "Numeric Code": "951",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 25"
+        }
+      }
+    ],
+    "GP": [
+      {
+        "EUR": {
+          "ENTITY": "GUADELOUPE",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "GU": [
+      {
+        "USD": {
+          "ENTITY": "GUAM",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "GT": [
+      {
+        "GTQ": {
+          "ENTITY": "GUATEMALA",
+          "Currency": "Quetzal",
+          "Numeric Code": "320",
+          "Minor unit": "2",
+          "Symbol": "Q",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "GG": [
+      {
+        "GBP": {
+          "ENTITY": "GUERNSEY",
+          "Currency": "Pound Sterling",
+          "Numeric Code": "826",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "1, 2, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "GN": [
+      {
+        "GNF": {
+          "ENTITY": "GUINEA",
+          "Currency": "Guinean Franc",
+          "Numeric Code": "324",
+          "Minor unit": "0",
+          "Symbol": "FG",
+          "Denominations": "500, 1000, 5000, 10000, 20000, 50000, 100000, 500000"
+        }
+      }
+    ],
+    "GW": [
+      {
+        "XOF": {
+          "ENTITY": "GUINEA-BISSAU",
+          "Currency": "CFA Franc BCEAO",
+          "Numeric Code": "952",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "1000, 2000, 5000, 10000, 20000, 50000, 100000, 500000, 1000000, 5000000"
+        }
+      }
+    ],
+    "GY": [
+      {
+        "GYD": {
+          "ENTITY": "GUYANA",
+          "Currency": "Guyana Dollar",
+          "Numeric Code": "328",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "20, 100, 500, 1000, 5000, 10000"
+        }
+      }
+    ],
+    "HT": [
+      {
+        "HTG": {
+          "ENTITY": "HAITI",
+          "Currency": "Gourde",
+          "Numeric Code": "332",
+          "Minor unit": "2",
+          "Symbol": "G",
+          "Denominations": "1, 5, 10, 20, 50, 100, 200, 500, 1000, 5000"
+        }
+      },
+      {
+        "USD": {
+          "ENTITY": "HAITI",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "HM": [
+      {
+        "AUD": {
+          "ENTITY": "HEARD ISLAND AND MCDONALD ISLANDS",
+          "Currency": "Australian Dollar",
+          "Numeric Code": "36",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "VA": [
+      {
+        "EUR": {
+          "ENTITY": "HOLY SEE (THE)",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "HN": [
+      {
+        "HNL": {
+          "ENTITY": "HONDURAS",
+          "Currency": "Lempira",
+          "Numeric Code": "340",
+          "Minor unit": "2",
+          "Symbol": "L",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "HK": [
+      {
+        "HKD": {
+          "ENTITY": "HONG KONG",
+          "Currency": "Hong Kong Dollar",
+          "Numeric Code": "344",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "10, 20, 50, 100, 500, 1000"
+        }
+      }
+    ],
+    "HU": [
+      {
+        "HUF": {
+          "ENTITY": "HUNGARY",
+          "Currency": "Forint",
+          "Numeric Code": "348",
+          "Minor unit": "2",
+          "Symbol": "Ft",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000"
+        }
+      }
+    ],
+    "IS": [
+      {
+        "ISK": {
+          "ENTITY": "ICELAND",
+          "Currency": "Iceland Krona",
+          "Numeric Code": "352",
+          "Minor unit": "0",
+          "Symbol": "kr",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 25000"
+        }
+      }
+    ],
+    "IN": [
+      {
+        "INR": {
+          "ENTITY": "INDIA",
+          "Currency": "Indian Rupee",
+          "Numeric Code": "356",
+          "Minor unit": "2",
+          "Symbol": "₹",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "ID": [
+      {
+        "IDR": {
+          "ENTITY": "INDONESIA",
+          "Currency": "Rupiah",
+          "Numeric Code": "360",
+          "Minor unit": "2",
+          "Symbol": "Rp",
+          "Denominations": "1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000"
+        }
+      }
+    ],
+    "IR": [
+      {
+        "IRR": {
+          "ENTITY": "IRAN (ISLAMIC REPUBLIC OF)",
+          "Currency": "Iranian Rial",
+          "Numeric Code": "364",
+          "Minor unit": "2",
+          "Symbol": "﷼",
+          "Denominations": "100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "IQ": [
+      {
+        "IQD": {
+          "ENTITY": "IRAQ",
+          "Currency": "Iraqi Dinar",
+          "Numeric Code": "368",
+          "Minor unit": "3",
+          "Symbol": "ع.د",
+          "Denominations": "50, 100, 250, 500, 1000, 5000, 10000, 25000, 50000"
+        }
+      }
+    ],
+    "IE": [
+      {
+        "EUR": {
+          "ENTITY": "IRELAND",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "IM": [
+      {
+        "GBP": {
+          "ENTITY": "ISLE OF MAN",
+          "Currency": "Pound Sterling",
+          "Numeric Code": "826",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "1, 2, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "IL": [
+      {
+        "ILS": {
+          "ENTITY": "ISRAEL",
+          "Currency": "New Israeli Sheqel",
+          "Numeric Code": "376",
+          "Minor unit": "2",
+          "Symbol": "₪",
+          "Denominations": "20, 50, 100, 200"
+        }
+      }
+    ],
+    "IT": [
+      {
+        "EUR": {
+          "ENTITY": "ITALY",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "JM": [
+      {
+        "JMD": {
+          "ENTITY": "JAMAICA",
+          "Currency": "Jamaican Dollar",
+          "Numeric Code": "388",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "50, 100, 500, 1000, 5000"
+        }
+      }
+    ],
+    "JP": [
+      {
+        "JPY": {
+          "ENTITY": "JAPAN",
+          "Currency": "Yen",
+          "Numeric Code": "392",
+          "Minor unit": "0",
+          "Symbol": "¥",
+          "Denominations": "1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "JE": [
+      {
+        "GBP": {
+          "ENTITY": "JERSEY",
+          "Currency": "Pound Sterling",
+          "Numeric Code": "826",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "1, 2, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "JO": [
+      {
+        "JOD": {
+          "ENTITY": "JORDAN",
+          "Currency": "Jordanian Dinar",
+          "Numeric Code": "400",
+          "Minor unit": "3",
+          "Symbol": "JD",
+          "Denominations": "1, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "KZ": [
+      {
+        "KZT": {
+          "ENTITY": "KAZAKHSTAN",
+          "Currency": "Tenge",
+          "Numeric Code": "398",
+          "Minor unit": "2",
+          "Symbol": "₸",
+          "Denominations": "20, 50, 100, 200, 500, 1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "KE": [
+      {
+        "KES": {
+          "ENTITY": "KENYA",
+          "Currency": "Kenyan Shilling",
+          "Numeric Code": "404",
+          "Minor unit": "2",
+          "Symbol": "KSh",
+          "Denominations": "50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "KI": [
+      {
+        "AUD": {
+          "ENTITY": "KIRIBATI",
+          "Currency": "Australian Dollar",
+          "Numeric Code": "36",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "KP": [
+      {
+        "KPW": {
+          "ENTITY": "KOREA (THE DEMOCRATIC PEOPLE’S REPUBLIC OF)",
+          "Currency": "North Korean Won",
+          "Numeric Code": "408",
+          "Minor unit": "2",
+          "Symbol": "₩",
+          "Denominations": "5, 10, 50, 100"
+        }
+      }
+    ],
+    "KR": [
+      {
+        "KRW": {
+          "ENTITY": "KOREA (THE REPUBLIC OF)",
+          "Currency": "Won",
+          "Numeric Code": "410",
+          "Minor unit": "0",
+          "Symbol": "₩",
+          "Denominations": "1000, 5000, 10000, 50000, 100000"
+        }
+      }
+    ],
+    "KW": [
+      {
+        "KWD": {
+          "ENTITY": "KUWAIT",
+          "Currency": "Kuwaiti Dinar",
+          "Numeric Code": "414",
+          "Minor unit": "3",
+          "Symbol": "د.ك",
+          "Denominations": "0.25, 0.5, 1, 5, 10, 20"
+        }
+      }
+    ],
+    "KG": [
+      {
+        "KGS": {
+          "ENTITY": "KYRGYZSTAN",
+          "Currency": "Som",
+          "Numeric Code": "417",
+          "Minor unit": "2",
+          "Symbol": "сом",
+          "Denominations": "1, 10, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "LA": [
+      {
+        "LAK": {
+          "ENTITY": "LAO PEOPLE’S DEMOCRATIC REPUBLIC (THE)",
+          "Currency": "Kip",
+          "Numeric Code": "418",
+          "Minor unit": "2",
+          "Symbol": "₭",
+          "Denominations": "10, 20, 50, 100, 500, 1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "LV": [
+      {
+        "EUR": {
+          "ENTITY": "LATVIA",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "LB": [
+      {
+        "LBP": {
+          "ENTITY": "LEBANON",
+          "Currency": "Lebanese Pound",
+          "Numeric Code": "422",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "25000, 50000, 100000"
+        }
+      }
+    ],
+    "LS": [
+      {
+        "LSL": {
+          "ENTITY": "LESOTHO",
+          "Currency": "Loti",
+          "Numeric Code": "426",
+          "Minor unit": "2",
+          "Symbol": "L",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200, 500"
+        }
+      },
+      {
+        "ZAR": {
+          "ENTITY": "LESOTHO",
+          "Currency": "South African Rand",
+          "Numeric Code": "710",
+          "Minor unit": "2",
+          "Symbol": "R",
+          "Denominations": "10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "LR": [
+      {
+        "LRD": {
+          "ENTITY": "LIBERIA",
+          "Currency": "Liberian Dollar",
+          "Numeric Code": "430",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100, 500"
+        }
+      }
+    ],
+    "LY": [
+      {
+        "LYD": {
+          "ENTITY": "LIBYA",
+          "Currency": "Libyan Dinar",
+          "Numeric Code": "434",
+          "Minor unit": "3",
+          "Symbol": "LD",
+          "Denominations": "1, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "LI": [
+      {
+        "CHF": {
+          "ENTITY": "LIECHTENSTEIN",
+          "Currency": "Swiss Franc",
+          "Numeric Code": "756",
+          "Minor unit": "2",
+          "Symbol": "CHF",
+          "Denominations": "10, 20, 50, 100, 200, 1000"
+        }
+      }
+    ],
+    "LT": [
+      {
+        "EUR": {
+          "ENTITY": "LITHUANIA",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "LU": [
+      {
+        "EUR": {
+          "ENTITY": "LUXEMBOURG",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "MO": [
+      {
+        "MOP": {
+          "ENTITY": "MACAO",
+          "Currency": "Pataca",
+          "Numeric Code": "446",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "10, 20, 50, 100, 500"
+        }
+      }
+    ],
+    "MK": [
+      {
+        "MKD": {
+          "ENTITY": "MACEDONIA (THE FORMER YUGOSLAV REPUBLIC OF)",
+          "Currency": "Denar",
+          "Numeric Code": "807",
+          "Minor unit": "2",
+          "Symbol": "ден",
+          "Denominations": "10, 50, 100, 500, 1000, 5000"
+        }
+      }
+    ],
+    "MG": [
+      {
+        "MGA": {
+          "ENTITY": "MADAGASCAR",
+          "Currency": "Malagasy Ariary",
+          "Numeric Code": "969",
+          "Minor unit": "2",
+          "Symbol": "Ar",
+          "Denominations": "1, 2, 4, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "MW": [
+      {
+        "MWK": {
+          "ENTITY": "MALAWI",
+          "Currency": "Malawi Kwacha",
+          "Numeric Code": "454",
+          "Minor unit": "2",
+          "Symbol": "MK",
+          "Denominations": "20, 50, 100, 200, 500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "MY": [
+      {
+        "MYR": {
+          "ENTITY": "MALAYSIA",
+          "Currency": "Malaysian Ringgit",
+          "Numeric Code": "458",
+          "Minor unit": "2",
+          "Symbol": "RM",
+          "Denominations": "1, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "MV": [
+      {
+        "MVR": {
+          "ENTITY": "MALDIVES",
+          "Currency": "Rufiyaa",
+          "Numeric Code": "462",
+          "Minor unit": "2",
+          "Symbol": "Rf",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 500, 1000"
+        }
+      }
+    ],
+    "ML": [
+      {
+        "XOF": {
+          "ENTITY": "MALI",
+          "Currency": "CFA Franc BCEAO",
+          "Numeric Code": "952",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "MT": [
+      {
+        "EUR": {
+          "ENTITY": "MALTA",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "MH": [
+      {
+        "USD": {
+          "ENTITY": "MARSHALL ISLANDS (THE)",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "MQ": [
+      {
+        "EUR": {
+          "ENTITY": "MARTINIQUE",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "MR": [
+      {
+        "MRU": {
+          "ENTITY": "MAURITANIA",
+          "Currency": "Ouguiya",
+          "Numeric Code": "929",
+          "Minor unit": "2",
+          "Symbol": "UM",
+          "Denominations": "50, 100, 200, 500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "MU": [
+      {
+        "MUR": {
+          "ENTITY": "MAURITIUS",
+          "Currency": "Mauritian Rupee",
+          "Numeric Code": "480",
+          "Minor unit": "2",
+          "Symbol": "₨",
+          "Denominations": "25, 50, 100, 200, 500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "YT": [
+      {
+        "EUR": {
+          "ENTITY": "MAYOTTE",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "MX": [
+      {
+        "MXN": {
+          "ENTITY": "MEXICO",
+          "Currency": "Mexican Peso",
+          "Numeric Code": "484",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "20, 50, 100, 200, 500"
+        }
+      },
+      {
+        "MXV": {
+          "ENTITY": "MEXICO",
+          "Currency": "Mexican Unidad de Inversion (UDI)",
+          "Numeric Code": "979",
+          "Minor unit": "2",
+          "Symbol": "nan",
+          "Denominations": "nan"
+        }
+      }
+    ],
+    "FM": [
+      {
+        "USD": {
+          "ENTITY": "MICRONESIA (FEDERATED STATES OF)",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "MD": [
+      {
+        "MDL": {
+          "ENTITY": "MOLDOVA (THE REPUBLIC OF)",
+          "Currency": "Moldovan Leu",
+          "Numeric Code": "498",
+          "Minor unit": "2",
+          "Symbol": "L",
+          "Denominations": "1, 5, 10, 20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "MC": [
+      {
+        "EUR": {
+          "ENTITY": "MONACO",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "MN": [
+      {
+        "MNT": {
+          "ENTITY": "MONGOLIA",
+          "Currency": "Tugrik",
+          "Numeric Code": "496",
+          "Minor unit": "2",
+          "Symbol": "₮",
+          "Denominations": "10, 20, 50, 100, 500, 1000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "ME": [
+      {
+        "EUR": {
+          "ENTITY": "MONTENEGRO",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "MS": [
+      {
+        "XCD": {
+          "ENTITY": "MONTSERRAT",
+          "Currency": "East Caribbean Dollar",
+          "Numeric Code": "951",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 25, 50"
+        }
+      }
+    ],
+    "MA": [
+      {
+        "MAD": {
+          "ENTITY": "MOROCCO",
+          "Currency": "Moroccan Dirham",
+          "Numeric Code": "504",
+          "Minor unit": "2",
+          "Symbol": "DH",
+          "Denominations": "20, 50, 100, 200"
+        }
+      }
+    ],
+    "MZ": [
+      {
+        "MZN": {
+          "ENTITY": "MOZAMBIQUE",
+          "Currency": "Mozambique Metical",
+          "Numeric Code": "943",
+          "Minor unit": "2",
+          "Symbol": "MT",
+          "Denominations": "20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "MM": [
+      {
+        "MMK": {
+          "ENTITY": "MYANMAR",
+          "Currency": "Kyat",
+          "Numeric Code": "104",
+          "Minor unit": "2",
+          "Symbol": "Ks",
+          "Denominations": "50, 100, 200, 500, 1000, 5000, 10000"
+        }
+      }
+    ],
+    "NA": [
+      {
+        "NAD": {
+          "ENTITY": "NAMIBIA",
+          "Currency": "Namibia Dollar",
+          "Numeric Code": "516",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "10, 20, 50, 100, 200"
+        }
+      },
+      {
+        "ZAR": {
+          "ENTITY": "NAMIBIA",
+          "Currency": "South African Rand",
+          "Numeric Code": "710",
+          "Minor unit": "2",
+          "Symbol": "R",
+          "Denominations": "10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "NR": [
+      {
+        "AUD": {
+          "ENTITY": "NAURU",
+          "Currency": "Australian Dollar",
+          "Numeric Code": "36",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "NP": [
+      {
+        "NPR": {
+          "ENTITY": "NEPAL",
+          "Currency": "Nepalese Rupee",
+          "Numeric Code": "524",
+          "Minor unit": "2",
+          "Symbol": "₨",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 500, 1000"
+        }
+      }
+    ],
+    "NL": [
+      {
+        "EUR": {
+          "ENTITY": "NETHERLANDS (THE)",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "NC": [
+      {
+        "XPF": {
+          "ENTITY": "NEW CALEDONIA",
+          "Currency": "CFP Franc",
+          "Numeric Code": "953",
+          "Minor unit": "0",
+          "Symbol": "F",
+          "Denominations": "500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "NZ": [
+      {
+        "NZD": {
+          "ENTITY": "NEW ZEALAND",
+          "Currency": "New Zealand Dollar",
+          "Numeric Code": "554",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "NI": [
+      {
+        "NIO": {
+          "ENTITY": "NICARAGUA",
+          "Currency": "Cordoba Oro",
+          "Numeric Code": "558",
+          "Minor unit": "2",
+          "Symbol": "C$",
+          "Denominations": "10, 20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "NE": [
+      {
+        "XOF": {
+          "ENTITY": "NIGER",
+          "Currency": "CFA Franc BCEAO",
+          "Numeric Code": "952",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "NG": [
+      {
+        "NGN": {
+          "ENTITY": "NIGERIA",
+          "Currency": "Naira",
+          "Numeric Code": "566",
+          "Minor unit": "2",
+          "Symbol": "₦",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "NU": [
+      {
+        "NZD": {
+          "ENTITY": "NIUE",
+          "Currency": "New Zealand Dollar",
+          "Numeric Code": "554",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 20"
+        }
+      }
+    ],
+    "NF": [
+      {
+        "AUD": {
+          "ENTITY": "NORFOLK ISLAND",
+          "Currency": "Australian Dollar",
+          "Numeric Code": "36",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "MP": [
+      {
+        "USD": {
+          "ENTITY": "NORTHERN MARIANA ISLANDS (THE)",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "NO": [
+      {
+        "NOK": {
+          "ENTITY": "NORWAY",
+          "Currency": "Norwegian Krone",
+          "Numeric Code": "578",
+          "Minor unit": "2",
+          "Symbol": "kr",
+          "Denominations": "50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "OM": [
+      {
+        "OMR": {
+          "ENTITY": "OMAN",
+          "Currency": "Rial Omani",
+          "Numeric Code": "512",
+          "Minor unit": "3",
+          "Symbol": "ر.ع.",
+          "Denominations": "1, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "PK": [
+      {
+        "PKR": {
+          "ENTITY": "PAKISTAN",
+          "Currency": "Pakistan Rupee",
+          "Numeric Code": "586",
+          "Minor unit": "2",
+          "Symbol": "₨",
+          "Denominations": "10, 20, 50, 100, 500, 1000"
+        }
+      }
+    ],
+    "PW": [
+      {
+        "USD": {
+          "ENTITY": "PALAU",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "PA": [
+      {
+        "PAB": {
+          "ENTITY": "PANAMA",
+          "Currency": "Balboa",
+          "Numeric Code": "590",
+          "Minor unit": "2",
+          "Symbol": "B/.",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      },
+      {
+        "USD": {
+          "ENTITY": "PANAMA",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "PG": [
+      {
+        "PGK": {
+          "ENTITY": "PAPUA NEW GUINEA",
+          "Currency": "Kina",
+          "Numeric Code": "598",
+          "Minor unit": "2",
+          "Symbol": "K",
+          "Denominations": "2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "PY": [
+      {
+        "PYG": {
+          "ENTITY": "PARAGUAY",
+          "Currency": "Guarani",
+          "Numeric Code": "600",
+          "Minor unit": "0",
+          "Symbol": "₲",
+          "Denominations": "1000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "PE": [
+      {
+        "PEN": {
+          "ENTITY": "PERU",
+          "Currency": "Sol",
+          "Numeric Code": "604",
+          "Minor unit": "2",
+          "Symbol": "S/",
+          "Denominations": "10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "PH": [
+      {
+        "PHP": {
+          "ENTITY": "PHILIPPINES",
+          "Currency": "Philippine Peso",
+          "Numeric Code": "608",
+          "Minor unit": "2",
+          "Symbol": "₱",
+          "Denominations": "20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "PN": [
+      {
+        "NZD": {
+          "ENTITY": "PITCAIRN",
+          "Currency": "New Zealand Dollar",
+          "Numeric Code": "554",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 20"
+        }
+      }
+    ],
+    "PL": [
+      {
+        "PLN": {
+          "ENTITY": "POLAND",
+          "Currency": "Zloty",
+          "Numeric Code": "985",
+          "Minor unit": "2",
+          "Symbol": "zł",
+          "Denominations": "10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "PT": [
+      {
+        "EUR": {
+          "ENTITY": "PORTUGAL",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "PR": [
+      {
+        "USD": {
+          "ENTITY": "PUERTO RICO",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "QA": [
+      {
+        "QAR": {
+          "ENTITY": "QATAR",
+          "Currency": "Qatari Rial",
+          "Numeric Code": "634",
+          "Minor unit": "2",
+          "Symbol": "ر.ق",
+          "Denominations": "1, 5, 10, 25, 50"
+        }
+      }
+    ],
+    "RE": [
+      {
+        "EUR": {
+          "ENTITY": "REUNION",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "RO": [
+      {
+        "RON": {
+          "ENTITY": "ROMANIA",
+          "Currency": "Romanian Leu",
+          "Numeric Code": "946",
+          "Minor unit": "2",
+          "Symbol": "lei",
+          "Denominations": "1, 5, 10, 50, 100, 200"
+        }
+      }
+    ],
+    "RU": [
+      {
+        "RUB": {
+          "ENTITY": "RUSSIAN FEDERATION (THE)",
+          "Currency": "Russian Ruble",
+          "Numeric Code": "643",
+          "Minor unit": "2",
+          "Symbol": "₽",
+          "Denominations": "5, 10, 50, 100, 500, 1000, 5000"
+        }
+      }
+    ],
+    "RW": [
+      {
+        "RWF": {
+          "ENTITY": "RWANDA",
+          "Currency": "Rwandan Franc",
+          "Numeric Code": "646",
+          "Minor unit": "0",
+          "Symbol": "FRw",
+          "Denominations": "500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "BL": [
+      {
+        "EUR": {
+          "ENTITY": "SAINT BARTHELEMY",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "SH": [
+      {
+        "SHP": {
+          "ENTITY": "SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA",
+          "Currency": "Saint Helena Pound",
+          "Numeric Code": "654",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "5, 10, 20, 50"
+        }
+      }
+    ],
+    "KN": [
+      {
+        "XCD": {
+          "ENTITY": "SAINT KITTS AND NEVIS",
+          "Currency": "East Caribbean Dollar",
+          "Numeric Code": "951",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "LC": [
+      {
+        "XCD": {
+          "ENTITY": "SAINT LUCIA",
+          "Currency": "East Caribbean Dollar",
+          "Numeric Code": "951",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "MF": [
+      {
+        "EUR": {
+          "ENTITY": "SAINT MARTIN (FRENCH PART)",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "PM": [
+      {
+        "EUR": {
+          "ENTITY": "SAINT PIERRE AND MIQUELON",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "VC": [
+      {
+        "XCD": {
+          "ENTITY": "SAINT VINCENT AND THE GRENADINES",
+          "Currency": "East Caribbean Dollar",
+          "Numeric Code": "951",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "WS": [
+      {
+        "WST": {
+          "ENTITY": "SAMOA",
+          "Currency": "Tala",
+          "Numeric Code": "882",
+          "Minor unit": "2",
+          "Symbol": "T",
+          "Denominations": "10, 20, 50, 100"
+        }
+      }
+    ],
+    "SM": [
+      {
+        "EUR": {
+          "ENTITY": "SAN MARINO",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "ST": [
+      {
+        "STN": {
+          "ENTITY": "SAO TOME AND PRINCIPE",
+          "Currency": "Dobra",
+          "Numeric Code": "930",
+          "Minor unit": "2",
+          "Symbol": "Db",
+          "Denominations": "100, 200, 500, 1000"
+        }
+      }
+    ],
+    "SA": [
+      {
+        "SAR": {
+          "ENTITY": "SAUDI ARABIA",
+          "Currency": "Saudi Riyal",
+          "Numeric Code": "682",
+          "Minor unit": "2",
+          "Symbol": "ر.س",
+          "Denominations": "1, 5, 10, 50, 100, 500"
+        }
+      }
+    ],
+    "SN": [
+      {
+        "XOF": {
+          "ENTITY": "SENEGAL",
+          "Currency": "CFA Franc BCEAO",
+          "Numeric Code": "952",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "RS": [
+      {
+        "RSD": {
+          "ENTITY": "SERBIA",
+          "Currency": "Serbian Dinar",
+          "Numeric Code": "941",
+          "Minor unit": "2",
+          "Symbol": "дин.",
+          "Denominations": "10, 20, 50, 100, 200, 500, 1000, 5000"
+        }
+      }
+    ],
+    "SC": [
+      {
+        "SCR": {
+          "ENTITY": "SEYCHELLES",
+          "Currency": "Seychelles Rupee",
+          "Numeric Code": "690",
+          "Minor unit": "2",
+          "Symbol": "₨",
+          "Denominations": "10, 25, 50, 100, 500"
+        }
+      }
+    ],
+    "SL": [
+      {
+        "SLL": {
+          "ENTITY": "SIERRA LEONE",
+          "Currency": "Leone",
+          "Numeric Code": "925",
+          "Minor unit": "2",
+          "Symbol": "Le",
+          "Denominations": "1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "SG": [
+      {
+        "SGD": {
+          "ENTITY": "SINGAPORE",
+          "Currency": "Singapore Dollar",
+          "Numeric Code": "702",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "2, 5, 10, 50, 100, 1000"
+        }
+      }
+    ],
+    "SX": [
+      {
+        "ANG": {
+          "ENTITY": "SINT MAARTEN (DUTCH PART)",
+          "Currency": "Netherlands Antillean Guilder",
+          "Numeric Code": "532",
+          "Minor unit": "2",
+          "Symbol": "ƒ",
+          "Denominations": "10, 25, 50, 100, 250"
+        }
+      }
+    ],
+    "SK": [
+      {
+        "EUR": {
+          "ENTITY": "SLOVAKIA",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "SI": [
+      {
+        "EUR": {
+          "ENTITY": "SLOVENIA",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "SB": [
+      {
+        "SBD": {
+          "ENTITY": "SOLOMON ISLANDS",
+          "Currency": "Solomon Islands Dollar",
+          "Numeric Code": "90",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "SO": [
+      {
+        "SOS": {
+          "ENTITY": "SOMALIA",
+          "Currency": "Somali Shilling",
+          "Numeric Code": "706",
+          "Minor unit": "2",
+          "Symbol": "S",
+          "Denominations": "500, 1000, 5000, 10000"
+        }
+      }
+    ],
+    "ZA": [
+      {
+        "ZAR": {
+          "ENTITY": "SOUTH AFRICA",
+          "Currency": "Rand",
+          "Numeric Code": "710",
+          "Minor unit": "2",
+          "Symbol": "R",
+          "Denominations": "10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "SS": [
+      {
+        "SSP": {
+          "ENTITY": "SOUTH SUDAN",
+          "Currency": "South Sudanese Pound",
+          "Numeric Code": "728",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "ES": [
+      {
+        "EUR": {
+          "ENTITY": "SPAIN",
+          "Currency": "Euro",
+          "Numeric Code": "978",
+          "Minor unit": "2",
+          "Symbol": "€",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "LK": [
+      {
+        "LKR": {
+          "ENTITY": "SRI LANKA",
+          "Currency": "Sri Lanka Rupee",
+          "Numeric Code": "144",
+          "Minor unit": "2",
+          "Symbol": "₨",
+          "Denominations": "10, 20, 50, 100, 500, 1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "SD": [
+      {
+        "SDG": {
+          "ENTITY": "SUDAN",
+          "Currency": "Sudanese Pound",
+          "Numeric Code": "938",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "SR": [
+      {
+        "SRD": {
+          "ENTITY": "SURINAME",
+          "Currency": "Surinam Dollar",
+          "Numeric Code": "968",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "SJ": [
+      {
+        "SRD": {
+          "ENTITY": "SURINAME",
+          "Currency": "Surinam Dollar (2004–2016)",
+          "Numeric Code": "578",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "SE": [
+      {
+        "SEK": {
+          "ENTITY": "SWEDEN",
+          "Currency": "Swedish Krona",
+          "Numeric Code": "752",
+          "Minor unit": "2",
+          "Symbol": "kr",
+          "Denominations": "1, 5, 10, 20, 50, 100, 500"
+        }
+      }
+    ],
+    "CH": [
+      {
+        "CHF": {
+          "ENTITY": "SWITZERLAND",
+          "Currency": "Swiss Franc",
+          "Numeric Code": "756",
+          "Minor unit": "2",
+          "Symbol": "CHF",
+          "Denominations": "10, 20, 50, 100, 200, 1000"
+        }
+      },
+      {
+        "CHE": {
+          "ENTITY": "SWITZERLAND",
+          "Currency": "WIR Euro",
+          "Numeric Code": "947",
+          "Minor unit": "2",
+          "Symbol": "CHE",
+          "Denominations": "nan"
+        }
+      },
+      {
+        "CHW": {
+          "ENTITY": "SWITZERLAND",
+          "Currency": "WIR Franc",
+          "Numeric Code": "948",
+          "Minor unit": "2",
+          "Symbol": "CHW",
+          "Denominations": "nan"
+        }
+      }
+    ],
+    "SY": [
+      {
+        "SYP": {
+          "ENTITY": "SYRIAN ARAB REPUBLIC",
+          "Currency": "Syrian Pound",
+          "Numeric Code": "760",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "TW": [
+      {
+        "TWD": {
+          "ENTITY": "TAIWAN (PROVINCE OF CHINA)",
+          "Currency": "New Taiwan Dollar",
+          "Numeric Code": "901",
+          "Minor unit": "2",
+          "Symbol": "NT$",
+          "Denominations": "1, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "TJ": [
+      {
+        "TJS": {
+          "ENTITY": "TAJIKISTAN",
+          "Currency": "Somoni",
+          "Numeric Code": "972",
+          "Minor unit": "2",
+          "Symbol": "ЅМ",
+          "Denominations": "1, 5, 10, 20, 50, 100, 200"
+        }
+      }
+    ],
+    "TZ": [
+      {
+        "TZS": {
+          "ENTITY": "TANZANIA (UNITED REPUBLIC OF)",
+          "Currency": "Tanzanian Shilling",
+          "Numeric Code": "834",
+          "Minor unit": "2",
+          "Symbol": "Sh",
+          "Denominations": "500, 1000, 2000, 5000, 10000"
+        }
+      }
+    ],
+    "TH": [
+      {
+        "THB": {
+          "ENTITY": "THAILAND",
+          "Currency": "Baht",
+          "Numeric Code": "764",
+          "Minor unit": "2",
+          "Symbol": "฿",
+          "Denominations": "20, 50, 100, 500, 1000"
+        }
+      }
+    ],
+    "TL": [
+      {
+        "USD": {
+          "ENTITY": "TIMOR-LESTE",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "TG": [
+      {
+        "XOF": {
+          "ENTITY": "TOGO",
+          "Currency": "CFA Franc BCEAO",
+          "Numeric Code": "952",
+          "Minor unit": "0",
+          "Symbol": "CFA",
+          "Denominations": "500, 1000, 2000, 5000, 10000, 20000, 50000, 100000"
+        }
+      }
+    ],
+    "TK": [
+      {
+        "NZD": {
+          "ENTITY": "TOKELAU",
+          "Currency": "New Zealand Dollar",
+          "Numeric Code": "554",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10"
+        }
+      }
+    ],
+    "TO": [
+      {
+        "TOP": {
+          "ENTITY": "TONGA",
+          "Currency": "Pa’anga",
+          "Numeric Code": "776",
+          "Minor unit": "2",
+          "Symbol": "T$",
+          "Denominations": "1, 2, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "TT": [
+      {
+        "TTD": {
+          "ENTITY": "TRINIDAD AND TOBAGO",
+          "Currency": "Trinidad and Tobago Dollar",
+          "Numeric Code": "780",
+          "Minor unit": "2",
+          "Symbol": "TT$",
+          "Denominations": "1, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "TN": [
+      {
+        "TND": {
+          "ENTITY": "TUNISIA",
+          "Currency": "Tunisian Dinar",
+          "Numeric Code": "788",
+          "Minor unit": "3",
+          "Symbol": "DT",
+          "Denominations": "5, 10, 20, 50"
+        }
+      }
+    ],
+    "TR": [
+      {
+        "TRY": {
+          "ENTITY": "TURKEY",
+          "Currency": "Turkish Lira",
+          "Numeric Code": "949",
+          "Minor unit": "2",
+          "Symbol": "₺",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "TM": [
+      {
+        "TMT": {
+          "ENTITY": "TURKMENISTAN",
+          "Currency": "Turkmenistan New Manat",
+          "Numeric Code": "934",
+          "Minor unit": "2",
+          "Symbol": "T",
+          "Denominations": "1, 5, 10, 20, 50, 100, 500"
+        }
+      }
+    ],
+    "TC": [
+      {
+        "USD": {
+          "ENTITY": "TURKS AND CAICOS ISLANDS",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "TV": [
+      {
+        "AUD": {
+          "ENTITY": "TUVALU",
+          "Currency": "Australian Dollar",
+          "Numeric Code": "36",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 2, 5, 10, 20, 50"
+        }
+      }
+    ],
+    "UG": [
+      {
+        "UGX": {
+          "ENTITY": "UGANDA",
+          "Currency": "Uganda Shilling",
+          "Numeric Code": "800",
+          "Minor unit": "0",
+          "Symbol": "USh",
+          "Denominations": "1000, 2000, 5000, 10000, 20000, 50000"
+        }
+      }
+    ],
+    "UA": [
+      {
+        "UAH": {
+          "ENTITY": "UKRAINE",
+          "Currency": "Hryvnia",
+          "Numeric Code": "980",
+          "Minor unit": "2",
+          "Symbol": "₴",
+          "Denominations": "1, 2, 5, 10, 20, 50, 100, 200, 500"
+        }
+      }
+    ],
+    "AE": [
+      {
+        "AED": {
+          "ENTITY": "UNITED ARAB EMIRATES (THE)",
+          "Currency": "UAE Dirham",
+          "Numeric Code": "784",
+          "Minor unit": "2",
+          "Symbol": "د.إ",
+          "Denominations": "5, 10, 20, 50, 100, 200, 500, 1000"
+        }
+      }
+    ],
+    "GB": [
+      {
+        "GBP": {
+          "ENTITY": "UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND",
+          "Currency": "Pound Sterling",
+          "Numeric Code": "826",
+          "Minor unit": "2",
+          "Symbol": "£",
+          "Denominations": "5, 10, 20, 50"
+        }
+      }
+    ],
+    "UM": [
+      {
+        "USD": {
+          "ENTITY": "UNITED STATES MINOR OUTLYING ISLANDS",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "US": [
+      {
+        "USD": {
+          "ENTITY": "UNITED STATES OF AMERICA (THE)",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      },
+      {
+        "USD": {
+          "ENTITY": "UNITED STATES OF AMERICA (THE)",
+          "Currency": "US Dollar",
+          "Numeric Code": "997",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "UY": [
+      {
+        "UYI": {
+          "ENTITY": "URUGUAY",
+          "Currency": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
+          "Numeric Code": "858",
+          "Minor unit": "2",
+          "Symbol": "nan",
+          "Denominations": "nan"
+        }
+      },
+      {
+        "UYU": {
+          "ENTITY": "URUGUAY",
+          "Currency": "Peso Uruguayo",
+          "Numeric Code": "940",
+          "Minor unit": "0",
+          "Symbol": "$U",
+          "Denominations": "20, 50, 100, 200, 500, 1000, 2000, 5000"
+        }
+      },
+      {
+        "UYW": {
+          "ENTITY": "URUGUAY",
+          "Currency": "Unidad Previsional",
+          "Numeric Code": "927",
+          "Minor unit": "4",
+          "Symbol": "nan",
+          "Denominations": "nan"
+        }
+      }
+    ],
+    "UZ": [
+      {
+        "UZS": {
+          "ENTITY": "UZBEKISTAN",
+          "Currency": "Uzbekistan Sum",
+          "Numeric Code": "860",
+          "Minor unit": "2",
+          "Symbol": "so‘m",
+          "Denominations": "1000, 5000, 10000, 50000, 100000, 200000, 500000, 1000000"
+        }
+      }
+    ],
+    "VU": [
+      {
+        "VUV": {
+          "ENTITY": "VANUATU",
+          "Currency": "Vatu",
+          "Numeric Code": "548",
+          "Minor unit": "0",
+          "Symbol": "VT",
+          "Denominations": "100, 200, 500, 1000, 5000, 10000"
+        }
+      }
+    ],
+    "VE": [
+      {
+        "VES": {
+          "ENTITY": "VENEZUELA (BOLIVARIAN REPUBLIC OF)",
+          "Currency": "Bolívar Soberano",
+          "Numeric Code": "928",
+          "Minor unit": "2",
+          "Symbol": "Bs.S.",
+          "Denominations": "2, 5, 10, 20, 50, 100"
+        }
+      },
+      {
+        "VED": {
+          "ENTITY": "VENEZUELA (BOLIVARIAN REPUBLIC OF)",
+          "Currency": "Bolívar Soberano",
+          "Numeric Code": "926",
+          "Minor unit": "2",
+          "Symbol": "Bs.S.",
+          "Denominations": "2, 5, 10, 20, 50, 100"
+        }
+      }
+    ],
+    "VN": [
+      {
+        "VND": {
+          "ENTITY": "VIET NAM",
+          "Currency": "Dong",
+          "Numeric Code": "704",
+          "Minor unit": "0",
+          "Symbol": "₫",
+          "Denominations": "1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000"
+        }
+      }
+    ],
+    "VG": [
+      {
+        "USD": {
+          "ENTITY": "VIRGIN ISLANDS (BRITISH)",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "VI": [
+      {
+        "USD": {
+          "ENTITY": "VIRGIN ISLANDS (U.S.)",
+          "Currency": "US Dollar",
+          "Numeric Code": "840",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 25, 50, 100"
+        }
+      }
+    ],
+    "WF": [
+      {
+        "XPF": {
+          "ENTITY": "WALLIS AND FUTUNA",
+          "Currency": "CFP Franc",
+          "Numeric Code": "953",
+          "Minor unit": "0",
+          "Symbol": "F",
+          "Denominations": "500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "EH": [
+      {
+        "MAD": {
+          "ENTITY": "WESTERN SAHARA",
+          "Currency": "Moroccan Dirham",
+          "Numeric Code": "504",
+          "Minor unit": "2",
+          "Symbol": "DH",
+          "Denominations": "20, 50, 100, 200"
+        }
+      }
+    ],
+    "YE": [
+      {
+        "YER": {
+          "ENTITY": "YEMEN",
+          "Currency": "Yemeni Rial",
+          "Numeric Code": "886",
+          "Minor unit": "2",
+          "Symbol": "﷼",
+          "Denominations": "200, 500, 1000, 2000, 5000"
+        }
+      }
+    ],
+    "ZM": [
+      {
+        "ZMW": {
+          "ENTITY": "ZAMBIA",
+          "Currency": "Zambian Kwacha",
+          "Numeric Code": "967",
+          "Minor unit": "2",
+          "Symbol": "ZK",
+          "Denominations": "2, 5, 10, 20, 50, 100, 500"
+        }
+      }
+    ],
+    "ZW": [
+      {
+        "ZWL": {
+          "ENTITY": "ZIMBABWE",
+          "Currency": "Zimbabwe Dollar",
+          "Numeric Code": "932",
+          "Minor unit": "2",
+          "Symbol": "$",
+          "Denominations": "1, 5, 10, 20, 50, 100, 500, 1000, 1000000000000"
+        }
+      }
+    ]
+  }
+}

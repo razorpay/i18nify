@@ -1,0 +1,14 @@
+Data Source:
+The currency data included in this version has been collected from ISO 4217, the International Organization for Standardization's standard for currency codes and names.
+
+Conversion to JSON Format:
+We meticulously transformed the currency data obtained from ISO 4217 into a structured JSON format. Each currency entry comprises its unique currency code, commonly used currency name, and any additional attributes deemed pertinent for our purposes.
+
+Purpose:
+The primary objective of this version is to establish a comprehensive dataset for currency attributes, ensuring consistency and accuracy. By leveraging ISO 4217 as our source, we aim to provide a reliable and standardized reference for currency-related information.
+
+Future Considerations:
+While Version 1 lays a robust foundation, we envision subsequent iterations to incorporate further enhancements, including:
+
+- Integration of supplementary data sources to enrich the dataset with additional currency attributes and metadata.
+- Expansion of the dataset to encompass broader currency-related information and facilitate diverse financial analysis and reporting needs.
