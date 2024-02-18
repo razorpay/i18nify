@@ -1,13 +1,14 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
 import formatPhoneNumber from './formatPhoneNumber';
-import { detectCountryCodeFromDialCode, cleanPhoneNumber } from './utils';
+import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
 
 interface PhoneInfo {
   countryCode: string;
   dialCode: string;
   formattedPhoneNumber: string;
   formatTemplate: string;
+  phoneNumber: string;
 }
 
 // Parses a given phone number, identifies its country code (if not provided), and returns an object with details including the country code, formatted phone number, dial code, and format template.
@@ -19,49 +20,35 @@ const parsePhoneNumber = (phoneNumber: string, country?: string): PhoneInfo => {
   phoneNumber = phoneNumber.toString();
   phoneNumber = cleanPhoneNumber(phoneNumber);
 
+  const countryData = detectCountryAndDialCodeFromPhone(phoneNumber);
   // Detect or validate the country code
   const countryCode =
     country && country in PHONE_FORMATTER_MAPPER
       ? country
-      : detectCountryCodeFromDialCode(phoneNumber);
+      : countryData.countryCode;
 
+  const dialCode = countryData.dialCode;
   // Format the phone number using the detected/validated country code
   const formattedPhoneNumber = formatPhoneNumber(phoneNumber, countryCode);
 
   // Fetch the pattern associated with the countryCode from the PHONE_FORMATTER_MAPPER
-  const pattern = PHONE_FORMATTER_MAPPER[countryCode];
+  const pattern = PHONE_FORMATTER_MAPPER[countryData.countryCode];
 
-  if (!pattern)
-    return {
-      countryCode: countryCode || '',
-      dialCode: '',
-      formattedPhoneNumber: phoneNumber,
-      formatTemplate: '',
-    };
-
-  // Count the number of 'x' characters in the format pattern
-  let charCountInFormatterPattern = 0;
-  for (let i = 0; i < pattern.length; i++) {
-    if (pattern[i] === 'x') {
-      charCountInFormatterPattern++;
-    }
-  }
-
-  // Calculate the difference between phoneNumber length and 'x' characters count in pattern
-  const diff = phoneNumber.length - charCountInFormatterPattern;
-
-  // Extract the dialCode from the phoneNumber
-  const dialCode = phoneNumber.slice(0, diff);
+  const rawPhoneNumber =
+    phoneNumber[0] === '+'
+      ? phoneNumber.slice(dialCode.length)
+      : phoneNumber.slice(dialCode.length - 1);
 
   // Obtain the format template associated with the countryCode
   const formatTemplate = PHONE_FORMATTER_MAPPER[countryCode];
 
   // Return the parsed phone number information
   return {
-    countryCode,
-    formattedPhoneNumber,
+    phoneNumber: rawPhoneNumber,
+    countryCode: countryCode || '',
     dialCode,
-    formatTemplate,
+    formattedPhoneNumber: pattern ? formattedPhoneNumber : phoneNumber,
+    formatTemplate: formatTemplate || '',
   };
 };
 
