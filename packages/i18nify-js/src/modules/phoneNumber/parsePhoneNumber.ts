@@ -34,18 +34,33 @@ const parsePhoneNumber = (phoneNumber: string, country?: string): PhoneInfo => {
   // Fetch the pattern associated with the countryCode from the PHONE_FORMATTER_MAPPER
   const pattern = PHONE_FORMATTER_MAPPER[countryData.countryCode];
 
-  const rawPhoneNumber =
-    phoneNumber[0] === '+'
-      ? phoneNumber.slice(dialCode.length)
-      : phoneNumber.slice(dialCode.length - 1);
+  if (!pattern)
+    return {
+      countryCode,
+      dialCode,
+      formattedPhoneNumber: phoneNumber,
+      formatTemplate: '',
+      phoneNumber,
+    };
+
+  // Count the number of 'x' characters in the format pattern
+  let charCountInFormatterPattern = 0;
+  for (let i = 0; i < pattern.length; i++) {
+    if (pattern[i] === 'x') {
+      charCountInFormatterPattern++;
+    }
+  }
+
+  // Calculate the difference between phoneNumber length and 'x' characters count in pattern
+  const diff = phoneNumber.length - charCountInFormatterPattern;
 
   // Obtain the format template associated with the countryCode
   const formatTemplate = PHONE_FORMATTER_MAPPER[countryCode];
 
   // Return the parsed phone number information
   return {
-    phoneNumber: rawPhoneNumber,
-    countryCode: countryCode || '',
+    phoneNumber: phoneNumber.slice(diff),
+    countryCode,
     dialCode,
     formattedPhoneNumber: pattern ? formattedPhoneNumber : phoneNumber,
     formatTemplate: formatTemplate || '',
