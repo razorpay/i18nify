@@ -1146,7 +1146,7 @@
     };
 
     /**
-     * Determines the country code based on the provided phone number.
+     * Determines the country data (countryCode, dialCode) based on the provided phone number.
      * This function employs a multi-step approach to identify the country code:
      * - If the phone number starts with '+', it extracts the numeric characters
      *   and matches the leading digits with known dial codes mapped to countries.
@@ -1156,9 +1156,9 @@
      *   against regular expressions associated with various countries to identify the code.
      *
      * @param phoneNumber The input phone number (string or number).
-     * @returns The detected country code or an empty string if not found.
+     * @returns The detected countryCode & dialCode or an empty strings in both if not found.
      */
-    const detectCountryCodeFromDialCode = (phoneNumber) => {
+    const detectCountryAndDialCodeFromPhone = (phoneNumber) => {
         // If the phone number starts with '+', extract numeric characters
         if (phoneNumber.toString().charAt(0) === '+') {
             const cleanedPhoneNumberWithoutPlusPrefix = phoneNumber
@@ -1168,30 +1168,41 @@
             // Iterate through dial codes and check for matches with cleaned phone number
             for (const code in DIAL_CODE_MAPPER) {
                 if (cleanedPhoneNumberWithoutPlusPrefix.startsWith(code)) {
-                    matchingCountries.push(...DIAL_CODE_MAPPER[code]);
+                    matchingCountries.push(...DIAL_CODE_MAPPER[code].map((item) => ({
+                        countryCode: item,
+                        dialCode: `+${code}`,
+                    })));
                 }
             }
             // Filter matching countries based on phone number validation regex
-            const matchedCountryCode = matchingCountries.find((countryCode) => {
-                const regex = PHONE_REGEX_MAPPER[countryCode];
+            const matchedCountryCode = matchingCountries.find((country) => {
+                const regex = PHONE_REGEX_MAPPER[country.countryCode];
                 if (regex && regex.test(phoneNumber.toString()))
-                    return countryCode;
+                    return country;
                 return undefined;
             });
             // Return the first matched country code, if any
-            return matchedCountryCode || '';
+            return (matchedCountryCode || {
+                countryCode: '',
+                dialCode: '',
+            });
         }
         else {
             // If phone number doesn't start with '+', directly match against country regexes
             for (const countryCode in PHONE_REGEX_MAPPER) {
                 const regex = PHONE_REGEX_MAPPER[countryCode];
                 if (regex.test(phoneNumber.toString())) {
-                    return countryCode;
+                    return {
+                        countryCode,
+                        dialCode: getDialCodeFromCountryCode(countryCode)
+                            ? `+${getDialCodeFromCountryCode(countryCode)}`
+                            : '',
+                    };
                 }
             }
         }
         // Return empty string if no country code is detected
-        return '';
+        return { countryCode: '', dialCode: '' };
     };
     const cleanPhoneNumber = (phoneNumber) => {
         // Regular expression to match all characters except numbers and + sign at the start
@@ -1199,6 +1210,17 @@
         // Replace matched characters with an empty string
         const cleanedPhoneNumber = phoneNumber.replace(regex, '');
         return phoneNumber[0] === '+' ? `+${cleanedPhoneNumber}` : cleanedPhoneNumber;
+    };
+    /**
+     * Returns the dial code mapped for the country code passed from DIAL_CODE_MAPPER
+     */
+    const getDialCodeFromCountryCode = (countryCode) => {
+        for (const dialCode in DIAL_CODE_MAPPER) {
+            if (DIAL_CODE_MAPPER[dialCode].includes(countryCode.toUpperCase())) {
+                return dialCode;
+            }
+        }
+        return '';
     };
 
     // Validates whether a given phone number is valid based on the provided country code or auto-detects the country code and checks if the number matches the defined regex pattern for that country.
@@ -1209,7 +1231,7 @@
         countryCode =
             countryCode && countryCode in PHONE_REGEX_MAPPER
                 ? countryCode
-                : detectCountryCodeFromDialCode(cleanedPhoneNumber);
+                : detectCountryAndDialCodeFromPhone(cleanedPhoneNumber).countryCode;
         // Return false if phoneNumber is empty
         if (!phoneNumber)
             return false;
@@ -1369,7 +1391,7 @@
         countryCode =
             countryCode && countryCode in PHONE_FORMATTER_MAPPER
                 ? countryCode
-                : detectCountryCodeFromDialCode(phoneNumber);
+                : detectCountryAndDialCodeFromPhone(phoneNumber).countryCode;
         // Fetch the pattern for the countryCode from the PHONE_FORMATTER_MAPPER
         const pattern = PHONE_FORMATTER_MAPPER[countryCode];
         if (!pattern)
@@ -1419,40 +1441,28 @@
         // Clean the phoneNumber by removing non-numeric characters
         phoneNumber = phoneNumber.toString();
         phoneNumber = cleanPhoneNumber(phoneNumber);
+        const countryData = detectCountryAndDialCodeFromPhone(phoneNumber);
         // Detect or validate the country code
         const countryCode = country && country in PHONE_FORMATTER_MAPPER
             ? country
-            : detectCountryCodeFromDialCode(phoneNumber);
+            : countryData.countryCode;
+        const dialCode = countryData.dialCode;
         // Format the phone number using the detected/validated country code
         const formattedPhoneNumber = formatPhoneNumber$1(phoneNumber, countryCode);
         // Fetch the pattern associated with the countryCode from the PHONE_FORMATTER_MAPPER
-        const pattern = PHONE_FORMATTER_MAPPER[countryCode];
-        if (!pattern)
-            return {
-                countryCode: countryCode || '',
-                dialCode: '',
-                formattedPhoneNumber: phoneNumber,
-                formatTemplate: '',
-            };
-        // Count the number of 'x' characters in the format pattern
-        let charCountInFormatterPattern = 0;
-        for (let i = 0; i < pattern.length; i++) {
-            if (pattern[i] === 'x') {
-                charCountInFormatterPattern++;
-            }
-        }
-        // Calculate the difference between phoneNumber length and 'x' characters count in pattern
-        const diff = phoneNumber.length - charCountInFormatterPattern;
-        // Extract the dialCode from the phoneNumber
-        const dialCode = phoneNumber.slice(0, diff);
+        const pattern = PHONE_FORMATTER_MAPPER[countryData.countryCode];
+        const rawPhoneNumber = phoneNumber[0] === '+'
+            ? phoneNumber.slice(dialCode.length)
+            : phoneNumber.slice(dialCode.length - 1);
         // Obtain the format template associated with the countryCode
         const formatTemplate = PHONE_FORMATTER_MAPPER[countryCode];
         // Return the parsed phone number information
         return {
-            countryCode,
-            formattedPhoneNumber,
+            phoneNumber: rawPhoneNumber,
+            countryCode: countryCode || '',
             dialCode,
-            formatTemplate,
+            formattedPhoneNumber: pattern ? formattedPhoneNumber : phoneNumber,
+            formatTemplate: formatTemplate || '',
         };
     };
     var parsePhoneNumber$1 = withErrorBoundary(parsePhoneNumber);

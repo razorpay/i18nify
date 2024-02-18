@@ -7,6 +7,7 @@ interface PhoneInfo {
     dialCode: string;
     formattedPhoneNumber: string;
     formatTemplate: string;
+    phoneNumber: string;
 }
 declare const _default: (phoneNumber: string, country?: string | undefined) => PhoneInfo;
 
