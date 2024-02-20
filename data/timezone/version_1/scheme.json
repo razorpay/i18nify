@@ -7,13 +7,13 @@
         "^[A-Z]{2}$": {
           "type": "object",
           "properties": {
-            "available_time_zones": {
+            "available_timezones": {
               "type": "array",
               "items": { "type": "string" }
             },
             "capital_city_time_zone": { "type": "string" }
           },
-          "required": ["available_time_zones", "capital_city_time_zone"]
+          "required": ["available_timezones", "capital_city_time_zone"]
         }
       },
       "additionalProperties": false
