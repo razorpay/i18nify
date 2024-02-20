@@ -1,27 +1,27 @@
 {
   "country_language_info": {
     "AF": {
-      "languages": ["Afghan Persian or Dari", "Pashto", "Uzbeki", "English", "Turkmani", "Urdu", "Pachaie", "Nuristani", "Arabic", "Balochi", "other"],
+      "languages": ["Afghan Persian or Dari", "Pashto", "Uzbeki", "English", "Turkmani", "Urdu", "Pachaie", "Nuristani", "Arabic", "Balochi"],
       "preferred_language": "Dari",
       "language_code": "prs"
     },
     "AL": {
-      "languages": ["Albanian", "Greek", "other"],
+      "languages": ["Albanian", "Greek"],
       "preferred_language": "Albanian",
       "language_code": "sq"
     },
     "AS": {
-      "languages": ["Samoan", "English", "Tongan", "other Pacific Islander", "Asian languages", "other"],
+      "languages": ["Samoan", "English", "Tongan", "Pacific Islander", "Asian languages"],
       "preferred_language": "Samoan",
       "language_code": "sm"
     },
     "AD": {
-      "languages": ["Catalan", "Castilian", "Portuguese", "French", "English", "other"],
+      "languages": ["Catalan", "Castilian", "Portuguese", "French", "English"],
       "preferred_language": "Catalan",
       "language_code": "ca"
     },
     "AO": {
-      "languages": ["Portuguese", "Umbundu", "Kikongo", "Kimbundu", "Chokwe", "Nhaneca", "Nganguela", "Fiote", "Kwanhama", "Muhumbi", "Luvale", "other"],
+      "languages": ["Portuguese", "Umbundu", "Kikongo", "Kimbundu", "Chokwe", "Nhaneca", "Nganguela", "Fiote", "Kwanhama", "Muhumbi", "Luvale"],
       "preferred_language": "Portuguese",
       "language_code": "pt"
     },
@@ -41,27 +41,27 @@
       "language_code": "es"
     },
     "AM": {
-      "languages": ["Armenian", "Kurmanji", "other", "Russian"],
+      "languages": ["Armenian", "Kurmanji", "Russian"],
       "preferred_language": "Armenian",
       "language_code": "hy"
     },
     "AW": {
-      "languages": ["Papiamento", "Spanish", "English", "Dutch", "Chinese", "other"],
+      "languages": ["Papiamento", "Spanish", "English", "Dutch", "Chinese"],
       "preferred_language": "Papiamento",
       "language_code": "pap"
     },
     "AU": {
-      "languages": ["English", "Mandarin", "Arabic", "Vietnamese", "Cantonese", "other"],
+      "languages": ["English", "Mandarin", "Arabic", "Vietnamese", "Cantonese"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "AT": {
-      "languages": ["German", "Turkish", "Serbian", "Croatian", "other"],
+      "languages": ["German", "Turkish", "Serbian", "Croatian"],
       "preferred_language": "German",
       "language_code": "de"
     },
     "AZ": {
-      "languages": ["Azerbaijani", "Russian", "Armenian", "other"],
+      "languages": ["Azerbaijani", "Russian", "Armenian"],
       "preferred_language": "Azerbaijani",
       "language_code": "az"
     },
@@ -76,7 +76,7 @@
       "language_code": "ar"
     },
     "BD": {
-      "languages": ["Bangla", "other"],
+      "languages": ["Bangla"],
       "preferred_language": "Bangla",
       "language_code": "bn"
     },
@@ -86,7 +86,7 @@
       "language_code": "en"
     },
     "BY": {
-      "languages": ["Russian", "Belarusian", "other"],
+      "languages": ["Russian", "Belarusian"],
       "preferred_language": "Russian",
       "language_code": "ru"
     },
@@ -96,22 +96,22 @@
       "language_code": "nl"
     },
     "BZ": {
-      "languages": ["English", "Spanish", "Creole", "Maya", "German", "Garifuna", "other"],
+      "languages": ["English", "Spanish", "Creole", "Maya", "German", "Garifuna"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "BJ": {
-      "languages": ["Fon", "Yom", "Yoruba", "Bariba", "Fula", "other"],
+      "languages": ["Fon", "Yom", "Yoruba", "Bariba", "Fula"],
       "preferred_language": "Fon",
       "language_code": "fr"
     },
     "BM": {
-      "languages": ["English", "Portuguese", "other"],
+      "languages": ["English", "Portuguese"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "BT": {
-      "languages": ["Dzongkha", "other"],
+      "languages": ["Dzongkha"],
       "preferred_language": "Dzongkha",
       "language_code": "dz"
     },
@@ -126,42 +126,42 @@
       "language_code": "bs"
     },
     "BW": {
-      "languages": ["Setswana", "Kalanga", "Sekgalagadi", "English", "other"],
+      "languages": ["Setswana", "Kalanga", "Sekgalagadi", "English"],
       "preferred_language": "Setswana",
       "language_code": "tn"
     },
     "BR": {
-      "languages": ["Portuguese", "Spanish", "English", "French", "other"],
+      "languages": ["Portuguese", "Spanish", "English", "French"],
       "preferred_language": "Portuguese",
       "language_code": "pt"
     },
     "IO": {
-      "languages": ["English", "Spanish", "other"],
+      "languages": ["English", "Spanish"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "BN": {
-      "languages": ["Malay", "English", "Chinese", "other"],
+      "languages": ["Malay", "English", "Chinese"],
       "preferred_language": "Malay",
       "language_code": "ms"
     },
     "BG": {
-      "languages": ["Bulgarian", "Turkish", "Romani", "other"],
+      "languages": ["Bulgarian", "Turkish", "Romani"],
       "preferred_language": "Bulgarian",
       "language_code": "bg"
     },
     "BF": {
-      "languages": ["French", "indigenous", "other"],
+      "languages": ["French", "indigenous"],
       "preferred_language": "French",
       "language_code": "fr"
     },
     "BI": {
-      "languages": ["Kirundi", "Kirundi and other language", "French", "Swahili", "English"],
+      "languages": ["Kirundi", "Kirundi", "French", "Swahili", "English"],
       "preferred_language": "Kirundi",
       "language_code": "rn"
     },
     "KH": {
-      "languages": ["Khmer", "French", "English", "other"],
+      "languages": ["Khmer", "French", "English"],
       "preferred_language": "Khmer",
       "language_code": "km"
     },
@@ -171,32 +171,32 @@
       "language_code": "en"
     },
     "CA": {
-      "languages": ["English", "French", "other"],
+      "languages": ["English", "French"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "KY": {
-      "languages": ["English", "French", "other"],
+      "languages": ["English", "French"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "CF": {
-      "languages": ["French", "Sango", "other"],
+      "languages": ["French", "Sango"],
       "preferred_language": "French",
       "language_code": "fr"
     },
     "TD": {
-      "languages": ["French", "Arabic", "Sara", "other"],
+      "languages": ["French", "Arabic", "Sara"],
       "preferred_language": "French",
       "language_code": "fr"
     },
     "CL": {
-      "languages": ["Spanish", "Mapudungun", "other"],
+      "languages": ["Spanish", "Mapudungun"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
     "CN": {
-      "languages": ["Mandarin", "Yue", "Wu", "Minbei", "Xiang", "Gan", "other"],
+      "languages": ["Mandarin", "Yue", "Wu", "Minbei", "Xiang", "Gan"],
       "preferred_language": "Mandarin",
       "language_code": "zh"
     },
@@ -216,17 +216,17 @@
       "language_code": "es"
     },
     "KM": {
-      "languages": ["Arabic", "French", "Shikomoro", "other"],
+      "languages": ["Arabic", "French", "Shikomoro"],
       "preferred_language": "Arabic",
       "language_code": "ar"
     },
     "CG": {
-      "languages": ["French", "Lingala", "Kingwana", "Kikongo", "Tshiluba", "Swahili", "other"],
+      "languages": ["French", "Lingala", "Kingwana", "Kikongo", "Tshiluba", "Swahili"],
       "preferred_language": "French",
       "language_code": "fr"
     },
     "CD": {
-      "languages": ["French", "Lingala", "Monokutuba", "Kikongo", "Kituba", "other"],
+      "languages": ["French", "Lingala", "Monokutuba", "Kikongo", "Kituba"],
       "preferred_language": "French",
       "language_code": "fr"
     },
@@ -236,27 +236,27 @@
       "language_code": "en"
     },
     "CR": {
-      "languages": ["Spanish", "English", "other"],
+      "languages": ["Spanish", "English"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
     "HR": {
-      "languages": ["Croatian", "Serbian", "other"],
+      "languages": ["Croatian", "Serbian"],
       "preferred_language": "Croatian",
       "language_code": "hr"
     },
     "GR": {
-      "languages": ["Greek", "Turkish", "English", "other"],
+      "languages": ["Greek", "Turkish", "English"],
       "preferred_language": "Greek",
       "language_code": "el"
     },
     "CZ": {
-      "languages": ["Czech", "Slovak", "other"],
+      "languages": ["Czech", "Slovak"],
       "preferred_language": "Czech",
       "language_code": "cs"
     },
     "DK": {
-      "languages": ["Danish", "Faroese", "Greenlandic", "German", "English", "other"],
+      "languages": ["Danish", "Faroese", "Greenlandic", "German", "English"],
       "preferred_language": "Danish",
       "language_code": "da"
     },
@@ -271,12 +271,12 @@
       "language_code": "en"
     },
     "DO": {
-      "languages": ["Spanish", "other"],
+      "languages": ["Spanish"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
     "EC": {
-      "languages": ["Spanish", "Quechua", "other"],
+      "languages": ["Spanish", "Quechua"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
@@ -286,47 +286,47 @@
       "language_code": "ar"
     },
     "SV": {
-      "languages": ["Spanish", "Nahua", "other"],
+      "languages": ["Spanish", "Nahua"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
     "GQ": {
-      "languages": ["French", "Spanish", "Portuguese", "other"],
+      "languages": ["French", "Spanish", "Portuguese"],
       "preferred_language": "French",
       "language_code": "fr"
     },
     "ER": {
-      "languages": ["Afar", "Arabic", "Beja", "Tigre", "Tigrinya", "other"],
+      "languages": ["Afar", "Arabic", "Beja", "Tigre", "Tigrinya"],
       "preferred_language": "Afar",
       "language_code": "aa"
     },
     "EE": {
-      "languages": ["Estonian", "Russian", "Ukrainian", "other"],
+      "languages": ["Estonian", "Russian", "Ukrainian"],
       "preferred_language": "Estonian",
       "language_code": "et"
     },
     "ET": {
-      "languages": ["Amharic", "Tigrinya", "Orominga", "Somali", "other"],
+      "languages": ["Amharic", "Tigrinya", "Orominga", "Somali"],
       "preferred_language": "Amharic",
       "language_code": "am"
     },
     "FO": {
-      "languages": ["Faroese", "Danish", "other"],
+      "languages": ["Faroese", "Danish"],
       "preferred_language": "Faroese",
       "language_code": "fo"
     },
     "FJ": {
-      "languages": ["English", "Fijian", "Hindustani", "Fiji Hindi", "other"],
+      "languages": ["English", "Fijian", "Hindustani", "Fiji Hindi"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "FI": {
-      "languages": ["Finnish", "Swedish", "Sami", "Russian", "other"],
+      "languages": ["Finnish", "Swedish", "Sami", "Russian"],
       "preferred_language": "Finnish",
       "language_code": "fi"
     },
     "FR": {
-      "languages": ["French", "German", "Italian", "Breton", "Catalan", "Corsican", "other"],
+      "languages": ["French", "German", "Italian", "Breton", "Catalan", "Corsican"],
       "preferred_language": "French",
       "language_code": "fr"
     },
@@ -341,7 +341,7 @@
       "language_code": "fr"
     },
     "GM": {
-      "languages": ["English", "Mandinka", "Wolof", "Fula", "other"],
+      "languages": ["English", "Mandinka", "Wolof", "Fula"],
       "preferred_language": "English",
       "language_code": "en"
     },
@@ -351,12 +351,12 @@
       "language_code": "ar"
     },
     "GE": {
-      "languages": ["Georgian", "Russian", "Armenian", "Azeri", "other"],
+      "languages": ["Georgian", "Russian", "Armenian", "Azeri"],
       "preferred_language": "Georgian",
       "language_code": "ka"
     },
     "DE": {
-      "languages": ["German", "Turkish", "other"],
+      "languages": ["German", "Turkish"],
       "preferred_language": "German",
       "language_code": "de"
     },
@@ -366,7 +366,7 @@
       "language_code": "en"
     },
     "GL": {
-      "languages": ["Greenlandic", "Danish", "other"],
+      "languages": ["Greenlandic", "Danish"],
       "preferred_language": "Greenlandic",
       "language_code": "kl"
     },
@@ -381,17 +381,17 @@
       "language_code": "en"
     },
     "GT": {
-      "languages": ["Spanish", "Quiche", "other"],
+      "languages": ["Spanish", "Quiche"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
     "JE": {
-      "languages": ["English", "French", "Norman-French", "other"],
+      "languages": ["English", "French", "Norman-French"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "GN": {
-      "languages": ["French", "Malinke", "Peul", "Soussou", "Kissi", "Toma", "other"],
+      "languages": ["French", "Malinke", "Peul", "Soussou", "Kissi", "Toma"],
       "preferred_language": "French",
       "language_code": "fr"
     },
@@ -411,22 +411,22 @@
       "language_code": "fr"
     },
     "VA": {
-      "languages": ["Italian", "Latin", "French", "other"],
+      "languages": ["Italian", "Latin", "French"],
       "preferred_language": "Italian",
       "language_code": "it"
     },
     "HN": {
-      "languages": ["Spanish", "Amerindian dialects", "other"],
+      "languages": ["Spanish", "Amerindian dialects"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
     "HK": {
-      "languages": ["Cantonese", "English", "Mandarin", "other"],
+      "languages": ["Cantonese", "English", "Mandarin"],
       "preferred_language": "Cantonese",
       "language_code": "zh"
     },
     "HU": {
-      "languages": ["Hungarian", "other"],
+      "languages": ["Hungarian"],
       "preferred_language": "Hungarian",
       "language_code": "hu"
     },
@@ -436,22 +436,22 @@
       "language_code": "is"
     },
     "IN": {
-      "languages": ["Hindi", "Bengali", "Telugu", "Marathi", "Tamil", "other"],
+      "languages": ["Hindi", "Bengali", "Telugu", "Marathi", "Tamil"],
       "preferred_language": "Hindi",
       "language_code": "hi"
     },
     "ID": {
-      "languages": ["Bahasa Indonesia", "English", "Dutch", "local dialects", "other"],
+      "languages": ["Bahasa Indonesia", "English", "Dutch", "local dialects"],
       "preferred_language": "Bahasa Indonesia",
       "language_code": "id"
     },
     "IR": {
-      "languages": ["Persian", "Azeri", "Kurdish", "Gilaki and Mazandarani", "Luri", "Balochi", "Arabic", "other"],
+      "languages": ["Persian", "Azeri", "Kurdish", "Gilaki and Mazandarani", "Luri", "Balochi", "Arabic"],
       "preferred_language": "Persian",
       "language_code": "fa"
     },
     "IQ": {
-      "languages": ["Arabic", "Kurdish", "Turkmen", "Syriac", "other"],
+      "languages": ["Arabic", "Kurdish", "Turkmen", "Syriac"],
       "preferred_language": "Arabic",
       "language_code": "ar"
     },
@@ -461,7 +461,7 @@
       "language_code": "en"
     },
     "IL": {
-      "languages": ["Hebrew", "Arabic", "other"],
+      "languages": ["Hebrew", "Arabic"],
       "preferred_language": "Hebrew",
       "language_code": "he"
     },
@@ -476,22 +476,22 @@
       "language_code": "en"
     },
     "JP": {
-      "languages": ["Japanese", "Ainu", "other"],
+      "languages": ["Japanese", "Ainu"],
       "preferred_language": "Japanese",
       "language_code": "ja"
     },
     "JO": {
-      "languages": ["Arabic", "English", "other"],
+      "languages": ["Arabic", "English"],
       "preferred_language": "Arabic",
       "language_code": "ar"
     },
     "KZ": {
-      "languages": ["Kazakh", "Russian", "other"],
+      "languages": ["Kazakh", "Russian"],
       "preferred_language": "Kazakh",
       "language_code": "kk"
     },
     "KE": {
-      "languages": ["English", "Kiswahili", "Kikuyu", "Kalenjin", "Luo", "Luhya", "Kamba", "other"],
+      "languages": ["English", "Kiswahili", "Kikuyu", "Kalenjin", "Luo", "Luhya", "Kamba"],
       "preferred_language": "English",
       "language_code": "en"
     },
@@ -521,17 +521,17 @@
       "language_code": "ar"
     },
     "KG": {
-      "languages": ["Kyrgyz", "Russian", "Uzbek", "other"],
+      "languages": ["Kyrgyz", "Russian", "Uzbek"],
       "preferred_language": "Kyrgyz",
       "language_code": "ky"
     },
     "LA": {
-      "languages": ["Lao", "French", "English", "other"],
+      "languages": ["Lao", "French", "English"],
       "preferred_language": "Lao",
       "language_code": "lo"
     },
     "LV": {
-      "languages": ["Latvian", "Russian", "other"],
+      "languages": ["Latvian", "Russian"],
       "preferred_language": "Latvian",
       "language_code": "lv"
     },
@@ -541,7 +541,7 @@
       "language_code": "ar"
     },
     "LS": {
-      "languages": ["Sesotho", "English", "Zulu", "Xhosa", "other"],
+      "languages": ["Sesotho", "English", "Zulu", "Xhosa"],
       "preferred_language": "Sesotho",
       "language_code": "st"
     },
@@ -551,7 +551,7 @@
       "language_code": "en"
     },
     "LY": {
-      "languages": ["Arabic", "Italian", "English", "other"],
+      "languages": ["Arabic", "Italian", "English"],
       "preferred_language": "Arabic",
       "language_code": "ar"
     },
@@ -571,7 +571,7 @@
       "language_code": "lb"
     },
     "MO": {
-      "languages": ["Cantonese", "Mandarin", "other"],
+      "languages": ["Cantonese", "Mandarin"],
       "preferred_language": "Cantonese",
       "language_code": "zh"
     },
@@ -581,12 +581,12 @@
       "language_code": "mk"
     },
     "MG": {
-      "languages": ["French", "Malagasy", "other"],
+      "languages": ["French", "Malagasy"],
       "preferred_language": "French",
       "language_code": "fr"
     },
     "MW": {
-      "languages": ["Chichewa", "Chinyanja", "Chiyao", "Chitumbuka", "other"],
+      "languages": ["Chichewa", "Chinyanja", "Chiyao", "Chitumbuka"],
       "preferred_language": "Chichewa",
       "language_code": "ny"
     },
@@ -601,7 +601,7 @@
       "language_code": "dv"
     },
     "ML": {
-      "languages": ["French", "Bambara", "other"],
+      "languages": ["French", "Bambara"],
       "preferred_language": "French",
       "language_code": "fr"
     },
@@ -611,27 +611,27 @@
       "language_code": "mt"
     },
     "MH": {
-      "languages": ["Marshallese", "English", "other"],
+      "languages": ["Marshallese", "English"],
       "preferred_language": "Marshallese",
       "language_code": "mh"
     },
     "MR": {
-      "languages": ["Arabic", "Pulaar", "Soninke", "Wolof", "French", "other"],
+      "languages": ["Arabic", "Pulaar", "Soninke", "Wolof", "French"],
       "preferred_language": "Arabic",
       "language_code": "ar"
     },
     "MU": {
-      "languages": ["Creole", "Bhojpuri", "French", "English", "other"],
+      "languages": ["Creole", "Bhojpuri", "French", "English"],
       "preferred_language": "Creole",
       "language_code": "en"
     },
     "MX": {
-      "languages": ["Spanish", "indigenous", "other"],
+      "languages": ["Spanish", "indigenous"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
     "FM": {
-      "languages": ["English", "Chuukese", "Pohnpeian", "Kosrean", "Yapese", "other"],
+      "languages": ["English", "Chuukese", "Pohnpeian", "Kosrean", "Yapese"],
       "preferred_language": "English",
       "language_code": "en"
     },
@@ -646,7 +646,7 @@
       "language_code": "fr"
     },
     "MN": {
-      "languages": ["Khalkha Mongol", "other"],
+      "languages": ["Khalkha Mongol"],
       "preferred_language": "Khalkha Mongol",
       "language_code": "mn"
     },
@@ -661,12 +661,12 @@
       "language_code": "ar"
     },
     "MZ": {
-      "languages": ["Portuguese", "indigenous", "other"],
+      "languages": ["Portuguese", "indigenous"],
       "preferred_language": "Portuguese",
       "language_code": "pt"
     },
     "NA": {
-      "languages": ["English", "Afrikaans", "German", "Oshivambo", "Herero", "Nama", "other"],
+      "languages": ["English", "Afrikaans", "German", "Oshivambo", "Herero", "Nama"],
       "preferred_language": "English",
       "language_code": "en"
     },
@@ -676,22 +676,22 @@
       "language_code": "en"
     },
     "NP": {
-      "languages": ["Nepali", "Maithali", "Bhojpuri", "Tharu", "Tamang", "Newar", "Magar", "Bajjika", "other"],
+      "languages": ["Nepali", "Maithali", "Bhojpuri", "Tharu", "Tamang", "Newar", "Magar", "Bajjika"],
       "preferred_language": "Nepali",
       "language_code": "ne"
     },
     "NL": {
-      "languages": ["Dutch", "Frisian", "English", "Turkish", "other"],
+      "languages": ["Dutch", "Frisian", "English", "Turkish"],
       "preferred_language": "Dutch",
       "language_code": "nl"
     },
     "NC": {
-      "languages": ["French", "other"],
+      "languages": ["French"],
       "preferred_language": "French",
       "language_code": "fr"
     },
     "NZ": {
-      "languages": ["English", "Maori", "other"],
+      "languages": ["English", "Maori"],
       "preferred_language": "English",
       "language_code": "en"
     },
@@ -706,7 +706,7 @@
       "language_code": "fr"
     },
     "NG": {
-      "languages": ["English", "Hausa", "Yoruba", "Igbo", "Fulani", "other"],
+      "languages": ["English", "Hausa", "Yoruba", "Igbo", "Fulani"],
       "preferred_language": "English",
       "language_code": "en"
     },
@@ -726,7 +726,7 @@
       "language_code": "ch"
     },
     "NO": {
-      "languages": ["Bokmal Norwegian", "Nynorsk Norwegian", "other"],
+      "languages": ["Bokmal Norwegian", "Nynorsk Norwegian"],
       "preferred_language": "Bokmal Norwegian",
       "language_code": "no"
     },
@@ -736,17 +736,17 @@
       "language_code": "ar"
     },
     "PK": {
-      "languages": ["Punjabi", "Sindhi", "Siraiki", "Pashtu", "Urdu", "Balochi", "Hindko", "Brahui", "English", "other"],
+      "languages": ["Punjabi", "Sindhi", "Siraiki", "Pashtu", "Urdu", "Balochi", "Hindko", "Brahui", "English"],
       "preferred_language": "Punjabi",
       "language_code": "ur"
     },
     "PW": {
-      "languages": ["Palauan", "English", "other"],
+      "languages": ["Palauan", "English"],
       "preferred_language": "Palauan",
       "language_code": "pau"
     },
     "PA": {
-      "languages": ["Spanish", "English", "indigenous languages", "other"],
+      "languages": ["Spanish", "English", "indigenous languages"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
@@ -766,7 +766,7 @@
       "language_code": "es"
     },
     "PH": {
-      "languages": ["Filipino", "English", "other"],
+      "languages": ["Filipino", "English"],
       "preferred_language": "Filipino",
       "language_code": "fil"
     },
@@ -796,12 +796,12 @@
       "language_code": "ar"
     },
     "RO": {
-      "languages": ["Romanian", "Hungarian", "German", "Romany", "other"],
+      "languages": ["Romanian", "Hungarian", "German", "Romany"],
       "preferred_language": "Romanian",
       "language_code": "ro"
     },
     "RU": {
-      "languages": ["Russian", "Tatar", "Ukrainian", "Bashkir", "Chuvash", "Chechen", "other"],
+      "languages": ["Russian", "Tatar", "Ukrainian", "Bashkir", "Chuvash", "Chechen"],
       "preferred_language": "Russian",
       "language_code": "ru"
     },
@@ -861,12 +861,12 @@
       "language_code": "ar"
     },
     "SN": {
-      "languages": ["French", "Wolof", "Pulaar", "Jola", "Mandinka", "Serer", "Toucouleur", "other"],
+      "languages": ["French", "Wolof", "Pulaar", "Jola", "Mandinka", "Serer", "Toucouleur"],
       "preferred_language": "French",
       "language_code": "fr"
     },
     "RS": {
-      "languages": ["Serbian", "Hungarian", "Bosnian", "Romanian", "Croatian", "other"],
+      "languages": ["Serbian", "Hungarian", "Bosnian", "Romanian", "Croatian"],
       "preferred_language": "Serbian",
       "language_code": "sr"
     },
@@ -876,12 +876,12 @@
       "language_code": "crs"
     },
     "SL": {
-      "languages": ["English", "Mende", "Temne", "Krio", "other"],
+      "languages": ["English", "Mende", "Temne", "Krio"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "SG": {
-      "languages": ["Mandarin", "English", "Malay", "Hokkien", "Cantonese", "Teochew", "other"],
+      "languages": ["Mandarin", "English", "Malay", "Hokkien", "Cantonese", "Teochew"],
       "preferred_language": "Mandarin",
       "language_code": "zh"
     },
@@ -891,12 +891,12 @@
       "language_code": "nl"
     },
     "SK": {
-      "languages": ["Slovak", "Hungarian", "Romany", "other"],
+      "languages": ["Slovak", "Hungarian", "Romany"],
       "preferred_language": "Slovak",
       "language_code": "sk"
     },
     "SI": {
-      "languages": ["Slovene", "Serbo-Croatian", "other"],
+      "languages": ["Slovene", "Serbo-Croatian"],
       "preferred_language": "Slovene",
       "language_code": "sl"
     },
@@ -911,7 +911,7 @@
       "language_code": "so"
     },
     "ZA": {
-      "languages": ["Afrikaans", "English", "Zulu", "Xhosa", "Tswana", "Southern Sotho", "Northern Sotho", "Swati", "Venda", "Tsonga", "Ndebele", "other"],
+      "languages": ["Afrikaans", "English", "Zulu", "Xhosa", "Tswana", "Southern Sotho", "Northern Sotho", "Swati", "Venda", "Tsonga", "Ndebele"],
       "preferred_language": "Afrikaans",
       "language_code": "af"
     },
@@ -926,7 +926,7 @@
       "language_code": "es"
     },
     "LK": {
-      "languages": ["Sinhala", "Tamil", "English", "other"],
+      "languages": ["Sinhala", "Tamil", "English"],
       "preferred_language": "Sinhala",
       "language_code": "si"
     },
@@ -946,7 +946,7 @@
       "language_code": "en"
     },
     "SE": {
-      "languages": ["Swedish", "Finnish", "Saami", "Arabic", "Kurdish", "Serbo-Croatian", "other"],
+      "languages": ["Swedish", "Finnish", "Saami", "Arabic", "Kurdish", "Serbo-Croatian"],
       "preferred_language": "Swedish",
       "language_code": "sv"
     },
@@ -956,7 +956,7 @@
       "language_code": "de"
     },
     "SY": {
-      "languages": ["Arabic", "Kurdish", "Armenian", "Aramaic", "Circassian", "French", "other"],
+      "languages": ["Arabic", "Kurdish", "Armenian", "Aramaic", "Circassian", "French"],
       "preferred_language": "Arabic",
       "language_code": "ar"
     },
@@ -976,12 +976,12 @@
       "language_code": "sw"
     },
     "TH": {
-      "languages": ["Thai", "English", "other"],
+      "languages": ["Thai", "English"],
       "preferred_language": "Thai",
       "language_code": "th"
     },
     "TG": {
-      "languages": ["French", "Ewe", "Mina", "Kabye", "Dagomba", "other"],
+      "languages": ["French", "Ewe", "Mina", "Kabye", "Dagomba"],
       "preferred_language": "French",
       "language_code": "fr"
     },
@@ -1006,12 +1006,12 @@
       "language_code": "ar"
     },
     "TR": {
-      "languages": ["Turkish", "Kurdish", "other"],
+      "languages": ["Turkish", "Kurdish"],
       "preferred_language": "Turkish",
       "language_code": "tr"
     },
     "TM": {
-      "languages": ["Turkmen", "Russian", "Uzbek", "other"],
+      "languages": ["Turkmen", "Russian", "Uzbek"],
       "preferred_language": "Turkmen",
       "language_code": "tk"
     },
@@ -1026,12 +1026,12 @@
       "language_code": "tvl"
     },
     "UG": {
-      "languages": ["English", "Ganda", "Luganda", "other"],
+      "languages": ["English", "Ganda", "Luganda"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "UA": {
-      "languages": ["Ukrainian", "Russian", "Romanian", "Polish", "other"],
+      "languages": ["Ukrainian", "Russian", "Romanian", "Polish"],
       "preferred_language": "Ukrainian",
       "language_code": "uk"
     },
@@ -1041,12 +1041,12 @@
       "language_code": "ar"
     },
     "GB": {
-      "languages": ["English", "Welsh", "Scots", "Scottish Gaelic", "Irish", "Cornish", "other"],
+      "languages": ["English", "Welsh", "Scots", "Scottish Gaelic", "Irish", "Cornish"],
       "preferred_language": "English",
       "language_code": "en"
     },
     "US": {
-      "languages": ["English", "Spanish", "other"],
+      "languages": ["English", "Spanish"],
       "preferred_language": "English",
       "language_code": "en"
     },
@@ -1056,7 +1056,7 @@
       "language_code": "es"
     },
     "UZ": {
-      "languages": ["Uzbek", "Russian", "Tajik", "other"],
+      "languages": ["Uzbek", "Russian", "Tajik"],
       "preferred_language": "Uzbek",
       "language_code": "uz"
     },
@@ -1066,12 +1066,12 @@
       "language_code": "bi"
     },
     "VE": {
-      "languages": ["Spanish", "indigenous", "other"],
+      "languages": ["Spanish", "indigenous"],
       "preferred_language": "Spanish",
       "language_code": "es"
     },
     "VN": {
-      "languages": ["Vietnamese", "English", "French", "Chinese", "Khmer", "Mon", "Muong", "other"],
+      "languages": ["Vietnamese", "English", "French", "Chinese", "Khmer", "Mon", "Muong"],
       "preferred_language": "Vietnamese",
       "language_code": "vi"
     },
@@ -1086,17 +1086,17 @@
       "language_code": "wls"
     },
     "YE": {
-      "languages": ["Arabic", "Soqutri", "Mahri", "other"],
+      "languages": ["Arabic", "Soqutri", "Mahri"],
       "preferred_language": "Arabic",
       "language_code": "ar"
     },
     "ZM": {
-      "languages": ["Bemba", "Kaonde", "Lozi", "Lunda", "Luvale", "Nyanja", "Tonga", "other"],
+      "languages": ["Bemba", "Kaonde", "Lozi", "Lunda", "Luvale", "Nyanja", "Tonga"],
       "preferred_language": "Bemba",
       "language_code": "en"
     },
     "ZW": {
-      "languages": ["English", "Shona", "Sindebele", "other"],
+      "languages": ["English", "Shona", "Sindebele"],
       "preferred_language": "English",
       "language_code": "en"
     }
