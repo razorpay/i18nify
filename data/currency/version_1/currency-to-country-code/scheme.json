@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "^[A-Z]{3}$": {
+      "type": "object",
+      "properties": {
+        "currency_name": { "type": "string" },
+        "countries": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["currency_name", "countries"]
+    }
+  }
+}

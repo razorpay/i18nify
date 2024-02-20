@@ -12,14 +12,17 @@
               "^[A-Z]{3}$": {
                 "type": "object",
                 "properties": {
-                  "ENTITY": { "type": "string" },
-                  "Currency": { "type": "string" },
-                  "Numeric Code": { "type": "string" },
-                  "Minor unit": { "type": "string" },
-                  "Symbol": { "type": "string" },
-                  "Denominations": { "type": "string" }
+                  "country_name": { "type": "string" },
+                  "currency": { "type": "string" },
+                  "numeric_code": { "type": "string" },
+                  "minor_unit": { "type": "string" },
+                  "symbol": { "type": "string" },
+                  "denominations": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
                 },
-                "required": ["ENTITY", "Currency", "Numeric Code", "Minor unit", "Symbol", "Denominations"]
+                "required": ["country_name", "currency", "numeric_code", "minor_unit", "symbol", "denominations"]
               }
             },
             "additionalProperties": false
