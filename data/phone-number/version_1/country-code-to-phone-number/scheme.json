@@ -7,11 +7,11 @@
         "^[A-Z]{2}$": {
           "type": "object",
           "properties": {
-            "Dial code": { "type": "string" },
-            "Format": { "type": "string" },
-            "Regex": { "type": "string" }
+            "dial_code": { "type": "string" },
+            "format": { "type": "string" },
+            "regex": { "type": "string" }
           },
-          "required": ["Dial code", "Format", "Regex"]
+          "required": ["dial_code", "format", "regex"]
         }
       },
       "additionalProperties": false
