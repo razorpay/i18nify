@@ -1,1497 +1,1746 @@
 {
   "country_information": {
     "AF": {
-      "country_name": "Afghanistan",
-      "country_code_3": "AFG",
-      "numeric_code": "004",
+      "name": "Afghanistan",
+      "alpha_3": "AFG",
+      "numeric": "004",
+      "flag": "🇦🇫",
       "sovereignty": "UN member state"
     },
     "AX": {
-      "country_name": "Åland Islands",
-      "country_code_3": "ALA",
-      "numeric_code": "248",
+      "name": "Åland Islands",
+      "alpha_3": "ALA",
+      "numeric": "248",
+      "flag": "🇦🇽",
       "sovereignty": "Finland"
     },
     "AL": {
-      "country_name": "Albania",
-      "country_code_3": "ALB",
-      "numeric_code": "008",
+      "name": "Albania",
+      "alpha_3": "ALB",
+      "flag": "🇦🇱",
+      "numeric": "008",
       "sovereignty": "UN member state"
     },
     "DZ": {
-      "country_name": "Algeria",
-      "country_code_3": "DZA",
-      "numeric_code": "012",
+      "name": "Algeria",
+      "alpha_3": "DZA",
+      "numeric": "012",
+      "flag": "🇩🇿",
       "sovereignty": "UN member state"
     },
     "AS": {
-      "country_name": "American Samoa",
-      "country_code_3": "ASM",
-      "numeric_code": "016",
+      "name": "American Samoa",
+      "alpha_3": "ASM",
+      "numeric": "016",
+      "flag": "🇦🇸",
       "sovereignty": "United States"
     },
     "AD": {
-      "country_name": "Andorra",
-      "country_code_3": "AND",
-      "numeric_code": "020",
+      "name": "Andorra",
+      "alpha_3": "AND",
+      "numeric": "020",
+      "flag": "🇦🇩",
       "sovereignty": "UN member state"
     },
     "AO": {
-      "country_name": "Angola",
-      "country_code_3": "AGO",
-      "numeric_code": "024",
+      "name": "Angola",
+      "alpha_3": "AGO",
+      "numeric": "024",
+      "flag": "🇦🇴",
       "sovereignty": "UN member state"
     },
     "AI": {
-      "country_name": "Anguilla",
-      "country_code_3": "AIA",
-      "numeric_code": "660",
+      "name": "Anguilla",
+      "alpha_3": "AIA",
+      "flag": "🇦🇮",
+      "numeric": "660",
       "sovereignty": "United Kingdom"
     },
     "AQ": {
-      "country_name": "Antarctica",
-      "country_code_3": "ATA",
-      "numeric_code": "010",
+      "name": "Antarctica",
+      "alpha_3": "ATA",
+      "numeric": "010",
+      "flag": "🇦🇶",
       "sovereignty": "Antarctic Treaty"
     },
     "AG": {
-      "country_name": "Antigua and Barbuda",
-      "country_code_3": "ATG",
-      "numeric_code": "028",
+      "name": "Antigua and Barbuda",
+      "alpha_3": "ATG",
+      "numeric": "028",
+      "flag": "🇦🇬",
       "sovereignty": "UN member state"
     },
     "AR": {
-      "country_name": "Argentina",
-      "country_code_3": "ARG",
-      "numeric_code": "248",
+      "name": "Argentina",
+      "alpha_3": "ARG",
+      "numeric": "248",
+      "flag": "🇦🇷",
       "sovereignty": "UN member state"
     },
     "AM": {
-      "country_name": "Armenia",
-      "country_code_3": "ARM",
-      "numeric_code": "248",
+      "name": "Armenia",
+      "alpha_3": "ARM",
+      "flag": "🇦🇲",
+      "numeric": "248",
       "sovereignty": "UN member state"
     },
     "AW": {
-      "country_name": "Aruba",
-      "country_code_3": "ABW",
-      "numeric_code": "533",
+      "name": "Aruba",
+      "alpha_3": "ABW",
+      "numeric": "533",
+      "flag": "🇦🇼",
       "sovereignty": "Netherlands"
     },
     "AU": {
-      "country_name": "Australia",
-      "country_code_3": "AUS",
-      "numeric_code": "036",
+      "name": "Australia",
+      "alpha_3": "AUS",
+      "numeric": "036",
+      "flag": "🇦🇺",
       "sovereignty": "UN member state"
     },
     "AT": {
-      "country_name": "Austria",
-      "country_code_3": "AUT",
-      "numeric_code": "040",
+      "name": "Austria",
+      "alpha_3": "AUT",
+      "numeric": "040",
+      "flag": "🇦🇹",
       "sovereignty": "UN member state"
     },
     "AZ": {
-      "country_name": "Azerbaijan",
-      "country_code_3": "031",
-      "numeric_code": "248",
+      "name": "Azerbaijan",
+      "alpha_3": "AZE",
+      "numeric": "248",
+      "flag": "🇦🇿",
       "sovereignty": "UN member state"
     },
     "BS": {
-      "country_name": "Bahamas (the)",
-      "country_code_3": "BHS",
-      "numeric_code": "044",
+      "name": "Bahamas (the)",
+      "alpha_3": "BHS",
+      "numeric": "044",
+      "flag": "🇧🇸",
       "sovereignty": "UN member state"
     },
     "BH": {
-      "country_name": "Bahrain",
-      "country_code_3": "BHR",
-      "numeric_code": "048",
+      "name": "Bahrain",
+      "alpha_3": "BHR",
+      "numeric": "048",
+      "flag": "🇧🇭",
       "sovereignty": "UN member state"
     },
     "BD": {
-      "country_name": "Bangladesh",
-      "country_code_3": "BGD",
-      "numeric_code": "050",
+      "name": "Bangladesh",
+      "alpha_3": "BGD",
+      "numeric": "050",
+      "flag": "🇧🇩",
       "sovereignty": "UN member state"
     },
     "BB": {
-      "country_name": "Barbados",
-      "country_code_3": "BRB",
-      "numeric_code": "052",
+      "name": "Barbados",
+      "alpha_3": "BRB",
+      "numeric": "052",
+      "flag": "🇧🇧",
       "sovereignty": "UN member state"
     },
     "BY": {
-      "country_name": "Belarus",
-      "country_code_3": "BLR",
-      "numeric_code": "112",
+      "name": "Belarus",
+      "alpha_3": "BLR",
+      "numeric": "112",
+      "flag": "🇧🇾",
       "sovereignty": "UN member state"
     },
     "BE": {
-      "country_name": "Belgium",
-      "country_code_3": "BEL",
-      "numeric_code": "056",
+      "name": "Belgium",
+      "alpha_3": "BEL",
+      "numeric": "056",
+      "flag": "🇧🇪",
       "sovereignty": "UN member state"
     },
     "BZ": {
-      "country_name": "Belize",
-      "country_code_3": "BLZ",
-      "numeric_code": "084",
+      "name": "Belize",
+      "alpha_3": "BLZ",
+      "numeric": "084",
+      "flag": "🇧🇿",
       "sovereignty": "UN member state"
     },
     "BJ": {
-      "country_name": "Benin",
-      "country_code_3": "BEN",
-      "numeric_code": "204",
+      "name": "Benin",
+      "alpha_3": "BEN",
+      "numeric": "204",
+      "flag": "🇧🇯",
       "sovereignty": "UN member state"
     },
     "BM": {
-      "country_name": "Bermuda",
-      "country_code_3": "BMU",
-      "numeric_code": "060",
+      "name": "Bermuda",
+      "alpha_3": "BMU",
+      "numeric": "060",
+      "flag": "🇧🇲",
       "sovereignty": "United Kingdom"
     },
     "BT": {
-      "country_name": "Bhutan",
-      "country_code_3": "BTN",
-      "numeric_code": "064",
+      "name": "Bhutan",
+      "alpha_3": "BTN",
+      "numeric": "064",
+      "flag": "🇧🇹",
       "sovereignty": "UN member state"
     },
     "BO": {
-      "country_name": "Bolivia",
-      "country_code_3": "BOL",
-      "numeric_code": "068",
+      "name": "Bolivia",
+      "alpha_3": "BOL",
+      "numeric": "068",
+      "flag": "🇧🇴",
       "sovereignty": "UN member state"
     },
     "BQ": {
-      "country_name": "Bonaire, Sint Eustatius, Saba",
-      "country_code_3": "BES",
-      "numeric_code": "535",
+      "name": "Bonaire, Sint Eustatius, Saba",
+      "alpha_3": "BES",
+      "numeric": "535",
+      "flag": "🇧🇶",
       "sovereignty": "Netherlands"
     },
     "BA": {
-      "country_name": "Bosnia and Herzegovina",
-      "country_code_3": "BIH",
-      "numeric_code": "070",
+      "name": "Bosnia and Herzegovina",
+      "alpha_3": "BIH",
+      "numeric": "070",
+      "flag": "🇧🇦",
       "sovereignty": "UN member state"
     },
     "BW": {
-      "country_name": "Botswana",
-      "country_code_3": "BWA",
-      "numeric_code": "072",
+      "name": "Botswana",
+      "alpha_3": "BWA",
+      "numeric": "072",
+      "flag": "🇧🇼",
       "sovereignty": "UN member state"
     },
     "BV": {
-      "country_name": "Bouvet Island",
-      "country_code_3": "BVT",
-      "numeric_code": "072",
+      "name": "Bouvet Island",
+      "alpha_3": "BVT",
+      "numeric": "072",
+      "flag": "🇧🇻",
       "sovereignty": "Norway"
     },
     "BR": {
-      "country_name": "Brazil",
-      "country_code_3": "BRA",
-      "numeric_code": "076",
+      "name": "Brazil",
+      "alpha_3": "BRA",
+      "numeric": "076",
+      "flag": "🇧🇷",
       "sovereignty": "UN member state"
     },
     "IO": {
-      "country_name": "British Indian Ocean Territory (the)",
-      "country_code_3": "IOT",
-      "numeric_code": "086",
+      "name": "British Indian Ocean Territory (the)",
+      "alpha_3": "IOT",
+      "numeric": "086",
+      "flag": "🇮🇴",
       "sovereignty": "United Kingdom"
     },
     "BN": {
-      "country_name": "Brunei Darussalam",
-      "country_code_3": "BRN",
-      "numeric_code": "096",
+      "name": "Brunei Darussalam",
+      "alpha_3": "BRN",
+      "numeric": "096",
+      "flag": "🇧🇳",
       "sovereignty": "UN member state"
     },
     "BG": {
-      "country_name": "Bulgaria",
-      "country_code_3": "BGR",
-      "numeric_code": "100",
+      "name": "Bulgaria",
+      "alpha_3": "BGR",
+      "numeric": "100",
+      "flag": "🇧🇬",
       "sovereignty": "UN member state"
     },
     "BF": {
-      "country_name": "Burkina Faso",
-      "country_code_3": "BFA",
-      "numeric_code": "854",
+      "name": "Burkina Faso",
+      "alpha_3": "BFA",
+      "numeric": "854",
+      "flag": "🇧🇫",
       "sovereignty": "UN member state"
     },
     "BI": {
-      "country_name": "Burundi",
-      "country_code_3": "BDI",
-      "numeric_code": "108",
+      "name": "Burundi",
+      "alpha_3": "BDI",
+      "numeric": "108",
+      "flag": "🇧🇮",
       "sovereignty": "UN member state"
     },
     "CV": {
-      "country_name": "Cabo Verde",
-      "country_code_3": "CPV",
-      "numeric_code": "132",
+      "name": "Cabo Verde",
+      "alpha_3": "CPV",
+      "numeric": "132",
+      "flag": "🇨🇻",
       "sovereignty": "UN member state"
     },
     "KH": {
-      "country_name": "Cambodia",
-      "country_code_3": "KHM",
-      "numeric_code": "116",
+      "name": "Cambodia",
+      "alpha_3": "KHM",
+      "numeric": "116",
+      "flag": "🇰🇭",
       "sovereignty": "UN member state"
     },
     "CM": {
-      "country_name": "Cameroon",
-      "country_code_3": "CMR",
-      "numeric_code": "120",
+      "name": "Cameroon",
+      "alpha_3": "CMR",
+      "numeric": "120",
+      "flag": "🇨🇲",
       "sovereignty": "UN member state"
     },
     "CA": {
-      "country_name": "Canada",
-      "country_code_3": "CAN",
-      "numeric_code": "124",
+      "name": "Canada",
+      "alpha_3": "CAN",
+      "numeric": "124",
+      "flag": "🇨🇦",
       "sovereignty": "UN member state"
     },
     "KY": {
-      "country_name": "Cayman Islands (the)",
-      "country_code_3": "CYM",
-      "numeric_code": "136",
+      "name": "Cayman Islands (the)",
+      "alpha_3": "CYM",
+      "numeric": "136",
+      "flag": "🇰🇾",
       "sovereignty": "United Kingdom"
     },
     "CF": {
-      "country_name": "Central African Republic (the)",
-      "country_code_3": "CAF",
-      "numeric_code": "140",
+      "name": "Central African Republic (the)",
+      "alpha_3": "CAF",
+      "numeric": "140",
+      "flag": "🇨🇫",
       "sovereignty": "UN member state"
     },
     "TD": {
-      "country_name": "Chad",
-      "country_code_3": "TCD",
-      "numeric_code": "148",
+      "name": "Chad",
+      "alpha_3": "TCD",
+      "numeric": "148",
+      "flag": "🇹🇩",
       "sovereignty": "UN member state"
     },
     "CL": {
-      "country_name": "Chile",
-      "country_code_3": "CHL",
-      "numeric_code": "152",
+      "name": "Chile",
+      "alpha_3": "CHL",
+      "numeric": "152",
+      "flag": "🇨🇱",
       "sovereignty": "UN member state"
     },
     "CN": {
-      "country_name": "China",
-      "country_code_3": "CHN",
-      "numeric_code": "156",
+      "name": "China",
+      "alpha_3": "CHN",
+      "numeric": "156",
+      "flag": "🇨🇳",
       "sovereignty": "UN member state"
     },
     "CX": {
-      "country_name": "Christmas Island",
-      "country_code_3": "CXR",
-      "numeric_code": "162",
+      "name": "Christmas Island",
+      "alpha_3": "CXR",
+      "numeric": "162",
+      "flag": "🇨🇽",
       "sovereignty": "Australia"
     },
     "CC": {
-      "country_name": "Cocos (Keeling) Islands (the)",
-      "country_code_3": "CCK",
-      "numeric_code": "166",
+      "name": "Cocos (Keeling) Islands (the)",
+      "alpha_3": "CCK",
+      "numeric": "166",
+      "flag": "🇨🇨",
       "sovereignty": "Australia"
     },
     "CO": {
-      "country_name": "Colombia",
-      "country_code_3": "COL",
-      "numeric_code": "170",
+      "name": "Colombia",
+      "alpha_3": "COL",
+      "numeric": "170",
+      "flag": "🇨🇴",
       "sovereignty": "UN member state"
     },
     "KM": {
-      "country_name": "Comoros (the)",
-      "country_code_3": "COM",
-      "numeric_code": "174",
+      "name": "Comoros (the)",
+      "alpha_3": "COM",
+      "numeric": "174",
+      "flag": "🇰🇲",
       "sovereignty": "UN member state"
     },
     "CD": {
-      "country_name": "Congo (the Democratic Republic of the)",
-      "country_code_3": "COD",
-      "numeric_code": "180",
+      "name": "Congo (the Democratic Republic of the)",
+      "alpha_3": "COD",
+      "numeric": "180",
+      "flag": "🇨🇩",
       "sovereignty": "UN member state"
     },
     "CG": {
-      "country_name": "Congo (the)",
-      "country_code_3": "COG",
-      "numeric_code": "178",
+      "name": "Congo (the)",
+      "alpha_3": "COG",
+      "numeric": "178",
+      "flag": "🇨🇬",
       "sovereignty": "UN member state"
     },
     "CK": {
-      "country_name": "Cook Islands (the)",
-      "country_code_3": "COK",
-      "numeric_code": "184",
+      "name": "Cook Islands (the)",
+      "alpha_3": "COK",
+      "numeric": "184",
+      "flag": "🇨🇰",
       "sovereignty": "New Zealand"
     },
     "CR": {
-      "country_name": "Costa Rica",
-      "country_code_3": "CRI",
-      "numeric_code": "188",
+      "name": "Costa Rica",
+      "alpha_3": "CRI",
+      "numeric": "188",
+      "flag": "🇨🇷",
       "sovereignty": "UN member state"
     },
     "CI": {
-      "country_name": "Côte d'Ivoire",
-      "country_code_3": "CIV",
-      "numeric_code": "384",
+      "name": "Côte d'Ivoire",
+      "alpha_3": "CIV",
+      "numeric": "384",
+      "flag": "🇨🇮",
       "sovereignty": "UN member state"
     },
     "HR": {
-      "country_name": "Croatia",
-      "country_code_3": "HRV",
-      "numeric_code": "191",
+      "name": "Croatia",
+      "alpha_3": "HRV",
+      "numeric": "191",
+      "flag": "🇭🇷",
       "sovereignty": "UN member state"
     },
     "CU": {
-      "country_name": "Cuba",
-      "country_code_3": "CUB",
-      "numeric_code": "192",
+      "name": "Cuba",
+      "alpha_3": "CUB",
+      "numeric": "192",
+      "flag": "🇨🇺",
       "sovereignty": "UN member state"
     },
     "CW": {
-      "country_name": "Curaçao",
-      "country_code_3": "CUW",
-      "numeric_code": "531",
+      "name": "Curaçao",
+      "alpha_3": "CUW",
+      "numeric": "531",
+      "flag": "🇨🇼",
       "sovereignty": "Netherlands"
     },
     "CY": {
-      "country_name": "Cyprus",
-      "country_code_3": "CYP",
-      "numeric_code": "196",
+      "name": "Cyprus",
+      "alpha_3": "CYP",
+      "numeric": "196",
+      "flag": "🇨🇾",
       "sovereignty": "UN member state"
     },
     "CZ": {
-      "country_name": "Czechia",
-      "country_code_3": "CZE",
-      "numeric_code": "203",
+      "name": "Czechia",
+      "alpha_3": "CZE",
+      "numeric": "203",
+      "flag": "🇨🇿",
       "sovereignty": "UN member state"
     },
     "DK": {
-      "country_name": "Denmark",
-      "country_code_3": "DNK",
-      "numeric_code": "208",
+      "name": "Denmark",
+      "alpha_3": "DNK",
+      "numeric": "208",
+      "flag": "🇩🇰",
       "sovereignty": "UN member state"
     },
     "DJ": {
-      "country_name": "Djibouti",
-      "country_code_3": "DJI",
-      "numeric_code": "262",
+      "name": "Djibouti",
+      "alpha_3": "DJI",
+      "numeric": "262",
+      "flag": "🇩🇯",
       "sovereignty": "UN member state"
     },
     "DM": {
-      "country_name": "Dominica",
-      "country_code_3": "DMA",
-      "numeric_code": "212",
+      "name": "Dominica",
+      "alpha_3": "DMA",
+      "numeric": "212",
+      "flag": "🇩🇲",
       "sovereignty": "UN member state"
     },
     "DO": {
-      "country_name": "Dominican Republic (the)",
-      "country_code_3": "DOM",
-      "numeric_code": "214",
+      "name": "Dominican Republic (the)",
+      "alpha_3": "DOM",
+      "numeric": "214",
+      "flag": "🇩🇴",
       "sovereignty": "UN member state"
     },
     "EC": {
-      "country_name": "Ecuador",
-      "country_code_3": "ECU",
-      "numeric_code": "218",
+      "name": "Ecuador",
+      "alpha_3": "ECU",
+      "numeric": "218",
+      "flag": "🇪🇨",
       "sovereignty": "UN member state"
     },
     "EG": {
-      "country_name": "Egypt",
-      "country_code_3": "EGY",
-      "numeric_code": "818",
+      "name": "Egypt",
+      "alpha_3": "EGY",
+      "numeric": "818",
+      "flag": "🇪🇬",
       "sovereignty": "UN member state"
     },
     "SV": {
-      "country_name": "El Salvador",
-      "country_code_3": "SLV",
-      "numeric_code": "222",
+      "name": "El Salvador",
+      "alpha_3": "SLV",
+      "numeric": "222",
+      "flag": "🇸🇻",
       "sovereignty": "UN member state"
     },
     "GQ": {
-      "country_name": "Equatorial Guinea",
-      "country_code_3": "GNQ",
-      "numeric_code": "226",
+      "name": "Equatorial Guinea",
+      "alpha_3": "GNQ",
+      "numeric": "226",
+      "flag": "🇬🇶",
       "sovereignty": "UN member state"
     },
     "ER": {
-      "country_name": "Eritrea",
-      "country_code_3": "ERI",
-      "numeric_code": "232",
+      "name": "Eritrea",
+      "alpha_3": "ERI",
+      "numeric": "232",
+      "flag": "🇪🇷",
       "sovereignty": "UN member state"
     },
     "EE": {
-      "country_name": "Estonia",
-      "country_code_3": "EST",
-      "numeric_code": "233",
+      "name": "Estonia",
+      "alpha_3": "EST",
+      "numeric": "233",
+      "flag": "🇪🇸",
       "sovereignty": "UN member state"
     },
     "SZ": {
-      "country_name": "Eswatini",
-      "country_code_3": "SWZ",
-      "numeric_code": "748",
+      "name": "Eswatini",
+      "alpha_3": "SWZ",
+      "numeric": "748",
+      "flag": "🇸🇿",
       "sovereignty": "UN member state"
     },
     "ET": {
-      "country_name": "Ethiopia",
-      "country_code_3": "ETH",
-      "numeric_code": "231",
+      "name": "Ethiopia",
+      "alpha_3": "ETH",
+      "numeric": "231",
+      "flag": "🇪🇹",
       "sovereignty": "UN member state"
     },
     "FK": {
-      "country_name": "Falkland Islands (the) [Malvinas]",
-      "country_code_3": "FLK",
-      "numeric_code": "238",
+      "name": "Falkland Islands (the) [Malvinas]",
+      "alpha_3": "FLK",
+      "numeric": "238",
+      "flag": "🇫🇰",
       "sovereignty": "United Kingdom"
     },
     "FO": {
-      "country_name": "Faroe Islands (the)",
-      "country_code_3": "FRO",
-      "numeric_code": "234",
+      "name": "Faroe Islands (the)",
+      "alpha_3": "FRO",
+      "numeric": "234",
+      "flag": "🇫🇴",
       "sovereignty": "Denmark"
     },
     "FJ": {
-      "country_name": "Fiji",
-      "country_code_3": "FJI",
-      "numeric_code": "242",
+      "name": "Fiji",
+      "alpha_3": "FJI",
+      "numeric": "242",
+      "flag": "🇫🇯",
       "sovereignty": "UN member state"
     },
     "FI": {
-      "country_name": "Finland",
-      "country_code_3": "FIN",
-      "numeric_code": "246",
+      "name": "Finland",
+      "alpha_3": "FIN",
+      "numeric": "246",
+      "flag": "🇫🇮",
       "sovereignty": "UN member state"
     },
     "FR": {
-      "country_name": "France [m]",
-      "country_code_3": "FRA",
-      "numeric_code": "250",
+      "name": "France [m]",
+      "alpha_3": "FRA",
+      "numeric": "250",
+      "flag": "🇫🇷",
       "sovereignty": "UN member state"
     },
     "GF": {
-      "country_name": "French Guiana",
-      "country_code_3": "GUF",
-      "numeric_code": "254",
+      "name": "French Guiana",
+      "alpha_3": "GUF",
+      "numeric": "254",
+      "flag": "🇬🇫",
       "sovereignty": "France"
     },
     "PF": {
-      "country_name": "French Polynesia",
-      "country_code_3": "PYF",
-      "numeric_code": "258",
+      "name": "French Polynesia",
+      "alpha_3": "PYF",
+      "numeric": "258",
+      "flag": "🇵🇫",
       "sovereignty": "France"
     },
     "TF": {
-      "country_name": "French Southern Territories (the)",
-      "country_code_3": "ATF",
-      "numeric_code": "260",
+      "name": "French Southern Territories (the)",
+      "alpha_3": "ATF",
+      "numeric": "260",
+      "flag": "🇹🇫",
       "sovereignty": "France"
     },
     "GA": {
-      "country_name": "Gabon",
-      "country_code_3": "GAB",
-      "numeric_code": "266",
+      "name": "Gabon",
+      "alpha_3": "GAB",
+      "numeric": "266",
+      "flag": "🇬🇦",
       "sovereignty": "UN member state"
     },
     "GM": {
-      "country_name": "Gambia (the)",
-      "country_code_3": "GMB",
-      "numeric_code": "270",
+      "name": "Gambia (the)",
+      "alpha_3": "GMB",
+      "numeric": "270",
+      "flag": "🇬🇲",
       "sovereignty": "UN member state"
     },
     "GE": {
-      "country_name": "Georgia",
-      "country_code_3": "GEO",
-      "numeric_code": "268",
+      "name": "Georgia",
+      "alpha_3": "GEO",
+      "numeric": "268",
+      "flag": "🇬🇪",
       "sovereignty": "UN member state"
     },
     "DE": {
-      "country_name": "Germany",
-      "country_code_3": "DEU",
-      "numeric_code": "276",
+      "name": "Germany",
+      "alpha_3": "DEU",
+      "numeric": "276",
+      "flag": "🇩🇪",
       "sovereignty": "UN member state"
     },
     "GH": {
-      "country_name": "Ghana",
-      "country_code_3": "GHA",
-      "numeric_code": "288",
+      "name": "Ghana",
+      "alpha_3": "GHA",
+      "numeric": "288",
+      "flag": "🇬🇭",
       "sovereignty": "UN member state"
     },
     "GI": {
-      "country_name": "Gibraltar",
-      "country_code_3": "GIB",
-      "numeric_code": "292",
+      "name": "Gibraltar",
+      "alpha_3": "GIB",
+      "numeric": "292",
+      "flag": "🇬🇮",
       "sovereignty": "United Kingdom"
     },
     "GR": {
-      "country_name": "Greece",
-      "country_code_3": "GRC",
-      "numeric_code": "300",
+      "name": "Greece",
+      "alpha_3": "GRC",
+      "numeric": "300",
+      "flag": "🇬🇷",
       "sovereignty": "UN member state"
     },
     "GL": {
-      "country_name": "Greenland",
-      "country_code_3": "GRL",
-      "numeric_code": "304",
+      "name": "Greenland",
+      "alpha_3": "GRL",
+      "numeric": "304",
+      "flag": "🇬🇱",
       "sovereignty": "Denmark"
     },
     "GD": {
-      "country_name": "Grenada",
-      "country_code_3": "GRD",
-      "numeric_code": "308",
+      "name": "Grenada",
+      "alpha_3": "GRD",
+      "numeric": "308",
+      "flag": "🇬🇩",
       "sovereignty": "UN member state"
     },
     "GP": {
-      "country_name": "Guadeloupe",
-      "country_code_3": "GLP",
-      "numeric_code": "312",
+      "name": "Guadeloupe",
+      "alpha_3": "GLP",
+      "numeric": "312",
+      "flag": "🇬🇵",
       "sovereignty": "France"
     },
     "GU": {
-      "country_name": "Guam",
-      "country_code_3": "GUM",
-      "numeric_code": "316",
+      "name": "Guam",
+      "alpha_3": "GUM",
+      "numeric": "316",
+      "flag": "🇬🇺",
       "sovereignty": "United States"
     },
     "GT": {
-      "country_name": "Guatemala",
-      "country_code_3": "GTM",
-      "numeric_code": "320",
+      "name": "Guatemala",
+      "alpha_3": "GTM",
+      "numeric": "320",
+      "flag": "🇬🇹",
       "sovereignty": "UN member state"
     },
     "GG": {
-      "country_name": "Guernsey",
-      "country_code_3": "GGY",
-      "numeric_code": "831",
+      "name": "Guernsey",
+      "alpha_3": "GGY",
+      "numeric": "831",
+      "flag": "🇬🇬",
       "sovereignty": "British Crown"
     },
     "GN": {
-      "country_name": "Guinea",
-      "country_code_3": "GIN",
-      "numeric_code": "324",
+      "name": "Guinea",
+      "alpha_3": "GIN",
+      "numeric": "324",
+      "flag": "🇬🇳",
       "sovereignty": "UN member state"
     },
     "GW": {
-      "country_name": "Guinea-Bissau",
-      "country_code_3": "GNB",
-      "numeric_code": "624",
+      "name": "Guinea-Bissau",
+      "alpha_3": "GNB",
+      "numeric": "624",
+      "flag": "🇬🇼",
       "sovereignty": "UN member state"
     },
     "GY": {
-      "country_name": "Guyana",
-      "country_code_3": "GUY",
-      "numeric_code": "328",
+      "name": "Guyana",
+      "alpha_3": "GUY",
+      "numeric": "328",
+      "flag": "🇬🇾",
       "sovereignty": "UN member state"
     },
     "HT": {
-      "country_name": "Haiti",
-      "country_code_3": "HTI",
-      "numeric_code": "332",
+      "name": "Haiti",
+      "alpha_3": "HTI",
+      "numeric": "332",
+      "flag": "🇭🇹",
       "sovereignty": "UN member state"
     },
     "HM": {
-      "country_name": "Heard Island and McDonald Islands",
-      "country_code_3": "HMD",
-      "numeric_code": "334",
+      "name": "Heard Island and McDonald Islands",
+      "alpha_3": "HMD",
+      "numeric": "334",
+      "flag": "🇭🇲",
       "sovereignty": "Australia"
     },
     "VA": {
-      "country_name": "Holy See (the)",
-      "country_code_3": "VAT",
-      "numeric_code": "336",
+      "name": "Holy See (the)",
+      "alpha_3": "VAT",
+      "numeric": "336",
+      "flag": "🇻🇦",
       "sovereignty": "UN observer state"
     },
     "HN": {
-      "country_name": "Honduras",
-      "country_code_3": "HND",
-      "numeric_code": "340",
+      "name": "Honduras",
+      "alpha_3": "HND",
+      "numeric": "340",
+      "flag": "🇭🇳",
       "sovereignty": "UN member state"
     },
     "HK": {
-      "country_name": "Hong Kong",
-      "country_code_3": "HKG",
-      "numeric_code": "344",
+      "name": "Hong Kong",
+      "alpha_3": "HKG",
+      "numeric": "344",
+      "flag": "🇭🇰",
       "sovereignty": "China"
     },
     "HU": {
-      "country_name": "Hungary",
-      "country_code_3": "HUN",
-      "numeric_code": "348",
+      "name": "Hungary",
+      "alpha_3": "HUN",
+      "numeric": "348",
+      "flag": "🇭🇺",
       "sovereignty": "UN member state"
     },
     "IS": {
-      "country_name": "Iceland",
-      "country_code_3": "ISL",
-      "numeric_code": "352",
+      "name": "Iceland",
+      "alpha_3": "ISL",
+      "numeric": "352",
+      "flag": "🇮🇸",
       "sovereignty": "UN member state"
     },
     "IN": {
-      "country_name": "India",
-      "country_code_3": "IND",
-      "numeric_code": "356",
+      "name": "India",
+      "alpha_3": "IND",
+      "numeric": "356",
+      "flag": "🇮🇳",
       "sovereignty": "UN member state"
     },
     "ID": {
-      "country_name": "Indonesia",
-      "country_code_3": "IDN",
-      "numeric_code": "360",
+      "name": "Indonesia",
+      "alpha_3": "IDN",
+      "numeric": "360",
+      "flag": "🇮🇩",
       "sovereignty": "UN member state"
     },
     "IR": {
-      "country_name": "Iran (Islamic Republic of)",
-      "country_code_3": "IRN",
-      "numeric_code": "364",
+      "name": "Iran (Islamic Republic of)",
+      "alpha_3": "IRN",
+      "numeric": "364",
+      "flag": "🇮🇷",
       "sovereignty": "UN member state"
     },
     "IQ": {
-      "country_name": "Iraq",
-      "country_code_3": "IRQ",
-      "numeric_code": "368",
+      "name": "Iraq",
+      "alpha_3": "IRQ",
+      "numeric": "368",
+      "flag": "🇮🇶",
       "sovereignty": "UN member state"
     },
     "IE": {
-      "country_name": "Ireland",
-      "country_code_3": "IRL",
-      "numeric_code": "372",
+      "name": "Ireland",
+      "alpha_3": "IRL",
+      "numeric": "372",
+      "flag": "🇮🇪",
       "sovereignty": "UN member state"
     },
     "IM": {
-      "country_name": "Isle of Man",
-      "country_code_3": "IMN",
-      "numeric_code": "833",
+      "name": "Isle of Man",
+      "alpha_3": "IMN",
+      "numeric": "833",
+      "flag": "🇮🇲",
       "sovereignty": "British Crown"
     },
     "IL": {
-      "country_name": "Israel",
-      "country_code_3": "ISR",
-      "numeric_code": "376",
+      "name": "Israel",
+      "alpha_3": "ISR",
+      "numeric": "376",
+      "flag": "🇮🇱",
       "sovereignty": "UN member state"
     },
     "IT": {
-      "country_name": "Italy",
-      "country_code_3": "ITA",
-      "numeric_code": "380",
+      "name": "Italy",
+      "alpha_3": "ITA",
+      "numeric": "380",
+      "flag": "🇮🇹",
       "sovereignty": "UN member state"
     },
     "JM": {
-      "country_name": "Jamaica",
-      "country_code_3": "JAM",
-      "numeric_code": "388",
+      "name": "Jamaica",
+      "alpha_3": "JAM",
+      "numeric": "388",
+      "flag": "🇯🇲",
       "sovereignty": "UN member state"
     },
     "JP": {
-      "country_name": "Japan",
-      "country_code_3": "JPN",
-      "numeric_code": "392",
+      "name": "Japan",
+      "alpha_3": "JPN",
+      "numeric": "392",
+      "flag": "🇯🇵",
       "sovereignty": "UN member state"
     },
     "JE": {
-      "country_name": "Jersey",
-      "country_code_3": "JEY",
-      "numeric_code": "832",
+      "name": "Jersey",
+      "alpha_3": "JEY",
+      "numeric": "832",
+      "flag": "🇯🇪",
       "sovereignty": "British Crown"
     },
     "JO": {
-      "country_name": "Jordan",
-      "country_code_3": "JOR",
-      "numeric_code": "400",
+      "name": "Jordan",
+      "alpha_3": "JOR",
+      "numeric": "400",
+      "flag": "🇯🇴",
       "sovereignty": "UN member state"
     },
     "KZ": {
-      "country_name": "Kazakhstan",
-      "country_code_3": "KAZ",
-      "numeric_code": "398",
+      "name": "Kazakhstan",
+      "alpha_3": "KAZ",
+      "numeric": "398",
+      "flag": "🇰🇿",
       "sovereignty": "UN member state"
     },
     "KE": {
-      "country_name": "Kenya",
-      "country_code_3": "KEN",
-      "numeric_code": "404",
+      "name": "Kenya",
+      "alpha_3": "KEN",
+      "numeric": "404",
+      "flag": "🇰🇪",
       "sovereignty": "UN member state"
     },
     "KI": {
-      "country_name": "Kiribati",
-      "country_code_3": "KIR",
-      "numeric_code": "296",
+      "name": "Kiribati",
+      "alpha_3": "KIR",
+      "numeric": "296",
+      "flag": "🇰🇮",
       "sovereignty": "UN member state"
     },
     "KP": {
-      "country_name": "Korea (the Democratic People's Republic of)",
-      "country_code_3": "PRK",
-      "numeric_code": "408",
+      "name": "Korea (the Democratic People's Republic of)",
+      "alpha_3": "PRK",
+      "numeric": "408",
+      "flag": "🇰🇵",
       "sovereignty": "UN member state"
     },
     "KR": {
-      "country_name": "Korea (the Republic of)",
-      "country_code_3": "KOR",
-      "numeric_code": "410",
+      "name": "Korea (the Republic of)",
+      "alpha_3": "KOR",
+      "numeric": "410",
+      "flag": "🇰🇷",
       "sovereignty": "UN member state"
     },
     "KW": {
-      "country_name": "Kuwait",
-      "country_code_3": "KWT",
-      "numeric_code": "414",
+      "name": "Kuwait",
+      "alpha_3": "KWT",
+      "numeric": "414",
+      "flag": "🇰🇼",
       "sovereignty": "UN member state"
     },
     "KG": {
-      "country_name": "Kyrgyzstan",
-      "country_code_3": "KGZ",
-      "numeric_code": "417",
+      "name": "Kyrgyzstan",
+      "alpha_3": "KGZ",
+      "numeric": "417",
+      "flag": "🇰🇬",
       "sovereignty": "UN member state"
     },
     "LA": {
-      "country_name": "Lao People's Democratic Republic (the)",
-      "country_code_3": "LAO",
-      "numeric_code": "418",
+      "name": "Lao People's Democratic Republic (the)",
+      "alpha_3": "LAO",
+      "numeric": "418",
+      "flag": "🇱🇦",
       "sovereignty": "UN member state"
     },
     "LV": {
-      "country_name": "Latvia",
-      "country_code_3": "LVA",
-      "numeric_code": "428",
+      "name": "Latvia",
+      "alpha_3": "LVA",
+      "numeric": "428",
+      "flag": "🇱🇻",
       "sovereignty": "UN member state"
     },
     "LB": {
-      "country_name": "Lebanon",
-      "country_code_3": "LBN",
-      "numeric_code": "422",
+      "name": "Lebanon",
+      "alpha_3": "LBN",
+      "numeric": "422",
+      "flag": "🇱🇧",
       "sovereignty": "UN member state"
     },
     "LS": {
-      "country_name": "Lesotho",
-      "country_code_3": "LSO",
-      "numeric_code": "426",
+      "name": "Lesotho",
+      "alpha_3": "LSO",
+      "numeric": "426",
+      "flag": "🇱🇸",
       "sovereignty": "UN member state"
     },
     "LR": {
-      "country_name": "Liberia",
-      "country_code_3": "LBR",
-      "numeric_code": "430",
+      "name": "Liberia",
+      "alpha_3": "LBR",
+      "numeric": "430",
+      "flag": "🇱🇷",
       "sovereignty": "UN member state"
     },
     "LY": {
-      "country_name": "Libya",
-      "country_code_3": "LBY",
-      "numeric_code": "434",
+      "name": "Libya",
+      "alpha_3": "LBY",
+      "numeric": "434",
+      "flag": "🇱🇾",
       "sovereignty": "UN member state"
     },
     "LI": {
-      "country_name": "Liechtenstein",
-      "country_code_3": "LIE",
-      "numeric_code": "438",
+      "name": "Liechtenstein",
+      "alpha_3": "LIE",
+      "numeric": "438",
+      "flag": "🇱🇮",
       "sovereignty": "UN member state"
     },
     "LT": {
-      "country_name": "Lithuania",
-      "country_code_3": "LTU",
-      "numeric_code": "440",
+      "name": "Lithuania",
+      "alpha_3": "LTU",
+      "numeric": "440",
+      "flag": "🇱🇹",
       "sovereignty": "UN member state"
     },
     "LU": {
-      "country_name": "Luxembourg",
-      "country_code_3": "LUX",
-      "numeric_code": "442",
+      "name": "Luxembourg",
+      "alpha_3": "LUX",
+      "numeric": "442",
+      "flag": "🇱🇺",
       "sovereignty": "UN member state"
     },
     "MO": {
-      "country_name": "Macao",
-      "country_code_3": "MAC",
-      "numeric_code": "446",
+      "name": "Macao",
+      "alpha_3": "MAC",
+      "numeric": "446",
+      "flag": "🇲🇴",
       "sovereignty": "China"
     },
     "MG": {
-      "country_name": "Madagascar",
-      "country_code_3": "MDG",
-      "numeric_code": "450",
+      "name": "Madagascar",
+      "alpha_3": "MDG",
+      "numeric": "450",
+      "flag": "🇲🇬",
       "sovereignty": "UN member state"
     },
     "MW": {
-      "country_name": "Malawi",
-      "country_code_3": "MWI",
-      "numeric_code": "454",
+      "name": "Malawi",
+      "alpha_3": "MWI",
+      "numeric": "454",
+      "flag": "🇲🇼",
       "sovereignty": "UN member state"
     },
     "MY": {
-      "country_name": "Malaysia",
-      "country_code_3": "MYS",
-      "numeric_code": "458",
+      "name": "Malaysia",
+      "alpha_3": "MYS",
+      "numeric": "458",
+      "flag": "🇲🇾",
       "sovereignty": "UN member state"
     },
     "MV": {
-      "country_name": "Maldives",
-      "country_code_3": "MDV",
-      "numeric_code": "462",
+      "name": "Maldives",
+      "alpha_3": "MDV",
+      "numeric": "462",
+      "flag": "🇲🇻",
       "sovereignty": "UN member state"
     },
     "ML": {
-      "country_name": "Mali",
-      "country_code_3": "MLI",
-      "numeric_code": "466",
+      "name": "Mali",
+      "alpha_3": "MLI",
+      "numeric": "466",
+      "flag": "🇲🇱",
       "sovereignty": "UN member state"
     },
     "MT": {
-      "country_name": "Malta",
-      "country_code_3": "MLT",
-      "numeric_code": "470",
+      "name": "Malta",
+      "alpha_3": "MLT",
+      "numeric": "470",
+      "flag": "🇲🇹",
       "sovereignty": "UN member state"
     },
     "MH": {
-      "country_name": "Marshall Islands (the)",
-      "country_code_3": "MHL",
-      "numeric_code": "584",
+      "name": "Marshall Islands (the)",
+      "alpha_3": "MHL",
+      "numeric": "584",
+      "flag": "🇲🇭",
       "sovereignty": "UN member state"
     },
     "MQ": {
-      "country_name": "Martinique",
-      "country_code_3": "MTQ",
-      "numeric_code": "474",
+      "name": "Martinique",
+      "alpha_3": "MTQ",
+      "numeric": "474",
+      "flag": "🇲🇶",
       "sovereignty": "France"
     },
     "MR": {
-      "country_name": "Mauritania",
-      "country_code_3": "MRT",
-      "numeric_code": "478",
+      "name": "Mauritania",
+      "alpha_3": "MRT",
+      "numeric": "478",
+      "flag": "🇲🇷",
       "sovereignty": "UN member state"
     },
     "MU": {
-      "country_name": "Mauritius",
-      "country_code_3": "MUS",
-      "numeric_code": "480",
+      "name": "Mauritius",
+      "alpha_3": "MUS",
+      "numeric": "480",
+      "flag": "🇲🇺",
       "sovereignty": "UN member state"
     },
     "YT": {
-      "country_name": "Mayotte",
-      "country_code_3": "MYT",
-      "numeric_code": "175",
+      "name": "Mayotte",
+      "alpha_3": "MYT",
+      "numeric": "175",
+      "flag": "🇾🇹",
       "sovereignty": "France"
     },
     "MX": {
-      "country_name": "Mexico",
-      "country_code_3": "MEX",
-      "numeric_code": "484",
+      "name": "Mexico",
+      "alpha_3": "MEX",
+      "numeric": "484",
+      "flag": "🇲🇽",
       "sovereignty": "UN member state"
     },
     "FM": {
-      "country_name": "Micronesia (Federated States of)",
-      "country_code_3": "FSM",
-      "numeric_code": "583",
+      "name": "Micronesia (Federated States of)",
+      "alpha_3": "FSM",
+      "numeric": "583",
+      "flag": "🇫🇲",
       "sovereignty": "UN member state"
     },
     "MD": {
-      "country_name": "Moldova (the Republic of)",
-      "country_code_3": "MDA",
-      "numeric_code": "498",
+      "name": "Moldova (the Republic of)",
+      "alpha_3": "MDA",
+      "numeric": "498",
+      "flag": "🇲🇩",
       "sovereignty": "UN member state"
     },
     "MC": {
-      "country_name": "Monaco",
-      "country_code_3": "MCO",
-      "numeric_code": "492",
+      "name": "Monaco",
+      "alpha_3": "MCO",
+      "numeric": "492",
+      "flag": "🇲🇨",
       "sovereignty": "UN member state"
     },
     "MN": {
-      "country_name": "Mongolia",
-      "country_code_3": "MNG",
-      "numeric_code": "496",
+      "name": "Mongolia",
+      "alpha_3": "MNG",
+      "numeric": "496",
+      "flag": "🇲🇳",
       "sovereignty": "UN member state"
     },
     "ME": {
-      "country_name": "Montenegro",
-      "country_code_3": "MNE",
-      "numeric_code": "499",
+      "name": "Montenegro",
+      "alpha_3": "MNE",
+      "numeric": "499",
+      "flag": "🇲🇪",
       "sovereignty": "UN member state"
     },
     "MS": {
-      "country_name": "Montserrat",
-      "country_code_3": "MSR",
-      "numeric_code": "500",
+      "name": "Montserrat",
+      "alpha_3": "MSR",
+      "numeric": "500",
+      "flag": "🇲🇸",
       "sovereignty": "United Kingdom"
     },
     "MA": {
-      "country_name": "Morocco",
-      "country_code_3": "MAR",
-      "numeric_code": "504",
+      "name": "Morocco",
+      "alpha_3": "MAR",
+      "numeric": "504",
+      "flag": "🇲🇦",
       "sovereignty": "UN member state"
     },
     "MZ": {
-      "country_name": "Mozambique",
-      "country_code_3": "MOZ",
-      "numeric_code": "508",
+      "name": "Mozambique",
+      "alpha_3": "MOZ",
+      "numeric": "508",
+      "flag": "🇲🇿",
       "sovereignty": "UN member state"
     },
     "MM": {
-      "country_name": "Myanmar",
-      "country_code_3": "MMR",
-      "numeric_code": "104",
+      "name": "Myanmar",
+      "alpha_3": "MMR",
+      "numeric": "104",
+      "flag": "🇲🇲",
       "sovereignty": "UN member state"
     },
     "NA": {
-      "country_name": "Namibia",
-      "country_code_3": "NAM",
-      "numeric_code": "516",
+      "name": "Namibia",
+      "alpha_3": "NAM",
+      "numeric": "516",
+      "flag": "🇳🇦",
       "sovereignty": "UN member state"
     },
     "NR": {
-      "country_name": "Nauru",
-      "country_code_3": "NRU",
-      "numeric_code": "520",
+      "name": "Nauru",
+      "alpha_3": "NRU",
+      "numeric": "520",
+      "flag": "🇳🇷",
       "sovereignty": "UN member state"
     },
     "NP": {
-      "country_name": "Nepal",
-      "country_code_3": "NPL",
-      "numeric_code": "524",
+      "name": "Nepal",
+      "alpha_3": "NPL",
+      "numeric": "524",
+      "flag": "🇳🇵",
       "sovereignty": "UN member state"
     },
     "NL": {
-      "country_name": "Netherlands, Kingdom of the",
-      "country_code_3": "NLD",
-      "numeric_code": "528",
+      "name": "Netherlands, Kingdom of the",
+      "alpha_3": "NLD",
+      "numeric": "528",
+      "flag": "🇳🇱",
       "sovereignty": "UN member state"
     },
     "NC": {
-      "country_name": "New Caledonia",
-      "country_code_3": "NCL",
-      "numeric_code": "540",
+      "name": "New Caledonia",
+      "alpha_3": "NCL",
+      "numeric": "540",
+      "flag": "🇳🇨",
       "sovereignty": "France"
     },
     "NZ": {
-      "country_name": "New Zealand",
-      "country_code_3": "NZL",
-      "numeric_code": "554",
+      "name": "New Zealand",
+      "alpha_3": "NZL",
+      "numeric": "554",
+      "flag": "🇳🇿",
       "sovereignty": "UN member state"
     },
     "NI": {
-      "country_name": "Nicaragua",
-      "country_code_3": "NIC",
-      "numeric_code": "558",
+      "name": "Nicaragua",
+      "alpha_3": "NIC",
+      "numeric": "558",
+      "flag": "🇳🇮",
       "sovereignty": "UN member state"
     },
     "NE": {
-      "country_name": "Niger (the)",
-      "country_code_3": "NER",
-      "numeric_code": "562",
+      "name": "Niger (the)",
+      "alpha_3": "NER",
+      "numeric": "562",
+      "flag": "🇳🇪",
       "sovereignty": "UN member state"
     },
     "NG": {
-      "country_name": "Nigeria",
-      "country_code_3": "NGA",
-      "numeric_code": "566",
+      "name": "Nigeria",
+      "alpha_3": "NGA",
+      "numeric": "566",
+      "flag": "🇳🇬",
       "sovereignty": "UN member state"
     },
     "NU": {
-      "country_name": "Niue",
-      "country_code_3": "NIU",
-      "numeric_code": "570",
+      "name": "Niue",
+      "alpha_3": "NIU",
+      "numeric": "570",
+      "flag": "🇳🇺",
       "sovereignty": "New Zealand"
     },
     "NF": {
-      "country_name": "Norfolk Island",
-      "country_code_3": "NFK",
-      "numeric_code": "574",
+      "name": "Norfolk Island",
+      "alpha_3": "NFK",
+      "numeric": "574",
+      "flag": "🇳🇫",
       "sovereignty": "Australia"
     },
     "MK": {
-      "country_name": "North Macedonia",
-      "country_code_3": "MKD",
-      "numeric_code": "807",
+      "name": "North Macedonia",
+      "alpha_3": "MKD",
+      "numeric": "807",
+      "flag": "🇲🇰",
       "sovereignty": "UN member state"
     },
     "MP": {
-      "country_name": "Northern Mariana Islands (the)",
-      "country_code_3": "MNP",
-      "numeric_code": "580",
+      "name": "Northern Mariana Islands (the)",
+      "alpha_3": "MNP",
+      "numeric": "580",
+      "flag": "🇲🇵",
       "sovereignty": "United States"
     },
     "NO": {
-      "country_name": "Norway",
-      "country_code_3": "NOR",
-      "numeric_code": "578",
+      "name": "Norway",
+      "alpha_3": "NOR",
+      "numeric": "578",
+      "flag": "🇳🇴",
       "sovereignty": "UN member state"
     },
     "OM": {
-      "country_name": "Oman",
-      "country_code_3": "OMN",
-      "numeric_code": "512",
+      "name": "Oman",
+      "alpha_3": "OMN",
+      "numeric": "512",
+      "flag": "🇴🇲",
       "sovereignty": "UN member state"
     },
     "PK": {
-      "country_name": "Pakistan",
-      "country_code_3": "PAK",
-      "numeric_code": "586",
+      "name": "Pakistan",
+      "alpha_3": "PAK",
+      "numeric": "586",
+      "flag": "🇵🇰",
       "sovereignty": "UN member state"
     },
     "PW": {
-      "country_name": "Palau",
-      "country_code_3": "PLW",
-      "numeric_code": "585",
+      "name": "Palau",
+      "alpha_3": "PLW",
+      "numeric": "585",
+      "flag": "🇵🇼",
       "sovereignty": "UN member state"
     },
     "PS": {
-      "country_name": "Palestine, State of",
-      "country_code_3": "PSE",
-      "numeric_code": "275",
+      "name": "Palestine, State of",
+      "alpha_3": "PSE",
+      "numeric": "275",
+      "flag": "🇵🇸",
       "sovereignty": "UN observer state"
     },
     "PA": {
-      "country_name": "Panama",
-      "country_code_3": "PAN",
-      "numeric_code": "591",
+      "name": "Panama",
+      "alpha_3": "PAN",
+      "numeric": "591",
+      "flag": "🇵🇦",
       "sovereignty": "UN member state"
     },
     "PG": {
-      "country_name": "Papua New Guinea",
-      "country_code_3": "PNG",
-      "numeric_code": "598",
+      "name": "Papua New Guinea",
+      "alpha_3": "PNG",
+      "numeric": "598",
+      "flag": "🇵🇬",
       "sovereignty": "UN member state"
     },
     "PY": {
-      "country_name": "Paraguay",
-      "country_code_3": "PRY",
-      "numeric_code": "600",
+      "name": "Paraguay",
+      "alpha_3": "PRY",
+      "numeric": "600",
+      "flag": "🇵🇾",
       "sovereignty": "UN member state"
     },
     "PE": {
-      "country_name": "Peru",
-      "country_code_3": "PER",
-      "numeric_code": "604",
+      "name": "Peru",
+      "alpha_3": "PER",
+      "numeric": "604",
+      "flag": "🇵🇪",
       "sovereignty": "UN member state"
     },
     "PH": {
-      "country_name": "Philippines (the)",
-      "country_code_3": "PHL",
-      "numeric_code": "608",
+      "name": "Philippines (the)",
+      "alpha_3": "PHL",
+      "numeric": "608",
+      "flag": "🇵🇭",
       "sovereignty": "UN member state"
     },
     "PN": {
-      "country_name": "Pitcairn",
-      "country_code_3": "PCN",
-      "numeric_code": "612",
+      "name": "Pitcairn",
+      "alpha_3": "PCN",
+      "numeric": "612",
+      "flag": "🇵🇳",
       "sovereignty": "United Kingdom"
     },
     "PL": {
-      "country_name": "Poland",
-      "country_code_3": "POL",
-      "numeric_code": "616",
+      "name": "Poland",
+      "alpha_3": "POL",
+      "numeric": "616",
+      "flag": "🇵🇱",
       "sovereignty": "UN member state"
     },
     "PT": {
-      "country_name": "Portugal",
-      "country_code_3": "PRT",
-      "numeric_code": "620",
+      "name": "Portugal",
+      "alpha_3": "PRT",
+      "numeric": "620",
+      "flag": "🇵🇹",
       "sovereignty": "UN member state"
     },
     "PR": {
-      "country_name": "Puerto Rico",
-      "country_code_3": "PRI",
-      "numeric_code": "630",
+      "name": "Puerto Rico",
+      "alpha_3": "PRI",
+      "numeric": "630",
+      "flag": "🇵🇷",
       "sovereignty": "United States"
     },
     "QA": {
-      "country_name": "Qatar",
-      "country_code_3": "QAT",
-      "numeric_code": "634",
+      "name": "Qatar",
+      "alpha_3": "QAT",
+      "numeric": "634",
+      "flag": "🇶🇦",
       "sovereignty": "UN member state"
     },
     "RE": {
-      "country_name": "Réunion",
-      "country_code_3": "REU",
-      "numeric_code": "638",
+      "name": "Réunion",
+      "alpha_3": "REU",
+      "numeric": "638",
+      "flag": "🇷🇪",
       "sovereignty": "France"
     },
     "RO": {
-      "country_name": "Romania",
-      "country_code_3": "ROU",
-      "numeric_code": "642",
+      "name": "Romania",
+      "alpha_3": "ROU",
+      "numeric": "642",
+      "flag": "🇷🇴",
       "sovereignty": "UN member state"
     },
     "RU": {
-      "country_name": "Russian Federation (the)",
-      "country_code_3": "RUS",
-      "numeric_code": "643",
+      "name": "Russian Federation (the)",
+      "alpha_3": "RUS",
+      "numeric": "643",
+      "flag": "🇷🇺",
       "sovereignty": "UN member state"
     },
     "RW": {
-      "country_name": "Rwanda",
-      "country_code_3": "RWA",
-      "numeric_code": "646",
+      "name": "Rwanda",
+      "alpha_3": "RWA",
+      "numeric": "646",
+      "flag": "🇷🇼",
       "sovereignty": "UN member state"
     },
     "BL": {
-      "country_name": "Saint Barthélemy",
-      "country_code_3": "BLM",
-      "numeric_code": "652",
+      "name": "Saint Barthélemy",
+      "alpha_3": "BLM",
+      "numeric": "652",
+      "flag": "🇧🇱",
       "sovereignty": "France"
     },
     "SH": {
-      "country_name": "Saint Helena,Ascension Island, Tristan da Cunha",
-      "country_code_3": "SHN",
-      "numeric_code": "654",
+      "name": "Saint Helena,Ascension Island, Tristan da Cunha",
+      "alpha_3": "SHN",
+      "numeric": "654",
+      "flag": "🇸🇭",
       "sovereignty": "United Kingdom"
     },
     "KN": {
-      "country_name": "Saint Kitts and Nevis",
-      "country_code_3": "KNA",
-      "numeric_code": "659",
+      "name": "Saint Kitts and Nevis",
+      "alpha_3": "KNA",
+      "numeric": "659",
+      "flag": "🇰🇳",
       "sovereignty": "UN member state"
     },
     "LC": {
-      "country_name": "Saint Lucia",
-      "country_code_3": "LCA",
-      "numeric_code": "662",
+      "name": "Saint Lucia",
+      "alpha_3": "LCA",
+      "numeric": "662",
+      "flag": "🇱🇨",
       "sovereignty": "UN member state"
     },
     "MF": {
-      "country_name": "Saint Martin (French part)",
-      "country_code_3": "MAF",
-      "numeric_code": "663",
+      "name": "Saint Martin (French part)",
+      "alpha_3": "MAF",
+      "numeric": "663",
+      "flag": "🇲🇫",
       "sovereignty": "France"
     },
     "PM": {
-      "country_name": "Saint Pierre and Miquelon",
-      "country_code_3": "SPM",
-      "numeric_code": "666",
+      "name": "Saint Pierre and Miquelon",
+      "alpha_3": "SPM",
+      "numeric": "666",
+      "flag": "🇵🇲",
       "sovereignty": "France"
     },
     "VC": {
-      "country_name": "Saint Vincent and the Grenadines",
-      "country_code_3": "VCT",
-      "numeric_code": "670",
+      "name": "Saint Vincent and the Grenadines",
+      "alpha_3": "VCT",
+      "numeric": "670",
+      "flag": "🇻🇨",
       "sovereignty": "UN member state"
     },
     "WS": {
-      "country_name": "Samoa",
-      "country_code_3": "WSM",
-      "numeric_code": "882",
+      "name": "Samoa",
+      "alpha_3": "WSM",
+      "numeric": "882",
+      "flag": "🇼🇸",
       "sovereignty": "UN member state"
     },
     "SM": {
-      "country_name": "San Marino",
-      "country_code_3": "SMR",
-      "numeric_code": "674",
+      "name": "San Marino",
+      "alpha_3": "SMR",
+      "numeric": "674",
+      "flag": "🇸🇲",
       "sovereignty": "UN member state"
     },
     "ST": {
-      "country_name": "Sao Tome and Principe",
-      "country_code_3": "STP",
-      "numeric_code": "678",
+      "name": "Sao Tome and Principe",
+      "alpha_3": "STP",
+      "numeric": "678",
+      "flag": "🇸🇹",
       "sovereignty": "UN member state"
     },
     "SA": {
-      "country_name": "Saudi Arabia",
-      "country_code_3": "SAU",
-      "numeric_code": "682",
+      "name": "Saudi Arabia",
+      "alpha_3": "SAU",
+      "numeric": "682",
+      "flag": "🇸🇦",
       "sovereignty": "UN member state"
     },
     "SN": {
-      "country_name": "Senegal",
-      "country_code_3": "SEN",
-      "numeric_code": "686",
+      "name": "Senegal",
+      "alpha_3": "SEN",
+      "numeric": "686",
+      "flag": "🇸🇳",
       "sovereignty": "UN member state"
     },
     "RS": {
-      "country_name": "Serbia",
-      "country_code_3": "SRB",
-      "numeric_code": "688",
+      "name": "Serbia",
+      "alpha_3": "SRB",
+      "numeric": "688",
+      "flag": "🇷🇸",
       "sovereignty": "UN member state"
     },
     "SC": {
-      "country_name": "Seychelles",
-      "country_code_3": "SYC",
-      "numeric_code": "690",
+      "name": "Seychelles",
+      "alpha_3": "SYC",
+      "numeric": "690",
+      "flag": "🇸🇨",
       "sovereignty": "UN member state"
     },
     "SL": {
-      "country_name": "Sierra Leone",
-      "country_code_3": "SLE",
-      "numeric_code": "694",
+      "name": "Sierra Leone",
+      "alpha_3": "SLE",
+      "numeric": "694",
+      "flag": "🇸🇱",
       "sovereignty": "UN member state"
     },
     "SG": {
-      "country_name": "Singapore",
-      "country_code_3": "SGP",
-      "numeric_code": "702",
+      "name": "Singapore",
+      "alpha_3": "SGP",
+      "numeric": "702",
+      "flag": "🇸🇬",
       "sovereignty": "UN member state"
     },
     "SX": {
-      "country_name": "Sint Maarten (Dutch part)",
-      "country_code_3": "SXM",
-      "numeric_code": "534",
+      "name": "Sint Maarten (Dutch part)",
+      "alpha_3": "SXM",
+      "numeric": "534",
+      "flag": "🇸🇽",
       "sovereignty": "Netherlands"
     },
     "SK": {
-      "country_name": "Slovakia",
-      "country_code_3": "SVK",
-      "numeric_code": "703",
+      "name": "Slovakia",
+      "alpha_3": "SVK",
+      "numeric": "703",
+      "flag": "🇸🇰",
       "sovereignty": "UN member state"
     },
     "SI": {
-      "country_name": "Slovenia",
-      "country_code_3": "SVN",
-      "numeric_code": "705",
+      "name": "Slovenia",
+      "alpha_3": "SVN",
+      "numeric": "705",
+      "flag": "🇸🇮",
       "sovereignty": "UN member state"
     },
     "SB": {
-      "country_name": "Solomon Islands",
-      "country_code_3": "SLB",
-      "numeric_code": "90",
+      "name": "Solomon Islands",
+      "alpha_3": "SLB",
+      "numeric": "90",
+      "flag": "🇸🇧",
       "sovereignty": "UN member state"
     },
     "SO": {
-      "country_name": "Somalia",
-      "country_code_3": "SOM",
-      "numeric_code": "706",
+      "name": "Somalia",
+      "alpha_3": "SOM",
+      "numeric": "706",
+      "flag": "🇸🇴",
       "sovereignty": "UN member state"
     },
     "ZA": {
-      "country_name": "South Africa",
-      "country_code_3": "ZAF",
-      "numeric_code": "710",
+      "name": "South Africa",
+      "alpha_3": "ZAF",
+      "numeric": "710",
+      "flag": "🇿🇦",
       "sovereignty": "UN member state"
     },
     "GS": {
-      "country_name": "South Georgia and the South Sandwich Islands",
-      "country_code_3": "SGS",
-      "numeric_code": "239",
+      "name": "South Georgia and the South Sandwich Islands",
+      "alpha_3": "SGS",
+      "numeric": "239",
+      "flag": "🇬🇸",
       "sovereignty": "United Kingdom"
     },
     "SS": {
-      "country_name": "South Sudan",
-      "country_code_3": "SSD",
-      "numeric_code": "728",
+      "name": "South Sudan",
+      "alpha_3": "SSD",
+      "numeric": "728",
+      "flag": "🇸🇸",
       "sovereignty": "UN member state"
     },
     "ES": {
-      "country_name": "Spain",
-      "country_code_3": "ESP",
-      "numeric_code": "724",
+      "name": "Spain",
+      "alpha_3": "ESP",
+      "numeric": "724",
+      "flag": "🇪🇸",
       "sovereignty": "UN member state"
     },
     "LK": {
-      "country_name": "Sri Lanka",
-      "country_code_3": "LKA",
-      "numeric_code": "144",
+      "name": "Sri Lanka",
+      "alpha_3": "LKA",
+      "numeric": "144",
+      "flag": "🇱🇰",
       "sovereignty": "UN member state"
     },
     "SD": {
-      "country_name": "Sudan (the)",
-      "country_code_3": "SDN",
-      "numeric_code": "729",
+      "name": "Sudan (the)",
+      "alpha_3": "SDN",
+      "numeric": "729",
+      "flag": "🇸🇩",
       "sovereignty": "UN member state"
     },
     "SR": {
-      "country_name": "Suriname",
-      "country_code_3": "SUR",
-      "numeric_code": "740",
+      "name": "Suriname",
+      "alpha_3": "SUR",
+      "numeric": "740",
+      "flag": "🇸🇷",
       "sovereignty": "UN member state"
     },
     "SJ": {
-      "country_name": "Svalbard, Jan Mayen",
-      "country_code_3": "SJM",
-      "numeric_code": "744",
+      "name": "Svalbard, Jan Mayen",
+      "alpha_3": "SJM",
+      "numeric": "744",
+      "flag": "🇸🇯",
       "sovereignty": "Norway"
     },
     "SE": {
-      "country_name": "Sweden",
-      "country_code_3": "SWE",
-      "numeric_code": "752",
+      "name": "Sweden",
+      "alpha_3": "SWE",
+      "numeric": "752",
+      "flag": "🇸🇪",
       "sovereignty": "UN member state"
     },
     "CH": {
-      "country_name": "Switzerland",
-      "country_code_3": "CHE",
-      "numeric_code": "756",
+      "name": "Switzerland",
+      "alpha_3": "CHE",
+      "numeric": "756",
+      "flag": "🇨🇭",
       "sovereignty": "UN member state"
     },
     "SY": {
-      "country_name": "Syrian Arab Republic (the)",
-      "country_code_3": "SYR",
-      "numeric_code": "760",
+      "name": "Syrian Arab Republic (the)",
+      "alpha_3": "SYR",
+      "numeric": "760",
+      "flag": "🇸🇾",
       "sovereignty": "UN member state"
     },
     "TW": {
-      "country_name": "Taiwan (Province of China)",
-      "country_code_3": "TWN",
-      "numeric_code": "158",
+      "name": "Taiwan (Province of China)",
+      "alpha_3": "TWN",
+      "numeric": "158",
+      "flag": "🇹🇼",
       "sovereignty": "Disputed [aa]"
     },
     "TJ": {
-      "country_name": "Tajikistan",
-      "country_code_3": "TJK",
-      "numeric_code": "762",
+      "name": "Tajikistan",
+      "alpha_3": "TJK",
+      "numeric": "762",
+      "flag": "🇹🇯",
       "sovereignty": "UN member state"
     },
     "TZ": {
-      "country_name": "Tanzania, the United Republic of",
-      "country_code_3": "TZA",
-      "numeric_code": "834",
+      "name": "Tanzania, the United Republic of",
+      "alpha_3": "TZA",
+      "numeric": "834",
+      "flag": "🇹🇿",
       "sovereignty": "UN member state"
     },
     "TH": {
-      "country_name": "Thailand",
-      "country_code_3": "THA",
-      "numeric_code": "764",
+      "name": "Thailand",
+      "alpha_3": "THA",
+      "numeric": "764",
+      "flag": "🇹🇭",
       "sovereignty": "UN member state"
     },
     "TL": {
-      "country_name": "Timor-Leste",
-      "country_code_3": "TLS",
-      "numeric_code": "626",
+      "name": "Timor-Leste",
+      "alpha_3": "TLS",
+      "numeric": "626",
+      "flag": "🇹🇱",
       "sovereignty": "UN member state"
     },
     "TG": {
-      "country_name": "Togo",
-      "country_code_3": "TGO",
-      "numeric_code": "768",
+      "name": "Togo",
+      "alpha_3": "TGO",
+      "numeric": "768",
+      "flag": "🇹🇬",
       "sovereignty": "UN member state"
     },
     "TK": {
-      "country_name": "Tokelau",
-      "country_code_3": "TKL",
-      "numeric_code": "772",
+      "name": "Tokelau",
+      "alpha_3": "TKL",
+      "numeric": "772",
+      "flag": "🇹🇰",
       "sovereignty": "New Zealand"
     },
     "TO": {
-      "country_name": "Tonga",
-      "country_code_3": "TON",
-      "numeric_code": "776",
+      "name": "Tonga",
+      "alpha_3": "TON",
+      "numeric": "776",
+      "flag": "🇹🇴",
       "sovereignty": "UN member state"
     },
     "TT": {
-      "country_name": "Trinidad and Tobago",
-      "country_code_3": "TTO",
-      "numeric_code": "780",
+      "name": "Trinidad and Tobago",
+      "alpha_3": "TTO",
+      "numeric": "780",
+      "flag": "🇹🇹",
       "sovereignty": "UN member state"
     },
     "TN": {
-      "country_name": "Tunisia",
-      "country_code_3": "TUN",
-      "numeric_code": "788",
+      "name": "Tunisia",
+      "alpha_3": "TUN",
+      "numeric": "788",
+      "flag": "🇹🇳",
       "sovereignty": "UN member state"
     },
     "TR": {
-      "country_name": "Türkiye",
-      "country_code_3": "TUR",
-      "numeric_code": "792",
+      "name": "Türkiye",
+      "alpha_3": "TUR",
+      "numeric": "792",
+      "flag": "🇹🇷",
       "sovereignty": "UN member state"
     },
     "TM": {
-      "country_name": "Turkmenistan",
-      "country_code_3": "TKM",
-      "numeric_code": "795",
+      "name": "Turkmenistan",
+      "alpha_3": "TKM",
+      "numeric": "795",
+      "flag": "🇹🇲",
       "sovereignty": "UN member state"
     },
     "TC": {
-      "country_name": "Turks and Caicos Islands (the)",
-      "country_code_3": "TCA",
-      "numeric_code": "796",
+      "name": "Turks and Caicos Islands (the)",
+      "alpha_3": "TCA",
+      "numeric": "796",
+      "flag": "🇹🇨",
       "sovereignty": "United Kingdom"
     },
     "TV": {
-      "country_name": "Tuvalu",
-      "country_code_3": "TUV",
-      "numeric_code": "798",
+      "name": "Tuvalu",
+      "alpha_3": "TUV",
+      "numeric": "798",
+      "flag": "🇹🇻",
       "sovereignty": "UN member state"
     },
     "UG": {
-      "country_name": "Uganda",
-      "country_code_3": "UGA",
-      "numeric_code": "800",
+      "name": "Uganda",
+      "alpha_3": "UGA",
+      "numeric": "800",
+      "flag": "🇺🇬",
       "sovereignty": "UN member state"
     },
     "UA": {
-      "country_name": "Ukraine",
-      "country_code_3": "UKR",
-      "numeric_code": "804",
+      "name": "Ukraine",
+      "alpha_3": "UKR",
+      "numeric": "804",
+      "flag": "🇺🇦",
       "sovereignty": "UN member state"
     },
     "AE": {
-      "country_name": "United Arab Emirates (the)",
-      "country_code_3": "ARE",
-      "numeric_code": "784",
+      "name": "United Arab Emirates (the)",
+      "alpha_3": "ARE",
+      "flag": "🇦🇪",
+      "numeric": "784",
       "sovereignty": "UN member state"
     },
     "GB": {
-      "country_name": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "country_code_3": "GBR",
-      "numeric_code": "826",
+      "name": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "alpha_3": "GBR",
+      "numeric": "826",
+      "flag": "🇬🇧",
       "sovereignty": "UN member state"
     },
     "UM": {
-      "country_name": "United States Minor Outlying Islands (the) [ae]",
-      "country_code_3": "UMI",
-      "numeric_code": "581",
+      "name": "United States Minor Outlying Islands (the) [ae]",
+      "alpha_3": "UMI",
+      "numeric": "581",
+      "flag": "🇺🇲",
       "sovereignty": "United States"
     },
     "US": {
-      "country_name": "United States of America (the)",
-      "country_code_3": "USA",
-      "numeric_code": "840",
+      "name": "United States of America (the)",
+      "alpha_3": "USA",
+      "numeric": "840",
+      "flag": "🇺🇸",
       "sovereignty": "UN member state"
     },
     "UY": {
-      "country_name": "Uruguay",
-      "country_code_3": "URY",
-      "numeric_code": "858",
+      "name": "Uruguay",
+      "alpha_3": "URY",
+      "numeric": "858",
+      "flag": "🇺🇾",
       "sovereignty": "UN member state"
     },
     "UZ": {
-      "country_name": "Uzbekistan",
-      "country_code_3": "UZB",
-      "numeric_code": "860",
+      "name": "Uzbekistan",
+      "alpha_3": "UZB",
+      "numeric": "860",
+      "flag": "🇺🇿",
       "sovereignty": "UN member state"
     },
     "VU": {
-      "country_name": "Vanuatu",
-      "country_code_3": "VUT",
-      "numeric_code": "548",
+      "name": "Vanuatu",
+      "alpha_3": "VUT",
+      "numeric": "548",
+      "flag": "🇻🇺",
       "sovereignty": "UN member state"
     },
     "VE": {
-      "country_name": "Venezuela (Bolivarian Republic of)",
-      "country_code_3": "VEN",
-      "numeric_code": "862",
+      "name": "Venezuela (Bolivarian Republic of)",
+      "alpha_3": "VEN",
+      "numeric": "862",
+      "flag": "🇻🇪",
       "sovereignty": "UN member state"
     },
     "VN": {
-      "country_name": "Viet Nam",
-      "country_code_3": "VNM",
-      "numeric_code": "704",
+      "name": "Viet Nam",
+      "alpha_3": "VNM",
+      "numeric": "704",
+      "flag": "🇻🇳",
       "sovereignty": "UN member state"
     },
     "VG": {
-      "country_name": "Virgin Islands (British)",
-      "country_code_3": "VGB",
-      "numeric_code": "092",
+      "name": "Virgin Islands (British)",
+      "alpha_3": "VGB",
+      "numeric": "092",
+      "flag": "🇻🇬",
       "sovereignty": "United Kingdom"
     },
     "VI": {
-      "country_name": "Virgin Islands (U.S.)",
-      "country_code_3": "VIR",
-      "numeric_code": "850",
+      "name": "Virgin Islands (U.S.)",
+      "alpha_3": "VIR",
+      "numeric": "850",
+      "flag": "🇻🇮",
       "sovereignty": "United States"
     },
     "WF": {
-      "country_name": "Wallis and Futuna",
-      "country_code_3": "WLF",
-      "numeric_code": "876",
+      "name": "Wallis and Futuna",
+      "alpha_3": "WLF",
+      "numeric": "876",
+      "flag": "🇼🇫",
       "sovereignty": "France"
     },
     "EH": {
-      "country_name": "Western Sahara",
-      "country_code_3": "ESH",
-      "numeric_code": "732",
+      "name": "Western Sahara",
+      "alpha_3": "ESH",
+      "numeric": "732",
+      "flag": "🇪🇭",
       "sovereignty": "Disputed"
     },
     "YE": {
-      "country_name": "Yemen",
-      "country_code_3": "YEM",
-      "numeric_code": "887",
+      "name": "Yemen",
+      "alpha_3": "YEM",
+      "numeric": "887",
+      "flag": "🇾🇪",
       "sovereignty": "UN member state"
     },
     "ZM": {
-      "country_name": "Zambia",
-      "country_code_3": "ZMB",
-      "numeric_code": "894",
+      "name": "Zambia",
+      "alpha_3": "ZMB",
+      "numeric": "894",
+      "flag": "🇿🇲",
       "sovereignty": "UN member state"
     },
     "ZW": {
-      "country_name": "Zimbabwe",
-      "country_code_3": "ZWE",
-      "numeric_code": "716",
+      "name": "Zimbabwe",
+      "alpha_3": "ZWE",
+      "numeric": "716",
+      "flag": "🇿🇼",
       "sovereignty": "UN member state"
     }
   }

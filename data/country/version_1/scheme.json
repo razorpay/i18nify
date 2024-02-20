@@ -7,12 +7,13 @@
         "^[A-Z]{2}$": {
           "type": "object",
           "properties": {
-            "country_name": { "type": "string" },
-            "country_code_3": { "type": "string" },
-            "numeric_code": { "type": "string" },
-            "sovereignty": { "type": "string" }
+            "name": { "type": "string" },
+            "alpha_3": { "type": "string" },
+            "numeric": { "type": "string" },
+            "sovereignty": { "type": "string" },
+            "flag" : {"type": "string"}
           },
-          "required": ["country_name", "country_code_3", "numeric_code", "sovereignty"]
+          "required": ["name", "alpha_3", "numeric", "sovereignty","flag"]
         }
       },
       "additionalProperties": false
