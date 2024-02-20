@@ -15,7 +15,8 @@
     "react-scripts": "5.0.1",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0",
-    "@razorpay/i18nify-react": "../../"
+    "@razorpay/i18nify-react": "../../",
+    "@razorpay/i18nify-js": "../../../i18nify-js"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,326 @@
+{
+  "name": "Malaysia",
+  "states": {
+    "02": {
+      "name": "Kedah",
+      "cities": [
+        "Kuah",
+        "Lunas",
+        "Kulim",
+        "Bandar Baharu",
+        "Baling",
+        "Gurun",
+        "Sungai Petani",
+        "Changloon",
+        "Jitra",
+        "Kepala Batas",
+        "Alor Star",
+        "Pokok Sena",
+        "Kuching",
+        "Kuala Ketil",
+        "Pendang",
+        "Badak"
+      ]
+    },
+    "07": {
+      "name": "Penang",
+      "cities": [
+        "Kampong Permatang Pauh",
+        "Penang",
+        "Batu Feringgi",
+        "Butterworth",
+        "Bukit Mertajam",
+        "Sungai Bakap",
+        "Nibong Tebal",
+        "Tasek Glugor",
+        "Balik Pulau",
+        "Bayan Lepas",
+        "Batu Maung",
+        "George Town",
+        "Kepala Batas",
+        "Tanjung Tokong",
+        "Simpang Empat Permatang Buluh",
+        "Pokok Sena",
+        "Kampung Gajah",
+        "Juru",
+        "Jelutong",
+        "Tanjung Bungah",
+        "Taman Prai",
+        "Seberang Jaya",
+        "Tanjung Bunga"
+      ]
+    },
+    "06": {
+      "name": "Pahang",
+      "cities": [
+        "Jerantut",
+        "Maran",
+        "Raub",
+        "Bentung",
+        "Simpang Pulai",
+        "Pekan",
+        "Mentekab",
+        "Temerluh",
+        "Teriang",
+        "Genting Highlands",
+        "Kuantan",
+        "Kuala Pahang",
+        "Pulau Pinang",
+        "Kampung Sempa",
+        "Kampung Bintang",
+        "Muadzam Shah"
+      ]
+    },
+    "08": {
+      "name": "Perak",
+      "cities": [
+        "Tanjong Malim",
+        "Sungkai",
+        "",
+        "Gerik",
+        "Tasik",
+        "Kampung Cangkat Jering",
+        "Kamunting",
+        "Taiping",
+        "Kuala Kangsar",
+        "Sungai Siput Utara",
+        "Chemor",
+        "Ipoh",
+        "Menglembu",
+        "Parit Buntar",
+        "Kuala Kurau",
+        "Gopeng",
+        "Batu Gajah",
+        "Kota Baharu",
+        "Malim Nawar",
+        "Kampar",
+        "Bidur",
+        "Parit",
+        "Lumut",
+        "Kampung Pasir Salak",
+        "Teluk Intan",
+        "Simpang",
+        "Pantai Remis",
+        "Kampung Teluk Baru",
+        "Kampung Tasek",
+        "Kampong Ayer Hitam Labu",
+        "Seri Manjung",
+        "Seri Iskandar"
+      ]
+    },
+    "10": {
+      "name": "Selangor",
+      "cities": [
+        "Kuala Kubu Baharu",
+        "Kuala Selangor",
+        "Batang Berjuntai",
+        "Kapar",
+        "Shah Alam",
+        "Klang",
+        "",
+        "Teluk Panglima Garang",
+        "Port Klang",
+        "Banting",
+        "Jenjarum",
+        "Semenyih",
+        "Sungai Pelek",
+        "Sepang",
+        "Rawang",
+        "Sungai Buloh",
+        "Petaling Jaya",
+        "Serdang",
+        "Setapak",
+        "Batu Caves",
+        "Hulu Langat",
+        "Sabak Bernam",
+        "Sungai Besar",
+        "Tanjung Sepat",
+        "Seri Kembangan",
+        "Puchong Batu Dua Belas",
+        "Kampong Pasir Segambut",
+        "Kampung Baru Subang",
+        "Kampung Baru Balakong",
+        "Cheras",
+        "Batang Kali",
+        "Jeram",
+        "Cyberjaya",
+        "Dengkil",
+        "Subang Jaya",
+        "Bandar Baru Bangi",
+        "Kajang",
+        "Bandar Puncak Alam",
+        "Damansara Damai",
+        "Denai Alam",
+        "Taman Koperasi Polis"
+      ]
+    },
+    "01": {
+      "name": "Johor",
+      "cities": [
+        "Batu Pahat",
+        "Ayer Hitam",
+        "Parit Raja",
+        "Simpang Renggam",
+        "Ayer Baloi",
+        "Pontian Kechil",
+        "Pasir Gudang",
+        "Kampung Ulu Tiram",
+        "Kampung Larkin Lama",
+        "Kota Tinggi",
+        "Taman Senai",
+        "Kulai",
+        "Kampung Kangkar Pulai",
+        "Skudai",
+        "Masai",
+        "Johor Bahru",
+        "Gelang Patah",
+        "Kluang",
+        "Yong Peng",
+        "Mersing",
+        "Segamat",
+        "Tangkak",
+        "Pagoh",
+        "Bandar Sungai Mati",
+        "Muar town",
+        "Chaah",
+        "",
+        "Bukit Gambir",
+        "Bandar Penawar",
+        "Kampung Jaya Sepakat",
+        "Iskandar Puteri"
+      ]
+    },
+    "11": {
+      "name": "Terengganu",
+      "cities": [
+        "Cukai",
+        "Dungun",
+        "Paka",
+        "Kuala Terengganu",
+        "Marang",
+        "Kuala Besut",
+        "Jertih",
+        "Kampong Kemaman"
+      ]
+    },
+    "03": {
+      "name": "Kelantan",
+      "cities": [
+        "Kelantan",
+        "Pasir Puteh",
+        "Tanah Merah",
+        "Machang",
+        "Pengkalan Chepa",
+        "Wakaf Baharu",
+        "Pasir Mas",
+        "Kota Bharu",
+        "Bachok"
+      ]
+    },
+    "": {
+      "name": "",
+      "cities": [""]
+    },
+    "14": {
+      "name": "Kuala Lumpur",
+      "cities": [
+        "",
+        "Kuala Lumpur",
+        "Ampang",
+        "Sentul",
+        "Kepong",
+        "Bukit Bintang",
+        "Istana Negara"
+      ]
+    },
+    "12": {
+      "name": "Sabah",
+      "cities": [
+        "Papar",
+        "Kuala",
+        "Kota Kinabalu",
+        "Putatan",
+        "Tambunan",
+        "Ranau",
+        "Kampung Kunak",
+        "Kampung Baharu",
+        "Beaufort",
+        "Lahad Datu",
+        "Sandakan",
+        "Keningau",
+        "Tawau",
+        "Tamparuli",
+        "Tuaran",
+        "Penampang"
+      ]
+    },
+    "15": {
+      "name": "Labuan",
+      "cities": ["Labuan", ""]
+    },
+    "13": {
+      "name": "Sarawak",
+      "cities": [
+        "Bau",
+        "Mukah",
+        "Kuching",
+        "Sibu",
+        "Pusa",
+        "Saratok",
+        "Matu",
+        "Kampong Lundu",
+        "Bintulu",
+        "Limbang",
+        "Marabu",
+        "Kampong Krian",
+        "Jerai",
+        "Rumah Ngalantei"
+      ]
+    },
+    "04": {
+      "name": "Melaka",
+      "cities": [
+        "Masjid Tanah",
+        "Lubok China",
+        "Selandar",
+        "Alor Gajah",
+        "Jasin",
+        "Durian Tunggal",
+        "Kampung Ayer Keroh",
+        "Malacca",
+        "Merlimau",
+        "Pulau Sebang",
+        "Batu Berendam"
+      ]
+    },
+    "05": {
+      "name": "Negeri Sembilan",
+      "cities": [
+        "Kuala Klawang",
+        "Lenggeng",
+        "Seremban",
+        "Rantau",
+        "Port Dickson",
+        "Taman Senawang Indah",
+        "Bahau",
+        "Kuala Pilah",
+        "Sungai Gadut",
+        "Kota",
+        "Rompin",
+        "Kampung Tampin",
+        "Kampung Kuala Jempol",
+        "Kampung Baharu Nilai",
+        "Kampung Baharu Mantin",
+        "Pelabuhan Kelang Utara"
+      ]
+    },
+    "09": {
+      "name": "Perlis",
+      "cities": ["Padang Besar", "Kangar", "Arau", "Kuala Perlis"]
+    },
+    "16": {
+      "name": "Putrajaya",
+      "cities": ["Putrajaya"]
+    }
+  }
+}
