@@ -1,4 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { DIAL_CODE_MAPPER } from './data/dialCodeMapper';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
 import formatPhoneNumber from './formatPhoneNumber';
 import { detectCountryCodeFromDialCode, cleanPhoneNumber } from './utils';
@@ -51,10 +52,28 @@ const parsePhoneNumber = (phoneNumber: string, country?: string): PhoneInfo => {
   const diff = phoneNumber.length - charCountInFormatterPattern;
 
   // Extract the dialCode from the phoneNumber
-  const dialCode = phoneNumber.slice(0, diff);
+  let dialCode = phoneNumber.slice(0, diff);
 
   // Obtain the format template associated with the countryCode
   const formatTemplate = PHONE_FORMATTER_MAPPER[countryCode];
+
+  if (!dialCode && countryCode) {
+    // Iterate over each key in the DIAL_CODE_MAPPER object
+    for (const key in DIAL_CODE_MAPPER) {
+      // Check if the key is actually a property of 'DIAL_CODE_MAPPER' and not inherited from its prototype
+      if (DIAL_CODE_MAPPER.hasOwnProperty(key)) {
+        // Get the array of country codes associated with the current key
+        const countryCodes = DIAL_CODE_MAPPER[key];
+        // Check if the provided countryCode exists in the current array of country codes
+        if (countryCodes.includes(countryCode)) {
+          // If found, append `+` and store the dialCode
+          // The key is originally a string because object keys are always strings in JavaScript
+          dialCode = `+${key}`;
+          break;
+        }
+      }
+    }
+  }
 
   // Return the parsed phone number information
   return {
