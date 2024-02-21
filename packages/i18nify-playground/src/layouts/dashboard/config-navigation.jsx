@@ -4,7 +4,7 @@ import SvgColor from 'src/components/svg-color';
 
 export const icon = (name) => (
   <SvgColor
-    src={`/i18nify/assets/icons/navbar/${name}.svg`}
+    src={`/assets/icons/navbar/${name}.svg`}
     sx={{ width: 1, height: 1 }}
   />
 );
@@ -61,7 +61,10 @@ const navConfig = [
       { title: 'GetListOfAllFlags', path: '/geo/getListOfAllFlags' },
       { title: 'GetAllContinents', path: '/geo/getAllContinents' },
       { title: 'GetAllCountries', path: '/geo/getAllCountries' },
-      { title: 'GetCountriesByContinent', path: '/geo/getCountriesByContinent' },
+      {
+        title: 'GetCountriesByContinent',
+        path: '/geo/getCountriesByContinent',
+      },
       { title: 'GetStatesByCountry', path: '/geo/getStatesByCountry' },
       { title: 'GetCities', path: '/geo/getCities' },
     ],
