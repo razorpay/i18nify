@@ -2,19 +2,24 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 // import checker from 'vite-plugin-checker';
+import copy from 'rollup-plugin-copy';
 
 // ----------------------------------------------------------------------
 
 export default defineConfig({
-  base: '/i18nify/',
+  base: '/',
   plugins: [
     react(),
-    // checker({
-    //   eslint: {
-    //     lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
-    //   },
-    // }),
+    copy({
+      targets: [{ src: 'CNAME', dest: 'dist/' }],
+      hook: 'writeBundle', // notice here
+    }),
   ],
+  // checker({
+  //   eslint: {
+  //     lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
+  //   },
+  // }),
   resolve: {
     alias: [
       {

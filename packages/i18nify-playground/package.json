@@ -30,7 +30,7 @@
     "@mui/lab": "^5.0.0-alpha.147",
     "@mui/material": "^5.15.6",
     "@mui/x-date-pickers": "^6.19.4",
-    "@razorpay/i18nify-js": "https://gitpkg.now.sh/razorpay/i18nify/packages/i18nify-js?ftx-testing-branch",
+    "@razorpay/i18nify-js": "^1.4.0",
     "@razorpay/i18nify-react": "^4.0.0",
     "apexcharts": "^3.43.0",
     "date-fns": "^2.30.0",
@@ -46,6 +46,7 @@
     "react-hook-form": "^7.47.0",
     "react-inlinesvg": "^4.1.1",
     "react-router-dom": "^6.16.0",
+    "rollup-plugin-copy": "^3.5.0",
     "simplebar-react": "^3.2.4"
   },
   "devDependencies": {

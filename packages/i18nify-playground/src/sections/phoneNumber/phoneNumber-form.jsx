@@ -15,7 +15,6 @@ import {
 
 import {
   dialCodeMap,
-  countryCodeMap,
   dialCodeCountryCodeMap,
   localPhoneNumbersByDialCodeMap,
 } from './data/phoneNumber';
@@ -25,8 +24,6 @@ const PhoneNumberForm = ({
   onInpChange,
   dialCode,
   onDialCodeChange,
-  countryCode,
-  onCountryCodeChange,
   showDialCodeSelector = true,
   utilName,
   errorMessage,
@@ -46,8 +43,8 @@ const PhoneNumberForm = ({
           <Typography variant="h5">Please enter phone number</Typography>
           {showDialCodeSelector ? (
             <FormHelperText>
-              One dial code can be applied to multiple regions ex: +1 shared by countries like the
-              United States, Canada, Barbados, Bermuda
+              One dial code can be applied to multiple regions ex: +1 shared by
+              countries like the United States, Canada, Barbados, Bermuda
             </FormHelperText>
           ) : null}
         </Grid>
@@ -91,7 +88,7 @@ const PhoneNumberForm = ({
                           marginRight: 8,
                         }}
                         loading="lazy"
-                        src={`/i18nify/assets/flags/${dialCodeCountryCodeMap[
+                        src={`/assets/flags/${dialCodeCountryCodeMap[
                           code
                         ][0].toLocaleLowerCase()}.svg`}
                       />
@@ -108,7 +105,9 @@ const PhoneNumberForm = ({
                   onInpChange(ev.target.value);
                 }}
                 size="large"
-                placeholder={localPhoneNumbersByDialCodeMap[dialCode?.replace('+', '')]}
+                placeholder={
+                  localPhoneNumbersByDialCodeMap[dialCode?.replace('+', '')]
+                }
                 error={error}
                 color={showHelperMessage ? (isValid ? 'success' : 'error') : ''}
               />
