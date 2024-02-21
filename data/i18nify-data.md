@@ -1,10 +1,10 @@
 # Country Attribute Source Data Repository
 
-Welcome to the Country Attribute Source Data Repository! This repository is dedicated to maintaining version-based Country Attribute Data for SDKs. Our main objectives include:
+This repository is dedicated to maintaining version-based Country Attribute Data for SDKs. Our main objectives include:
 
-- Maintaining version-based Country Attribute Data in JSON format.
-- Validating the JSON data schema of each module using GitHub Actions on new Pull Requests.
-- Standardizing the APIs for accessing the Country Attribute Data across languages by defining the JSON schema.
+- Continuous maintenance of country attribute data in JSON format, organized by version.
+- Implementation of GitHub Actions to validate the JSON schema upon new Pull Requests for each module.
+- Establishment of standardized APIs to access country attribute data across different programming languages, leveraging defined JSON schemas.
 - Uploading each versioned Country Attribute Data Module to a CDN, enabling users to easily pull the data on demand without bundling data into SDKs and keeping lightweight SDKs.
 - Automating the ingestion of data from various sources and ensuring the ingested data is legitimate by enabling strict Pull Request review policies on the repository.
 
@@ -76,9 +76,16 @@ Each Country Attribute Folder (`country`, `currency`, etc.) maintains version ba
     }
 }
 ```
+
+<br>
+We validate data files to ensure they conform to the schema specified in the schema file for individual information. This ensures data integrity and consistency, maintaining high-quality country attribute data throughout the repository.
+
 ## Contributing
 
 We welcome contributions from the community! If you have any suggestions, improvements, or would like to report issues, please feel free to submit a Pull Request or open an issue.
+
+
+For making a Contribution, Please go through the [Contribution Guidelines](contribution-guidelines.md)
 
 ### Contribution Guidelines:
 
