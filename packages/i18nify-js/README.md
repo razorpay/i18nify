@@ -488,3 +488,50 @@ const parsedInfo = parsePhoneNumber('', countryCode);
 console.log('Country Code:', parsedInfo.countryCode); // 'JP'
 console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxxx-xxxx'
 ```
+
+### Module 03: Geo Module 🌍
+
+Dive into the digital atlas with the Geo Module 🌍, your go-to source for fetching flag emojis 🏁 and images from around the globe 🌐. Whether you're jazzing up your app with patriotic flair 🎉 or feeding your curiosity about different countries 🤔, this module is your magic carpet ride 🧞‍♂️. Featuring two fantastic functions ✨, it's never been easier to bring a world of flags 🚩 right into your app. Let's unpack these global treasures 🌟:
+
+#### getFlagOfCountry(countryCode) 🏁
+
+Unlock the world's flags with just a country code! 🌐✈️ This function acts as your digital passport, granting you access to the URLs of flags from across the globe, thus adding the perfect international touch to your app. Should you encounter an unrecognized code, there's no cause for alarm—the function will promptly notify you with an error, ensuring you're always on the right path. Consider it your very own flag concierge, dedicated to bringing a world of colors and symbols right to your screen. 🏳️‍🌈🔍 Whether you're aiming to enhance the global appeal of your application or simply want to celebrate the diversity of our planet, this tool is your gateway to a more connected and visually engaging world. 🌍💼
+
+##### Examples
+
+```javascript
+// Fetching the flag of the United States 🇺🇸
+console.log(getFlagOfCountry('US')); // https://betacdn.np.razorpay.in/static/assets/flags/us.svg
+
+// Fetching the flag of India 🇮🇳
+console.log(getFlagOfCountry('IN')); // https://betacdn.np.razorpay.in/static/assets/flags/in.svg
+
+// When you wander off the map with an invalid country code
+try {
+  console.log(getFlagOfCountry('XX')); // Oops, this will throw an error
+} catch (error) {
+  console.error(error.message); // Politely informs 'Invalid country code: XX'
+}
+```
+
+#### getFlagsForAllCountries() 🌐
+
+Imagine having a toolbox that brings the flags of the entire world right to your fingertips—this function embodies that vision! 🌍🔧 By creating a link between each country code and its flag's URL, it's akin to possessing a vivid, virtual atlas without the physical weight. Perfect for applications designed to highlight global diversity or for those who have a passion for the visual tapestry of our planet, this tool equips you with everything you need to showcase the world in its full, colorful splendor. 🎨🌏 Whether you're looking to enrich your app with international flair or simply wish to explore the rich array of flags that represent the many nations of our world, this function is your essential companion for a journey across borders and cultures, all from the comfort of your digital space.
+
+##### Examples
+
+```javascript
+// Embracing the flags of all nations
+const allFlags = getFlagsForAllCountries();
+console.log(allFlags);
+/*
+Behold, an object where each key is a country code linked to its flag's URL, such as:
+{
+  US: 'https://betacdn.np.razorpay.in/static/assets/flags/us.svg', // 🇺🇸
+  IN: 'https://betacdn.np.razorpay.in/static/assets/flags/in.svg', // 🇮🇳
+  ...
+}
+*/
+```
+
+Through the eloquent and meaningful symbols of flags, the Geo Module 🌍 opens up a panoramic view of the globe, transforming your application into a vibrant fusion of cultures and national pride. Armed with these tools, your coding transcends mere programming; it becomes a voyage across continents, turning each user interaction into a festival of global solidarity. 🎉🌐 This module doesn't just integrate internationalization into your app; it weaves a tapestry of global connection, inviting users from every corner of the earth to see their heritage reflected and respected. In this way, you're not just developing software; you're crafting a gateway to worldwide camaraderie, celebrating the diversity that unites us all. 🤝🎗️
