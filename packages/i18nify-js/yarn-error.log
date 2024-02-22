@@ -1,0 +1,111 @@
+Arguments: 
+  /Users/divyansh.singh/.nvm/versions/node/v18.19.0/bin/node /Users/divyansh.singh/.cache/node/corepack/yarn/1.22.19/bin/yarn.js build
+
+PATH: 
+  /var/folders/_p/yxbqvbwd4799fcz3h9xkbs0h0000gq/T/yarn--1708606989582-0.8908011017756745:/Users/divyansh.singh/Desktop/Razorpay/i18n/cra-i18nify-test-app/node_modules/.bin:/Users/divyansh.singh/.config/yarn/link/node_modules/.bin:/Users/divyansh.singh/.yarn/bin:/Users/divyansh.singh/.nvm/versions/node/v18.19.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/divyansh.singh/.nvm/versions/node/v18.19.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/divyansh.singh/.nvm/versions/node/v18.19.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/divyansh.singh/go/bin:/Users/divyansh.singh/Library/Python/3.9/bin:/Users/divyansh.singh/.devstack/bin:/Users/divyansh.singh/.nvm/versions/node/v18.19.0/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/divyansh.singh/go/bin:/Users/divyansh.singh/Library/Python/3.9/bin:/Users/divyansh.singh/.devstack/bin:/Users/divyansh.singh/.nvm/versions/node/v18.19.0/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/opt/homebrew/bin:/opt/homebrew/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.19.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/divyansh.singh/Desktop/Razorpay/i18n/i18nify/packages/i18nify-js/package.json: Unexpected token } in JSON at position 903
+      at JSON.parse (<anonymous>)
+      at /Users/divyansh.singh/.cache/node/corepack/yarn/1.22.19/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/Users/divyansh.singh/.cache/node/corepack/yarn/1.22.19/lib/cli.js:310:30)
+      at /Users/divyansh.singh/.cache/node/corepack/yarn/1.22.19/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "@razorpay/i18nify-js",
+    "version": "1.4.0",
+    "author": "tarun khanna <tarun.khanna@razorpay.com>",
+    "license": "MIT",
+    "main": "lib/cjs/index.js",
+    "module": "lib/esm/index.js",
+    "types": "lib/types/index.d.ts",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@github.com:razorpay/i18nify.git"
+    },
+    "files": [
+      "lib"
+    ],
+    "exports": {
+      ".": {
+        "require": "./lib/cjs/index.js",
+        "import": "./lib/esm/index.js"
+      },
+      "./core": {
+        "require": "./lib/cjs/index.js",
+        "import": "./lib/esm/core/index.js"
+      },
+      "./currency": {
+        "require": "./lib/cjs/index.js",
+        "import": "./lib/esm/currency/index.js"
+      },
+      "./phoneNumber": {
+        "require": "./lib/cjs/index.js",
+        "import": "./lib/esm/phoneNumber/index.js"
+      },
+      "./geo": {
+        "require": "./lib/cjs/index.js",
+        "import": "./lib/esm/geo/index.js"
+      },
+    },
+    "typesVersions": {
+      "*": {
+        "core": [
+          "./lib/esm/core/index.d.ts"
+        ],
+        "currency": [
+          "./lib/esm/currency/index.d.ts"
+        ],
+        "phoneNumber": [
+          "./lib/esm/phoneNumber/index.d.ts"
+        ],
+        "geo": [
+          "./lib/esm/geo/index.d.ts"
+        ]
+      }
+    },
+    "scripts": {
+      "lint": "eslint",
+      "lint:fix": "eslint --fix",
+      "format:check": "prettier --check",
+      "format": "prettier src --write",
+      "tsc": "tsc --noEmit",
+      "validate": "yarn tsc && yarn lint:fix",
+      "clean": "rm -rf lib",
+      "build": "yarn clean && rollup -c",
+      "test": "jest",
+      "prepare": "yarn build",
+      "test:browser": "npx playwright test"
+    },
+    "devDependencies": {
+      "@playwright/test": "^1.40.1",
+      "@rollup/plugin-babel": "^6.0.4",
+      "@rollup/plugin-commonjs": "^25.0.7",
+      "@rollup/plugin-node-resolve": "^15.2.3",
+      "@rollup/plugin-terser": "^0.4.4",
+      "@rollup/plugin-typescript": "^11.1.5",
+      "@types/jest": "^29.5.7",
+      "jest": "^29.7.0",
+      "ts-jest": "^29.1.1",
+      "jest-environment-jsdom": "^29.7.0",
+      "rollup": "^4.0.2",
+      "rollup-plugin-dts": "^6.1.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -33,7 +33,7 @@
     "./geo": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/geo/index.js"
-    },
+    }
   },
   "typesVersions": {
     "*": {
