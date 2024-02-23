@@ -12,7 +12,7 @@
     "prepare": "husky install",
     "build-js": "yarn workspace @razorpay/i18nify-js run build",
     "build-react": "yarn build-js && yarn workspace @razorpay/i18nify-react run build",
-    "validate-i18nify-data": "ts-node-dev data/dataValidate.ts"
+    "validate-i18nify-data": "ts-node data/dataValidate.ts"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",

@@ -1,4 +1,4 @@
-name: JSON Validation
+name: i18nify Data Validation
 
 on:
   pull_request:
@@ -25,4 +25,4 @@ jobs:
           git diff --name-only origin/master >> changed_files.txt
 
       - name: Compile TypeScript
-        run: npm run validate-data changed_files.txt
+        run: npm run validate-i18nify-data changed_files.txt
