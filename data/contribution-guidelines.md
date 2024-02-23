@@ -18,3 +18,4 @@ Please follow the below guidelines for any contribution to the i18nify-data:
 * Make sure to include both the scheme and Data files in each version.
 * Make Sure to cross-check the `Data.json` follows the schema from the `schema.json` file.
 * We run a validation script to validate the data with the schema for every PR.
+
