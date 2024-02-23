@@ -13,7 +13,7 @@ interface PhoneInfo {
 // Parses a given phone number, identifies its country code (if not provided), and returns an object with details including the country code, formatted phone number, dial code, and format template.
 const parsePhoneNumber = (phoneNumber: string, country?: string): PhoneInfo => {
   // Throw errors if phoneNumber is invalid
-  if (!phoneNumber) throw new Error('Parameter `phoneNumber` is invalid!');
+  if (!phoneNumber) throw new Error(`Parameter 'phoneNumber' is invalid: ${phoneNumber}`);
 
   // Clean the phoneNumber by removing non-numeric characters
   phoneNumber = phoneNumber.toString();

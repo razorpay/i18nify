@@ -17,7 +17,7 @@ const formatNumberByParts = (
   } = {},
 ): ByParts => {
   if (!Number(amount) && Number(amount) !== 0)
-    throw new Error('Parameter `amount` is not a number!');
+    throw new Error(`Parameter 'amount' is not a number. Typeof amount is : ${typeof amount}`);
 
   try {
     const formattedAmount = getIntlInstanceWithOptions(options).formatToParts(
