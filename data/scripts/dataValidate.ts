@@ -1,9 +1,6 @@
 import fs from 'fs';
 import Ajv from 'ajv';
 
-// const path = require("path")
-// const Ajv = require("ajv")
-
 function isInterfaceInArray(arr: Files[], obj: Files): boolean {
   for (const item of arr) {
     if (
