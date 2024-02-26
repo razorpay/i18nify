@@ -1,21 +1,50 @@
 # i18nify-data Contribution Guidelines
 
-First off, thank you for contributing to i18nify-data! 🎉
+Thank you for contributing to i18nify-data! 🎉
 
-Read this before adding or modifying anything in this data. These guidelines exist to help create and maintain packages better. Feel free to propose changes to this document.
-
+Please go through the below document before addition, deletion or updation of data and provide necessary information, to ensure you've reviewed this document to provide us with the necessary details for a prompt response
 ## Before Contributing
 
-Before contributing a new data or the modifications to the existing data, make sure the data source is either standard or the most reliable data source for the specific data.
+Before contributing a new data or the modifications to the existing data, please go through previous versions of data and ensure the modification that you're providing is never addressed.
 
-## Contribution Guidelines:
+### Source Reliability
 
-Please follow the below guidelines for any contribution to the i18nify-data:
+There is no specific standards to specify that a source is standard as the data is very vast. But there are some factors that can be considered which make the source more reliable.
 
-* Make sure the Data source is the most reliable source for the specific information like `ISO3166` for country information.
-* For any updation of data, or addition of new data make a new version folder based on the [versioning guidelines](versioning-policy.md) and add the data along with scheme.
-* For each version add a `Description.txt` file which gives a breief about the updatation and make sure to include the Data Source.
-* Make sure to include both the scheme and Data files in each version.
-* Make Sure to cross-check the `Data.json` follows the schema from the `schema.json` file.
-* We run a validation script to validate the data with the schema for every PR.
+They are:
 
+* The source is released by the government.
+* The source is released by any esteemed organisation.
+* The data is being updated periodically and well maintained by the source.
+* The Number of data usages from the source.
+* The data in the source is Upto Date.
+* Examples:
+  * ISO stndards
+  * CIA world factbook
+  * Maxmind
+  * Google's libPhoneNumber library
+
+
+
+## Contribution Flow:
+![contributionFlow.png](media/contributionFlow.png)
+
+### Contribution Guidelines:
+
+1) **Source Reliability:**
+   *  Make sure that the source that you're referring is reliable, based on the factors mentioned in the Source Reliability section.
+2) **Versioning Policy:**
+    * Before making a new version, please go through this [versioning policy](versioning-policy.md) guidelines.
+2) **Description File:**
+    * Add a Description file in the format specified, so that we have all the information needed for review
+      * Description file Format:
+        * It should have the data source
+        * It should have the previous data that you want to change
+        * It should have the new changed data
+3) **Schema Updates:**
+    * When adding a new field to the schema and making it required, add the field name to the array containing all required fields in `scheme.json`.
+4) **Data and Schema Validation:**
+    * Please, ensure that the data in the newer version aligns with the schema of the corresponding version.
+    * We run the validation check in the form of github actions to cross the data file with the schema file.
+
+Please adhere to these guidelines to maintain consistency and integrity within the repository. Your contributions are greatly appreciated!
