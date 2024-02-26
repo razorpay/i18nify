@@ -2,29 +2,47 @@
 
 The i18nify-data repo is not tagged or versioned overall. Individual Country Attributes within the package are versioned directly and independently.
 
+## Versioning Policy
+
+We follow [SemVer](https://semver.org/) for version. version`major.minor.patch`
+
+The versioning is maintained in the format of `version1.0.2`, in which the first part represents the scheme of data, second part represents the contry attribute data, and the third part represents the country attribute field value.
+
+![versionPolicy.png](media/versionPolicy.png)
+
+
+
 ## Developer How To
+
+There are 3 different scenarios while versioning a new release
+
+* Schema Updation
+* Data Addition
+* Patching Existing Data
 
 ### 1. Scheme Updation
 
-* Pull the latest master and checkout to a new branch
-* Inside the country attribute folder in which you want to update the scheme, make a new version folder.
-* While versioning make sure the version new version is updated from `1.0` to `2.0`
-* Inside that version Add the description file and give a brief about the updation.
-* Add the updated scheme.json file and corresponding data.json file.
-* Raise the PR.
-* It will be reviewed, based on the data source, along with cross checking the data to the schema
+* In this, You can change the overall scheme of the country attribute information by adding, deleting or updating the country attribute data fields.
+* Make sure to update the version from `version1.0.0` to `version2.0.0` in this scenario.
+* Example of this scenario:
+  * ![schemaUpdation.png](media/schemaUpdate.png)
+  * Due to a new field addition, there is a change of country_info attribute schema.
 
 ### 2. Data Addition / Updation
 
-* Pull the latest master and checkout to a new branch
-* Inside the country attribute folder in which you want to update the scheme, make a new version folder.
-* While versioning make sure the version new version is updated from `1.0` to `1.1`
-* Inside that version Add the description file and give a brief about the updation.
-* Add the updated scheme.json file and corresponding data.json file.
-* Raise the PR.
-* It will be reviewed, based on the data source, along with cross checking the data to the schema
+* In this, You can change the country attrtibute data by adding, deleting or updating the country attribute data, without updating any schema.
+* Make sure to update the version from `version1.0.0` to `version1.1.0` in this scenario.
+* Example of this Scenario:
+  * ![dataAddition.png](media/dataAddition.png)
+  * In the above example, there is a new data addition without any change in the schema of the country attribute.
 
-### Patching older versions
+### 3. Patching older versions
 
-versions `1.0.0` and `2.0.0` exist. If `1.0.0` needs an update to `1.0.1`, branch out from `1.0.0` and create `1.0.1`. Your new commits need to be merged to master branch, when applicable.
+* In this, You can change update the value of any country attribute data field, without modifying schema and the overall data.
+* Make sure to update the version from `version1.0.0` to `version1.0.1` in this scenario.
+* Example of this scenario:
+  * ![countryInfoPatch.png](media/countryInfoPatch.png)
+  * In the above example, there is an update in the numeric field with out any update in the schema or any update in the overall data.
+
+
 
