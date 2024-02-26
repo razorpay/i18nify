@@ -78,7 +78,7 @@ function differenceToSymbol(v) {
 }
 
 function traverseFileAndGenerateStats(dir) {
-  const filesToTrack = ['esm/index.js', 'cjs/index.js', 'umd/index.js'];
+  const filesToTrack = ['esm/index.min.js', 'cjs/index.js', 'umd/index.js'];
 
   return filesToTrack.reduce((acc, curr) => {
     const fullPath = `${dir}/${curr}`;
