@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
-import { detectCountryCodeFromDialCode, cleanPhoneNumber } from './utils';
+import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
 
 // Formats a provided phone number according to the predefined format for a specific country code, or auto-detects the country code and formats the number accordingly.
 const formatPhoneNumber = (
@@ -18,7 +18,7 @@ const formatPhoneNumber = (
   countryCode =
     countryCode && countryCode in PHONE_FORMATTER_MAPPER
       ? countryCode
-      : detectCountryCodeFromDialCode(phoneNumber);
+      : detectCountryAndDialCodeFromPhone(phoneNumber).countryCode;
 
   // Fetch the pattern for the countryCode from the PHONE_FORMATTER_MAPPER
   const pattern = PHONE_FORMATTER_MAPPER[countryCode];

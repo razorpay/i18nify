@@ -1,6 +1,6 @@
 import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { detectCountryCodeFromDialCode, cleanPhoneNumber } from './utils';
+import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
 
 // Validates whether a given phone number is valid based on the provided country code or auto-detects the country code and checks if the number matches the defined regex pattern for that country.
 const isValidPhoneNumber = (
@@ -14,7 +14,7 @@ const isValidPhoneNumber = (
   countryCode =
     countryCode && countryCode in PHONE_REGEX_MAPPER
       ? countryCode
-      : detectCountryCodeFromDialCode(cleanedPhoneNumber);
+      : detectCountryAndDialCodeFromPhone(cleanedPhoneNumber).countryCode;
 
   // Return false if phoneNumber is empty
   if (!phoneNumber) return false;
