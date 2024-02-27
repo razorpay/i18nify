@@ -1,4 +1,6 @@
-export const PHONE_REGEX_MAPPER: { [key: string]: RegExp } = {
+import { CountryCodeType } from "../../shared/types";
+
+export const PHONE_REGEX_MAPPER: { [key: CountryCodeType]: RegExp } = {
   IN: /^(?:(?:\+|0{0,2})91\s*[-]?\s*|[0]?)?[6789]\d{9}$/,
   MY: /^(\+?6?0)?(\d{1,3})[-. ]?(\d{7,8})$/,
   AE: /^(?:\+?971|0)?(?:2|3|4|6|7|9)\d{8}$/,

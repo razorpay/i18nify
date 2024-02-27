@@ -1,4 +1,6 @@
-export const PHONE_FORMATTER_MAPPER: { [key: string]: string } = {
+import { CountryCodeType } from "../../shared/types";
+
+export const PHONE_FORMATTER_MAPPER: { [key: string]: CountryCodeType } = {
   IN: 'xxxx xxxxxx',
   MY: 'xx xxxxx xx',
   AE: 'xx xxx xxxx',
