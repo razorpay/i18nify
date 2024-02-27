@@ -78,6 +78,9 @@ function differenceToSymbol(v) {
 }
 
 function traverseFileAndGenerateStats(dir) {
+  // === Why esm/index.min.js and not esm/index.js === ?
+  // As esm/index.js is divided across multiple shared files, it doesn't give the accurate bundle size,
+  // whereas index.min.js includes all modules in a single file.
   const filesToTrack = ['esm/index.min.js', 'cjs/index.js', 'umd/index.js'];
 
   return filesToTrack.reduce((acc, curr) => {
