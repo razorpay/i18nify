@@ -8,7 +8,7 @@ const formatPhoneNumber = (
   countryCode?: keyof typeof PHONE_FORMATTER_MAPPER,
 ): string => {
   // Throw errors if phoneNumber is invalid
-  if (!phoneNumber) throw new Error('Parameter `phoneNumber` is invalid!');
+  if (!phoneNumber) throw new Error(`Parameter 'phoneNumber' is invalid: ${phoneNumber}`);
 
   // Convert phoneNumber to string and clean it by removing non-numeric characters
   phoneNumber = phoneNumber.toString();

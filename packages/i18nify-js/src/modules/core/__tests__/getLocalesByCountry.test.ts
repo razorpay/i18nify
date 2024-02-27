@@ -18,7 +18,7 @@ describe('core - getLocalesByCountry', () => {
       it('throws an error for an invalid country code', () => {
         const invalidCountryCode = 'XX'; // 'XX' is not a valid country code
         // @ts-expect-error
-        expect(() => getLocalesByCountry(invalidCountryCode)).toThrow('Invalid countryCode!');
+        expect(() => getLocalesByCountry(invalidCountryCode)).toThrow(`Invalid countryCode: ${invalidCountryCode}`);
       });
     
 });

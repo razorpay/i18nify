@@ -12,7 +12,7 @@ describe('getCurrencySymbol', () => {
     const currencyCode = 'XYZ'; // An invalid code
     // @ts-expect-error invalid currency code for testing
     expect(() => getCurrencySymbol(currencyCode)).toThrow(
-      'Invalid currencyCode!',
+      `Invalid currencyCode: ${currencyCode}`,
     );
   });
 
@@ -20,7 +20,7 @@ describe('getCurrencySymbol', () => {
     const currencyCode = '';
     // @ts-expect-error invalid currency code for testing
     expect(() => getCurrencySymbol(currencyCode)).toThrow(
-      'Invalid currencyCode!',
+      `Invalid currencyCode: ${currencyCode}`,
     );
   });
 });

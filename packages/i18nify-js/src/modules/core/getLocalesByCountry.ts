@@ -12,7 +12,7 @@ const getLocalesByCountry = (
 ): string[] => {
   if (countryCode in COUNTRY_TO_ALL_LOCALES)
     return [...COUNTRY_TO_ALL_LOCALES[countryCode]];
-  else throw new Error('Invalid countryCode!');
+  else throw new Error(`Invalid countryCode: ${countryCode}`);
 };
 
 export default withErrorBoundary<typeof getLocalesByCountry>(
