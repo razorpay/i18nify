@@ -19,6 +19,6 @@ describe('phoneNumber - getDialCodeByCountryCode', () => {
 
     it('should throw an error for invalid country codes', () => {
         const invalidCountryCode = 'XX'; // XX is not a valid country code
-        expect(() => getDialCodeByCountryCode(invalidCountryCode)).toThrow('Invalid countryCode!');
+        expect(() => getDialCodeByCountryCode(invalidCountryCode)).toThrow(`Invalid countryCode: ${invalidCountryCode}`);
     });
 });

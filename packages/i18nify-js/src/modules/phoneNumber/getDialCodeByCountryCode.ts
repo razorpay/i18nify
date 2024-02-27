@@ -1,5 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import getDialCodes from './getDialCodes';
+import { GetDialCodesType } from './types';
 
 /**
  * Retrieves the dial code for a specified country code.
@@ -9,9 +10,7 @@ import getDialCodes from './getDialCodes';
  * @returns The corresponding dial code as a string.
  * @throws An error if the provided country code is not found in the dial code mapping.
  */
-const getDialCodeByCountryCode = (
-  countryCode: keyof ReturnType<typeof getDialCodes>,
-): string => {
+const getDialCodeByCountryCode = (countryCode: GetDialCodesType): string => {
   // Get the mapping of all country codes to their respective dial codes
   const dialCodeForAllCountries = getDialCodes();
 
@@ -21,7 +20,7 @@ const getDialCodeByCountryCode = (
    * */
   if (countryCode in dialCodeForAllCountries)
     return dialCodeForAllCountries[countryCode];
-  else throw new Error('Invalid countryCode!');
+  else throw new Error(`Invalid countryCode: ${countryCode}`);
 };
 
 export default withErrorBoundary<typeof getDialCodeByCountryCode>(
