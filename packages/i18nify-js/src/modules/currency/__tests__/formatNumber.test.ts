@@ -121,7 +121,6 @@ describe('formatNumber', () => {
     expect(result).toBe(expected);
   });
 
-  // NEW
   it('should round numbers correctly based on fraction digits', () => {
     const result = formatNumber('1000.555', {
       currency: 'USD',
