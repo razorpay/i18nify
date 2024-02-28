@@ -44,4 +44,11 @@ describe('isValidPhoneNumber', () => {
     const isValid = isValidPhoneNumber(phoneNumber, countryCode as any);
     expect(isValid).toBe(false);
   });
+
+  it('should return false if the countryCode is not supported', () => {
+    const unsupportedCountryCode = 'XXX'; 
+    const phoneNumber = '+1234567890'; 
+    const result = isValidPhoneNumber(phoneNumber, unsupportedCountryCode as any);
+    expect(result).toBe(false);
+  });
 });
