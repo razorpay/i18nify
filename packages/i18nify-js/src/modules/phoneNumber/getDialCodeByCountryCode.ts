@@ -1,5 +1,5 @@
-import { CountryCodeType } from '../../../lib/esm/shared';
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { CountryCodeType } from '../shared/types';
 import getDialCodes from './getDialCodes';
 
 /**
