@@ -1,4 +1,4 @@
-import { CountryCodeType } from '../../../../lib/esm/shared';
+import { CountryCodeType } from '../../shared/types';
 import { DIAL_CODE_MAPPER } from '../data/dialCodeMapper';
 import { getDialCodeFromCountryCode } from '../utils';
 
