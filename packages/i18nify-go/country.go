@@ -2,29 +2,18 @@ package i18nify_go
 
 import (
 	"fmt"
-	"i18nify/packages/i18nify-go/modules/language"
-	"i18nify/packages/i18nify-go/modules/timezone"
+	"i18nify/packages/i18nify-go/modules/country_information"
 	"io/ioutil"
 )
 
-const CountryData_File = "modules/country/country_v1.json"
+const CountryData_File = "modules/country_information/data/country_v1.json"
 
 type CountryV1 struct {
-	ctry country_information.Country
-}
-
-func (c CountryV1) GetLanguage(code string) language.Language {
-	//TODO implement me
-	panic("implement me")
-}
-
-func (c CountryV1) GetTimezone(code string) timezone.Timezone {
-	//TODO implement me
-	panic("implement me")
+	country country_information.Country
 }
 
 func (c CountryV1) GetCountryInformation(code string) country_information.CountryInformation {
-	return c.ctry.GetCountryInformation()[code]
+	return c.country.GetCountryInformation()[code]
 }
 
 func NewCountryV1() ICountry {
@@ -35,6 +24,6 @@ func NewCountryV1() ICountry {
 	}
 	c, _ := country_information.UnmarshalCountry(jsonData)
 
-	v1 := CountryV1{ctry: c}
+	v1 := CountryV1{country: c}
 	return v1
 }
