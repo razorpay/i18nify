@@ -32,7 +32,7 @@
     },
     "./types": {
       "require": "./lib/cjs/index.js",
-      "import": "./lib/esm/types/index.js"
+      "import": "./lib/esm/types/index.d.ts"
     }
   },
   "typesVersions": {
