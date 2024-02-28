@@ -1,3 +1,4 @@
+import { CountryCodeType } from '../../../../lib/esm/shared';
 import { DIAL_CODE_MAPPER } from '../data/dialCodeMapper';
 import { getDialCodeFromCountryCode } from '../utils';
 
@@ -9,12 +10,12 @@ describe('getDialCodeFromCountryCode', () => {
   });
 
   it('should return an empty string for an invalid country code', () => {
-    expect(getDialCodeFromCountryCode('XYZ')).toBe('');
+    expect(getDialCodeFromCountryCode('XYZ' as CountryCodeType)).toBe('');
   });
 
   it('should be case-insensitive', () => {
-    expect(getDialCodeFromCountryCode('us')).toBe('1');
-    expect(getDialCodeFromCountryCode('gb')).toBe('44');
+    expect(getDialCodeFromCountryCode('us' as CountryCodeType)).toBe('1');
+    expect(getDialCodeFromCountryCode('gb' as CountryCodeType)).toBe('44');
   });
 
   it('should return the correct dial code for countries with shared codes', () => {
@@ -23,8 +24,8 @@ describe('getDialCodeFromCountryCode', () => {
   });
 
   it('should return an empty string for empty or whitespace-only input', () => {
-    expect(getDialCodeFromCountryCode('')).toBe('');
-    expect(getDialCodeFromCountryCode(' ')).toBe('');
+    expect(getDialCodeFromCountryCode('' as CountryCodeType)).toBe('');
+    expect(getDialCodeFromCountryCode(' ' as CountryCodeType)).toBe('');
   });
 
   it('should return a valid dial code for every country code in DIAL_CODE_MAPPER', () => {

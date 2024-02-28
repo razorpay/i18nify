@@ -1,6 +1,6 @@
+import { CountryCodeType } from '../../../lib/esm/shared';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import getDialCodes from './getDialCodes';
-import { GetDialCodesType } from './types';
 
 /**
  * Retrieves the dial code for a specified country code.
@@ -10,7 +10,7 @@ import { GetDialCodesType } from './types';
  * @returns The corresponding dial code as a string.
  * @throws An error if the provided country code is not found in the dial code mapping.
  */
-const getDialCodeByCountryCode = (countryCode: GetDialCodesType): string => {
+const getDialCodeByCountryCode = (countryCode: CountryCodeType): string => {
   // Get the mapping of all country codes to their respective dial codes
   const dialCodeForAllCountries = getDialCodes();
 
