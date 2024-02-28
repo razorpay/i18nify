@@ -1,4 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { CountryCodeType } from '../shared/types';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
 import formatPhoneNumber from './formatPhoneNumber';
 import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
@@ -12,7 +13,7 @@ interface PhoneInfo {
 }
 
 // Parses a given phone number, identifies its country code (if not provided), and returns an object with details including the country code, formatted phone number, dial code, and format template.
-const parsePhoneNumber = (phoneNumber: string, country?: string): PhoneInfo => {
+const parsePhoneNumber = (phoneNumber: string, country?: CountryCodeType): PhoneInfo => {
   // Throw errors if phoneNumber is invalid
   if (!phoneNumber) throw new Error('Parameter `phoneNumber` is invalid!');
 
@@ -23,9 +24,9 @@ const parsePhoneNumber = (phoneNumber: string, country?: string): PhoneInfo => {
   const countryData = detectCountryAndDialCodeFromPhone(phoneNumber);
   // Detect or validate the country code
   const countryCode =
-    country && country in PHONE_FORMATTER_MAPPER
+    (country && country in PHONE_FORMATTER_MAPPER
       ? country
-      : countryData.countryCode;
+      : countryData.countryCode) as CountryCodeType;
 
   const dialCode = countryData.dialCode;
   // Format the phone number using the detected/validated country code

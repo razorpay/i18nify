@@ -1,3 +1,4 @@
+import { CountryCodeType } from '../../shared/types';
 import getDialCodes from '../getDialCodes';
 
 describe('phoneNumber - getDialCodes', () => {
@@ -10,7 +11,7 @@ describe('phoneNumber - getDialCodes', () => {
     };
 
     for (const [countryCode, dialCode] of Object.entries(expectedMappings)) {
-      expect(result[countryCode]).toBe(dialCode);
+      expect(result[countryCode as CountryCodeType]).toBe(dialCode);
     }
   });
 });

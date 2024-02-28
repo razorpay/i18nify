@@ -12,13 +12,13 @@ describe('phoneNumber - getDialCodeByCountryCode', () => {
 
         // Iterate over the test cases and check if the function returns the expected dial code
         testCases.forEach(({ countryCode, expectedDialCode }) => {
-            const dialCode = getDialCodeByCountryCode(countryCode);
+            const dialCode = getDialCodeByCountryCode(countryCode as any);
             expect(dialCode).toBe(expectedDialCode);
         });
     });
 
     it('should throw an error for invalid country codes', () => {
         const invalidCountryCode = 'XX'; // XX is not a valid country code
-        expect(() => getDialCodeByCountryCode(invalidCountryCode)).toThrow(`Invalid countryCode: ${invalidCountryCode}`);
+        expect(() => getDialCodeByCountryCode(invalidCountryCode as any)).toThrow(`Invalid countryCode: ${invalidCountryCode}`);
     });
 });
