@@ -1,4 +1,4 @@
-import { CountryCodeType } from '../../shared/types';
+import { CountryCodeType } from '../../types/geo';
 import getDialCodes from '../getDialCodes';
 
 describe('phoneNumber - getDialCodes', () => {

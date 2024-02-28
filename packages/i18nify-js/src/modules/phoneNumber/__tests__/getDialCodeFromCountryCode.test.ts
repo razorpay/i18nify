@@ -1,4 +1,4 @@
-import { CountryCodeType } from '../../shared/types';
+import { CountryCodeType } from '../../types/geo';
 import { DIAL_CODE_MAPPER } from '../data/dialCodeMapper';
 import { getDialCodeFromCountryCode } from '../utils';
 

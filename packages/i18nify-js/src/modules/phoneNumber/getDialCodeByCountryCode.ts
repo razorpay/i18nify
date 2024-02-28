@@ -1,5 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { CountryCodeType } from '../shared/types';
+import { CountryCodeType } from '../types/geo';
 import getDialCodes from './getDialCodes';
 
 /**

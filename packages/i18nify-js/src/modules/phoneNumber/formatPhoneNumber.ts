@@ -1,5 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { CountryCodeType } from '../shared/types';
+import { CountryCodeType } from '../types/geo';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
 import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
 
@@ -16,10 +16,11 @@ const formatPhoneNumber = (
   phoneNumber = cleanPhoneNumber(phoneNumber);
 
   // Detect or validate the country code
-  countryCode =
-    (countryCode && countryCode in PHONE_FORMATTER_MAPPER
+  countryCode = (
+    countryCode && countryCode in PHONE_FORMATTER_MAPPER
       ? countryCode
-      : detectCountryAndDialCodeFromPhone(phoneNumber).countryCode) as CountryCodeType;
+      : detectCountryAndDialCodeFromPhone(phoneNumber).countryCode
+  ) as CountryCodeType;
 
   // Fetch the pattern for the countryCode from the PHONE_FORMATTER_MAPPER
   const pattern = PHONE_FORMATTER_MAPPER[countryCode];

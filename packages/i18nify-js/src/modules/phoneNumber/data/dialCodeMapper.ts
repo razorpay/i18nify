@@ -1,6 +1,6 @@
 /*  Source: Google LibPhoneNumber Metadata: https://github.com/google/libphonenumber/blob/master/javascript/i18n/phonenumbers/metadata.js  */
 
-import { CountryCodeType } from '../../shared/types';
+import { CountryCodeType } from '../../types/geo';
 
 export const DIAL_CODE_MAPPER: { [key: number]: CountryCodeType[] } = {
   1: [

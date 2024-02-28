@@ -29,6 +29,10 @@
     "./phoneNumber": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/phoneNumber/index.js"
+    },
+    "./types": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/types/index.js"
     }
   },
   "typesVersions": {
@@ -41,6 +45,9 @@
       ],
       "phoneNumber": [
         "./lib/esm/phoneNumber/index.d.ts"
+      ],
+      "types": [
+        "./lib/esm/types/index.d.ts"
       ]
     }
   },
