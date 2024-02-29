@@ -1,6 +1,6 @@
 {
   "name": "@razorpay/i18nify-js",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "author": "tarun khanna <tarun.khanna@razorpay.com>",
   "license": "MIT",
   "main": "lib/cjs/index.js",
@@ -33,6 +33,10 @@
     "./geo": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/geo/index.js"
+    },
+    "./types": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/types/index.d.ts"
     }
   },
   "typesVersions": {
@@ -48,6 +52,9 @@
       ],
       "geo": [
         "./lib/esm/geo/index.d.ts"
+      ],
+      "types": [
+        "./lib/esm/types/index.d.ts"
       ]
     }
   },
