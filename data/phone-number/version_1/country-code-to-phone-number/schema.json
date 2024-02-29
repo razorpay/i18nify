@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
-    "country_Tele_Information": {
+    "country_tele_information": {
       "type": "object",
       "patternProperties": {
         "^[A-Z]{2}$": {
@@ -18,5 +18,5 @@
       "additionalProperties": false
     }
   },
-  "required": ["country_Tele_Information"]
+  "required": ["country_tele_information"]
 }
