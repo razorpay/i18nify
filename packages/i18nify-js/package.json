@@ -1,6 +1,6 @@
 {
   "name": "@razorpay/i18nify-js",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "author": "tarun khanna <tarun.khanna@razorpay.com>",
   "license": "MIT",
   "main": "lib/cjs/index.js",
@@ -29,6 +29,10 @@
     "./phoneNumber": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/phoneNumber/index.js"
+    },
+    "./types": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/types/index.d.ts"
     }
   },
   "typesVersions": {
@@ -41,6 +45,9 @@
       ],
       "phoneNumber": [
         "./lib/esm/phoneNumber/index.d.ts"
+      ],
+      "types": [
+        "./lib/esm/types/index.d.ts"
       ]
     }
   },

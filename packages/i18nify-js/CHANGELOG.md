@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.4.2
+
+### Patch Changes
+
+- c82bd92: [feat]: Add dial codes apis in phoneNumber module
+
 ## 1.4.1
 
 ### Patch Changes
