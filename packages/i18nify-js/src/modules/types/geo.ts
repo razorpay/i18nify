@@ -244,5 +244,4 @@ export type CountryCodeType =
   | 'AZ'
   | 'GE'
   | 'KG'
-  | 'UZ'
-  | 'EU';
+  | 'UZ';

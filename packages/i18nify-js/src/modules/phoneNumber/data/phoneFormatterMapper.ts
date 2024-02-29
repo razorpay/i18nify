@@ -29,7 +29,6 @@ export const PHONE_FORMATTER_MAPPER: { [key in CountryCodeType]: string } = {
   DZ: 'xxxx-xxxx-xxx',
   EG: 'xx xxx xxxx',
   ET: 'xx xxx xxxx',
-  EU: 'xxx xx xx xx',
   FJ: 'xxxx xxxx',
   GB: 'xxxx xxx xxx',
   GH: 'xxx xxx xxxx',

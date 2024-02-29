@@ -185,7 +185,7 @@ export const DIAL_CODE_MAPPER: { [key: number]: CountryCodeType[] } = {
   598: ['UY'],
   599: ['CW', 'BQ'],
   670: ['TL'],
-  672: ['NF'],
+  672: ['NF', 'AQ'],
   673: ['BN'],
   674: ['NR'],
   675: ['PG'],
