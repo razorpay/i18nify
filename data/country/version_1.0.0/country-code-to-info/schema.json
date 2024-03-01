@@ -1,23 +1,37 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "properties": {
-    "country_information": {
+  "patternProperties": {
+    "^[A-Z]{2}$": {
       "type": "object",
-      "patternProperties": {
-        "^[A-Z]{2}$": {
+      "properties": {
+        "country_name": {"type": "string"},
+        "continent_code": {"type": "string"},
+        "continent_name": {"type": "string"},
+        "alpha_3": {"type": "string"},
+        "numeric_code": {"type": "string"},
+        "flag": {"type": "string"},
+        "sovereignity": {"type": "string"},
+        "dial_code": {"type": "string"},
+        "currency": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "timezones": {
           "type": "object",
-          "properties": {
-            "name": { "type": "string" },
-            "alpha_3": { "type": "string" },
-            "numeric": { "type": "string" },
-            "sovereignty": { "type": "string" },
-            "flag" : {"type": "string"}
-          },
-          "required": ["name", "alpha_3", "numeric", "sovereignty","flag"]
+          "patternProperties": {
+            "^[a-zA-Z_/-]+$": {
+              "type": "object",
+              "properties": {
+                "utc_offset": {"type": "string"}
+              },
+              "required": ["utc_offset"]
+            }
+          }
         }
       },
-      "additionalProperties": false
+      "required": ["country_name", "continent_code", "continent_name", "alpha_3", "numeric_code", "flag", "sovereignity", "dial_code", "currency", "timezones"]
     }
   },
-  "required": ["country_information"]
+  "additionalProperties": false
 }
