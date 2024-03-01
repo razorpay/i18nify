@@ -8,7 +8,7 @@ coverage
 /playwright/.cache/
 
 # sub-modules
-currency.js
-phoneNumber.js
-core.js
-types.js
+# currency.js
+# phoneNumber.js
+# core.js
+# types.js

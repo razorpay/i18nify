@@ -4,11 +4,11 @@ interface I18nState {
     country: string;
 }
 
-declare const _default$p: () => I18nState;
+declare const _default$r: () => I18nState;
 
-declare const _default$o: (newState: Partial<I18nState>) => void;
+declare const _default$q: (newState: Partial<I18nState>) => void;
 
-declare const _default$n: () => void;
+declare const _default$p: () => void;
 
 declare const ALLOWED_FORMAT_PARTS_KEYS$1: readonly ["nan", "infinity", "percent", "integer", "group", "decimal", "fraction", "plusSign", "minusSign", "percentSign", "currency", "code", "symbol", "name", "compact", "exponentInteger", "exponentMinusSign", "exponentSeparator", "unit"];
 
@@ -534,13 +534,13 @@ interface I18nifyNumberFormatOptions {
 }
 type CurrencyCodeType = keyof typeof CURRENCIES;
 
-declare const _default$m: (amount: string | number, options?: {
+declare const _default$o: (amount: string | number, options?: {
     currency?: "ARS" | "BND" | "DKK" | "GIP" | "HNL" | "LSL" | "MDL" | "MMK" | "NIO" | "NOK" | "PGK" | "SEK" | "AED" | "ALL" | "AMD" | "AUD" | "AWG" | "BBD" | "BDT" | "BMD" | "BOB" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CNY" | "COP" | "CRC" | "CUP" | "CZK" | "DOP" | "DZD" | "EGP" | "ETB" | "EUR" | "FJD" | "GBP" | "GHS" | "GMD" | "GTQ" | "GYD" | "HKD" | "HRK" | "HTG" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "KES" | "KGS" | "KHR" | "KYD" | "KZT" | "LAK" | "LKR" | "LRD" | "MAD" | "MKD" | "MNT" | "MOP" | "MUR" | "MVR" | "MWK" | "MXN" | "MYR" | "NAD" | "NGN" | "NPR" | "NZD" | "PEN" | "PHP" | "PKR" | "QAR" | "RUB" | "SAR" | "SCR" | "SGD" | "SLL" | "SOS" | "SSP" | "SVC" | "SZL" | "THB" | "TTD" | "TZS" | "USD" | "UYU" | "UZS" | "YER" | "ZAR" | "KWD" | "BHD" | "OMR" | "JPY" | undefined;
     locale?: string | undefined;
     intlOptions?: I18nifyNumberFormatOptions | undefined;
 } | undefined) => string;
 
-declare const _default$l: () => {
+declare const _default$n: () => {
     readonly AED: {
         readonly symbol: "د.إ";
         readonly name: "United Arab Emirates Dirham";
@@ -1027,25 +1027,27 @@ declare const _default$l: () => {
     };
 };
 
-declare const _default$k: (currencyCode: "ARS" | "BND" | "DKK" | "GIP" | "HNL" | "LSL" | "MDL" | "MMK" | "NIO" | "NOK" | "PGK" | "SEK" | "AED" | "ALL" | "AMD" | "AUD" | "AWG" | "BBD" | "BDT" | "BMD" | "BOB" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CNY" | "COP" | "CRC" | "CUP" | "CZK" | "DOP" | "DZD" | "EGP" | "ETB" | "EUR" | "FJD" | "GBP" | "GHS" | "GMD" | "GTQ" | "GYD" | "HKD" | "HRK" | "HTG" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "KES" | "KGS" | "KHR" | "KYD" | "KZT" | "LAK" | "LKR" | "LRD" | "MAD" | "MKD" | "MNT" | "MOP" | "MUR" | "MVR" | "MWK" | "MXN" | "MYR" | "NAD" | "NGN" | "NPR" | "NZD" | "PEN" | "PHP" | "PKR" | "QAR" | "RUB" | "SAR" | "SCR" | "SGD" | "SLL" | "SOS" | "SSP" | "SVC" | "SZL" | "THB" | "TTD" | "TZS" | "USD" | "UYU" | "UZS" | "YER" | "ZAR" | "KWD" | "BHD" | "OMR" | "JPY") => string;
+declare const _default$m: (currencyCode: "ARS" | "BND" | "DKK" | "GIP" | "HNL" | "LSL" | "MDL" | "MMK" | "NIO" | "NOK" | "PGK" | "SEK" | "AED" | "ALL" | "AMD" | "AUD" | "AWG" | "BBD" | "BDT" | "BMD" | "BOB" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CNY" | "COP" | "CRC" | "CUP" | "CZK" | "DOP" | "DZD" | "EGP" | "ETB" | "EUR" | "FJD" | "GBP" | "GHS" | "GMD" | "GTQ" | "GYD" | "HKD" | "HRK" | "HTG" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "KES" | "KGS" | "KHR" | "KYD" | "KZT" | "LAK" | "LKR" | "LRD" | "MAD" | "MKD" | "MNT" | "MOP" | "MUR" | "MVR" | "MWK" | "MXN" | "MYR" | "NAD" | "NGN" | "NPR" | "NZD" | "PEN" | "PHP" | "PKR" | "QAR" | "RUB" | "SAR" | "SCR" | "SGD" | "SLL" | "SOS" | "SSP" | "SVC" | "SZL" | "THB" | "TTD" | "TZS" | "USD" | "UYU" | "UZS" | "YER" | "ZAR" | "KWD" | "BHD" | "OMR" | "JPY") => string;
 
-declare const _default$j: (amount: string | number, options?: {
+declare const _default$l: (amount: string | number, options?: {
     currency?: "ARS" | "BND" | "DKK" | "GIP" | "HNL" | "LSL" | "MDL" | "MMK" | "NIO" | "NOK" | "PGK" | "SEK" | "AED" | "ALL" | "AMD" | "AUD" | "AWG" | "BBD" | "BDT" | "BMD" | "BOB" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CNY" | "COP" | "CRC" | "CUP" | "CZK" | "DOP" | "DZD" | "EGP" | "ETB" | "EUR" | "FJD" | "GBP" | "GHS" | "GMD" | "GTQ" | "GYD" | "HKD" | "HRK" | "HTG" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "KES" | "KGS" | "KHR" | "KYD" | "KZT" | "LAK" | "LKR" | "LRD" | "MAD" | "MKD" | "MNT" | "MOP" | "MUR" | "MVR" | "MWK" | "MXN" | "MYR" | "NAD" | "NGN" | "NPR" | "NZD" | "PEN" | "PHP" | "PKR" | "QAR" | "RUB" | "SAR" | "SCR" | "SGD" | "SLL" | "SOS" | "SSP" | "SVC" | "SZL" | "THB" | "TTD" | "TZS" | "USD" | "UYU" | "UZS" | "YER" | "ZAR" | "KWD" | "BHD" | "OMR" | "JPY" | undefined;
     locale?: string | undefined;
     intlOptions?: I18nifyNumberFormatOptions | undefined;
 } | undefined) => ByParts;
 
-declare const _default$i: (amount: number, options: {
+declare const _default$k: (amount: number, options: {
     currency: "ARS" | "BND" | "DKK" | "GIP" | "HNL" | "LSL" | "MDL" | "MMK" | "NIO" | "NOK" | "PGK" | "SEK" | "AED" | "ALL" | "AMD" | "AUD" | "AWG" | "BBD" | "BDT" | "BMD" | "BOB" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CNY" | "COP" | "CRC" | "CUP" | "CZK" | "DOP" | "DZD" | "EGP" | "ETB" | "EUR" | "FJD" | "GBP" | "GHS" | "GMD" | "GTQ" | "GYD" | "HKD" | "HRK" | "HTG" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "KES" | "KGS" | "KHR" | "KYD" | "KZT" | "LAK" | "LKR" | "LRD" | "MAD" | "MKD" | "MNT" | "MOP" | "MUR" | "MVR" | "MWK" | "MXN" | "MYR" | "NAD" | "NGN" | "NPR" | "NZD" | "PEN" | "PHP" | "PKR" | "QAR" | "RUB" | "SAR" | "SCR" | "SGD" | "SLL" | "SOS" | "SSP" | "SVC" | "SZL" | "THB" | "TTD" | "TZS" | "USD" | "UYU" | "UZS" | "YER" | "ZAR" | "KWD" | "BHD" | "OMR" | "JPY";
 }) => number;
 
-declare const _default$h: (amount: number, options: {
+declare const _default$j: (amount: number, options: {
     currency: "ARS" | "BND" | "DKK" | "GIP" | "HNL" | "LSL" | "MDL" | "MMK" | "NIO" | "NOK" | "PGK" | "SEK" | "AED" | "ALL" | "AMD" | "AUD" | "AWG" | "BBD" | "BDT" | "BMD" | "BOB" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CNY" | "COP" | "CRC" | "CUP" | "CZK" | "DOP" | "DZD" | "EGP" | "ETB" | "EUR" | "FJD" | "GBP" | "GHS" | "GMD" | "GTQ" | "GYD" | "HKD" | "HRK" | "HTG" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "KES" | "KGS" | "KHR" | "KYD" | "KZT" | "LAK" | "LKR" | "LRD" | "MAD" | "MKD" | "MNT" | "MOP" | "MUR" | "MVR" | "MWK" | "MXN" | "MYR" | "NAD" | "NGN" | "NPR" | "NZD" | "PEN" | "PHP" | "PKR" | "QAR" | "RUB" | "SAR" | "SCR" | "SGD" | "SLL" | "SOS" | "SSP" | "SVC" | "SZL" | "THB" | "TTD" | "TZS" | "USD" | "UYU" | "UZS" | "YER" | "ZAR" | "KWD" | "BHD" | "OMR" | "JPY";
 }) => number;
 
-declare const _default$g: (phoneNumber: string | number, countryCode?: string | number | undefined) => boolean;
+type CountryCodeType = 'US' | 'AQ' | 'AG' | 'AI' | 'AS' | 'BB' | 'BM' | 'BS' | 'CA' | 'DM' | 'DO' | 'GD' | 'GU' | 'JM' | 'KN' | 'KY' | 'LC' | 'MP' | 'MS' | 'PR' | 'SX' | 'TC' | 'TT' | 'VC' | 'VG' | 'VI' | 'RU' | 'KZ' | 'EG' | 'ZA' | 'GR' | 'NL' | 'BE' | 'FR' | 'ES' | 'HU' | 'IT' | 'VA' | 'RO' | 'CH' | 'AT' | 'GB' | 'GG' | 'IM' | 'JE' | 'DK' | 'SE' | 'NO' | 'SJ' | 'PL' | 'DE' | 'PE' | 'MX' | 'CU' | 'AR' | 'BR' | 'CL' | 'CO' | 'VE' | 'MY' | 'AU' | 'CC' | 'CX' | 'ID' | 'PH' | 'NZ' | 'SG' | 'TH' | 'JP' | 'KR' | 'VN' | 'CN' | 'TR' | 'IN' | 'PK' | 'AF' | 'LK' | 'MM' | 'IR' | 'SS' | 'MA' | 'EH' | 'DZ' | 'TN' | 'LY' | 'GM' | 'SN' | 'MR' | 'ML' | 'GN' | 'CI' | 'BF' | 'NE' | 'TG' | 'BJ' | 'MU' | 'LR' | 'SL' | 'GH' | 'NG' | 'TD' | 'CF' | 'CM' | 'CV' | 'ST' | 'GQ' | 'GA' | 'CG' | 'CD' | 'AO' | 'GW' | 'IO' | 'AC' | 'SC' | 'SD' | 'RW' | 'ET' | 'SO' | 'DJ' | 'KE' | 'TZ' | 'UG' | 'BI' | 'MZ' | 'ZM' | 'MG' | 'RE' | 'YT' | 'ZW' | 'NA' | 'MW' | 'LS' | 'BW' | 'SZ' | 'KM' | 'SH' | 'TA' | 'ER' | 'AW' | 'FO' | 'GL' | 'GI' | 'PT' | 'LU' | 'IE' | 'IS' | 'AL' | 'MT' | 'CY' | 'FI' | 'AX' | 'BG' | 'LT' | 'LV' | 'EE' | 'MD' | 'AM' | 'BY' | 'AD' | 'MC' | 'SM' | 'UA' | 'RS' | 'ME' | 'XK' | 'HR' | 'SI' | 'BA' | 'MK' | 'CZ' | 'SK' | 'LI' | 'FK' | 'BZ' | 'GT' | 'SV' | 'HN' | 'NI' | 'CR' | 'PA' | 'PM' | 'HT' | 'GP' | 'BL' | 'MF' | 'BO' | 'GY' | 'EC' | 'GF' | 'PY' | 'MQ' | 'SR' | 'UY' | 'CW' | 'BQ' | 'TL' | 'NF' | 'BN' | 'NR' | 'PG' | 'TO' | 'SB' | 'VU' | 'FJ' | 'PW' | 'WF' | 'CK' | 'NU' | 'WS' | 'KI' | 'NC' | 'TV' | 'PF' | 'TK' | 'FM' | 'MH' | 'KP' | 'HK' | 'MO' | 'KH' | 'LA' | 'BD' | 'TW' | 'MV' | 'LB' | 'JO' | 'SY' | 'IQ' | 'KW' | 'SA' | 'YE' | 'OM' | 'PS' | 'AE' | 'IL' | 'BH' | 'QA' | 'BT' | 'MN' | 'NP' | 'TJ' | 'TM' | 'AZ' | 'GE' | 'KG' | 'UZ' | 'EU';
 
-declare const _default$f: (phoneNumber: string | number, countryCode?: string | number | undefined) => string;
+declare const _default$i: (phoneNumber: string | number, countryCode?: CountryCodeType | undefined) => boolean;
+
+declare const _default$h: (phoneNumber: string | number, countryCode?: CountryCodeType | undefined) => string;
 
 interface PhoneInfo {
     countryCode: string;
@@ -1054,7 +1056,259 @@ interface PhoneInfo {
     formatTemplate: string;
     phoneNumber: string;
 }
-declare const _default$e: (phoneNumber: string, country?: string | undefined) => PhoneInfo;
+declare const _default$g: (phoneNumber: string, country?: CountryCodeType | undefined) => PhoneInfo;
+
+declare const _default$f: () => {
+    MK: string;
+    SR: string;
+    US: string;
+    AQ: string;
+    AG: string;
+    AI: string;
+    AS: string;
+    BB: string;
+    BM: string;
+    BS: string;
+    CA: string;
+    DM: string;
+    DO: string;
+    GD: string;
+    GU: string;
+    JM: string;
+    KN: string;
+    KY: string;
+    LC: string;
+    MP: string;
+    MS: string;
+    PR: string;
+    SX: string;
+    TC: string;
+    TT: string;
+    VC: string;
+    VG: string;
+    VI: string;
+    RU: string;
+    KZ: string;
+    EG: string;
+    ZA: string;
+    GR: string;
+    NL: string;
+    BE: string;
+    FR: string;
+    ES: string;
+    HU: string;
+    IT: string;
+    VA: string;
+    RO: string;
+    CH: string;
+    AT: string;
+    GB: string;
+    GG: string;
+    IM: string;
+    JE: string;
+    DK: string;
+    SE: string;
+    NO: string;
+    SJ: string;
+    PL: string;
+    DE: string;
+    PE: string;
+    MX: string;
+    CU: string;
+    AR: string;
+    BR: string;
+    CL: string;
+    CO: string;
+    VE: string;
+    MY: string;
+    AU: string;
+    CC: string;
+    CX: string;
+    ID: string;
+    PH: string;
+    NZ: string;
+    SG: string;
+    TH: string;
+    JP: string;
+    KR: string;
+    VN: string;
+    CN: string;
+    TR: string;
+    IN: string;
+    PK: string;
+    AF: string;
+    LK: string;
+    MM: string;
+    IR: string;
+    SS: string;
+    MA: string;
+    EH: string;
+    DZ: string;
+    TN: string;
+    LY: string;
+    GM: string;
+    SN: string;
+    MR: string;
+    ML: string;
+    GN: string;
+    CI: string;
+    BF: string;
+    NE: string;
+    TG: string;
+    BJ: string;
+    MU: string;
+    LR: string;
+    SL: string;
+    GH: string;
+    NG: string;
+    TD: string;
+    CF: string;
+    CM: string;
+    CV: string;
+    ST: string;
+    GQ: string;
+    GA: string;
+    CG: string;
+    CD: string;
+    AO: string;
+    GW: string;
+    IO: string;
+    AC: string;
+    SC: string;
+    SD: string;
+    RW: string;
+    ET: string;
+    SO: string;
+    DJ: string;
+    KE: string;
+    TZ: string;
+    UG: string;
+    BI: string;
+    MZ: string;
+    ZM: string;
+    MG: string;
+    RE: string;
+    YT: string;
+    ZW: string;
+    NA: string;
+    MW: string;
+    LS: string;
+    BW: string;
+    SZ: string;
+    KM: string;
+    SH: string;
+    TA: string;
+    ER: string;
+    AW: string;
+    FO: string;
+    GL: string;
+    GI: string;
+    PT: string;
+    LU: string;
+    IE: string;
+    IS: string;
+    AL: string;
+    MT: string;
+    CY: string;
+    FI: string;
+    AX: string;
+    BG: string;
+    LT: string;
+    LV: string;
+    EE: string;
+    MD: string;
+    AM: string;
+    BY: string;
+    AD: string;
+    MC: string;
+    SM: string;
+    UA: string;
+    RS: string;
+    ME: string;
+    XK: string;
+    HR: string;
+    SI: string;
+    BA: string;
+    CZ: string;
+    SK: string;
+    LI: string;
+    FK: string;
+    BZ: string;
+    GT: string;
+    SV: string;
+    HN: string;
+    NI: string;
+    CR: string;
+    PA: string;
+    PM: string;
+    HT: string;
+    GP: string;
+    BL: string;
+    MF: string;
+    BO: string;
+    GY: string;
+    EC: string;
+    GF: string;
+    PY: string;
+    MQ: string;
+    UY: string;
+    CW: string;
+    BQ: string;
+    TL: string;
+    NF: string;
+    BN: string;
+    NR: string;
+    PG: string;
+    TO: string;
+    SB: string;
+    VU: string;
+    FJ: string;
+    PW: string;
+    WF: string;
+    CK: string;
+    NU: string;
+    WS: string;
+    KI: string;
+    NC: string;
+    TV: string;
+    PF: string;
+    TK: string;
+    FM: string;
+    MH: string;
+    KP: string;
+    HK: string;
+    MO: string;
+    KH: string;
+    LA: string;
+    BD: string;
+    TW: string;
+    MV: string;
+    LB: string;
+    JO: string;
+    SY: string;
+    IQ: string;
+    KW: string;
+    SA: string;
+    YE: string;
+    OM: string;
+    PS: string;
+    AE: string;
+    IL: string;
+    BH: string;
+    QA: string;
+    BT: string;
+    MN: string;
+    NP: string;
+    TJ: string;
+    TM: string;
+    AZ: string;
+    GE: string;
+    KG: string;
+    UZ: string;
+    EU: string;
+};
+
+declare const _default$e: (countryCode: CountryCodeType) => string;
 
 declare const ALLOWED_FORMAT_PARTS_KEYS: readonly ["day", "dayPeriod", "era", "fractionalSecond", "hour", "minute", "month", "relatedYear", "second", "timeZone", "weekday", "year", "yearName"];
 
@@ -1125,4 +1379,4 @@ declare const _default$1: (countryCode: COUNTRY_CODE) => Promise<any>;
 
 declare const _default: (countryCode: COUNTRY_CODE, stateCode: string) => Promise<any>;
 
-export { type CurrencyCodeType, _default$i as convertToMajorUnit, _default$h as convertToMinorUnit, _default$d as formatDate, _default$c as formatDateTime, _default$m as formatNumber, _default$j as formatNumberByParts, _default$f as formatPhoneNumber, _default$b as formatTime, _default$4 as getAllContinents, _default$2 as getAllCountries, _default as getCities, _default$3 as getCountriesByContinent, _default$l as getCurrencyList, _default$k as getCurrencySymbol, _default$6 as getFlagByCountry, _default$5 as getListOfAllFlags, _default$a as getRelativeTime, _default$p as getState, _default$1 as getStatesByCountry, _default$9 as getWeekdays, _default$8 as isValidDate, _default$g as isValidPhoneNumber, _default$7 as parseDateTime, _default$e as parsePhoneNumber, _default$n as resetState, _default$o as setState };
+export { type CountryCodeType, type CurrencyCodeType, _default$k as convertToMajorUnit, _default$j as convertToMinorUnit, _default$d as formatDate, _default$c as formatDateTime, _default$o as formatNumber, _default$l as formatNumberByParts, _default$h as formatPhoneNumber, _default$b as formatTime, _default$4 as getAllContinents, _default$2 as getAllCountries, _default as getCities, _default$3 as getCountriesByContinent, _default$n as getCurrencyList, _default$m as getCurrencySymbol, _default$e as getDialCodeByCountryCode, _default$f as getDialCodes, _default$6 as getFlagByCountry, _default$5 as getListOfAllFlags, _default$a as getRelativeTime, _default$r as getState, _default$1 as getStatesByCountry, _default$9 as getWeekdays, _default$8 as isValidDate, _default$i as isValidPhoneNumber, _default$7 as parseDateTime, _default$g as parsePhoneNumber, _default$p as resetState, _default$q as setState };

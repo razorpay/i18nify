@@ -894,6 +894,124 @@ const PHONE_REGEX_MAPPER = {
     TW: /^(?:(?:\+886)|0)?9\d{8}$/,
     UA: /^(?:(?:\+380)|(0))?(39|50|63|66|67|68|91|92|93|94|95|96|97|98|99)\d{7}$/,
     UG: /^(?:(?:\+256)|0)?[39]\d{8}$/,
+    AG: /^(?:\+1-268)?(?:\d{7})$/,
+    AI: /^(?:\+1-264)?(?:\d{7})$/,
+    AO: /^(?:\+244)?(?:\d{9})$/,
+    AQ: /^(?:\+672)?(?:\d{6})$/,
+    AS: /^(?:\+1-684)?(?:\d{7})$/,
+    AT: /^(?:\+43)?(?:\d{4,13})$/,
+    AZ: /^(?:\+994)?(?:\d{9})$/,
+    BA: /^(?:\+387)?(?:\d{6,8})$/,
+    BE: /^(?:\+32)?(?:\d{8,9})$/,
+    BF: /^(?:\+226)?(?:\d{8})$/,
+    BG: /^(?:\+359)?(?:\d{7,9})$/,
+    BI: /^(?:\+257)?(?:\d{8})$/,
+    BJ: /^(?:\+229)?(?:\d{8})$/,
+    BL: /^(?:\+590)?(?:\d{9})$/,
+    BQ: /^(?:\+599)?(?:\d{7})$/,
+    BR: /^(?:\+55)?(?:\d{10,11})$/,
+    BT: /^(?:\+975)?(?:\d{8})$/,
+    BY: /^(?:\+375)?(?:\d{9})$/,
+    CC: /^(?:\+61)?(?:\d{8,9})$/,
+    CD: /^(?:\+243)?(?:\d{9})$/,
+    CF: /^(?:\+236)?(?:\d{8})$/,
+    CG: /^(?:\+242)?(?:\d{9})$/,
+    CI: /^(?:\+225)?(?:\d{8})$/,
+    CK: /^(?:\+682)?(?:\d{5})$/,
+    CL: /^(?:\+56)?(?:\d{9})$/,
+    CM: /^(?:\+237)?(?:\d{9})$/,
+    CV: /^(?:\+238)?(?:\d{7})$/,
+    CW: /^(?:\+599)?(?:\d{7})$/,
+    CX: /^(?:\+61)?(?:\d{8,9})$/,
+    CY: /^(?:\+357)?(?:\d{8})$/,
+    DE: /^(?:\+49)?(?:\d{6,11})$/,
+    DJ: /^(?:\+253)?(?:\d{6})$/,
+    DM: /^(?:\+1-767)?(?:\d{7})$/,
+    EC: /^(?:\+593)?(?:\d{8,9})$/,
+    EE: /^(?:\+372)?(?:\d{7,8})$/,
+    EH: /^(?:\+212)?(?:\d{9})$/,
+    ER: /^(?:\+291)?(?:\d{6,7})$/,
+    ES: /^(?:\+34)?(?:\d{9})$/,
+    FI: /^(?:\+358)?(?:\d{5,12})$/,
+    FK: /^(?:\+500)?(?:\d{5})$/,
+    FM: /^(?:\+691)?(?:\d{7})$/,
+    FO: /^(?:\+298)?(?:\d{6})$/,
+    FR: /^(?:\+33)?(?:\d{9})$/,
+    GA: /^(?:\+241)?(?:\d{6,7})$/,
+    GD: /^(?:\+1-473)?(?:\d{7})$/,
+    GE: /^(?:\+995)?(?:\d{8,9})$/,
+    GU: /^(?:\+1-671)?\d{7}$/,
+    KN: /^(?:\+1-869)?\d{7}$/,
+    LC: /^(?:\+1-758)?\d{7}$/,
+    MP: /^(?:\+1-670)?\d{7}$/,
+    MS: /^(?:\+1-664)?\d{7}$/,
+    SX: /^(?:\+1-721)?\d{7}$/,
+    TC: /^(?:\+1-649)?\d{7}$/,
+    VG: /^(?:\+1-284)?\d{7}$/,
+    VI: /^(?:\+1-340)?\d{7}$/,
+    GR: /^(?:\+30)?\d{10}$/,
+    IT: /^(?:\+39)?\d{9,10}$/,
+    VA: /^(?:\+379)?\d{8,12}$/,
+    GG: /^(?:\+44-1481)?\d{6}$/,
+    IM: /^(?:\+44-1624)?\d{6}$/,
+    JE: /^(?:\+44-1534)?\d{6}$/,
+    SJ: /^\\+47\\d{8}$/,
+    JP: /^(?:\+81)?\d{10}$/,
+    KR: /^(?:\+82)?\d{8,11}$/,
+    AF: /^(?:\+93)?\d{9}$/,
+    IR: /^(?:\+98)?\d{10}$/,
+    LY: /^(?:\+218)?\d{9}$/,
+    MR: /^(?:\+222)?\d{8}$/,
+    ML: /^(?:\+223)?\d{8}$/,
+    GN: /^(?:\+224)?\d{8}$/,
+    NE: /^(?:\+227)?\d{8}$/,
+    TD: /^(?:\+235)?\d{8}$/,
+    ST: /^(?:\+239)?\d{7}$/,
+    GQ: /^(?:\+240)?\d{9}$/,
+    GW: /^(?:\+245)?\d{7}$/,
+    IO: /^\\+246\\d{7}$/,
+    AC: /^\\+247\\d{4}$/,
+    SD: /^(?:\+249)?\d{9}$/,
+    RE: /^(?:\+262)?\d{9}$/,
+    YT: /^(?:\+262)?\d{9}$/,
+    KM: /^(?:\+269)?\d{7}$/,
+    SH: /^\\+290\\d{4,5}$/,
+    TA: /^\\+290\\d{4}$/,
+    GL: /^(?:\+299)?\d{6}$/,
+    IE: /^(?:\+353)?\d{7,10}$/,
+    IS: /^(?:\+354)?\d{7}$/,
+    MT: /^(?:\+356)?\d{8}$/,
+    AX: /^\\+358\\d{5,8}$/,
+    AD: /^(?:\+376)?\d{6}$/,
+    MC: /^(?:\+377)?\d{8,9}$/,
+    XK: /^\\+383\\d{8}$/,
+    LI: /^(?:\+423)?\d{7}$/,
+    PM: /^(?:\+508)?\d{6}$/,
+    GP: /^(?:\+590)?\d{9}$/,
+    MF: /^(?:\+590)?\d{9}$/,
+    GF: /^(?:\+594)?\d{9}$/,
+    MQ: /^(?:\+596)?\d{9}$/,
+    NF: /^(?:\+672)?\d{6}$/,
+    NR: /^(?:\+674)?\d{7}$/,
+    TO: /^(?:\+676)?\d{5}$/,
+    SB: /^(?:\+677)?\d{5}$/,
+    VU: /^(?:\+678)?\d{7}$/,
+    PW: /^(?:\+680)?\d{7}$/,
+    WF: /^(?:\+681)?\d{6}$/,
+    NU: /^(?:\+683)?\d{4}$/,
+    WS: /^(?:\+685)?\d{5}$/,
+    KI: /^(?:\+686)?\d{5}$/,
+    NC: /^(?:\+687)?\d{6}$/,
+    TV: /^(?:\+688)?\d{5}$/,
+    PF: /^(?:\+689)?\d{6}$/,
+    TK: /^\\+690\\d{4}$/,
+    MH: /^(?:\+692)?\d{7}$/,
+    KP: /^\\+850\\d{6,9}$/,
+    LB: /^(?:\+961)?\d{8}$/,
+    JO: /^(?:\+962)?\d{9}$/,
+    SY: /^(?:\+963)?\d{9}$/,
+    IQ: /^(?:\+964)?\d{10}$/,
+    TM: /^(?:\+993)?\d{8}$/,
 };
 
 /*  Source: Google LibPhoneNumber Metadata: https://github.com/google/libphonenumber/blob/master/javascript/i18n/phonenumbers/metadata.js  */
@@ -1100,21 +1218,13 @@ const DIAL_CODE_MAPPER = {
     690: ['TK'],
     691: ['FM'],
     692: ['MH'],
-    800: ['001'],
-    808: ['001'],
     850: ['KP'],
     852: ['HK'],
     853: ['MO'],
     855: ['KH'],
     856: ['LA'],
-    870: ['001'],
-    878: ['001'],
     880: ['BD'],
-    881: ['001'],
-    882: ['001'],
-    883: ['001'],
     886: ['TW'],
-    888: ['001'],
     960: ['MV'],
     961: ['LB'],
     962: ['JO'],
@@ -1132,7 +1242,6 @@ const DIAL_CODE_MAPPER = {
     975: ['BT'],
     976: ['MN'],
     977: ['NP'],
-    979: ['001'],
     992: ['TJ'],
     993: ['TM'],
     994: ['AZ'],
@@ -1189,7 +1298,7 @@ const detectCountryAndDialCodeFromPhone = (phoneNumber) => {
             const regex = PHONE_REGEX_MAPPER[countryCode];
             if (regex.test(phoneNumber.toString())) {
                 return {
-                    countryCode,
+                    countryCode: countryCode,
                     dialCode: getDialCodeFromCountryCode(countryCode)
                         ? `+${getDialCodeFromCountryCode(countryCode)}`
                         : '',
@@ -1224,10 +1333,9 @@ const isValidPhoneNumber = (phoneNumber, countryCode) => {
     // Clean the provided phoneNumber by removing non-numeric characters
     const cleanedPhoneNumber = cleanPhoneNumber(phoneNumber.toString());
     // Detect or validate the country code
-    countryCode =
-        countryCode && countryCode in PHONE_REGEX_MAPPER
-            ? countryCode
-            : detectCountryAndDialCodeFromPhone(cleanedPhoneNumber).countryCode;
+    countryCode = (countryCode && countryCode in PHONE_REGEX_MAPPER
+        ? countryCode
+        : detectCountryAndDialCodeFromPhone(cleanedPhoneNumber).countryCode);
     // Return false if phoneNumber is empty
     if (!phoneNumber)
         return false;
@@ -1373,6 +1481,124 @@ const PHONE_FORMATTER_MAPPER = {
     ZW: 'xx xxx xxxx',
     KW: 'xxx xx xxxx',
     BH: 'xxxx xxxx',
+    AG: 'xxx-xxxx',
+    AI: 'xxx-xxxx',
+    AS: 'xxx-xxxx',
+    DM: 'xxx-xxxx',
+    GD: 'xxx-xxxx',
+    GU: 'xxx-xxxx',
+    KN: 'xxx-xxxx',
+    LC: 'xxx-xxxx',
+    MP: 'xxx-xxxx',
+    MS: 'xxx-xxxx',
+    SX: 'xxx-xxxx',
+    TC: 'xxx-xxxx',
+    VG: 'xxx-xxxx',
+    VI: 'xxx-xxxx',
+    GR: 'xx xxx xxxx',
+    BE: 'xxx xx xx xx',
+    FR: 'xx xx xx xx xx',
+    ES: 'xxx xxx xxx',
+    IT: 'xxx xxxx xxxx',
+    VA: 'xxx xxxx xxxx',
+    AT: 'xxx xxxxxxxx',
+    GG: 'xxxx xxxx',
+    IM: 'xxxx xxxx',
+    JE: 'xxxx xxxx',
+    SJ: 'xxx xx xxx',
+    DE: 'xxx xxxxxxxx',
+    BR: 'xx xxxx-xxxx',
+    CL: 'x xxxx xxxx',
+    CC: 'xxx xxxx xxxx',
+    CX: 'xxx xxxx xxxx',
+    JP: 'xx xxxx xxxx',
+    KR: 'xx xxxx xxxx',
+    AF: 'xx xxx xxxx',
+    IR: 'xx xxxx xxxx',
+    EH: 'xx xx xx xx',
+    LY: 'xx xxxxx xxxx',
+    MR: 'xx xx xx xx',
+    ML: 'xx xx xx xx',
+    GN: 'xx xx xx xx',
+    CI: 'xx xx xx xx',
+    BF: 'xx xx xx xx',
+    NE: 'xx xx xx xx',
+    BJ: 'xx xx xx xx',
+    TD: 'xx xx xx xx',
+    CF: 'xx xx xx xx',
+    CM: 'xx xx xx xx',
+    CV: 'xxx xxxx',
+    ST: 'xx xxx xx',
+    GQ: 'xx xxx xxxx',
+    GA: 'xx xx xx xx',
+    CG: 'xx xx xx xx',
+    CD: 'xx xxx xxxx',
+    AO: 'xx xxx xxxx',
+    GW: 'xx xx xx xx',
+    IO: 'xxx xxxx',
+    AC: 'xxxx',
+    SD: 'xx xxx xxxx',
+    DJ: 'xx xx xx xx',
+    BI: 'xx xx xx xx',
+    RE: 'xxx xx xx xx',
+    YT: 'xxx xx xx xx',
+    KM: 'xx xx xx xx',
+    SH: 'xxxx',
+    TA: 'xxxx',
+    ER: 'x xxx xxxx',
+    FO: 'xxx xxx',
+    GL: 'xx xx xx',
+    IE: 'xx xxx xxxx',
+    IS: 'xxx xxxx',
+    MT: 'xx xx xx xx',
+    CY: 'xx xxxxxx',
+    FI: 'xx xxx xxxx',
+    AX: 'xxx xxx',
+    AD: 'xxx xxx',
+    MC: 'xx xx xx xx',
+    XK: 'xx xxx xxxx',
+    LI: 'xxx xx xx',
+    PM: 'xxx xxxx',
+    GP: 'xxx xx xx xx',
+    MF: 'xxx xx xx xx',
+    GF: 'xxx xx xx xx',
+    MQ: 'xxx xx xx xx',
+    NF: 'x xxxx',
+    NR: 'xxx xxxx',
+    TO: 'xxxxx',
+    SB: 'xxxxx',
+    VU: 'xx xxxxx',
+    PW: 'xxx xxxx',
+    WF: 'xx xxxx',
+    CK: 'xx xxx',
+    NU: 'xxxx',
+    WS: 'xx xxxxx',
+    KI: 'xx xxx',
+    NC: 'xx xx xx',
+    TV: 'xxxxx',
+    PF: 'xx xx xx xx',
+    TK: 'xxxx',
+    FM: 'xxx xxxx',
+    MH: 'xxx xxxx',
+    KP: 'xx xxx xxxx',
+    LB: 'xx xxx xxx',
+    JO: 'xx xxxx xxxx',
+    SY: 'xx xxxx xxxx',
+    IQ: 'xx xxx xxxx',
+    BT: 'x xxx xxx',
+    TM: 'x xxx xxx',
+    AZ: 'xx xxx xx xx',
+    GE: 'xxx xxx xxx',
+    AQ: 'xx xxxx',
+    BG: 'xx xxx xxxx',
+    EE: 'xxx xxxx',
+    BY: 'xx xxx-xx-xx',
+    BA: 'xx xxx-xxxx',
+    FK: 'xxxxx',
+    BL: 'xxx xx xx xx',
+    EC: 'xx xxx xxxx',
+    CW: 'xxx xxxx',
+    BQ: 'xxx xxxx',
 };
 
 // Formats a provided phone number according to the predefined format for a specific country code, or auto-detects the country code and formats the number accordingly.
@@ -1384,10 +1610,9 @@ const formatPhoneNumber = (phoneNumber, countryCode) => {
     phoneNumber = phoneNumber.toString();
     phoneNumber = cleanPhoneNumber(phoneNumber);
     // Detect or validate the country code
-    countryCode =
-        countryCode && countryCode in PHONE_FORMATTER_MAPPER
-            ? countryCode
-            : detectCountryAndDialCodeFromPhone(phoneNumber).countryCode;
+    countryCode = (countryCode && countryCode in PHONE_FORMATTER_MAPPER
+        ? countryCode
+        : detectCountryAndDialCodeFromPhone(phoneNumber).countryCode);
     // Fetch the pattern for the countryCode from the PHONE_FORMATTER_MAPPER
     const pattern = PHONE_FORMATTER_MAPPER[countryCode];
     if (!pattern)
@@ -1439,9 +1664,9 @@ const parsePhoneNumber = (phoneNumber, country) => {
     phoneNumber = cleanPhoneNumber(phoneNumber);
     const countryData = detectCountryAndDialCodeFromPhone(phoneNumber);
     // Detect or validate the country code
-    const countryCode = country && country in PHONE_FORMATTER_MAPPER
+    const countryCode = (country && country in PHONE_FORMATTER_MAPPER
         ? country
-        : countryData.countryCode;
+        : countryData.countryCode);
     const dialCode = countryData.dialCode;
     // Format the phone number using the detected/validated country code
     const formattedPhoneNumber = formatPhoneNumber$1(phoneNumber, countryCode);
@@ -1476,6 +1701,43 @@ const parsePhoneNumber = (phoneNumber, country) => {
     };
 };
 var parsePhoneNumber$1 = withErrorBoundary(parsePhoneNumber);
+
+/**
+ * Retrieves a mapping of country codes to their respective international dial codes.
+ * @returns {Object} An object where each key is a country code (e.g., 'US', 'CA') and its value is the corresponding dial code (e.g., '+1' for 'US' and 'CA').
+ */
+const getDialCodes = () => {
+    const countryDialCode = {};
+    for (const [dialCode, countryCodes] of Object.entries(DIAL_CODE_MAPPER)) {
+        countryCodes.forEach((countryCode) => {
+            countryDialCode[countryCode] = `+${Number(dialCode)}`;
+        });
+    }
+    return countryDialCode;
+};
+var getDialCodes$1 = withErrorBoundary(getDialCodes);
+
+/**
+ * Retrieves the dial code for a specified country code.
+ *
+ * @param countryCode The country code for which the dial code is to be retrieved.
+ *                    It must be a key of the object returned by the `getDialCodes` function.
+ * @returns The corresponding dial code as a string.
+ * @throws An error if the provided country code is not found in the dial code mapping.
+ */
+const getDialCodeByCountryCode = (countryCode) => {
+    // Get the mapping of all country codes to their respective dial codes
+    const dialCodeForAllCountries = getDialCodes$1();
+    /** Check if the provided country code exists in the mapping.
+     * Return the corresponding dial code if the country code is valid.
+     * Throw an error if the country code is not found in the mapping
+     * */
+    if (countryCode in dialCodeForAllCountries)
+        return dialCodeForAllCountries[countryCode];
+    else
+        throw new Error(`Invalid countryCode: ${countryCode}`);
+};
+var getDialCodeByCountryCode$1 = withErrorBoundary(getDialCodeByCountryCode);
 
 /**
  * Formats date based on the locale.
@@ -6004,6 +6266,8 @@ exports.getCities = getCities$1;
 exports.getCountriesByContinent = getCountriesByContinent$1;
 exports.getCurrencyList = getCurrencyList$1;
 exports.getCurrencySymbol = getCurrencySymbol$1;
+exports.getDialCodeByCountryCode = getDialCodeByCountryCode$1;
+exports.getDialCodes = getDialCodes$1;
 exports.getFlagByCountry = getFlagByCountry$1;
 exports.getListOfAllFlags = getListOfAllFlags$1;
 exports.getRelativeTime = getRelativeTime$1;
