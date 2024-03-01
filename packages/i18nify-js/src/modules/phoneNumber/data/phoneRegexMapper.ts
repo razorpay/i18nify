@@ -453,5 +453,5 @@ export const PHONE_REGEX_MAPPER: { [key in CountryCodeType]: RegExp } = {
   // Turkmenistan, 8 digits with optional country code +993
   TM: /^(?:\+993)?\d{8}$/,
   // Wallis and Futuna, 2 groups of 2 digits followed by 4 groups of 2 digits with optional country code +590 590
-  FW: /^(?:\+590\s?590|\d{2})\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2}$/,  
+  FW: /^(?:\+590\s?590|\d{2})\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2}$/,
 };
