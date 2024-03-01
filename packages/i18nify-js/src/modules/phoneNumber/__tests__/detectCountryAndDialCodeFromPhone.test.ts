@@ -22,4 +22,27 @@ describe('detectCountryAndDialCodeFromPhone', () => {
       dialCode: '',
     });
   });
+
+  it('should correctly detect the country code and dial code for a UK number with plus', () => {
+    expect(detectCountryAndDialCodeFromPhone('+447911123456')).toEqual({
+      countryCode: 'GB',
+      dialCode: '+44',
+    });
+  });
+
+  it('should handle phone numbers with spaces and dashes after cleaning', () => {
+    expect(detectCountryAndDialCodeFromPhone('+12025550178')).toEqual({
+      // Removed spaces and dashes
+      countryCode: 'US',
+      dialCode: '+1',
+    });
+  });
+
+  it('should return empty strings for a number too short to be valid', () => {
+    expect(detectCountryAndDialCodeFromPhone('+12345')).toEqual({
+      // Added a '+' to indicate an attempt at an international number
+      countryCode: '',
+      dialCode: '',
+    });
+  });
 });

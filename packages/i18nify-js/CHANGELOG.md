@@ -1,5 +1,17 @@
 # @razorpay/i18nify-js
 
+## 1.4.2
+
+### Patch Changes
+
+- c82bd92: [feat]: Add dial codes apis in phoneNumber module
+
+## 1.4.1
+
+### Patch Changes
+
+- 7f8b698: fix: getting empty dialCode in parsePhoneNumber even after getting countryCode
+
 ## 1.4.0
 
 ### Minor Changes

@@ -6,3 +6,9 @@ coverage
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# sub-modules
+currency.js
+phoneNumber.js
+core.js
+types.js

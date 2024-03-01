@@ -1,6 +1,6 @@
 {
   "name": "@razorpay/i18nify-js",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "author": "tarun khanna <tarun.khanna@razorpay.com>",
   "license": "MIT",
   "main": "lib/cjs/index.js",
@@ -37,6 +37,10 @@
     "./geo": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/geo/index.js"
+    },
+    "./types": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/types/index.d.ts"
     }
   },
   "typesVersions": {
@@ -55,6 +59,9 @@
       ],
       "geo": [
         "./lib/esm/geo/index.d.ts"
+      ],
+      "types": [
+        "./lib/esm/types/index.d.ts"
       ]
     }
   },
@@ -66,7 +73,7 @@
     "tsc": "tsc --noEmit",
     "validate": "yarn tsc && yarn lint:fix",
     "clean": "rm -rf lib",
-    "build": "yarn clean && rollup -c",
+    "build": "yarn clean && rollup -c && node scripts/generate-root-imports.js",
     "test": "jest",
     "prepare": "yarn build",
     "test:browser": "npx playwright test"

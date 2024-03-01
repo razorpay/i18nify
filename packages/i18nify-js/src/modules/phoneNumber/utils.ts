@@ -1,3 +1,4 @@
+import { CountryCodeType } from '../types/geo';
 import { DIAL_CODE_MAPPER } from './data/dialCodeMapper';
 import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
 
@@ -16,22 +17,24 @@ import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
  */
 export const detectCountryAndDialCodeFromPhone = (
   phoneNumber: string | number,
-): { countryCode: string; dialCode: string } => {
+): { countryCode: CountryCodeType; dialCode: string } => {
   // If the phone number starts with '+', extract numeric characters
   if (phoneNumber.toString().charAt(0) === '+') {
     const cleanedPhoneNumberWithoutPlusPrefix = phoneNumber
       .toString()
       .replace(/\D/g, '');
 
-    const matchingCountries: Array<{ countryCode: string; dialCode: string }> =
-      [];
+    const matchingCountries: Array<{
+      countryCode: CountryCodeType;
+      dialCode: string;
+    }> = [];
 
     // Iterate through dial codes and check for matches with cleaned phone number
     for (const code in DIAL_CODE_MAPPER) {
       if (cleanedPhoneNumberWithoutPlusPrefix.startsWith(code)) {
         matchingCountries.push(
           ...DIAL_CODE_MAPPER[code].map((item) => ({
-            countryCode: item,
+            countryCode: item as CountryCodeType,
             dialCode: `+${code}`,
           })),
         );
@@ -40,7 +43,7 @@ export const detectCountryAndDialCodeFromPhone = (
 
     // Filter matching countries based on phone number validation regex
     const matchedCountryCode = matchingCountries.find((country) => {
-      const regex = PHONE_REGEX_MAPPER[country.countryCode];
+      const regex = PHONE_REGEX_MAPPER[country.countryCode as CountryCodeType];
       if (regex && regex.test(phoneNumber.toString())) return country;
       return undefined;
     });
@@ -48,19 +51,19 @@ export const detectCountryAndDialCodeFromPhone = (
     // Return the first matched country code, if any
     return (
       matchedCountryCode || {
-        countryCode: '',
+        countryCode: '' as CountryCodeType,
         dialCode: '',
       }
     );
   } else {
     // If phone number doesn't start with '+', directly match against country regexes
     for (const countryCode in PHONE_REGEX_MAPPER) {
-      const regex = PHONE_REGEX_MAPPER[countryCode];
+      const regex = PHONE_REGEX_MAPPER[countryCode as CountryCodeType];
       if (regex.test(phoneNumber.toString())) {
         return {
-          countryCode,
-          dialCode: getDialCodeFromCountryCode(countryCode)
-            ? `+${getDialCodeFromCountryCode(countryCode)}`
+          countryCode: countryCode as CountryCodeType,
+          dialCode: getDialCodeFromCountryCode(countryCode as CountryCodeType)
+            ? `+${getDialCodeFromCountryCode(countryCode as CountryCodeType)}`
             : '',
         };
       }
@@ -68,7 +71,7 @@ export const detectCountryAndDialCodeFromPhone = (
   }
 
   // Return empty string if no country code is detected
-  return { countryCode: '', dialCode: '' };
+  return { countryCode: '' as CountryCodeType, dialCode: '' };
 };
 
 export const cleanPhoneNumber = (phoneNumber: string) => {
@@ -82,9 +85,15 @@ export const cleanPhoneNumber = (phoneNumber: string) => {
 /**
  * Returns the dial code mapped for the country code passed from DIAL_CODE_MAPPER
  */
-export const getDialCodeFromCountryCode = (countryCode: string): string => {
+export const getDialCodeFromCountryCode = (
+  countryCode: CountryCodeType,
+): string => {
   for (const dialCode in DIAL_CODE_MAPPER) {
-    if (DIAL_CODE_MAPPER[dialCode].includes(countryCode.toUpperCase())) {
+    if (
+      DIAL_CODE_MAPPER[dialCode].includes(
+        countryCode.toUpperCase() as CountryCodeType,
+      )
+    ) {
       return dialCode;
     }
   }

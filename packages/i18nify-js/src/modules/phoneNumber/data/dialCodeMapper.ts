@@ -1,6 +1,8 @@
 /*  Source: Google LibPhoneNumber Metadata: https://github.com/google/libphonenumber/blob/master/javascript/i18n/phonenumbers/metadata.js  */
 
-export const DIAL_CODE_MAPPER: { [key: number]: string[] } = {
+import { CountryCodeType } from '../../types/geo';
+
+export const DIAL_CODE_MAPPER: { [key: number]: CountryCodeType[] } = {
   1: [
     'US',
     'AG',
@@ -203,21 +205,13 @@ export const DIAL_CODE_MAPPER: { [key: number]: string[] } = {
   690: ['TK'],
   691: ['FM'],
   692: ['MH'],
-  800: ['001'],
-  808: ['001'],
   850: ['KP'],
   852: ['HK'],
   853: ['MO'],
   855: ['KH'],
   856: ['LA'],
-  870: ['001'],
-  878: ['001'],
   880: ['BD'],
-  881: ['001'],
-  882: ['001'],
-  883: ['001'],
   886: ['TW'],
-  888: ['001'],
   960: ['MV'],
   961: ['LB'],
   962: ['JO'],
@@ -235,7 +229,6 @@ export const DIAL_CODE_MAPPER: { [key: number]: string[] } = {
   975: ['BT'],
   976: ['MN'],
   977: ['NP'],
-  979: ['001'],
   992: ['TJ'],
   993: ['TM'],
   994: ['AZ'],

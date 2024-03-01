@@ -489,6 +489,41 @@ console.log('Country Code:', parsedInfo.countryCode); // 'JP'
 console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxxx-xxxx'
 ```
 
+#### getDialCodes()
+
+🌍🔢 This function is a comprehensive directory of international dial codes, mapped to their respective country codes. Whether you're coding a global application or just need to reference international dialing formats, this function provides a quick and accurate reference, organizing the world's dial codes in a clean, easy-to-use format.
+
+console.log(getDialCodes()); /\*
+{
+US: '+1',
+RU: '+7',
+KZ: '+7',
+EG: '+20',
+ZA: '+27',
+GR: '+30',
+NL: '+31',
+BE: '+32',
+FR: '+33',
+ES: '+34',
+HU: '+36',
+IT: '+39',
+VA: '+39',
+RO: '+40',
+CH: '+41',
+AT: '+43',
+GB: '+44',
+MM: '+95',
+IR: '+98',
+SS: '+211',
+MA: '+212',
+EH: '+212',
+DZ: '+213',
+TN: '+216',
+LY: '+218',
+GM: '+220',
+SN: '+221',
+// ... rest of the country
+
 ### Module 03: Geo
 
 #### getFlagByCountry(countryCode)
@@ -518,6 +553,7 @@ getListOfAllFlags()
   .then((flags) => console.log(flags))
   .catch((error) => console.error(error)); // Logs an object with country codes as keys and SVG content as values
 ```
+
 ### Module 04: Date & Time Module
 
 This module provides functions for formatting and manipulating dates and times in a locale-sensitive manner using the JavaScript Intl API & Date object.
@@ -530,19 +566,22 @@ This module provides functions for formatting and manipulating dates and times i
 
 ```javascript
 // Basic date formatting
-console.log(formatDate(new Date(), {locale: 'en-US'})); // Outputs today's date in 'MM/DD/YYYY' format
+console.log(formatDate(new Date(), { locale: 'en-US' })); // Outputs today's date in 'MM/DD/YYYY' format
 
 // Formatting with different locale
-console.log(formatDate('2024-05-20', {locale: 'de-DE'})); // Outputs '20.05.2024'
+console.log(formatDate('2024-05-20', { locale: 'de-DE' })); // Outputs '20.05.2024'
 
 // Using Intl.DateTimeFormat options
 console.log(
-  formatDate('2024-05-20', {locale: 'en-GB', intlOptions: {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }}),
+  formatDate('2024-05-20', {
+    locale: 'en-GB',
+    intlOptions: {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    },
+  }),
 ); // Outputs 'Monday, 20 May 2024'
 ```
 
@@ -556,27 +595,33 @@ console.log(
 
 ```javascript
 // Standard date-time formatting
-console.log(formatDateTime(new Date(), {locale: 'en-US'})); // Outputs something like '1/23/2024, 10:00 AM'
+console.log(formatDateTime(new Date(), { locale: 'en-US' })); // Outputs something like '1/23/2024, 10:00 AM'
 
 // Custom date-time formatting in French
 console.log(
-  formatDateTime('2024-05-20 15:00', {locale: 'fr-FR', intlOptions: {
-    weekday: 'long',
-    hour: '2-digit',
-    minute: '2-digit',
-  }}),
+  formatDateTime('2024-05-20 15:00', {
+    locale: 'fr-FR',
+    intlOptions: {
+      weekday: 'long',
+      hour: '2-digit',
+      minute: '2-digit',
+    },
+  }),
 ); // Outputs 'lundi, 15:00'
 
 // Locale-specific date-time formatting with extended options
 console.log(
-  formatDateTime('2024-12-31 23:59', {locale: 'ja-JP', intlOptions: {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  }}),
+  formatDateTime('2024-12-31 23:59', {
+    locale: 'ja-JP',
+    intlOptions: {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    },
+  }),
 ); // Outputs '2024年12月31日 23:59:00'
 ```
 
@@ -590,24 +635,30 @@ console.log(
 
 ```javascript
 // Simple time formatting
-console.log(formatTime(new Date(), {locale: 'en-US'})); // Outputs something like '10:00 AM'
+console.log(formatTime(new Date(), { locale: 'en-US' })); // Outputs something like '10:00 AM'
 
 // Time formatting with extended options in French
 console.log(
-  formatTime('2024-05-20 15:00', {locale: 'fr-FR', intlOptions: {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  }}),
+  formatTime('2024-05-20 15:00', {
+    locale: 'fr-FR',
+    intlOptions: {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    },
+  }),
 ); // Outputs '15:00:00'
 
 // Custom time formatting in Japanese
 console.log(
-  formatTime('2024-05-20 23:59', {locale: 'ja-JP', intlOptions: {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true,
-  }}),
+  formatTime('2024-05-20 23:59', {
+    locale: 'ja-JP',
+    intlOptions: {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    },
+  }),
 ); // Outputs '11:59 午後'
 ```
 
@@ -627,7 +678,7 @@ console.log(getRelativeTime('2024-01-20', new Date())); // Outputs something lik
 console.log(getRelativeTime('2024-01-26', new Date())); // Outputs 'in 3 days'
 
 // Customizing output for different locales
-console.log(getRelativeTime('2024-01-26', '2024-01-23', {locale: 'fr-FR'})); // Outputs 'dans 3 jours' (in 3 days in French)
+console.log(getRelativeTime('2024-01-26', '2024-01-23', { locale: 'fr-FR' })); // Outputs 'dans 3 jours' (in 3 days in French)
 ```
 
 💡 Pro Tip: `getRelativeTime` is not just a way to express time differences; it's a bridge that connects your users to the temporal context in a way that's both meaningful and culturally aware. Time is more than seconds and minutes; it's a story, and this function helps you tell it! 📖⌚
@@ -640,13 +691,13 @@ console.log(getRelativeTime('2024-01-26', '2024-01-23', {locale: 'fr-FR'})); // 
 
 ```javascript
 // Getting weekdays in English
-console.log(getWeekdays({locale: 'en-US'})); // Outputs ['Sunday', 'Monday', ..., 'Saturday']
+console.log(getWeekdays({ locale: 'en-US' })); // Outputs ['Sunday', 'Monday', ..., 'Saturday']
 
 // Discovering weekdays in French
-console.log(getWeekdays({locale: 'fr-FR'})); // Outputs ['dimanche', 'lundi', ..., 'samedi']
+console.log(getWeekdays({ locale: 'fr-FR' })); // Outputs ['dimanche', 'lundi', ..., 'samedi']
 
 // Exploring weekdays in Japanese
-console.log(getWeekdays({locale: 'ja-JP'})); // Outputs ['日曜日', '月曜日', ..., '土曜日']
+console.log(getWeekdays({ locale: 'ja-JP' })); // Outputs ['日曜日', '月曜日', ..., '土曜日']
 ```
 
 💡 Did You Know? The order and names of weekdays vary across cultures and languages. With `getWeekdays`, you can easily cater to a global audience, ensuring that your application speaks their language, quite literally! 🌍🗣️
@@ -712,13 +763,15 @@ console.log(parsed1); // Outputs object with detailed date components
 */
 
 // Parsing with specific locale and formatting options
-const parsed2 = parseDateTime(
-  '2024-01-23',
-  {
-    intlOptions: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' },
-    locale: 'fr-FR',
-  }
-);
+const parsed2 = parseDateTime('2024-01-23', {
+  intlOptions: {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  },
+  locale: 'fr-FR',
+});
 console.log(parsed2); // Outputs object with formatted date in French
 /*
     {
@@ -797,4 +850,19 @@ console.log(parsed3); // Outputs object with date components for January 23, 202
 */
 ```
 
+<<<<<<< HEAD
 💡 Pro Tip: Leverage `parseDateTime` in applications where detailed date analysis and manipulation are key, such as in calendar apps, scheduling tools, or date-sensitive data processing. It's like having a Swiss Army knife for all things related to dates and times! 📅🛠️
+=======
+
+#### getDialCodeByCountryCode(countryCode)
+
+📞🗺️ This function is your quick access to finding the dial code for any specific country, utilizing the country's ISO code. Perfect for applications that require validating user input for phone numbers or enhancing UIs with country-specific details. It ensures you get the exact dial code you need, and if the country code doesn't match, it alerts you right away with an error.
+
+##### Examples
+
+```javascript
+console.log(getDialCodeByCountryCode('BR')); // Outputs the dial code for Brazil (+55)
+console.log(getDialCodeByCountryCode('DE')); // Outputs the dial code for Germany (+49)
+```
+
+> > > > > > > fix/submodulePaths
