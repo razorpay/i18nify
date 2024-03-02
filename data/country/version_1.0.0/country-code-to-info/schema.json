@@ -1,37 +1,45 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "patternProperties": {
-    "^[A-Z]{2}$": {
-      "type": "object",
-      "properties": {
-        "country_name": {"type": "string"},
-        "continent_code": {"type": "string"},
-        "continent_name": {"type": "string"},
-        "alpha_3": {"type": "string"},
-        "numeric_code": {"type": "string"},
-        "flag": {"type": "string"},
-        "sovereignity": {"type": "string"},
-        "dial_code": {"type": "string"},
-        "currency": {
-          "type": "array",
-          "items": {"type": "string"}
-        },
-        "timezones": {
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "country_name": {"type": "string"},
+      "continent_code": {"type": "string"},
+      "continent_name": {"type": "string"},
+      "alpha_3": {"type": "string"},
+      "numeric_code": {"type": "string"},
+      "flag": {"type": "string"},
+      "sovereignty": {"type": "string"},
+      "dial_code": {"type": "string"},
+      "currency": {
+        "type": "array",
+        "items": {"type": "string"}
+      },
+      "timezones": {
+        "type": "object",
+        "additionalProperties": {
           "type": "object",
-          "patternProperties": {
-            "^[a-zA-Z_/-]+$": {
-              "type": "object",
-              "properties": {
-                "utc_offset": {"type": "string"}
-              },
-              "required": ["utc_offset"]
-            }
-          }
+          "properties": {
+            "utc_offset": {"type": "string"}
+          },
+          "required": ["utc_offset"]
         }
       },
-      "required": ["country_name", "continent_code", "continent_name", "alpha_3", "numeric_code", "flag", "sovereignity", "dial_code", "currency", "timezones"]
-    }
-  },
-  "additionalProperties": false
+      "timezone_of_capital": {"type": "string"},
+      "locales": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "code": {"type": "string"},
+            "name": {"type": "string"}
+          },
+          "required": ["code", "name"]
+        }
+      },
+      "default_locale": {"type": "string"}
+    },
+    "required": ["country_name", "continent_code", "continent_name", "alpha_3", "numeric_code", "flag", "sovereignty", "dial_code", "currency", "timezones", "timezone_of_capital", "locales", "default_locale"]
+  }
 }
