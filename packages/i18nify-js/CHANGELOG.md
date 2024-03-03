@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.4.3
+
+### Patch Changes
+
+- a5b362e: [fix]: sub-module files generated at root and imports fixed for react native
+
 ## 1.4.2
 
 ### Patch Changes
