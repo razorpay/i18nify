@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="148071a9-9bfa-47b9-8365-d070317a2ed2" name="Changes" comment="moved valiadtion script to scripts folder" />
+    <list default="true" id="148071a9-9bfa-47b9-8365-d070317a2ed2" name="Changes" comment="Updated the Description file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +39,7 @@
     "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "i18nify-data-validation",
+    "git-widget-placeholder": "data-country-zipcode",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "/Users/betha.c/Desktop/i18nify",
@@ -92,7 +92,8 @@
     <MESSAGE value="Adding validation workflow" />
     <MESSAGE value="Added .idea folder to gitignore" />
     <MESSAGE value="moved valiadtion script to scripts folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved valiadtion script to scripts folder" />
+    <MESSAGE value="Updated the Description file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the Description file" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
