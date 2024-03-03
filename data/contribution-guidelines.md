@@ -37,10 +37,11 @@ They are:
     * Before making a new version, please go through this [versioning policy](versioning-policy.md) guidelines.
 2) **Description File:**
     * Add a Description file in the format specified, so that we have all the information needed for review
-      * Description file Format:
-        * It should have the data source
-        * It should have the previous data that you want to change
-        * It should have the new changed data
+    * Make sure the `Description.md` file contains the following mandatory fields
+      * Source of the Data
+      * Author
+      * Relavent descriptions for the Fields in Data
+      * Version based on the [versioning policy](versioning-policy.md)
 3) **Schema Updates:**
     * When adding a new field to the schema and making it required, add the field name to the array containing all required fields in `scheme.json`.
 4) **Data and Schema Validation:**
