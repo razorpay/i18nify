@@ -59,7 +59,7 @@
     "tsc": "tsc --noEmit",
     "validate": "yarn tsc && yarn lint:fix",
     "clean": "rm -rf lib",
-    "build": "yarn clean && rollup -c",
+    "build": "yarn clean && rollup -c && node scripts/generate-root-imports.js",
     "test": "jest",
     "prepare": "yarn build",
     "test:browser": "npx playwright test"
