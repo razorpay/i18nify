@@ -11,7 +11,11 @@
     "url": "ssh://git@github.com:razorpay/i18nify.git"
   },
   "files": [
-    "lib"
+    "lib",
+    "core.js",
+    "currency.js",
+    "phoneNumber.js",
+    "types.js"
   ],
   "exports": {
     ".": {
