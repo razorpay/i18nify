@@ -47,5 +47,12 @@ They are:
 4) **Data and Schema Validation:**
     * Please, ensure that the data in the newer version aligns with the schema of the corresponding version.
     * We run the validation check in the form of github actions to cross the data file with the schema file.
+5) **Addition/Deleting in data/country-zipcode folder**
+    * When trying to Add a new Country Zipcode data (or) Delete an existing Country zipcode data, Make sure you modify the `available_countries` array in the `data/scripts/dataValidate.ts` file, to run the validation script
+    * Eg:
+      * If you Add a new country Afghanistan Data, modify
+        * `const available_countries = ['IN', 'US', 'MY', 'SG'];` to `const available_countries = ['IN', 'US', 'MY', 'SG','AF'];`
+      * If you Delete an existing country Singapore Data, modify
+          * `const available_countries = ['IN', 'US', 'MY', 'SG'];` to `const available_countries = ['IN', 'US', 'MY'];`
 
 Please adhere to these guidelines to maintain consistency and integrity within the repository. Your contributions are greatly appreciated!
