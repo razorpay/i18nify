@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.4.4
+
+### Patch Changes
+
+- 1d758b7: fix: submodules added in published files in package.json
+
 ## 1.4.3
 
 ### Patch Changes
