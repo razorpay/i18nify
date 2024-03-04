@@ -1,5 +1,13 @@
 # @razorpay/i18nify-react
 
+## 4.0.2
+
+### Patch Changes
+
+- 1d758b7: fix: submodules added in published files in package.json
+- Updated dependencies [1d758b7]
+  - @razorpay/i18nify-js@1.4.4
+
 ## 4.0.1
 
 ### Patch Changes
