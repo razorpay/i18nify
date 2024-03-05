@@ -1,6 +1,6 @@
 {
   "name": "@razorpay/i18nify-js",
-  "version": "1.4.2",
+  "version": "1.4.4",
   "author": "tarun khanna <tarun.khanna@razorpay.com>",
   "license": "MIT",
   "main": "lib/cjs/index.js",
@@ -11,7 +11,11 @@
     "url": "ssh://git@github.com:razorpay/i18nify.git"
   },
   "files": [
-    "lib"
+    "lib",
+    "core.js",
+    "currency.js",
+    "phoneNumber.js",
+    "types.js"
   ],
   "exports": {
     ".": {
@@ -59,7 +63,7 @@
     "tsc": "tsc --noEmit",
     "validate": "yarn tsc && yarn lint:fix",
     "clean": "rm -rf lib",
-    "build": "yarn clean && rollup -c",
+    "build": "yarn clean && rollup -c && node scripts/generate-root-imports.js",
     "test": "jest",
     "prepare": "yarn build",
     "test:browser": "npx playwright test"
