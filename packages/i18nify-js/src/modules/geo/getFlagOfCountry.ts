@@ -1,5 +1,7 @@
+import { CountryCodeType } from '../../../lib/types';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { LIST_OF_ALL_COUNTRIES } from './data/listOfAllCountries';
+import { FLAG_BASE_PATH } from './constants';
 
 /**
  * Retrieves the URL for the flag of a given country.
@@ -13,11 +15,11 @@ import { LIST_OF_ALL_COUNTRIES } from './data/listOfAllCountries';
  * @returns The URL of the flag image for the given country code.
  * @throws {Error} If the country code is not in the list of valid country codes.
  */
-const getFlagOfCountry = (countryCode: string): string => {
+const getFlagOfCountry = (countryCode: CountryCodeType): string => {
   if (!LIST_OF_ALL_COUNTRIES.includes(countryCode)) {
     throw new Error(`Invalid country code: ${countryCode}`);
   }
-  return `https://flagcdn.com/${countryCode.toLowerCase()}.svg`;
+  return `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`;
 };
 
 export default withErrorBoundary<typeof getFlagOfCountry>(getFlagOfCountry);

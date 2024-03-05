@@ -1,5 +1,7 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { LIST_OF_ALL_COUNTRIES } from './data/listOfAllCountries';
+import { FLAG_BASE_PATH } from './constants';
+import { CountryCodeType } from '../../../lib/types';
 
 /**
  * Retrieves a mapping of country codes to their corresponding flag image URLs.
@@ -11,20 +13,23 @@ import { LIST_OF_ALL_COUNTRIES } from './data/listOfAllCountries';
  * @returns An object mapping each country code from the list to its flag image URL.
  */
 const getFlagsForAllCountries = (): {
-  [countryCode: string]: string;
+  [countryCode in CountryCodeType]: string;
 } => {
   // Initialize an empty object to hold the country code to flag URL mapping
-  const flagsForAllCountriesMap: { [countryCode: string]: string } = {};
+  const flagsForAllCountriesMap: { [countryCode in CountryCodeType]: string } =
+    {} as { [countryCode in CountryCodeType]: string };
 
   // Loop through each country code in the list
-  LIST_OF_ALL_COUNTRIES.map((countryCode: string) => {
+  LIST_OF_ALL_COUNTRIES.map((countryCode: CountryCodeType) => {
     // Construct the flag image URL and assign it to the corresponding country code in the map
     flagsForAllCountriesMap[countryCode] =
-      `https://flagcdn.com/${countryCode.toLowerCase()}.svg`;
+      `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`;
   });
 
   // Return the populated map of country codes to flag image URLs
   return flagsForAllCountriesMap;
 };
 
-export default withErrorBoundary<typeof getFlagsForAllCountries>(getFlagsForAllCountries);
+export default withErrorBoundary<typeof getFlagsForAllCountries>(
+  getFlagsForAllCountries,
+);
