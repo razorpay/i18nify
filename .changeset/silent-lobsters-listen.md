@@ -1,5 +1,5 @@
 ---
-"@razorpay/i18nify-js": patch
+'@razorpay/i18nify-js': patch
 ---
 
-fix: update country code data for phone number module
+fix: update country code data for phone number and currency module
