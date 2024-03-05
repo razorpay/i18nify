@@ -37,14 +37,22 @@ They are:
     * Before making a new version, please go through this [versioning policy](versioning-policy.md) guidelines.
 2) **Description File:**
     * Add a Description file in the format specified, so that we have all the information needed for review
-      * Description file Format:
-        * It should have the data source
-        * It should have the previous data that you want to change
-        * It should have the new changed data
+    * Make sure the `Description.md` file contains the following mandatory fields
+      * Source of the Data
+      * Author
+      * Relavent descriptions for the Fields in Data
+      * Version based on the [versioning policy](versioning-policy.md)
 3) **Schema Updates:**
     * When adding a new field to the schema and making it required, add the field name to the array containing all required fields in `scheme.json`.
 4) **Data and Schema Validation:**
     * Please, ensure that the data in the newer version aligns with the schema of the corresponding version.
     * We run the validation check in the form of github actions to cross the data file with the schema file.
+5) **Addition/Deleting in data/country-zipcode folder**
+    * When trying to Add a new Country Zipcode data (or) Delete an existing Country zipcode data, Make sure you modify the `available_countries` array in the `data/scripts/dataValidate.ts` file, to run the validation script
+    * Eg:
+      * If you Add a new country Afghanistan Data, modify
+        * `const available_countries = ['IN', 'US', 'MY', 'SG'];` to `const available_countries = ['IN', 'US', 'MY', 'SG','AF'];`
+      * If you Delete an existing country Singapore Data, modify
+          * `const available_countries = ['IN', 'US', 'MY', 'SG'];` to `const available_countries = ['IN', 'US', 'MY'];`
 
 Please adhere to these guidelines to maintain consistency and integrity within the repository. Your contributions are greatly appreciated!

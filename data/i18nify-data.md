@@ -6,7 +6,7 @@ Example: CountryLanguages, CountryTeleInformation, CountryInformation, CountryCu
 
 This repository acts as a Power Source of all geographical data, to any SDK that deals with country level data. The main features are:
 - We maintain the country attribute data in JSON format, well organized by version
-- We validate teh Json Schema and Data for every pull request using of Github actions validation check.
+- We validate the Json Schema and Data for every pull request using of Github actions validation check.
 - We provide standardised API's to access country attribute data across different programming languages, leveraging defined JSON schemas.
 - We upload each versioned country attribute data module into a CDN, So that user can pull the data on demand without bundling data into SDK, which ensure the SDK is lightweight.
 - We automate the data updation, ingestion from various sources and ensuring the ingested data is legitimate by enabling strict Pull Request review policies on the repository.
@@ -19,18 +19,18 @@ i18nify-data/
 │
 ├── country/
 │  └── version1.0.0
-│   └── Description.txt
+│   └── Description.md
 │   └── data.json
 │   └── schema.json
 ├── currency/
 │  └── version1.0.0
-│   └── Description.txt
+│   └── Description.md
 │   └── data.json
 │   └── schema.json
 ├── ...
 ```
 
-Each Country Attribute Folder (`country`, `currency`, etc.) maintains version based two JSON file (`data.json, schema.json`) that has attributes mapped to a country code along with a `Description.txt` file that gives a brief about the changes that was made in the newer version.
+Each Country Attribute Folder (`country`, `currency`, etc.) maintains version based two JSON file (`data.json, schema.json`) that has attributes mapped to a country code along with a `Description.md` file that gives a brief about the Source and the descriptions of various fields..
 
 
 **Sample Json files:**
