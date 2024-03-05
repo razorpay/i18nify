@@ -5,7 +5,7 @@ describe('geo - getFlagOfCountry', () => {
   it('should return a correct URL for a valid country code', () => {
     const sampleValidCodes = ['US', 'GB', 'FR'];
     sampleValidCodes.forEach(code => {
-      expect(getFlagOfCountry(code)).toEqual(`https://betacdn.np.razorpay.in/static/assets/flags/${code.toLowerCase()}.svg`);
+      expect(getFlagOfCountry(code)).toEqual(`https://flagcdn.com/${code.toLowerCase()}.svg`);
     });
   });
 
@@ -22,7 +22,7 @@ describe('geo - getFlagOfCountry', () => {
 
   it('should work for every code in the predefined list', () => {
     LIST_OF_ALL_COUNTRIES.forEach(code => {
-      expect(getFlagOfCountry(code)).toEqual(`https://betacdn.np.razorpay.in/static/assets/flags/${code.toLowerCase()}.svg`);
+      expect(getFlagOfCountry(code)).toEqual(`https://flagcdn.com/${code.toLowerCase()}.svg`);
     });
   });
 });

@@ -18,7 +18,7 @@ describe('geo - getFlagsForAllCountries', () => {
   it('should map each country code to a correctly formed flag URL', () => {
     const flagsMap = getFlagsForAllCountries();
     LIST_OF_ALL_COUNTRIES.forEach(countryCode => {
-      const expectedUrl = `https://betacdn.np.razorpay.in/static/assets/flags/${countryCode.toLowerCase()}.svg`;
+      const expectedUrl = `https://flagcdn.com/${countryCode.toLowerCase()}.svg`;
       expect(flagsMap[countryCode]).toEqual(expectedUrl);
     });
   });
@@ -32,7 +32,7 @@ describe('geo - getFlagsForAllCountries', () => {
     const flagsMap = getFlagsForAllCountries();
     const testCases = ['US', 'GB', 'FR'];
     testCases.forEach(countryCode => {
-      const expectedUrl = `https://betacdn.np.razorpay.in/static/assets/flags/${countryCode.toLowerCase()}.svg`;
+      const expectedUrl = `https://flagcdn.com/${countryCode.toLowerCase()}.svg`;
       expect(flagsMap[countryCode]).toEqual(expectedUrl);
     });
   });

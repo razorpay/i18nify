@@ -553,10 +553,10 @@ Unlock the world's flags with just a country code! 🌐✈️ This function acts
 
 ```javascript
 // Fetching the flag of the United States 🇺🇸
-console.log(getFlagOfCountry('US')); // https://betacdn.np.razorpay.in/static/assets/flags/us.svg
+console.log(getFlagOfCountry('US')); // https://flagcdn.com/flags/us.svg
 
 // Fetching the flag of India 🇮🇳
-console.log(getFlagOfCountry('IN')); // https://betacdn.np.razorpay.in/static/assets/flags/in.svg
+console.log(getFlagOfCountry('IN')); // https://flagcdn.com/flags/in.svg
 
 // When you wander off the map with an invalid country code
 try {
@@ -579,8 +579,8 @@ console.log(allFlags);
 /*
 Behold, an object where each key is a country code linked to its flag's URL, such as:
 {
-  US: 'https://betacdn.np.razorpay.in/static/assets/flags/us.svg', // 🇺🇸
-  IN: 'https://betacdn.np.razorpay.in/static/assets/flags/in.svg', // 🇮🇳
+  US: 'https://flagcdn.com/flags/us.svg', // 🇺🇸
+  IN: 'https://flagcdn.com/flags/in.svg', // 🇮🇳
   ...
 }
 */

@@ -17,7 +17,7 @@ const getFlagOfCountry = (countryCode: string): string => {
   if (!LIST_OF_ALL_COUNTRIES.includes(countryCode)) {
     throw new Error(`Invalid country code: ${countryCode}`);
   }
-  return `https://betacdn.np.razorpay.in/static/assets/flags/${countryCode.toLowerCase()}.svg`;
+  return `https://flagcdn.com/${countryCode.toLowerCase()}.svg`;
 };
 
 export default withErrorBoundary<typeof getFlagOfCountry>(getFlagOfCountry);

@@ -20,7 +20,7 @@ const getFlagsForAllCountries = (): {
   LIST_OF_ALL_COUNTRIES.map((countryCode: string) => {
     // Construct the flag image URL and assign it to the corresponding country code in the map
     flagsForAllCountriesMap[countryCode] =
-      `https://betacdn.np.razorpay.in/static/assets/flags/${countryCode.toLowerCase()}.svg`;
+      `https://flagcdn.com/${countryCode.toLowerCase()}.svg`;
   });
 
   // Return the populated map of country codes to flag image URLs
