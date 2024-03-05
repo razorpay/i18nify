@@ -489,6 +489,58 @@ console.log('Country Code:', parsedInfo.countryCode); // 'JP'
 console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxxx-xxxx'
 ```
 
+#### getDialCodes()
+
+🌍🔢 This function is a comprehensive directory of international dial codes, mapped to their respective country codes. Whether you're coding a global application or just need to reference international dialing formats, this function provides a quick and accurate reference, organizing the world's dial codes in a clean, easy-to-use format.
+
+##### Examples
+
+```javascript
+console.log(getDialCodes()); /*
+    {
+      US: '+1',
+      RU: '+7',
+      KZ: '+7',
+      EG: '+20',
+      ZA: '+27',
+      GR: '+30',
+      NL: '+31',
+      BE: '+32',
+      FR: '+33',
+      ES: '+34',
+      HU: '+36',
+      IT: '+39',
+      VA: '+39',
+      RO: '+40',
+      CH: '+41',
+      AT: '+43',
+      GB: '+44',
+      MM: '+95',
+      IR: '+98',
+      SS: '+211',
+      MA: '+212',
+      EH: '+212',
+      DZ: '+213',
+      TN: '+216',
+      LY: '+218',
+      GM: '+220',
+      SN: '+221',
+      // ... rest of the country 
+    }
+*/
+```
+
+#### getDialCodeByCountryCode(countryCode)
+
+📞🗺️ This function is your quick access to finding the dial code for any specific country, utilizing the country's ISO code. Perfect for applications that require validating user input for phone numbers or enhancing UIs with country-specific details. It ensures you get the exact dial code you need, and if the country code doesn't match, it alerts you right away with an error.
+
+##### Examples
+
+```javascript
+console.log(getDialCodeByCountryCode('BR')); // Outputs the dial code for Brazil (+55)
+console.log(getDialCodeByCountryCode('DE')); // Outputs the dial code for Germany (+49)
+```
+
 ### Module 03: Date & Time Module
 
 This module provides functions for formatting and manipulating dates and times in a locale-sensitive manner using the JavaScript Intl API & Date object.
@@ -767,5 +819,5 @@ console.log(parsed3); // Outputs object with date components for January 23, 202
     }
 */
 ```
-
+        
 💡 Pro Tip: Leverage `parseDateTime` in applications where detailed date analysis and manipulation are key, such as in calendar apps, scheduling tools, or date-sensitive data processing. It's like having a Swiss Army knife for all things related to dates and times! 📅🛠️
