@@ -1,7 +1,7 @@
 import getFlagsForAllCountries from '../getFlagsForAllCountries';
 import { LIST_OF_ALL_COUNTRIES } from '../data/listOfAllCountries';
 import { FLAG_BASE_PATH } from '../constants';
-import { CountryCodeType } from '../../../../lib/types';
+import { CountryCodeType } from '../../types/geo';
 
 describe('geo - getFlagsForAllCountries', () => {
   it('should return an object', () => {
