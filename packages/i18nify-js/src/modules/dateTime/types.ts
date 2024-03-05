@@ -1,6 +1,6 @@
 import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
 
-export type DateInput = Date | string;
+export type DateInput = Date | string | number;
 export type Locale = string;
 
 export interface DateTimeFormatOptions extends Intl.DateTimeFormatOptions {}

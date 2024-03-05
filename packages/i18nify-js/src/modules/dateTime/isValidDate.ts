@@ -1,20 +1,26 @@
+import {DateFormatter} from '@internationalized/date'
+
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { DateInput } from './types';
 
 /**
  * Checks if a given string is a valid date according to a specific locale's date format.
  *
- * @param dateString The date string to validate.
+ * @param dateString The date to validate.
  * @returns True if the dateString is a valid date according to the locale's format, false otherwise.
  */
-const isValidDate = (dateString: string): boolean => {
- // Try to parse the date string using the Date object
- const date = new Date(dateString);
- // Check if the date is an invalid Date object (e.g., new Date('invalid') -> NaN)
- if (isNaN(date.getTime())) {
-   return false; // The date is invalid
- } else {
-   // Use Intl.DateTimeFormat to format the date back to a string
-   const formattedDateStr = new Intl.DateTimeFormat('en-IN', {
+const isValidDate = (dateString: DateInput): boolean => {
+  if(dateString === null)
+    return false;
+    
+  // Try to parse the date string using the Date object
+  const date = new Date(dateString);
+  // Check if the date is an invalid Date object (e.g., new Date('invalid') -> NaN)
+  if (isNaN(date.getTime())) {
+    return false; // The date is invalid
+  } else {
+   // Use DateFormatter to format the date back to a string
+   const formattedDateStr = new DateFormatter('en-IN', {
      year: 'numeric',
      month: 'numeric',
      day: 'numeric'

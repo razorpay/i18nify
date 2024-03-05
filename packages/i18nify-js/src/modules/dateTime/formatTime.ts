@@ -1,3 +1,5 @@
+import {DateFormatter} from '@internationalized/date'
+
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getLocale } from '../.internal/utils';
 import {
@@ -36,7 +38,7 @@ const formatTime = (
   let formattedTime;
 
   try {
-    formattedTime = new Intl.DateTimeFormat(locale, fullOptions).format(new Date(date));
+    formattedTime = new DateFormatter(locale, fullOptions).format(new Date(date));
   } catch (err) {
     if (err instanceof Error) {
       throw new Error(err.message);

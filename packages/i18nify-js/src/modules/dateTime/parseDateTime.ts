@@ -1,3 +1,5 @@
+import {DateFormatter} from '@internationalized/date'
+
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getLocale } from '../.internal/utils';
 import {
@@ -33,8 +35,8 @@ const parseDateTime = (
   const locale = getLocale(options);
 
   try {
-    // Create an Intl.DateTimeFormat instance for formatting
-    const dateTimeFormat = new Intl.DateTimeFormat(locale, options.intlOptions);
+    // Create an DateFormatter instance for formatting
+    const dateTimeFormat = new DateFormatter(locale, options.intlOptions);
     const formattedParts = dateTimeFormat.formatToParts(date);
     const formattedObj: FormattedPartsObject = {};
 
