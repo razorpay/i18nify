@@ -1,0 +1,34 @@
+{
+  "country_information": {
+    "MY": {
+      "country_name": "Malaysia",
+      "continent_name": "Asia",
+      "continent_code": "AS",
+      "subdivisions_1": {
+        "Kedah": {
+          "sub_division_1_name": "Kedah",
+          "pincode" : [56767, 56768]
+        }
+      }
+    },
+    "IN": {
+      "country_name": "India",
+      "continent_name": "Asia",
+      "continent_code": "AS",
+      "subdivisions_1": {
+        "KA": {
+          "sub_division_1_name": "Karnataka",
+          "pincode" : [222222, 222223]
+        },
+        "TN": {
+          "sub_division_1_name": "Tamil Nadu",
+          "pincode" : [333333, 333334]
+        },
+        "MH": {
+          "sub_division_1_name": "Maharastra",
+          "pincode" : [111111, 111112]
+        }
+      }
+    }
+  }
+}

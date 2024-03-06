@@ -152,7 +152,11 @@ describe('formatNumber', () => {
 
   it('should handle non-Error throws by creating a new Error with a generic message', () => {
     expect(() => {
-      formatNumber(123, {intlOptions: { style: 'hola' }} as any);
-    }).toThrow(new Error('Error: Value hola out of range for Intl.NumberFormat options property style')); 
+      formatNumber(123, { intlOptions: { style: 'hola' } } as any);
+    }).toThrow(
+      new Error(
+        'Error: Value hola out of range for Intl.NumberFormat options property style',
+      ),
+    );
   });
 });
