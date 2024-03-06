@@ -543,13 +543,15 @@ console.log(getDialCodeByCountryCode('DE')); // Outputs the dial code for German
 
 ### Module 03: Geo Module 🌍
 
-Dive into the digital atlas with the Geo Module 🌍, your go-to source for fetching flag emojis 🏁 and images from around the globe 🌐. Whether you're jazzing up your app with patriotic flair 🎉 or feeding your curiosity about different countries 🤔, this module is your magic carpet ride 🧞‍♂️. Featuring two fantastic functions ✨, it's never been easier to bring a world of flags 🚩 right into your app. Let's unpack these global treasures 🌟:
+Dive into the digital atlas with the Geo Module 🌍, your ultimate toolkit for adding flag emojis 🏁 and images from around the globe 🌐 to your app. Whether you're infusing your projects with a touch of national pride 🎉 or satisfying your curiosity about different countries 🤔, this module is like a magic carpet ride 🧞‍♂️. With two amazing functions at your disposal ✨, incorporating a world of flags 🚩 into your app has never been easier. Let's explore these global gems 🌟:
 
-Powered by the open-source service [FlagCDN](https://flagcdn.com/) 🚀, the Geo Module lets you access high-quality flag images for every country, streamlining the way you showcase flags 🚩. A huge thanks to FlagCDN for its invaluable contribution to the digital world, making it simpler for everyone to connect with cultures and countries globally 🌏.
+The Geo Module is designed to enrich your applications by providing easy access to high-quality flag images and emojis for every country.
+
+Source for flag images: [FlagCDN](https://flagcdn.com/).
 
 #### getFlagOfCountry(countryCode) 🏁
 
-Unlock global flags with a country code using FlagCDN! 🌍✈️ This function is your digital passport 🛂, fetching flag URLs from FlagCDN for every corner of the globe 🌐. Ideal for infusing your app with an international vibe. Encounter an unrecognized code? No worries, an error alert 🚨 ensures you stay on track. Consider this your flag concierge via FlagCDN 🏳️‍🌈🔍, enhancing your app's global appeal and celebrating our world's diversity. Dive into a visually connected world with FlagCDN at your side! 🌟💡
+Fetch flag URLs for any country code 🌍✈️, enhancing your app's international appeal 🌐 and celebrating global diversity 🏳️‍🌈.
 
 ##### Examples
 
@@ -570,7 +572,7 @@ try {
 
 #### getFlagsForAllCountries() 🌐
 
-This digital atlas tool 🌍🔧 links every country code to its flag's URL via FlagCDN, offering a weightless way to access the world's flags at your fingertips! 🌐 Leveraging FlagCDN, it's perfect for apps aiming to celebrate global diversity or for those passionate about the planet's vibrant tapestry 🎨🌏. Enrich your app with international flair or dive into the flags representing the myriad nations, all from your digital realm. With FlagCDN's support, this function is your essential companion for a colorful exploration across borders and cultures, making global connections a breeze. 🗺️💼🚀
+Unlock global flags with a country code 🌍✈️—your digital passport 🛂 to a visually connected world, ensuring global appeal and diversity celebration in your app 🏳️‍🌈🔍.
 
 ##### Examples
 
