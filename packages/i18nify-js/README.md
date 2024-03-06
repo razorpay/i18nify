@@ -541,7 +541,56 @@ console.log(getDialCodeByCountryCode('BR')); // Outputs the dial code for Brazil
 console.log(getDialCodeByCountryCode('DE')); // Outputs the dial code for Germany (+49)
 ```
 
-### Module 03: Date & Time Module
+### Module 03: Geo Module 🌍
+
+Dive into the digital atlas with the Geo Module 🌍, your ultimate toolkit for adding flag emojis 🏁 and images from around the globe 🌐 to your app. Whether you're infusing your projects with a touch of national pride 🎉 or satisfying your curiosity about different countries 🤔, this module is like a magic carpet ride 🧞‍♂️. With two amazing functions at your disposal ✨, incorporating a world of flags 🚩 into your app has never been easier. Let's explore these global gems 🌟:
+
+The Geo Module is designed to enrich your applications by providing easy access to high-quality flag images and emojis for every country.
+
+Source for flag images: [FlagCDN](https://flagcdn.com/).
+
+#### getFlagOfCountry(countryCode) 🏁
+
+Retrieve flag images for any ISO country code 🌍✈️ with a simple API call, bolstering your application's global engagement 🌐 and honoring worldwide diversity 🏳️. This method efficiently integrates international flags into your digital projects, leveraging high-resolution SVG formats from a reliable source.
+
+##### Examples
+
+```javascript
+// Fetching the flag of the United States 🇺🇸
+console.log(getFlagOfCountry('US')); // https://flagcdn.com/flags/us.svg
+
+// Fetching the flag of India 🇮🇳
+console.log(getFlagOfCountry('IN')); // https://flagcdn.com/flags/in.svg
+
+// When you wander off the map with an invalid country code
+try {
+  console.log(getFlagOfCountry('XX')); // Oops, this will throw an error
+} catch (error) {
+  console.error(error.message); // Politely informs 'Invalid country code: XX'
+}
+```
+
+#### getFlagsForAllCountries() 🌐
+
+Access a comprehensive collection of global flags with an ISO country code 🌍✈️—serving as your digital passport 🛂 to a visually unified world. This feature amplifies your app's international flair 🌐 and celebrates cultural diversity 🏳️🔍 by embedding flags from every recognized nation.
+
+##### Examples
+
+```javascript
+// Embracing the flags of all nations
+const allFlags = getFlagsForAllCountries();
+console.log(allFlags);
+/*
+Behold, an object where each key is a country code linked to its flag's URL, such as:
+{
+  US: 'https://flagcdn.com/flags/us.svg', // 🇺🇸
+  IN: 'https://flagcdn.com/flags/in.svg', // 🇮🇳
+  ...
+}
+*/
+```
+
+### Module 04: Date & Time Module
 
 This module provides functions for formatting and manipulating dates and times in a locale-sensitive manner using the JavaScript Intl API & Date object.
 
@@ -573,7 +622,7 @@ console.log(
 
 #### formatDateTime(date, options)
 
-🕰️🌍 This savvy time tailor is your go-to for dressing up dates and times in locale-specific styles. Whether you're marking milestones, scheduling global meetings, or just need that perfect date-time format, `formatDateTime` uses the Internationalization API (Intl) to translate your dates and times into the local lingo. It's like having a linguistic time machine at your fingertips! 🌟🗓️
+🕰️🌍 This savvy time tailor is your go-to for dressing up dates and times in locale-specific styles. Whether you're marking milestones, scheduling global meetings, or just need that perfect date-time format, `formatDateTime` uses the Internationalization API (Intl) to translate your dates and times into the local lingo. It's like having a linguistic time machine at your fingertips! 🌟🗓
 
 ##### Examples
 
