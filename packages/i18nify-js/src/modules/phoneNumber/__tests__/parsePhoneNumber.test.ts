@@ -39,4 +39,12 @@ describe('parsePhoneNumber function', () => {
     expect(parsedInfo.formatTemplate).toBe('');
     expect(parsedInfo.phoneNumber).toBe('+1969123456789');
   });
+
+  it('should throw error if phone number is not passed as empty string', () => {
+    const phoneNumber = '';
+
+    expect(() => parsePhoneNumber(phoneNumber)).toThrow(
+      'Parameter `phoneNumber` is invalid!',
+    );
+  })
 });

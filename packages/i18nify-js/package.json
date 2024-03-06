@@ -34,6 +34,10 @@
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/phoneNumber/index.js"
     },
+    "./geo": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/geo/index.js"
+    },
     "./types": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/types/index.d.ts"
@@ -49,6 +53,9 @@
       ],
       "phoneNumber": [
         "./lib/esm/phoneNumber/index.d.ts"
+      ],
+      "geo": [
+        "./lib/esm/geo/index.d.ts"
       ],
       "types": [
         "./lib/esm/types/index.d.ts"
