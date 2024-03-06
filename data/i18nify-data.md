@@ -1,12 +1,15 @@
-# Country Attribute Source Data Repository
+# Country Attribute Data
 
-Welcome to the Country Attribute Source Data Repository! This repository is dedicated to maintaining version-based Country Attribute Data for SDKs. Our main objectives include:
+**Note**: The word Attribute in this repository refers to any specific data related to countries. 
 
-- Maintaining version-based Country Attribute Data in JSON format.
-- Validating the JSON data schema of each module using GitHub Actions on new Pull Requests.
-- Standardizing the APIs for accessing the Country Attribute Data across languages by defining the JSON schema.
-- Uploading each versioned Country Attribute Data Module to a CDN, enabling users to easily pull the data on demand without bundling data into SDKs and keeping lightweight SDKs.
-- Automating the ingestion of data from various sources and ensuring the ingested data is legitimate by enabling strict Pull Request review policies on the repository.
+Example: CountryLanguages, CountryTeleInformation, CountryInformation, CountryCurrency, etc.
+
+This repository acts as a Power Source of all geographical data, to any SDK that deals with country level data. The main features are:
+- We maintain the country attribute data in JSON format, well organized by version
+- We validate the Json Schema and Data for every pull request using of Github actions validation check.
+- We provide standardised API's to access country attribute data across different programming languages, leveraging defined JSON schemas.
+- We upload each versioned country attribute data module into a CDN, So that user can pull the data on demand without bundling data into SDK, which ensure the SDK is lightweight.
+- We automate the data updation, ingestion from various sources and ensuring the ingested data is legitimate by enabling strict Pull Request review policies on the repository.
 
 ## Folder Structure
 
@@ -15,19 +18,17 @@ The sample folder structure for the `i18nify-data` is as follows:
 i18nify-data/
 │
 ├── country/
-│  └── version_1
-│   └── Description.txt
+│   └── Description.md
 │   └── data.json
 │   └── schema.json
 ├── currency/
-│  └── version_1
-│   └── Description.txt
+│   └── Description.md
 │   └── data.json
 │   └── schema.json
 ├── ...
 ```
 
-Each Country Attribute Folder (`country`, `currency`, etc.) maintains version based two JSON file (`data.json, schema.json`) that has attributes mapped to a country code along with a `Description.txt` file that gives a brief about the changes that was made in the newer version.
+Each Country Attribute Folder (`country`, `currency`, etc.) maintains version based two JSON file (`data.json, schema.json`) that has attributes mapped to a country code along with a `Description.md` file that gives a brief about the Source and the descriptions of various fields..
 
 
 **Sample Json files:**
@@ -76,26 +77,17 @@ Each Country Attribute Folder (`country`, `currency`, etc.) maintains version ba
     }
 }
 ```
+
+<br>
+We validate data files to ensure they conform to the schema specified in the schema file for individual information. This ensures data integrity and consistency, maintaining high-quality country attribute data throughout the repository.
+
 ## Contributing
 
 We welcome contributions from the community! If you have any suggestions, improvements, or would like to report issues, please feel free to submit a Pull Request or open an issue.
 
-### Contribution Guidelines:
 
-Thank you for contributing to the Country Attribute Source Data Repository. Before making any changes to the data or schema, please adhere to the following guidelines:
+For making a Contribution, Please go through the [Contribution Guidelines](contribution-guidelines.md)
 
-1) **Versioning Policy:**
-   * When updating the schema of any country attribute, increment the version from 1.0 to 2.0.
-   * When updating the data of any country attribute or adding new country information without altering the schema, increment the version from 1.0 to 1.1.
-   * If both the schema and data need updates, use the version change pattern followed for schema changes (1.0 to 2.0).
-2) **Description File:**
-    * Provide a brief description of the changes made in the description.txt file for every version.
-3) **Schema Updates:**
-    * When adding a new field to the schema and making it required, add the field name to the array containing all required fields in `scheme.json`.
-4) **Data and Schema Validation:**
-    * Ensure that the data in the newer version aligns with the schema of the corresponding version.
-
-Please adhere to these guidelines to maintain consistency and integrity within the repository. Your contributions are greatly appreciated!
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
