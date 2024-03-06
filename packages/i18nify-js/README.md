@@ -551,7 +551,7 @@ Source for flag images: [FlagCDN](https://flagcdn.com/).
 
 #### getFlagOfCountry(countryCode) 🏁
 
-Fetch flag URLs for any country code 🌍✈️, enhancing your app's international appeal 🌐 and celebrating global diversity 🏳️‍🌈.
+Retrieve flag images for any ISO country code 🌍✈️ with a simple API call, bolstering your application's global engagement 🌐 and honoring worldwide diversity 🏳️. This method efficiently integrates international flags into your digital projects, leveraging high-resolution SVG formats from a reliable source.
 
 ##### Examples
 
@@ -572,7 +572,7 @@ try {
 
 #### getFlagsForAllCountries() 🌐
 
-Unlock global flags with a country code 🌍✈️—your digital passport 🛂 to a visually connected world, ensuring global appeal and diversity celebration in your app 🏳️‍🌈🔍.
+Access a comprehensive collection of global flags with an ISO country code 🌍✈️—serving as your digital passport 🛂 to a visually unified world. This feature amplifies your app's international flair 🌐 and celebrates cultural diversity 🏳️🔍 by embedding flags from every recognized nation.
 
 ##### Examples
 
