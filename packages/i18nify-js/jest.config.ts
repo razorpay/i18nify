@@ -3,7 +3,7 @@ const config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.test.[jt]s?(x)', '**/?(*.)+test.[jt]s?(x)'],
-  collectCoverageFrom: ['**/*.{ts,js}', '!coverage/**/*.{ts,tsx,js,jsx}'],
+  collectCoverageFrom: ['**/*.{ts,js}', '!coverage/**/*.{ts,tsx,js,jsx}', '!**/index.ts'],
   coveragePathIgnorePatterns: ['blackbox', '.spec.ts'],
   coverageThreshold: {
     './src/': {
