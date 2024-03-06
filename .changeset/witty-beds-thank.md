@@ -1,4 +1,4 @@
 ---
-"@razorpay/i18nify-js": patch
+"@razorpay/i18nify-js": minor
 ---
-minor: Add new Geo module - Country Flag SVG's
+feat: Add new Geo module - Country Flag SVG's
