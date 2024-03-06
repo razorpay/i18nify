@@ -18,12 +18,10 @@ The sample folder structure for the `i18nify-data` is as follows:
 i18nify-data/
 │
 ├── country/
-│  └── version1.0.0
 │   └── Description.md
 │   └── data.json
 │   └── schema.json
 ├── currency/
-│  └── version1.0.0
 │   └── Description.md
 │   └── data.json
 │   └── schema.json
