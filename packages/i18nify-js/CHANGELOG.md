@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.5.0
+
+### Minor Changes
+
+- 92bbe13: feat: Add new Geo module - Country Flag SVG's
+
 ## 1.4.4
 
 ### Patch Changes
