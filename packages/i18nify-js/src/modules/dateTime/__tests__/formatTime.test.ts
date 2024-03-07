@@ -1,4 +1,4 @@
-import formatTime from '../formatTime';
+import {formatTime} from '../index';
 import { DateTimeFormatOptions } from '../types';
 
 describe('formatTime function', () => {

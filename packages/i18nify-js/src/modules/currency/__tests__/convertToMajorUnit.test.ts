@@ -1,4 +1,4 @@
-import convertToMajorUnit from '../convertToMajorUnit';
+import {convertToMajorUnit} from '../index';
 import { CurrencyCodeType } from '../types';
 
 describe('currency - convertToMajorUnit', () => {

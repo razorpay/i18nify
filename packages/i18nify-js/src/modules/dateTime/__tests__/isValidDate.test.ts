@@ -1,4 +1,4 @@
-import isValidDate from '../isValidDate';
+import {isValidDate} from '../index';
 
 describe('dateTime - isValidDate', () => {
   test.each([

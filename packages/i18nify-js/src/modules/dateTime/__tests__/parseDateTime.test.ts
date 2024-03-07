@@ -1,4 +1,4 @@
-import parseDateTime from '../parseDateTime';
+import {parseDateTime} from '../index';
 import { DateTimeFormatOptions } from '../types';
 
 describe('dateTime - parseDateTime', () => {

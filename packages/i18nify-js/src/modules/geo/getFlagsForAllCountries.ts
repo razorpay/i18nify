@@ -1,7 +1,7 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { LIST_OF_ALL_COUNTRIES } from './data/listOfAllCountries';
 import { FLAG_BASE_PATH } from './constants';
-import { CountryCodeType } from '../types/geo';
+import { CountryCodeType } from '../types';
 
 /**
  * Retrieves a mapping of country codes to their corresponding flag image URLs.

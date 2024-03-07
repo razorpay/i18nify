@@ -1,4 +1,4 @@
-import getWeekdays from '../getWeekdays';
+import {getWeekdays} from '../index';
 import { DateTimeFormatOptions } from '../types';
 
 describe('dateTime - getWeekdays', () => {

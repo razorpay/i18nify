@@ -1,4 +1,4 @@
-import formatPhoneNumber from '../formatPhoneNumber';
+import {formatPhoneNumber} from '../index';
 
 describe('formatPhoneNumber', () => {
   it('should format an Indian phone number', () => {

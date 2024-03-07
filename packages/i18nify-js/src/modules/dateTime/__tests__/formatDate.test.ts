@@ -1,4 +1,4 @@
-import formatDate from '../formatDate';
+import {formatDate} from '../index';
 import { DateFormatOptions } from '../types';
 
 describe('dateTime - formatDate', () => {

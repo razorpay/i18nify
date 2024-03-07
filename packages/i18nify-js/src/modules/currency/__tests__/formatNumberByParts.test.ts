@@ -1,4 +1,4 @@
-import formatNumberByParts from '../formatNumberByParts';
+import {formatNumberByParts} from '../index';
 
 const nbsp = String.fromCharCode(160);
 

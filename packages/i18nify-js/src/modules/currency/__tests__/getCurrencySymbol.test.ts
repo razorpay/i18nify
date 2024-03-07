@@ -1,4 +1,4 @@
-import getCurrencySymbol from '../getCurrencySymbol';
+import {getCurrencySymbol} from '../index';
 
 describe('getCurrencySymbol', () => {
   it('should return the correct symbol for a valid currency code', () => {

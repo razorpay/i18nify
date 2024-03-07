@@ -1,4 +1,4 @@
-import { CountryCodeType } from '../types/geo';
+import { CountryCodeType } from '../types';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { LIST_OF_ALL_COUNTRIES } from './data/listOfAllCountries';
 import { FLAG_BASE_PATH } from './constants';

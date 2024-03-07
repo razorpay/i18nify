@@ -1,7 +1,7 @@
-import getFlagOfCountry from '../getFlagOfCountry';
+import {getFlagOfCountry} from '../index';
 import {LIST_OF_ALL_COUNTRIES} from '../data/listOfAllCountries';
 import { FLAG_BASE_PATH } from '../constants';
-import { CountryCodeType } from '../../types/geo';
+import { CountryCodeType } from '../../types';
 
 describe('geo - getFlagOfCountry', () => {
   it('should return a correct URL for a valid country code', () => {

@@ -1,4 +1,4 @@
-import parsePhoneNumber from '../parsePhoneNumber';
+import {parsePhoneNumber} from '../index';
 
 describe('parsePhoneNumber function', () => {
   it('should correctly parse a valid phone number with country code', () => {
