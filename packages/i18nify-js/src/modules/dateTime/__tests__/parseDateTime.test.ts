@@ -62,6 +62,14 @@ describe('dateTime - parseDateTime', () => {
     expect(result.second).toBe('59');
   });
 
+  test('parses date components correctly for undefined options', () => {
+    const dateTime = '2024-01-01 23:59:59';
+    const result = parseDateTime(dateTime, undefined);
+    expect(result.month).toBe('1');
+    expect(result.day).toBe('1');
+    expect(result.year).toBe('2024');
+  });
+
   test('verifies each date component', () => {
     const date = '2024-01-01';
     const result = parseDateTime(date, {

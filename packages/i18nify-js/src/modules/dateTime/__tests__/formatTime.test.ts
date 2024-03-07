@@ -55,4 +55,8 @@ describe('formatTime function', () => {
       'Error: Value dummy out of range for Intl.DateTimeFormat options property weekday',
     );
   });
+
+  test('formats end of day time for undefined options', () => {
+    expect(formatTime('2024-01-01T23:59:59', undefined)).toBe('11:59:59 PM');
+  });
 });

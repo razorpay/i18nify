@@ -22,6 +22,12 @@ describe('dateTime - formatDateTime', () => {
     );
   });
 
+  test('formats end of year date with time for undefined options', () => {
+    expect(formatDateTime('2024-12-31T23:59:59', undefined)).toBe(
+      '12/31/2024, 11:59:59 PM',
+    );
+  });
+
   test('handles invalid date strings', () => {
     expect(() => formatDateTime('invalid-date', { locale: 'en-US' })).toThrow();
   });

@@ -31,6 +31,11 @@ describe('dateTime - getRelativeTime', () => {
     expect(getRelativeTime(inThreeDays, now)).toBe('in 3 days');
   });
 
+  test('returns correct relative time for days for undefined options', () => {
+    const threeDaysAgo = new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000);
+    expect(getRelativeTime(threeDaysAgo, now, undefined)).toBe('3 days ago');
+  });
+
   test('handles different locales', () => {
     const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
     expect(getRelativeTime(oneDayAgo, now, { locale: 'en-US' })).toBe(
