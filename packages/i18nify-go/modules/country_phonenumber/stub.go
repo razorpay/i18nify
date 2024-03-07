@@ -19,14 +19,14 @@ func (r *CountryPhonenumber) Marshal() ([]byte, error) {
 }
 
 type CountryPhonenumber struct {
-	CountryTeleInformation CountryTeleInformation `json:"country_tele_information"`
+	CountryTeleInformation map[string]CountryTeleInformation `json:"country_tele_information"`
 }
 
-func (r *CountryPhonenumber) GetCountryTeleInformation() CountryTeleInformation {
+func (r *CountryPhonenumber) GetCountryTeleInformation() map[string]CountryTeleInformation {
 	return r.CountryTeleInformation
 }
 
-func NewCountryPhonenumber(countryTeleInformation CountryTeleInformation) *CountryPhonenumber {
+func NewCountryPhonenumber(countryTeleInformation map[string]CountryTeleInformation) *CountryPhonenumber {
 	return &CountryPhonenumber{
 		CountryTeleInformation: countryTeleInformation,
 	}

@@ -1,33 +1,33 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse and unparse this JSON data, add this code to your project and do:
 //
-//    countryCurrency, err := UnmarshalCountryCurrency(bytes)
-//    bytes, err = countryCurrency.Marshal()
+//    Currency, err := UnmarshalCurrency(bytes)
+//    bytes, err = Currency.Marshal()
 
-package country_currency
+package currency
 
 import "encoding/json"
 
-func UnmarshalCountryCurrency(data []byte) (CountryCurrency, error) {
-	var r CountryCurrency
+func UnmarshalCurrency(data []byte) (Currency, error) {
+	var r Currency
 	err := json.Unmarshal(data, &r)
 	return r, err
 }
 
-func (r *CountryCurrency) Marshal() ([]byte, error) {
+func (r *Currency) Marshal() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-type CountryCurrency struct {
-	CurrencyInformation CurrencyInformation `json:"currency_information"`
+type Currency struct {
+	CurrencyInformation map[string]CurrencyInformation `json:"currency_information"`
 }
 
-func (r *CountryCurrency) GetCurrencyInformation() CurrencyInformation {
+func (r *Currency) GetCurrencyInformation() map[string]CurrencyInformation {
 	return r.CurrencyInformation
 }
 
-func NewCountryCurrency(currencyInformation CurrencyInformation) *CountryCurrency {
-	return &CountryCurrency{
+func NewCurrency(currencyInformation map[string]CurrencyInformation) *Currency {
+	return &Currency{
 		CurrencyInformation: currencyInformation,
 	}
 }

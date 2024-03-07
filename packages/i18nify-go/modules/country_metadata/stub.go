@@ -19,14 +19,14 @@ func (r *CountryMetadata) Marshal() ([]byte, error) {
 }
 
 type CountryMetadata struct {
-	MetadataInformation MetadataInformation `json:"metadata_information"`
+	MetadataInformation map[string]MetadataInformation `json:"metadata_information"`
 }
 
-func (r *CountryMetadata) GetMetadataInformation() MetadataInformation {
+func (r *CountryMetadata) GetMetadataInformation() map[string]MetadataInformation {
 	return r.MetadataInformation
 }
 
-func NewCountryMetadata(metadataInformation MetadataInformation) *CountryMetadata {
+func NewCountryMetadata(metadataInformation map[string]MetadataInformation) *CountryMetadata {
 	return &CountryMetadata{
 		MetadataInformation: metadataInformation,
 	}

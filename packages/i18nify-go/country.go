@@ -2,45 +2,47 @@ package i18nify_go
 
 import (
 	"fmt"
-	"i18nify/packages/i18nify-go/modules/country_currency"
 	"i18nify/packages/i18nify-go/modules/country_metadata"
 	"i18nify/packages/i18nify-go/modules/country_phonenumber"
 	"i18nify/packages/i18nify-go/modules/country_subdivisions"
+	"i18nify/packages/i18nify-go/modules/currency"
 	"io/ioutil"
 )
 
-const Currency_File = "modules/country_currency/data.json"
+const Currency_File = "modules/currency/data.json"
 const MetaData_File = "modules/country_metadata/data.json"
 const PhoneNumber_File = "modules/country_phonenumber/data.json"
-const SubDivisions_File = "modules/country_subdivisions/data.json"
+const SubDivisions_File = "modules/country_subdivisions/"
 
 type CountryV1 struct {
-	currency     country_currency.CountryCurrency
 	metadata     country_metadata.CountryMetadata
 	phoneNumber  country_phonenumber.CountryPhonenumber
 	subDivisions country_subdivisions.CountrySubdivisions
-}
-
-func (c CountryV1) GetCountryCurrency(code string) country_currency.CurrencyInformation {
-	return c.currency.GetCurrencyInformation()
+	currency     currency.Currency
 }
 
 func (c CountryV1) GetCountryMetadata(code string) country_metadata.MetadataInformation {
-	return c.metadata.GetMetadataInformation()
+	return c.metadata.GetMetadataInformation()[code]
 }
 
 func (c CountryV1) GetCountryPhoneNumber(code string) country_phonenumber.CountryTeleInformation {
-	return c.phoneNumber.GetCountryTeleInformation()
+	return c.phoneNumber.GetCountryTeleInformation()[code]
 }
 
 func (c CountryV1) GetCountrySubDivisions(code string) country_subdivisions.CountrySubdivisions {
-	//TODO implement me
-	panic("implement me")
+	subDivJsonData, err := ioutil.ReadFile(SubDivisions_File + code + ".json")
+	if err != nil {
+		fmt.Println("Error reading JSON file:", err)
+		return country_subdivisions.CountrySubdivisions{}
+	}
+	sub, _ := country_subdivisions.UnmarshalCountrySubdivisions(subDivJsonData)
+	c.subDivisions = sub
+	return c.subDivisions
 }
 
-//func (c CountryV1) GetCountryInformation(code string) country_metadata.CountryInformation {
-//	return c.country.GetCountryInformation()[code]
-//}
+func (c CountryV1) GetCurrency(currencyCode string) currency.CurrencyInformation {
+	return c.currency.GetCurrencyInformation()[currencyCode]
+}
 
 func NewCountryV1() ICountry {
 	currencyJsonData, err := ioutil.ReadFile(Currency_File)
@@ -48,7 +50,7 @@ func NewCountryV1() ICountry {
 		fmt.Println("Error reading JSON file:", err)
 		return nil
 	}
-	cur, _ := country_currency.UnmarshalCountryCurrency(currencyJsonData)
+	cur, _ := currency.UnmarshalCurrency(currencyJsonData)
 
 	metaJsonData, err := ioutil.ReadFile(MetaData_File)
 	if err != nil {
@@ -64,13 +66,6 @@ func NewCountryV1() ICountry {
 	}
 	ph, _ := country_phonenumber.UnmarshalCountryPhonenumber(phoneJsonData)
 
-	subDivJsonData, err := ioutil.ReadFile(SubDivisions_File)
-	if err != nil {
-		fmt.Println("Error reading JSON file:", err)
-		return nil
-	}
-	sub, _ := country_subdivisions.UnmarshalCountrySubdivisions(subDivJsonData)
-
-	v1 := CountryV1{currency: cur, metadata: meta, phoneNumber: ph, subDivisions: sub}
+	v1 := CountryV1{metadata: meta, phoneNumber: ph, currency: cur}
 	return v1
 }
