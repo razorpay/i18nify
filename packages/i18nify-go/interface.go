@@ -8,9 +8,8 @@ import (
 )
 
 type ICountry interface {
-	GetCountryMetadata(code string) country_metadata.MetadataInformation
-	GetCountrySubDivisions(code string) country_subdivisions.CountrySubdivisions
-	GetCountryPhoneNumber(code string) country_phonenumber.CountryTeleInformation
-
-	GetCurrency(currencyCode string) currency.CurrencyInformation
+	GetCountryMetadata() country_metadata.MetadataInformation
+	GetCountrySubDivisions() country_subdivisions.CountrySubdivisions
+	GetCountryPhoneNumber() country_phonenumber.CountryTeleInformation
+	GetCountryCurrency() []currency.CurrencyInformation
 }

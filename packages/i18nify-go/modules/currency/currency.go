@@ -6,7 +6,13 @@
 
 package currency
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+)
+
+const DataFile = "modules/currency/data.json"
 
 func UnmarshalCurrency(data []byte) (Currency, error) {
 	var r Currency
@@ -22,8 +28,18 @@ type Currency struct {
 	CurrencyInformation map[string]CurrencyInformation `json:"currency_information"`
 }
 
-func (r *Currency) GetCurrencyInformation() map[string]CurrencyInformation {
+func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 	return r.CurrencyInformation
+}
+
+func GetCurrencyInformation(code string) CurrencyInformation {
+	currencyJsonData, err := ioutil.ReadFile(DataFile)
+	if err != nil {
+		fmt.Println("Error reading JSON file:", err)
+		return CurrencyInformation{}
+	}
+	allCurrencyData, _ := UnmarshalCurrency(currencyJsonData)
+	return allCurrencyData.CurrencyInformation[code]
 }
 
 func NewCurrency(currencyInformation map[string]CurrencyInformation) *Currency {

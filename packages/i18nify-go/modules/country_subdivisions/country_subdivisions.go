@@ -6,7 +6,13 @@
 
 package country_subdivisions
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+)
+
+const DataFile = "modules/country_subdivisions/"
 
 func UnmarshalCountrySubdivisions(data []byte) (CountrySubdivisions, error) {
 	var r CountrySubdivisions
@@ -29,6 +35,16 @@ func (r *CountrySubdivisions) GetCountryName() string {
 
 func (r *CountrySubdivisions) GetStates() map[string]State {
 	return r.States
+}
+
+func GetCountrySubdivisions(code string) CountrySubdivisions {
+	subDivJsonData, err := ioutil.ReadFile(DataFile + code + ".json")
+	if err != nil {
+		fmt.Println("Error reading JSON file:", err)
+		return CountrySubdivisions{}
+	}
+	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
+	return allSubDivData
 }
 
 func NewCountrySubdivisions(countryName string, states map[string]State) *CountrySubdivisions {

@@ -3,35 +3,41 @@ package main
 import (
 	"fmt"
 	i18nify_go "i18nify/packages/i18nify-go"
+	"i18nify/packages/i18nify-go/modules/currency"
 )
 
 func main() {
-	countryV1 := i18nify_go.NewCountryV1()
-
 	//India
-	metaData := countryV1.GetCountryMetadata("IN")
-	fmt.Println(metaData)
-	fmt.Println(metaData.GetCountryName())
-	fmt.Println(metaData.GetCurrency())
-	fmt.Println(metaData.GetDialCode())
-	fmt.Println(metaData.GetTimezones())
-	fmt.Println(metaData.GetDefaultLocale())
+	countryIN := i18nify_go.NewCountry("IN")
+
+	metaDataIN := countryIN.GetCountryMetadata()
+	fmt.Println(metaDataIN)
+	fmt.Println(metaDataIN.GetCountryName())
+	fmt.Println(metaDataIN.GetCurrency())
+	fmt.Println(metaDataIN.GetDialCode())
+	fmt.Println(metaDataIN.GetTimezones())
+	fmt.Println(metaDataIN.GetDefaultLocale())
 
 	//INR
-	currency := countryV1.GetCurrency(metaData.GetCurrency()[0])
-	fmt.Println(currency.GetName())
-	fmt.Println(currency.GetSymbol())
+	currencyIN := countryIN.GetCountryCurrency()
+	fmt.Println(currencyIN[0].GetName())
+	fmt.Println(currencyIN[0].GetSymbol())
 
 	//India PhoneNumber
-	phoneNumber := countryV1.GetCountryPhoneNumber("IN")
-	fmt.Println(phoneNumber.GetDialCode())
-	fmt.Println(phoneNumber.GetRegex())
+	phoneNumberIN := countryIN.GetCountryPhoneNumber()
+	fmt.Println(phoneNumberIN.GetDialCode())
+	fmt.Println(phoneNumberIN.GetRegex())
 
 	//India States
-	subdivisions := countryV1.GetCountrySubDivisions("IN")
+	subdivisions := countryIN.GetCountrySubDivisions()
 	fmt.Println(subdivisions.GetCountryName())
 
 	state := subdivisions.GetStates()["KA"]
 	fmt.Println(state.GetName())
 	fmt.Println(state.GetCities()[0])
+
+	//USD
+	currencyUS := currency.GetCurrencyInformation("USD")
+	fmt.Println(currencyUS.GetName())
+	fmt.Println(currencyUS.GetSymbol())
 }

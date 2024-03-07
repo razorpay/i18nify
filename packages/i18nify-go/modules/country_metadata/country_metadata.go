@@ -6,7 +6,13 @@
 
 package country_metadata
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+)
+
+const DataFile = "modules/country_metadata/data.json"
 
 func UnmarshalCountryMetadata(data []byte) (CountryMetadata, error) {
 	var r CountryMetadata
@@ -22,8 +28,18 @@ type CountryMetadata struct {
 	MetadataInformation map[string]MetadataInformation `json:"metadata_information"`
 }
 
-func (r *CountryMetadata) GetMetadataInformation() map[string]MetadataInformation {
+func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInformation {
 	return r.MetadataInformation
+}
+
+func GetMetadataInformation(code string) MetadataInformation {
+	metaJsonData, err := ioutil.ReadFile(DataFile)
+	if err != nil {
+		fmt.Println("Error reading JSON file:", err)
+		return MetadataInformation{}
+	}
+	allCountryMetaData, _ := UnmarshalCountryMetadata(metaJsonData)
+	return allCountryMetaData.MetadataInformation[code]
 }
 
 func NewCountryMetadata(metadataInformation map[string]MetadataInformation) *CountryMetadata {

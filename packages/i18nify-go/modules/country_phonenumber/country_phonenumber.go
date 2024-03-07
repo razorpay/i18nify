@@ -6,7 +6,13 @@
 
 package country_phonenumber
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+)
+
+const DataFile = "modules/country_phonenumber/data.json"
 
 func UnmarshalCountryPhonenumber(data []byte) (CountryPhonenumber, error) {
 	var r CountryPhonenumber
@@ -22,8 +28,18 @@ type CountryPhonenumber struct {
 	CountryTeleInformation map[string]CountryTeleInformation `json:"country_tele_information"`
 }
 
-func (r *CountryPhonenumber) GetCountryTeleInformation() map[string]CountryTeleInformation {
+func (r *CountryPhonenumber) GetAllCountryTeleInformation() map[string]CountryTeleInformation {
 	return r.CountryTeleInformation
+}
+
+func GetCountryTeleInformation(code string) CountryTeleInformation {
+	teleJsonData, err := ioutil.ReadFile(DataFile)
+	if err != nil {
+		fmt.Println("Error reading JSON file:", err)
+		return CountryTeleInformation{}
+	}
+	allCountryTeleInfo, _ := UnmarshalCountryPhonenumber(teleJsonData)
+	return allCountryTeleInfo.CountryTeleInformation[code]
 }
 
 func NewCountryPhonenumber(countryTeleInformation map[string]CountryTeleInformation) *CountryPhonenumber {
