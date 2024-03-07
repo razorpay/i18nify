@@ -1,4 +1,4 @@
-import {getWeekdays} from '../index';
+import { getWeekdays } from '../index';
 import { DateTimeFormatOptions } from '../types';
 
 describe('dateTime - getWeekdays', () => {
@@ -53,11 +53,21 @@ describe('dateTime - getWeekdays', () => {
     test(`returns correct weekdays for ${locale} locale`, () => {
       const weekdays = getWeekdays({
         locale,
-        intlOptions :options as DateTimeFormatOptions,
-      }
-      );
+        intlOptions: options as DateTimeFormatOptions,
+      });
       expect(weekdays).toHaveLength(7);
       expect(weekdays).toEqual(expected);
     });
+  });
+
+  test('throws a generic error message for invalid intl options', () => {
+    expect(() =>
+      getWeekdays({
+        locale: 'en-US',
+        intlOptions: { weekday: 'dummy' } as any,
+      }),
+    ).toThrow(
+      'Error: Value dummy out of range for Intl.DateTimeFormat options property weekday',
+    );
   });
 });

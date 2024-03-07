@@ -1,4 +1,4 @@
-import {getRelativeTime} from '../index';
+import { getRelativeTime } from '../index';
 
 describe('dateTime - getRelativeTime', () => {
   const now = new Date();
@@ -33,13 +33,54 @@ describe('dateTime - getRelativeTime', () => {
 
   test('handles different locales', () => {
     const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-    expect(getRelativeTime(oneDayAgo, now, {locale: 'en-US'})).toBe('1 day ago');
-    expect(getRelativeTime(oneDayAgo, now, {locale: 'fr-FR'})).toBe('il y a 1 jour');
+    expect(getRelativeTime(oneDayAgo, now, { locale: 'en-US' })).toBe(
+      '1 day ago',
+    );
+    expect(getRelativeTime(oneDayAgo, now, { locale: 'fr-FR' })).toBe(
+      'il y a 1 jour',
+    );
   });
 
   test('throws an error for invalid date inputs', () => {
     expect(() => getRelativeTime('invalid-date', now)).toThrow(
       'Date format not recognized',
     );
+  });
+
+  test('throws a generic error message for invalid intl options', () => {
+    const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+    expect(() =>
+      getRelativeTime(new Date(), oneDayAgo, {
+        locale: 'en-US',
+        intlOptions: { style: 'dummy' } as any,
+      }),
+    ).toThrow(
+      'Error: Value dummy out of range for Intl.RelativeTimeFormat options property style',
+    );
+  });
+
+  test('returns correct relative time for weeks', () => {
+    const twoWeeksAgo = new Date(now.getTime() - 2 * 7 * 24 * 60 * 60 * 1000);
+    expect(getRelativeTime(twoWeeksAgo, now)).toBe('2 weeks ago');
+    const inTwoWeeks = new Date(now.getTime() + 2 * 7 * 24 * 60 * 60 * 1000);
+    expect(getRelativeTime(inTwoWeeks, now)).toBe('in 2 weeks');
+  });
+
+  test('returns correct relative time for months', () => {
+    const threeMonthsAgo = new Date(
+      now.getTime() - 3 * 30 * 24 * 60 * 60 * 1000,
+    );
+    expect(getRelativeTime(threeMonthsAgo, now)).toBe('3 months ago');
+    const inThreeMonths = new Date(
+      now.getTime() + 3 * 30 * 24 * 60 * 60 * 1000,
+    );
+    expect(getRelativeTime(inThreeMonths, now)).toBe('in 3 months');
+  });
+
+  test('returns correct relative time for years', () => {
+    const oneYearAgo = new Date(now.getTime() - 365 * 24 * 60 * 60 * 1000);
+    expect(getRelativeTime(oneYearAgo, now)).toBe('1 year ago');
+    const inOneYear = new Date(now.getTime() + 365 * 24 * 60 * 60 * 1000);
+    expect(getRelativeTime(inOneYear, now)).toBe('in 1 year');
   });
 });
