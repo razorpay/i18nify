@@ -1,4 +1,4 @@
-import { supportedDateFormats } from './data/supportedDateFormats';
+import { SUPPORTED_DATE_FORMATS } from './data/supportedDateFormats';
 import { DateInput } from './types';
 
 /**
@@ -14,7 +14,7 @@ import { DateInput } from './types';
  */
 export const stringToDate = (dateString: string): Date => {
   // Iterate through each supported date format.
-  for (const format of supportedDateFormats) {
+  for (const format of SUPPORTED_DATE_FORMATS) {
     const match = dateString.match(format.regex);
     if (match) {
       // Extract year, month, and day from the matched groups.

@@ -1,6 +1,7 @@
 /**
- * This module provides functions for formatting and manipulating dates and times
- * in a locale-sensitive manner using the JavaScript Intl API & Date object.
+ * This module offers a range of functions tailored for date and time formatting and manipulation,
+ * leveraging the capabilities of the JavaScript Intl API and Date object. It is designed to handle
+ * dates and times in a way that respects locale-specific conventions and preferences.
  */
 
 export { default as formatDateTime } from './formatDateTime';
@@ -9,7 +10,13 @@ export { default as getWeekdays } from './getWeekdays';
 export { default as isValidDate } from './isValidDate';
 export { default as parseDateTime } from './parseDateTime';
 
-// Re-exporting Calendar, CalendarDate, CalendarDateTime, Time, ZonedDateTime directly
+// For additional information, refer to the documentation: https://react-spectrum.adobe.com/internationalized/date/index.html
+/**
+ * Direct exports include Calendar, CalendarDate, CalendarDateTime, Time, and ZonedDateTime.
+ * Notably absent from the direct exports is DateFormatter. This exclusion is intentional
+ * to highlight our enhancements around DateFormatter, which now includes extended functionalities
+ * such as provider state and automatic locale detection, aimed at simplifying its usage.
+ */
 export {
   Calendar,
   CalendarDate,

@@ -1,6 +1,6 @@
 import { SupportedDateFormats } from '../types';
 
-export const supportedDateFormats: SupportedDateFormats[] = [
+export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
   // Date formats
   {
     regex: /^(\d{4})\/(0[1-9]|1[0-2])\/(\d{2})$/,

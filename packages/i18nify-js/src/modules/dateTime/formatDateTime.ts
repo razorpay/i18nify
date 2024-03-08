@@ -25,7 +25,7 @@ const formatDateTime = (
     intlOptions?: Intl.DateTimeFormatOptions;
   } = {},
 ): string => {
-  const locale = getLocale(options);
+  const extractedLocale = getLocale(options);
 
   const standardDate = convertToStandardDate(date);
 
@@ -66,7 +66,7 @@ const formatDateTime = (
   let formatter;
 
   try {
-    formatter = new DateFormatter(locale, finalIntlOptions);
+    formatter = new DateFormatter(extractedLocale, finalIntlOptions);
   } catch (err) {
     if (err instanceof Error) {
       throw new Error(err.message);
