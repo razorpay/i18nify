@@ -1,5 +1,5 @@
 import { CountryCodeType } from '../../types';
-import {getDialCodes} from '../index';
+import { getDialCodes } from '../index';
 
 describe('phoneNumber - getDialCodes', () => {
   it('should correctly map country codes to their dial codes', () => {

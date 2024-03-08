@@ -1,4 +1,4 @@
-import {parsePhoneNumber} from '../index';
+import { parsePhoneNumber } from '../index';
 
 describe('parsePhoneNumber function', () => {
   it('should correctly parse a valid phone number with country code', () => {
@@ -46,5 +46,5 @@ describe('parsePhoneNumber function', () => {
     expect(() => parsePhoneNumber(phoneNumber)).toThrow(
       'Parameter `phoneNumber` is invalid!',
     );
-  })
+  });
 });

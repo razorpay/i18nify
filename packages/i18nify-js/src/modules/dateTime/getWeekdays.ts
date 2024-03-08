@@ -8,12 +8,10 @@ import { Locale } from './types';
  * @param options Config object
  * @returns An array of weekday names.
  */
-const getWeekdays = (
-  options: {
-    locale?: Locale,
-    intlOptions: Intl.DateTimeFormatOptions,
-  },
-): string[] => {
+const getWeekdays = (options: {
+  locale?: Locale;
+  intlOptions: Intl.DateTimeFormatOptions;
+}): string[] => {
   try {
     const locale = getLocale(options);
     if (!options.intlOptions.weekday) options.intlOptions.weekday = 'long';

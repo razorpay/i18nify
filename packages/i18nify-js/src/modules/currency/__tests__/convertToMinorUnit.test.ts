@@ -1,4 +1,4 @@
-import {convertToMinorUnit} from '../index';
+import { convertToMinorUnit } from '../index';
 import { CurrencyCodeType } from '../types';
 
 describe('currency - convertToMinorUnit', () => {

@@ -1,7 +1,7 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getLocale } from '../.internal/utils';
 import { DateInput, Locale } from './types';
-import { stringToDate } from './utils';
+import { convertToStandardDate } from './utils';
 
 /**
  * Provides a relative time string (e.g., '3 hours ago', 'in 2 days').
@@ -18,21 +18,17 @@ const getRelativeTime = (
   date: DateInput,
   baseDate: DateInput = new Date(),
   options: {
-    locale?: Locale,
-    intlOptions?: Intl.RelativeTimeFormatOptions,
+    locale?: Locale;
+    intlOptions?: Intl.RelativeTimeFormatOptions;
   } = {},
 ): string => {
-  date =
-    typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
+  const standardDate = convertToStandardDate(date);
+  const standardBaseDate = convertToStandardDate(baseDate);
 
-  baseDate =
-    typeof baseDate === 'string'
-      ? new Date(stringToDate(baseDate))
-      : new Date(baseDate);
-      
   const locale = getLocale(options);
 
-  const diffInSeconds = (date.getTime() - baseDate.getTime()) / 1000;
+  const diffInSeconds =
+    (standardDate.getTime() - standardBaseDate.getTime()) / 1000;
 
   // Define time units in seconds
   const minute = 60;

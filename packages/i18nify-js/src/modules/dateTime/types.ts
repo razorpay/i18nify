@@ -18,7 +18,7 @@ export type FormattedPartsObject = {
 export interface ParsedDateTime extends FormattedPartsObject {
   rawParts: Array<{ type: string; value: unknown }>;
   formattedDate: string;
-  dateObj: Date | null;
+  isoDate: Date | null;
 }
 
 export interface SupportedDateFormats {

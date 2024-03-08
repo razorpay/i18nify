@@ -1,4 +1,4 @@
-import {DateFormatter} from '@internationalized/date'
+import { DateFormatter } from '@internationalized/date';
 
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getLocale } from '../.internal/utils';
@@ -9,35 +9,32 @@ import {
   ParsedDateTime,
 } from './types';
 import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
-import { stringToDate } from './utils';
+import { convertToStandardDate } from './utils';
 
 /**
  * Parses a date input and returns a detailed object containing various date components
  * and their formatted representations.
  *
- * @param {DateInput} dateInput - The date input, can be a string or a Date object.
+ * @param {DateInput} date - The date input, can be a string or a Date object.
  * @param options - Config object.
  * @returns {ParsedDateTime} An object containing the parsed date and its components.
  */
 const parseDateTime = (
-  dateInput: DateInput,
+  date: DateInput,
   options: {
-    locale?: Locale,
-    intlOptions?: Intl.DateTimeFormatOptions,
+    locale?: Locale;
+    intlOptions?: Intl.DateTimeFormatOptions;
   } = {},
 ): ParsedDateTime => {
   // Parse the input date, converting strings to Date objects if necessary
-  const date =
-    typeof dateInput === 'string'
-      ? new Date(stringToDate(dateInput))
-      : new Date(dateInput);
+  const standardDate = convertToStandardDate(date);
 
   const locale = getLocale(options);
 
   try {
     // Create an DateFormatter instance for formatting
     const dateTimeFormat = new DateFormatter(locale, options.intlOptions);
-    const formattedParts = dateTimeFormat.formatToParts(date);
+    const formattedParts = dateTimeFormat.formatToParts(standardDate);
     const formattedObj: FormattedPartsObject = {};
 
     // Iterate over each part of the formatted date
@@ -55,7 +52,7 @@ const parseDateTime = (
       ...formattedObj,
       rawParts: formattedParts,
       formattedDate: formattedParts.map((p) => p.value).join(''),
-      dateObj: date,
+      isoDate: standardDate,
     };
   } catch (err) {
     // Handle any errors that occur during parsing

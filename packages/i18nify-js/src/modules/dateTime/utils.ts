@@ -1,4 +1,5 @@
 import { supportedDateFormats } from './data/supportedDateFormats';
+import { DateInput } from './types';
 
 /**
  * Converts a string representation of a date into a Date object.
@@ -46,4 +47,11 @@ export const stringToDate = (dateString: string): Date => {
 
   // If no format matches, throw an error.
   throw new Error('Date format not recognized');
+};
+
+export const convertToStandardDate = (date: DateInput): Date => {
+  const standardDate =
+    typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
+
+  return standardDate;
 };

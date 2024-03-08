@@ -1,4 +1,4 @@
-import {getFlagsForAllCountries} from '../index';
+import { getFlagsForAllCountries } from '../index';
 import { LIST_OF_ALL_COUNTRIES } from '../data/listOfAllCountries';
 import { FLAG_BASE_PATH } from '../constants';
 import { CountryCodeType } from '../../types';
