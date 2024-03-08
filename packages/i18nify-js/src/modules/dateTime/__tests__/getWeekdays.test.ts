@@ -1,5 +1,4 @@
 import { getWeekdays } from '../index';
-import { DateTimeFormatOptions } from '../types';
 
 describe('dateTime - getWeekdays', () => {
   const testCases = [
@@ -14,7 +13,7 @@ describe('dateTime - getWeekdays', () => {
         'Friday',
         'Saturday',
       ],
-      options: {},
+      weekday: undefined,
     },
     {
       locale: 'de-DE',
@@ -27,7 +26,7 @@ describe('dateTime - getWeekdays', () => {
         'Freitag',
         'Samstag',
       ],
-      options: {},
+      weekday: undefined,
     },
     {
       locale: 'fr-FR',
@@ -40,20 +39,20 @@ describe('dateTime - getWeekdays', () => {
         'vendredi',
         'samedi',
       ],
-      options: {},
+      weekday: undefined,
     },
     {
       locale: 'en-US',
       expected: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-      options: { weekday: 'short' },
+      weekday: 'short',
     },
   ];
 
-  testCases.forEach(({ locale, expected, options }) => {
+  testCases.forEach(({ locale, expected, weekday }) => {
     test(`returns correct weekdays for ${locale} locale`, () => {
       const weekdays = getWeekdays({
         locale,
-        intlOptions: options as DateTimeFormatOptions,
+        weekday: weekday as any,
       });
       expect(weekdays).toHaveLength(7);
       expect(weekdays).toEqual(expected);
@@ -64,7 +63,7 @@ describe('dateTime - getWeekdays', () => {
     expect(() =>
       getWeekdays({
         locale: 'en-US',
-        intlOptions: { weekday: 'dummy' } as any,
+        weekday: 'dummy' as any,
       }),
     ).toThrow(
       'Error: Value dummy out of range for Intl.DateTimeFormat options property weekday',
