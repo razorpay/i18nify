@@ -93,6 +93,16 @@ describe('dateTime - parseDateTime', () => {
     expect(result.formattedDate).toBe('01/01/24');
   });
 
+  test('parses correctly for timestamp input', () => {
+    const intlOptions = { year: '2-digit', month: '2-digit', day: '2-digit' };
+    const result = parseDateTime(1709878371089, {
+      intlOptions: intlOptions as DateTimeFormatOptions,
+    });
+    expect(result.year).toBe('24');
+    expect(result.month).toBe('03');
+    expect(result.day).toBe('08');
+  });
+
   test('falls back to system locale if none provided', () => {
     const date = '2024-01-01';
     const result = parseDateTime(date);
