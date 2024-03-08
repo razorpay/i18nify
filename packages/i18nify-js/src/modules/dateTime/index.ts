@@ -7,7 +7,6 @@
 export { default as formatDateTime } from './formatDateTime';
 export { default as getRelativeTime } from './getRelativeTime';
 export { default as getWeekdays } from './getWeekdays';
-export { default as isValidDate } from './isValidDate';
 export { default as parseDateTime } from './parseDateTime';
 
 // For additional information, refer to the documentation: https://react-spectrum.adobe.com/internationalized/date/index.html
