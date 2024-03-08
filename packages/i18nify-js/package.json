@@ -3,6 +3,16 @@
   "version": "1.5.0",
   "author": "tarun khanna <tarun.khanna@razorpay.com>",
   "license": "MIT",
+  "contributors": [
+    {
+      "name": "Tarun Khanna",
+      "email": "tarun.khanna@razorpay.com"
+    },
+    {
+      "name": "Divyansh Singh",
+      "email": "divyansh.singh@razorpay.com"
+    }
+  ],
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
@@ -34,6 +44,10 @@
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/phoneNumber/index.js"
     },
+    "./dateTime": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/dateTime/index.js"
+    },
     "./geo": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/geo/index.js"
@@ -53,6 +67,9 @@
       ],
       "phoneNumber": [
         "./lib/esm/phoneNumber/index.d.ts"
+      ],
+      "dateTime": [
+        "./lib/esm/dateTime/index.d.ts"
       ],
       "geo": [
         "./lib/esm/geo/index.d.ts"
@@ -84,9 +101,12 @@
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/jest": "^29.5.7",
     "jest": "^29.7.0",
-    "ts-jest": "^29.1.1",
     "jest-environment-jsdom": "^29.7.0",
     "rollup": "^4.0.2",
-    "rollup-plugin-dts": "^6.1.0"
+    "rollup-plugin-dts": "^6.1.0",
+    "ts-jest": "^29.1.1"
+  },
+  "dependencies": {
+    "@internationalized/date": "^3.5.2"
   }
 }

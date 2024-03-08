@@ -1,4 +1,4 @@
-import { CountryCodeType } from '../../types/geo';
+import { CountryCodeType } from '../../types';
 
 export const PHONE_FORMATTER_MAPPER: { [key in CountryCodeType]: string } = {
   IN: 'xxxx xxxxxx',
