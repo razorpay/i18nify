@@ -1,5 +1,6 @@
 import { SupportedDateFormats } from '../types';
 
+// These are the standard Date Formats being followed globally
 export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
   // Date formats
   {
