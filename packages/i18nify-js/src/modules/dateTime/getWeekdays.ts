@@ -1,3 +1,5 @@
+import { DateFormatter } from '@internationalized/date';
+
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getLocale } from '../.internal/utils';
 import { Locale } from './types';
@@ -12,15 +14,13 @@ const getWeekdays = (options: {
   locale?: Locale;
   weekday?: 'long' | 'short' | 'narrow' | undefined;
 }): string[] => {
+  console.log({ options });
   try {
     const locale = getLocale(options);
-    if (!options.weekday) options.weekday = 'long';
 
-    const intlOptions: Intl.DateTimeFormatOptions = {
-      weekday: options.weekday,
-    };
-
-    const formatter = new Intl.DateTimeFormat(locale, intlOptions);
+    const formatter = new DateFormatter(locale, {
+      weekday: options.weekday || 'long',
+    });
 
     /** The date January 1, 1970, is a well-known reference point in computing known as the Unix epoch.
      * It's the date at which time is measured for Unix systems, making it a consistent and reliable choice for date calculations.
