@@ -594,111 +594,55 @@ Behold, an object where each key is a country code linked to its flag's URL, suc
 
 This module provides functions for formatting and manipulating dates and times in a locale-sensitive manner using the JavaScript Intl API & Date object.
 
-#### formatDate(date, options)
-
-🌍📆 This global time stylist effortlessly turns your dates into beautifully formatted strings, tailored to different locales. Whether you're dealing with international clients or just love the beauty of diverse date formats, `formatDate` is your go-to function. It leverages the power of the Intl.DateTimeFormat API, ensuring that your dates always dress to impress, no matter where they're displayed. 🎩🌟
-
-##### Examples
-
-```javascript
-// Basic date formatting
-console.log(formatDate(new Date(), { locale: 'en-US' })); // Outputs today's date in 'MM/DD/YYYY' format
-
-// Formatting with different locale
-console.log(formatDate('2024-05-20', { locale: 'de-DE' })); // Outputs '20.05.2024'
-
-// Using Intl.DateTimeFormat options
-console.log(
-  formatDate('2024-05-20', {
-    locale: 'en-GB',
-    intlOptions: {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    },
-  }),
-); // Outputs 'Monday, 20 May 2024'
-```
-
-💡 Remember, if the date string doesn't match any supported formats, the function raises the curtain on an error message! 🛑🎭
-
 #### formatDateTime(date, options)
 
-🕰️🌍 This savvy time tailor is your go-to for dressing up dates and times in locale-specific styles. Whether you're marking milestones, scheduling global meetings, or just need that perfect date-time format, `formatDateTime` uses the Internationalization API (Intl) to translate your dates and times into the local lingo. It's like having a linguistic time machine at your fingertips! 🌟🗓
+🛠️ Dive into the sophistication of formatDateTime, a highly configurable function designed for developers seeking to master the intricacies of international date and time formatting. Leveraging the robust capabilities of the Intl.DateTimeFormat API, this utility offers unparalleled precision and adaptability in crafting date-time strings. Whether your application caters to a global audience or requires meticulous timestamping, formatDateTime delivers the versatility and accuracy essential for modern software development. 🌍🔧
 
 ##### Examples
 
 ```javascript
-// Standard date-time formatting
-console.log(formatDateTime(new Date(), { locale: 'en-US' })); // Outputs something like '1/23/2024, 10:00 AM'
-
-// Custom date-time formatting in French
-console.log(
-  formatDateTime('2024-05-20 15:00', {
-    locale: 'fr-FR',
-    intlOptions: {
-      weekday: 'long',
-      hour: '2-digit',
-      minute: '2-digit',
-    },
-  }),
-); // Outputs 'lundi, 15:00'
-
-// Locale-specific date-time formatting with extended options
+// Comprehensive date-time formatting with custom options
 console.log(
   formatDateTime('2024-12-31 23:59', {
-    locale: 'ja-JP',
+    locale: 'en-US',
+    dateTimeMode: 'dateTime',
     intlOptions: {
+      weekday: 'long',
       year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+      month: 'short',
+      day: '2-digit',
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
+      hour12: false,
     },
   }),
-); // Outputs '2024年12月31日 23:59:00'
-```
+); // Outputs 'Tuesday, Dec 31, 2024, 23:59:00'
 
-💡 Remember, it's not just about translating the date and time; it's about presenting them in a way that feels natural and familiar to the user, no matter where they are in the world. 🌐⌚
-
-#### formatTime(date, options)
-
-⏰🌐 This timely charmer is your key to unlocking the secrets of time presentation across different cultures. Using the wizardry of the Internationalization API (Intl), `formatTime` translates your time into a format that resonates with local customs and practices. Whether it's for scheduling international calls or just making sure you're in sync with the world's timezones, this function is your trusty sidekick in the realm of time formatting! 🌟⌚
-
-##### Examples
-
-```javascript
-// Simple time formatting
-console.log(formatTime(new Date(), { locale: 'en-US' })); // Outputs something like '10:00 AM'
-
-// Time formatting with extended options in French
+// Locale-specific date-only formatting
 console.log(
-  formatTime('2024-05-20 15:00', {
-    locale: 'fr-FR',
-    intlOptions: {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-    },
-  }),
-); // Outputs '15:00:00'
-
-// Custom time formatting in Japanese
-console.log(
-  formatTime('2024-05-20 23:59', {
+  formatDateTime('2024-05-20', {
     locale: 'ja-JP',
+    dateTimeMode: 'dateOnly',
+  }),
+); // Outputs '2024/05/20', adhering to the Japanese date format
+
+// Time-only formatting with emphasis on precision
+console.log(
+  formatDateTime('2024-05-20 15:45:30', {
+    locale: 'fr-FR',
+    dateTimeMode: 'timeOnly',
     intlOptions: {
       hour: '2-digit',
       minute: '2-digit',
+      second: '2-digit',
       hour12: true,
     },
   }),
-); // Outputs '11:59 午後'
+); // Outputs '03:45:30 PM', catering to the French preference for 24-hour time with high precision
 ```
 
-💡 Pro Tip: `formatTime` isn't just about showing the time; it's about presenting it in a way that's intuitive and familiar to your audience, wherever they may be. 🌍🕒
+Utilize `formatDateTime` to ensure your application's date and time outputs are not only accurate 🎯 but also culturally and contextually appropriate 🌍. From backend logging systems 🖥️ to user-facing interfaces 📱, this function stands as a testament to your commitment to internationalization 🌐 and user experience excellence ✨. With its straightforward implementation 🛠️ and extensive configuration options ⚙️, `formatDateTime` empowers you to meet the diverse needs of your audience 👥, promoting clarity 📖 and understanding 🤝 across different cultures and languages 🗣️.
 
 #### getRelativeTime(date, baseDate, options)
 
