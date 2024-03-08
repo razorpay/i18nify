@@ -10,20 +10,21 @@ import { convertToStandardDate } from './utils';
  * through Intl.RelativeTimeFormat options.
  *
  * @param date - The date to compare.
- * @param baseDate - The date to compare against (default: current date).
  * @param options - Config object.
  * @returns The relative time as a string.
  */
 const getRelativeTime = (
   date: DateInput,
-  baseDate: DateInput = new Date(),
   options: {
     locale?: Locale;
+    baseDate?: DateInput;
     intlOptions?: Intl.RelativeTimeFormatOptions;
   } = {},
 ): string => {
   const standardDate = convertToStandardDate(date);
-  const standardBaseDate = convertToStandardDate(baseDate);
+  const standardBaseDate = convertToStandardDate(
+    options.baseDate || new Date(),
+  );
 
   const locale = getLocale(options);
 

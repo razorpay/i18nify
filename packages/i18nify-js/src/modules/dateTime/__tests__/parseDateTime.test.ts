@@ -11,7 +11,7 @@ describe('dateTime - parseDateTime', () => {
         day: 'numeric',
       },
     });
-    expect(result.isoDate).toBeDefined();
+    expect(result.date).toBeDefined();
     expect(result.formattedDate).toBe('January 1, 2024');
     expect(result.year).toBe('2024');
     expect(result.month).toBe('January');
@@ -40,10 +40,10 @@ describe('dateTime - parseDateTime', () => {
   test('handles leap year correctly', () => {
     const date = '2024-02-29';
     const result = parseDateTime(date);
-    if (result.isoDate) {
-      expect(result.isoDate.getFullYear()).toBe(2024);
-      expect(result.isoDate.getMonth()).toBe(1); // Month is 0-indexed
-      expect(result.isoDate.getDate()).toBe(29);
+    if (result.date) {
+      expect(result.date.getFullYear()).toBe(2024);
+      expect(result.date.getMonth()).toBe(1); // Month is 0-indexed
+      expect(result.date.getDate()).toBe(29);
     }
   });
 

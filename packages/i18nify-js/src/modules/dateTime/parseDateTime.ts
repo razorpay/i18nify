@@ -52,7 +52,7 @@ const parseDateTime = (
       ...formattedObj,
       rawParts: formattedParts,
       formattedDate: formattedParts.map((p) => p.value).join(''),
-      isoDate: standardDate,
+      date: standardDate,
     };
   } catch (err) {
     // Handle any errors that occur during parsing

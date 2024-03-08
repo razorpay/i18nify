@@ -644,7 +644,7 @@ console.log(
 
 Utilize `formatDateTime` to ensure your application's date and time outputs are not only accurate 🎯 but also culturally and contextually appropriate 🌍. From backend logging systems 🖥️ to user-facing interfaces 📱, this function stands as a testament to your commitment to internationalization 🌐 and user experience excellence ✨. With its straightforward implementation 🛠️ and extensive configuration options ⚙️, `formatDateTime` empowers you to meet the diverse needs of your audience 👥, promoting clarity 📖 and understanding 🤝 across different cultures and languages 🗣️.
 
-#### getRelativeTime(date, baseDate, options)
+#### getRelativeTime(date, options)
 
 ⏳🌏 This time-traveling virtuoso effortlessly bridges the gap between dates, offering a glimpse into the past or a peek into the future. With the help of the Internationalization API (Intl), `getRelativeTime` transforms absolute dates into relatable, human-friendly phrases like '3 hours ago' or 'in 2 days'. Whether you're reminiscing the past or anticipating the future, this function keeps you connected to time in the most intuitive way! 🚀🕰️
 
@@ -652,13 +652,15 @@ Utilize `formatDateTime` to ensure your application's date and time outputs are 
 
 ```javascript
 // How long ago was a past date?
-console.log(getRelativeTime('2024-01-20', new Date())); // Outputs something like '3 days ago'
+console.log(getRelativeTime('2024-01-20')); // Outputs something like '3 days ago'
 
 // How much time until a future date?
-console.log(getRelativeTime('2024-01-26', new Date())); // Outputs 'in 3 days'
+console.log(getRelativeTime('2024-01-26')); // Outputs 'in 3 days'
 
 // Customizing output for different locales
-console.log(getRelativeTime('2024-01-26', '2024-01-23', { locale: 'fr-FR' })); // Outputs 'dans 3 jours' (in 3 days in French)
+console.log(
+  getRelativeTime('2024-01-26', { locale: 'fr-FR', baseDate: '2024-01-23' }),
+); // Outputs 'dans 3 jours' (in 3 days in French)
 ```
 
 💡 Pro Tip: `getRelativeTime` is not just a way to express time differences; it's a bridge that connects your users to the temporal context in a way that's both meaningful and culturally aware. Time is more than seconds and minutes; it's a story, and this function helps you tell it! 📖⌚
@@ -720,7 +722,7 @@ console.log(parsed1); // Outputs object with detailed date components
             }
         ],
         "formattedDate": "18/01/2024",
-        "isoDate": "2024-01-17T18:30:00.000Z"
+        "date": "2024-01-17T18:30:00.000Z"
     }
 */
 
@@ -772,7 +774,7 @@ console.log(parsed2); // Outputs object with formatted date in French
             }
         ],
         "formattedDate": "mardi 23 janvier 2024",
-        "isoDate": "2024-01-22T18:30:00.000Z"
+        "date": "2024-01-22T18:30:00.000Z"
     }
 */
 
@@ -807,7 +809,7 @@ console.log(parsed3); // Outputs object with date components for January 23, 202
             }
         ],
         "formattedDate": "23/01/2024",
-        "isoDate": "2024-01-22T18:30:00.000Z"
+        "date": "2024-01-22T18:30:00.000Z"
     }
 */
 ```
