@@ -34,11 +34,11 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 
 func GetMetadataInformation(code string) MetadataInformation {
 	metaJsonData, err := ioutil.ReadFile(DataFile)
+	allCountryMetaData, err := UnmarshalCountryMetadata(metaJsonData)
 	if err != nil {
-		fmt.Println("Error reading JSON file:", err)
+		fmt.Printf("Error unmarshalling country metadata: %v", err)
 		return MetadataInformation{}
 	}
-	allCountryMetaData, _ := UnmarshalCountryMetadata(metaJsonData)
 	return allCountryMetaData.MetadataInformation[code]
 }
 
