@@ -483,4 +483,304 @@ export const CURRENCIES = {
     lowerUnitName: '',
     minorUnitMultiplier: 1,
   },
+  AFN: {
+    symbol: '؋',
+    name: 'Afghan Afghani',
+    lowerUnitName: 'Pul',
+  },
+  AOA: {
+    symbol: 'Kz',
+    name: 'Angolan Kwanza',
+    lowerUnitName: 'Cêntimo',
+  },
+  XCD: {
+    symbol: '$',
+    name: 'East Caribbean Dollar',
+    lowerUnitName: 'Cent',
+  },
+  AZN: {
+    symbol: '₼',
+    name: 'Azerbaijani Manat',
+    lowerUnitName: 'Qəpik',
+  },
+  BYN: {
+    symbol: 'Br',
+    name: 'Belarusian Ruble',
+    lowerUnitName: 'Kopeck',
+  },
+  XOF: {
+    symbol: 'CFA',
+    name: 'West African CFA Franc',
+    lowerUnitName: 'Centime',
+  },
+  BTN: {
+    symbol: 'Nu.',
+    name: 'Bhutanese Ngultrum',
+    lowerUnitName: 'Chetrum',
+  },
+  BAM: {
+    symbol: 'KM',
+    name: 'Bosnia-Herzegovina Convertible Mark',
+    lowerUnitName: 'Fening',
+  },
+  BRL: {
+    symbol: 'R$',
+    name: 'Brazilian Real',
+    lowerUnitName: 'Centavo',
+  },
+  BGN: {
+    symbol: 'лв',
+    name: 'Bulgarian Lev',
+    lowerUnitName: 'Stotinka',
+  },
+  BIF: {
+    symbol: 'FBu',
+    name: 'Burundian Franc',
+    lowerUnitName: 'Centime',
+  },
+  XAF: {
+    symbol: 'FCFA',
+    name: 'Central African CFA Franc',
+    lowerUnitName: 'Centime',
+  },
+  CVE: {
+    symbol: '$',
+    name: 'Cape Verdean Escudo',
+    lowerUnitName: 'Centavo',
+  },
+  CLP: {
+    symbol: '$',
+    name: 'Chilean Peso',
+    lowerUnitName: 'Peso',
+  },
+  KMF: {
+    symbol: 'CF',
+    name: 'Comorian Franc',
+    lowerUnitName: 'Centime',
+  },
+  CDF: {
+    symbol: 'FC',
+    name: 'Congolese Franc',
+    lowerUnitName: 'Centime',
+  },
+  ANG: {
+    symbol: 'ƒ',
+    name: 'Netherlands Antillean Guilder',
+    lowerUnitName: 'Cent',
+  },
+  DJF: {
+    symbol: 'Fdj',
+    name: 'Djiboutian Franc',
+    lowerUnitName: 'Centime',
+  },
+  ERN: {
+    symbol: 'Nfk',
+    name: 'Eritrean Nakfa',
+    lowerUnitName: 'Cent',
+  },
+  FKP: {
+    symbol: '£',
+    name: 'Falkland Islands Pound',
+    lowerUnitName: 'Penny',
+  },
+  XPF: {
+    symbol: '₣',
+    name: 'CFP Franc',
+    lowerUnitName: 'Centime',
+  },
+  GEL: {
+    symbol: '₾',
+    name: 'Georgian Lari',
+    lowerUnitName: 'Tetri',
+  },
+  GNF: {
+    symbol: 'FG',
+    name: 'Guinean Franc',
+    lowerUnitName: 'Centime',
+  },
+  ISK: {
+    symbol: 'kr',
+    name: 'Icelandic Króna',
+    lowerUnitName: 'Eyrir',
+  },
+  IRR: {
+    symbol: '﷼',
+    name: 'Iranian Rial',
+    lowerUnitName: 'Dinar',
+  },
+  IQD: {
+    symbol: 'ع.د',
+    name: 'Iraqi Dinar',
+    lowerUnitName: 'Fils',
+  },
+  JOD: {
+    symbol: 'د.ا',
+    name: 'Jordanian Dinar',
+    lowerUnitName: 'Piastre',
+  },
+  LBP: {
+    symbol: 'ل.ل',
+    name: 'Lebanese Pound',
+    lowerUnitName: 'Piastre',
+  },
+  LYD: {
+    symbol: 'ل.د',
+    name: 'Libyan Dinar',
+    lowerUnitName: 'Dirham',
+  },
+  MGA: {
+    symbol: 'Ar',
+    name: 'Malagasy Ariary',
+    lowerUnitName: 'Iraimbilanja',
+  },
+  MRU: {
+    symbol: 'UM',
+    name: 'Mauritanian Ouguiya',
+    lowerUnitName: 'Khoums',
+  },
+  MZN: {
+    symbol: 'MT',
+    name: 'Mozambican Metical',
+    lowerUnitName: 'Centavo',
+  },
+  KPW: {
+    symbol: '₩',
+    name: 'North Korean Won',
+    lowerUnitName: 'Chon',
+  },
+  PAB: {
+    symbol: 'B/.',
+    name: 'Panamanian Balboa',
+    lowerUnitName: 'Centésimo',
+  },
+  PYG: {
+    symbol: '₲',
+    name: 'Paraguayan Guarani',
+    lowerUnitName: 'Céntimo',
+  },
+  PLN: {
+    symbol: 'zł',
+    name: 'Polish Złoty',
+    lowerUnitName: 'Grosz',
+  },
+  RON: {
+    symbol: 'lei',
+    name: 'Romanian Leu',
+    lowerUnitName: 'Ban',
+  },
+  RWF: {
+    symbol: 'RF',
+    name: 'Rwandan Franc',
+    lowerUnitName: 'Centime',
+  },
+  WST: {
+    symbol: 'WS$',
+    name: 'Samoan Tala',
+    lowerUnitName: 'Sene',
+  },
+  STN: {
+    symbol: 'Db',
+    name: 'São Tomé and Príncipe Dobra',
+    lowerUnitName: 'Cêntimo',
+  },
+  RSD: {
+    symbol: 'РСД',
+    name: 'Serbian Dinar',
+    lowerUnitName: 'Para',
+  },
+  SBD: {
+    symbol: 'SI$',
+    name: 'Solomon Islands Dollar',
+    lowerUnitName: 'Cent',
+  },
+  KRW: {
+    symbol: '₩',
+    name: 'South Korean Won',
+    lowerUnitName: 'Jeon',
+  },
+  SHP: {
+    symbol: '£',
+    name: 'Saint Helena Pound',
+    lowerUnitName: 'Penny',
+  },
+  SDG: {
+    symbol: '£',
+    name: 'Sudanese Pound',
+    lowerUnitName: 'Piastre',
+  },
+  SRD: {
+    symbol: '$',
+    name: 'Surinamese Dollar',
+    lowerUnitName: 'Cent',
+  },
+  SYP: {
+    symbol: '£',
+    name: 'Syrian Pound',
+    lowerUnitName: 'Piastre',
+  },
+  TWD: {
+    symbol: 'NT$',
+    name: 'New Taiwan Dollar',
+    lowerUnitName: 'Cent',
+  },
+  TJS: {
+    symbol: 'ЅМ',
+    name: 'Tajikistani Somoni',
+    lowerUnitName: 'Diram',
+  },
+  TOP: {
+    symbol: 'T$',
+    name: 'Tongan Paʻanga',
+    lowerUnitName: 'Seniti',
+  },
+  TND: {
+    symbol: 'د.ت',
+    name: 'Tunisian Dinar',
+    lowerUnitName: 'Millime',
+  },
+  TRY: {
+    symbol: '₺',
+    name: 'Turkish Lira',
+    lowerUnitName: 'Kuruş',
+  },
+  TMT: {
+    symbol: 'm',
+    name: 'Turkmenistani Manat',
+    lowerUnitName: 'Tenge',
+  },
+  UGX: {
+    symbol: 'USh',
+    name: 'Ugandan Shilling',
+    lowerUnitName: 'Cent',
+  },
+  UAH: {
+    symbol: '₴',
+    name: 'Ukrainian Hryvnia',
+    lowerUnitName: 'Kopiyka',
+  },
+  VUV: {
+    symbol: 'Vt',
+    name: 'Vanuatu Vatu',
+    lowerUnitName: '',
+  },
+  VES: {
+    symbol: 'Bs.',
+    name: 'Venezuelan Bolívar Soberano',
+    lowerUnitName: 'Céntimo',
+  },
+  VND: {
+    symbol: '₫',
+    name: 'Vietnamese Đồng',
+    lowerUnitName: 'Hào',
+  },
+  ZMW: {
+    symbol: 'ZK',
+    name: 'Zambian Kwacha',
+    lowerUnitName: 'Ngwee',
+  },
+  ZWL: {
+    symbol: '$',
+    name: 'Zimbabwean Dollar',
+    lowerUnitName: 'Cent',
+  },
 } as const;
