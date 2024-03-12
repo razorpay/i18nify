@@ -8,19 +8,19 @@ import (
 )
 
 type Country struct {
-	code string
+	Code string
 }
 
 func (c Country) GetCountryMetadata() metadata.MetadataInformation {
-	return metadata.GetMetadataInformation(c.code)
+	return metadata.GetMetadataInformation(c.Code)
 }
 
 func (c Country) GetCountryPhoneNumber() phonenumber.CountryTeleInformation {
-	return phonenumber.GetCountryTeleInformation(c.code)
+	return phonenumber.GetCountryTeleInformation(c.Code)
 }
 
 func (c Country) GetCountrySubDivisions() subdivisions.CountrySubdivisions {
-	return subdivisions.GetCountrySubdivisions(c.code)
+	return subdivisions.GetCountrySubdivisions(c.Code)
 }
 
 func (c Country) GetCountryCurrency() []currency.CurrencyInformation {
@@ -35,6 +35,6 @@ func (c Country) GetCountryCurrency() []currency.CurrencyInformation {
 
 func NewCountry(code string) ICountry {
 	return Country{
-		code: code,
+		Code: code,
 	}
 }
