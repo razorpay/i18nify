@@ -1,4 +1,4 @@
-// extracted from https://www.henleyglobal.com/passport-index
+// extracted from https://www.henleyglobal.com/passport-index. Passport index uses https://api.henleypassportindex.com/api/v3/countries endpoint which brings the list of recognized countries and related data. This is has been picked up from there.
 
 export type CountryCodeType =
   | 'AF' // Afghanistan
