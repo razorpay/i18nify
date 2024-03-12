@@ -18,7 +18,8 @@ const parsePhoneNumber = (
   country?: CountryCodeType,
 ): PhoneInfo => {
   // Throw errors if phoneNumber is invalid
-  if (!phoneNumber) throw new Error(`Parameter 'phoneNumber' is invalid: ${phoneNumber}`);
+  if (!phoneNumber)
+    throw new Error(`Parameter 'phoneNumber' is invalid: ${phoneNumber}`);
 
   // Clean the phoneNumber by removing non-numeric characters
   phoneNumber = phoneNumber.toString();
