@@ -1,5 +1,20 @@
 # @razorpay/i18nify-react
 
+## 4.0.4
+
+### Patch Changes
+
+- 77e9bf7: feat[ATLAS-104]: Introducing Date & Time Module
+- Updated dependencies [77e9bf7]
+  - @razorpay/i18nify-js@1.6.0
+
+## 4.0.3
+
+### Patch Changes
+
+- Updated dependencies [92bbe13]
+  - @razorpay/i18nify-js@1.5.0
+
 ## 4.0.2
 
 ### Patch Changes

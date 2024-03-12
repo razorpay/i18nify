@@ -1,5 +1,17 @@
 # @razorpay/i18nify-js
 
+## 1.6.0
+
+### Minor Changes
+
+- 77e9bf7: feat[ATLAS-104]: Introducing Date & Time Module
+
+## 1.5.0
+
+### Minor Changes
+
+- 92bbe13: feat: Add new Geo module - Country Flag SVG's
+
 ## 1.4.4
 
 ### Patch Changes
