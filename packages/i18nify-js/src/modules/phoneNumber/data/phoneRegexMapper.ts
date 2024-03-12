@@ -1,4 +1,4 @@
-import { CountryCodeType } from '../../types/geo';
+import { CountryCodeType } from '../../types';
 
 export const PHONE_REGEX_MAPPER: { [key in CountryCodeType]: RegExp } = {
   // India, mobile numbers starting with 6, 7, 8, or 9 and followed by 9 digits
