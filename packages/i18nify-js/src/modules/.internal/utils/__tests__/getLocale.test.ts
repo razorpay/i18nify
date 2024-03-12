@@ -1,6 +1,4 @@
-import { getLocale } from '../getLocale';
-
-
+import { getLocale } from '..';
 
 describe('getLocale', () => {
   const mockNavigator = (navigator: string): void => {
@@ -9,14 +7,14 @@ describe('getLocale', () => {
       writable: true,
     });
   };
-  
+
   const mockNavigatorLanguage = (navigatorLanguage: string): void => {
     Object.defineProperty(window.navigator, 'language', {
       value: navigatorLanguage,
       writable: true,
     });
   };
-  
+
   const mockNavigatorLanguages = (navigatorLanguages: string[]): void => {
     Object.defineProperty(window.navigator, 'languages', {
       value: navigatorLanguages,
@@ -65,11 +63,11 @@ describe('getLocale in non-browser environment', () => {
   beforeAll(() => {
     // Store the original navigator
     originalNavigator = Object.getOwnPropertyDescriptor(window, 'navigator');
-    
+
     // Temporarily replace navigator with a proxy to simulate it being undefined
     Object.defineProperty(window, 'navigator', {
       value: undefined,
-      configurable: true
+      configurable: true,
     });
   });
 
@@ -84,4 +82,3 @@ describe('getLocale in non-browser environment', () => {
     }
   });
 });
-

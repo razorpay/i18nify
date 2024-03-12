@@ -1,0 +1,15 @@
+export const ALLOWED_FORMAT_PARTS_KEYS = [
+  'day',
+  'dayPeriod',
+  'era',
+  'fractionalSecond',
+  'hour',
+  'minute',
+  'month',
+  'relatedYear',
+  'second',
+  'timeZone',
+  'weekday',
+  'year',
+  'yearName',
+] as const;

@@ -1,5 +1,29 @@
 # @razorpay/i18nify-js
 
+## 1.6.0
+
+### Minor Changes
+
+- 77e9bf7: feat[ATLAS-104]: Introducing Date & Time Module
+
+## 1.5.0
+
+### Minor Changes
+
+- 92bbe13: feat: Add new Geo module - Country Flag SVG's
+
+## 1.4.4
+
+### Patch Changes
+
+- 1d758b7: fix: submodules added in published files in package.json
+
+## 1.4.3
+
+### Patch Changes
+
+- a5b362e: [fix]: sub-module files generated at root and imports fixed for react native
+
 ## 1.4.2
 
 ### Patch Changes

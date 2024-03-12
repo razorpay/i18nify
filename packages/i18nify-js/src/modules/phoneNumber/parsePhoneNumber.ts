@@ -1,5 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { CountryCodeType } from '../types/geo';
+import { CountryCodeType } from '../types';
 import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
 import formatPhoneNumber from './formatPhoneNumber';
 import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';

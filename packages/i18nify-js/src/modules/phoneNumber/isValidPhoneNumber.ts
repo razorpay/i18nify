@@ -1,7 +1,7 @@
 import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
-import { CountryCodeType } from '../types/geo';
+import { CountryCodeType } from '../types';
 
 // Validates whether a given phone number is valid based on the provided country code or auto-detects the country code and checks if the number matches the defined regex pattern for that country.
 const isValidPhoneNumber = (
