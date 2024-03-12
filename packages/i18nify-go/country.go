@@ -1,10 +1,10 @@
 package i18nify_go
 
 import (
-	metadata "i18nify/packages/i18nify-go/modules/country_metadata"
-	phonenumber "i18nify/packages/i18nify-go/modules/country_phonenumber"
-	subdivisions "i18nify/packages/i18nify-go/modules/country_subdivisions"
-	currency "i18nify/packages/i18nify-go/modules/currency"
+	metadata "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
+	phonenumber "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_phonenumber"
+	subdivisions "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
+	currency "github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
 )
 
 type Country struct {
