@@ -822,22 +822,22 @@ Leverage the power of Adobe's @internationalized/date with our module, designed 
 
 Discover more about integrating these powerful components into your software at [Adobe's Internationalized Date Documentation](https://react-spectrum.adobe.com/internationalized/date/index.html).
 
-##### Calendar 📆
+##### Calendar 📆 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/Calendar.html)
 
 Tailor your app with comprehensive calendar interfaces, ensuring global locale compatibility.
 
-##### CalendarDate 🗓
+##### CalendarDate 🗓 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/CalendarDate.html)
 
 Focus on date-specific functionalities, perfect for event planning and deadlines without the time zone hassle.
 
-##### CalendarDateTime 📅🕒
+##### CalendarDateTime 📅🕒 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/CalendarDateTime.html)
 
 Merge dates and times seamlessly for scheduling and reminders, with smart time zone handling.
 
-##### Time ⏰
+##### Time ⏰ [Documentation here](https://react-spectrum.adobe.com/internationalized/date/Time.html)
 
 Simplify time tracking and events in your app, concentrating solely on time without the date aspect.
 
-##### ZonedDateTime 🌍🕖
+##### ZonedDateTime 🌍🕖 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/ZonedDateTime.html)
 
 Master global time zones for scheduling and planning across borders, ensuring accuracy and user relevance.
