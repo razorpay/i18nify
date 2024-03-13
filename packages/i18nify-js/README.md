@@ -793,7 +793,7 @@ console.log(getWeekdays({ locale: 'ja-JP' })); // Outputs ['日曜日', '月曜�
 
 💡 Did You Know? The order and names of weekdays vary across cultures and languages. With `getWeekdays`, you can easily cater to a global audience, ensuring that your application speaks their language, quite literally! 🌍🗣️
 
-#### parseDateTime(dateInput, options:)
+#### parseDateTime(dateInput, options)
 
 🔍🗓️ The `parseDateTime` function is like a time-traveler's best friend, expertly navigating the complex world of dates and times. Whether it's a string or a Date object you're dealing with, this function seamlessly transforms it into a comprehensive, easy-to-digest package of date information, tailored to any locale you desire. 🌍⏲️
 
@@ -924,3 +924,29 @@ console.log(parsed3); // Outputs object with date components for January 23, 202
 ```
 
 💡 Pro Tip: Leverage `parseDateTime` in applications where detailed date analysis and manipulation are key, such as in calendar apps, scheduling tools, or date-sensitive data processing. It's like having a Swiss Army knife for all things related to dates and times! 📅🛠️
+
+#### Calendar, CalendarDate, CalendarDateTime, Time, ZonedDateTime
+
+Leverage the power of Adobe's @internationalized/date with our module, designed to offer a sophisticated, locale-sensitive approach to managing dates and times. Utilize these advanced tools to create applications that are both intuitive and efficient, ensuring they connect with users worldwide.
+
+Discover more about integrating these powerful components into your software at [Adobe's Internationalized Date Documentation](https://react-spectrum.adobe.com/internationalized/date/index.html).
+
+##### Calendar 📆 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/Calendar.html)
+
+Tailor your app with comprehensive calendar interfaces, ensuring global locale compatibility.
+
+##### CalendarDate 🗓 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/CalendarDate.html)
+
+Focus on date-specific functionalities, perfect for event planning and deadlines without the time zone hassle.
+
+##### CalendarDateTime 📅🕒 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/CalendarDateTime.html)
+
+Merge dates and times seamlessly for scheduling and reminders, with smart time zone handling.
+
+##### Time ⏰ [Documentation here](https://react-spectrum.adobe.com/internationalized/date/Time.html)
+
+Simplify time tracking and events in your app, concentrating solely on time without the date aspect.
+
+##### ZonedDateTime 🌍🕖 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/ZonedDateTime.html)
+
+Master global time zones for scheduling and planning across borders, ensuring accuracy and user relevance.
