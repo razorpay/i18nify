@@ -9,8 +9,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+93",
     "currency": [
-      "SVC",
-      "USD"
+      "AFN"
     ],
     "timezones": {
       "Asia/Kabul": {
@@ -48,8 +47,7 @@
     "sovereignty": "Finland",
     "dial_code": "+358",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Mariehamn": {
@@ -75,8 +73,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+355",
     "currency": [
-      "SVC",
-      "USD"
+      "ALL"
     ],
     "timezones": {
       "Europe/Tirane": {
@@ -106,8 +103,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+213",
     "currency": [
-      "SVC",
-      "USD"
+      "DZD"
     ],
     "timezones": {
       "Africa/Algiers": {
@@ -133,7 +129,6 @@
     "sovereignty": "United States",
     "dial_code": "+1",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -168,8 +163,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+376",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Andorra": {
@@ -195,8 +189,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+244",
     "currency": [
-      "SVC",
-      "USD"
+      "AOA"
     ],
     "timezones": {
       "Africa/Luanda": {
@@ -222,8 +215,7 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "XCD"
     ],
     "timezones": {
       "America/Anguilla": {
@@ -249,7 +241,6 @@
     "sovereignty": "Antarctic Treaty",
     "dial_code": "+672",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -279,8 +270,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "XCD"
     ],
     "timezones": {
       "America/Antigua": {
@@ -306,8 +296,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+54",
     "currency": [
-      "SVC",
-      "USD"
+      "ARS"
     ],
     "timezones": {
       "America/Argentina/Buenos_Aires": {
@@ -386,8 +375,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+374",
     "currency": [
-      "SVC",
-      "USD"
+      "AMD"
     ],
     "timezones": {
       "Asia/Yerevan": {
@@ -413,8 +401,7 @@
     "sovereignty": "Netherlands",
     "dial_code": "+297",
     "currency": [
-      "SVC",
-      "USD"
+      "AWG"
     ],
     "timezones": {
       "America/Aruba": {
@@ -452,8 +439,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+61",
     "currency": [
-      "SVC",
-      "USD"
+      "AUD"
     ],
     "timezones": {
       "Australia/Adelaide": {
@@ -509,8 +495,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+43",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Vienna": {
@@ -548,8 +533,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+994",
     "currency": [
-      "SVC",
-      "USD"
+      "AZN"
     ],
     "timezones": {
       "Asia/Baku": {
@@ -583,8 +567,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "BSD"
     ],
     "timezones": {
       "America/Nassau": {
@@ -610,8 +593,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+973",
     "currency": [
-      "SVC",
-      "USD"
+      "BHD"
     ],
     "timezones": {
       "Asia/Bahrain": {
@@ -649,8 +631,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+880",
     "currency": [
-      "SVC",
-      "USD"
+      "BDT"
     ],
     "timezones": {
       "Asia/Dhaka": {
@@ -680,8 +661,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "BBD"
     ],
     "timezones": {
       "America/Barbados": {
@@ -707,8 +687,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+375",
     "currency": [
-      "SVC",
-      "USD"
+      "BYN"
     ],
     "timezones": {
       "Europe/Minsk": {
@@ -738,8 +717,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+32",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Brussels": {
@@ -773,8 +751,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+501",
     "currency": [
-      "SVC",
-      "USD"
+      "BZD"
     ],
     "timezones": {
       "America/Belize": {
@@ -804,8 +781,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+229",
     "currency": [
-      "SVC",
-      "USD"
+      "XOF"
     ],
     "timezones": {
       "Africa/Porto-Novo": {
@@ -831,8 +807,7 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "BMD"
     ],
     "timezones": {
       "Atlantic/Bermuda": {
@@ -862,8 +837,8 @@
     "sovereignty": "UN member state",
     "dial_code": "+975",
     "currency": [
-      "SVC",
-      "USD"
+      "INR",
+      "BTN"
     ],
     "timezones": {
       "Asia/Thimphu": {
@@ -889,8 +864,8 @@
     "sovereignty": "UN member state",
     "dial_code": "+591",
     "currency": [
-      "SVC",
-      "USD"
+      "BOB",
+      "BOV"
     ],
     "timezones": {
       "America/La_Paz": {
@@ -924,7 +899,6 @@
     "sovereignty": "Netherlands",
     "dial_code": "+599",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -959,8 +933,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+387",
     "currency": [
-      "SVC",
-      "USD"
+      "BAM"
     ],
     "timezones": {
       "Europe/Sarajevo": {
@@ -994,8 +967,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+267",
     "currency": [
-      "SVC",
-      "USD"
+      "BWP"
     ],
     "timezones": {
       "Africa/Gaborone": {
@@ -1025,8 +997,7 @@
     "sovereignty": "Norway",
     "dial_code": "+47",
     "currency": [
-      "SVC",
-      "USD"
+      "NOK"
     ],
     "timezones": {
       "Europe/Oslo": {
@@ -1052,8 +1023,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+55",
     "currency": [
-      "SVC",
-      "USD"
+      "BRL"
     ],
     "timezones": {
       "America/Fortaleza": {
@@ -1133,7 +1103,6 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+246",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -1160,8 +1129,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+673",
     "currency": [
-      "SVC",
-      "USD"
+      "BND"
     ],
     "timezones": {
       "Asia/Brunei": {
@@ -1191,8 +1159,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+359",
     "currency": [
-      "SVC",
-      "USD"
+      "BGN"
     ],
     "timezones": {
       "Europe/Sofia": {
@@ -1226,8 +1193,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+226",
     "currency": [
-      "SVC",
-      "USD"
+      "XOF"
     ],
     "timezones": {
       "Africa/Ouagadougou": {
@@ -1257,8 +1223,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+257",
     "currency": [
-      "SVC",
-      "USD"
+      "BIF"
     ],
     "timezones": {
       "Africa/Bujumbura": {
@@ -1288,8 +1253,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+238",
     "currency": [
-      "SVC",
-      "USD"
+      "CVE"
     ],
     "timezones": {
       "Atlantic/Cape_Verde": {
@@ -1315,8 +1279,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+855",
     "currency": [
-      "SVC",
-      "USD"
+      "KHR"
     ],
     "timezones": {
       "Asia/Phnom_Penh": {
@@ -1350,8 +1313,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+237",
     "currency": [
-      "SVC",
-      "USD"
+      "XAF"
     ],
     "timezones": {
       "Africa/Douala": {
@@ -1381,8 +1343,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "CAD"
     ],
     "timezones": {
       "America/Vancouver": {
@@ -1488,8 +1449,7 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "KYD"
     ],
     "timezones": {
       "America/Cayman": {
@@ -1515,8 +1475,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+236",
     "currency": [
-      "SVC",
-      "USD"
+      "XAF"
     ],
     "timezones": {
       "Africa/Bangui": {
@@ -1554,8 +1513,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+235",
     "currency": [
-      "SVC",
-      "USD"
+      "XAF"
     ],
     "timezones": {
       "Africa/Ndjamena": {
@@ -1589,8 +1547,8 @@
     "sovereignty": "UN member state",
     "dial_code": "+56",
     "currency": [
-      "SVC",
-      "USD"
+      "CLP",
+      "CLF"
     ],
     "timezones": {
       "America/Santiago": {
@@ -1622,8 +1580,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+86",
     "currency": [
-      "SVC",
-      "USD"
+      "CNY"
     ],
     "timezones": {
       "Asia/Shanghai": {
@@ -1672,8 +1629,7 @@
     "sovereignty": "Australia",
     "dial_code": "+61",
     "currency": [
-      "SVC",
-      "USD"
+      "AUD"
     ],
     "timezones": {
       "Indian/Christmas": {
@@ -1707,8 +1663,7 @@
     "sovereignty": "Australia",
     "dial_code": "+61",
     "currency": [
-      "SVC",
-      "USD"
+      "AUD"
     ],
     "timezones": {
       "Indian/Cocos": {
@@ -1738,8 +1693,8 @@
     "sovereignty": "UN member state",
     "dial_code": "+57",
     "currency": [
-      "SVC",
-      "USD"
+      "COP",
+      "COU"
     ],
     "timezones": {
       "America/Bogota": {
@@ -1765,8 +1720,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+269",
     "currency": [
-      "SVC",
-      "USD"
+      "KMF"
     ],
     "timezones": {
       "Indian/Comoro": {
@@ -1796,8 +1750,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+243",
     "currency": [
-      "SVC",
-      "USD"
+      "XAF"
     ],
     "timezones": {
       "Africa/Lubumbashi": {
@@ -1846,8 +1799,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+242",
     "currency": [
-      "SVC",
-      "USD"
+      "CDF"
     ],
     "timezones": {
       "Africa/Brazzaville": {
@@ -1881,8 +1833,7 @@
     "sovereignty": "New Zealand",
     "dial_code": "+682",
     "currency": [
-      "SVC",
-      "USD"
+      "NZD"
     ],
     "timezones": {
       "Pacific/Rarotonga": {
@@ -1912,8 +1863,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+506",
     "currency": [
-      "SVC",
-      "USD"
+      "CRC"
     ],
     "timezones": {
       "America/Costa_Rica": {
@@ -1943,8 +1893,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+225",
     "currency": [
-      "SVC",
-      "USD"
+      "XOF"
     ],
     "timezones": {
       "Africa/Abidjan": {
@@ -1970,8 +1919,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+385",
     "currency": [
-      "SVC",
-      "USD"
+      "HRK"
     ],
     "timezones": {
       "Europe/Zagreb": {
@@ -2001,8 +1949,8 @@
     "sovereignty": "UN member state",
     "dial_code": "+53",
     "currency": [
-      "SVC",
-      "USD"
+      "CUP",
+      "CUC"
     ],
     "timezones": {
       "America/Havana": {
@@ -2032,8 +1980,7 @@
     "sovereignty": "Netherlands",
     "dial_code": "+599",
     "currency": [
-      "SVC",
-      "USD"
+      "ANG"
     ],
     "timezones": {
       "America/Curacao": {
@@ -2063,8 +2010,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+357",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Asia/Nicosia": {
@@ -2101,8 +2047,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+420",
     "currency": [
-      "SVC",
-      "USD"
+      "CZK"
     ],
     "timezones": {
       "Europe/Prague": {
@@ -2132,8 +2077,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+45",
     "currency": [
-      "SVC",
-      "USD"
+      "DKK"
     ],
     "timezones": {
       "Europe/Copenhagen": {
@@ -2171,8 +2115,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+253",
     "currency": [
-      "SVC",
-      "USD"
+      "DJF"
     ],
     "timezones": {
       "Africa/Djibouti": {
@@ -2210,8 +2153,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "XCD"
     ],
     "timezones": {
       "America/Dominica": {
@@ -2237,8 +2179,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "DOP"
     ],
     "timezones": {
       "America/Santo_Domingo": {
@@ -2264,7 +2205,6 @@
     "sovereignty": "UN member state",
     "dial_code": "+593",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -2294,8 +2234,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+20",
     "currency": [
-      "SVC",
-      "USD"
+      "EGP"
     ],
     "timezones": {
       "Africa/Cairo": {
@@ -2356,8 +2295,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+240",
     "currency": [
-      "SVC",
-      "USD"
+      "XAF"
     ],
     "timezones": {
       "Africa/Malabo": {
@@ -2391,8 +2329,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+291",
     "currency": [
-      "SVC",
-      "USD"
+      "ERN"
     ],
     "timezones": {
       "Africa/Asmara": {
@@ -2434,8 +2371,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+372",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Tallinn": {
@@ -2465,8 +2401,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+268",
     "currency": [
-      "SVC",
-      "USD"
+      "SZL"
     ],
     "timezones": {
       "Africa/Mbabane": {
@@ -2496,8 +2431,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+251",
     "currency": [
-      "SVC",
-      "USD"
+      "ETB"
     ],
     "timezones": {
       "Africa/Addis_Ababa": {
@@ -2543,8 +2477,7 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+500",
     "currency": [
-      "SVC",
-      "USD"
+      "FKP"
     ],
     "timezones": {
       "Atlantic/Stanley": {
@@ -2570,8 +2503,7 @@
     "sovereignty": "Denmark",
     "dial_code": "+298",
     "currency": [
-      "SVC",
-      "USD"
+      "DKK"
     ],
     "timezones": {
       "Atlantic/Faroe": {
@@ -2601,8 +2533,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+679",
     "currency": [
-      "SVC",
-      "USD"
+      "FJD"
     ],
     "timezones": {
       "Pacific/Fiji": {
@@ -2632,8 +2563,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+358",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Helsinki": {
@@ -2667,8 +2597,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+33",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Paris": {
@@ -2718,8 +2647,7 @@
     "sovereignty": "France",
     "dial_code": "+594",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "America/Cayenne": {
@@ -2745,8 +2673,7 @@
     "sovereignty": "France",
     "dial_code": "+689",
     "currency": [
-      "SVC",
-      "USD"
+      "XPF"
     ],
     "timezones": {
       "Pacific/Marquesas": {
@@ -2782,8 +2709,7 @@
     "sovereignty": "France",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Indian/Kerguelen": {
@@ -2809,8 +2735,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+241",
     "currency": [
-      "SVC",
-      "USD"
+      "XAF"
     ],
     "timezones": {
       "Africa/Libreville": {
@@ -2836,8 +2761,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+220",
     "currency": [
-      "SVC",
-      "USD"
+      "GMD"
     ],
     "timezones": {
       "Africa/Banjul": {
@@ -2879,8 +2803,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+995",
     "currency": [
-      "SVC",
-      "USD"
+      "GEL"
     ],
     "timezones": {
       "Asia/Tbilisi": {
@@ -2918,8 +2841,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+49",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Berlin": {
@@ -2945,8 +2867,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+233",
     "currency": [
-      "SVC",
-      "USD"
+      "GHS"
     ],
     "timezones": {
       "Africa/Accra": {
@@ -2984,8 +2905,7 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+350",
     "currency": [
-      "SVC",
-      "USD"
+      "GIP"
     ],
     "timezones": {
       "Europe/Gibraltar": {
@@ -3023,8 +2943,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+30",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Athens": {
@@ -3058,8 +2977,7 @@
     "sovereignty": "Denmark",
     "dial_code": "+299",
     "currency": [
-      "SVC",
-      "USD"
+      "DKK"
     ],
     "timezones": {
       "America/Nuuk": {
@@ -3099,8 +3017,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "XCD"
     ],
     "timezones": {
       "America/Grenada": {
@@ -3126,8 +3043,7 @@
     "sovereignty": "France",
     "dial_code": "+590",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "America/Guadeloupe": {
@@ -3153,7 +3069,6 @@
     "sovereignty": "United States",
     "dial_code": "+1",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -3184,8 +3099,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+502",
     "currency": [
-      "SVC",
-      "USD"
+      "GTQ"
     ],
     "timezones": {
       "America/Guatemala": {
@@ -3211,8 +3125,7 @@
     "sovereignty": "British Crown",
     "dial_code": "+44",
     "currency": [
-      "SVC",
-      "USD"
+      "GBP"
     ],
     "timezones": {
       "Europe/Guernsey": {
@@ -3242,8 +3155,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+224",
     "currency": [
-      "SVC",
-      "USD"
+      "GNF"
     ],
     "timezones": {
       "Africa/Conakry": {
@@ -3269,8 +3181,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+245",
     "currency": [
-      "SVC",
-      "USD"
+      "XOF"
     ],
     "timezones": {
       "Africa/Bissau": {
@@ -3300,8 +3211,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+592",
     "currency": [
-      "SVC",
-      "USD"
+      "GYD"
     ],
     "timezones": {
       "America/Guyana": {
@@ -3327,7 +3237,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+509",
     "currency": [
-      "SVC",
+      "HTG",
       "USD"
     ],
     "timezones": {
@@ -3358,8 +3268,7 @@
     "sovereignty": "Australia",
     "dial_code": "+00672",
     "currency": [
-      "SVC",
-      "USD"
+      "AUD"
     ],
     "timezones": {
       "Indian/Kerguelen": {
@@ -3385,8 +3294,7 @@
     "sovereignty": "UN observer state",
     "dial_code": "+39",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Vatican": {
@@ -3420,8 +3328,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+504",
     "currency": [
-      "SVC",
-      "USD"
+      "HNL"
     ],
     "timezones": {
       "America/Tegucigalpa": {
@@ -3455,8 +3362,7 @@
     "sovereignty": "China",
     "dial_code": "+852",
     "currency": [
-      "SVC",
-      "USD"
+      "HKD"
     ],
     "timezones": {
       "Asia/Hong_Kong": {
@@ -3494,8 +3400,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+36",
     "currency": [
-      "SVC",
-      "USD"
+      "HUF"
     ],
     "timezones": {
       "Europe/Budapest": {
@@ -3521,8 +3426,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+354",
     "currency": [
-      "SVC",
-      "USD"
+      "ISK"
     ],
     "timezones": {
       "Atlantic/Reykjavik": {
@@ -3568,8 +3472,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+91",
     "currency": [
-      "SVC",
-      "USD"
+      "INR"
     ],
     "timezones": {
       "Asia/Kolkata": {
@@ -3695,8 +3598,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+62",
     "currency": [
-      "SVC",
-      "USD"
+      "IDR"
     ],
     "timezones": {
       "Asia/Jakarta": {
@@ -3743,8 +3645,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+98",
     "currency": [
-      "SVC",
-      "USD"
+      "IRR"
     ],
     "timezones": {
       "Asia/Tehran": {
@@ -3774,8 +3675,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+964",
     "currency": [
-      "SVC",
-      "USD"
+      "IQD"
     ],
     "timezones": {
       "Asia/Baghdad": {
@@ -3809,8 +3709,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+353",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Dublin": {
@@ -3840,8 +3739,7 @@
     "sovereignty": "British Crown",
     "dial_code": "+44",
     "currency": [
-      "SVC",
-      "USD"
+      "GBP"
     ],
     "timezones": {
       "Europe/Isle_of_Man": {
@@ -3871,8 +3769,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+972",
     "currency": [
-      "SVC",
-      "USD"
+      "ILS"
     ],
     "timezones": {
       "Asia/Jerusalem": {
@@ -3906,8 +3803,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+39",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Rome": {
@@ -3957,8 +3853,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "JMD"
     ],
     "timezones": {
       "America/Jamaica": {
@@ -3984,8 +3879,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+81",
     "currency": [
-      "SVC",
-      "USD"
+      "JPY"
     ],
     "timezones": {
       "Asia/Tokyo": {
@@ -4011,8 +3905,7 @@
     "sovereignty": "British Crown",
     "dial_code": "+44",
     "currency": [
-      "SVC",
-      "USD"
+      "GBP"
     ],
     "timezones": {
       "Europe/Jersey": {
@@ -4046,8 +3939,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+962",
     "currency": [
-      "SVC",
-      "USD"
+      "JOD"
     ],
     "timezones": {
       "Asia/Amman": {
@@ -4077,8 +3969,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+7",
     "currency": [
-      "SVC",
-      "USD"
+      "KZT"
     ],
     "timezones": {
       "Asia/Aqtau": {
@@ -4126,8 +4017,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+254",
     "currency": [
-      "SVC",
-      "USD"
+      "KES"
     ],
     "timezones": {
       "Africa/Nairobi": {
@@ -4157,8 +4047,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+686",
     "currency": [
-      "SVC",
-      "USD"
+      "AUD"
     ],
     "timezones": {
       "Pacific/Tarawa": {
@@ -4194,8 +4083,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+850",
     "currency": [
-      "SVC",
-      "USD"
+      "KPW"
     ],
     "timezones": {
       "Asia/Pyongyang": {
@@ -4221,8 +4109,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+82",
     "currency": [
-      "SVC",
-      "USD"
+      "KRW"
     ],
     "timezones": {
       "Asia/Seoul": {
@@ -4252,8 +4139,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+965",
     "currency": [
-      "SVC",
-      "USD"
+      "KWD"
     ],
     "timezones": {
       "Asia/Kuwait": {
@@ -4283,8 +4169,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+996",
     "currency": [
-      "SVC",
-      "USD"
+      "KGS"
     ],
     "timezones": {
       "Asia/Bishkek": {
@@ -4318,8 +4203,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+856",
     "currency": [
-      "SVC",
-      "USD"
+      "LAK"
     ],
     "timezones": {
       "Asia/Vientiane": {
@@ -4353,8 +4237,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+371",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Riga": {
@@ -4388,8 +4271,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+961",
     "currency": [
-      "SVC",
-      "USD"
+      "LBP"
     ],
     "timezones": {
       "Asia/Beirut": {
@@ -4427,8 +4309,8 @@
     "sovereignty": "UN member state",
     "dial_code": "+266",
     "currency": [
-      "SVC",
-      "USD"
+      "LSL",
+      "ZAR"
     ],
     "timezones": {
       "Africa/Maseru": {
@@ -4466,8 +4348,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+231",
     "currency": [
-      "SVC",
-      "USD"
+      "LRD"
     ],
     "timezones": {
       "Africa/Monrovia": {
@@ -4493,8 +4374,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+218",
     "currency": [
-      "SVC",
-      "USD"
+      "LYD"
     ],
     "timezones": {
       "Africa/Tripoli": {
@@ -4528,8 +4408,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+423",
     "currency": [
-      "SVC",
-      "USD"
+      "CHF"
     ],
     "timezones": {
       "Europe/Vaduz": {
@@ -4555,8 +4434,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+370",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Vilnius": {
@@ -4590,8 +4468,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+352",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Luxembourg": {
@@ -4625,8 +4502,7 @@
     "sovereignty": "China",
     "dial_code": "+853",
     "currency": [
-      "SVC",
-      "USD"
+      "MOP"
     ],
     "timezones": {
       "Asia/Macau": {
@@ -4660,8 +4536,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+261",
     "currency": [
-      "SVC",
-      "USD"
+      "MGA"
     ],
     "timezones": {
       "Indian/Antananarivo": {
@@ -4691,8 +4566,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+265",
     "currency": [
-      "SVC",
-      "USD"
+      "MWK"
     ],
     "timezones": {
       "Africa/Blantyre": {
@@ -4730,8 +4604,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+60",
     "currency": [
-      "SVC",
-      "USD"
+      "MYR"
     ],
     "timezones": {
       "Asia/Kuala_Lumpur": {
@@ -4788,8 +4661,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+960",
     "currency": [
-      "SVC",
-      "USD"
+      "MVR"
     ],
     "timezones": {
       "Indian/Maldives": {
@@ -4819,8 +4691,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+223",
     "currency": [
-      "SVC",
-      "USD"
+      "XOF"
     ],
     "timezones": {
       "Africa/Bamako": {
@@ -4850,8 +4721,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+356",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Malta": {
@@ -4881,7 +4751,6 @@
     "sovereignty": "UN member state",
     "dial_code": "+692",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -4915,8 +4784,7 @@
     "sovereignty": "France",
     "dial_code": "+596",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "America/Martinique": {
@@ -4942,8 +4810,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+222",
     "currency": [
-      "SVC",
-      "USD"
+      "MRU"
     ],
     "timezones": {
       "Africa/Nouakchott": {
@@ -4989,8 +4856,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+230",
     "currency": [
-      "SVC",
-      "USD"
+      "MUR"
     ],
     "timezones": {
       "Indian/Mauritius": {
@@ -5024,8 +4890,7 @@
     "sovereignty": "France",
     "dial_code": "+262",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Indian/Mayotte": {
@@ -5051,8 +4916,8 @@
     "sovereignty": "UN member state",
     "dial_code": "+52",
     "currency": [
-      "SVC",
-      "USD"
+      "MXN",
+      "MXV"
     ],
     "timezones": {
       "America/Monterrey": {
@@ -5108,7 +4973,6 @@
     "sovereignty": "UN member state",
     "dial_code": "+691",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -5173,8 +5037,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+373",
     "currency": [
-      "SVC",
-      "USD"
+      "MDL"
     ],
     "timezones": {
       "Europe/Chisinau": {
@@ -5212,8 +5075,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+377",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Monaco": {
@@ -5247,8 +5109,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+976",
     "currency": [
-      "SVC",
-      "USD"
+      "MNT"
     ],
     "timezones": {
       "Asia/Hovd": {
@@ -5284,8 +5145,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+382",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Podgorica": {
@@ -5331,8 +5191,7 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "XCD"
     ],
     "timezones": {
       "America/Montserrat": {
@@ -5358,8 +5217,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+212",
     "currency": [
-      "SVC",
-      "USD"
+      "MAD"
     ],
     "timezones": {
       "Africa/Casablanca": {
@@ -5393,8 +5251,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+258",
     "currency": [
-      "SVC",
-      "USD"
+      "MZN"
     ],
     "timezones": {
       "Africa/Maputo": {
@@ -5424,8 +5281,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+95",
     "currency": [
-      "SVC",
-      "USD"
+      "MMK"
     ],
     "timezones": {
       "Asia/Yangon": {
@@ -5451,8 +5307,8 @@
     "sovereignty": "UN member state",
     "dial_code": "+264",
     "currency": [
-      "SVC",
-      "USD"
+      "NAD",
+      "ZAR"
     ],
     "timezones": {
       "Africa/Windhoek": {
@@ -5500,8 +5356,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+674",
     "currency": [
-      "SVC",
-      "USD"
+      "AUD"
     ],
     "timezones": {
       "Pacific/Nauru": {
@@ -5531,8 +5386,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+977",
     "currency": [
-      "SVC",
-      "USD"
+      "NPR"
     ],
     "timezones": {
       "Asia/Kathmandu": {
@@ -5562,8 +5416,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+31",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Amsterdam": {
@@ -5593,8 +5446,7 @@
     "sovereignty": "France",
     "dial_code": "+687",
     "currency": [
-      "SVC",
-      "USD"
+      "XPF"
     ],
     "timezones": {
       "Pacific/Noumea": {
@@ -5620,8 +5472,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+64",
     "currency": [
-      "SVC",
-      "USD"
+      "NZD"
     ],
     "timezones": {
       "Pacific/Auckland": {
@@ -5654,8 +5505,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+505",
     "currency": [
-      "SVC",
-      "USD"
+      "NIO"
     ],
     "timezones": {
       "America/Managua": {
@@ -5685,8 +5535,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+227",
     "currency": [
-      "SVC",
-      "USD"
+      "XOF"
     ],
     "timezones": {
       "Africa/Niamey": {
@@ -5724,8 +5573,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+234",
     "currency": [
-      "SVC",
-      "USD"
+      "NGN"
     ],
     "timezones": {
       "Africa/Lagos": {
@@ -5767,8 +5615,7 @@
     "sovereignty": "New Zealand",
     "dial_code": "+683",
     "currency": [
-      "SVC",
-      "USD"
+      "NZD"
     ],
     "timezones": {
       "Pacific/Niue": {
@@ -5798,8 +5645,7 @@
     "sovereignty": "Australia",
     "dial_code": "+672",
     "currency": [
-      "SVC",
-      "USD"
+      "AUD"
     ],
     "timezones": {
       "Pacific/Norfolk": {
@@ -5825,8 +5671,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+389",
     "currency": [
-      "SVC",
-      "USD"
+      "MKD"
     ],
     "timezones": {
       "Europe/Skopje": {
@@ -5868,7 +5713,6 @@
     "sovereignty": "United States",
     "dial_code": "+1",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -5911,8 +5755,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+47",
     "currency": [
-      "SVC",
-      "USD"
+      "NOK"
     ],
     "timezones": {
       "Europe/Oslo": {
@@ -5954,8 +5797,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+968",
     "currency": [
-      "SVC",
-      "USD"
+      "OMR"
     ],
     "timezones": {
       "Asia/Muscat": {
@@ -5993,8 +5835,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+92",
     "currency": [
-      "SVC",
-      "USD"
+      "PKR"
     ],
     "timezones": {
       "Asia/Karachi": {
@@ -6040,7 +5881,6 @@
     "sovereignty": "UN member state",
     "dial_code": "+680",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -6091,7 +5931,6 @@
     "sovereignty": "UN observer state",
     "dial_code": "+970",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -6121,7 +5960,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+507",
     "currency": [
-      "SVC",
+      "PAB",
       "USD"
     ],
     "timezones": {
@@ -6152,8 +5991,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+675",
     "currency": [
-      "SVC",
-      "USD"
+      "PGK"
     ],
     "timezones": {
       "Pacific/Port_Moresby": {
@@ -6194,8 +6032,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+595",
     "currency": [
-      "SVC",
-      "USD"
+      "PYG"
     ],
     "timezones": {
       "America/Asuncion": {
@@ -6225,8 +6062,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+51",
     "currency": [
-      "SVC",
-      "USD"
+      "PEN"
     ],
     "timezones": {
       "America/Lima": {
@@ -6260,8 +6096,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+63",
     "currency": [
-      "SVC",
-      "USD"
+      "PHP"
     ],
     "timezones": {
       "Asia/Manila": {
@@ -6375,8 +6210,7 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+64",
     "currency": [
-      "SVC",
-      "USD"
+      "NZD"
     ],
     "timezones": {
       "Pacific/Pitcairn": {
@@ -6402,8 +6236,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+48",
     "currency": [
-      "SVC",
-      "USD"
+      "PLN"
     ],
     "timezones": {
       "Europe/Warsaw": {
@@ -6429,8 +6262,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+351",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Lisbon": {
@@ -6466,7 +6298,6 @@
     "sovereignty": "United States",
     "dial_code": "+1",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -6497,8 +6328,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+974",
     "currency": [
-      "SVC",
-      "USD"
+      "QAR"
     ],
     "timezones": {
       "Asia/Qatar": {
@@ -6528,8 +6358,7 @@
     "sovereignty": "France",
     "dial_code": "+262",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Indian/Reunion": {
@@ -6555,8 +6384,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+40",
     "currency": [
-      "SVC",
-      "USD"
+      "RON"
     ],
     "timezones": {
       "Europe/Bucharest": {
@@ -6590,8 +6418,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+7",
     "currency": [
-      "SVC",
-      "USD"
+      "RUB"
     ],
     "timezones": {
       "Europe/Moscow": {
@@ -6774,8 +6601,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+250",
     "currency": [
-      "SVC",
-      "USD"
+      "RWF"
     ],
     "timezones": {
       "Africa/Kigali": {
@@ -6813,8 +6639,7 @@
     "sovereignty": "France",
     "dial_code": "+590",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "America/St_Barthelemy": {
@@ -6840,8 +6665,7 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+290",
     "currency": [
-      "SVC",
-      "USD"
+      "SHP"
     ],
     "timezones": {
       "Atlantic/St_Helena": {
@@ -6867,8 +6691,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "XCD"
     ],
     "timezones": {
       "America/St_Kitts": {
@@ -6894,8 +6717,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "XCD"
     ],
     "timezones": {
       "America/St_Lucia": {
@@ -6921,8 +6743,7 @@
     "sovereignty": "France",
     "dial_code": "+590",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "America/Marigot": {
@@ -6948,8 +6769,7 @@
     "sovereignty": "France",
     "dial_code": "+508",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "America/Miquelon": {
@@ -6975,8 +6795,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "XCD"
     ],
     "timezones": {
       "America/St_Vincent": {
@@ -7006,8 +6825,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+685",
     "currency": [
-      "SVC",
-      "USD"
+      "WST"
     ],
     "timezones": {
       "Pacific/Apia": {
@@ -7037,8 +6855,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+378",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/San_Marino": {
@@ -7064,8 +6881,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+239",
     "currency": [
-      "SVC",
-      "USD"
+      "STN"
     ],
     "timezones": {
       "Africa/Sao_Tome": {
@@ -7091,8 +6907,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+966",
     "currency": [
-      "SVC",
-      "USD"
+      "SAR"
     ],
     "timezones": {
       "Asia/Riyadh": {
@@ -7118,8 +6933,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+221",
     "currency": [
-      "SVC",
-      "USD"
+      "XOF"
     ],
     "timezones": {
       "Africa/Dakar": {
@@ -7157,8 +6971,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+381",
     "currency": [
-      "SVC",
-      "USD"
+      "RSD"
     ],
     "timezones": {
       "Europe/Belgrade": {
@@ -7196,8 +7009,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+248",
     "currency": [
-      "SVC",
-      "USD"
+      "SCR"
     ],
     "timezones": {
       "Indian/Mahe": {
@@ -7227,8 +7039,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+232",
     "currency": [
-      "SVC",
-      "USD"
+      "SLL"
     ],
     "timezones": {
       "Africa/Freetown": {
@@ -7262,8 +7073,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+65",
     "currency": [
-      "SVC",
-      "USD"
+      "SGD"
     ],
     "timezones": {
       "Asia/Singapore": {
@@ -7305,8 +7115,7 @@
     "sovereignty": "Netherlands",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "ANG"
     ],
     "timezones": {
       "America/Lower_Princes": {
@@ -7336,8 +7145,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+421",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Bratislava": {
@@ -7367,8 +7175,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+386",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Ljubljana": {
@@ -7398,8 +7205,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+677",
     "currency": [
-      "SVC",
-      "USD"
+      "SBD"
     ],
     "timezones": {
       "Pacific/Guadalcanal": {
@@ -7429,8 +7235,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+252",
     "currency": [
-      "SVC",
-      "USD"
+      "SOS"
     ],
     "timezones": {
       "Africa/Mogadishu": {
@@ -7468,8 +7273,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+27",
     "currency": [
-      "SVC",
-      "USD"
+      "ZAR"
     ],
     "timezones": {
       "Africa/Johannesburg": {
@@ -7535,7 +7339,6 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+500",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -7562,8 +7365,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+211",
     "currency": [
-      "SVC",
-      "USD"
+      "SSP"
     ],
     "timezones": {
       "Africa/Juba": {
@@ -7589,8 +7391,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+34",
     "currency": [
-      "SVC",
-      "USD"
+      "EUR"
     ],
     "timezones": {
       "Europe/Madrid": {
@@ -7638,8 +7439,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+94",
     "currency": [
-      "SVC",
-      "USD"
+      "LKR"
     ],
     "timezones": {
       "Asia/Colombo": {
@@ -7673,8 +7473,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+249",
     "currency": [
-      "SVC",
-      "USD"
+      "SDG"
     ],
     "timezones": {
       "Africa/Khartoum": {
@@ -7708,8 +7507,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+597",
     "currency": [
-      "SVC",
-      "USD"
+      "SRD"
     ],
     "timezones": {
       "America/Paramaribo": {
@@ -7751,8 +7549,7 @@
     "sovereignty": "Norway",
     "dial_code": "+47",
     "currency": [
-      "SVC",
-      "USD"
+      "SRD"
     ],
     "timezones": {
       "Arctic/Longyearbyen": {
@@ -7782,8 +7579,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+46",
     "currency": [
-      "SVC",
-      "USD"
+      "SEK"
     ],
     "timezones": {
       "Europe/Stockholm": {
@@ -7821,8 +7617,9 @@
     "sovereignty": "UN member state",
     "dial_code": "+41",
     "currency": [
-      "SVC",
-      "USD"
+      "CHF",
+      "CHE",
+      "CHW"
     ],
     "timezones": {
       "Europe/Zurich": {
@@ -7860,8 +7657,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+963",
     "currency": [
-      "SVC",
-      "USD"
+      "SYP"
     ],
     "timezones": {
       "Asia/Damascus": {
@@ -7907,8 +7703,7 @@
     "sovereignty": "Disputed [aa]",
     "dial_code": "+886",
     "currency": [
-      "SVC",
-      "USD"
+      "TWD"
     ],
     "timezones": {
       "Asia/Taipei": {
@@ -7946,8 +7741,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+992",
     "currency": [
-      "SVC",
-      "USD"
+      "TJS"
     ],
     "timezones": {
       "Asia/Dushanbe": {
@@ -7977,8 +7771,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+255",
     "currency": [
-      "SVC",
-      "USD"
+      "TZS"
     ],
     "timezones": {
       "Africa/Dar_es_Salaam": {
@@ -8012,8 +7805,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+66",
     "currency": [
-      "SVC",
-      "USD"
+      "THB"
     ],
     "timezones": {
       "Asia/Bangkok": {
@@ -8043,7 +7835,6 @@
     "sovereignty": "UN member state",
     "dial_code": "+670",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -8082,8 +7873,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+228",
     "currency": [
-      "SVC",
-      "USD"
+      "XOF"
     ],
     "timezones": {
       "Africa/Lome": {
@@ -8129,8 +7919,7 @@
     "sovereignty": "New Zealand",
     "dial_code": "+690",
     "currency": [
-      "SVC",
-      "USD"
+      "NZD"
     ],
     "timezones": {
       "Pacific/Fakaofo": {
@@ -8160,8 +7949,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+676",
     "currency": [
-      "SVC",
-      "USD"
+      "TOP"
     ],
     "timezones": {
       "Pacific/Tongatapu": {
@@ -8191,8 +7979,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
-      "USD"
+      "TTD"
     ],
     "timezones": {
       "America/Port_of_Spain": {
@@ -8234,8 +8021,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+216",
     "currency": [
-      "SVC",
-      "USD"
+      "TND"
     ],
     "timezones": {
       "Africa/Tunis": {
@@ -8265,8 +8051,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+90",
     "currency": [
-      "SVC",
-      "USD"
+      "TRY"
     ],
     "timezones": {
       "Europe/Istanbul": {
@@ -8308,8 +8093,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+993",
     "currency": [
-      "SVC",
-      "USD"
+      "TMT"
     ],
     "timezones": {
       "Asia/Ashgabat": {
@@ -8343,7 +8127,6 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+1",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -8370,8 +8153,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+688",
     "currency": [
-      "SVC",
-      "USD"
+      "AUD"
     ],
     "timezones": {
       "Pacific/Funafuti": {
@@ -8409,8 +8191,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+256",
     "currency": [
-      "SVC",
-      "USD"
+      "UGX"
     ],
     "timezones": {
       "Africa/Kampala": {
@@ -8448,8 +8229,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+380",
     "currency": [
-      "SVC",
-      "USD"
+      "UAH"
     ],
     "timezones": {
       "Europe/Kyiv": {
@@ -8494,8 +8274,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+971",
     "currency": [
-      "SVC",
-      "USD"
+      "AED"
     ],
     "timezones": {
       "Asia/Dubai": {
@@ -8537,8 +8316,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+44",
     "currency": [
-      "SVC",
-      "USD"
+      "GBP"
     ],
     "timezones": {
       "Europe/London": {
@@ -8572,7 +8350,6 @@
     "sovereignty": "United States",
     "dial_code": "+1",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -8602,7 +8379,6 @@
     "sovereignty": "UN member state",
     "dial_code": "+1",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -8722,8 +8498,9 @@
     "sovereignty": "UN member state",
     "dial_code": "+598",
     "currency": [
-      "SVC",
-      "USD"
+      "UYI",
+      "UYU",
+      "UYW"
     ],
     "timezones": {
       "America/Montevideo": {
@@ -8749,8 +8526,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+998",
     "currency": [
-      "SVC",
-      "USD"
+      "UZS"
     ],
     "timezones": {
       "Asia/Samarkand": {
@@ -8787,8 +8563,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+678",
     "currency": [
-      "SVC",
-      "USD"
+      "VUV"
     ],
     "timezones": {
       "Pacific/Efate": {
@@ -8822,8 +8597,8 @@
     "sovereignty": "UN member state",
     "dial_code": "+58",
     "currency": [
-      "SVC",
-      "USD"
+      "VES",
+      "VED"
     ],
     "timezones": {
       "America/Caracas": {
@@ -8849,8 +8624,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+84",
     "currency": [
-      "SVC",
-      "USD"
+      "VND"
     ],
     "timezones": {
       "Asia/Bangkok": {
@@ -8895,7 +8669,6 @@
     "sovereignty": "United Kingdom",
     "dial_code": "+1",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -8922,7 +8695,6 @@
     "sovereignty": "United States",
     "dial_code": "+1",
     "currency": [
-      "SVC",
       "USD"
     ],
     "timezones": {
@@ -8949,8 +8721,7 @@
     "sovereignty": "France",
     "dial_code": "+681",
     "currency": [
-      "SVC",
-      "USD"
+      "XPF"
     ],
     "timezones": {
       "Pacific/Wallis": {
@@ -8984,8 +8755,7 @@
     "sovereignty": "Disputed",
     "dial_code": "+212",
     "currency": [
-      "SVC",
-      "USD"
+      "MAD"
     ],
     "timezones": {
       "Africa/El_Aaiun": {
@@ -9015,8 +8785,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+967",
     "currency": [
-      "SVC",
-      "USD"
+      "YER"
     ],
     "timezones": {
       "Asia/Aden": {
@@ -9042,8 +8811,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+260",
     "currency": [
-      "SVC",
-      "USD"
+      "ZMW"
     ],
     "timezones": {
       "Africa/Lusaka": {
@@ -9093,8 +8861,7 @@
     "sovereignty": "UN member state",
     "dial_code": "+263",
     "currency": [
-      "SVC",
-      "USD"
+      "ZWL"
     ],
     "timezones": {
       "Africa/Harare": {
