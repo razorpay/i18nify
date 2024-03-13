@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.6.1
+
+### Patch Changes
+
+- 6980dba: fix: update country code data for phone number and currency module
+
 ## 1.6.0
 
 ### Minor Changes
