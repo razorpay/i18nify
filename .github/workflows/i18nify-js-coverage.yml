@@ -2,6 +2,8 @@ name: CodeCov Code Coverage PR Analysis
 
 on:
   pull_request:
+    paths:
+      - 'packages/i18nify-js/**'
   push:
     branches:
       - master
