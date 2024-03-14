@@ -2,7 +2,7 @@ name: (i18nify-js) Build & Validate
 on:
   pull_request:
     branches-ignore: 
-      - re-arch/i18nify-multiple-langs
+      - 're-arch/i18nify-multiple-langs'
 
 defaults:
   run:
