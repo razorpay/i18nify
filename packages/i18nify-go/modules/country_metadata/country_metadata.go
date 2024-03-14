@@ -4,6 +4,7 @@
 //    countryMetadata, err := UnmarshalCountryMetadata(bytes)
 //    bytes, err = countryMetadata.Marshal()
 
+// Package country_metadata provides functionality to handle metadata information about countries.
 package country_metadata
 
 import (
@@ -12,110 +13,79 @@ import (
 	"io/ioutil"
 )
 
+// DataFile defines the path to the JSON data file containing country metadata.
 const DataFile = "modules/country_metadata/data.json"
 
+// UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
 func UnmarshalCountryMetadata(data []byte) (CountryMetadata, error) {
 	var r CountryMetadata
 	err := json.Unmarshal(data, &r)
 	return r, err
 }
 
+// Marshal converts a CountryMetadata struct into JSON data.
 func (r *CountryMetadata) Marshal() ([]byte, error) {
 	return json.Marshal(r)
 }
 
+// CountryMetadata represents metadata information about countries.
 type CountryMetadata struct {
+	// MetadataInformation holds metadata information for each country, keyed by country code.
 	MetadataInformation map[string]MetadataInformation `json:"metadata_information"`
 }
 
+// GetAllMetadataInformation returns all metadata information about countries.
 func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInformation {
 	return r.MetadataInformation
 }
 
+// GetMetadataInformation retrieves metadata information for a specific country code.
 func GetMetadataInformation(code string) MetadataInformation {
+	// Read JSON data file containing country metadata.
 	metaJsonData, err := ioutil.ReadFile(DataFile)
+	if err != nil {
+		// Handle error reading the file.
+		fmt.Printf("Error reading country metadata file: %v", err)
+		return MetadataInformation{}
+	}
+
+	// Unmarshal JSON data into CountryMetadata struct.
 	allCountryMetaData, err := UnmarshalCountryMetadata(metaJsonData)
 	if err != nil {
+		// Handle error unmarshalling the JSON data.
 		fmt.Printf("Error unmarshalling country metadata: %v", err)
 		return MetadataInformation{}
 	}
+
+	// Return metadata information for the specified country code.
 	return allCountryMetaData.MetadataInformation[code]
 }
 
+// NewCountryMetadata creates a new CountryMetadata instance.
 func NewCountryMetadata(metadataInformation map[string]MetadataInformation) *CountryMetadata {
 	return &CountryMetadata{
 		MetadataInformation: metadataInformation,
 	}
 }
 
+// MetadataInformation contains detailed information about a specific country.
 type MetadataInformation struct {
-	Alpha3            string              `json:"alpha_3"`
-	ContinentCode     string              `json:"continent_code"`
-	ContinentName     string              `json:"continent_name"`
-	CountryName       string              `json:"country_name"`
-	Currency          []string            `json:"currency"`
-	DefaultLocale     string              `json:"default_locale"`
-	DialCode          string              `json:"dial_code"`
-	Flag              string              `json:"flag"`
-	Locales           []Locale            `json:"locales"`
-	NumericCode       string              `json:"numeric_code"`
-	Sovereignty       string              `json:"sovereignty"`
-	TimezoneOfCapital string              `json:"timezone_of_capital"`
-	Timezones         map[string]Timezone `json:"timezones"`
+	Alpha3            string              `json:"alpha_3"`             // Alpha3 represents the ISO 3166-1 alpha-3 code of the country.
+	ContinentCode     string              `json:"continent_code"`      // ContinentCode represents the continent code of the country.
+	ContinentName     string              `json:"continent_name"`      // ContinentName represents the name of the continent where the country belongs.
+	CountryName       string              `json:"country_name"`        // CountryName represents the official name of the country.
+	Currency          []string            `json:"currency"`            // Currency represents the official currencies used in the country.
+	DefaultLocale     string              `json:"default_locale"`      // DefaultLocale represents the default locale used in the country.
+	DialCode          string              `json:"dial_code"`           // DialCode represents the international dialing code of the country.
+	Flag              string              `json:"flag"`                // Flag represents the flag emoji or image URL of the country.
+	Locales           []Locale            `json:"locales"`             // Locales represents the list of supported locales in the country.
+	NumericCode       string              `json:"numeric_code"`        // NumericCode represents the ISO 3166-1 numeric code of the country.
+	Sovereignty       string              `json:"sovereignty"`         // Sovereignty represents the official sovereignty status of the country.
+	TimezoneOfCapital string              `json:"timezone_of_capital"` // TimezoneOfCapital represents the timezone of the capital city of the country.
+	Timezones         map[string]Timezone `json:"timezones"`           // Timezones represents the list of timezones used in the country, keyed by timezone identifier.
 }
 
-func (r *MetadataInformation) GetAlpha3() string {
-	return r.Alpha3
-}
-
-func (r *MetadataInformation) GetContinentCode() string {
-	return r.ContinentCode
-}
-
-func (r *MetadataInformation) GetContinentName() string {
-	return r.ContinentName
-}
-
-func (r *MetadataInformation) GetCountryName() string {
-	return r.CountryName
-}
-
-func (r *MetadataInformation) GetCurrency() []string {
-	return r.Currency
-}
-
-func (r *MetadataInformation) GetDefaultLocale() string {
-	return r.DefaultLocale
-}
-
-func (r *MetadataInformation) GetDialCode() string {
-	return r.DialCode
-}
-
-func (r *MetadataInformation) GetFlag() string {
-	return r.Flag
-}
-
-func (r *MetadataInformation) GetLocales() []Locale {
-	return r.Locales
-}
-
-func (r *MetadataInformation) GetNumericCode() string {
-	return r.NumericCode
-}
-
-func (r *MetadataInformation) GetSovereignty() string {
-	return r.Sovereignty
-}
-
-func (r *MetadataInformation) GetTimezoneOfCapital() string {
-	return r.TimezoneOfCapital
-}
-
-func (r *MetadataInformation) GetTimezones() map[string]Timezone {
-	return r.Timezones
-}
-
+// NewMetadataInformation creates a new MetadataInformation instance.
 func NewMetadataInformation(alpha_3 string, continentCode string, continentName string, countryName string, currency []string, defaultLocale string, dialCode string, flag string, locales []Locale, numericCode string, sovereignty string, timezoneOfCapital string, timezones map[string]Timezone) *MetadataInformation {
 	return &MetadataInformation{
 		Alpha3:            alpha_3,
@@ -134,19 +104,13 @@ func NewMetadataInformation(alpha_3 string, continentCode string, continentName 
 	}
 }
 
+// Locale represents a locale with its code and name.
 type Locale struct {
-	Code string `json:"code"`
-	Name string `json:"name"`
+	Code string `json:"code"` // Code represents the locale code.
+	Name string `json:"name"` // Name represents the name of the locale.
 }
 
-func (r *Locale) GetCode() string {
-	return r.Code
-}
-
-func (r *Locale) GetName() string {
-	return r.Name
-}
-
+// NewLocale creates a new Locale instance.
 func NewLocale(code string, name string) *Locale {
 	return &Locale{
 		Code: code,
@@ -154,14 +118,12 @@ func NewLocale(code string, name string) *Locale {
 	}
 }
 
+// Timezone represents a timezone with its UTC offset.
 type Timezone struct {
-	UTCOffset string `json:"utc_offset"`
+	UTCOffset string `json:"utc_offset"` // UTCOffset represents the UTC offset of the timezone.
 }
 
-func (r *Timezone) GetUTCOffset() string {
-	return r.UTCOffset
-}
-
+// NewTimezone creates a new Timezone instance.
 func NewTimezone(utcOffset string) *Timezone {
 	return &Timezone{
 		UTCOffset: utcOffset,

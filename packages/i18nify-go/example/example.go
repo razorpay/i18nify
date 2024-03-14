@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	i18nify_go "i18nify/packages/i18nify-go"
-	"i18nify/packages/i18nify-go/modules/currency"
+	i18nify_go "github.com/razorpay/i18nify/packages/i18nify-go"
+	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
 )
 
 func main() {
@@ -12,21 +12,21 @@ func main() {
 
 	metaDataIN := countryIN.GetCountryMetadata()
 	fmt.Println(metaDataIN)
-	fmt.Println(metaDataIN.GetCountryName())
-	fmt.Println(metaDataIN.GetCurrency())
-	fmt.Println(metaDataIN.GetDialCode())
-	fmt.Println(metaDataIN.GetTimezones())
-	fmt.Println(metaDataIN.GetDefaultLocale())
+	fmt.Println(metaDataIN.CountryName)
+	fmt.Println(metaDataIN.Currency)
+	fmt.Println(metaDataIN.DialCode)
+	fmt.Println(metaDataIN.Timezones)
+	fmt.Println(metaDataIN.DefaultLocale)
 
 	//INR
 	currencyIN := countryIN.GetCountryCurrency()
-	fmt.Println(currencyIN[0].GetName())
-	fmt.Println(currencyIN[0].GetSymbol())
+	fmt.Println(currencyIN[0].Name)
+	fmt.Println(currencyIN[0].Symbol)
 
 	//India PhoneNumber
 	phoneNumberIN := countryIN.GetCountryPhoneNumber()
-	fmt.Println(phoneNumberIN.GetDialCode())
-	fmt.Println(phoneNumberIN.GetRegex())
+	fmt.Println(phoneNumberIN.DialCode)
+	fmt.Println(phoneNumberIN.Regex)
 
 	//India States
 	subdivisions := countryIN.GetCountrySubDivisions()
@@ -38,6 +38,6 @@ func main() {
 
 	//USD
 	currencyUS := currency.GetCurrencyInformation("USD")
-	fmt.Println(currencyUS.GetName())
-	fmt.Println(currencyUS.GetSymbol())
+	fmt.Println(currencyUS.Name)
+	fmt.Println(currencyUS.Symbol)
 }

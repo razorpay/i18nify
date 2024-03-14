@@ -66,16 +66,16 @@ func TestNewCountryMetadata(t *testing.T) {
 }
 
 func assertINMetaData(t *testing.T, result MetadataInformation) {
-	assert.Equal(t, "IND", result.GetAlpha3(), "Alpha3 field mismatch")
-	assert.Equal(t, "AS", result.GetContinentCode(), "ContinentCode field mismatch")
-	assert.Equal(t, "Asia", result.GetContinentName(), "ContinentName field mismatch")
-	assert.Equal(t, "356", result.GetNumericCode(), "NumericCode field mismatch")
-	assert.Equal(t, "https://flagcdn.com/in.svg", result.GetFlag(), "Flag field mismatch")
-	assert.Equal(t, "UN member state", result.GetSovereignty(), "Sovereignty field mismatch")
-	assert.Equal(t, "+91", result.GetDialCode(), "DialCode field mismatch")
-	assert.Equal(t, "Asia/Kolkata", result.GetTimezoneOfCapital(), "TimezoneOfCapital field mismatch")
-	assert.Equal(t, "en_IN", result.GetDefaultLocale(), "DefaultLocale field mismatch")
-	assert.Equal(t, Locale{Code: "en_IN", Name: "English (India)"}, result.GetLocales()[0], "Locale field mismatch")
-	assert.Equal(t, []string{"INR"}, result.GetCurrency(), "Currency field mismatch")
-	assert.Equal(t, Timezone{UTCOffset: "UTC +05:30"}, result.GetTimezones()["Asia/Kolkata"], "Timezones field mismatch")
+	assert.Equal(t, "IND", result.Alpha3, "Alpha3 field mismatch")
+	assert.Equal(t, "AS", result.ContinentCode, "ContinentCode field mismatch")
+	assert.Equal(t, "Asia", result.ContinentName, "ContinentName field mismatch")
+	assert.Equal(t, "356", result.NumericCode, "NumericCode field mismatch")
+	assert.Equal(t, "https://flagcdn.com/in.svg", result.Flag, "Flag field mismatch")
+	assert.Equal(t, "UN member state", result.Sovereignty, "Sovereignty field mismatch")
+	assert.Equal(t, "+91", result.DialCode, "DialCode field mismatch")
+	assert.NotNil(t, result.Timezones["Asia/Kolkata"], "TimezoneOfCapital field mismatch")
+	assert.Equal(t, "en_IN", result.DefaultLocale, "DefaultLocale field mismatch")
+	assert.Equal(t, Locale{Code: "en_IN", Name: "English (India)"}, result.Locales[0], "Locale field mismatch")
+	assert.Equal(t, []string{"INR"}, result.Currency, "Currency field mismatch")
+	assert.Equal(t, Timezone{UTCOffset: "UTC +05:30"}, result.Timezones["Asia/Kolkata"], "Timezones field mismatch")
 }

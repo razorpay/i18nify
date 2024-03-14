@@ -4,6 +4,7 @@
 //    Currency, err := UnmarshalCurrency(bytes)
 //    bytes, err = Currency.Marshal()
 
+// Package currency provides functionality to handle information about currencies.
 package currency
 
 import (
@@ -12,70 +13,66 @@ import (
 	"io/ioutil"
 )
 
+// DataFile defines the path to the JSON data file containing currency information.
 const DataFile = "modules/currency/data.json"
 
+// UnmarshalCurrency parses JSON data into a Currency struct.
 func UnmarshalCurrency(data []byte) (Currency, error) {
 	var r Currency
 	err := json.Unmarshal(data, &r)
 	return r, err
 }
 
+// Marshal converts a Currency struct into JSON data.
 func (r *Currency) Marshal() ([]byte, error) {
 	return json.Marshal(r)
 }
 
+// Currency represents information about currencies.
 type Currency struct {
+	// CurrencyInformation holds currency information, keyed by currency code.
 	CurrencyInformation map[string]CurrencyInformation `json:"currency_information"`
 }
 
+// GetAllCurrencyInformation returns all currency information.
 func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 	return r.CurrencyInformation
 }
 
+// GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) CurrencyInformation {
+	// Read JSON data file containing currency information.
 	currencyJsonData, err := ioutil.ReadFile(DataFile)
 	if err != nil {
+		// Handle error reading the file.
 		fmt.Println("Error reading JSON file:", err)
 		return CurrencyInformation{}
 	}
+	// Unmarshal JSON data into Currency struct.
 	allCurrencyData, _ := UnmarshalCurrency(currencyJsonData)
+	// Retrieve currency information for the specified currency code.
 	return allCurrencyData.CurrencyInformation[code]
 }
 
+// NewCurrency creates a new Currency instance.
 func NewCurrency(currencyInformation map[string]CurrencyInformation) *Currency {
 	return &Currency{
 		CurrencyInformation: currencyInformation,
 	}
 }
 
+// CurrencyInformation contains details about a specific currency.
 type CurrencyInformation struct {
-	MinorUnit                     string   `json:"minor_unit"`
-	Name                          string   `json:"name"`
-	NumericCode                   string   `json:"numeric_code"`
-	PhysicalCurrencyDenominations []string `json:"physical_currency_denominations"`
-	Symbol                        string   `json:"symbol"`
+	MinorUnit                     string   `json:"minor_unit"`                      // MinorUnit represents the minor unit of the currency.
+	Name                          string   `json:"name"`                            // Name represents the name of the currency.
+	NumericCode                   string   `json:"numeric_code"`                    // NumericCode represents the ISO 4217 numeric code of the currency.
+	PhysicalCurrencyDenominations []string `json:"physical_currency_denominations"` // PhysicalCurrencyDenominations represents the physical denominations of the currency.
+	Symbol                        string   `json:"symbol"`                          // Symbol represents the symbol or abbreviation of the currency.
 }
 
-func (r *CurrencyInformation) GetMinorUnit() string {
-	return r.MinorUnit
-}
+// Getters for various fields of CurrencyInformation.
 
-func (r *CurrencyInformation) GetName() string {
-	return r.Name
-}
-
-func (r *CurrencyInformation) GetNumericCode() string {
-	return r.NumericCode
-}
-
-func (r *CurrencyInformation) GetPhysicalCurrencyDenominations() []string {
-	return r.PhysicalCurrencyDenominations
-}
-
-func (r *CurrencyInformation) GetSymbol() string {
-	return r.Symbol
-}
-
+// NewCurrencyInformation creates a new CurrencyInformation instance.
 func NewCurrencyInformation(minorUnit string, name string, numericCode string, physicalCurrencyDenominations []string, symbol string) *CurrencyInformation {
 	return &CurrencyInformation{
 		MinorUnit:                     minorUnit,

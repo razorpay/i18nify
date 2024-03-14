@@ -15,9 +15,9 @@ func TestUnmarshalCountryPhonenumber(t *testing.T) {
 	assert.NoError(t, err, "Unexpected error during unmarshal")
 
 	information := result.CountryTeleInformation["IN"]
-	assert.Equal(t, "+91", information.GetDialCode(), "DialCode field mismatch")
-	assert.Equal(t, "xxxx xxxxxx", information.GetFormat(), "Format field mismatch")
-	assert.Equal(t, "/^(?:(?:\\+|0{0,2})91\\s*[-]?\\s*|[0]?)?[6789]\\d{9}$/", information.GetRegex(), "Regex field mismatch")
+	assert.Equal(t, "+91", information.DialCode, "DialCode field mismatch")
+	assert.Equal(t, "xxxx xxxxxx", information.Format, "Format field mismatch")
+	assert.Equal(t, "/^(?:(?:\\+|0{0,2})91\\s*[-]?\\s*|[0]?)?[6789]\\d{9}$/", information.Regex, "Regex field mismatch")
 }
 
 func TestMarshalCountryPhonenumber(t *testing.T) {
@@ -54,7 +54,7 @@ func TestGetCountryTeleInformation(t *testing.T) {
 	result := GetCountryTeleInformation("IN")
 
 	// Use assert.Equal for assertions with inline expected values
-	assert.Equal(t, "+1", result.GetDialCode(), "DialCode field mismatch")
-	assert.Equal(t, "XXX-XXX-XXXX", result.GetFormat(), "Format field mismatch")
-	assert.Equal(t, "\\d{3}-\\d{3}-\\d{4}", result.GetRegex(), "Regex field mismatch")
+	assert.Equal(t, "+1", result.DialCode, "DialCode field mismatch")
+	assert.Equal(t, "XXX-XXX-XXXX", result.Format, "Format field mismatch")
+	assert.Equal(t, "\\d{3}-\\d{3}-\\d{4}", result.Regex, "Regex field mismatch")
 }

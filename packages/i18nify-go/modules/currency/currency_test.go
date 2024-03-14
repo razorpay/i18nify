@@ -14,11 +14,11 @@ func TestUnmarshalCurrency(t *testing.T) {
 	assert.NoError(t, err, "Unexpected error during unmarshal")
 
 	currency := result.CurrencyInformation["USD"]
-	assert.Equal(t, "2", currency.GetMinorUnit(), "MinorUnit field mismatch")
-	assert.Equal(t, "US Dollar", currency.GetName(), "Name field mismatch")
-	assert.Equal(t, "840", currency.GetNumericCode(), "NumericCode field mismatch")
-	assert.Equal(t, []string{"1", "5", "10", "25", "50", "100"}, currency.GetPhysicalCurrencyDenominations(), "PhysicalCurrencyDenominations field mismatch")
-	assert.Equal(t, "$", currency.GetSymbol(), "Symbol field mismatch")
+	assert.Equal(t, "2", currency.MinorUnit, "MinorUnit field mismatch")
+	assert.Equal(t, "US Dollar", currency.Name, "Name field mismatch")
+	assert.Equal(t, "840", currency.NumericCode, "NumericCode field mismatch")
+	assert.Equal(t, []string{"1", "5", "10", "25", "50", "100"}, currency.PhysicalCurrencyDenominations, "PhysicalCurrencyDenominations field mismatch")
+	assert.Equal(t, "$", currency.Symbol, "Symbol field mismatch")
 }
 
 func TestMarshalCurrency(t *testing.T) {
@@ -60,9 +60,9 @@ func TestGetCurrencyInformation(t *testing.T) {
 	result := GetCurrencyInformation("USD")
 
 	// Use assert.Equal for assertions with inline expected values
-	assert.Equal(t, "2", result.GetMinorUnit(), "MinorUnit field mismatch")
-	assert.Equal(t, "US Dollar", result.GetName(), "Name field mismatch")
-	assert.Equal(t, "840", result.GetNumericCode(), "NumericCode field mismatch")
-	assert.Equal(t, []string{"1", "5", "10", "25", "50", "100"}, result.GetPhysicalCurrencyDenominations(), "PhysicalCurrencyDenominations field mismatch")
-	assert.Equal(t, "$", result.GetSymbol(), "Symbol field mismatch")
+	assert.Equal(t, "2", result.MinorUnit, "MinorUnit field mismatch")
+	assert.Equal(t, "US Dollar", result.Name, "Name field mismatch")
+	assert.Equal(t, "840", result.NumericCode, "NumericCode field mismatch")
+	assert.Equal(t, []string{"1", "5", "10", "25", "50", "100"}, result.PhysicalCurrencyDenominations, "PhysicalCurrencyDenominations field mismatch")
+	assert.Equal(t, "$", result.Symbol, "Symbol field mismatch")
 }
