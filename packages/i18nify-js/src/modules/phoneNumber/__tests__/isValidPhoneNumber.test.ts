@@ -1,4 +1,4 @@
-import isValidPhoneNumber from '../isValidPhoneNumber';
+import { isValidPhoneNumber } from '../index';
 
 describe('isValidPhoneNumber', () => {
   const validTestDataSet = [
@@ -15,7 +15,7 @@ describe('isValidPhoneNumber', () => {
     it(`should validate a valid phone number for ${dataset.countryCode}`, () => {
       const isValid = isValidPhoneNumber(
         dataset.phoneNumber,
-        dataset.countryCode,
+        dataset.countryCode as any,
       );
       expect(isValid).toBe(true);
     });
@@ -25,7 +25,7 @@ describe('isValidPhoneNumber', () => {
     it(`should reject an invalid phone number for ${dataset.countryCode}`, () => {
       const isValid = isValidPhoneNumber(
         dataset.phoneNumber,
-        dataset.countryCode,
+        dataset.countryCode as any,
       );
       expect(isValid).toBe(false);
     });
@@ -34,14 +34,24 @@ describe('isValidPhoneNumber', () => {
   it('should handle a invalid country code and detect it from phone number to validate it', () => {
     const phoneNumber = '1234567890';
     const countryCode = 'XYZ';
-    const isValid = isValidPhoneNumber(phoneNumber, countryCode);
+    const isValid = isValidPhoneNumber(phoneNumber, countryCode as any);
     expect(isValid).toBe(true);
   });
 
   it('should handle a missing phoneNumber', () => {
     const phoneNumber = '';
     const countryCode = 'MY';
-    const isValid = isValidPhoneNumber(phoneNumber, countryCode);
+    const isValid = isValidPhoneNumber(phoneNumber, countryCode as any);
     expect(isValid).toBe(false);
+  });
+
+  it('should return false if the countryCode is not supported', () => {
+    const unsupportedCountryCode = 'XXX';
+    const phoneNumber = '+1234567890';
+    const result = isValidPhoneNumber(
+      phoneNumber,
+      unsupportedCountryCode as any,
+    );
+    expect(result).toBe(false);
   });
 });

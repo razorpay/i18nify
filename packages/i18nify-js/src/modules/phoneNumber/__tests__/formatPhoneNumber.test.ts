@@ -1,4 +1,4 @@
-import formatPhoneNumber from '../formatPhoneNumber';
+import { formatPhoneNumber } from '../index';
 
 describe('formatPhoneNumber', () => {
   it('should format an Indian phone number', () => {
@@ -18,7 +18,7 @@ describe('formatPhoneNumber', () => {
   it('should handle a invalid country code and detect it from phone number to format', () => {
     const phoneNumber = '+917394926646';
     const countryCode = 'XYZ';
-    const formatted = formatPhoneNumber(phoneNumber, countryCode);
+    const formatted = formatPhoneNumber(phoneNumber, countryCode as any);
     expect(formatted).toBe('+91 7394 926646');
   });
 

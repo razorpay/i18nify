@@ -1,27 +1,27 @@
-import { getLocale } from '../getLocale';
-
-const mockNavigator = (navigator: string): void => {
-  Object.defineProperty(window, 'navigator', {
-    value: navigator,
-    writable: true,
-  });
-};
-
-const mockNavigatorLanguage = (navigatorLanguage: string): void => {
-  Object.defineProperty(window.navigator, 'language', {
-    value: navigatorLanguage,
-    writable: true,
-  });
-};
-
-const mockNavigatorLanguages = (navigatorLanguages: string[]): void => {
-  Object.defineProperty(window.navigator, 'languages', {
-    value: navigatorLanguages,
-    writable: true,
-  });
-};
+import { getLocale } from '..';
 
 describe('getLocale', () => {
+  const mockNavigator = (navigator: string): void => {
+    Object.defineProperty(window, 'navigator', {
+      value: navigator,
+      writable: true,
+    });
+  };
+
+  const mockNavigatorLanguage = (navigatorLanguage: string): void => {
+    Object.defineProperty(window.navigator, 'language', {
+      value: navigatorLanguage,
+      writable: true,
+    });
+  };
+
+  const mockNavigatorLanguages = (navigatorLanguages: string[]): void => {
+    Object.defineProperty(window.navigator, 'languages', {
+      value: navigatorLanguages,
+      writable: true,
+    });
+  };
+
   it('should return user locale in browser environment', () => {
     // Mocking browser environment with user language preference
     mockNavigatorLanguage('');
@@ -54,5 +54,31 @@ describe('getLocale', () => {
     // Mocking a non-browser environment
     mockNavigator('');
     expect(getLocale()).toBe('en-IN');
+  });
+});
+
+describe('getLocale in non-browser environment', () => {
+  let originalNavigator: PropertyDescriptor | undefined;
+
+  beforeAll(() => {
+    // Store the original navigator
+    originalNavigator = Object.getOwnPropertyDescriptor(window, 'navigator');
+
+    // Temporarily replace navigator with a proxy to simulate it being undefined
+    Object.defineProperty(window, 'navigator', {
+      value: undefined,
+      configurable: true,
+    });
+  });
+
+  it('should return "en-IN" when navigator is undefined', () => {
+    expect(getLocale()).toBe('en-IN');
+  });
+
+  afterAll(() => {
+    // Restore the original navigator after the test
+    if (originalNavigator) {
+      Object.defineProperty(window, 'navigator', originalNavigator);
+    }
   });
 });

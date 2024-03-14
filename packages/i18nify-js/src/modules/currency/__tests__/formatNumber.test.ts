@@ -1,6 +1,6 @@
 import { getLocale } from '../../.internal/utils';
 import { setState } from '../../core';
-import formatNumber from '../formatNumber';
+import { formatNumber } from '../index';
 
 const nbsp = String.fromCharCode(160);
 const nnsp = String.fromCharCode(8239);
@@ -119,5 +119,44 @@ describe('formatNumber', () => {
 
     const expected = `XYZ${nbsp}1,000.00`;
     expect(result).toBe(expected);
+  });
+
+  it('should round numbers correctly based on fraction digits', () => {
+    const result = formatNumber('1000.555', {
+      currency: 'USD',
+      intlOptions: {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      },
+    });
+    expect(result).toBe('$1,000.56');
+  });
+
+  it('should handle very small numbers with precision', () => {
+    const result = formatNumber('0.00000012345', {
+      currency: 'USD',
+      intlOptions: {
+        minimumFractionDigits: 10,
+      },
+    });
+    expect(result).toBe('$0.0000001235');
+  });
+
+  it('should rethrow the caught Error instance with the same message', () => {
+    const errorMessage = 'Error: Invalid currency code : undefined';
+
+    expect(() => {
+      formatNumber(123, { intlOptions: { currency: 'undefined' } } as any);
+    }).toThrow(new Error(errorMessage));
+  });
+
+  it('should handle non-Error throws by creating a new Error with a generic message', () => {
+    expect(() => {
+      formatNumber(123, { intlOptions: { style: 'hola' } } as any);
+    }).toThrow(
+      new Error(
+        'Error: Value hola out of range for Intl.NumberFormat options property style',
+      ),
+    );
   });
 });

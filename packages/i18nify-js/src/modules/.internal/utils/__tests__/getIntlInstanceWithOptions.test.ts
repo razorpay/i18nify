@@ -1,6 +1,5 @@
-import { getIntlInstanceWithOptions } from '../getIntlInstanceWithOptions';
+import { getIntlInstanceWithOptions, getLocale } from '..';
 import { setState } from '../../../core';
-import { getLocale } from '../getLocale';
 
 describe('getIntlInstanceWithOptions', () => {
   it('should return a valid Intl.NumberFormat object', () => {
