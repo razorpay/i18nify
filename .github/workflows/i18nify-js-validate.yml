@@ -1,8 +1,7 @@
 name: (i18nify-js) Build & Validate
+
 on:
   pull_request:
-    branches-ignore: 
-      - 're-arch/i18nify-multiple-langs'
 
 defaults:
   run:
@@ -13,16 +12,35 @@ jobs:
     name: Validate Source code
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: dorny/paths-filter@v3
+        id: changes
         with:
-          node-version: 20.3.1
-      - name: Install dependencies
-        run: yarn
-      - name: run eslint
-        run: yarn lint
-      - name: run tsc
-        run: yarn tsc
+          filters: |
+            src:
+              - 'packages/i18nify-js/**'
+
+      # Run only if some file in 'src' folder was changed
+      - name: Execute if 'src' folder was changed
+        if: steps.changes.outputs.src == 'true'
+        run: |
+          steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: 20.3.1
+            - name: Install dependencies
+              run: yarn
+            - name: Run eslint
+              run: yarn lint
+            - name: Run tsc
+              run: yarn tsc
+
+      # If 'src' folder wasn't changed, pass the action
+      - name: Skip if 'src' folder was not changed
+        if: steps.changes.outputs.src == 'false'
+        run: echo "No changes in 'src' folder, skipping validation"
   build:
     name: Run Build
     runs-on: ubuntu-latest
