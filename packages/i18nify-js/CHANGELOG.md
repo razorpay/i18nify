@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.8.0
+
+### Minor Changes
+
+- 33a66ca: Flag service updated to return unpkg url
+
 ## 1.7.0
 
 ### Minor Changes
