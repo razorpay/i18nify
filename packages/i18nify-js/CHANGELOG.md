@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.7.0
+
+### Minor Changes
+
+- 05e4574: Flags deployed on unpkg
+
 ## 1.6.1
 
 ### Patch Changes
