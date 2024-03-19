@@ -1,8 +1,8 @@
 # @razorpay/i18nify-react
 
-## 5.0.0
+## 4.0.5
 
-### Minor Changes
+### Patch Changes
 
 - 05e4574: Flags deployed on unpkg
 
