@@ -8,7 +8,7 @@ describe('geo - getFlagOfCountry', () => {
     const sampleValidCodes = ['US', 'GB', 'FR'];
     sampleValidCodes.forEach((code) => {
       expect(getFlagOfCountry(code as CountryCodeType)).toEqual(
-        `${FLAG_BASE_PATH}/${code.toLowerCase()}.svg`,
+        `${FLAG_BASE_PATH}/${code}.svg`,
       );
     });
   });
@@ -28,9 +28,7 @@ describe('geo - getFlagOfCountry', () => {
 
   it('should work for every code in the predefined list', () => {
     LIST_OF_ALL_COUNTRIES.forEach((code) => {
-      expect(getFlagOfCountry(code)).toEqual(
-        `${FLAG_BASE_PATH}/${code.toLowerCase()}.svg`,
-      );
+      expect(getFlagOfCountry(code)).toEqual(`${FLAG_BASE_PATH}/${code}.svg`);
     });
   });
 });

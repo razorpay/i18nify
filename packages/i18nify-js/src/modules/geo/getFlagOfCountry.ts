@@ -15,11 +15,12 @@ import { FLAG_BASE_PATH } from './constants';
  * @returns The URL of the flag image for the given country code.
  * @throws {Error} If the country code is not in the list of valid country codes.
  */
-const getFlagOfCountry = (countryCode: CountryCodeType): string => {
+const getFlagOfCountry = (_countryCode: CountryCodeType): string => {
+  const countryCode = _countryCode.toUpperCase() as CountryCodeType;
   if (!LIST_OF_ALL_COUNTRIES.includes(countryCode)) {
     throw new Error(`Invalid country code: ${countryCode}`);
   }
-  return `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`;
+  return `${FLAG_BASE_PATH}/${countryCode}.svg`;
 };
 
 export default withErrorBoundary<typeof getFlagOfCountry>(getFlagOfCountry);

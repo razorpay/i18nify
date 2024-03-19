@@ -23,7 +23,7 @@ const getFlagsForAllCountries = (): {
   LIST_OF_ALL_COUNTRIES.map((countryCode: CountryCodeType) => {
     // Construct the flag image URL and assign it to the corresponding country code in the map
     flagsForAllCountriesMap[countryCode] =
-      `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`;
+      `${FLAG_BASE_PATH}/${countryCode}.svg`;
   });
 
   // Return the populated map of country codes to flag image URLs
