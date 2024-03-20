@@ -8,6 +8,7 @@ runs:
   using: composite
   steps:
     - name: Execute Steps if 'packages/i18nify-js' Folder Changed
+      shell: bash
       uses: dorny/paths-filter@v3
       id: changes
       with:
@@ -17,10 +18,12 @@ runs:
 
     # Run only if some file in 'packages/i18nify-js' folder was changed
     - name: Execute if 'packages/i18nify-js' folder was changed
+      shell: bash
       if: steps.changes.outputs.src == 'true'
       run: echo ${{ inputs.steps_to_excute }}
 
     # If 'src' folder wasn't changed, pass the action
     - name: Skip if 'src' folder was not changed
+      shell: bash
       if: steps.changes.outputs.src == 'false'
       run: echo "No changes in 'packages/i18nify-js' folder, skipping execution"
