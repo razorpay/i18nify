@@ -38,6 +38,7 @@ jobs:
       - name: Skip if 'src' folder was not changed
         if: steps.changes.outputs.src == 'false'
         run: echo "No changes in 'src' folder, skipping validation"
+
   build:
     name: Run Build
     runs-on: ubuntu-latest
@@ -50,3 +51,4 @@ jobs:
         run: yarn
       - name: run build
         run: yarn build
+        working-directory: packages/i18nify-js
