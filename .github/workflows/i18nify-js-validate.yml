@@ -3,10 +3,6 @@ name: (i18nify-js) Build & Validate
 on:
   pull_request:
 
-defaults:
-  run:
-    working-directory: packages/i18nify-js
-
 jobs:
   validate:
     name: Validate Source code
@@ -36,6 +32,7 @@ jobs:
               run: yarn lint
             - name: Run tsc
               run: yarn tsc
+          working-directory: packages/i18nify-js
 
       # If 'src' folder wasn't changed, pass the action
       - name: Skip if 'src' folder was not changed
