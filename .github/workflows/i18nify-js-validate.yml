@@ -13,34 +13,3 @@ jobs:
         uses: ./.github/actions/execute-if-i18nify-js
         with:
           steps: test-test
-
-  build:
-    name: Run Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: dorny/paths-filter@v3
-        id: changes
-        with:
-          filters: |
-            src:
-              - 'packages/i18nify-js/**'
-
-      # Run only if some file in 'packages/i18nify-js' folder was changed
-      - name: Execute if 'packages/i18nify-js' folder was changed
-        if: steps.changes.outputs.src == 'true'
-        run: |
-          steps:
-          - uses: actions/checkout@v3
-          - uses: actions/setup-node@v2
-            with:
-              node-version: 20.3.1
-          - name: Install dependencies
-            run: yarn
-          - name: run build
-            run: yarn build
-            working-directory: packages/i18nify-js
-
-      # If 'src' folder wasn't changed, pass the action
-      - name: Skip if 'src' folder was not changed
-        if: steps.changes.outputs.src == 'false'
-        run: echo "No changes in 'packages/i18nify-js' folder, skipping validation"
