@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Execute steps if 'packages/i18nify-js' folder was changed
-        uses: ./.github/actions/execute-if-i18nify-js.yml
+        uses: ./.github/workflows/actions/execute-if-i18nify-js.yml
         with:
           steps: |
             - uses: actions/checkout@v3
