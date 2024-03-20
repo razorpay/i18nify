@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Execute steps if 'packages/i18nify-js' folder was changed
-        uses: ./.github/workflows/actions/execute-if-i18nify-js.yml
+        uses: ./.github/actions/execute-if-i18nify-js
         with:
           steps: |
             - uses: actions/checkout@v3
