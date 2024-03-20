@@ -18,7 +18,7 @@ jobs:
       - name: Execute if 'packages/i18nify-js' folder was changed
         if: steps.changes.outputs.src == 'true'
         run: |
-          ${{ steps }}
+          ${{ steps.executeSteps }}
 
       # If 'src' folder wasn't changed, pass the action
       - name: Skip if 'src' folder was not changed
