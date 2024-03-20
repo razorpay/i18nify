@@ -5,11 +5,9 @@ inputs:
     required: true
     default: ''
 
-on:
-  pull_request:
-
-jobs:
-  execute-if-i18nify-js:
+runs:
+  using: composite
+  steps:
     name: Execute Steps if 'packages/i18nify-js' Folder Changed
     runs-on: ubuntu-latest
     steps:
