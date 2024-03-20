@@ -12,4 +12,4 @@ jobs:
       - name: Execute steps if 'packages/i18nify-js' folder was changed
         uses: ./.github/actions/execute-if-i18nify-js
         with:
-          steps: test-test
+          steps_to_excute: test-test
