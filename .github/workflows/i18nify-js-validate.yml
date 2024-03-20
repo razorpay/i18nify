@@ -8,6 +8,8 @@ jobs:
     name: Validate Source code
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
       - name: Execute steps if 'packages/i18nify-js' folder was changed
         uses: ./.github/workflows/actions/execute-if-i18nify-js.yml
         with:
