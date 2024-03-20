@@ -11,3 +11,14 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: 18.12.1
+
+    - uses: dorny/paths-filter@v3
+      id: changes
+      with:
+        filters: |
+          src:
+            - 'src/**'
+
+      # run only if some file in 'src' folder was changed
+    - if: steps.changes.outputs.src == 'true'
+      run: echo test
