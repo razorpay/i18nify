@@ -8,7 +8,6 @@ This repository acts as a Power Source of all geographical data, to any SDK that
 - We maintain the country attribute data in JSON format, well organized by version
 - We validate the Json Schema and Data for every pull request using of Github actions validation check.
 - We provide standardised API's to access country attribute data across different programming languages, leveraging defined JSON schemas.
-- We upload each versioned country attribute data module into a CDN, So that user can pull the data on demand without bundling data into SDK, which ensure the SDK is lightweight.
 - We automate the data updation, ingestion from various sources and ensuring the ingested data is legitimate by enabling strict Pull Request review policies on the repository.
 
 ## Folder Structure
