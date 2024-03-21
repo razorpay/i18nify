@@ -26,7 +26,7 @@ describe('formatPhoneNumber', () => {
     const phoneNumber = '';
     const countryCode = 'MY';
     expect(() => formatPhoneNumber(phoneNumber, countryCode)).toThrow(
-      'Parameter `phoneNumber` is invalid!',
+      `Parameter 'phoneNumber' is invalid: ${phoneNumber}`,
     );
   });
 });
