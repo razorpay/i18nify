@@ -4,15 +4,12 @@
   "properties": {
     "dial_code_to_country": {
       "type": "object",
-      "patternProperties": {
-        "^\\+\\d{1,3}$": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
-      },
-      "additionalProperties": false
+      }
     }
   },
   "required": ["dial_code_to_country"]
