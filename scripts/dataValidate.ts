@@ -1,5 +1,5 @@
-import fs from 'fs';
-import Ajv from 'ajv';
+const fs = require('fs');
+const Ajv = require('ajv');
 
 /*
   This validation script is to validate the data file with respective schema files
