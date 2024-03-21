@@ -1,45 +1,72 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "additionalProperties": {
-    "type": "object",
-    "properties": {
-      "country_name": {"type": "string"},
-      "continent_code": {"type": "string"},
-      "continent_name": {"type": "string"},
-      "alpha_3": {"type": "string"},
-      "numeric_code": {"type": "string"},
-      "flag": {"type": "string"},
-      "sovereignty": {"type": "string"},
-      "dial_code": {"type": "string"},
-      "currency": {
-        "type": "array",
-        "items": {"type": "string"}
-      },
-      "timezones": {
-        "type": "object",
-        "additionalProperties": {
+  "properties": {
+    "country_code": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Z]{2}$": {
           "type": "object",
           "properties": {
-            "utc_offset": {"type": "string"}
+            "country_name": { "type": "string" },
+            "continent_code": { "type": "string" },
+            "continent_name": { "type": "string" },
+            "alpha_3": { "type": "string" },
+            "numeric_code": { "type": "string" },
+            "flag": { "type": "string", "format": "uri" },
+            "sovereignty": { "type": "string" },
+            "dial_code": { "type": "string" },
+            "supportedCurrency": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "timezones": {
+              "type": "object",
+              "patternProperties": {
+                "^[A-Za-z_/]+$": {
+                  "type": "object",
+                  "properties": {
+                    "utc_offset": { "type": "string" }
+                  },
+                  "required": ["utc_offset"]
+                }
+              }
+            },
+            "timezone_of_capital": { "type": "string" },
+            "locales": {
+              "type": "object",
+              "patternProperties": {
+                "^[a-z]{2}_[A-Z]{2}$": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" }
+                  },
+                  "required": ["name"]
+                }
+              }
+            },
+            "default_locale": { "type": "string" },
+            "default_currency": { "type": "string" }
           },
-          "required": ["utc_offset"]
+          "required": [
+            "country_name",
+            "continent_code",
+            "continent_name",
+            "alpha_3",
+            "numeric_code",
+            "flag",
+            "sovereignty",
+            "dial_code",
+            "supportedCurrency",
+            "timezones",
+            "timezone_of_capital",
+            "locales",
+            "default_locale",
+            "default_currency"
+          ]
         }
-      },
-      "timezone_of_capital": {"type": "string"},
-      "locales": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "code": {"type": "string"},
-            "name": {"type": "string"}
-          },
-          "required": ["code", "name"]
-        }
-      },
-      "default_locale": {"type": "string"}
-    },
-    "required": ["country_name", "continent_code", "continent_name", "alpha_3", "numeric_code", "flag", "sovereignty", "dial_code", "currency", "timezones", "timezone_of_capital", "locales", "default_locale"]
-  }
+      }
+    }
+  },
+  "required": ["country_code"]
 }
