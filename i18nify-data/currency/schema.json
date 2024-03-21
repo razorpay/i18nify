@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "currency_information": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Z]{3}$": {
+          "type": "object",
+          "properties": {
+            "name": {"type": "string"},
+            "numeric_code": {"type": "string"},
+            "minor_unit": {"type": "string"},
+            "symbol": {"type": "string"},
+            "physical_currency_denominations": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          },
+          "required": ["name", "numeric_code", "minor_unit", "symbol", "physical_currency_denominations"]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["currency_information"]
+}

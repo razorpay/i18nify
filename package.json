@@ -11,7 +11,8 @@
     "publish-npm": "node ./scripts/publishToNpm.js",
     "prepare": "husky install",
     "build-js": "yarn workspace @razorpay/i18nify-js run build",
-    "build-react": "yarn build-js && yarn workspace @razorpay/i18nify-react run build"
+    "build-react": "yarn build-js && yarn workspace @razorpay/i18nify-react run build",
+    "validate-i18nify-data": "ts-node data/scripts/dataValidate.ts"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
@@ -29,6 +30,9 @@
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "execa": "5.0.0"
+    "execa": "5.0.0",
+    "ajv": "^8.12.0",
+    "jsonschema": "^1.4.1",
+    "node-fetch": "^2.7.0"
   }
 }

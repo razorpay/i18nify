@@ -18,3 +18,13 @@ Unleash the power of **i18nify-js**, the heart of all things i18nify. Its README
    [i18nify-react docs](https://github.com/razorpay/i18nify/blob/master/packages/i18nify-react/README.md)
 
    Built as a wrapper over i18nify-js, **i18nify-react** simplifies the integration with React. Explore its README for seamless installation, API documentation, and additional features tailored for the React library.
+
+### Go SDK:
+
+Convert json to json schema
+1. quicktype data/<attribute>_v1.json -l schema -o data/schema/<attribute>_schema.json
+
+
+2. quicktype -s schema data/schema/<attribute>_schema.json -o generator/go/<attribute>.go 
+3. mkdir -p packages/i18nify-go/modules/<attribute> && cp -R generator/go/<attribute>.go packages/i18nify-go/modules/<attribute>
+4. 
