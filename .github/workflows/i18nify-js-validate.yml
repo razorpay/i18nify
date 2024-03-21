@@ -20,7 +20,7 @@ jobs:
   validate:
     name: Validate Source code
     runs-on: ubuntu-latest
-    if: needs.path-check.outputs.files-changed == 'true'
+    # if: needs.path-check.outputs.files-changed == 'false'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
