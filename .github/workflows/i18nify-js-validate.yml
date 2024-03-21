@@ -4,9 +4,11 @@ on:
   pull_request:
 
 jobs:
-  validate:
-    name: Validate Source code
+  path-check:
+    name: Check if i18nify-js path has changed
     runs-on: ubuntu-latest
+    outputs:
+      files-changed: ${{ steps.changes.outputs.src }}
     steps:
       - uses: dorny/paths-filter@v3
         id: changes
@@ -15,51 +17,38 @@ jobs:
             src:
               - 'packages/i18nify-js/**'
 
-      - name: Execute if 'packages/i18nify-js' folder was changed
-        if: steps.changes.outputs.src == 'true'
-        steps:
-          - name: Checkout code
-            uses: actions/checkout@v3
-          - name: Setup Node.js
-            uses: actions/setup-node@v2
-            with:
-              node-version: 20.3.1
-          - name: Install dependencies
-            run: yarn
-          - name: Run eslint
-            run: yarn lint
-          - name: Run tsc
-            run: yarn tsc
-          working-directory: packages/i18nify-js
-
-      - name: Skip if 'packages/i18nify-js' folder was not changed
-        if: steps.changes.outputs.src == 'false'
-        run: echo "No changes in 'packages/i18nify-js' folder, skipping validation"
+  validate:
+    name: Validate Source code
+    runs-on: ubuntu-latest
+    if: needs.path-check.outputs.files-changed == 'true'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.3.1
+      - name: Install dependencies
+        run: yarn
+      - name: Run eslint
+        run: yarn lint
+      - name: Run tsc
+        run: yarn tsc
+      - name: Run build
+        run: yarn build
+        working-directory: packages/i18nify-js
 
   build:
     name: Run Build
     runs-on: ubuntu-latest
+    if: needs.path-check.outputs.files-changed == 'true'
     steps:
-      - uses: dorny/paths-filter@v3
-        id: changes
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
         with:
-          filters: |
-            src:
-              - 'packages/i18nify-js/**'
-
-      - name: Execute if 'packages/i18nify-js' folder was changed
-        if: steps.changes.outputs.src == 'true'
-        steps:
-          - uses: actions/checkout@v3
-          - uses: actions/setup-node@v2
-            with:
-              node-version: 20.3.1
-          - name: Install dependencies
-            run: yarn
-          - name: run build
-            run: yarn build
-          working-directory: packages/i18nify-js
-
-      - name: Skip if 'packages/i18nify-js' folder was not changed
-        if: steps.changes.outputs.src == 'false'
-        run: echo "No changes in 'packages/i18nify-js' folder, skipping validation"
+          node-version: 20.3.1
+      - name: Install dependencies
+        run: yarn
+      - name: run build
+        run: yarn build
+        working-directory: packages/i18nify-js
