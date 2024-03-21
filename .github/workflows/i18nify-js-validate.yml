@@ -8,11 +8,8 @@ defaults:
 
 jobs:
   # JOB to run change detection
-  changes:
+  check-if-i18nify-js:
     runs-on: ubuntu-latest
-    # Required permissions
-    permissions:
-      pull-requests: read
     outputs:
       modified: ${{ steps.filter.outputs.src }}
     steps:
@@ -26,8 +23,8 @@ jobs:
   validate:
     name: Validate Source code
     runs-on: ubuntu-latest
-    needs: changes
-    if: ${{ needs.changes.outputs.modified == 'true' }}
+    needs: check-if-i18nify-js
+    if: ${{ needs.check-if-i18nify-js.outputs.modified == 'true' }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -43,8 +40,8 @@ jobs:
   build:
     name: Run Build
     runs-on: ubuntu-latest
-    needs: changes
-    if: ${{ needs.changes.outputs.modified == 'true' }}
+    needs: check-if-i18nify-js
+    if: ${{ needs.check-if-i18nify-js.outputs.modified == 'true' }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
