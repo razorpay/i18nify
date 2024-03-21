@@ -17,20 +17,19 @@ jobs:
 
       - name: Execute if 'packages/i18nify-js' folder was changed
         if: steps.changes.outputs.src == 'true'
-        run: |
-          steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
-              with:
-                node-version: 20.3.1
-            - name: Install dependencies
-              run: yarn
-            - name: Run eslint
-              run: yarn lint
-            - name: Run tsc
-              run: yarn tsc
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+          - name: Setup Node.js
+            uses: actions/setup-node@v2
+            with:
+              node-version: 20.3.1
+          - name: Install dependencies
+            run: yarn
+          - name: Run eslint
+            run: yarn lint
+          - name: Run tsc
+            run: yarn tsc
           working-directory: packages/i18nify-js
 
       - name: Skip if 'packages/i18nify-js' folder was not changed
@@ -50,8 +49,7 @@ jobs:
 
       - name: Execute if 'packages/i18nify-js' folder was changed
         if: steps.changes.outputs.src == 'true'
-        run: |
-          steps:
+        steps:
           - uses: actions/checkout@v3
           - uses: actions/setup-node@v2
             with:
@@ -60,7 +58,7 @@ jobs:
             run: yarn
           - name: run build
             run: yarn build
-            working-directory: packages/i18nify-js
+          working-directory: packages/i18nify-js
 
       - name: Skip if 'packages/i18nify-js' folder was not changed
         if: steps.changes.outputs.src == 'false'
