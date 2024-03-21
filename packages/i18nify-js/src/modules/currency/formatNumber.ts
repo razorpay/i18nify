@@ -11,6 +11,7 @@ const formatNumber = (
     intlOptions?: I18nifyNumberFormatOptions;
   } = {},
 ): string => {
+  console.log('I am just here to test github workflows');
   if (!Number(amount) && Number(amount) !== 0)
     throw new Error('Parameter `amount` is not a number!');
 
