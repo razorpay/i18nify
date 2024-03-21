@@ -5,6 +5,7 @@ import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
 import { readdirSync } from 'fs';
 import { basename, extname, join } from 'path';
+import copy from 'rollup-plugin-copy';
 
 // Function to get modules dynamically from a directory
 const getModules = (directory) => {
@@ -67,7 +68,16 @@ export default [
       format: 'es',
       sourcemap: true,
     },
-    plugins: [typescript(), resolve(), commonjs()],
+    plugins: [
+      typescript(),
+      resolve(),
+      commonjs(),
+      copy({
+        targets: [
+          { src: '../../i18nify-data/assets/flags', dest: './lib/assets' },
+        ],
+      }),
+    ],
   },
   // ESM (ES6 module) minified build
   {

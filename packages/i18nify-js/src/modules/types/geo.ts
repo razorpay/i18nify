@@ -228,3 +228,8 @@ export type CountryCodeType =
   | 'PS' // Palestine
   | 'FO' // Faroe Islands
   | 'GL'; // Greenland;
+
+export interface GetFlagReturnType {
+  original: string;
+  '4X3': string;
+}

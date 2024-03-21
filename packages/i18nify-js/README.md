@@ -557,10 +557,22 @@ Retrieve flag images for any ISO country code 🌍✈️ with a simple API call,
 
 ```javascript
 // Fetching the flag of the United States 🇺🇸
-console.log(getFlagOfCountry('US')); // https://flagcdn.com/flags/us.svg
+console.log(getFlagOfCountry('US'));
+/*
+{
+    "original": "https://flagcdn.com/US.svg",
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/US.svg"
+}
+*/
 
 // Fetching the flag of India 🇮🇳
-console.log(getFlagOfCountry('IN')); // https://flagcdn.com/flags/in.svg
+console.log(getFlagOfCountry('IN'));
+/*
+{
+    "original": "https://flagcdn.com/IN.svg",
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/IN.svg"
+}
+*/
 
 // When you wander off the map with an invalid country code
 try {
@@ -583,8 +595,14 @@ console.log(allFlags);
 /*
 Behold, an object where each key is a country code linked to its flag's URL, such as:
 {
-  US: 'https://flagcdn.com/flags/us.svg', // 🇺🇸
-  IN: 'https://flagcdn.com/flags/in.svg', // 🇮🇳
+  US: {
+    "original": "https://flagcdn.com/US.svg",
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/US.svg"
+  },
+  IN: {
+    "original": "https://flagcdn.com/IN.svg",
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/IN.svg"
+  },
   ...
 }
 */
