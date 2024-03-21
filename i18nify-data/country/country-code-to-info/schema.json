@@ -69,7 +69,7 @@
         "continent_name": { "type": "string" },
         "alpha_3": { "type": "string" },
         "numeric_code": { "type": "string" },
-        "flag": { "type": "string", "format": "uri" },
+        "flag": { "type": "string" },
         "sovereignty": { "type": "string" },
         "dial_code": { "type": "string" },
         "supportedCurrency": {
