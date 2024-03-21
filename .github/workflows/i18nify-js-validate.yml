@@ -1,7 +1,10 @@
 name: (i18nify-js) Build & Validate
-
 on:
   pull_request:
+
+defaults:
+  run:
+    working-directory: packages/i18nify-js
 
 jobs:
   # JOB to run change detection
@@ -10,11 +13,9 @@ jobs:
     # Required permissions
     permissions:
       pull-requests: read
-    # Set job outputs to values from filter step
     outputs:
       modified: ${{ steps.filter.outputs.src }}
     steps:
-      # For pull requests it's not necessary to checkout the code
       - uses: dorny/paths-filter@v3
         id: filter
         with:
@@ -28,26 +29,22 @@ jobs:
     needs: changes
     if: ${{ needs.changes.outputs.modified == 'true' }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
         with:
           node-version: 20.3.1
       - name: Install dependencies
         run: yarn
-      - name: Run eslint
+      - name: run eslint
         run: yarn lint
-      - name: Run tsc
+      - name: run tsc
         run: yarn tsc
-      - name: Run build
-        run: yarn build
-        working-directory: packages/i18nify-js
 
   build:
     name: Run Build
     runs-on: ubuntu-latest
-    if: ${{ needs.path-check.outputs.files-changed == 'true' }}
+    needs: changes
+    if: ${{ needs.changes.outputs.modified == 'true' }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -57,4 +54,3 @@ jobs:
         run: yarn
       - name: run build
         run: yarn build
-        working-directory: packages/i18nify-js
