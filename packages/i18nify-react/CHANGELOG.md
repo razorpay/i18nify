@@ -1,5 +1,23 @@
 # @razorpay/i18nify-react
 
+## 4.0.6
+
+### Patch Changes
+
+- Updated dependencies [33a66ca]
+  - @razorpay/i18nify-js@1.8.0
+
+## 4.0.5
+
+### Patch Changes
+
+- 05e4574: Flags deployed on unpkg
+
+### Patch Changes
+
+- Updated dependencies [05e4574]
+  - @razorpay/i18nify-js@1.7.0
+
 ## 4.0.4
 
 ### Patch Changes
