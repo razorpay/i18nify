@@ -10,7 +10,7 @@ package currency
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"os"
 )
 
 // DataFile defines the path to the JSON data file containing currency information.
@@ -42,7 +42,7 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) CurrencyInformation {
 	// Read JSON data file containing currency information.
-	currencyJsonData, err := ioutil.ReadFile(DataFile)
+	currencyJsonData, err := os.ReadFile(DataFile)
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Println("Error reading JSON file:", err)

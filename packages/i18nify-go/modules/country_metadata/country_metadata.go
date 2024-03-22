@@ -10,7 +10,7 @@ package country_metadata
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"os"
 )
 
 // DataFile defines the path to the JSON data file containing country metadata.
@@ -42,7 +42,7 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 // GetMetadataInformation retrieves metadata information for a specific country code.
 func GetMetadataInformation(code string) MetadataInformation {
 	// Read JSON data file containing country metadata.
-	metaJsonData, err := ioutil.ReadFile(DataFile)
+	metaJsonData, err := os.ReadFile(DataFile)
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Printf("Error reading country metadata file: %v", err)

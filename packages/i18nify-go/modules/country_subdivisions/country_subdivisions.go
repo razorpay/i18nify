@@ -10,7 +10,7 @@ package country_subdivisions
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"os"
 )
 
 // DataFile is the directory where JSON files containing country subdivision data are stored.
@@ -47,7 +47,7 @@ func (r *CountrySubdivisions) GetStates() map[string]State {
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
 	// Read JSON data file containing country subdivision information.
-	subDivJsonData, err := ioutil.ReadFile(DataFile + code + ".json")
+	subDivJsonData, err := os.ReadFile(DataFile + code + ".json")
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)
 		return CountrySubdivisions{}

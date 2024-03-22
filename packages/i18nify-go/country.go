@@ -3,9 +3,9 @@ package i18nify_go
 
 import (
 	metadata "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
-	phonenumber "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_phonenumber"
 	subdivisions "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
 	currency "github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
+	phonenumber "github.com/razorpay/i18nify/packages/i18nify-go/modules/phonenumber"
 )
 
 // Country represents a country with its code.

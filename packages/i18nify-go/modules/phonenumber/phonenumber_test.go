@@ -4,12 +4,12 @@ import (
 	_ "encoding/json"
 	"errors"
 	"github.com/stretchr/testify/assert"
-	"io/ioutil"
+	"os"
 	"testing"
 )
 
 func TestUnmarshalPhoneNumber(t *testing.T) {
-	jsonData, err := ioutil.ReadFile("data.json")
+	jsonData, err := os.ReadFile("data.json")
 	result, err := UnmarshalPhoneNumber(jsonData)
 
 	assert.NoError(t, err, "Unexpected error during unmarshal")
@@ -32,18 +32,18 @@ func TestMarshalPhoneNumber(t *testing.T) {
 	assert.JSONEq(t, expectedJSON, string(marshaledJSON))
 }
 
-var readFileFunc = ioutil.ReadFile
+var readFileFunc = os.ReadFile
 
 func TestGetCountryTeleInformation(t *testing.T) {
-	jsonData, err := ioutil.ReadFile("data.json")
+	jsonData, err := os.ReadFile("data.json")
 
-	// Mock implementation of ioutil.ReadFile
+	// Mock implementation of os.ReadFile
 	readFileFunc = func(filename string) ([]byte, error) {
 		return jsonData, errors.New("error reading JSON file")
 	}
 	defer func() {
 		// Restore the original implementation after the test
-		readFileFunc = ioutil.ReadFile
+		readFileFunc = os.ReadFile
 	}()
 
 	_, err = readFileFunc(DataFile)

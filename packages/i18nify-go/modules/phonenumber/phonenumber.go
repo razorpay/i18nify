@@ -10,7 +10,7 @@ package phonenumber
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"os"
 )
 
 // DataFile defines the path to the JSON data file containing country telephone number information.
@@ -41,7 +41,7 @@ func (r *PhoneNumber) GetAllCountryTeleInformation() map[string]CountryTeleInfor
 // GetCountryTeleInformation retrieves telephone information for a specific country code.
 func GetCountryTeleInformation(code string) CountryTeleInformation {
 	// Read JSON data file containing country telephone information.
-	teleJsonData, err := ioutil.ReadFile(DataFile)
+	teleJsonData, err := os.ReadFile(DataFile)
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)
 		return CountryTeleInformation{}

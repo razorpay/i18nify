@@ -3,7 +3,7 @@ package country_subdivisions
 import (
 	"errors"
 	"github.com/stretchr/testify/assert"
-	"io/ioutil"
+	"os"
 	"reflect"
 	"testing"
 )
@@ -11,7 +11,7 @@ import (
 var testJSONData = []byte(`{"country_name": "India", "states": {"KA": {"name": "Karnataka", "cities": [{"name": "Bengaluru", "timezone": "Asia/Kolkata", "zipcodes": ["560018", "560116", "560500"], "region_name/district_name": "nan"}]}}}`)
 
 func TestUnmarshalCountrySubdivisions(t *testing.T) {
-	jsonData, err := ioutil.ReadFile("IN.json")
+	jsonData, err := os.ReadFile("IN.json")
 	subDivData, err := UnmarshalCountrySubdivisions(jsonData)
 	assert.NoError(t, err, "Unexpected error during unmarshal")
 
@@ -42,18 +42,18 @@ func TestMarshalCountrySubdivisions(t *testing.T) {
 
 }
 
-var readFileFunc = ioutil.ReadFile
+var readFileFunc = os.ReadFile
 
 func TestGetCountrySubdivisions(t *testing.T) {
-	jsonData, err := ioutil.ReadFile("IN.json")
+	jsonData, err := os.ReadFile("IN.json")
 
-	// Mock implementation of ioutil.ReadFile
+	// Mock implementation of os.ReadFile
 	readFileFunc = func(filename string) ([]byte, error) {
 		return jsonData, errors.New("error reading JSON file")
 	}
 	defer func() {
 		// Restore the original implementation after the test
-		readFileFunc = ioutil.ReadFile
+		readFileFunc = os.ReadFile
 	}()
 
 	_, err = readFileFunc(DataFile)

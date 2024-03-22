@@ -3,12 +3,12 @@ package currency
 import (
 	"errors"
 	"github.com/stretchr/testify/assert"
-	"io/ioutil"
+	"os"
 	"testing"
 )
 
 func TestUnmarshalCurrency(t *testing.T) {
-	jsonData, err := ioutil.ReadFile("data.json")
+	jsonData, err := os.ReadFile("data.json")
 	result, err := UnmarshalCurrency(jsonData)
 
 	assert.NoError(t, err, "Unexpected error during unmarshal")
@@ -39,17 +39,17 @@ func TestMarshalCurrency(t *testing.T) {
 	assert.JSONEq(t, expectedJSON, string(marshaledJSON))
 }
 
-var readFileFunc = ioutil.ReadFile
+var readFileFunc = os.ReadFile
 
 func TestGetCurrencyInformation(t *testing.T) {
-	jsonData, err := ioutil.ReadFile("data.json")
-	// Mock implementation of ioutil.ReadFile
+	jsonData, err := os.ReadFile("data.json")
+	// Mock implementation of os.ReadFile
 	readFileFunc = func(filename string) ([]byte, error) {
 		return jsonData, errors.New("error reading JSON file")
 	}
 	defer func() {
 		// Restore the original implementation after the test
-		readFileFunc = ioutil.ReadFile
+		readFileFunc = os.ReadFile
 	}()
 
 	_, err = readFileFunc(DataFile)
