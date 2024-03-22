@@ -35,10 +35,12 @@ jobs:
         - name: checkout
           id: checkout
           uses: actions/checkout@v2
+        - name: Change directory
+          run: cd packages/i18nify-go
         - name: Install Dependencies
           run: go mod download
         - name: Run Unit Tests
-          run: go test -v ./...
+          run: go test -v github.com/razorpay/i18nify/packages/i18nify-go/modules/...
 
   workflow_status:
     runs-on: [self-hosted]
