@@ -1,4 +1,4 @@
-import isValidPhoneNumber from '../isValidPhoneNumber';
+import { isValidPhoneNumber } from '../index';
 
 describe('isValidPhoneNumber', () => {
   const validTestDataSet = [

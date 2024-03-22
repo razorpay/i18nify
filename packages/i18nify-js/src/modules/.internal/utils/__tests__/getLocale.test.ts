@@ -1,4 +1,4 @@
-import { getLocale } from '../getLocale';
+import { getLocale } from '..';
 
 describe('getLocale', () => {
   const mockNavigator = (navigator: string): void => {

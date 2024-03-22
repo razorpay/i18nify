@@ -1,6 +1,6 @@
 import { getLocale } from '../../.internal/utils';
 import { setState } from '../../core';
-import formatNumber from '../formatNumber';
+import { formatNumber } from '../index';
 
 const nbsp = String.fromCharCode(160);
 const nnsp = String.fromCharCode(8239);

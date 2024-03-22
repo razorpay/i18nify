@@ -1,4 +1,4 @@
-import getDialCodeByCountryCode from '../getDialCodeByCountryCode';
+import { getDialCodeByCountryCode } from '../index';
 
 describe('phoneNumber - getDialCodeByCountryCode', () => {
   it('should return the correct dial code for valid country codes', () => {

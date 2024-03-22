@@ -8,3 +8,4 @@ coverage
 /playwright/.cache/
 .idea/
 **/.idea/
+**/dist/
