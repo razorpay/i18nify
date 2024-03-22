@@ -1,4 +1,5 @@
 name: i18nify-go UT
+
 on:
   pull_request:
   push:
@@ -8,56 +9,17 @@ on:
       - 'packages/i18nify-go/**'
 
 jobs:
-  cancel-previous-runs:
-    runs-on: [self-hosted]
-    name: Cancel Previous Runs
-    if: always()
-    steps:
-      - uses: styfle/cancel-workflow-action@d57d93c3a8110b00c3a2c0b64b8516013c9fd4c9
-        if: github.ref != 'refs/heads/master'
-        name: cancel old workflows
-        id: cancel
-        with:
-          access_token: ${{ github.token }}
-      - if: github.ref == 'refs/heads/master'
-        name: Don't cancel old workflows
-        id: dont_cancel
-        run: |
-          echo "Don't cancel old workflow"
-
   run-test:
-      name: running tests
-      runs-on: [self-hosted]
-      container:
-        image: c.rzp.io/razorpay/onggi:rzp-golden-image-base-golang-1.20
-        options: "--entrypoint /bin/bash"
-        credentials:
-          username: ${{ secrets.HARBOR_DOCKER_USERNAME }}
-          password: ${{ secrets.HARBOR_DOCKER_PASSWORD }}
-      steps:
-        - name: checkout
-          id: checkout
-          uses: actions/checkout@v2
-        - name: Change directory
-          run: cd packages/i18nify-go
-        - name: Install Dependencies
-          run: go mod download
-        - name: Run Unit Tests
-          run: go test -v github.com/razorpay/i18nify/packages/i18nify-go/modules/...
-
-  workflow_status:
-    runs-on: [self-hosted]
-    continue-on-error: false
-    name: Update Account Service e2e Tests Status Check
-    needs: [account-service-e2e-tests-webhook]
-    if: always()
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
     steps:
-      - name: Failed
-        id: failed
-        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+      - name: Run Unit Tests
         run: |
-          echo 'Failing the workflow for github status check.'
-      - name: Success
-        if: steps.failed.conclusion == 'skipped'
-        run: |
-          echo 'Status check has passed!'
+          cd $GITHUB_WORKSPACE/packages/i18nify-go
+          go test -v github.com/razorpay/i18nify/packages/i18nify-go/modules/...
