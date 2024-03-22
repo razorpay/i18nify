@@ -1,6 +1,9 @@
 name: i18nify-go UT
 on:
+  pull_request:
   push:
+    branches:
+      - master
     paths:
       - 'packages/i18nify-go/**'
 
