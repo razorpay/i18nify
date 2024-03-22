@@ -1,8 +1,8 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse and unparse this JSON data, add this code to your project and do:
 //
-//    Currency, err := UnmarshalCurrency(bytes)
-//    bytes, err = Currency.Marshal()
+//    SupportedCurrency, err := UnmarshalCurrency(bytes)
+//    bytes, err = SupportedCurrency.Marshal()
 
 // Package currency provides functionality to handle information about currencies.
 package currency
@@ -48,7 +48,7 @@ func GetCurrencyInformation(code string) CurrencyInformation {
 		fmt.Println("Error reading JSON file:", err)
 		return CurrencyInformation{}
 	}
-	// Unmarshal JSON data into Currency struct.
+	// Unmarshal JSON data into SupportedCurrency struct.
 	allCurrencyData, _ := UnmarshalCurrency(currencyJsonData)
 	// Retrieve currency information for the specified currency code.
 	return allCurrencyData.CurrencyInformation[code]

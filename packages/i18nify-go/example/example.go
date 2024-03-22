@@ -11,11 +11,11 @@ func main() {
 	countryIN := i18nify_go.NewCountry("IN")
 
 	metaDataIN := countryIN.GetCountryMetadata()
-	fmt.Println(metaDataIN.CountryName)   //India
-	fmt.Println(metaDataIN.Currency)      //[INR]
-	fmt.Println(metaDataIN.DialCode)      //+91
-	fmt.Println(metaDataIN.Timezones)     //Asia/Kolkata:{UTC +05:30}
-	fmt.Println(metaDataIN.DefaultLocale) //en_IN
+	fmt.Println(metaDataIN.CountryName)       //India
+	fmt.Println(metaDataIN.SupportedCurrency) //[INR]
+	fmt.Println(metaDataIN.DialCode)          //+91
+	fmt.Println(metaDataIN.Timezones)         //Asia/Kolkata:{UTC +05:30}
+	fmt.Println(metaDataIN.DefaultLocale)     //en_IN
 
 	//INR
 	currencyIN := countryIN.GetCountryCurrency()

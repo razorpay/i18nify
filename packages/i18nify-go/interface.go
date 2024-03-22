@@ -3,7 +3,6 @@ package i18nify_go
 
 import (
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_phonenumber"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
 )
@@ -15,7 +14,7 @@ type ICountry interface {
 	// GetCountrySubDivisions retrieves subdivision information for the country.
 	GetCountrySubDivisions() country_subdivisions.CountrySubdivisions
 	// GetCountryPhoneNumber retrieves telephone number information for the country.
-	GetCountryPhoneNumber() country_phonenumber.CountryTeleInformation
+	GetCountryPhoneNumber() phonenumber.CountryTeleInformation
 	// GetCountryCurrency retrieves currency information for the country.
 	GetCountryCurrency() []currency.CurrencyInformation
 }

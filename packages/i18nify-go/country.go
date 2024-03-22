@@ -35,7 +35,7 @@ func (c Country) GetCountryCurrency() []currency.CurrencyInformation {
 
 	var curInfoList []currency.CurrencyInformation
 	// Iterate through currency codes for the country.
-	for _, cur := range countryMetadata.Currency {
+	for _, cur := range countryMetadata.SupportedCurrency {
 		// Retrieve currency information for each currency code.
 		curInfoList = append(curInfoList, currency.GetCurrencyInformation(cur))
 	}

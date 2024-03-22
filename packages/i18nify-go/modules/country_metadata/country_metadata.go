@@ -74,25 +74,26 @@ type MetadataInformation struct {
 	ContinentCode     string              `json:"continent_code"`      // ContinentCode represents the continent code of the country.
 	ContinentName     string              `json:"continent_name"`      // ContinentName represents the name of the continent where the country belongs.
 	CountryName       string              `json:"country_name"`        // CountryName represents the official name of the country.
-	Currency          []string            `json:"currency"`            // Currency represents the official currencies used in the country.
+	SupportedCurrency []string            `json:"supported_currency"`  // SupportedCurrency represents the official currencies used in the country.
 	DefaultLocale     string              `json:"default_locale"`      // DefaultLocale represents the default locale used in the country.
 	DialCode          string              `json:"dial_code"`           // DialCode represents the international dialing code of the country.
 	Flag              string              `json:"flag"`                // Flag represents the flag emoji or image URL of the country.
-	Locales           []Locale            `json:"locales"`             // Locales represents the list of supported locales in the country.
+	Locales           map[string]Locale   `json:"locales"`             // Locales represents the list of supported locales in the country.
 	NumericCode       string              `json:"numeric_code"`        // NumericCode represents the ISO 3166-1 numeric code of the country.
 	Sovereignty       string              `json:"sovereignty"`         // Sovereignty represents the official sovereignty status of the country.
 	TimezoneOfCapital string              `json:"timezone_of_capital"` // TimezoneOfCapital represents the timezone of the capital city of the country.
 	Timezones         map[string]Timezone `json:"timezones"`           // Timezones represents the list of timezones used in the country, keyed by timezone identifier.
+	DefaultCurrency   string              `json:"default_currency"`    // DefaultCurrency represents the default currency used in the country.
 }
 
 // NewMetadataInformation creates a new MetadataInformation instance.
-func NewMetadataInformation(alpha_3 string, continentCode string, continentName string, countryName string, currency []string, defaultLocale string, dialCode string, flag string, locales []Locale, numericCode string, sovereignty string, timezoneOfCapital string, timezones map[string]Timezone) *MetadataInformation {
+func NewMetadataInformation(alpha_3 string, continentCode string, continentName string, countryName string, currency []string, defaultCurrency string, defaultLocale string, dialCode string, flag string, locales map[string]Locale, numericCode string, sovereignty string, timezoneOfCapital string, timezones map[string]Timezone) *MetadataInformation {
 	return &MetadataInformation{
 		Alpha3:            alpha_3,
 		ContinentCode:     continentCode,
 		ContinentName:     continentName,
 		CountryName:       countryName,
-		Currency:          currency,
+		SupportedCurrency: currency,
 		DefaultLocale:     defaultLocale,
 		DialCode:          dialCode,
 		Flag:              flag,
@@ -101,19 +102,18 @@ func NewMetadataInformation(alpha_3 string, continentCode string, continentName 
 		Sovereignty:       sovereignty,
 		TimezoneOfCapital: timezoneOfCapital,
 		Timezones:         timezones,
+		DefaultCurrency:   defaultCurrency,
 	}
 }
 
 // Locale represents a locale with its code and name.
 type Locale struct {
-	Code string `json:"code"` // Code represents the locale code.
 	Name string `json:"name"` // Name represents the name of the locale.
 }
 
 // NewLocale creates a new Locale instance.
-func NewLocale(code string, name string) *Locale {
+func NewLocale(name string) *Locale {
 	return &Locale{
-		Code: code,
 		Name: name,
 	}
 }
