@@ -764,7 +764,7 @@ export const CURRENCIES = {
     lowerUnitName: '',
   },
   VES: {
-    symbol: 'Bs.',
+    symbol: 'Bs.S.',
     name: 'Venezuelan Bolívar Soberano',
     lowerUnitName: 'Céntimo',
   },
@@ -782,5 +782,85 @@ export const CURRENCIES = {
     symbol: '$',
     name: 'Zimbabwean Dollar',
     lowerUnitName: 'Cent',
+  },
+  CHE: {
+    symbol: 'CHE',
+    name: 'WIR Euro',
+    lowerUnitName: 'Rappen',
+  },
+  BOV: {
+    symbol: 'BOV',
+    name: 'Bolivian Mvdol',
+    lowerUnitName: 'Centavo',
+  },
+  CLF: {
+    symbol: 'UF',
+    name: 'Unidad de Fomento',
+    lowerUnitName: 'Peso',
+  },
+  COU: {
+    symbol: 'UVR',
+    name: 'Colombian Unidad de Valor Real',
+    lowerUnitName: 'Peso',
+  },
+  CUC: {
+    symbol: 'CUC$',
+    name: 'Cuban Convertible Peso',
+    lowerUnitName: 'Centavo',
+  },
+  XDR: {
+    symbol: 'XDR',
+    name: 'Special Drawing Rights',
+    lowerUnitName: '',
+  },
+  MRO: {
+    symbol: 'UM',
+    name: 'Mauritanian Ouguiya',
+    lowerUnitName: 'Khoums',
+  },
+  XUA: {
+    symbol: 'XUA',
+    name: 'ADB Unit of Account',
+    lowerUnitName: '',
+  },
+  MXV: {
+    symbol: 'MXV',
+    name: 'Mexican Unidad de Inversion (UDI)',
+    lowerUnitName: 'Peso',
+  },
+  XSU: {
+    symbol: 'XSU',
+    name: 'Sistema Unitario de Compensacion Regional de Pagos "SUCRE"',
+    lowerUnitName: '',
+  },
+  CHW: {
+    symbol: 'CHW',
+    name: 'WIR Franc',
+    lowerUnitName: 'Rappen',
+  },
+  USN: {
+    symbol: 'USN',
+    name: 'US Dollar (Next day)',
+    lowerUnitName: '',
+  },
+  UYI: {
+    symbol: 'UYI',
+    name: 'Uruguay Peso en Unidades Indexadas (URUIURUI)',
+    lowerUnitName: '',
+  },
+  VEF: {
+    symbol: 'Bs',
+    name: 'Venezuelan Bolívar',
+    lowerUnitName: 'Céntimo',
+  },
+  VED: {
+    symbol: 'Bs.S.',
+    name: 'Venezuelan Bolívar',
+    lowerUnitName: 'Céntimo',
+  },
+  UYW: {
+    name: 'Unidad Previsional',
+    symbol: 'UYW',
+    lowerUnitName: '',
   },
 } as const;
