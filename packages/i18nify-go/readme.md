@@ -45,10 +45,12 @@ func main() {
    countryIN := i18nify_go.NewCountry("IN")
    
    // Now you can use countryIN to access various country-related information
-   // For example usage refer to example/example.go
+   // For example usage refer to example/example.go (Link provided below)
 }
 ```
 
+For example usage refer to example/example.go
+https://github.com/razorpay/i18nify/blob/master/packages/i18nify-go/example/example.go
 
 ## License
 TBD
