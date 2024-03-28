@@ -1,4 +1,4 @@
-name: i18nify-go UT
+name: (i18nify-go) Unit Tests
 
 on:
   pull_request:
@@ -9,6 +9,19 @@ on:
       - 'packages/i18nify-go/**'
 
 jobs:
+  # JOB to run change detection
+  check-if-i18nify-go:
+    runs-on: ubuntu-latest
+    outputs:
+      modified: ${{ steps.filter.outputs.src }}
+    steps:
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            src:
+              - 'packages/i18nify-go/**'
+
   run-test:
     name: Run Unit Tests
     runs-on: ubuntu-latest
