@@ -1,6 +1,20 @@
 ## i18nify-go
 _A comprehensive solution written in Go to facilitate internationalization._
 
+## Attributes Supported
+1. **Country Metadata**:
+   - Provide metadata for countries, including name, supported currency, dial code, timezones, and default locale.
+
+2. **Currency Module**:
+   - Handle currency-related operations, such as retrieving currency names and symbols.
+
+3. **Phone Number Handling**:
+   - Fetch phone number related information, including dial codes and regex patterns.
+
+4. **Subdivisions (States) Information**:
+   - Support for accessing information about subdivisions (states) within countries, such as names and cities.
+
+
 ## Go Software Development Kit (SDK)
 
 This package is compatible with modern versions of Go in module mode. If you have Go installed, you can add the package to your current development module and its dependencies by running:
@@ -19,12 +33,25 @@ To use the latest version of this repository's main branch, execute the followin
 
 `go get github.com/razorpay/i18nify/packages/i18nify-go@master`
 
+## Initializing the Country Package
+To initialize the `Country` package in your Go application, you can use the following code snippet:
+```
+import (
+   i18nify_go "github.com/razorpay/i18nify/packages/i18nify-go"
+)
+
+func main() {
+   // Initialize the country package for a specific country (e.g., India)
+   countryIN := i18nify_go.NewCountry("IN")
+   
+   // Now you can use countryIN to access various country-related information
+   // For example usage refer to example/example.go
+}
+```
 
 
-## Quicktype(beta)
-Convert json to json schema
-1. quicktype data/<attribute>_v1.json -l schema -o data/schema/<attribute>_schema.json
+## License
+TBD
 
-
-2. quicktype -s schema data/schema/<attribute>_schema.json -o generator/go/<attribute>.go
-3. mkdir -p packages/i18nify-go/modules/<attribute> && cp -R generator/go/<attribute>.go packages/i18nify-go/modules/<attribute>
+## Contribution
+Feel free to contribute to this sdk by opening issues or pull requests. Your feedback and contributions are highly appreciated.

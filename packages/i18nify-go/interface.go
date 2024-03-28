@@ -5,6 +5,7 @@ import (
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
+	"github.com/razorpay/i18nify/packages/i18nify-go/modules/phonenumber"
 )
 
 // ICountry defines an interface representing a country with various information retrieval methods.
