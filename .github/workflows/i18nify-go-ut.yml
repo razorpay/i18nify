@@ -2,11 +2,6 @@ name: (i18nify-go) Unit Tests
 
 on:
   pull_request:
-  push:
-    branches:
-      - master
-    paths:
-      - 'packages/i18nify-go/**'
 
 jobs:
   # JOB to run change detection
