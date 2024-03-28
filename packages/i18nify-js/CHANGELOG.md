@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.8.1
+
+### Patch Changes
+
+- c7c88c4: [chore]: new currency codes added
+
 ## 1.8.0
 
 ### Minor Changes
