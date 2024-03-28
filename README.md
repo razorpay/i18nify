@@ -12,7 +12,7 @@ To get started with i18nify, please refer to the language-specific README files:
 
 ## Dataset
 
-If you are just looking for the dataset, go to the [i18nify-data][./i18nify-data] and download the respective data.
+If you are just looking for the dataset, go to [i18nify-data](i18nify-data) and download the respective data.
 
 ## Contributing
 
