@@ -1,9 +1,10 @@
 import { getCurrencyList } from '../index';
-import { CURRENCIES } from '../data/currencies';
+import CURRENCY_INFO from '../../../../../../i18nify-data/currency/data.json';
+
 describe('getCurrencyList', () => {
   it('should return the correct currency list', () => {
     const currencyList = getCurrencyList();
-    expect(currencyList).toEqual(CURRENCIES);
+    expect(currencyList).toEqual(CURRENCY_INFO.currency_information);
   });
 
   it("check properties 'symbol' and 'name' for a sample currency", () => {
@@ -20,7 +21,11 @@ describe('getCurrencyList', () => {
     const sampleCurrency = currencyList[sampleCurrencyCode];
 
     // Assert that the 'symbol' and 'name' properties have the expected values
-    expect(sampleCurrency.symbol).toBe(CURRENCIES[sampleCurrencyCode].symbol);
-    expect(sampleCurrency.name).toBe(CURRENCIES[sampleCurrencyCode].name);
+    expect(sampleCurrency.symbol).toBe(
+      CURRENCY_INFO.currency_information[sampleCurrencyCode].symbol,
+    );
+    expect(sampleCurrency.name).toBe(
+      CURRENCY_INFO.currency_information[sampleCurrencyCode].name,
+    );
   });
 });

@@ -7,7 +7,7 @@ import CURRENCY_INFO from '../../../../../i18nify-data/currency/data.json';
  *
  * The function takes an amount in the major unit (e.g., dollars, pounds) and a currency code,
  * then converts the amount to the minor unit (e.g., cents, pence) using the conversion rate
- * defined in the CURRENCIES object. If the currency code is not supported, it throws an error.
+ * defined in the CURRENCY_INFO object. If the currency code is not supported, it throws an error.
  *
  * @param {number} amount - The amount in the major currency unit.
  * @param {object} options - The options object
