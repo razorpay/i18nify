@@ -1,5 +1,6 @@
 import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
 import { CURRENCIES } from './data/currencies';
+import CURRENCY_INFO from '../../../../../i18nify-data/currency/data.json';
 
 export type FormattedPartsObject = {
   [key in (typeof ALLOWED_FORMAT_PARTS_KEYS)[number]]?: string | undefined;
@@ -56,4 +57,5 @@ export interface I18nifyNumberFormatOptions {
   maximumSignificantDigits?: number | undefined;
 }
 
-export type CurrencyCodeType = keyof typeof CURRENCIES;
+// export type CurrencyCodeType = keyof typeof CURRENCIES;
+export type CurrencyCodeType = keyof typeof CURRENCY_INFO.currency_information;

@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { CURRENCIES } from './data/currencies';
-import { CurrencyCodeType, CurrencyType } from './types';
+import { CurrencyCodeType } from './types';
+import CURRENCY_INFO from '../../../../../i18nify-data/currency/data.json';
 
 /**
  * Converts an amount from a minor currency unit to a major currency unit.
@@ -20,12 +20,13 @@ const convertToMajorUnit = (
     currency: CurrencyCodeType;
   },
 ): number => {
-  const currencyInfo = CURRENCIES[options.currency] as CurrencyType;
+  const currencyInfo = CURRENCY_INFO.currency_information[options.currency];
 
   if (!currencyInfo)
     throw new Error(`Unsupported currency ${options.currency}`);
 
-  const minorUnitMultiplier = currencyInfo.minorUnitMultiplier || 100;
+  const minorUnitMultiplier =
+    Math.pow(10, Number(currencyInfo.minor_unit)) || 100;
 
   const higherCurrencyValue = amount / minorUnitMultiplier;
   return higherCurrencyValue;
