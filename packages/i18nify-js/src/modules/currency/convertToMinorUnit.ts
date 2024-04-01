@@ -23,7 +23,7 @@ const convertToMinorUnit = (
   const currencyInfo = CURRENCY_INFO.currency_information[options.currency];
 
   if (!currencyInfo)
-    throw new Error(`Unsupported currency ${options.currency}`);
+    throw new Error(`Unsupported currency ${String(options.currency)}`);
 
   const minorUnitMultiplier =
     Math.pow(10, Number(currencyInfo.minor_unit)) || 100;

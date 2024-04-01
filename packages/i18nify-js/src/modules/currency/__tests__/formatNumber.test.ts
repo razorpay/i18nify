@@ -55,7 +55,9 @@ describe('formatNumber', () => {
       formatNumber('invalid-amount', {
         currency: 'USD',
       }),
-    ).toThrow('Parameter `amount` is not a number!');
+    ).toThrow(
+      `Error: Parameter 'amount' is not a number. typeof amount: string`,
+    );
   });
 
   it('should format a negative amount', () => {
@@ -86,7 +88,7 @@ describe('formatNumber', () => {
 
   it('should throw error with thousands separators', () => {
     expect(() => formatNumber('1,234,567.89', { currency: 'USD' })).toThrow(
-      'Parameter `amount` is not a number!',
+      `Error: Parameter 'amount' is not a number. typeof amount: string`,
     );
   });
 
@@ -96,7 +98,9 @@ describe('formatNumber', () => {
         currency: 'USD',
         intlOptions: { useGrouping: false },
       }),
-    ).toThrow('Parameter `amount` is not a number!');
+    ).toThrow(
+      `Error: Parameter 'amount' is not a number. typeof amount: string`,
+    );
   });
 
   it('should handle extremely large numbers with precision', () => {

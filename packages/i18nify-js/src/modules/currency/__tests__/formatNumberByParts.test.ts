@@ -50,7 +50,9 @@ describe('formatNumberByParts', () => {
         currency: 'USD',
         locale: 'en-US',
       }),
-    ).toThrow('Error: Parameter `amount` is not a number!');
+    ).toThrow(
+      `Error: Parameter 'amount' is not a number. typeof amount: string`,
+    );
   });
 
   it('should use the default locale if locale is not provided', () => {
