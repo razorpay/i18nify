@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches: [master]
+    paths:
+      - 'packages/i18nify-js/**'
+      - 'packages/i18nify-react/**'
 
 env:
   GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}

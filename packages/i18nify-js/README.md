@@ -2,9 +2,9 @@
 
 _A one-stop solution built in javascript to provide internationalization support._
 
-Hey, dive into this JavaScript toolkit—it’s like having a magic kit for your app! 🪄✨ Picture this: modules for phoneNumber, currency, date—they’re like enchanted tools that make your app talk fluently in any language, anywhere! It’s your ticket to making your app a global citizen, no matter where it goes!
+Hey, dive into this JavaScript toolkit—it's like having a magic kit for your app! 🪄✨ Picture this: modules for phoneNumber, currency, date—they're like enchanted tools that make your app talk fluently in any language, anywhere! It's your ticket to making your app a global citizen, no matter where it goes!
 
-And hey, hang tight—I’ll break down each of these enchanting modules in the sections coming up! 🌍📱💸🗓️
+And hey, hang tight—I'll break down each of these enchanting modules in the sections coming up! 🌍📱💸🗓️
 
 ## Install
 
@@ -12,10 +12,10 @@ And hey, hang tight—I’ll break down each of these enchanting modules in the 
 
 ## Local Setup / Want to Contribute ?
 
-Here’s your roadmap to getting this party started:
+Here's your roadmap to getting this party started:
 
 - First things first, clone this treasure trove of code (repository).
-- Once you’ve done that, make sure all the buddies (dependencies) are in place by hitting `yarn install`
+- Once you've done that, make sure all the buddies (dependencies) are in place by hitting `yarn install`
 - You are good to go, go ahead find issues and raise your PR to fix those. Happy coding!!
 - To create a build run following command: `yarn build`
 
@@ -184,8 +184,8 @@ This module's your go-to guru for everything currency/number-related. 🤑 It's 
 ##### Examples
 
 ```javascript
-console.log(convertToMajorUnit(10000, 'USD')); // Outputs the amount in dollars for 10000 cents (e.g., 100.00)
-console.log(convertToMajorUnit(5000, 'GBP')); // Converts 5000 pence to pounds (e.g., 50.00)
+console.log(convertToMajorUnit(10000, { currency: 'USD' })); // Outputs the amount in dollars for 10000 cents (e.g., 100.00)
+console.log(convertToMajorUnit(5000, { currency: 'GBP' })); // Converts 5000 pence to pounds (e.g., 50.00)
 ```
 
 #### convertToMinorUnit(amount, options)
@@ -195,8 +195,8 @@ console.log(convertToMajorUnit(5000, 'GBP')); // Converts 5000 pence to pounds (
 ##### Examples
 
 ```javascript
-console.log(convertToMinorUnit(100, 'USD')); // Outputs the amount in cents for 10000 dollars (e.g., 10000)
-console.log(convertToMinorUnit(50, 'GBP')); // Converts 50 pounds to pence (e.g., 5000)
+console.log(convertToMinorUnit(100, { currency: 'USD' })); // Outputs the amount in cents for 10000 dollars (e.g., 10000)
+console.log(convertToMinorUnit(50, { currency: 'GBP' })); // Converts 50 pounds to pence (e.g., 5000)
 ```
 
 #### formatNumber(amount, options)
@@ -230,7 +230,7 @@ console.log(
 
 #### getCurrencyList()
 
-🌍💰 It’s your easy-peasy way to snag a whole list of currencies with their symbols and names. Simple, straightforward, and totally handy!
+🌍💰 It's your easy-peasy way to snag a whole list of currencies with their symbols and names. Simple, straightforward, and totally handy!
 
 ##### Examples
 
@@ -494,11 +494,11 @@ console.log(
 
 ### Module 02: Phone Number
 
-This module’s your phone’s best friend, handling all things phone number-related. 📱 It’s the go-to for formatting, checking if those digits are legit, and all those handy phone-related tricks. And guess what? It’s got a bunch of cool stuff—APIs and utilities—just waiting for you to dive in and make your phone game strong! 🚀🔢
+This module's your phone's best friend, handling all things phone number-related. 📱 It's the go-to for formatting, checking if those digits are legit, and all those handy phone-related tricks. And guess what? It's got a bunch of cool stuff—APIs and utilities—just waiting for you to dive in and make your phone game strong! 🚀🔢
 
 #### isValidPhoneNumber(phoneNumber, countryCode)
 
-📞 It’s like the phone number detective, using fancy patterns to check if a number is the real deal for a specific country code. So, it’s pretty simple: if it says true, your number’s good to go for that country; if it’s false, time to double-check those digits! 🕵️‍♂️🔍
+📞 It's like the phone number detective, using fancy patterns to check if a number is the real deal for a specific country code. So, it's pretty simple: if it says true, your number's good to go for that country; if it's false, time to double-check those digits! 🕵️‍♂️🔍
 
 ##### Examples
 
@@ -527,7 +527,7 @@ console.log(isValidPhoneNumber('(555) 555-5555')); // true
 
 #### formatPhoneNumber(phoneNumber, countryCode)
 
-📞 It’s like your personal phone number stylist, working its magic to make those digits look all snazzy. You can tell it the country code, or it’ll figure it out itself—then presto! It hands you back a phone number looking sharp and dapper in that country’s typical style. ✨🌍
+📞 It's like your personal phone number stylist, working its magic to make those digits look all snazzy. You can tell it the country code, or it'll figure it out itself—then presto! It hands you back a phone number looking sharp and dapper in that country's typical style. ✨🌍
 
 ##### Examples
 
@@ -556,7 +556,7 @@ console.log(formatPhoneNumber('(555) 555-5555')); // '555 555 5555'
 
 #### parsePhoneNumber(phoneNumber, country)
 
-🕵️‍♂️📞 This clever function digs deep into a phone number, pulling out all the juicy details: country code, dial code, the number all dolled up, and even the format it follows. What’s cool? It hands you back an object filled with all these deets, making it a breeze to access everything about that phone number. It’s like having the ultimate phone number cheat sheet! 🌟
+🕵️‍♂️📞 This clever function digs deep into a phone number, pulling out all the juicy details: country code, dial code, the number all dolled up, and even the format it follows. What's cool? It hands you back an object filled with all these deets, making it a breeze to access everything about that phone number. It's like having the ultimate phone number cheat sheet! 🌟
 
 ##### Examples
 
@@ -666,10 +666,22 @@ Retrieve flag images for any ISO country code 🌍✈️ with a simple API call,
 
 ```javascript
 // Fetching the flag of the United States 🇺🇸
-console.log(getFlagOfCountry('US')); // https://flagcdn.com/flags/us.svg
+console.log(getFlagOfCountry('US'));
+/*
+{
+    "original": "https://flagcdn.com/US.svg",
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/US.svg"
+}
+*/
 
 // Fetching the flag of India 🇮🇳
-console.log(getFlagOfCountry('IN')); // https://flagcdn.com/flags/in.svg
+console.log(getFlagOfCountry('IN'));
+/*
+{
+    "original": "https://flagcdn.com/IN.svg",
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/IN.svg"
+}
+*/
 
 // When you wander off the map with an invalid country code
 try {
@@ -692,8 +704,14 @@ console.log(allFlags);
 /*
 Behold, an object where each key is a country code linked to its flag's URL, such as:
 {
-  US: 'https://flagcdn.com/flags/us.svg', // 🇺🇸
-  IN: 'https://flagcdn.com/flags/in.svg', // 🇮🇳
+  US: {
+    "original": "https://flagcdn.com/US.svg",
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/US.svg"
+  },
+  IN: {
+    "original": "https://flagcdn.com/IN.svg",
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/IN.svg"
+  },
   ...
 }
 */

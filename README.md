@@ -1,20 +1,22 @@
 # i18nify
 
-_A comprehensive JavaScript toolkit designed to streamline internationalization in your applications._
+i18nify is a comprehensive internationalization (i18n) library for all things global. 
+Currently, it provides functionalities for handling countries, currencies, phone numbers, and subdivisions, making it easier to localize applications for different regions and languages.
 
-Embark on a journey into the world of **i18nify**—a magical toolkit for JavaScript that transforms your app into a global linguist! 🪄✨ Imagine having specialized modules for handling phone numbers, currencies, dates, and more—like enchanted tools ensuring your app speaks fluently in any language, anywhere it goes. It's your passport to making your app a true global citizen!
+## Usage
 
-**Let's get started!**
+To get started with i18nify, please refer to the language-specific README files:
 
-### Core Package: i18nify-js
+- [Go](./packages/i18nify-go/README.md)
+- [JavaScript](./packages/i18nify-js/README.md)
+- [React](./packages/i18nify-react/README.md)
 
-[i18nify-js docs](https://github.com/razorpay/i18nify/blob/master/packages/i18nify-js/README.md)
+## Dataset
 
-Unleash the power of **i18nify-js**, the heart of all things i18nify. Its README provides detailed instructions on installation, usage, and documentation on APIs, empowering you to harness the full potential of internationalization in your projects.
+If you are just looking for the dataset, go to [i18nify-data](i18nify-data) and download the respective data.
 
-### Framework Wrappers:
+## Contributing
 
-1. **i18nify-react**
-   [i18nify-react docs](https://github.com/razorpay/i18nify/blob/master/packages/i18nify-react/README.md)
+Contributions to i18nify are welcome! If you encounter any issues, have feature requests, or would like to contribute code, please refer to the respective contribution guidelines.
 
-   Built as a wrapper over i18nify-js, **i18nify-react** simplifies the integration with React. Explore its README for seamless installation, API documentation, and additional features tailored for the React library.
+- [i18nify-data](i18nify-data/contribution-guidelines.md)

@@ -1,5 +1,23 @@
 # @razorpay/i18nify-js
 
+## 1.8.1
+
+### Patch Changes
+
+- c7c88c4: [chore]: new currency codes added
+
+## 1.8.0
+
+### Minor Changes
+
+- 33a66ca: Flag service updated to return unpkg url
+
+## 1.7.0
+
+### Minor Changes
+
+- 05e4574: Flags deployed on unpkg
+
 ## 1.6.1
 
 ### Patch Changes

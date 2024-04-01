@@ -1,6 +1,6 @@
 import { getFlagsForAllCountries } from '../index';
 import { LIST_OF_ALL_COUNTRIES } from '../data/listOfAllCountries';
-import { FLAG_BASE_PATH } from '../constants';
+import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from '../constants';
 import { CountryCodeType } from '../../types';
 
 describe('geo - getFlagsForAllCountries', () => {
@@ -19,8 +19,11 @@ describe('geo - getFlagsForAllCountries', () => {
   it('should map each country code to a correctly formed flag URL', () => {
     const flagsMap = getFlagsForAllCountries();
     LIST_OF_ALL_COUNTRIES.forEach((countryCode) => {
-      const expectedUrl = `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`;
-      expect(flagsMap[countryCode]).toEqual(expectedUrl);
+      const expectedObject = {
+        original: `${FLAG_BASE_PATH}/${countryCode}.svg`,
+        '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode}.svg`,
+      };
+      expect(flagsMap[countryCode]).toEqual(expectedObject);
     });
   });
 
@@ -33,8 +36,11 @@ describe('geo - getFlagsForAllCountries', () => {
     const flagsMap = getFlagsForAllCountries();
     const testCases = ['US', 'GB', 'FR'];
     testCases.forEach((countryCode) => {
-      const expectedUrl = `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`;
-      expect(flagsMap[countryCode as CountryCodeType]).toEqual(expectedUrl);
+      const expectedObject = {
+        original: `${FLAG_BASE_PATH}/${countryCode}.svg`,
+        '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode}.svg`,
+      };
+      expect(flagsMap[countryCode as CountryCodeType]).toEqual(expectedObject);
     });
   });
 });
