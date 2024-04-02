@@ -18,6 +18,6 @@ test.describe('getCurrencyList', () => {
   test('should print name correctly for a given currency', async ({ page }) => {
     await injectScript(page, `(await getCurrencyList())['USD'].name`);
 
-    await assertScriptText(page, 'United States Dollar');
+    await assertScriptText(page, 'US Dollar');
   });
 });
