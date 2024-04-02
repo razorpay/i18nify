@@ -112,7 +112,6 @@ describe('formatNumber', () => {
 
   it('should handle custom currency symbol and placement', () => {
     const result = formatNumber('1000', {
-      // @ts-expect-error invalid currency code for testing
       currency: 'XYZ',
       intlOptions: {
         style: 'currency',
