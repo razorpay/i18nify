@@ -1,6 +1,9 @@
 const fs = require('fs');
 const currencyOriginalData = require('../../../../../../i18nify-data/currency/data.json');
 
+const currencyGeoDataFilePath =
+  './src/modules/.internal/jsonSubsets/currency/currencyDataSubset.json';
+
 // currency module json subset generation
 const currencySubsetData = Object.entries(
   currencyOriginalData.currency_information,
@@ -13,8 +16,13 @@ const currencySubsetData = Object.entries(
   return acc;
 }, {});
 
+if (fs.existsSync(currencyGeoDataFilePath)) {
+  // If the file exists, delete it
+  fs.unlinkSync(currencyGeoDataFilePath);
+}
+
 fs.writeFileSync(
-  './src/modules/.internal/jsonSubsets/currency/currencyDataSubset.json',
+  currencyGeoDataFilePath,
   JSON.stringify(currencySubsetData, null, 2),
   'utf8',
 );
