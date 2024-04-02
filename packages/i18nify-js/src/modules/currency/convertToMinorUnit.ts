@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CurrencyCodeType } from './types';
-import CURRENCY_INFO from '#/i18nify-data/currency/data.json';
+import CURRENCY_INFO from '../.internal/jsonSubsets/currency/currencyDataSubset.json';
 
 /**
  * Converts an amount from a major currency unit to a minor currency unit.
@@ -20,7 +20,7 @@ const convertToMinorUnit = (
     currency: CurrencyCodeType;
   },
 ): number => {
-  const currencyInfo = CURRENCY_INFO.currency_information[options.currency];
+  const currencyInfo = CURRENCY_INFO[options.currency];
 
   if (!currencyInfo)
     throw new Error(`Unsupported currency ${String(options.currency)}`);

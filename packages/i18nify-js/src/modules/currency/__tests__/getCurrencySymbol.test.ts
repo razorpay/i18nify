@@ -1,4 +1,4 @@
-import { getCurrencySymbol } from '../index';
+import { CurrencyCodeType, getCurrencySymbol } from '../index';
 
 describe('getCurrencySymbol', () => {
   it('should return the correct symbol for a valid currency code', () => {
@@ -10,16 +10,14 @@ describe('getCurrencySymbol', () => {
 
   it('should throw Error for an invalid currency code', () => {
     const currencyCode = 'XYZ'; // An invalid code
-    // @ts-expect-error invalid currency code for testing
-    expect(() => getCurrencySymbol(currencyCode)).toThrow(
+    expect(() => getCurrencySymbol(currencyCode as CurrencyCodeType)).toThrow(
       'Error: Invalid currencyCode: XYZ',
     );
   });
 
   it('should throw Error for an empty string', () => {
     const currencyCode = '';
-    // @ts-expect-error invalid currency code for testing
-    expect(() => getCurrencySymbol(currencyCode)).toThrow(
+    expect(() => getCurrencySymbol(currencyCode as CurrencyCodeType)).toThrow(
       'Error: Invalid currencyCode: ',
     );
   });
