@@ -1,5 +1,5 @@
 import { getCurrencyList } from '../index';
-import CURRENCY_INFO from '../../.internal/jsonSubsets/currency/currencyDataSubset.json';
+import CURRENCY_INFO from '../.internal/jsonSubsets/currency/currencyDataSubset.json';
 
 describe('getCurrencyList', () => {
   it('should return the correct currency list', () => {
