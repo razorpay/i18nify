@@ -1,5 +1,5 @@
 import { getCurrencyList } from '../index';
-import CURRENCY_INFO from '../../../../../../i18nify-data/currency/data.json';
+import CURRENCY_INFO from '#/i18nify-data/currency/data.json';
 
 describe('getCurrencyList', () => {
   it('should return the correct currency list', () => {
