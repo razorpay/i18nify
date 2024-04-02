@@ -1244,6 +1244,16 @@
       "dial_code": "+263",
       "format": "xx xxx xxxx",
       "regex": "/^(?:(?:\\+263)|0)?(?:\\d{9,10})$/"
+    },
+    "XK": {
+      "dial_code": "+383",
+      "format": "xxx xxx xxx",
+      "regex": "/^\\+383\\s\\d{3}\\s\\d{3}\\s\\d{3}$/"
+    },
+    "FW": {
+      "dial_code": "+590",
+      "format": "xxx xx xx xx",
+      "regex": "/^\\+590\\s\\d{2}\\s\\d{2}\\s\\d{2}\\s\\d{2}$/"
     }
   }
 }
