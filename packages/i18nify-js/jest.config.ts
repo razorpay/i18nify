@@ -14,7 +14,7 @@ const config = {
     },
   },
   moduleNameMapper: {
-    '^#/i18nify-data/(.*)$': '<rootDir>/../../i18nify-data/$1',
+    '^#/i18nify-data/(.*)$': '<rootDir>/../../../i18nify-data/$1',
   },
 };
 
