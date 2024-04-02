@@ -21,7 +21,9 @@ describe('currency - convertToMinorUnit', () => {
   it('should throw an error for unsupported currency codes', () => {
     const unsupportedCurrencyCode = 'XXX';
     expect(() => {
-      convertToMinorUnit(100, { currency: unsupportedCurrencyCode });
+      convertToMinorUnit(100, {
+        currency: unsupportedCurrencyCode as CurrencyCodeType,
+      });
     }).toThrow('Unsupported currency XXX');
   });
 });

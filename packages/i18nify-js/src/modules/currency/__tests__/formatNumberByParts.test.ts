@@ -1,4 +1,4 @@
-import { formatNumberByParts } from '../index';
+import { CurrencyCodeType, formatNumberByParts } from '../index';
 
 const nbsp = String.fromCharCode(160);
 
@@ -65,7 +65,7 @@ describe('formatNumberByParts', () => {
 
   it('should handle invalid currency code', () => {
     const result = formatNumberByParts(12345.67, {
-      currency: 'XYZ',
+      currency: 'XYZ' as CurrencyCodeType,
       locale: 'en-US',
     });
     expect(result).toEqual({

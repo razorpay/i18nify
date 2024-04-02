@@ -21,7 +21,9 @@ describe('currency - convertToMajorUnit', () => {
   it('should throw an error for unsupported currency codes', () => {
     const unsupportedCurrencyCode = 'XXX';
     expect(() => {
-      convertToMajorUnit(100, { currency: unsupportedCurrencyCode });
+      convertToMajorUnit(100, {
+        currency: unsupportedCurrencyCode as CurrencyCodeType,
+      });
     }).toThrow('Unsupported currency XXX');
   });
 });

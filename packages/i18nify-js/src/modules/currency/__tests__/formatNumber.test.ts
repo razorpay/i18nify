@@ -1,6 +1,6 @@
 import { getLocale } from '../../.internal/utils';
 import { setState } from '../../core';
-import { formatNumber } from '../index';
+import { CurrencyCodeType, formatNumber } from '../index';
 
 const nbsp = String.fromCharCode(160);
 const nnsp = String.fromCharCode(8239);
@@ -112,7 +112,7 @@ describe('formatNumber', () => {
 
   it('should handle custom currency symbol and placement', () => {
     const result = formatNumber('1000', {
-      currency: 'XYZ',
+      currency: 'XYZ' as CurrencyCodeType,
       intlOptions: {
         style: 'currency',
         currencyDisplay: 'symbol',
