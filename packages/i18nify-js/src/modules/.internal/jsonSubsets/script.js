@@ -21,6 +21,9 @@ if (fs.existsSync(currencyGeoDataFilePath)) {
   fs.unlinkSync(currencyGeoDataFilePath);
 }
 
+const dirPath = path.dirname(currencyGeoDataFilePath);
+fs.mkdirSync(dirPath, { recursive: true });
+
 fs.writeFileSync(
   currencyGeoDataFilePath,
   JSON.stringify(currencySubsetData, null, 2),
