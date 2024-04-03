@@ -32,6 +32,7 @@ jobs:
         with:
           node-version: 20.3.1
       - name: Run prebuild
+        working-directory: packages/i18nify-js
         run: yarn prebuild
       - name: Setup Cache & Install Dependencies
         uses: bahmutov/npm-install@v1.8.15
