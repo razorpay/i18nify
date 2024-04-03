@@ -1,5 +1,6 @@
 import { CountryCodeType } from '../../types';
-import { DIAL_CODE_MAPPER } from '../data/dialCodeMapper';
+import DIAL_CODE_MAPPER from '#/i18nify-data/phone-number/dial-code-to-country/data.json';
+
 import { getDialCodeFromCountryCode } from '../utils';
 
 describe('getDialCodeFromCountryCode', () => {
@@ -29,10 +30,12 @@ describe('getDialCodeFromCountryCode', () => {
   });
 
   it('should return a valid dial code for every country code in DIAL_CODE_MAPPER', () => {
-    Object.values(DIAL_CODE_MAPPER)
+    Object.values(DIAL_CODE_MAPPER.dial_code_to_country)
       .flat()
       .forEach((countryCode) => {
-        const dialCode = getDialCodeFromCountryCode(countryCode);
+        const dialCode = getDialCodeFromCountryCode(
+          countryCode as CountryCodeType,
+        );
         expect(dialCode).toMatch(/^\d+$/);
       });
   });
