@@ -1,4 +1,4 @@
-import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
+import PHONE_REGEX_MAPPER from '#/i18nify-data/phone-number/country-code-to-phone-number/data.json';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
 import { CountryCodeType } from '../types';
@@ -11,9 +11,10 @@ const isValidPhoneNumber = (
   // Clean the provided phoneNumber by removing non-numeric characters
   const cleanedPhoneNumber = cleanPhoneNumber(phoneNumber.toString());
 
+  const regexMapper = PHONE_REGEX_MAPPER.country_tele_information;
   // Detect or validate the country code
   countryCode = (
-    countryCode && countryCode in PHONE_REGEX_MAPPER
+    countryCode && countryCode in regexMapper
       ? countryCode
       : detectCountryAndDialCodeFromPhone(cleanedPhoneNumber).countryCode
   ) as CountryCodeType;
@@ -22,9 +23,9 @@ const isValidPhoneNumber = (
   if (!phoneNumber) return false;
 
   // Check if the countryCode exists in the PHONE_REGEX_MAPPER
-  if (countryCode in PHONE_REGEX_MAPPER) {
+  if (countryCode in regexMapper) {
     // Fetch the regex pattern for the countryCode
-    const regex = PHONE_REGEX_MAPPER[countryCode];
+    const regex = new RegExp(regexMapper[countryCode].regex);
     // Test if the cleanedPhoneNumber matches the regex pattern
     return regex.test(cleanedPhoneNumber as string);
   }
