@@ -543,13 +543,240 @@ console.log(getDialCodeByCountryCode('DE')); // Outputs the dial code for German
 
 ### Module 03: Geo Module 🌍
 
-Dive into the digital atlas with the Geo Module 🌍, your ultimate toolkit for adding flag emojis 🏁 and images from around the globe 🌐 to your app. Whether you're infusing your projects with a touch of national pride 🎉 or satisfying your curiosity about different countries 🤔, this module is like a magic carpet ride 🧞‍♂️. With two amazing functions at your disposal ✨, incorporating a world of flags 🚩 into your app has never been easier. Let's explore these global gems 🌟:
+Dive into the digital atlas with the Geo Module 🌍, your ultimate toolkit for accessing geo contextual data from around the globe 🌐. Whether you're infusing your projects with national pride 🎉 or exploring different countries 🤔, this module is like a magic carpet ride 🧞‍♂️. With a range of functions at your disposal ✨, incorporating global data 🚩 into your app has never been easier. Let's explore these global gems 🌟:
 
-The Geo Module is designed to enrich your applications by providing easy access to high-quality flag images and emojis for every country.
+The Geo Module is designed to enrich your applications by providing easy access to high-quality flag images and emojis, country information, states, cities, and zip codes for every country.
 
-Source for flag images: [FlagCDN](https://flagcdn.com/).
+> **Note:** Below APIs in the Geo module currently support a limited set of countries.
+>
+> 1. getStates
+> 2. getCities
+> 3. getZipcodes
+>
+> These countries are 'IN', 'MY', 'SG' and 'US'.
+
+#### getAllCountries
+
+Looking for a global adventure? The getAllCountries API is your passport to a world of fun facts! Get ready to explore every country on the map, complete with cool details like names, languages, currencies, dial codes, and even their snazzy flags.
+
+##### Examples
+
+```javascript
+// Fetching the list of all countries
+console.log(getAllCountries());
+/*
+    "AF": {
+      "country_name": "Afghanistan",
+      "continent_code": "AS",
+      "continent_name": "Asia",
+      "alpha_3": "AFG",
+      "numeric_code": "004",
+      "flag": "https://flagcdn.com/af.svg",
+      "sovereignty": "UN member state",
+      "dial_code": "+93",
+      "supported_currency": [
+        "AFN"
+      ],
+      "timezones": {
+        "Asia/Kabul": {
+          "utc_offset": "UTC +04:30"
+        }
+      },
+      "timezone_of_capital": "Asia/Kabul",
+      "locales": {
+        "fa_AF": {
+          "name": "Persian (Afghanistan)"
+        },
+        "ps": {
+          "name": "Pashto"
+        },
+        "uz_AF": {
+          "name": "Uzbek"
+        },
+        "tk": {
+          "name": "Turkmen"
+        }
+      },
+      "default_locale": "fa_AF",
+      "default_currency": "AFN"
+    },
+    // more_countries
+*/
+```
+
+#### getStates(country_code)
+
+Embark on a state-by-state discovery with the getStates API! Get access to a treasure trove of state information, including names, time zones, and even a list of vibrant cities within each state.
+
+##### Examples
+
+```javascript
+// Getting list of all states
+const res = await getStates('IN');
+console.log(res);
+/*
+{"NL": {"name": "Nagaland",
+      "cities": [{"name": "Wokha",
+        "timezone": "Asia/Kolkata",
+        "zipcodes": ["797111"],
+        "region_name": "nan"},
+        {"name": "Mokokchūng",
+          "timezone": "Asia/Kolkata",
+          "zipcodes": ["798601",
+            "798601",
+            "798604",
+            "798607",
+            "798614",
+            "798615",
+            "798618"],
+          "region_name": "nan"},
+        {"name": "Kohima",
+          "timezone": "Asia/Kolkata",
+          "zipcodes": ["797001",
+            "797002",
+            "797003",
+            "797006",
+            "797105",
+            "797109",
+            "797120"],
+          "region_name": "nan"},
+        {"name": "Dimāpur",
+          "timezone": "Asia/Kolkata",
+          "zipcodes": ["797103",
+            "797103",
+            "797106",
+            "797112",
+            "797115",
+            "797116",
+            "797118"],
+          "region_name": "nan"}]}
+          // ...more_states
+          }
+*/
+
+// Passing invalid country code
+getStates('XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs Invalid country code: XYZ
+```
+
+#### getCities(country_code, states_code)
+
+Uncover the charm of cities worldwide with the getCities API! This dynamic tool fetches an array of cities complete with their names, time zones, and region names, providing a detailed glimpse into urban life across the globe.
+
+##### Examples
+
+```javascript
+// Getting list of all cities for a country
+const res = await getCities('IN');
+console.log(res);
+/*
+ [{
+    name: 'Tughlakābād',
+    timezone: 'Asia/Kolkata',
+    zipcodes: [],
+    region_name: 'nan',
+  },
+  {
+    name: 'Sabzi Mandi',
+    timezone: 'Asia/Kolkata',
+    zipcodes: [],
+    region_name: 'nan',
+  },
+  {
+    name: 'Pālam',
+    timezone: 'Asia/Kolkata',
+    zipcodes: ['517401', '517401'],
+    region_name: 'nan',
+  },
+  {
+    name: 'New Delhi',
+    timezone: 'Asia/Kolkata',
+    zipcodes: ['110001', '110020', '110029', '110084'],
+    region_name: 'nan',
+  },
+  // ...more_cities
+  ]
+*/
+
+// Getting list of all cities within a state
+const res = await getCities('IN', 'DL');
+console.log(res);
+/*
+ [{
+    name: 'Tughlakābād',
+    timezone: 'Asia/Kolkata',
+    zipcodes: [],
+    region_name: 'nan',
+  },
+  {
+    name: 'Sabzi Mandi',
+    timezone: 'Asia/Kolkata',
+    zipcodes: [],
+    region_name: 'nan',
+  },
+  {
+    name: 'Pālam',
+    timezone: 'Asia/Kolkata',
+    zipcodes: ['517401', '517401'],
+    region_name: 'nan',
+  },
+  {
+    name: 'New Delhi',
+    timezone: 'Asia/Kolkata',
+    zipcodes: ['110001', '110020', '110029', '110084'],
+    region_name: 'nan',
+  },
+  // ...more_cities_in_DL
+  ]
+*/
+
+// Passing invalid country code
+getCities('XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs Invalid country code: XYZ
+
+// Passing invalid state code
+getCities('IN', 'XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs State code XYZ missing in IN
+```
+
+#### getZipcodes(country_code, states_code)
+
+Explore postal codes with the getZipcodes API! Discover a list of unique zip codes organized by country and state, making it easy to navigate geographic areas and streamline address-based operations.
+
+##### Examples
+
+```javascript
+// Getting list of all cities for a country
+const res = await getZipcodes('IN');
+console.log(res);
+/*
+ ['517401', '517401','110001', '110020', '110029', '110084', ...more_zipcodes]
+*/
+
+// Getting list of all cities within a state
+const res = await getZipcodes('IN', 'DL');
+console.log(res);
+/*
+ ['517401', '517401','110001', '110020', '110029', '110084', ...more_zipcodes_in_DL]
+*/
+
+// Passing invalid country code
+getZipcodes('XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs Invalid country code: XYZ
+
+// Passing invalid state code
+getZipcodes('IN', 'XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs State code XYZ missing in IN
+```
 
 #### getFlagOfCountry(countryCode) 🏁
+
+Source for flag images: [FlagCDN](https://flagcdn.com/).
 
 Retrieve flag images for any ISO country code 🌍✈️ with a simple API call, bolstering your application's global engagement 🌐 and honoring worldwide diversity 🏳️. This method efficiently integrates international flags into your digital projects, leveraging high-resolution SVG formats from a reliable source.
 
@@ -583,6 +810,8 @@ try {
 ```
 
 #### getFlagsForAllCountries() 🌐
+
+Source for flag images: [FlagCDN](https://flagcdn.com/).
 
 Access a comprehensive collection of global flags with an ISO country code 🌍✈️—serving as your digital passport 🛂 to a visually unified world. This feature amplifies your app's international flair 🌐 and celebrates cultural diversity 🏳️🔍 by embedding flags from every recognized nation.
 
