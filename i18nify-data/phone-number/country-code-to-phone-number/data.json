@@ -1,14 +1,14 @@
 {
   "country_tele_information": {
-    "MY": {
-      "dial_code": "+60",
-      "format": "xx xxxxx xx",
-      "regex": "^(\\+?6?0)?(\\d{1,3})[-. ]?(\\d{7,8})$"
-    },
     "AF": {
       "dial_code": "+93",
       "format": "xx xxx xxxx",
       "regex": "^(?:\\+93)?\\d{9}$"
+    },
+    "AX": {
+      "dial_code": "+358",
+      "format": "xxx xxx",
+      "regex": "^\\+358\\d{5,8}$"
     },
     "AL": {
       "dial_code": "+355",
@@ -39,6 +39,11 @@
       "dial_code": "+1",
       "format": "xxx-xxxx",
       "regex": "^(?:\\+1-264)?(?:\\d{7})$"
+    },
+    "AQ": {
+      "dial_code": "+672",
+      "format": "",
+      "regex": ""
     },
     "AG": {
       "dial_code": "+1",
@@ -145,10 +150,20 @@
       "format": "xx xxxx xxxx",
       "regex": "^(?:(?:\\+267)?\\s?)?[74]\\d{7}$"
     },
+    "BV": {
+      "dial_code": "+47",
+      "format": "",
+      "regex": ""
+    },
     "BR": {
       "dial_code": "+55",
       "format": "xx xxxx-xxxx",
       "regex": "^(?:\\+55)?(?:\\d{10,11})$"
+    },
+    "IO": {
+      "dial_code": "+246",
+      "format": "xxx xxxx",
+      "regex": "^\\+246\\d{7}$"
     },
     "BN": {
       "dial_code": "+673",
@@ -214,6 +229,16 @@
       "dial_code": "+86",
       "format": "xxxx-xxxxxxx",
       "regex": "^(?:(?:\\+|00)86)?1\\d{10}$"
+    },
+    "CX": {
+      "dial_code": "+61",
+      "format": "xxx xxxx xxxx",
+      "regex": "^(?:\\+61)?(?:\\d{8,9})$"
+    },
+    "CC": {
+      "dial_code": "+61",
+      "format": "xxx xxxx xxxx",
+      "regex": "^(?:\\+61)?(?:\\d{8,9})$"
     },
     "CO": {
       "dial_code": "+57",
@@ -370,6 +395,11 @@
       "format": "xx xx xx xx",
       "regex": "^(?:\\+689)?\\d{6}$"
     },
+    "TF": {
+      "dial_code": "+1",
+      "format": "",
+      "regex": ""
+    },
     "GA": {
       "dial_code": "+241",
       "format": "xx xx xx xx",
@@ -415,6 +445,11 @@
       "format": "xxx-xxxx",
       "regex": "^(?:\\+1-473)?(?:\\d{7})$"
     },
+    "GP": {
+      "dial_code": "+590",
+      "format": "xxx xx xx xx",
+      "regex": "^(?:\\+590)?\\d{9}$"
+    },
     "GU": {
       "dial_code": "+1",
       "format": "xxx-xxxx",
@@ -424,6 +459,11 @@
       "dial_code": "+502",
       "format": "xxxx-xxxx",
       "regex": "^(?:\\+502)?[2468]\\d{7,8}$"
+    },
+    "GG": {
+      "dial_code": "+44",
+      "format": "xxxx xxxx",
+      "regex": "^(?:\\+44-1481)?\\d{6}$"
     },
     "GN": {
       "dial_code": "+224",
@@ -444,6 +484,11 @@
       "dial_code": "+509",
       "format": "xxx-xxxx",
       "regex": "^(?:\\+?509)?\\d{8}$"
+    },
+    "HM": {
+      "dial_code": "+00672",
+      "format": "",
+      "regex": ""
     },
     "VA": {
       "dial_code": "+39",
@@ -495,6 +540,11 @@
       "format": "xx xxx xxxx",
       "regex": "^(?:\\+353)?\\d{7,10}$"
     },
+    "IM": {
+      "dial_code": "+44",
+      "format": "xxxx xxxx",
+      "regex": "^(?:\\+44-1624)?\\d{6}$"
+    },
     "IL": {
       "dial_code": "+972",
       "format": "xxxx-xxx-xxx",
@@ -514,6 +564,11 @@
       "dial_code": "+81",
       "format": "xx xxxx xxxx",
       "regex": "^(?:\\+81)?\\d{10}$"
+    },
+    "JE": {
+      "dial_code": "+44",
+      "format": "xxxx xxxx",
+      "regex": "^(?:\\+44-1534)?\\d{6}$"
     },
     "JO": {
       "dial_code": "+962",
@@ -615,6 +670,11 @@
       "format": "xx xxxx xxxx",
       "regex": "^(?:\\+265)[1-9]\\d{6}$"
     },
+    "MY": {
+      "dial_code": "+60",
+      "format": "xx xxxxx xx",
+      "regex": "^(\\+?6?0)?(\\d{1,3})[-. ]?(\\d{7,8})$"
+    },
     "MV": {
       "dial_code": "+960",
       "format": "xxxxxx",
@@ -634,6 +694,11 @@
       "dial_code": "+692",
       "format": "xxx xxxx",
       "regex": "^(?:\\+692)?\\d{7}$"
+    },
+    "MQ": {
+      "dial_code": "+596",
+      "format": "xxx xx xx xx",
+      "regex": "^(?:\\+596)?\\d{9}$"
     },
     "MR": {
       "dial_code": "+222",
@@ -750,6 +815,11 @@
       "format": "xxxx",
       "regex": "^(?:\\+683)?\\d{4}$"
     },
+    "NF": {
+      "dial_code": "+672",
+      "format": "x xxxx",
+      "regex": "^(?:\\+672)?\\d{6}$"
+    },
     "MK": {
       "dial_code": "+389",
       "format": "xx xx xx xx",
@@ -810,6 +880,11 @@
       "format": "xxx-xxxx",
       "regex": "^(?:(?:\\+?63)|0)(?:\\d{10})$"
     },
+    "PN": {
+      "dial_code": "+64",
+      "format": "",
+      "regex": ""
+    },
     "PL": {
       "dial_code": "+48",
       "format": "xxx xxx xxx",
@@ -850,6 +925,11 @@
       "format": "xxx xxxxxx",
       "regex": "^(?:(?:\\+250)|(0))\\d{9}$"
     },
+    "BL": {
+      "dial_code": "+590",
+      "format": "xxx xx xx xx",
+      "regex": "^(?:\\+590)?(?:\\d{9})$"
+    },
     "SH": {
       "dial_code": "+290",
       "format": "xxxx",
@@ -869,6 +949,11 @@
       "dial_code": "+590",
       "format": "xxx xx xx xx",
       "regex": "^(?:\\+590)?\\d{9}$"
+    },
+    "PM": {
+      "dial_code": "+508",
+      "format": "xxx xxxx",
+      "regex": "^(?:\\+508)?\\d{6}$"
     },
     "VC": {
       "dial_code": "+1",
@@ -920,6 +1005,11 @@
       "format": "xxxx xxxx",
       "regex": "^(?:(?:\\+65)|(?:\\(\\+65\\))|(?:65))\\d{4}\\d{4}$"
     },
+    "SX": {
+      "dial_code": "+1",
+      "format": "xxx-xxxx",
+      "regex": "^(?:\\+1-721)?\\d{7}$"
+    },
     "SK": {
       "dial_code": "+421",
       "format": "xxx xxx xxx",
@@ -944,6 +1034,11 @@
       "dial_code": "+27",
       "format": "xxx-xxx-xxxx",
       "regex": "^(?:(?:\\+27)|0)(\\d{9})$"
+    },
+    "GS": {
+      "dial_code": "+500",
+      "format": "",
+      "regex": ""
     },
     "SS": {
       "dial_code": "+211",
@@ -970,7 +1065,11 @@
       "format": "xxx-xxxx",
       "regex": "^(?:(?:\\+597))\\d{7}$"
     },
-
+    "SJ": {
+      "dial_code": "+47",
+      "format": "xxx xx xxx",
+      "regex": "^\\+47\\d{8}$"
+    },
     "SE": {
       "dial_code": "+46",
       "format": "xxx-xxx xx xx",
@@ -1015,6 +1114,11 @@
       "dial_code": "+228",
       "format": "xx xx xx xx",
       "regex": "^(?:(?:\\+228))\\d{8}$"
+    },
+    "TK": {
+      "dial_code": "+690",
+      "format": "xxxx",
+      "regex": "^\\+690\\d{4}$"
     },
     "TO": {
       "dial_code": "+676",
@@ -1071,6 +1175,11 @@
       "format": "xxxx xxx xxx",
       "regex": "^(?:(?:\\+44\\s?|0)7\\d{3}(\\s?\\d{4,})?)$"
     },
+    "UM": {
+      "dial_code": "+1",
+      "format": "",
+      "regex": ""
+    },
     "US": {
       "dial_code": "+1",
       "format": "xxx-xxx-xxxx",
@@ -1110,6 +1219,16 @@
       "dial_code": "+1",
       "format": "xxx-xxxx",
       "regex": "^(?:\\+1-340)?\\d{7}$"
+    },
+    "WF": {
+      "dial_code": "+681",
+      "format": "xx xxxx",
+      "regex": "^(?:\\+681)?\\d{6}$"
+    },
+    "EH": {
+      "dial_code": "+212",
+      "format": "xx xx xx xx",
+      "regex": "^(?:\\+212)?(?:\\d{9})$"
     },
     "YE": {
       "dial_code": "+967",
