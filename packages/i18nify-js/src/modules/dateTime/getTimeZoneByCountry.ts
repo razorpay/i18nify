@@ -1,24 +1,33 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
+import { I18NIFY_DATA_SOURCE } from './constants';
 
 /**
  * Asynchronously retrieves the timezone of the capital city for a given country code.
  *
- * This function takes a country code as input and returns a promise that resolves to the timezone of the capital city of that country
- * from a dynamically imported dataset. If the country code does not exist in the dataset,
- * it throws an Error.
- *
  * @param countryCode The country code for which the timezone of the capital city is requested.
  * @returns A promise that resolves to the timezone of the capital city for the specified country code.
- * @throws Error if the country code is not found in the dynamically imported dataset.
+ * @throws Error if the country code is not found in the dynamically imported dataset or if there's an API response error.
  */
 const getTimeZoneByCountry = async (countryCode: string): Promise<string> => {
-    const { default: COUNTRY_DATA } = await import('#/i18nify-data/country/metadata/data.json');
-    
-    if (!(countryCode in COUNTRY_DATA.metadata_information)) {
-        throw new Error(`Invalid countryCode: ${countryCode}`);
-    }
-   
-    return COUNTRY_DATA.metadata_information[countryCode as keyof typeof COUNTRY_DATA.metadata_information].timezone_of_capital;
-}
+  try {
+    const response = await fetch(
+      `${I18NIFY_DATA_SOURCE}/country/metadata/data.json`,
+    );
+    const data = await response.json();
 
-export default withErrorBoundary<typeof getTimeZoneByCountry>(getTimeZoneByCountry);
+    const timezone =
+      data.metadata_information[countryCode]?.timezone_of_capital;
+
+    if (!timezone) {
+      throw new Error(`Invalid countryCode: ${countryCode}`);
+    }
+
+    return timezone;
+  } catch (err) {
+    throw new Error(`Error in API response: ${(err as Error).message}`);
+  }
+};
+
+export default withErrorBoundary<typeof getTimeZoneByCountry>(
+  getTimeZoneByCountry,
+);

@@ -31,3 +31,36 @@ export interface SupportedDateFormats {
   secondIndex?: number;
   format: string;
 }
+
+export interface TimezoneInfo {
+  utc_offset: string;
+}
+
+export interface LocaleInfo {
+  name: string;
+}
+
+export interface CountryMetaType {
+  country_name: string;
+  continent_code: string;
+  continent_name: string;
+  alpha_3: string;
+  numeric_code: string;
+  flag: string;
+  sovereignty: string;
+  dial_code: string;
+  supportedCurrency: string[];
+  timezones: Record<string, TimezoneInfo>;
+  timezone_of_capital: string;
+  locales: Record<string, LocaleInfo>;
+  default_locale: string;
+  default_currency: string;
+}
+
+export interface CountryMetadataInformation {
+  [countryCode: string]: CountryMetadata;
+}
+
+export interface CountryDataApiResponse {
+  metadata_information: CountryMetadataInformation;
+}
