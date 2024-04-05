@@ -58,7 +58,7 @@ export interface CountryMetaType {
 }
 
 export interface CountryMetadataInformation {
-  [countryCode: string]: CountryMetadata;
+  [countryCode: string]: CountryMetaType;
 }
 
 export interface CountryDataApiResponse {
