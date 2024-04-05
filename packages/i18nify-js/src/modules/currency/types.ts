@@ -1,5 +1,5 @@
 import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
-import CURRENCY_INFO from '../.internal/jsonSubsets/currency/currencyDataSubset.json';
+import CURRENCY_INFO from './data/currencyDataSubset.json';
 
 export type FormattedPartsObject = {
   [key in (typeof ALLOWED_FORMAT_PARTS_KEYS)[number]]?: string | undefined;
@@ -57,3 +57,11 @@ export interface I18nifyNumberFormatOptions {
 }
 
 export type CurrencyCodeType = keyof typeof CURRENCY_INFO;
+
+export interface CurrencySubsetData {
+  [key: string]: {
+    name: string;
+    minor_unit: string;
+    symbol: string;
+  };
+}

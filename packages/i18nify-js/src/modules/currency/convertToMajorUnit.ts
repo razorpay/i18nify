@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CurrencyCodeType } from './types';
-import CURRENCY_INFO from '../.internal/jsonSubsets/currency/currencyDataSubset.json';
+import CURRENCY_INFO from './data/currencyDataSubset.json';
 
 /**
  * Converts an amount from a minor currency unit to a major currency unit.

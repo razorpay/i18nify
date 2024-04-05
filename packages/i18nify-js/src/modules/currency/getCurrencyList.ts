@@ -1,5 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import CURRENCY_INFO from '../.internal/jsonSubsets/currency/currencyDataSubset.json';
+import CURRENCY_INFO from './data/currencyDataSubset.json';
 
 const getCurrencyList = () => {
   return CURRENCY_INFO;

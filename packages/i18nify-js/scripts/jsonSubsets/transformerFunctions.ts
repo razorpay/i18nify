@@ -5,7 +5,7 @@ import {
 } from './types';
 
 export const currencyGeoDataFilePath =
-  './src/modules/.internal/jsonSubsets/currency/currencyDataSubset.json';
+  './src/modules/currency/data/currencyDataSubset.json';
 
 // Currency-specific transformation logic
 export const transformCurrencyData: TransformFunction<

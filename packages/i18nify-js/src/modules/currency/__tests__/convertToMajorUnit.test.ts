@@ -7,8 +7,8 @@ describe('currency - convertToMajorUnit', () => {
     currency: CurrencyCodeType;
     expectedResult: number;
   }[] = [
-    { amount: 100, currency: 'USD', expectedResult: 1 },
-    { amount: 100, currency: 'GBP', expectedResult: 1 },
+    { amount: 100, currency: 'USD' as CurrencyCodeType, expectedResult: 1 },
+    { amount: 100, currency: 'GBP' as CurrencyCodeType, expectedResult: 1 },
   ];
 
   testCases.forEach(({ amount, currency, expectedResult }) => {

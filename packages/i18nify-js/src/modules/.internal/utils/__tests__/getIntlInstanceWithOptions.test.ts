@@ -1,5 +1,6 @@
 import { getIntlInstanceWithOptions, getLocale } from '..';
 import { setState } from '../../../core';
+import { CurrencyCodeType } from '../../../currency/types';
 
 describe('getIntlInstanceWithOptions', () => {
   it('should return a valid Intl.NumberFormat object', () => {
@@ -21,7 +22,7 @@ describe('getIntlInstanceWithOptions', () => {
   });
 
   it('should handle currency options', () => {
-    const currency = 'EUR';
+    const currency = 'EUR' as CurrencyCodeType;
     const intlProps = getIntlInstanceWithOptions({ currency });
     const resolvedOptions = intlProps.resolvedOptions();
     expect(resolvedOptions.style).toBe('currency');

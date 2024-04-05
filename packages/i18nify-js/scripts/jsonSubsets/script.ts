@@ -4,16 +4,14 @@ import {
   currencyGeoDataFilePath,
   transformCurrencyData,
 } from './transformerFunctions';
-import { CurrencyInformation, CurrencySubsetData } from './types';
+import { CurrencyInformation, CurrencySubsetData, TransformFunction } from './types';
 
 const subsetMap = [
   [currencyOriginalData, currencyGeoDataFilePath, transformCurrencyData],
 ];
 
-subsetMap.forEach((module) => {
-  createModuleSubsetFile<CurrencyInformation, CurrencySubsetData>(
-    module[0],
-    module[1],
-    module[2],
-  );
-});
+subsetMap.forEach((module) => createModuleSubsetFile<CurrencyInformation, CurrencySubsetData>(
+  module[0] as CurrencyInformation,
+  module[1] as string,
+  module[2] as TransformFunction<CurrencyInformation, CurrencySubsetData>
+));

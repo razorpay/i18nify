@@ -1,5 +1,6 @@
-import { getCurrencyList } from '../index';
-import CURRENCY_INFO from '../../.internal/jsonSubsets/currency/currencyDataSubset.json';
+import { CurrencyCodeType, getCurrencyList } from '../index';
+import CURRENCY_INFO from '../data/currencyDataSubset.json';
+import { CurrencySubsetData } from '../types';
 
 describe('getCurrencyList', () => {
   it('should return the correct currency list', () => {
@@ -9,7 +10,7 @@ describe('getCurrencyList', () => {
 
   it("check properties 'symbol' and 'name' for a sample currency", () => {
     const currencyList = getCurrencyList();
-    const sampleCurrencyCode = 'USD';
+    const sampleCurrencyCode = 'USD' as CurrencyCodeType;
 
     expect(currencyList[sampleCurrencyCode]).toHaveProperty('symbol');
     expect(currencyList[sampleCurrencyCode]).toHaveProperty('name');
@@ -17,13 +18,13 @@ describe('getCurrencyList', () => {
 
   it("check the values of 'symbol' and 'name' properties for a sample currency", () => {
     const currencyList = getCurrencyList();
-    const sampleCurrencyCode = 'USD';
-    const sampleCurrency = currencyList[sampleCurrencyCode];
+    const sampleCurrencyCode = 'USD' as CurrencyCodeType;
+    const sampleCurrency: CurrencySubsetData = currencyList[sampleCurrencyCode];
 
     // Assert that the 'symbol' and 'name' properties have the expected values
     expect(sampleCurrency.symbol).toBe(
-      CURRENCY_INFO[sampleCurrencyCode].symbol,
+      (CURRENCY_INFO as CurrencySubsetData)[sampleCurrencyCode].symbol,
     );
-    expect(sampleCurrency.name).toBe(CURRENCY_INFO[sampleCurrencyCode].name);
+    expect(sampleCurrency.name).toBe((CURRENCY_INFO as CurrencySubsetData)[sampleCurrencyCode].name);
   });
 });

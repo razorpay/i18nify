@@ -7,13 +7,13 @@ const nnsp = String.fromCharCode(8239);
 
 describe('formatNumber', () => {
   it('should format the amount with default options', () => {
-    const result = formatNumber('1000.5', { currency: 'USD' });
+    const result = formatNumber('1000.5', { currency: 'USD' as CurrencyCodeType });
     expect(result).toBe('$1,000.50');
   });
 
   it('should format the amount with custom locale and currency display', () => {
     const result = formatNumber('1500', {
-      currency: 'EUR',
+      currency: 'EUR' as CurrencyCodeType,
       locale: 'fr-FR',
       intlOptions: {
         currencyDisplay: 'code',
@@ -30,7 +30,7 @@ describe('formatNumber', () => {
 
   it('should format the amount with narrow currency symbol', () => {
     const result = formatNumber('5000', {
-      currency: 'JPY',
+      currency: 'JPY' as CurrencyCodeType,
       intlOptions: {
         currencyDisplay: 'narrowSymbol',
       },
@@ -40,7 +40,7 @@ describe('formatNumber', () => {
 
   it('should format the amount using the browser locale when no custom locale is provided', () => {
     const result = formatNumber('2000', {
-      currency: 'CAD',
+      currency: 'CAD' as CurrencyCodeType,
     });
     const expectedLocale = getLocale();
     const formattedAmount = new Intl.NumberFormat(expectedLocale, {
@@ -53,7 +53,7 @@ describe('formatNumber', () => {
   it('should handle invalid inputs gracefully', () => {
     expect(() =>
       formatNumber('invalid-amount', {
-        currency: 'USD',
+        currency: 'USD' as CurrencyCodeType,
       }),
     ).toThrow(
       `Error: Parameter 'amount' is not a number. typeof amount: string`,
@@ -61,18 +61,18 @@ describe('formatNumber', () => {
   });
 
   it('should format a negative amount', () => {
-    const result = formatNumber('-500', { currency: 'USD' });
+    const result = formatNumber('-500', { currency: 'USD' as CurrencyCodeType });
     expect(result).toBe('-$500.00');
   });
 
   it('should format zero as "0.00"', () => {
-    const result = formatNumber(0, { currency: 'USD' });
+    const result = formatNumber(0, { currency: 'USD' as CurrencyCodeType });
     expect(result).toBe('$0.00');
   });
 
   it('should format with custom minimum and maximum fraction digits', () => {
     const result = formatNumber('42.12345', {
-      currency: 'USD',
+      currency: 'USD' as CurrencyCodeType,
       intlOptions: {
         minimumFractionDigits: 2,
         maximumFractionDigits: 3,
@@ -87,7 +87,7 @@ describe('formatNumber', () => {
   });
 
   it('should throw error with thousands separators', () => {
-    expect(() => formatNumber('1,234,567.89', { currency: 'USD' })).toThrow(
+    expect(() => formatNumber('1,234,567.89', { currency: 'USD' as CurrencyCodeType })).toThrow(
       `Error: Parameter 'amount' is not a number. typeof amount: string`,
     );
   });
@@ -95,7 +95,7 @@ describe('formatNumber', () => {
   it('should throw error with a different decimal separator', () => {
     expect(() =>
       formatNumber('1000,5', {
-        currency: 'USD',
+        currency: 'USD' as CurrencyCodeType,
         intlOptions: { useGrouping: false },
       }),
     ).toThrow(
@@ -106,7 +106,7 @@ describe('formatNumber', () => {
   it('should handle extremely large numbers with precision', () => {
     const input = '1234567890123456.7890123456789012345678901234567890123456';
     setState({ locale: 'en-US' });
-    const result = formatNumber(input, { currency: 'USD' });
+    const result = formatNumber(input, { currency: 'USD' as CurrencyCodeType });
     expect(result).toBe('$1,234,567,890,123,456.80');
   });
 
@@ -126,7 +126,7 @@ describe('formatNumber', () => {
 
   it('should round numbers correctly based on fraction digits', () => {
     const result = formatNumber('1000.555', {
-      currency: 'USD',
+      currency: 'USD' as CurrencyCodeType,
       intlOptions: {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
@@ -137,7 +137,7 @@ describe('formatNumber', () => {
 
   it('should handle very small numbers with precision', () => {
     const result = formatNumber('0.00000012345', {
-      currency: 'USD',
+      currency: 'USD' as CurrencyCodeType,
       intlOptions: {
         minimumFractionDigits: 10,
       },
