@@ -25,7 +25,7 @@ export const withErrorBoundary = <T extends (...args: any[]) => any>(
     try {
       return fn.call(this, ...rest) as ReturnType<T>;
     } catch (err) {
-      console.warn('[I18N Error]: ', err);
+      console.error('[i18nify Error]: ', err);
       // Currently, we are throwing the error as it is to consumers.
       // In the future, this can be modified as per our requirement, like an error logging service.
       throw new I18nifyError(err as string | undefined);

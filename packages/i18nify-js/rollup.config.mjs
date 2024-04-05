@@ -6,6 +6,12 @@ import terser from '@rollup/plugin-terser';
 import { readdirSync } from 'fs';
 import { basename, extname, join } from 'path';
 import copy from 'rollup-plugin-copy';
+import json from '@rollup/plugin-json';
+import alias from '@rollup/plugin-alias';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Function to get modules dynamically from a directory
 const getModules = (directory) => {
@@ -28,6 +34,21 @@ const MODULES_DIR = 'src/modules';
 
 // Get modules dynamically from the specified directory
 const modules = getModules(MODULES_DIR);
+
+const COMMON_PLUGINS = [
+  typescript(),
+  resolve(),
+  commonjs(),
+  json(),
+  alias({
+    entries: [
+      {
+        find: '#/i18nify-data',
+        replacement: path.resolve(__dirname, '../../i18nify-data'),
+      },
+    ],
+  }),
+];
 
 /**
  * Generates input objects in below format
@@ -69,9 +90,7 @@ export default [
       sourcemap: true,
     },
     plugins: [
-      typescript(),
-      resolve(),
-      commonjs(),
+      ...COMMON_PLUGINS,
       copy({
         targets: [
           { src: '../../i18nify-data/assets/flags', dest: './lib/assets' },
@@ -87,7 +106,7 @@ export default [
       format: 'es',
       sourcemap: true,
     },
-    plugins: [typescript(), resolve(), commonjs(), terser()],
+    plugins: [...COMMON_PLUGINS, terser()],
   },
   // Universal Module Definition (UMD) build
   {
@@ -98,7 +117,7 @@ export default [
       sourcemap: true,
       name: 'i18nify',
     },
-    plugins: [typescript(), resolve(), commonjs()],
+    plugins: [...COMMON_PLUGINS],
   },
   // Universal Module Definition (UMD) minified build
   {
@@ -109,7 +128,7 @@ export default [
       sourcemap: true,
       name: 'i18nify',
     },
-    plugins: [typescript(), resolve(), commonjs(), terser()],
+    plugins: [...COMMON_PLUGINS, terser()],
   },
   // CommonJS (CJS) build
   {
@@ -118,7 +137,7 @@ export default [
       file: 'lib/cjs/index.js',
       format: 'cjs',
     },
-    plugins: [typescript(), resolve(), commonjs()],
+    plugins: [...COMMON_PLUGINS],
   },
   // Declaration types (.d.ts) for modules
   ...declarationTypes,
