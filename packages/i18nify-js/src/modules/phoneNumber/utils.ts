@@ -1,6 +1,6 @@
 import { CountryCodeType } from '../types';
 import DIAL_CODE_MAPPER from '#/i18nify-data/phone-number/dial-code-to-country/data.json';
-import PHONE_REGEX_MAPPER from '#/i18nify-data/phone-number/country-code-to-phone-number/data.json';
+import PHONE_REGEX_MAPPER from './data/phoneRegexMapper.json';
 
 /**
  * Determines the country data (countryCode, dialCode) based on the provided phone number.
@@ -18,7 +18,7 @@ import PHONE_REGEX_MAPPER from '#/i18nify-data/phone-number/country-code-to-phon
 export const detectCountryAndDialCodeFromPhone = (
   phoneNumber: string | number,
 ): { countryCode: CountryCodeType; dialCode: string } => {
-  const regexMapper = PHONE_REGEX_MAPPER.country_tele_information;
+  const regexMapper = PHONE_REGEX_MAPPER;
 
   // If the phone number starts with '+', extract numeric characters
   if (phoneNumber.toString().charAt(0) === '+') {
@@ -50,7 +50,7 @@ export const detectCountryAndDialCodeFromPhone = (
     // Filter matching countries based on phone number validation regex
     const matchedCountryCode = matchingCountries.find((country) => {
       const regex = new RegExp(
-        regexMapper[country.countryCode as CountryCodeType].regex,
+        regexMapper[country.countryCode as CountryCodeType],
       );
       if (regex && regex.test(phoneNumber.toString())) return country;
       return undefined;
@@ -66,9 +66,7 @@ export const detectCountryAndDialCodeFromPhone = (
   } else {
     // If phone number doesn't start with '+', directly match against country regexes
     for (const countryCode in regexMapper) {
-      const regex = new RegExp(
-        regexMapper[countryCode as CountryCodeType].regex,
-      );
+      const regex = new RegExp(regexMapper[countryCode as CountryCodeType]);
       if (regex.test(phoneNumber.toString())) {
         return {
           countryCode: countryCode as CountryCodeType,

@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CountryCodeType } from '../types';
-import PHONE_FORMATTER_MAPPER from '#/i18nify-data/phone-number/country-code-to-phone-number/data.json';
+import PHONE_FORMATTER_MAPPER from './data/phoneFormatterMapper.json';
 import formatPhoneNumber from './formatPhoneNumber';
 import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
 
@@ -25,7 +25,7 @@ const parsePhoneNumber = (
   phoneNumber = cleanPhoneNumber(phoneNumber);
 
   const countryData = detectCountryAndDialCodeFromPhone(phoneNumber);
-  const formatterMap = PHONE_FORMATTER_MAPPER.country_tele_information;
+  const formatterMap = PHONE_FORMATTER_MAPPER;
 
   // Detect or validate the country code
   const countryCode = (
@@ -37,7 +37,7 @@ const parsePhoneNumber = (
   const formattedPhoneNumber = formatPhoneNumber(phoneNumber, countryCode);
 
   // Fetch the pattern associated with the countryCode from the PHONE_FORMATTER_MAPPER
-  const pattern = formatterMap[countryCode]?.format;
+  const pattern = formatterMap[countryCode];
 
   if (!pattern)
     return {
@@ -60,7 +60,7 @@ const parsePhoneNumber = (
   const diff = phoneNumber.length - charCountInFormatterPattern;
 
   // Obtain the format template associated with the countryCode
-  const formatTemplate = formatterMap[countryCode]?.format;
+  const formatTemplate = formatterMap[countryCode];
 
   // Return the parsed phone number information
   return {
