@@ -563,7 +563,8 @@ Looking for a global adventure? The getAllCountries API is your passport to a wo
 
 ```javascript
 // Fetching the list of all countries
-console.log(getAllCountries());
+const res = await getAllCountries();
+console.log(res);
 /*
     "AF": {
       "country_name": "Afghanistan",
