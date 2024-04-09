@@ -35,7 +35,7 @@ describe('isValidPhoneNumber', () => {
     const phoneNumber = '1234567890';
     const countryCode = 'XYZ';
     const isValid = isValidPhoneNumber(phoneNumber, countryCode as any);
-    expect(isValid).toBe(true);
+    expect(isValid).toBe(false);
   });
 
   it('should handle a missing phoneNumber', () => {
