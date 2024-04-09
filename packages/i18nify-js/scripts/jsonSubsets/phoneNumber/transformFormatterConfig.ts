@@ -12,7 +12,7 @@
     { "IN": "xxxx xxxxxx" }
  * 
  */
-module.exports = () => {
+export default () => {
   const DATA = require('#/i18nify-data/phone-number/country-code-to-phone-number/data.json');
 
   const countryData = DATA.country_tele_information;

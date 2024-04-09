@@ -92,7 +92,7 @@
     "test": "jest",
     "prepare": "yarn build",
     "test:browser": "npx playwright test",
-    "generate:jsonsubsets": "ts-node -r tsconfig-paths/register ./scripts/jsonsubsets/main.ts",
+    "generate:jsonsubsets": "ts-node -r tsconfig-paths/register ./scripts/jsonsubsets/index.ts",
     "prebuild": "yarn generate:jsonsubsets"
   },
   "devDependencies": {

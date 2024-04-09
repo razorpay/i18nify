@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 /**
  * Creates a json file with the data and filePath provided.
  */
-module.exports = async ({
+export default async ({
   data,
   subsetFilePath,
 }: {

@@ -12,7 +12,7 @@
     { "IN": "^(?:(?:\\+|0{0,2})91\\s*[-]?\\s*|[0]?)?[6789]\\d{9}$" }
  * 
  */
-module.exports = () => {
+export default () => {
   const DATA = require('#/i18nify-data/phone-number/country-code-to-phone-number/data.json');
 
   const countryData = DATA.country_tele_information;
