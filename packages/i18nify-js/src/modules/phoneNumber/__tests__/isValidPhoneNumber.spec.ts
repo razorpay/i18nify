@@ -54,7 +54,7 @@ test.describe('isValidPhoneNumber', () => {
       `await isValidPhoneNumber('${phoneNumber}', '${countryCode}')`,
     );
 
-    await assertScriptText(page, 'true');
+    await assertScriptText(page, 'false');
   });
 
   test('should handle a missing phoneNumber', async ({ page }) => {

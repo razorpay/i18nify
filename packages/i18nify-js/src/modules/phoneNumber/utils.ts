@@ -9,8 +9,7 @@ import PHONE_REGEX_MAPPER from './data/phoneRegexMapper.json';
  *   and matches the leading digits with known dial codes mapped to countries.
  * - For matched dial codes, it further filters based on country-specific regex patterns
  *   to validate the phone number format for those countries.
- * - If the phone number doesn't start with '+', it directly matches the number
- *   against regular expressions associated with various countries to identify the code.
+ * - If the phone number doesn't start with '+', it returns empty strings as dialCode and countryCode
  *
  * @param phoneNumber The input phone number (string or number).
  * @returns The detected countryCode & dialCode or an empty strings in both if not found.
@@ -63,19 +62,6 @@ export const detectCountryAndDialCodeFromPhone = (
         dialCode: '',
       }
     );
-  } else {
-    // If phone number doesn't start with '+', directly match against country regexes
-    for (const countryCode in regexMapper) {
-      const regex = new RegExp(regexMapper[countryCode as CountryCodeType]);
-      if (regex.test(phoneNumber.toString())) {
-        return {
-          countryCode: countryCode as CountryCodeType,
-          dialCode: getDialCodeFromCountryCode(countryCode as CountryCodeType)
-            ? `+${getDialCodeFromCountryCode(countryCode as CountryCodeType)}`
-            : '',
-        };
-      }
-    }
   }
 
   // Return empty string if no country code is detected
@@ -88,26 +74,4 @@ export const cleanPhoneNumber = (phoneNumber: string) => {
   // Replace matched characters with an empty string
   const cleanedPhoneNumber = phoneNumber.replace(regex, '');
   return phoneNumber[0] === '+' ? `+${cleanedPhoneNumber}` : cleanedPhoneNumber;
-};
-
-/**
- * Returns the dial code mapped for the country code passed from DIAL_CODE_MAPPER
- */
-export const getDialCodeFromCountryCode = (
-  countryCode: CountryCodeType,
-): string => {
-  const dialCodeMap = DIAL_CODE_MAPPER.dial_code_to_country as Record<
-    string,
-    CountryCodeType[]
-  >;
-  for (const dialCode in dialCodeMap) {
-    if (
-      dialCodeMap[dialCode].includes(
-        countryCode.toUpperCase() as CountryCodeType,
-      )
-    ) {
-      return dialCode;
-    }
-  }
-  return '';
 };
