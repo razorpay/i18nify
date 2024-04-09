@@ -6,7 +6,7 @@ describe('detectCountryAndDialCodeFromPhone', () => {
       countryCode: 'IN',
       dialCode: '+91',
     });
-    expect(detectCountryAndDialCodeFromPhone('60123456789')).toEqual({
+    expect(detectCountryAndDialCodeFromPhone('+60123456789')).toEqual({
       countryCode: 'MY',
       dialCode: '+60',
     });
