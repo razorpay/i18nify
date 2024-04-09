@@ -92,8 +92,8 @@
     "test": "jest",
     "prepare": "yarn build",
     "test:browser": "npx playwright test",
-    "generate:jsonsubsets": "ts-node -r tsconfig-paths/register ./scripts/jsonsubsets",
-    "prebuild": "yarn generate:jsonsubsets"
+    "generate:jsonSubsets": "ts-node -r tsconfig-paths/register ./scripts/jsonSubsets/index.ts",
+    "prebuild": "yarn generate:jsonSubsets"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.1",
