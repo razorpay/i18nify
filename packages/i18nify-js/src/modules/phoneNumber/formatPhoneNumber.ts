@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CountryCodeType } from '../types';
-import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
+import PHONE_FORMATTER_MAPPER from './data/phoneFormatterMapper.json';
 import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
 
 // Formats a provided phone number according to the predefined format for a specific country code, or auto-detects the country code and formats the number accordingly.
@@ -15,15 +15,16 @@ const formatPhoneNumber = (
   phoneNumber = phoneNumber.toString();
   phoneNumber = cleanPhoneNumber(phoneNumber);
 
+  const formatterMap = PHONE_FORMATTER_MAPPER;
   // Detect or validate the country code
   countryCode = (
-    countryCode && countryCode in PHONE_FORMATTER_MAPPER
+    countryCode && countryCode in formatterMap
       ? countryCode
       : detectCountryAndDialCodeFromPhone(phoneNumber).countryCode
   ) as CountryCodeType;
 
   // Fetch the pattern for the countryCode from the PHONE_FORMATTER_MAPPER
-  const pattern = PHONE_FORMATTER_MAPPER[countryCode];
+  const pattern = formatterMap[countryCode];
 
   if (!pattern) return phoneNumber;
 
