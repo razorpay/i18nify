@@ -1,5 +1,5 @@
 ---
-"@razorpay/i18nify-js": minor
+"@razorpay/i18nify-js": patch
 ---
 
 feat: add timezone getter function in dateTime module
