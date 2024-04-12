@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CountryCodeType } from '../types';
-import { PHONE_FORMATTER_MAPPER } from './data/phoneFormatterMapper';
+import PHONE_FORMATTER_MAPPER from './data/phoneFormatterMapper.json';
 import formatPhoneNumber from './formatPhoneNumber';
 import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
 
@@ -25,11 +25,11 @@ const parsePhoneNumber = (
   phoneNumber = cleanPhoneNumber(phoneNumber);
 
   const countryData = detectCountryAndDialCodeFromPhone(phoneNumber);
+  const formatterMap = PHONE_FORMATTER_MAPPER;
+
   // Detect or validate the country code
   const countryCode = (
-    country && country in PHONE_FORMATTER_MAPPER
-      ? country
-      : countryData.countryCode
+    country && country in formatterMap ? country : countryData.countryCode
   ) as CountryCodeType;
 
   const dialCode = countryData.dialCode;
@@ -37,7 +37,7 @@ const parsePhoneNumber = (
   const formattedPhoneNumber = formatPhoneNumber(phoneNumber, countryCode);
 
   // Fetch the pattern associated with the countryCode from the PHONE_FORMATTER_MAPPER
-  const pattern = PHONE_FORMATTER_MAPPER[countryCode];
+  const pattern = formatterMap[countryCode];
 
   if (!pattern)
     return {
@@ -60,7 +60,7 @@ const parsePhoneNumber = (
   const diff = phoneNumber.length - charCountInFormatterPattern;
 
   // Obtain the format template associated with the countryCode
-  const formatTemplate = PHONE_FORMATTER_MAPPER[countryCode];
+  const formatTemplate = formatterMap[countryCode];
 
   // Return the parsed phone number information
   return {
