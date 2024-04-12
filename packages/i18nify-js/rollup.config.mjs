@@ -74,7 +74,7 @@ const declarationTypes = modules.map((_module) => ({
     file: `lib/esm/${_module.name}/index.d.ts`,
     format: 'es',
   },
-  plugins: [dts()],
+  plugins: [dts(), json()],
 }));
 
 export default [
@@ -148,6 +148,6 @@ export default [
       file: 'lib/types/index.d.ts',
       format: 'es',
     },
-    plugins: [dts()],
+    plugins: [dts(), json()],
   },
 ];

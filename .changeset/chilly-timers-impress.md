@@ -1,5 +1,5 @@
 ---
-"@razorpay/i18nify-js": minor
+'@razorpay/i18nify-js': patch
 ---
 
-feat: refactoring currency module to use central geo data [ATLAS-167]
+feat: refactoring currency module to use central geo data
