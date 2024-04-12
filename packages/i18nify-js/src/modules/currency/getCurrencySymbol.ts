@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CurrencyCodeType } from './types';
-import CURRENCY_INFO from './data/currencyDataSubset.json';
+import CURRENCY_INFO from './data/currencyConfig.json';
 
 const getCurrencySymbol = (currencyCode: CurrencyCodeType): string => {
   const currencyInformation = CURRENCY_INFO;

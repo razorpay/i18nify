@@ -1,5 +1,5 @@
 import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
-import CURRENCY_INFO from './data/currencyDataSubset.json';
+import CURRENCY_INFO from './data/currencyConfig.json';
 
 export type FormattedPartsObject = {
   [key in (typeof ALLOWED_FORMAT_PARTS_KEYS)[number]]?: string | undefined;

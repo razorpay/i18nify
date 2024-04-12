@@ -1,6 +1,6 @@
 import { CountryCodeType } from '../types';
-import { DIAL_CODE_MAPPER } from './data/dialCodeMapper';
-import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
+import DIAL_CODE_MAPPER from '#/i18nify-data/phone-number/dial-code-to-country/data.json';
+import PHONE_REGEX_MAPPER from './data/phoneRegexMapper.json';
 
 /**
  * Determines the country data (countryCode, dialCode) based on the provided phone number.
@@ -17,6 +17,8 @@ import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
 export const detectCountryAndDialCodeFromPhone = (
   phoneNumber: string | number,
 ): { countryCode: CountryCodeType; dialCode: string } => {
+  const regexMapper = PHONE_REGEX_MAPPER;
+
   // If the phone number starts with '+', extract numeric characters
   if (phoneNumber.toString().charAt(0) === '+') {
     const cleanedPhoneNumberWithoutPlusPrefix = phoneNumber
@@ -28,11 +30,15 @@ export const detectCountryAndDialCodeFromPhone = (
       dialCode: string;
     }> = [];
 
+    const dialCodeMap = DIAL_CODE_MAPPER.dial_code_to_country as Record<
+      string,
+      CountryCodeType[]
+    >;
     // Iterate through dial codes and check for matches with cleaned phone number
-    for (const code in DIAL_CODE_MAPPER) {
+    for (const code in dialCodeMap) {
       if (cleanedPhoneNumberWithoutPlusPrefix.startsWith(code)) {
         matchingCountries.push(
-          ...DIAL_CODE_MAPPER[code].map((item) => ({
+          ...(dialCodeMap[code] as string[]).map((item) => ({
             countryCode: item as CountryCodeType,
             dialCode: `+${code}`,
           })),
@@ -42,7 +48,9 @@ export const detectCountryAndDialCodeFromPhone = (
 
     // Filter matching countries based on phone number validation regex
     const matchedCountryCode = matchingCountries.find((country) => {
-      const regex = PHONE_REGEX_MAPPER[country.countryCode as CountryCodeType];
+      const regex = new RegExp(
+        regexMapper[country.countryCode as CountryCodeType],
+      );
       if (regex && regex.test(phoneNumber.toString())) return country;
       return undefined;
     });

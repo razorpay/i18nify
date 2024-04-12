@@ -88,11 +88,12 @@
     "tsc": "tsc --noEmit",
     "validate": "yarn tsc && yarn lint:fix",
     "clean": "rm -rf lib",
-    "prebuild": "tsc ./scripts/jsonSubsets/script.ts",
     "build": "yarn clean && rollup -c && node scripts/generate-root-imports.js",
     "test": "jest",
     "prepare": "yarn build",
-    "test:browser": "npx playwright test"
+    "test:browser": "npx playwright test",
+    "generate:jsonSubsets": "ts-node -r tsconfig-paths/register ./scripts/jsonSubsets/index.ts",
+    "prebuild": "yarn generate:jsonSubsets"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.1",
@@ -110,7 +111,8 @@
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-dts": "^6.1.0",
     "ts-jest": "^29.1.1",
-    "typescript": "^5.4.3"
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
   },
   "dependencies": {
     "@internationalized/date": "^3.5.2"
