@@ -10,6 +10,7 @@
 
 - 774d07b: Feat: static configs in phone module replaced with i18nify-data
 - 3f406fb: Feat: Added an alias of i18nify-data to allow static imports of json within js package
+- Feat: Phone number engine modified (dialcode or countryCode treated as mandatory)
 
 ## 1.8.1
 
