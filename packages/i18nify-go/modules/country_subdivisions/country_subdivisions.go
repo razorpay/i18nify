@@ -11,10 +11,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
+	"runtime"
 )
 
-// DataFile is the directory where JSON files containing country subdivision data are stored.
-const DataFile = "modules/country_subdivisions/"
+// DataFile is the directory where JSON files containing country subdivision data are stored. "
 
 // UnmarshalCountrySubdivisions parses JSON data into a CountrySubdivisions struct.
 func UnmarshalCountrySubdivisions(data []byte) (CountrySubdivisions, error) {
@@ -47,7 +48,12 @@ func (r *CountrySubdivisions) GetStates() map[string]State {
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
 	// Read JSON data file containing country subdivision information.
-	subDivJsonData, err := os.ReadFile(DataFile + code + ".json")
+	_, currentFileName, _, ok := runtime.Caller(0)
+	if !ok {
+		fmt.Println("Error getting current file directory")
+		return CountrySubdivisions{}
+	}
+	subDivJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), code+".json"))
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)
 		return CountrySubdivisions{}
