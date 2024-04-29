@@ -11,10 +11,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
+	"runtime"
 )
 
 // DataFile defines the path to the JSON data file containing country metadata.
-const DataFile = "modules/country_metadata/data.json"
+const DataFile = "data.json"
 
 // UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
 func UnmarshalCountryMetadata(data []byte) (CountryMetadata, error) {
@@ -42,7 +44,12 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 // GetMetadataInformation retrieves metadata information for a specific country code.
 func GetMetadataInformation(code string) MetadataInformation {
 	// Read JSON data file containing country metadata.
-	metaJsonData, err := os.ReadFile(DataFile)
+	_, fileName, _, ok := runtime.Caller(0)
+	if !ok {
+		fmt.Println("Error getting current file directory")
+		return MetadataInformation{}
+	}
+	metaJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(fileName), DataFile))
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Printf("Error reading country metadata file: %v", err)

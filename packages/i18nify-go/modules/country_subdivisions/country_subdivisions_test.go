@@ -2,9 +2,12 @@ package country_subdivisions
 
 import (
 	"errors"
+	"fmt"
 	"github.com/stretchr/testify/assert"
 	"os"
+	"path/filepath"
 	"reflect"
+	"runtime"
 	"testing"
 )
 
@@ -45,8 +48,13 @@ func TestMarshalCountrySubdivisions(t *testing.T) {
 var readFileFunc = os.ReadFile
 
 func TestGetCountrySubdivisions(t *testing.T) {
-	jsonData, err := os.ReadFile("IN.json")
+	_, currentFileName, _, ok := runtime.Caller(0)
+	if !ok {
+		fmt.Println("Error getting current file directory")
+	}
+	jsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), "IN.json"))
 
+	fileName := filepath.Join(filepath.Dir(currentFileName), "IN.json")
 	// Mock implementation of os.ReadFile
 	readFileFunc = func(filename string) ([]byte, error) {
 		return jsonData, errors.New("error reading JSON file")
@@ -56,7 +64,7 @@ func TestGetCountrySubdivisions(t *testing.T) {
 		readFileFunc = os.ReadFile
 	}()
 
-	_, err = readFileFunc(DataFile)
+	_, err = readFileFunc(fileName)
 	if err != nil {
 		return
 	}
