@@ -10,6 +10,7 @@ const isValidPhoneNumber = (
 ): boolean => {
   // Clean the provided phoneNumber by removing non-numeric characters
   const cleanedPhoneNumber = cleanPhoneNumber(phoneNumber.toString());
+  if (!cleanedPhoneNumber) return false;
 
   const regexMapper = PHONE_REGEX_MAPPER;
   // Detect or validate the country code
