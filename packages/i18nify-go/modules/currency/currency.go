@@ -11,10 +11,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
+	"runtime"
 )
 
 // DataFile defines the path to the JSON data file containing currency information.
-const DataFile = "modules/currency/data.json"
+const DataFile = "data.json"
 
 // UnmarshalCurrency parses JSON data into a Currency struct.
 func UnmarshalCurrency(data []byte) (Currency, error) {
@@ -42,7 +44,12 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) CurrencyInformation {
 	// Read JSON data file containing currency information.
-	currencyJsonData, err := os.ReadFile(DataFile)
+	_, fileName, _, ok := runtime.Caller(0)
+	if !ok {
+		fmt.Println("Error getting current file directory")
+		return CurrencyInformation{}
+	}
+	currencyJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(fileName), DataFile))
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Println("Error reading JSON file:", err)
