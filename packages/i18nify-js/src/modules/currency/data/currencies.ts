@@ -198,6 +198,7 @@ export const CURRENCIES = {
     symbol: 'Rp',
     name: 'Indonesian Rupiah',
     lowerUnitName: 'Sen',
+    minorUnitMultiplier: 1,
   },
   ILS: {
     symbol: '₪',
@@ -512,6 +513,7 @@ export const CURRENCIES = {
     symbol: 'CFA',
     name: 'West African CFA Franc',
     lowerUnitName: 'Centime',
+    minorUnitMultiplier: 1,
   },
   BTN: {
     symbol: 'Nu.',
@@ -537,11 +539,13 @@ export const CURRENCIES = {
     symbol: 'FBu',
     name: 'Burundian Franc',
     lowerUnitName: 'Centime',
+    minorUnitMultiplier: 1,
   },
   XAF: {
     symbol: 'FCFA',
     name: 'Central African CFA Franc',
     lowerUnitName: 'Centime',
+    minorUnitMultiplier: 1,
   },
   CVE: {
     symbol: '$',
@@ -557,6 +561,7 @@ export const CURRENCIES = {
     symbol: 'CF',
     name: 'Comorian Franc',
     lowerUnitName: 'Centime',
+    minorUnitMultiplier: 1,
   },
   CDF: {
     symbol: 'FC',
@@ -572,6 +577,7 @@ export const CURRENCIES = {
     symbol: 'Fdj',
     name: 'Djiboutian Franc',
     lowerUnitName: 'Centime',
+    minorUnitMultiplier: 1,
   },
   ERN: {
     symbol: 'Nfk',
@@ -587,6 +593,7 @@ export const CURRENCIES = {
     symbol: '₣',
     name: 'CFP Franc',
     lowerUnitName: 'Centime',
+    minorUnitMultiplier: 1,
   },
   GEL: {
     symbol: '₾',
@@ -597,6 +604,7 @@ export const CURRENCIES = {
     symbol: 'FG',
     name: 'Guinean Franc',
     lowerUnitName: 'Centime',
+    minorUnitMultiplier: 1,
   },
   ISK: {
     symbol: 'kr',
@@ -657,6 +665,7 @@ export const CURRENCIES = {
     symbol: '₲',
     name: 'Paraguayan Guarani',
     lowerUnitName: 'Céntimo',
+    minorUnitMultiplier: 1,
   },
   PLN: {
     symbol: 'zł',
@@ -672,6 +681,7 @@ export const CURRENCIES = {
     symbol: 'RF',
     name: 'Rwandan Franc',
     lowerUnitName: 'Centime',
+    minorUnitMultiplier: 1,
   },
   WST: {
     symbol: 'WS$',
@@ -697,6 +707,7 @@ export const CURRENCIES = {
     symbol: '₩',
     name: 'South Korean Won',
     lowerUnitName: 'Jeon',
+    minorUnitMultiplier: 1,
   },
   SHP: {
     symbol: '£',
@@ -752,6 +763,7 @@ export const CURRENCIES = {
     symbol: 'USh',
     name: 'Ugandan Shilling',
     lowerUnitName: 'Cent',
+    minorUnitMultiplier: 1,
   },
   UAH: {
     symbol: '₴',
@@ -762,6 +774,7 @@ export const CURRENCIES = {
     symbol: 'Vt',
     name: 'Vanuatu Vatu',
     lowerUnitName: '',
+    minorUnitMultiplier: 1,
   },
   VES: {
     symbol: 'Bs.S.',

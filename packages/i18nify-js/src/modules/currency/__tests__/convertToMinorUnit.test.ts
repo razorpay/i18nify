@@ -1,15 +1,32 @@
 import { convertToMinorUnit } from '../index';
 import { CurrencyCodeType } from '../types';
 
+const ZERO_EXPONENT_CURRENCIES = [
+  'BIF',
+  'DJF',
+  'GNF',
+  'IDR',
+  'JPY',
+  'KMF',
+  'KRW',
+  'PYG',
+  'RWF',
+  'UGX',
+  'VUV',
+  'XAF',
+  'XOF',
+  'XPF',
+] as const;
+
 describe('currency - convertToMinorUnit', () => {
   const testCases: {
     amount: number;
     currency: CurrencyCodeType;
     expectedResult: number;
   }[] = [
-    { amount: 1, currency: 'USD', expectedResult: 100 },
-    { amount: 1, currency: 'GBP', expectedResult: 100 },
-  ];
+      { amount: 1, currency: 'USD', expectedResult: 100 },
+      { amount: 1, currency: 'GBP', expectedResult: 100 },
+    ];
 
   testCases.forEach(({ amount, currency, expectedResult }) => {
     it(`should correctly convert ${amount} of minor unit ${currency} to ${expectedResult}`, () => {
@@ -24,5 +41,12 @@ describe('currency - convertToMinorUnit', () => {
       // @ts-expect-error intented invalid currencyCode for testing
       convertToMinorUnit(100, { currency: unsupportedCurrencyCode });
     }).toThrow('Unsupported currency XXX');
+  });
+
+  ZERO_EXPONENT_CURRENCIES.forEach((currency) => {
+    it(`should correctly convert zero exponent currency ${currency} i.e 100 to 100 minor unit`, () => {
+      const result = convertToMinorUnit(100, { currency });
+      expect(result).toBe(100);
+    });
   });
 });
