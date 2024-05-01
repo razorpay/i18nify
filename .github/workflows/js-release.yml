@@ -7,6 +7,7 @@ on:
     paths:
       - 'packages/i18nify-js/**'
       - 'packages/i18nify-react/**'
+      - 'i18nify-data/**'
 
 env:
   GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}

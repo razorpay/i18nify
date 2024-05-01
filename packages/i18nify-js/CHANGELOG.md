@@ -1,5 +1,18 @@
 # @razorpay/i18nify-js
 
+## 1.9.2
+
+### Patch Changes
+
+- 891908b: Singapore validation bug fixed
+
+## 1.9.1
+
+### Patch Changes
+
+- eb5a756: [fix]: singapore validation regex fixed
+- 5083738: fix: text should be treated inValid in isValidPhoneNumber [ATLAS-196]
+
 ## 1.9.0
 
 ### Minor Changes
