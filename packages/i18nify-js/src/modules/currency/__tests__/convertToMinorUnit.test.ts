@@ -7,8 +7,8 @@ describe('currency - convertToMinorUnit', () => {
     currency: CurrencyCodeType;
     expectedResult: number;
   }[] = [
-    { amount: 1, currency: 'USD' as CurrencyCodeType, expectedResult: 100 },
-    { amount: 1, currency: 'GBP' as CurrencyCodeType, expectedResult: 100 },
+    { amount: 1, currency: 'USD', expectedResult: 100 },
+    { amount: 1, currency: 'GBP', expectedResult: 100 },
   ];
 
   testCases.forEach(({ amount, currency, expectedResult }) => {
