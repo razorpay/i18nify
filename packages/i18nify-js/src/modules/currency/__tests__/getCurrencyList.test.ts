@@ -1,4 +1,4 @@
-import { CurrencyCodeType, getCurrencyList } from '../index';
+import { getCurrencyList } from '../index';
 import CURRENCY_INFO from '../data/currencyConfig.json';
 import { CurrencySubsetData } from '../types';
 
@@ -10,7 +10,7 @@ describe('getCurrencyList', () => {
 
   it("check properties 'symbol' and 'name' for a sample currency", () => {
     const currencyList = getCurrencyList();
-    const sampleCurrencyCode = 'USD' as CurrencyCodeType;
+    const sampleCurrencyCode = 'USD';
 
     expect(currencyList[sampleCurrencyCode]).toHaveProperty('symbol');
     expect(currencyList[sampleCurrencyCode]).toHaveProperty('name');
@@ -18,7 +18,7 @@ describe('getCurrencyList', () => {
 
   it("check the values of 'symbol' and 'name' properties for a sample currency", () => {
     const currencyList = getCurrencyList();
-    const sampleCurrencyCode = 'USD' as CurrencyCodeType;
+    const sampleCurrencyCode = 'USD';
     const sampleCurrency: CurrencySubsetData[string] =
       currencyList[sampleCurrencyCode];
 

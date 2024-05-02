@@ -5,7 +5,7 @@ const nbsp = String.fromCharCode(160);
 describe('formatNumberByParts', () => {
   it('should format the amount correctly for a given currency', () => {
     const result = formatNumberByParts(12345.67, {
-      currency: 'USD' as CurrencyCodeType,
+      currency: 'USD',
       locale: 'en-US',
     });
 
@@ -47,7 +47,7 @@ describe('formatNumberByParts', () => {
   it('should throw error for non-numeric input', () => {
     expect(() =>
       formatNumberByParts('not a number', {
-        currency: 'USD' as CurrencyCodeType,
+        currency: 'USD',
         locale: 'en-US',
       }),
     ).toThrow(
@@ -57,7 +57,7 @@ describe('formatNumberByParts', () => {
 
   it('should use the default locale if locale is not provided', () => {
     const result = formatNumberByParts(12345.67, {
-      currency: 'USD' as CurrencyCodeType,
+      currency: 'USD',
     });
 
     expect(result).toBeDefined();
@@ -109,7 +109,7 @@ describe('formatNumberByParts', () => {
 
   it('should handle different locales', () => {
     const result = formatNumberByParts(12345.67, {
-      currency: 'EUR' as CurrencyCodeType,
+      currency: 'EUR',
       locale: 'fr-FR',
     });
 
@@ -154,7 +154,7 @@ describe('formatNumberByParts', () => {
 
   it('should handle a currency with symbol at the beginning', () => {
     const result = formatNumberByParts(12345.67, {
-      currency: 'JPY' as CurrencyCodeType,
+      currency: 'JPY',
       locale: 'ja-JP',
     });
 
@@ -185,7 +185,7 @@ describe('formatNumberByParts', () => {
 
   it('should handle a currency with decimal value and symbol at the end', () => {
     const result = formatNumberByParts(12345.67, {
-      currency: 'EUR' as CurrencyCodeType,
+      currency: 'EUR',
       locale: 'de-DE',
     });
 

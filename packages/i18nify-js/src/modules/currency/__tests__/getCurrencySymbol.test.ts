@@ -2,7 +2,7 @@ import { CurrencyCodeType, getCurrencySymbol } from '../index';
 
 describe('getCurrencySymbol', () => {
   it('should return the correct symbol for a valid currency code', () => {
-    const currencyCode = 'USD' as CurrencyCodeType;
+    const currencyCode = 'USD';
     const expectedSymbol = '$';
     const symbol = getCurrencySymbol(currencyCode);
     expect(symbol).toBe(expectedSymbol);
