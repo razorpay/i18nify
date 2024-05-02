@@ -1,10 +1,12 @@
-import { CURRENCIES } from './data/currencies';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CurrencyCodeType } from './types';
+import CURRENCY_INFO from './data/currencyConfig.json';
 
 const getCurrencySymbol = (currencyCode: CurrencyCodeType): string => {
-  if (currencyCode in CURRENCIES) return CURRENCIES[currencyCode]?.symbol;
-  else throw new Error('Invalid currencyCode!');
+  const currencyInformation = CURRENCY_INFO;
+  if (currencyCode in currencyInformation)
+    return currencyInformation[currencyCode]?.symbol;
+  else throw new Error(`Invalid currencyCode: ${String(currencyCode)}`);
 };
 
 export default withErrorBoundary<typeof getCurrencySymbol>(getCurrencySymbol);

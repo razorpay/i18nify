@@ -1,13 +1,13 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { CURRENCIES } from './data/currencies';
-import { CurrencyCodeType, CurrencyType } from './types';
+import { CurrencyCodeType } from './types';
+import CURRENCY_INFO from './data/currencyConfig.json';
 
 /**
  * Converts an amount from a major currency unit to a minor currency unit.
  *
  * The function takes an amount in the major unit (e.g., dollars, pounds) and a currency code,
  * then converts the amount to the minor unit (e.g., cents, pence) using the conversion rate
- * defined in the CURRENCIES object. If the currency code is not supported, it throws an error.
+ * defined in the CURRENCY_INFO object. If the currency code is not supported, it throws an error.
  *
  * @param {number} amount - The amount in the major currency unit.
  * @param {object} options - The options object
@@ -20,12 +20,13 @@ const convertToMinorUnit = (
     currency: CurrencyCodeType;
   },
 ): number => {
-  const currencyInfo = CURRENCIES[options.currency] as CurrencyType;
+  const currencyInfo = CURRENCY_INFO[options.currency];
 
   if (!currencyInfo)
-    throw new Error(`Unsupported currency ${options.currency}`);
+    throw new Error(`Unsupported currency ${String(options.currency)}`);
 
-  const minorUnitMultiplier = currencyInfo.minorUnitMultiplier || 100;
+  const minorUnitMultiplier =
+    Math.pow(10, Number(currencyInfo.minor_unit)) || 100;
 
   const lowerCurrencyValue = amount * minorUnitMultiplier;
   return lowerCurrencyValue;

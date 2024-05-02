@@ -1,4 +1,4 @@
-import { formatNumberByParts } from '../index';
+import { CurrencyCodeType, formatNumberByParts } from '../index';
 
 const nbsp = String.fromCharCode(160);
 
@@ -50,7 +50,9 @@ describe('formatNumberByParts', () => {
         currency: 'USD',
         locale: 'en-US',
       }),
-    ).toThrow('Error: Parameter `amount` is not a number!');
+    ).toThrow(
+      `Error: Parameter 'amount' is not a number. typeof amount: string`,
+    );
   });
 
   it('should use the default locale if locale is not provided', () => {
@@ -63,8 +65,7 @@ describe('formatNumberByParts', () => {
 
   it('should handle invalid currency code', () => {
     const result = formatNumberByParts(12345.67, {
-      // @ts-expect-error invalid currency for testing
-      currency: 'XYZ',
+      currency: 'XYZ' as CurrencyCodeType,
       locale: 'en-US',
     });
     expect(result).toEqual({
