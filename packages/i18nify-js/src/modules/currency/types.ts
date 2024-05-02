@@ -58,7 +58,7 @@ export interface I18nifyNumberFormatOptions {
 
 export type CurrencyCodeType = keyof typeof CURRENCY_INFO;
 
-export interface CurrencySubsetData {
+export interface Currency {
   [key: string]: {
     name: string;
     minor_unit: string;

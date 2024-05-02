@@ -1,6 +1,6 @@
 import { getCurrencyList } from '../index';
 import CURRENCY_INFO from '../data/currencyConfig.json';
-import { CurrencySubsetData } from '../types';
+import { Currency } from '../types';
 
 describe('getCurrencyList', () => {
   it('should return the correct currency list', () => {
@@ -19,15 +19,12 @@ describe('getCurrencyList', () => {
   it("check the values of 'symbol' and 'name' properties for a sample currency", () => {
     const currencyList = getCurrencyList();
     const sampleCurrencyCode = 'USD';
-    const sampleCurrency: CurrencySubsetData[string] =
-      currencyList[sampleCurrencyCode];
+    const sampleCurrency: Currency[string] = currencyList[sampleCurrencyCode];
 
     // Assert that the 'symbol' and 'name' properties have the expected values
     expect(sampleCurrency.symbol).toBe(
-      (CURRENCY_INFO as CurrencySubsetData)[sampleCurrencyCode].symbol,
+      CURRENCY_INFO[sampleCurrencyCode].symbol,
     );
-    expect(sampleCurrency.name).toBe(
-      (CURRENCY_INFO as CurrencySubsetData)[sampleCurrencyCode].name,
-    );
+    expect(sampleCurrency.name).toBe(CURRENCY_INFO[sampleCurrencyCode].name);
   });
 });
