@@ -25,10 +25,10 @@ const convertToMajorUnit = (
   if (!currencyInfo)
     throw new Error(`Unsupported currency ${String(options.currency)}`);
 
-  const majorUnitMultiplier =
+  const minorUnitMultiplier =
     Math.pow(10, Number(currencyInfo.minor_unit)) || 100;
 
-  const higherCurrencyValue = amount / majorUnitMultiplier;
+  const higherCurrencyValue = amount / minorUnitMultiplier;
   return higherCurrencyValue;
 };
 
