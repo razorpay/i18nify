@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.9.3
+
+### Patch Changes
+
+- 7321238: feat: refactoring currency module to use central geo data
+
 ## 1.9.2
 
 ### Patch Changes
