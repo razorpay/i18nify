@@ -541,6 +541,26 @@ console.log(getDialCodeByCountryCode('BR')); // Outputs the dial code for Brazil
 console.log(getDialCodeByCountryCode('DE')); // Outputs the dial code for Germany (+49)
 ```
 
+#### getMaskedPhoneNumber(countryCode, withDialCode = true)
+
+📱🌍 This function provides an easy way to generate a formatted, masked phone number for any specified country based on its ISO 3166-1 alpha-2 code. Ideal for applications that handle international phone data, it allows for displaying phone number formats in a user-friendly masked layout. If the country code is not recognized or if formatting data is missing, the function will clearly indicate an error, ensuring reliable and accurate use.
+
+##### Examples
+
+```
+// Displaying the masked phone number for India including the dial code
+console.log(getMaskedPhoneNumber('IN')); // Outputs: "+91 xxxx xxxxxx"
+
+// Displaying the masked phone number for India without the dial code
+console.log(getMaskedPhoneNumber('IN', false)); // Outputs: "xxxx xxxxxx"
+
+// Displaying the masked phone number for Malaysia including the dial code
+console.log(getMaskedPhoneNumber('MY')); // Outputs: "+60 xx xxxxx xx"
+
+// Displaying the masked phone number for Malaysia without the dial code
+console.log(getMaskedPhoneNumber('MY', false)); // Outputs: "xx xxxxx xx"
+```
+
 ### Module 03: Geo Module 🌍
 
 Dive into the digital atlas with the Geo Module 🌍, your ultimate toolkit for accessing geo contextual data from around the globe 🌐. Whether you're infusing your projects with national pride 🎉 or exploring different countries 🤔, this module is like a magic carpet ride 🧞‍♂️. With a range of functions at your disposal ✨, incorporating global data 🚩 into your app has never been easier. Let's explore these global gems 🌟:
