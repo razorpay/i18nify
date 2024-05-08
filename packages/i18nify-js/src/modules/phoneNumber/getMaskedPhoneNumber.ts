@@ -5,7 +5,6 @@ import { CountryCodeType } from '../types';
 
 /**
  * Returns a masked phone number based on the country code.
- * It uses predefined mappings to format phone numbers according to the country standards.
  *
  * @param countryCode The ISO 3166-1 alpha-2 country code.
  * @param withDialCode A boolean indicating whether to include the country's dial code in the result. It has a default value of "true"
