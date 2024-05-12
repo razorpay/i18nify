@@ -1,7 +1,12 @@
 import getDialCodeByCountryCode from './getDialCodeByCountryCode';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import PHONE_FORMATTER_MAPPER from './data/phoneFormatterMapper.json';
-import { cleanPhoneNumber, detectCountryAndDialCodeFromPhone } from './utils';
+import {
+  cleanPhoneNumber,
+  detectCountryAndDialCodeFromPhone,
+  replaceFirstXsWithChars,
+  replaceLastXsWithChars,
+} from './utils';
 import { GetMaskedPhoneNumberOptions } from './types';
 
 /**
@@ -72,16 +77,19 @@ const getMaskedPhoneNumber = ({
 
       // Apply the masking characters to the phone number based on prefix or suffix masking
       if (maskingOptions.prefixMasking) {
-        maskedContactNumber =
-          maskingOptions.maskingChar.repeat(maskingOptions.maskedDigitsCount) +
-          phoneNumberWithoutDialCode.slice(maskingOptions.maskedDigitsCount);
+        maskedContactNumber = replaceLastXsWithChars(
+          formattingTemplate,
+          phoneNumberWithoutDialCode,
+          phoneNumberWithoutDialCode.length -
+            (maskingOptions.maskedDigitsCount || 0),
+        ).replace(/x/g, maskingOptions.maskingChar || 'x');
       } else {
-        maskedContactNumber =
-          phoneNumberWithoutDialCode.slice(
-            0,
-            -maskingOptions.maskedDigitsCount,
-          ) +
-          maskingOptions.maskingChar.repeat(maskingOptions.maskedDigitsCount);
+        maskedContactNumber = replaceFirstXsWithChars(
+          formattingTemplate,
+          phoneNumberWithoutDialCode,
+          phoneNumberWithoutDialCode.length -
+            (maskingOptions.maskedDigitsCount || 0),
+        ).replace(/x/g, maskingOptions.maskingChar || 'x');
       }
     }
   } else {

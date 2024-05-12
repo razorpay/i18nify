@@ -1,60 +1,156 @@
 import { CountryCodeType } from '../../types';
-import { getMaskedPhoneNumber } from '../index';
+import { getMaskedPhoneNumber, GetMaskedPhoneNumberOptions } from '../index';
 
 describe('phoneNumber - getMaskedPhoneNumber', () => {
-  // Test data array for multiple countries
-  const testCasesWithDialCode = [
-    { countryCode: 'US', expected: '+1 xxx-xxx-xxxx' },
-    { countryCode: 'GB', expected: '+44 xxxx xxx xxx' },
-    { countryCode: 'DE', expected: '+49 xxx xxxxxxxx' },
-    { countryCode: 'IN', expected: '+91 xxxx xxxxxx' },
-    { countryCode: 'JP', expected: '+81 xx xxxx xxxx' },
-  ];
+  it('should throw an error when both countryCode and phoneNumber are empty', () => {
+    expect(() =>
+      getMaskedPhoneNumber({
+        countryCode: '' as CountryCodeType,
+        phoneNumber: '',
+      }),
+    ).toThrow('Both countryCode and phoneNumber cannot be empty.');
+  });
 
-  // Tests for valid inputs including dial code
-  testCasesWithDialCode.forEach(({ countryCode, expected }) => {
-    it(`should return the correct phone number format including dial code for ${countryCode}`, () => {
-      const result = getMaskedPhoneNumber(countryCode as CountryCodeType, true);
+  it.each([
+    {
+      countryCode: 'US',
+      phoneNumber: '+1234567890',
+      result: '+1 xxx-xxx-xxxx',
+      completeMasking: true,
+    },
+    {
+      countryCode: 'GB',
+      phoneNumber: '+447911123456',
+      result: '+44 xxxx xx3 456',
+      maskedDigitsCount: 6,
+      maskingChar: 'x',
+      prefixMasking: true,
+    },
+    {
+      countryCode: 'IN',
+      phoneNumber: '+919876543210',
+      result: '+91 9876 54321#',
+      maskedDigitsCount: 1,
+      maskingChar: '#',
+      prefixMasking: false,
+    },
+  ])(
+    'should apply masking correctly for different countries and options',
+    ({
+      countryCode,
+      phoneNumber,
+      result,
+      completeMasking,
+      maskedDigitsCount,
+      maskingChar,
+      prefixMasking,
+    }) => {
+      const options = {
+        countryCode,
+        phoneNumber,
+        maskingOptions: {
+          completeMasking: completeMasking ?? false,
+          prefixMasking: prefixMasking ?? true,
+          maskedDigitsCount: maskedDigitsCount ?? 0,
+          maskingChar: maskingChar ?? 'x',
+        },
+      };
+      const maskedPhoneNumber = getMaskedPhoneNumber(
+        options as GetMaskedPhoneNumberOptions,
+      );
+      expect(maskedPhoneNumber).toBe(result);
+    },
+  );
+
+  it('should handle phone numbers with and without leading plus sign', () => {
+    const testCases = [
+      {
+        countryCode: 'US',
+        phoneNumber: '+1234567890',
+        expected: '+1 xxx-xxx-xxxx',
+      },
+      {
+        countryCode: 'US',
+        phoneNumber: '1234567890',
+        expected: '+1 xxx-xxx-xxxx',
+      },
+    ];
+
+    testCases.forEach(({ countryCode, phoneNumber, expected }) => {
+      const options = {
+        countryCode,
+        phoneNumber,
+        maskingOptions: { completeMasking: true },
+      };
+      const result = getMaskedPhoneNumber(
+        options as GetMaskedPhoneNumberOptions,
+      );
       expect(result).toBe(expected);
     });
   });
 
-  // Tests for valid inputs without dial code
-  testCasesWithDialCode.forEach(({ countryCode, expected }) => {
-    it(`should return the correct phone number format without dial code for ${countryCode}`, () => {
-      const result = getMaskedPhoneNumber(
-        countryCode as CountryCodeType,
-        false,
-      );
-      // Remove the dial code and leading space from the expected string
-      const expectedWithoutDialCode = expected.substring(
-        expected.indexOf(' ') + 1,
-      );
-      expect(result).toBe(expectedWithoutDialCode);
-    });
+  it('should throw error for invalid country code', () => {
+    const optionsWithPhoneNumber = {
+      countryCode: 'XX' as CountryCodeType, // Invalid country code
+      phoneNumber: '0123456789',
+    };
+    const optionsWithoutPhoneNumber = {
+      countryCode: 'XX' as CountryCodeType, // Invalid country code
+    };
+    expect(() => getMaskedPhoneNumber(optionsWithPhoneNumber)).toThrow(
+      'Error: Parameter "phoneNumber" is invalid: 0123456789',
+    );
+    expect(() => getMaskedPhoneNumber(optionsWithoutPhoneNumber)).toThrow(
+      'Parameter "countryCode" is invalid: XX',
+    );
   });
 
-  // Test for invalid country code
-  it('should throw an error for an invalid country code', () => {
-    expect(() => {
-      // @ts-expect-error null is not a valid country code
-      getMaskedPhoneNumber('XYZ', true);
-    }).toThrow('Parameter "countryCode" is invalid: XYZ');
-  });
+  it.each([
+    {
+      countryCode: 'DE',
+      phoneNumber: '+4915212345678',
+      expected: '+49 xxx xxxxxxxx',
+    },
+    {
+      countryCode: 'JP',
+      phoneNumber: '+819012345678',
+      expected: '+81 xx xxxx xxxx',
+    },
+    {
+      countryCode: 'RU',
+      phoneNumber: '+79031234567',
+      expected: '+7 xxx xxx-xx-xx',
+    },
+    {
+      countryCode: 'KZ',
+      phoneNumber: '+77011234567',
+      expected: '+7 xxx-xxx-xx-xx',
+    },
+  ])(
+    'should format correctly with dial code for different countries',
+    ({ countryCode, phoneNumber, expected }) => {
+      expect(
+        getMaskedPhoneNumber({
+          countryCode: countryCode as CountryCodeType,
+          phoneNumber,
+        }),
+      ).toBe(expected);
+    },
+  );
 
-  // Test for missing country code
-  it('should throw an error when country code is undefined', () => {
-    expect(() => {
-      // @ts-expect-error null is not a valid country code
-      getMaskedPhoneNumber(undefined, true);
-    }).toThrow('Parameter "countryCode" is invalid: undefined');
-  });
-
-  // Test for null country code
-  it('should throw an error when country code is null', () => {
-    expect(() => {
-      // @ts-expect-error null is not a valid country code
-      getMaskedPhoneNumber(null, true);
-    }).toThrow('Parameter "countryCode" is invalid: null');
+  it('should throw error when maskedDigitsCount exceeds the phone number length', () => {
+    const options = {
+      countryCode: 'US',
+      phoneNumber: '+1234567890',
+      maskingOptions: {
+        completeMasking: false,
+        maskedDigitsCount: 20, // Excessive count
+      },
+    };
+    expect(() =>
+      getMaskedPhoneNumber(options as GetMaskedPhoneNumberOptions),
+    ).toThrow(
+      'maskedDigitsCount exceeds phone number length. Value of "maskedDigitsCount" is 20',
+    );
   });
 });
