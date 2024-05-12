@@ -153,4 +153,17 @@ describe('phoneNumber - getMaskedPhoneNumber', () => {
       'maskedDigitsCount exceeds phone number length. Value of "maskedDigitsCount" is 20',
     );
   });
+
+  it('should format the phone number without including the dial code when withDialCode is false', () => {
+    const options = {
+      countryCode: 'US',
+      withDialCode: false,
+      maskingOptions: {
+        completeMasking: true,
+      },
+    };
+    const expectedOutput = 'xxx-xxx-xxxx';
+    const result = getMaskedPhoneNumber(options as GetMaskedPhoneNumberOptions);
+    expect(result).toBe(expectedOutput);
+  });
 });
