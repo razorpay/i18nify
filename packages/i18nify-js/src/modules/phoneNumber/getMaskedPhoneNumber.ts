@@ -104,8 +104,6 @@ const getMaskedPhoneNumber = ({
                     ? acc.result.push('x')
                     : acc.result.push(char);
                   acc.numericCount++;
-                } else {
-                  acc.result.push(char);
                 }
                 return acc;
               },
