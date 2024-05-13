@@ -1,8 +1,7 @@
 import { CountryCodeType } from '../..';
 
 export interface MaskingOptions {
-  completeMasking?: boolean;
-  prefixMasking?: boolean;
+  maskingStyle?: 'full' | 'prefix' | 'suffix' | 'alternate';
   maskedDigitsCount?: number;
   maskingChar?: string;
 }

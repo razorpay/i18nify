@@ -566,8 +566,7 @@ console.log(
     countryCode: 'IN',
     phoneNumber: '9876543210',
     maskingOptions: {
-      completeMasking: false,
-      prefixMasking: false,
+      maskingStyle: 'suffix',
       maskedDigitsCount: 6,
       maskingChar: '*',
     },
