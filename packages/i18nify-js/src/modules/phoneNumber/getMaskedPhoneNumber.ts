@@ -27,12 +27,14 @@ const getMaskedPhoneNumber = ({
   countryCode,
   withDialCode = true,
   phoneNumber,
-  maskingOptions = {
-    maskingStyle: MaskingStyle.Full,
-    maskedDigitsCount: 0,
-    maskingChar: 'x',
-  },
+  maskingOptions = {},
 }: GetMaskedPhoneNumberOptions) => {
+  const {
+    maskingStyle = MaskingStyle.Full,
+    maskedDigitsCount = 0,
+    maskingChar = 'x',
+  } = maskingOptions;
+
   if (!countryCode && !phoneNumber) {
     throw new Error('Either countryCode or phoneNumber is mandatory.');
   }
@@ -54,16 +56,13 @@ const getMaskedPhoneNumber = ({
 
     // Apply full masking to the phone number if it lacks a dialCode, without formatting the phone number.
     if (!formattingTemplate) {
-      return updatedPhoneNumber.replace(
-        /./g,
-        maskingOptions.maskingChar || 'x',
-      );
+      return updatedPhoneNumber.replace(/./g, maskingChar);
     }
 
     maskedContactNumber = formattingTemplate;
 
     // If not complete masking, calculate the masked phone number based on the masking options
-    if (maskingOptions.maskingStyle !== MaskingStyle.Full) {
+    if (maskingStyle !== MaskingStyle.Full) {
       const dialCode = countryData.dialCode;
       const phoneNumberWithoutDialCode = updatedPhoneNumber.slice(
         dialCode.toString().length,
@@ -71,29 +70,27 @@ const getMaskedPhoneNumber = ({
 
       // Validate the masked digits count against the phone number length
       if (
-        maskingOptions.maskedDigitsCount &&
-        maskingOptions.maskedDigitsCount > phoneNumberWithoutDialCode.length
+        maskedDigitsCount &&
+        maskedDigitsCount > phoneNumberWithoutDialCode.length
       ) {
         maskedContactNumber = PHONE_FORMATTER_MAPPER[countryCode];
       } else {
         // Apply the masking characters to the phone number based on prefix or suffix masking
-        if (maskingOptions.maskingStyle === MaskingStyle.Prefix) {
+        if (maskingStyle === MaskingStyle.Prefix) {
           // Example: 7394926646 --> xxxx 926646
           maskedContactNumber = replaceLastXsWithChars(
             formattingTemplate,
             String(phoneNumberWithoutDialCode),
-            phoneNumberWithoutDialCode.length -
-              (maskingOptions.maskedDigitsCount || 0),
-          ).replace(/x/g, maskingOptions.maskingChar || 'x');
-        } else if (maskingOptions.maskingStyle === MaskingStyle.Suffix) {
+            phoneNumberWithoutDialCode.length - maskedDigitsCount,
+          ).replace(/x/g, maskingChar);
+        } else if (maskingStyle === MaskingStyle.Suffix) {
           // Example: 7394926646 --> 7494 92xxxx
           maskedContactNumber = replaceFirstXsWithChars(
             formattingTemplate,
             String(phoneNumberWithoutDialCode),
-            phoneNumberWithoutDialCode.length -
-              (maskingOptions.maskedDigitsCount || 0),
-          ).replace(/x/g, maskingOptions.maskingChar || 'x');
-        } else if (maskingOptions.maskingStyle === MaskingStyle.Alternate) {
+            phoneNumberWithoutDialCode.length - maskedDigitsCount,
+          ).replace(/x/g, maskingChar);
+        } else if (maskingStyle === MaskingStyle.Alternate) {
           // Example: 7394926646 --> 7x9x 9x6x4x
           maskedContactNumber = String(phoneNumberWithoutDialCode)
             .trim()
@@ -111,7 +108,7 @@ const getMaskedPhoneNumber = ({
               { result: [], numericCount: 0 },
             )
             .result.join('')
-            .replace(/x/g, maskingOptions.maskingChar || 'x');
+            .replace(/x/g, maskingChar);
         }
       }
     }
@@ -126,9 +123,9 @@ const getMaskedPhoneNumber = ({
   // Include the dial code in the masked phone number if requested
   if (withDialCode) {
     const dialCode = getDialCodeByCountryCode(countryCode);
-    return `${dialCode} ${maskedContactNumber.replace(/x/g, maskingOptions.maskingChar || 'x')}`;
+    return `${dialCode} ${maskedContactNumber.replace(/x/g, maskingChar)}`;
   } else {
-    return maskedContactNumber.replace(/x/g, maskingOptions.maskingChar || 'x');
+    return maskedContactNumber.replace(/x/g, maskingChar);
   }
 };
 
