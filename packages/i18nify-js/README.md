@@ -560,7 +560,7 @@ console.log(
 );
 // Output: +1 xxx-xxx-xxxx
 
-// Partially masking an Indian phone number, hiding the last 6 digits
+// Partially masking an Indian phone number, hiding the last 6 digits with maskingStyle: suffix
 console.log(
   getMaskedPhoneNumber({
     countryCode: 'IN',
@@ -573,7 +573,50 @@ console.log(
     withDialCode: true,
   }),
 );
-// Output: +91 9876**-****
+// Output: +91 9876 ******
+
+// Partially masking an Indian phone number, hiding the first 6 digits with maskingStyle: prefix
+console.log(
+  getMaskedPhoneNumber({
+    countryCode: 'IN',
+    phoneNumber: '9876543210',
+    maskingOptions: {
+      maskingStyle: 'prefix',
+      maskedDigitsCount: 6,
+      maskingChar: '*',
+    },
+    withDialCode: true,
+  }),
+);
+// Output: +91 **** 543210
+
+// Partially masking an Indian phone number, hiding the first 6 digits with maskingStyle: full
+console.log(
+  getMaskedPhoneNumber({
+    countryCode: 'IN',
+    phoneNumber: '9876543210',
+    maskingOptions: {
+      maskingStyle: 'full',
+      maskingChar: '*',
+    },
+    withDialCode: true,
+  }),
+);
+// Output: +91 **** ******
+
+// Partially masking an Indian phone number, hiding the first 6 digits with maskingStyle: alternate
+console.log(
+  getMaskedPhoneNumber({
+    countryCode: 'IN',
+    phoneNumber: '9876543210',
+    maskingOptions: {
+      maskingStyle: 'alternate',
+      maskingChar: '*',
+    },
+    withDialCode: true,
+  }),
+);
+// Output: +91 9*7* 5*3*1*
 
 // Formatting and completely masking a phone number for Brazil without specifying a phone number
 console.log(

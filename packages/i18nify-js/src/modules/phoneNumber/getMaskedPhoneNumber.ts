@@ -8,6 +8,7 @@ import {
   replaceLastXsWithChars,
 } from './utils';
 import { GetMaskedPhoneNumberOptions } from './types';
+import { MaskingStyle } from './constants';
 
 /**
  * Generates a masked phone number based on provided options.
@@ -27,13 +28,13 @@ const getMaskedPhoneNumber = ({
   withDialCode = true,
   phoneNumber,
   maskingOptions = {
-    maskingStyle: 'full',
+    maskingStyle: MaskingStyle.Full,
     maskedDigitsCount: 0,
     maskingChar: 'x',
   },
 }: GetMaskedPhoneNumberOptions) => {
   if (!countryCode && !phoneNumber) {
-    throw new Error('Either countryCode and phoneNumber is mandatory.');
+    throw new Error('Either countryCode or phoneNumber is mandatory.');
   }
 
   let maskedContactNumber: string;
@@ -51,7 +52,7 @@ const getMaskedPhoneNumber = ({
     // Get the phone number formatting template based on the country code
     let formattingTemplate = PHONE_FORMATTER_MAPPER[updatedCountryCode];
 
-    // In case phone number doesn't have dialCode masking should happen without formatting
+    // Apply full masking to the phone number if it lacks a dialCode, without formatting the phone number.
     if (!formattingTemplate) {
       return updatedPhoneNumber.replace(
         /./g,
@@ -62,7 +63,7 @@ const getMaskedPhoneNumber = ({
     maskedContactNumber = formattingTemplate;
 
     // If not complete masking, calculate the masked phone number based on the masking options
-    if (maskingOptions.maskingStyle !== 'full') {
+    if (maskingOptions.maskingStyle !== MaskingStyle.Full) {
       const dialCode = countryData.dialCode;
       const phoneNumberWithoutDialCode = updatedPhoneNumber.slice(
         dialCode.toString().length,
@@ -76,7 +77,7 @@ const getMaskedPhoneNumber = ({
         maskedContactNumber = PHONE_FORMATTER_MAPPER[countryCode];
       } else {
         // Apply the masking characters to the phone number based on prefix or suffix masking
-        if (maskingOptions.maskingStyle === 'prefix') {
+        if (maskingOptions.maskingStyle === MaskingStyle.Prefix) {
           // Example: 7394926646 --> xxxx 926646
           maskedContactNumber = replaceLastXsWithChars(
             formattingTemplate,
@@ -84,7 +85,7 @@ const getMaskedPhoneNumber = ({
             phoneNumberWithoutDialCode.length -
               (maskingOptions.maskedDigitsCount || 0),
           ).replace(/x/g, maskingOptions.maskingChar || 'x');
-        } else if (maskingOptions.maskingStyle === 'suffix') {
+        } else if (maskingOptions.maskingStyle === MaskingStyle.Suffix) {
           // Example: 7394926646 --> 7494 92xxxx
           maskedContactNumber = replaceFirstXsWithChars(
             formattingTemplate,
@@ -92,7 +93,7 @@ const getMaskedPhoneNumber = ({
             phoneNumberWithoutDialCode.length -
               (maskingOptions.maskedDigitsCount || 0),
           ).replace(/x/g, maskingOptions.maskingChar || 'x');
-        } else if (maskingOptions.maskingStyle === 'alternate') {
+        } else if (maskingOptions.maskingStyle === MaskingStyle.Alternate) {
           // Example: 7394926646 --> 7x9x 9x6x4x
           maskedContactNumber = String(phoneNumberWithoutDialCode)
             .trim()
