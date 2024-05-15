@@ -45,6 +45,56 @@ func (r *CountrySubdivisions) GetStates() map[string]State {
 	return r.States
 }
 
+func GetAllCities(country string) []string {
+	_, currentFileName, _, ok := runtime.Caller(0)
+	var cities []string
+
+	if !ok {
+		fmt.Println("Error getting current file directory")
+		return cities
+	}
+	subDivJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), country+".json"))
+	if err != nil {
+		fmt.Println("Error reading JSON file:", err)
+		return cities
+	}
+	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
+
+	for _, state := range allSubDivData.States {
+		for _, city := range state.Cities {
+			if city.Name != "nan" {
+				cities = append(cities, city.Name)
+			}
+		}
+	}
+
+	return cities
+}
+
+func GetAllStates(country string) []string {
+	_, currentFileName, _, ok := runtime.Caller(0)
+	var states []string
+
+	if !ok {
+		fmt.Println("Error getting current file directory")
+		return states
+	}
+	subDivJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), country+".json"))
+	if err != nil {
+		fmt.Println("Error reading JSON file:", err)
+		return states
+	}
+	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
+
+	for _, state := range allSubDivData.States {
+		if state.Name != "nan" {
+			states = append(states, state.Name)
+		}
+	}
+
+	return states
+}
+
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
 	// Read JSON data file containing country subdivision information.
