@@ -92,11 +92,6 @@ const getMaskedPhoneNumber = ({
         break;
       default: // Full Masking Condition
         maskedContactNumber = formattingTemplate;
-        if (!maskedContactNumber) {
-          throw new Error(
-            `Either of "phoneNumber" or "countryCode" is invalid.  countryCode: ${countryCode}, phoneNumber: ${phoneNumber}`,
-          );
-        }
     }
   } else {
     // Retrieve the phone number formatting template using the country code
