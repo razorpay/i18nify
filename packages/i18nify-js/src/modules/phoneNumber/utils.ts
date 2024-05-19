@@ -81,10 +81,10 @@ export const cleanPhoneNumber = (phoneNumber: string) => {
  *
  * @param source {string} - The original string where replacements are to be made.
  * @param replacement {string} - The string from which replacement characters are taken.
- * @param n {number} - The number of 'x' characters to replace.
+ * @param n {number} - The number of 'x' characters to replace (unmasked digit count).
  * @returns {string} - The modified string after replacements.
  */
-export const replaceFirstXsWithChars = (
+export const suffixMasking = (
   source: string,
   replacement: string,
   n: number,
@@ -111,10 +111,10 @@ export const replaceFirstXsWithChars = (
  *
  * @param source {string} - The original string where replacements are to be made.
  * @param replacement {string} - The string from which replacement characters are taken.
- * @param n {number} - The number of 'x' characters to replace from the end of the source string.
+ * @param n {number} - The number of 'x' characters to replace from the end of the source string  (unmasked digit count).
  * @returns {string} - The modified string after replacements.
  */
-export const replaceLastXsWithChars = (
+export const prefixMasking = (
   source: string,
   replacement: string,
   n: number,
@@ -134,4 +134,31 @@ export const replaceLastXsWithChars = (
 
   // Join the array back into a string and return the modified result
   return result.join('');
+};
+
+/**
+ * Replaces every alternate digit of phone number with 'x' in phoneNumberWithoutDialCode.
+ *
+ * @param phoneNumberWithoutDialCode {number | string} - The original phone number without dial code where replacements are to be made.
+ * @returns {string} - The modified string after replacements.
+ */
+export const alternateMasking = (
+  phoneNumberWithoutDialCode: number | string,
+): string => {
+  return String(phoneNumberWithoutDialCode)
+    .trim()
+    .split('')
+    .reduce(
+      (acc: any, char: string) => {
+        if (/\d/.test(char)) {
+          acc.numericCount % 2 !== 0
+            ? acc.result.push('x')
+            : acc.result.push(char);
+          acc.numericCount++;
+        }
+        return acc;
+      },
+      { result: [], numericCount: 0 },
+    )
+    .result.join('');
 };

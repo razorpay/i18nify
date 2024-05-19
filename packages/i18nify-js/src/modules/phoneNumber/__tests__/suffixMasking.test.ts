@@ -1,8 +1,8 @@
-import { replaceFirstXsWithChars } from '../utils';
+import { suffixMasking } from '../utils';
 
-describe('phone number - utils - replaceFirstXsWithChars', () => {
+describe('phone number - utils - suffixMasking', () => {
   test("replaces the first N x's with characters from the replacement string", () => {
-    expect(replaceFirstXsWithChars('xxxxxx', 'abc', 3)).toBe('abcxxx');
+    expect(suffixMasking('xxxxxx', 'abc', 3)).toBe('abcxxx');
   });
 
   test.each([
@@ -19,22 +19,22 @@ describe('phone number - utils - replaceFirstXsWithChars', () => {
     ['empty replacement string', 'xxxx', '', 3, 'xxxx'],
     ['count n is zero', 'xxxx', 'abc', 0, 'xxxx'],
   ])('%s', (_, source, replacement, n, expected) => {
-    expect(replaceFirstXsWithChars(source, replacement, n)).toBe(expected);
+    expect(suffixMasking(source, replacement, n)).toBe(expected);
   });
 
   test("replaces nothing when n is greater than the number of x's", () => {
-    expect(replaceFirstXsWithChars('xx', 'abc', 5)).toBe('abcx'.slice(0, 2));
+    expect(suffixMasking('xx', 'abc', 5)).toBe('abcx'.slice(0, 2));
   });
 
   test('handles strings with mixed characters', () => {
-    expect(replaceFirstXsWithChars('ax1x2x3x', 'xyz', 3)).toBe('ax1y2z3x');
+    expect(suffixMasking('ax1x2x3x', 'xyz', 3)).toBe('ax1y2z3x');
   });
 
   test('negative n is treated as zero', () => {
-    expect(replaceFirstXsWithChars('xxxx', 'abc', -1)).toBe('xxxx');
+    expect(suffixMasking('xxxx', 'abc', -1)).toBe('xxxx');
   });
 
   test('n larger than both strings only replaces up to the shortest', () => {
-    expect(replaceFirstXsWithChars('xxyyxx', 'abc', 10)).toBe('abyycx');
+    expect(suffixMasking('xxyyxx', 'abc', 10)).toBe('abyycx');
   });
 });

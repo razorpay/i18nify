@@ -4,8 +4,9 @@ import PHONE_FORMATTER_MAPPER from './data/phoneFormatterMapper.json';
 import {
   cleanPhoneNumber,
   detectCountryAndDialCodeFromPhone,
-  replaceFirstXsWithChars,
-  replaceLastXsWithChars,
+  suffixMasking,
+  prefixMasking,
+  alternateMasking,
 } from './utils';
 import { GetMaskedPhoneNumberOptions } from './types';
 import { MaskingStyle } from './constants';
@@ -40,6 +41,7 @@ const getMaskedPhoneNumber = ({
   }
 
   let maskedContactNumber: string;
+  let dialCode: string;
 
   if (phoneNumber) {
     // Clean the phone number to remove any non-numeric characters, except the leading '+'
@@ -50,67 +52,51 @@ const getMaskedPhoneNumber = ({
     // Detect the country code and dial code from the cleaned phone number
     const countryData = detectCountryAndDialCodeFromPhone(updatedPhoneNumber);
     const updatedCountryCode = countryCode || countryData.countryCode;
-
-    // Get the phone number formatting template based on the country code
-    let formattingTemplate = PHONE_FORMATTER_MAPPER[updatedCountryCode];
-
-    // Apply full masking to the phone number if it lacks a dialCode, without formatting the phone number.
-    if (!formattingTemplate) {
-      return updatedPhoneNumber.replace(/./g, maskingChar);
+    try {
+      dialCode = getDialCodeByCountryCode(updatedCountryCode);
+    } catch (error) {
+      dialCode = countryData.dialCode;
     }
 
-    maskedContactNumber = formattingTemplate;
+    // Extract the phone number without dial code
+    const phoneNumberWithoutDialCode =
+      updatedPhoneNumber[0] === '+'
+        ? updatedPhoneNumber.slice(dialCode.toString().length)
+        : updatedPhoneNumber;
 
-    // If not complete masking, calculate the masked phone number based on the masking options
-    if (maskingStyle !== MaskingStyle.Full) {
-      const dialCode = countryData.dialCode;
-      const phoneNumberWithoutDialCode = updatedPhoneNumber.slice(
-        dialCode.toString().length,
-      );
+    // Get the phone number formatting template based on the country code
+    let formattingTemplate =
+      PHONE_FORMATTER_MAPPER[updatedCountryCode] ||
+      phoneNumber.replace(/\d/g, 'x');
 
-      // Validate the masked digits count against the phone number length
-      if (
-        maskedDigitsCount &&
-        maskedDigitsCount > phoneNumberWithoutDialCode.length
-      ) {
-        maskedContactNumber = PHONE_FORMATTER_MAPPER[countryCode];
-      } else {
-        // Apply the masking characters to the phone number based on prefix or suffix masking
-        if (maskingStyle === MaskingStyle.Prefix) {
-          // Example: 7394926646 --> xxxx 926646
-          maskedContactNumber = replaceLastXsWithChars(
-            formattingTemplate,
-            String(phoneNumberWithoutDialCode),
-            phoneNumberWithoutDialCode.length - maskedDigitsCount,
-          ).replace(/x/g, maskingChar);
-        } else if (maskingStyle === MaskingStyle.Suffix) {
-          // Example: 7394926646 --> 7494 92xxxx
-          maskedContactNumber = replaceFirstXsWithChars(
-            formattingTemplate,
-            String(phoneNumberWithoutDialCode),
-            phoneNumberWithoutDialCode.length - maskedDigitsCount,
-          ).replace(/x/g, maskingChar);
-        } else if (maskingStyle === MaskingStyle.Alternate) {
-          // Example: 7394926646 --> 7x9x 9x6x4x
-          maskedContactNumber = String(phoneNumberWithoutDialCode)
-            .trim()
-            .split('')
-            .reduce(
-              (acc: any, char: string) => {
-                if (/\d/.test(char)) {
-                  acc.numericCount % 2 !== 0
-                    ? acc.result.push('x')
-                    : acc.result.push(char);
-                  acc.numericCount++;
-                }
-                return acc;
-              },
-              { result: [], numericCount: 0 },
-            )
-            .result.join('')
-            .replace(/x/g, maskingChar);
+    switch (maskingStyle) {
+      case MaskingStyle.Alternate:
+        // Example: 7394926646 --> 7x9x 9x6x4x
+        maskedContactNumber = alternateMasking(phoneNumberWithoutDialCode);
+        break;
+      case MaskingStyle.Prefix:
+        // Example: 7394926646 --> xxxx 926646
+        maskedContactNumber = prefixMasking(
+          formattingTemplate,
+          String(phoneNumberWithoutDialCode),
+          phoneNumberWithoutDialCode.length - maskedDigitsCount,
+        );
+        break;
+      case MaskingStyle.Suffix:
+        // Example: 7394926646 --> 7494 92xxxx
+        maskedContactNumber = suffixMasking(
+          formattingTemplate,
+          String(phoneNumberWithoutDialCode),
+          phoneNumberWithoutDialCode.length - maskedDigitsCount,
+        );
+        break;
+      default: // Full Masking Condition
+        maskedContactNumber = formattingTemplate;
+        if (!maskedContactNumber) {
+          throw new Error(
+            `Either of "phoneNumber" or "countryCode" is invalid.  countryCode: ${countryCode}, phoneNumber: ${phoneNumber}`,
+          );
         }
-      }
     }
   } else {
     // Retrieve the phone number formatting template using the country code
@@ -118,14 +104,14 @@ const getMaskedPhoneNumber = ({
     if (!maskedContactNumber) {
       throw new Error(`Parameter "countryCode" is invalid: ${countryCode}`);
     }
+    dialCode = getDialCodeByCountryCode(countryCode);
   }
 
   // Include the dial code in the masked phone number if requested
   if (withDialCode) {
-    const dialCode = getDialCodeByCountryCode(countryCode);
-    return `${dialCode} ${maskedContactNumber.replace(/x/g, maskingChar)}`;
+    return `${dialCode} ${maskedContactNumber.replace(/x/g, maskingChar)}`.trim();
   } else {
-    return maskedContactNumber.replace(/x/g, maskingChar);
+    return maskedContactNumber.trim().replace(/x/g, maskingChar);
   }
 };
 
