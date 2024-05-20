@@ -71,7 +71,7 @@ const getMaskedPhoneNumber = ({
 
     switch (maskingStyle) {
       case MaskingStyle.Alternate:
-        // Example: 7394926646 --> 7x9x 9x6x4x
+        // Example: 7394926646 --> 7x9x9x6x4x
         maskedContactNumber = alternateMasking(phoneNumberWithoutDialCode);
         break;
       case MaskingStyle.Prefix:

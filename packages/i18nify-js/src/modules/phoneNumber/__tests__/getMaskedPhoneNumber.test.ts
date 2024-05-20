@@ -149,4 +149,112 @@ describe('phoneNumber - getMaskedPhoneNumber', () => {
       getMaskedPhoneNumber(options as GetMaskedPhoneNumberOptions),
     ).toEqual(expected);
   });
+
+  describe('should mask with just phone number (without dialcode) without countryCode', () => {
+    const phoneNumber = '7394926646';
+    const testCases = [
+      {
+        options: {
+          phoneNumber,
+          maskingOptions: {
+            maskingStyle: MaskingStyle.Prefix,
+            maskedDigitsCount: 4,
+          },
+        },
+        expected: 'xxxx926646',
+        description: 'Prefix style',
+      },
+      {
+        options: {
+          phoneNumber,
+          maskingOptions: {
+            maskingStyle: MaskingStyle.Suffix,
+            maskedDigitsCount: 4,
+          },
+        },
+        expected: '739492xxxx',
+        description: 'Suffix style',
+      },
+      {
+        options: {
+          phoneNumber,
+          maskingOptions: {
+            maskingStyle: MaskingStyle.Alternate,
+          },
+        },
+        expected: '7x9x9x6x4x',
+        description: 'Alternate style',
+      },
+      {
+        options: {
+          phoneNumber,
+          maskingOptions: {
+            maskingStyle: MaskingStyle.Full,
+          },
+        },
+        expected: 'xxxxxxxxxx',
+        description: 'Full style',
+      },
+    ];
+
+    test.each(testCases)('$description', ({ options, expected }) => {
+      expect(
+        getMaskedPhoneNumber(options as GetMaskedPhoneNumberOptions),
+      ).toEqual(expected);
+    });
+  });
+
+  describe('should mask with just phone number (with dialcode) without countryCode', () => {
+    const phoneNumber = '+91 7394926646';
+    const testCases = [
+      {
+        options: {
+          phoneNumber,
+          maskingOptions: {
+            maskingStyle: MaskingStyle.Prefix,
+            maskedDigitsCount: 4,
+          },
+        },
+        expected: '+91 xxxx 926646',
+        description: 'Prefix style',
+      },
+      {
+        options: {
+          phoneNumber,
+          maskingOptions: {
+            maskingStyle: MaskingStyle.Suffix,
+            maskedDigitsCount: 4,
+          },
+        },
+        expected: '+91 7394 92xxxx',
+        description: 'Suffix style',
+      },
+      {
+        options: {
+          phoneNumber,
+          maskingOptions: {
+            maskingStyle: MaskingStyle.Alternate,
+          },
+        },
+        expected: '+91 7x9x9x6x4x',
+        description: 'Alternate style',
+      },
+      {
+        options: {
+          phoneNumber,
+          maskingOptions: {
+            maskingStyle: MaskingStyle.Full,
+          },
+        },
+        expected: '+91 xxxx xxxxxx',
+        description: 'Full style',
+      },
+    ];
+
+    test.each(testCases)('$description', ({ options, expected }) => {
+      expect(
+        getMaskedPhoneNumber(options as GetMaskedPhoneNumberOptions),
+      ).toEqual(expected);
+    });
+  });
 });
