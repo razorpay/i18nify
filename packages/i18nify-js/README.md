@@ -96,26 +96,26 @@ console.log(convertToMinorUnit(50, { currency: 'GBP' })); // Converts 50 pounds 
 
 ##### Examples
 
-```
-console.log(formatNumber("1000.5", { currency: "USD" })); // $1,000.50
+```javascript
+console.log(formatNumber('1000.5', { currency: 'USD' })); // $1,000.50
 
 console.log(
-  formatNumber("1500", {
-    currency: "EUR",
-    locale: "fr-FR",
+  formatNumber('1500', {
+    currency: 'EUR',
+    locale: 'fr-FR',
     intlOptions: {
-      currencyDisplay: "code",
+      currencyDisplay: 'code',
     },
-  })
+  }),
 ); // 1 500,00 EUR
 
 console.log(
-  formatNumber("5000", {
-    currency: "JPY",
+  formatNumber('5000', {
+    currency: 'JPY',
     intlOptions: {
-      currencyDisplay: "narrowSymbol",
+      currencyDisplay: 'narrowSymbol',
     },
-  })
+  }),
 ); // ¥5,000
 ```
 
@@ -125,7 +125,7 @@ console.log(
 
 ##### Examples
 
-```
+```javascript
 console.log(getCurrencyList()); /* {
   AED: {
     symbol: 'د.إ',
@@ -162,7 +162,7 @@ Picture this: it's like having a cool decoder ring for currency codes! 🔍💰 
 
 ##### Examples
 
-```
+```javascript
 console.log(getCurrencySymbol('USD')); // $
 
 console.log(getCurrencySymbol('UZS')); // so'm
@@ -176,12 +176,12 @@ This slick function breaks down numbers into separate pieces using Intl.NumberFo
 
 ##### Examples
 
-```
+```javascript
 console.log(
   formatNumberByParts(12345.67, {
-    currency: "USD",
-    locale: "en-US",
-  })
+    currency: 'USD',
+    locale: 'en-US',
+  }),
 ); /* {
     "currency": "$",
     "integer": "12,345",
@@ -218,9 +218,9 @@ console.log(
 
 console.log(
   formatNumberByParts(12345.67, {
-    currency: "XYZ",
-    locale: "en-US",
-  })
+    currency: 'XYZ',
+    locale: 'en-US',
+  }),
 ); /* {
     "currency": "XYZ",
     "integer": "12,345",
@@ -261,9 +261,9 @@ console.log(
 
 console.log(
   formatNumberByParts(12345.67, {
-    currency: "EUR",
-    locale: "fr-FR",
-  })
+    currency: 'EUR',
+    locale: 'fr-FR',
+  }),
 ); /* {
     "integer": "12 345",
     "decimal": ",",
@@ -304,9 +304,9 @@ console.log(
 
 console.log(
   formatNumberByParts(12345.67, {
-    currency: "JPY",
-    locale: "ja-JP",
-  })
+    currency: 'JPY',
+    locale: 'ja-JP',
+  }),
 ); /* {
     "currency": "￥",
     "integer": "12,346",
@@ -333,9 +333,9 @@ console.log(
 
 console.log(
   formatNumberByParts(12345.67, {
-    currency: "OMR",
-    locale: "ar-OM",
-  })
+    currency: 'OMR',
+    locale: 'ar-OM',
+  }),
 ); /* {
     "integer": "١٢٬٣٤٥",
     "decimal": "٫",
@@ -393,26 +393,26 @@ This module's your phone's best friend, handling all things phone number-related
 
 ##### Examples
 
-```
---> Basic Validation
+```javascript
+// Basic Validation
 console.log(isValidPhoneNumber('+14155552671')); // true
 
---> Specifying Country Code for Validation
+// Specifying Country Code for Validation
 console.log(isValidPhoneNumber('0501234567', 'AE')); // true
 
---> Auto-Detecting Country Code
+// Auto-Detecting Country Code
 console.log(isValidPhoneNumber('+447700900123')); // true
 
---> Handling Invalid Numbers
+// Handling Invalid Numbers
 console.log(isValidPhoneNumber('123456789', 'US')); // false
 
---> Invalid Country Code
+// Invalid Country Code
 console.log(isValidPhoneNumber('+123456789')); // false
 
---> Empty Phone Number
+// Empty Phone Number
 console.log(isValidPhoneNumber('')); // false
 
---> Non-Standard Formatting
+// Non-Standard Formatting
 console.log(isValidPhoneNumber('(555) 555-5555')); // true
 ```
 
@@ -422,26 +422,26 @@ console.log(isValidPhoneNumber('(555) 555-5555')); // true
 
 ##### Examples
 
-```
---> Basic Formatting
+```javascript
+// Basic Formatting
 console.log(formatPhoneNumber('+14155552671')); // '+1 415-555-2671'
 
---> Specifying Country Code for Formatting
+// Specifying Country Code for Formatting
 console.log(formatPhoneNumber('0501234567', 'AE')); // '050 123 4567'
 
---> Auto-Detecting Country Code for Formatting
+// Auto-Detecting Country Code for Formatting
 console.log(formatPhoneNumber('+447700900123')); // '+44 7700 900123'
 
---> Handling Invalid Numbers for Formatting
+// Handling Invalid Numbers for Formatting
 console.log(formatPhoneNumber('123456789', 'US')); // '123456789'
 
---> Invalid Country Code for Formatting
+// Invalid Country Code for Formatting
 console.log(formatPhoneNumber('+123456789')); // '+123456789'
 
---> Empty Phone Number
+// Empty Phone Number
 console.log(formatPhoneNumber('')); // Throws an Error: 'Parameter `phoneNumber` is invalid!'
 
---> Non-Standard Formatting
+// Non-Standard Formatting
 console.log(formatPhoneNumber('(555) 555-5555')); // '555 555 5555'
 ```
 
@@ -451,8 +451,8 @@ console.log(formatPhoneNumber('(555) 555-5555')); // '555 555 5555'
 
 ##### Examples
 
-```
---> Formatting a Phone Number
+```javascript
+// Formatting a Phone Number
 const phoneNumber = '+1 (555) 123-4567';
 const parsedInfo = parsePhoneNumber(phoneNumber);
 console.log('Country Code:', parsedInfo.countryCode); // 'US'
@@ -460,16 +460,18 @@ console.log('Formatted Number:', parsedInfo.formattedPhoneNumber); // '555-123-4
 console.log('Dial Code:', parsedInfo.dialCode); // '+1'
 console.log('Format Template:', parsedInfo.formatTemplate); // 'xxx-xxx-xxxx'
 
---> Parsing a Phone Number with Specified Country Code
+// Parsing a Phone Number with Specified Country Code
 const phoneNumber = '987654321'; // Phone number without country code
 const countryCode = 'IN'; // Specifying the country code (India)
 const parsedInfo = parsePhoneNumber(phoneNumber, countryCode);
 console.log('Country Code:', parsedInfo.countryCode); // 'IN'
 console.log('Formatted Number:', parsedInfo.formattedPhoneNumber); // '98-765-4321'
-console.log('Dial Code:', parsedInfo.dialCode); ''
-console.log('Format Template:', parsedInfo.formatTemplate); 'xxxx xxxxxx'
+console.log('Dial Code:', parsedInfo.dialCode);
+('');
+console.log('Format Template:', parsedInfo.formatTemplate);
+('xxxx xxxxxx');
 
---> Handling Invalid Phone Numbers
+// Handling Invalid Phone Numbers
 try {
   const invalidPhoneNumber = ''; // Empty phone number
   // This will throw an error since the phone number is empty
@@ -481,7 +483,7 @@ try {
   console.error('Error:', error.message); // 'Parameter `phoneNumber` is invalid!'
 }
 
---> Obtaining Format Information for a Country Code
+// Obtaining Format Information for a Country Code
 const countryCode = 'JP'; // Country code for Japan
 // Get the format information without providing a phone number
 const parsedInfo = parsePhoneNumber('', countryCode);
@@ -539,6 +541,90 @@ console.log(getDialCodes()); /*
 ```javascript
 console.log(getDialCodeByCountryCode('BR')); // Outputs the dial code for Brazil (+55)
 console.log(getDialCodeByCountryCode('DE')); // Outputs the dial code for Germany (+49)
+```
+
+#### getMaskedPhoneNumber(options)
+
+📞🔒 The getMaskedPhoneNumber function is a versatile tool designed to handle phone number formatting and masking based on the specific requirements of different countries. This function is ideal for applications that require the display of partially hidden phone numbers for security purposes or privacy concerns. It supports a wide range of configurations, including options to mask portions of the phone number, specify the number of digits to mask, and choose whether to mask digits from the beginning or end of the number.
+
+##### Examples
+
+```javascript
+// Masking a U.S. phone number completely
+console.log(
+  getMaskedPhoneNumber({
+    countryCode: 'US',
+    phoneNumber: '2025550125',
+    withDialCode: true,
+  }),
+);
+// Output: +1 xxx-xxx-xxxx
+
+// Partially masking an Indian phone number, hiding the last 6 digits with maskingStyle: suffix
+console.log(
+  getMaskedPhoneNumber({
+    countryCode: 'IN',
+    phoneNumber: '9876543210',
+    maskingOptions: {
+      maskingStyle: 'suffix',
+      maskedDigitsCount: 6,
+      maskingChar: '*',
+    },
+    withDialCode: true,
+  }),
+);
+// Output: +91 9876 ******
+
+// Partially masking an Indian phone number, hiding the first 6 digits with maskingStyle: prefix
+console.log(
+  getMaskedPhoneNumber({
+    countryCode: 'IN',
+    phoneNumber: '9876543210',
+    maskingOptions: {
+      maskingStyle: 'prefix',
+      maskedDigitsCount: 6,
+      maskingChar: '*',
+    },
+    withDialCode: true,
+  }),
+);
+// Output: +91 **** 543210
+
+// Partially masking an Indian phone number, hiding the first 6 digits with maskingStyle: full
+console.log(
+  getMaskedPhoneNumber({
+    countryCode: 'IN',
+    phoneNumber: '9876543210',
+    maskingOptions: {
+      maskingStyle: 'full',
+      maskingChar: '*',
+    },
+    withDialCode: true,
+  }),
+);
+// Output: +91 **** ******
+
+// Partially masking an Indian phone number, hiding the first 6 digits with maskingStyle: alternate
+console.log(
+  getMaskedPhoneNumber({
+    countryCode: 'IN',
+    phoneNumber: '9876543210',
+    maskingOptions: {
+      maskingStyle: 'alternate',
+      maskingChar: '*',
+    },
+    withDialCode: true,
+  }),
+);
+// Output: +91 9*7* 5*3*1*
+
+// Formatting and completely masking a phone number for Brazil without specifying a phone number
+console.log(
+  getMaskedPhoneNumber({
+    countryCode: 'BR',
+  }),
+);
+// Output: xx xxxx-xxxx
 ```
 
 ### Module 03: Geo Module 🌍
