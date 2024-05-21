@@ -257,4 +257,10 @@ describe('formatNumberByParts', () => {
     expect(inrParts.minusSign).toEqual('-');
     expect(eurParts.minusSign).toEqual('-');
   });
+
+  it('should return true as default value of isPrefixSymbol even when currency code is not passed', () => {
+    expect(formatNumberByParts(-1234567, {} as any).isPrefixSymbol).toEqual(
+      true,
+    );
+  });
 });
