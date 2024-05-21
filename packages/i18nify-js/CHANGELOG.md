@@ -1,5 +1,15 @@
 # @razorpay/i18nify-js
 
+## 1.10.0
+
+### Minor Changes
+
+- 08342e6: add new api for masked contact number in phone number module
+
+### Patch Changes
+
+- 3803afe: currency symbol placement evaluation in formatNumberToParts
+
 ## 1.9.3
 
 ### Patch Changes
