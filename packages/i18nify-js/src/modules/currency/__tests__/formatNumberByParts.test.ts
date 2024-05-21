@@ -237,4 +237,30 @@ describe('formatNumberByParts', () => {
       ),
     );
   });
+
+  it('should return correct value for isPrefixSymbol for negative amounts', () => {
+    const inrParts = formatNumberByParts(-1234567, {
+      currency: 'INR',
+      locale: 'en-IN',
+      intlOptions: { style: 'currency' },
+    } as any);
+
+    const eurParts = formatNumberByParts(-1234567, {
+      currency: 'EUR',
+      locale: 'de-DE',
+      intlOptions: { style: 'currency' },
+    } as any);
+
+    expect(inrParts.isPrefixSymbol).toEqual(true);
+    expect(eurParts.isPrefixSymbol).toEqual(false);
+
+    expect(inrParts.minusSign).toEqual('-');
+    expect(eurParts.minusSign).toEqual('-');
+  });
+
+  it('should return true as default value of isPrefixSymbol even when currency code is not passed', () => {
+    expect(formatNumberByParts(-1234567, {} as any).isPrefixSymbol).toEqual(
+      true,
+    );
+  });
 });

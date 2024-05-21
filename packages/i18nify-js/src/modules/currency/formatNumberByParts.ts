@@ -43,7 +43,9 @@ const formatNumberByParts = (
 
     return {
       ...formattedObj,
-      isPrefixSymbol: parts[0].type === 'currency',
+      isPrefixSymbol:
+        parts.findIndex((item) => item.type === 'currency') <
+        parts.findIndex((item) => item.type === 'integer'),
       rawParts: parts,
     };
   } catch (err) {
