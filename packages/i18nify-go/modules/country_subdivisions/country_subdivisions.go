@@ -37,9 +37,9 @@ func (r *CountrySubdivisions) Marshal() ([]byte, error) {
 
 // CountrySubdivisions contains information about country subdivisions.
 type CountrySubdivisions struct {
-	CountryName       string           `json:"country_name"` // CountryName represents the name of the country.
-	States            map[string]State `json:"states"`       // States contains information about states or provinces within the country.
-	PincodeDetailsMap map[string]PincodeValue
+	CountryName       string                  `json:"country_name"` // CountryName represents the name of the country.
+	States            map[string]State        `json:"states"`       // States contains information about states or provinces within the country.
+	PincodeDetailsMap map[string]PincodeValue `json:"-"`
 }
 
 // GetCountryName returns the name of the country.
@@ -68,7 +68,9 @@ func (r *CountrySubdivisions) GetAllCities() []string {
 	states := r.States
 	for _, state := range states {
 		for _, city := range state.Cities {
-			cities = append(cities, city.Name)
+			if city.Name != "nan" {
+				cities = append(cities, city.Name) // TODO : Get rid of this check after cleaning up the data
+			}
 		}
 	}
 
@@ -78,7 +80,9 @@ func (r *CountrySubdivisions) GetAllCities() []string {
 func (r *CountrySubdivisions) GetAllStates() []string {
 	var states []string
 	for _, state := range r.States {
-		states = append(states, state.Name)
+		if state.Name != "nan" {
+			states = append(states, state.Name) // TODO : Get rid of this check after cleaning up the data
+		}
 	}
 	return states
 }
