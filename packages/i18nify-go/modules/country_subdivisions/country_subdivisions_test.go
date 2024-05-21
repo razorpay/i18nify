@@ -84,20 +84,18 @@ func assertIsArray(t *testing.T, value interface{}) {
 	}
 }
 
-func TestGetAllStates(t *testing.T) {
+func TestCountrySubdivisions_GetCityAndStateForPincode(t *testing.T) {
 	_, currentFileName, _, ok := runtime.Caller(0)
 	if !ok {
 		fmt.Println("Error getting current file directory")
 	}
 	jsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), "MY.json"))
 
-	fileName := filepath.Join(filepath.Dir(currentFileName)+"/pincode", "MY.json")
-	// Mock implementation of os.ReadFile
+	fileName := filepath.Join(filepath.Dir(currentFileName), "MY.json")
 	readFileFunc = func(filename string) ([]byte, error) {
 		return jsonData, nil
 	}
 	defer func() {
-		// Restore the original implementation after the test
 		readFileFunc = os.ReadFile
 	}()
 
@@ -106,6 +104,53 @@ func TestGetAllStates(t *testing.T) {
 		return
 	}
 
+	subDivData := GetCountrySubdivisions("MY")
+
+	tests := []struct {
+		name     string
+		country  string
+		expected []string
+		err      error
+	}{
+		{"Valid country", "MY", []string{"Kulim", "Kedah"}, nil},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			city, state, err := subDivData.GetCityAndStateForPincode("09000")
+			if err != nil {
+				assert.Error(t, tt.err)
+			} else {
+				assert.NoError(t, nil)
+				assert.Equal(t, city, tt.expected[0])
+				assert.Equal(t, state, tt.expected[1])
+			}
+		})
+	}
+}
+
+func TestGetAllStates(t *testing.T) {
+	_, currentFileName, _, ok := runtime.Caller(0)
+	if !ok {
+		fmt.Println("Error getting current file directory")
+	}
+	jsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), "MY.json"))
+
+	fileName := filepath.Join(filepath.Dir(currentFileName), "MY.json")
+	readFileFunc = func(filename string) ([]byte, error) {
+		return jsonData, nil
+	}
+	defer func() {
+		readFileFunc = os.ReadFile
+	}()
+
+	_, err = readFileFunc(fileName)
+	if err != nil {
+		return
+	}
+
+	subDivData := GetCountrySubdivisions("MY")
+
 	tests := []struct {
 		name     string
 		country  string
@@ -113,12 +158,11 @@ func TestGetAllStates(t *testing.T) {
 		err      error
 	}{
 		{"Valid country", "MY", []string{"Kedah"}, nil},
-		{"Invalid country", "Unknown", nil, errors.New("file not found")},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := GetAllStates(tt.country)
+			result := subDivData.GetAllStates()
 			if tt.err != nil {
 				assert.Error(t, tt.err)
 			} else {
@@ -136,13 +180,11 @@ func TestGetAllCities(t *testing.T) {
 	}
 	jsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), "MY.json"))
 
-	fileName := filepath.Join(filepath.Dir(currentFileName)+"/pincode", "MY.json")
-	// Mock implementation of os.ReadFile
+	fileName := filepath.Join(filepath.Dir(currentFileName), "MY.json")
 	readFileFunc = func(filename string) ([]byte, error) {
 		return jsonData, nil
 	}
 	defer func() {
-		// Restore the original implementation after the test
 		readFileFunc = os.ReadFile
 	}()
 
@@ -151,19 +193,19 @@ func TestGetAllCities(t *testing.T) {
 		return
 	}
 
+	subDivData := GetCountrySubdivisions("MY")
 	tests := []struct {
 		name     string
 		country  string
 		expected []string
 		err      error
 	}{
-		{"Valid country", "MY", []string{"Kedah"}, nil},
-		{"Invalid country", "Unknown", nil, errors.New("file not found")},
+		{"Valid country", "MY", []string{"Penang"}, nil},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := GetAllStates(tt.country)
+			result := subDivData.GetAllCities()
 			if tt.err != nil {
 				assert.Error(t, tt.err)
 			} else {

@@ -9,6 +9,7 @@ package country_subdivisions
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -24,6 +25,11 @@ func UnmarshalCountrySubdivisions(data []byte) (CountrySubdivisions, error) {
 	return r, err
 }
 
+type PincodeValue struct {
+	City  string `json:"city"`
+	State string `json:"state"`
+}
+
 // Marshal converts a CountrySubdivisions struct into JSON data.
 func (r *CountrySubdivisions) Marshal() ([]byte, error) {
 	return json.Marshal(r)
@@ -31,8 +37,9 @@ func (r *CountrySubdivisions) Marshal() ([]byte, error) {
 
 // CountrySubdivisions contains information about country subdivisions.
 type CountrySubdivisions struct {
-	CountryName string           `json:"country_name"` // CountryName represents the name of the country.
-	States      map[string]State `json:"states"`       // States contains information about states or provinces within the country.
+	CountryName       string           `json:"country_name"` // CountryName represents the name of the country.
+	States            map[string]State `json:"states"`       // States contains information about states or provinces within the country.
+	PincodeDetailsMap map[string]PincodeValue
 }
 
 // GetCountryName returns the name of the country.
@@ -45,53 +52,34 @@ func (r *CountrySubdivisions) GetStates() map[string]State {
 	return r.States
 }
 
-func GetAllCities(country string) []string {
-	_, currentFileName, _, ok := runtime.Caller(0)
-	var cities []string
+func (r *CountrySubdivisions) GetCityAndStateForPincode(pincode string) (string, string, error) {
+	pincodeDetailsMap := r.PincodeDetailsMap
+	pincodeDetails, ok := pincodeDetailsMap[pincode]
 
 	if !ok {
-		fmt.Println("Error getting current file directory")
-		return cities
+		return "", "", errors.New("Pincode not found")
 	}
-	subDivJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), country+".json"))
-	if err != nil {
-		fmt.Println("Error reading JSON file:", err)
-		return cities
-	}
-	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
 
-	for _, state := range allSubDivData.States {
+	return pincodeDetails.City, pincodeDetails.State, nil
+}
+
+func (r *CountrySubdivisions) GetAllCities() []string {
+	var cities []string
+	states := r.States
+	for _, state := range states {
 		for _, city := range state.Cities {
-			if city.Name != "nan" {
-				cities = append(cities, city.Name)
-			}
+			cities = append(cities, city.Name)
 		}
 	}
 
 	return cities
 }
 
-func GetAllStates(country string) []string {
-	_, currentFileName, _, ok := runtime.Caller(0)
+func (r *CountrySubdivisions) GetAllStates() []string {
 	var states []string
-
-	if !ok {
-		fmt.Println("Error getting current file directory")
-		return states
+	for _, state := range r.States {
+		states = append(states, state.Name)
 	}
-	subDivJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), country+".json"))
-	if err != nil {
-		fmt.Println("Error reading JSON file:", err)
-		return states
-	}
-	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
-
-	for _, state := range allSubDivData.States {
-		if state.Name != "nan" {
-			states = append(states, state.Name)
-		}
-	}
-
 	return states
 }
 
@@ -99,6 +87,8 @@ func GetAllStates(country string) []string {
 func GetCountrySubdivisions(code string) CountrySubdivisions {
 	// Read JSON data file containing country subdivision information.
 	_, currentFileName, _, ok := runtime.Caller(0)
+	pincodeDetailsMap := make(map[string]PincodeValue)
+
 	if !ok {
 		fmt.Println("Error getting current file directory")
 		return CountrySubdivisions{}
@@ -108,8 +98,21 @@ func GetCountrySubdivisions(code string) CountrySubdivisions {
 		fmt.Println("Error reading JSON file:", err)
 		return CountrySubdivisions{}
 	}
-	// Unmarshal JSON data into CountrySubdivisions struct.
+
 	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
+	if allSubDivData.States != nil {
+		for _, state := range allSubDivData.States {
+			for _, city := range state.Cities {
+				pincodes := city.Zipcodes
+				for _, pincode := range pincodes {
+					pincodeDetails := PincodeValue{City: city.Name, State: state.Name}
+					pincodeDetailsMap[pincode] = pincodeDetails
+				}
+			}
+		}
+	}
+
+	allSubDivData.PincodeDetailsMap = pincodeDetailsMap
 	return allSubDivData
 }
 
