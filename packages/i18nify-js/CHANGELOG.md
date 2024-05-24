@@ -1,5 +1,46 @@
 # @razorpay/i18nify-js
 
+## 1.10.0
+
+### Minor Changes
+
+- 08342e6: add new api for masked contact number in phone number module
+
+### Patch Changes
+
+- 3803afe: currency symbol placement evaluation in formatNumberToParts
+
+## 1.9.3
+
+### Patch Changes
+
+- 7321238: feat: refactoring currency module to use central geo data
+
+## 1.9.2
+
+### Patch Changes
+
+- 891908b: Singapore validation bug fixed
+
+## 1.9.1
+
+### Patch Changes
+
+- eb5a756: [fix]: singapore validation regex fixed
+- 5083738: fix: text should be treated inValid in isValidPhoneNumber [ATLAS-196]
+
+## 1.9.0
+
+### Minor Changes
+
+- 472f8aa: Feat: Geo-contextual module
+
+### Patch Changes
+
+- 774d07b: Feat: static configs in phone module replaced with i18nify-data
+- 3f406fb: Feat: Added an alias of i18nify-data to allow static imports of json within js package
+- Feat: Phone number engine modified (dialcode or countryCode treated as mandatory)
+
 ## 1.8.1
 
 ### Patch Changes

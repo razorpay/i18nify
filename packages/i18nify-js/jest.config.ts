@@ -14,6 +14,9 @@ const config = {
     },
   },
   rootDir: 'src',
+  moduleNameMapper: {
+    '^#/i18nify-data/(.*)$': '<rootDir>/../../../i18nify-data/$1',
+  },
 };
 
 export default config;

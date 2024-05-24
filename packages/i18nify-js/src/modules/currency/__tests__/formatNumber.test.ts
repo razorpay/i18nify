@@ -1,13 +1,15 @@
 import { getLocale } from '../../.internal/utils';
 import { setState } from '../../core';
-import { formatNumber } from '../index';
+import { CurrencyCodeType, formatNumber } from '../index';
 
 const nbsp = String.fromCharCode(160);
 const nnsp = String.fromCharCode(8239);
 
 describe('formatNumber', () => {
   it('should format the amount with default options', () => {
-    const result = formatNumber('1000.5', { currency: 'USD' });
+    const result = formatNumber('1000.5', {
+      currency: 'USD',
+    });
     expect(result).toBe('$1,000.50');
   });
 
@@ -55,11 +57,15 @@ describe('formatNumber', () => {
       formatNumber('invalid-amount', {
         currency: 'USD',
       }),
-    ).toThrow('Parameter `amount` is not a number!');
+    ).toThrow(
+      `Error: Parameter 'amount' is not a number. typeof amount: string`,
+    );
   });
 
   it('should format a negative amount', () => {
-    const result = formatNumber('-500', { currency: 'USD' });
+    const result = formatNumber('-500', {
+      currency: 'USD',
+    });
     expect(result).toBe('-$500.00');
   });
 
@@ -86,7 +92,7 @@ describe('formatNumber', () => {
 
   it('should throw error with thousands separators', () => {
     expect(() => formatNumber('1,234,567.89', { currency: 'USD' })).toThrow(
-      'Parameter `amount` is not a number!',
+      `Error: Parameter 'amount' is not a number. typeof amount: string`,
     );
   });
 
@@ -96,7 +102,9 @@ describe('formatNumber', () => {
         currency: 'USD',
         intlOptions: { useGrouping: false },
       }),
-    ).toThrow('Parameter `amount` is not a number!');
+    ).toThrow(
+      `Error: Parameter 'amount' is not a number. typeof amount: string`,
+    );
   });
 
   it('should handle extremely large numbers with precision', () => {
@@ -108,8 +116,7 @@ describe('formatNumber', () => {
 
   it('should handle custom currency symbol and placement', () => {
     const result = formatNumber('1000', {
-      // @ts-expect-error invalid currency code for testing
-      currency: 'XYZ',
+      currency: 'XYZ' as CurrencyCodeType,
       intlOptions: {
         style: 'currency',
         currencyDisplay: 'symbol',

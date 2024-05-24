@@ -12,7 +12,9 @@ const formatNumber = (
   } = {},
 ): string => {
   if (!Number(amount) && Number(amount) !== 0)
-    throw new Error('Parameter `amount` is not a number!');
+    throw new Error(
+      `Parameter 'amount' is not a number. typeof amount: ${typeof amount}`,
+    );
 
   let formattedAmount = '';
 
