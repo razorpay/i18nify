@@ -48,6 +48,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Unit Test Results
+          working-directory: packages/i18nify-js
           path: src/coverage/**/*.xml
 
   publish-test-results:
