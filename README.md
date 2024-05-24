@@ -7,7 +7,7 @@ Currently, it provides functionalities for handling countries, currencies, phone
 
 To get started with i18nify, please refer to the language-specific README files:
 
-- [Go](./packages/i18nify-go/README.md)
+- [Go](./packages/i18nify-go/readme.md)
 - [JavaScript](./packages/i18nify-js/README.md)
 - [React](./packages/i18nify-react/README.md)
 
