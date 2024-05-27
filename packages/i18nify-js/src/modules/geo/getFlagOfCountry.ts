@@ -21,8 +21,8 @@ const getFlagOfCountry = (_countryCode: CountryCodeType): GetFlagReturnType => {
     throw new Error(`Invalid country code: ${countryCode}`);
   }
   return {
-    original: `${FLAG_BASE_PATH}/${countryCode}.svg`,
-    '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode}.svg`,
+    original: `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
+    '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
   };
 };
 
