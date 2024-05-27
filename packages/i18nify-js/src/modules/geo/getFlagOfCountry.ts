@@ -16,13 +16,11 @@ import { isCountryValid } from './utils';
  * @throws {Error} If the country code is not in the list of valid country codes.
  */
 const getFlagOfCountry = (_countryCode: CountryCodeType): GetFlagReturnType => {
-  let countryCode = _countryCode.toUpperCase() as CountryCodeType;
-  if (!isCountryValid(countryCode)) {
-    throw new Error(`Invalid country code: ${countryCode}`);
+  if (!isCountryValid(_countryCode)) {
+    throw new Error(`Invalid country code: ${_countryCode}`);
   }
 
-  countryCode = countryCode.toLowerCase() as CountryCodeType;
-
+  const countryCode = _countryCode.toLowerCase() as CountryCodeType;
   return {
     original: `${FLAG_BASE_PATH}/${countryCode}.svg`,
     '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode}.svg`,
