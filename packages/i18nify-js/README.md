@@ -1150,6 +1150,48 @@ console.log(parsed3); // Outputs object with date components for January 23, 202
 
 💡 Pro Tip: Leverage `parseDateTime` in applications where detailed date analysis and manipulation are key, such as in calendar apps, scheduling tools, or date-sensitive data processing. It's like having a Swiss Army knife for all things related to dates and times! 📅🛠️
 
+#### getTimezoneList()
+
+`getTimezoneList` 🌍 dynamically imports country-specific timezone information 🕒, offering a detailed map 🗺️ of timezones and capital city timezones keyed by country codes. Ideal for applications needing timezone data for location-based services 📍 or global scheduling features 📅. It returns a Promise 🔄 resolving to a map of country codes to timezone information, including each country's timezones 🌐 and the timezone of its capital 🏛️.
+
+##### Examples
+
+```javascript
+
+console.log(await getTimezoneList());
+/*
+ {
+    AF: {
+      timezone_of_capital: 'Asia/Kabul',
+      timezones: {
+        'Asia/Kabul': {
+          utc_offset: 'UTC +04:30',
+        },
+      },
+    },
+    IN: {
+      timezone_of_capital: 'Asia/Kolkata',
+      timezones: {
+        'Asia/Kolkata': {
+          utc_offset: 'UTC +05:30',
+        },
+      },
+    },
+    // rest of the countries
+  }
+*/
+```
+
+#### getTimeZoneByCountry(countryCode)
+
+`getTimeZoneByCountry` asynchronously fetches the time zone ⏰ for the capital city 🏙️ of a given country, using its country code 🌍. It's crafted for applications that require displaying or working with time zone-specific information 🕒 across different locations globally 🌎.
+
+##### Examples
+
+```javascript
+console.log(await getTimeZoneByCountry('AF')); // 'Asia/Kabul'
+```
+
 #### Calendar, CalendarDate, CalendarDateTime, Time, ZonedDateTime
 
 Leverage the power of Adobe's @internationalized/date with our module, designed to offer a sophisticated, locale-sensitive approach to managing dates and times. Utilize these advanced tools to create applications that are both intuitive and efficient, ensuring they connect with users worldwide.
