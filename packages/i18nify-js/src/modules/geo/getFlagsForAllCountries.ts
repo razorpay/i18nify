@@ -1,7 +1,7 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { LIST_OF_ALL_COUNTRIES } from './data/listOfAllCountries';
+import { COUNTRY_LIST_FOR_ALL_FLAGS } from './data/countryListForAllFlags';
 import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from './constants';
-import { CountryCodeType, GetFlagReturnType } from '../types';
+import { GetFlagReturnType, CountryCodeTypeForAllFlags } from '../types';
 
 /**
  * Retrieves a mapping of country codes to their corresponding flag image URLs.
@@ -13,16 +13,17 @@ import { CountryCodeType, GetFlagReturnType } from '../types';
  * @returns An object mapping each country code from the list to its flag image URL.
  */
 const getFlagsForAllCountries = (): {
-  [countryCode in CountryCodeType]: GetFlagReturnType;
+  [countryCode in CountryCodeTypeForAllFlags]: GetFlagReturnType;
 } => {
   // Initialize an empty object to hold the country code to flag URL mapping
   const flagsForAllCountriesMap = {} as {
-    [countryCode in CountryCodeType]: GetFlagReturnType;
+    [countryCode in CountryCodeTypeForAllFlags]: GetFlagReturnType;
   };
 
   // Loop through each country code in the list
-  LIST_OF_ALL_COUNTRIES.map((countryCode: CountryCodeType) => {
-    let lowerCasedCountryCode = countryCode.toLowerCase() as CountryCodeType;
+  COUNTRY_LIST_FOR_ALL_FLAGS.map((countryCode: CountryCodeTypeForAllFlags) => {
+    let lowerCasedCountryCode =
+      countryCode.toLowerCase() as CountryCodeTypeForAllFlags;
     // Construct the flag image URL and assign it to the corresponding country code in the map
     flagsForAllCountriesMap[countryCode] = {
       original: `${FLAG_BASE_PATH}/${lowerCasedCountryCode}.svg`,
