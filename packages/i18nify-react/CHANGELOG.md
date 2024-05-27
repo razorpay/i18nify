@@ -1,5 +1,19 @@
 # @razorpay/i18nify-react
 
+## 4.0.9
+
+### Patch Changes
+
+- Updated dependencies [08342e6]
+- Updated dependencies [3803afe]
+  - @razorpay/i18nify-js@1.10.0
+
+## 4.0.8
+
+### Patch Changes
+
+- b6207b9: [fix]: i18nify-js removed as direct dependency in i18nify-react
+
 ## 4.0.7
 
 ### Patch Changes

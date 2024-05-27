@@ -17,7 +17,9 @@ const formatNumberByParts = (
   } = {},
 ): ByParts => {
   if (!Number(amount) && Number(amount) !== 0)
-    throw new Error('Parameter `amount` is not a number!');
+    throw new Error(
+      `Parameter 'amount' is not a number. typeof amount: ${typeof amount}`,
+    );
 
   try {
     const formattedAmount = getIntlInstanceWithOptions(options).formatToParts(
@@ -41,7 +43,9 @@ const formatNumberByParts = (
 
     return {
       ...formattedObj,
-      isPrefixSymbol: parts[0].type === 'currency',
+      isPrefixSymbol:
+        parts.findIndex((item) => item.type === 'currency') <
+        parts.findIndex((item) => item.type === 'integer'),
       rawParts: parts,
     };
   } catch (err) {
