@@ -22,10 +22,11 @@ const getFlagsForAllCountries = (): {
 
   // Loop through each country code in the list
   LIST_OF_ALL_COUNTRIES.map((countryCode: CountryCodeType) => {
+    let lowerCasedCountryCode = countryCode.toLowerCase() as CountryCodeType;
     // Construct the flag image URL and assign it to the corresponding country code in the map
     flagsForAllCountriesMap[countryCode] = {
-      original: `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
-      '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
+      original: `${FLAG_BASE_PATH}/${lowerCasedCountryCode}.svg`,
+      '4X3': `${FLAG_4X3_BASE_PATH}/${lowerCasedCountryCode}.svg`,
     };
   });
 
