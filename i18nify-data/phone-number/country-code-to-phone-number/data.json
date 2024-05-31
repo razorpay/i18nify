@@ -1255,6 +1255,11 @@
       "format": "xxx xx xx xx",
       "regex": "^\\+590\\s\\d{2}\\s\\d{2}\\s\\d{2}\\s\\d{2}$"
     },
+    "YT-UNF": {
+      "dial_code": "+262",
+      "format": "xxx xx xx xx",
+      "regex": "^(?:\\+262)?\\d{9}$"
+    },
     "BQ-BO": {
       "dial_code": "+599",
       "format": "",
@@ -1294,11 +1299,6 @@
       "dial_code": "+44",
       "format": "",
       "regex": ""
-    },
-    "YT-UNF": {
-      "dial_code": "+262",
-      "format": "xxx xx xx xx",
-      "regex": "^(?:\\+262)?\\d{9}$"
     }
   }
 }
