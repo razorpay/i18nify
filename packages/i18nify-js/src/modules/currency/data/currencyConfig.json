@@ -662,7 +662,7 @@
   "SGD": {
     "name": "Singapore Dollar",
     "minor_unit": "2",
-    "symbol": "S$"
+    "symbol": "$"
   },
   "SBD": {
     "name": "Solomon Islands Dollar",

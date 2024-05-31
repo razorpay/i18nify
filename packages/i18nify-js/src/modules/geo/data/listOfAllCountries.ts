@@ -260,6 +260,3 @@ export const LIST_OF_ALL_COUNTRIES: CountryCodeType[] = [
   'ZM',
   'ZW',
 ];
-//226
-
-// less 32

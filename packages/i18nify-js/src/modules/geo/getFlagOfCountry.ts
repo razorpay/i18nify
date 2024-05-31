@@ -1,7 +1,7 @@
 import { CountryCodeType, GetFlagReturnType } from '../types';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from './constants';
-import { isCountryValidForFlags } from './utils';
+import { isCountryValid } from './utils';
 
 /**
  * Retrieves the URL for the flag of a given country.
@@ -16,7 +16,7 @@ import { isCountryValidForFlags } from './utils';
  * @throws {Error} If the country code is not in the list of valid country codes.
  */
 const getFlagOfCountry = (_countryCode: CountryCodeType): GetFlagReturnType => {
-  if (!isCountryValidForFlags(_countryCode)) {
+  if (!isCountryValid(_countryCode)) {
     throw new Error(`Invalid country code: ${_countryCode}`);
   }
 
