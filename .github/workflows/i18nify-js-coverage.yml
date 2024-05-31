@@ -2,6 +2,9 @@ name: (i18nify-js) CodeCov Code Coverage PR Analysis
 
 on:
   pull_request:
+  push:
+    branches:
+      - master
 
 jobs:
   # JOB to run change detection
@@ -10,6 +13,8 @@ jobs:
     outputs:
       modified: ${{ steps.filter.outputs.src }}
     steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v3
       - uses: dorny/paths-filter@v3
         id: filter
         with:
