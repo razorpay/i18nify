@@ -1,7 +1,7 @@
 import { getFlagsForAllCountries } from '../index';
-import { COUNTRY_LIST_FOR_ALL_FLAGS } from '../data/countryListForAllFlags';
+import { LIST_OF_ALL_COUNTRIES } from '../data/listOfAllCountries';
 import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from '../constants';
-import { CountryCodeTypeForAllFlags } from '../../types';
+import { CountryCodeType } from '../../types';
 
 describe('geo - getFlagsForAllCountries', () => {
   it('should return an object', () => {
@@ -11,14 +11,14 @@ describe('geo - getFlagsForAllCountries', () => {
 
   it('should contain all predefined country codes as keys', () => {
     const flagsMap = getFlagsForAllCountries();
-    COUNTRY_LIST_FOR_ALL_FLAGS.forEach((countryCode) => {
+    LIST_OF_ALL_COUNTRIES.forEach((countryCode) => {
       expect(flagsMap).toHaveProperty(countryCode);
     });
   });
 
   it('should map each country code to a correctly formed flag URL', () => {
     const flagsMap = getFlagsForAllCountries();
-    COUNTRY_LIST_FOR_ALL_FLAGS.forEach((countryCode) => {
+    LIST_OF_ALL_COUNTRIES.forEach((countryCode) => {
       const expectedObject = {
         original: `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
         '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
@@ -29,9 +29,7 @@ describe('geo - getFlagsForAllCountries', () => {
 
   it('should have an entry for each country code in the predefined list', () => {
     const flagsMap = getFlagsForAllCountries();
-    expect(Object.keys(flagsMap).length).toEqual(
-      COUNTRY_LIST_FOR_ALL_FLAGS.length,
-    );
+    expect(Object.keys(flagsMap).length).toEqual(LIST_OF_ALL_COUNTRIES.length);
   });
 
   it('should correctly map specific country codes to their flag URLs', () => {
@@ -42,9 +40,7 @@ describe('geo - getFlagsForAllCountries', () => {
         original: `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
         '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
       };
-      expect(flagsMap[countryCode as CountryCodeTypeForAllFlags]).toEqual(
-        expectedObject,
-      );
+      expect(flagsMap[countryCode as CountryCodeType]).toEqual(expectedObject);
     });
   });
 });
