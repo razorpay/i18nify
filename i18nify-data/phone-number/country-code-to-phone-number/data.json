@@ -1254,6 +1254,51 @@
       "dial_code": "+590",
       "format": "xxx xx xx xx",
       "regex": "^\\+590\\s\\d{2}\\s\\d{2}\\s\\d{2}\\s\\d{2}$"
+    },
+    "BQ-BO": {
+      "dial_code": "+599",
+      "format": "",
+      "regex": ""
+    },
+    "BQ-SA": {
+      "dial_code": "+599",
+      "format": "",
+      "regex": ""
+    },
+    "BQ-SE": {
+      "dial_code": "+599",
+      "format": "",
+      "regex": ""
+    },
+    "GB-ENG": {
+      "dial_code": "+44",
+      "format": "",
+      "regex": ""
+    },
+    "GB-NIR": {
+      "dial_code": "+44",
+      "format": "",
+      "regex": ""
+    },
+    "GB-SCT": {
+      "dial_code": "+44",
+      "format": "",
+      "regex": ""
+    },
+    "GB-UKM": {
+      "dial_code": "+44",
+      "format": "",
+      "regex": ""
+    },
+    "GB-WLS": {
+      "dial_code": "+44",
+      "format": "",
+      "regex": ""
+    },
+    "YT-UNF": {
+      "dial_code": "+262",
+      "format": "xxx xx xx xx",
+      "regex": "^(?:\\+262)?\\d{9}$"
     }
   }
 }
