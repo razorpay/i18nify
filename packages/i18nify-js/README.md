@@ -875,7 +875,7 @@ console.log(getFlagOfCountry('US'));
 /*
 {
     "original": "https://flagcdn.com/US.svg",
-    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/US.svg"
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/us.svg"
 }
 */
 
@@ -884,7 +884,7 @@ console.log(getFlagOfCountry('IN'));
 /*
 {
     "original": "https://flagcdn.com/IN.svg",
-    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/IN.svg"
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/in.svg"
 }
 */
 
@@ -913,11 +913,11 @@ Behold, an object where each key is a country code linked to its flag's URL, suc
 {
   US: {
     "original": "https://flagcdn.com/US.svg",
-    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/US.svg"
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/us.svg"
   },
   IN: {
     "original": "https://flagcdn.com/IN.svg",
-    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/IN.svg"
+    "4X3": "https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/in.svg"
   },
   ...
 }

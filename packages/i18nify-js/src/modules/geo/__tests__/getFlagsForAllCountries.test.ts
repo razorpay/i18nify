@@ -20,8 +20,8 @@ describe('geo - getFlagsForAllCountries', () => {
     const flagsMap = getFlagsForAllCountries();
     LIST_OF_ALL_COUNTRIES.forEach((countryCode) => {
       const expectedObject = {
-        original: `${FLAG_BASE_PATH}/${countryCode}.svg`,
-        '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode}.svg`,
+        original: `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
+        '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
       };
       expect(flagsMap[countryCode]).toEqual(expectedObject);
     });
@@ -37,8 +37,8 @@ describe('geo - getFlagsForAllCountries', () => {
     const testCases = ['US', 'GB', 'FR'];
     testCases.forEach((countryCode) => {
       const expectedObject = {
-        original: `${FLAG_BASE_PATH}/${countryCode}.svg`,
-        '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode}.svg`,
+        original: `${FLAG_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
+        '4X3': `${FLAG_4X3_BASE_PATH}/${countryCode.toLowerCase()}.svg`,
       };
       expect(flagsMap[countryCode as CountryCodeType]).toEqual(expectedObject);
     });
