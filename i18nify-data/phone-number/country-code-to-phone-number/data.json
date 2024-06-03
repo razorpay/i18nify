@@ -40,6 +40,11 @@
       "format": "xxx-xxxx",
       "regex": "^(?:\\+1-264)?(?:\\d{7})$"
     },
+    "AQ": {
+      "dial_code": "+672",
+      "format": "",
+      "regex": ""
+    },
     "AG": {
       "dial_code": "+1",
       "format": "xxx-xxxx",
@@ -144,6 +149,11 @@
       "dial_code": "+267",
       "format": "xx xxxx xxxx",
       "regex": "^(?:(?:\\+267)?\\s?)?[74]\\d{7}$"
+    },
+    "BV": {
+      "dial_code": "+47",
+      "format": "",
+      "regex": ""
     },
     "BR": {
       "dial_code": "+55",
@@ -385,6 +395,11 @@
       "format": "xx xx xx xx",
       "regex": "^(?:\\+689)?\\d{6}$"
     },
+    "TF": {
+      "dial_code": "+1",
+      "format": "",
+      "regex": ""
+    },
     "GA": {
       "dial_code": "+241",
       "format": "xx xx xx xx",
@@ -469,6 +484,11 @@
       "dial_code": "+509",
       "format": "xxx-xxxx",
       "regex": "^(?:\\+?509)?\\d{8}$"
+    },
+    "HM": {
+      "dial_code": "+00672",
+      "format": "",
+      "regex": ""
     },
     "VA": {
       "dial_code": "+39",
@@ -860,6 +880,11 @@
       "format": "xxx-xxxx",
       "regex": "^(?:(?:\\+?63)|0)(?:\\d{10})$"
     },
+    "PN": {
+      "dial_code": "+64",
+      "format": "",
+      "regex": ""
+    },
     "PL": {
       "dial_code": "+48",
       "format": "xxx xxx xxx",
@@ -1010,6 +1035,11 @@
       "format": "xxx-xxx-xxxx",
       "regex": "^(?:(?:\\+27)|0)(\\d{9})$"
     },
+    "GS": {
+      "dial_code": "+500",
+      "format": "",
+      "regex": ""
+    },
     "SS": {
       "dial_code": "+211",
       "format": "xxx xxxx xxx",
@@ -1145,6 +1175,11 @@
       "format": "xxxx xxx xxx",
       "regex": "^(?:(?:\\+44\\s?|0)7\\d{3}(\\s?\\d{4,})?)$"
     },
+    "UM": {
+      "dial_code": "+1",
+      "format": "",
+      "regex": ""
+    },
     "US": {
       "dial_code": "+1",
       "format": "xxx-xxx-xxxx",
@@ -1224,41 +1259,6 @@
       "dial_code": "+262",
       "format": "xxx xx xx xx",
       "regex": "^(?:\\+262)?\\d{9}$"
-    },
-    "HM": {
-      "dial_code": "+00672",
-      "format": "",
-      "regex": ""
-    },
-    "PN": {
-      "dial_code": "+64",
-      "format": "",
-      "regex": ""
-    },
-    "GS": {
-      "dial_code": "+500",
-      "format": "",
-      "regex": ""
-    },
-    "UM": {
-      "dial_code": "+1",
-      "format": "",
-      "regex": ""
-    },
-    "TF": {
-      "dial_code": "+1",
-      "format": "",
-      "regex": ""
-    },
-    "BV": {
-      "dial_code": "+47",
-      "format": "",
-      "regex": ""
-    },
-    "AQ": {
-      "dial_code": "+672",
-      "format": "",
-      "regex": ""
     },
     "BQ-BO": {
       "dial_code": "+599",
