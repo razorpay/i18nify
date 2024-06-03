@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.10.1
+
+### Patch Changes
+
+- 6959a83: chore: change flags name to lowercase in flags api
+
 ## 1.10.0
 
 ### Minor Changes
