@@ -1,4 +1,8 @@
 import { CurrencyCodeType, formatNumberByParts } from '../index';
+import {
+  positiveNumberPartsIntlMap,
+  negativeNumberPartsIntlMap,
+} from './mocks/formatNumberToParts';
 
 const nbsp = String.fromCharCode(160);
 
@@ -263,4 +267,61 @@ describe('formatNumberByParts', () => {
       true,
     );
   });
+
+  const intlMappedTestCases = [
+    ['SGD', 'en-SG'],
+    ['XCD', 'en-AI'],
+    ['ARS', 'en-AR'],
+    ['AUD', 'en-AU'],
+    ['BSD', 'en-BS'],
+    ['BBD', 'en-BB'],
+    ['BMD', 'en-BM'],
+    ['CVE', 'en-CV'],
+    ['CAD', 'en-CA'],
+    ['KYD', 'en-KY'],
+    ['CLP', 'en-CL'],
+    ['COP', 'en-CO'],
+    ['NZD', 'en-CK'],
+    ['CUP', 'en-CU'],
+    ['SVC', 'en-SV'],
+    ['FJD', 'en-FJ'],
+    ['GYD', 'en-GY'],
+    ['HKD', 'en-HK'],
+    ['JMD', 'en-JM'],
+    ['LRD', 'en-LR'],
+    ['MOP', 'en'],
+    ['MXN', 'en-MX'],
+    ['NAD', 'en-NA'],
+    ['SBD', 'en-SB'],
+    ['SRD', 'en-SR'],
+    ['ZWL', 'en-ZW'],
+  ];
+
+  it.each(intlMappedTestCases)(
+    'parses (+ve and -ve) amount 123456.3276 with currency "%s", locale "%s" to "%s"',
+    (currency, locale) => {
+      const amount = 123456.3276;
+      expect(
+        formatNumberByParts(amount, {
+          currency: currency as CurrencyCodeType,
+          locale: locale as string,
+        }),
+      ).toEqual(
+        positiveNumberPartsIntlMap[
+          currency as keyof typeof positiveNumberPartsIntlMap
+        ],
+      );
+
+      expect(
+        formatNumberByParts(-amount, {
+          currency: currency as CurrencyCodeType,
+          locale: locale as string,
+        }),
+      ).toEqual(
+        negativeNumberPartsIntlMap[
+          currency as keyof typeof negativeNumberPartsIntlMap
+        ],
+      );
+    },
+  );
 });

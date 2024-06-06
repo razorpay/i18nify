@@ -166,4 +166,53 @@ describe('formatNumber', () => {
       ),
     );
   });
+
+  const intlMappedTestCases = [
+    ['SGD', 'en-SG', 'S$123,456.33'],
+    ['XCD', 'en-AI', 'EC$123,456.33'],
+    ['ARS', 'en-AR', `ARS${nbsp}123,456.33`],
+    ['AUD', 'en-AU', 'A$123,456.33'],
+    ['BSD', 'en-BS', 'BSD123,456.33'],
+    ['BBD', 'en-BB', 'Bds$123,456.33'],
+    ['BMD', 'en-BM', 'BD$123,456.33'],
+    ['CVE', 'en-CV', `CVE${nbsp}123,456.33`],
+    ['CAD', 'en-CA', 'C$123,456.33'],
+    ['KYD', 'en-KY', 'CI$123,456.33'],
+    ['CLP', 'en-CL', `CLP${nbsp}123,456`],
+    ['COP', 'en-CO', `COP${nbsp}123,456.33`],
+    ['NZD', 'en-CK', 'NZ$123,456.33'],
+    ['CUP', 'en-CU', `CUP${nbsp}123,456.33`],
+    ['SVC', 'en-SV', `SVC${nbsp}123,456.33`],
+    ['FJD', 'en-FJ', 'FJ$123,456.33'],
+    ['GYD', 'en-GY', 'GY$123,456.33'],
+    ['HKD', 'en-HK', 'HK$123,456.33'],
+    ['JMD', 'en-JM', 'J$123,456.33'],
+    ['LRD', 'en-LR', 'L$123,456.33'],
+    ['MOP', 'en', `MOP${nbsp}123,456.33`],
+    ['MXN', 'en-MX', 'MX$123,456.33'],
+    ['NAD', 'en-NA', 'N$123,456.33'],
+    ['SBD', 'en-SB', 'SI$123,456.33'],
+    ['SRD', 'en-SR', `SRD${nbsp}123,456.33`],
+    ['ZWL', 'en-ZW', `ZWL${nbsp}123,456.33`],
+  ];
+
+  it.each(intlMappedTestCases)(
+    'formats (+ve and -ve) amount 123456.3276 with currency "%s", locale "%s" to "%s"',
+    (currency, locale, expected) => {
+      const amount = 123456.3276;
+      expect(
+        formatNumber(amount, {
+          currency: currency as CurrencyCodeType,
+          locale: locale as string,
+        }),
+      ).toBe(expected);
+
+      expect(
+        formatNumber(-amount, {
+          currency: currency as CurrencyCodeType,
+          locale: locale as string,
+        }),
+      ).toBe(`-${expected}`);
+    },
+  );
 });

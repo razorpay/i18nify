@@ -6,7 +6,7 @@ import {
 } from './types';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getIntlInstanceWithOptions } from '../.internal/utils';
-import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
+import { ALLOWED_FORMAT_PARTS_KEYS, INTL_MAPPING } from './constants';
 
 const formatNumberByParts = (
   amount: string | number,
@@ -29,8 +29,17 @@ const formatNumberByParts = (
     const parts = formattedAmount;
 
     const formattedObj: FormattedPartsObject = {};
+    const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
+    const currencyCode = options?.currency || intlOptions.currency;
 
     parts.forEach((p) => {
+      if (p.type === 'currency' && currencyCode in INTL_MAPPING) {
+        const mapping = INTL_MAPPING[currencyCode as keyof typeof INTL_MAPPING];
+        if (p.value in mapping) {
+          p.value = mapping[p.value as keyof typeof mapping];
+        }
+      }
+
       if (p.type === 'group') {
         formattedObj.integer = (formattedObj.integer || '') + p.value;
       } else if (
