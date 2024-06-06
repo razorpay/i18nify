@@ -22,7 +22,6 @@ export const ALLOWED_FORMAT_PARTS_KEYS = [
   'unit',
 ] as const;
 
-// This has been taken from here: https://docs.google.com/spreadsheets/d/13VFVLJql-IPeIV5NTR5MNzeeJp5LVkelbt4jFGUpBlE/edit?usp=sharing
 export const INTL_MAPPING = {
   SGD: { $: CURRENCY_INFO.SGD.symbol }, // Singapore Dollar
   XCD: { $: CURRENCY_INFO.XCD.symbol }, // East Caribbean Dollar

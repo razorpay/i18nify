@@ -30,7 +30,7 @@ const formatNumberByParts = (
 
     const formattedObj: FormattedPartsObject = {};
     const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
-    const currencyCode = options?.currency || intlOptions.currency;
+    const currencyCode = options?.currency || intlOptions.currency || 'INR';
 
     parts.forEach((p) => {
       if (p.type === 'currency' && currencyCode in INTL_MAPPING) {

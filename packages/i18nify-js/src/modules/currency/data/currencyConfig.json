@@ -32,12 +32,12 @@
   "XCD": {
     "name": "East Caribbean Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "EC$"
   },
   "ARS": {
     "name": "Argentine Peso",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "ARS"
   },
   "AMD": {
     "name": "Armenian Dram",
@@ -52,7 +52,7 @@
   "AUD": {
     "name": "Australian Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "A$"
   },
   "AZN": {
     "name": "Azerbaijan Manat",
@@ -62,7 +62,7 @@
   "BSD": {
     "name": "Bahamian Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "BSD"
   },
   "BHD": {
     "name": "Bahraini Dinar",
@@ -77,7 +77,7 @@
   "BBD": {
     "name": "Barbados Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "Bds$"
   },
   "BYN": {
     "name": "Belarusian Ruble",
@@ -97,7 +97,7 @@
   "BMD": {
     "name": "Bermudian Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "BD$"
   },
   "INR": {
     "name": "Indian Rupee",
@@ -157,7 +157,7 @@
   "CVE": {
     "name": "Cabo Verde Escudo",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "CVE"
   },
   "KHR": {
     "name": "Riel",
@@ -172,17 +172,17 @@
   "CAD": {
     "name": "Canadian Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "C$"
   },
   "KYD": {
     "name": "Cayman Islands Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "CI$"
   },
   "CLP": {
     "name": "Chilean Peso",
     "minor_unit": "0",
-    "symbol": "$"
+    "symbol": "CLP"
   },
   "CLF": {
     "name": "Unidad de Fomento",
@@ -197,7 +197,7 @@
   "COP": {
     "name": "Colombian Peso",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "COL$"
   },
   "COU": {
     "name": "Unidad de Valor Real",
@@ -217,7 +217,7 @@
   "NZD": {
     "name": "New Zealand Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "NZ$"
   },
   "CRC": {
     "name": "Costa Rican Colon",
@@ -232,7 +232,7 @@
   "CUP": {
     "name": "Cuban Peso",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "$MN"
   },
   "CUC": {
     "name": "Peso Convertible",
@@ -272,7 +272,7 @@
   "SVC": {
     "name": "El Salvador Colon",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "₡"
   },
   "ERN": {
     "name": "Nakfa",
@@ -297,7 +297,7 @@
   "FJD": {
     "name": "Fiji Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "FJ$"
   },
   "XPF": {
     "name": "CFP Franc",
@@ -342,7 +342,7 @@
   "GYD": {
     "name": "Guyana Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "GY$"
   },
   "HTG": {
     "name": "Gourde",
@@ -357,7 +357,7 @@
   "HKD": {
     "name": "Hong Kong Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "HK$"
   },
   "HUF": {
     "name": "Forint",
@@ -392,7 +392,7 @@
   "JMD": {
     "name": "Jamaican Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "J$"
   },
   "JPY": {
     "name": "Yen",
@@ -457,7 +457,7 @@
   "LRD": {
     "name": "Liberian Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "L$"
   },
   "LYD": {
     "name": "Libyan Dinar",
@@ -472,7 +472,7 @@
   "MOP": {
     "name": "Pataca",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "MOP$"
   },
   "MKD": {
     "name": "Denar",
@@ -512,7 +512,7 @@
   "MXN": {
     "name": "Mexican Peso",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "Mex$"
   },
   "MXV": {
     "name": "Mexican Unidad de Inversion (UDI)",
@@ -547,7 +547,7 @@
   "NAD": {
     "name": "Namibia Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "N$"
   },
   "NPR": {
     "name": "Nepalese Rupee",
@@ -667,7 +667,7 @@
   "SBD": {
     "name": "Solomon Islands Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "SI$"
   },
   "SOS": {
     "name": "Somali Shilling",
@@ -692,7 +692,7 @@
   "SRD": {
     "name": "Surinam Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "SRD"
   },
   "SEK": {
     "name": "Swedish Krona",
@@ -827,6 +827,6 @@
   "ZWL": {
     "name": "Zimbabwe Dollar",
     "minor_unit": "2",
-    "symbol": "$"
+    "symbol": "Z$"
   }
 }
