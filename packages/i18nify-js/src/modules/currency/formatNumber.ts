@@ -24,7 +24,7 @@ const formatNumber = (
 
     const parts: Array<{ type: string; value: unknown }> = formattedAmount;
     const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
-    const currencyCode = options?.currency || intlOptions.currency || 'INR';
+    const currencyCode = (options?.currency || intlOptions.currency) as string;
 
     parts.forEach((p: { type: string; value: any }) => {
       if (p.type === 'currency' && currencyCode in INTL_MAPPING) {
