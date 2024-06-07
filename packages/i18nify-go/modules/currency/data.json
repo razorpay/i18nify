@@ -149,7 +149,7 @@
       "name": "Aruban Florin",
       "numeric_code": "533",
       "minor_unit": "2",
-      "symbol": "ƒ",
+      "symbol": "Aƒ",
       "physical_currency_denominations": [
         "5",
         "10",
@@ -228,7 +228,7 @@
       "name": "Belarusian Ruble",
       "numeric_code": "933",
       "minor_unit": "2",
-      "symbol": "Br",
+      "symbol": "Rbl",
       "physical_currency_denominations": ["1", "5", "10", "20", "50", "100"]
     },
     "BZD": {
@@ -321,7 +321,7 @@
       "name": "Mvdol",
       "numeric_code": "984",
       "minor_unit": "2",
-      "symbol": "nan",
+      "symbol": "Bs",
       "physical_currency_denominations": ["10", "20", "50", "100", "200"]
     },
     "BAM": {
@@ -465,7 +465,7 @@
       "name": "CFA Franc BEAC",
       "numeric_code": "950",
       "minor_unit": "0",
-      "symbol": "CFA",
+      "symbol": "FCFA",
       "physical_currency_denominations": [
         "500",
         "1000",
@@ -481,7 +481,7 @@
       "name": "Canadian Dollar",
       "numeric_code": "124",
       "minor_unit": "2",
-      "symbol": "C$",
+      "symbol": "CA$",
       "physical_currency_denominations": ["5", "10", "20", "50", "100"]
     },
     "KYD": {
@@ -519,7 +519,7 @@
       "name": "Yuan Renminbi",
       "numeric_code": "156",
       "minor_unit": "2",
-      "symbol": "¥",
+      "symbol": "CN¥",
       "physical_currency_denominations": [
         "1",
         "2",
@@ -714,7 +714,7 @@
       "name": "Egyptian Pound",
       "numeric_code": "818",
       "minor_unit": "2",
-      "symbol": "£",
+      "symbol": "E£",
       "physical_currency_denominations": ["25", "50", "100", "200"]
     },
     "SVC": {
@@ -761,7 +761,7 @@
       "name": "Falkland Islands Pound",
       "numeric_code": "238",
       "minor_unit": "2",
-      "symbol": "£",
+      "symbol": "FK£",
       "physical_currency_denominations": ["1", "2", "5", "10", "20", "50"]
     },
     "FJD": {
@@ -1107,14 +1107,14 @@
       "name": "Lebanese Pound",
       "numeric_code": "422",
       "minor_unit": "2",
-      "symbol": "£",
+      "symbol": "L£",
       "physical_currency_denominations": ["25000", "50000", "100000"]
     },
     "LSL": {
       "name": "Loti",
       "numeric_code": "426",
       "minor_unit": "2",
-      "symbol": "L",
+      "symbol": "M",
       "physical_currency_denominations": [
         "1",
         "2",
@@ -1287,7 +1287,7 @@
       "name": "Mexican Unidad de Inversion (UDI)",
       "numeric_code": "979",
       "minor_unit": "2",
-      "symbol": "nan",
+      "symbol": "UDI",
       "physical_currency_denominations": ["nan"]
     },
     "MDL": {
@@ -1541,7 +1541,7 @@
       "name": "Tala",
       "numeric_code": "882",
       "minor_unit": "2",
-      "symbol": "T",
+      "symbol": "WS$",
       "physical_currency_denominations": ["10", "20", "50", "100"]
     },
     "STN": {
@@ -1621,7 +1621,7 @@
       "name": "South Sudanese Pound",
       "numeric_code": "728",
       "minor_unit": "2",
-      "symbol": "£",
+      "symbol": "SS£",
       "physical_currency_denominations": ["1", "5", "10", "25", "50", "100"]
     },
     "LKR": {
@@ -1843,7 +1843,7 @@
       "name": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
       "numeric_code": "858",
       "minor_unit": "2",
-      "symbol": "nan",
+      "symbol": "$U",
       "physical_currency_denominations": ["nan"]
     },
     "UYU": {
@@ -1866,7 +1866,7 @@
       "name": "Unidad Previsional",
       "numeric_code": "927",
       "minor_unit": "4",
-      "symbol": "nan",
+      "symbol": "UR",
       "physical_currency_denominations": ["nan"]
     },
     "UZS": {
