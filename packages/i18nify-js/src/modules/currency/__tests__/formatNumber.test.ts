@@ -176,7 +176,7 @@ describe('formatNumber', () => {
     ['BBD', 'en-BB', 'Bds$123,456.33'],
     ['BMD', 'en-BM', 'BD$123,456.33'],
     ['CVE', 'en-CV', `CVE${nbsp}123,456.33`],
-    ['CAD', 'en-CA', 'C$123,456.33'],
+    ['CAD', 'en-CA', 'CA$123,456.33'],
     ['KYD', 'en-KY', 'CI$123,456.33'],
     ['CLP', 'en-CL', `CLP${nbsp}123,456`],
     ['COP', 'en-CO', `COP${nbsp}123,456.33`],
@@ -194,6 +194,16 @@ describe('formatNumber', () => {
     ['SBD', 'en-SB', 'SI$123,456.33'],
     ['SRD', 'en-SR', `SRD${nbsp}123,456.33`],
     ['ZWL', 'en-ZW', `ZWL${nbsp}123,456.33`],
+    ['LSL', 'en-LS', `LSL${nbsp}123,456.33`],
+    ['AWG', 'en-AW', `AWG${nbsp}123,456.33`],
+    ['BYN', 'en', `BYN${nbsp}123,456.33`],
+    ['XAF', 'en-CM', `FCFA${nbsp}123,456`],
+    ['CNY', 'en-CN', `CN¥123,456.33`],
+    ['EGP', 'en-EG', `EGP${nbsp}123,456.33`],
+    ['FKP', 'en-FK', `FK£123,456.33`],
+    ['LBP', 'en-LB', `LBP${nbsp}123,456`],
+    ['SSP', 'en', `SSP${nbsp}123,456.33`],
+    ['WST', 'en-WS', `WS$123,456.33`],
   ];
 
   it.each(intlMappedTestCases)(

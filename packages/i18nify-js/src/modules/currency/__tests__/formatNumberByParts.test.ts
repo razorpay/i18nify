@@ -295,6 +295,16 @@ describe('formatNumberByParts', () => {
     ['SBD', 'en-SB'],
     ['SRD', 'en-SR'],
     ['ZWL', 'en-ZW'],
+    ['LSL', 'en-LS'],
+    ['AWG', 'en-AW'],
+    ['BYN', 'en'],
+    ['XAF', 'en-CM'],
+    ['CNY', 'en-CN'],
+    ['EGP', 'en-EG'],
+    ['FKP', 'en-FK'],
+    ['LBP', 'en-LB'],
+    ['SSP', 'en'],
+    ['WST', 'en-WS'],
   ];
 
   it.each(intlMappedTestCases)(
