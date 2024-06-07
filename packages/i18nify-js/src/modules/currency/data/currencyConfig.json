@@ -47,7 +47,7 @@
   "AWG": {
     "name": "Aruban Florin",
     "minor_unit": "2",
-    "symbol": "ƒ"
+    "symbol": "Aƒ"
   },
   "AUD": {
     "name": "Australian Dollar",
@@ -82,7 +82,7 @@
   "BYN": {
     "name": "Belarusian Ruble",
     "minor_unit": "2",
-    "symbol": "Br"
+    "symbol": "Rbl"
   },
   "BZD": {
     "name": "Belize Dollar",
@@ -117,7 +117,7 @@
   "BOV": {
     "name": "Mvdol",
     "minor_unit": "2",
-    "symbol": "nan"
+    "symbol": "Bs"
   },
   "BAM": {
     "name": "Convertible Mark",
@@ -167,12 +167,12 @@
   "XAF": {
     "name": "CFA Franc BEAC",
     "minor_unit": "0",
-    "symbol": "CFA"
+    "symbol": "FCFA"
   },
   "CAD": {
     "name": "Canadian Dollar",
     "minor_unit": "2",
-    "symbol": "C$"
+    "symbol": "CA$"
   },
   "KYD": {
     "name": "Cayman Islands Dollar",
@@ -192,7 +192,7 @@
   "CNY": {
     "name": "Yuan Renminbi",
     "minor_unit": "2",
-    "symbol": "¥"
+    "symbol": "CN¥"
   },
   "COP": {
     "name": "Colombian Peso",
@@ -267,7 +267,7 @@
   "EGP": {
     "name": "Egyptian Pound",
     "minor_unit": "2",
-    "symbol": "£"
+    "symbol": "E£"
   },
   "SVC": {
     "name": "El Salvador Colon",
@@ -292,7 +292,7 @@
   "FKP": {
     "name": "Falkland Islands Pound",
     "minor_unit": "2",
-    "symbol": "£"
+    "symbol": "FK£"
   },
   "FJD": {
     "name": "Fiji Dollar",
@@ -442,12 +442,12 @@
   "LBP": {
     "name": "Lebanese Pound",
     "minor_unit": "2",
-    "symbol": "£"
+    "symbol": "L£"
   },
   "LSL": {
     "name": "Loti",
     "minor_unit": "2",
-    "symbol": "L"
+    "symbol": "M"
   },
   "ZAR": {
     "name": "South African Rand",
@@ -517,7 +517,7 @@
   "MXV": {
     "name": "Mexican Unidad de Inversion (UDI)",
     "minor_unit": "2",
-    "symbol": "nan"
+    "symbol": "UDI"
   },
   "MDL": {
     "name": "Moldovan Leu",
@@ -632,7 +632,7 @@
   "WST": {
     "name": "Tala",
     "minor_unit": "2",
-    "symbol": "T"
+    "symbol": "WS$"
   },
   "STN": {
     "name": "Dobra",
@@ -677,7 +677,7 @@
   "SSP": {
     "name": "South Sudanese Pound",
     "minor_unit": "2",
-    "symbol": "£"
+    "symbol": "SS£"
   },
   "LKR": {
     "name": "Sri Lanka Rupee",
@@ -777,7 +777,7 @@
   "UYI": {
     "name": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
     "minor_unit": "2",
-    "symbol": "nan"
+    "symbol": "$U"
   },
   "UYU": {
     "name": "Peso Uruguayo",
@@ -787,7 +787,7 @@
   "UYW": {
     "name": "Unidad Previsional",
     "minor_unit": "4",
-    "symbol": "nan"
+    "symbol": "UR"
   },
   "UZS": {
     "name": "Uzbekistan Sum",

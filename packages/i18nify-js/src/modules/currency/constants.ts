@@ -49,4 +49,14 @@ export const INTL_MAPPING = {
   SBD: { $: CURRENCY_INFO.SBD.symbol }, // Solomon Islands Dollar
   SRD: { $: CURRENCY_INFO.SRD.symbol }, // Surinam Dollar
   ZWL: { $: CURRENCY_INFO.ZWL.symbol }, // Zimbabwe Dollar
+  LSL: { L: CURRENCY_INFO.LSL.symbol }, // Loti
+  AWG: { 'Afl.': CURRENCY_INFO.AWG.symbol }, // Aruban Florin
+  BYN: { Br: CURRENCY_INFO.BYN.symbol }, // Belarusian Ruble
+  XAF: { FCFA: CURRENCY_INFO.XAF.symbol }, // CFA Franc BEAC
+  CNY: { '¥': CURRENCY_INFO.CNY.symbol }, // Yuan Renminbi
+  EGP: { '£': CURRENCY_INFO.EGP.symbol }, // Egyptian Pound
+  FKP: { '£': CURRENCY_INFO.FKP.symbol }, // Falkland Islands Pound
+  LBP: { '£': CURRENCY_INFO.LBP.symbol }, // Lebanese Pound
+  SSP: { '£': CURRENCY_INFO.SSP.symbol }, // South Sudanese Pound
+  WST: { T: CURRENCY_INFO.WST.symbol }, // Tala
 };
