@@ -29,7 +29,6 @@ const formatNumberByParts = (
       Number(amount),
     );
 
-    // Initialize an empty object to store the formatted parts
     let parts: ByParts['rawParts'] = formattedAmount;
     const formattedObj: FormattedPartsObject = {};
     const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
@@ -37,7 +36,6 @@ const formatNumberByParts = (
 
     parts = configureIntlFromI18nifyData(parts, currencyCode);
 
-    // Loop through each part of the formatted amount
     parts.forEach((p) => {
       // If the part is a group separator, add it to the integer part
       if (p.type === 'group') {
@@ -51,7 +49,6 @@ const formatNumberByParts = (
       }
     });
 
-    // Determine if the currency symbol is a prefix
     return {
       ...formattedObj,
       isPrefixSymbol:
@@ -60,7 +57,6 @@ const formatNumberByParts = (
       rawParts: parts,
     };
   } catch (err) {
-    // Handle errors by throwing a new Error with the error message
     if (err instanceof Error) {
       throw new Error(err.message);
     } else {

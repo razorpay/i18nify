@@ -24,7 +24,6 @@ const formatNumber = (
       Number(amount),
     );
 
-    // Initialize an empty object to store the formatted parts
     let parts: ByParts['rawParts'] = formattedAmount;
     const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
     const currencyCode = (options?.currency || intlOptions.currency) as string;
@@ -34,7 +33,6 @@ const formatNumber = (
     // Join the parts back together to form the final formatted string
     return parts.map((p) => p.value).join('');
   } catch (err) {
-    // Handle errors by throwing a new Error with the error message
     if (err instanceof Error) {
       throw new Error(err.message);
     } else {
