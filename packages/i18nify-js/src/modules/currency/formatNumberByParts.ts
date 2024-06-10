@@ -6,7 +6,8 @@ import {
 } from './types';
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getIntlInstanceWithOptions } from '../.internal/utils';
-import { ALLOWED_FORMAT_PARTS_KEYS, INTL_MAPPING } from './constants';
+import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
+import { configureIntlFromI18nifyData } from './utils';
 
 const formatNumberByParts = (
   amount: string | number,
@@ -29,28 +30,15 @@ const formatNumberByParts = (
     );
 
     // Initialize an empty object to store the formatted parts
-    const parts = formattedAmount;
+    let parts: ByParts['rawParts'] = formattedAmount;
     const formattedObj: FormattedPartsObject = {};
     const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
     const currencyCode = (options?.currency || intlOptions.currency) as string;
 
+    parts = configureIntlFromI18nifyData(parts, currencyCode);
+
     // Loop through each part of the formatted amount
     parts.forEach((p) => {
-      /** If the part is of type 'currency' and the provided currency code exists in INTL_MAPPING,
-       *  replace the value of this part with the corresponding value from INTL_MAPPING.
-       *  This replacement is done to allow customization of the currency symbol or other parameters,
-       *  which may differ from the defaults provided by the Intl API.
-       *
-       *  Example: If the original currency symbol provided by Intl API is '$', but for the
-       *  currency code 'SGD', we want to use 'S$', then we use INTL_MAPPING to make this replacement.
-       */
-      if (p.type === 'currency' && currencyCode in INTL_MAPPING) {
-        const mapping = INTL_MAPPING[currencyCode as keyof typeof INTL_MAPPING];
-        if (p.value in mapping) {
-          p.value = mapping[p.value as keyof typeof mapping];
-        }
-      }
-
       // If the part is a group separator, add it to the integer part
       if (p.type === 'group') {
         formattedObj.integer = (formattedObj.integer || '') + p.value;
