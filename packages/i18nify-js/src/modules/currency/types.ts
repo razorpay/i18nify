@@ -4,6 +4,7 @@ import CURRENCY_INFO from './data/currencyConfig.json';
 export type FormattedPartsObject = {
   [key in (typeof ALLOWED_FORMAT_PARTS_KEYS)[number]]?: string | undefined;
 };
+
 export interface ByParts extends FormattedPartsObject {
   isPrefixSymbol: boolean;
   rawParts: Array<{ type: string; value: unknown }>;

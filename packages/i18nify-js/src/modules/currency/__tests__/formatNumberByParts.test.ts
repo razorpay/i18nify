@@ -1,10 +1,15 @@
 import { CurrencyCodeType, formatNumberByParts } from '../index';
-import {
-  positiveNumberPartsIntlMap,
-  negativeNumberPartsIntlMap,
-} from './mocks/formatNumberToParts';
+import { numberPartsIntlMap } from './mocks/formatNumberToParts';
 
 const nbsp = String.fromCharCode(160);
+
+const addMinusSignInMock = (mock: any) => {
+  return {
+    ...mock,
+    minusSign: '-',
+    rawParts: [{ type: 'minusSign', value: '-' }, ...mock.rawParts],
+  };
+};
 
 describe('formatNumberByParts', () => {
   it('should format the amount correctly for a given currency', () => {
@@ -311,27 +316,23 @@ describe('formatNumberByParts', () => {
     'parses (+ve and -ve) amount 123456.3276 with currency "%s", locale "%s" to "%s"',
     (currency, locale) => {
       const amount = 123456.3276;
+      const positiveMock =
+        numberPartsIntlMap[currency as keyof typeof numberPartsIntlMap];
+      const negativeMock = addMinusSignInMock(positiveMock);
+
       expect(
         formatNumberByParts(amount, {
           currency: currency as CurrencyCodeType,
           locale: locale as string,
         }),
-      ).toEqual(
-        positiveNumberPartsIntlMap[
-          currency as keyof typeof positiveNumberPartsIntlMap
-        ],
-      );
+      ).toEqual(positiveMock);
 
       expect(
         formatNumberByParts(-amount, {
           currency: currency as CurrencyCodeType,
           locale: locale as string,
         }),
-      ).toEqual(
-        negativeNumberPartsIntlMap[
-          currency as keyof typeof negativeNumberPartsIntlMap
-        ],
-      );
+      ).toEqual(negativeMock);
     },
   );
 });
