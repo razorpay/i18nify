@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.10.2
+
+### Patch Changes
+
+- 89e7ca9: [fix]: fix i18nify currency inconsistency
+
 ## 1.10.1
 
 ### Patch Changes
