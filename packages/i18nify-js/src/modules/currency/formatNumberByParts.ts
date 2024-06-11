@@ -7,7 +7,7 @@ import {
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getIntlInstanceWithOptions } from '../.internal/utils';
 import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
-import { configureIntlFromI18nifyData } from './utils';
+import { transformPartsFromIntl } from './utils';
 
 const formatNumberByParts = (
   amount: string | number,
@@ -34,7 +34,7 @@ const formatNumberByParts = (
     const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
     const currencyCode = (options?.currency || intlOptions.currency) as string;
 
-    parts = configureIntlFromI18nifyData(parts, currencyCode);
+    parts = transformPartsFromIntl(parts, currencyCode);
 
     parts.forEach((p) => {
       // If the part is a group separator, add it to the integer part

@@ -14,7 +14,7 @@ import { ByParts } from './types';
  * @returns {ByParts['rawParts']} - The modified array of parts with replaced values based on the
  *                                  local i18nify configuration.
  */
-export const configureIntlFromI18nifyData = (
+export const transformPartsFromIntl = (
   parts: ByParts['rawParts'],
   currencyCode: string,
 ): ByParts['rawParts'] => {

@@ -1,7 +1,7 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getIntlInstanceWithOptions } from '../.internal/utils';
 import { ByParts, CurrencyCodeType, I18nifyNumberFormatOptions } from './types';
-import { configureIntlFromI18nifyData } from './utils';
+import { transformPartsFromIntl } from './utils';
 
 // this function formats number based on different arguments passed
 const formatNumber = (
@@ -28,7 +28,7 @@ const formatNumber = (
     const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
     const currencyCode = (options?.currency || intlOptions.currency) as string;
 
-    parts = configureIntlFromI18nifyData(parts, currencyCode);
+    parts = transformPartsFromIntl(parts, currencyCode);
 
     // Join the parts back together to form the final formatted string
     return parts.map((p) => p.value).join('');

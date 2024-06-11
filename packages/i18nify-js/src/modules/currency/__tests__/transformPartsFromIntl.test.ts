@@ -1,9 +1,9 @@
 import { INTL_MAPPING } from '../constants';
 import { ByParts } from '../types';
-import { configureIntlFromI18nifyData } from '../utils';
-import { getMockParts } from './mocks/configureIntlFromI18nifyData';
+import { transformPartsFromIntl } from '../utils';
+import { getMockParts } from './mocks/transformPartsFromIntl';
 
-describe('configureIntlFromI18nifyData', () => {
+describe('transformPartsFromIntl', () => {
   Object.keys(INTL_MAPPING).forEach((currencyCode) => {
     const mapping = INTL_MAPPING[currencyCode as keyof typeof INTL_MAPPING];
     const symbolKey = Object.keys(mapping)[0] as keyof typeof mapping;
@@ -16,7 +16,7 @@ describe('configureIntlFromI18nifyData', () => {
     ];
 
     it(`should replace the currency symbol with the value from INTL_MAPPING for ${currencyCode}`, () => {
-      const result = configureIntlFromI18nifyData(mockParts, currencyCode);
+      const result = transformPartsFromIntl(mockParts, currencyCode);
       expect(result).toEqual(expectedParts);
     });
   });
@@ -24,7 +24,7 @@ describe('configureIntlFromI18nifyData', () => {
   it('should not modify parts if currency code is not in INTL_MAPPING', () => {
     const currencyCode = 'XYZ';
     const mockParts = getMockParts('$');
-    const result = configureIntlFromI18nifyData(mockParts, currencyCode);
+    const result = transformPartsFromIntl(mockParts, currencyCode);
     expect(result).toEqual(mockParts);
   });
 
@@ -37,7 +37,7 @@ describe('configureIntlFromI18nifyData', () => {
     ];
 
     const currencyCode = 'SGD';
-    const result = configureIntlFromI18nifyData(
+    const result = transformPartsFromIntl(
       mockPartsWithDifferentCurrencySymbol,
       currencyCode,
     );
