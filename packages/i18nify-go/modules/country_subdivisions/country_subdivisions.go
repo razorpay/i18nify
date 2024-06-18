@@ -11,7 +11,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"golang.org/x/exp/maps"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -79,7 +78,11 @@ func (r *CountrySubdivisions) GetAllCities() []string {
 }
 
 func (r *CountrySubdivisions) GetAllPostalcodes() []string {
-	postalcodes := maps.Keys(r.PincodeDetailsMap)
+	var postalcodes []string
+	for postalcode, _ := range r.PincodeDetailsMap {
+		postalcodes = append(postalcodes, postalcode)
+	}
+
 	return postalcodes
 }
 
