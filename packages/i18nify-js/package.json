@@ -115,6 +115,7 @@
     "tsconfig-paths": "^4.2.0"
   },
   "dependencies": {
-    "@internationalized/date": "^3.5.2"
+    "@internationalized/date": "^3.5.2",
+    "libphonenumber-js": "^1.11.4"
   }
 }
