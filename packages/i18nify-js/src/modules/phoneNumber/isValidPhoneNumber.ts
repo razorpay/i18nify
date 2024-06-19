@@ -13,11 +13,12 @@ const isValidPhoneNumber = (
   if (!cleanedPhoneNumber) return false;
 
   const regexMapper = PHONE_REGEX_MAPPER;
+  const phoneInfo = detectCountryAndDialCodeFromPhone(cleanedPhoneNumber);
   // Detect or validate the country code
   countryCode = (
     countryCode && countryCode in regexMapper
       ? countryCode
-      : detectCountryAndDialCodeFromPhone(cleanedPhoneNumber).countryCode
+      : phoneInfo.countryCode
   ) as CountryCodeType;
 
   // Return false if phoneNumber is empty
@@ -25,10 +26,14 @@ const isValidPhoneNumber = (
 
   // Check if the countryCode exists in the PHONE_REGEX_MAPPER
   if (countryCode in regexMapper) {
+    const phoneNumberWithoutDialCode = String(cleanedPhoneNumber).replace(
+      phoneInfo.dialCode,
+      '',
+    );
     // Fetch the regex pattern for the countryCode
     const regex = new RegExp(regexMapper[countryCode]);
     // Test if the cleanedPhoneNumber matches the regex pattern
-    return regex.test(cleanedPhoneNumber as string);
+    return regex.test(phoneNumberWithoutDialCode as string);
   }
 
   // Return false if the countryCode is not supported

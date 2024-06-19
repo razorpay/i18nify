@@ -48,10 +48,16 @@ export const detectCountryAndDialCodeFromPhone = (
 
     // Filter matching countries based on phone number validation regex
     const matchedCountryCode = matchingCountries.find((country) => {
+      const phoneNumberWithoutDialCode = String(phoneNumber).replace(
+        country.dialCode,
+        '',
+      );
+
       const regex = new RegExp(
         regexMapper[country.countryCode as CountryCodeType],
       );
-      if (regex && regex.test(phoneNumber.toString())) return country;
+      if (regex && regex.test(phoneNumberWithoutDialCode.toString()))
+        return country;
       return undefined;
     });
 
