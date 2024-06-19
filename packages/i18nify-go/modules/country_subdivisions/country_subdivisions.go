@@ -11,9 +11,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"os"
-	"path/filepath"
-	"runtime"
+	"io/ioutil"
+	"net/http"
 )
 
 // DataFile is the directory where JSON files containing country subdivision data are stored. "
@@ -99,20 +98,29 @@ func (r *CountrySubdivisions) GetAllStates() []string {
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
 	// Read JSON data file containing country subdivision information.
-	_, currentFileName, _, ok := runtime.Caller(0)
 	pincodeDetailsMap := make(map[string]PincodeValue)
 
-	if !ok {
-		fmt.Println("Error getting current file directory")
+	url := fmt.Sprintf("https://raw.githubusercontent.com/razorpay/i18nify/master/i18nify-data/country/subdivisions/%s.json", code)
+	resp, err := http.Get(url)
+	if err != nil {
+		fmt.Println("Error fetching JSON file:", err)
 		return CountrySubdivisions{}
 	}
-	subDivJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), code+".json"))
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		fmt.Println("Error reading JSON file:", err)
+		fmt.Println("Error reading response body:", err)
 		return CountrySubdivisions{}
 	}
 
-	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
+	var allSubDivData CountrySubdivisions
+	err = json.Unmarshal(body, &allSubDivData)
+	if err != nil {
+		fmt.Println("Error unmarshalling JSON data:", err)
+		return CountrySubdivisions{}
+	}
+
 	if allSubDivData.States != nil {
 		for _, state := range allSubDivData.States {
 			for _, city := range state.Cities {

@@ -85,25 +85,6 @@ func assertIsArray(t *testing.T, value interface{}) {
 }
 
 func TestCountrySubdivisions_GetCityAndStateForPincode(t *testing.T) {
-	_, currentFileName, _, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Println("Error getting current file directory")
-	}
-	jsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), "MY.json"))
-
-	fileName := filepath.Join(filepath.Dir(currentFileName), "MY.json")
-	readFileFunc = func(filename string) ([]byte, error) {
-		return jsonData, nil
-	}
-	defer func() {
-		readFileFunc = os.ReadFile
-	}()
-
-	_, err = readFileFunc(fileName)
-	if err != nil {
-		return
-	}
-
 	subDivData := GetCountrySubdivisions("MY")
 
 	tests := []struct {
@@ -130,25 +111,6 @@ func TestCountrySubdivisions_GetCityAndStateForPincode(t *testing.T) {
 }
 
 func TestGetAllStates(t *testing.T) {
-	_, currentFileName, _, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Println("Error getting current file directory")
-	}
-	jsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), "MY.json"))
-
-	fileName := filepath.Join(filepath.Dir(currentFileName), "MY.json")
-	readFileFunc = func(filename string) ([]byte, error) {
-		return jsonData, nil
-	}
-	defer func() {
-		readFileFunc = os.ReadFile
-	}()
-
-	_, err = readFileFunc(fileName)
-	if err != nil {
-		return
-	}
-
 	subDivData := GetCountrySubdivisions("MY")
 
 	tests := []struct {
@@ -174,25 +136,6 @@ func TestGetAllStates(t *testing.T) {
 }
 
 func TestGetAllCities(t *testing.T) {
-	_, currentFileName, _, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Println("Error getting current file directory")
-	}
-	jsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), "MY.json"))
-
-	fileName := filepath.Join(filepath.Dir(currentFileName), "MY.json")
-	readFileFunc = func(filename string) ([]byte, error) {
-		return jsonData, nil
-	}
-	defer func() {
-		readFileFunc = os.ReadFile
-	}()
-
-	_, err = readFileFunc(fileName)
-	if err != nil {
-		return
-	}
-
 	subDivData := GetCountrySubdivisions("MY")
 	tests := []struct {
 		name     string
