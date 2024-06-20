@@ -16,6 +16,7 @@ export interface GetMaskedPhoneNumberOptions {
 
 export interface PhoneNumberMockEntry {
   PhoneNumber: string;
+  isValid: boolean;
 }
 
 export interface PhoneNumbersMockData {

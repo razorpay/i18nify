@@ -1,13 +1,7 @@
-import {
-  CountryCode,
-  isValidPhoneNumber as googleIsValidPhoneNumber,
-} from 'libphonenumber-js';
-
 import PHONE_NUMBERS_JSON from './mocks/phoneNumbers.json';
 import { isValidPhoneNumber } from '../index';
 import { CountryCodeType } from '../../types';
 import { PhoneNumbersMockData } from '../types';
-import { getPhoneNumberWithoutDialCode } from '../utils';
 
 describe('isValidPhoneNumber', () => {
   describe('test using inhouse validator', () => {
@@ -72,18 +66,13 @@ describe('isValidPhoneNumber', () => {
     Object.keys(phoneNumbersData).forEach((countryCode) => {
       it(`should match output with libphonenumber-js for ${countryCode}`, () => {
         phoneNumbersData[countryCode].forEach(
-          (data: { PhoneNumber: string }) => {
+          (data: { PhoneNumber: string; isValid: boolean }) => {
             expect(
               isValidPhoneNumber(
                 data.PhoneNumber,
                 countryCode as CountryCodeType,
               ),
-            ).toBe(
-              googleIsValidPhoneNumber(
-                getPhoneNumberWithoutDialCode(data.PhoneNumber),
-                countryCode as CountryCode,
-              ),
-            );
+            ).toBe(data.isValid);
           },
         );
       });
