@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.10.3
+
+### Patch Changes
+
+- 948d7fc: fix: fix phone number regex's
+
 ## 1.10.2
 
 ### Patch Changes
