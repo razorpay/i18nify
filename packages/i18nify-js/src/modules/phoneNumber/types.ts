@@ -13,3 +13,12 @@ export interface GetMaskedPhoneNumberOptions {
   phoneNumber?: string;
   maskingOptions?: MaskingOptions;
 }
+
+export interface PhoneNumberMockEntry {
+  PhoneNumber: string;
+  isValid: boolean;
+}
+
+export interface PhoneNumbersMockData {
+  [countryCode: string]: PhoneNumberMockEntry[];
+}

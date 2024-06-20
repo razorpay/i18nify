@@ -1,0 +1,3856 @@
+{
+  "IN": [
+    {
+      "PhoneNumber": "+91-755-505-9215",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-755-552-2890",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-925-558-7693",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-755-567-0672",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-755-577-0063",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-985-554-3248",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-855-534-7182",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-755-532-4832",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-965-557-2586",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-755-585-0362",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-965-557-7762",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-855-550-9869",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-755-510-7892",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-935-551-9900",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-855-562-4809",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-955-556-1523",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-995-553-1337",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-755-519-2110",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-755-513-7682",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+91-905-551-5706",
+      "isValid": true
+    }
+  ],
+  "MY": [
+    {
+      "PhoneNumber": "+60-155-552-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-165-552-7",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-135-557-8",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-195-553-2",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-145-555-3",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-135-552-1",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-185-552-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-145-554-0",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-165-554-5",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-155-558-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-155-553-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-185-552-3",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-115-559-1",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-195-559-9",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-155-555-7",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-185-554-3",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-145-550-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-185-555-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-185-554-4",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+60-195-559-2",
+      "isValid": false
+    }
+  ],
+  "SG": [
+    {
+      "PhoneNumber": "+65-855-577-32",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-955-533-60",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-502-99",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-507-79",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-592-65",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-955-561-07",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-548-86",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-535-48",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-955-540-66",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-528-91",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-520-53",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-955-555-07",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-955-551-83",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-552-83",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-508-97",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-574-99",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-531-56",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-588-74",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-955-508-63",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+65-855-584-41",
+      "isValid": true
+    }
+  ],
+  "US": [
+    {
+      "PhoneNumber": "+1-555-848-8036",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-672-6057",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-587-0190",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-666-4790",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-380-8643",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-533-2242",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-129-3700",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-347-8037",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-776-5722",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-640-5928",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-794-2784",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-051-4977",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-713-0974",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-271-0921",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-731-6184",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-977-7454",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-834-4259",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-343-6668",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-336-8303",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-449-4842",
+      "isValid": true
+    }
+  ],
+  "ID": [
+    {
+      "PhoneNumber": "+62-899-555-780",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-899-555-654",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-838-555-555",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-838-555-732",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-899-555-157",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-838-555-205",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-899-555-444",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-838-555-650",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-813-555-463",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-897-555-481",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-858-555-946",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-856-555-271",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-838-555-579",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-838-555-676",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-857-555-724",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-878-555-917",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-859-555-249",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-838-555-689",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-817-555-753",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+62-878-555-864",
+      "isValid": true
+    }
+  ],
+  "AF": [
+    {
+      "PhoneNumber": "+93-765-558-5785",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-755-555-9318",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-795-554-26",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-795-558-866",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+93-705-554-27",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-715-556-46",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-755-553-0519",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-785-557-991",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+93-715-559-3435",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-705-556-27",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-725-556-57",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-795-554-141",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+93-755-558-73",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-785-556-55",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-715-557-708",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+93-755-551-35",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-705-552-2743",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-795-555-285",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+93-775-558-0160",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+93-775-555-0510",
+      "isValid": false
+    }
+  ],
+  "AX": [
+    {
+      "PhoneNumber": "+358-457-555-9680",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-7615",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-4259",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-7155",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-9758",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-6303",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-3376",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-3765",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-5505",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-0137",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-5656",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-8427",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-8589",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-5363",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-0499",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-5598",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-0141",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-8215",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-4341",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+358-457-555-2105",
+      "isValid": true
+    }
+  ],
+  "AL": [
+    {
+      "PhoneNumber": "+355-555-537-1",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-555-571-7",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-675-550-5",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-665-556-4",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-755-535-5",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-685-555-8",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-675-556-5",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-655-597-8",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-555-520-2",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-555-544-3",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-755-572-7",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-655-536-7",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-655-569-8",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-755-551-4",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-755-561-2",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-685-554-9",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-655-534-9",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-695-551-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-655-554-4",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+355-655-594-7",
+      "isValid": false
+    }
+  ],
+  "DZ": [
+    {
+      "PhoneNumber": "+213-655-551-425",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-655-521-324",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-755-526-432",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-598-554",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-522-903",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-655-521-984",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-500-533",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-655-570-648",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-576-168",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-509-606",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-755-525-589",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-574-035",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-655-527-053",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-655-506-266",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-599-154",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-517-484",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-755-567-381",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-500-896",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-555-501-453",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+213-655-557-652",
+      "isValid": true
+    }
+  ],
+  "AS": [
+    {
+      "PhoneNumber": "+1-684-555-3955",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-4354",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-8559",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-3791",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-6737",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-6450",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-1008",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-6287",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-2501",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-1889",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-9444",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-6895",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-4060",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-8025",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-4238",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-3625",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-9396",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-0310",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-0935",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-684-555-4158",
+      "isValid": true
+    }
+  ],
+  "AD": [
+    {
+      "PhoneNumber": "+376-355-546-8423",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-542-09",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-553-0496",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-517-41",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-500-918",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-509-78",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-574-65",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-540-9219",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-589-2947",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-503-12",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-561-0145",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-542-75",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-567-35",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-534-1337",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-500-0934",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-589-1122",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-505-09",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-527-776",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-553-4145",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+376-355-503-992",
+      "isValid": false
+    }
+  ],
+  "AO": [
+    {
+      "PhoneNumber": "+244-925-558-8347",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-925-558-85",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-925-555-53",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-915-551-836",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+244-935-556-78",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-925-553-0663",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-915-552-3754",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-915-559-736",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+244-935-555-717",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+244-925-552-32",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-925-557-462",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+244-915-558-7914",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-915-552-00",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-935-559-6324",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-935-552-7020",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-915-550-0131",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-935-551-400",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+244-915-557-900",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+244-915-554-5544",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+244-915-551-8685",
+      "isValid": false
+    }
+  ],
+  "AI": [
+    {
+      "PhoneNumber": "+1-264-555-6534",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-0146",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-1603",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-0721",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-9595",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-3090",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-5859",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-4783",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-9432",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-2943",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-8102",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-6005",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-5694",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-9356",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-3805",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-7572",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-6718",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-7642",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-3928",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-264-555-3638",
+      "isValid": true
+    }
+  ],
+  "AG": [
+    {
+      "PhoneNumber": "+1-268-555-4249",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-2047",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-9798",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-0698",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-7144",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-3547",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-6991",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-7940",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-5469",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-7135",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-9102",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-5679",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-7382",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-5627",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-6042",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-1482",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-2092",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-0829",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-9825",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-268-555-5669",
+      "isValid": true
+    }
+  ],
+  "AR": [
+    {
+      "PhoneNumber": "+54-955-551-46",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-955-590-7786",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-555-35",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-552-9270",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-955-551-3787",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-551-690",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-556-8340",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-955-520-774",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-553-6474",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-955-544-748",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-559-151",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-555-3556",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-551-729",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-955-591-249",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-955-599-989",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-555-2044",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-155-553-0996",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-955-563-89",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-955-585-929",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+54-955-546-973",
+      "isValid": false
+    }
+  ],
+  "AM": [
+    {
+      "PhoneNumber": "+374-915-553",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-555-551",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-915-554",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-445-556",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-415-557",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-945-559",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-435-557",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-555-550",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-915-558",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-915-556",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-985-558",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-415-550",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-445-555",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-775-557",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-445-556",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-995-551",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-555-557",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-775-552",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-775-559",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+374-975-552",
+      "isValid": false
+    }
+  ],
+  "AW": [
+    {
+      "PhoneNumber": "+297-555-878-7885",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-007-29",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-112-5212",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-426-685",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-990-45",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-764-992",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-731-00",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-918-903",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-777-222",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-785-616",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-710-86",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-373-564",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-092-155",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-546-95",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-538-752",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-930-497",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-884-265",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-029-06",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-967-3143",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+297-555-608-12",
+      "isValid": false
+    }
+  ],
+  "AU": [
+    {
+      "PhoneNumber": "+61-455-559-408",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-553-514",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-557-131",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-562-931",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-534-404",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-527-630",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-535-163",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-562-225",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-530-698",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-595-220",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-575-939",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-552-051",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-571-072",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-512-511",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-513-643",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-505-644",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-564-762",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-531-763",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-510-215",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+61-455-564-735",
+      "isValid": true
+    }
+  ],
+  "AT": [
+    {
+      "PhoneNumber": "+43-688-555-1930",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-650-555-6072",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-681-555-14986",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-677-555-5981",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-688-555-01947",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-650-555-6595",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-676-555-38740",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-650-555-3178",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-650-555-5696",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-660-555-69158",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-664-555-9578",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-677-555-70899",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-676-555-03494",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-699-555-0275",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-650-555-39194",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-650-555-02172",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-677-555-1119",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-650-555-38694",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-676-555-71876",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+43-681-555-5741",
+      "isValid": true
+    }
+  ],
+  "AZ": [
+    {
+      "PhoneNumber": "+994-775-554-679",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+994-405-559-828",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+994-405-554-14",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-555-552-3346",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-775-557-2084",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-515-555-64",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-775-558-9673",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-775-550-3635",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-555-552-192",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+994-515-556-34",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-555-554-845",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+994-555-559-008",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+994-515-552-370",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+994-775-558-90",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-555-558-674",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+994-705-554-216",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+994-555-558-8467",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-515-551-0325",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+994-705-556-385",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+994-405-550-9405",
+      "isValid": false
+    }
+  ],
+  "BS": [
+    {
+      "PhoneNumber": "+1-242-355-5518",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-455-5515",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-455-5508",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-355-5567",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-555-5521",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-555-5548",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-555-5529",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-555-5598",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-455-5531",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-355-5503",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-355-5574",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-555-5526",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-455-5576",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-355-5562",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-455-5584",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-455-5506",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-555-5511",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-455-5559",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-355-5568",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-242-555-5542",
+      "isValid": true
+    }
+  ],
+  "BH": [
+    {
+      "PhoneNumber": "+973-388-555-73",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-384-555-61",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-355-555-24",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-377-555-77",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-315-550-65",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-383-555-40",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-666-555-31",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-335-556-78",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-377-555-20",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-315-556-15",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-388-555-94",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-315-554-70",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-322-555-63",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-383-555-32",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-663-555-45",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-395-552-72",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-353-555-61",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-663-555-25",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-377-555-38",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+973-384-555-51",
+      "isValid": true
+    }
+  ],
+  "BD": [
+    {
+      "PhoneNumber": "+880-165-559-4839",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-115-557-6200",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-115-554-8779",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-155-555-6823",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-165-556-5910",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-115-556-8517",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-155-551-8024",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-155-559-4486",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-185-557-5867",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-165-558-9304",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-175-557-3819",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-175-554-5294",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-115-550-5175",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-115-554-7826",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-195-556-1798",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-115-559-7082",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-175-557-1733",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-115-551-9029",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-175-556-3503",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+880-195-554-3812",
+      "isValid": true
+    }
+  ],
+  "BB": [
+    {
+      "PhoneNumber": "+1-246-555-2839",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-6726",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-6406",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-2492",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-3155",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-7593",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-9777",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-7752",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-9845",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-4995",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-6790",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-0542",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-0696",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-7068",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-5261",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-2760",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-0132",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-4968",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-6290",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-246-555-3309",
+      "isValid": true
+    }
+  ],
+  "BY": [
+    {
+      "PhoneNumber": "+375-255-551-620",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-295-556-144",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-445-559-575",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-255-553-118",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-335-552-934",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-335-558-686",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-445-559-717",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-445-554-454",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-445-558-130",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-445-559-360",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-255-554-103",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-335-555-526",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-335-558-584",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-295-556-580",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-445-559-353",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-295-553-963",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-295-559-250",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-255-552-065",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-445-550-835",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+375-445-557-506",
+      "isValid": true
+    }
+  ],
+  "BE": [
+    {
+      "PhoneNumber": "+32-485-556-231",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-495-559-329",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-475-552-556",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-456-555-694",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-495-554-238",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-475-556-706",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-456-555-874",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-495-559-580",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-456-555-232",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-456-555-246",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-456-555-283",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-495-554-574",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-495-559-420",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-456-555-166",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-456-555-631",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-456-555-635",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-485-555-132",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-495-558-870",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-456-555-448",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+32-485-558-054",
+      "isValid": true
+    }
+  ],
+  "BZ": [
+    {
+      "PhoneNumber": "+501-655-597",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-543-3",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+501-655-597-9",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+501-655-517",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-565",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-593",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-554",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-546-0",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+501-655-576",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-557",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-551-5",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+501-655-519",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-561",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-569-5",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+501-655-520-1",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+501-655-572",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-578-6",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+501-655-569",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+501-655-566-5",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+501-655-551",
+      "isValid": false
+    }
+  ],
+  "BJ": [
+    {
+      "PhoneNumber": "+229-955-554-02",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+229-955-538-2214",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-578-743",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-564-1493",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-541-11",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+229-955-588-594",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-575-2774",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-579-92",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+229-955-503-2603",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-596-5514",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-504-400",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-590-83",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+229-955-565-5719",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-581-110",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-574-863",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-578-7691",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-550-192",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-521-0614",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-595-4703",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+229-955-591-775",
+      "isValid": false
+    }
+  ],
+  "BM": [
+    {
+      "PhoneNumber": "+1-441-555-9295",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-2776",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-2850",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-8109",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-4321",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-4103",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-5052",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-2785",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-5276",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-4332",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-4642",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-5180",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-6396",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-5033",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-5917",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-8966",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-9335",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-0576",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-4920",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-441-555-8807",
+      "isValid": true
+    }
+  ],
+  "BT": [
+    {
+      "PhoneNumber": "+975-175-559-789",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-557-7379",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-555-3515",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-556-034",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-558-7981",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-557-305",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-552-0208",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-559-00",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+975-175-555-6625",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-559-237",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-552-107",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-552-5049",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-556-9670",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-552-049",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-557-779",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-551-563",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-550-611",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-550-084",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+975-175-552-41",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+975-175-554-8362",
+      "isValid": false
+    }
+  ],
+  "BO": [
+    {
+      "PhoneNumber": "+591-755-590-685",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-755-512-4498",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-755-532-79",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+591-755-500-41",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+591-755-500-6839",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-655-525-359",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-655-599-7178",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-655-549-38",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+591-755-542-6824",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-655-524-343",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-655-595-07",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+591-655-589-13",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+591-755-553-90",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+591-755-503-153",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-655-579-7226",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-655-541-9045",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-755-596-90",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+591-655-588-575",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+591-755-597-16",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+591-655-522-4026",
+      "isValid": false
+    }
+  ],
+  "BQ": [
+    {
+      "PhoneNumber": "+599-555-305-4875",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-873-310",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-676-6376",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-715-61",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-841-3886",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-333-4444",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-625-07",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-784-77",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-707-1355",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-095-950",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-202-801",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-487-27",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-542-418",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-121-139",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-814-021",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-328-845",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-318-8222",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-822-854",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-956-067",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+599-555-011-6190",
+      "isValid": false
+    }
+  ],
+  "BA": [
+    {
+      "PhoneNumber": "+387-645-556-45",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-625-559-67",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-635-552-72",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-645-559-57",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-635-558-09",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-665-551-06",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-615-554-05",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-615-557-89",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-665-557-83",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-665-558-04",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-635-554-20",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-665-550-22",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-605-559-88",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-655-553-41",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-665-551-81",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-605-551-14",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-665-553-28",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-655-553-78",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-605-556-32",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+387-625-557-75",
+      "isValid": true
+    }
+  ],
+  "BW": [
+    {
+      "PhoneNumber": "+267-755-505-459",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-585-732",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-542-951",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-588-73",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+267-755-568-529",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-576-712",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-593-9259",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-551-5044",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-549-711",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-546-9857",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-531-5326",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-545-93",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+267-755-570-64",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+267-755-570-290",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-577-5339",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-519-600",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-552-9366",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-552-5008",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-554-104",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+267-755-571-07",
+      "isValid": true
+    }
+  ],
+  "BR": [
+    {
+      "PhoneNumber": "+55-955-510-05978",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-555-74377",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-526-62017",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-557-85491",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-572-19606",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-558-34557",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-509-55192",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-559-86210",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-565-28192",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-558-97279",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-523-80344",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-553-48965",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-512-73762",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-506-74145",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-556-01891",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-533-76103",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-542-11639",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-582-97967",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-581-20929",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+55-955-575-38673",
+      "isValid": true
+    }
+  ],
+  "IO": [
+    {
+      "PhoneNumber": "+246-387-555-5",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-7",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-0",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-7",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-0",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-7",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-0",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-7",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-5",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-1",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-1",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-0",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-1",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-1",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-4",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-6",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+246-387-555-1",
+      "isValid": false
+    }
+  ],
+  "BN": [
+    {
+      "PhoneNumber": "+673-855-580-8735",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-565-927",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-562-646",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-555-8391",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-599-926",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-524-807",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-599-2103",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-581-08",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-572-3380",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-543-32",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-581-0613",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-520-53",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-573-066",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-523-57",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-598-16",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-560-5888",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-540-4354",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-582-52",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-591-85",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+673-855-541-3953",
+      "isValid": false
+    }
+  ],
+  "BG": [
+    {
+      "PhoneNumber": "+359-485-552-573",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+359-485-550-935",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+359-875-551-301",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-895-553-979",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-885-559-473",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-485-553-659",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+359-875-552-029",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-885-554-513",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-988-555-177",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-485-557-476",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+359-988-555-501",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-875-558-561",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-885-551-787",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-485-555-177",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+359-885-553-055",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-485-554-067",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+359-988-555-509",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-485-552-404",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+359-988-555-233",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+359-895-553-538",
+      "isValid": true
+    }
+  ],
+  "BF": [
+    {
+      "PhoneNumber": "+226-745-552-04",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-795-554-76",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-785-559-04",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-745-554-77",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-715-558-43",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-785-550-81",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-775-555-57",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-745-550-53",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-765-553-00",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-745-555-41",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-735-550-73",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-785-559-65",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-715-552-17",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-725-557-88",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-725-550-58",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-755-557-56",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-755-556-64",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-775-557-45",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-745-559-22",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+226-785-557-84",
+      "isValid": true
+    }
+  ],
+  "BI": [
+    {
+      "PhoneNumber": "+257-755-582-681",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-525-2775",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-503-47",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+257-755-521-9732",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-561-6066",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-575-6739",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-551-58",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+257-755-540-56",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+257-755-587-23",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+257-755-530-396",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-517-69",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+257-755-508-86",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+257-755-550-3627",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-595-1284",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-586-3167",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-551-2727",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-529-2555",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-520-08",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+257-755-551-2170",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+257-755-581-076",
+      "isValid": false
+    }
+  ],
+  "KH": [
+    {
+      "PhoneNumber": "+855-775-556-801",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-775-555-975",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-995-552-408",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-925-558-345",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-925-550-140",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-125-559-620",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-925-554-452",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-775-558-495",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-125-555-203",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-125-550-797",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-925-553-939",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-125-552-780",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-925-555-327",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-925-559-960",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-775-552-236",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-115-554-396",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-925-555-714",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-995-558-623",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-115-558-197",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+855-925-553-229",
+      "isValid": true
+    }
+  ],
+  "CM": [
+    {
+      "PhoneNumber": "+237-755-530-04",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-955-524-40",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-955-568-0123",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-955-510-2826",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-955-504-777",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-955-521-9917",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-549-185",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-576-816",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-503-41",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-955-535-2505",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-518-1396",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-546-4286",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-596-988",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-585-02",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-955-587-55",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-550-706",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-572-253",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-506-7781",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-522-7297",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+237-755-597-4265",
+      "isValid": false
+    }
+  ],
+  "CA": [
+    {
+      "PhoneNumber": "+1-555-065-7121",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-692-2899",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-976-9527",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-024-2106",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-141-5355",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-101-2377",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-077-5910",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-774-1649",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-382-4756",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-746-6156",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-579-2117",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-086-4231",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-420-2231",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-819-8937",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-094-1643",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-682-5716",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-905-3996",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-200-3733",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-811-0824",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-555-091-7992",
+      "isValid": true
+    }
+  ],
+  "KY": [
+    {
+      "PhoneNumber": "+1-345-555-3457",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-9489",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-0382",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-9113",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-1426",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-1451",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-0416",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-4852",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-8390",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-6330",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-4006",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-9794",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-1608",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-4997",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-1050",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-1538",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-2990",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-3467",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-7185",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+1-345-555-3707",
+      "isValid": true
+    }
+  ],
+  "CF": [
+    {
+      "PhoneNumber": "+236-555-389-0317",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-445-62",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-059-361",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-524-972",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-719-0271",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-206-99",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-090-9589",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-498-7524",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-420-9465",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-973-13",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-715-029",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-137-339",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-102-1892",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-215-49",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-519-1191",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-230-6306",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-637-12",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-412-702",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-595-060",
+      "isValid": false
+    },
+    {
+      "PhoneNumber": "+236-555-476-672",
+      "isValid": false
+    }
+  ],
+  "TD": [
+    {
+      "PhoneNumber": "+235-935-552-64",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-635-551-69",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-935-551-49",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-655-556-08",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-995-553-80",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-935-554-75",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-655-557-67",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-935-550-20",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-935-551-12",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-665-552-77",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-905-556-22",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-905-557-69",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-905-552-07",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-655-558-12",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-905-559-92",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-995-555-63",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-655-555-81",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-635-552-56",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-905-553-35",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+235-955-552-75",
+      "isValid": true
+    }
+  ],
+  "CL": [
+    {
+      "PhoneNumber": "+56-955-530-022",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-558-640",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-572-896",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-555-562",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-544-212",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-512-066",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-542-176",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-511-025",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-521-366",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-592-763",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-563-576",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-586-032",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-514-084",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-539-979",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-547-002",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-582-495",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-567-197",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-533-064",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-592-763",
+      "isValid": true
+    },
+    {
+      "PhoneNumber": "+56-955-524-164",
+      "isValid": true
+    }
+  ]
+}

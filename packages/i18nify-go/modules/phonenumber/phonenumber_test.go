@@ -17,7 +17,7 @@ func TestUnmarshalPhoneNumber(t *testing.T) {
 	information := result.CountryTeleInformation["IN"]
 	assert.Equal(t, "+91", information.DialCode, "DialCode field mismatch")
 	assert.Equal(t, "xxxx xxxxxx", information.Format, "Format field mismatch")
-	assert.Equal(t, "/^(?:(?:\\+|0{0,2})91\\s*[-]?\\s*|[0]?)?[6789]\\d{9}$/", information.Regex, "Regex field mismatch")
+	assert.Equal(t, "(?:000800|[2-9]\\d\\d)\\d{7}|1\\d{7,12}", information.Regex, "Regex field mismatch")
 }
 
 func TestMarshalPhoneNumber(t *testing.T) {
