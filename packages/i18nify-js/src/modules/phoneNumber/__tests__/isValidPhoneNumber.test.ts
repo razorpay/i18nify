@@ -4,7 +4,7 @@ import { CountryCodeType } from '../../types';
 import { PhoneNumbersMockData } from '../types';
 
 describe('isValidPhoneNumber', () => {
-  describe('test using inhouse validator', () => {
+  describe('standard validity checks', () => {
     const validTestDataSet = [
       { countryCode: 'IN', phoneNumber: '+917394926646' },
       { countryCode: 'MY', phoneNumber: '+60123456789' },
@@ -60,11 +60,11 @@ describe('isValidPhoneNumber', () => {
     });
   });
 
-  describe('test via libphonenumber-js validator', () => {
+  describe('validation against known data sets from https://fakenumber.in/', () => {
     const phoneNumbersData: PhoneNumbersMockData =
       PHONE_NUMBERS_JSON as PhoneNumbersMockData;
     Object.keys(phoneNumbersData).forEach((countryCode) => {
-      it(`should match output with libphonenumber-js for ${countryCode}`, () => {
+      it(`should match output for ${countryCode}`, () => {
         phoneNumbersData[countryCode].forEach(
           (data: { PhoneNumber: string; isValid: boolean }) => {
             expect(
