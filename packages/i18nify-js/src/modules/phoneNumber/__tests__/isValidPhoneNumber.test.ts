@@ -7,6 +7,7 @@ import PHONE_NUMBERS_JSON from './mocks/phoneNumbers.json';
 import { isValidPhoneNumber } from '../index';
 import { CountryCodeType } from '../../types';
 import { PhoneNumbersMockData } from '../types';
+import { getPhoneNumberWithoutDialCode } from '../utils';
 
 describe('isValidPhoneNumber', () => {
   describe('test using inhouse validator', () => {
@@ -79,7 +80,7 @@ describe('isValidPhoneNumber', () => {
               ),
             ).toBe(
               googleIsValidPhoneNumber(
-                data.PhoneNumber,
+                getPhoneNumberWithoutDialCode(data.PhoneNumber),
                 countryCode as CountryCode,
               ),
             );

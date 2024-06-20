@@ -53,10 +53,11 @@ export const detectCountryAndDialCodeFromPhone = (
         '',
       );
 
-      const regex = new RegExp(
-        regexMapper[country.countryCode as CountryCodeType],
-      );
-      if (regex && regex.test(phoneNumberWithoutDialCode.toString()))
+      const regex = regexMapper[country.countryCode as CountryCodeType];
+      if (
+        regex &&
+        matchesEntirely(phoneNumberWithoutDialCode as string, regex as string)
+      )
         return country;
       return undefined;
     });
@@ -72,6 +73,13 @@ export const detectCountryAndDialCodeFromPhone = (
 
   // Return empty string if no country code is detected
   return { countryCode: '' as CountryCodeType, dialCode: '' };
+};
+
+export const getPhoneNumberWithoutDialCode = (phoneNumber: string | number) => {
+  const cleanedPhoneNumber = cleanPhoneNumber(String(phoneNumber));
+  const { dialCode } = detectCountryAndDialCodeFromPhone(cleanedPhoneNumber);
+
+  return String(cleanedPhoneNumber).replace(dialCode, '');
 };
 
 export const cleanPhoneNumber = (phoneNumber: string) => {
@@ -167,4 +175,9 @@ export const alternateMasking = (
       { result: [], numericCount: 0 },
     )
     .result.join('');
+};
+
+export const matchesEntirely = (text: string, regular_expression: string) => {
+  text = text || '';
+  return new RegExp('^(?:' + regular_expression + ')$').test(text);
 };
