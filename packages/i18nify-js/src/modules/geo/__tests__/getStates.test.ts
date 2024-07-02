@@ -21,12 +21,16 @@ describe('getStates', () => {
   it('throws error for invalid country code', async () => {
     // @ts-expect-error invalid state code for testing
     await expect(() => getStates('XYZ')).rejects.toEqual(
-      `Invalid country code: XYZ`,
+      new Error(
+        `Invalid country code: XYZ. Please ensure you provide a valid country code that is included in the supported list.`,
+      ),
     );
   });
 
   it('handles API errors', async () => {
     global.fetch = jest.fn(() => Promise.reject('API Error'));
-    await expect(getStates('IN')).rejects.toThrow('Error in API response');
+    await expect(getStates('IN')).rejects.toThrow(
+      'An error occurred while fetching state data. The error details are: undefined.',
+    );
   });
 });

@@ -59,7 +59,7 @@ describe('dateTime - getRelativeTime', () => {
         baseDate: oneDayAgo,
       }),
     ).toThrow(
-      'Error: Value dummy out of range for Intl.RelativeTimeFormat options property style',
+      'Error: An error occurred while creating the RelativeTimeFormat instance: Value dummy out of range for Intl.RelativeTimeFormat options property style. Please ensure the provided options are valid and try again.',
     );
   });
 

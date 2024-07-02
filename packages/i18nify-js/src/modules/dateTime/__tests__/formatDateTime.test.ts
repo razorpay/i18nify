@@ -251,7 +251,7 @@ describe('dateTime - formatDateTime', () => {
         intlOptions: { weekday: 'dummy' } as any,
       }),
     ).toThrow(
-      'Error: Value dummy out of range for Intl.DateTimeFormat options property weekday',
+      'Error: An error occurred while creating the DateFormatter instance: Value dummy out of range for Intl.DateTimeFormat options property weekday. Please ensure the provided options are valid and try again.',
     );
   });
 

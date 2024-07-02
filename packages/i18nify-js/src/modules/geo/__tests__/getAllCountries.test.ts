@@ -25,6 +25,8 @@ describe('getAllCountries', () => {
 
   it('handles API errors', async () => {
     global.fetch = jest.fn(() => Promise.reject('API Error'));
-    await expect(getAllCountries()).rejects.toThrow('Error in API response');
+    await expect(getAllCountries()).rejects.toThrow(
+      'An error occurred while fetching country metadata. The error details are: undefined.',
+    );
   });
 });

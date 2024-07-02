@@ -20,7 +20,9 @@ describe('phoneNumber - getDialCodeByCountryCode', () => {
   it('should throw an error for invalid country codes', () => {
     const invalidCountryCode = 'XX'; // XX is not a valid country code
     expect(() => getDialCodeByCountryCode(invalidCountryCode as any)).toThrow(
-      `Invalid countryCode: ${invalidCountryCode}`,
+      new Error(
+        `Error: The provided country code is invalid. The received value was: ${invalidCountryCode}. Please ensure you pass a valid country code.`,
+      ),
     );
   });
 });

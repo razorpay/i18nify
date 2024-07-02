@@ -24,6 +24,8 @@ describe('currency - convertToMajorUnit', () => {
       convertToMajorUnit(100, {
         currency: unsupportedCurrencyCode as CurrencyCodeType,
       });
-    }).toThrow('Unsupported currency XXX');
+    }).toThrow(
+      `Error: The provided currency code is either empty or not supported. The received value was : ${unsupportedCurrencyCode}. Please ensure you pass a valid currency code that is included in the supported list.`,
+    );
   });
 });

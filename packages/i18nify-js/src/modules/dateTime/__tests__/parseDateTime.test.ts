@@ -133,7 +133,7 @@ describe('dateTime - parseDateTime', () => {
         intlOptions: { weekday: 'dummy' } as any,
       }),
     ).toThrow(
-      'Error: Value dummy out of range for Intl.DateTimeFormat options property weekday',
+      'Error: An error occurred while parsing the date: Value dummy out of range for Intl.DateTimeFormat options property weekday. Please ensure the provided date and options are valid and try again.',
     );
   });
 });

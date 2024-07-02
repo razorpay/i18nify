@@ -18,12 +18,14 @@ describe('geo - getFlagOfCountry', () => {
     const sampleInvalidCodes = 'XX';
     expect(() =>
       getFlagOfCountry(sampleInvalidCodes as CountryCodeType),
-    ).toThrow(`Invalid country code: ${sampleInvalidCodes}`);
+    ).toThrow(
+      `Error: The provided country code is invalid. The received value was: ${sampleInvalidCodes}. Please ensure you pass a valid country code that is included in the supported list.`,
+    );
   });
 
   it('should throw an error for an empty string', () => {
     expect(() => getFlagOfCountry('' as CountryCodeType)).toThrow(
-      'Invalid country code: ',
+      'Error: The provided country code is invalid. The received value was: . Please ensure you pass a valid country code that is included in the supported list.',
     );
   });
 

@@ -30,7 +30,9 @@ describe('getCities', () => {
     const invalidCountryCode = 'XYZ';
     // @ts-expect-error invalid country code for testing
     await expect(getCities(invalidCountryCode)).rejects.toEqual(
-      `Invalid country code: ${invalidCountryCode}`,
+      new Error(
+        `Invalid country code: XYZ. Please ensure you provide a valid country code that is included in the supported list.`,
+      ),
     );
   });
 
@@ -38,12 +40,14 @@ describe('getCities', () => {
     const validCountryCode = 'IN';
     const missingStateCode = 'XYZ';
     await expect(getCities(validCountryCode, missingStateCode)).rejects.toThrow(
-      `State code ${missingStateCode} missing in ${validCountryCode}`,
+      `An error occurred while fetching city data. The error details are: State code ${missingStateCode} is missing in ${validCountryCode}. Please ensure you provide a valid state code that exists within the specified country..`,
     );
   });
 
   it('handles API errors', async () => {
     global.fetch = jest.fn(() => Promise.reject('API Error'));
-    await expect(getCities('IN')).rejects.toThrow('Error in API response');
+    await expect(getCities('IN')).rejects.toThrow(
+      'An error occurred while fetching city data. The error details are: undefined.',
+    );
   });
 });
