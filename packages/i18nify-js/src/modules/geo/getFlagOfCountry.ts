@@ -18,7 +18,7 @@ import { isCountryValid } from './utils';
 const getFlagOfCountry = (_countryCode: CountryCodeType): GetFlagReturnType => {
   if (!isCountryValid(_countryCode)) {
     throw new Error(
-      `The provided country code is invalid. The received value was: ${_countryCode}. Please ensure you pass a valid country code that is included in the supported list.`,
+      `The provided country code is invalid. The received value was: ${_countryCode}. Please ensure you pass a valid country code.`,
     );
   }
 

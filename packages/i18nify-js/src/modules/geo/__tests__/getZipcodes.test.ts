@@ -43,7 +43,7 @@ describe('getZipcodes', () => {
     // @ts-expect-error invalid country code for testing
     await expect(getZipcodes(invalidCountryCode)).rejects.toEqual(
       new Error(
-        `Invalid country code: XYZ. Please ensure you provide a valid country code that is included in the supported list.`,
+        `Invalid country code: XYZ. Please ensure you provide a valid country code.`,
       ),
     );
   });

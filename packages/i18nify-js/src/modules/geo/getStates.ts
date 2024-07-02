@@ -19,7 +19,7 @@ const getStates = (_countryCode: I18nifyCountryCodeType) => {
   if (!I18NIFY_DATA_SUPPORTED_COUNTRIES.includes(countryCode)) {
     return Promise.reject(
       new Error(
-        `Invalid country code: ${countryCode}. Please ensure you provide a valid country code that is included in the supported list.`,
+        `Invalid country code: ${countryCode}. Please ensure you provide a valid country code.`,
       ),
     );
   }
