@@ -37,7 +37,9 @@ const getMaskedPhoneNumber = ({
   } = maskingOptions;
 
   if (!countryCode && !phoneNumber) {
-    throw new Error('Either countryCode or phoneNumber is mandatory.');
+    throw new Error(
+      `Either 'countryCode' or 'phoneNumber' is mandatory. Please provide a valid 'countryCode' or 'phoneNumber'.`,
+    );
   }
 
   let maskedContactNumber: string;
@@ -97,7 +99,9 @@ const getMaskedPhoneNumber = ({
     // Retrieve the phone number formatting template using the country code
     maskedContactNumber = PHONE_FORMATTER_MAPPER[countryCode];
     if (!maskedContactNumber) {
-      throw new Error(`Parameter "countryCode" is invalid: ${countryCode}`);
+      throw new Error(
+        `Parameter 'countryCode' is invalid. The received value was: ${countryCode}.`,
+      );
     }
     dialCode = getDialCodeByCountryCode(countryCode);
   }

@@ -20,7 +20,7 @@ const formatNumberByParts = (
   // Validate the amount parameter to ensure it is a number
   if (!Number(amount) && Number(amount) !== 0)
     throw new Error(
-      `Parameter 'amount' is not a number. typeof amount: ${typeof amount}`,
+      `Parameter 'amount' is not a valid number. The received value was: ${amount} of type ${typeof amount}. Please ensure you pass a valid number.`,
     );
 
   try {
@@ -58,9 +58,11 @@ const formatNumberByParts = (
     };
   } catch (err) {
     if (err instanceof Error) {
-      throw new Error(err.message);
+      throw new Error(
+        `An error occurred while formatting the number: ${err.message}`,
+      );
     } else {
-      throw new Error(`An unknown error occurred = ${err}`);
+      throw new Error(`An unknown error occurred. Error details: ${err}`);
     }
   }
 };

@@ -6,7 +6,10 @@ const getCurrencySymbol = (currencyCode: CurrencyCodeType): string => {
   const currencyInformation = CURRENCY_INFO;
   if (currencyCode in currencyInformation)
     return currencyInformation[currencyCode]?.symbol;
-  else throw new Error(`Invalid currencyCode: ${String(currencyCode)}`);
+  else
+    throw new Error(
+      `The provided currency code is invalid. The received value was: ${String(currencyCode)}. Please ensure you pass a valid currency code that is included in the supported list.`,
+    );
 };
 
 export default withErrorBoundary<typeof getCurrencySymbol>(getCurrencySymbol);

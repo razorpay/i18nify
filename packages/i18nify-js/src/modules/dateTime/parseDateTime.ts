@@ -57,9 +57,11 @@ const parseDateTime = (
   } catch (err) {
     // Handle any errors that occur during parsing
     if (err instanceof Error) {
-      throw err;
+      throw new Error(
+        `An error occurred while parsing the date: ${err.message}. Please ensure the provided date and options are valid and try again.`,
+      );
     } else {
-      throw new Error(`An unknown error occurred: ${err}`);
+      throw new Error(`An unknown error occurred. Error details: ${err}`);
     }
   }
 };

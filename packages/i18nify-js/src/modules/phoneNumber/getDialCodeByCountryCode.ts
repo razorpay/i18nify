@@ -20,7 +20,10 @@ const getDialCodeByCountryCode = (countryCode: CountryCodeType): string => {
    * */
   if (countryCode in dialCodeForAllCountries)
     return dialCodeForAllCountries[countryCode];
-  else throw new Error(`Invalid countryCode: ${countryCode}`);
+  else
+    throw new Error(
+      `The provided country code is invalid. The received value was: ${countryCode}. Please ensure you pass a valid country code.`,
+    );
 };
 
 export default withErrorBoundary<typeof getDialCodeByCountryCode>(
