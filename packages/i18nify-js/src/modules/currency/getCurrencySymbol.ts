@@ -8,7 +8,7 @@ const getCurrencySymbol = (currencyCode: CurrencyCodeType): string => {
     return currencyInformation[currencyCode]?.symbol;
   else
     throw new Error(
-      `The provided currency code is invalid. The received value was: ${String(currencyCode)}. Please ensure you pass a valid currency code that is included in the supported list.`,
+      `The provided currency code is invalid. The received value was: ${String(currencyCode)}. Please ensure you pass a valid currency code.`,
     );
 };
 

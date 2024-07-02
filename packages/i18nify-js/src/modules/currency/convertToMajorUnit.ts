@@ -24,7 +24,7 @@ const convertToMajorUnit = (
 
   if (!options.currency || !currencyInfo) {
     throw new Error(
-      `The provided currency code is either empty or not supported. The received value was ${(options.currency as any) === '' ? 'an empty string' : `: ${String(options.currency)}`}. Please ensure you pass a valid currency code that is included in the supported list.`,
+      `The provided currency code is either empty or not supported. The received value was ${(options.currency as any) === '' ? 'an empty string' : `: ${String(options.currency)}`}. Please ensure you pass a valid currency code.`,
     );
   }
 
