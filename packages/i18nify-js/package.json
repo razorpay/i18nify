@@ -96,6 +96,7 @@
     "prebuild": "yarn generate:jsonSubsets"
   },
   "devDependencies": {
+    "@google-cloud/translate": "^8.3.0",
     "@playwright/test": "^1.40.1",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-babel": "^6.0.4",
@@ -115,6 +116,8 @@
     "tsconfig-paths": "^4.2.0"
   },
   "dependencies": {
-    "@internationalized/date": "^3.5.2"
+    "@google-cloud/translate": "^8.3.0",
+    "@internationalized/date": "^3.5.2",
+    "axios": "^1.7.2"
   }
 }
