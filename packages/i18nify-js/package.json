@@ -53,6 +53,10 @@
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/geo/index.js"
     },
+    "./translate": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/translate/index.js"
+    },
     "./types": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/types/index.d.ts"
