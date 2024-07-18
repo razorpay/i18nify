@@ -1,4 +1,4 @@
-import convertToMinorUnit from '../convertToMinorUnit';
+import { convertToMinorUnit } from '../index';
 import { CurrencyCodeType } from '../types';
 
 describe('currency - convertToMinorUnit', () => {
@@ -12,7 +12,7 @@ describe('currency - convertToMinorUnit', () => {
   ];
 
   testCases.forEach(({ amount, currency, expectedResult }) => {
-    it(`should correctly convert ${amount} of minor unit ${currency} to ${expectedResult}`, () => {
+    it(`should correctly convert ${amount} of minor unit ${String(currency)} to ${expectedResult}`, () => {
       const result = convertToMinorUnit(amount, { currency: currency });
       expect(result).toBe(expectedResult);
     });
@@ -21,8 +21,9 @@ describe('currency - convertToMinorUnit', () => {
   it('should throw an error for unsupported currency codes', () => {
     const unsupportedCurrencyCode = 'XXX';
     expect(() => {
-      // @ts-expect-error intented invalid currencyCode for testing
-      convertToMinorUnit(100, { currency: unsupportedCurrencyCode });
+      convertToMinorUnit(100, {
+        currency: unsupportedCurrencyCode as CurrencyCodeType,
+      });
     }).toThrow('Unsupported currency XXX');
   });
 });

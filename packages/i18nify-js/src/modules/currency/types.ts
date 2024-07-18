@@ -1,9 +1,10 @@
 import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
-import { CURRENCIES } from './data/currencies';
+import CURRENCY_INFO from './data/currencyConfig.json';
 
 export type FormattedPartsObject = {
   [key in (typeof ALLOWED_FORMAT_PARTS_KEYS)[number]]?: string | undefined;
 };
+
 export interface ByParts extends FormattedPartsObject {
   isPrefixSymbol: boolean;
   rawParts: Array<{ type: string; value: unknown }>;
@@ -56,4 +57,12 @@ export interface I18nifyNumberFormatOptions {
   maximumSignificantDigits?: number | undefined;
 }
 
-export type CurrencyCodeType = keyof typeof CURRENCIES;
+export type CurrencyCodeType = keyof typeof CURRENCY_INFO;
+
+export interface Currency {
+  [key: string]: {
+    name: string;
+    minor_unit: string;
+    symbol: string;
+  };
+}

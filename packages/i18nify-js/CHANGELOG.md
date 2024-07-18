@@ -1,5 +1,124 @@
 # @razorpay/i18nify-js
 
+## 1.10.3
+
+### Patch Changes
+
+- 948d7fc: fix: fix phone number regex's
+
+## 1.10.2
+
+### Patch Changes
+
+- 89e7ca9: [fix]: fix i18nify currency inconsistency
+
+## 1.10.1
+
+### Patch Changes
+
+- 6959a83: chore: change flags name to lowercase in flags api
+
+## 1.10.0
+
+### Minor Changes
+
+- 08342e6: add new api for masked contact number in phone number module
+
+### Patch Changes
+
+- 3803afe: currency symbol placement evaluation in formatNumberToParts
+
+## 1.9.3
+
+### Patch Changes
+
+- 7321238: feat: refactoring currency module to use central geo data
+
+## 1.9.2
+
+### Patch Changes
+
+- 891908b: Singapore validation bug fixed
+
+## 1.9.1
+
+### Patch Changes
+
+- eb5a756: [fix]: singapore validation regex fixed
+- 5083738: fix: text should be treated inValid in isValidPhoneNumber [ATLAS-196]
+
+## 1.9.0
+
+### Minor Changes
+
+- 472f8aa: Feat: Geo-contextual module
+
+### Patch Changes
+
+- 774d07b: Feat: static configs in phone module replaced with i18nify-data
+- 3f406fb: Feat: Added an alias of i18nify-data to allow static imports of json within js package
+- Feat: Phone number engine modified (dialcode or countryCode treated as mandatory)
+
+## 1.8.1
+
+### Patch Changes
+
+- c7c88c4: [chore]: new currency codes added
+
+## 1.8.0
+
+### Minor Changes
+
+- 33a66ca: Flag service updated to return unpkg url
+
+## 1.7.0
+
+### Minor Changes
+
+- 05e4574: Flags deployed on unpkg
+
+## 1.6.1
+
+### Patch Changes
+
+- 6980dba: fix: update country code data for phone number and currency module
+
+## 1.6.0
+
+### Minor Changes
+
+- 77e9bf7: feat[ATLAS-104]: Introducing Date & Time Module
+
+## 1.5.0
+
+### Minor Changes
+
+- 92bbe13: feat: Add new Geo module - Country Flag SVG's
+
+## 1.4.4
+
+### Patch Changes
+
+- 1d758b7: fix: submodules added in published files in package.json
+
+## 1.4.3
+
+### Patch Changes
+
+- a5b362e: [fix]: sub-module files generated at root and imports fixed for react native
+
+## 1.4.2
+
+### Patch Changes
+
+- c82bd92: [feat]: Add dial codes apis in phoneNumber module
+
+## 1.4.1
+
+### Patch Changes
+
+- 7f8b698: fix: getting empty dialCode in parsePhoneNumber even after getting countryCode
+
 ## 1.4.0
 
 ### Minor Changes

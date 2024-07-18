@@ -1,9 +1,11 @@
-import getCurrencyList from '../getCurrencyList';
-import { CURRENCIES } from '../data/currencies';
+import { getCurrencyList } from '../index';
+import CURRENCY_INFO from '../data/currencyConfig.json';
+import { Currency } from '../types';
+
 describe('getCurrencyList', () => {
   it('should return the correct currency list', () => {
     const currencyList = getCurrencyList();
-    expect(currencyList).toEqual(CURRENCIES);
+    expect(currencyList).toEqual(CURRENCY_INFO);
   });
 
   it("check properties 'symbol' and 'name' for a sample currency", () => {
@@ -17,10 +19,12 @@ describe('getCurrencyList', () => {
   it("check the values of 'symbol' and 'name' properties for a sample currency", () => {
     const currencyList = getCurrencyList();
     const sampleCurrencyCode = 'USD';
-    const sampleCurrency = currencyList[sampleCurrencyCode];
+    const sampleCurrency: Currency[string] = currencyList[sampleCurrencyCode];
 
     // Assert that the 'symbol' and 'name' properties have the expected values
-    expect(sampleCurrency.symbol).toBe(CURRENCIES[sampleCurrencyCode].symbol);
-    expect(sampleCurrency.name).toBe(CURRENCIES[sampleCurrencyCode].name);
+    expect(sampleCurrency.symbol).toBe(
+      CURRENCY_INFO[sampleCurrencyCode].symbol,
+    );
+    expect(sampleCurrency.name).toBe(CURRENCY_INFO[sampleCurrencyCode].name);
   });
 });

@@ -6,3 +6,6 @@ coverage
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+.idea/
+**/.idea/
+**/dist/

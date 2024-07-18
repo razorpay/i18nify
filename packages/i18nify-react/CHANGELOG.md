@@ -1,5 +1,76 @@
 # @razorpay/i18nify-react
 
+## 4.0.9
+
+### Patch Changes
+
+- Updated dependencies [08342e6]
+- Updated dependencies [3803afe]
+  - @razorpay/i18nify-js@1.10.0
+
+## 4.0.8
+
+### Patch Changes
+
+- b6207b9: [fix]: i18nify-js removed as direct dependency in i18nify-react
+
+## 4.0.7
+
+### Patch Changes
+
+- Updated dependencies [774d07b]
+- Updated dependencies [3f406fb]
+- Updated dependencies [472f8aa]
+  - @razorpay/i18nify-js@1.9.0
+
+## 4.0.6
+
+### Patch Changes
+
+- Updated dependencies [33a66ca]
+  - @razorpay/i18nify-js@1.8.0
+
+## 4.0.5
+
+### Patch Changes
+
+- 05e4574: Flags deployed on unpkg
+
+### Patch Changes
+
+- Updated dependencies [05e4574]
+  - @razorpay/i18nify-js@1.7.0
+
+## 4.0.4
+
+### Patch Changes
+
+- 77e9bf7: feat[ATLAS-104]: Introducing Date & Time Module
+- Updated dependencies [77e9bf7]
+  - @razorpay/i18nify-js@1.6.0
+
+## 4.0.3
+
+### Patch Changes
+
+- Updated dependencies [92bbe13]
+  - @razorpay/i18nify-js@1.5.0
+
+## 4.0.2
+
+### Patch Changes
+
+- 1d758b7: fix: submodules added in published files in package.json
+- Updated dependencies [1d758b7]
+  - @razorpay/i18nify-js@1.4.4
+
+## 4.0.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @razorpay/i18nify-js@1.4.3
+
 ## 4.0.0
 
 ### Minor Changes

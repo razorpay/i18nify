@@ -7,6 +7,7 @@ import {
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { getIntlInstanceWithOptions } from '../.internal/utils';
 import { ALLOWED_FORMAT_PARTS_KEYS } from './constants';
+import { transformPartsFromIntl } from './utils';
 
 const formatNumberByParts = (
   amount: string | number,
@@ -16,24 +17,33 @@ const formatNumberByParts = (
     intlOptions?: I18nifyNumberFormatOptions;
   } = {},
 ): ByParts => {
+  // Validate the amount parameter to ensure it is a number
   if (!Number(amount) && Number(amount) !== 0)
-    throw new Error('Parameter `amount` is not a number!');
+    throw new Error(
+      `Parameter 'amount' is not a number. typeof amount: ${typeof amount}`,
+    );
 
   try {
+    // Get an instance of Intl.NumberFormat with the provided options
     const formattedAmount = getIntlInstanceWithOptions(options).formatToParts(
       Number(amount),
     );
 
-    const parts = formattedAmount;
-
+    let parts: ByParts['rawParts'] = formattedAmount;
     const formattedObj: FormattedPartsObject = {};
+    const intlOptions = options?.intlOptions ? { ...options.intlOptions } : {};
+    const currencyCode = (options?.currency || intlOptions.currency) as string;
+
+    parts = transformPartsFromIntl(parts, currencyCode);
 
     parts.forEach((p) => {
+      // If the part is a group separator, add it to the integer part
       if (p.type === 'group') {
         formattedObj.integer = (formattedObj.integer || '') + p.value;
       } else if (
         ALLOWED_FORMAT_PARTS_KEYS.findIndex((item) => item === p.type) != -1
       ) {
+        // If the part type is allowed, add it to the formatted object
         // @ts-expect-error only allowed keys are added to the formattedObj. For eg, key 'literal' is skipped
         formattedObj[p.type] = (formattedObj[p.type] || '') + p.value;
       }
@@ -41,7 +51,9 @@ const formatNumberByParts = (
 
     return {
       ...formattedObj,
-      isPrefixSymbol: parts[0].type === 'currency',
+      isPrefixSymbol:
+        parts.findIndex((item) => item.type === 'currency') <
+        parts.findIndex((item) => item.type === 'integer'),
       rawParts: parts,
     };
   } catch (err) {

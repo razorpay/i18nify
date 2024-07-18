@@ -1,30 +1,46 @@
-import { PHONE_REGEX_MAPPER } from './data/phoneRegexMapper';
+import PHONE_REGEX_MAPPER from './data/phoneRegexMapper.json';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { detectCountryCodeFromDialCode, cleanPhoneNumber } from './utils';
+import {
+  detectCountryAndDialCodeFromPhone,
+  cleanPhoneNumber,
+  matchesEntirely,
+  getPhoneNumberWithoutDialCode,
+} from './utils';
+import { CountryCodeType } from '../types';
 
 // Validates whether a given phone number is valid based on the provided country code or auto-detects the country code and checks if the number matches the defined regex pattern for that country.
 const isValidPhoneNumber = (
   phoneNumber: string | number,
-  countryCode?: keyof typeof PHONE_REGEX_MAPPER,
+  countryCode?: CountryCodeType,
 ): boolean => {
   // Clean the provided phoneNumber by removing non-numeric characters
   const cleanedPhoneNumber = cleanPhoneNumber(phoneNumber.toString());
+  if (!cleanedPhoneNumber) return false;
 
+  const regexMapper = PHONE_REGEX_MAPPER;
+  const phoneInfo = detectCountryAndDialCodeFromPhone(cleanedPhoneNumber);
   // Detect or validate the country code
-  countryCode =
-    countryCode && countryCode in PHONE_REGEX_MAPPER
+  countryCode = (
+    countryCode && countryCode in regexMapper
       ? countryCode
-      : detectCountryCodeFromDialCode(cleanedPhoneNumber);
+      : phoneInfo.countryCode
+  ) as CountryCodeType;
 
   // Return false if phoneNumber is empty
   if (!phoneNumber) return false;
 
   // Check if the countryCode exists in the PHONE_REGEX_MAPPER
-  if (countryCode in PHONE_REGEX_MAPPER) {
+  if (countryCode in regexMapper) {
+    const phoneNumberWithoutDialCode =
+      getPhoneNumberWithoutDialCode(cleanedPhoneNumber);
+
     // Fetch the regex pattern for the countryCode
-    const regex = PHONE_REGEX_MAPPER[countryCode];
+    const regex = regexMapper[countryCode];
     // Test if the cleanedPhoneNumber matches the regex pattern
-    return regex.test(cleanedPhoneNumber as string);
+    return matchesEntirely(
+      phoneNumberWithoutDialCode as string,
+      regex as string,
+    );
   }
 
   // Return false if the countryCode is not supported
