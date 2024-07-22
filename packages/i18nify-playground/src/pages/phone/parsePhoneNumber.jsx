@@ -38,17 +38,26 @@ export default function ParsePhoneNumber() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            🕵️‍♂️📞 This clever function digs deep into a phone number, pulling out all the juicy
-            details: country code, dial code, the number all dolled up, and even the format it
-            follows. What’s cool? It hands you back an object filled with all these deets, making it
-            a breeze to access everything about that phone number. It’s like having the ultimate
-            phone number cheat sheet! 🌟
+            🕵️‍♂️📞 This clever function digs deep into a phone number, pulling out
+            all the juicy details: country code, dial code, the number all
+            dolled up, and even the format it follows. What’s cool? It hands you
+            back an object filled with all these deets, making it a breeze to
+            access everything about that phone number. It’s like having the
+            ultimate phone number cheat sheet! 🌟
           </Typography>
         </Grid>
         {isMobile && (
           <Grid item xs={12}>
-            <Grid sx={{ height: '200px' }} container alignItems="center" justifyContent="center">
-              <Grid item sx={{ height: '200px', width: '100%', padding: '20px 0px' }}>
+            <Grid
+              sx={{ height: '200px' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Grid
+                item
+                sx={{ height: '200px', width: '100%', padding: '20px 0px' }}
+              >
                 <CodeEditor value={formattedCode} />
               </Grid>
             </Grid>
@@ -57,7 +66,9 @@ export default function ParsePhoneNumber() {
         <Grid
           item
           xs={isMobile ? 12 : 7}
-          sx={!isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }}
+          sx={
+            !isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }
+          }
         >
           <PhoneNumberForm
             inpValue={inpValue}
@@ -72,8 +83,16 @@ export default function ParsePhoneNumber() {
 
         {!isMobile && (
           <Grid item xs={5}>
-            <Grid sx={{ height: '60vh' }} container alignItems="center" justifyContent="center">
-              <Grid item sx={{ height: '100%', width: '100%', padding: '0px 20px' }}>
+            <Grid
+              sx={{ height: '60vh' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Grid
+                item
+                sx={{ height: '100%', width: '100%', padding: '0px 20px' }}
+              >
                 <CodeEditor value={formattedCode} />
               </Grid>
             </Grid>

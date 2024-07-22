@@ -5,7 +5,12 @@ import { Select, MenuItem } from '@mui/material';
 
 const index = ({ currency, onChange }) => {
   return (
-    <Select fullWidth size="small" value={currency} onChange={(ev) => onChange(ev.target.value)}>
+    <Select
+      fullWidth
+      size="small"
+      value={currency}
+      onChange={(ev) => onChange(ev.target.value)}
+    >
       {Object.keys(getCurrencyList()).map((option) => (
         <MenuItem key={option} value={option}>
           {option}

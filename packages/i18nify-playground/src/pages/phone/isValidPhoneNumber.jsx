@@ -26,10 +26,10 @@ export default function IsValidPhoneNumberView() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            📞 It’s like the phone number detective, using fancy patterns to check if a number is
-            the real deal for a specific country code. So, it’s pretty simple: if it says true, your
-            number’s good to go for that country; if it’s false, time to double-check those digits!
-            🕵️‍♂️🔍
+            📞 It’s like the phone number detective, using fancy patterns to
+            check if a number is the real deal for a specific country code. So,
+            it’s pretty simple: if it says true, your number’s good to go for
+            that country; if it’s false, time to double-check those digits! 🕵️‍♂️🔍
           </Typography>
         </Grid>
 

@@ -29,14 +29,21 @@ export default function NumberView() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            🎩✨ This little wizard helps you jazz up numerical values in all sorts of fancy ways.
-            And guess what? It uses the Internationalization API (Intl) to sprinkle that magic dust
-            and give you snazzy, locale-specific number formats—especially for currencies! 🌟💸
+            🎩✨ This little wizard helps you jazz up numerical values in all
+            sorts of fancy ways. And guess what? It uses the
+            Internationalization API (Intl) to sprinkle that magic dust and give
+            you snazzy, locale-specific number formats—especially for
+            currencies! 🌟💸
           </Typography>
         </Grid>
         {isMobile && (
           <Grid item xs={12}>
-            <Grid sx={{ height: '100px' }} container alignItems="center" justifyContent="center">
+            <Grid
+              sx={{ height: '100px' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
               <Grid item>
                 <Typography variant="h2">
                   {formatNumber(inpValue, {
@@ -52,7 +59,9 @@ export default function NumberView() {
         <Grid
           item
           xs={isMobile ? 12 : 7}
-          sx={!isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }}
+          sx={
+            !isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }
+          }
         >
           <NumberForm
             inpValue={inpValue}
@@ -63,7 +72,12 @@ export default function NumberView() {
         </Grid>
         {!isMobile && (
           <Grid item xs={5}>
-            <Grid sx={{ height: '60vh' }} container alignItems="center" justifyContent="center">
+            <Grid
+              sx={{ height: '60vh' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
               <Grid item>
                 <Typography variant="h2">
                   {formatNumber(inpValue, {

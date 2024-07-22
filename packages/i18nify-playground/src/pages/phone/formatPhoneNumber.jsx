@@ -13,7 +13,8 @@ export default function IsValidPhoneNumberView() {
   const [countryCode, setCountryCode] = useState('');
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const forMattedPhoneNumber = inpValue > 5 ? formatPhoneNumber(`${dialCode}${inpValue}`) : null;
+  const forMattedPhoneNumber =
+    inpValue > 5 ? formatPhoneNumber(`${dialCode}${inpValue}`) : null;
 
   return (
     <Container maxWidth="xl">
@@ -24,16 +25,22 @@ export default function IsValidPhoneNumberView() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            📞 It’s like your personal phone number stylist, working its magic to make those digits
-            look all snazzy. You can tell it the country code, or it’ll figure it out itself—then
-            presto! It hands you back a phone number looking sharp and dapper in that country’s
-            typical style. ✨🌍
+            📞 It’s like your personal phone number stylist, working its magic
+            to make those digits look all snazzy. You can tell it the country
+            code, or it’ll figure it out itself—then presto! It hands you back a
+            phone number looking sharp and dapper in that country’s typical
+            style. ✨🌍
           </Typography>
         </Grid>
 
         {isMobile && (
           <Grid item xs={12}>
-            <Grid sx={{ height: '100px' }} container alignItems="center" justifyContent="center">
+            <Grid
+              sx={{ height: '100px' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
               <Grid item>
                 {forMattedPhoneNumber ? (
                   <Typography variant="h5">{forMattedPhoneNumber}</Typography>
@@ -45,7 +52,9 @@ export default function IsValidPhoneNumberView() {
         <Grid
           item
           xs={isMobile ? 12 : 7}
-          sx={!isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }}
+          sx={
+            !isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }
+          }
         >
           <PhoneNumberForm
             inpValue={inpValue}

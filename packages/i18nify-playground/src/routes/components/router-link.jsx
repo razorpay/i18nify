@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
-const RouterLink = forwardRef(({ href, ...other }, ref) => <Link ref={ref} to={href} {...other} />);
+const RouterLink = forwardRef(({ href, ...other }, ref) => (
+  <Link ref={ref} to={href} {...other} />
+));
 
 RouterLink.propTypes = {
   href: PropTypes.string,

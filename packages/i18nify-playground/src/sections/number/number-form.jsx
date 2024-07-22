@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { Grid, useTheme, Typography, OutlinedInput, useMediaQuery } from '@mui/material';
+import {
+  Grid,
+  useTheme,
+  Typography,
+  OutlinedInput,
+  useMediaQuery,
+} from '@mui/material';
 
 import IntlOptionsForm from 'src/components/intlOptionsForm';
 import CurrencyListDropdown from 'src/components/currencyListDropdown';
@@ -33,7 +39,10 @@ const NumberForm = ({
           <Typography variant="h5">Choose Currency:</Typography>
         </Grid>
         <Grid item xs={isMobile ? 7 : 6}>
-          <CurrencyListDropdown currency={currency} onChange={onCurrencyChange} />
+          <CurrencyListDropdown
+            currency={currency}
+            onChange={onCurrencyChange}
+          />
         </Grid>
       </Grid>
       {includeIntlOptions && <IntlOptionsForm />}

@@ -1,6 +1,14 @@
 import Container from '@mui/material/Container';
-import { Box, Grid, MenuItem, Select, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { getAllCountries, getCities, getStatesByCountry, setState } from '@razorpay/i18nify-js';
+import {
+  Box,
+  Grid,
+  MenuItem,
+  Select,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import { getAllCountries, getCities, getStates } from '@razorpay/i18nify-js';
 import { useEffect, useState } from 'react';
 import { ALLOWED_COUNTRIES } from 'src/constants/geo';
 import CodeEditor from 'src/components/codeEditor';
@@ -22,14 +30,16 @@ export default function GetCities() {
 
   useEffect(() => {
     getAllCountries().then((res) =>
-      setCountryList(res.filter((country) => ALLOWED_COUNTRIES.includes(country.code)))
+      setCountryList(
+        res.filter((country) => ALLOWED_COUNTRIES.includes(country.code)),
+      ),
     );
   }, []);
 
   useEffect(() => {
     setStateInp('');
     setCode('');
-    getStatesByCountry(countryInp).then((res) => {
+    getStates(countryInp).then((res) => {
       const states = Object.entries(res).map(([_code, state]) => ({
         code: _code,
         name: state.name,
@@ -45,7 +55,6 @@ export default function GetCities() {
       setCityInp(res[0]);
       setCode(JSON.stringify(res, null, 2));
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stateInp]);
 
   return (
@@ -57,18 +66,27 @@ export default function GetCities() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            🏙️ Ready to navigate cities with precision? Say hello to getCities! This ingenious
-            function empowers you to explore cities based on country and state codes, unleashing a
-            world of urban excitement at your fingertips. Whether you're hunting for the pulse of
-            New York or the charm of Tokyo, just call this function and let the cityscape adventure
-            begin! 🗺️🌆
+            🏙️ Ready to navigate cities with precision? Say hello to getCities!
+            This ingenious function empowers you to explore cities based on
+            country and state codes, unleashing a world of urban excitement at
+            your fingertips. Whether you're hunting for the pulse of New York or
+            the charm of Tokyo, just call this function and let the cityscape
+            adventure begin! 🗺️🌆
           </Typography>
         </Grid>
 
         {isMobile && (
           <Grid item xs={12}>
-            <Grid sx={{ height: '200px' }} container alignItems="center" justifyContent="center">
-              <Grid item sx={{ height: '200px', width: '100%', padding: '20px 0px' }}>
+            <Grid
+              sx={{ height: '200px' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Grid
+                item
+                sx={{ height: '200px', width: '100%', padding: '20px 0px' }}
+              >
                 <CodeEditor value={code} />
               </Grid>
             </Grid>
@@ -77,14 +95,20 @@ export default function GetCities() {
         <Grid
           item
           xs={isMobile ? 12 : 7}
-          sx={!isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }}
+          sx={
+            !isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }
+          }
         >
           <CountryDropdown
             value={countryInp}
             list={countryList}
             onChange={(country) => setCountryInp(country)}
           />
-          <StateDropdown value={stateInp} onChange={(e) => setStateInp(e)} list={stateList} />
+          <StateDropdown
+            value={stateInp}
+            onChange={(e) => setStateInp(e)}
+            list={stateList}
+          />
 
           <Typography variant="h5">List of Cities</Typography>
           <Select
@@ -113,8 +137,16 @@ export default function GetCities() {
         </Grid>
         {!isMobile && (
           <Grid item xs={5}>
-            <Grid sx={{ height: '60vh' }} container alignItems="center" justifyContent="center">
-              <Grid item sx={{ height: '100%', width: '100%', padding: '0px 20px' }}>
+            <Grid
+              sx={{ height: '60vh' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Grid
+                item
+                sx={{ height: '100%', width: '100%', padding: '0px 20px' }}
+              >
                 <CodeEditor value={code} />
               </Grid>
             </Grid>

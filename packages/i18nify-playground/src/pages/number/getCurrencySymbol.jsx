@@ -22,18 +22,29 @@ export default function GetCurrencySymbol() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            Picture this: it&apos;s like having a cool decoder ring for currency codes! 🔍💰 This
-            little guy, grabs the symbol for a currency code from its secret stash.
+            Picture this: it&apos;s like having a cool decoder ring for currency
+            codes! 🔍💰 This little guy, grabs the symbol for a currency code
+            from its secret stash.
           </Typography>
         </Grid>
 
         <Grid item xs={isMobile ? 12 : 4}>
-          <Grid sx={{ height: '100px' }} container alignItems="center" justifyContent="center">
+          <Grid
+            sx={{ height: '100px' }}
+            container
+            alignItems="center"
+            justifyContent="center"
+          >
             <Grid item>
-              <Typography variant="h2">{getCurrencySymbol(currency)}</Typography>
+              <Typography variant="h2">
+                {getCurrencySymbol(currency)}
+              </Typography>
             </Grid>
           </Grid>
-          <CurrencyListDropdown currency={currency} onChange={(val) => setCurrency(val)} />
+          <CurrencyListDropdown
+            currency={currency}
+            onChange={(val) => setCurrency(val)}
+          />
         </Grid>
       </Grid>
     </Container>

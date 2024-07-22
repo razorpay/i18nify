@@ -8,7 +8,9 @@ import navConfig from 'src/layouts/dashboard/config-navigation';
 
 export default function PhoneNumberView() {
   const navigate = useNavigate();
-  const numberLinks = navConfig.find((item) => item.path.toLowerCase().includes('phone')).children;
+  const numberLinks = navConfig.find((item) =>
+    item.path.toLowerCase().includes('phone'),
+  ).children;
 
   return (
     <Container maxWidth="xl">
@@ -19,10 +21,10 @@ export default function PhoneNumberView() {
 
         <Grid item xs={10}>
           <Typography variant="body1" sx={{ mb: 4 }}>
-            This module's your go-to guru for everything Phone Number related. 🤑 It's all about
-            formatting, validations, and handy tricks to make dealing with phone numbers a breeze.
-            Here are the cool APIs and utilities this Phone Number Module gives you to play with!
-            🚀💸
+            This module's your go-to guru for everything Phone Number related.
+            🤑 It's all about formatting, validations, and handy tricks to make
+            dealing with phone numbers a breeze. Here are the cool APIs and
+            utilities this Phone Number Module gives you to play with! 🚀💸
           </Typography>
         </Grid>
         <Grid item xs={12} sx={{ mb: 3 }}>

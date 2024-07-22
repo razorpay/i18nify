@@ -36,6 +36,15 @@ const navConfig = [
       { title: 'IsValidPhoneNumber', path: '/phone/isValidPhoneNumber' },
       { title: 'FormatPhoneNumber', path: '/phone/formatPhoneNumber' },
       { title: 'ParsePhoneNumber', path: '/phone/parsePhoneNumber' },
+      { title: 'GetDialCodes', path: '/phone/getDialCodes' },
+      {
+        title: 'GetDialCodeByCountryCode',
+        path: '/phone/getDialCodeByCountryCode',
+      },
+      {
+        title: 'GetMaskedPhoneNumber',
+        path: '/phone/getMaskedPhoneNumber',
+      },
     ],
   },
   {
@@ -48,7 +57,6 @@ const navConfig = [
       { title: 'FormatTime', path: '/date/formatTime' },
       { title: 'GetRelativeTime', path: '/date/getRelativeTime' },
       { title: 'GetWeekdays', path: '/date/getWeekdays' },
-      { title: 'IsValidDate', path: '/date/isValidDate' },
       { title: 'ParseDateTime', path: '/date/parseDateTime' },
     ],
   },
@@ -59,12 +67,7 @@ const navConfig = [
     children: [
       { title: 'GetFlagByCountry', path: '/geo/getFlagByCountry' },
       { title: 'GetListOfAllFlags', path: '/geo/getListOfAllFlags' },
-      { title: 'GetAllContinents', path: '/geo/getAllContinents' },
       { title: 'GetAllCountries', path: '/geo/getAllCountries' },
-      {
-        title: 'GetCountriesByContinent',
-        path: '/geo/getCountriesByContinent',
-      },
       { title: 'GetStatesByCountry', path: '/geo/getStatesByCountry' },
       { title: 'GetCities', path: '/geo/getCities' },
     ],

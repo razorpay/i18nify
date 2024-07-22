@@ -23,16 +23,22 @@ export default function ConvertToMajorUnit() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            💵🔄 This function is your go-to tool for scaling currency values from lower to major
-            units. Just input the amount in a minor unit (like cents or pence) along with the
-            currency code, and voilà! You get the amount in a major unit (like dollars or pounds).
-            And if you stumble upon an unsupported currency code, it'll promptly let you know by
-            throwing an error.
+            💵🔄 This function is your go-to tool for scaling currency values
+            from lower to major units. Just input the amount in a minor unit
+            (like cents or pence) along with the currency code, and voilà! You
+            get the amount in a major unit (like dollars or pounds). And if you
+            stumble upon an unsupported currency code, it'll promptly let you
+            know by throwing an error.
           </Typography>
         </Grid>
         {isMobile && (
           <Grid item xs={12}>
-            <Grid sx={{ height: '100px' }} container alignItems="center" justifyContent="center">
+            <Grid
+              sx={{ height: '100px' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
               <Grid item>
                 <Typography variant="h2">
                   {convertToMajorUnit(inpValue, {
@@ -46,7 +52,9 @@ export default function ConvertToMajorUnit() {
         <Grid
           item
           xs={isMobile ? 12 : 7}
-          sx={!isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }}
+          sx={
+            !isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }
+          }
         >
           <NumberForm
             inpValue={inpValue}
@@ -58,7 +66,12 @@ export default function ConvertToMajorUnit() {
         </Grid>
         {!isMobile && (
           <Grid item xs={5}>
-            <Grid  sx={{ height: '30vh' }} container alignItems="center" justifyContent="center">
+            <Grid
+              sx={{ height: '30vh' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
               <Grid item>
                 <Typography variant="h2">
                   {convertToMajorUnit(inpValue, {

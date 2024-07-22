@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { formatDate } from '@razorpay/i18nify-js';
+import { formatDateTime } from '@razorpay/i18nify-js';
 
 import dayjs from 'dayjs';
 import Container from '@mui/material/Container';
@@ -30,19 +30,26 @@ export default function FormatDate() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            🌍📆 This global time stylist effortlessly turns your dates into beautifully formatted
-            strings, tailored to different locales. Whether you're dealing with international
-            clients or just love the beauty of diverse date formats, `formatDate` is your go-to
-            function. It leverages the power of the Intl.DateTimeFormat API, ensuring that your
-            dates always dress to impress, no matter where they're displayed. 🎩🌟
+            🌍📆 This global time stylist effortlessly turns your dates into
+            beautifully formatted strings, tailored to different locales.
+            Whether you're dealing with international clients or just love the
+            beauty of diverse date formats, `formatDate` is your go-to function.
+            It leverages the power of the Intl.DateTimeFormat API, ensuring that
+            your dates always dress to impress, no matter where they're
+            displayed. 🎩🌟
           </Typography>
         </Grid>
         {isMobile && (
           <Grid item xs={12}>
-            <Grid sx={{ height: '100px' }} container alignItems="center" justifyContent="center">
+            <Grid
+              sx={{ height: '100px' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
               <Grid item>
                 <Typography variant="h2">
-                  {formatDate(new Date(inpValue), {
+                  {formatDateTime(new Date(inpValue), {
                     locale,
                     intlOptions: removeEmptyValues(intlDateOptions),
                   })}
@@ -54,7 +61,9 @@ export default function FormatDate() {
         <Grid
           item
           xs={isMobile ? 12 : 7}
-          sx={!isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }}
+          sx={
+            !isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }
+          }
         >
           <DateForm
             utilName="formatDate"
@@ -67,10 +76,15 @@ export default function FormatDate() {
         </Grid>
         {!isMobile && (
           <Grid item xs={5}>
-            <Grid sx={{ height: '60vh' }} container alignItems="center" justifyContent="center">
+            <Grid
+              sx={{ height: '60vh' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
               <Grid item>
                 <Typography variant="h2">
-                  {formatDate(new Date(inpValue), {
+                  {formatDateTime(new Date(inpValue), {
                     locale,
                     intlOptions: removeEmptyValues(intlDateOptions),
                   })}

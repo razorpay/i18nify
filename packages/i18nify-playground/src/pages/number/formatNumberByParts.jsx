@@ -29,7 +29,7 @@ export default function NumberView() {
       intlOptions: removeEmptyValues(intlOptions),
     }),
     null,
-    2
+    2,
   );
 
   return (
@@ -41,16 +41,25 @@ export default function NumberView() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            This slick function breaks down numbers into separate pieces using Intl.NumberFormat.
-            It&apos;s like taking apart a puzzle 🧩 — currency symbol here, integers there, decimals
-            in their place—with a fail-proof system to handle any formatting hiccups 🥴 along the
-            way. Smooth operator, right?
+            This slick function breaks down numbers into separate pieces using
+            Intl.NumberFormat. It&apos;s like taking apart a puzzle 🧩 —
+            currency symbol here, integers there, decimals in their place—with a
+            fail-proof system to handle any formatting hiccups 🥴 along the way.
+            Smooth operator, right?
           </Typography>
         </Grid>
         {isMobile && (
           <Grid item xs={12}>
-            <Grid sx={{ height: '200px' }} container alignItems="center" justifyContent="center">
-              <Grid item sx={{ height: '200px', width: '100%', padding: '20px 0px' }}>
+            <Grid
+              sx={{ height: '200px' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Grid
+                item
+                sx={{ height: '200px', width: '100%', padding: '20px 0px' }}
+              >
                 <CodeEditor value={code} />
               </Grid>
             </Grid>
@@ -59,7 +68,9 @@ export default function NumberView() {
         <Grid
           item
           xs={isMobile ? 12 : 7}
-          sx={!isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }}
+          sx={
+            !isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }
+          }
         >
           <NumberForm
             inpValue={inpValue}
@@ -70,8 +81,16 @@ export default function NumberView() {
         </Grid>
         {!isMobile && (
           <Grid item xs={5}>
-            <Grid sx={{ height: '60vh' }} container alignItems="center" justifyContent="center">
-              <Grid item sx={{ height: '100%', width: '100%', padding: '0px 20px' }}>
+            <Grid
+              sx={{ height: '60vh' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Grid
+                item
+                sx={{ height: '100%', width: '100%', padding: '0px 20px' }}
+              >
                 <CodeEditor value={code} />
               </Grid>
             </Grid>

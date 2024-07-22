@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getListOfAllFlags } from '@razorpay/i18nify-js';
+import { getFlagsForAllCountries } from '@razorpay/i18nify-js';
 
 import Container from '@mui/material/Container';
 import { Grid, useTheme, Typography, useMediaQuery, Box } from '@mui/material';
@@ -13,7 +13,7 @@ export default function GetListOfAllFlags() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
-    setCountryCodes(getListOfAllFlags());
+    setCountryCodes(getFlagsForAllCountries());
   }, []);
 
   return (
@@ -21,17 +21,18 @@ export default function GetListOfAllFlags() {
       <Grid container>
         <Grid item xs={12}>
           <Typography color="#4767FD" variant="h2" sx={{ mb: 2 }}>
-            GetListOfAllFlags
+            getFlagsForAllCountries
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            🌍🚩 Imagine a virtual globe where you can spin and pick any country – that's what
-            `getListOfAllFlags` brings to your codebase. This function maps out the whole world by
-            returning an object with country codes as keys and their respective flag SVGs as values.
-            It's like having a world atlas in your hands, but instead of pages, you get digital,
-            vibrant flags of each nation. If any issue arises during this global flag gathering, the
-            function won't just sweep it under the rug; it'll raise a flag (pun intended) to let you
-            know.
+            🌍🚩 Imagine a virtual globe where you can spin and pick any country
+            – that's what `getFlagsForAllCountries` brings to your codebase.
+            This function maps out the whole world by returning an object with
+            country codes as keys and their respective flag SVGs as values. It's
+            like having a world atlas in your hands, but instead of pages, you
+            get digital, vibrant flags of each nation. If any issue arises
+            during this global flag gathering, the function won't just sweep it
+            under the rug; it'll raise a flag (pun intended) to let you know.
           </Typography>
         </Grid>
 
@@ -56,7 +57,12 @@ export default function GetListOfAllFlags() {
                         'flex-wrap': 'wrap',
                       }}
                     >
-                      <SVG src={countrySvg} width="100%" height="auto" title={countryCode} />
+                      <SVG
+                        src={countrySvg}
+                        width="100%"
+                        height="auto"
+                        title={countryCode}
+                      />
                       <Typography variant="body1">{countryCode}</Typography>
                     </Box>
                   </>
@@ -85,7 +91,12 @@ export default function GetListOfAllFlags() {
                         'align-items': 'center',
                       }}
                     >
-                      <SVG src={countrySvg} width="60%" height="auto" title={countryCode} />
+                      <SVG
+                        src={countrySvg}
+                        width="60%"
+                        height="auto"
+                        title={countryCode}
+                      />
                       <Typography variant="body1">{countryCode}</Typography>
                     </Box>
                   </>
