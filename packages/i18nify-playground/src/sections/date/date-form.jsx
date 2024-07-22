@@ -24,7 +24,11 @@ const DateForm = ({
       <Grid container rowSpacing={5} alignItems="center">
         <Grid item xs={isMobile ? 12 : 10} sx={{ mb: 2 }}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateTimePicker value={dayjs(inpValue)} onChange={onInpChange} sx={{width: '100%'}} />
+            <DateTimePicker
+              value={dayjs(inpValue)}
+              onChange={onInpChange}
+              sx={{ width: '100%' }}
+            />
           </LocalizationProvider>
           <Typography
             marginTop={1}

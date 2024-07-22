@@ -52,9 +52,7 @@ const navConfig = [
     path: '/date',
     icon: icon('ic_date'),
     children: [
-      { title: 'FormatDate', path: '/date/formatDate' },
       { title: 'FormatDateTime', path: '/date/formatDateTime' },
-      { title: 'FormatTime', path: '/date/formatTime' },
       { title: 'GetRelativeTime', path: '/date/getRelativeTime' },
       { title: 'GetWeekdays', path: '/date/getWeekdays' },
       { title: 'ParseDateTime', path: '/date/parseDateTime' },
@@ -65,11 +63,15 @@ const navConfig = [
     path: '/geo',
     icon: icon('ic_geo'),
     children: [
-      { title: 'GetFlagByCountry', path: '/geo/getFlagByCountry' },
-      { title: 'GetListOfAllFlags', path: '/geo/getListOfAllFlags' },
+      { title: 'GetFlagOfCountry', path: '/geo/getFlagOfCountry' },
+      {
+        title: 'GetFlagsForAllCountries',
+        path: '/geo/getFlagsForAllCountries',
+      },
       { title: 'GetAllCountries', path: '/geo/getAllCountries' },
-      { title: 'GetStatesByCountry', path: '/geo/getStatesByCountry' },
+      { title: 'GetStates', path: '/geo/getStates' },
       { title: 'GetCities', path: '/geo/getCities' },
+      { title: 'GetZipcodes', path: '/geo/getZipcodes' },
     ],
   },
   {

@@ -26,17 +26,16 @@ import GetDialCodeByCountryCode from 'src/pages/phone/getDialCodeByCountryCode';
 
 // Geo Pages
 import GeoPage from 'src/pages/geo';
-import GetFlagByCountry from 'src/pages/geo/getFlagByCountry';
-import GetListOfAllFlags from 'src/pages/geo/getListOfAllFlags';
+import GetFlagOfCountry from 'src/pages/geo/getFlagOfCountry';
+import GetFlagsForAllCountries from 'src/pages/geo/getFlagsForAllCountries';
 import GetAllCountries from 'src/pages/geo/getAllCountries';
 import GetCities from 'src/pages/geo/getCities';
-import GetStatesByCountry from 'src/pages/geo/getStatesByCountry';
+import GetZipcodes from 'src/pages/geo/getZipcodes';
+import GetStates from 'src/pages/geo/getStates';
 
 // Date Time Pages
 import DatePage from 'src/pages/date';
-import FormatDate from 'src/pages/date/formatDate';
 import FormatDateTime from 'src/pages/date/formatDateTime';
-import FormatTime from 'src/pages/date/formatTime';
 import GetRelativeTime from 'src/pages/date/getRelativeTime';
 import GetWeekdays from 'src/pages/date/getWeekdays';
 import ParseDateTime from 'src/pages/date/parseDateTime';
@@ -104,12 +103,12 @@ export default function Router() {
           element: <GetMaskedPhoneNumber />,
         },
         {
-          path: 'geo/getListOfAllFlags',
-          element: <GetListOfAllFlags />,
+          path: 'geo/getFlagsForAllCountries',
+          element: <GetFlagsForAllCountries />,
         },
         {
-          path: 'geo/getFlagByCountry',
-          element: <GetFlagByCountry />,
+          path: 'geo/getFlagOfCountry',
+          element: <GetFlagOfCountry />,
         },
 
         {
@@ -117,38 +116,26 @@ export default function Router() {
           element: <GetAllCountries />,
         },
         {
-          path: 'geo/getStatesByCountry',
-          element: <GetStatesByCountry />,
+          path: 'geo/getStates',
+          element: <GetStates />,
         },
         {
           path: 'geo/getCities',
           element: <GetCities />,
         },
         {
-          path: 'geo',
-          element: <GeoPage />,
+          path: 'geo/getZipcodes',
+          element: <GetZipcodes />,
         },
         {
-          path: 'date/formatDate',
-          element: (
-            <IntlOptionsDateProvider>
-              <FormatDate />
-            </IntlOptionsDateProvider>
-          ),
+          path: 'geo',
+          element: <GeoPage />,
         },
         {
           path: 'date/formatDateTime',
           element: (
             <IntlOptionsDateProvider>
               <FormatDateTime />
-            </IntlOptionsDateProvider>
-          ),
-        },
-        {
-          path: 'date/formatTime',
-          element: (
-            <IntlOptionsDateProvider>
-              <FormatTime />
             </IntlOptionsDateProvider>
           ),
         },

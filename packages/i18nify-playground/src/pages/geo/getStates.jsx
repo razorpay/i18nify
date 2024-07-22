@@ -9,7 +9,7 @@ import StateDropdown from 'src/components/stateDropdown';
 
 // ----------------------------------------------------------------------
 
-export default function GetStatesByCountry() {
+export default function GetStates() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [code, setCode] = useState('');
@@ -43,15 +43,13 @@ export default function GetStatesByCountry() {
       <Grid container>
         <Grid item xs={isMobile ? 12 : 7}>
           <Typography color="#4767FD" variant="h2" sx={{ mb: 2 }}>
-            GetStatesByCountry
+            GetStates
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            🌍 Want to explore countries by continent? Meet getStatesByCountry!
-            This savvy function lets you delve into specific continents,
-            unlocking a trove of countries waiting to be discovered. Whether
-            you're curious about Africa, Asia, or any other continent, just call
-            this function and let the geographical journey begin! 🗺️🔍
+            🌍 Embark on a state-by-state discovery with the getStates API! Get
+            access to a treasure trove of state information, including names,
+            time zones, and even a list of vibrant cities within each state.
           </Typography>
         </Grid>
 

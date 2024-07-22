@@ -30,17 +30,23 @@ export default function GetRelativeTime() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            ⏳🌏 This time-traveling virtuoso effortlessly bridges the gap between dates, offering a
-            glimpse into the past or a peek into the future. With the help of the
-            Internationalization API (Intl), getRelativeTime transforms absolute dates into
-            relatable, human-friendly phrases like ‘3 hours ago’ or ‘in 2 days’. Whether you’re
-            reminiscing the past or anticipating the future, this function keeps you connected to
-            time in the most intuitive way! 🚀🕰️
+            ⏳🌏 This time-traveling virtuoso effortlessly bridges the gap
+            between dates, offering a glimpse into the past or a peek into the
+            future. With the help of the Internationalization API (Intl),
+            getRelativeTime transforms absolute dates into relatable,
+            human-friendly phrases like ‘3 hours ago’ or ‘in 2 days’. Whether
+            you’re reminiscing the past or anticipating the future, this
+            function keeps you connected to time in the most intuitive way! 🚀🕰️
           </Typography>
         </Grid>
         {isMobile && (
           <Grid item xs={12}>
-            <Grid sx={{ height: '100px' }} container alignItems="center" justifyContent="center">
+            <Grid
+              sx={{ height: '100px' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
               <Grid item>
                 <Typography variant="h2">
                   {getRelativeTime(new Date(inpValue), new Date(), {
@@ -55,7 +61,9 @@ export default function GetRelativeTime() {
         <Grid
           item
           xs={isMobile ? 12 : 7}
-          sx={!isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }}
+          sx={
+            !isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }
+          }
         >
           <DateForm
             utilName="getRelativeTime"
@@ -68,7 +76,12 @@ export default function GetRelativeTime() {
         </Grid>
         {!isMobile && (
           <Grid item xs={5}>
-            <Grid sx={{ height: '30vh' }} container alignItems="center" justifyContent="center">
+            <Grid
+              sx={{ height: '30vh' }}
+              container
+              alignItems="center"
+              justifyContent="center"
+            >
               <Grid item>
                 <Typography variant="h3">
                   {getRelativeTime(new Date(inpValue), new Date(), {

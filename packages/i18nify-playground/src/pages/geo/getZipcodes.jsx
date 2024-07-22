@@ -8,7 +8,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { getAllCountries, getCities, getStates } from '@razorpay/i18nify-js';
+import { getAllCountries, getStates, getZipcodes } from '@razorpay/i18nify-js';
 import { useEffect, useState } from 'react';
 import { ALLOWED_COUNTRIES } from 'src/constants/geo';
 import CodeEditor from 'src/components/codeEditor';
@@ -17,7 +17,7 @@ import StateDropdown from 'src/components/stateDropdown';
 
 // ----------------------------------------------------------------------
 
-export default function GetCities() {
+export default function GetZipcodes() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [code, setCode] = useState('');
@@ -25,8 +25,8 @@ export default function GetCities() {
   const [countryList, setCountryList] = useState([]);
   const [stateInp, setStateInp] = useState('');
   const [stateList, setStateList] = useState([]);
-  const [cities, setCities] = useState([]);
-  const [cityInp, setCityInp] = useState('');
+  const [zipcodes, setZipcodes] = useState([]);
+  const [zipcodeInp, setZipcodeInp] = useState('');
 
   useEffect(() => {
     getAllCountries().then((res) =>
@@ -50,9 +50,9 @@ export default function GetCities() {
 
   useEffect(() => {
     if (!stateInp) return;
-    getCities(countryInp, stateInp).then((res) => {
-      setCities(res);
-      setCityInp(res[0].name);
+    getZipcodes(countryInp, stateInp).then((res) => {
+      setZipcodes(res);
+      setZipcodeInp(res[0]);
       setCode(JSON.stringify(res, null, 2));
     });
   }, [stateInp]);
@@ -62,16 +62,13 @@ export default function GetCities() {
       <Grid container>
         <Grid item xs={isMobile ? 12 : 7}>
           <Typography color="#4767FD" variant="h2" sx={{ mb: 2 }}>
-            GetCities
+            GetZipcodes
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 6 }}>
-            🏙️ Ready to navigate cities with precision? Say hello to getCities!
-            This ingenious function empowers you to explore cities based on
-            country and state codes, unleashing a world of urban excitement at
-            your fingertips. Whether you're hunting for the pulse of New York or
-            the charm of Tokyo, just call this function and let the cityscape
-            adventure begin! 🗺️🌆
+            Explore postal codes with the getZipcodes API! Discover a list of
+            unique zip codes organized by country and state, making it easy to
+            navigate geographic areas and streamline address-based operations.
           </Typography>
         </Grid>
 
@@ -110,18 +107,18 @@ export default function GetCities() {
             list={stateList}
           />
 
-          <Typography variant="h5">List of Cities</Typography>
+          <Typography variant="h5">List of Zipcodes</Typography>
           <Select
             size="small"
-            value={cityInp}
+            value={zipcodeInp}
             sx={{
               height: '57px',
               marginRight: 1,
               width: '100%',
             }}
           >
-            {cities.map((city) => (
-              <MenuItem key={city.name} value={city.name}>
+            {zipcodes.map((zipcode) => (
+              <MenuItem key={zipcode} value={zipcode}>
                 <Box
                   sx={{
                     display: 'flex',
@@ -129,7 +126,7 @@ export default function GetCities() {
                     textOverflow: 'initial',
                   }}
                 >
-                  <div width="30px">{city.name}</div>
+                  <div width="30px">{zipcode}</div>
                 </Box>
               </MenuItem>
             ))}

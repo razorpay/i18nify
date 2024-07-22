@@ -57,7 +57,7 @@ const Dropdown = ({ countryCode, onClick }) => {
   );
 };
 
-export default function GetFlagByCountry() {
+export default function GetFlagOfCountry() {
   const [inpValue, setInpValue] = useState('');
   const [countryCode, setCountryCode] = useState('US');
   const theme = useTheme();
