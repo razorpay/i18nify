@@ -104,7 +104,10 @@ const getMaskedPhoneNumber = ({
 
   // Include the dial code in the masked phone number if requested
   if (withDialCode) {
-    return `${dialCode} ${maskedContactNumber.replace(/x/g, maskingChar)}`.trim();
+    return `${dialCode} ${maskedContactNumber.replace(
+      /x/g,
+      maskingChar,
+    )}`.trim();
   } else {
     return maskedContactNumber.trim().replace(/x/g, maskingChar);
   }
