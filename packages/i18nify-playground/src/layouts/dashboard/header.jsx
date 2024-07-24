@@ -12,11 +12,9 @@ import { useResponsive } from 'src/hooks/use-responsive';
 import { bgBlur } from 'src/theme/css';
 
 import Iconify from 'src/components/iconify';
-import SvgColor from 'src/components/svg-color';
 
 import { NAV, HEADER } from './config-layout';
 import LanguagePopover from './common/language-popover';
-// import GitHubIcon from '@mui/icons-material/GitHub';
 
 // ----------------------------------------------------------------------
 

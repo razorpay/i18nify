@@ -23,6 +23,7 @@ import FormatPhoneNumber from 'src/pages/phone/formatPhoneNumber';
 import ParsePhoneNumber from 'src/pages/phone/parsePhoneNumber';
 import GetDialCodes from 'src/pages/phone/getDialCodes';
 import GetDialCodeByCountryCode from 'src/pages/phone/getDialCodeByCountryCode';
+import GetMaskedPhoneNumber from 'src/pages/phone/getMaskedPhoneNumber';
 
 // Geo Pages
 import GeoPage from 'src/pages/geo';
@@ -41,7 +42,6 @@ import GetWeekdays from 'src/pages/date/getWeekdays';
 import ParseDateTime from 'src/pages/date/parseDateTime';
 
 import ComingSoon from 'src/components/comingSoon';
-import GetMaskedPhoneNumber from 'src/pages/phone/getMaskedPhoneNumber';
 
 // ----------------------------------------------------------------------
 

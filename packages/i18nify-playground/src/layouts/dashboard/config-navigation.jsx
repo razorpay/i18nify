@@ -89,20 +89,6 @@ const navConfig = [
     path: '/banking',
     icon: icon('ic_bank'),
   },
-  // {
-  //   title: 'State',
-  //   path: '/state',
-  //   icon: icon('ic_state'),
-  //   children: [
-  //     { title: 'GetState', path: '/state/getState' },
-  //     { title: 'SetState', path: '/state/setState' },
-  //   ],
-  // },
-  // {
-  //   title: 'Plugins',
-  //   path: '/plugins',
-  //   icon: icon('ic_plugin'),
-  // },
 ];
 
 export default navConfig;

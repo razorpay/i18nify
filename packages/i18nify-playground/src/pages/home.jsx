@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { useTheme } from '@mui/material/styles';
 import {
@@ -13,36 +13,10 @@ import {
 } from '@mui/material';
 import Globe from 'src/components/globe';
 
-// function generateRandomColor() {
-//   const colorList = [
-//     '#305EFF',
-//     '#FF5733',
-//     '#C70039',
-//     '#900C3F',
-//     '#581845',
-//     '#FFC300',
-//     '#FF5733',
-//     '#C70039',
-//     '#900C3F',
-//   ];
-//   const randomIndex = Math.floor(Math.random() * colorList.length);
-//   return colorList[randomIndex];
-// }
-
 const Home = () => {
-  // const [color, setColor] = useState('#305EFF');
   const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setColor(generateRandomColor());
-  //   }, 2000);
-
-  //   // Clear interval on component unmount
-  //   return () => clearInterval(intervalId);
-  // }, []);
 
   return (
     <Container maxWidth="xl">
@@ -170,22 +144,6 @@ const Home = () => {
                 </Link>
               </Box>
             </Grid>
-
-            {/* <Grid item xs={12} sx={{ mb: 3 }}>
-              <Typography variant="h3" sx={{ mb: 1 }} fontWeight="600">
-                Polyfills
-              </Typography>
-              <Box>
-                <Link
-                  component="button"
-                  underline="none"
-                  onClick={() => navigate('/plugins')}
-                  color="#2950DA"
-                >
-                  FormatNumberByParts
-                </Link>
-              </Box>
-            </Grid> */}
           </Grid>
 
           {!isMobile && (
