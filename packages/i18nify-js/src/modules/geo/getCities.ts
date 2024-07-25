@@ -23,7 +23,7 @@ const getCities = (
   if (!I18NIFY_DATA_SUPPORTED_COUNTRIES.includes(countryCode)) {
     return Promise.reject(
       new Error(
-        `Invalid country code: ${countryCode}. Please ensure you provide a valid country code.`,
+        `Invalid country code: ${countryCode}. Please ensure you provide a valid country code. Check valid country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
       ),
     );
   }

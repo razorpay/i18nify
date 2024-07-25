@@ -63,7 +63,7 @@ const getZipcodes = (_countryCode: CountryCodeType, _stateCode?: string) => {
 
       if (!res.states[stateCode]) {
         return Promise.reject(
-          `State code ${stateCode} is missing in ${countryCode}. Please ensure you provide a valid state code that exists within the specified country.`,
+          `State code ${stateCode} is missing in ${countryCode}. Please ensure you provide a valid state code that exists within the specified country. Check valid state codes and country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
         );
       }
 

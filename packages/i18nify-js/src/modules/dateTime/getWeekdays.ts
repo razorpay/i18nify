@@ -14,7 +14,6 @@ const getWeekdays = (options: {
   locale?: Locale;
   weekday?: 'long' | 'short' | 'narrow' | undefined;
 }): string[] => {
-  console.log({ options });
   try {
     const locale = getLocale(options);
 

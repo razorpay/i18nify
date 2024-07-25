@@ -21,7 +21,7 @@ describe('phoneNumber - getDialCodeByCountryCode', () => {
     const invalidCountryCode = 'XX'; // XX is not a valid country code
     expect(() => getDialCodeByCountryCode(invalidCountryCode as any)).toThrow(
       new Error(
-        `Error: The provided country code is invalid. The received value was: ${invalidCountryCode}. Please ensure you pass a valid country code.`,
+        `Error: The provided country code is invalid. The received value was: ${invalidCountryCode}. Please ensure you pass a valid country code. Check valid country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
       ),
     );
   });

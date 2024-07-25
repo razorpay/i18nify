@@ -38,7 +38,7 @@ const getMaskedPhoneNumber = ({
 
   if (!countryCode && !phoneNumber) {
     throw new Error(
-      `Either 'countryCode' or 'phoneNumber' is mandatory. Please provide a valid 'countryCode' or 'phoneNumber'.`,
+      `Either 'countryCode' or 'phoneNumber' is mandatory. Please provide a valid 'countryCode' or 'phoneNumber'. Check valid country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
     );
   }
 
@@ -100,7 +100,7 @@ const getMaskedPhoneNumber = ({
     maskedContactNumber = PHONE_FORMATTER_MAPPER[countryCode];
     if (!maskedContactNumber) {
       throw new Error(
-        `Parameter 'countryCode' is invalid. The received value was: ${countryCode}.`,
+        `Parameter 'countryCode' is invalid. The received value was: ${countryCode}. Check valid country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
       );
     }
     dialCode = getDialCodeByCountryCode(countryCode);

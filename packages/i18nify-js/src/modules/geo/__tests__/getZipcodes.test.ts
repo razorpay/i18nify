@@ -54,7 +54,7 @@ describe('getZipcodes', () => {
     await expect(
       getZipcodes(validCountryCode, missingStateCode),
     ).rejects.toThrow(
-      `An error occurred while fetching zipcode data. The error details are: State code ${missingStateCode} is missing in ${validCountryCode}. Please ensure you provide a valid state code that exists within the specified country..`,
+      `An error occurred while fetching zipcode data. The error details are: State code ${missingStateCode} is missing in ${validCountryCode}. Please ensure you provide a valid state code that exists within the specified country. Check valid state codes and country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json.`,
     );
   });
 

@@ -22,7 +22,7 @@ describe('getStates', () => {
     // @ts-expect-error invalid state code for testing
     await expect(() => getStates('XYZ')).rejects.toEqual(
       new Error(
-        `Invalid country code: XYZ. Please ensure you provide a valid country code.`,
+        `Invalid country code: XYZ. Please ensure you provide a valid country code. Check valid country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
       ),
     );
   });

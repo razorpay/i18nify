@@ -22,7 +22,7 @@ const getDialCodeByCountryCode = (countryCode: CountryCodeType): string => {
     return dialCodeForAllCountries[countryCode];
   else
     throw new Error(
-      `The provided country code is invalid. The received value was: ${countryCode}. Please ensure you pass a valid country code.`,
+      `The provided country code is invalid. The received value was: ${countryCode}. Please ensure you pass a valid country code. Check valid country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
     );
 };
 
