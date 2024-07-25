@@ -4,7 +4,7 @@ describe('getPhoneNumberWithoutDialCode', () => {
   test('should correctly remove the dial code from a phone number', () => {
     const phoneNumber = '+1-800-123-4567';
     const result = getPhoneNumberWithoutDialCode(phoneNumber);
-   
+
     expect(result).toBe('8001234567');
   });
 
@@ -23,6 +23,6 @@ describe('getPhoneNumberWithoutDialCode', () => {
   test('should process numbers with unusual dial codes', () => {
     const phoneNumber = '+91-9876543210';
     const result = getPhoneNumberWithoutDialCode(phoneNumber);
-    expect(result).toBe('9876543210'); 
+    expect(result).toBe('9876543210');
   });
 });

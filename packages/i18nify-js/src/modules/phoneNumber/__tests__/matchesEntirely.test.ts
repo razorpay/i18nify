@@ -1,4 +1,4 @@
-import {matchesEntirely} from '../utils';
+import { matchesEntirely } from '../utils';
 
 describe('matchesEntirely', () => {
   test('should return true for exact match', () => {
@@ -43,7 +43,6 @@ describe('matchesEntirely', () => {
     expect(matchesEntirely(text, regex)).toBe(true);
   });
 
-  
   test('should return false for regex that does not cover the entire string', () => {
     const text = 'hello 123 world';
     const regex = '\\d{3}';

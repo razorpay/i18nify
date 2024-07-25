@@ -104,7 +104,7 @@ export const suffixMasking = (
   n: number,
 ): string => {
   // Convert the source string into an array of characters for easy manipulation
-  let result: string[] = source.split('');
+  const result: string[] = source.split('');
   let replaceIndex: number = 0;
   let replacementsDone: number = 0;
 
@@ -134,7 +134,7 @@ export const prefixMasking = (
   n: number,
 ): string => {
   // Convert the source string into an array of characters for easy manipulation
-  let result: string[] = source.split('');
+  const result: string[] = source.split('');
   let replaceIndex: number = replacement.length - 1;
   let replacementsDone: number = 0;
 

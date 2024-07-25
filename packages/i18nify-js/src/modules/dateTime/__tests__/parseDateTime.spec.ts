@@ -14,7 +14,9 @@ function generateOptionsString(
 ) {
   const { locale, intlOptions } = options;
   const intlOptionsString = JSON.stringify(intlOptions || {});
-  return `'${date}', { locale: '${locale || ''}', intlOptions: ${intlOptionsString} }`;
+  return `'${date}', { locale: '${
+    locale || ''
+  }', intlOptions: ${intlOptionsString} }`;
 }
 
 test.describe('parseDateTime', () => {
