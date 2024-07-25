@@ -65,7 +65,7 @@ const getMaskedPhoneNumber = ({
         : updatedPhoneNumber;
 
     // Get the phone number formatting template based on the country code
-    let formattingTemplate =
+    const formattingTemplate =
       PHONE_FORMATTER_MAPPER[updatedCountryCode] ||
       phoneNumber.replace(/\d/g, 'x');
 
@@ -104,7 +104,10 @@ const getMaskedPhoneNumber = ({
 
   // Include the dial code in the masked phone number if requested
   if (withDialCode) {
-    return `${dialCode} ${maskedContactNumber.replace(/x/g, maskingChar)}`.trim();
+    return `${dialCode} ${maskedContactNumber.replace(
+      /x/g,
+      maskingChar,
+    )}`.trim();
   } else {
     return maskedContactNumber.trim().replace(/x/g, maskingChar);
   }

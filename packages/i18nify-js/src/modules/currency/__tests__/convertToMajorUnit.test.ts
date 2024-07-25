@@ -12,7 +12,9 @@ describe('currency - convertToMajorUnit', () => {
   ];
 
   testCases.forEach(({ amount, currency, expectedResult }) => {
-    it(`should correctly convert ${amount} of minor unit ${String(currency)} to ${expectedResult}`, () => {
+    it(`should correctly convert ${amount} of minor unit ${String(
+      currency,
+    )} to ${expectedResult}`, () => {
       const result = convertToMajorUnit(amount, { currency: currency });
       expect(result).toBe(expectedResult);
     });
