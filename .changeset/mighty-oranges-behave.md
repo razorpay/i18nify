@@ -1,5 +1,5 @@
 ---
-"@razorpay/i18nify-js": patch
+'@razorpay/i18nify-js': minor
 ---
 
 enhance error message clarity and verbosity
