@@ -31,7 +31,7 @@
     "@mui/material": "^5.15.6",
     "@mui/x-date-pickers": "^6.19.4",
     "@razorpay/i18nify-js": "^1.11.0",
-    "@razorpay/i18nify-react": "^5.0.0",
+    "@razorpay/i18nify-react": "^4.0.10",
     "apexcharts": "^3.43.0",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.10",
