@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.11.0
+
+### Minor Changes
+
+- 228ad00: enhance error message clarity and verbosity
+
 ## 1.10.3
 
 ### Patch Changes
