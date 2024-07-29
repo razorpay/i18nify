@@ -6,13 +6,17 @@ describe('phoneNumber - getMaskedPhoneNumber', () => {
   it('should throw error if no countryCode and phoneNumber are provided', () => {
     expect(() =>
       getMaskedPhoneNumber({} as GetMaskedPhoneNumberOptions),
-    ).toThrow('Either countryCode or phoneNumber is mandatory.');
+    ).toThrow(
+      "Error: Either 'countryCode' or 'phoneNumber' is mandatory. Please provide a valid 'countryCode' or 'phoneNumber'.",
+    );
   });
 
   it('should throw error for invalid country code when phone number is not provided', () => {
     expect(() =>
       getMaskedPhoneNumber({ countryCode: 'ZZ' as CountryCodeType }),
-    ).toThrow('Parameter "countryCode" is invalid: ZZ');
+    ).toThrow(
+      "Error: Parameter 'countryCode' is invalid. The received value was: ZZ.",
+    );
   });
 
   it('should handle invalid country code when phone number is provided', () => {

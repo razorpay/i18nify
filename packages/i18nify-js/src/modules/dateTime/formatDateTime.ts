@@ -69,9 +69,11 @@ const formatDateTime = (
     formatter = new DateFormatter(extractedLocale, finalIntlOptions);
   } catch (err) {
     if (err instanceof Error) {
-      throw new Error(err.message);
+      throw new Error(
+        `An error occurred while creating the DateFormatter instance: ${err.message}. Please ensure the provided options are valid and try again.`,
+      );
     } else {
-      throw new Error(`An unknown error occurred = ${err}`);
+      throw new Error(`An unknown error occurred. Error details: ${err}`);
     }
   }
 

@@ -18,7 +18,9 @@ const getAllCountries = (): Promise<
     .then((res) => res.json())
     .then((res) => res.metadata_information)
     .catch((err) => {
-      throw new Error(`Error in API response ${err}`);
+      throw new Error(
+        `An error occurred while fetching country metadata. The error details are: ${err.message}.`,
+      );
     });
 };
 

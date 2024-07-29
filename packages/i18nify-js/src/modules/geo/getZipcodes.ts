@@ -40,7 +40,11 @@ const getZipcodes = (_countryCode: CountryCodeType, _stateCode?: string) => {
   const stateCode = _stateCode && _stateCode.toUpperCase();
 
   if (!I18NIFY_DATA_SUPPORTED_COUNTRIES.includes(countryCode)) {
-    return Promise.reject(`Invalid country code: ${countryCode}`);
+    return Promise.reject(
+      new Error(
+        `Invalid country code: ${countryCode}. Please ensure you provide a valid country code.`,
+      ),
+    );
   }
 
   return fetch(
@@ -59,14 +63,16 @@ const getZipcodes = (_countryCode: CountryCodeType, _stateCode?: string) => {
 
       if (!res.states[stateCode]) {
         return Promise.reject(
-          `State code ${stateCode} missing in ${countryCode}`,
+          `State code ${stateCode} is missing in ${countryCode}. Please ensure you provide a valid state code that exists within the specified country. Check valid state codes and country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
         );
       }
 
       return getZipcodesFromState(res, stateCode);
     })
     .catch((err) => {
-      throw new Error(`Error in API response ${err}`);
+      throw new Error(
+        `An error occurred while fetching zipcode data. The error details are: ${err}.`,
+      );
     });
 };
 

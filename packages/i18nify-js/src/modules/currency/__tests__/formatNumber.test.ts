@@ -58,7 +58,7 @@ describe('formatNumber', () => {
         currency: 'USD',
       }),
     ).toThrow(
-      `Error: Parameter 'amount' is not a number. typeof amount: string`,
+      "Error: Parameter 'amount' is not a valid number. The received value was: invalid-amount of type string. Please ensure you pass a valid number.",
     );
   });
 
@@ -92,7 +92,7 @@ describe('formatNumber', () => {
 
   it('should throw error with thousands separators', () => {
     expect(() => formatNumber('1,234,567.89', { currency: 'USD' })).toThrow(
-      `Error: Parameter 'amount' is not a number. typeof amount: string`,
+      "Error: Parameter 'amount' is not a valid number. The received value was: 1,234,567.89 of type string. Please ensure you pass a valid number.",
     );
   });
 
@@ -103,7 +103,7 @@ describe('formatNumber', () => {
         intlOptions: { useGrouping: false },
       }),
     ).toThrow(
-      `Error: Parameter 'amount' is not a number. typeof amount: string`,
+      "Error: Parameter 'amount' is not a valid number. The received value was: 1000,5 of type string. Please ensure you pass a valid number.",
     );
   });
 
@@ -150,7 +150,8 @@ describe('formatNumber', () => {
   });
 
   it('should rethrow the caught Error instance with the same message', () => {
-    const errorMessage = 'Error: Invalid currency code : undefined';
+    const errorMessage =
+      'Error: An error occurred while formatting the number: Invalid currency code : undefined';
 
     expect(() => {
       formatNumber(123, { intlOptions: { currency: 'undefined' } } as any);
@@ -162,7 +163,7 @@ describe('formatNumber', () => {
       formatNumber(123, { intlOptions: { style: 'hola' } } as any);
     }).toThrow(
       new Error(
-        'Error: Value hola out of range for Intl.NumberFormat options property style',
+        'Error: An error occurred while formatting the number: Value hola out of range for Intl.NumberFormat options property style',
       ),
     );
   });

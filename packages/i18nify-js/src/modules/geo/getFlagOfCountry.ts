@@ -17,7 +17,9 @@ import { isCountryValid } from './utils';
  */
 const getFlagOfCountry = (_countryCode: CountryCodeType): GetFlagReturnType => {
   if (!isCountryValid(_countryCode)) {
-    throw new Error(`Invalid country code: ${_countryCode}`);
+    throw new Error(
+      `The provided country code is invalid. The received value was: ${_countryCode}. Please ensure you pass a valid country code. Check valid country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
+    );
   }
 
   const countryCode = _countryCode.toLowerCase() as CountryCodeType;

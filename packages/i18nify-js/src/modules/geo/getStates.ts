@@ -17,7 +17,11 @@ const getStates = (_countryCode: I18nifyCountryCodeType) => {
   const countryCode = _countryCode.toUpperCase();
 
   if (!I18NIFY_DATA_SUPPORTED_COUNTRIES.includes(countryCode)) {
-    return Promise.reject(`Invalid country code: ${countryCode}`);
+    return Promise.reject(
+      new Error(
+        `Invalid country code: ${countryCode}. Please ensure you provide a valid country code. Check valid country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
+      ),
+    );
   }
 
   return fetch(
@@ -26,7 +30,9 @@ const getStates = (_countryCode: I18nifyCountryCodeType) => {
     .then((res) => res.json())
     .then((res) => res.states)
     .catch((err) => {
-      throw new Error(`Error in API response ${err}`);
+      throw new Error(
+        `An error occurred while fetching state data. The error details are: ${err.message}.`,
+      );
     });
 };
 

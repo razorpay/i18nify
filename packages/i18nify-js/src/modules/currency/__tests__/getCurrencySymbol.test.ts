@@ -11,14 +11,14 @@ describe('getCurrencySymbol', () => {
   it('should throw Error for an invalid currency code', () => {
     const currencyCode = 'XYZ'; // An invalid code
     expect(() => getCurrencySymbol(currencyCode as CurrencyCodeType)).toThrow(
-      'Error: Invalid currencyCode: XYZ',
+      `Error: The provided currency code is invalid. The received value was: ${currencyCode}. Please ensure you pass a valid currency code.`,
     );
   });
 
   it('should throw Error for an empty string', () => {
     const currencyCode = '';
     expect(() => getCurrencySymbol(currencyCode as CurrencyCodeType)).toThrow(
-      'Error: Invalid currencyCode: ',
+      'Error: The provided currency code is invalid. The received value was: . Please ensure you pass a valid currency code.',
     );
   });
 });

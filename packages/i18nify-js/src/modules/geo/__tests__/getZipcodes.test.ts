@@ -42,7 +42,9 @@ describe('getZipcodes', () => {
     const invalidCountryCode = 'XYZ';
     // @ts-expect-error invalid country code for testing
     await expect(getZipcodes(invalidCountryCode)).rejects.toEqual(
-      `Invalid country code: ${invalidCountryCode}`,
+      new Error(
+        `Invalid country code: XYZ. Please ensure you provide a valid country code.`,
+      ),
     );
   });
 
@@ -52,12 +54,14 @@ describe('getZipcodes', () => {
     await expect(
       getZipcodes(validCountryCode, missingStateCode),
     ).rejects.toThrow(
-      `State code ${missingStateCode} missing in ${validCountryCode}`,
+      `An error occurred while fetching zipcode data. The error details are: State code ${missingStateCode} is missing in ${validCountryCode}. Please ensure you provide a valid state code that exists within the specified country. Check valid state codes and country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json.`,
     );
   });
 
   it('handles API errors', async () => {
     global.fetch = jest.fn(() => Promise.reject('API Error'));
-    await expect(getZipcodes('IN')).rejects.toThrow('Error in API response');
+    await expect(getZipcodes('IN')).rejects.toThrow(
+      'An error occurred while fetching zipcode data. The error details are: API Error.',
+    );
   });
 });

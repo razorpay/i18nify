@@ -20,7 +20,10 @@ export const getIntlInstanceWithOptions = (
     intlOptions.currency = (options.currency || intlOptions.currency) as string;
   }
 
-  if (!locale) throw new Error('Pass valid locale !');
+  if (!locale)
+    throw new Error(
+      `The provided locale value is invalid. The received value was: ${locale}. Please ensure you pass a correct locale string for proper formatting.`,
+    );
 
   return new Intl.NumberFormat(
     locale || undefined,

@@ -22,8 +22,11 @@ const convertToMajorUnit = (
 ): number => {
   const currencyInfo = CURRENCY_INFO[options.currency];
 
-  if (!currencyInfo)
-    throw new Error(`Unsupported currency ${String(options.currency)}`);
+  if (!options.currency || !currencyInfo) {
+    throw new Error(
+      `The provided currency code is either empty or not supported. The received value was ${(options.currency as any) === '' ? 'an empty string' : `: ${String(options.currency)}`}. Please ensure you pass a valid currency code. Check valid currency codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/currency/data.json`,
+    );
+  }
 
   const minorUnitMultiplier =
     Math.pow(10, Number(currencyInfo.minor_unit)) || 100;

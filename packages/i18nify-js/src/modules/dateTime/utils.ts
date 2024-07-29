@@ -34,19 +34,26 @@ export const stringToDate = (dateString: string): Date => {
         );
 
         if (dateObj.getTime()) return dateObj;
-        else throw new Error('Invalid Date!');
+        else
+          throw new Error(
+            `Invalid Date! The constructed date from the provided string "${dateString}" is invalid. Please ensure the date string is correct.`,
+          );
       } catch (err) {
         if (err instanceof Error) {
-          throw new Error(err.message);
+          throw new Error(
+            `An error occurred while constructing the date: ${err.message}. Please ensure the date string "${dateString}" is in a supported format.`,
+          );
         } else {
-          throw new Error(`An unknown error occurred = ${err}`);
+          throw new Error(`An unknown error occurred. Error details: ${err}`);
         }
       }
     }
   }
 
   // If no format matches, throw an error.
-  throw new Error('Date format not recognized');
+  throw new Error(
+    `Date format not recognized. The provided date string "${dateString}" does not match any supported formats. Please use a recognized date format.`,
+  );
 };
 
 export const convertToStandardDate = (date: DateInput): Date => {
