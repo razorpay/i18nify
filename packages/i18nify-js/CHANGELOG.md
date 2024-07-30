@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.12.2
+
+### Patch Changes
+
+- b43972e: [chore]: mock changes for triggering release
+
 ## 1.12.1
 
 ### Patch Changes
