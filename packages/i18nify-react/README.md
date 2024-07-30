@@ -33,7 +33,7 @@ Welcome to i18nify-react, your new best friend for seamlessly managing i18n stat
 
 ### I18nProvider
 
-Add the `I18nProvider` to the topmost parent component in your application to kickstart the i18n magic! 🪄
+Add the `I18nProvider` to the topmost parent component in your application to kickstart the i18n magic!🪄
 
 #### Example:
 
