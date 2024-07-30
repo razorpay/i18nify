@@ -83,3 +83,78 @@ func assertIsArray(t *testing.T, value interface{}) {
 		t.Errorf("Expected an array or slice, but got %T", value)
 	}
 }
+
+func TestCountrySubdivisions_GetCityAndStateForPincode(t *testing.T) {
+	subDivData := GetCountrySubdivisions("MY")
+
+	tests := []struct {
+		name     string
+		country  string
+		expected []string
+		err      error
+	}{
+		{"Valid country", "MY", []string{"Kulim", "Kedah"}, nil},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			city, state, err := subDivData.GetCityAndStateForPincode("09000")
+			if err != nil {
+				assert.Error(t, tt.err)
+			} else {
+				assert.NoError(t, nil)
+				assert.Equal(t, city, tt.expected[0])
+				assert.Equal(t, state, tt.expected[1])
+			}
+		})
+	}
+}
+
+func TestGetAllStates(t *testing.T) {
+	subDivData := GetCountrySubdivisions("MY")
+
+	tests := []struct {
+		name     string
+		country  string
+		expected []string
+		err      error
+	}{
+		{"Valid country", "MY", []string{"Kedah"}, nil},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := subDivData.GetAllStates()
+			if tt.err != nil {
+				assert.Error(t, tt.err)
+			} else {
+				assert.NoError(t, nil)
+				assert.Subset(t, result, tt.expected)
+			}
+		})
+	}
+}
+
+func TestGetAllCities(t *testing.T) {
+	subDivData := GetCountrySubdivisions("MY")
+	tests := []struct {
+		name     string
+		country  string
+		expected []string
+		err      error
+	}{
+		{"Valid country", "MY", []string{"Penang"}, nil},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := subDivData.GetAllCities()
+			if tt.err != nil {
+				assert.Error(t, tt.err)
+			} else {
+				assert.NoError(t, nil)
+				assert.Subset(t, result, tt.expected)
+			}
+		})
+	}
+}
