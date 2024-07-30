@@ -1,5 +1,12 @@
 # @razorpay/i18nify-js
 
+## 1.12.1
+
+### Patch Changes
+
+- 87faac9: [chore]: mock changes to trigger release
+- a10a4a9: playground package set as private to fix changeset release
+
 ## 1.11.0
 
 ### Minor Changes
