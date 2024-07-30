@@ -1,5 +1,15 @@
 # @razorpay/i18nify-react
 
+## 4.0.11
+
+### Patch Changes
+
+- 87faac9: [chore]: mock changes to trigger release
+- a10a4a9: playground package set as private to fix changeset release
+- Updated dependencies [87faac9]
+- Updated dependencies [a10a4a9]
+  - @razorpay/i18nify-js@1.11.1
+
 ## 4.0.10
 
 ### Patch Changes
