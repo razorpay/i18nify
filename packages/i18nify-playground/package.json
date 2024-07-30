@@ -3,7 +3,7 @@
   "author": "tarun-khanna",
   "licence": "MIT",
   "version": "1.8.1",
-  "private": false,
+  "private": true,
   "scripts": {
     "dev": "vite",
     "start": "vite build --watch & vite preview",
