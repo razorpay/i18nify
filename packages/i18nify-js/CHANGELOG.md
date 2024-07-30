@@ -1,6 +1,6 @@
 # @razorpay/i18nify-js
 
-## 1.11.1
+## 1.12.1
 
 ### Patch Changes
 
