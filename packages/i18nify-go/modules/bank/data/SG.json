@@ -1,0 +1,13 @@
+[
+  {
+    "name": "CITIBANK,N.A.",
+    "short_code": "CITI",
+    "branches": [
+      {
+        "code": "XXX",
+        "city": "SINGAPORE",
+        "swift_code": "CITISGSGXXX"
+      }
+    ]
+  }
+]

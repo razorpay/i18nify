@@ -1,0 +1,13 @@
+[
+  {
+    "name": "AFFIN BANK BERHAD",
+    "short_code": "PHBM",
+    "branches": [
+      {
+        "code": "XXX",
+        "city": "KUALA LUMPUR",
+        "swift_code": "PHBMMYKLXXX"
+      }
+    ]
+  }
+]

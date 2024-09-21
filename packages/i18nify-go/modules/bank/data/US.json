@@ -1,0 +1,13 @@
+[
+  {
+    "name": "U.S. BANK N.A.",
+    "short_code": "USBK",
+    "branches": [
+      {
+        "code": "XXX",
+        "city": "MINNEAPOLIS",
+        "swift_code": "USBKUS44XXX"
+      }
+    ]
+  }
+]

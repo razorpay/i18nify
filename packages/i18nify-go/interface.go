@@ -2,6 +2,7 @@
 package i18nify_go
 
 import (
+	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bank"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
@@ -18,4 +19,8 @@ type ICountry interface {
 	GetCountryPhoneNumber() phonenumber.CountryTeleInformation
 	// GetCountryCurrency retrieves currency information for the country.
 	GetCountryCurrency() []currency.CurrencyInformation
+}
+
+type IBank interface {
+	GetBankNameFromShortCode(bank.CountryCode, string) (bool, string)
 }
