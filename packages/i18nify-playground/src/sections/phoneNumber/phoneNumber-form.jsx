@@ -19,6 +19,8 @@ import {
   localPhoneNumbersByDialCodeMap,
 } from './data/phoneNumber';
 
+import { getFlagOfCountry } from '@razorpay/i18nify-js';
+
 const PhoneNumberForm = ({
   inpValue,
   onInpChange,
@@ -82,15 +84,15 @@ const PhoneNumberForm = ({
                     >
                       <div width="30px">+ {code}</div>
                       <img
-                        width="40px"
+                        width="28px"
                         style={{
                           marginLeft: 8,
                           marginRight: 8,
                         }}
                         loading="lazy"
-                        src={`/assets/flags/${dialCodeCountryCodeMap[
+                        src={getFlagOfCountry(dialCodeCountryCodeMap[
                           code
-                        ][0].toLocaleLowerCase()}.svg`}
+                        ][0])['4X3']}
                       />
                     </Box>
                   </MenuItem>
