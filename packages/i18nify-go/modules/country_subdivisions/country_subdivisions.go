@@ -8,6 +8,7 @@
 package country_subdivisions
 
 import (
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -53,7 +54,9 @@ func GetCountrySubdivisions(code string) CountrySubdivisions {
 		fmt.Println("Error getting current file directory")
 		return CountrySubdivisions{}
 	}
-	subDivJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), code+".json"))
+	completePath := filepath.Join(filepath.Dir(currentFileName), code+".json")
+	//go:embed completePath
+	subDivJsonData, err := os.ReadFile(completePath)
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)
 		return CountrySubdivisions{}
