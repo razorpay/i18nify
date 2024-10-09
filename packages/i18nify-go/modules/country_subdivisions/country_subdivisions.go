@@ -13,7 +13,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"path/filepath"
-	"runtime"
 )
 
 //go:embed data
@@ -51,13 +50,7 @@ func (r *CountrySubdivisions) GetStates() map[string]State {
 
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
-	// Read JSON data file containing country subdivision information.
-	_, currentFileName, _, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Println("Error getting current file directory")
-		return CountrySubdivisions{}
-	}
-	completePath := filepath.Join(filepath.Dir(currentFileName), "data/", code+".json")
+	completePath := filepath.Join("data/", code+".json")
 	subDivJsonData, err := subDivJsonDir.ReadFile(completePath)
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)

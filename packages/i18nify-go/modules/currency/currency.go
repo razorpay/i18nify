@@ -11,8 +11,6 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
-	"path/filepath"
-	"runtime"
 )
 
 //go:embed data
@@ -46,13 +44,7 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) CurrencyInformation {
-	// Read JSON data file containing currency information.
-	_, fileName, _, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Println("Error getting current file directory")
-		return CurrencyInformation{}
-	}
-	currencyJsonData, err := currencyJsonDir.ReadFile(filepath.Join(filepath.Dir(fileName), DataFile))
+	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Println("Error reading JSON file:", err)

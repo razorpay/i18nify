@@ -11,8 +11,6 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
-	"path/filepath"
-	"runtime"
 )
 
 //go:embed data
@@ -46,13 +44,8 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 
 // GetMetadataInformation retrieves metadata information for a specific country code.
 func GetMetadataInformation(code string) MetadataInformation {
-	// Read JSON data file containing country metadata.
-	_, fileName, _, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Println("Error getting current file directory")
-		return MetadataInformation{}
-	}
-	metaJsonData, err := metaJsonDir.ReadFile(filepath.Join(filepath.Dir(fileName), DataFile))
+	fmt.Println(metaJsonDir)
+	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Printf("Error reading country metadata file: %v", err)
