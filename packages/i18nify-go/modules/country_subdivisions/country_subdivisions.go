@@ -9,7 +9,6 @@ package country_subdivisions
 
 import (
 	"embed"
-	_ "embed"
 	"encoding/json"
 	"fmt"
 	"path/filepath"
