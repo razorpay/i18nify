@@ -8,10 +8,13 @@
 package phonenumber
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
-	"os"
 )
+
+//go:embed data
+var teleJsonDir embed.FS
 
 // DataFile defines the path to the JSON data file containing country telephone number information.
 const DataFile = "data/data.json"
@@ -40,7 +43,7 @@ func (r *PhoneNumber) GetAllCountryTeleInformation() map[string]CountryTeleInfor
 
 // GetCountryTeleInformation retrieves telephone information for a specific country code.
 func GetCountryTeleInformation(code string) CountryTeleInformation {
-	teleJsonData, err := os.ReadFile(DataFile)
+	teleJsonData, err := teleJsonDir.ReadFile(DataFile)
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)
 		return CountryTeleInformation{}
