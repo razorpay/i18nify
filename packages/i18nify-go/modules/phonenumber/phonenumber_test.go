@@ -9,7 +9,7 @@ import (
 )
 
 func TestUnmarshalPhoneNumber(t *testing.T) {
-	jsonData, err := os.ReadFile("data.json")
+	jsonData, err := os.ReadFile("data/data.json")
 	result, err := UnmarshalPhoneNumber(jsonData)
 
 	assert.NoError(t, err, "Unexpected error during unmarshal")

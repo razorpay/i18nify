@@ -8,12 +8,14 @@
 package country_subdivisions
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
-	"os"
 	"path/filepath"
-	"runtime"
 )
+
+//go:embed data
+var subDivJsonDir embed.FS
 
 // DataFile is the directory where JSON files containing country subdivision data are stored. "
 
@@ -48,12 +50,8 @@ func (r *CountrySubdivisions) GetStates() map[string]State {
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
 	// Read JSON data file containing country subdivision information.
-	_, currentFileName, _, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Println("Error getting current file directory")
-		return CountrySubdivisions{}
-	}
-	subDivJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), code+".json"))
+	completePath := filepath.Join("data/", code+".json")
+	subDivJsonData, err := subDivJsonDir.ReadFile(completePath)
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)
 		return CountrySubdivisions{}

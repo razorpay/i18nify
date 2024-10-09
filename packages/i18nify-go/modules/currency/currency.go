@@ -8,15 +8,16 @@
 package currency
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
-	"os"
-	"path/filepath"
-	"runtime"
 )
 
+//go:embed data
+var currencyJsonDir embed.FS
+
 // DataFile defines the path to the JSON data file containing currency information.
-const DataFile = "data.json"
+const DataFile = "data/data.json"
 
 // UnmarshalCurrency parses JSON data into a Currency struct.
 func UnmarshalCurrency(data []byte) (Currency, error) {
@@ -44,12 +45,7 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) CurrencyInformation {
 	// Read JSON data file containing currency information.
-	_, fileName, _, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Println("Error getting current file directory")
-		return CurrencyInformation{}
-	}
-	currencyJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(fileName), DataFile))
+	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Println("Error reading JSON file:", err)
