@@ -14,7 +14,7 @@ import (
 var testJSONData = []byte(`{"country_name": "India", "states": {"KA": {"name": "Karnataka", "cities": [{"name": "Bengaluru", "timezone": "Asia/Kolkata", "zipcodes": ["560018", "560116", "560500"], "region_name/district_name": "nan"}]}}}`)
 
 func TestUnmarshalCountrySubdivisions(t *testing.T) {
-	jsonData, err := os.ReadFile("IN.json")
+	jsonData, err := subDivJsonDir.ReadFile("data/IN.json")
 	subDivData, err := UnmarshalCountrySubdivisions(jsonData)
 	assert.NoError(t, err, "Unexpected error during unmarshal")
 

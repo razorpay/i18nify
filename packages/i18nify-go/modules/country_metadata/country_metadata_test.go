@@ -9,7 +9,7 @@ import (
 )
 
 func TestUnmarshalCountryMetadata(t *testing.T) {
-	jsonData, err := os.ReadFile("data.json")
+	jsonData, err := os.ReadFile("data/data.json")
 	countryMetadata, err := UnmarshalCountryMetadata(jsonData)
 
 	assert.NoError(t, err, "Unexpected error during unmarshal")
@@ -66,7 +66,7 @@ func TestMarshalCountryMetadata(t *testing.T) {
 var readFileFunc = os.ReadFile
 
 func TestGetMetadataInformation(t *testing.T) {
-	jsonData, err := os.ReadFile("data.json")
+	jsonData, err := os.ReadFile("data/data.json")
 
 	// Mock implementation of os.ReadFile
 	readFileFunc = func(filename string) ([]byte, error) {

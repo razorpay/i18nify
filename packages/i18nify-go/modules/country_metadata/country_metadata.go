@@ -8,12 +8,15 @@
 package country_metadata
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
-	"os"
 	"path/filepath"
 	"runtime"
 )
+
+//go:embed data
+var metaJsonDir embed.FS
 
 // DataFile defines the path to the JSON data file containing country metadata.
 const DataFile = "data.json"
@@ -49,7 +52,7 @@ func GetMetadataInformation(code string) MetadataInformation {
 		fmt.Println("Error getting current file directory")
 		return MetadataInformation{}
 	}
-	metaJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(fileName), DataFile))
+	metaJsonData, err := metaJsonDir.ReadFile(filepath.Join(filepath.Dir(fileName), DataFile))
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Printf("Error reading country metadata file: %v", err)

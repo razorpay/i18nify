@@ -8,12 +8,15 @@
 package currency
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
-	"os"
 	"path/filepath"
 	"runtime"
 )
+
+//go:embed data
+var currencyJsonDir embed.FS
 
 // DataFile defines the path to the JSON data file containing currency information.
 const DataFile = "data.json"
@@ -49,7 +52,7 @@ func GetCurrencyInformation(code string) CurrencyInformation {
 		fmt.Println("Error getting current file directory")
 		return CurrencyInformation{}
 	}
-	currencyJsonData, err := os.ReadFile(filepath.Join(filepath.Dir(fileName), DataFile))
+	currencyJsonData, err := currencyJsonDir.ReadFile(filepath.Join(filepath.Dir(fileName), DataFile))
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Println("Error reading JSON file:", err)

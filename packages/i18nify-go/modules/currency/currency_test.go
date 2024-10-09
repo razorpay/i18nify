@@ -8,7 +8,7 @@ import (
 )
 
 func TestUnmarshalCurrency(t *testing.T) {
-	jsonData, err := os.ReadFile("data.json")
+	jsonData, err := os.ReadFile("data/data.json")
 	result, err := UnmarshalCurrency(jsonData)
 
 	assert.NoError(t, err, "Unexpected error during unmarshal")
@@ -42,7 +42,7 @@ func TestMarshalCurrency(t *testing.T) {
 var readFileFunc = os.ReadFile
 
 func TestGetCurrencyInformation(t *testing.T) {
-	jsonData, err := os.ReadFile("data.json")
+	jsonData, err := os.ReadFile("data/data.json")
 	// Mock implementation of os.ReadFile
 	readFileFunc = func(filename string) ([]byte, error) {
 		return jsonData, errors.New("error reading JSON file")
