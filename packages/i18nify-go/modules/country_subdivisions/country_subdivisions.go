@@ -57,7 +57,7 @@ func GetCountrySubdivisions(code string) CountrySubdivisions {
 		fmt.Println("Error getting current file directory")
 		return CountrySubdivisions{}
 	}
-	completePath := filepath.Join(filepath.Dir(currentFileName), code+".json")
+	completePath := filepath.Join(filepath.Dir(currentFileName), "data/", code+".json")
 	subDivJsonData, err := subDivJsonDir.ReadFile(completePath)
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)

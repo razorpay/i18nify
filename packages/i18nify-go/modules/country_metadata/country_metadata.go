@@ -19,7 +19,7 @@ import (
 var metaJsonDir embed.FS
 
 // DataFile defines the path to the JSON data file containing country metadata.
-const DataFile = "data.json"
+const DataFile = "data/data.json"
 
 // UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
 func UnmarshalCountryMetadata(data []byte) (CountryMetadata, error) {

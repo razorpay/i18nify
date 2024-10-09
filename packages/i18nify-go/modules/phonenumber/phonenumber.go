@@ -16,7 +16,7 @@ import (
 )
 
 // DataFile defines the path to the JSON data file containing country telephone number information.
-const DataFile = "data.json"
+const DataFile = "data/data.json"
 
 // UnmarshalPhoneNumber parses JSON data into a PhoneNumber struct.
 func UnmarshalPhoneNumber(data []byte) (PhoneNumber, error) {

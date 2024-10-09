@@ -19,7 +19,7 @@ import (
 var currencyJsonDir embed.FS
 
 // DataFile defines the path to the JSON data file containing currency information.
-const DataFile = "data.json"
+const DataFile = "data/data.json"
 
 // UnmarshalCurrency parses JSON data into a Currency struct.
 func UnmarshalCurrency(data []byte) (Currency, error) {
