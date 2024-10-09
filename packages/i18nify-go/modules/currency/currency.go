@@ -44,6 +44,7 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) CurrencyInformation {
+	// Read JSON data file containing currency information.
 	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
 	if err != nil {
 		// Handle error reading the file.

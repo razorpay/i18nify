@@ -43,6 +43,7 @@ func (r *PhoneNumber) GetAllCountryTeleInformation() map[string]CountryTeleInfor
 
 // GetCountryTeleInformation retrieves telephone information for a specific country code.
 func GetCountryTeleInformation(code string) CountryTeleInformation {
+	// Read JSON data file containing country telephone information.
 	teleJsonData, err := teleJsonDir.ReadFile(DataFile)
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)

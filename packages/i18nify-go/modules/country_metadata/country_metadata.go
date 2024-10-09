@@ -44,6 +44,7 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 
 // GetMetadataInformation retrieves metadata information for a specific country code.
 func GetMetadataInformation(code string) MetadataInformation {
+	// Read JSON data file containing country metadata.
 	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
 	if err != nil {
 		// Handle error reading the file.

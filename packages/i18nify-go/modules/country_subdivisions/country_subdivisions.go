@@ -49,6 +49,7 @@ func (r *CountrySubdivisions) GetStates() map[string]State {
 
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
+	// Read JSON data file containing country subdivision information.
 	completePath := filepath.Join("data/", code+".json")
 	subDivJsonData, err := subDivJsonDir.ReadFile(completePath)
 	if err != nil {
