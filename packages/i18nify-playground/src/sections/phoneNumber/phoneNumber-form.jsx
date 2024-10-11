@@ -84,7 +84,7 @@ const PhoneNumberForm = ({
                     >
                       <div width="30px">+ {code}</div>
                       <img
-                        width="28px"
+                        width="40px"
                         style={{
                           marginLeft: 8,
                           marginRight: 8,
