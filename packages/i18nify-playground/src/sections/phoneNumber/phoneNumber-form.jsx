@@ -19,7 +19,7 @@ import {
   localPhoneNumbersByDialCodeMap,
 } from './data/phoneNumber';
 
-import { getFlagOfCountry } from '@razorpay/i18nify-js';
+import { FLAG_4X3_BASE_PATH } from 'src/constants/phoneNumber';
 
 const PhoneNumberForm = ({
   inpValue,
@@ -90,9 +90,9 @@ const PhoneNumberForm = ({
                           marginRight: 8,
                         }}
                         loading="lazy"
-                        src={getFlagOfCountry(dialCodeCountryCodeMap[
+                        src={`${FLAG_4X3_BASE_PATH}/${dialCodeCountryCodeMap[
                           code
-                        ][0])['4X3']}
+                        ][0].toLocaleLowerCase()}.svg`}
                       />
                     </Box>
                   </MenuItem>
