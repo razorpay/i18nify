@@ -19,6 +19,10 @@ import {
   localPhoneNumbersByDialCodeMap,
 } from './data/phoneNumber';
 
+import {
+  FLAG_4X3_BASE_PATH
+} from '../../constants/geo';
+
 const PhoneNumberForm = ({
   inpValue,
   onInpChange,
@@ -88,7 +92,7 @@ const PhoneNumberForm = ({
                           marginRight: 8,
                         }}
                         loading="lazy"
-                        src={`/assets/flags/${dialCodeCountryCodeMap[
+                        src={`${FLAG_4X3_BASE_PATH}/${dialCodeCountryCodeMap[
                           code
                         ][0].toLocaleLowerCase()}.svg`}
                       />
