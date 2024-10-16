@@ -63,7 +63,7 @@ jobs:
     if: (success() || failure()) && ${{ needs.check-if-i18nify-js.outputs.modified == 'true' }}
     steps:
       - name: Download Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
 
