@@ -18,3 +18,6 @@ export const PHONE_MASKING_INPUTS = [
     type: 'number',
   },
 ];
+
+export const FLAG_CDN_BASE_PATH =
+  'https://flagcdn.com';
