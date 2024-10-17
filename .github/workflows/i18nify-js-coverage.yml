@@ -44,13 +44,13 @@ jobs:
         working-directory: packages/i18nify-js
         run: yarn test
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: false
           verbose: true
       - name: Upload Unit Test Results
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: Unit Test Results
           path: src/coverage/**/*.xml
@@ -63,7 +63,7 @@ jobs:
     if: (success() || failure()) && ${{ needs.check-if-i18nify-js.outputs.modified == 'true' }}
     steps:
       - name: Download Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
 
