@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.12.3
+
+### Patch Changes
+
+- 934f6b5: fix: add missing dial codes data in i18nify-data
+
 ## 1.12.2
 
 ### Patch Changes
