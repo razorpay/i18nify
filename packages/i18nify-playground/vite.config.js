@@ -11,7 +11,10 @@ export default defineConfig({
   plugins: [
     react(),
     copy({
-      targets: [{ src: 'CNAME', dest: 'dist/' }],
+      targets: [
+        { src: 'CNAME', dest: 'dist/' },
+        { src: '../../i18nify-data/assets/flags/*', dest: 'public/assets/flags' },
+      ],
       hook: 'writeBundle', // notice here
     }),
   ],
