@@ -19,7 +19,7 @@ import {
   localPhoneNumbersByDialCodeMap,
 } from './data/phoneNumber';
 
-import { FLAG_4X3_BASE_PATH } from 'src/constants/phoneNumber';
+import { FLAG_CDN_BASE_PATH } from 'src/constants/phoneNumber';
 
 const PhoneNumberForm = ({
   inpValue,
@@ -90,9 +90,11 @@ const PhoneNumberForm = ({
                           marginRight: 8,
                         }}
                         loading="lazy"
-                        src={`${FLAG_4X3_BASE_PATH}/${dialCodeCountryCodeMap[
-                          code
-                        ][0].toLocaleLowerCase()}.svg`}
+                        src={`${FLAG_CDN_BASE_PATH}/${
+                          dialCodeCountryCodeMap[code][0].toLocaleLowerCase() === '001'? 'us' : 
+                          dialCodeCountryCodeMap[code][0].toLocaleLowerCase() === 'ac' ? 'sh' : 
+                          dialCodeCountryCodeMap[code][0].toLocaleLowerCase()
+                        }.svg`}
                       />
                     </Box>
                   </MenuItem>
