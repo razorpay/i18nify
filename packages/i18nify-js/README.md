@@ -27,6 +27,15 @@ Go on, code conqueror, the adventure awaits!
 
 Welcome to the command center for your i18n experience! This module serves as the control hub, housing the essential functions to manage your i18n settings seamlessly. This module offers a trio of functions to handle all your i18n needs. Whether it's checking the current state, customizing settings, or starting afresh, this module has got you covered in managing your i18n world! 🚀
 
+#### Flowcharts
+
+```mermaid
+flowchart TD
+    A[Core Module] --> B[setState]
+    A --> C[getState]
+    A --> D[resetState]
+```
+
 #### Functions
 
 **setState(newState: Partial `<I18nState>`):** Customize and update your i18n state with ease! Whether you're changing locales or tweaking directions, this function is your ticket to tailor your i18n experience precisely how you want it! 🎨
@@ -67,6 +76,18 @@ resetState();
 ### Module 01: Currency
 
 This module's your go-to guru for everything currency/number-related. 🤑 It's all about formatting, validations, and handy tricks to make dealing with money/numbers a breeze. Here are the cool APIs and utilities this Currency Module gives you to play with! 🚀💸
+
+#### Flowcharts
+
+```mermaid
+flowchart TD
+    E[Module 01: Currency] --> F[convertToMajorUnit]
+    E --> G[convertToMinorUnit]
+    E --> H[formatNumber]
+    E --> I[getCurrencyList]
+    E --> J[getCurrencySymbol]
+    E --> K[formatNumberByParts]
+```
 
 #### convertToMajorUnit(amount, options)
 
@@ -387,6 +408,18 @@ console.log(
 
 This module's your phone's best friend, handling all things phone number-related. 📱 It's the go-to for formatting, checking if those digits are legit, and all those handy phone-related tricks. And guess what? It's got a bunch of cool stuff—APIs and utilities—just waiting for you to dive in and make your phone game strong! 🚀🔢
 
+#### Flowcharts
+
+```mermaid
+flowchart TD
+    L[Module 02: Phone Number] --> M[isValidPhoneNumber]
+    L --> N[formatPhoneNumber]
+    L --> O[parsePhoneNumber]
+    L --> P[getDialCodes]
+    L --> Q[getDialCodeByCountryCode]
+    L --> R[getMaskedPhoneNumber]
+```
+
 #### isValidPhoneNumber(phoneNumber, countryCode)
 
 📞 It's like the phone number detective, using fancy patterns to check if a number is the real deal for a specific country code. So, it's pretty simple: if it says true, your number's good to go for that country; if it's false, time to double-check those digits! 🕵️‍♂️🔍
@@ -640,6 +673,18 @@ The Geo Module is designed to enrich your applications by providing easy access 
 > 3. getZipcodes
 >
 > These countries are 'IN', 'MY', 'SG' and 'US'.
+
+#### Flowcharts
+
+```mermaid
+flowchart TD
+    S[Module 03: Geo Module] --> T[getAllCountries]
+    S --> U[getStates]
+    S --> V[getCities]
+    S --> W[getZipcodes]
+    S --> X[getFlagOfCountry]
+    S --> Y[getFlagsForAllCountries]
+```
 
 #### getAllCountries
 
@@ -927,6 +972,17 @@ Behold, an object where each key is a country code linked to its flag's URL, suc
 ### Module 04: Date & Time Module
 
 This module provides functions for formatting and manipulating dates and times in a locale-sensitive manner using the JavaScript Intl API & Date object.
+
+#### Flowcharts
+
+```mermaid
+flowchart TD
+    Z[Module 04: Date & Time Module] --> AA[formatDateTime]
+    Z --> AB[getRelativeTime]
+    Z --> AC[getWeekdays]
+    Z --> AD[parseDateTime]
+    Z --> AE[Calendar, CalendarDate, CalendarDateTime, Time, ZonedDateTime]
+```
 
 #### formatDateTime(date, options)
 
