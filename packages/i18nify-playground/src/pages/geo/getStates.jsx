@@ -27,6 +27,8 @@ export default function GetStates() {
   }, []);
 
   useEffect(() => {
+    setStateVal('');
+    setStateList([]);
     getStates(countryInp).then((res) => {
       setCode(JSON.stringify(res, null, 2));
       const data = Object.keys(res).map((stateCode) => ({
@@ -80,13 +82,13 @@ export default function GetStates() {
           <CountryDropdown
             value={countryInp}
             list={countryList}
-            onChange={(e) => setCountryInp(e)}
+            onChange={(country) => setCountryInp(country)}
           />
           <StateDropdown
             label="List of States"
             value={stateVal}
             list={stateList}
-            onChange={(e) => setStateVal(e)}
+            onChange={(state) => setStateVal(state)}
           />
         </Grid>
         {!isMobile && (

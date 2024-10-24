@@ -38,6 +38,9 @@ export default function GetCities() {
 
   useEffect(() => {
     setStateInp('');
+    setStateList([]);
+    setCityInp('');
+    setCities([]);
     setCode('');
     getStates(countryInp).then((res) => {
       const states = Object.entries(res).map(([_code, state]) => ({
@@ -50,6 +53,8 @@ export default function GetCities() {
 
   useEffect(() => {
     if (!stateInp) return;
+    setCityInp('');
+    setCities([]);
     getCities(countryInp, stateInp).then((res) => {
       setCities(res);
       setCityInp(res[0].name);
@@ -106,7 +111,7 @@ export default function GetCities() {
           />
           <StateDropdown
             value={stateInp}
-            onChange={(e) => setStateInp(e)}
+            onChange={(state) => setStateInp(state)}
             list={stateList}
           />
 
@@ -119,6 +124,7 @@ export default function GetCities() {
               marginRight: 1,
               width: '100%',
             }}
+            onChange={(e) => setCityInp(e.target.value || '')}
           >
             {cities.map((city) => (
               <MenuItem key={city.name} value={city.name}>
