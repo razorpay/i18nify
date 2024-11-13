@@ -47,6 +47,31 @@ func (r *CountrySubdivisions) GetStates() map[string]State {
 	return r.States
 }
 
+// GetStatesByZipCode returns the list of states that have at least one city with the specified zip code.
+func (r *CountrySubdivisions) GetStatesByZipCode(code string) []State {
+	var states []State
+	for _, state := range r.States {
+		for _, city := range state.Cities {
+			for _, zipcode := range city.Zipcodes {
+				if zipcode == code {
+					states = append(states, state)
+					break
+				}
+			}
+		}
+	}
+	return states
+}
+
+// GetCitiesWithZipCode returns the list of cities with the specified zip code.
+func (r *CountrySubdivisions) GetCitiesWithZipCode(code string) []City {
+	var cities []City
+	for _, state := range r.States {
+		cities = append(cities, state.GetCitiesByZipCode(code)...)
+	}
+	return cities
+}
+
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
 	// Read JSON data file containing country subdivision information.
@@ -78,6 +103,25 @@ type State struct {
 // GetCities returns information about cities within the state.
 func (r *State) GetCities() []City {
 	return r.Cities
+}
+
+// IsValidZipCode return whether input zipcode is valid or not.
+func (r *State) IsValidZipCode(zipcode string) bool {
+	return len(r.GetCitiesByZipCode(zipcode)) > 0
+}
+
+// GetCitiesByZipCode returns the City based on the input code.
+func (r *State) GetCitiesByZipCode(code string) []City {
+	var cities []City
+	for _, city := range r.Cities {
+		for _, zipcode := range city.Zipcodes {
+			if zipcode == code {
+				cities = append(cities, city)
+				break
+			}
+		}
+	}
+	return cities
 }
 
 // GetName returns the name of the state.
@@ -119,6 +163,16 @@ func (r *City) GetTimezone() string {
 // GetZipcodes returns postal codes for the city.
 func (r *City) GetZipcodes() []string {
 	return r.Zipcodes
+}
+
+// IsValidZipCode returns whether the input zipcode is valid for the city.
+func (r *City) IsValidZipCode(zipcode string) bool {
+	for _, code := range r.Zipcodes {
+		if code == zipcode {
+			return true
+		}
+	}
+	return false
 }
 
 // NewCity creates a new City instance.

@@ -42,6 +42,32 @@ func (c Country) GetCountryCurrency() []currency.CurrencyInformation {
 	return curInfoList
 }
 
+// GetStatesByZipCode retrieves the states with zipcode for the country.
+func (c Country) GetStatesByZipCode(zipcode string) []subdivisions.State {
+	subdivision := subdivisions.GetCountrySubdivisions(c.Code)
+	return subdivision.GetStatesByZipCode(zipcode)
+}
+
+// GetCitiesByZipCode retrieves the cities with zipcode for the country.
+func (c Country) GetCitiesByZipCode(zipcode string) []subdivisions.City {
+	// Get the subdivision
+	subdivision := subdivisions.GetCountrySubdivisions(c.Code)
+	// Get list of all the states which have zipCode included.
+	states := subdivision.GetStatesByZipCode(zipcode)
+	var cities []subdivisions.City
+	// Get all cities with the zipCode from all the states.
+	for _, state := range states {
+		// Retrieve Cities with the zipCode from the state.
+		cities = append(cities, state.GetCitiesByZipCode(zipcode)...)
+	}
+	return cities
+}
+
+// IsValidZipCode returns whether a pinCode is valid for the country or not.
+func (c Country) IsValidZipCode(zipcode string) bool {
+	return len(c.GetStatesByZipCode(zipcode)) > 0
+}
+
 // NewCountry creates a new Country instance with the given country code.
 func NewCountry(code string) ICountry {
 	return Country{

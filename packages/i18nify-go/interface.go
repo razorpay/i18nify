@@ -18,4 +18,10 @@ type ICountry interface {
 	GetCountryPhoneNumber() phonenumber.CountryTeleInformation
 	// GetCountryCurrency retrieves currency information for the country.
 	GetCountryCurrency() []currency.CurrencyInformation
+	// GetStatesByZipCode retrieves the states with zipcode for the country.
+	GetStatesByZipCode(zipcode string) []country_subdivisions.State
+	// GetCitiesByZipCode retrieves the cities with zipcode for the country.
+	GetCitiesByZipCode(zipcode string) []country_subdivisions.City
+	// IsValidZipCode returns whether a pinCode is valid for the country or not.
+	IsValidZipCode(zipcode string) bool
 }
