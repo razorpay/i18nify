@@ -43,7 +43,6 @@ type CountrySubdivisions struct {
 type CountryZipCodeMap struct {
 	zipcodeToStates map[string][]State
 	zipcodeToCities map[string][]City
-	IsInitialized   bool
 }
 
 // GetCountryName returns the name of the country.
@@ -109,7 +108,6 @@ func initializeZipCodeMap(subdivisions *CountrySubdivisions) {
 	}
 	subdivisions.ZipCodes.zipcodeToStates = zipcodeToStates
 	subdivisions.ZipCodes.zipcodeToCities = zipcodeToCities
-	subdivisions.ZipCodes.IsInitialized = true
 }
 
 // NewCountrySubdivisions creates a new CountrySubdivisions instance.
