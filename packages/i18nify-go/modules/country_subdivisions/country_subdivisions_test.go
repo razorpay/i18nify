@@ -139,33 +139,26 @@ func TestGetCitiesWithZipCode(t *testing.T) {
 }
 
 func TestIsValidZipCode(t *testing.T) {
-	state := State{
-		Name: "Karnataka",
-		Cities: []City{
-			{Name: "Bengaluru", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116"}},
-			{Name: "Mysore", Timezone: "Asia/Kolkata", Zipcodes: []string{"570001"}},
+	data := CountrySubdivisions{
+		CountryName: "India",
+		States: map[string]State{
+			"KA": {
+				Name: "Karnataka",
+				Cities: []City{
+					{Name: "Bengaluru", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116"}},
+					{Name: "Mysore", Timezone: "Asia/Kolkata", Zipcodes: []string{"570001"}},
+				},
+			},
+			"MH": {
+				Name: "Maharashtra",
+				Cities: []City{
+					{Name: "Mumbai", Timezone: "Asia/Kolkata", Zipcodes: []string{"400001"}},
+					{Name: "Pune", Timezone: "Asia/Kolkata", Zipcodes: []string{"560116"}},
+				},
+			},
 		},
 	}
 
-	assert.True(t, state.IsValidZipCode("560116"))
-	assert.False(t, state.IsValidZipCode("999999"))
-}
-
-func TestGetCitiesByZipCode(t *testing.T) {
-	state := State{
-		Name: "Karnataka",
-		Cities: []City{
-			{Name: "Bengaluru", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116"}},
-			{Name: "Mysore", Timezone: "Asia/Kolkata", Zipcodes: []string{"570001"}},
-		},
-	}
-
-	cities := state.GetCitiesByZipCode("560116")
-
-	assert.Equal(t, 1, len(cities))
-	assert.Equal(t, "Bengaluru", cities[0].GetName())
-
-	// Test with a zip code that does not exist
-	cities = state.GetCitiesByZipCode("999999")
-	assert.Equal(t, 0, len(cities))
+	assert.True(t, data.IsValidZipCode("400001"))
+	assert.False(t, data.IsValidZipCode("199901"))
 }

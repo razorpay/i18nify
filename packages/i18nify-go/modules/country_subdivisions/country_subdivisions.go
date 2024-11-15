@@ -17,6 +17,9 @@ import (
 //go:embed data
 var subDivJsonDir embed.FS
 
+// Cache to avoid duplicate reads for same countryCode
+var countrySubDivisionStore = make(map[string]CountrySubdivisions)
+
 // DataFile is the directory where JSON files containing country subdivision data are stored. "
 
 // UnmarshalCountrySubdivisions parses JSON data into a CountrySubdivisions struct.
@@ -33,8 +36,14 @@ func (r *CountrySubdivisions) Marshal() ([]byte, error) {
 
 // CountrySubdivisions contains information about country subdivisions.
 type CountrySubdivisions struct {
-	CountryName string           `json:"country_name"` // CountryName represents the name of the country.
-	States      map[string]State `json:"states"`       // States contains information about states or provinces within the country.
+	CountryName string            `json:"country_name"` // CountryName represents the name of the country.
+	States      map[string]State  `json:"states"`       // States contains information about states or provinces within the country.
+	ZipCodes    CountryZipCodeMap `json:"-"`            // CountryZipCodeMap contains information for reverse lookup on zipcodes within a country
+}
+type CountryZipCodeMap struct {
+	zipcodeToStates map[string][]State
+	zipcodeToCities map[string][]City
+	IsInitialized   bool
 }
 
 // GetCountryName returns the name of the country.
@@ -49,31 +58,24 @@ func (r *CountrySubdivisions) GetStates() map[string]State {
 
 // GetStatesByZipCode returns the list of states that have at least one city with the specified zip code.
 func (r *CountrySubdivisions) GetStatesByZipCode(code string) []State {
-	var states []State
-	for _, state := range r.States {
-		for _, city := range state.Cities {
-			for _, zipcode := range city.Zipcodes {
-				if zipcode == code {
-					states = append(states, state)
-					break
-				}
-			}
-		}
-	}
-	return states
+	return r.ZipCodes.zipcodeToStates[code]
 }
 
 // GetCitiesWithZipCode returns the list of cities with the specified zip code.
 func (r *CountrySubdivisions) GetCitiesWithZipCode(code string) []City {
-	var cities []City
-	for _, state := range r.States {
-		cities = append(cities, state.GetCitiesByZipCode(code)...)
-	}
-	return cities
+	return r.ZipCodes.zipcodeToCities[code]
+}
+
+// IsValidZipCode returns if the input zipcode is valid or not
+func (r *CountrySubdivisions) IsValidZipCode(code string) bool {
+	return len(r.ZipCodes.zipcodeToStates[code]) > 0
 }
 
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
+	if _, present := countrySubDivisionStore[code]; present {
+		return countrySubDivisionStore[code]
+	}
 	// Read JSON data file containing country subdivision information.
 	completePath := filepath.Join("data/", code+".json")
 	subDivJsonData, err := subDivJsonDir.ReadFile(completePath)
@@ -83,7 +85,35 @@ func GetCountrySubdivisions(code string) CountrySubdivisions {
 	}
 	// Unmarshal JSON data into CountrySubdivisions struct.
 	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
+	// Initialise zipcode map to get faster retrieval for Cities and States
+	initializeZipCodeMap(&allSubDivData)
+	// Store calculated CountrySubDivisions into the cache
+	countrySubDivisionStore[code] = allSubDivData
 	return allSubDivData
+}
+
+// initializeZipCodeMap builds the zip code maps for the given CountrySubdivisions.
+func initializeZipCodeMap(subdivisions *CountrySubdivisions) {
+	// Ensure zip code maps are initialized only once.
+	if subdivisions.ZipCodes.IsInitialized {
+		return
+	}
+	var zipcodeToStates = make(map[string][]State)
+	var zipcodeToCities = make(map[string][]City)
+
+	// Iterate through all states and cities to populate the zip code maps.
+
+	for _, state := range subdivisions.States {
+		for _, city := range state.Cities {
+			for _, zipcode := range city.Zipcodes {
+				zipcodeToStates[zipcode] = append(zipcodeToStates[zipcode], state)
+				zipcodeToCities[zipcode] = append(zipcodeToCities[zipcode], city)
+			}
+		}
+	}
+	subdivisions.ZipCodes.zipcodeToStates = zipcodeToStates
+	subdivisions.ZipCodes.zipcodeToCities = zipcodeToCities
+	subdivisions.ZipCodes.IsInitialized = true
 }
 
 // NewCountrySubdivisions creates a new CountrySubdivisions instance.
@@ -103,25 +133,6 @@ type State struct {
 // GetCities returns information about cities within the state.
 func (r *State) GetCities() []City {
 	return r.Cities
-}
-
-// IsValidZipCode return whether input zipcode is valid or not.
-func (r *State) IsValidZipCode(zipcode string) bool {
-	return len(r.GetCitiesByZipCode(zipcode)) > 0
-}
-
-// GetCitiesByZipCode returns the City based on the input code.
-func (r *State) GetCitiesByZipCode(code string) []City {
-	var cities []City
-	for _, city := range r.Cities {
-		for _, zipcode := range city.Zipcodes {
-			if zipcode == code {
-				cities = append(cities, city)
-				break
-			}
-		}
-	}
-	return cities
 }
 
 // GetName returns the name of the state.
