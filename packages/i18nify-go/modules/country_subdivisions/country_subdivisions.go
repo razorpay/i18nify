@@ -94,10 +94,6 @@ func GetCountrySubdivisions(code string) CountrySubdivisions {
 
 // initializeZipCodeMap builds the zip code maps for the given CountrySubdivisions.
 func initializeZipCodeMap(subdivisions *CountrySubdivisions) {
-	// Ensure zip code maps are initialized only once.
-	if subdivisions.ZipCodes.IsInitialized {
-		return
-	}
 	var zipcodeToStates = make(map[string][]State)
 	var zipcodeToCities = make(map[string][]City)
 
