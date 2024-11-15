@@ -14,6 +14,7 @@ import { ALLOWED_COUNTRIES } from 'src/constants/geo';
 import CodeEditor from 'src/components/codeEditor';
 import CountryDropdown from 'src/components/countryDropdown';
 import StateDropdown from 'src/components/stateDropdown';
+import PlaceholderMenuItem from 'src/components/placeholderMenuItem';
 
 // ----------------------------------------------------------------------
 
@@ -123,19 +124,21 @@ export default function GetZipcodes() {
             }}
             onChange={(e) => setZipcodeInp(e.target.value || '')}
           >
-            {zipcodes.map((zipcode) => (
-              <MenuItem key={zipcode} value={zipcode}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    textOverflow: 'initial',
-                  }}
-                >
-                  <div width="30px">{zipcode}</div>
-                </Box>
-              </MenuItem>
-            ))}
+            {zipcodes.length === 0 ?
+              <PlaceholderMenuItem /> :
+              zipcodes.map((zipcode) => (
+                <MenuItem key={zipcode} value={zipcode}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      textOverflow: 'initial',
+                    }}
+                  >
+                    <div width="30px">{zipcode}</div>
+                  </Box>
+                </MenuItem>
+              ))}
           </Select>
         </Grid>
         {!isMobile && (
