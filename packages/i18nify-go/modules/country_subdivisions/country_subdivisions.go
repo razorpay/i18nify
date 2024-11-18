@@ -49,6 +49,12 @@ func (r *CountrySubdivisions) GetCountryName() string {
 func (r *CountrySubdivisions) GetStates() map[string]State {
 	return r.States
 }
+func (r *CountrySubdivisions) GetStateByStateCode(code string) (State, bool) {
+	if _, exists := r.States[code]; exists {
+		return r.States[code], true
+	}
+	return State{}, false
+}
 
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {

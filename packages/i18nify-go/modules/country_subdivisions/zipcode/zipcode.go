@@ -28,11 +28,10 @@ func GetCountryZipCodeDetails(code string) *PinCodeData {
 func GetStatesFromZipCode(zipCode string, countryCode string) []country_subdivisions.State {
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
 	subdivisions := country_subdivisions.GetCountrySubdivisions(countryCode)
-	subDivisionStates := subdivisions.GetStates()
 	var states []country_subdivisions.State
 	for _, stateCode := range pinCodeData.pinCodeToDetails[zipCode].StateCodes {
-		if _, exists := subDivisionStates[stateCode]; exists {
-			states = append(states, subdivisions.GetStates()[stateCode])
+		if state, exists := subdivisions.GetStateByStateCode(stateCode); exists {
+			states = append(states, state)
 		}
 	}
 	return states
