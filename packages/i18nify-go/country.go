@@ -4,6 +4,7 @@ package i18nify_go
 import (
 	metadata "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
 	subdivisions "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
+	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions/zipcode"
 	currency "github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
 	phonenumber "github.com/razorpay/i18nify/packages/i18nify-go/modules/phonenumber"
 )
@@ -43,20 +44,18 @@ func (c *Country) GetCountryCurrency() []currency.CurrencyInformation {
 }
 
 // GetStatesByZipCode retrieves the states with zipcode for the country.
-func (c *Country) GetStatesByZipCode(zipcode string) []subdivisions.State {
-	subdivision := c.GetCountrySubDivisions()
-	return subdivision.GetStatesByZipCode(zipcode)
+func (c *Country) GetStatesByZipCode(pinCode string) []subdivisions.State {
+	return zipcode.GetStatesFromZipCode(pinCode, c.Code)
 }
 
 // GetCitiesByZipCode retrieves the cities with zipcode for the country.
-func (c *Country) GetCitiesByZipCode(zipcode string) []subdivisions.City {
-	subdivision := c.GetCountrySubDivisions()
-	return subdivision.GetCitiesWithZipCode(zipcode)
+func (c *Country) GetCitiesByZipCode(pinCode string) []subdivisions.City {
+	return zipcode.GetCitiesFromZipCode(pinCode, c.Code)
 }
 
 // IsValidZipCode returns whether a pinCode is valid for the country or not.
-func (c *Country) IsValidZipCode(zipcode string) bool {
-	return len(c.GetStatesByZipCode(zipcode)) > 0
+func (c *Country) IsValidZipCode(pinCode string) bool {
+	return zipcode.IsValidPinCode(pinCode, c.Code)
 }
 
 // NewCountry creates a new Country instance with the given country code.
