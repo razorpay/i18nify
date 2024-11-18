@@ -2,6 +2,8 @@ import { Box, MenuItem, Select, Typography } from '@mui/material';
 import { getAllCountries } from '@razorpay/i18nify-js';
 import React, { useEffect, useState } from 'react';
 
+import PlaceholderMenuItem from 'src/components/placeholderMenuItem';
+
 const CountryDropdown = ({
   label = 'Select Country',
   value,
@@ -38,21 +40,23 @@ const CountryDropdown = ({
           ...selectStyle,
         }}
       >
-        {countryList.map((country) => (
-          <MenuItem key={country.code} value={country.code}>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                textOverflow: 'initial',
-              }}
-            >
-              <div width="30px">
-                {country.code} - {country.country_name}
-              </div>
-            </Box>
-          </MenuItem>
-        ))}
+        {countryList.length === 0 ?
+          <PlaceholderMenuItem /> :
+          countryList.map((country) => (
+            <MenuItem key={country.code} value={country.code}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  textOverflow: 'initial',
+                }}
+              >
+                <div width="30px">
+                  {country.code} - {country.country_name}
+                </div>
+              </Box>
+            </MenuItem>
+          ))}
       </Select>
     </>
   );

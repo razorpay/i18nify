@@ -1,6 +1,8 @@
 import { Box, MenuItem, Select, Typography } from '@mui/material';
 import React from 'react';
 
+import PlaceholderMenuItem from 'src/components/placeholderMenuItem';
+
 const StateDropdown = ({ label = 'Select State', list, onChange, value }) => {
   return (
     <>
@@ -16,21 +18,23 @@ const StateDropdown = ({ label = 'Select State', list, onChange, value }) => {
           mb: 4,
         }}
       >
-        {list.map((state) => (
-          <MenuItem key={state.code} value={state.code}>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                textOverflow: 'initial',
-              }}
-            >
-              <div width="30px">
-                {state.code} - {state.name}
-              </div>
-            </Box>
-          </MenuItem>
-        ))}
+        {list.length === 0 ?
+          <PlaceholderMenuItem /> :
+          list.map((state) => (
+            <MenuItem key={state.code} value={state.code}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  textOverflow: 'initial',
+                }}
+              >
+                <div width="30px">
+                  {state.code} - {state.name}
+                </div>
+              </Box>
+            </MenuItem>
+          ))}
       </Select>
     </>
   );
