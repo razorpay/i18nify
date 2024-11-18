@@ -1,11 +1,13 @@
 // Package zipcode manages lookup for all the details related to zipcode (city, state) for a country
 package zipcode
 
-import "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
+import (
+	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
+)
 
 type PinCodeDetails struct {
-	Cities []country_subdivisions.City
-	States []country_subdivisions.State
+	Cities     []country_subdivisions.City
+	StateCodes []string
 }
 
 type PinCodeData struct {
@@ -15,17 +17,25 @@ type PinCodeData struct {
 
 var zipCodeStore = make(map[string]*PinCodeData)
 
-func GetCountryZipCodeDetails(code string) PinCodeData {
+func GetCountryZipCodeDetails(code string) *PinCodeData {
 	if _, exists := zipCodeStore[code]; !exists {
 		subdivision := country_subdivisions.GetCountrySubdivisions(code)
 		pinCodeData := initializeZipCodeMap(subdivision)
 		zipCodeStore[code] = pinCodeData
 	}
-	return *zipCodeStore[code]
+	return zipCodeStore[code]
 }
 func GetStatesFromZipCode(zipCode string, countryCode string) []country_subdivisions.State {
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
-	return pinCodeData.pinCodeToDetails[zipCode].States
+	subdivisions := country_subdivisions.GetCountrySubdivisions(countryCode)
+	subDivisionStates := subdivisions.GetStates()
+	var states []country_subdivisions.State
+	for _, stateCode := range pinCodeData.pinCodeToDetails[zipCode].StateCodes {
+		if _, exists := subDivisionStates[stateCode]; exists {
+			states = append(states, subdivisions.GetStates()[stateCode])
+		}
+	}
+	return states
 }
 func GetCitiesFromZipCode(zipCode string, countryCode string) []country_subdivisions.City {
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
@@ -33,7 +43,7 @@ func GetCitiesFromZipCode(zipCode string, countryCode string) []country_subdivis
 }
 func IsValidPinCode(zipCode string, countryCode string) bool {
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
-	return len(pinCodeData.pinCodeToDetails[zipCode].States) > 0
+	return len(pinCodeData.pinCodeToDetails[zipCode].StateCodes) > 0
 }
 func GetPinCodesFromCity(city string, countryCode string) []string {
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
@@ -46,18 +56,18 @@ func initializeZipCodeMap(subdivisions country_subdivisions.CountrySubdivisions)
 	var details = make(map[string]PinCodeDetails)
 
 	// Iterate through all states and cities to populate the zip code maps.
-	for _, state := range subdivisions.States {
+	for stateCode, state := range subdivisions.States {
 		for _, city := range state.Cities {
 			for _, zipcode := range city.Zipcodes {
 				// check if an entry with specific PinCode already exists, if not create one
 				if _, exists := details[zipcode]; !exists {
 					details[zipcode] = PinCodeDetails{
-						States: []country_subdivisions.State{},
-						Cities: []country_subdivisions.City{},
+						StateCodes: []string{},
+						Cities:     []country_subdivisions.City{},
 					}
 				}
 				pinCodeDetail := details[zipcode]
-				pinCodeDetail.States = append(pinCodeDetail.States, state)
+				pinCodeDetail.StateCodes = append(pinCodeDetail.StateCodes, stateCode)
 				pinCodeDetail.Cities = append(pinCodeDetail.Cities, city)
 				details[zipcode] = pinCodeDetail
 			}
