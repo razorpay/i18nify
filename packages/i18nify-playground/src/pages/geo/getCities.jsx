@@ -14,6 +14,7 @@ import { ALLOWED_COUNTRIES } from 'src/constants/geo';
 import CodeEditor from 'src/components/codeEditor';
 import CountryDropdown from 'src/components/countryDropdown';
 import StateDropdown from 'src/components/stateDropdown';
+import PlaceholderMenuItem from 'src/components/placeholderMenuItem';
 
 // ----------------------------------------------------------------------
 
@@ -38,6 +39,9 @@ export default function GetCities() {
 
   useEffect(() => {
     setStateInp('');
+    setStateList([]);
+    setCityInp('');
+    setCities([]);
     setCode('');
     getStates(countryInp).then((res) => {
       const states = Object.entries(res).map(([_code, state]) => ({
@@ -50,6 +54,8 @@ export default function GetCities() {
 
   useEffect(() => {
     if (!stateInp) return;
+    setCityInp('');
+    setCities([]);
     getCities(countryInp, stateInp).then((res) => {
       setCities(res);
       setCityInp(res[0].name);
@@ -106,7 +112,7 @@ export default function GetCities() {
           />
           <StateDropdown
             value={stateInp}
-            onChange={(e) => setStateInp(e)}
+            onChange={(state) => setStateInp(state)}
             list={stateList}
           />
 
@@ -119,20 +125,23 @@ export default function GetCities() {
               marginRight: 1,
               width: '100%',
             }}
+            onChange={(e) => setCityInp(e.target.value || '')}
           >
-            {cities.map((city) => (
-              <MenuItem key={city.name} value={city.name}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    textOverflow: 'initial',
-                  }}
-                >
-                  <div width="30px">{city.name}</div>
-                </Box>
-              </MenuItem>
-            ))}
+            {cities.length === 0 ?
+              <PlaceholderMenuItem /> :
+              cities.map((city) => (
+                <MenuItem key={city.name} value={city.name}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      textOverflow: 'initial',
+                    }}
+                  >
+                    <div width="30px">{city.name}</div>
+                  </Box>
+                </MenuItem>
+              ))}
           </Select>
         </Grid>
         {!isMobile && (
