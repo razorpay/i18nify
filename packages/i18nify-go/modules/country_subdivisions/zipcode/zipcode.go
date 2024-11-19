@@ -6,13 +6,17 @@ import (
 )
 
 type PinCodeDetails struct {
-	Cities     []country_subdivisions.City
+	Cities     []*CityDetails
 	StateCodes []string
 }
 
 type PinCodeData struct {
-	pinCodeToDetails map[string]PinCodeDetails
+	pinCodeToDetails map[string]*PinCodeDetails
 	cityToPinCodes   map[string][]string
+}
+type CityDetails struct {
+	cityName  string
+	stateCode string
 }
 
 var zipCodeStore = make(map[string]*PinCodeData)
@@ -38,7 +42,14 @@ func GetStatesFromZipCode(zipCode string, countryCode string) []country_subdivis
 }
 func GetCitiesFromZipCode(zipCode string, countryCode string) []country_subdivisions.City {
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
-	return pinCodeData.pinCodeToDetails[zipCode].Cities
+	subdivision := country_subdivisions.GetCountrySubdivisions(countryCode)
+	var cities []country_subdivisions.City
+	for _, cityDetails := range pinCodeData.pinCodeToDetails[zipCode].Cities {
+		if city, exists := subdivision.GetCityByCityNameAndStateCode(cityDetails.cityName, cityDetails.stateCode); exists {
+			cities = append(cities, city)
+		}
+	}
+	return cities
 }
 func IsValidPinCode(zipCode string, countryCode string) bool {
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
@@ -52,7 +63,7 @@ func GetPinCodesFromCity(city string, countryCode string) []string {
 // initializeZipCodeMap builds the zip code maps for the given CountrySubdivisions.
 func initializeZipCodeMap(subdivisions country_subdivisions.CountrySubdivisions) *PinCodeData {
 	var cityToZipCode = make(map[string][]string)
-	var details = make(map[string]PinCodeDetails)
+	var details = make(map[string]*PinCodeDetails)
 
 	// Iterate through all states and cities to populate the zip code maps.
 	for stateCode, state := range subdivisions.States {
@@ -60,14 +71,17 @@ func initializeZipCodeMap(subdivisions country_subdivisions.CountrySubdivisions)
 			for _, zipcode := range city.Zipcodes {
 				// check if an entry with specific PinCode already exists, if not create one
 				if _, exists := details[zipcode]; !exists {
-					details[zipcode] = PinCodeDetails{
+					details[zipcode] = &PinCodeDetails{
 						StateCodes: []string{},
-						Cities:     []country_subdivisions.City{},
+						Cities:     []*CityDetails{},
 					}
 				}
 				pinCodeDetail := details[zipcode]
 				pinCodeDetail.StateCodes = append(pinCodeDetail.StateCodes, stateCode)
-				pinCodeDetail.Cities = append(pinCodeDetail.Cities, city)
+				pinCodeDetail.Cities = append(pinCodeDetail.Cities, &CityDetails{
+					cityName:  city.Name,
+					stateCode: stateCode,
+				})
 				details[zipcode] = pinCodeDetail
 			}
 			cityToZipCode[city.Name] = city.Zipcodes
