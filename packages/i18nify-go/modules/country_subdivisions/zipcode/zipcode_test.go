@@ -13,16 +13,16 @@ func getTestCountrySubdivisions() country_subdivisions.CountrySubdivisions {
 		States: map[string]country_subdivisions.State{
 			"KA": {
 				Name: "Karnataka",
-				Cities: []country_subdivisions.City{
-					{Name: "Bengaluru", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116"}},
-					{Name: "Mysore", Timezone: "Asia/Kolkata", Zipcodes: []string{"570001"}},
+				Cities: map[string]country_subdivisions.City{
+					"Bengaluru": {Name: "Bengaluru", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116"}},
+					"Mysore":    {Name: "Mysore", Timezone: "Asia/Kolkata", Zipcodes: []string{"570001"}},
 				},
 			},
 			"MH": {
 				Name: "Maharashtra",
-				Cities: []country_subdivisions.City{
-					{Name: "Mumbai", Timezone: "Asia/Kolkata", Zipcodes: []string{"400001"}},
-					{Name: "Pune", Timezone: "Asia/Kolkata", Zipcodes: []string{"560116"}},
+				Cities: map[string]country_subdivisions.City{
+					"Mumbai": {Name: "Mumbai", Timezone: "Asia/Kolkata", Zipcodes: []string{"400001"}},
+					"Pune":   {Name: "Pune", Timezone: "Asia/Kolkata", Zipcodes: []string{"560116"}},
 				},
 			},
 		},
@@ -70,6 +70,8 @@ func TestGetCitiesFromZipCode(t *testing.T) {
 	cities = GetCitiesFromZipCode("570001", "IN")
 	assert.Equal(t, 1, len(cities))
 	assert.Equal(t, "Mysore", cities[0].Name)
+	cities = GetCitiesFromZipCode("randomInvalid", "IN")
+	assert.Equal(t, 0, len(cities))
 }
 
 func TestIsValidZipCode(t *testing.T) {
