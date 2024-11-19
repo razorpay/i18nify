@@ -55,7 +55,7 @@ func (c *Country) GetCitiesByZipCode(pinCode string) []subdivisions.City {
 
 // IsValidZipCode returns whether a pinCode is valid for the country or not.
 func (c *Country) IsValidZipCode(pinCode string) bool {
-	return zipcode.IsValidPinCode(pinCode, c.Code)
+	return zipcode.IsValidZipCode(pinCode, c.Code)
 }
 
 // NewCountry creates a new Country instance with the given country code.
