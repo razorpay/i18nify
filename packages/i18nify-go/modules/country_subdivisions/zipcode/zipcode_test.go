@@ -72,31 +72,31 @@ func TestGetCitiesFromZipCode(t *testing.T) {
 	assert.Equal(t, "Mysore", cities[0].Name)
 }
 
-func TestIsValidPinCode(t *testing.T) {
+func TestIsValidZipCode(t *testing.T) {
 	setupTestData()
 
-	assert.True(t, IsValidPinCode("560116", "IN"))
-	assert.True(t, IsValidPinCode("400001", "IN"))
-	assert.False(t, IsValidPinCode("999999", "IN"))
-	assert.False(t, IsValidPinCode("123456", "IN"))
+	assert.True(t, IsValidZipCode("560116", "IN"))
+	assert.True(t, IsValidZipCode("400001", "IN"))
+	assert.False(t, IsValidZipCode("999999", "IN"))
+	assert.False(t, IsValidZipCode("123456", "IN"))
 }
 
-func TestGetPinCodesFromCity(t *testing.T) {
+func TestGetZipCodesFromCity(t *testing.T) {
 	setupTestData()
 
-	pincodes := GetPinCodesFromCity("Bengaluru", "IN")
+	pincodes := GetZipCodesFromCity("Bengaluru", "IN")
 	assert.Equal(t, 2, len(pincodes))
 	assert.Contains(t, pincodes, "560018")
 	assert.Contains(t, pincodes, "560116")
 
-	pincodes = GetPinCodesFromCity("Mumbai", "IN")
+	pincodes = GetZipCodesFromCity("Mumbai", "IN")
 	assert.Equal(t, 1, len(pincodes))
 	assert.Equal(t, "400001", pincodes[0])
 
-	pincodes = GetPinCodesFromCity("Indore", "IN")
+	pincodes = GetZipCodesFromCity("Indore", "IN")
 	assert.Equal(t, 0, len(pincodes)) // City not present in test data
 
-	pincodes = GetPinCodesFromCity("Pune", "IN")
+	pincodes = GetZipCodesFromCity("Pune", "IN")
 	assert.Equal(t, 1, len(pincodes))
 	assert.Equal(t, "560116", pincodes[0])
 }
@@ -133,8 +133,8 @@ func BenchmarkGetCitiesFromZipCode(b *testing.B) {
 	}
 }
 
-// Benchmark test for IsValidPinCode
-func BenchmarkIsValidPinCode(b *testing.B) {
+// Benchmark test for IsValidZipCode
+func BenchmarkIsValidZipCode(b *testing.B) {
 	b.ResetTimer()
 	zipCode := []string{
 		"110001", "110002", "110003", "110007", "110092", "400001", "400011", "400080", "411001", "411004",
@@ -145,6 +145,6 @@ func BenchmarkIsValidPinCode(b *testing.B) {
 	}
 	n := len(zipCode)
 	for i := 0; i < b.N; i++ {
-		IsValidPinCode(zipCode[i%n], "IN")
+		IsValidZipCode(zipCode[i%n], "IN")
 	}
 }
