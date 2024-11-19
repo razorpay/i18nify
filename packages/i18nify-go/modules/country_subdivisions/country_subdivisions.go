@@ -58,11 +58,8 @@ func (r *CountrySubdivisions) GetStateByStateCode(code string) (State, bool) {
 
 func (r *CountrySubdivisions) GetCityDetailsByCityName(cityName string, stateCode string) (City, bool) {
 	if state, exists := r.States[stateCode]; exists {
-		for _, city := range state.Cities {
-			if city.Name == cityName {
-				return city, true
-			}
-		}
+		city, exists := state.Cities[cityName]
+		return city, exists
 	}
 	return City{}, false
 }
@@ -96,13 +93,17 @@ func NewCountrySubdivisions(countryName string, states map[string]State) *Countr
 
 // State contains information about a state or province.
 type State struct {
-	Cities []City `json:"cities"` // Cities contains information about cities within the state.
-	Name   string `json:"name"`   // Name represents the name of the state.
+	Cities map[string]City `json:"cities"` // Cities contains information about cities within the state.
+	Name   string          `json:"name"`   // Name represents the name of the state.
 }
 
 // GetCities returns information about cities within the state.
 func (r *State) GetCities() []City {
-	return r.Cities
+	cities := make([]City, 0, len(r.Cities))
+	for _, city := range r.Cities {
+		cities = append(cities, city)
+	}
+	return cities
 }
 
 // GetName returns the name of the state.
@@ -110,8 +111,33 @@ func (r *State) GetName() string {
 	return r.Name
 }
 
+// UnmarshalJSON Custom unmarshal for States
+func (r *State) UnmarshalJSON(data []byte) error {
+	// Temporary structure to unmarshal cities as a slice
+	type Temp State
+	temp := &struct {
+		Cities []City `json:"cities"`
+		*Temp
+	}{
+		Temp: (*Temp)(r),
+	}
+
+	// Unmarshal into temporary struct
+	if err := json.Unmarshal(data, &temp); err != nil {
+		return err
+	}
+
+	// Convert the slice of cities into a map
+	r.Cities = make(map[string]City)
+	for _, city := range temp.Cities {
+		r.Cities[city.Name] = city
+	}
+
+	return nil
+}
+
 // NewState creates a new State instance.
-func NewState(cities []City, name string) *State {
+func NewState(cities map[string]City, name string) *State {
 	return &State{
 		Cities: cities,
 		Name:   name,

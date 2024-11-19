@@ -31,8 +31,8 @@ func TestMarshalCountrySubdivisions(t *testing.T) {
 		CountryName: "India",
 		States: map[string]State{
 			"KA": {
-				Cities: []City{
-					{Name: "Bengaluru", RegionName: "nan", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116", "560500"}},
+				Cities: map[string]City{
+					"Bengaluru": {Name: "Bengaluru", RegionName: "nan", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116", "560500"}},
 				},
 				Name: "Karnataka",
 			},
@@ -109,16 +109,16 @@ func TestGetCityByCityNameAndStateCode(t *testing.T) {
 		States: map[string]State{
 			"KA": {
 				Name: "Karnataka",
-				Cities: []City{
-					{Name: "Bengaluru", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116"}},
-					{Name: "Mysore", Timezone: "Asia/Kolkata", Zipcodes: []string{"570001"}},
+				Cities: map[string]City{
+					"Bengaluru": {Name: "Bengaluru", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116"}},
+					"Mysore":    {Name: "Mysore", Timezone: "Asia/Kolkata", Zipcodes: []string{"570001"}},
 				},
 			},
 			"MH": {
 				Name: "Maharashtra",
-				Cities: []City{
-					{Name: "Mumbai", Timezone: "Asia/Kolkata", Zipcodes: []string{"400001"}},
-					{Name: "Pune", Timezone: "Asia/Kolkata", Zipcodes: []string{"411001"}},
+				Cities: map[string]City{
+					"Mumbai": {Name: "Mumbai", Timezone: "Asia/Kolkata", Zipcodes: []string{"400001"}},
+					"Pune":   {Name: "Pune", Timezone: "Asia/Kolkata", Zipcodes: []string{"411001"}},
 				},
 			},
 		},
