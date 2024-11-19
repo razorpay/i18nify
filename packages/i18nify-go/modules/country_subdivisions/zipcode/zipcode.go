@@ -33,6 +33,9 @@ func GetStatesFromZipCode(zipCode string, countryCode string) []country_subdivis
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
 	subdivisions := country_subdivisions.GetCountrySubdivisions(countryCode)
 	var states []country_subdivisions.State
+	if pinCodeData.pinCodeToDetails[zipCode] == nil {
+		return states
+	}
 	for _, stateCode := range pinCodeData.pinCodeToDetails[zipCode].StateCodes {
 		if state, exists := subdivisions.GetStateByStateCode(stateCode); exists {
 			states = append(states, state)
@@ -44,6 +47,9 @@ func GetCitiesFromZipCode(zipCode string, countryCode string) []country_subdivis
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
 	subdivision := country_subdivisions.GetCountrySubdivisions(countryCode)
 	var cities []country_subdivisions.City
+	if pinCodeData.pinCodeToDetails[zipCode] == nil {
+		return cities
+	}
 	for _, cityDetails := range pinCodeData.pinCodeToDetails[zipCode].Cities {
 		if city, exists := subdivision.GetCityByCityNameAndStateCode(cityDetails.cityName, cityDetails.stateCode); exists {
 			cities = append(cities, city)
