@@ -56,7 +56,7 @@ func (r *CountrySubdivisions) GetStateByStateCode(code string) (State, bool) {
 	return State{}, false
 }
 
-func (r *CountrySubdivisions) GetCityByCityNameAndStateCode(cityName string, stateCode string) (City, bool) {
+func (r *CountrySubdivisions) GetCityDetailsByCityName(cityName string, stateCode string) (City, bool) {
 	if state, exists := r.States[stateCode]; exists {
 		for _, city := range state.Cities {
 			if city.Name == cityName {

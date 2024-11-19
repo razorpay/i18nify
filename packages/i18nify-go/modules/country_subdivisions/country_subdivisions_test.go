@@ -125,22 +125,22 @@ func TestGetCityByCityNameAndStateCode(t *testing.T) {
 	}
 
 	// Test: Valid city name and state code
-	city, exists := data.GetCityByCityNameAndStateCode("Bengaluru", "KA")
+	city, exists := data.GetCityDetailsByCityName("Bengaluru", "KA")
 	assert.True(t, exists, "City should exist for valid city name and state code")
 	assert.Equal(t, "Bengaluru", city.GetName())
 
 	// Test: Valid city name but invalid state code
-	city, exists = data.GetCityByCityNameAndStateCode("Bengaluru", "MH")
+	city, exists = data.GetCityDetailsByCityName("Bengaluru", "MH")
 	assert.False(t, exists, "City should not exist for valid city name but invalid state code")
 	assert.Equal(t, City{}, city, "City should be empty for invalid state code")
 
 	// Test: Invalid city name
-	city, exists = data.GetCityByCityNameAndStateCode("Chennai", "KA")
+	city, exists = data.GetCityDetailsByCityName("Chennai", "KA")
 	assert.False(t, exists, "City should not exist for invalid city name")
 	assert.Equal(t, City{}, city, "City should be empty for invalid city name")
 
 	// Test: Invalid state code
-	city, exists = data.GetCityByCityNameAndStateCode("Mumbai", "TN")
+	city, exists = data.GetCityDetailsByCityName("Mumbai", "TN")
 	assert.False(t, exists, "City should not exist for invalid state code")
 	assert.Equal(t, City{}, city, "City should be empty for invalid state code")
 }

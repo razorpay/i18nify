@@ -49,6 +49,10 @@ func TestGetStatesFromZipCode(t *testing.T) {
 	states = GetStatesFromZipCode("570001", "IN")
 	assert.Equal(t, 1, len(states))
 	assert.Equal(t, "Karnataka", states[0].Name)
+
+	// Test case with invalid country code
+	states = GetStatesFromZipCode("570001", "IND")
+	assert.Equal(t, 0, len(states), "Invalid country code should not break and return empty array")
 }
 
 func TestGetCitiesFromZipCode(t *testing.T) {
