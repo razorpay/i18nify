@@ -53,7 +53,7 @@ func GetCitiesFromZipCode(zipCode string, countryCode string) []country_subdivis
 }
 func IsValidPinCode(zipCode string, countryCode string) bool {
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
-	return len(pinCodeData.pinCodeToDetails[zipCode].StateCodes) > 0
+	return pinCodeData.pinCodeToDetails[zipCode] != nil
 }
 func GetPinCodesFromCity(city string, countryCode string) []string {
 	pinCodeData := GetCountryZipCodeDetails(countryCode)
