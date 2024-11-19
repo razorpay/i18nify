@@ -83,3 +83,64 @@ func assertIsArray(t *testing.T, value interface{}) {
 		t.Errorf("Expected an array or slice, but got %T", value)
 	}
 }
+func TestGetStateByStateCode(t *testing.T) {
+	data := CountrySubdivisions{
+		CountryName: "India",
+		States: map[string]State{
+			"KA": {Name: "Karnataka"},
+			"MH": {Name: "Maharashtra"},
+		},
+	}
+
+	// Test: Valid state code
+	state, exists := data.GetStateByStateCode("KA")
+	assert.True(t, exists, "State should exist for valid state code")
+	assert.Equal(t, "Karnataka", state.GetName())
+
+	// Test: Invalid state code
+	state, exists = data.GetStateByStateCode("TN")
+	assert.False(t, exists, "State should not exist for invalid state code")
+	assert.Equal(t, State{}, state, "State should be empty for invalid state code")
+}
+
+func TestGetCityByCityNameAndStateCode(t *testing.T) {
+	data := CountrySubdivisions{
+		CountryName: "India",
+		States: map[string]State{
+			"KA": {
+				Name: "Karnataka",
+				Cities: []City{
+					{Name: "Bengaluru", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116"}},
+					{Name: "Mysore", Timezone: "Asia/Kolkata", Zipcodes: []string{"570001"}},
+				},
+			},
+			"MH": {
+				Name: "Maharashtra",
+				Cities: []City{
+					{Name: "Mumbai", Timezone: "Asia/Kolkata", Zipcodes: []string{"400001"}},
+					{Name: "Pune", Timezone: "Asia/Kolkata", Zipcodes: []string{"411001"}},
+				},
+			},
+		},
+	}
+
+	// Test: Valid city name and state code
+	city, exists := data.GetCityByCityNameAndStateCode("Bengaluru", "KA")
+	assert.True(t, exists, "City should exist for valid city name and state code")
+	assert.Equal(t, "Bengaluru", city.GetName())
+
+	// Test: Valid city name but invalid state code
+	city, exists = data.GetCityByCityNameAndStateCode("Bengaluru", "MH")
+	assert.False(t, exists, "City should not exist for valid city name but invalid state code")
+	assert.Equal(t, City{}, city, "City should be empty for invalid state code")
+
+	// Test: Invalid city name
+	city, exists = data.GetCityByCityNameAndStateCode("Chennai", "KA")
+	assert.False(t, exists, "City should not exist for invalid city name")
+	assert.Equal(t, City{}, city, "City should be empty for invalid city name")
+
+	// Test: Invalid state code
+	city, exists = data.GetCityByCityNameAndStateCode("Mumbai", "TN")
+	assert.False(t, exists, "City should not exist for invalid state code")
+	assert.Equal(t, City{}, city, "City should be empty for invalid state code")
+}
