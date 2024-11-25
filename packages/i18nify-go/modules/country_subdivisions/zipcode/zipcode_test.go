@@ -150,3 +150,24 @@ func BenchmarkIsValidZipCode(b *testing.B) {
 		IsValidZipCode(zipCode[i%n], "IN")
 	}
 }
+
+// Benchmark test for GetZipCodesByCity
+func BenchmarkGetZipCodesByCity(b *testing.B) {
+	var cities = []string{
+		"Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad",
+		"Chennai", "Kolkata", "Surat", "Pune", "Jaipur",
+		"Lucknow", "Kanpur", "Nagpur", "Indore", "Thane",
+		"Bhopal", "Visakhapatnam", "Patna", "Vadodara", "Ghaziabad",
+		"Ludhiana", "Agra", "Nashik", "Faridabad", "Meerut",
+		"Rajkot", "Kalyan-Dombivli", "Vasai-Virar", "Varanasi", "Srinagar",
+		"Aurangabad", "Dhanbad", "Amritsar", "Navi Mumbai", "Allahabad",
+		"Ranchi", "Howrah", "Coimbatore", "Jabalpur", "Gwalior",
+		"Vijayawada", "Jodhpur", "Madurai", "Raipur", "Kota",
+		"Guwahati", "Chandigarh", "Solapur", "Hubli-Dharwad", "Tiruchirappalli",
+	}
+	b.ResetTimer()
+	n := len(cities)
+	for i := 0; i < b.N; i++ {
+		GetZipCodesFromCity(cities[i%n], "IN")
+	}
+}

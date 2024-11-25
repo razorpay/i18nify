@@ -48,6 +48,12 @@ func main() {
 		fmt.Println(city.Name)
 	}
 
+	// Get zipcodes by city
+	zipcodes := countryIN.GetZipCodesFromCity("indore")
+	for _, val := range zipcodes {
+		fmt.Println(val)
+	}
+
 	//USD
 	currencyUS := currency.GetCurrencyInformation("USD")
 	fmt.Println(currencyUS.Name)   //US Dollar

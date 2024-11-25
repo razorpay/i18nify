@@ -24,4 +24,6 @@ type ICountry interface {
 	GetCitiesByZipCode(zipcode string) []country_subdivisions.City
 	// IsValidZipCode returns whether a pinCode is valid for the country or not.
 	IsValidZipCode(zipcode string) bool
+	// GetZipCodesFromCity returns all the zipcodes belonging to that city.
+	GetZipCodesFromCity(cityName string) []string
 }

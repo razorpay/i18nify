@@ -58,6 +58,11 @@ func (c *Country) IsValidZipCode(pinCode string) bool {
 	return zipcode.IsValidZipCode(pinCode, c.Code)
 }
 
+// GetZipCodesFromCity returns all the zipcodes belonging to that city.
+func (c *Country) GetZipCodesFromCity(cityName string) []string {
+	return zipcode.GetZipCodesFromCity(cityName, c.Code)
+}
+
 // NewCountry creates a new Country instance with the given country code.
 func NewCountry(code string) ICountry {
 	return &Country{

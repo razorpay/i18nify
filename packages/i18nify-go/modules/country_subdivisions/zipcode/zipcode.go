@@ -3,6 +3,7 @@ package zipcode
 
 import (
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
+	"strings"
 )
 
 type ZipCodeDetails struct {
@@ -63,7 +64,7 @@ func IsValidZipCode(zipCode string, countryCode string) bool {
 }
 func GetZipCodesFromCity(city string, countryCode string) []string {
 	zipCodeData := GetCountryZipCodeDetails(countryCode)
-	return zipCodeData.cityToZipCodes[city]
+	return zipCodeData.cityToZipCodes[strings.ToLower(city)]
 }
 
 // initializeZipCodeMap builds the zip code maps for the given CountrySubdivisions.
@@ -90,7 +91,7 @@ func initializeZipCodeMap(subdivisions country_subdivisions.CountrySubdivisions)
 				})
 				details[zipcode] = zipCodeDetail
 			}
-			cityToZipCode[city.Name] = city.Zipcodes
+			cityToZipCode[strings.ToLower(city.Name)] = city.Zipcodes
 		}
 	}
 	return &ZipCodeData{
