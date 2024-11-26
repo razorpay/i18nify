@@ -7,12 +7,12 @@ import (
 )
 
 type ZipCodeDetails struct {
-	Cities     []*CityDetails
+	Cities     []CityDetails
 	StateCodes []string
 }
 
 type ZipCodeData struct {
-	zipCodeToDetails map[string]*ZipCodeDetails
+	zipCodeToDetails map[string]ZipCodeDetails
 	cityToZipCodes   map[string][]string
 }
 type CityDetails struct {
@@ -20,9 +20,9 @@ type CityDetails struct {
 	stateCode string
 }
 
-var zipCodeStore = make(map[string]*ZipCodeData)
+var zipCodeStore = make(map[string]ZipCodeData)
 
-func GetCountryZipCodeDetails(countryCode string) *ZipCodeData {
+func GetCountryZipCodeDetails(countryCode string) ZipCodeData {
 	if _, exists := zipCodeStore[countryCode]; !exists {
 		subdivision := country_subdivisions.GetCountrySubdivisions(countryCode)
 		zipCodeData := initializeZipCodeMap(subdivision)
@@ -34,7 +34,7 @@ func GetStatesFromZipCode(zipCode string, countryCode string) []country_subdivis
 	zipCodeData := GetCountryZipCodeDetails(countryCode)
 	subdivisions := country_subdivisions.GetCountrySubdivisions(countryCode)
 	var states []country_subdivisions.State
-	if zipCodeData.zipCodeToDetails[zipCode] == nil {
+	if _, exists := zipCodeData.zipCodeToDetails[zipCode]; !exists {
 		return states
 	}
 	for _, stateCode := range zipCodeData.zipCodeToDetails[zipCode].StateCodes {
@@ -48,7 +48,7 @@ func GetCitiesFromZipCode(zipCode string, countryCode string) []country_subdivis
 	zipCodeData := GetCountryZipCodeDetails(countryCode)
 	subdivision := country_subdivisions.GetCountrySubdivisions(countryCode)
 	var cities []country_subdivisions.City
-	if zipCodeData.zipCodeToDetails[zipCode] == nil {
+	if _, exists := zipCodeData.zipCodeToDetails[zipCode]; !exists {
 		return cities
 	}
 	for _, cityDetails := range zipCodeData.zipCodeToDetails[zipCode].Cities {
@@ -60,7 +60,8 @@ func GetCitiesFromZipCode(zipCode string, countryCode string) []country_subdivis
 }
 func IsValidZipCode(zipCode string, countryCode string) bool {
 	zipCodeData := GetCountryZipCodeDetails(countryCode)
-	return zipCodeData.zipCodeToDetails[zipCode] != nil
+	_, exists := zipCodeData.zipCodeToDetails[zipCode]
+	return exists
 }
 func GetZipCodesFromCity(city string, countryCode string) []string {
 	zipCodeData := GetCountryZipCodeDetails(countryCode)
@@ -68,9 +69,9 @@ func GetZipCodesFromCity(city string, countryCode string) []string {
 }
 
 // initializeZipCodeMap builds the zip code maps for the given CountrySubdivisions.
-func initializeZipCodeMap(subdivisions country_subdivisions.CountrySubdivisions) *ZipCodeData {
+func initializeZipCodeMap(subdivisions country_subdivisions.CountrySubdivisions) ZipCodeData {
 	var cityToZipCode = make(map[string][]string)
-	var details = make(map[string]*ZipCodeDetails)
+	var details = make(map[string]ZipCodeDetails)
 
 	// Iterate through all states and cities to populate the zip code maps.
 	for stateCode, state := range subdivisions.States {
@@ -78,14 +79,14 @@ func initializeZipCodeMap(subdivisions country_subdivisions.CountrySubdivisions)
 			for _, zipcode := range city.Zipcodes {
 				// check if an entry with specific ZipCode already exists, if not create one
 				if _, exists := details[zipcode]; !exists {
-					details[zipcode] = &ZipCodeDetails{
+					details[zipcode] = ZipCodeDetails{
 						StateCodes: []string{},
-						Cities:     []*CityDetails{},
+						Cities:     []CityDetails{},
 					}
 				}
 				zipCodeDetail := details[zipcode]
 				zipCodeDetail.StateCodes = append(zipCodeDetail.StateCodes, stateCode)
-				zipCodeDetail.Cities = append(zipCodeDetail.Cities, &CityDetails{
+				zipCodeDetail.Cities = append(zipCodeDetail.Cities, CityDetails{
 					cityName:  city.Name,
 					stateCode: stateCode,
 				})
@@ -94,7 +95,7 @@ func initializeZipCodeMap(subdivisions country_subdivisions.CountrySubdivisions)
 			cityToZipCode[strings.ToLower(city.Name)] = city.Zipcodes
 		}
 	}
-	return &ZipCodeData{
+	return ZipCodeData{
 		cityToZipCodes:   cityToZipCode,
 		zipCodeToDetails: details,
 	}
