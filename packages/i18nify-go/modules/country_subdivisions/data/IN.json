@@ -2,7 +2,7 @@
   "country_name": "India",
   "states": {
     "AP": {
-      "name": "AndhraPradesh",
+      "name": "Andhra Pradesh",
       "cities": {
         "Ananthapur": {
           "name": "Ananthapur",
@@ -1509,7 +1509,7 @@
       }
     },
     "AR": {
-      "name": "ArunachalPradesh",
+      "name": "Arunachal Pradesh",
       "cities": {
         "WestGodavari": {
           "name": "Westgodavari",
@@ -5023,7 +5023,7 @@
       }
     },
     "UP": {
-      "name": "UttarPradesh",
+      "name": "Uttar Pradesh",
       "cities": {
         "Aurangabad": {
           "name": "Aurangabad",
@@ -9442,7 +9442,7 @@
       }
     },
     "HP": {
-      "name": "HimachalPradesh",
+      "name": "Himachal Pradesh",
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
@@ -10030,7 +10030,7 @@
       }
     },
     "JK": {
-      "name": "JammuAndKashmir",
+      "name": "Jammu and Kashmir",
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
@@ -10456,7 +10456,7 @@
       }
     },
     "MP": {
-      "name": "MadhyaPradesh",
+      "name": "Madhya Pradesh",
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
@@ -17846,7 +17846,7 @@
       }
     },
     "DN": {
-      "name": "DadraAndNagarHaveliAndDamanAndDiu",
+      "name": "Dadra and Nagar Haveli and Daman and Diu",
       "cities": {
         "Diu": {
           "name": "Diu",
@@ -21961,7 +21961,7 @@
       }
     },
     "TN": {
-      "name": "TamilNadu",
+      "name": "Tamil Nadu",
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
@@ -25708,7 +25708,7 @@
       }
     },
     "PY": {
-      "name": "UnionTerritoryOfPuducherry",
+      "name": "Union Territory of Puducherry",
       "cities": {
         "UnionTerritoryOfPuducherry": {
           "name": "Unionterritoryofpuducherry",
@@ -25751,7 +25751,7 @@
       }
     },
     "AN": {
-      "name": "AndamanAndNicobar",
+      "name": "Andaman and Nicobar",
       "cities": {
         "Agra": {
           "name": "Agra",
@@ -25831,7 +25831,7 @@
       }
     },
     "WB": {
-      "name": "WestBengal",
+      "name": "West Bengal",
       "cities": {
         "Siddharthnagar": {
           "name": "Siddharthnagar",
