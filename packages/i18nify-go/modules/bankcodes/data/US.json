@@ -1,0 +1,22 @@
+{
+    "defaults": {
+      "identifier_type": "routing_code"
+    },
+    "details": [
+      {
+        "name": "U.S. BANK N.A.",
+        "short_code": "USBK",
+        "branches": [
+          {
+            "code": "XXX",
+            "city": "MINNEAPOLIS",
+            "identifiers": {
+              "swift_code": "USBKUS44XXX",
+              "routing_code": "122105155"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
