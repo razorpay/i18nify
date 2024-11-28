@@ -36,7 +36,9 @@ func main() {
 	fmt.Println(state.GetCities()[0]) //{Yellāpur nan Asia/Kolkata [581337 581337 ...}
 
 	//USD
-	currencyUS := currency.GetCurrencyInformation("USD")
+	currencyUS, _ := currency.GetCurrencyInformation("USD")
 	fmt.Println(currencyUS.Name)   //US Dollar
 	fmt.Println(currencyUS.Symbol) //$
+
+	// add convert to major unit and minor unit examples
 }

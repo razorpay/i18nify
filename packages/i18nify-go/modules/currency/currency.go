@@ -40,21 +40,34 @@ type Currency struct {
 // GetAllCurrencyInformation returns all currency information.
 func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 	return r.CurrencyInformation
+	// can be stored in cache on first call
+	// reset cache if there is any change in data.json file
 }
 
 // GetCurrencyInformation retrieves currency information for a specific currency code.
-func GetCurrencyInformation(code string) CurrencyInformation {
+func GetCurrencyInformation(code string) (CurrencyInformation, error) {
 	// Read JSON data file containing currency information.
 	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
 	if err != nil {
-		// Handle error reading the file.
-		fmt.Println("Error reading JSON file:", err)
-		return CurrencyInformation{}
+		// Handle error reading the file
+		return CurrencyInformation{}, fmt.Errorf("error reading JSON file: %v", err)
 	}
+
 	// Unmarshal JSON data into SupportedCurrency struct.
-	allCurrencyData, _ := UnmarshalCurrency(currencyJsonData)
+	allCurrencyData, err := UnmarshalCurrency(currencyJsonData)
+	if err != nil {
+		return CurrencyInformation{}, fmt.Errorf("error unmarshalling JSON data: %v", err)
+	}
+
 	// Retrieve currency information for the specified currency code.
-	return allCurrencyData.CurrencyInformation[code]
+	currencyInfo, exists := allCurrencyData.CurrencyInformation[code]
+
+	if !exists {
+		return CurrencyInformation{}, fmt.Errorf("currency code '%s' not found", code)
+	}
+
+	return currencyInfo, nil
+
 }
 
 // NewCurrency creates a new Currency instance.
@@ -84,4 +97,25 @@ func NewCurrencyInformation(minorUnit string, name string, numericCode string, p
 		PhysicalCurrencyDenominations: physicalCurrencyDenominations,
 		Symbol:                        symbol,
 	}
+}
+
+// GetCurrencySymbol retrieves the currency symbol for a specific currency code.
+func GetCurrencySymbol(code string) (string, error) {
+	// Validate the input code.
+	if code == "" {
+		return "", fmt.Errorf("currency code cannot be empty")
+	}
+
+	// Retrieve currency information for the specified code.
+	currencyInfo, err := GetCurrencyInformation(code)
+	if err != nil {
+		return "", fmt.Errorf("failed to retrieve currency information for code '%s': %v", code, err)
+	}
+
+	// Validate the currency symbol.
+	if currencyInfo.Symbol == "" {
+		return "", fmt.Errorf("currency symbol for code '%s' is not available", code)
+	}
+
+	return currencyInfo.Symbol, nil
 }
