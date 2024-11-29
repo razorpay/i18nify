@@ -32,8 +32,9 @@ func main() {
 	fmt.Println(subdivisions.GetCountryName()) //India
 
 	state := subdivisions.GetStates()["KA"]
-	fmt.Println(state.GetName())      //Karnataka
-	fmt.Println(state.GetCities()[0]) //{Yellāpur nan Asia/Kolkata [581337 581337 ...}
+	fmt.Println(state.GetName())        //Karnataka
+	fmt.Println(state.GetCities()[0])   //{Yellāpur nan Asia/Kolkata [581337 581337 ...}
+	fmt.Println(len(state.GetCities())) //58
 
 	//USD
 	currencyUS := currency.GetCurrencyInformation("USD")
