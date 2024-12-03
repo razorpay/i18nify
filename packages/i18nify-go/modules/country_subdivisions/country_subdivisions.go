@@ -71,8 +71,8 @@ func NewCountrySubdivisions(countryName string, states map[string]State) *Countr
 
 // State contains information about a state or province.
 type State struct {
-	Cities map[string]City `json:"cities"` // Cities contains information about cities within the state.
-	Name   string          `json:"name"`   // Name represents the name of the state.
+	Cities []City `json:"cities"` // Cities contains information about cities within the state.
+	Name   string `json:"name"`   // Name represents the name of the state.
 }
 
 // GetCities returns information about cities within the state.
@@ -90,7 +90,7 @@ func (r *State) GetName() string {
 }
 
 // NewState creates a new State instance.
-func NewState(cities map[string]City, name string) *State {
+func NewState(cities []City, name string) *State {
 	return &State{
 		Cities: cities,
 		Name:   name,
