@@ -41,6 +41,7 @@ export default function LanguagePopover() {
           value={option.value}
         >
           <Box component="img" alt={option.label} src={option.icon} sx={{ width: 28, mr: 2 }} />
+          <span>{option.label}</span>
         </MenuItem>
       ))}
     </Select>
