@@ -57,7 +57,7 @@ func TestGetCurrencyInformation(t *testing.T) {
 		return
 	}
 
-	result := GetCurrencyInformation("USD")
+	result, _ := GetCurrencyInformation("USD")
 
 	// Use assert.Equal for assertions with inline expected values
 	assert.Equal(t, "2", result.MinorUnit, "MinorUnit field mismatch")
