@@ -1,6 +1,6 @@
 {
     "defaults": {
-      "identifier_type": "routing_code"
+      "identifier_type": "ROUTING_NUMBER"
     },
     "details": [
       {
@@ -12,7 +12,7 @@
             "city": "MINNEAPOLIS",
             "identifiers": {
               "swift_code": "USBKUS44XXX",
-              "routing_code": "122105155"
+              "routing_number": "122105155"
             }
           }
         ]

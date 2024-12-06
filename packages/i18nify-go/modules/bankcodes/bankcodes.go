@@ -36,7 +36,7 @@ type BankInfo struct {
 
 const (
 	IdentifierTypeSWIFT         = "SWIFT"
-	IdentifierTypeRoutingNumber = "routing_number"
+	IdentifierTypeRoutingNumber = "ROUTING_NUMBER"
 	IdentifierTypeIFSC          = "IFSC"
 )
 
