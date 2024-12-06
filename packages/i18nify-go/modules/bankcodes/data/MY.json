@@ -1,0 +1,21 @@
+{
+    "defaults": {
+      "identifier_type": "SWIFT"
+    },
+    "details": [
+      {
+        "name": "AFFIN BANK BERHAD",
+        "short_code": "PHBM",
+        "branches": [
+          {
+            "code": "XXX",
+            "city": "KUALA LUMPUR",
+            "identifiers": {
+              "swift_code": "PHBMMYKLXXX"
+            }
+          }
+        ]
+      }
+    ]
+}
+  

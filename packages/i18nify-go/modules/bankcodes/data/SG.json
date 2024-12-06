@@ -1,0 +1,21 @@
+{
+    "defaults": {
+      "identifier_type": "SWIFT"
+    },
+    "details": [
+      {
+        "name": "CITIBANK,N.A.",
+        "short_code": "CITI",
+        "branches": [
+          {
+            "code": "XXX",
+            "city": "SINGAPORE",
+            "identifiers": {
+              "swift_code": "CITISGSGXXX"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
