@@ -1,0 +1,21 @@
+{
+    "defaults": {
+      "identifier_type": "IFSC"
+    },
+    "details": [
+      {
+        "name": "HDFC Bank Limited",
+        "short_code": "HDFC",
+        "branches": [
+          {
+            "code": "BNG",
+            "city": "BANGALORE",
+            "identifiers": {
+            "ifsc_code":"HDFC0001993"
+            }
+          }
+        ]
+      }
+    ]
+}
+  
