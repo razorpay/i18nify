@@ -1,21 +1,4717 @@
 {
-    "defaults": {
-      "identifier_type": "SWIFT"
-    },
-    "details": [
-      {
-        "name": "AFFIN BANK BERHAD",
-        "short_code": "PHBM",
-        "branches": [
-          {
-            "code": "XXX",
-            "city": "KUALA LUMPUR",
-            "identifiers": {
-              "swift_code": "PHBMMYKLXXX"
-            }
+  "defaults": {
+    "identifier_type": "SWIFT"
+  },
+  "details": [
+    {
+      "name": "AFFIN BANK BERHAD",
+      "short_code": "PHBM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PHBMMYKL"
           }
-        ]
-      }
-    ]
+        }
+      ]
+    },
+    {
+      "name": "ABRAR DISCOUNTS BERHAD",
+      "short_code": "ISCA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ISCAMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ABRAR FUTURES SDN BHD",
+      "short_code": "ABFU",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ABFUMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ACS DIGITAL BERHAD",
+      "short_code": "ACDB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ACDBMYK2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AFFIN BANK BERHAD",
+      "short_code": "ACFB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ACFBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AFFIN HWANG INVESTMENT BANK BERHAD",
+      "short_code": "AFID",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AFIDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AFFIN HWANG INVESTMENT BANK BERHAD",
+      "short_code": "PMBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PMBBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AFFIN HWANG INVESTMENT BANK BERHAD",
+      "short_code": "HDSB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HDSBMY2P"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AFFIN HWANG INVESTMENT BANK BERHAD",
+      "short_code": "AFUO",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AFUOMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AFFIN ISLAMIC BANK BERHAD",
+      "short_code": "AIBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AIBBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AHAM ASSET MANAGEMENT BERHAD",
+      "short_code": "HIMR",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HIMRMYK1"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HIMRMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AIA BERHAD",
+      "short_code": "AIBE",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AIBEMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AIA BHD.",
+      "short_code": "AIAC",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AIACMYKL"
+          }
+        },
+        {
+          "code": "GIO",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AIACMYK1GIO"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AIA PENSION AND ASSET MANAGEMENT SDN BHD",
+      "short_code": "AIPM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AIPMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AIBL",
+      "short_code": "AIBM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AIBMMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AL RAJHI BANKING AND INVESTMENT CORPORATION (MALAYSIA) BHD",
+      "short_code": "RJHI",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "RJHIMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ALLIANCE BANK MALAYSIA BERHAD",
+      "short_code": "MFBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MFBBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ALLIANCE INVESTMENT BANK BERHAD",
+      "short_code": "ALOS",
+      "branches": [
+        {
+          "code": "",
+          "city": "ALOR SETAR",
+          "identifiers": {
+            "swift_code": "ALOSMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ALLIANCE INVESTMENT BANK BERHAD",
+      "short_code": "BMBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BMBBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ALLIANCE ISLAMIC BANK BERHAD",
+      "short_code": "ALSR",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ALSRMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMANAH BUTLER MALAYSIA SDN BHD",
+      "short_code": "AMBM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMBMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMANAH FUTURES AND OPTIONS SDN BHD",
+      "short_code": "AFOB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AFOBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMANAH SAHAM KEDAH BERHAD",
+      "short_code": "KUTM",
+      "branches": [
+        {
+          "code": "",
+          "city": "ALOR SETAR",
+          "identifiers": {
+            "swift_code": "KUTMMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMANAH SAHAM SARAWAK BERHAD",
+      "short_code": "SSWK",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUCHING",
+          "identifiers": {
+            "swift_code": "SSWKMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMANAH SHORT DEPOSITS BERHAD",
+      "short_code": "SDEP",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SDEPMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMANAHRAYA TRUSTEES BERHAD",
+      "short_code": "AMTB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMTBMYK1"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMTBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMBANK (M) BERHAD",
+      "short_code": "ARMD",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ARMDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMBANK (M) BERHAD",
+      "short_code": "MBFF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBFFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMBANK (M) BERHAD",
+      "short_code": "ARBK",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ARBKMYKL"
+          }
+        },
+        {
+          "code": "LAB",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "ARBKMYKLLAB"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMBANK ISLAMIC BERHAD",
+      "short_code": "AISL",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AISLMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMCARD SERVICES BERHAD",
+      "short_code": "AMCB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMCBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMFB HOLDINGS BERHAD",
+      "short_code": "AMFB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMFBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMFUNDS MANAGEMENT BERHAD",
+      "short_code": "AMUT",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMUTMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMFUNDS MANAGEMENT BERHAD",
+      "short_code": "AMME",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMMEMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMINVESTMENT BANK BERHAD",
+      "short_code": "AMSD",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMSDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMINVESTMENT BANK BERHAD (FORMERLY KNOWN AS AMMERCHANT BANK BERHAD)",
+      "short_code": "AMMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMMBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMINVESTMENT BANK BERHAD-SPI",
+      "short_code": "AMMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AMMBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AMSTEEL EQUITY CAPITAL SDN. BHD.",
+      "short_code": "KLAN",
+      "branches": [
+        {
+          "code": "",
+          "city": "KLANG",
+          "identifiers": {
+            "swift_code": "KLANMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AOF FUTURES SDN. BHD.",
+      "short_code": "AOFM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AOFMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ASIA DIGITAL BANK LTD. (LABUAN INVESTMENT BANK)",
+      "short_code": "ADLN",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "ADLNMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ASIA INVESTMENT BANKING CORPORATION",
+      "short_code": "ASNC",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "ASNCMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ASIA PACIFIC INVESTMENT BANK LTD",
+      "short_code": "ASPM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ASPMMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ASIAN TRADE INVESTMENT BANK LTD",
+      "short_code": "ATBL",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "ATBLMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AVENUE KESTREL SDN. BHD.",
+      "short_code": "MBFS",
+      "branches": [
+        {
+          "code": "",
+          "city": "MUAR",
+          "identifiers": {
+            "swift_code": "MBFSMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AXIATA GROUP BERHAD",
+      "short_code": "AXGB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AXGBMYKK"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANGKOK BANK BERHAD",
+      "short_code": "BKKB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BKKBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK AL HABIB LIMITED",
+      "short_code": "BAHL",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "BAHLMY2A"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK INDUSTRI MALAYSIA BERHAD",
+      "short_code": "BKIM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BKIMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK ISLAM MALAYSIA BERHAD",
+      "short_code": "BIMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BIMBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK KERJASAMA RAKYAT MALAYSIA BERHAD (BANK RAKYAT)",
+      "short_code": "BKRM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BKRMMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK MUAMALAT MALAYSIA BERHAD",
+      "short_code": "BKEW",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BKEWMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK MUAMALAT MALAYSIA BERHAD (6175-W)",
+      "short_code": "BMMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BMMBMYKL"
+          }
+        },
+        {
+          "code": "TFD",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BMMBMYKLTFD"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK NEGARA MALAYSIA",
+      "short_code": "BNMA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BNMAMY2K"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BNMAMYK3"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BNMAMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK OF AMERICA, MALAYSIA BERHAD",
+      "short_code": "BOFA",
+      "branches": [
+        {
+          "code": "GRC",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BOFAMY2XGRC"
+          }
+        },
+        {
+          "code": "LMY",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BOFAMY2XLMY"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BOFAMY2X"
+          }
+        },
+        {
+          "code": "LBN",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "BOFAMY2XLBN"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK OF CHINA (MALAYSIA) BERHAD",
+      "short_code": "BKCH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BKCHMYKL"
+          }
+        },
+        {
+          "code": "CLR",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BKCHMYKLCLR"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK OF TOKYO-MITSUBISHI UFJ (MALAYSIA) BERHAD",
+      "short_code": "BOTK",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BOTKMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK PEMBANGUNAN MALAYSIA BERHAD",
+      "short_code": "PEMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PEMBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK PEMBANGUNAN MALAYSIA BERHAD-SPI",
+      "short_code": "PEMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PEMBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK PERTANIAN MALAYSIA BERHAD",
+      "short_code": "AGIS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AGISMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK PERTANIAN MALAYSIA BERHAD - RENTAS SPI",
+      "short_code": "AGOB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AGOBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK PERTANIAN MALAYSIA BERHAD-AGROBANK",
+      "short_code": "AGOB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AGOBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK SIMPANAN NASIONAL",
+      "short_code": "BSNA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BSNAMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BANK SIMPANAN NASIONAL BERHAD",
+      "short_code": "BSNA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BSNAMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BAT ASPAC SERVICE CENTRE SDN. BHD",
+      "short_code": "BATS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BATSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BBMB FUTURES SDN BHD",
+      "short_code": "BBFT",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BBFTMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BBMB SECURITIES SDN BHD",
+      "short_code": "BSSB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BSSBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BBMB UNIT TRUST MANAGEMENT BERHAD",
+      "short_code": "BBUT",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BBUTMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BIMB INVESTMENT MANAGEMENT BERHAD",
+      "short_code": "BUTM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BUTMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BIMB SECURITIES SDN BHD",
+      "short_code": "BSDB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BSDBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BNP PARIBAS",
+      "short_code": "BNPA",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "BNPAMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BNP PARIBAS MALAYSIA BERHAD",
+      "short_code": "BNPA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BNPAMYKL"
+          }
+        },
+        {
+          "code": "SPI",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BNPAMYKLSPI"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BNP PARIBAS MALAYSIA BERHAD-SPI",
+      "short_code": "BNPA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BNPAMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BOOST BANK BERHAD",
+      "short_code": "BOBE",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BOBEMYK2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BOS WEALTH MANAGEMENT MALAYSIA BERHAD",
+      "short_code": "PMFB",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "PMFBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BRITISH AMERICAN TOBACCO GSD (KUALA LUMPUR) SDN BHD",
+      "short_code": "BATS",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "BATSMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BURSA MALAYSIA BERHAD",
+      "short_code": "XKLS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "XKLSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BURSA MALAYSIA DEPOSITORY SDN BHD",
+      "short_code": "MCDS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MCDSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BURSA MALAYSIA DERIVATIVES BERHAD",
+      "short_code": "XLOF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "XLOFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BURSA MALAYSIA DERIVATIVES CLEARING BERHAD",
+      "short_code": "BMDR",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BMDRMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BURSA MALAYSIA SECURITIES CLEARING SDN. BHD.",
+      "short_code": "BMSC",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BMSCMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CAGAMAS BERHAD",
+      "short_code": "CAGA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CAGAMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CAGAMAS BERHAD - SPI",
+      "short_code": "CAGA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CAGAMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CAPITAL INVESTMENT BANK (LABUAN) LIMITED (CIB LABUAN)",
+      "short_code": "CINB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "CINBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CGS-CIMB SECURITIES SDN BHD",
+      "short_code": "JUPS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "JUPSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CHINA CONSTRUCTION BANK (MALAYSIA) BERHAD",
+      "short_code": "PCBC",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PCBCMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CHINA CONSTRUCTION BANK CORPORATION LABUAN BRANCH",
+      "short_code": "PCBC",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "PCBCMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIB",
+      "short_code": "RINT",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "RINTMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIMB BANK (L) LIMITED",
+      "short_code": "CIBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "CIBBMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIMB BANK BERHAD",
+      "short_code": "CIBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CIBBMYKL"
+          }
+        },
+        {
+          "code": "SBL",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CIBBMYKLSBL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIMB BANK BERHAD, LABUAN OFFSHORE BRANCH",
+      "short_code": "CIBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "CIBBMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIMB FUTURES SDN. BHD.",
+      "short_code": "CIMF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CIMFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIMB INVESTMENT BANK BERHAD",
+      "short_code": "COIM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "COIMMY21"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "COIMMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIMB ISLAMIC BANK BERHAD",
+      "short_code": "CTBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CTBBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIMB SI SDN. BHD.",
+      "short_code": "LABN",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "LABNMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIMB WEALTH ADVISORS BERHAD",
+      "short_code": "BPTM",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "BPTMMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CIMB-PRINCIPAL ASSET MANAGEMENT BERHAD",
+      "short_code": "CANH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CANHMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CITIBANK BERHAD",
+      "short_code": "CITI",
+      "branches": [
+        {
+          "code": "PEN",
+          "city": "GEORGE TOWN",
+          "identifiers": {
+            "swift_code": "CITIMYKLPEN"
+          }
+        },
+        {
+          "code": "JOD",
+          "city": "JOHOR BAHRU",
+          "identifiers": {
+            "swift_code": "CITIMYKLJOD"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CITIMYM1"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CITIMYKL"
+          }
+        },
+        {
+          "code": "LAB",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CITIMYKLLAB"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CITIGROUP GLOBAL MARKET MALAYSIA SDN BHD",
+      "short_code": "CITI",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CITIMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CLSA SECURITIES MALAYSIA SDN. BHD",
+      "short_code": "CSMS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CSMSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CLSA SECURITIES MALAYSIA SDN. BHD.",
+      "short_code": "CLSA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CLSAMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CREDIT SUISSE SECURITIES (MALAYSIA) SDN. BHD.",
+      "short_code": "CSFB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CSFBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CREDIT SUISSE SECURITIES (MALAYSIA) SDN. BHD.",
+      "short_code": "CRES",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CRESMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "DBS BANK LTD, LABUAN BRANCH",
+      "short_code": "DBSS",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "DBSSMY2A"
+          }
+        }
+      ]
+    },
+    {
+      "name": "DEUTSCHE BANK (MALAYSIA) BERHAD",
+      "short_code": "DEUT",
+      "branches": [
+        {
+          "code": "GMO",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "DEUTMYKLGMO"
+          }
+        },
+        {
+          "code": "IBW",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "DEUTMYKLIBW"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "DEUTMYKL"
+          }
+        },
+        {
+          "code": "DFS",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "DEUTMYKLDFS"
+          }
+        },
+        {
+          "code": "ISB",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "DEUTMYKLISB"
+          }
+        },
+        {
+          "code": "BLB",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "DEUTMYKLBLB"
+          }
+        }
+      ]
+    },
+    {
+      "name": "DEUTSCHE BANK MALAYSIA BERHAD-SPI",
+      "short_code": "DEUT",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "DEUTMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "EMPLOYEES PROVIDENT FUND BOARD",
+      "short_code": "KWSP",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KWSPMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "EONCAP SECURITIES SDN BHD",
+      "short_code": "ESSH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ESSHMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "EUROPE-ASIA INVESTMENT BANK LIMITED",
+      "short_code": "EUIE",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "EUIEMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "EXPORT-IMPORT BANK OF MALAYSIA BERHAD",
+      "short_code": "EXMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "EXMBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "EXPORT-IMPORT BANK OF MALAYSIA BERHAD - SPI",
+      "short_code": "EXMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "EXMBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FA SECURITIES SDN. BHD.",
+      "short_code": "FASE",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA TERENGGANU",
+          "identifiers": {
+            "swift_code": "FASEMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FGV CAPITAL SDN. BHD.",
+      "short_code": "FGVC",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "FGVCMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FGV HOLDINGS BERHAD",
+      "short_code": "FGVH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "FGVHMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FIDELITY ASIA BANK LTD",
+      "short_code": "FABE",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "FABEMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FINTECH BANK LTD.",
+      "short_code": "FNTH",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "FNTHMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FIRST ABU DHABI BANK PJSC ( FORMERLY NATIONAL BANK OF ABU DHABI)",
+      "short_code": "NBAD",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "NBADMYKL"
+          }
+        },
+        {
+          "code": "LAU",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "NBADMYKLLAU"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FIRST EAST EXPORT BANK (P.L.C.)",
+      "short_code": "FEEB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "FEEBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FULTON PREBON (MALAYSIA) SDN. BHD",
+      "short_code": "FPMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "FPMBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "GAT INVESTMENT BANK LIMITED",
+      "short_code": "GATI",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "GATIMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "GOH GROUP DEVELOPMENT SDN. BHD.",
+      "short_code": "GOSP",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "GOSPMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "GOLDEN TOUCH INVESTMENT BANK LIMITED",
+      "short_code": "GTIV",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "GTIVMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "GOLDMAN SACHS (LABUAN) INVESTMENT BK LTD",
+      "short_code": "GSLI",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "GSLIMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "GOLDMAN SACHS (MALAYSIA) SDN. BHD.",
+      "short_code": "GSMD",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "GSMDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "GX BANK BERHAD",
+      "short_code": "GXSP",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "GXSPMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HA OPTIONS AND FINANCIAL FUTURES",
+      "short_code": "HAOF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HAOFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HALIM SECURITIES SDN BHD.",
+      "short_code": "HALI",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "HALIMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HDM FUTURES SDN. BHD",
+      "short_code": "HDMF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HDMFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HLG FUTURES SDN. BHD.",
+      "short_code": "HLGF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HLGFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HONG LEONG ASSET MANAGEMENT BHD",
+      "short_code": "HUTM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HUTMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HONG LEONG ASSET MANAGEMENT BHD",
+      "short_code": "HLAN",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HLANMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HONG LEONG BANK BERHAD",
+      "short_code": "HLBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HLBBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HONG LEONG BANK BERHAD, LABUAN INTERNATIONAL BRANCH",
+      "short_code": "HLBL",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "HLBLMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HONG LEONG INVESTMENT BANK BERHAD",
+      "short_code": "PERD",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PERDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HONG LEONG INVESTMENT BANK BERHAD",
+      "short_code": "HLIV",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HLIVMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HONG LEONG INVESTMENT BANK BERHAD",
+      "short_code": "MIMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MIMBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HONG LEONG ISLAMIC BANK BERHAD",
+      "short_code": "HLIB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HLIBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HSBC (MALAYSIA) TRUSTEE BERHAD",
+      "short_code": "HSTM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HSTMMYKL"
+          }
+        },
+        {
+          "code": "GWS",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HSTMMYKLGWS"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HSBC AMANAH MALAYSIA BERHAD",
+      "short_code": "HMAB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HMABMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HSBC BANK MALAYSIA BERHAD",
+      "short_code": "HBMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "HBMBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HSBC RESEARCH (MALAYSIA) SDN. BHD",
+      "short_code": "JACL",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "JACLMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "I-VCAP MANAGEMENT SDN BHD",
+      "short_code": "IMSH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "IMSHMYK2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "IBH INVESTMENT BANK LIMITED",
+      "short_code": "IBHI",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "IBHIMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "INDIA INTERNATIONAL BANK (MALAYSIA) BERHAD",
+      "short_code": "IIMB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "IIMBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA (MALAYSIA) BERHAD.",
+      "short_code": "ICBK",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ICBKMYKL"
+          }
+        },
+        {
+          "code": "LAB",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "ICBKMYKLLAB"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ING CORPORATE ADVISORY (MALAYSIA) SDN. BHD",
+      "short_code": "INGB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "INGBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "INTER-PACIFIC SECURITIES SDN. BHD.",
+      "short_code": "INSS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "INSSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "INTERNATIONAL ISLAMIC LIQUIDITY MANAGEMENT CORPORATION",
+      "short_code": "IILM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "IILMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "J.P. MORGAN CHASE BANK BERHAD",
+      "short_code": "CHAS",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "CHASMYL1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "J.P. MORGAN SECURITIES (MALAYSIA) SDN BHD",
+      "short_code": "CHAS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CHASMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "J.P.MORGAN CHASE BANK BERHAD",
+      "short_code": "CHAS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CHASMYKX"
+          }
+        },
+        {
+          "code": "SEC",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "CHASMYKXSEC"
+          }
+        }
+      ]
+    },
+    {
+      "name": "JF APEX SECURITIES BERHAD",
+      "short_code": "APEX",
+      "branches": [
+        {
+          "code": "",
+          "city": "KAJANG",
+          "identifiers": {
+            "swift_code": "APEXMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "JF APEX SECURITIES BERHAD",
+      "short_code": "JFAF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KAJANG",
+          "identifiers": {
+            "swift_code": "JFAFMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "JF APEX SECURITIES BERHAD",
+      "short_code": "JFAP",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "JFAPMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "JPMORGAN CHASE BANK, N.A., LABUAN BRANCH",
+      "short_code": "CHAS",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "CHASMY2A"
+          }
+        }
+      ]
+    },
+    {
+      "name": "JPMORGAN SECURITIES (MALAYSIA) SDN. BHD.",
+      "short_code": "PEJF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PEJFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KAF INVESTMENT BANK BERHAD",
+      "short_code": "KAFD",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KAFDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KAF INVESTMENT BANK BERHAD",
+      "short_code": "KAFB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KAFBMY21"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KAFBMYKL"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KAFBMYK2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KAF INVESTMENT FUNDS BERHAD",
+      "short_code": "MPUT",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MPUTMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KAF-ASTLEY AND PEARCE SDN BHD",
+      "short_code": "KAAP",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KAAPMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KAF-SEAGROATT AND CAMPBELL SECURITIES SDN. BHD.",
+      "short_code": "SEAC",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SEACMYK1"
+          }
+        },
+        {
+          "code": "KSC",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SEACMYK1KSC"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KENANGA FUTURES SDN. BHD.",
+      "short_code": "KDMG",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KDMGMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KENANGA INVESTMENT BANK BERHAD",
+      "short_code": "SSTD",
+      "branches": [
+        {
+          "code": "",
+          "city": "GEORGE TOWN",
+          "identifiers": {
+            "swift_code": "SSTDMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KENANGA INVESTMENT BANK BERHAD",
+      "short_code": "KKEN",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KKENMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KENANGA INVESTMENT BANK BERHAD",
+      "short_code": "ECML",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ECMLMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KENANGA INVESTMENT BANK BERHAD- SPI",
+      "short_code": "KKEN",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KKENMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KHAZANAH NASIONAL BERHAD",
+      "short_code": "KHAZ",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KHAZMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KOPERASI CO-OPBANK PERTAMA MALAYSIA BERHAD",
+      "short_code": "KCPM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KCPMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KUALA LUMPUR KEPONG BERHAD",
+      "short_code": "KLKB",
+      "branches": [
+        {
+          "code": "",
+          "city": "IPOH",
+          "identifiers": {
+            "swift_code": "KLKBMY2I"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KUMPULAN WANG PERSARAAN (DIPERBADANKAN)",
+      "short_code": "KWAP",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KWAPMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "KUWAIT FINANCE HOUSE (MALAYSIA) BERHAD",
+      "short_code": "KFHO",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KFHOMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LBS",
+      "short_code": "LBGR",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "LBGRMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LIBRA CAPITAL MANAGEMENT SDN BHD",
+      "short_code": "LCMS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "LCMSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LIBRA OPTIONS AND FINANCIAL FUTURES SDN BHD",
+      "short_code": "LOFF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "LOFFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "M AND A SECURITIES SDN. BHD.",
+      "short_code": "PTBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "IPOH",
+          "identifiers": {
+            "swift_code": "PTBBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MACQUARIE CAPITAL SECURITIES (MALAYSIA) SDN. BHD.",
+      "short_code": "MACQ",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MACQMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MALACCA SECURITIES SDN. BHD.",
+      "short_code": "MLLA",
+      "branches": [
+        {
+          "code": "",
+          "city": "MELAKA",
+          "identifiers": {
+            "swift_code": "MLLAMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MALAYAN BANKING BERHAD (MAYBANK)",
+      "short_code": "MBBE",
+      "branches": [
+        {
+          "code": "PEN",
+          "city": "",
+          "identifiers": {
+            "swift_code": "MBBEMYKLPEN"
+          }
+        },
+        {
+          "code": "PGC",
+          "city": "",
+          "identifiers": {
+            "swift_code": "MBBEMYKLPGC"
+          }
+        },
+        {
+          "code": "BWC",
+          "city": "BUTTERWORTH",
+          "identifiers": {
+            "swift_code": "MBBEMYKLBWC"
+          }
+        },
+        {
+          "code": "IPH",
+          "city": "IPOH",
+          "identifiers": {
+            "swift_code": "MBBEMYKLIPH"
+          }
+        },
+        {
+          "code": "JOB",
+          "city": "JOHOR BAHRU",
+          "identifiers": {
+            "swift_code": "MBBEMYKLJOB"
+          }
+        },
+        {
+          "code": "PKG",
+          "city": "KLANG",
+          "identifiers": {
+            "swift_code": "MBBEMYKLPKG"
+          }
+        },
+        {
+          "code": "KIN",
+          "city": "KOTA KINABALU",
+          "identifiers": {
+            "swift_code": "MBBEMYKLKIN"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKL"
+          }
+        },
+        {
+          "code": "BAN",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLBAN"
+          }
+        },
+        {
+          "code": "BBG",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLBBG"
+          }
+        },
+        {
+          "code": "WEB",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLWEB"
+          }
+        },
+        {
+          "code": "CSD",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLCSD"
+          }
+        },
+        {
+          "code": "KEP",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLKEP"
+          }
+        },
+        {
+          "code": "PWM",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLPWM"
+          }
+        },
+        {
+          "code": "PUD",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLPUD"
+          }
+        },
+        {
+          "code": "SUB",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLSUB"
+          }
+        },
+        {
+          "code": "KLC",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLKLC"
+          }
+        },
+        {
+          "code": "WSD",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBBEMYKLWSD"
+          }
+        },
+        {
+          "code": "MAL",
+          "city": "MELAKA",
+          "identifiers": {
+            "swift_code": "MBBEMYKLMAL"
+          }
+        },
+        {
+          "code": "PSG",
+          "city": "PASIR GUDANG",
+          "identifiers": {
+            "swift_code": "MBBEMYKLPSG"
+          }
+        },
+        {
+          "code": "PJY",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "MBBEMYKLPJY"
+          }
+        },
+        {
+          "code": "PJC",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "MBBEMYKLPJC"
+          }
+        },
+        {
+          "code": "YSL",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "MBBEMYKLYSL"
+          }
+        },
+        {
+          "code": "SBN",
+          "city": "SEREMBAN",
+          "identifiers": {
+            "swift_code": "MBBEMYKLSBN"
+          }
+        },
+        {
+          "code": "SHA",
+          "city": "SHAH ALAM",
+          "identifiers": {
+            "swift_code": "MBBEMYKLSHA"
+          }
+        },
+        {
+          "code": "SAC",
+          "city": "SHAH ALAM",
+          "identifiers": {
+            "swift_code": "MBBEMYKLSAC"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MALAYSIA AIRLINES BERHAD 1116944-X",
+      "short_code": "MAYH",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "MAYHMY2S"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MALAYSIA LNG SDN BHD",
+      "short_code": "MLNG",
+      "branches": [
+        {
+          "code": "",
+          "city": "BINTULU",
+          "identifiers": {
+            "swift_code": "MLNGMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MALAYSIAN ELECTRONIC PAYMENT SYSTEM (1997) SDN BHD",
+      "short_code": "MEPS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MEPSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MALAYSIAN INDUSTRIAL DEVELOPMENT FINANCE BHD",
+      "short_code": "MAID",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MAIDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MALPAC MANAGEMENT SDN. BHD.",
+      "short_code": "SSSD",
+      "branches": [
+        {
+          "code": "",
+          "city": "SEREMBAN",
+          "identifiers": {
+            "swift_code": "SSSDMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAX MONEY SDN BHD",
+      "short_code": "MMSB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MMSBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBAN FINANCE BHD",
+      "short_code": "MFIN",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MFINMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBAN SECURITIES SDN BHD",
+      "short_code": "MAYS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MAYSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBANK ASSET MANAGEMENT SDN BHD",
+      "short_code": "MAMD",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MAMDMY21"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MAMDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBANK INTERNATIONAL (L) LTD.",
+      "short_code": "MBBE",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "MBBEMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBANK INTERNATIONAL LABUAN BRANCH",
+      "short_code": "MBBE",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "MBBEMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBANK INVESTMENT BANK BERHAD",
+      "short_code": "PPSS",
+      "branches": [
+        {
+          "code": "",
+          "city": "IPOH",
+          "identifiers": {
+            "swift_code": "PPSSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBANK INVESTMENT BANK BERHAD",
+      "short_code": "AEAM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AEAMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBANK INVESTMENT BANK BERHAD",
+      "short_code": "MAYD",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MAYDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBANK INVESTMENT BANK BERHAD",
+      "short_code": "MBEA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBEAMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBANK INVESTMENT BANK BERHAD - SPI",
+      "short_code": "MBEA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBEAMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAYBANK ISLAMIC BERHAD",
+      "short_code": "MBIS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBISMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MBF UNIT TRUST MANAGEMENT BERHAD",
+      "short_code": "MBFU",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBFUMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MBSB BANK BERHAD",
+      "short_code": "AFBQ",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "AFBQMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MEGA INTERNATIONAL COMMERCIAL BANK CO., LTD. LABUAN BRANCH",
+      "short_code": "ICBC",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "ICBCMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MERCEDES-BENZ MALAYSIA SDN. BHD.",
+      "short_code": "DABE",
+      "branches": [
+        {
+          "code": "",
+          "city": "PUCHONG",
+          "identifiers": {
+            "swift_code": "DABEMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MERCEDES-BENZ SERVICES MALAYSIA SDN. BHD.",
+      "short_code": "MBSM",
+      "branches": [
+        {
+          "code": "",
+          "city": "PUCHONG",
+          "identifiers": {
+            "swift_code": "MBSMMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MERCER INVESTMENTS V PRIVATE LTD.",
+      "short_code": "MENP",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "MENPMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MERCHANTRADE ASIA SDN BHD",
+      "short_code": "MSSH",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "MSSHMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MERCURY SECURITIES SDN. BHD.",
+      "short_code": "MERY",
+      "branches": [
+        {
+          "code": "",
+          "city": "BUTTERWORTH",
+          "identifiers": {
+            "swift_code": "MERYMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MIDDLE EAST INVESTMENT BANK LTD",
+      "short_code": "MEIB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "MEIBMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MIDF AMANAH INVESTMENT BANK BERHAD",
+      "short_code": "MIDF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MIDFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MIDF AMANAH INVESTMENT BANK BHD - SPI",
+      "short_code": "MIDF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MIDFMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MIZUHO BANK (MALAYSIA) BERHAD",
+      "short_code": "MHCB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MHCBMYKA"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MHCBMYK2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MIZUHO BANK, LTD., LABUAN BRANCH",
+      "short_code": "MHCB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "MHCBMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MOBILITYONE SDN. BHD.",
+      "short_code": "MBSD",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MBSDMYKM"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MONFI DIGITAL BANK LTD.",
+      "short_code": "MOFD",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "MOFDMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MTRUSTEE BERHAD",
+      "short_code": "MTBE",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "MTBEMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MUFG BANK (MALAYSIA) BERHAD",
+      "short_code": "BOTK",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BOTKMYKX"
+          }
+        }
+      ]
+    },
+    {
+      "name": "MUFG BANK, LTD., LABUAN BRANCH",
+      "short_code": "BOTK",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "BOTKMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NOMURA ASSET MANAGEMENT MALAYSIA SDN BHD",
+      "short_code": "NOCM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "NOCMMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NOMURA MALAYSIA SDN. BHD",
+      "short_code": "NMSB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "NMSBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NOMURA SECURITIES MALAYSIA SDN BHD",
+      "short_code": "NMRS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "NMRSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NOVATEL SDN. BHD.",
+      "short_code": "NOSB",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "NOSBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OCBC AL-AMIN BANK BERHAD",
+      "short_code": "OABB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "OABBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OCBC BANK (MALAYSIA) BERHAD",
+      "short_code": "OCBC",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "OCBCMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ONG RESEARCH (MALAYSIA) SDN BHD",
+      "short_code": "ORMS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ORMSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OSK AND PARTNERS SDN. BHD.",
+      "short_code": "OSPS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "OSPSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OSK FUTURES AND OPTIONS SDN BHD",
+      "short_code": "OSKF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "OSKFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OVERSEA-CHINESE BANKING CORPORATION LIMITED, LABUAN BRANCH",
+      "short_code": "OCBC",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "OCBCMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PACIFIC TRUSTEES BERHAD",
+      "short_code": "PCTR",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PCTRMYK2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PAN MALAYSIA EQUITIES SDN. BHD.",
+      "short_code": "KIMA",
+      "branches": [
+        {
+          "code": "",
+          "city": "SEREMBAN",
+          "identifiers": {
+            "swift_code": "KIMAMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PANASONIC FINANCIAL CENTRE (MALAYSIA) SDN. BHD.",
+      "short_code": "PANA",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "PANAMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PBFIN BERHAD",
+      "short_code": "PFBE",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PFBEMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PELABURAN JOHOR BERHAD",
+      "short_code": "PJBJ",
+      "branches": [
+        {
+          "code": "",
+          "city": "JOHOR BAHRU",
+          "identifiers": {
+            "swift_code": "PJBJMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PENGURUSAN KUMIPA BERHAD",
+      "short_code": "PKUM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUANTAN",
+          "identifiers": {
+            "swift_code": "PKUMMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PERFECT HEXAGON COMMODITY AND INVESTMENT BANK LIMITED",
+      "short_code": "PHCI",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "PHCIMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PERMODALAN BSN BERHAD",
+      "short_code": "PBSN",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PBSNMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PERMODALAN NASIONAL BERHAD",
+      "short_code": "PERM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PERMMYK1"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PERMMY21"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PERMMYKB"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PERMMYKP"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PERMMYKK"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PERMMYKG"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PETROLIAM NASIONAL BERHAD",
+      "short_code": "PTRO",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PTROMYKL"
+          }
+        },
+        {
+          "code": "FSD",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PTROMYKLFSD"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PG ASIA INVESTMENT BANK LTD",
+      "short_code": "AINE",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "AINEMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PHILEO ALLIED OPTION AND FINANCIAL FUTURES SDN. BHD.",
+      "short_code": "POFF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "POFFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PHILLIP CAPITAL SDN BHD",
+      "short_code": "PHCH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PHCHMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PICA (M) CORPORATION SDN BHD",
+      "short_code": "PCOS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PCOSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PM SECURITIES SDN. BHD.",
+      "short_code": "PENS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PENSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PMB INVESTMENT BERHAD",
+      "short_code": "ASMM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "ASMMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PREMIER CAPITAL SECURITIES SDN. BHD.",
+      "short_code": "FSSB",
+      "branches": [
+        {
+          "code": "",
+          "city": "IPOH",
+          "identifiers": {
+            "swift_code": "FSSBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PRIORITY CARE SDN. BHD.",
+      "short_code": "VIBR",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "VIBRMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PTB UNIT TRUST BERHAD",
+      "short_code": "PUTB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA TERENGGANU",
+          "identifiers": {
+            "swift_code": "PUTBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PUBLIC BANK (L) LTD",
+      "short_code": "PBLL",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "PBLLMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PUBLIC BANK BERHAD",
+      "short_code": "PBBE",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PBBEMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PUBLIC INVESTMENT BANK BERHAD",
+      "short_code": "SECS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SECSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PUBLIC INVESTMENT BANK BERHAD",
+      "short_code": "SMBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SMBBMYK1"
+          }
+        },
+        {
+          "code": "001",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SMBBMYK1001"
+          }
+        },
+        {
+          "code": "002",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SMBBMYK1002"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PUBLIC ISLAMIC BANK BERHAD",
+      "short_code": "PUIB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PUIBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PUBLIC ISLAMIC BANK BERHAD",
+      "short_code": "PIBE",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "PIBEMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PUBLIC MUTUAL BERHAD",
+      "short_code": "KLMF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "KLMFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RASHID AND ZAKI DERIVATIVES SDN BHD",
+      "short_code": "RNZD",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "RNZDMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RC HOLDINGS SDN. BHD.",
+      "short_code": "SSSH",
+      "branches": [
+        {
+          "code": "",
+          "city": "IPOH",
+          "identifiers": {
+            "swift_code": "SSSHMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RHB ASSET MANAGEMENT SDN BHD",
+      "short_code": "RHBT",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "RHBTMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RHB BANK (L) LTD",
+      "short_code": "RHBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "RHBBMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RHB BANK BERHAD",
+      "short_code": "RHBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "RHBBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RHB EXCEL SDN. BHD.",
+      "short_code": "RHBK",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "RHBKMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RHB INVESTMENT BANK BERHAD",
+      "short_code": "OSSB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "OSSBMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RHB INVESTMENT BANK BERHAD",
+      "short_code": "RHBF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "RHBFMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RHB INVESTMENT BANK BERHAD",
+      "short_code": "OSKI",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "OSKIMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RHB INVESTMENT BANK BERHAD",
+      "short_code": "RHBM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "RHBMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RHB ISLAMIC BANK BERHAD",
+      "short_code": "RHBA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "RHBAMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SABAH DEVELOPMENT BANK BHD.",
+      "short_code": "SDBE",
+      "branches": [
+        {
+          "code": "",
+          "city": "KOTA KINABALU",
+          "identifiers": {
+            "swift_code": "SDBEMY41"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SAHAM SABAH BERHAD",
+      "short_code": "SASB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KOTA KINABALU",
+          "identifiers": {
+            "swift_code": "SASBMY41"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SAMSUNG C AND T KL SDN BHD",
+      "short_code": "SASH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SASHMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SAMSUNG C AND T MALAYSIA SDN BHD",
+      "short_code": "SCNT",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SCNTMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SAMSUNG ELECTRONICS DISPLAY (M) SDN.BHD.",
+      "short_code": "SECT",
+      "branches": [
+        {
+          "code": "520",
+          "city": "KLANG",
+          "identifiers": {
+            "swift_code": "SECTMY21520"
+          }
+        },
+        {
+          "code": "5F0",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SECTMY215F0"
+          }
+        },
+        {
+          "code": "",
+          "city": "SEREMBAN",
+          "identifiers": {
+            "swift_code": "SECTMY21"
+          }
+        },
+        {
+          "code": "510",
+          "city": "SEREMBAN",
+          "identifiers": {
+            "swift_code": "SECTMY21510"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SARAWAK SECURITIES FUTURES SDN BHD",
+      "short_code": "SSFO",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUCHING",
+          "identifiers": {
+            "swift_code": "SSFOMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SBB UNIT TRUST MANAGEMENT B ERHAD",
+      "short_code": "SBUT",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SBUTMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SCHRODERS MALAYSIA (L) BERHAD",
+      "short_code": "SMBL",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "SMBLMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SEA CAPITAL SERVICES BERHAD",
+      "short_code": "SCCH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SCCHMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SINGPOLI INVESTMENT BANK LIMITED",
+      "short_code": "SIMV",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "SIMVMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SJ SECURITIES SDN BHD",
+      "short_code": "SJSE",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "SJSEMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SMALL MEDIUM ENTERPRISE DEVELOPMENT BANK MALAYSIA BERHAD",
+      "short_code": "MSME",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MSMEMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SMALL MEDIUM ENTERPRISE DEVELOPMENT BANK MALAYSIA BERHAD-SPI",
+      "short_code": "MSME",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "MSMEMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "STANDARD CHARTERED BANK MALAYSIA BERHAD",
+      "short_code": "SCBL",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SCBLMYKX"
+          }
+        },
+        {
+          "code": "WMO",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SCBLMYKXWMO"
+          }
+        },
+        {
+          "code": "LAB",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "SCBLMYKXLAB"
+          }
+        }
+      ]
+    },
+    {
+      "name": "STANDARD CHARTERED SAADIQ BERHAD",
+      "short_code": "SCSR",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SCSRMYK1"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SCSRMYKK"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SUMITOMO MITSUI BANKING CORPORATION",
+      "short_code": "SMBC",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "SMBCMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SUMITOMO MITSUI BANKING CORPORATION MALAYSIA BERHAD",
+      "short_code": "SMBC",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SMBCMYKL"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SMBCMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TA CENTRE BERHAD",
+      "short_code": "SETA",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "SETAMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TA FUTURES SDN. BHD.",
+      "short_code": "TAFR",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "TAFRMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TA INVESTMENT MANAGEMENT BERHAD",
+      "short_code": "TAUT",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "TAUTMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TA SECURITIES HOLDINGS BERHAD",
+      "short_code": "LEKE",
+      "branches": [
+        {
+          "code": "",
+          "city": "KOTA BAHRU",
+          "identifiers": {
+            "swift_code": "LEKEMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TA SECURITIES HOLDINGS BERHAD",
+      "short_code": "BOTL",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "BOTLMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TAICHUNG COMMERCIAL BANK CO.,LTD LABUAN BRANCH",
+      "short_code": "TCBB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "TCBBMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TAISHIN INTERNATIONAL BANK CO.,LTD.LABUAN BRANCH",
+      "short_code": "TSIB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "TSIBMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "THE BANK OF NOVA SCOTIA BERHAD",
+      "short_code": "NOSC",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "NOSCMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "THE DAIWA SECURITIES INTERNATIONAL (H.K.) LTD",
+      "short_code": "DAIC",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "DAICMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "THE HONGKONG AND SHANGHAI BANKING CORPORATION LIMITED",
+      "short_code": "HSBC",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "HSBCMYKA"
+          }
+        }
+      ]
+    },
+    {
+      "name": "THONG AND KAY HIAN SECURITIES SDN. BHD.",
+      "short_code": "TKHO",
+      "branches": [
+        {
+          "code": "",
+          "city": "GEORGE TOWN",
+          "identifiers": {
+            "swift_code": "TKHOMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "THONG-KHJC SDN BHD",
+      "short_code": "THKH",
+      "branches": [
+        {
+          "code": "",
+          "city": "GEORGE TOWN",
+          "identifiers": {
+            "swift_code": "THKHMYP1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TMC SERVICES SDN. BHD.",
+      "short_code": "TMCB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "TMCBMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TML REMITTANCE CENTER SDN. BHD.",
+      "short_code": "TRTD",
+      "branches": [
+        {
+          "code": "",
+          "city": "BATU PAHAT",
+          "identifiers": {
+            "swift_code": "TRTDMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TRANGLO SDN BHD",
+      "short_code": "TRLO",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "TRLOMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TRANSFERWISE MALAYSIA SDN. BHD.",
+      "short_code": "TRWI",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "TRWIMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TROPICANA CORPORATION BERHAD",
+      "short_code": "TROH",
+      "branches": [
+        {
+          "code": "",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "TROHMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "UBB INVESTMENT BANK LIMITED",
+      "short_code": "UBBI",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "UBBIMY22"
+          }
+        }
+      ]
+    },
+    {
+      "name": "UBS SECURITIES MALAYSIA SDN. BHD.",
+      "short_code": "USMS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "USMSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "UNITED OVERSEAS BANK (MALAYSIA) BERHAD",
+      "short_code": "UOVB",
+      "branches": [
+        {
+          "code": "026",
+          "city": "BENTONG",
+          "identifiers": {
+            "swift_code": "UOVBMYK1026"
+          }
+        },
+        {
+          "code": "01P",
+          "city": "BUTTERWORTH",
+          "identifiers": {
+            "swift_code": "UOVBMYK101P"
+          }
+        },
+        {
+          "code": "02P",
+          "city": "GEORGE TOWN",
+          "identifiers": {
+            "swift_code": "UOVBMYK102P"
+          }
+        },
+        {
+          "code": "03P",
+          "city": "GEORGE TOWN",
+          "identifiers": {
+            "swift_code": "UOVBMYK103P"
+          }
+        },
+        {
+          "code": "02H",
+          "city": "IPOH",
+          "identifiers": {
+            "swift_code": "UOVBMYK102H"
+          }
+        },
+        {
+          "code": "02J",
+          "city": "JOHOR BAHRU",
+          "identifiers": {
+            "swift_code": "UOVBMYK102J"
+          }
+        },
+        {
+          "code": "01K",
+          "city": "KLANG",
+          "identifiers": {
+            "swift_code": "UOVBMYK101K"
+          }
+        },
+        {
+          "code": "02K",
+          "city": "KLANG",
+          "identifiers": {
+            "swift_code": "UOVBMYK102K"
+          }
+        },
+        {
+          "code": "01J",
+          "city": "KLUANG",
+          "identifiers": {
+            "swift_code": "UOVBMYK101J"
+          }
+        },
+        {
+          "code": "01T",
+          "city": "KOTA BAHRU",
+          "identifiers": {
+            "swift_code": "UOVBMYK101T"
+          }
+        },
+        {
+          "code": "04K",
+          "city": "KOTA KINABALU",
+          "identifiers": {
+            "swift_code": "UOVBMYK104K"
+          }
+        },
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "UOVBMYKL"
+          }
+        },
+        {
+          "code": "CND",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "UOVBMYKLCND"
+          }
+        },
+        {
+          "code": "0K3",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "UOVBMYK10K3"
+          }
+        },
+        {
+          "code": "0K1",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "UOVBMYK10K1"
+          }
+        },
+        {
+          "code": "0K2",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "UOVBMYK10K2"
+          }
+        },
+        {
+          "code": "CMS",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "UOVBMYKLCMS"
+          }
+        },
+        {
+          "code": "03T",
+          "city": "KUALA TERENGGANU",
+          "identifiers": {
+            "swift_code": "UOVBMYK103T"
+          }
+        },
+        {
+          "code": "02T",
+          "city": "KUANTAN",
+          "identifiers": {
+            "swift_code": "UOVBMYK102T"
+          }
+        },
+        {
+          "code": "03K",
+          "city": "KUCHING",
+          "identifiers": {
+            "swift_code": "UOVBMYK103K"
+          }
+        },
+        {
+          "code": "03J",
+          "city": "KULAI",
+          "identifiers": {
+            "swift_code": "UOVBMYK103J"
+          }
+        },
+        {
+          "code": "027",
+          "city": "MELAKA",
+          "identifiers": {
+            "swift_code": "UOVBMYK1027"
+          }
+        },
+        {
+          "code": "024",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "UOVBMYK1024"
+          }
+        },
+        {
+          "code": "025",
+          "city": "PETALING JAYA",
+          "identifiers": {
+            "swift_code": "UOVBMYK1025"
+          }
+        },
+        {
+          "code": "022",
+          "city": "RAUB",
+          "identifiers": {
+            "swift_code": "UOVBMYK1022"
+          }
+        },
+        {
+          "code": "042",
+          "city": "SANDAKAN",
+          "identifiers": {
+            "swift_code": "UOVBMYK1042"
+          }
+        },
+        {
+          "code": "023",
+          "city": "SEREMBAN",
+          "identifiers": {
+            "swift_code": "UOVBMYK1023"
+          }
+        },
+        {
+          "code": "043",
+          "city": "TUARAN",
+          "identifiers": {
+            "swift_code": "UOVBMYK1043"
+          }
+        }
+      ]
+    },
+    {
+      "name": "UNITED OVERSEAS BANK (MALAYSIA) BHD",
+      "short_code": "UOVB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "UOVBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "UNITED OVERSEAS BANK LIMITED LABUAN BRANCH",
+      "short_code": "UOVB",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "UOVBMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "UNIVERSAL TRUSTEE (M) BERHAD",
+      "short_code": "UNTH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "UNTHMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "UOB KAY HIAN SECURITIES (M) SDN BHD",
+      "short_code": "INNO",
+      "branches": [
+        {
+          "code": "",
+          "city": "KOTA KINABALU",
+          "identifiers": {
+            "swift_code": "INNOMY41"
+          }
+        }
+      ]
+    },
+    {
+      "name": "UOB SECURITIES PTE LTD",
+      "short_code": "UOBS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "UOBSMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "VCAP ASSET MANAGERS SDN BHD",
+      "short_code": "VAMS",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "VAMSMYK2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "VOLKSWAGEN GROUP MALAYSIA",
+      "short_code": "VOGM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "VOGMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "VOLKSWAGEN PASSENGER CARS MALAYSIA SDN BHD",
+      "short_code": "VPCM",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "VPCMMYK1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "WAAFI BANK LTD.",
+      "short_code": "WAAF",
+      "branches": [
+        {
+          "code": "",
+          "city": "LABUAN",
+          "identifiers": {
+            "swift_code": "WAAFMY2L"
+          }
+        }
+      ]
+    },
+    {
+      "name": "WILHELMSEN SHIP MANAGEMENT SDN BHD",
+      "short_code": "WSMH",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "WSMHMYKL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "WK OPTIONS AND FUTURES SDN BHD",
+      "short_code": "WKOF",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUANTAN",
+          "identifiers": {
+            "swift_code": "WKOFMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "WK SECURITIES SDN BHD",
+      "short_code": "SESB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUANTAN",
+          "identifiers": {
+            "swift_code": "SESBMY21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "YINSON HOLDINGS BERHAD",
+      "short_code": "YIHB",
+      "branches": [
+        {
+          "code": "",
+          "city": "KUALA LUMPUR",
+          "identifiers": {
+            "swift_code": "YIHBMYKL"
+          }
+        }
+      ]
+    }
+  ]
 }
-  

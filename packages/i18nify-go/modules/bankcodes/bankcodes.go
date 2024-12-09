@@ -76,24 +76,29 @@ func IsValidBankIdentifier(countryCode, identifierType, identifierValue string) 
 	}
 
 	// Checking if the identifier type is valid for the country
-	if bankInfo.Defaults.IdentifierType != identifierType {
-		return false, fmt.Errorf("invalid identifier type '%s' for country: %s", identifierType, countryCode)
-	}
+	// if bankInfo.Defaults.IdentifierType != identifierType {
+	// 	return false, fmt.Errorf("invalid identifier type '%s' for country: %s", identifierType, countryCode)
+	// }
 
 	// Iterating over bank details to validate the identifier value
 	for _, bank := range bankInfo.Details {
 		for _, branch := range bank.Branches {
 			switch identifierType {
 			case IdentifierTypeSWIFT:
-				if branch.Identifiers.SwiftCode == identifierValue {
+				swiftCode := strings.ToUpper(identifierValue)
+				// If SWIFT code ends with "XXX", compare only the first 8 characters
+				if len(swiftCode) == 11 && strings.HasSuffix(swiftCode, "XXX") {
+					swiftCode = swiftCode[:8]
+				}
+				if strings.EqualFold(branch.Identifiers.SwiftCode, swiftCode) {
 					return true, nil
 				}
 			case IdentifierTypeRoutingNumber:
-				if branch.Identifiers.RoutingNumber == identifierValue {
+				if strings.EqualFold(branch.Identifiers.RoutingNumber, identifierValue) {
 					return true, nil
 				}
 			case IdentifierTypeIFSC:
-				if branch.Identifiers.IfscCode == identifierValue {
+				if strings.EqualFold(branch.Identifiers.IfscCode, identifierValue) {
 					return true, nil
 				}
 			default:
