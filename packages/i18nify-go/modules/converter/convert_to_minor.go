@@ -28,7 +28,6 @@ func ConvertToMinorUnit(code string, amount float64) (float64, error) {
 	minorUnitMultiplier := math.Pow(10, minorUnit)
 	if minorUnitMultiplier <= 0 {
 		minorUnitMultiplier = 100 // Default fallback value.
-		return 0, fmt.Errorf("invalid minor unit multiplier for currency code '%s'", code)
 	}
 	// 100 = Default fallback value.
 

@@ -27,10 +27,8 @@ func ConvertToMajorUnit(code string, amount float64) (float64, error) {
 	// Calculate the minor unit multiplier to float64
 	minorUnitMultiplier := math.Pow(10, minorUnit)
 	if minorUnitMultiplier <= 0 {
-		minorUnitMultiplier = 100 // Default fallback value.
-		return 0, fmt.Errorf("invalid minor unit multiplier for currency code '%s'", code)
+		minorUnitMultiplier = 100 // Default fallback value = 100
 	}
-	// 100 = Default fallback value.
 
 	// Convert the amount from minor to major unit.
 	majorUnitAmount := amount / minorUnitMultiplier
