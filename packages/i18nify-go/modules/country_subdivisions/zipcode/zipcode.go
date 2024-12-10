@@ -67,20 +67,6 @@ func GetDetailsFromZipCode(zipCode string, countryCode string) []country_subdivi
 	return states
 }
 
-func filterCitiesByZipCode(state country_subdivisions.State, zipCode string) map[string]country_subdivisions.City {
-	filteredCities := make(map[string]country_subdivisions.City)
-
-	for cityName, city := range state.Cities {
-		// Check if the city contains the specific zipcode
-		for _, zip := range city.Zipcodes {
-			if zip == zipCode {
-				filteredCities[cityName] = city
-				break
-			}
-		}
-	}
-	return filteredCities
-}
 func IsValidZipCode(zipCode string, countryCode string) bool {
 	zipCodeData := GetCountryZipCodeDetails(countryCode)
 	_, exists := zipCodeData.zipCodeToDetails[zipCode]
