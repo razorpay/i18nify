@@ -4,6 +4,7 @@ import { ByParts, CurrencyCodeType, I18nifyNumberFormatOptions } from './types';
 import { transformPartsFromIntl } from './utils';
 
 // this function formats number based on different arguments passed
+
 const formatNumber = (
   amount: string | number,
   options: {
