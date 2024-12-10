@@ -7,16 +7,15 @@ import (
 )
 
 type ZipCodeDetails struct {
-	Cities     []CityDetails
-	StateCodes []string
+	Details []Details
 }
 
 type ZipCodeData struct {
 	zipCodeToDetails map[string]ZipCodeDetails
 	cityToZipCodes   map[string][]string
 }
-type CityDetails struct {
-	cityName  string
+type Details struct {
+	cityNames []string
 	stateCode string
 }
 
@@ -30,33 +29,57 @@ func GetCountryZipCodeDetails(countryCode string) ZipCodeData {
 	}
 	return zipCodeStore[countryCode]
 }
-func GetStatesFromZipCode(zipCode string, countryCode string) []country_subdivisions.State {
+func GetDetailsFromZipCode(zipCode string, countryCode string) []country_subdivisions.State {
+	// Validate inputs
+	if zipCode == "" || countryCode == "" {
+		return nil
+	}
+
+	// Get zip code data and subdivisions
 	zipCodeData := GetCountryZipCodeDetails(countryCode)
 	subdivisions := country_subdivisions.GetCountrySubdivisions(countryCode)
+
 	var states []country_subdivisions.State
-	if _, exists := zipCodeData.zipCodeToDetails[zipCode]; !exists {
+
+	// Check if zipcode exists in the data
+	zipDetails, exists := zipCodeData.zipCodeToDetails[zipCode]
+	if !exists {
 		return states
 	}
-	for _, stateCode := range zipCodeData.zipCodeToDetails[zipCode].StateCodes {
-		if state, exists := subdivisions.GetStateByStateCode(stateCode); exists {
-			states = append(states, state)
+
+	// Iterate through details for this zipcode
+	for _, detail := range zipDetails.Details {
+		stateCode := detail.stateCode
+		// Check if state exists
+		state, stateExists := subdivisions.States[stateCode]
+		if !stateExists {
+			continue
 		}
+		// Create a copy of the state to modify
+		stateCopy := state
+		stateCopy.Cities = map[string]country_subdivisions.City{}
+		for _, cityName := range detail.cityNames {
+			stateCopy.Cities[cityName] = state.Cities[cityName]
+		}
+		states = append(states, stateCopy)
 	}
+
 	return states
 }
-func GetCitiesFromZipCode(zipCode string, countryCode string) []country_subdivisions.City {
-	zipCodeData := GetCountryZipCodeDetails(countryCode)
-	subdivision := country_subdivisions.GetCountrySubdivisions(countryCode)
-	var cities []country_subdivisions.City
-	if _, exists := zipCodeData.zipCodeToDetails[zipCode]; !exists {
-		return cities
-	}
-	for _, cityDetails := range zipCodeData.zipCodeToDetails[zipCode].Cities {
-		if city, exists := subdivision.GetCityDetailsByCityName(cityDetails.cityName, cityDetails.stateCode); exists {
-			cities = append(cities, city)
+
+func filterCitiesByZipCode(state country_subdivisions.State, zipCode string) map[string]country_subdivisions.City {
+	filteredCities := make(map[string]country_subdivisions.City)
+
+	for cityName, city := range state.Cities {
+		// Check if the city contains the specific zipcode
+		for _, zip := range city.Zipcodes {
+			if zip == zipCode {
+				filteredCities[cityName] = city
+				break
+			}
 		}
 	}
-	return cities
+	return filteredCities
 }
 func IsValidZipCode(zipCode string, countryCode string) bool {
 	zipCodeData := GetCountryZipCodeDetails(countryCode)
@@ -70,33 +93,54 @@ func GetZipCodesFromCity(city string, countryCode string) []string {
 
 // initializeZipCodeMap builds the zip code maps for the given CountrySubdivisions.
 func initializeZipCodeMap(subdivisions country_subdivisions.CountrySubdivisions) ZipCodeData {
-	var cityToZipCode = make(map[string][]string)
-	var details = make(map[string]ZipCodeDetails)
+	cityToZipCode := make(map[string][]string)
+	zipCodeToDetails := make(map[string]ZipCodeDetails)
 
-	// Iterate through all states and cities to populate the zip code maps.
 	for stateCode, state := range subdivisions.States {
 		for _, city := range state.Cities {
+			// Lowercase city name once
+			cityKey := strings.ToLower(city.Name)
+			cityToZipCode[cityKey] = city.Zipcodes
+
 			for _, zipcode := range city.Zipcodes {
-				// check if an entry with specific ZipCode already exists, if not create one
-				if _, exists := details[zipcode]; !exists {
-					details[zipcode] = ZipCodeDetails{
-						StateCodes: []string{},
-						Cities:     []CityDetails{},
+				details, exists := zipCodeToDetails[zipcode]
+				if !exists {
+					details = ZipCodeDetails{}
+				}
+				// Check if state already exists to avoid duplicates
+				stateExists := false
+				for _, existingDetail := range details.Details {
+					if existingDetail.stateCode == stateCode {
+						stateExists = true
+						// Ensure unique city names
+						existingDetail.cityNames = appendUnique(existingDetail.cityNames, city.Name)
+						break
 					}
 				}
-				zipCodeDetail := details[zipcode]
-				zipCodeDetail.StateCodes = append(zipCodeDetail.StateCodes, stateCode)
-				zipCodeDetail.Cities = append(zipCodeDetail.Cities, CityDetails{
-					cityName:  city.Name,
-					stateCode: stateCode,
-				})
-				details[zipcode] = zipCodeDetail
+				if !stateExists {
+					details.Details = append(details.Details, Details{
+						stateCode: stateCode,
+						cityNames: []string{city.Name},
+					})
+				}
+
+				zipCodeToDetails[zipcode] = details
 			}
-			cityToZipCode[strings.ToLower(city.Name)] = city.Zipcodes
 		}
 	}
+
 	return ZipCodeData{
 		cityToZipCodes:   cityToZipCode,
-		zipCodeToDetails: details,
+		zipCodeToDetails: zipCodeToDetails,
 	}
+}
+
+// Helper function to append unique strings
+func appendUnique(slice []string, item string) []string {
+	for _, existing := range slice {
+		if existing == item {
+			return slice
+		}
+	}
+	return append(slice, item)
 }

@@ -56,14 +56,6 @@ func (r *CountrySubdivisions) GetStateByStateCode(code string) (State, bool) {
 	return State{}, false
 }
 
-func (r *CountrySubdivisions) GetCityDetailsByCityName(cityName string, stateCode string) (City, bool) {
-	if state, exists := r.States[stateCode]; exists {
-		city, exists := state.Cities[cityName]
-		return city, exists
-	}
-	return City{}, false
-}
-
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
 	if _, present := countrySubDivisionStore[code]; present {

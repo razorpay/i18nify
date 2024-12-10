@@ -42,8 +42,8 @@ func main() {
 	fmt.Printf("For pincode 452010 state : %s\n", madhyaPradesh) // {[{Wārāseonī nan Asia/Kolkata [481331 ...}
 	fmt.Printf("State name %s\n", madhyaPradesh.GetName())
 
-	// Get Cities by zipcode
-	cityList := countryIN.GetCitiesByZipCode("452010")
+	// Get Cities
+	cityList := madhyaPradesh.Cities
 	fmt.Println("Cities :")
 	for _, city := range cityList {
 		fmt.Println(city.Name)

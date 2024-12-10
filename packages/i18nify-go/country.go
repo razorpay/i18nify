@@ -45,12 +45,7 @@ func (c *Country) GetCountryCurrency() []currency.CurrencyInformation {
 
 // GetStatesByZipCode retrieves the states with zipcode for the country.
 func (c *Country) GetStatesByZipCode(zipCode string) []subdivisions.State {
-	return zipcode.GetStatesFromZipCode(zipCode, c.Code)
-}
-
-// GetCitiesByZipCode retrieves the cities with zipcode for the country.
-func (c *Country) GetCitiesByZipCode(zipCode string) []subdivisions.City {
-	return zipcode.GetCitiesFromZipCode(zipCode, c.Code)
+	return zipcode.GetDetailsFromZipCode(zipCode, c.Code)
 }
 
 // IsValidZipCode returns whether a zipCode is valid for the country or not.
