@@ -52,6 +52,13 @@ func main() {
 For example usage refer to example/example.go
 https://github.com/razorpay/i18nify/blob/master/packages/i18nify-go/example/example.go
 
+Source:
+
+India (IN): https://www.data.gov.in/catalog/all-india-pincode-directory
+Malaysia (MY): https://malaysiapostcode.com/
+USA (US): https://www.unitedstateszipcodes.org
+Singapore (SG): #TBD
+
 ## License
 TBD
 

@@ -25,14 +25,14 @@ func TestUnmarshalCountrySubdivisions(t *testing.T) {
 }
 
 func TestMarshalCountrySubdivisions(t *testing.T) {
-	var expectedJSON = `{"country_name": "India", "states": {"KA": {"name": "Karnataka", "cities": [{"name": "Bengaluru", "timezone": "Asia/Kolkata", "zipcodes": ["560018", "560116", "560500"], "region_name/district_name": "nan"}]}}}`
+	var expectedJSON = `{"country_name": "India", "states": {"KA": {"name": "Karnataka", "cities": {"Bengaluru" : {"name": "Bengaluru", "timezone": "Asia/Kolkata", "zipcodes": ["560018", "560116", "560500"], "region_name/district_name": "nan"}}}}}`
 
 	data := CountrySubdivisions{
 		CountryName: "India",
 		States: map[string]State{
 			"KA": {
-				Cities: []City{
-					{Name: "Bengaluru", RegionName: "nan", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116", "560500"}},
+				Cities: map[string]City{
+					"Bengaluru": {Name: "Bengaluru", RegionName: "nan", Timezone: "Asia/Kolkata", Zipcodes: []string{"560018", "560116", "560500"}},
 				},
 				Name: "Karnataka",
 			},
