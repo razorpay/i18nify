@@ -6,6 +6,8 @@ import (
 	"strconv"
 )
 
+// Converts a given amount from major currency units (e.g., dollars) to minor units (e.g., cents) for a specified currency
+
 func ConvertToMinorUnit(code string, amount interface{}) (float64, error) {
 
 	amountValue, err := ValidateAndConvertAmount(amount)

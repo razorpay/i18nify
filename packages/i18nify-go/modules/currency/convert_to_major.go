@@ -6,6 +6,8 @@ import (
 	"strconv"
 )
 
+// Converts given amount from minor (e.g., paise) to major unit (e.g., rupees) for a specified currency
+
 func ConvertToMajorUnit(code string, amount interface{}) (float64, error) {
 
 	amountValue, err := ValidateAndConvertAmount(amount)

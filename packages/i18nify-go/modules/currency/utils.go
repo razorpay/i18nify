@@ -6,6 +6,8 @@ import (
 	"strconv"
 )
 
+// Validates and converts the input amount (float64, int, or string) to a float64, ensuring it is non-negative.
+
 func ValidateAndConvertAmount(amount interface{}) (float64, error) {
 	var amountValue float64
 	switch v := amount.(type) {
