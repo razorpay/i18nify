@@ -98,21 +98,21 @@ func NewCurrencyInformation(minorUnit string, name string, numericCode string, p
 }
 
 // GetCurrencySymbol retrieves the currency symbol for a specific currency code.
-func GetCurrencySymbol(code string) (string, error) {
+func GetCurrencySymbol(currencyCode string) (string, error) {
 	// Validate the input code.
-	if code == "" {
+	if currencyCode == "" {
 		return "", fmt.Errorf("currency code cannot be empty")
 	}
 
 	// Retrieve currency information for the specified code.
-	currencyInfo, err := GetCurrencyInformation(code)
+	currencyInfo, err := GetCurrencyInformation(currencyCode)
 	if err != nil {
-		return "", fmt.Errorf("failed to retrieve currency information for code '%s': %v", code, err)
+		return "", fmt.Errorf("failed to retrieve currency information for code '%s': %v", currencyCode, err)
 	}
 
 	// Validate the currency symbol.
 	if currencyInfo.Symbol == "" {
-		return "", fmt.Errorf("currency symbol for code '%s' is not available", code)
+		return "", fmt.Errorf("currency symbol for code '%s' is not available", currencyCode)
 	}
 
 	return currencyInfo.Symbol, nil
