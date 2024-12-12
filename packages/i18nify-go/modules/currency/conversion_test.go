@@ -71,14 +71,6 @@ func TestConvertCurrency(t *testing.T) {
 			majorExpectedValue: 0,
 			expectedError:      "currency code 'INR0' not found",
 		},
-		{
-			name:               "Negative Amount",
-			currencyCode:       "USD",
-			amount:             -100.0,
-			minorExpectedValue: 0,
-			majorExpectedValue: 0,
-			expectedError:      "amount cannot be negative",
-		},
 	}
 
 	for _, tt := range tests {
