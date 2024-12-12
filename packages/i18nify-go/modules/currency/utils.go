@@ -25,9 +25,5 @@ func ValidateAndConvertAmount(amount interface{}) (float64, error) {
 		return 0, fmt.Errorf("amount must be a number (float64, int, or string that can be parsed to float64), but got %v", reflect.TypeOf(amount))
 	}
 
-	if amountValue < 0 {
-		return 0, fmt.Errorf("amount cannot be negative")
-	}
-
 	return amountValue, nil
 }

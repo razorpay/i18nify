@@ -40,8 +40,6 @@ type Currency struct {
 // GetAllCurrencyInformation returns all currency information.
 func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 	return r.CurrencyInformation
-	// can be stored in cache on first call
-	// reset cache if there is any change in data.json file
 }
 
 // GetCurrencyInformation retrieves currency information for a specific currency code.

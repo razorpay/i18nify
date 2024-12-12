@@ -20,12 +20,12 @@ func ConvertToMajorUnit(code string, amount interface{}) (float64, error) {
 		return 0, err
 	}
 
-	minorUnit, err := strconv.ParseFloat(currencyInfo.MinorUnit, 64)
+	minorUnit, err := strconv.ParseInt(currencyInfo.MinorUnit, 10, 64)
 	if err != nil {
 		return 0, fmt.Errorf("invalid minor unit for currency code '%s': %v", code, err)
 	}
 
-	minorUnitMultiplier := math.Pow(10, minorUnit)
+	minorUnitMultiplier := math.Pow(10, float64(minorUnit))
 	if minorUnitMultiplier <= 0 {
 		return 0, fmt.Errorf("invalid minor unit multiplier for currency code '%s'", code)
 	}
