@@ -38,7 +38,10 @@ func (c *Country) GetCountryCurrency() []currency.CurrencyInformation {
 	// Iterate through currency codes for the country.
 	for _, cur := range countryMetadata.SupportedCurrency {
 		// Retrieve currency information for each currency code.
-		curInfoList = append(curInfoList, currency.GetCurrencyInformation(cur))
+		curr, err := currency.GetCurrencyInformation(cur)
+		if err == nil {
+			curInfoList = append(curInfoList, curr)
+		}
 	}
 	return curInfoList
 }

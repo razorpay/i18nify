@@ -56,7 +56,9 @@ func main() {
 	}
 
 	//USD
-	currencyUS := currency.GetCurrencyInformation("USD")
+	currencyUS, _ := currency.GetCurrencyInformation("USD")
 	fmt.Println(currencyUS.Name)   //US Dollar
 	fmt.Println(currencyUS.Symbol) //$
+
+	// add convert to major unit and minor unit examples
 }
