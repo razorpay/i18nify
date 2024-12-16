@@ -32,7 +32,7 @@ const convertToMinorUnit = (
     Math.pow(10, Number(currencyInfo.minor_unit)) || 100;
 
   const lowerCurrencyValue = parseFloat(
-    (amount * minorUnitMultiplier).toFixed(Number(currencyInfo.minor_unit)),
+    (amount * minorUnitMultiplier).toFixed(0),
   );
   return lowerCurrencyValue;
 };
