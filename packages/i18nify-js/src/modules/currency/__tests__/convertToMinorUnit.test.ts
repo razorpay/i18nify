@@ -30,4 +30,9 @@ describe('currency - convertToMinorUnit', () => {
       `Error: The provided currency code is either empty or not supported. The received value was : ${unsupportedCurrencyCode}. Please ensure you pass a valid currency code.`,
     );
   });
+
+  it('should correctly convert amount to minor unit for INR', () => {
+    const result = convertToMinorUnit(4.14, { currency: 'INR' });
+    expect(result).toBe(414);
+  });
 });
