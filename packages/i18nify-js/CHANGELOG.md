@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.12.4
+
+### Patch Changes
+
+- 5bbace7: fix floating point issue in convertToMinorUnit
+
 ## 1.12.3
 
 ### Patch Changes
