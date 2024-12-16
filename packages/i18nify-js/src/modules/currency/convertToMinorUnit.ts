@@ -31,7 +31,9 @@ const convertToMinorUnit = (
   const minorUnitMultiplier =
     Math.pow(10, Number(currencyInfo.minor_unit)) || 100;
 
-  const lowerCurrencyValue = amount * minorUnitMultiplier;
+  const lowerCurrencyValue = parseFloat(
+    (amount * minorUnitMultiplier).toFixed(Number(currencyInfo.minor_unit)),
+  );
   return lowerCurrencyValue;
 };
 
