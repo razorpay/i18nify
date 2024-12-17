@@ -38,7 +38,7 @@ func TestParseDateTime(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			_, err := parseDateTime(tt.input)
+			_, err := convertToStandardDate(tt.input)
 			if tt.expectError && err == nil {
 				t.Error("expected error but got none")
 			}
@@ -65,7 +65,7 @@ func TestStringToDate(t *testing.T) {
 	layout := "2006-01-02 15:04:05"
 
 	// Positive case
-	parsedDate, err := StringToDate(dateStr, layout)
+	parsedDate, err := StringToDate(dateStr)
 	if err != nil {
 		t.Errorf("unexpected error: %v", err)
 	}
@@ -74,7 +74,7 @@ func TestStringToDate(t *testing.T) {
 	}
 
 	// Negative case
-	_, err = StringToDate("not-a-date", layout)
+	_, err = StringToDate("not-a-date")
 	if err == nil {
 		t.Error("expected an error for invalid date string")
 	}

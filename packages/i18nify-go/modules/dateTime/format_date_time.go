@@ -15,7 +15,7 @@ func FormatDateTime(dateStr string, options *DateTimeOptions) (string, error) {
 	}
 
 	// Parse the input date
-	parsedTime, err := parseDateTime(dateStr)
+	parsedTime, err := convertToStandardDate(dateStr)
 	if err != nil {
 		return "", fmt.Errorf("error parsing date: %v", err)
 	}

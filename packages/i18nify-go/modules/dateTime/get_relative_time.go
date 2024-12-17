@@ -4,11 +4,11 @@ import "fmt"
 
 // GetRelativeTime calculates the relative time string (e.g., "2 hours ago" or "in 2 hours").
 func GetRelativeTime(dateStr string, options DateTimeOptions) (string, error) {
-	date, err := parseDateTime(dateStr)
+	date, err := convertToStandardDate(dateStr)
 	if err != nil {
 		return "", err
 	}
-	baseDate, err := parseDateTime(options.BaseDate)
+	baseDate, err := convertToStandardDate(options.BaseDate)
 	if err != nil {
 		return "", err
 	}

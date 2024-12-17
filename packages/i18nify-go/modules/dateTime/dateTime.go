@@ -2,6 +2,7 @@
 package dateTime
 
 import (
+	"errors"
 	"fmt"
 	"time"
 )
@@ -38,23 +39,47 @@ type DateTimeOptions struct {
 	IntlOptions  *IntlOptions
 }
 
-// parseDateTime handles parsing various date string formats
-func parseDateTime(dateStr string) (time.Time, error) {
-	formats := []string{
-		time.RFC3339,
-		"2006-01-02T15:04:05",
-		"2006-01-02",
-		"1/2/2006",
-	}
+// stringToDate converts a date string into a Go time.Time object.
+func stringToDate(dateString string) (time.Time, error) {
+	for _, format := range SupportedDateFormats {
+		if format.Regex != nil {
+			// Handle custom regex formats
+			if matches := format.Regex.FindStringSubmatch(dateString); matches != nil {
+				year := matches[format.YearIndex]
+				month := matches[format.MonthIndex]
+				day := matches[format.DayIndex]
+				hour, minute, second := "00", "00", "00"
 
-	for _, format := range formats {
-		parsed, err := time.Parse(format, dateStr)
-		if err == nil {
-			return parsed, nil
+				if format.HourIndex > 0 {
+					hour = matches[format.HourIndex]
+					minute = matches[format.MinuteIndex]
+					second = matches[format.SecondIndex]
+				}
+
+				combined := fmt.Sprintf("%s-%s-%sT%s:%s:%sZ", year, month, day, hour, minute, second)
+				return time.Parse(time.RFC3339, combined)
+			}
+		} else if format.Format != "" {
+			// Handle Go's standard layouts
+			if parsedTime, err := time.Parse(format.Format, dateString); err == nil {
+				return parsedTime, nil
+			}
 		}
 	}
 
-	return time.Time{}, fmt.Errorf("invalid date format, please pass one of these formats %v", formats)
+	return time.Time{}, fmt.Errorf("date format not recognized: %s", dateString)
+}
+
+// convertToStandardDate converts a date input (string or time.Time) into a standardized time.Time object.
+func convertToStandardDate(dateInput interface{}) (time.Time, error) {
+	switch date := dateInput.(type) {
+	case string:
+		return stringToDate(date)
+	case time.Time:
+		return date, nil
+	default:
+		return time.Time{}, errors.New("unsupported date input type")
+	}
 }
 
 // GetWeekdays returns an array of weekday names starting from Sunday.
@@ -68,16 +93,7 @@ func GetWeekdays() []string {
 	return weekdays
 }
 
-// ParseDateTime parses a date string and returns its components.
-func ParseDateTime(dateStr, layout string) (time.Time, error) {
-	parsedDate, err := time.Parse(layout, dateStr)
-	if err != nil {
-		return time.Time{}, fmt.Errorf("failed to parse date: %w", err)
-	}
-	return parsedDate, nil
-}
-
 // StringToDate converts a string representation of a date into a time.Time object.
-func StringToDate(dateStr string, layout string) (time.Time, error) {
-	return ParseDateTime(dateStr, layout)
+func StringToDate(dateStr string) (time.Time, error) {
+	return convertToStandardDate(dateStr)
 }
