@@ -49,17 +49,6 @@ func TestParseDateTime(t *testing.T) {
 	}
 }
 
-func TestGetWeekdays(t *testing.T) {
-	weekdays := GetWeekdays()
-	expectedWeekdays := []string{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
-
-	for i, weekday := range weekdays {
-		if weekday != expectedWeekdays[i] {
-			t.Errorf("expected '%s', got '%s'", expectedWeekdays[i], weekday)
-		}
-	}
-}
-
 func TestStringToDate(t *testing.T) {
 	dateStr := "2024-12-16 10:30:00"
 	layout := "2006-01-02 15:04:05"

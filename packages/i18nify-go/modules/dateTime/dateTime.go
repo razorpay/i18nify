@@ -82,17 +82,6 @@ func convertToStandardDate(dateInput interface{}) (time.Time, error) {
 	}
 }
 
-// GetWeekdays returns an array of weekday names starting from Sunday.
-func GetWeekdays() []string {
-	var weekdays []string
-	// Jan 4, 1970, is a Sunday
-	startDate := time.Date(1970, 1, 4, 0, 0, 0, 0, time.UTC)
-	for i := 0; i < 7; i++ {
-		weekdays = append(weekdays, startDate.AddDate(0, 0, i).Weekday().String())
-	}
-	return weekdays
-}
-
 // StringToDate converts a string representation of a date into a time.Time object.
 func StringToDate(dateStr string) (time.Time, error) {
 	return convertToStandardDate(dateStr)
