@@ -691,6 +691,55 @@ console.log(res);
 */
 ```
 
+#### getByCountry
+
+The getByCountry API offers a treasure trove of information about any country in the world. With a single query, you can uncover details like country names, languages, currencies, dial codes, timezones, and even links to their flags. It’s a perfect tool for building apps that need geographic or cultural context.
+
+##### Examples
+
+```javascript
+// Fetching the list of metadata for a country
+const res = await getByCountry('AF');
+console.log(res);
+/*
+    {
+      "country_name": "Afghanistan",
+      "continent_code": "AS",
+      "continent_name": "Asia",
+      "alpha_3": "AFG",
+      "numeric_code": "004",
+      "flag": "https://flagcdn.com/af.svg",
+      "sovereignty": "UN member state",
+      "dial_code": "+93",
+      "supported_currency": [
+        "AFN"
+      ],
+      "timezones": {
+        "Asia/Kabul": {
+          "utc_offset": "UTC +04:30"
+        }
+      },
+      "timezone_of_capital": "Asia/Kabul",
+      "locales": {
+        "fa_AF": {
+          "name": "Persian (Afghanistan)"
+        },
+        "ps": {
+          "name": "Pashto"
+        },
+        "uz_AF": {
+          "name": "Uzbek"
+        },
+        "tk": {
+          "name": "Turkmen"
+        }
+      },
+      "default_locale": "fa_AF",
+      "default_currency": "AFN"
+    }
+*/
+```
+
 #### getStates(country_code)
 
 Embark on a state-by-state discovery with the getStates API! Get access to a treasure trove of state information, including names, time zones, and even a list of vibrant cities within each state.
