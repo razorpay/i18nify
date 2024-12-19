@@ -698,7 +698,7 @@ The getByCountry API offers a treasure trove of information about any country in
 ##### Examples
 
 ```javascript
-// Fetching the list of metadata for a country
+// Fetching the metadata for a country
 const res = await getByCountry('AF');
 console.log(res);
 /*
