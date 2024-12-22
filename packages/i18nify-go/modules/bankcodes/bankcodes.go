@@ -200,10 +200,3 @@ func GetBankNameFromBankIdentifier(countryCode, identifier string) (string, erro
 
 	return "", fmt.Errorf("no bank found for identifier '%s' in country %s", identifier, countryCode)
 }
-
-func main() {
-	// fmt.Println(IsValidBankIdentifier("US", "ROUTING_NUMBER", "121135087"))
-	// fmt.Println(GetBankNameFromShortCode("US", "BUFB"))
-	fmt.Println(GetDefaultBankIdentifiersFromShortCode("US", "BNNE"))
-	// fmt.Println(GetBankNameFromBankIdentifier("US", "323371076"))
-}
