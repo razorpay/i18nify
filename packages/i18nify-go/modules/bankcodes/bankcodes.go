@@ -10,9 +10,9 @@ import (
 )
 
 type Identifier struct {
-	SwiftCode     string `json:"swift_code"`
-	RoutingNumber string `json:"routing_number"`
-	IfscCode      string `json:"ifsc_code"`
+	SwiftCode     string   `json:"swift_code"`
+	RoutingNumber []string `json:"routing_number"`
+	IfscCode      string   `json:"ifsc_code"`
 }
 
 type Branch struct {
@@ -94,8 +94,10 @@ func IsValidBankIdentifier(countryCode, identifierType, identifierValue string) 
 					return true, nil
 				}
 			case IdentifierTypeRoutingNumber:
-				if strings.EqualFold(branch.Identifiers.RoutingNumber, identifierValue) {
-					return true, nil
+				for _, routingNumber := range branch.Identifiers.RoutingNumber {
+					if strings.EqualFold(routingNumber, identifierValue) {
+						return true, nil
+					}
 				}
 			case IdentifierTypeIFSC:
 				if strings.EqualFold(branch.Identifiers.IfscCode, identifierValue) {
@@ -151,7 +153,7 @@ func GetDefaultBankIdentifiersFromShortCode(countryCode, shortCode string) ([]st
 				case IdentifierTypeSWIFT:
 					identifiers = append(identifiers, branch.Identifiers.SwiftCode)
 				case IdentifierTypeRoutingNumber:
-					identifiers = append(identifiers, branch.Identifiers.RoutingNumber)
+					identifiers = append(identifiers, branch.Identifiers.RoutingNumber...)
 				case IdentifierTypeIFSC:
 					identifiers = append(identifiers, branch.Identifiers.IfscCode)
 				default:
@@ -182,13 +184,26 @@ func GetBankNameFromBankIdentifier(countryCode, identifier string) (string, erro
 
 	for _, bank := range bankInfo.Details {
 		for _, branch := range bank.Branches {
-			if branch.Identifiers.SwiftCode == identifier ||
-				branch.Identifiers.RoutingNumber == identifier ||
-				branch.Identifiers.IfscCode == identifier {
+			// Check SwiftCode and IfscCode directly
+			if branch.Identifiers.SwiftCode == identifier || branch.Identifiers.IfscCode == identifier {
 				return bank.Name, nil
+			}
+
+			// Check if identifier is in RoutingNumber list
+			for _, routingNumber := range branch.Identifiers.RoutingNumber {
+				if routingNumber == identifier {
+					return bank.Name, nil
+				}
 			}
 		}
 	}
 
 	return "", fmt.Errorf("no bank found for identifier '%s' in country %s", identifier, countryCode)
+}
+
+func main() {
+	// fmt.Println(IsValidBankIdentifier("US", "ROUTING_NUMBER", "121135087"))
+	// fmt.Println(GetBankNameFromShortCode("US", "BUFB"))
+	fmt.Println(GetDefaultBankIdentifiersFromShortCode("US", "BNNE"))
+	// fmt.Println(GetBankNameFromBankIdentifier("US", "323371076"))
 }

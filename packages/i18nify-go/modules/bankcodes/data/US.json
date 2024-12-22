@@ -1,6 +1,6 @@
 {
     "defaults": {
-        "identifier_type": "SWIFT"
+        "identifier_type": "ROUTING_NUMBER"
     },
     "details": [
         {
