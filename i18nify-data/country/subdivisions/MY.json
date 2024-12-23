@@ -3,11 +3,10 @@
   "states": {
     "1": {
       "name": "Johor",
-      "cities": [
-        {
+      "cities": {
+        "Iskandar Puteri": {
           "name": "Iskandar Puteri",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "79000",
             "79050",
@@ -53,12 +52,12 @@
             "79680",
             "79681",
             "79683"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Johor Bahru": {
           "name": "Johor Bahru",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "80000",
             "80050",
@@ -119,431 +118,431 @@
             "81200",
             "81300",
             "81310"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kulai": {
           "name": "Kulai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81000",
             "81030"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Senai": {
           "name": "Senai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Tenggara": {
           "name": "Bandar Tenggara",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81440"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gugusan Taib Andak": {
           "name": "Gugusan Taib Andak",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81450"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pekan Nenas": {
           "name": "Pekan Nenas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gelang Patah": {
           "name": "Gelang Patah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81550"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pulau Satu": {
           "name": "Pulau Satu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81550"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pengerang": {
           "name": "Pengerang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pasir Gudang": {
           "name": "Pasir Gudang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Masai": {
           "name": "Masai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81750"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ulu Tiram": {
           "name": "Ulu Tiram",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Layang-Layang": {
           "name": "Layang-Layang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81850"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kota Tinggi": {
           "name": "Kota Tinggi",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81900"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ayer Tawar 2": {
           "name": "Ayer Tawar 2",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81920"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Penawar": {
           "name": "Bandar Penawar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "81930"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pontian": {
           "name": "Pontian",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "82000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ayer Baloi": {
           "name": "Ayer Baloi",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "82100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Benut": {
           "name": "Benut",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "82200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kukup": {
           "name": "Kukup",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "82300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batu Pahat": {
           "name": "Batu Pahat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "83000",
             "83010"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Rengit": {
           "name": "Rengit",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "83100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Senggarang": {
           "name": "Senggarang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "83200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Seri Gading": {
           "name": "Seri Gading",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "83300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Seri Medan": {
           "name": "Seri Medan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "83400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Parit Sulong": {
           "name": "Parit Sulong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "83500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Semerah": {
           "name": "Semerah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "83600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Yong Peng": {
           "name": "Yong Peng",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "83700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Muar": {
           "name": "Muar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "84000",
             "84200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Parit Jawa": {
           "name": "Parit Jawa",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "84150"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Pasir": {
           "name": "Bukit Pasir",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "84300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Mati": {
           "name": "Sungai Mati",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "84400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Panchor": {
           "name": "Panchor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "84500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pagoh": {
           "name": "Pagoh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "84600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gerisek": {
           "name": "Gerisek",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "84700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Gambir": {
           "name": "Bukit Gambir",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "84800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tangkak": {
           "name": "Tangkak",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "84900"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Segamat": {
           "name": "Segamat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "85000",
             "85010",
             "85020"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batu Anam": {
           "name": "Batu Anam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "85100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jementah": {
           "name": "Jementah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "85200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Labis": {
           "name": "Labis",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "85300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Chaah": {
           "name": "Chaah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "85400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kluang": {
           "name": "Kluang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ayer Hitam": {
           "name": "Ayer Hitam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Simpang Rengam": {
           "name": "Simpang Rengam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Rengam": {
           "name": "Rengam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Parit Raja": {
           "name": "Parit Raja",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bekok": {
           "name": "Bekok",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Paloh": {
           "name": "Paloh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kahang": {
           "name": "Kahang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Mersing": {
           "name": "Mersing",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86800",
             "86810"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Endau": {
           "name": "Endau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "86900"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "2": {
       "name": "Kedah",
-      "cities": [
-        {
+      "cities": {
+        "Alor Setar": {
           "name": "Alor Setar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "05000",
             "05050",
@@ -621,115 +620,115 @@
             "06550",
             "06570",
             "06660"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jitra": {
           "name": "Jitra",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06000",
             "06007",
             "06009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Changloon": {
           "name": "Changloon",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06010"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Universiti Utara Malaysia": {
           "name": "Universiti Utara Malaysia",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06010"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Kayu Hitam": {
           "name": "Bukit Kayu Hitam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06050"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kodiang": {
           "name": "Kodiang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ayer Hitam": {
           "name": "Ayer Hitam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06150"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kepala Batas": {
           "name": "Kepala Batas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06200",
             "06207",
             "06209"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Nerang": {
           "name": "Kuala Nerang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pokok Sena": {
           "name": "Pokok Sena",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06350",
             "06400",
             "06760"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Langgar": {
           "name": "Langgar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06500",
             "06507"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Kedah": {
           "name": "Kuala Kedah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Simpang Empat": {
           "name": "Simpang Empat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06650"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pendang": {
           "name": "Pendang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06700",
             "06707",
@@ -737,109 +736,109 @@
             "06710",
             "06720",
             "06750"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kota Sarang Semut": {
           "name": "Kota Sarang Semut",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Yan": {
           "name": "Yan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "06900",
             "06910"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Langkawi": {
           "name": "Langkawi",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "07000",
             "07007",
             "07009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Petani": {
           "name": "Sungai Petani",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "08000",
             "08007",
             "08009",
             "08010",
             "08600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bedong": {
           "name": "Bedong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "08100",
             "08110"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sik": {
           "name": "Sik",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "08200",
             "08210",
             "08340"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gurun": {
           "name": "Gurun",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "08300",
             "08330",
             "08800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jeniang": {
           "name": "Jeniang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "08320",
             "08700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Merbok": {
           "name": "Merbok",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "08400",
             "08407",
             "08409"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kota Kuala Muda": {
           "name": "Kota Kuala Muda",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "08500",
             "08507",
             "08509"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kulim": {
           "name": "Kulim",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "09000",
             "09007",
@@ -847,96 +846,96 @@
             "09010",
             "09020",
             "09090"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Baling": {
           "name": "Baling",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "09100",
             "09120",
             "09130"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Pegang": {
           "name": "Kuala Pegang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "09110"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kupang": {
           "name": "Kupang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "09200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Ketil": {
           "name": "Kuala Ketil",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "09300",
             "09310"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Padang Serai": {
           "name": "Padang Serai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "09400",
             "09410"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lunas": {
           "name": "Lunas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "09600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Karangan": {
           "name": "Karangan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "09700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Serdang": {
           "name": "Serdang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "09800",
             "09810"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Baharu": {
           "name": "Bandar Baharu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "14290",
             "14390",
             "34950"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "3": {
       "name": "Kelantan",
-      "cities": [
-        {
+      "cities": {
+        "Kota Bharu": {
           "name": "Kota Bharu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "15000",
             "15050",
@@ -1024,12 +1023,12 @@
             "16100",
             "16109",
             "16150"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bachok": {
           "name": "Bachok",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16020",
             "16030",
@@ -1040,87 +1039,87 @@
             "16300",
             "16310",
             "16320"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Wakaf Bharu": {
           "name": "Wakaf Bharu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16040",
             "16250"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tumpat": {
           "name": "Tumpat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16080",
             "16200",
             "16210"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Melor": {
           "name": "Melor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ketereh": {
           "name": "Ketereh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16450"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kem Desa Pahlawan": {
           "name": "Kem Desa Pahlawan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pulai Chondong": {
           "name": "Pulai Chondong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Cherang Ruku": {
           "name": "Cherang Ruku",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pasir Puteh": {
           "name": "Pasir Puteh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Selising": {
           "name": "Selising",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "16810"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pasir Mas": {
           "name": "Pasir Mas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "17000",
             "17007",
@@ -1132,101 +1131,101 @@
             "17050",
             "17060",
             "17070"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Rantau Panjang": {
           "name": "Rantau Panjang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "17200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanah Merah": {
           "name": "Tanah Merah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "17500",
             "17507",
             "17509",
             "17510"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jeli": {
           "name": "Jeli",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "17600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Balah": {
           "name": "Kuala Balah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "17610"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ayer Lanas": {
           "name": "Ayer Lanas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "17700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Krai": {
           "name": "Kuala Krai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "18000",
             "18050"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Dabong": {
           "name": "Dabong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "18200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gua Musang": {
           "name": "Gua Musang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "18300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Temangan": {
           "name": "Temangan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "18400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Machang": {
           "name": "Machang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "18500"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "4": {
       "name": "Wilayah Persekutuan Kuala Lumpur",
-      "cities": [
-        {
+      "cities": {
+        "Kuala Lumpur": {
           "name": "Kuala Lumpur",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "50000",
             "50050",
@@ -1505,25 +1504,25 @@
             "59800",
             "59990",
             "60000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Hulu Langat": {
           "name": "Hulu Langat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "53100"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "5": {
       "name": "Wilayah Persekutuan Labuan",
-      "cities": [
-        {
+      "cities": {
+        "Labuan": {
           "name": "Labuan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "87000",
             "87010",
@@ -1550,17 +1549,17 @@
             "87031",
             "87032",
             "87033"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "6": {
       "name": "Melaka",
-      "cities": [
-        {
+      "cities": {
+        "Melaka": {
           "name": "Melaka",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "75000",
             "75050",
@@ -1652,148 +1651,148 @@
             "75918",
             "75990",
             "76450"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ayer Keroh": {
           "name": "Ayer Keroh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "75450"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Durian Tunggal": {
           "name": "Durian Tunggal",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "76100",
             "76109"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kem Trendak": {
           "name": "Kem Trendak",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "76200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Udang": {
           "name": "Sungai Udang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "76300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjong Kling": {
           "name": "Tanjong Kling",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "76400",
             "76409"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jasin": {
           "name": "Jasin",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "77000",
             "77007",
             "77008",
             "77009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Asahan": {
           "name": "Asahan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "77100",
             "77109"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bemban": {
           "name": "Bemban",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "77200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Merlimau": {
           "name": "Merlimau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "77300",
             "77309"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Rambai": {
           "name": "Sungai Rambai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "77400",
             "77409"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Selandar": {
           "name": "Selandar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "77500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Alor Gajah": {
           "name": "Alor Gajah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "78000",
             "78009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lubok China": {
           "name": "Lubok China",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "78100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Sungai Baru": {
           "name": "Kuala Sungai Baru",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "78200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Masjid Tanah": {
           "name": "Masjid Tanah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "78300",
             "78307",
             "78309"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "7": {
       "name": "Negeri Sembilan",
-      "cities": [
-        {
+      "cities": {
+        "Seremban": {
           "name": "Seremban",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "70000",
             "70100",
@@ -1866,145 +1865,145 @@
             "71459",
             "71770",
             "71950"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Port Dickson": {
           "name": "Port Dickson",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71000",
             "71007",
             "71009",
             "71010",
             "71960"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Si Rusa": {
           "name": "Si Rusa",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71050",
             "71059",
             "71250",
             "71259"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Rantau": {
           "name": "Rantau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71100",
             "71109",
             "71200",
             "71209"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Linggi": {
           "name": "Linggi",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71150",
             "71159"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Rembau": {
           "name": "Rembau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71300",
             "71309",
             "71400",
             "71409"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kota": {
           "name": "Kota",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71350",
             "71359"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjong Ipoh": {
           "name": "Tanjong Ipoh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71500",
             "71509",
             "71550",
             "71559"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Klawang": {
           "name": "Kuala Klawang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71600",
             "71609",
             "71650",
             "71659"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Mantin": {
           "name": "Mantin",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71700",
             "71707",
             "71709",
             "71750",
             "71759"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Enstek": {
           "name": "Bandar Enstek",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71760"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Nilai": {
           "name": "Nilai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71800",
             "71807",
             "71809"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Niai": {
           "name": "Niai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Labu": {
           "name": "Labu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "71900",
             "71907",
             "71909"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Pilah": {
           "name": "Kuala Pilah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "72000",
             "72007",
@@ -2012,130 +2011,130 @@
             "72500",
             "72507",
             "72509"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bahau": {
           "name": "Bahau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "72100",
             "72107",
             "72109"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Seri Jempol": {
           "name": "Bandar Seri Jempol",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "72120",
             "72127",
             "72129"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batu Kikir": {
           "name": "Batu Kikir",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "72200",
             "72207",
             "72209"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Simpang Pertang": {
           "name": "Simpang Pertang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "72300",
             "72307",
             "72309"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Simpang Durian": {
           "name": "Simpang Durian",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "72400",
             "72409"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tampin": {
           "name": "Tampin",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "73000",
             "73007",
             "73009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Johol": {
           "name": "Johol",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "73100",
             "73109"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gemencheh": {
           "name": "Gemencheh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "73200",
             "73207",
             "73209",
             "73300",
             "73309"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gemas": {
           "name": "Gemas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "73400",
             "73409",
             "73420",
             "73480"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pusat Bandar Palong": {
           "name": "Pusat Bandar Palong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "73430",
             "73440",
             "73450",
             "73460",
             "73470"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Rompin": {
           "name": "Rompin",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "73500",
             "73507",
             "73509"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "8": {
       "name": "Pahang",
-      "cities": [
-        {
+      "cities": {
+        "Kuantan": {
           "name": "Kuantan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "25000",
             "25050",
@@ -2228,46 +2227,46 @@
             "26100",
             "26140",
             "26250"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Goh": {
           "name": "Bukit Goh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26050",
             "26090"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Balok": {
           "name": "Balok",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26150",
             "26190"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Kuin": {
           "name": "Bukit Kuin",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26180"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Lembing": {
           "name": "Sungai Lembing",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gambang": {
           "name": "Gambang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26300",
             "26310",
@@ -2277,12 +2276,12 @@
             "26350",
             "26360",
             "26370"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Pusat Jengka": {
           "name": "Bandar Pusat Jengka",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26400",
             "26410",
@@ -2293,20 +2292,20 @@
             "26460",
             "26485",
             "26490"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Maran": {
           "name": "Maran",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pekan": {
           "name": "Pekan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26600",
             "26607",
@@ -2318,46 +2317,46 @@
             "26650",
             "26660",
             "26680"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Chini": {
           "name": "Chini",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26690"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Muadzam Shah": {
           "name": "Muadzam Shah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Rompin": {
           "name": "Kuala Rompin",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26800",
             "26810",
             "26820"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Tun Abdul Razak": {
           "name": "Bandar Tun Abdul Razak",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "26900"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jerantut": {
           "name": "Jerantut",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "27000",
             "27010",
@@ -2368,56 +2367,56 @@
             "27070",
             "27090",
             "27150"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Damak": {
           "name": "Damak",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "27030"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Padang Tengku": {
           "name": "Padang Tengku",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "27100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Lipis": {
           "name": "Kuala Lipis",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "27200",
             "27207",
             "27209",
             "27210"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Benta": {
           "name": "Benta",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "27300",
             "27310"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Dong": {
           "name": "Dong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "27400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Raub": {
           "name": "Raub",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "27500",
             "27600",
@@ -2427,28 +2426,28 @@
             "27620",
             "27630",
             "27670"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Koyan": {
           "name": "Sungai Koyan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "27650"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sega": {
           "name": "Sega",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "27660"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Temerloh": {
           "name": "Temerloh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28000",
             "28007",
@@ -2457,84 +2456,84 @@
             "28020",
             "28030",
             "28040"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Krau": {
           "name": "Kuala Krau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28050"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Chenor": {
           "name": "Chenor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Bera": {
           "name": "Bandar Bera",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Triang": {
           "name": "Triang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28300",
             "28310",
             "28320",
             "28330"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kemayan": {
           "name": "Kemayan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28340",
             "28380"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Mentakab": {
           "name": "Mentakab",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28400",
             "28407",
             "28409"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lanchang": {
           "name": "Lanchang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Karak": {
           "name": "Karak",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28600",
             "28610",
             "28620"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bentong": {
           "name": "Bentong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28700",
             "28707",
@@ -2542,68 +2541,68 @@
             "28730",
             "28740",
             "28750"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lurah Bilut": {
           "name": "Lurah Bilut",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "28800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanah Rata": {
           "name": "Tanah Rata",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "39000",
             "39007",
             "39009",
             "39010"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Brinchang": {
           "name": "Brinchang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "39100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ringlet": {
           "name": "Ringlet",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "39200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Fraser": {
           "name": "Bukit Fraser",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "49000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Genting Highlands": {
           "name": "Genting Highlands",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "69000"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "9": {
       "name": "Wilayah Persekutuan Putra Jaya",
-      "cities": [
-        {
+      "cities": {
+        "Putrajaya": {
           "name": "Putrajaya",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "62000",
             "62007",
@@ -2670,17 +2669,17 @@
             "62686",
             "62692",
             "62988"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "10": {
       "name": "Perlis",
-      "cities": [
-        {
+      "cities": {
+        "Kangar": {
           "name": "Kangar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "01000",
             "01007",
@@ -2749,62 +2748,62 @@
             "02400",
             "02450",
             "02500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Perlis": {
           "name": "Kuala Perlis",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "02000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Padang Besar": {
           "name": "Padang Besar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "02100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kaki Bukit": {
           "name": "Kaki Bukit",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "02200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Arau": {
           "name": "Arau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "02600",
             "02607",
             "02609"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Simpang Ampat": {
           "name": "Simpang Ampat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "02700",
             "02707",
             "02709",
             "02800"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "11": {
       "name": "Pulau Pinang",
-      "cities": [
-        {
+      "cities": {
+        "Pulau Pinang": {
           "name": "Pulau Pinang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "10000",
             "10050",
@@ -2894,98 +2893,98 @@
             "11060",
             "11400",
             "11409"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Balik Pulau": {
           "name": "Balik Pulau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11000",
             "11010",
             "11020"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batu Ferringhi": {
           "name": "Batu Ferringhi",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjung Bungah": {
           "name": "Tanjung Bungah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Penang Hill": {
           "name": "Penang Hill",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ayer Itam": {
           "name": "Ayer Itam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jelutong": {
           "name": "Jelutong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11600",
             "11609"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gelugor": {
           "name": "Gelugor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "USM Pulau Pinang": {
           "name": "USM Pulau Pinang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bayan Lepas": {
           "name": "Bayan Lepas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11900",
             "11910",
             "11920",
             "11950"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batu Maung": {
           "name": "Batu Maung",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "11960"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Butterworth": {
           "name": "Butterworth",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "12000",
             "12100",
@@ -3002,110 +3001,110 @@
             "13400",
             "13409",
             "13800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Penaga": {
           "name": "Penaga",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "13100",
             "13110"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kepala Batas": {
           "name": "Kepala Batas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "13200",
             "13210",
             "13220"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tasek Gelugor": {
           "name": "Tasek Gelugor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "13300",
             "13310"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Permatang Pauh": {
           "name": "Permatang Pauh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "13500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Perai": {
           "name": "Perai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "13600",
             "13700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Mertajam": {
           "name": "Bukit Mertajam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "14000",
             "14007",
             "14009",
             "14020"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Simpang Ampat": {
           "name": "Simpang Ampat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "14100",
             "14101",
             "14110",
             "14120"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Jawi": {
           "name": "Sungai Jawi",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "14200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Nibong Tebal": {
           "name": "Nibong Tebal",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "14300",
             "14310",
             "14320"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kubang Semang": {
           "name": "Kubang Semang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "14400"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "12": {
       "name": "Perak",
-      "cities": [
-        {
+      "cities": {
+        "Ipoh": {
           "name": "Ipoh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "30000",
             "30010",
@@ -3216,113 +3215,113 @@
             "31450",
             "31500",
             "31650"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batu Gajah": {
           "name": "Batu Gajah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31000",
             "31007",
             "31009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Siput": {
           "name": "Sungai Siput",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31050",
             "31100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ulu Kinta": {
           "name": "Ulu Kinta",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31150"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Chemor": {
           "name": "Chemor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjong Rambutan": {
           "name": "Tanjong Rambutan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31250"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kampung Kepayang": {
           "name": "Kampung Kepayang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pusing": {
           "name": "Pusing",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31550",
             "31560"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gopeng": {
           "name": "Gopeng",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31600",
             "31610"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Malim Nawar": {
           "name": "Malim Nawar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tronoh": {
           "name": "Tronoh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31750"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjong Tualang": {
           "name": "Tanjong Tualang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jeram": {
           "name": "Jeram",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31850"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kampar": {
           "name": "Kampar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "31900",
             "31907",
@@ -3330,108 +3329,108 @@
             "31910",
             "31920",
             "31950"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sitiawan": {
           "name": "Sitiawan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Seri Manjung": {
           "name": "Seri Manjung",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32040"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "TLDM Lumut": {
           "name": "TLDM Lumut",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lumut": {
           "name": "Lumut",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pangkor": {
           "name": "Pangkor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ayer Tawar": {
           "name": "Ayer Tawar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Changkat Keruing": {
           "name": "Changkat Keruing",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bota": {
           "name": "Bota",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Seri Iskandar": {
           "name": "Bandar Seri Iskandar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32610"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bruas": {
           "name": "Bruas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Parit": {
           "name": "Parit",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lambor Kanan": {
           "name": "Lambor Kanan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "32900"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Kangsar": {
           "name": "Kuala Kangsar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "33000",
             "33007",
@@ -3440,80 +3439,80 @@
             "33020",
             "33030",
             "33040"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pengkalan Hulu": {
           "name": "Pengkalan Hulu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "33100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Intan": {
           "name": "Intan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "33200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Gerik": {
           "name": "Gerik",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "33300",
             "33310",
             "33320"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lenggong": {
           "name": "Lenggong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "33400",
             "33410",
             "33420"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sauk": {
           "name": "Sauk",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "33500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Enggor": {
           "name": "Enggor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "33600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Padang Rengas": {
           "name": "Padang Rengas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "33700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Manong": {
           "name": "Manong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "33800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Taiping": {
           "name": "Taiping",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34000",
             "34007",
@@ -3522,223 +3521,223 @@
             "34010",
             "34020",
             "34030"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Selama": {
           "name": "Selama",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34100",
             "34120",
             "34130"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Rantau Panjang": {
           "name": "Rantau Panjang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34140"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Parit Buntar": {
           "name": "Parit Buntar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjong Piandang": {
           "name": "Tanjong Piandang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34250"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bagan Serai": {
           "name": "Bagan Serai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34300",
             "34310"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Kurau": {
           "name": "Kuala Kurau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34350"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Simpang Ampat Semanggol": {
           "name": "Simpang Ampat Semanggol",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batu Kurau": {
           "name": "Batu Kurau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34500",
             "34510",
             "34520"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kamunting": {
           "name": "Kamunting",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Sepetang": {
           "name": "Kuala Sepetang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34650"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Simpang": {
           "name": "Simpang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Matang": {
           "name": "Matang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34750"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Trong": {
           "name": "Trong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Changkat Jering": {
           "name": "Changkat Jering",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34850"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pantai Remis": {
           "name": "Pantai Remis",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "34900"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tapah": {
           "name": "Tapah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35000",
             "35007",
             "35009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Chenderiang": {
           "name": "Chenderiang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Temoh": {
           "name": "Temoh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35350"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tapah Road": {
           "name": "Tapah Road",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bidor": {
           "name": "Bidor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungkai": {
           "name": "Sungkai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Trolak": {
           "name": "Trolak",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Slim River": {
           "name": "Slim River",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35800",
             "35820"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjong Malim": {
           "name": "Tanjong Malim",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35900",
             "35907",
             "35909",
             "35910"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Behrang Stesen": {
           "name": "Behrang Stesen",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "35950"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Teluk Intan": {
           "name": "Teluk Intan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36000",
             "36007",
@@ -3748,94 +3747,94 @@
             "36020",
             "36030",
             "36110"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bagan Datoh": {
           "name": "Bagan Datoh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Selekoh": {
           "name": "Selekoh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36200",
             "36207",
             "36209"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Sumun": {
           "name": "Sungai Sumun",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36300",
             "36307",
             "36309"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Hutan Melintang": {
           "name": "Hutan Melintang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ulu Bernam": {
           "name": "Ulu Bernam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Chenderong Balai": {
           "name": "Chenderong Balai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Langkap": {
           "name": "Langkap",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Chikus": {
           "name": "Chikus",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36750"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kampung Gajah": {
           "name": "Kampung Gajah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "36800",
             "36810"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "13": {
       "name": "Sabah",
-      "cities": [
-        {
+      "cities": {
+        "Kota Kinabalu": {
           "name": "Kota Kinabalu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "88000",
             "88100",
@@ -4043,79 +4042,79 @@
             "88997",
             "88998",
             "88999"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Beverly": {
           "name": "Beverly",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "88700",
             "89260"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Putatan": {
           "name": "Putatan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "88721",
             "88722",
             "88723",
             "88724",
             "88725"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Likas": {
           "name": "Likas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "88856"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Inanam": {
           "name": "Inanam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "88857"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjung Aru": {
           "name": "Tanjung Aru",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "88858"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Keningau": {
           "name": "Keningau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89000",
             "89007",
             "89008",
             "89009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kudat": {
           "name": "Kudat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89050",
             "89057",
             "89058",
             "89059"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kota Marudu": {
           "name": "Kota Marudu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89100",
             "89107",
@@ -4125,53 +4124,53 @@
             "89137",
             "89138",
             "89139"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kota Belud": {
           "name": "Kota Belud",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89150",
             "89157",
             "89158",
             "89159"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tuaran": {
           "name": "Tuaran",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89200",
             "89207",
             "89208",
             "89209"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tamparuli": {
           "name": "Tamparuli",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89250",
             "89257",
             "89258",
             "89259"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tenghilan": {
           "name": "Tenghilan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89260"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ranau": {
           "name": "Ranau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89300",
             "89307",
@@ -4185,133 +4184,133 @@
             "89337",
             "89338",
             "89339"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Penampang": {
           "name": "Penampang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89500",
             "89507",
             "89508",
             "89509"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Papar": {
           "name": "Papar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89600",
             "89607",
             "89608",
             "89609"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tambunan": {
           "name": "Tambunan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89650",
             "89657",
             "89658",
             "89659"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bongawan": {
           "name": "Bongawan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89700",
             "89707",
             "89708",
             "89709"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Membakut": {
           "name": "Membakut",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89720",
             "89727",
             "89728",
             "89729"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Penyu": {
           "name": "Kuala Penyu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89740",
             "89747",
             "89748",
             "89749"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Menumbok": {
           "name": "Menumbok",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89760",
             "89767",
             "89768",
             "89769"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Beaufort": {
           "name": "Beaufort",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89800",
             "89807",
             "89808",
             "89809"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sipitang": {
           "name": "Sipitang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89850",
             "89857",
             "89858",
             "89859"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tenom": {
           "name": "Tenom",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89900",
             "89907",
             "89908",
             "89909"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Nabawan": {
           "name": "Nabawan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "89950",
             "89957",
             "89958",
             "89959"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sandakan": {
           "name": "Sandakan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "90000",
             "90009",
@@ -4358,38 +4357,38 @@
             "90739",
             "90740",
             "90741"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Beluran": {
           "name": "Beluran",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "90100",
             "90107",
             "90109"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kota Kinabatangan": {
           "name": "Kota Kinabatangan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "90200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pamol": {
           "name": "Pamol",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "90400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tawau": {
           "name": "Tawau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "91000",
             "91007",
@@ -4421,12 +4420,12 @@
             "91033",
             "91034",
             "91035"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lahad Datu": {
           "name": "Lahad Datu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "91100",
             "91109",
@@ -4450,38 +4449,38 @@
             "91127",
             "91128",
             "91150"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kunak": {
           "name": "Kunak",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "91200",
             "91207",
             "91209"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Semporna": {
           "name": "Semporna",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "91300",
             "91307",
             "91308",
             "91309"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "14": {
       "name": "Selangor",
-      "cities": [
-        {
+      "cities": {
+        "Shah Alam": {
           "name": "Shah Alam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "40000",
             "40100",
@@ -4563,12 +4562,12 @@
             "40808",
             "40810",
             "40990"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Klang": {
           "name": "Klang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "41000",
             "41050",
@@ -4597,303 +4596,303 @@
             "41918",
             "41990",
             "42100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pelabuhan Klang": {
           "name": "Pelabuhan Klang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42000",
             "42009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kapar": {
           "name": "Kapar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Puncak Alam": {
           "name": "Bandar Puncak Alam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Telok Panglima Garang": {
           "name": "Telok Panglima Garang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42425",
             "42500",
             "42507",
             "42509"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jenjarom": {
           "name": "Jenjarom",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42600",
             "42610"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Banting": {
           "name": "Banting",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjong Sepat": {
           "name": "Tanjong Sepat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pulau Indah": {
           "name": "Pulau Indah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42920"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pulau Ketam": {
           "name": "Pulau Ketam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42940"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pulau Carey": {
           "name": "Pulau Carey",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "42960"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kajang": {
           "name": "Kajang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43000",
             "43007",
             "43009",
             "43558"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Hulu Langat": {
           "name": "Hulu Langat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Cheras": {
           "name": "Cheras",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43200",
             "43207"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Seri Kembangan": {
           "name": "Seri Kembangan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Serdang": {
           "name": "Serdang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Semenyih": {
           "name": "Semenyih",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bandar Baru Bangi": {
           "name": "Bandar Baru Bangi",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43600",
             "43650"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Beranang": {
           "name": "Beranang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Dengkil": {
           "name": "Dengkil",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43800",
             "43807"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sepang": {
           "name": "Sepang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43900"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Pelek": {
           "name": "Sungai Pelek",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "43950"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Kubu Baru": {
           "name": "Kuala Kubu Baru",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "44000",
             "44010",
             "44020",
             "44110"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kerling": {
           "name": "Kerling",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "44100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Rasa": {
           "name": "Rasa",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "44200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batang Kali": {
           "name": "Batang Kali",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "44300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Selangor": {
           "name": "Kuala Selangor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "45000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Ayer Tawar": {
           "name": "Sungai Ayer Tawar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "45100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sabak Bernam": {
           "name": "Sabak Bernam",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "45200",
             "45207",
             "45209"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Besar": {
           "name": "Sungai Besar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "45300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sekinchan": {
           "name": "Sekinchan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "45400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tanjong Karang": {
           "name": "Tanjong Karang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "45500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bestari Jaya": {
           "name": "Bestari Jaya",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "45600",
             "45607",
             "45609",
             "45620"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Rotan": {
           "name": "Bukit Rotan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "45700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jeram": {
           "name": "Jeram",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "45800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Petaling Jaya": {
           "name": "Petaling Jaya",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "46000",
             "46050",
@@ -4972,20 +4971,20 @@
             "47810",
             "47820",
             "47830"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Buloh": {
           "name": "Sungai Buloh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "47000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Puchong": {
           "name": "Puchong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "47100",
             "47110",
@@ -4997,12 +4996,12 @@
             "47170",
             "47180",
             "47190"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Subang Jaya": {
           "name": "Subang Jaya",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "47200",
             "47500",
@@ -5013,88 +5012,88 @@
             "47630",
             "47640",
             "47650"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Rawang": {
           "name": "Rawang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "48000",
             "48010",
             "48020",
             "48050",
             "48300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuang": {
           "name": "Kuang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "48050"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batu Arang": {
           "name": "Batu Arang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "48100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Serendah": {
           "name": "Serendah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "48200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Cyberjaya": {
           "name": "Cyberjaya",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "63000",
             "63100",
             "63200",
             "63300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "KLIA": {
           "name": "KLIA",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "64000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ampang": {
           "name": "Ampang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "68000"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Batu Caves": {
           "name": "Batu Caves",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "68100"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "15": {
       "name": "Sarawak",
-      "cities": [
-        {
+      "cities": {
+        "Kuching": {
           "name": "Kuching",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "93000",
             "93010",
@@ -5212,310 +5211,310 @@
             "93914",
             "93916",
             "93990"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bau": {
           "name": "Bau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94000",
             "94007",
             "94009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Siburan": {
           "name": "Siburan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kota Samarahan": {
           "name": "Kota Samarahan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lundu": {
           "name": "Lundu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94500",
             "94507",
             "94509"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Asajaya": {
           "name": "Asajaya",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kabong": {
           "name": "Kabong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94650"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Serian": {
           "name": "Serian",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94700",
             "94707",
             "94709",
             "94750",
             "94760"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Simunjan": {
           "name": "Simunjan",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94800",
             "94807",
             "94809"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sebuyau": {
           "name": "Sebuyau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94850"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lingga": {
           "name": "Lingga",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94900"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Pusa": {
           "name": "Pusa",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "94950"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sri Aman": {
           "name": "Sri Aman",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "95000",
             "95007",
             "95008",
             "95009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Roban": {
           "name": "Roban",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "95300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Saratok": {
           "name": "Saratok",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "95400",
             "95407",
             "95409"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Debak": {
           "name": "Debak",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "95500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Spaoh": {
           "name": "Spaoh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "95600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Betong": {
           "name": "Betong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "95700",
             "95707",
             "95709"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Engkilili": {
           "name": "Engkilili",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "95800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lubok Antu": {
           "name": "Lubok Antu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "95900"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sibu": {
           "name": "Sibu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96000",
             "96007",
             "96008",
             "96009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sarikei": {
           "name": "Sarikei",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96100",
             "96107",
             "96108",
             "96109"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Belawai": {
           "name": "Belawai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96150"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Daro": {
           "name": "Daro",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Matu": {
           "name": "Matu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96250"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Dalat": {
           "name": "Dalat",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96300",
             "96307",
             "96309"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Balingian": {
           "name": "Balingian",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96350"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Mukah": {
           "name": "Mukah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96400",
             "96410"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bintangor": {
           "name": "Bintangor",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96500",
             "96507",
             "96508",
             "96509"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Julau": {
           "name": "Julau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96600"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kanowit": {
           "name": "Kanowit",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96700",
             "96707",
             "96709"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kapit": {
           "name": "Kapit",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96800",
             "96807",
             "96809"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Song": {
           "name": "Song",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96850"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Belaga": {
           "name": "Belaga",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "96900",
             "96950"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bintulu": {
           "name": "Bintulu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "97000",
             "97007",
@@ -5528,128 +5527,128 @@
             "97014",
             "97015",
             "97300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sebauh": {
           "name": "Sebauh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "97100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Tatau": {
           "name": "Tatau",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "97200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Miri": {
           "name": "Miri",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98000",
             "98007",
             "98008",
             "98009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Baram": {
           "name": "Baram",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98050",
             "98057",
             "98058",
             "98059"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lutong": {
           "name": "Lutong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98100",
             "98107",
             "98109"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bekenu": {
           "name": "Bekenu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98150",
             "98157",
             "98159"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Niah": {
           "name": "Niah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Long Lama": {
           "name": "Long Lama",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Limbang": {
           "name": "Limbang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98700",
             "98707",
             "98708",
             "98709"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Nanga Medamit": {
           "name": "Nanga Medamit",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98750"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sundar": {
           "name": "Sundar",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98800"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Lawas": {
           "name": "Lawas",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "98850",
             "98857",
             "98859"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     },
     "16": {
       "name": "Terengganu",
-      "cities": [
-        {
+      "cities": {
+        "Kuala Terengganu": {
           "name": "Kuala Terengganu",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "20000",
             "20050",
@@ -5767,197 +5766,198 @@
             "21220",
             "21300",
             "21309"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Payong": {
           "name": "Bukit Payong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "21400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Chalok": {
           "name": "Chalok",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "21450"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Sungai Tong": {
           "name": "Sungai Tong",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "21500"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Marang": {
           "name": "Marang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "21600",
             "21610"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Berang": {
           "name": "Kuala Berang",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "21700"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ajil": {
           "name": "Ajil",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "21800",
             "21810",
             "21820"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Jerteh": {
           "name": "Jerteh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "22000",
             "22010",
             "22020"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Permaisuri": {
           "name": "Permaisuri",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "22100",
             "22107",
             "22109",
             "22110",
             "22120"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kampung Raja": {
           "name": "Kampung Raja",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "22200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kuala Besut": {
           "name": "Kuala Besut",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "22300",
             "22307",
             "22309"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Dungun": {
           "name": "Dungun",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "23000",
             "23007",
             "23009",
             "23050"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Paka": {
           "name": "Paka",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "23100"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Bukit Besi": {
           "name": "Bukit Besi",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "23200"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ketengah Jaya": {
           "name": "Ketengah Jaya",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "23300"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Al Muktatfi Billah Shah": {
           "name": "Al Muktatfi Billah Shah",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "23400"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Cukai": {
           "name": "Cukai",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "24000",
             "24007",
             "24009"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ayer Puteh": {
           "name": "Ayer Puteh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "24050"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Ceneh": {
           "name": "Ceneh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "24060"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kijal": {
           "name": "Kijal",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "24100",
             "24107",
             "24109"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kemasek": {
           "name": "Kemasek",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "24200",
             "24207",
             "24209"
-          ]
+          ],
+          "region_name/district_name": ""
         },
-        {
+        "Kerteh": {
           "name": "Kerteh",
           "timezone": "Asia/Kuala_Lumpur",
-          "region_name/district_name": "",
           "zipcodes": [
             "24300"
-          ]
+          ],
+          "region_name/district_name": ""
         }
-      ]
+      }
     }
   }
 }
