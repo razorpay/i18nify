@@ -32,11 +32,33 @@ func main() {
 	fmt.Println(subdivisions.GetCountryName()) //India
 
 	state := subdivisions.GetStates()["KA"]
-	fmt.Println(state.GetName())      //Karnataka
-	fmt.Println(state.GetCities()[0]) //{Yellāpur nan Asia/Kolkata [581337 581337 ...}
+	fmt.Println(state.GetName())        //Karnataka
+	fmt.Println(state.GetCities()[0])   //{Yellāpur nan Asia/Kolkata [581337 581337 ...}
+	fmt.Println(len(state.GetCities())) //58
+
+	// Get States by zipcode
+	// As suggested online there are some cases in which one zipcode can be
+	madhyaPradesh := countryIN.GetStatesByZipCode("452010")[0]
+	fmt.Printf("For pincode 452010 state : %s\n", madhyaPradesh) // {[{Wārāseonī nan Asia/Kolkata [481331 ...}
+	fmt.Printf("State name %s\n", madhyaPradesh.GetName())
+
+	// Get Cities
+	cityList := madhyaPradesh.Cities
+	fmt.Println("Cities :")
+	for _, city := range cityList {
+		fmt.Println(city.Name)
+	}
+
+	// Get zipcodes by city
+	zipcodes := countryIN.GetZipCodesFromCity("indore")
+	for _, val := range zipcodes {
+		fmt.Println(val)
+	}
 
 	//USD
-	currencyUS := currency.GetCurrencyInformation("USD")
+	currencyUS, _ := currency.GetCurrencyInformation("USD")
 	fmt.Println(currencyUS.Name)   //US Dollar
 	fmt.Println(currencyUS.Symbol) //$
+
+	// add convert to major unit and minor unit examples
 }

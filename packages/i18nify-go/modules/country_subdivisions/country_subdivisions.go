@@ -17,6 +17,9 @@ import (
 //go:embed data
 var subDivJsonDir embed.FS
 
+// Cache to avoid duplicate reads for same countryCode
+var countrySubDivisionStore = make(map[string]CountrySubdivisions)
+
 // DataFile is the directory where JSON files containing country subdivision data are stored. "
 
 // UnmarshalCountrySubdivisions parses JSON data into a CountrySubdivisions struct.
@@ -46,9 +49,18 @@ func (r *CountrySubdivisions) GetCountryName() string {
 func (r *CountrySubdivisions) GetStates() map[string]State {
 	return r.States
 }
+func (r *CountrySubdivisions) GetStateByStateCode(code string) (State, bool) {
+	if _, exists := r.States[code]; exists {
+		return r.States[code], true
+	}
+	return State{}, false
+}
 
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
+	if _, present := countrySubDivisionStore[code]; present {
+		return countrySubDivisionStore[code]
+	}
 	// Read JSON data file containing country subdivision information.
 	completePath := filepath.Join("data/", code+".json")
 	subDivJsonData, err := subDivJsonDir.ReadFile(completePath)
@@ -58,6 +70,8 @@ func GetCountrySubdivisions(code string) CountrySubdivisions {
 	}
 	// Unmarshal JSON data into CountrySubdivisions struct.
 	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
+	// Store calculated CountrySubDivisions into the cache
+	countrySubDivisionStore[code] = allSubDivData
 	return allSubDivData
 }
 
@@ -71,13 +85,17 @@ func NewCountrySubdivisions(countryName string, states map[string]State) *Countr
 
 // State contains information about a state or province.
 type State struct {
-	Cities []City `json:"cities"` // Cities contains information about cities within the state.
-	Name   string `json:"name"`   // Name represents the name of the state.
+	Cities map[string]City `json:"cities"` // Cities contains information about cities within the state.
+	Name   string          `json:"name"`   // Name represents the name of the state.
 }
 
 // GetCities returns information about cities within the state.
 func (r *State) GetCities() []City {
-	return r.Cities
+	cities := make([]City, 0, len(r.Cities))
+	for _, city := range r.Cities {
+		cities = append(cities, city)
+	}
+	return cities
 }
 
 // GetName returns the name of the state.
@@ -86,7 +104,7 @@ func (r *State) GetName() string {
 }
 
 // NewState creates a new State instance.
-func NewState(cities []City, name string) *State {
+func NewState(cities map[string]City, name string) *State {
 	return &State{
 		Cities: cities,
 		Name:   name,
@@ -119,6 +137,16 @@ func (r *City) GetTimezone() string {
 // GetZipcodes returns postal codes for the city.
 func (r *City) GetZipcodes() []string {
 	return r.Zipcodes
+}
+
+// IsValidZipCode returns whether the input zipcode is valid for the city.
+func (r *City) IsValidZipCode(zipcode string) bool {
+	for _, code := range r.Zipcodes {
+		if code == zipcode {
+			return true
+		}
+	}
+	return false
 }
 
 // NewCity creates a new City instance.
