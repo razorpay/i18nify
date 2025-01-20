@@ -14,7 +14,7 @@ describe('getStates', () => {
   it('fetches states data correctly', async () => {
     const states = await getStates('IN');
     expect(states).toHaveProperty('DL');
-    expect(states.DL.name).toBe('National Capital Territory of Delhi');
+    expect(states.DL.name).toBe('Delhi');
     expect(states.DL).toHaveProperty('cities');
   });
 

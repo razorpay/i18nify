@@ -1,18 +1,18 @@
-import { CityType, CountryDetailType } from '../types';
+import { StateType, CountryDetailType } from '../types';
 import getZipcodes from '../getZipcodes';
-import { DL_CITIES, INDIA_DATA, NL_CITIES } from '../mocks/country';
+import { INDIA_DATA } from '../mocks/country';
 
-const generateZipcodes = (cities: CityType[]) => {
-  let zipcodes = cities.reduce((acc, curr) => {
-    acc = [...acc, ...curr.zipcodes] as string[];
-    return acc;
+const generateZipcodes = (state: StateType) => {
+  let zipcodes = Object.values(state.cities).reduce((acc: string[], city) => {
+    return [...acc, ...city.zipcodes];
   }, [] as string[]);
+
   zipcodes = [...new Set(zipcodes)];
   return zipcodes;
 };
 
-const DL_ZIPCODES = generateZipcodes(DL_CITIES);
-const NL_ZIPCODES = generateZipcodes(NL_CITIES);
+const DL_ZIPCODES = generateZipcodes(INDIA_DATA.states.DL);
+const NL_ZIPCODES = generateZipcodes(INDIA_DATA.states.NL);
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
