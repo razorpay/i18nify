@@ -1,5 +1,5 @@
 import { StateType, CountryDetailType } from '../types';
-import getZipcodes from '../getZipcodes';
+import getZipcodes, { getZipcodesFromState } from '../getZipcodes';
 import { INDIA_DATA } from '../mocks/country';
 
 const generateZipcodes = (state: StateType) => {
@@ -21,6 +21,32 @@ global.fetch = jest.fn(() =>
     json: () => Promise.resolve<CountryDetailType>(INDIA_DATA),
   } as Response),
 );
+
+describe('getZipcodesFromState', () => {
+  const mockCountryData: CountryDetailType = {
+    country_name: 'Mock Country',
+    states: {
+      VALID_STATE: {
+        name: 'Valid State',
+        cities: {
+          City1: {
+            name: 'City1',
+            zipcodes: ['12345'],
+            timezone: 'Mock/Timezone',
+            'region_name/district_name': 'Mock Region',
+          },
+        },
+      },
+    },
+  };
+
+  it('should throw an error if state code is not found', () => {
+    const invalidStateCode = 'INVALID_STATE';
+    expect(() =>
+      getZipcodesFromState(mockCountryData, invalidStateCode),
+    ).toThrow(`State with code ${invalidStateCode} not found.`);
+  });
+});
 
 describe('getZipcodes', () => {
   it('should return zipcodes for a valid country and state code', async () => {

@@ -12,7 +12,7 @@ import { CountryDetailType } from './types';
  * @param stateCode code assigned to the State
  * @returns array of all zipcodes present in state provided
  */
-function getZipcodesFromState(
+export function getZipcodesFromState(
   response: CountryDetailType,
   stateCode: string,
 ): string[] {
