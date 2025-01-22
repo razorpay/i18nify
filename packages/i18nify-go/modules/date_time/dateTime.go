@@ -1,5 +1,5 @@
 // Package dateTime provides utilities for date and time formatting, parsing, and manipulation.
-package dateTime
+package date_time
 
 import (
 	"errors"

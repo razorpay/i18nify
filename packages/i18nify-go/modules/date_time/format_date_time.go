@@ -1,4 +1,4 @@
-package dateTime
+package date_time
 
 import (
 	"fmt"
