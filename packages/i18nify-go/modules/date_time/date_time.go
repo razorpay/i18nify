@@ -18,9 +18,14 @@ const (
 
 // IntlOptions represents the options for formatting the date and time.
 type IntlOptions struct {
-	Locale       string
+	// Locale - Locale by which the timezone should be formatted/converted.
+	// Valid examples include "IST", "UTC", "GMT", "GMT+2"
+	// Invalid Locale will by default get converted to UTC
+	Locale string
+	// DateTimeMode - DateTime format, examples: "dateTime", "dateOnly", "timeOnly"
 	DateTimeMode string
-	Hour12       *bool
+	// Hour12 - boolean flag to identify the time format
+	Hour12 *bool
 }
 
 // DateTimeMode represents the different modes of date-time formatting

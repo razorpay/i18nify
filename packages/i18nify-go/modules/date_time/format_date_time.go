@@ -35,6 +35,26 @@ func FormatDateTime(dateStr string, options *DateTimeOptions) (string, error) {
 
 // formatFullDateTime handles full date and time formatting
 func formatFullDateTime(t time.Time, options *DateTimeOptions) string {
+	var loc *time.Location = nil
+	// Check if IntlOptions contains a locale or timezone
+	if options.IntlOptions != nil {
+		if options.IntlOptions.Locale != "" {
+			// Load the timezone based on Locale (e.g., "IST", "GMT")
+			timezone, isTimeZonePresent := timezoneMapping[options.IntlOptions.Locale]
+			// in case of invalid timezone, this can be changed to return err if expected
+			if !isTimeZonePresent {
+				timezone = "UTC"
+			}
+			location, err := time.LoadLocation(timezone)
+			if err == nil {
+				loc = location
+			}
+		}
+	}
+	if loc != nil {
+		t = t.In(loc)
+	}
+
 	// Check for 24-hour format option
 	hour12 := false
 	if options.IntlOptions != nil {
@@ -42,12 +62,18 @@ func formatFullDateTime(t time.Time, options *DateTimeOptions) string {
 			hour12 = *options.IntlOptions.Hour12
 		}
 	}
+	hour12Format := "1/2/2006, 3:04:05 PM"
+	hour24Format := "1/2/2006, 15:04:05"
+	if loc != nil {
+		hour12Format = "1/2/2006, 3:04:05 PM MST"
+		hour24Format = "1/2/2006, 15:04:05 MST"
+	}
 
 	// Choose format based on 12/24 hour
 	if hour12 {
-		return t.Format("1/2/2006, 3:04:05 PM")
+		return t.Format(hour12Format)
 	}
-	return t.Format("1/2/2006, 15:04:05")
+	return t.Format(hour24Format)
 }
 
 // formatDateOnly handles date-only formatting
