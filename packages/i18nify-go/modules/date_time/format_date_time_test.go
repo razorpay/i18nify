@@ -22,7 +22,7 @@ func TestFormatDateTime(t *testing.T) {
 		// Date Time Mode Tests
 		{
 			name:    "formats full date time with 12-Hour format",
-			dateStr: now.Format(time.RFC3339),
+			dateStr: "2025-01-23T14:36:23+05:30",
 			options: &DateTimeOptions{
 				DateTimeMode: DateTimeMode,
 				IntlOptions: &IntlOptions{
@@ -30,7 +30,7 @@ func TestFormatDateTime(t *testing.T) {
 					Locale: "IST",
 				},
 			},
-			expected: now.Format("1/2/2006, 3:04:05 PM IST"),
+			expected: "1/23/2025, 2:36:23 PM IST",
 		},
 		{
 			name:    "formats full date time with 24-Hour format",
