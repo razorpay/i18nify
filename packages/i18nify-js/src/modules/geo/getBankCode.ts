@@ -6,15 +6,15 @@ import {
 import { I18nifyCountryCodeType } from './types';
 
 /**
- * Retrieves the short_code for the specified bank in a given country
+ * Retrieves the bank code for the specified bank in a given country
  *
  * This function makes a network request to the central i18nify-data source and
- * returns a promise for the short_code associated with the bank name passed.
+ * returns a promise for the bank code associated with the bank name passed.
  * If the bank or country is invalid, it rejects with an appropriate error.
  *
  * @param {I18nifyCountryCodeType} _countryCode - The ISO country code (e.g., 'IN')
  * @param {string} bankName - The exact name of the bank (as it appears in the data)
- * @returns {Promise<string>} Promise that resolves to the short_code of the bank
+ * @returns {Promise<string>} Promise that resolves to the bank code of the bank
  */
 const getBankCode = (
   _countryCode: I18nifyCountryCodeType,
@@ -33,7 +33,7 @@ const getBankCode = (
   if (!bankName) {
     return Promise.reject(
       new Error(
-        `Bank name is required to fetch the short_code. Please provide a valid bank name.`,
+        `Bank name is required to fetch the bank code. Please provide a valid bank name.`,
       ),
     );
   }
@@ -59,7 +59,7 @@ const getBankCode = (
       if (!bank || !bank.short_code) {
         return Promise.reject(
           new Error(
-            `Unable to find short_code for bank "${bankName}" in ${countryCode}. Please ensure the bank name is correct.`,
+            `Unable to find bank code for bank "${bankName}" in ${countryCode}. Please ensure the bank name is correct.`,
           ),
         );
       }
@@ -68,7 +68,7 @@ const getBankCode = (
     })
     .catch((err) => {
       throw new Error(
-        `An error occurred while fetching bank short_code. The error details are: ${err.message}.`,
+        `An error occurred while fetching bank bank code. The error details are: ${err.message}.`,
       );
     });
 };
