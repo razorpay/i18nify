@@ -60,5 +60,7 @@ func main() {
 	fmt.Println(currencyUS.Name)   //US Dollar
 	fmt.Println(currencyUS.Symbol) //$
 
+	// date_time
+
 	// add convert to major unit and minor unit examples
 }
