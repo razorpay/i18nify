@@ -12,28 +12,17 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.40.1-focal
-      options: --user=1001
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 20.3.1
-      - name: Set up custom Playwright browser path
-        run: mkdir -p ./ms-playwright
       - name: Install dependencies
         run: yarn install
-        env:
-          PLAYWRIGHT_BROWSERS_PATH: ./ms-playwright
-      - name: Install Playwright Browsers (msedge)
-        run: yarn playwright install msedge
-        env:
-          PLAYWRIGHT_BROWSERS_PATH: ./ms-playwright
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: yarn test:browser
-        env:
-          PLAYWRIGHT_BROWSERS_PATH: ./ms-playwright
       - uses: actions/upload-artifact@v3
         if: always()
         with:
