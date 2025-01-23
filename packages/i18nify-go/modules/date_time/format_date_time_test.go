@@ -21,10 +21,10 @@ func TestFormatDateTime(t *testing.T) {
 	}{
 		// Date Time Mode Tests
 		{
-			name:    "formats full date time with 12-hour format",
+			name:    "formats full date time with 12-Hour format",
 			dateStr: now.Format(time.RFC3339),
 			options: &DateTimeOptions{
-				DateTimeMode: dateTimeMode,
+				DateTimeMode: DateTimeMode,
 				IntlOptions: &IntlOptions{
 					Hour12: &hour12True,
 					Locale: "IST",
@@ -33,10 +33,10 @@ func TestFormatDateTime(t *testing.T) {
 			expected: now.Format("1/2/2006, 3:04:05 PM IST"),
 		},
 		{
-			name:    "formats full date time with 24-hour format",
+			name:    "formats full date time with 24-Hour format",
 			dateStr: now.Format(time.RFC3339),
 			options: &DateTimeOptions{
-				DateTimeMode: dateTimeMode,
+				DateTimeMode: DateTimeMode,
 				IntlOptions: &IntlOptions{
 					Hour12: &hour12False,
 				},
@@ -49,7 +49,7 @@ func TestFormatDateTime(t *testing.T) {
 			name:    "formats date only",
 			dateStr: now.Format(time.RFC3339),
 			options: &DateTimeOptions{
-				DateTimeMode: dateOnlyMode,
+				DateTimeMode: DateOnlyMode,
 			},
 			expected: now.Format("1/2/2006"),
 		},
@@ -62,10 +62,10 @@ func TestFormatDateTime(t *testing.T) {
 
 		// Time Only Mode Tests
 		{
-			name:    "formats time only with 12-hour format",
+			name:    "formats time only with 12-Hour format",
 			dateStr: now.Format(time.RFC3339),
 			options: &DateTimeOptions{
-				DateTimeMode: timeOnlyMode,
+				DateTimeMode: TimeOnlyMode,
 				IntlOptions: &IntlOptions{
 					Hour12: &hour12True,
 				},
@@ -73,10 +73,10 @@ func TestFormatDateTime(t *testing.T) {
 			expected: now.Format("3:04:05 PM"),
 		},
 		{
-			name:    "formats time only with 24-hour format",
+			name:    "formats time only with 24-Hour format",
 			dateStr: now.Format(time.RFC3339),
 			options: &DateTimeOptions{
-				DateTimeMode: timeOnlyMode,
+				DateTimeMode: TimeOnlyMode,
 				IntlOptions: &IntlOptions{
 					Hour12: &hour12False,
 				},
@@ -105,7 +105,7 @@ func TestFormatDateTime(t *testing.T) {
 			name:    "handles en-US locale",
 			dateStr: now.Format(time.RFC3339),
 			options: &DateTimeOptions{
-				DateTimeMode: dateOnlyMode,
+				DateTimeMode: DateOnlyMode,
 			},
 			expected: now.Format("1/2/2006"),
 		},
@@ -113,7 +113,7 @@ func TestFormatDateTime(t *testing.T) {
 			name:    "check Hour12 structure for dateTime",
 			dateStr: "2024-01-01T12:00:00",
 			options: &DateTimeOptions{
-				DateTimeMode: dateTimeMode,
+				DateTimeMode: DateTimeMode,
 				IntlOptions: &IntlOptions{
 					Hour12: boolPtr(hour12True),
 				},
@@ -166,12 +166,12 @@ func TestFormatTimeOnly(t *testing.T) {
 		expected string
 	}{
 		{
-			name:     "12-hour format",
+			name:     "12-Hour format",
 			hour12:   boolPtr(true),
 			expected: now.Format("3:04:05 PM"),
 		},
 		{
-			name:     "24-hour format",
+			name:     "24-Hour format",
 			hour12:   boolPtr(false),
 			expected: now.Format("15:04:05"),
 		},

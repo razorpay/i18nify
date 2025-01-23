@@ -130,7 +130,7 @@ func TestGetRelativeTime(t *testing.T) {
 				date := now.Add(-365 * 24 * time.Hour)
 				return date.Format(time.RFC3339), now.Format(time.RFC3339)
 			},
-			expected: "1 year ago",
+			expected: "1 Year ago",
 		},
 		{
 			name: "returns correct relative time for years - future",
@@ -138,7 +138,7 @@ func TestGetRelativeTime(t *testing.T) {
 				date := now.Add(365 * 24 * time.Hour)
 				return date.Format(time.RFC3339), now.Format(time.RFC3339)
 			},
-			expected: "in 1 year",
+			expected: "in 1 Year",
 		},
 
 		// Error cases
@@ -157,7 +157,7 @@ func TestGetRelativeTime(t *testing.T) {
 				date := now.Add(-24 * time.Hour)
 				return date.Format(time.RFC3339), now.Format(time.RFC3339)
 			},
-			expected: "1 day ago",
+			expected: "1 Day ago",
 		},
 		// locale to be supported later
 		//{

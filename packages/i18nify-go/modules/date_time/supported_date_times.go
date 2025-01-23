@@ -58,6 +58,8 @@ var SupportedDateFormats = []DateFormat{
 
 	// ISO 8601 Timestamp - YYYY-MM-DDTHH:MM:SS
 	{regexp.MustCompile(`^(\d{4})-(0[1-9]|1[0-2])-(\d{2})T(\d{2}):(\d{2}):(\d{2})$`), 1, 2, 3, 4, 5, 6, "YYYY-MM-DDTHH:MM:SS"},
+	// YYYY-MM-DD HH:MM:SS +0000 UTC
+	{regexp.MustCompile(`^(\d{4})-(0[1-9]|1[0-2])-(\d{2}) (\d{2}):(\d{2}):(\d{2}) \+0000 UTC$`), 1, 2, 3, 4, 5, 6, "YYYY-MM-DD HH:MM:SS +0000 MST"},
 
 	// Standard Go time formats
 	// "01/02 03:04:05PM '06 -0700"

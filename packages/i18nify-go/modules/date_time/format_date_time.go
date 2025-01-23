@@ -10,7 +10,7 @@ func FormatDateTime(dateStr string, options *DateTimeOptions) (string, error) {
 	// Set default options if not provided
 	if options == nil {
 		options = &DateTimeOptions{
-			DateTimeMode: dateOnlyMode,
+			DateTimeMode: DateOnlyMode,
 		}
 	}
 
@@ -22,11 +22,11 @@ func FormatDateTime(dateStr string, options *DateTimeOptions) (string, error) {
 
 	// Determine formatting based on mode
 	switch options.DateTimeMode {
-	case dateTimeMode:
+	case DateTimeMode:
 		return formatFullDateTime(parsedTime, options), nil
-	case dateOnlyMode:
+	case DateOnlyMode:
 		return formatDateOnly(parsedTime, options), nil
-	case timeOnlyMode:
+	case TimeOnlyMode:
 		return formatTimeOnly(parsedTime, options), nil
 	default:
 		return formatDateOnly(parsedTime, options), nil
@@ -55,7 +55,7 @@ func formatFullDateTime(t time.Time, options *DateTimeOptions) string {
 		t = t.In(loc)
 	}
 
-	// Check for 24-hour format option
+	// Check for 24-Hour format option
 	hour12 := false
 	if options.IntlOptions != nil {
 		if options.IntlOptions.Hour12 != nil {
@@ -69,7 +69,7 @@ func formatFullDateTime(t time.Time, options *DateTimeOptions) string {
 		hour24Format = "1/2/2006, 15:04:05 MST"
 	}
 
-	// Choose format based on 12/24 hour
+	// Choose format based on 12/24 Hour
 	if hour12 {
 		return t.Format(hour12Format)
 	}
@@ -83,7 +83,7 @@ func formatDateOnly(t time.Time, options *DateTimeOptions) string {
 
 // formatTimeOnly handles time-only formatting
 func formatTimeOnly(t time.Time, options *DateTimeOptions) string {
-	// Check for 24-hour format option
+	// Check for 24-Hour format option
 	hour12 := true
 	if options.IntlOptions != nil {
 		if options.IntlOptions.Hour12 != nil {
@@ -91,7 +91,7 @@ func formatTimeOnly(t time.Time, options *DateTimeOptions) string {
 		}
 	}
 
-	// Choose format based on 12/24 hour
+	// Choose format based on 12/24 Hour
 	if hour12 {
 		return t.Format("3:04:05 PM")
 	}

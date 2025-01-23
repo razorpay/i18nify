@@ -7,13 +7,14 @@ import (
 	"time"
 )
 
+// exported constants for time duration
 const (
-	minute = time.Minute
-	hour   = time.Hour
-	day    = hour * 24
-	week   = day * 7
-	month  = day * 30
-	year   = month * 12
+	Minute = time.Minute
+	Hour   = time.Hour
+	Day    = Hour * 24
+	Week   = Day * 7
+	Month  = Day * 30
+	Year   = Month * 12
 )
 
 // IntlOptions represents the options for formatting the date and time.
@@ -22,26 +23,29 @@ type IntlOptions struct {
 	// Valid examples include "IST", "UTC", "GMT", "GMT+2"
 	// Invalid Locale will by default get converted to UTC
 	Locale string
-	// DateTimeMode - DateTime format, examples: "dateTime", "dateOnly", "timeOnly"
-	DateTimeMode string
 	// Hour12 - boolean flag to identify the time format
 	Hour12 *bool
 }
 
-// DateTimeMode represents the different modes of date-time formatting
-type DateTimeMode string
+// DateTimeModeOption represents the different modes of date-time formatting
+type DateTimeModeOption string
 
 const (
-	dateTimeMode DateTimeMode = "dateTime"
-	dateOnlyMode DateTimeMode = "dateOnly"
-	timeOnlyMode DateTimeMode = "timeOnly"
+	DateTimeMode DateTimeModeOption = "dateTime"
+	DateOnlyMode DateTimeModeOption = "dateOnly"
+	TimeOnlyMode DateTimeModeOption = "timeOnly"
 )
 
 // DateTimeOptions represents the configuration for date-time formatting
 type DateTimeOptions struct {
-	DateTimeMode DateTimeMode
-	BaseDate     string
-	IntlOptions  *IntlOptions
+	// DateTimeMode - DateTime format, examples: "dateTime", "dateOnly", "timeOnly"
+	// by default or illegal value passed takes dateOnly mode
+	// Exported through DateTimeModeOption
+	DateTimeMode DateTimeModeOption
+	// BaseDate - Base date in case of getting relative time
+	BaseDate string
+	// IntlOptions - Options for providing flags/details related to internationalization of date
+	IntlOptions *IntlOptions
 }
 
 // stringToDate converts a date string into a Go time.Time object.

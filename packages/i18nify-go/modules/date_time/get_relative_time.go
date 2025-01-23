@@ -27,20 +27,20 @@ func GetRelativeTime(dateStr string, options DateTimeOptions) (string, error) {
 	// Format the duration with appropriate unit
 	var result string
 	switch {
-	case absDuration < minute:
+	case absDuration < Minute:
 		result = formatDuration(int(absDuration.Seconds()), "second", prefix)
-	case absDuration < hour:
-		result = formatDuration(int(absDuration.Minutes()), "minute", prefix)
-	case absDuration < day:
-		result = formatDuration(int(absDuration.Hours()), "hour", prefix)
-	case absDuration < week:
-		result = formatDuration(int(absDuration.Hours()/24), "day", prefix)
-	case absDuration < month:
-		result = formatDuration(int(absDuration.Hours()/(24*7)), "week", prefix)
-	case absDuration < year:
-		result = formatDuration(int(absDuration.Hours()/(24*30)), "month", prefix)
+	case absDuration < Hour:
+		result = formatDuration(int(absDuration.Minutes()), "Minute", prefix)
+	case absDuration < Day:
+		result = formatDuration(int(absDuration.Hours()), "Hour", prefix)
+	case absDuration < Week:
+		result = formatDuration(int(absDuration.Hours()/24), "Day", prefix)
+	case absDuration < Month:
+		result = formatDuration(int(absDuration.Hours()/(24*7)), "Week", prefix)
+	case absDuration < Year:
+		result = formatDuration(int(absDuration.Hours()/(24*30)), "Month", prefix)
 	default:
-		result = formatDuration(int(absDuration.Hours()/(24*365)), "year", prefix)
+		result = formatDuration(int(absDuration.Hours()/(24*365)), "Year", prefix)
 	}
 
 	return result, nil
