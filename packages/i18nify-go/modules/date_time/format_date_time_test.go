@@ -30,7 +30,7 @@ func TestFormatDateTime(t *testing.T) {
 					Locale: "IST",
 				},
 			},
-			expected: now.Format("1/2/2006, 3:04:05 PM MST"),
+			expected: now.Format("1/2/2006, 3:04:05 PM IST"),
 		},
 		{
 			name:    "formats full date time with 24-hour format",
