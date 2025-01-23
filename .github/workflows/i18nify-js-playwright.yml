@@ -12,24 +12,15 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.37.1-focal
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 20.3.1
-      - name: Install missing dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            libasound2 \
-            libasound2-dev \
-            libicu-dev \
-            libffi-dev \
-            libx264-dev
       - name: Install dependencies
         run: yarn install
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: yarn test:browser
       - uses: actions/upload-artifact@v3
