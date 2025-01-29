@@ -1175,3 +1175,27 @@ Simplify time tracking and events in your app, concentrating solely on time with
 ##### ZonedDateTime 🌍🕖 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/ZonedDateTime.html)
 
 Master global time zones for scheduling and planning across borders, ensuring accuracy and user relevance.
+
+### Module 05: Banking
+
+This module's your financial sidekick for all things banking! 🏦💰 Whether you're looking for bank codes, payment-related info, or planning to integrate banking details seamlessly into your app, this module has got you covered. No more hunting for bank-specific data—just plug and play! Here are the handy APIs this Banking Module brings to your toolkit. 🚀💳
+
+#### getListOfBanks(\_countryCode)
+
+🏦📋 Need a full list of banks for a specific country? This function delivers exactly that! Just pass in the country code, and it'll fetch an up-to-date list of banks available in that country—no branches included. Perfect for building banking-related features in your app without the hassle of manual data collection. If the country isn't supported, it'll let you know with a friendly error.
+
+##### Examples
+
+```javascript
+async function fetchBanks() {
+  try {
+    const banks = await getListOfBanks('IN');
+    console.log(banks);
+    // Outputs an array of banks available in India (e.g., [{ name: 'State Bank of India', short_code: 'SBIN' }, { name: 'HDFC Bank', short_code: 'HDFC' }])
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
+fetchBanks();
+```
