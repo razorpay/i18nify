@@ -1175,3 +1175,23 @@ Simplify time tracking and events in your app, concentrating solely on time with
 ##### ZonedDateTime 🌍🕖 [Documentation here](https://react-spectrum.adobe.com/internationalized/date/ZonedDateTime.html)
 
 Master global time zones for scheduling and planning across borders, ensuring accuracy and user relevance.
+
+### Module 05: Banking
+
+This module's your financial sidekick for all things banking! 🏦💰 Whether you're looking for bank codes or planning to integrate banking details seamlessly into your app, this module has got you covered. No more hunting for bank-specific data—just plug and play! Here are the handy APIs this Banking Module brings to your toolkit. 🚀💳
+
+#### getBankCode(\_countryCode, bankName)
+
+🏦🔍 Need a bank's code in a specific country? This function has your back! Just pass the country code and the exact bank name, and it'll fetch the bank code for you from the central i18nify data source. If the bank or country isn't supported, it'll give you a heads-up with a helpful error. No more guessing or manual lookups—get the right bank code in seconds!
+
+##### Examples
+
+```javascript
+getBankCode('IN', 'Abhyudaya Co-operative Bank')
+  .then((code) => console.log(code)) // Outputs the bank code for SBI in India (e.g., "ABHY")
+  .catch((err) => console.error(err.message));
+
+getBankCode('US', 'Bank of America CORPORATION')
+  .then((code) => console.log(code)) // Outputs the bank code for Bank of America (e.g., "MLCO")
+  .catch((err) => console.error(err.message));
+```
