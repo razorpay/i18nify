@@ -36,7 +36,7 @@ const getCities = (
       // return cities from all states if state code is not provided
       if (!stateCode) {
         return Object.keys(res.states).reduce((acc, curr) => {
-          acc = [...acc, ...res.states[curr].cities];
+          acc = [...acc, ...Object.keys(res.states[curr].cities)];
           return acc;
         }, [] as unknown[]);
       }
@@ -49,7 +49,7 @@ const getCities = (
         );
       }
 
-      return res.states[stateCode].cities;
+      return Object.keys(res.states[stateCode].cities);
     })
     .catch((err) => {
       throw new Error(
