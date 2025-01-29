@@ -1,4 +1,4 @@
-import getListOfBanks from '../getListOfBanks';
+import { getListOfBanks } from '../index';
 
 global.fetch = jest.fn();
 
@@ -31,7 +31,7 @@ describe('getListOfBanks', () => {
   test('should throw an error for invalid country code', async () => {
     const invalidCountryCode = 'XX'; // Not in `I18NIFY_DATA_SUPPORTED_COUNTRIES`
     await expect(getListOfBanks(invalidCountryCode as any)).rejects.toThrow(
-      `Invalid country code: ${invalidCountryCode}. Please ensure you provide a valid country code.`,
+      `Data not available for country code: ${invalidCountryCode}. Data only available for country codes mentioned here: https://github.com/razorpay/i18nify/blob/master/packages/i18nify-js/src/modules/geo/constants.ts#L8`,
     );
   });
 

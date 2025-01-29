@@ -23,7 +23,7 @@ const getListOfBanks = (_countryCode: I18nifyCountryCodeType) => {
   if (!I18NIFY_DATA_SUPPORTED_COUNTRIES.includes(countryCode)) {
     return Promise.reject(
       new Error(
-        `Invalid country code: ${countryCode}. Please ensure you provide a valid country code. Check valid country codes here: https://github.com/razorpay/i18nify/blob/master/i18nify-data/country/metadata/data.json`,
+        `Data not available for country code: ${countryCode}. Data only available for country codes mentioned here: https://github.com/razorpay/i18nify/blob/master/packages/i18nify-js/src/modules/geo/constants.ts#L8`,
       ),
     );
   }
