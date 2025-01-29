@@ -1,6 +1,6 @@
 import { CountryCodeType, GetFlagReturnType } from '../types';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from '../shared/sourceConstants';
+import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from '../shared';
 import { isCountryValid } from './utils';
 
 /**

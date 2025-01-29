@@ -3,7 +3,7 @@ import { CountryCodeType } from '../types';
 import {
   I18NIFY_DATA_SOURCE,
   I18NIFY_DATA_SUPPORTED_COUNTRIES,
-} from '../shared/sourceConstants';
+} from '../shared';
 import { CountryDetailType } from './types';
 
 /**

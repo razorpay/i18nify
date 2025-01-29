@@ -3,7 +3,7 @@ import { I18nifyCountryCodeType } from '../geo/types';
 import {
   I18NIFY_DATA_SOURCE,
   I18NIFY_DATA_SUPPORTED_COUNTRIES,
-} from '../shared/sourceConstants';
+} from '../shared';
 
 /**
  * Retrieves the list of all banks available for a specified country.
