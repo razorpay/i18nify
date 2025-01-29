@@ -1,4 +1,4 @@
-import getBankCode from '../../banking/getBankCode';
+import getBankCode from '../getBankCode';
 
 // A mock object to simulate the data returned by the fetch call
 // You can customize this as needed for your tests

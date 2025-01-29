@@ -2,7 +2,7 @@ import { withErrorBoundary } from '../../common/errorBoundary';
 import {
   I18NIFY_DATA_SOURCE,
   I18NIFY_DATA_SUPPORTED_COUNTRIES,
-} from '../geo/constants';
+} from '../sourceConstants';
 import { I18nifyCountryCodeType } from '../geo/types';
 
 /**
