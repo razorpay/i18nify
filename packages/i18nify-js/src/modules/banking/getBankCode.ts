@@ -2,8 +2,8 @@ import { withErrorBoundary } from '../../common/errorBoundary';
 import {
   I18NIFY_DATA_SOURCE,
   I18NIFY_DATA_SUPPORTED_COUNTRIES,
-} from './constants';
-import { I18nifyCountryCodeType } from './types';
+} from '../geo/constants';
+import { I18nifyCountryCodeType } from '../geo/types';
 
 /**
  * Retrieves the bank code for the specified bank in a given country
