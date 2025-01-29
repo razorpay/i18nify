@@ -8,6 +8,7 @@ const config = {
     'blackbox',
     '.spec.ts',
     'modules/shared/index.ts$',
+    'packages/i18nify-js/src/index.ts$',
   ],
   coverageThreshold: {
     './src/': {
