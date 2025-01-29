@@ -691,6 +691,26 @@ console.log(res);
 */
 ```
 
+#### getDefaultLocaleByCountry
+
+The getDefaultLocaleByCountry API simplifies the process of retrieving the default locale for any country. With a quick query, it provides the primary locale used in the specified country, ensuring seamless localization for applications.
+
+##### Examples
+
+```javascript
+// Getting default locale of a country
+const res = await getDefaultLocaleByCountry('AF');
+console.log(res);
+/*
+    fa_AF
+*/
+
+// Passing invalid country code
+getDefaultLocaleByCountry('XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs Invalid country code: XYZ
+```
+
 #### getByCountry
 
 The getByCountry API offers a treasure trove of information about any country in the world. With a single query, you can uncover details like country names, languages, currencies, dial codes, timezones, and even links to their flags. It’s a perfect tool for building apps that need geographic or cultural context.

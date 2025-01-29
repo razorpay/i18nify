@@ -1,18 +1,18 @@
-import { CityType, CountryDetailType } from '../types';
-import getZipcodes from '../getZipcodes';
-import { DL_CITIES, INDIA_DATA, NL_CITIES } from '../mocks/country';
+import { StateType, CountryDetailType } from '../types';
+import getZipcodes, { getZipcodesFromState } from '../getZipcodes';
+import { INDIA_DATA } from '../mocks/country';
 
-const generateZipcodes = (cities: CityType[]) => {
-  let zipcodes = cities.reduce((acc, curr) => {
-    acc = [...acc, ...curr.zipcodes] as string[];
-    return acc;
+const generateZipcodes = (state: StateType) => {
+  let zipcodes = Object.values(state.cities).reduce((acc: string[], city) => {
+    return [...acc, ...city.zipcodes];
   }, [] as string[]);
+
   zipcodes = [...new Set(zipcodes)];
   return zipcodes;
 };
 
-const DL_ZIPCODES = generateZipcodes(DL_CITIES);
-const NL_ZIPCODES = generateZipcodes(NL_CITIES);
+const DL_ZIPCODES = generateZipcodes(INDIA_DATA.states.DL);
+const NL_ZIPCODES = generateZipcodes(INDIA_DATA.states.NL);
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -21,6 +21,32 @@ global.fetch = jest.fn(() =>
     json: () => Promise.resolve<CountryDetailType>(INDIA_DATA),
   } as Response),
 );
+
+describe('getZipcodesFromState', () => {
+  const mockCountryData: CountryDetailType = {
+    country_name: 'Mock Country',
+    states: {
+      VALID_STATE: {
+        name: 'Valid State',
+        cities: {
+          City1: {
+            name: 'City1',
+            zipcodes: ['12345'],
+            timezone: 'Mock/Timezone',
+            'region_name/district_name': 'Mock Region',
+          },
+        },
+      },
+    },
+  };
+
+  it('should throw an error if state code is not found', () => {
+    const invalidStateCode = 'INVALID_STATE';
+    expect(() =>
+      getZipcodesFromState(mockCountryData, invalidStateCode),
+    ).toThrow(`State with code ${invalidStateCode} not found.`);
+  });
+});
 
 describe('getZipcodes', () => {
   it('should return zipcodes for a valid country and state code', async () => {
