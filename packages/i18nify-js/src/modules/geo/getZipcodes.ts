@@ -3,7 +3,7 @@ import { CountryCodeType } from '../types';
 import {
   I18NIFY_DATA_SOURCE,
   I18NIFY_DATA_SUPPORTED_COUNTRIES,
-} from '../sourceConstants';
+} from '../shared';
 import { CountryDetailType } from './types';
 
 /**
@@ -12,18 +12,21 @@ import { CountryDetailType } from './types';
  * @param stateCode code assigned to the State
  * @returns array of all zipcodes present in state provided
  */
-function getZipcodesFromState(
+export function getZipcodesFromState(
   response: CountryDetailType,
   stateCode: string,
 ): string[] {
-  const zipcodes = response.states[stateCode].cities.reduce(
-    (_acc: string[], city: { zipcodes: string[] }) => [
-      ..._acc,
-      ...city.zipcodes,
-    ],
-    [],
-  );
-  // remove duplicate zipcodes
+  const state = response.states[stateCode];
+
+  if (!state) {
+    throw new Error(`State with code ${stateCode} not found.`);
+  }
+
+  const zipcodes = Object.values(state.cities).reduce((acc: string[], city) => {
+    return [...acc, ...city.zipcodes];
+  }, []);
+
+  // Remove duplicate zipcodes using a Set
   return [...new Set(zipcodes)];
 }
 

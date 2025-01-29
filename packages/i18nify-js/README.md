@@ -691,6 +691,75 @@ console.log(res);
 */
 ```
 
+#### getDefaultLocaleByCountry
+
+The getDefaultLocaleByCountry API simplifies the process of retrieving the default locale for any country. With a quick query, it provides the primary locale used in the specified country, ensuring seamless localization for applications.
+
+##### Examples
+
+```javascript
+// Getting default locale of a country
+const res = await getDefaultLocaleByCountry('AF');
+console.log(res);
+/*
+    fa_AF
+*/
+
+// Passing invalid country code
+getDefaultLocaleByCountry('XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs Invalid country code: XYZ
+```
+
+#### getByCountry
+
+The getByCountry API offers a treasure trove of information about any country in the world. With a single query, you can uncover details like country names, languages, currencies, dial codes, timezones, and even links to their flags. It’s a perfect tool for building apps that need geographic or cultural context.
+
+##### Examples
+
+```javascript
+// Fetching the metadata for a country
+const res = await getByCountry('AF');
+console.log(res);
+/*
+    {
+      "country_name": "Afghanistan",
+      "continent_code": "AS",
+      "continent_name": "Asia",
+      "alpha_3": "AFG",
+      "numeric_code": "004",
+      "flag": "https://flagcdn.com/af.svg",
+      "sovereignty": "UN member state",
+      "dial_code": "+93",
+      "supported_currency": [
+        "AFN"
+      ],
+      "timezones": {
+        "Asia/Kabul": {
+          "utc_offset": "UTC +04:30"
+        }
+      },
+      "timezone_of_capital": "Asia/Kabul",
+      "locales": {
+        "fa_AF": {
+          "name": "Persian (Afghanistan)"
+        },
+        "ps": {
+          "name": "Pashto"
+        },
+        "uz_AF": {
+          "name": "Uzbek"
+        },
+        "tk": {
+          "name": "Turkmen"
+        }
+      },
+      "default_locale": "fa_AF",
+      "default_currency": "AFN"
+    }
+*/
+```
+
 #### getStates(country_code)
 
 Embark on a state-by-state discovery with the getStates API! Get access to a treasure trove of state information, including names, time zones, and even a list of vibrant cities within each state.
@@ -1178,7 +1247,27 @@ Master global time zones for scheduling and planning across borders, ensuring ac
 
 ### Module 05: Banking
 
-This module's your financial sidekick for all things banking! 🏦💰 Whether you're looking for bank codes or planning to integrate banking details seamlessly into your app, this module has got you covered. No more hunting for bank-specific data—just plug and play! Here are the handy APIs this Banking Module brings to your toolkit. 🚀💳
+This module's your financial sidekick for all things banking! 🏦💰 Whether you're looking for bank codes, payment-related info, or planning to integrate banking details seamlessly into your app, this module has got you covered. No more hunting for bank-specific data—just plug and play! Here are the handy APIs this Banking Module brings to your toolkit. 🚀💳
+
+#### getListOfBanks(\_countryCode)
+
+🏦📋 Need a full list of banks for a specific country? This function delivers exactly that! Just pass in the country code, and it'll fetch an up-to-date list of banks available in that country—no branches included. Perfect for building banking-related features in your app without the hassle of manual data collection. If the country isn't supported, it'll let you know with a friendly error.
+
+##### Examples
+
+```javascript
+async function fetchBanks() {
+  try {
+    const banks = await getListOfBanks('IN');
+    console.log(banks);
+    // Outputs an array of banks available in India (e.g., [{ name: 'State Bank of India', short_code: 'SBIN' }, { name: 'HDFC Bank', short_code: 'HDFC' }])
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
+fetchBanks();
+```
 
 #### getBankCode(\_countryCode, bankName)
 

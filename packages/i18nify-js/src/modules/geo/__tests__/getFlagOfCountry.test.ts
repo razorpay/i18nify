@@ -1,6 +1,6 @@
 import { getFlagOfCountry } from '../index';
 import { LIST_OF_ALL_COUNTRIES } from '../data/listOfAllCountries';
-import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from '../../sourceConstants';
+import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from '../../shared';
 import { CountryCodeType } from '../../types';
 
 describe('geo - getFlagOfCountry', () => {
