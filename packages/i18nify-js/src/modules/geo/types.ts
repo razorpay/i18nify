@@ -19,12 +19,14 @@ export type CityType = {
   name: string;
   timezone: string;
   zipcodes: string[];
-  region_name: string;
+  'region_name/district_name': string;
 };
 
 export type StateType = {
   name: string;
-  cities: CityType[];
+  cities: {
+    [cityName: string]: CityType;
+  };
 };
 
 export type CountryDetailType = {
