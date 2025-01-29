@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CountryCodeType } from '../types';
-import { I18NIFY_DATA_SOURCE } from '../sourceConstants';
+import { I18NIFY_DATA_SOURCE } from '../shared/sourceConstants';
 import { CountryMetaType } from './types';
 
 /**

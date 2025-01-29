@@ -4,7 +4,11 @@ const config = {
   testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.test.[jt]s?(x)', '**/?(*.)+test.[jt]s?(x)'],
   collectCoverageFrom: ['**/*.{ts,js}', '!coverage/**/*.{ts,tsx,js,jsx}'],
-  coveragePathIgnorePatterns: ['blackbox', '.spec.ts'],
+  coveragePathIgnorePatterns: [
+    'blackbox',
+    '.spec.ts',
+    'modules/shared/index.ts$',
+  ],
   coverageThreshold: {
     './src/': {
       statements: 0,
