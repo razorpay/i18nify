@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { LIST_OF_ALL_COUNTRIES } from './data/listOfAllCountries';
-import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from './constants';
+import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from '../shared';
 import { GetFlagReturnType, CountryCodeType } from '../types';
 
 /**

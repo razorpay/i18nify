@@ -13,7 +13,14 @@ const fs = require('fs');
 const path = require('path');
 
 // TODO: Currently, we will have to manually add every new module that we create. Automate this in future.
-const EXPORT_MODULES = ['currency', 'phoneNumber', 'core', 'types'];
+const EXPORT_MODULES = [
+  'currency',
+  'phoneNumber',
+  'core',
+  'types',
+  'geo',
+  'banking',
+];
 const BUILD_DIRECTORY = 'lib';
 
 try {
