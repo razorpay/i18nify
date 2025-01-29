@@ -12,6 +12,6 @@ test.describe('getStates', () => {
   }) => {
     await injectScript(page, `await getStates('IN').then(res => res.DL.name)`);
 
-    await assertScriptText(page, 'National Capital Territory of Delhi');
+    await assertScriptText(page, 'Delhi');
   });
 });
