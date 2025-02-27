@@ -4,6 +4,8 @@ import (
 	"fmt"
 	i18nify_go "github.com/razorpay/i18nify/packages/i18nify-go"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
+	"github.com/razorpay/i18nify/packages/i18nify-go/modules/date_time"
+	"time"
 )
 
 func main() {
@@ -59,6 +61,40 @@ func main() {
 	currencyUS, _ := currency.GetCurrencyInformation("USD")
 	fmt.Println(currencyUS.Name)   //US Dollar
 	fmt.Println(currencyUS.Symbol) //$
+
+	// date_time
+	// get date in time format
+	currentDateTime, _ := date_time.StringToDate("12/12/2024") //2024-12-12 00:00:00 +0000 UTC
+	fmt.Println("currentDate ", currentDateTime)
+
+	// get dateTime in specific format with Locale
+	date, err := date_time.FormatDateTime("2024-12-12 00:00:00 +0000 UTC", &date_time.DateTimeOptions{
+		DateTimeMode: date_time.DateTimeMode,
+		IntlOptions: &date_time.IntlOptions{
+			Locale: "IST",
+		},
+	})
+	fmt.Println("IST converted dateTime ", date, err) //12/12/2024, 05:30:00 IST
+	// get dateTime in specific format without Locale
+	date, err = date_time.FormatDateTime("2024-12-12 00:00:00 +0000 UTC", &date_time.DateTimeOptions{
+		DateTimeMode: date_time.DateTimeMode,
+		IntlOptions:  &date_time.IntlOptions{},
+	})
+	fmt.Println("No Locale passed converted dateTime ", date, err) //12/12/2024, 00:00:00
+
+	// get relative time
+	relativeDate := time.Now().Add(365 * date_time.Day).Format(time.RFC3339)
+	currentDate := time.Now().Format(time.RFC3339)
+	relativeTime, err := date_time.GetRelativeTime(relativeDate, date_time.DateTimeOptions{
+		BaseDate: currentDate,
+	})
+	fmt.Println("Relative time (future) - ", relativeTime, err) //  in 1 Year
+
+	relativeDate = time.Now().Add(-365 * date_time.Day).Format(time.RFC3339)
+	relativeTime, err = date_time.GetRelativeTime(relativeDate, date_time.DateTimeOptions{
+		BaseDate: currentDate,
+	})
+	fmt.Println("Relative time (past) - ", relativeTime, err) // 1 Year ago
 
 	// add convert to major unit and minor unit examples
 }
