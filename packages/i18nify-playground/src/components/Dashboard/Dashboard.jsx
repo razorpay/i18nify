@@ -11,9 +11,9 @@ import { useMobile } from 'src/hooks/useMobile';
 
 const DashboardLayout = () => {
   const { loading } = useLanguageContext();
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
-  const toggleMobileNav = () => setIsMobileOpen(!isMobileOpen);
+  const toggleMobileNav = () => setIsMobileSidebarOpen(!isMobileSidebarOpen);
 
   const isMobile = useMobile();
 
@@ -30,7 +30,7 @@ const DashboardLayout = () => {
         <Box display="flex" flex="1">
           <SideNavBar
             toggleMobileNav={toggleMobileNav}
-            isMobileOpen={isMobileOpen}
+            isMobileSidebarOpen={isMobileSidebarOpen}
           />
           <Box
             marginLeft={isMobile ? 'spacing.0' : '264px'}

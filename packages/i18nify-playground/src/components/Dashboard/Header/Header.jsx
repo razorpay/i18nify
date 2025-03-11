@@ -13,12 +13,12 @@ import { bladeTheme } from '@razorpay/blade/tokens';
 import { useI18nContext } from '@razorpay/i18nify-react';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useMobile } from 'src/hooks/useMobile';
 import { NAV_ITEMS_MAP } from 'src/components/Dashboard/Sidebar/navItems';
 
 import { LANGS } from 'src/constants/locale';
 import { LANGUAGES } from 'src/context/constants';
 import { useLanguageContext } from 'src/context/languagesContext';
-import { useMobile } from 'src/hooks/useMobile';
 
 const Header = ({ toggleMobileNav }) => {
   const { selectedLanguage, setSelectedLanguage, setLoading, setSidebarItems } =
@@ -43,11 +43,12 @@ const Header = ({ toggleMobileNav }) => {
     <Box
       display="flex"
       justifyContent="space-between"
-      alignItems="center"
+      alignItems="start"
       padding="spacing.3"
       position="sticky"
       flexWrap="wrap"
       top="spacing.0"
+      rowGap="spacing.3"
       borderBottomWidth="thicker"
       backgroundColor="surface.background.gray.subtle"
       borderBottomColor="surface.border.gray.muted"
@@ -75,7 +76,9 @@ const Header = ({ toggleMobileNav }) => {
             <DropdownOverlay>
               <ActionList>
                 {Object.values(LANGUAGES).map((value) => {
-                  return <ActionListItem title={value} value={value} />;
+                  return (
+                    <ActionListItem title={value} value={value} key={value} />
+                  );
                 })}
               </ActionList>
             </DropdownOverlay>
@@ -95,6 +98,7 @@ const Header = ({ toggleMobileNav }) => {
                   return (
                     <ActionListItem
                       title={lang.label}
+                      key={lang.value}
                       value={lang.value}
                       leading={<img src={lang.icon} alt="" />}
                     />

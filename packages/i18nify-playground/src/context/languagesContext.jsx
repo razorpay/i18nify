@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { NAV_ITEMS_MAP } from 'src/components/Dashboard/Sidebar/navItems';
 import { LANGUAGES } from 'src/context/constants';
-import { useMobile } from 'src/hooks/useMobile';
 
 const languagesContext = createContext({});
 
@@ -12,8 +11,6 @@ export const LanguagesProvider = ({ children }) => {
     NAV_ITEMS_MAP[selectedLanguage],
   );
 
-  const isMobile = useMobile();
-
   useEffect(() => {
     const availableLanguages = Object.keys(LANGUAGES);
     const language = availableLanguages.find((language) =>
@@ -21,7 +18,7 @@ export const LanguagesProvider = ({ children }) => {
     );
     setSelectedLanguage(language);
     setSidebarItems(NAV_ITEMS_MAP[language]);
-  }, [location.pathname, isMobile]);
+  }, [location.pathname]);
 
   return (
     <languagesContext.Provider

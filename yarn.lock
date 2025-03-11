@@ -1130,6 +1130,13 @@
   version "6.0.21"
   resolved "https://registry.yarnpkg.com/@mantine/core/-/core-6.0.21.tgz#6e3a1b8d0f6869518a644d5f5e3d55a5db7e1e51"
   integrity sha512-Kx4RrRfv0I+cOCIcsq/UA2aWcYLyXgW3aluAuW870OdXnbII6qg7RW28D+r9D76SHPxWFKwIKwmcucAG08Divg==
+  dependencies:
+    "@floating-ui/react" "^0.19.1"
+    "@mantine/styles" "6.0.21"
+    "@mantine/utils" "6.0.21"
+    "@radix-ui/react-scroll-area" "1.0.2"
+    react-remove-scroll "^2.5.5"
+    react-textarea-autosize "8.3.4"
 
 "@mantine/dates@6.0.21":
   version "6.0.21"
@@ -1457,7 +1464,7 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
-"@razorpay/blade@^12.11.0":
+"@razorpay/blade@^12.15.0":
   version "12.15.0"
   resolved "https://registry.yarnpkg.com/@razorpay/blade/-/blade-12.15.0.tgz#73d150a9e6891d6a0098b0766efcb188e74aacb8"
   integrity sha512-DuwmmbszwkNlzrBwUNs28JeFbRFHyj85vq7xefcrCvkyP8s3N6Uvo1LRNEnnIflM6/W3PgbwqBObyAffhHecUw==
@@ -1478,13 +1485,6 @@
     ts-deepmerge "6.2.0"
     universal-base64 "2.1.0"
     use-presence "1.3.0"
-
-"@razorpay/i18nify-js@1.12.3":
-  version "1.12.3"
-  resolved "https://registry.yarnpkg.com/@razorpay/i18nify-js/-/i18nify-js-1.12.3.tgz#6fa86ba0f9277a436df5eae1fa1db9ce3d2bbb6a"
-  integrity sha512-e5WtYcA9LQAJ+9h4Iasyftj3c6qIg9XrieAgl6vvk1JHFOkGHgoM7EQmo0ztttTOLxwkLp38VTdCI4B1H0fiLg==
-  dependencies:
-    "@internationalized/date" "^3.5.2"
 
 "@remix-run/router@1.23.0":
   version "1.23.0"
@@ -1781,7 +1781,7 @@
   resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.67.2.tgz#3d59a7dd3613321465925975510c0bb8e603a064"
   integrity sha512-+iaFJ/pt8TaApCk6LuZ0WHS/ECVfTzrxDOEL9HH9Dayyb5OVuomLzDXeSaI2GlGT/8HN7bDGiRXDts3LV+u6ww==
 
-"@tanstack/react-query@^5.66.9":
+"@tanstack/react-query@^5.67.2":
   version "5.67.2"
   resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.67.2.tgz#70ef113dcd80500700a99658134dc3c6d0c1c65e"
   integrity sha512-6Sa+BVNJWhAV4QHvIqM73norNeGRWGC3ftN0Ix87cmMvI215I1wyJ44KUTt/9a0V9YimfGcg25AITaYVel71Og==
@@ -5751,7 +5751,7 @@ pretty-format@^29.0.0, pretty-format@^29.7.0:
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
 
-prismjs@^1.29.0:
+prismjs@^1.30.0:
   version "1.30.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.30.0.tgz#d9709969d9d4e16403f6f348c63553b19f0975a9"
   integrity sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==

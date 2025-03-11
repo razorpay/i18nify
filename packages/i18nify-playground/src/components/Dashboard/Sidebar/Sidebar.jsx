@@ -13,17 +13,14 @@ import {
 } from 'src/components/Dashboard/Sidebar/utils';
 
 import { useLanguageContext } from 'src/context/languagesContext';
-import { useMobile } from 'src/hooks/useMobile';
 
-const SideNavBar = ({ toggleMobileNav, isMobileOpen }) => {
+const SideNavBar = ({ toggleMobileNav, isMobileSidebarOpen }) => {
   const { sidebarItems } = useLanguageContext();
-
-  const isMobile = useMobile();
 
   return (
     <BladeProvider themeTokens={bladeTheme} colorScheme="dark">
       <SideNav
-        isOpen={isMobileOpen || !isMobile}
+        isOpen={isMobileSidebarOpen}
         onDismiss={() => toggleMobileNav(false)}
         top="52px"
         zIndex={2}
