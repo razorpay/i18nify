@@ -1,6 +1,7 @@
 import { DATE_FORMAT_INTL_INPUTS } from 'src/constants/date';
 
-import { createContext, useState, useContext, useMemo } from 'react';
+import React from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const IntlOptionsDateContext = createContext({});
 

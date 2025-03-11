@@ -1,6 +1,6 @@
 import { NUMBER_FORMAT_INTL_INPUTS } from 'src/constants/number';
-
-import { createContext, useState, useContext, useMemo } from 'react';
+import React from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const IntlOptionsContext = createContext({});
 
