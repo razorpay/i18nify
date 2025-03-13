@@ -192,7 +192,7 @@ export const DATE_FORMAT_INTL_INPUTS = [
     label: 'Fractional Second Digits',
     type: 'select',
     supportedUtilName: ['formatDateTime', 'parseDateTime'],
-    options: [1, 2, 3],
+    options: ['1', '2', '3'],
   },
   {
     key: 'timeZoneName',

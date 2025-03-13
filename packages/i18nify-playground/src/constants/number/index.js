@@ -33,23 +33,26 @@ export const NUMBER_FORMAT_INTL_INPUTS = [
     key: 'maximumFractionDigits',
     label: 'Max Fraction digits',
     type: 'number',
+    max: 2,
   },
   {
     key: 'minimumSignificantDigits',
     label: 'Min Significant digits',
     type: 'number',
+    max: 2,
   },
   {
     key: 'maximumSignificantDigits',
     label: 'Max Significant digits',
     type: 'number',
+    max: 2,
   },
   {
     key: 'useGrouping',
     label: 'Use Grouping',
     type: 'select',
-    options: [true, false],
-    defaultValue: true,
+    options: ['true', 'false'],
+    defaultValue: 'true',
   },
 
   {

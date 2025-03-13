@@ -38,4 +38,7 @@ export default defineConfig({
   preview: {
     port: 3030,
   },
+  build: {
+    sourcemap: true, // Enable source maps
+  },
 });
