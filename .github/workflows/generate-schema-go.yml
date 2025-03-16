@@ -1,0 +1,45 @@
+name: Generate Go Code from Schema
+
+on:
+  push:
+    paths:
+      - 'i18nify-data/**/schema.json'
+      - 'i18nify-data/**/data.json'
+      - 'scripts/generateGoFromSchema.js'
+  workflow_dispatch:
+    inputs:
+      schema_path:
+        description: 'Path to schema.json file'
+        required: false
+        type: string
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Generate Go Code
+        run: |
+          if [ -n "${{ github.event.inputs.schema_path }}" ]; then
+            SCHEMA_PATH="${{ github.event.inputs.schema_path }}" node scripts/generateGoFromSchema.js
+          else
+            node scripts/generateGoFromSchema.js
+          fi
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: 'feat: update generated Go code from schemas'
+          title: 'feat: update generated Go code from schemas'
+          body: |
+            Auto-generated update to Go code based on latest schema definitions.
+            
+            This PR was automatically created by the generate-schema-go workflow.
+          branch: feat/update-generated-go-code
+          base: main
