@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, TextInput } from '@razorpay/blade/components';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import { getCurrencyList } from '@razorpay/i18nify-js';
 import IntlOptionsNumberForm from 'src/components/intlOptions/IntlOptionsNumberForm';
 import GenericDropdown from 'src/components/Generic/GenericDropdown';
@@ -66,7 +66,7 @@ const NumberForm = ({
         <Box
           display="grid"
           gridTemplateColumns={isMobile ? '1fr' : '1fr 1fr'}
-          rowGap={isMobile ? 'spacing.5' : '0'}
+          rowGap={isMobile ? 'spacing.5' : 'spacing.0'}
         >
           {includeIntlOptions && <IntlOptionsNumberForm />}
           <Box

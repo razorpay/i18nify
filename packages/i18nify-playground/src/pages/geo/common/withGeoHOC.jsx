@@ -2,7 +2,7 @@ import { Box, useToast } from '@razorpay/blade/components';
 import { getAllCountries } from '@razorpay/i18nify-js';
 import React, { useEffect, useState } from 'react';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import GenericDropdown from 'src/components/Generic/GenericDropdown';
 
 import { useMutation } from '@tanstack/react-query';

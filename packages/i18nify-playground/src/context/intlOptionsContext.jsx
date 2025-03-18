@@ -5,9 +5,10 @@ import { createContext, useContext, useState } from 'react';
 const IntlOptionsContext = createContext({});
 
 const INITIAL_STATE = NUMBER_FORMAT_INTL_INPUTS.reduce((acc, curr) => {
-  acc[curr.key] = curr.defaultValue || '';
+  acc[curr.key] =
+    curr.defaultValue || curr.defaultValue === 0 ? curr.defaultValue : '';
   return acc;
-});
+}, {});
 
 export const IntlOptionsProvider = ({ children }) => {
   const [intlOptions, setIntlOptions] = useState(INITIAL_STATE);
@@ -21,6 +22,5 @@ export const IntlOptionsProvider = ({ children }) => {
 
 export const useIntlOptionsContext = () => {
   const { intlOptions, setIntlOptions } = useContext(IntlOptionsContext);
-
   return { intlOptions, setIntlOptions };
 };

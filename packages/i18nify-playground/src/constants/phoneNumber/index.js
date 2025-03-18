@@ -16,5 +16,6 @@ export const PHONE_MASKING_INPUTS = [
     key: 'maskedDigitsCount',
     label: 'Masked Digit Counts',
     type: 'number',
+    defaultValue: '0',
   },
 ];

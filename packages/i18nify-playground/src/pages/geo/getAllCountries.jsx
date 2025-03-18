@@ -2,7 +2,7 @@ import { Box } from '@razorpay/blade/components';
 import React from 'react';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
 import Loader from 'src/components/Dashboard/Loader';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import GenericDropdown from 'src/components/Generic/GenericDropdown';
 import useCountriesList from 'src/pages/Geo/common/useCountriesList';
 

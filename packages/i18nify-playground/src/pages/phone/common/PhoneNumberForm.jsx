@@ -8,17 +8,15 @@ import {
   SelectInput,
   Text,
   TextInput,
-  useToast,
 } from '@razorpay/blade/components';
-import { useMutation } from '@tanstack/react-query';
-import React, { useEffect } from 'react';
-import { getDialCodeCountryMap } from 'src/pages/Phone/network';
+import { getFlagOfCountry } from '@razorpay/i18nify-js/geo';
+import React from 'react';
+import { useMobile } from 'src/hooks/useMobile';
 import {
+  dialCodeCountryCodeMap,
   dialCodeMap,
   localPhoneNumbersByDialCodeMap,
 } from './data/phoneNumber';
-import { FLAG_4X3_BASE_PATH } from 'src/shared/constants';
-import { useMobile } from 'src/hooks/useMobile';
 
 const PhoneNumberForm = ({
   inpValue,
@@ -33,19 +31,7 @@ const PhoneNumberForm = ({
   const validatePhoneNumberUtilView = utilName === 'isValidPhoneNumber';
   const showHelperMessage = validatePhoneNumberUtilView && inpValue.length > 5;
 
-  const toast = useToast();
   const isMobile = useMobile();
-
-  const { data, isPending, mutate } = useMutation({
-    mutationFn: getDialCodeCountryMap,
-    onError: () => {
-      toast.show({ content: 'Error', color: 'negative' });
-    },
-  });
-
-  useEffect(() => {
-    mutate();
-  }, []);
 
   return (
     <>
@@ -70,7 +56,6 @@ const PhoneNumberForm = ({
             <Dropdown _width={isMobile ? '100%' : '150px'}>
               <SelectInput
                 label=""
-                isDisabled={isPending}
                 placeholder="Select"
                 value={dialCode}
                 onChange={({ values }) => onDialCodeChange(values[0])}
@@ -79,19 +64,25 @@ const PhoneNumberForm = ({
               <DropdownOverlay>
                 <ActionList>
                   <ActionListItem title="-" value="-" />
-                  {Object.entries(dialCodeMap).map(([code]) => (
-                    <ActionListItem
-                      title={`+ ${code}`}
-                      value={`+ ${code}`}
-                      leading={
-                        <img
-                          src={`${FLAG_4X3_BASE_PATH}/${data?.dial_code_to_country?.[
-                            code
-                          ]?.[0]?.toLocaleLowerCase()}.svg`}
-                        />
-                      }
-                    />
-                  ))}
+                  {Object.entries(dialCodeMap).map(([code]) => {
+                    return (
+                      <ActionListItem
+                        title={`+ ${code}`}
+                        value={`+ ${code}`}
+                        leading={
+                          <img
+                            src={
+                              getFlagOfCountry(
+                                dialCodeCountryCodeMap?.[code]?.[0] ?? 'US',
+                              )?.original
+                            }
+                            width="20px"
+                            height="20px"
+                          />
+                        }
+                      />
+                    );
+                  })}
                 </ActionList>
               </DropdownOverlay>
             </Dropdown>

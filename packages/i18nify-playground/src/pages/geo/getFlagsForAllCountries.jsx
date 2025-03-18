@@ -1,7 +1,7 @@
 import { getFlagsForAllCountries } from '@razorpay/i18nify-js/geo';
 
 import SVG from 'react-inlinesvg';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
 import React from 'react';
 import { Box, Text } from '@razorpay/blade/components';

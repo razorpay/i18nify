@@ -17,13 +17,12 @@ function FormatNumber(props) {
 
   useEffect(() => {
     try {
-      setCode(
-        formatNumber(+props.inpValue, {
-          locale,
-          currency: props.currency,
-          intlOptions: removeEmptyValues(intlOptions),
-        }),
-      );
+      const value = formatNumber(+props.inpValue, {
+        locale,
+        currency: props.currency,
+        intlOptions: removeEmptyValues(intlOptions),
+      });
+      setCode(value);
     } catch (error) {
       toast.show({
         content: error.message || 'An error occurred',

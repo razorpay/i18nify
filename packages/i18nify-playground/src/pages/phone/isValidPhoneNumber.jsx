@@ -1,18 +1,20 @@
-import { Box } from '@razorpay/blade/components';
-import { isValidPhoneNumber } from '@razorpay/i18nify-js';
+import { isValidPhoneNumber } from '@razorpay/i18nify-js/phoneNumber';
 import { useState } from 'react';
 
 import React from 'react';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
+import {
+  DEFAULT_PHONE_DIAL_CODE,
+  DEFAULT_PHONE_NUMBER,
+} from 'src/pages/Phone/common/data/phoneNumber';
 import PhoneNumberForm from 'src/pages/Phone/common/PhoneNumberForm';
 
 export default function IsValidPhoneNumberView() {
-  const [inpValue, setInpValue] = useState('');
-  const [dialCode, setDialCode] = useState('+91');
-  const [countryCode, setCountryCode] = useState('');
+  const [inpValue, setInpValue] = useState(DEFAULT_PHONE_NUMBER);
+  const [dialCode, setDialCode] = useState(DEFAULT_PHONE_DIAL_CODE);
 
   const phoneNumber = inpValue.replaceAll(' ').replaceAll('-');
-  const isValid = isValidPhoneNumber(`${dialCode}${phoneNumber}`, countryCode);
+  const isValid = isValidPhoneNumber(`${dialCode}${phoneNumber}`);
   const errorMessage = isValid ? 'Valid phone number' : 'Invalid Phone Number';
 
   return (

@@ -8,10 +8,11 @@ import React from 'react';
 import CountryDropdown from 'src/components/Generic/CountryDropdown';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
 import { useMobile } from 'src/hooks/useMobile';
+import { DEFAULT_COUNTRY_CODE } from 'src/components/Dashboard/constants/common';
 
 export default function GetFlagOfCountry() {
   const [inpValue, setInpValue] = useState('');
-  const [countryCode, setCountryCode] = useState('US');
+  const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY_CODE);
 
   const isMobile = useMobile();
 

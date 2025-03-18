@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const withNumberHOC = (WrapperedComponent) => {
   return (props) => {
-    const [inpValue, setInpValue] = useState('');
+    const [inpValue, setInpValue] = useState('30');
     const [currency, setCurrency] = useState('INR');
     return (
       <WrapperedComponent

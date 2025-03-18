@@ -6,7 +6,6 @@ import RenderContainer from 'src/pages/common/DropdownContainer';
 
 const IntlOptionsNumberForm = () => {
   const { intlOptions, setIntlOptions } = useIntlOptionsContext();
-
   const handleInputChange = (key, value) => {
     setIntlOptions((prevState) => {
       const newData = {

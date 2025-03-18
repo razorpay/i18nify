@@ -144,6 +144,7 @@ export const DATE_FORMAT_INTL_INPUTS = [
     type: 'select',
     supportedUtilName: ['formatDateTime', 'parseDateTime'],
     options: ['numeric', '2-digit'],
+    defaultValue: 'numeric',
   },
   {
     key: 'month',
@@ -151,6 +152,7 @@ export const DATE_FORMAT_INTL_INPUTS = [
     type: 'select',
     supportedUtilName: ['formatDateTime', 'parseDateTime'],
     options: ['numeric', '2-digit', 'long', 'short', 'narrow'],
+    defaultValue: 'numeric',
   },
   {
     key: 'day',
@@ -158,6 +160,7 @@ export const DATE_FORMAT_INTL_INPUTS = [
     type: 'select',
     supportedUtilName: ['formatDateTime', 'parseDateTime'],
     options: ['numeric', '2-digit'],
+    defaultValue: 'numeric',
   },
   {
     key: 'dayPeriod',
@@ -172,6 +175,7 @@ export const DATE_FORMAT_INTL_INPUTS = [
     type: 'select',
     supportedUtilName: ['formatDateTime', 'parseDateTime'],
     options: ['numeric', '2-digit'],
+    defaultValue: 'numeric',
   },
   {
     key: 'minute',
@@ -179,6 +183,7 @@ export const DATE_FORMAT_INTL_INPUTS = [
     type: 'select',
     supportedUtilName: ['formatDateTime', 'parseDateTime'],
     options: ['numeric', '2-digit'],
+    defaultValue: 'numeric',
   },
   {
     key: 'second',
@@ -186,6 +191,7 @@ export const DATE_FORMAT_INTL_INPUTS = [
     type: 'select',
     supportedUtilName: ['formatDateTime', 'parseDateTime'],
     options: ['numeric', '2-digit'],
+    defaultValue: 'numeric',
   },
   {
     key: 'fractionalSecondDigits',

@@ -3,7 +3,7 @@ import { getFlagsForAllCountries } from '@razorpay/i18nify-js';
 import Container from '@mui/material/Container';
 import { Grid, useTheme, Typography, useMediaQuery, Box } from '@mui/material';
 import SVG from 'react-inlinesvg';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 
 // ----------------------------------------------------------------------
 

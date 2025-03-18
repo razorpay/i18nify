@@ -8,7 +8,7 @@ import { useIntlOptionsDateContext } from 'src/context/intlOptionsDateContext';
 
 import IntlOptionsDateForm from 'src/components/intlOptionsDateForm';
 import { useI18nContext } from '@razorpay/i18nify-react';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 
 // ----------------------------------------------------------------------
 

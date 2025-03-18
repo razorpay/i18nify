@@ -4,7 +4,7 @@ import { removeEmptyValues } from 'src/utils';
 import { useIntlOptionsDateContext } from 'src/context/intlOptionsDateContext';
 
 import { useI18nContext } from '@razorpay/i18nify-react';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import React from 'react';
 import { Box } from '@razorpay/blade/components';
 import IntlOptionsDateForm from 'src/components/intlOptions/IntlOptionsDateForm';

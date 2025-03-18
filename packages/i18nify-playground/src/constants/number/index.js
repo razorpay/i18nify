@@ -4,6 +4,7 @@ export const NUMBER_FORMAT_INTL_INPUTS = [
     label: 'Number Style',
     type: 'select',
     options: ['decimal', 'percent'],
+    defaultValue: 'decimal',
   },
   {
     key: 'notation',
@@ -17,35 +18,43 @@ export const NUMBER_FORMAT_INTL_INPUTS = [
     label: 'Currency Display',
     type: 'select',
     options: ['code', 'symbol', 'narrowSymbol', 'name'],
+    defaultValue: 'symbol',
   },
   {
     key: 'minimumFractionDigits',
     label: 'Min Fraction digits',
     type: 'number',
+    defaultValue: 0,
+  },
+  {
+    key: 'maximumFractionDigits',
+    label: 'Max Fraction digits',
+    type: 'number',
+    defaultValue: 0,
   },
   {
     key: 'trailingZeroDisplay',
     label: 'Trailing zero display',
     type: 'select',
     options: ['auto', 'stripIfInteger'],
+    defaultValue: 'auto',
   },
-  {
-    key: 'maximumFractionDigits',
-    label: 'Max Fraction digits',
-    type: 'number',
-    max: 2,
-  },
+
   {
     key: 'minimumSignificantDigits',
     label: 'Min Significant digits',
     type: 'number',
-    max: 2,
+    defaultValue: 1,
+    textInputHelper:
+      'The valid range is between 1 and 21 and it should be less than Max Significant digits',
   },
   {
     key: 'maximumSignificantDigits',
     label: 'Max Significant digits',
     type: 'number',
-    max: 2,
+    defaultValue: 2,
+    textInputHelper:
+      'The valid range is between 1 and 21 and it should be greater than Min Significant digits',
   },
   {
     key: 'useGrouping',
@@ -66,6 +75,7 @@ export const NUMBER_FORMAT_INTL_INPUTS = [
     key: 'minimumExponentDigits',
     label: 'Min Exponent Digits',
     type: 'number',
+    defaultValue: 1,
   },
   {
     key: 'roundingType',
@@ -79,5 +89,6 @@ export const NUMBER_FORMAT_INTL_INPUTS = [
     key: 'minimumIntegerDigits',
     label: 'Min Integer digits',
     type: 'number',
+    defaultValue: 1,
   },
 ];

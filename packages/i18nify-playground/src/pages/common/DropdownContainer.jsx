@@ -19,14 +19,13 @@ const RenderContainer = ({ input, handleInputChange, intlOptions }) => {
         columnGap="spacing.4"
         gridTemplateColumns="1fr 3fr"
       >
-        <Box>
-          <Text>{input.label}</Text>
-        </Box>
+        <Text>{input.label}</Text>
+
         <Box>
           <Dropdown selectionType="single" _width="100%">
             <SelectInput
               label=""
-              value={intlOptions[input.key]}
+              value={`${intlOptions[input.key]}`}
               onChange={({ values }) => handleInputChange(input.key, values[0])}
             />
             <DropdownOverlay>
@@ -48,9 +47,8 @@ const RenderContainer = ({ input, handleInputChange, intlOptions }) => {
       columnGap="spacing.4"
       gridTemplateColumns="1fr 3fr"
     >
-      <Box>
-        <Text>{input.label}</Text>
-      </Box>
+      <Text>{input.label}</Text>
+
       <Box>
         <TextInput
           label=""
@@ -58,6 +56,15 @@ const RenderContainer = ({ input, handleInputChange, intlOptions }) => {
           value={intlOptions[input.key]}
           onChange={({ value }) => handleInputChange(input.key, value)}
         />
+        {input.textInputHelper && (
+          <Text
+            variant="caption"
+            size="small"
+            color="interactive.text.gray.muted"
+          >
+            {input.textInputHelper}
+          </Text>
+        )}
       </Box>
     </Box>
   );

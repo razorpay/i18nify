@@ -3,13 +3,17 @@ import { useState } from 'react';
 
 import { Box } from '@razorpay/blade/components';
 import React from 'react';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
 import PhoneNumberForm from 'src/pages/Phone/common/PhoneNumberForm';
+import {
+  DEFAULT_PHONE_DIAL_CODE,
+  DEFAULT_PHONE_NUMBER,
+} from 'src/pages/Phone/common/data/phoneNumber';
 
 export default function IsValidPhoneNumberView() {
-  const [inpValue, setInpValue] = useState('');
-  const [dialCode, setDialCode] = useState('+91');
+  const [inpValue, setInpValue] = useState(DEFAULT_PHONE_NUMBER);
+  const [dialCode, setDialCode] = useState(DEFAULT_PHONE_DIAL_CODE);
 
   const forMattedPhoneNumber =
     +inpValue > 5 ? formatPhoneNumber(`${dialCode}${inpValue}`) : null;

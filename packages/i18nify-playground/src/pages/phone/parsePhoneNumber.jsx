@@ -1,15 +1,19 @@
 import { Box } from '@razorpay/blade/components';
 import { parsePhoneNumber } from '@razorpay/i18nify-js/phoneNumber';
 import React, { useState } from 'react';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
 import PhoneNumberForm from 'src/pages/Phone/common/PhoneNumberForm';
 import { useMobile } from 'src/hooks/useMobile';
+import {
+  DEFAULT_PHONE_DIAL_CODE,
+  DEFAULT_PHONE_NUMBER,
+} from 'src/pages/Phone/common/data/phoneNumber';
 
 export default function ParsePhoneNumber() {
-  const [inpValue, setInpValue] = useState('');
+  const [inpValue, setInpValue] = useState(DEFAULT_PHONE_NUMBER);
 
-  const [dialCode, setDialCode] = useState('+91');
+  const [dialCode, setDialCode] = useState(DEFAULT_PHONE_DIAL_CODE);
   const code = +inpValue > 5 ? parsePhoneNumber(`${dialCode}${inpValue}`) : {};
   const formattedCode = JSON.stringify(code, null, 2);
 

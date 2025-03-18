@@ -4,7 +4,9 @@ export function removeEmptyValues(obj) {
       if (key === 'fractionalSecondDigits') newObj[key] = +obj[key];
       else if (key === 'useGrouping') {
         if (obj[key] === 'true') obj[key] = true;
-        else obj[key] = false;
+        else if (obj[key] === 'false') {
+          obj[key] = false;
+        }
       } else newObj[key] = obj[key];
     }
     return newObj;

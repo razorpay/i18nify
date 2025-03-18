@@ -9,7 +9,7 @@ import { useIntlOptionsContext } from 'src/context/intlOptionsContext';
 
 import NumberForm from 'src/sections/number/number-form';
 import { useI18nContext } from '@razorpay/i18nify-react';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 
 // ----------------------------------------------------------------------
 

@@ -11,7 +11,7 @@ import {
 import { getAllCountries, getCities, getStates } from '@razorpay/i18nify-js';
 import { useEffect, useState } from 'react';
 import { ALLOWED_COUNTRIES } from 'src/constants/geo';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import CountryDropdown from 'src/components/countryDropdown';
 import StateDropdown from 'src/components/stateDropdown';
 import PlaceholderMenuItem from 'src/components/placeholderMenuItem';

@@ -2,7 +2,7 @@ import Container from '@mui/material/Container';
 import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { getAllCountries } from '@razorpay/i18nify-js';
 import { useEffect, useState } from 'react';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import CountryDropdown from 'src/components/countryDropdown';
 
 // ----------------------------------------------------------------------

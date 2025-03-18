@@ -14,8 +14,10 @@ import CountryDropdown from 'src/components/Generic/CountryDropdown';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
 import { PHONE_MASKING_INPUTS } from 'src/constants/phoneNumber';
 import { getMaskedPhoneNumber } from '@razorpay/i18nify-js/phoneNumber';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import PhoneMaskingOptions from 'src/components/intlOptions/PhoneMaskingOptions';
+import { DEFAULT_PHONE_NUMBER } from 'src/pages/Phone/common/data/phoneNumber';
+import { DEFAULT_COUNTRY_CODE } from 'src/components/Dashboard/constants/common';
 
 const INITIAL_STATE = PHONE_MASKING_INPUTS.reduce((acc, curr) => {
   acc[curr.key] = curr.defaultValue || '';
@@ -23,8 +25,8 @@ const INITIAL_STATE = PHONE_MASKING_INPUTS.reduce((acc, curr) => {
 }, {});
 
 export default function GetMaskedPhoneNumber() {
-  const [countryCode, setCountryCode] = useState('US');
-  const [inpValue, setInpValue] = useState('');
+  const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY_CODE);
+  const [inpValue, setInpValue] = useState(DEFAULT_PHONE_NUMBER);
   const [maskingOptions, setMaskingOptions] = useState(INITIAL_STATE);
   const [withDialCode, setWithDialCode] = useState('true');
 
@@ -81,7 +83,10 @@ export default function GetMaskedPhoneNumber() {
             countryCode,
             phoneNumber: inpValue,
             withDialCode: withDialCode === 'true' ? true : false,
-            maskingOptions,
+            maskingOptions: {
+              ...maskingOptions,
+              maskedDigitsCount: +maskingOptions?.maskedDigitsCount,
+            },
           })}
           isSmallEditor
         />

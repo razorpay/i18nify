@@ -6,8 +6,9 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 import { Box, Text } from '@razorpay/blade/components';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import IntlOptionsDateForm from 'src/components/intlOptions/IntlOptionsDateForm';
+import { useMobile } from 'src/hooks/useMobile';
 
 const DateForm = ({
   inpValue,
@@ -19,6 +20,8 @@ const DateForm = ({
   utilName,
   includeIntlOptions = true,
 }) => {
+  const isMobile = useMobile();
+
   return (
     <Box
       display="flex"
@@ -47,10 +50,14 @@ const DateForm = ({
         </Text>
       </Box>
       {!isSmallEditor ? (
-        <Box display="flex" flexWrap="wrap">
+        <Box
+          display="flex"
+          flexWrap={isMobile ? 'wrap' : 'nowrap'}
+          width="100%"
+        >
           {includeIntlOptions && <IntlOptionsDateForm utilName={utilName} />}
           {code && (
-            <Box marginTop="spacing.7">
+            <Box marginTop="spacing.7" width={isMobile ? '100%' : '50%'}>
               <CodeEditor code={code} isSmallEditor={isSmallEditor} />
             </Box>
           )}

@@ -2,7 +2,7 @@ import { Box } from '@razorpay/blade/components';
 import { getCurrencyList } from '@razorpay/i18nify-js';
 import React from 'react';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import { useMobile } from 'src/hooks/useMobile';
 
 export default function GetCurrencyList() {

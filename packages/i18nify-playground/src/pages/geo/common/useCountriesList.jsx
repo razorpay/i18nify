@@ -2,11 +2,12 @@ import { useToast } from '@razorpay/blade/components';
 import { getAllCountries } from '@razorpay/i18nify-js';
 import { useMutation } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
+import { DEFAULT_COUNTRY_CODE } from 'src/components/Dashboard/constants/common';
 
 const useCountriesList = () => {
   const [countryList, setCountryList] = useState([]);
   const [code, setCode] = useState('');
-  const [countryInp, setCountryInp] = useState('');
+  const [countryInp, setCountryInp] = useState(DEFAULT_COUNTRY_CODE);
 
   const toast = useToast();
 

@@ -15,10 +15,9 @@ const BankingOverview = () => {
       </Helmet>
       <Overview
         title="Banking Module"
-        description={`Welcome to the Geo Package 🚀, your all-in-one, supercharged toolkit for sprinkling some
-              geographical magic 🧙‍♂️ into your applications! Whether you're looking to jazz up your UI
-              with some snazzy SVG flags 🏁, or you need the nitty-gritty details of continents,
-              countries, states, cities, and zip codes, we've got you covered!`}
+        description={`Welcome to the Banking Package 🚀, Access a curated, up-to-date list of global and local banks.
+        Retrieve detailed bank information, including names, locations, and contacts.
+        Integrate effortlessly into your applications with fast, reliable performance.`}
         apiItems={bankingLinks}
       />
     </>

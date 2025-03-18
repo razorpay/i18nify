@@ -1,7 +1,7 @@
 import { Box } from '@razorpay/blade/components';
 import { getDialCodes } from '@razorpay/i18nify-js';
 import React from 'react';
-import CodeEditor from 'src/components/Generic/CodeEditor';
+import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
 
 export default function GetDialCodes() {
