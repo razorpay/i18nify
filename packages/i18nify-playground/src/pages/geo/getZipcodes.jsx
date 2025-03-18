@@ -1,41 +1,64 @@
-import Container from '@mui/material/Container';
-import {
-  Box,
-  Grid,
-  MenuItem,
-  Select,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material';
-import { getAllCountries, getStates, getZipcodes } from '@razorpay/i18nify-js';
-import { useEffect, useState } from 'react';
-import { ALLOWED_COUNTRIES } from 'src/constants/geo';
-import CodeEditor from 'src/components/codeEditor';
-import CountryDropdown from 'src/components/countryDropdown';
-import StateDropdown from 'src/components/stateDropdown';
-import PlaceholderMenuItem from 'src/components/placeholderMenuItem';
+import { useToast } from '@razorpay/blade/components';
+import { getStates, getZipcodes } from '@razorpay/i18nify-js/geo';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import React, { useEffect, useState } from 'react';
+import Loader from 'src/components/Dashboard/Loader';
+import GenericDropdown from 'src/components/Generic/GenericDropdown';
+import withGeoHOC from 'src/pages/Geo/common/withGeoHOC';
 
-// ----------------------------------------------------------------------
-
-export default function GetZipcodes() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const [code, setCode] = useState('');
-  const [countryInp, setCountryInp] = useState('IN');
-  const [countryList, setCountryList] = useState([]);
-  const [stateInp, setStateInp] = useState('');
-  const [stateList, setStateList] = useState([]);
+function GetZipcodes({
+  countryInp,
+  setStateInp,
+  setStateList,
+  setCode,
+  isLoading,
+  stateInp,
+}) {
   const [zipcodes, setZipcodes] = useState([]);
-  const [zipcodeInp, setZipcodeInp] = useState('');
+  const [zipcodeInp, setZipcodeInp] = useState(null);
+
+  const toast = useToast();
+
+  const { isPending: isPendingGetStates, mutate: getStatesApi } = useMutation({
+    mutationFn: getStates,
+    onError: () => {
+      toast.show({ content: 'Error fetching states', color: 'negative' });
+    },
+    onSuccess: (res) => {
+      const data = Object.keys(res).map((stateCode) => ({
+        title: `${stateCode} - ${res[stateCode].name}`,
+        value: stateCode,
+      }));
+      setStateList(data);
+      setStateInp(data[0].value);
+    },
+  });
+
+  const {
+    data: zipCodesData,
+    error,
+    isLoading: isPendingGetZipCodes,
+  } = useQuery({
+    queryKey: ['zipcodes', countryInp, stateInp],
+    queryFn: () => getZipcodes(countryInp, stateInp),
+    enabled: Boolean(countryInp && stateInp),
+  });
 
   useEffect(() => {
-    getAllCountries().then((res) =>
-      setCountryList(
-        res.filter((country) => ALLOWED_COUNTRIES.includes(country.code)),
-      ),
-    );
-  }, []);
+    if (error) {
+      toast.show({ content: 'Error fetching zipcodes', color: 'negative' });
+    }
+  }, [error]);
+
+  useEffect(() => {
+    if (zipCodesData) {
+      setZipcodes(
+        zipCodesData.map((option) => ({ title: option, value: option })),
+      );
+      setZipcodeInp(zipCodesData[0]);
+      setCode(JSON.stringify(zipCodesData, null, 2));
+    }
+  }, [zipCodesData]);
 
   useEffect(() => {
     setStateInp('');
@@ -43,122 +66,33 @@ export default function GetZipcodes() {
     setZipcodeInp('');
     setZipcodes([]);
     setCode('');
-    getStates(countryInp).then((res) => {
-      const states = Object.entries(res).map(([_code, state]) => ({
-        code: _code,
-        name: state.name,
-      }));
-      setStateList(states);
-    });
+    getStatesApi(countryInp);
   }, [countryInp]);
 
   useEffect(() => {
     if (!stateInp) return;
     setZipcodeInp('');
     setZipcodes([]);
-    getZipcodes(countryInp, stateInp).then((res) => {
-      setZipcodes(res);
-      setZipcodeInp(res[0]);
-      setCode(JSON.stringify(res, null, 2));
-    });
   }, [stateInp]);
 
   return (
-    <Container maxWidth="xl">
-      <Grid container>
-        <Grid item xs={isMobile ? 12 : 7}>
-          <Typography color="#4767FD" variant="h2" sx={{ mb: 2 }}>
-            GetZipcodes
-          </Typography>
-
-          <Typography variant="body1" sx={{ mb: 6 }}>
-            Explore postal codes with the getZipcodes API! Discover a list of
-            unique zip codes organized by country and state, making it easy to
-            navigate geographic areas and streamline address-based operations.
-          </Typography>
-        </Grid>
-
-        {isMobile && (
-          <Grid item xs={12}>
-            <Grid
-              sx={{ height: '200px' }}
-              container
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Grid
-                item
-                sx={{ height: '200px', width: '100%', padding: '20px 0px' }}
-              >
-                <CodeEditor value={code} />
-              </Grid>
-            </Grid>
-          </Grid>
-        )}
-        <Grid
-          item
-          xs={isMobile ? 12 : 7}
-          sx={
-            !isMobile && { 'border-right': '1px solid rgba(0,0,0,0.2)', pr: 2 }
-          }
-        >
-          <CountryDropdown
-            value={countryInp}
-            list={countryList}
-            onChange={(country) => setCountryInp(country)}
-          />
-          <StateDropdown
-            value={stateInp}
-            onChange={(state) => setStateInp(state)}
-            list={stateList}
-          />
-
-          <Typography variant="h5">List of Zipcodes</Typography>
-          <Select
-            size="small"
-            value={zipcodeInp}
-            sx={{
-              height: '57px',
-              marginRight: 1,
-              width: '100%',
-            }}
-            onChange={(e) => setZipcodeInp(e.target.value || '')}
-          >
-            {zipcodes.length === 0 ?
-              <PlaceholderMenuItem /> :
-              zipcodes.map((zipcode) => (
-                <MenuItem key={zipcode} value={zipcode}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      textOverflow: 'initial',
-                    }}
-                  >
-                    <div width="30px">{zipcode}</div>
-                  </Box>
-                </MenuItem>
-              ))}
-          </Select>
-        </Grid>
-        {!isMobile && (
-          <Grid item xs={5}>
-            <Grid
-              sx={{ height: '60vh' }}
-              container
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Grid
-                item
-                sx={{ height: '100%', width: '100%', padding: '0px 20px' }}
-              >
-                <CodeEditor value={code} />
-              </Grid>
-            </Grid>
-          </Grid>
-        )}
-      </Grid>
-    </Container>
+    <>
+      <GenericDropdown
+        label="List of ZipCodes"
+        list={zipcodes}
+        isVirtualized
+        value={zipcodeInp}
+        onChange={(value) => setZipcodeInp(value)}
+      />
+      {(isPendingGetStates || isLoading || isPendingGetZipCodes) && <Loader />}
+    </>
   );
 }
+
+export default withGeoHOC(GetZipcodes, {
+  title: 'getZipcodes',
+  description: `Explore postal codes with the getZipcodes API! Discover a list of
+      unique zip codes organized by country and state, making it easy to
+      navigate geographic areas and streamline address-based operations.`,
+  stateDropdownLabel: 'Select state',
+});
