@@ -46,6 +46,11 @@ export default function JSRoutes() {
       element: <DashboardLayout />,
       children: [
         {
+          path: '/',
+          element: <Home />,
+          index: true,
+        },
+        {
           path: '/i18nify-js',
           element: <Home />,
           index: true,

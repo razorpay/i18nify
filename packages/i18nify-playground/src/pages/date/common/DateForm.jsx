@@ -9,6 +9,7 @@ import { Box, Text } from '@razorpay/blade/components';
 import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import IntlOptionsDateForm from 'src/components/intlOptions/IntlOptionsDateForm';
 import { useMobile } from 'src/hooks/useMobile';
+import TextEditorForStrings from 'src/components/TextEditorForStrings/TextEditorForStrings';
 
 const DateForm = ({
   inpValue,
@@ -64,7 +65,7 @@ const DateForm = ({
         </Box>
       ) : (
         <>
-          {code && <CodeEditor code={code} isSmallEditor={isSmallEditor} />}
+          {code && <TextEditorForStrings value={code} />}
           {includeIntlOptions && <IntlOptionsDateForm utilName={utilName} />}
         </>
       )}

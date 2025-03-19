@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { Box } from '@razorpay/blade/components';
 import React from 'react';
-import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
+import TextEditorForStrings from 'src/components/TextEditorForStrings/TextEditorForStrings';
 import PhoneNumberForm from 'src/pages/Phone/common/PhoneNumberForm';
 import {
   DEFAULT_PHONE_DIAL_CODE,
@@ -38,7 +38,7 @@ export default function IsValidPhoneNumberView() {
       />
 
       <Box marginTop="spacing.4">
-        <CodeEditor code={forMattedPhoneNumber ?? '-'} isSmallEditor />
+        <TextEditorForStrings value={forMattedPhoneNumber ?? '-'} />
       </Box>
     </>
   );

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
 
 import { Box, Heading, Link, Text } from '@razorpay/blade/components';
+import { useMobile } from 'src/hooks/useMobile';
 import { MODULES } from 'src/pages/Home/constants';
 import './globe.css';
-import { useMobile } from 'src/hooks/useMobile';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const navigate = useNavigate();
   const isMobile = useMobile();
+  const navigate = useNavigate();
 
   return (
     <Box>

@@ -13,11 +13,11 @@ import { bladeTheme } from '@razorpay/blade/tokens';
 import { useI18nContext } from '@razorpay/i18nify-react';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useMobile } from 'src/hooks/useMobile';
 import { NAV_ITEMS_MAP } from 'src/components/Dashboard/Sidebar/navItems';
+import { useMobile } from 'src/hooks/useMobile';
 
 import { LANGS } from 'src/constants/locale';
-import { LANGUAGES } from 'src/context/constants';
+import { LANGUAGE_MAPPING, LANGUAGES } from 'src/context/constants';
 import { useLanguageContext } from 'src/context/languagesContext';
 
 const Header = ({ toggleMobileNav }) => {
@@ -61,7 +61,7 @@ const Header = ({ toggleMobileNav }) => {
       </Box>
       <BladeProvider themeTokens={bladeTheme} colorScheme="dark">
         <Box display="flex" columnGap="spacing.3">
-          <Dropdown selectionType="single" _width="100px">
+          <Dropdown selectionType="single" _width="180px">
             <SelectInput
               label=""
               value={selectedLanguage}
@@ -77,7 +77,12 @@ const Header = ({ toggleMobileNav }) => {
               <ActionList>
                 {Object.values(LANGUAGES).map((value) => {
                   return (
-                    <ActionListItem title={value} value={value} key={value} />
+                    <ActionListItem
+                      title={`${value} ${LANGUAGE_MAPPING[value].version ? `${LANGUAGE_MAPPING[value].version}` : '(Coming soon)'}`}
+                      value={value}
+                      isDisabled={!LANGUAGE_MAPPING[value].isApisAvailable}
+                      key={value}
+                    />
                   );
                 })}
               </ActionList>
@@ -100,13 +105,16 @@ const Header = ({ toggleMobileNav }) => {
                       title={lang.label}
                       key={lang.value}
                       value={lang.value}
-                      leading={<img src={lang.icon} alt="" />}
+                      leading={
+                        <img src={lang.icon} alt="" width={20} height={20} />
+                      }
                     />
                   );
                 })}
               </ActionList>
             </DropdownOverlay>
           </Dropdown>
+          {/* <LocaleDropdown /> */}
         </Box>
       </BladeProvider>
       {isMobile && (

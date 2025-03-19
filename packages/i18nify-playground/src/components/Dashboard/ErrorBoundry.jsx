@@ -1,6 +1,5 @@
-import { Text } from '@razorpay/blade/components';
-import React from 'react';
-import { Component } from 'react';
+import { Box, Heading } from '@razorpay/blade/components';
+import React, { Component } from 'react';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -16,7 +15,19 @@ class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
-      return <Text>Something went wrong.</Text>;
+      return (
+        <Box
+          display="flex"
+          flex={1}
+          alignItems="center"
+          justifyContent="center"
+          height="100%"
+        >
+          <Heading size="large" color="surface.text.primary.normal">
+            Something went wrong!
+          </Heading>
+        </Box>
+      );
     }
 
     return this.props.children;

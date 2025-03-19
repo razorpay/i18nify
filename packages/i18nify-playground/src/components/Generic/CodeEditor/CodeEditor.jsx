@@ -22,7 +22,7 @@ const CodeEditor = ({ code, isSmallEditor = false }) => {
         theme="onedark"
         defaultLanguage={isSmallEditor ? 'string' : 'json'}
         value={code}
-        options={{ minimap: { enabled: false } }}
+        options={{ minimap: { enabled: false }, readOnly: true }}
       />
     </Box>
   );

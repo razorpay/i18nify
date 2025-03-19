@@ -5,6 +5,7 @@ import { getCurrencyList } from '@razorpay/i18nify-js';
 import IntlOptionsNumberForm from 'src/components/intlOptions/IntlOptionsNumberForm';
 import GenericDropdown from 'src/components/Generic/GenericDropdown';
 import { useMobile } from 'src/hooks/useMobile';
+import TextEditorForStrings from 'src/components/TextEditorForStrings/TextEditorForStrings';
 
 const NumberForm = ({
   inpValue,
@@ -57,7 +58,7 @@ const NumberForm = ({
         </Box>
         {isSmallEditor && (
           <Box display="flex" justifyContent="start" alignItems="start">
-            <CodeEditor isSmallEditor={isSmallEditor} code={code} />
+            <TextEditorForStrings value={code} />
           </Box>
         )}
       </Box>
@@ -81,7 +82,11 @@ const NumberForm = ({
         </Box>
       )}
 
-      {includeIntlOptions && isSmallEditor && <IntlOptionsNumberForm />}
+      {includeIntlOptions && isSmallEditor && (
+        <Box marginTop="spacing.5">
+          <IntlOptionsNumberForm />
+        </Box>
+      )}
     </>
   );
 };

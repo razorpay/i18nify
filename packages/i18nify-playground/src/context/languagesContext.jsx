@@ -12,12 +12,17 @@ export const LanguagesProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    const availableLanguages = Object.keys(LANGUAGES);
-    const language = availableLanguages.find((language) =>
-      location.pathname.includes(language.toLowerCase()),
-    );
-    setSelectedLanguage(language);
-    setSidebarItems(NAV_ITEMS_MAP[language]);
+    if (location.pathname === '/') {
+      setSelectedLanguage(LANGUAGES.JS);
+      setSidebarItems(NAV_ITEMS_MAP[LANGUAGES.JS]);
+    } else {
+      const availableLanguages = Object.keys(LANGUAGES);
+      const language = availableLanguages.find((language) =>
+        location.pathname.includes(language.toLowerCase()),
+      );
+      setSelectedLanguage(language);
+      setSidebarItems(NAV_ITEMS_MAP[language]);
+    }
   }, [location.pathname]);
 
   return (
