@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet-async';
 import { Box, Heading, Link, Text } from '@razorpay/blade/components';
 import { useMobile } from 'src/hooks/useMobile';
 import { MODULES } from 'src/pages/Home/constants';
-import './globe.css';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {

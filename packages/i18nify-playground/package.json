@@ -27,7 +27,6 @@
     "@faker-js/faker": "^8.1.0",
     "@iconify/react": "^4.1.1",
     "@monaco-editor/react": "^4.6.0",
-    "@mui/lab": "^5.0.0-alpha.147",
     "@mui/material": "^5.15.6",
     "@mui/x-date-pickers": "^6.19.4",
     "@razorpay/blade": "^12.15.0",
@@ -45,15 +44,11 @@
     "prismjs": "^1.30.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
-    "react-hook-form": "^7.47.0",
     "react-inlinesvg": "^4.1.1",
     "react-router-dom": "^6.16.0",
-    "react-simple-code-editor": "^0.14.1",
     "rollup-plugin-copy": "^3.5.0",
-    "simplebar-react": "^3.2.4",
     "styled-components": "5.3.11"
   },
   "devDependencies": {
