@@ -90,7 +90,7 @@ jobs:
           node-version: 20.3.1
 
       - name: Download stats
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: ./build
 
