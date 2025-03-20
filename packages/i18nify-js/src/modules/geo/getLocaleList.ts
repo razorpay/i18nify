@@ -1,7 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CountryCodeType } from '../types';
 import { I18NIFY_DATA_SOURCE } from '../shared';
-// import { CountryMetaType } from './types';
 
 /**
  * Retrieves the list of locales for a country or all countries
