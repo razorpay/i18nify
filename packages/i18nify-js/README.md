@@ -760,6 +760,24 @@ console.log(res);
 */
 ```
 
+#### getLocaleList()
+
+🌐 This function fetches a comprehensive mapping of country codes to their supported locale codes. It's your go-to tool for discovering which locales are available for each country! The function returns a promise that resolves to an object where each key is a country code, and its value is an array of supported locale codes.
+
+##### Examples
+
+```javascript
+const locales = await getLocaleList();
+console.log(locales);
+/* Output:
+{
+  "IN": ["hi_IN", "en_IN"],
+  "US": ["en_US"],
+  // ... other countries and their locales
+}
+*/
+```
+
 #### getStates(country_code)
 
 Embark on a state-by-state discovery with the getStates API! Get access to a treasure trove of state information, including names, time zones, and even a list of vibrant cities within each state.
