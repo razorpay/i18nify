@@ -1,5 +1,4 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import { CountryCodeType } from '../types';
 import { I18NIFY_DATA_SOURCE } from '../shared';
 
 /**
@@ -11,21 +10,13 @@ import { I18NIFY_DATA_SOURCE } from '../shared';
  * @param {CountryCodeType} [countryCode] - Optional country code to get locales for a specific country
  * @returns {Promise} Promise object containing locale information
  */
-const getLocaleList = (
-  countryCode?: CountryCodeType,
-): Promise<
-  | Record<string, { name: string }>
-  | Record<string, Record<string, { name: string }>>
-> => {
+const getLocaleList = (): Promise<Record<string, string[]>> => {
   return fetch(`${I18NIFY_DATA_SOURCE}/country/metadata/data.json`)
     .then((res) => res.json())
     .then((res) => {
-      if (countryCode) {
-        return res.metadata_information[countryCode].locales;
-      }
-      const allLocales: Record<string, Record<string, { name: string }>> = {};
+      const allLocales: Record<string, string[]> = {};
       Object.keys(res.metadata_information).forEach((code) => {
-        allLocales[code] = res.metadata_information[code].locales;
+        allLocales[code] = Object.keys(res.metadata_information[code].locales);
       });
       return allLocales;
     })

@@ -1,6 +1,5 @@
 import getLocaleList from '../getLocaleList';
 import { I18NIFY_DATA_SOURCE } from '../../shared';
-import { CountryCodeType } from '../../types';
 
 describe('getLocaleList', () => {
   const mockResponse = {
@@ -31,23 +30,15 @@ describe('getLocaleList', () => {
     jest.resetAllMocks();
   });
 
-  it('fetches all locales when no country code is provided', async () => {
+  it('fetches all locales successfully', async () => {
     const localeList = await getLocaleList();
     expect(global.fetch).toHaveBeenCalledWith(
       `${I18NIFY_DATA_SOURCE}/country/metadata/data.json`,
     );
     expect(localeList).toEqual({
-      IN: mockResponse.metadata_information.IN.locales,
-      US: mockResponse.metadata_information.US.locales,
+      IN: ['hi_IN', 'en_IN'],
+      US: ['en_US'],
     });
-  });
-
-  it('fetches locales for a specific country when country code is provided', async () => {
-    const localeList = await getLocaleList('IN');
-    expect(global.fetch).toHaveBeenCalledWith(
-      `${I18NIFY_DATA_SOURCE}/country/metadata/data.json`,
-    );
-    expect(localeList).toEqual(mockResponse.metadata_information.IN.locales);
   });
 
   it('handles API errors correctly', async () => {
@@ -58,13 +49,6 @@ describe('getLocaleList', () => {
 
     await expect(getLocaleList()).rejects.toThrow(
       `An error occurred while fetching country metadata. The error details are: ${errorMessage}.`,
-    );
-  });
-
-  it('handles invalid country code', async () => {
-    const invalidCountryCode = 'XX' as CountryCodeType;
-    await expect(getLocaleList(invalidCountryCode)).rejects.toThrow(
-      'An error occurred while fetching country metadata.',
     );
   });
 
