@@ -760,6 +760,31 @@ console.log(res);
 */
 ```
 
+#### getLocaleByCountry
+
+The getLocaleByCountry API is your multilingual compass, helping you discover all the supported locales for any country. Perfect for building apps that need to handle multiple language variants within a single country, it returns an array of locale codes that are officially used in the specified country.
+
+##### Examples
+
+```javascript
+// Getting all supported locales for a country
+const res = await getLocaleByCountry('AF');
+console.log(res);
+/*
+    [
+        "fa_AF",
+        "ps",
+        "uz_AF",
+        "tk"
+    ]
+*/
+
+// Passing invalid country code
+getLocaleByCountry('XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs Invalid country code: XYZ
+```
+
 #### getStates(country_code)
 
 Embark on a state-by-state discovery with the getStates API! Get access to a treasure trove of state information, including names, time zones, and even a list of vibrant cities within each state.
