@@ -1,5 +1,9 @@
 import React from 'react';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
+import {
+  getNumberSupportedLocals,
+  getSupportedLocalsObjectStructure,
+} from 'src/components/LocalDropdown/utils';
 import NumberForm from 'src/pages/CurrencyAndNumber/common/NumberForm';
 
 const NumberPage = ({
@@ -15,7 +19,14 @@ const NumberPage = ({
 }) => {
   return (
     <>
-      <LayoutHeader title={title} description={description} />
+      <LayoutHeader
+        title={title}
+        description={description}
+        showLocalDropdown
+        supportedLocals={getSupportedLocalsObjectStructure(
+          getNumberSupportedLocals(),
+        )}
+      />
 
       <NumberForm
         inpValue={inpValue}

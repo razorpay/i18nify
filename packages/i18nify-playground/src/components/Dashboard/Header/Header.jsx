@@ -15,8 +15,6 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NAV_ITEMS_MAP } from 'src/components/Dashboard/Sidebar/navItems';
 import { useMobile } from 'src/hooks/useMobile';
-
-import { LANGS } from 'src/constants/locale';
 import { LANGUAGE_MAPPING, LANGUAGES } from 'src/context/constants';
 import { useLanguageContext } from 'src/context/languagesContext';
 
@@ -88,33 +86,6 @@ const Header = ({ toggleMobileNav }) => {
               </ActionList>
             </DropdownOverlay>
           </Dropdown>
-          <Dropdown selectionType="single">
-            <SelectInput
-              label=""
-              value={i18nState.locale}
-              onChange={({ values }) => {
-                setI18nState({ locale: values[0] });
-                handleLoader();
-              }}
-            />
-            <DropdownOverlay>
-              <ActionList>
-                {LANGS.map((lang) => {
-                  return (
-                    <ActionListItem
-                      title={lang.label}
-                      key={lang.value}
-                      value={lang.value}
-                      leading={
-                        <img src={lang.icon} alt="" width={20} height={20} />
-                      }
-                    />
-                  );
-                })}
-              </ActionList>
-            </DropdownOverlay>
-          </Dropdown>
-          {/* <LocaleDropdown /> */}
         </Box>
       </BladeProvider>
       {isMobile && (
