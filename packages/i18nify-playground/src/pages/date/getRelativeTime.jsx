@@ -33,7 +33,7 @@ export default function GetRelativeTime() {
         color: 'negative',
       });
     }
-  }, [inpValue, intlDateOptions]);
+  }, [inpValue, intlDateOptions, locale]);
 
   return (
     <DatePage

@@ -15,6 +15,7 @@ function ConvertToMajorUnit(props) {
           stumble upon an unsupported currency code, it'll promptly let you
           know by throwing an error`}
       {...props}
+      supportLocale={false}
       isSmallEditor
       code={convertToMajorUnit(+props.inpValue, {
         currency: props.currency,

@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  FlagIcon,
   Menu,
   MenuDivider,
   MenuItem,
@@ -33,10 +34,7 @@ function LocaleDropdown({ supportedLocals }) {
             return (
               <React.Fragment key={index}>
                 <Menu>
-                  <MenuItem
-                    leading={<ShareIcon size="small" />}
-                    title={local.language}
-                  />
+                  <MenuItem leading={<FlagIcon />} title={local.language} />
                   <MenuOverlay>
                     {local.locales.map((subItem, idx) => {
                       return (

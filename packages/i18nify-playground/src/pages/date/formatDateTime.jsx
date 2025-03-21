@@ -35,7 +35,7 @@ export default function FormatDateTime() {
         color: 'negative',
       });
     }
-  }, [inpValue, intlDateOptions]);
+  }, [inpValue, intlDateOptions, locale]);
 
   return (
     <ErrorBoundary>

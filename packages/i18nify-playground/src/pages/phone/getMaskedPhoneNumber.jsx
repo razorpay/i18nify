@@ -18,6 +18,7 @@ import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import PhoneMaskingOptions from 'src/components/intlOptions/PhoneMaskingOptions';
 import { DEFAULT_PHONE_NUMBER } from 'src/pages/Phone/common/data/phoneNumber';
 import { DEFAULT_COUNTRY_CODE } from 'src/components/Dashboard/constants/common';
+import TextEditorForStrings from 'src/components/TextEditorForStrings/TextEditorForStrings';
 
 const INITIAL_STATE = PHONE_MASKING_INPUTS.reduce((acc, curr) => {
   acc[curr.key] = curr.defaultValue || '';
@@ -77,9 +78,8 @@ export default function GetMaskedPhoneNumber() {
             </ActionList>
           </DropdownOverlay>
         </Dropdown>
-
-        <CodeEditor
-          code={getMaskedPhoneNumber({
+        <TextEditorForStrings
+          value={getMaskedPhoneNumber({
             countryCode,
             phoneNumber: inpValue,
             withDialCode: withDialCode === 'true' ? true : false,
@@ -88,7 +88,6 @@ export default function GetMaskedPhoneNumber() {
               maskedDigitsCount: +maskingOptions?.maskedDigitsCount,
             },
           })}
-          isSmallEditor
         />
       </Box>
 

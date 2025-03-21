@@ -5,28 +5,41 @@ import { useIntlOptionsDateContext } from 'src/context/intlOptionsDateContext';
 
 import { useI18nContext } from '@razorpay/i18nify-react';
 import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box } from '@razorpay/blade/components';
 import IntlOptionsDateForm from 'src/components/intlOptions/IntlOptionsDateForm';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
+import {
+  getDateTimeSupportedLocals,
+  getSupportedLocalsObjectStructure,
+} from 'src/components/LocalDropdown/utils';
 
 export default function GetWeekdays() {
   const { intlDateOptions } = useIntlOptionsDateContext();
   const { i18nState } = useI18nContext();
   const { locale } = i18nState;
+  const [code, setCode] = useState('');
 
-  const code = JSON.stringify(
-    getWeekdays({
-      locale,
-      weekday: removeEmptyValues(intlDateOptions).weekday,
-    }),
-    null,
-    2,
-  );
+  useEffect(() => {
+    setCode(
+      JSON.stringify(
+        getWeekdays({
+          locale,
+          weekday: removeEmptyValues(intlDateOptions).weekday,
+        }),
+        null,
+        2,
+      ),
+    );
+  }, [locale, intlDateOptions]);
 
   return (
     <Box>
       <LayoutHeader
+        showLocalDropdown
+        supportedLocals={getSupportedLocalsObjectStructure(
+          getDateTimeSupportedLocals(),
+        )}
         title="getWeekdays"
         description={`📅🌐 This global day-namer is your trusty guide through the week, no
             matter where you are in the world. Using the power of the

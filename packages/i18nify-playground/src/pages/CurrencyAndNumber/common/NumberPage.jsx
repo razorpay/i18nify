@@ -14,6 +14,7 @@ const NumberPage = ({
   inpValue,
   code,
   onInpChange,
+  supportLocale = true,
   isSmallEditor = true,
   onCurrencyChange,
 }) => {
@@ -22,7 +23,7 @@ const NumberPage = ({
       <LayoutHeader
         title={title}
         description={description}
-        showLocalDropdown
+        showLocalDropdown={supportLocale ? true : false}
         supportedLocals={getSupportedLocalsObjectStructure(
           getNumberSupportedLocals(),
         )}

@@ -39,7 +39,7 @@ export default function ParseDateTime() {
         color: 'negative',
       });
     }
-  }, [inpValue, intlDateOptions]);
+  }, [inpValue, intlDateOptions, locale]);
 
   return (
     <DatePage

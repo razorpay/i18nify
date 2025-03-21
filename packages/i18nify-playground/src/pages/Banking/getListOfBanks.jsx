@@ -25,13 +25,17 @@ const GetListOfBanks = () => {
   });
 
   useEffect(() => {
-    mutate(DEFAULT_COUNTRY_CODE);
+    mutate(countryCode);
   }, [countryCode]);
 
   return (
     <>
       <LayoutHeader title={'getListOfBanks'} description={'getListOfBanks'} />
-      <CountryDropdown value={countryCode} onChange={setCountryCode} />
+      <CountryDropdown
+        value={countryCode}
+        onChange={setCountryCode}
+        showAllowedCountries
+      />
       <Box marginTop="spacing.4" width="100%">
         <CodeEditor code={code} />
       </Box>

@@ -18,6 +18,7 @@ function ConvertToMinorUnit(props) {
       code={convertToMinorUnit(+props.inpValue, {
         currency: props.currency,
       }).toString()}
+      supportLocale={false}
       includeIntlOptions={false}
     />
   );

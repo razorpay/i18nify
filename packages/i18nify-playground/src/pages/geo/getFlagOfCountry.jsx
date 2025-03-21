@@ -34,11 +34,18 @@ export default function GetFlagOfCountry() {
             flag, it won't leave you hanging; it'll let you know something went
             wrong.`}
       />
-      <Box display="flex" flexWrap="wrap" justifyContent="space-around">
-        <CountryDropdown
-          value={countryCode}
-          onChange={(val) => setCountryCode(val)}
-        />
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="space-around"
+        flexDirection={isMobile ? 'column' : 'row'}
+      >
+        <Box width="300px">
+          <CountryDropdown
+            value={countryCode}
+            onChange={(val) => setCountryCode(val)}
+          />
+        </Box>
 
         <Box
           display="flex"

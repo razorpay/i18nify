@@ -31,7 +31,9 @@ const LayoutHeader = ({
           {title}
         </Heading>
         {showLocalDropdown && (
-          <LocaleDropdown supportedLocals={supportedLocals} />
+          <Box marginBottom="spacing.3" alignSelf="start">
+            <LocaleDropdown supportedLocals={supportedLocals} />
+          </Box>
         )}
       </Box>
 

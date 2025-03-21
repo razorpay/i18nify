@@ -1,5 +1,5 @@
 import { useToast } from '@razorpay/blade/components';
-import { formatNumber } from '@razorpay/i18nify-js';
+import { formatNumber } from '@razorpay/i18nify-js/currency';
 import { useI18nContext } from '@razorpay/i18nify-react';
 import React, { useEffect, useState } from 'react';
 import { useIntlOptionsContext } from 'src/context/intlOptionsContext';
@@ -17,7 +17,7 @@ function FormatNumber(props) {
 
   useEffect(() => {
     try {
-      const value = formatNumber(+props.inpValue, {
+      const value = formatNumber(props.inpValue, {
         locale,
         currency: props.currency,
         intlOptions: removeEmptyValues(intlOptions),

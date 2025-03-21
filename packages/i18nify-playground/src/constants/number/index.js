@@ -52,7 +52,6 @@ export const NUMBER_FORMAT_INTL_INPUTS = [
     key: 'maximumSignificantDigits',
     label: 'Max Significant digits',
     type: 'number',
-    defaultValue: 2,
     textInputHelper:
       'The valid range is between 1 and 21 and it should be greater than Min Significant digits',
   },
