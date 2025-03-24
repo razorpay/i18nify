@@ -30,7 +30,10 @@ const GetListOfBanks = () => {
 
   return (
     <>
-      <LayoutHeader title={'getListOfBanks'} description={'getListOfBanks'} />
+      <LayoutHeader
+        title={'getListOfBanks'}
+        description={`🏦 Your essential utility for retrieving bank information with precision! 🌍 Features include bank list retrieval with locale support and detailed metadata. 🔄 Perfect for apps needing financial institution data, the function returns a complete list of banks for any supported country. 💫 Includes detailed information like bank codes, names, and branch configurations based on international standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent bank data access across your application.`}
+      />
       <CountryDropdown
         value={countryCode}
         onChange={setCountryCode}
