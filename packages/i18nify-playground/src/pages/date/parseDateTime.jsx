@@ -51,12 +51,7 @@ export default function ParseDateTime() {
       }}
       code={code}
       title="parseDateTime"
-      description={`🔍🗓️ The parseDateTime function is like a time-traveler’s best
-            friend, expertly navigating the complex world of dates and times.
-            Whether it’s a string or a Date object you’re dealing with, this
-            function seamlessly transforms it into a comprehensive,
-            easy-to-digest package of date information, tailored to any locale
-            you desire. 🌍⏲️`}
+      description={`🔍 Your essential utility for breaking down dates into detailed components! 🌍 Features include date parsing with locale support and customizable output formats. 🔄 Perfect for apps needing granular date information, the function transforms dates into structured data with timezone awareness. 💫 Includes support for various date components and formatting patterns based on regional standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent date parsing across your application.`}
     />
   );
 }

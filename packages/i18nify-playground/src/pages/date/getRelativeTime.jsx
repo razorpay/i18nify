@@ -44,13 +44,7 @@ export default function GetRelativeTime() {
       inpValue={inpValue}
       code={code}
       title="getRelativeTime"
-      description={`⏳🌏 This time-traveling virtuoso effortlessly bridges the gap
-            between dates, offering a glimpse into the past or a peek into the
-            future. With the help of the Internationalization API (Intl),
-            getRelativeTime transforms absolute dates into relatable,
-            human-friendly phrases like ‘3 hours ago’ or ‘in 2 days’. Whether
-            you’re reminiscing the past or anticipating the future, this
-            function keeps you connected to time in the most intuitive way! 🚀🕰️`}
+      description={`⏳ Your essential utility for transforming dates into human-friendly relative expressions! 🌍 Features include relative time calculation with locale support and customizable formatting. 🔄 Perfect for apps needing intuitive time displays, the function converts dates into phrases like '3 hours ago' or 'in 2 days'. 💫 Includes support for various time units from seconds to years with automatic unit selection. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent relative time handling across your application.`}
     />
   );
 }

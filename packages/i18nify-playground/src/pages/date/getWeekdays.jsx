@@ -41,14 +41,7 @@ export default function GetWeekdays() {
           getDateTimeSupportedLocals(),
         )}
         title="getWeekdays"
-        description={`📅🌐 This global day-namer is your trusty guide through the week, no
-            matter where you are in the world. Using the power of the
-            Internationalization API (Intl), getWeekdays serves up the names of
-            all seven days tailored to your chosen locale. From planning
-            international meetings to creating a multilingual planner, this
-            function provides the perfect blend of cultural awareness and
-            practical utility, keeping you in sync with the local rhythm of
-            life, one day at a time! 🌟🗓️`}
+        description={`📅🌐 Your essential utility for accessing weekday names across cultures! 🌍 Features include weekday name retrieval with locale support and customizable formatting. 🔄 Perfect for apps needing localized day names, the function returns weekday names according to locale-specific patterns and preferences. 💫 Includes support for various formatting options like long, short, or narrow weekday names. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent weekday handling across your application.`}
       />
 
       <Box

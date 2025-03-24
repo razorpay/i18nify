@@ -47,12 +47,7 @@ export default function FormatDateTime() {
         }}
         code={code}
         title="formatDateTime"
-        description={`🕰️🌍 This savvy time tailor is your go-to for dressing up dates and
-            times in locale-specific styles. Whether you’re marking milestones,
-            scheduling global meetings, or just need that perfect date-time
-            format, formatDateTime uses the Internationalization API (Intl) to
-            translate your dates and times into the local lingo. It’s like
-            having a linguistic time machine at your fingertips! 🌟🗓️`}
+        description={`📅 Your essential utility for formatting dates and times with precision! 🌍 Features include date-time formatting with locale support and customizable output patterns. 🔄 Perfect for apps needing standardized date-time display, the function formats dates according to locale-specific patterns and user preferences. 💫 Includes support for various date-time components like year, month, day, hour, minute, and second with flexible formatting options. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent date-time formatting across your application.`}
       />
     </ErrorBoundary>
   );
