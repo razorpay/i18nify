@@ -15,9 +15,7 @@ export default function DateOverview() {
       </Helmet>
       <Overview
         title="Date module"
-        description={`This module 🧩 leverages the JavaScript Intl API & Date object 📆 to
-            offer developers locale-aware tools 🛠️ for formatting and
-            manipulating dates and times ⏳ in a user-friendly way.`}
+        description={`📅 Your comprehensive toolkit for handling dates and times across the globe! 🌍 Features include date parsing, formatting, validation, and timezone support with locale awareness. 🔄 Perfect for apps dealing with global scheduling, the module handles date-time validations, timezone conversions, and formatting with built-in locale support. 💫 Includes utilities for relative time, weekday management, and format handling based on regional standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent date and time handling across your application.`}
         apiItems={dateLinks}
       />
     </>

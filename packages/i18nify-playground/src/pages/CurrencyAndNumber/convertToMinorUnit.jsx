@@ -7,12 +7,7 @@ function ConvertToMinorUnit(props) {
   return (
     <NumberPage
       title="convertToMinorUnit"
-      description={`= 💵🔄 This function is your go-to tool for scaling currency values
-            from lower to major units. Just input the amount in a minor unit
-            (like cents or pence) along with the currency code, and voilà! You
-            get the amount in a major unit (like dollars or pounds). And if you
-            stumble upon an unsupported currency code, it'll promptly let you
-            know by throwing an error`}
+      description={`💸 Your essential utility for converting major currency units to minor units! 🌍 Features include precise conversion handling with locale support and decimal precision. 🔄 Perfect for apps dealing with currency calculations, the function converts major units (like dollars) to minor units (like cents) with proper decimal placement. 💫 Includes built-in validation and handling of different currency decimal places. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent currency conversion across your application.`}
       {...props}
       isSmallEditor
       code={convertToMinorUnit(+props.inpValue, {

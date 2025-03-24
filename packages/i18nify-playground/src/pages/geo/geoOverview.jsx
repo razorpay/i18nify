@@ -15,10 +15,7 @@ const GeoOverview = () => {
       </Helmet>
       <Overview
         title="Geo module"
-        description={`Welcome to the Geo Package 🚀, your all-in-one, supercharged toolkit for sprinkling some
-            geographical magic 🧙‍♂️ into your applications! Whether you're looking to jazz up your UI
-            with some snazzy SVG flags 🏁, or you need the nitty-gritty details of continents,
-            countries, states, cities, and zip codes, we've got you covered!`}
+        description={`🌍 Your comprehensive toolkit for handling geographical data across borders! 🗺️ Features include country metadata, state/province management, city lookup, and postal code validation with locale support. 🔄 Perfect for apps dealing with global addresses, the module handles location validations, flag retrieval, and formatting with built-in locale awareness. 💫 Includes utilities for country codes, subdivisions, and regional standards management. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent geographical data handling across your application.`}
         apiItems={geoLinks}
       />
     </>

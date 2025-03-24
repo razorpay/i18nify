@@ -35,11 +35,7 @@ function FormatNumber(props) {
     <NumberPage
       {...props}
       title="formatNumber"
-      description="🎩✨ This little wizard helps you jazz up numerical values in all
-      sorts of fancy ways. And guess what? It uses the
-      Internationalization API (Intl) to sprinkle that magic dust and give
-      you snazzy, locale-specific number formats—especially for
-      currencies! 🌟💸"
+      description="🔢 Your powerful utility for formatting numbers with precision! 🌍 Features include number formatting with locale support, currency symbol handling, and decimal placement. 🔄 Perfect for apps dealing with financial data, the function handles number validations, grouping separators, and decimal formatting with built-in locale awareness. 💫 Includes utilities for currency symbol placement, decimal precision, and grouping based on regional standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent number formatting across your application."
       isSmallEditor
       code={code}
     />

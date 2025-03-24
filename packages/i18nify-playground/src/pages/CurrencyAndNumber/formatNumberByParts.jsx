@@ -42,11 +42,7 @@ function FormatNumberByParts(props) {
     <NumberPage
       {...props}
       title="formatNumberByParts"
-      description={` This slick function breaks down numbers into separate pieces using
-            Intl.NumberFormat. It&apos;s like taking apart a puzzle 🧩 —
-            currency symbol here, integers there, decimals in their place—with a
-            fail-proof system to handle any formatting hiccups 🥴 along the way.
-            Smooth operator, right?`}
+      description={`🔢 Your powerful utility for breaking down formatted numbers into parts! 🌍 Features include number formatting with locale support, currency symbol handling, and decimal placement with detailed part information. 🔄 Perfect for apps needing granular control over number display, the function returns structured data about integers, decimals, currency symbols, and their positions. 💫 Includes utilities for currency symbol placement detection and grouping based on regional standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent number formatting across your application.`}
       code={code}
       isSmallEditor={false}
     />

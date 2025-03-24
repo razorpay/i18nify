@@ -15,9 +15,7 @@ const BankingOverview = () => {
       </Helmet>
       <Overview
         title="Banking Module"
-        description={`Welcome to the Banking Package 🚀, Access a curated, up-to-date list of global and local banks.
-        Retrieve detailed bank information, including names, locations, and contacts.
-        Integrate effortlessly into your applications with fast, reliable performance.`}
+        description={`🏦 Your comprehensive toolkit for managing banking operations across borders! 🌍 Features include bank list retrieval, bank code validation, and branch information with locale support. 🔄 Perfect for apps dealing with financial institutions, the module handles bank validations, code lookups, and formatting with built-in locale awareness. 💫 Includes utilities for bank code management, branch details, and regional banking standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent banking data handling across your application.`}
         apiItems={bankingLinks}
       />
     </>

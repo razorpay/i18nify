@@ -11,9 +11,7 @@ export default function GetCurrencyList() {
     <Box height="100%">
       <LayoutHeader
         title="getCurrencyList"
-        description={`  🌍💰 It’s your easy-peasy way to snag a whole list of currencies
-            with their symbols and names. Simple, straightforward, and totally
-            handy!`}
+        description={`📋 Your essential utility for retrieving comprehensive currency information! 🌍 Features include accessing currency metadata, symbols, and configuration details with locale support. 🔄 Perfect for apps needing currency reference data, the function returns a complete list of supported currencies with their properties. 💫 Includes detailed information like currency names, symbols, and minor unit configurations based on international standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent currency data access across your application.`}
       />
 
       <Box display="grid" flexWrap="wrap" width="100%">

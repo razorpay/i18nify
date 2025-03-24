@@ -11,9 +11,7 @@ export default function GetCurrencySymbol() {
     <Box height="100%">
       <LayoutHeader
         title="getCurrencySymbol"
-        description={`Picture this: it&apos;s like having a cool decoder ring for currency
-            codes! 🔍💰 This little guy, grabs the symbol for a currency code
-            from its secret stash.`}
+        description={`💱 Your essential utility for retrieving currency symbols with precision! 🌍 Features include currency symbol lookup with locale support and validation. 🔄 Perfect for apps needing currency display, the function returns the correct symbol for any supported currency code. 💫 Includes built-in validation to ensure currency codes are valid and supported. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent currency symbol handling across your application.`}
       />
 
       <Box display="flex" alignItems="center" justifyContent="center">

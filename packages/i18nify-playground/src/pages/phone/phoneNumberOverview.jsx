@@ -16,10 +16,7 @@ const PhoneNumberOverview = () => {
 
       <Overview
         title="Phone Number module"
-        description={`This module's your go-to guru for everything Phone Number related.
-            🤑 It's all about formatting, validations, and handy tricks to make
-            dealing with phone numbers a breeze. Here are the cool APIs and
-            utilities this Phone Number Module gives you to play with! 🚀💸`}
+        description={`📱 Your comprehensive toolkit for handling international phone numbers! 🌍 Features include phone number parsing, formatting, validation, and masking with locale support. 🔄 Perfect for apps dealing with global user data, the module handles phone number validations, country code detection, and formatting with built-in locale awareness. 💫 Includes utilities for dial code management, number cleaning, and format handling based on regional standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent phone number handling across your application.`}
         apiItems={phoneNumberLinks}
       />
     </>

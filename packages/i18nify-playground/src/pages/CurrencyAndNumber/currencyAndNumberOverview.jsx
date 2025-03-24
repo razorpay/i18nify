@@ -17,11 +17,7 @@ const CurrencyAndNumberOverview = () => {
 
       <Overview
         title="Currency & Number module"
-        description={`This module's your go-to guru for everything
-            currency/number-related. 🤑 It's all about formatting, validations,
-            and handy tricks to make dealing with money/numbers a breeze. Here
-            are the cool APIs and utilities this Currency Module gives you to
-            play with! 🚀💸`}
+        description={`💰 Your financial toolkit for handling international currencies with precision! 🌍 Features include currency symbol retrieval, currency list management, and number formatting with locale support. 🔄 Perfect for apps dealing with global transactions, the module handles currency validations, conversions, and formatting with built-in locale awareness. 💫 Includes utilities for currency code validation, symbol placement, and decimal handling based on regional standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent money handling across your application.`}
         apiItems={numberLinks}
       />
     </>
