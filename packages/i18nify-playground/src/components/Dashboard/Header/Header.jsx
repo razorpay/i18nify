@@ -39,12 +39,7 @@ const Header = ({ toggleMobileNav }) => {
 
   return (
     <Box
-      display="flex"
-      justifyContent="space-between"
-      alignItems="start"
-      padding="spacing.3"
       position="sticky"
-      flexWrap="wrap"
       top="spacing.0"
       rowGap="spacing.3"
       borderBottomWidth="thicker"
@@ -52,13 +47,19 @@ const Header = ({ toggleMobileNav }) => {
       borderBottomColor="surface.border.gray.muted"
       zIndex={3}
     >
-      <Box marginLeft="spacing.7">
-        <a href="https://razorpay.com" target="_blank">
-          <img src="/assets/rzp.svg" height="30px" alt="Razorpay" />
-        </a>
-      </Box>
-      <BladeProvider themeTokens={bladeTheme} colorScheme="dark">
-        <Box display="flex" columnGap="spacing.3">
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="start"
+        padding="spacing.3"
+        flexWrap="wrap"
+      >
+        <Box marginLeft="spacing.7">
+          <a href="https://razorpay.com" target="_blank">
+            <img src="/assets/rzp.svg" height="30px" alt="Razorpay" />
+          </a>
+        </Box>
+        <BladeProvider themeTokens={bladeTheme} colorScheme="dark">
           <Dropdown selectionType="single" _width="180px">
             <SelectInput
               label=""
@@ -86,16 +87,18 @@ const Header = ({ toggleMobileNav }) => {
               </ActionList>
             </DropdownOverlay>
           </Dropdown>
-        </Box>
-      </BladeProvider>
+        </BladeProvider>
+      </Box>
       {isMobile && (
-        <Button
-          onClick={toggleMobileNav}
-          variant="secondary"
-          icon={MenuIcon}
-          aria-label="Toggle Navigation"
-          marginBottom="spacing.4"
-        />
+        <Box display="flex" justifyContent="flex-end" marginRight="spacing.3">
+          <Button
+            onClick={toggleMobileNav}
+            variant="secondary"
+            icon={MenuIcon}
+            aria-label="Toggle Navigation"
+            marginBottom="spacing.4"
+          />
+        </Box>
       )}
     </Box>
   );
