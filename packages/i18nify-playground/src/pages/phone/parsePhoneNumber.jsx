@@ -23,12 +23,7 @@ export default function ParsePhoneNumber() {
     <>
       <LayoutHeader
         title="parsePhoneNumber"
-        description={` 🕵️‍♂️📞 This clever function digs deep into a phone number, pulling out
-            all the juicy details: country code, dial code, the number all
-            dolled up, and even the format it follows. What’s cool? It hands you
-            back an object filled with all these deets, making it a breeze to
-            access everything about that phone number. It’s like having the
-            ultimate phone number cheat sheet! 🌟`}
+        description={`🔍 Your essential utility for extracting phone number details with precision! 🌍 Features include comprehensive phone number parsing with locale support and country code detection. 🔄 Perfect for apps needing detailed phone number information, the function breaks down numbers into components like country code, national number, and formatting patterns. 💫 Includes support for various input formats and automatic region detection. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent phone number parsing across your application.`}
       />
 
       <Box display="flex" marginRight="spacing.4" flexWrap="wrap">

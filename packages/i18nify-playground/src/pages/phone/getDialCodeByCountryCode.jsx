@@ -14,12 +14,7 @@ export default function GetDialCodeByCountryCode() {
     <>
       <LayoutHeader
         title="getDialCodeByCountryCode"
-        description={`  📞🗺️ This function is your quick access to finding the dial code for
-            any specific country, utilizing the country's ISO code. Perfect for
-            applications that require validating user input for phone numbers or
-            enhancing UIs with country-specific details. It ensures you get the
-            exact dial code you need, and if the country code doesn't match, it
-            alerts you right away with an error.`}
+        description={`📞🌍 Your essential utility for retrieving country-specific dial codes! 🔄 Features include dial code lookup with country code validation and formatting. 💫 Perfect for apps needing international phone number handling, the function returns the exact dial code for any supported country code. 🚀 Includes built-in validation to ensure country codes are valid and supported. ✨ Seamlessly integrates with the i18nify ecosystem for consistent dial code handling across your application.`}
       />
       <Box>
         <Box display="flex" alignItems="center" justifyContent="center">

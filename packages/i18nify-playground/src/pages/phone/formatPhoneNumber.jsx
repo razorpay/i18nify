@@ -22,11 +22,7 @@ export default function IsValidPhoneNumberView() {
     <>
       <LayoutHeader
         title="formatPhoneNumber"
-        description="📞 It’s like your personal phone number stylist, working its magic
-            to make those digits look all snazzy. You can tell it the country
-            code, or it’ll figure it out itself—then presto! It hands you back a
-            phone number looking sharp and dapper in that country’s typical
-            style. ✨🌍"
+        description="📞 Your essential utility for formatting phone numbers with precision! 🌍 Features include phone number formatting with locale support and country code detection. 🔄 Perfect for apps needing standardized phone number display, the function formats numbers according to country-specific patterns. 💫 Includes support for various input formats and automatic country code handling. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent phone number formatting across your application."
       />
 
       <PhoneNumberForm

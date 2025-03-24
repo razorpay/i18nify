@@ -21,10 +21,7 @@ export default function IsValidPhoneNumberView() {
     <>
       <LayoutHeader
         title="isValidPhoneNumber"
-        description={`📞 It’s like the phone number detective, using fancy patterns to
-            check if a number is the real deal for a specific country code. So,
-            it’s pretty simple: if it says true, your number’s good to go for
-            that country; if it’s false, time to double-check those digits! 🕵️‍♂️🔍`}
+        description={`📱 Your essential utility for validating phone numbers across the globe! 🌍 Features include phone number validation with locale support and country code detection. 🔄 Perfect for apps needing robust phone number verification, the function validates numbers against country-specific patterns. 💫 Includes support for various phone number formats and automatic country detection from international numbers. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent phone number validation across your application.`}
       />
 
       <PhoneNumberForm

@@ -14,7 +14,6 @@ import CountryDropdown from 'src/components/Generic/CountryDropdown';
 import LayoutHeader from 'src/components/Dashboard/LayoutHeader';
 import { PHONE_MASKING_INPUTS } from 'src/constants/phoneNumber';
 import { getMaskedPhoneNumber } from '@razorpay/i18nify-js/phoneNumber';
-import CodeEditor from 'src/components/Generic/CodeEditor/CodeEditor';
 import PhoneMaskingOptions from 'src/components/intlOptions/PhoneMaskingOptions';
 import { DEFAULT_PHONE_NUMBER } from 'src/pages/Phone/common/data/phoneNumber';
 import { DEFAULT_COUNTRY_CODE } from 'src/components/Dashboard/constants/common';
@@ -35,14 +34,7 @@ export default function GetMaskedPhoneNumber() {
     <Box>
       <LayoutHeader
         title="getMaskedPhoneNumber"
-        description={` 📞🔒 The getMaskedPhoneNumber function is a versatile tool designed
-            to handle phone number formatting and masking based on the specific
-            requirements of different countries. This function is ideal for
-            applications that require the display of partially hidden phone
-            numbers for security purposes or privacy concerns. It supports a
-            wide range of configurations, including options to mask portions of
-            the phone number, specify the number of digits to mask, and choose
-            whether to mask digits from the beginning or end of the number.`}
+        description={`🔒 Your essential utility for masking sensitive phone numbers! 🌍 Features include phone number masking with locale support and customizable masking patterns. 🔄 Perfect for apps needing privacy-focused number display, the function masks digits according to configurable rules and country-specific formats. 💫 Includes support for various masking options like mask position, character count, and dial code handling. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent phone number masking across your application.`}
       />
 
       <Box

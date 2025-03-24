@@ -9,12 +9,7 @@ export default function GetDialCodes() {
     <>
       <LayoutHeader
         title="getDialCodes"
-        description={` 🌍🔢 This function is a comprehensive directory of international
-            dial codes, mapped to their respective country codes. Whether you're
-            coding a global application or just need to reference international
-            dialing formats, this function provides a quick and accurate
-            reference, organizing the world's dial codes in a clean, easy-to-use
-            format.`}
+        description={`📞 Your essential utility for accessing international dial codes! 🌍 Features include comprehensive dial code lookup with country code mapping and validation. 🔄 Perfect for apps needing international phone number handling, the function provides a complete directory of dial codes mapped to their respective countries. 💫 Includes support for various country code formats and automatic validation. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent dial code handling across your application.`}
       />
 
       <Box display="flex" alignItems="center" justifyContent="center">
