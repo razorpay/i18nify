@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.12.5
+
+### Patch Changes
+
+- 7ea622e: fix: update IN phone number regex [ROW-227]
+
 ## 1.12.4
 
 ### Patch Changes
