@@ -94,11 +94,6 @@ function GetCities({
 
 export default withGeoHOC(GetCities, {
   title: 'getCities',
-  description: ` 🏙️ Ready to navigate cities with precision? Say hello to getCities!
-      This ingenious function empowers you to explore cities based on
-      country and state codes, unleashing a world of urban excitement at
-      your fingertips. Whether you're hunting for the pulse of New York or
-      the charm of Tokyo, just call this function and let the cityscape
-      adventure begin! 🗺️🌆`,
+  description: `🏙️ Your essential utility for retrieving city information with precision! 🌍 Features include city data retrieval with locale support and detailed metadata. 🔄 Perfect for apps needing city-level information, the function returns a complete list of cities for any supported country and state combination. 💫 Includes support for various city formats and automatic validation. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent city data access across your application.`,
   stateDropdownLabel: 'Select state',
 });

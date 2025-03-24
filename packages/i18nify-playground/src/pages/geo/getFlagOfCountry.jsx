@@ -25,14 +25,7 @@ export default function GetFlagOfCountry() {
     <Box>
       <LayoutHeader
         title={'getFlagOfCountry'}
-        description={`  🏳️‍🌈✨ Fetching country flags has never been easier! Just hand over a
-            country code to this function, and it will retrieve the SVG content
-            of the corresponding flag for you. Whether it's for displaying
-            patriotic flair or for an international project, this function
-            handles the lookup and ensures you get the exact visual
-            representation of the nation's pride. In case it can't find the
-            flag, it won't leave you hanging; it'll let you know something went
-            wrong.`}
+        description={`🏁 Your essential utility for retrieving country flags with precision! 🌍 Features include flag retrieval with country code validation and multiple format support. 🔄 Perfect for apps needing national flag display, the function returns flag URLs in both original and 4x3 aspect ratios. 💫 Includes built-in validation to ensure country codes are valid and supported. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent flag handling across your application.`}
       />
       <Box
         display="flex"

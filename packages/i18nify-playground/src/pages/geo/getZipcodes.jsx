@@ -91,8 +91,6 @@ function GetZipcodes({
 
 export default withGeoHOC(GetZipcodes, {
   title: 'getZipcodes',
-  description: `Explore postal codes with the getZipcodes API! Discover a list of
-      unique zip codes organized by country and state, making it easy to
-      navigate geographic areas and streamline address-based operations.`,
+  description: `📮 Your essential utility for retrieving postal codes with precision! 🌍 Features include zipcode data retrieval with locale support and detailed metadata. 🔄 Perfect for apps needing postal code information, the function returns a complete list of zipcodes for any supported country and state combination. 💫 Includes support for various postal code formats and automatic validation. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent zipcode data access across your application.`,
   stateDropdownLabel: 'Select state',
 });

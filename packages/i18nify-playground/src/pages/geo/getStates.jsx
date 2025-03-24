@@ -44,7 +44,5 @@ function GetStates({
 
 export default withGeoHOC(GetStates, {
   title: 'getStates',
-  description: `🌍 Embark on a state-by-state discovery with the getStates API! Get
-        access to a treasure trove of state information, including names,
-        time zones, and even a list of vibrant cities within each state.`,
+  description: `🗺️ Your essential utility for retrieving state/province information! 🌍 Features include state data retrieval with locale support and detailed metadata. 🔄 Perfect for apps needing regional information, the function returns a complete list of states/provinces for any supported country. 💫 Includes detailed information like state codes, names, and regional configurations based on international standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent state data access across your application.`,
 });

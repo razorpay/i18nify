@@ -14,11 +14,7 @@ export default function GetAllCountries() {
     <>
       <LayoutHeader
         title="getAllCountries"
-        description={` 🌍 Ready to dive into the world of nations? Say hello to
-            getAllCountries! This dynamic function is your gateway to a
-            comprehensive list of countries spanning the globe. With just a
-            simple call, you'll unlock a treasure trove of international data,
-            perfect for any coding adventurer. 🗺️🚀`}
+        description={`🌍 Your essential utility for accessing comprehensive country information! 🗺️ Features include country data retrieval with locale support and detailed metadata. 🔄 Perfect for apps needing global country information, the function returns a complete list of countries with their properties. 💫 Includes detailed information like country codes, names, and regional configurations based on international standards. 🚀 Seamlessly integrates with the i18nify ecosystem for consistent country data access across your application.`}
       />
 
       <GenericDropdown
