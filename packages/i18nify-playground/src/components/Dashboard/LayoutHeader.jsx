@@ -22,6 +22,8 @@ const LayoutHeader = ({
       <Box
         display="flex"
         width="100%"
+        flexWrap="wrap"
+        rowGap={isMobile ? 'spacing.5' : 'spacing.0'}
         justifyContent={showLocalDropdown ? 'space-between' : 'start'}
       >
         <Heading

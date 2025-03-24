@@ -27,7 +27,7 @@ root.render(
             <IntlOptionsProvider>
               <LanguagesProvider>
                 <HelmetProvider>
-                  <Suspense>
+                  <Suspense fallback={<div>Loading</div>}>
                     <App />
                   </Suspense>
                 </HelmetProvider>
