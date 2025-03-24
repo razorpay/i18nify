@@ -28,14 +28,16 @@ const Home = () => {
           </Heading>
 
           <Heading as="h4">
-            A one-stop solution for all your internationalization needs. Hey,
-            dive into this extensive toolkit—it’s like having a magic kit for
-            your app! 🪄✨ Picture this: modules for phoneNumber, currency,
-            date—they’re like enchanted tools that make your app talk fluently
-            in any language, anywhere! It’s your ticket to making your app a
-            global citizen, no matter where it goes! And hey, hang tight—I’ll
-            break down each of these enchanting modules in the sections coming
-            up! 🌍📱💸🗓️
+            🌍 Your comprehensive internationalization toolkit across multiple
+            programming languages! 🚀 Features include currency handling, phone
+            number formatting, date-time operations, and geographical data
+            management with locale support. 🔄 Perfect for apps needing global
+            reach, the library provides consistent internationalization
+            capabilities across JavaScript, Go, and upcoming support for Java,
+            PHP, and Python. 💫 Includes extensive utilities for formatting,
+            validation, and regional standards management across all supported
+            languages. 🌐 A unified solution for handling international data
+            formats and standards across your tech stack!
           </Heading>
         </Box>
 
