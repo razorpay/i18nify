@@ -1,7 +1,13 @@
 export function removeEmptyValues(obj) {
   return Object.keys(obj).reduce((newObj, key) => {
     if (obj[key] !== '' && obj[key] !== null && obj[key] !== undefined) {
-      newObj[key] = obj[key];
+      if (key === 'fractionalSecondDigits') newObj[key] = +obj[key];
+      else if (key === 'useGrouping') {
+        if (obj[key] === 'true') obj[key] = true;
+        else if (obj[key] === 'false') {
+          obj[key] = false;
+        }
+      } else newObj[key] = obj[key];
     }
     return newObj;
   }, {});
