@@ -6,7 +6,6 @@ import {
   MenuDivider,
   MenuItem,
   MenuOverlay,
-  ShareIcon,
   Text,
 } from '@razorpay/blade/components';
 import React from 'react';

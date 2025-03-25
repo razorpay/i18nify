@@ -93,7 +93,7 @@ const Home = () => {
           </Box>
 
           <Box>
-            <Heading size="large">Other Langauges (Coming soon)</Heading>
+            <Heading size="large">Other Languages (Coming soon)</Heading>
             <Box
               display="flex"
               flexDirection="column"
