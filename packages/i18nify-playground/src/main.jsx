@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import { BladeProvider } from '@razorpay/blade/components';
 import '@razorpay/blade/fonts.css';
@@ -12,14 +12,14 @@ import React from 'react';
 import { LanguagesProvider } from 'src/context/languagesContext';
 import App from './app';
 
-import { IntlOptionsProvider } from './context/intlOptionsContext';
 import ErrorBoundary from 'src/components/Dashboard/ErrorBoundry';
+import { IntlOptionsProvider } from './context/intlOptionsContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient({});
 
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <BladeProvider themeTokens={bladeTheme} colorScheme="light">
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
@@ -37,5 +37,5 @@ root.render(
         </QueryClientProvider>
       </ErrorBoundary>
     </BladeProvider>
-  </BrowserRouter>,
+  </HashRouter>,
 );
