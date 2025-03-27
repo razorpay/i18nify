@@ -944,47 +944,6 @@ getCities('IN', 'XYZ').catch((err) => {
 
 Explore postal codes with the getZipcodes API! Discover a list of unique zip codes organized by country and state, making it easy to navigate geographic areas and streamline address-based operations.
 
-#### getZipcodesByCity(countryCode, cityIdentifier)
-
-🏙️ Get all postal codes for a specific city! This versatile API accepts either a city name or city code and returns an array of zipcodes. Perfect for address validation and location-based services!
-
-##### Parameters
-
-- `countryCode`: A valid country code (e.g., 'IN' for India)
-- `cityIdentifier`: Either the city name (e.g., 'New Delhi') or city code (e.g., 'DL')
-
-##### Returns
-
-Promise that resolves to an array of zipcodes for the specified city.
-
-##### Examples
-
-```javascript
-// Using city name
-const delhiZipcodes = await getZipcodesByCity('IN', 'New Delhi');
-console.log(delhiZipcodes); // ['110001', '110002', ...]
-
-// Using city code
-const delhiZipcodesAlt = await getZipcodesByCity('IN', 'DL');
-console.log(delhiZipcodesAlt); // ['110001', '110002', ...]
-
-// Case-insensitive matching works too!
-const eastDelhiZipcodes = await getZipcodesByCity('IN', 'East Delhi');
-console.log(eastDelhiZipcodes); // ['110031', '110032', ...]
-```
-
-##### Error Handling
-
-```javascript
-try {
-  const zipcodes = await getZipcodesByCity('XYZ', 'Invalid City');
-} catch (error) {
-  console.error(error.message);
-  // Outputs: Invalid country code: XYZ. Please ensure you provide a valid country code.
-  // or: City with identifier "Invalid City" not found in XYZ...
-}
-```
-
 ##### Examples
 
 ```javascript
@@ -1011,6 +970,43 @@ getZipcodes('XYZ').catch((err) => {
 getZipcodes('IN', 'XYZ').catch((err) => {
   console.log(err);
 }); // Outputs State code XYZ missing in IN
+```
+
+#### getZipcodesByCity(countryCode, cityIdentifier)
+
+🏙️ Get all postal codes for a specific city! This versatile API accepts either a city name or city code and returns an array of zipcodes. Perfect for address validation and location-based services!
+
+##### Parameters
+
+- `countryCode`: A valid country code (e.g., 'IN' for India)
+- `cityIdentifier`: The city name (e.g., 'New Delhi')
+
+##### Returns
+
+Promise that resolves to an array of zipcodes for the specified city.
+
+##### Examples
+
+```javascript
+// Using city name
+const delhiZipcodes = await getZipcodesByCity('IN', 'New Delhi');
+console.log(delhiZipcodes); // ['110001', '110002', ...]
+
+// Case-insensitive matching works too!
+const eastDelhiZipcodes = await getZipcodesByCity('IN', 'East Delhi');
+console.log(eastDelhiZipcodes); // ['110031', '110032', ...]
+```
+
+##### Error Handling
+
+```javascript
+try {
+  const zipcodes = await getZipcodesByCity('XYZ', 'Invalid City');
+} catch (error) {
+  console.error(error.message);
+  // Outputs: Invalid country code: XYZ. Please ensure you provide a valid country code.
+  // or: City with identifier "Invalid City" not found in XYZ...
+}
 ```
 
 #### getFlagOfCountry(countryCode) 🏁
