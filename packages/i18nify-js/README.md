@@ -760,6 +760,22 @@ console.log(res);
 */
 ```
 
+#### getLocaleList()
+
+🌐 This function fetches a comprehensive mapping of country codes to their supported locale codes. It's your go-to tool for discovering which locales are available for each country! The function returns a promise that resolves to an object where each key is a country code, and its value is an array of supported locale codes.
+
+```javascript
+const locales = await getLocaleList();
+console.log(locales);
+/* Output:
+{
+  "IN": ["hi_IN", "en_IN"],
+  "US": ["en_US"],
+  // ... other countries and their locales
+}
+*/
+```
+
 #### getLocaleByCountry
 
 The getLocaleByCountry API is your multilingual compass, helping you discover all the supported locales for any country. Perfect for building apps that need to handle multiple language variants within a single country, it returns an array of locale codes that are officially used in the specified country.
