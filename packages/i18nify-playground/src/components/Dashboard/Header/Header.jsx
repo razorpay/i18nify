@@ -1,7 +1,6 @@
 import {
   ActionList,
   ActionListItem,
-  BladeProvider,
   Box,
   Button,
   Dropdown,
@@ -9,14 +8,13 @@ import {
   MenuIcon,
   SelectInput,
 } from '@razorpay/blade/components';
-import { bladeTheme } from '@razorpay/blade/tokens';
 import { useI18nContext } from '@razorpay/i18nify-react';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NAV_ITEMS_MAP } from 'src/components/Dashboard/Sidebar/navItems';
-import { useMobile } from 'src/hooks/useMobile';
-import { LANGUAGE_MAPPING, LANGUAGES } from 'src/context/constants';
+import { LANGUAGES, LANGUAGE_MAPPING } from 'src/context/constants';
 import { useLanguageContext } from 'src/context/languagesContext';
+import { useMobile } from 'src/hooks/useMobile';
 
 const Header = ({ toggleMobileNav }) => {
   const { selectedLanguage, setSelectedLanguage, setLoading, setSidebarItems } =
@@ -59,35 +57,33 @@ const Header = ({ toggleMobileNav }) => {
             <img src="/assets/rzp.svg" height="30px" alt="Razorpay" />
           </a>
         </Box>
-        <BladeProvider themeTokens={bladeTheme} colorScheme="dark">
-          <Dropdown selectionType="single" _width="180px">
-            <SelectInput
-              label=""
-              value={selectedLanguage}
-              onChange={({ values }) => {
-                setSelectedLanguage(values[0]);
-                setSidebarItems(NAV_ITEMS_MAP[values[0]]);
-                handleLoader();
-                navigate(`/i18nify-${values[0].toLowerCase()}`);
-              }}
-            />
+        <Dropdown selectionType="single" _width="180px">
+          <SelectInput
+            label=""
+            value={selectedLanguage}
+            onChange={({ values }) => {
+              setSelectedLanguage(values[0]);
+              setSidebarItems(NAV_ITEMS_MAP[values[0]]);
+              handleLoader();
+              navigate(`/i18nify-${values[0].toLowerCase()}`);
+            }}
+          />
 
-            <DropdownOverlay>
-              <ActionList>
-                {Object.values(LANGUAGES).map((value) => {
-                  return (
-                    <ActionListItem
-                      title={`${value} ${LANGUAGE_MAPPING[value].version ? `${LANGUAGE_MAPPING[value].version}` : '(Coming soon)'}`}
-                      value={value}
-                      isDisabled={!LANGUAGE_MAPPING[value].isApisAvailable}
-                      key={value}
-                    />
-                  );
-                })}
-              </ActionList>
-            </DropdownOverlay>
-          </Dropdown>
-        </BladeProvider>
+          <DropdownOverlay>
+            <ActionList>
+              {Object.values(LANGUAGES).map((value) => {
+                return (
+                  <ActionListItem
+                    title={`${value} ${LANGUAGE_MAPPING[value].version ? `${LANGUAGE_MAPPING[value].version}` : '(Coming soon)'}`}
+                    value={value}
+                    isDisabled={!LANGUAGE_MAPPING[value].isApisAvailable}
+                    key={value}
+                  />
+                );
+              })}
+            </ActionList>
+          </DropdownOverlay>
+        </Dropdown>
       </Box>
       {isMobile && (
         <Box display="flex" justifyContent="flex-end" marginRight="spacing.3">
