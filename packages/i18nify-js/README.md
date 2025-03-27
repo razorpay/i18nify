@@ -764,8 +764,6 @@ console.log(res);
 
 🌐 This function fetches a comprehensive mapping of country codes to their supported locale codes. It's your go-to tool for discovering which locales are available for each country! The function returns a promise that resolves to an object where each key is a country code, and its value is an array of supported locale codes.
 
-##### Examples
-
 ```javascript
 const locales = await getLocaleList();
 console.log(locales);
@@ -776,6 +774,31 @@ console.log(locales);
   // ... other countries and their locales
 }
 */
+```
+
+#### getLocaleByCountry
+
+The getLocaleByCountry API is your multilingual compass, helping you discover all the supported locales for any country. Perfect for building apps that need to handle multiple language variants within a single country, it returns an array of locale codes that are officially used in the specified country.
+
+##### Examples
+
+```javascript
+// Getting all supported locales for a country
+const res = await getLocaleByCountry('AF');
+console.log(res);
+/*
+    [
+        "fa_AF",
+        "ps",
+        "uz_AF",
+        "tk"
+    ]
+*/
+
+// Passing invalid country code
+getLocaleByCountry('XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs Invalid country code: XYZ
 ```
 
 #### getStates(country_code)
