@@ -45,36 +45,25 @@ const getZipcodesByCity = (
   )
     .then((res) => res.json())
     .then((res: CountryDetailType) => {
-      // First check if the identifier matches a state code
-      const stateEntry = Object.entries(res.states).find(
-        ([code]) => code.toUpperCase() === cityIdentifier.toUpperCase(),
-      );
-      if (stateEntry) {
-        // For state codes, return the capital city's zipcodes
-        // For Delhi (DL), it's New Delhi
-        const capitalCity = stateEntry[1].cities['New Delhi'];
-        if (capitalCity) {
-          return capitalCity.zipcodes;
-        }
-      }
-
-      // If not a state code, search for the city across all states
+      // Search for the city across all states
       for (const state of Object.values(res.states)) {
-        // Try to find by city name
-        const cityByName = Object.values(state.cities).find(
+        // Try to find by exact city name match first
+        const cityByExactName = Object.values(state.cities).find(
           (c: CityType) =>
             c.name.toUpperCase() === cityIdentifier.toUpperCase(),
         );
-        if (cityByName) {
-          return cityByName.zipcodes;
+        if (cityByExactName) {
+          return cityByExactName.zipcodes;
         }
 
-        // Then try to find by city code
-        const cityByCode = Object.entries(state.cities).find(
-          ([code]) => code.toUpperCase() === cityIdentifier.toUpperCase(),
+        // Try to find by partial city name match
+        const cityByPartialName = Object.values(state.cities).find(
+          (c: CityType) =>
+            c.name.toUpperCase().includes(cityIdentifier.toUpperCase()) ||
+            cityIdentifier.toUpperCase().includes(c.name.toUpperCase()),
         );
-        if (cityByCode) {
-          return cityByCode[1].zipcodes;
+        if (cityByPartialName) {
+          return cityByPartialName.zipcodes;
         }
       }
 
