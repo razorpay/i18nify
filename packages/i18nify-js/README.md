@@ -234,7 +234,7 @@ console.log(
         },
         {
             "type": "literal",
-            "value": " "
+            "value": " "
         },
         {
             "type": "integer",
@@ -293,7 +293,7 @@ console.log(
         },
         {
             "type": "literal",
-            "value": " "
+            "value": " "
         },
         {
             "type": "currency",
@@ -369,7 +369,7 @@ console.log(
         },
         {
             "type": "literal",
-            "value": " "
+            "value": " "
         },
         {
             "type": "currency",
@@ -743,7 +743,7 @@ getDefaultLocaleByCountry('XYZ').catch((err) => {
 
 #### getByCountry
 
-The getByCountry API offers a treasure trove of information about any country in the world. With a single query, you can uncover details like country names, languages, currencies, dial codes, timezones, and even links to their flags. It’s a perfect tool for building apps that need geographic or cultural context.
+The getByCountry API offers a treasure trove of information about any country in the world. With a single query, you can uncover details like country names, languages, currencies, dial codes, timezones, and even links to their flags. It's a perfect tool for building apps that need geographic or cultural context.
 
 ##### Examples
 
@@ -804,6 +804,38 @@ console.log(locales);
   // ... other countries and their locales
 }
 */
+```
+
+#### getDefaultLocaleList() 🌐
+
+The `getDefaultLocaleList` API provides a comprehensive mapping of country codes to their default locale codes. This function is particularly useful when you need to quickly identify the primary language/locale used in each country. It returns a promise that resolves to an object where each key is a country code, and its value is the default locale code for that country.
+
+##### Examples
+
+```javascript
+// Fetching default locales for all countries
+const defaultLocales = await getDefaultLocaleList();
+console.log(defaultLocales);
+/* Output:
+{
+  "AF": "fa_AF",    // Afghanistan's default locale
+  "IN": "en_IN",    // India's default locale
+  "US": "en_US",    // United States' default locale
+  "JP": "ja_JP",    // Japan's default locale
+  // ... other countries and their default locales
+}
+*/
+
+// Error handling
+try {
+  const defaultLocales = await getDefaultLocaleList();
+} catch (error) {
+  console.error(error.message);
+  // Handles various error cases like:
+  // - Network errors
+  // - Invalid response format
+  // - Empty response data
+}
 ```
 
 #### getLocaleByCountry
