@@ -234,7 +234,7 @@ console.log(
         },
         {
             "type": "literal",
-            "value": " "
+            "value": " "
         },
         {
             "type": "integer",
@@ -293,7 +293,7 @@ console.log(
         },
         {
             "type": "literal",
-            "value": " "
+            "value": " "
         },
         {
             "type": "currency",
@@ -369,7 +369,7 @@ console.log(
         },
         {
             "type": "literal",
-            "value": " "
+            "value": " "
         },
         {
             "type": "currency",
@@ -743,7 +743,7 @@ getDefaultLocaleByCountry('XYZ').catch((err) => {
 
 #### getByCountry
 
-The getByCountry API offers a treasure trove of information about any country in the world. With a single query, you can uncover details like country names, languages, currencies, dial codes, timezones, and even links to their flags. It’s a perfect tool for building apps that need geographic or cultural context.
+The getByCountry API offers a treasure trove of information about any country in the world. With a single query, you can uncover details like country names, languages, currencies, dial codes, timezones, and even links to their flags. It's a perfect tool for building apps that need geographic or cultural context.
 
 ##### Examples
 
@@ -885,6 +885,52 @@ console.log(res);
 getStates('XYZ').catch((err) => {
   console.log(err);
 }); // Outputs Invalid country code: XYZ
+```
+
+#### getStatesByZipCode(zipcode, countryCode?)
+
+🏘️ Want to find out which state a zipcode belongs to? The getStatesByZipCode API is your trusty guide! Just provide a zipcode, and optionally a country code, and it'll fetch the state information for you. If you don't specify a country, it'll search across all supported countries to find your zipcode's home state. Perfect for address validation, location-based services, or just satisfying your geographical curiosity! 🌍🔍
+
+##### Examples
+
+```javascript
+// Finding state for a specific zipcode in a country
+const stateInfo = await getStatesByZipCode('110001', 'IN');
+console.log(stateInfo);
+/*
+{
+  code: 'DL',
+  name: 'Delhi',
+  country: 'IN'
+}
+*/
+
+// Searching across all supported countries
+const stateInfo = await getStatesByZipCode('110001');
+console.log(stateInfo);
+/*
+{
+  code: 'DL',
+  name: 'Delhi',
+  country: 'IN'
+}
+*/
+
+// Handling invalid zipcodes
+try {
+  await getStatesByZipCode('999999', 'IN');
+} catch (error) {
+  console.error(error.message);
+  // Outputs: Zipcode "999999" not found in any supported country. Please ensure you provide a valid zipcode that exists within the specified countries.
+}
+
+// Handling invalid country codes
+try {
+  await getStatesByZipCode('110001', 'XX');
+} catch (error) {
+  console.error(error.message);
+  // Outputs: Invalid country code: XX. Please ensure you provide a valid country code.
+}
 ```
 
 #### getCities(country_code, states_code)
