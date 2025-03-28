@@ -4,6 +4,7 @@ export { default as getAllCountries } from './getAllCountries';
 export { default as getStates } from './getStates';
 export { default as getCities } from './getCities';
 export { default as getZipcodes } from './getZipcodes';
+export { default as getZipcodesByCity } from './getZipcodesByCity';
 export { default as getByCountry } from './getByCountry';
 export { default as getDefaultLocaleByCountry } from './getDefaultLocaleByCountry';
 export { default as getLocaleList } from './getLocaleList';
