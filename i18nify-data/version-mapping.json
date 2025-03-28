@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "description": "Version mapping between i18nify-js and i18nify-data",
+  "mappings": {
+    "1.12.6": {
+      "country": "version1.0.0",
+      "bankcodes": "version1.0.0",
+      "currency": "version1.0.0",
+      "phone-number": "version1.0.0"
+    },
+    "1.12.5": {
+      "country": "version1.0.0",
+      "bankcodes": "version1.0.0",
+      "currency": "version1.0.0",
+      "phone-number": "version1.0.0"
+    },
+    "1.12.4": {
+      "country": "version1.0.0",
+      "bankcodes": "version1.0.0",
+      "currency": "version1.0.0",
+      "phone-number": "version1.0.0"
+    }
+  }
+}
