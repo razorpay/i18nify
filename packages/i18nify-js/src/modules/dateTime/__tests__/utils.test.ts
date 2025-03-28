@@ -60,6 +60,26 @@ describe('dateTime - utils', () => {
         new Date(2024, 1, 29, 23, 59, 59),
       );
     });
+
+    // Test for handling non-Error object in catch block
+    test('handles non-Error object in catch block', () => {
+      const input = '2024-02-29T23:59:59';
+      // Mock Date constructor to throw a non-Error object
+      const originalDate = global.Date;
+      global.Date = class extends Date {
+        constructor() {
+          super();
+          throw 'non-Error object';
+        }
+      } as any;
+
+      expect(() => stringToDate(input)).toThrow(
+        'An unknown error occurred. Error details: non-Error object',
+      );
+
+      // Restore original Date constructor
+      global.Date = originalDate;
+    });
   });
 
   describe('convertToStandardDate', () => {

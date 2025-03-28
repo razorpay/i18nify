@@ -63,6 +63,30 @@ describe('dateTime - getRelativeTime', () => {
     );
   });
 
+  test('handles non-Error instance in catch block', () => {
+    const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+    // Create a custom error that's not an instance of Error
+    const customError = { message: 'custom error' };
+
+    // Mock the Intl.RelativeTimeFormat constructor to throw our custom error
+    const originalRTF = Intl.RelativeTimeFormat;
+    (Intl as any).RelativeTimeFormat = class {
+      constructor() {
+        throw customError;
+      }
+    };
+
+    expect(() =>
+      getRelativeTime(new Date(), {
+        locale: 'en-US',
+        baseDate: oneDayAgo,
+      }),
+    ).toThrow('An unknown error occurred. Error details: [object Object]');
+
+    // Restore original implementation
+    (Intl as any).RelativeTimeFormat = originalRTF;
+  });
+
   test('returns correct relative time for weeks', () => {
     const twoWeeksAgo = new Date(now.getTime() - 2 * 7 * 24 * 60 * 60 * 1000);
     expect(getRelativeTime(twoWeeksAgo)).toBe('2 weeks ago');

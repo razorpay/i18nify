@@ -168,6 +168,104 @@ describe('formatNumber', () => {
     );
   });
 
+  it('should handle non-Error throws with custom error object', () => {
+    const customError = { message: 'custom error' };
+    expect(() => {
+      formatNumber(123, {
+        intlOptions: {
+          get style() {
+            throw customError;
+          },
+        },
+      } as any);
+    }).toThrow(
+      new Error(
+        'Error: An unknown error occurred. Error details: [object Object]',
+      ),
+    );
+  });
+
+  it('should handle scientific notation', () => {
+    const result = formatNumber('1234567', {
+      intlOptions: {
+        notation: 'scientific',
+      },
+    });
+    expect(result).toBe('1.235E6');
+  });
+
+  it('should handle engineering notation', () => {
+    const result = formatNumber('1234567', {
+      intlOptions: {
+        notation: 'engineering',
+      },
+    });
+    expect(result).toBe('1.235E6');
+  });
+
+  it('should handle compact notation with short display', () => {
+    const result = formatNumber('1234567', {
+      intlOptions: {
+        notation: 'compact',
+        compactDisplay: 'short',
+      },
+    });
+    expect(result).toBe('1.2M');
+  });
+
+  it('should handle compact notation with long display', () => {
+    const result = formatNumber('1234567', {
+      intlOptions: {
+        notation: 'compact',
+        compactDisplay: 'long',
+      },
+    });
+    expect(result).toBe('1.2 million');
+  });
+
+  it('should handle unit formatting', () => {
+    const result = formatNumber('1234.5', {
+      intlOptions: {
+        style: 'unit',
+        unit: 'kilometer',
+        unitDisplay: 'long',
+      },
+    });
+    expect(result).toBe('1,234.5 kilometers');
+  });
+
+  it('should handle unit formatting with short display', () => {
+    const result = formatNumber('1234.5', {
+      intlOptions: {
+        style: 'unit',
+        unit: 'kilometer',
+        unitDisplay: 'short',
+      },
+    });
+    expect(result).toBe('1,234.5 km');
+  });
+
+  it('should handle unit formatting with narrow display', () => {
+    const result = formatNumber('1234.5', {
+      intlOptions: {
+        style: 'unit',
+        unit: 'kilometer',
+        unitDisplay: 'narrow',
+      },
+    });
+    expect(result).toBe('1,234.5km');
+  });
+
+  it('should handle locale matcher option', () => {
+    const result = formatNumber('1234.5', {
+      locale: 'en-US',
+      intlOptions: {
+        localeMatcher: 'lookup',
+      },
+    });
+    expect(result).toBe('1,234.5');
+  });
+
   const intlMappedTestCases = [
     ['SGD', 'en-SG', 'S$123,456.33'],
     ['XCD', 'en-AI', 'EC$123,456.33'],
