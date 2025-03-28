@@ -642,6 +642,35 @@ The Geo Module is designed to enrich your applications by providing easy access 
 >
 > These countries are 'IN', 'MY', 'SG' and 'US'.
 
+#### getCityByZipcode
+
+The getCityByZipcode API allows you to retrieve the name of a city based on a given zipcode. This function is particularly useful for applications that need to map zipcodes to city names, providing a seamless way to enhance user experience with localized data.
+
+##### Parameters:
+
+- `zipcode` (string): The zipcode for which you want to find the city name.
+- `countryCode` (optional, string): The country code to narrow down the search. If not provided, the function searches across all supported countries.
+
+##### Returns:
+
+- A promise that resolves to the city name if found, or rejects with an error if the zipcode is invalid or not found.
+
+##### Example:
+
+```javascript
+import { getCityByZipcode } from 'i18nify-js';
+
+// Example with country code
+getCityByZipcode('90001', 'US')
+  .then((cityName) => console.log(cityName))
+  .catch((error) => console.error(error));
+
+// Example without country code
+getCityByZipcode('90001')
+  .then((cityName) => console.log(cityName))
+  .catch((error) => console.error(error));
+```
+
 #### getAllCountries
 
 Looking for a global adventure? The getAllCountries API is your passport to a world of fun facts! Get ready to explore every country on the map, complete with cool details like names, languages, currencies, dial codes, and even their snazzy flags.
