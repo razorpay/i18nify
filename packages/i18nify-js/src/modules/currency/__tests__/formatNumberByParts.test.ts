@@ -247,6 +247,23 @@ describe('formatNumberByParts', () => {
     );
   });
 
+  it('should handle non-Error object throws', () => {
+    const customError = { foo: 'bar' };
+    expect(() => {
+      formatNumberByParts(123, {
+        intlOptions: {
+          get style() {
+            throw customError;
+          },
+        },
+      } as any);
+    }).toThrow(
+      new Error(
+        'Error: An unknown error occurred. Error details: [object Object]',
+      ),
+    );
+  });
+
   it('should return correct value for isPrefixSymbol for negative amounts', () => {
     const inrParts = formatNumberByParts(-1234567, {
       currency: 'INR',
@@ -271,6 +288,89 @@ describe('formatNumberByParts', () => {
     expect(formatNumberByParts(-1234567, {} as any).isPrefixSymbol).toEqual(
       true,
     );
+  });
+
+  it('should handle parts with non-allowed types', () => {
+    const result = formatNumberByParts(0.5, {
+      intlOptions: {
+        style: 'percent',
+      },
+    });
+
+    expect(result).toEqual({
+      integer: '50',
+      percentSign: '%',
+      isPrefixSymbol: true,
+      rawParts: [
+        {
+          type: 'integer',
+          value: '50',
+        },
+        {
+          type: 'percentSign',
+          value: '%',
+        },
+      ],
+    });
+  });
+
+  it('should handle numbers with no integer part', () => {
+    const result = formatNumberByParts(0.123, {
+      intlOptions: {
+        minimumIntegerDigits: 1,
+        maximumFractionDigits: 3,
+      },
+    });
+
+    expect(result).toEqual({
+      integer: '0',
+      decimal: '.',
+      fraction: '123',
+      isPrefixSymbol: true,
+      rawParts: [
+        {
+          type: 'integer',
+          value: '0',
+        },
+        {
+          type: 'decimal',
+          value: '.',
+        },
+        {
+          type: 'fraction',
+          value: '123',
+        },
+      ],
+    });
+  });
+
+  it('should handle formatting without currency', () => {
+    const result = formatNumberByParts(123.45, {
+      intlOptions: {
+        style: 'decimal',
+      },
+    });
+
+    expect(result).toEqual({
+      integer: '123',
+      decimal: '.',
+      fraction: '45',
+      isPrefixSymbol: true,
+      rawParts: [
+        {
+          type: 'integer',
+          value: '123',
+        },
+        {
+          type: 'decimal',
+          value: '.',
+        },
+        {
+          type: 'fraction',
+          value: '45',
+        },
+      ],
+    });
   });
 
   const intlMappedTestCases = [
