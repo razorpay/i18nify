@@ -69,4 +69,26 @@ describe('dateTime - getWeekdays', () => {
       'Error: An error occurred while creating the DateFormatter instance or formatting the weekdays: Value dummy out of range for Intl.DateTimeFormat options property weekday. Please ensure the provided options are valid and try again.',
     );
   });
+
+  test('uses default locale when no locale is provided', () => {
+    const weekdays = getWeekdays({});
+    expect(weekdays).toHaveLength(7);
+    expect(weekdays[0]).toBe('Sunday'); // Default locale is 'en-US'
+  });
+
+  test('handles non-Error instance in catch block', () => {
+    jest.isolateModules(() => {
+      jest.doMock('@internationalized/date', () => ({
+        DateFormatter: jest.fn().mockImplementation(() => {
+          throw 'Non-Error string';
+        }),
+      }));
+
+      const { getWeekdays } = require('../index');
+
+      expect(() => getWeekdays({})).toThrow(
+        'Error: An unknown error occurred. Error details: Non-Error string',
+      );
+    });
+  });
 });
