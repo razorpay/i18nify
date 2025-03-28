@@ -13,6 +13,9 @@ const isValidPhoneNumber = (
   phoneNumber: string | number,
   countryCode?: CountryCodeType,
 ): boolean => {
+  // Return false if phoneNumber is empty, null, or undefined
+  if (!phoneNumber) return false;
+
   // Clean the provided phoneNumber by removing non-numeric characters
   const cleanedPhoneNumber = cleanPhoneNumber(phoneNumber.toString());
   if (!cleanedPhoneNumber) return false;
@@ -25,9 +28,6 @@ const isValidPhoneNumber = (
       ? countryCode
       : phoneInfo.countryCode
   ) as CountryCodeType;
-
-  // Return false if phoneNumber is empty
-  if (!phoneNumber) return false;
 
   // Check if the countryCode exists in the PHONE_REGEX_MAPPER
   if (countryCode in regexMapper) {
