@@ -10,3 +10,4 @@ export { default as getDefaultLocaleByCountry } from './getDefaultLocaleByCountr
 export { default as getLocaleList } from './getLocaleList';
 export { default as getLocaleByCountry } from './getLocaleByCountry';
 export { default as getCityByZipcode } from './getCityByZipcode';
+export { default as validateZipCode } from './validateZipCode';
