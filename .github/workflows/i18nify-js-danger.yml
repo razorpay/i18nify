@@ -38,7 +38,7 @@ jobs:
       - name: Make Build
         run: yarn build-js
       - name: Upload base stats
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: base
           path: |
@@ -61,7 +61,7 @@ jobs:
       - name: Make Build
         run: yarn build-js
       - name: Upload pr build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pr
           path: |
@@ -90,7 +90,7 @@ jobs:
           node-version: 20.3.1
 
       - name: Download stats
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: ./build
 

@@ -1,5 +1,22 @@
 # @razorpay/i18nify-js
 
+## 1.12.5
+
+### Patch Changes
+
+- 7ea622e: fix: update IN phone number regex [ROW-227]
+
+## 1.12.4
+
+### Patch Changes
+
+- 8ce78d5: introduce getDefaultLocaleByCountry api
+- 6590a44: feat: Add getListOfBanks api in geo module
+- 243859a: update IN,MY country data
+- 5bbace7: fix floating point issue in convertToMinorUnit
+- 1cd62d0: fix github rawcontent path
+- f8fcf09: introduce getByCountry api
+
 ## 1.12.3
 
 ### Patch Changes

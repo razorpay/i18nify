@@ -1,18 +1,28 @@
-import 'src/global.css';
+import { ToastContainer } from '@razorpay/blade/components';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useLanguageContext } from 'src/context/languagesContext';
+import { ROUTER_MAP } from 'src/Routes/constants';
+import { GlobalStyles } from 'src/styles';
 
-import { useScrollToTop } from 'src/hooks/use-scroll-to-top';
+const App = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (location.pathname === '/') {
+      navigate('/i18nify-js');
+    }
+  }, []);
 
-import Router from 'src/routes/sections';
-import ThemeProvider from 'src/theme';
-
-// ----------------------------------------------------------------------
-
-export default function App() {
-  useScrollToTop();
+  const { selectedLanguage } = useLanguageContext();
+  const Router = ROUTER_MAP[selectedLanguage];
 
   return (
-    <ThemeProvider>
+    <>
+      <ToastContainer />
+      <GlobalStyles />
       <Router />
-    </ThemeProvider>
+    </>
   );
-}
+};
+
+export default App;

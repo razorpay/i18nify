@@ -638,8 +638,38 @@ The Geo Module is designed to enrich your applications by providing easy access 
 > 1. getStates
 > 2. getCities
 > 3. getZipcodes
+> 4. getZipcodesByCity
 >
 > These countries are 'IN', 'MY', 'SG' and 'US'.
+
+#### getCityByZipcode
+
+The getCityByZipcode API allows you to retrieve the name of a city based on a given zipcode. This function is particularly useful for applications that need to map zipcodes to city names, providing a seamless way to enhance user experience with localized data.
+
+##### Parameters:
+
+- `zipcode` (string): The zipcode for which you want to find the city name.
+- `countryCode` (optional, string): The country code to narrow down the search. If not provided, the function searches across all supported countries.
+
+##### Returns:
+
+- A promise that resolves to the city name if found, or rejects with an error if the zipcode is invalid or not found.
+
+##### Example:
+
+```javascript
+import { getCityByZipcode } from 'i18nify-js';
+
+// Example with country code
+getCityByZipcode('90001', 'US')
+  .then((cityName) => console.log(cityName))
+  .catch((error) => console.error(error));
+
+// Example without country code
+getCityByZipcode('90001')
+  .then((cityName) => console.log(cityName))
+  .catch((error) => console.error(error));
+```
 
 #### getAllCountries
 
@@ -758,6 +788,47 @@ console.log(res);
       "default_currency": "AFN"
     }
 */
+```
+
+#### getLocaleList()
+
+🌐 This function fetches a comprehensive mapping of country codes to their supported locale codes. It's your go-to tool for discovering which locales are available for each country! The function returns a promise that resolves to an object where each key is a country code, and its value is an array of supported locale codes.
+
+```javascript
+const locales = await getLocaleList();
+console.log(locales);
+/* Output:
+{
+  "IN": ["hi_IN", "en_IN"],
+  "US": ["en_US"],
+  // ... other countries and their locales
+}
+*/
+```
+
+#### getLocaleByCountry
+
+The getLocaleByCountry API is your multilingual compass, helping you discover all the supported locales for any country. Perfect for building apps that need to handle multiple language variants within a single country, it returns an array of locale codes that are officially used in the specified country.
+
+##### Examples
+
+```javascript
+// Getting all supported locales for a country
+const res = await getLocaleByCountry('AF');
+console.log(res);
+/*
+    [
+        "fa_AF",
+        "ps",
+        "uz_AF",
+        "tk"
+    ]
+*/
+
+// Passing invalid country code
+getLocaleByCountry('XYZ').catch((err) => {
+  console.log(err);
+}); // Outputs Invalid country code: XYZ
 ```
 
 #### getStates(country_code)
@@ -928,6 +999,43 @@ getZipcodes('XYZ').catch((err) => {
 getZipcodes('IN', 'XYZ').catch((err) => {
   console.log(err);
 }); // Outputs State code XYZ missing in IN
+```
+
+#### getZipcodesByCity(countryCode, cityIdentifier)
+
+🏙️ Get all postal codes for a specific city! This versatile API accepts either a city name or city code and returns an array of zipcodes. Perfect for address validation and location-based services!
+
+##### Parameters
+
+- `countryCode`: A valid country code (e.g., 'IN' for India)
+- `cityIdentifier`: The city name (e.g., 'New Delhi')
+
+##### Returns
+
+Promise that resolves to an array of zipcodes for the specified city.
+
+##### Examples
+
+```javascript
+// Using city name
+const delhiZipcodes = await getZipcodesByCity('IN', 'New Delhi');
+console.log(delhiZipcodes); // ['110001', '110002', ...]
+
+// Case-insensitive matching works too!
+const eastDelhiZipcodes = await getZipcodesByCity('IN', 'East Delhi');
+console.log(eastDelhiZipcodes); // ['110031', '110032', ...]
+```
+
+##### Error Handling
+
+```javascript
+try {
+  const zipcodes = await getZipcodesByCity('XYZ', 'Invalid City');
+} catch (error) {
+  console.error(error.message);
+  // Outputs: Invalid country code: XYZ. Please ensure you provide a valid country code.
+  // or: City with identifier "Invalid City" not found in XYZ...
+}
 ```
 
 #### getFlagOfCountry(countryCode) 🏁
