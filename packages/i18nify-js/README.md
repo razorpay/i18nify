@@ -1376,3 +1376,19 @@ async function fetchBanks() {
 
 fetchBanks();
 ```
+
+#### getBankCode(\_countryCode, bankName)
+
+🏦🔍 Need a bank's code in a specific country? This function has your back! Just pass the country code and the exact bank name, and it'll fetch the bank code for you from the central i18nify data source. If the bank or country isn't supported, it'll give you a heads-up with a helpful error. No more guessing or manual lookups—get the right bank code in seconds!
+
+##### Examples
+
+```javascript
+getBankCode('IN', 'Abhyudaya Co-operative Bank')
+  .then((code) => console.log(code)) // Outputs the bank code for SBI in India (e.g., "ABHY")
+  .catch((err) => console.error(err.message));
+
+getBankCode('US', 'Bank of America CORPORATION')
+  .then((code) => console.log(code)) // Outputs the bank code for Bank of America (e.g., "MLCO")
+  .catch((err) => console.error(err.message));
+```
