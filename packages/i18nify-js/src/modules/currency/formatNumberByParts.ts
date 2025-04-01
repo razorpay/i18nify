@@ -18,6 +18,11 @@ const formatNumberByParts = (
   } = {},
 ): ByParts => {
   // Validate the amount parameter to ensure it is a number
+  if (typeof amount === 'string' && amount.trim() === '') {
+    throw new Error(
+      `Parameter 'amount' is not a valid number. The received value was: ${amount} of type ${typeof amount}. Please ensure you pass a valid number.`,
+    );
+  }
   if (!Number(amount) && Number(amount) !== 0)
     throw new Error(
       `Parameter 'amount' is not a valid number. The received value was: ${amount} of type ${typeof amount}. Please ensure you pass a valid number.`,

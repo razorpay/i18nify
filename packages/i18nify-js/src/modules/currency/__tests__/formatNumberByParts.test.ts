@@ -1,5 +1,6 @@
 import { CurrencyCodeType, formatNumberByParts } from '../index';
 import { numberPartsIntlMap } from './mocks/formatNumberToParts';
+import { ALLOWED_FORMAT_PARTS_KEYS } from '../constants';
 
 const nbsp = String.fromCharCode(160);
 
@@ -371,6 +372,78 @@ describe('formatNumberByParts', () => {
         },
       ],
     });
+  });
+
+  it('should handle empty string as amount', () => {
+    expect(() => formatNumberByParts('')).toThrow(
+      "Parameter 'amount' is not a valid number. The received value was:  of type string. Please ensure you pass a valid number.",
+    );
+  });
+
+  it('should handle multiple group separators in number', () => {
+    const result = formatNumberByParts(1234567.89, {
+      currency: 'USD',
+      locale: 'en-US',
+    });
+
+    expect(result.integer).toBe('1,234,567');
+    expect(result.rawParts.filter((p) => p.type === 'group')).toHaveLength(2);
+  });
+
+  it('should handle non-Error object throws from Intl.NumberFormat', () => {
+    const customError = { message: 'Custom error' };
+    expect(() => {
+      formatNumberByParts(123, {
+        intlOptions: {
+          get style() {
+            throw customError;
+          },
+        },
+      } as any);
+    }).toThrow('An unknown error occurred. Error details: [object Object]');
+  });
+
+  it('should handle group separator with no integer part', () => {
+    const result = formatNumberByParts(0.123, {
+      intlOptions: {
+        minimumIntegerDigits: 1,
+        maximumFractionDigits: 3,
+        useGrouping: true,
+      },
+    });
+
+    expect(result.integer).toBe('0');
+    expect(result.rawParts.filter((p) => p.type === 'group')).toHaveLength(0);
+  });
+
+  it('should handle invalid string input', () => {
+    expect(() => formatNumberByParts('abc')).toThrow(
+      "Parameter 'amount' is not a valid number. The received value was: abc of type string. Please ensure you pass a valid number.",
+    );
+  });
+
+  it('should handle non-allowed part types', () => {
+    const result = formatNumberByParts(123.45, {
+      intlOptions: {
+        style: 'decimal',
+      },
+    });
+
+    // Verify that only allowed part types are included in the formatted object
+    const formattedKeys = Object.keys(result).filter(
+      (key) => key !== 'rawParts' && key !== 'isPrefixSymbol',
+    );
+    expect(
+      formattedKeys.every((key) =>
+        ALLOWED_FORMAT_PARTS_KEYS.includes(key as any),
+      ),
+    ).toBe(true);
+  });
+
+  it('should handle empty string input', () => {
+    expect(() => formatNumberByParts('')).toThrow(
+      "Parameter 'amount' is not a valid number. The received value was:  of type string. Please ensure you pass a valid number.",
+    );
   });
 
   const intlMappedTestCases = [
