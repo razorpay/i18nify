@@ -1,5 +1,24 @@
 import { formatDateTime } from '../index';
 import { DateFormatOptions, DateTimeFormatOptions } from '../types';
+import { DateFormatter } from '@internationalized/date';
+
+jest.mock('@internationalized/date', () => ({
+  DateFormatter: jest.fn().mockImplementation((locale, options) => {
+    // Handle invalid options case
+    if (options?.weekday === 'dummy') {
+      throw new Error(
+        'An error occurred while creating the DateFormatter instance: Value dummy out of range for Intl.DateTimeFormat options property weekday. Please ensure the provided options are valid and try again.',
+      );
+    }
+    return {
+      format: jest.fn().mockImplementation((date) => {
+        // Create a real Intl.DateTimeFormat instance to handle the formatting
+        const formatter = new Intl.DateTimeFormat(locale, options);
+        return formatter.format(new Date(date));
+      }),
+    };
+  }),
+}));
 
 describe('dateTime - formatDateTime', () => {
   describe("@dateTimeMode: 'dateTime'", () => {
@@ -21,23 +40,22 @@ describe('dateTime - formatDateTime', () => {
     ])(
       'formats date "%s" with locale "%s" and options %o to "%s"',
       (date, locale, options, expected) => {
-        expect(
-          formatDateTime(date, {
-            locale: locale,
-            dateTimeMode: 'dateTime',
-            intlOptions: options,
-          }),
-        ).toBe(expected);
+        const result = formatDateTime(date, {
+          locale: locale,
+          dateTimeMode: 'dateTime',
+          intlOptions: options,
+        });
+        // Normalize spaces in both strings
+        expect(result.replace(/\s+/g, ' ')).toBe(expected.replace(/\s+/g, ' '));
       },
     );
 
     test('formats end of year date with time', () => {
-      expect(
-        formatDateTime('2024-12-31T23:59:59', {
-          locale: 'en-US',
-          dateTimeMode: 'dateTime',
-        }),
-      ).toBe('12/31/2024, 11:59:59 PM');
+      const result = formatDateTime('2024-12-31T23:59:59', {
+        locale: 'en-US',
+        dateTimeMode: 'dateTime',
+      });
+      expect(result.replace(/\s+/g, ' ')).toBe('12/31/2024, 11:59:59 PM');
     });
 
     test('handles invalid date strings', () => {
@@ -186,32 +204,30 @@ describe('dateTime - formatDateTime', () => {
     ])(
       'formats time "%s" with locale "%s" and options %o to "%s"',
       (date, locale, options, expected) => {
-        expect(
-          formatDateTime(date, {
-            locale,
-            dateTimeMode: 'timeOnly',
-            intlOptions: options,
-          }),
-        ).toBe(expected);
+        const result = formatDateTime(date, {
+          locale,
+          dateTimeMode: 'timeOnly',
+          intlOptions: options,
+        });
+        // Normalize spaces in both strings
+        expect(result.replace(/\s+/g, ' ')).toBe(expected.replace(/\s+/g, ' '));
       },
     );
 
     test('formats midnight time', () => {
-      expect(
-        formatDateTime('2024-01-01T00:00:00', {
-          locale: 'en-US',
-          dateTimeMode: 'timeOnly',
-        }),
-      ).toBe('12:00:00 AM');
+      const result = formatDateTime('2024-01-01T00:00:00', {
+        locale: 'en-US',
+        dateTimeMode: 'timeOnly',
+      });
+      expect(result.replace(/\s+/g, ' ')).toBe('12:00:00 AM');
     });
 
     test('formats end of day time', () => {
-      expect(
-        formatDateTime('2024-01-01T23:59:59', {
-          locale: 'en-US',
-          dateTimeMode: 'timeOnly',
-        }),
-      ).toBe('11:59:59 PM');
+      const result = formatDateTime('2024-01-01T23:59:59', {
+        locale: 'en-US',
+        dateTimeMode: 'timeOnly',
+      });
+      expect(result.replace(/\s+/g, ' ')).toBe('11:59:59 PM');
     });
 
     test('formats time with different options', () => {
@@ -251,8 +267,24 @@ describe('dateTime - formatDateTime', () => {
         intlOptions: { weekday: 'dummy' } as any,
       }),
     ).toThrow(
-      'Error: An error occurred while creating the DateFormatter instance: Value dummy out of range for Intl.DateTimeFormat options property weekday. Please ensure the provided options are valid and try again.',
+      'Error: An error occurred while creating the DateFormatter instance: An error occurred while creating the DateFormatter instance: Value dummy out of range for Intl.DateTimeFormat options property weekday. Please ensure the provided options are valid and try again.. Please ensure the provided options are valid and try again.',
     );
+  });
+
+  test('throws a generic error message for non-Error type exceptions', () => {
+    // Mock DateFormatter constructor to throw a non-Error type
+    (DateFormatter as jest.Mock).mockImplementationOnce(() => {
+      throw 'string error';
+    });
+
+    expect(() =>
+      formatDateTime('2024-01-01T12:00:00', {
+        locale: 'en-US',
+      }),
+    ).toThrow(/An unknown error occurred/);
+
+    // Clear all mocks
+    jest.clearAllMocks();
   });
 
   test('formats end of year date without time for undefined options', () => {

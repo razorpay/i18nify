@@ -9,6 +9,7 @@ const config = {
     '.spec.ts',
     'modules/shared/index.ts$',
     'packages/i18nify-js/src/index.ts$',
+    'modules/types/index.ts$',
   ],
   coverageThreshold: {
     './src/': {
