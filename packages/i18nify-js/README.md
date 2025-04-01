@@ -806,6 +806,38 @@ console.log(locales);
 */
 ```
 
+#### getDefaultLocaleList() 🌐
+
+The `getDefaultLocaleList` API provides a comprehensive mapping of country codes to their default locale codes. This function is particularly useful when you need to quickly identify the primary language/locale used in each country. It returns a promise that resolves to an object where each key is a country code, and its value is the default locale code for that country.
+
+##### Examples
+
+```javascript
+// Fetching default locales for all countries
+const defaultLocales = await getDefaultLocaleList();
+console.log(defaultLocales);
+/* Output:
+{
+  "AF": "fa_AF",    // Afghanistan's default locale
+  "IN": "en_IN",    // India's default locale
+  "US": "en_US",    // United States' default locale
+  "JP": "ja_JP",    // Japan's default locale
+  // ... other countries and their default locales
+}
+*/
+
+// Error handling
+try {
+  const defaultLocales = await getDefaultLocaleList();
+} catch (error) {
+  console.error(error.message);
+  // Handles various error cases like:
+  // - Network errors
+  // - Invalid response format
+  // - Empty response data
+}
+```
+
 #### getLocaleByCountry
 
 The getLocaleByCountry API is your multilingual compass, helping you discover all the supported locales for any country. Perfect for building apps that need to handle multiple language variants within a single country, it returns an array of locale codes that are officially used in the specified country.
