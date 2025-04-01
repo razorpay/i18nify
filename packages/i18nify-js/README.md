@@ -265,7 +265,7 @@ console.log(
     locale: 'fr-FR',
   }),
 ); /* {
-    "integer": "12 345",
+    "integer": "12 345",
     "decimal": ",",
     "fraction": "67",
     "currency": "€",
@@ -277,7 +277,7 @@ console.log(
         },
         {
             "type": "group",
-            "value": " "
+            "value": " "
         },
         {
             "type": "integer",
@@ -1115,6 +1115,64 @@ try {
   // or: City with identifier "Invalid City" not found in XYZ...
 }
 ```
+
+#### validateZipCode(zipcode, countryCode?) 🔍
+
+The `validateZipCode` API helps you verify if a zipcode exists in a specific country or across all supported countries. This function is particularly useful for address validation, form verification, and ensuring postal codes are valid before processing.
+
+##### Parameters
+
+- `zipcode` (string): The zipcode to validate
+- `countryCode` (optional, string): The country code to validate against. If not provided, searches across all supported countries.
+
+##### Returns
+
+Promise that resolves to:
+
+- `true` if the zipcode exists in the specified country (or any country if no country code is provided)
+- `false` if the zipcode is not found
+
+##### Examples
+
+```javascript
+// Validating a zipcode in a specific country
+const isValid = await validateZipCode('110001', 'IN');
+console.log(isValid); // true (for Delhi, India)
+
+// Validating a zipcode across all supported countries
+const existsAnywhere = await validateZipCode('90001');
+console.log(existsAnywhere); // true (if found in any country)
+
+// Handling invalid zipcodes
+const invalidZip = await validateZipCode('00000', 'IN');
+console.log(invalidZip); // false
+
+// Handling invalid country codes
+try {
+  await validateZipCode('110001', 'XYZ');
+} catch (error) {
+  console.error(error.message);
+  // Outputs: Invalid country code: XYZ. Please ensure you provide a valid country code.
+}
+
+// Handling empty zipcodes
+try {
+  await validateZipCode('');
+} catch (error) {
+  console.error(error.message);
+  // Outputs: Zipcode is required. Please provide a valid zipcode.
+}
+```
+
+##### Error Handling
+
+The API throws errors in the following cases:
+
+- When the zipcode is empty or contains only whitespace
+- When an invalid country code is provided
+- When the API request fails while searching in a specific country
+
+For multi-country searches (when no country code is provided), errors are silently handled by returning `false`, allowing the search to continue with other countries.
 
 #### getFlagOfCountry(countryCode) 🏁
 
