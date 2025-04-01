@@ -1,5 +1,18 @@
 # @razorpay/i18nify-js
 
+## 1.12.6
+
+### Patch Changes
+
+- ad1d01a: Feat/get zipcodes by city api
+- d464294: feat: add getLocaleList api in geo module
+- d8de170: feat: add getDefaultLocaleList api in geo module [ROW-571]
+- 2d68274: feat: add getLocaleByCountry api in geo module
+- 98d1f5e: feat(geo): add getStatesByZipCode export to geo module [ROW-574]
+- 032ea1f: feat(geo): add validateZipCode api in geo module [ROW-575]
+- 2589d26: feat: add getCityByZipcode api in geo module [ROW-573]
+- 0a7a897: test: add missing UTs in i18nify-js [ROW-771]
+
 ## 1.12.5
 
 ### Patch Changes
