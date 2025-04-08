@@ -1477,13 +1477,6 @@
     universal-base64 "2.1.0"
     use-presence "1.3.0"
 
-"@razorpay/i18nify-js@^1.12.5":
-  version "1.12.5"
-  resolved "https://registry.yarnpkg.com/@razorpay/i18nify-js/-/i18nify-js-1.12.5.tgz#e4183d2a8e0108b864e772f45200174d71b935dc"
-  integrity sha512-V3eVRgdNIutLqqAm+h2gTP9GT0QsJPEs7XSgNzqwyJk1qsp6sQRCgKGquerft1xR/hbYHuKEqwuk4U5BBw8Qgg==
-  dependencies:
-    "@internationalized/date" "^3.5.2"
-
 "@remix-run/router@1.23.0":
   version "1.23.0"
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.23.0.tgz#35390d0e7779626c026b11376da6789eb8389242"
