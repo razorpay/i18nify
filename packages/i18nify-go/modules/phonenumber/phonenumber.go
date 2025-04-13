@@ -10,7 +10,6 @@ package phonenumber
 import (
 	"embed"
 	"encoding/json"
-	"fmt"
 )
 
 //go:embed data
@@ -43,16 +42,29 @@ func (r *PhoneNumber) GetAllCountryTeleInformation() map[string]CountryTeleInfor
 
 // GetCountryTeleInformation retrieves telephone information for a specific country code.
 func GetCountryTeleInformation(code string) CountryTeleInformation {
+	if code == "" {
+		return CountryTeleInformation{}
+	}
+
 	// Read JSON data file containing country telephone information.
 	teleJsonData, err := teleJsonDir.ReadFile(DataFile)
 	if err != nil {
-		fmt.Println("Error reading JSON file:", err)
 		return CountryTeleInformation{}
 	}
+
 	// Unmarshal JSON data into PhoneNumber struct.
-	allCountryTeleInfo, _ := UnmarshalPhoneNumber(teleJsonData)
+	allCountryTeleInfo, err := UnmarshalPhoneNumber(teleJsonData)
+	if err != nil {
+		return CountryTeleInformation{}
+	}
+
 	// Retrieve telephone information for the specified country code.
-	return allCountryTeleInfo.CountryTeleInformation[code]
+	info, exists := allCountryTeleInfo.CountryTeleInformation[code]
+	if !exists {
+		return CountryTeleInformation{}
+	}
+
+	return info
 }
 
 // NewPhoneNumber creates a new PhoneNumber instance.

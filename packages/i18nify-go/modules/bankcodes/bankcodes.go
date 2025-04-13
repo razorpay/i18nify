@@ -1,13 +1,18 @@
 package bankcodes
 
 import (
+	"embed"
 	"encoding/json"
 	"errors"
 	"fmt"
-	"os"
-	"path/filepath"
 	"strings"
 )
+
+//go:embed data
+var bankJsonDir embed.FS
+
+// DataFile defines the path to the JSON data file containing bank information.
+const DataFile = "data/%s.json"
 
 type Identifier struct {
 	SwiftCode     string   `json:"swift_code"`
@@ -40,13 +45,16 @@ const (
 	IdentifierTypeIFSC          = "IFSC"
 )
 
-func loadBankInfo(filePath string) (*BankInfo, error) {
-	if filePath == "" {
-		return nil, errors.New("file path is empty")
+func loadBankInfo(countryCode string) (*BankInfo, error) {
+	if countryCode == "" {
+		return nil, errors.New("country code is empty")
 	}
 
-	// Load JSON file
-	data, err := os.ReadFile(filePath)
+	// Construct file path
+	filePath := fmt.Sprintf(DataFile, strings.ToUpper(countryCode))
+
+	// Load JSON file from embedded filesystem
+	data, err := bankJsonDir.ReadFile(filePath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}
@@ -66,19 +74,11 @@ func IsValidBankIdentifier(countryCode, identifierType, identifierValue string) 
 		return false, errors.New("countryCode, identifierType, and identifierValue must not be empty")
 	}
 
-	// Constructing file path based on country code
-	filePath := filepath.Join("data", strings.ToUpper(countryCode)+".json")
-
-	// Load the bank info from corresponding JSON file
-	bankInfo, err := loadBankInfo(filePath)
+	// Load the bank info from embedded filesystem
+	bankInfo, err := loadBankInfo(countryCode)
 	if err != nil {
 		return false, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
 	}
-
-	// Checking if the identifier type is valid for the country
-	// if bankInfo.Defaults.IdentifierType != identifierType {
-	// 	return false, fmt.Errorf("invalid identifier type '%s' for country: %s", identifierType, countryCode)
-	// }
 
 	// Iterating over bank details to validate the identifier value
 	for _, bank := range bankInfo.Details {
@@ -117,9 +117,7 @@ func GetBankNameFromShortCode(countryCode, shortCode string) (string, error) {
 		return "", errors.New("countryCode and shortCode must not be empty")
 	}
 
-	filePath := filepath.Join("data", strings.ToUpper(countryCode)+".json")
-
-	bankInfo, err := loadBankInfo(filePath)
+	bankInfo, err := loadBankInfo(countryCode)
 	if err != nil {
 		return "", fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
 	}
@@ -138,9 +136,7 @@ func GetDefaultBankIdentifiersFromShortCode(countryCode, shortCode string) ([]st
 		return nil, errors.New("countryCode and shortCode must not be empty")
 	}
 
-	filePath := filepath.Join("data", strings.ToUpper(countryCode)+".json")
-
-	bankInfo, err := loadBankInfo(filePath)
+	bankInfo, err := loadBankInfo(countryCode)
 	if err != nil {
 		return nil, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
 	}
@@ -175,9 +171,7 @@ func GetBankNameFromBankIdentifier(countryCode, identifier string) (string, erro
 		return "", errors.New("countryCode and identifier must not be empty")
 	}
 
-	filePath := filepath.Join("data", strings.ToUpper(countryCode)+".json")
-
-	bankInfo, err := loadBankInfo(filePath)
+	bankInfo, err := loadBankInfo(countryCode)
 	if err != nil {
 		return "", fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
 	}
