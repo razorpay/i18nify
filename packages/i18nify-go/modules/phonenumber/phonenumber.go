@@ -42,17 +42,30 @@ func (r *PhoneNumber) GetAllCountryTeleInformation() map[string]CountryTeleInfor
 }
 
 // GetCountryTeleInformation retrieves telephone information for a specific country code.
-func GetCountryTeleInformation(code string) CountryTeleInformation {
+func GetCountryTeleInformation(code string) (CountryTeleInformation, error) {
+	if code == "" {
+		return CountryTeleInformation{}, fmt.Errorf("country code cannot be empty")
+	}
+
 	// Read JSON data file containing country telephone information.
 	teleJsonData, err := teleJsonDir.ReadFile(DataFile)
 	if err != nil {
-		fmt.Println("Error reading JSON file:", err)
-		return CountryTeleInformation{}
+		return CountryTeleInformation{}, fmt.Errorf("error reading phone data file: %w", err)
 	}
+
 	// Unmarshal JSON data into PhoneNumber struct.
-	allCountryTeleInfo, _ := UnmarshalPhoneNumber(teleJsonData)
+	allCountryTeleInfo, err := UnmarshalPhoneNumber(teleJsonData)
+	if err != nil {
+		return CountryTeleInformation{}, fmt.Errorf("error unmarshalling phone data: %w", err)
+	}
+
 	// Retrieve telephone information for the specified country code.
-	return allCountryTeleInfo.CountryTeleInformation[code]
+	info, exists := allCountryTeleInfo.CountryTeleInformation[code]
+	if !exists {
+		return CountryTeleInformation{}, fmt.Errorf("no phone information found for country code: %s", code)
+	}
+
+	return info, nil
 }
 
 // NewPhoneNumber creates a new PhoneNumber instance.
