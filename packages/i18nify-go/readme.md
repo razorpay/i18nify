@@ -13,6 +13,14 @@ A comprehensive internationalization solution for Go applications, providing eas
 - International dial codes
 - Timezone information
 - Default locale settings
+- Example:
+```go
+country := i18nify_go.NewCountry("IN")
+metaData := country.GetCountryMetadata()
+fmt.Printf("Country: %s\n", metaData.CountryName)       // India
+fmt.Printf("Currency: %v\n", metaData.SupportedCurrency) // [INR]
+fmt.Printf("Dial Code: %s\n", metaData.DialCode)        // +91
+```
 
 ### 2. Currency Module
 - Currency names and symbols
@@ -21,12 +29,30 @@ A comprehensive internationalization solution for Go applications, providing eas
 - Physical currency denominations
 - Numeric codes
 - Direct currency symbol retrieval
+- Currency conversion between major and minor units
+- Example:
+```go
+// Get currency information
+currencyIN := country.GetCountryCurrency()
+fmt.Printf("Currency Name: %s\n", currencyIN[0].Name) // Indian Rupee
+fmt.Printf("Symbol: %s\n", currencyIN[0].Symbol)      // ₹
+
+// Convert between major and minor units
+majorAmount, _ := currency.ConvertToMajorUnit("INR", 1234) // 12.34 rupees
+minorAmount, _ := currency.ConvertToMinorUnit("USD", 12.34) // 1234 cents
+```
 
 ### 3. Phone Number Handling
 - International dial codes
 - Phone number validation patterns
 - Country-specific phone number formats
 - Direct phone number information retrieval
+- Example:
+```go
+phoneNumber := country.GetCountryPhoneNumber()
+fmt.Printf("Dial Code: %s\n", phoneNumber.DialCode)  // +91
+fmt.Printf("Regex: %s\n", phoneNumber.Regex)         // /^(?:(?:\+|0{0,2})91\s*[-]?\s*|[0]?)?[6789]\d{9}$/
+```
 
 ### 4. Subdivisions (States) Information
 - State/province names and codes
@@ -34,12 +60,32 @@ A comprehensive internationalization solution for Go applications, providing eas
 - Postal/ZIP code data
 - City-to-ZIP code mapping
 - State lookup by ZIP code
+- Example:
+```go
+subdivisions := country.GetCountrySubDivisions()
+state := subdivisions.GetStates()["KA"]
+fmt.Printf("State: %s\n", state.GetName())        // Karnataka
+fmt.Printf("Cities: %d\n", len(state.GetCities())) // 58
+
+// Get state by zipcode
+states := country.GetStatesByZipCode("452010")
+fmt.Printf("State: %s\n", states[0].GetName())    // Madhya Pradesh
+```
 
 ### 5. Bank Codes
 - IFSC code validation
 - Bank name lookup by short code
 - Bank identifier retrieval
 - Bank name lookup by identifier
+- Example:
+```go
+// Validate IFSC code
+isValid, _ := bankcodes.IsValidBankIdentifier("IN", bankcodes.IdentifierTypeIFSC, "HDFC0000001")
+
+// Get bank information
+bankName, _ := bankcodes.GetBankNameFromShortCode("IN", "HDFC") // HDFC Bank Limited
+identifiers, _ := bankcodes.GetDefaultBankIdentifiersFromShortCode("IN", "HDFC")
+```
 
 ## Installation
 
@@ -63,9 +109,9 @@ func main() {
     
     // Get basic country information
     metaData := country.GetCountryMetadata()
-    fmt.Printf("Country: %s\n", metaData.CountryName)
-    fmt.Printf("Currency: %s\n", metaData.SupportedCurrency[0])
-    fmt.Printf("Dial Code: %s\n", metaData.DialCode)
+    fmt.Printf("Country: %s\n", metaData.CountryName)       // India
+    fmt.Printf("Currency: %v\n", metaData.SupportedCurrency) // [INR]
+    fmt.Printf("Dial Code: %s\n", metaData.DialCode)        // +91
 }
 ```
 
@@ -101,6 +147,8 @@ i18nify-go/
 - All operations after initial load are performed in memory
 - Consider the memory footprint when working with large datasets
 - For optimal performance, initialize country objects once and reuse them
+- Data is loaded lazily, only when needed
+- Memory usage is optimized by sharing common data structures
 
 ## Data Sources
 - India (IN): [All India Pincode Directory](https://www.data.gov.in/catalog/all-india-pincode-directory)
@@ -113,9 +161,14 @@ We welcome contributions to improve this package! Please feel free to:
 - Open issues for bugs or feature requests
 - Submit pull requests with improvements
 - Help expand the data coverage for more countries
+- Add more test cases
+- Improve documentation
+- Add support for more data formats
 
 ## License
 [License details to be added]
 
 ## Support
-For support, please open an issue in the GitHub repository or contact the maintainers.
+For support, please:
+- Open an issue in the GitHub repository
+- Check the [example.go](example/example.go) file for usage examples

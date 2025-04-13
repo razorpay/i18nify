@@ -52,12 +52,8 @@ func main() {
 	fmt.Printf("Regex Pattern: %s\n", phoneNumberIN.Regex) // /^(?:(?:\+|0{0,2})91\s*[-]?\s*|[0]?)?[6789]\d{9}$/
 
 	// Format a sample phone number
-	phoneInfo, err := phonenumber.GetCountryTeleInformation("IN")
-	if err != nil {
-		fmt.Printf("Error getting phone information: %v\n", err)
-	} else {
-		fmt.Printf("Formatted Phone Number: %s%s\n", phoneInfo.DialCode, "9876543210") // +919876543210
-	}
+	phoneInfo := phonenumber.GetCountryTeleInformation("IN")
+	fmt.Printf("Formatted Phone Number: %s%s\n", phoneInfo.DialCode, "9876543210") // +919876543210
 
 	// Country Subdivisions
 	subdivisions := countryIN.GetCountrySubDivisions()
