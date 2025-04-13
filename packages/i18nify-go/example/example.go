@@ -10,89 +10,95 @@ import (
 )
 
 func main() {
-	//India
+	// Basic Country Information
 	countryIN := i18nify_go.NewCountry("IN")
-
 	metaDataIN := countryIN.GetCountryMetadata()
-	fmt.Println(metaDataIN.CountryName)       //India
-	fmt.Println(metaDataIN.SupportedCurrency) //[INR]
-	fmt.Println(metaDataIN.DialCode)          //+91
-	fmt.Println(metaDataIN.Timezones)         //Asia/Kolkata:{UTC +05:30}
-	fmt.Println(metaDataIN.DefaultLocale)     //en_IN
+	fmt.Printf("Country Name: %s\n", metaDataIN.CountryName)             // India
+	fmt.Printf("Supported Currency: %v\n", metaDataIN.SupportedCurrency) // [INR]
+	fmt.Printf("Dial Code: %s\n", metaDataIN.DialCode)                   // +91
+	fmt.Printf("Timezones: %v\n", metaDataIN.Timezones)                  // Asia/Kolkata:{UTC +05:30}
+	fmt.Printf("Default Locale: %s\n", metaDataIN.DefaultLocale)         // en_IN
 
-	// Currency Examples
-	// Get currency information for INR
+	// Currency Information
 	currencyIN := countryIN.GetCountryCurrency()
-	fmt.Println(currencyIN[0].Name)                          //Indian Rupee
-	fmt.Println(currencyIN[0].Symbol)                        //₹
-	fmt.Println(currencyIN[0].MinorUnit)                     //2
-	fmt.Println(currencyIN[0].NumericCode)                   //356
-	fmt.Println(currencyIN[0].PhysicalCurrencyDenominations) //[1, 2, 5, 10, 20, 50, 100, 200, 500, 2000]
-
-	// Get currency symbol directly
-	symbol, err := currency.GetCurrencySymbol("INR")
-	if err != nil {
-		fmt.Printf("Error getting currency symbol: %v\n", err)
-	} else {
-		fmt.Printf("Currency symbol: %s\n", symbol) //₹
+	if len(currencyIN) > 0 {
+		fmt.Printf("Currency Name: %s\n", currencyIN[0].Name)                                   // Indian Rupee
+		fmt.Printf("Currency Symbol: %s\n", currencyIN[0].Symbol)                               // ₹
+		fmt.Printf("Minor Unit: %s\n", currencyIN[0].MinorUnit)                                 // 2
+		fmt.Printf("Numeric Code: %s\n", currencyIN[0].NumericCode)                             // 356
+		fmt.Printf("Physical Denominations: %v\n", currencyIN[0].PhysicalCurrencyDenominations) // [1, 2, 5, 10, 20, 50, 100, 200, 500, 2000]
 	}
 
-	// Get currency information for USD
-	currencyUS, err := currency.GetCurrencyInformation("USD")
+	// Currency conversion examples
+	amount := 1234.0
+	majorAmount, err := currency.ConvertToMajorUnit("INR", amount)
 	if err != nil {
-		fmt.Printf("Error getting currency information: %v\n", err)
+		fmt.Printf("Error converting to major unit: %v\n", err)
 	} else {
-		fmt.Println(currencyUS.Name)                          //US Dollar
-		fmt.Println(currencyUS.Symbol)                        //$
-		fmt.Println(currencyUS.MinorUnit)                     //2
-		fmt.Println(currencyUS.NumericCode)                   //840
-		fmt.Println(currencyUS.PhysicalCurrencyDenominations) //[1, 5, 10, 25, 50, 100]
+		fmt.Printf("INR %v paise = %v rupees\n", amount, majorAmount) // INR 1234 paise = 12.34 rupees
 	}
 
-	// Phone Number Examples
-	// Get phone number information for India
+	// Convert from major to minor units
+	minorAmount, err := currency.ConvertToMinorUnit("USD", 12.34)
+	if err != nil {
+		fmt.Printf("Error converting to minor unit: %v\n", err)
+	} else {
+		fmt.Printf("USD $12.34 = %v cents\n", minorAmount) // USD $12.34 = 1234 cents
+	}
+
+	// Phone Number Information
 	phoneNumberIN := countryIN.GetCountryPhoneNumber()
-	fmt.Println(phoneNumberIN.DialCode) //+91
-	fmt.Println(phoneNumberIN.Regex)    // /^(?:(?:\+|0{0,2})91\s*[-]?\s*|[0]?)?[6789]\d{9}$/
+	fmt.Printf("Dial Code: %s\n", phoneNumberIN.DialCode)  // +91
+	fmt.Printf("Regex Pattern: %s\n", phoneNumberIN.Regex) // /^(?:(?:\+|0{0,2})91\s*[-]?\s*|[0]?)?[6789]\d{9}$/
 
 	// Format a sample phone number
-	phoneInfo := phonenumber.GetCountryTeleInformation("IN")
-	fmt.Printf("Phone number format: %s%s\n", phoneInfo.DialCode, "9876543210") // +919876543210
+	phoneInfo, err := phonenumber.GetCountryTeleInformation("IN")
+	if err != nil {
+		fmt.Printf("Error getting phone information: %v\n", err)
+	} else {
+		fmt.Printf("Formatted Phone Number: %s%s\n", phoneInfo.DialCode, "9876543210") // +919876543210
+	}
 
-	//India States
+	// Country Subdivisions
 	subdivisions := countryIN.GetCountrySubDivisions()
-	fmt.Println(subdivisions.GetCountryName()) //India
+	fmt.Printf("Country Name: %s\n", subdivisions.GetCountryName()) // India
 
+	// Get state information
 	state := subdivisions.GetStates()["KA"]
-	fmt.Println(state.GetName())        //Karnataka
-	fmt.Println(state.GetCities()[0])   //{Yellāpur nan Asia/Kolkata [581337 581337 ...}
-	fmt.Println(len(state.GetCities())) //58
+	fmt.Printf("State Name: %s\n", state.GetName()) // Karnataka
+	if len(state.GetCities()) > 0 {
+		fmt.Printf("First City: %v\n", state.GetCities()[0]) // {Yellāpur nan Asia/Kolkata [581337 581337 ...}
+	}
+	fmt.Printf("Total Cities: %d\n", len(state.GetCities())) // 58
 
-	// Get States by zipcode
-	madhyaPradesh := countryIN.GetStatesByZipCode("452010")[0]
-	fmt.Printf("For pincode 452010 state : %s\n", madhyaPradesh) // {[{Wārāseonī nan Asia/Kolkata [481331 ...}
-	fmt.Printf("State name %s\n", madhyaPradesh.GetName())
+	// Zip Code Information
+	// Get state by zipcode
+	states := countryIN.GetStatesByZipCode("452010")
+	if len(states) > 0 {
+		madhyaPradesh := states[0]
+		fmt.Printf("State for pincode 452010: %s\n", madhyaPradesh.GetName()) // Madhya Pradesh
 
-	// Get Cities
-	cityList := madhyaPradesh.Cities
-	fmt.Println("Cities :")
-	for _, city := range cityList {
-		fmt.Println(city.Name)
+		// Get cities in the state
+		fmt.Println("\nCities in Madhya Pradesh:")
+		for _, city := range madhyaPradesh.Cities {
+			fmt.Printf("- %s\n", city.Name)
+		}
 	}
 
 	// Get zipcodes by city
 	zipcodes := countryIN.GetZipCodesFromCity("indore")
-	for _, val := range zipcodes {
-		fmt.Println(val)
+	fmt.Println("\nZipcodes for Indore:")
+	for _, zipcode := range zipcodes {
+		fmt.Printf("- %s\n", zipcode) // 452001, 452002, etc.
 	}
 
-	// Bank Codes Examples
+	// Bank Information
 	// Validate IFSC code
 	isValid, err := bankcodes.IsValidBankIdentifier("IN", bankcodes.IdentifierTypeIFSC, "HDFC0000001")
 	if err != nil {
 		fmt.Printf("Error validating IFSC code: %v\n", err)
 	} else {
-		fmt.Printf("Is valid IFSC code: %v\n", isValid)
+		fmt.Printf("Is valid IFSC code: %v\n", isValid) // true
 	}
 
 	// Get bank name from short code
@@ -100,7 +106,7 @@ func main() {
 	if err != nil {
 		fmt.Printf("Error getting bank name: %v\n", err)
 	} else {
-		fmt.Printf("Bank name: %s\n", bankName)
+		fmt.Printf("Bank name: %s\n", bankName) // HDFC Bank Limited
 	}
 
 	// Get default bank identifiers
@@ -108,7 +114,7 @@ func main() {
 	if err != nil {
 		fmt.Printf("Error getting bank identifiers: %v\n", err)
 	} else {
-		fmt.Printf("Bank identifiers: %v\n", identifiers)
+		fmt.Printf("Bank identifiers: %v\n", identifiers) // [HDFC0000001, HDFC0000002, ...]
 	}
 
 	// Get bank name from identifier
@@ -116,6 +122,23 @@ func main() {
 	if err != nil {
 		fmt.Printf("Error getting bank name from identifier: %v\n", err)
 	} else {
-		fmt.Printf("Bank name from identifier: %s\n", bankName)
+		fmt.Printf("Bank name from identifier: %s\n", bankName) // HDFC Bank Limited
 	}
+
+	// Multiple Countries
+	// United States
+	countryUS := i18nify_go.NewCountry("US")
+	metaDataUS := countryUS.GetCountryMetadata()
+	fmt.Printf("\nUnited States Information:\n")
+	fmt.Printf("Country Name: %s\n", metaDataUS.CountryName)             // United States
+	fmt.Printf("Supported Currency: %v\n", metaDataUS.SupportedCurrency) // [USD]
+	fmt.Printf("Dial Code: %s\n", metaDataUS.DialCode)                   // +1
+
+	// United Kingdom
+	countryUK := i18nify_go.NewCountry("GB")
+	metaDataUK := countryUK.GetCountryMetadata()
+	fmt.Printf("\nUnited Kingdom Information:\n")
+	fmt.Printf("Country Name: %s\n", metaDataUK.CountryName)             // United Kingdom
+	fmt.Printf("Supported Currency: %v\n", metaDataUK.SupportedCurrency) // [GBP]
+	fmt.Printf("Dial Code: %s\n", metaDataUK.DialCode)                   // +44
 }
