@@ -63,7 +63,7 @@ func (c *Country) GetZipCodesFromCity(cityName string) []string {
 
 // GetCountryCodeISO2 returns the ISO 3166-1 alpha-2 country code for a given country name.
 func (c *Country) GetCountryCodeISO2() string {
-	return metadata.GetCountryCodeISO2()
+	return metadata.GetCountryCodeISO2(c.Code)
 }
 
 // NewCountry creates a new Country instance with the given country code.
