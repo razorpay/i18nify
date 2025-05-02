@@ -10,8 +10,8 @@ type CountryCode struct {
 	Name string //
 }
 
-// GetCountryCodeISO2 returns the ISO 3166-1 alpha-2 country code for a given country name.
-func (c CountryCode) GetCountryCodeISO2(countryName string) string {
+// GetCountryCodeISO2 returns the ISO 3166-1 alpha-2 country code for a given country name
+func (c CountryCode) GetCountryCodeISO2() string {
 	metaJsonData, err := metadata.MetaJsonDir.ReadFile(metadata.DataFile)
 	if err != nil {
 		fmt.Printf("Error reading country metadata file: %v", err)
@@ -23,7 +23,7 @@ func (c CountryCode) GetCountryCodeISO2(countryName string) string {
 		fmt.Printf("Error unmarshalling country metadata: %v", err)
 		return ""
 	}
-	normalizedName := strings.ToUpper(strings.TrimSpace(countryName))
+	normalizedName := strings.ToUpper(strings.TrimSpace(c.Name))
 	for code, info := range allCountryMetaData.MetadataInformation {
 		if strings.ToUpper(info.CountryName) == normalizedName {
 			return code
@@ -33,8 +33,8 @@ func (c CountryCode) GetCountryCodeISO2(countryName string) string {
 	return ""
 }
 
-func NewCountryCode(code string) ICountryCode {
+func NewCountryCode(name string) ICountryCode {
 	return &CountryCode{
-		Name: code,
+		Name: name,
 	}
 }
