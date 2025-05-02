@@ -11,6 +11,7 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+	"strings"
 )
 
 //go:embed data
@@ -131,4 +132,26 @@ func NewTimezone(utcOffset string) *Timezone {
 	return &Timezone{
 		UTCOffset: utcOffset,
 	}
+}
+
+func GetCountryCodeISO2(countryName string) string {
+	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
+	if err != nil {
+		fmt.Printf("Error reading country metadata file: %v", err)
+		return ""
+	}
+
+	allCountryMetaData, err := UnmarshalCountryMetadata(metaJsonData)
+	if err != nil {
+		fmt.Printf("Error unmarshalling country metadata: %v", err)
+		return ""
+	}
+	normalizedName := strings.ToUpper(strings.TrimSpace(countryName))
+	for code, info := range allCountryMetaData.MetadataInformation {
+		if strings.ToUpper(info.CountryName) == normalizedName {
+			return code
+		}
+	}
+
+	return ""
 }
