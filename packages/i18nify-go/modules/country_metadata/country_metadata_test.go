@@ -113,3 +113,44 @@ func assertINMetaData(t *testing.T, result MetadataInformation) {
 	assert.Equal(t, []string{"INR"}, result.SupportedCurrency, "SupportedCurrency field mismatch")
 	assert.Equal(t, Timezone{UTCOffset: "UTC +05:30"}, result.Timezones["Asia/Kolkata"], "Timezones field mismatch")
 }
+
+func TestGetCountryCodeISO2(t *testing.T) {
+	testCases := []struct {
+		name         string
+		countryName  string
+		expectedCode string
+	}{
+		{
+			name:         "Valid country name - India",
+			countryName:  "India",
+			expectedCode: "IN",
+		},
+		{
+			name:         "Valid country name with different case - india",
+			countryName:  "india",
+			expectedCode: "IN",
+		},
+		{
+			name:         "Valid country name with spaces - United States",
+			countryName:  "United States of America (the)",
+			expectedCode: "US",
+		},
+		{
+			name:         "Valid country name with leading/trailing spaces",
+			countryName:  "  India  ",
+			expectedCode: "IN",
+		},
+		{
+			name:         "Non-existent country name",
+			countryName:  "NonExistentCountry",
+			expectedCode: "",
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			result := GetCountryCodeISO2(tc.countryName)
+			assert.Equal(t, tc.expectedCode, result, "Country code doesn't match expected value")
+		})
+	}
+}
