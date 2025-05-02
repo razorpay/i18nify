@@ -25,3 +25,8 @@ type ICountry interface {
 	// GetZipCodesFromCity returns all the zipcodes belonging to that city.
 	GetZipCodesFromCity(cityName string) []string
 }
+
+type ICountryCode interface {
+	// GetCountryCodeISO2 returns the ISO 3166-1 alpha-2 country code for a given country name.
+	GetCountryCodeISO2(countryName string) string
+}
