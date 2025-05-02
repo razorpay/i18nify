@@ -11,10 +11,11 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+	"strings"
 )
 
 //go:embed data
-var MetaJsonDir embed.FS
+var metaJsonDir embed.FS
 
 // DataFile defines the path to the JSON data file containing country metadata.
 const DataFile = "data/data.json"
@@ -45,7 +46,7 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 // GetMetadataInformation retrieves metadata information for a specific country code.
 func GetMetadataInformation(code string) MetadataInformation {
 	// Read JSON data file containing country metadata.
-	metaJsonData, err := MetaJsonDir.ReadFile(DataFile)
+	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
 	if err != nil {
 		// Handle error reading the file.
 		fmt.Printf("Error reading country metadata file: %v", err)
@@ -131,4 +132,26 @@ func NewTimezone(utcOffset string) *Timezone {
 	return &Timezone{
 		UTCOffset: utcOffset,
 	}
+}
+
+func GetCountryCodeISO2(countryName string) string {
+	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
+	if err != nil {
+		fmt.Printf("Error reading country metadata file: %v", err)
+		return ""
+	}
+
+	allCountryMetaData, err := UnmarshalCountryMetadata(metaJsonData)
+	if err != nil {
+		fmt.Printf("Error unmarshalling country metadata: %v", err)
+		return ""
+	}
+	normalizedName := strings.ToUpper(strings.TrimSpace(countryName))
+	for code, info := range allCountryMetaData.MetadataInformation {
+		if strings.ToUpper(info.CountryName) == normalizedName {
+			return code
+		}
+	}
+
+	return ""
 }
