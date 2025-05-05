@@ -3,7 +3,7 @@
 i18nify is a comprehensive internationalization (i18n) library for all things global. 
 Currently, it provides functionalities for handling countries, currencies, phone numbers, and subdivisions, making it easier to localize applications for different regions and languages.
 
-## DeepWiki Link: [https://deepwiki.com/razorpay/i18nify/2.2-currency-module](https://deepwiki.com/razorpay/i18nify/2.2-currency-module)
+## DeepWiki Link: [Link](https://deepwiki.com/razorpay/i18nify)
 
 ## Usage
 
