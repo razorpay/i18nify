@@ -177,6 +177,7 @@ func GetBankNameFromBankIdentifier(countryCode, identifier string) (string, erro
 	}
 
 	for _, bank := range bankInfo.Details {
+		
 		for _, branch := range bank.Branches {
 			// Check SwiftCode and IfscCode directly
 			if branch.Identifiers.SwiftCode == identifier || branch.Identifiers.IfscCode == identifier {

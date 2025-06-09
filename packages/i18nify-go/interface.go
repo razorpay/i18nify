@@ -26,6 +26,6 @@ type ICountry interface {
 	GetZipCodesFromCity(cityName string) []string
 	// GetCountryCodeISO2 returns the ISO 3166-1 alpha-2 country code for a given country name.
 	GetCountryCodeISO2() string
-	// GetBankNameFromBankIdentifier returns the bank name for a given bank identifier.
-	GetBankNameFromBankIdentifier(identifier string) (string, error)
+	// GetSwiftCodeFromBankName returns the swift code for a given bank name.
+	GetSwiftCodeFromBankName(bankName string) (string, error)
 }
