@@ -1,5 +1,11 @@
 # @razorpay/i18nify-js
 
+## 1.12.7
+
+### Patch Changes
+
+- a2f4ec2: update regex for DM phone numbers
+
 ## 1.12.6
 
 ### Patch Changes
