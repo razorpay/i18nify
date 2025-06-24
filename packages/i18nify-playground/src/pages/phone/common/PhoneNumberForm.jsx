@@ -1,6 +1,7 @@
 import {
   ActionList,
   ActionListItem,
+  ActionListItemAsset,
   Box,
   Dropdown,
   DropdownOverlay,
@@ -63,21 +64,21 @@ const PhoneNumberForm = ({
 
               <DropdownOverlay>
                 <ActionList>
-                  <ActionListItem title="-" value="-" />
+                  <ActionListItem title="-" value="-" key="default" />
                   {Object.entries(dialCodeMap).map(([code]) => {
                     return (
                       <ActionListItem
+                        key={code}
                         title={`+ ${code}`}
                         value={`+ ${code}`}
                         leading={
-                          <img
+                          <ActionListItemAsset
                             src={
                               getFlagOfCountry(
                                 dialCodeCountryCodeMap?.[code]?.[0] ?? 'US',
                               )?.original
                             }
-                            width="20px"
-                            height="20px"
+                            alt={`Flag of ${dialCodeCountryCodeMap?.[code]?.[0] ?? 'US'}`}
                           />
                         }
                       />
