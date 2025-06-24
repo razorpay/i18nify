@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: 20.3.1
       - name: Setup Cache & Install Dependencies
-        uses: bahmutov/npm-install@v1.8.15
+        uses: bahmutov/npm-install@v1.10.9
         with:
           install-command: yarn --frozen-lockfile
       - name: Run Tests
