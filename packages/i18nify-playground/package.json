@@ -30,7 +30,7 @@
     "@mui/material": "^5.15.6",
     "@mui/x-date-pickers": "^6.19.4",
     "@razorpay/blade": "^12.15.0",
-    "@razorpay/i18nify-js": "^1.12.7",
+    "@razorpay/i18nify-js": "^1.12.6",
     "@razorpay/i18nify-react": "^4.0.12",
     "@tanstack/react-query": "^5.67.2",
     "apexcharts": "^3.43.0",
