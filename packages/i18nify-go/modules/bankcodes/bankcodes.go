@@ -177,7 +177,7 @@ func GetBankNameFromBankIdentifier(countryCode, identifier string) (string, erro
 	}
 
 	for _, bank := range bankInfo.Details {
-		
+
 		for _, branch := range bank.Branches {
 			// Check SwiftCode and IfscCode directly
 			if branch.Identifiers.SwiftCode == identifier || branch.Identifiers.IfscCode == identifier {
@@ -202,15 +202,26 @@ func GetSwiftCodeFromBankName(countryCode, bankName string) (string, error) {
 		return "", err
 	}
 
-	// Search through all banks to find a match by name
+	var firstSwiftCode string
+
 	for _, bank := range bankInfo.Details {
 		if bank.Name == bankName {
-			// Look for SWIFT code in the first branch that has one
 			for _, branch := range bank.Branches {
 				if branch.Identifiers.SwiftCode != "" {
-					return branch.Identifiers.SwiftCode, nil
+					if firstSwiftCode == "" {
+						firstSwiftCode = branch.Identifiers.SwiftCode
+					}
+
+					if len(branch.Identifiers.SwiftCode) == 8 {
+						return branch.Identifiers.SwiftCode, nil
+					}
 				}
 			}
+		}
+	}
+	if firstSwiftCode != "" {
+		if len(firstSwiftCode) >= 8 {
+			return firstSwiftCode[:8], nil
 		}
 	}
 
