@@ -227,3 +227,17 @@ func GetSwiftCodeFromBankShortCode(countryCode, bankShortCode string) (string, e
 
 	return "", fmt.Errorf("no SWIFT code found for bank '%s' in country %s", bankShortCode, countryCode)
 }
+
+func GetBanksInfo(countryCode string) (map[string]interface{}, error) {
+	bankInfo, err := loadBankInfo(countryCode)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
+	}	
+
+	bankInfoMap := make(map[string]interface{})
+	for _, bank := range bankInfo.Details {
+		bankInfoMap[bank.ShortCode] = bank
+	}
+
+	return bankInfoMap, nil
+}	

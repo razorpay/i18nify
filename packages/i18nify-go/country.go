@@ -68,8 +68,13 @@ func (c *Country) GetCountryCodeISO2() string {
 }
 
 // GetBankNameFromBankIdentifier returns the bank name for a given bank identifier.
-func (c *Country) GetSwiftCodeFromBankName(bankName string) (string, error) {
-	return bankcodes.GetSwiftCodeFromBankName(c.Code, bankName)
+func (c *Country) GetSwiftCodeFromBankShortCode(bankName string) (string, error) {
+	return bankcodes.GetSwiftCodeFromBankShortCode(c.Code, bankName)
+}
+
+// GetBankInfo returns the bank information for the country.
+func (c *Country) GetBanksInfo() (map[string]interface{}, error) {
+	return bankcodes.GetBanksInfo(c.Code)
 }
 
 // NewCountry creates a new Country instance with the given country code.
