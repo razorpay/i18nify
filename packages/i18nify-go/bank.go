@@ -8,11 +8,11 @@ type Bank struct {
 	CountryCode string
 }
 
-func (b *Bank) GetBankInfo() (map[string]interface{}, error) {
+func (b *Bank) GetBanksInfo() (map[string]interface{}, error) {
 	return bankcodes.GetBanksInfo(b.CountryCode)
 }
 
-func (b *Bank) GetBankShortCodeFromBankName(bankName string) (string, error) {
+func (b *Bank) GetSwiftCodeFromBankShortCode(bankName string) (string, error) {
 	return bankcodes.GetSwiftCodeFromBankShortCode(b.CountryCode, bankName)
 }
 
