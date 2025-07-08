@@ -31,3 +31,8 @@ type ICountry interface {
 	// GetBankInfo returns the bank information for the country.
 	GetBanksInfo() (map[string]interface{}, error)
 }
+
+type IBank interface {
+	GetBankInfo() (map[string]interface{}, error)
+	GetBankShortCodeFromBankName(bankName string) (string, error)
+}

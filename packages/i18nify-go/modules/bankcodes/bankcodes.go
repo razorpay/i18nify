@@ -177,7 +177,6 @@ func GetBankNameFromBankIdentifier(countryCode, identifier string) (string, erro
 	}
 
 	for _, bank := range bankInfo.Details {
-
 		for _, branch := range bank.Branches {
 			// Check SwiftCode and IfscCode directly
 			if branch.Identifiers.SwiftCode == identifier || branch.Identifiers.IfscCode == identifier {
@@ -232,7 +231,7 @@ func GetBanksInfo(countryCode string) (map[string]interface{}, error) {
 	bankInfo, err := loadBankInfo(countryCode)
 	if err != nil {
 		return nil, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
-	}	
+	}
 
 	bankInfoMap := make(map[string]interface{})
 	for _, bank := range bankInfo.Details {
@@ -240,4 +239,4 @@ func GetBanksInfo(countryCode string) (map[string]interface{}, error) {
 	}
 
 	return bankInfoMap, nil
-}	
+}
