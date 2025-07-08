@@ -2,7 +2,6 @@
 package i18nify_go
 
 import (
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
 	metadata "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
 	subdivisions "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions/zipcode"
@@ -65,16 +64,6 @@ func (c *Country) GetZipCodesFromCity(cityName string) []string {
 // GetCountryCodeISO2 returns the ISO 3166-1 alpha-2 country code for a given country name.
 func (c *Country) GetCountryCodeISO2() string {
 	return metadata.GetCountryCodeISO2(c.Code)
-}
-
-// GetBankNameFromBankIdentifier returns the bank name for a given bank identifier.
-func (c *Country) GetSwiftCodeFromBankShortCode(bankName string) (string, error) {
-	return bankcodes.GetSwiftCodeFromBankShortCode(c.Code, bankName)
-}
-
-// GetBankInfo returns the bank information for the country.
-func (c *Country) GetBanksInfo() (map[string]interface{}, error) {
-	return bankcodes.GetBanksInfo(c.Code)
 }
 
 // NewCountry creates a new Country instance with the given country code.
