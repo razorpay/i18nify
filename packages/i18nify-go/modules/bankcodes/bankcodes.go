@@ -195,7 +195,7 @@ func GetBankNameFromBankIdentifier(countryCode, identifier string) (string, erro
 	return "", fmt.Errorf("no bank found for identifier '%s' in country %s", identifier, countryCode)
 }
 
-func GetBaseIdentifierFromShortCode(countryCode, bankShortCode string) (string, error) {
+func GetBaseBranchIdentifierFromShortCode(countryCode, bankShortCode string) (string, error) {
 	if countryCode == "" || bankShortCode == "" {
 		return "", errors.New("countryCode and bankShortCode must not be empty")
 	}
@@ -244,16 +244,18 @@ func GetBaseIdentifierFromShortCode(countryCode, bankShortCode string) (string, 
 	return "", fmt.Errorf("no %s found for bank '%s' in country %s", bankInfo.Defaults.IdentifierType, bankShortCode, countryCode)
 }
 
-func GetBanksInfo(countryCode string) (map[string]interface{}, error) {
+func GetAllBanksWithShortCodes(countryCode string) (map[string]string, error) {
 	bankInfo, err := loadBankInfo(countryCode)
 	if err != nil {
 		return nil, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
 	}
 
-	bankInfoMap := make(map[string]interface{})
+	bankNamesMap := make(map[string]string)
 	for _, bank := range bankInfo.Details {
-		bankInfoMap[bank.ShortCode] = bank
+		if bank.ShortCode != "" {
+			bankNamesMap[bank.ShortCode] = bank.Name
+		}
 	}
 
-	return bankInfoMap, nil
+	return bankNamesMap, nil
 }

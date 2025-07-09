@@ -146,7 +146,7 @@ func TestGetBankNameFromBankIdentifier(t *testing.T) {
 	}
 }
 
-func TestGetBaseIdentifierFromShortCode(t *testing.T) {
+func TestGetBaseBranchIdentifierFromShortCode(t *testing.T) {
 	tests := []struct {
 		name               string
 		countryCode        string
@@ -213,81 +213,76 @@ func TestGetBaseIdentifierFromShortCode(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetBaseIdentifierFromShortCode(tt.countryCode, tt.bankShortCode)
+			got, err := GetBaseBranchIdentifierFromShortCode(tt.countryCode, tt.bankShortCode)
 
 			if tt.expectError {
 				if err == nil {
-					t.Errorf("GetBaseIdentifierFromShortCode() expected error but got none")
+					t.Errorf("GetBaseBranchIdentifierFromShortCode() expected error but got none")
 					return
 				}
 				if tt.errorContains != "" && !strings.Contains(err.Error(), tt.errorContains) {
-					t.Errorf("GetBaseIdentifierFromShortCode() error = %v, expected to contain %v", err, tt.errorContains)
+					t.Errorf("GetBaseBranchIdentifierFromShortCode() error = %v, expected to contain %v", err, tt.errorContains)
 				}
 				return
 			}
 
 			if err != nil {
-				t.Errorf("GetBaseIdentifierFromShortCode() unexpected error = %v", err)
+				t.Errorf("GetBaseBranchIdentifierFromShortCode() unexpected error = %v", err)
 				return
 			}
 
 			// For valid cases, check if we got an identifier
 			if got == "" {
-				t.Errorf("GetBaseIdentifierFromShortCode() got empty identifier, expected non-empty")
+				t.Errorf("GetBaseBranchIdentifierFromShortCode() got empty identifier, expected non-empty")
 			}
 
 			// For US, expect routing number format (9 digits)
 			if tt.countryCode == "US" && len(got) != 9 {
-				t.Logf("GetBaseIdentifierFromShortCode() got = %v, expected 9-digit routing number for US", got)
+				t.Logf("GetBaseBranchIdentifierFromShortCode() got = %v, expected 9-digit routing number for US", got)
 			}
 
 			// For IN, expect IFSC format (11 characters)
 			if tt.countryCode == "IN" && len(got) != 11 {
-				t.Logf("GetBaseIdentifierFromShortCode() got = %v, expected 11-character IFSC for IN", got)
+				t.Logf("GetBaseBranchIdentifierFromShortCode() got = %v, expected 11-character IFSC for IN", got)
 			}
 		})
 	}
 }
 
-func TestGetBanksInfo(t *testing.T) {
+func TestGetAllBanksWithShortCodes(t *testing.T) {
 	tests := []struct {
 		name           string
 		countryCode    string
 		expectError    bool
 		errorContains  string
-		validateResult func(t *testing.T, result map[string]interface{})
+		validateResult func(t *testing.T, result map[string]string)
 	}{
 		{
 			name:        "Valid US country code",
 			countryCode: "US",
 			expectError: false,
-			validateResult: func(t *testing.T, result map[string]interface{}) {
+			validateResult: func(t *testing.T, result map[string]string) {
 				if len(result) == 0 {
 					t.Error("Expected non-empty bank info map for US")
 				}
 
 				// Check if known US banks are present
-				if _, exists := result["USBK"]; !exists {
+				if bankName, exists := result["USBK"]; !exists {
 					t.Error("Expected USBK bank to be present in US bank info")
-				}
-				if _, exists := result["BUYE"]; !exists {
-					t.Error("Expected BUYE bank to be present in US bank info")
+				} else if bankName == "" {
+					t.Error("Expected USBK bank name to be non-empty")
 				}
 
-				// Validate structure of a bank entry
-				if bankInfo, ok := result["USBK"]; ok {
-					if bankDetails, ok := bankInfo.(BankDetails); ok {
-						if bankDetails.Name == "" {
-							t.Error("Expected bank name to be non-empty")
-						}
-						if bankDetails.ShortCode != "USBK" {
-							t.Errorf("Expected short code to be USBK, got %s", bankDetails.ShortCode)
-						}
-						if len(bankDetails.Branches) == 0 {
-							t.Error("Expected at least one branch for USBK")
-						}
-					} else {
-						t.Error("Expected bank info to be of type BankDetails")
+				if bankName, exists := result["BUYE"]; !exists {
+					t.Error("Expected BUYE bank to be present in US bank info")
+				} else if bankName == "" {
+					t.Error("Expected BUYE bank name to be non-empty")
+				}
+
+				// Validate that all values are non-empty strings
+				for shortCode, bankName := range result {
+					if bankName == "" {
+						t.Errorf("Expected bank name for %s to be non-empty", shortCode)
 					}
 				}
 			},
@@ -296,25 +291,22 @@ func TestGetBanksInfo(t *testing.T) {
 			name:        "Valid IN country code",
 			countryCode: "IN",
 			expectError: false,
-			validateResult: func(t *testing.T, result map[string]interface{}) {
+			validateResult: func(t *testing.T, result map[string]string) {
 				if len(result) == 0 {
 					t.Error("Expected non-empty bank info map for IN")
 				}
 
 				// Check if known IN banks are present
-				if _, exists := result["ABHY"]; !exists {
+				if bankName, exists := result["ABHY"]; !exists {
 					t.Error("Expected ABHY bank to be present in IN bank info")
+				} else if bankName == "" {
+					t.Error("Expected ABHY bank name to be non-empty")
 				}
 
-				// Validate structure
-				if bankInfo, ok := result["ABHY"]; ok {
-					if bankDetails, ok := bankInfo.(BankDetails); ok {
-						if bankDetails.Name == "" {
-							t.Error("Expected bank name to be non-empty")
-						}
-						if bankDetails.ShortCode != "ABHY" {
-							t.Errorf("Expected short code to be ABHY, got %s", bankDetails.ShortCode)
-						}
+				// Validate that all values are non-empty strings
+				for shortCode, bankName := range result {
+					if bankName == "" {
+						t.Errorf("Expected bank name for %s to be non-empty", shortCode)
 					}
 				}
 			},
@@ -335,7 +327,7 @@ func TestGetBanksInfo(t *testing.T) {
 			name:        "Valid MY country code",
 			countryCode: "MY",
 			expectError: false,
-			validateResult: func(t *testing.T, result map[string]interface{}) {
+			validateResult: func(t *testing.T, result map[string]string) {
 				// Should return a map, even if empty
 				if result == nil {
 					t.Error("Expected non-nil result for MY")
@@ -346,7 +338,7 @@ func TestGetBanksInfo(t *testing.T) {
 			name:        "Valid SG country code",
 			countryCode: "SG",
 			expectError: false,
-			validateResult: func(t *testing.T, result map[string]interface{}) {
+			validateResult: func(t *testing.T, result map[string]string) {
 				// Should return a map, even if empty
 				if result == nil {
 					t.Error("Expected non-nil result for SG")
@@ -357,26 +349,26 @@ func TestGetBanksInfo(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetBanksInfo(tt.countryCode)
+			got, err := GetAllBanksWithShortCodes(tt.countryCode)
 
 			if tt.expectError {
 				if err == nil {
-					t.Errorf("GetBanksInfo() expected error but got none")
+					t.Errorf("GetAllBanksWithShortCodes() expected error but got none")
 					return
 				}
 				if tt.errorContains != "" && !strings.Contains(err.Error(), tt.errorContains) {
-					t.Errorf("GetBanksInfo() error = %v, expected to contain %v", err, tt.errorContains)
+					t.Errorf("GetAllBanksWithShortCodes() error = %v, expected to contain %v", err, tt.errorContains)
 				}
 				return
 			}
 
 			if err != nil {
-				t.Errorf("GetBanksInfo() unexpected error = %v", err)
+				t.Errorf("GetAllBanksWithShortCodes() unexpected error = %v", err)
 				return
 			}
 
 			if got == nil {
-				t.Error("GetBanksInfo() returned nil map")
+				t.Error("GetAllBanksWithShortCodes() returned nil map")
 				return
 			}
 
@@ -388,7 +380,7 @@ func TestGetBanksInfo(t *testing.T) {
 	}
 }
 
-func TestGetBaseIdentifierFromShortCode_EdgeCases(t *testing.T) {
+func TestGetBaseBranchIdentifierFromShortCode_EdgeCases(t *testing.T) {
 	tests := []struct {
 		name          string
 		countryCode   string
@@ -421,11 +413,11 @@ func TestGetBaseIdentifierFromShortCode_EdgeCases(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetBaseIdentifierFromShortCode(tt.countryCode, tt.bankShortCode)
+			got, err := GetBaseBranchIdentifierFromShortCode(tt.countryCode, tt.bankShortCode)
 
 			if tt.expectError {
 				if err == nil {
-					t.Errorf("GetBaseIdentifierFromShortCode() expected error for %s but got none", tt.description)
+					t.Errorf("GetBaseBranchIdentifierFromShortCode() expected error for %s but got none", tt.description)
 				}
 				return
 			}
@@ -433,51 +425,34 @@ func TestGetBaseIdentifierFromShortCode_EdgeCases(t *testing.T) {
 			if err != nil {
 				// For case sensitivity tests, if we get an error, it might be because
 				// the data doesn't exist, which is acceptable for these edge cases
-				t.Logf("GetBaseIdentifierFromShortCode() %s: %v", tt.description, err)
+				t.Logf("GetBaseBranchIdentifierFromShortCode() %s: %v", tt.description, err)
 				return
 			}
 
 			if len(got) < 4 {
-				t.Errorf("GetBaseIdentifierFromShortCode() %s: got = %v, expected at least 4 characters", tt.description, got)
+				t.Errorf("GetBaseBranchIdentifierFromShortCode() %s: got = %v, expected at least 4 characters", tt.description, got)
 			}
 		})
 	}
 }
 
-func TestGetBanksInfo_DataIntegrity(t *testing.T) {
+func TestGetAllBanksWithShortCodes_DataIntegrity(t *testing.T) {
 	// Test that the returned data structure is consistent
 	t.Run("Data structure consistency", func(t *testing.T) {
-		result, err := GetBanksInfo("US")
+		result, err := GetAllBanksWithShortCodes("US")
 		if err != nil {
-			t.Fatalf("GetBanksInfo() unexpected error = %v", err)
+			t.Fatalf("GetAllBanksWithShortCodes() unexpected error = %v", err)
 		}
 
-		for shortCode, bankInfo := range result {
-			if bankDetails, ok := bankInfo.(BankDetails); ok {
-				// Verify that the key matches the short code
-				if bankDetails.ShortCode != shortCode {
-					t.Errorf("Key %s does not match ShortCode %s", shortCode, bankDetails.ShortCode)
-				}
+		for shortCode, bankName := range result {
+			// Verify basic data integrity
+			if bankName == "" {
+				t.Errorf("Bank %s has empty name", shortCode)
+			}
 
-				// Verify basic data integrity
-				if bankDetails.Name == "" {
-					t.Errorf("Bank %s has empty name", shortCode)
-				}
-
-				// Verify branches structure
-				for i, branch := range bankDetails.Branches {
-					// Note: Empty codes are valid for main branches, so we only check for basic structure
-					// Ensure each branch has at least some identifiers or city information
-					hasIdentifiers := branch.Identifiers.SwiftCode != "" ||
-						len(branch.Identifiers.RoutingNumber) > 0 ||
-						branch.Identifiers.IfscCode != ""
-
-					if branch.City == "" && !hasIdentifiers {
-						t.Errorf("Bank %s branch %d has no city and no identifiers", shortCode, i)
-					}
-				}
-			} else {
-				t.Errorf("Bank info for %s is not of type BankDetails", shortCode)
+			// Verify that short codes are reasonable (not empty, reasonable length)
+			if len(shortCode) > 10 {
+				t.Errorf("Short code %s seems too long (%d characters)", shortCode, len(shortCode))
 			}
 		}
 	})

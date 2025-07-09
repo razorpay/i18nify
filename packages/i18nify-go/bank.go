@@ -8,12 +8,12 @@ type Bank struct {
 	CountryCode string
 }
 
-func (b *Bank) GetBanksInfo() (map[string]interface{}, error) {
-	return bankcodes.GetBanksInfo(b.CountryCode)
+func (b *Bank) GetAllBanksWithShortCodes() (map[string]string, error) {
+	return bankcodes.GetAllBanksWithShortCodes(b.CountryCode)
 }
 
-func (b *Bank) GetBaseIdentifierFromShortCode(bankName string) (string, error) {
-	return bankcodes.GetBaseIdentifierFromShortCode(b.CountryCode, bankName)
+func (b *Bank) GetBaseBranchIdentifierFromShortCode(bankName string) (string, error) {
+	return bankcodes.GetBaseBranchIdentifierFromShortCode(b.CountryCode, bankName)
 }
 
 func NewBank(countryCode string) *Bank {
