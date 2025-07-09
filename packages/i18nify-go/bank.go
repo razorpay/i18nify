@@ -12,8 +12,8 @@ func (b *Bank) GetBanksInfo() (map[string]interface{}, error) {
 	return bankcodes.GetBanksInfo(b.CountryCode)
 }
 
-func (b *Bank) GetSwiftCodeFromBankShortCode(bankName string) (string, error) {
-	return bankcodes.GetSwiftCodeFromBankShortCode(b.CountryCode, bankName)
+func (b *Bank) GetBaseIdentifierFromShortCode(bankName string) (string, error) {
+	return bankcodes.GetBaseIdentifierFromShortCode(b.CountryCode, bankName)
 }
 
 func NewBank(countryCode string) *Bank {

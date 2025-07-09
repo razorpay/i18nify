@@ -30,5 +30,5 @@ type ICountry interface {
 
 type IBank interface {
 	GetBanksInfo() (map[string]interface{}, error)
-	GetSwiftCodeFromBankShortCode(bankName string) (string, error)
+	GetBaseIdentifierFromShortCode(bankName string) (string, error)
 }

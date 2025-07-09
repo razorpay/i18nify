@@ -195,36 +195,53 @@ func GetBankNameFromBankIdentifier(countryCode, identifier string) (string, erro
 	return "", fmt.Errorf("no bank found for identifier '%s' in country %s", identifier, countryCode)
 }
 
-func GetSwiftCodeFromBankShortCode(countryCode, bankShortCode string) (string, error) {
+func GetBaseIdentifierFromShortCode(countryCode, bankShortCode string) (string, error) {
+	if countryCode == "" || bankShortCode == "" {
+		return "", errors.New("countryCode and bankShortCode must not be empty")
+	}
+
 	bankInfo, err := loadBankInfo(countryCode)
 	if err != nil {
 		return "", err
 	}
 
-	var firstSwiftCode string
+	var firstIdentifier string
 
 	for _, bank := range bankInfo.Details {
 		if bank.ShortCode == bankShortCode {
 			for _, branch := range bank.Branches {
-				if branch.Identifiers.SwiftCode != "" {
-					if firstSwiftCode == "" {
-						firstSwiftCode = branch.Identifiers.SwiftCode
+				var identifier string
+				switch bankInfo.Defaults.IdentifierType {
+				case IdentifierTypeSWIFT:
+					identifier = branch.Identifiers.SwiftCode
+				case IdentifierTypeRoutingNumber:
+					if len(branch.Identifiers.RoutingNumber) > 0 {
+						identifier = branch.Identifiers.RoutingNumber[0] // Take first routing number
 					}
+				case IdentifierTypeIFSC:
+					identifier = branch.Identifiers.IfscCode
+				default:
+					return "", fmt.Errorf("unsupported identifier type: %s", bankInfo.Defaults.IdentifierType)
+				}
 
-					if len(branch.Identifiers.SwiftCode) == 8 {
-						return branch.Identifiers.SwiftCode, nil
+				if identifier != "" {
+					if firstIdentifier == "" {
+						firstIdentifier = identifier
+					}
+					// Return identifier for main branch (empty branch code)
+					if branch.Code == "" {
+						return identifier, nil
 					}
 				}
 			}
 		}
 	}
-	if firstSwiftCode != "" {
-		if len(firstSwiftCode) >= 8 {
-			return firstSwiftCode[:8], nil
-		}
+
+	if firstIdentifier != "" {
+		return firstIdentifier, nil
 	}
 
-	return "", fmt.Errorf("no SWIFT code found for bank '%s' in country %s", bankShortCode, countryCode)
+	return "", fmt.Errorf("no %s found for bank '%s' in country %s", bankInfo.Defaults.IdentifierType, bankShortCode, countryCode)
 }
 
 func GetBanksInfo(countryCode string) (map[string]interface{}, error) {
