@@ -27,3 +27,8 @@ type ICountry interface {
 	// GetCountryCodeISO2 returns the ISO 3166-1 alpha-2 country code for a given country name.
 	GetCountryCodeISO2() string
 }
+
+type IBank interface {
+	GetAllBanksWithShortCodes() (map[string]string, error)
+	GetBaseBranchIdentifierFromShortCode(bankName string) (string, error)
+}

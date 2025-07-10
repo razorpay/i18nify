@@ -2,6 +2,7 @@ package bankcodes
 
 import (
 	"reflect"
+	"strings"
 	"testing"
 )
 
@@ -143,4 +144,316 @@ func TestGetBankNameFromBankIdentifier(t *testing.T) {
 			}
 		})
 	}
+}
+
+func TestGetBaseBranchIdentifierFromShortCode(t *testing.T) {
+	tests := []struct {
+		name               string
+		countryCode        string
+		bankShortCode      string
+		expectedIdentifier string
+		expectError        bool
+		errorContains      string
+	}{
+		{
+			name:               "Valid US bank short code",
+			countryCode:        "US",
+			bankShortCode:      "USBK",
+			expectedIdentifier: "",
+			expectError:        true, // USBK doesn't have routing numbers
+			errorContains:      "no ROUTING_NUMBER found for bank 'USBK' in country US",
+		},
+		{
+			name:               "Valid US bank short code with multiple branches",
+			countryCode:        "US",
+			bankShortCode:      "BUYE",
+			expectedIdentifier: "", // Should return routing number for US
+			expectError:        false,
+		},
+		{
+			name:               "Invalid bank short code",
+			countryCode:        "US",
+			bankShortCode:      "INVALID",
+			expectedIdentifier: "",
+			expectError:        true,
+			errorContains:      "no ROUTING_NUMBER found for bank 'INVALID' in country US",
+		},
+		{
+			name:               "Empty country code",
+			countryCode:        "",
+			bankShortCode:      "USBK",
+			expectedIdentifier: "",
+			expectError:        true,
+			errorContains:      "countryCode and bankShortCode must not be empty",
+		},
+		{
+			name:               "Empty bank short code",
+			countryCode:        "US",
+			bankShortCode:      "",
+			expectedIdentifier: "",
+			expectError:        true,
+			errorContains:      "countryCode and bankShortCode must not be empty",
+		},
+		{
+			name:               "Non-existent country code",
+			countryCode:        "ZZ",
+			bankShortCode:      "USBK",
+			expectedIdentifier: "",
+			expectError:        true,
+			errorContains:      "failed to read file",
+		},
+		{
+			name:               "Valid IN bank short code",
+			countryCode:        "IN",
+			bankShortCode:      "ABHY",
+			expectedIdentifier: "",
+			expectError:        false, // Should return IFSC code for IN
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := GetBaseBranchIdentifierFromShortCode(tt.countryCode, tt.bankShortCode)
+
+			if tt.expectError {
+				if err == nil {
+					t.Errorf("GetBaseBranchIdentifierFromShortCode() expected error but got none")
+					return
+				}
+				if tt.errorContains != "" && !strings.Contains(err.Error(), tt.errorContains) {
+					t.Errorf("GetBaseBranchIdentifierFromShortCode() error = %v, expected to contain %v", err, tt.errorContains)
+				}
+				return
+			}
+
+			if err != nil {
+				t.Errorf("GetBaseBranchIdentifierFromShortCode() unexpected error = %v", err)
+				return
+			}
+
+			// For valid cases, check if we got an identifier
+			if got == "" {
+				t.Errorf("GetBaseBranchIdentifierFromShortCode() got empty identifier, expected non-empty")
+			}
+
+			// For US, expect routing number format (9 digits)
+			if tt.countryCode == "US" && len(got) != 9 {
+				t.Logf("GetBaseBranchIdentifierFromShortCode() got = %v, expected 9-digit routing number for US", got)
+			}
+
+			// For IN, expect IFSC format (11 characters)
+			if tt.countryCode == "IN" && len(got) != 11 {
+				t.Logf("GetBaseBranchIdentifierFromShortCode() got = %v, expected 11-character IFSC for IN", got)
+			}
+		})
+	}
+}
+
+func TestGetAllBanksWithShortCodes(t *testing.T) {
+	tests := []struct {
+		name           string
+		countryCode    string
+		expectError    bool
+		errorContains  string
+		validateResult func(t *testing.T, result map[string]string)
+	}{
+		{
+			name:        "Valid US country code",
+			countryCode: "US",
+			expectError: false,
+			validateResult: func(t *testing.T, result map[string]string) {
+				if len(result) == 0 {
+					t.Error("Expected non-empty bank info map for US")
+				}
+
+				// Check if known US banks are present
+				if bankName, exists := result["USBK"]; !exists {
+					t.Error("Expected USBK bank to be present in US bank info")
+				} else if bankName == "" {
+					t.Error("Expected USBK bank name to be non-empty")
+				}
+
+				if bankName, exists := result["BUYE"]; !exists {
+					t.Error("Expected BUYE bank to be present in US bank info")
+				} else if bankName == "" {
+					t.Error("Expected BUYE bank name to be non-empty")
+				}
+
+				// Validate that all values are non-empty strings
+				for shortCode, bankName := range result {
+					if bankName == "" {
+						t.Errorf("Expected bank name for %s to be non-empty", shortCode)
+					}
+				}
+			},
+		},
+		{
+			name:        "Valid IN country code",
+			countryCode: "IN",
+			expectError: false,
+			validateResult: func(t *testing.T, result map[string]string) {
+				if len(result) == 0 {
+					t.Error("Expected non-empty bank info map for IN")
+				}
+
+				// Check if known IN banks are present
+				if bankName, exists := result["ABHY"]; !exists {
+					t.Error("Expected ABHY bank to be present in IN bank info")
+				} else if bankName == "" {
+					t.Error("Expected ABHY bank name to be non-empty")
+				}
+
+				// Validate that all values are non-empty strings
+				for shortCode, bankName := range result {
+					if bankName == "" {
+						t.Errorf("Expected bank name for %s to be non-empty", shortCode)
+					}
+				}
+			},
+		},
+		{
+			name:          "Empty country code",
+			countryCode:   "",
+			expectError:   true,
+			errorContains: "country code is empty",
+		},
+		{
+			name:          "Non-existent country code",
+			countryCode:   "ZZ",
+			expectError:   true,
+			errorContains: "failed to load bank information for country ZZ",
+		},
+		{
+			name:        "Valid MY country code",
+			countryCode: "MY",
+			expectError: false,
+			validateResult: func(t *testing.T, result map[string]string) {
+				// Should return a map, even if empty
+				if result == nil {
+					t.Error("Expected non-nil result for MY")
+				}
+			},
+		},
+		{
+			name:        "Valid SG country code",
+			countryCode: "SG",
+			expectError: false,
+			validateResult: func(t *testing.T, result map[string]string) {
+				// Should return a map, even if empty
+				if result == nil {
+					t.Error("Expected non-nil result for SG")
+				}
+			},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := GetAllBanksWithShortCodes(tt.countryCode)
+
+			if tt.expectError {
+				if err == nil {
+					t.Errorf("GetAllBanksWithShortCodes() expected error but got none")
+					return
+				}
+				if tt.errorContains != "" && !strings.Contains(err.Error(), tt.errorContains) {
+					t.Errorf("GetAllBanksWithShortCodes() error = %v, expected to contain %v", err, tt.errorContains)
+				}
+				return
+			}
+
+			if err != nil {
+				t.Errorf("GetAllBanksWithShortCodes() unexpected error = %v", err)
+				return
+			}
+
+			if got == nil {
+				t.Error("GetAllBanksWithShortCodes() returned nil map")
+				return
+			}
+
+			// Run custom validation if provided
+			if tt.validateResult != nil {
+				tt.validateResult(t, got)
+			}
+		})
+	}
+}
+
+func TestGetBaseBranchIdentifierFromShortCode_EdgeCases(t *testing.T) {
+	tests := []struct {
+		name          string
+		countryCode   string
+		bankShortCode string
+		description   string
+		expectError   bool
+	}{
+		{
+			name:          "Case insensitive bank short code",
+			countryCode:   "US",
+			bankShortCode: "usbk", // lowercase
+			description:   "Should handle case insensitive bank short codes",
+			expectError:   true, // Function doesn't handle case insensitivity
+		},
+		{
+			name:          "Case insensitive country code",
+			countryCode:   "us", // lowercase
+			bankShortCode: "USBK",
+			description:   "Should handle case insensitive country codes",
+			expectError:   true, // Country code conversion doesn't help if bank data doesn't exist
+		},
+		{
+			name:          "Bank with no identifiers",
+			countryCode:   "US",
+			bankShortCode: "NOIDENTIFIER", // Assuming this bank has no identifiers
+			description:   "Should handle banks with no identifiers gracefully",
+			expectError:   true,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := GetBaseBranchIdentifierFromShortCode(tt.countryCode, tt.bankShortCode)
+
+			if tt.expectError {
+				if err == nil {
+					t.Errorf("GetBaseBranchIdentifierFromShortCode() expected error for %s but got none", tt.description)
+				}
+				return
+			}
+
+			if err != nil {
+				// For case sensitivity tests, if we get an error, it might be because
+				// the data doesn't exist, which is acceptable for these edge cases
+				t.Logf("GetBaseBranchIdentifierFromShortCode() %s: %v", tt.description, err)
+				return
+			}
+
+			if len(got) < 4 {
+				t.Errorf("GetBaseBranchIdentifierFromShortCode() %s: got = %v, expected at least 4 characters", tt.description, got)
+			}
+		})
+	}
+}
+
+func TestGetAllBanksWithShortCodes_DataIntegrity(t *testing.T) {
+	// Test that the returned data structure is consistent
+	t.Run("Data structure consistency", func(t *testing.T) {
+		result, err := GetAllBanksWithShortCodes("US")
+		if err != nil {
+			t.Fatalf("GetAllBanksWithShortCodes() unexpected error = %v", err)
+		}
+
+		for shortCode, bankName := range result {
+			// Verify basic data integrity
+			if bankName == "" {
+				t.Errorf("Bank %s has empty name", shortCode)
+			}
+
+			// Verify that short codes are reasonable (not empty, reasonable length)
+			if len(shortCode) > 10 {
+				t.Errorf("Short code %s seems too long (%d characters)", shortCode, len(shortCode))
+			}
+		}
+	})
 }

@@ -194,3 +194,68 @@ func GetBankNameFromBankIdentifier(countryCode, identifier string) (string, erro
 
 	return "", fmt.Errorf("no bank found for identifier '%s' in country %s", identifier, countryCode)
 }
+
+func GetBaseBranchIdentifierFromShortCode(countryCode, bankShortCode string) (string, error) {
+	if countryCode == "" || bankShortCode == "" {
+		return "", errors.New("countryCode and bankShortCode must not be empty")
+	}
+
+	bankInfo, err := loadBankInfo(countryCode)
+	if err != nil {
+		return "", err
+	}
+
+	var firstIdentifier string
+
+	for _, bank := range bankInfo.Details {
+		if bank.ShortCode == bankShortCode {
+			for _, branch := range bank.Branches {
+				var identifier string
+				switch bankInfo.Defaults.IdentifierType {
+				case IdentifierTypeSWIFT:
+					identifier = branch.Identifiers.SwiftCode
+				case IdentifierTypeRoutingNumber:
+					if len(branch.Identifiers.RoutingNumber) > 0 {
+						identifier = branch.Identifiers.RoutingNumber[0] // Take first routing number
+					}
+				case IdentifierTypeIFSC:
+					identifier = branch.Identifiers.IfscCode
+				default:
+					return "", fmt.Errorf("unsupported identifier type: %s", bankInfo.Defaults.IdentifierType)
+				}
+
+				if identifier != "" {
+					if firstIdentifier == "" {
+						firstIdentifier = identifier
+					}
+					// Return identifier for main branch (empty branch code)
+					if branch.Code == "" {
+						return identifier, nil
+					}
+				}
+			}
+		}
+	}
+
+	if firstIdentifier != "" {
+		return firstIdentifier, nil
+	}
+
+	return "", fmt.Errorf("no %s found for bank '%s' in country %s", bankInfo.Defaults.IdentifierType, bankShortCode, countryCode)
+}
+
+func GetAllBanksWithShortCodes(countryCode string) (map[string]string, error) {
+	bankInfo, err := loadBankInfo(countryCode)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
+	}
+
+	bankNamesMap := make(map[string]string)
+	for _, bank := range bankInfo.Details {
+		if bank.ShortCode != "" {
+			bankNamesMap[bank.ShortCode] = bank.Name
+		}
+	}
+
+	return bankNamesMap, nil
+}

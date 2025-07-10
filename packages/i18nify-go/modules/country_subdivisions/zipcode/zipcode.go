@@ -52,6 +52,7 @@ func GetDetailsFromZipCode(zipCode string, countryCode string) []country_subdivi
 		stateCode := detail.stateCode
 		// Check if state exists
 		state, stateExists := subdivisions.States[stateCode]
+		
 		if !stateExists {
 			continue
 		}
@@ -60,6 +61,9 @@ func GetDetailsFromZipCode(zipCode string, countryCode string) []country_subdivi
 		stateCopy.Cities = map[string]country_subdivisions.City{}
 		for _, cityName := range detail.cityNames {
 			stateCopy.Cities[cityName] = state.Cities[cityName]
+		}
+		if stateCopy.Name == ""{
+			stateCopy.Name = stateCode
 		}
 		states = append(states, stateCopy)
 	}
