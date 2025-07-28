@@ -17,9 +17,9 @@ class CurrencyTest extends TestCase
     public function testGetCurrencyInfo(): void
     {
         $currencyInfo = Currency::getCurrencyInfo('USD');
-        
+
         $this->assertIsArray($currencyInfo);
-        $this->assertArrayHasKey('currency_name', $currencyInfo);
+        $this->assertArrayHasKey('name', $currencyInfo);
         $this->assertArrayHasKey('symbol', $currencyInfo);
     }
 
@@ -54,7 +54,7 @@ class CurrencyTest extends TestCase
         $formatted = Currency::formatCurrency(1234.56, 'USD');
         $this->assertIsString($formatted);
         $this->assertStringContainsString('$', $formatted);
-        $this->assertStringContainsString('1234.56', $formatted);
+        $this->assertStringContainsString('1,234.56', $formatted);
     }
 
     public function testToMinorUnits(): void

@@ -17,11 +17,11 @@ class BankCode
     public static function getBankCodeData(string $countryCode): array
     {
         $countryCode = strtoupper($countryCode);
-        
+
         if (isset(self::$bankDataCache[$countryCode])) {
             return self::$bankDataCache[$countryCode];
         }
-        
+
         try {
             $data = DataLoader::loadData("bankcodes/{$countryCode}.json");
             self::$bankDataCache[$countryCode] = $data;
@@ -59,14 +59,14 @@ class BankCode
         $banks = self::getAllBanks($countryCode);
         $result = [];
         $searchTerm = strtolower($bankName);
-        
+
         foreach ($banks as $bank) {
             $bankNameField = $bank['name'] ?? '';
             if ($bankNameField !== '' && strpos(strtolower($bankNameField), $searchTerm) !== false) {
                 $result[] = $bank;
             }
         }
-        
+
         return $result;
     }
 
@@ -77,14 +77,14 @@ class BankCode
     {
         $banks = self::getAllBanks($countryCode);
         $shortCode = strtoupper($shortCode);
-        
+
         foreach ($banks as $bank) {
             $bankShortCode = $bank['short_code'] ?? '';
             if ($bankShortCode !== '' && strtoupper($bankShortCode) === $shortCode) {
                 return $bank;
             }
         }
-        
+
         return null;
     }
 
@@ -105,12 +105,12 @@ class BankCode
         $banks = self::getAllBanks($countryCode);
         $result = [];
         $branchCode = strtoupper($branchCode);
-        
+
         foreach ($banks as $bank) {
             if (!isset($bank['branches'])) {
                 continue;
             }
-            
+
             foreach ($bank['branches'] as $branch) {
                 $branchCodeField = $branch['code'] ?? '';
                 if ($branchCodeField !== '' && strtoupper($branchCodeField) === $branchCode) {
@@ -121,7 +121,7 @@ class BankCode
                 }
             }
         }
-        
+
         return $result;
     }
 
@@ -133,12 +133,12 @@ class BankCode
         $banks = self::getAllBanks($countryCode);
         $result = [];
         $searchCity = strtolower($city);
-        
+
         foreach ($banks as $bank) {
             if (!isset($bank['branches'])) {
                 continue;
             }
-            
+
             foreach ($bank['branches'] as $branch) {
                 $branchCity = $branch['city'] ?? '';
                 if ($branchCity !== '' && strpos(strtolower($branchCity), $searchCity) !== false) {
@@ -149,7 +149,7 @@ class BankCode
                 }
             }
         }
-        
+
         return $result;
     }
 
@@ -161,11 +161,11 @@ class BankCode
         if (!$type) {
             $type = self::getDefaultIdentifierType($countryCode);
         }
-        
+
         if (!$type) {
             return false;
         }
-        
+
         switch (strtoupper($type)) {
             case 'IFSC':
                 return self::validateIFSC($identifier);
@@ -200,11 +200,11 @@ class BankCode
     public static function validateRoutingNumber(string $routingNumber): bool
     {
         $cleanRoutingNumber = preg_replace('/[^\d]/', '', $routingNumber);
-        
+
         if ($cleanRoutingNumber === null || strlen($cleanRoutingNumber) !== 9) {
             return false;
         }
-        
+
         // Check digit validation
         $checksum = 0;
         for ($i = 0; $i < 9; $i += 3) {
@@ -216,7 +216,7 @@ class BankCode
                 $checksum += (int)$cleanRoutingNumber[$i + 2];
             }
         }
-        
+
         return $checksum % 10 === 0;
     }
 
@@ -228,28 +228,30 @@ class BankCode
         if (!self::validateBankIdentifier($countryCode, $identifier, $type)) {
             return null;
         }
-        
+
         $banks = self::getAllBanks($countryCode);
         $identifier = strtoupper($identifier);
         $identifierType = $type ?: self::getDefaultIdentifierType($countryCode);
-        
+
         if (!$identifierType) {
             return null;
         }
-        
+
         foreach ($banks as $bank) {
             if (!isset($bank['branches'])) {
                 continue;
             }
-            
+
             foreach ($bank['branches'] as $branch) {
                 if (!isset($branch['identifiers'])) {
                     continue;
                 }
-                
+
                 foreach ($branch['identifiers'] as $idType => $idValue) {
-                    if (strtoupper($idType) === strtoupper($identifierType) && 
-                        strtoupper((string)$idValue) === $identifier) {
+                    if (
+                        strtoupper($idType) === strtoupper($identifierType) &&
+                        strtoupper((string)$idValue) === $identifier
+                    ) {
                         return array_merge($branch, [
                             'bank_name' => $bank['name'] ?? '',
                             'bank_short_code' => $bank['short_code'] ?? '',
@@ -258,7 +260,7 @@ class BankCode
                 }
             }
         }
-        
+
         return null;
     }
 

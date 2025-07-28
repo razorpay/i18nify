@@ -24,7 +24,7 @@ class I18nify
     /**
      * Quick access methods for common operations
      */
-    
+
     /**
      * Get country information
      */

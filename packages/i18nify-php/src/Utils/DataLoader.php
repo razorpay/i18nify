@@ -26,7 +26,7 @@ class DataLoader
             // Default path relative to the package root
             $dataPath = __DIR__ . '/../../../../i18nify-data';
         }
-        
+
         self::$dataPath = rtrim($dataPath, '/');
     }
 
@@ -49,7 +49,7 @@ class DataLoader
         }
 
         $fullPath = self::$dataPath . '/' . ltrim($filePath, '/');
-        
+
         if (!file_exists($fullPath)) {
             throw new \RuntimeException("Data file not found: {$fullPath}");
         }

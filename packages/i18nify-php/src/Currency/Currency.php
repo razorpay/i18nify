@@ -20,7 +20,7 @@ class Currency
             $data = DataLoader::loadData('currency/data.json');
             self::$currencyData = $data['currency_information'] ?? [];
         }
-        
+
         return self::$currencyData;
     }
 
@@ -31,7 +31,7 @@ class Currency
     {
         $currencies = self::getAllCurrencies();
         $currencyCode = strtoupper($currencyCode);
-        
+
         return $currencies[$currencyCode] ?? null;
     }
 
@@ -83,13 +83,13 @@ class Currency
 
         $minorUnits = self::getMinorUnits($currencyCode) ?? 2;
         $symbol = self::getCurrencySymbol($currencyCode) ?? $currencyCode;
-        
+
         if ($locale && class_exists('NumberFormatter')) {
             $formatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
             $formatted = $formatter->formatCurrency($amount, $currencyCode);
             return $formatted !== false ? $formatted : $symbol . number_format($amount, $minorUnits);
         }
-        
+
         return $symbol . number_format($amount, $minorUnits);
     }
 
@@ -127,14 +127,16 @@ class Currency
         $currencies = self::getAllCurrencies();
         $result = [];
         $searchTerm = strtolower($searchTerm);
-        
+
         foreach ($currencies as $code => $info) {
-            if (isset($info['name']) && 
-                strpos(strtolower($info['name']), $searchTerm) !== false) {
+            if (
+                isset($info['name']) &&
+                strpos(strtolower($info['name']), $searchTerm) !== false
+            ) {
                 $result[$code] = $info;
             }
         }
-        
+
         return $result;
     }
 
@@ -147,7 +149,7 @@ class Currency
         if (!$currencyInfo) {
             return [];
         }
-        
+
         return [
             'code' => strtoupper($currencyCode),
             'name' => $currencyInfo['name'] ?? '',

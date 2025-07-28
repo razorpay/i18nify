@@ -17,10 +17,10 @@ class CountryTest extends TestCase
     public function testGetCountryInfo(): void
     {
         $countryInfo = Country::getCountryInfo('US');
-        
+
         $this->assertIsArray($countryInfo);
         $this->assertArrayHasKey('country_name', $countryInfo);
-        $this->assertEquals('United States', $countryInfo['country_name']);
+        $this->assertEquals('United States of America (the)', $countryInfo['country_name']);
     }
 
     public function testGetCountryName(): void
@@ -33,7 +33,7 @@ class CountryTest extends TestCase
     {
         $dialCode = Country::getDialCode('US');
         $this->assertEquals('+1', $dialCode);
-        
+
         $dialCode = Country::getDialCode('IN');
         $this->assertEquals('+91', $dialCode);
     }
@@ -49,7 +49,7 @@ class CountryTest extends TestCase
     {
         $currency = Country::getDefaultCurrency('US');
         $this->assertEquals('USD', $currency);
-        
+
         $currency = Country::getDefaultCurrency('IN');
         $this->assertEquals('INR', $currency);
     }

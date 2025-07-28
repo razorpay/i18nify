@@ -68,7 +68,7 @@ class Country
     public static function getSupportedCurrencies(string $countryCode): array
     {
         $countryInfo = self::getCountryInfo($countryCode);
-        return $countryInfo['supported_currency'] ?? [];
+        return $countryInfo['supportedCurrency'] ?? [];
     }
 
     /**

@@ -21,7 +21,7 @@ class PhoneNumber
             $data = DataLoader::loadData('phone-number/country-code-to-phone-number/data.json');
             self::$countryToPhoneData = $data['country_tele_information'] ?? [];
         }
-        
+
         return self::$countryToPhoneData;
     }
 
@@ -34,7 +34,7 @@ class PhoneNumber
             $data = DataLoader::loadData('phone-number/dial-code-to-country/data.json');
             self::$dialCodeToCountryData = $data['dial_code_to_country'] ?? [];
         }
-        
+
         return self::$dialCodeToCountryData;
     }
 
@@ -45,7 +45,7 @@ class PhoneNumber
     {
         $phoneData = self::getAllCountryPhoneData();
         $countryCode = strtoupper($countryCode);
-        
+
         return $phoneData[$countryCode] ?? null;
     }
 
@@ -85,13 +85,13 @@ class PhoneNumber
         if (!$regex) {
             return false;
         }
-        
+
         // Remove any non-digit characters except +
         $cleanNumber = preg_replace('/[^\d+]/', '', $phoneNumber);
         if ($cleanNumber === null) {
             return false;
         }
-        
+
         // Remove country dial code if present
         $dialCode = self::getDialCode($countryCode);
         if ($dialCode && strpos($cleanNumber, $dialCode) === 0) {
@@ -104,7 +104,7 @@ class PhoneNumber
                 $cleanNumber = substr($cleanNumber, strlen($numericDialCode));
             }
         }
-        
+
         return preg_match('/^' . $regex . '$/', $cleanNumber) === 1;
     }
 
@@ -116,26 +116,26 @@ class PhoneNumber
         if (!self::validatePhoneNumber($phoneNumber, $countryCode)) {
             return null;
         }
-        
+
         $format = self::getPhoneNumberFormat($countryCode);
         $dialCode = self::getDialCode($countryCode);
-        
+
         if (!$format || !$dialCode) {
             return null;
         }
-        
+
         // Clean the number
         $cleanNumber = preg_replace('/[^\d]/', '', $phoneNumber);
         if ($cleanNumber === null) {
             return null;
         }
-        
+
         // Remove country code if present
         $numericDialCode = ltrim($dialCode, '+');
         if (strpos($cleanNumber, $numericDialCode) === 0) {
             $cleanNumber = substr($cleanNumber, strlen($numericDialCode));
         }
-        
+
         // Apply format
         $formatted = $format;
         for ($i = 0; $i < strlen($cleanNumber); $i++) {
@@ -144,10 +144,10 @@ class PhoneNumber
                 $formatted = substr_replace($formatted, $cleanNumber[$i], $pos, 1);
             }
         }
-        
+
         // Remove any remaining 'x' characters
         $formatted = str_replace('x', '', $formatted);
-        
+
         return $dialCode . ' ' . trim($formatted);
     }
 
@@ -158,7 +158,7 @@ class PhoneNumber
     {
         $dialCodeData = self::getDialCodeToCountryData();
         $dialCode = ltrim($dialCode, '+');
-        
+
         return $dialCodeData[$dialCode] ?? [];
     }
 
@@ -169,23 +169,23 @@ class PhoneNumber
     {
         $dialCodeData = self::getDialCodeToCountryData();
         $cleanNumber = preg_replace('/[^\d]/', '', $phoneNumber);
-        
+
         if ($cleanNumber === null) {
             return null;
         }
-        
+
         // Try to match dial codes from longest to shortest
         $dialCodes = array_keys($dialCodeData);
-        usort($dialCodes, function($a, $b) {
+        usort($dialCodes, function ($a, $b) {
             return strlen($b) - strlen($a);
         });
-        
+
         foreach ($dialCodes as $dialCode) {
             if (strpos($cleanNumber, $dialCode) === 0) {
                 return '+' . $dialCode;
             }
         }
-        
+
         return null;
     }
 
@@ -198,7 +198,7 @@ class PhoneNumber
         if (!$dialCode) {
             return [];
         }
-        
+
         return self::getCountriesByDialCode($dialCode);
     }
 
@@ -208,13 +208,13 @@ class PhoneNumber
     public static function isValidPhoneNumber(string $phoneNumber): bool
     {
         $countries = self::detectCountryFromPhoneNumber($phoneNumber);
-        
+
         foreach ($countries as $countryCode) {
             if (self::validatePhoneNumber($phoneNumber, $countryCode)) {
                 return true;
             }
         }
-        
+
         return false;
     }
 
@@ -224,7 +224,7 @@ class PhoneNumber
     public static function getAllDialCodes(): array
     {
         $dialCodeData = self::getDialCodeToCountryData();
-        return array_map(function($code) {
+        return array_map(function ($code) {
             return '+' . $code;
         }, array_keys($dialCodeData));
     }
