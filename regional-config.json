@@ -1,0 +1,29 @@
+{
+  "region": "us",
+  "currency": "USD", 
+  "locale": "en-US",
+  "timezone": "America/New_York",
+  "dateFormat": "MM/DD/YYYY",
+  "phoneFormat": "+1 (XXX) XXX-XXXX",
+  "compliance": {
+    "gdpr": false,
+    "ccpa": true,
+    "coppa": true
+  },
+  "features": {
+    "banking": {
+      "ach": true,
+      "wire": true,
+      "routing_numbers": true
+    },
+    "tax": {
+      "sales_tax": true,
+      "state_tax": true
+    }
+  },
+  "api_endpoints": {
+    "base_url": "https://api.us.i18nify.com",
+    "banking": "/v1/us/banking",
+    "geo": "/v1/us/geo"
+  }
+}
