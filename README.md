@@ -22,3 +22,10 @@ If you are just looking for the dataset, go to [i18nify-data](i18nify-data) and 
 Contributions to i18nify are welcome! If you encounter any issues, have feature requests, or would like to contribute code, please refer to the respective contribution guidelines.
 
 - [i18nify-data](i18nify-data/contribution-guidelines.md)
+
+
+## Singapore Regional Configuration  
+This branch includes Singapore-specific settings:
+- Currency: SGD
+- Compliance: PDPA, MAS regulations
+- Banking: GIRO, PayNow, SWIFT
