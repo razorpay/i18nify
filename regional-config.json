@@ -1,6 +1,6 @@
 {
   "region": "us",
-  "currency": "USD", 
+  "currency": "USD",
   "locale": "en-US",
   "timezone": "America/New_York",
   "dateFormat": "MM/DD/YYYY",
@@ -19,6 +19,11 @@
     "tax": {
       "sales_tax": true,
       "state_tax": true
+    },
+    "global_features": {
+      "multi_currency_support": ["USD", "CAD"],
+      "poc_integration": true,
+      "merge_queue_compatible": true
     }
   },
   "api_endpoints": {
