@@ -1,0 +1,29 @@
+{
+  "region": "singapore",
+  "currency": "SGD",
+  "locale": "en-SG", 
+  "timezone": "Asia/Singapore",
+  "dateFormat": "DD/MM/YYYY",
+  "phoneFormat": "+65 XXXX XXXX",
+  "compliance": {
+    "gdpr": false,
+    "pdpa": true,
+    "mas_regulations": true
+  },
+  "features": {
+    "banking": {
+      "giro": true,
+      "paynow": true,
+      "swift": true
+    },
+    "tax": {
+      "gst": true,
+      "withholding_tax": true
+    }
+  },
+  "api_endpoints": {
+    "base_url": "https://api.sg.i18nify.com",
+    "banking": "/v1/sg/banking",
+    "geo": "/v1/sg/geo"
+  }
+}
