@@ -43,7 +43,7 @@ class DataLoader
         if (self::$dataPath === null) {
             self::init();
         }
-        
+
         if (self::$dataPath === null) {
             throw new \RuntimeException('Data path could not be initialized');
         }
@@ -249,4 +249,4 @@ class DataLoader
     {
         self::$maxMemoryFileSize = $bytes;
     }
-} 
+}

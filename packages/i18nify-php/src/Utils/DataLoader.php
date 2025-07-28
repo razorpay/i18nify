@@ -28,12 +28,13 @@ class DataLoader
         if (self::$dataPath === null) {
             self::init();
         }
-        
+
         if (self::$dataPath === null) {
             throw new \RuntimeException("Data path could not be initialized");
         }
-        
-        return self::$dataPath;    }
+
+        return self::$dataPath;
+}
     public static function init(?string $dataPath = null): void
     {
         if ($dataPath === null) {
