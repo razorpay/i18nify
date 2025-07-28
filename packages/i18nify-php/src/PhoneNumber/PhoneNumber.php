@@ -88,6 +88,9 @@ class PhoneNumber
         
         // Remove any non-digit characters except +
         $cleanNumber = preg_replace('/[^\d+]/', '', $phoneNumber);
+        if ($cleanNumber === null) {
+            return false;
+        }
         
         // Remove country dial code if present
         $dialCode = self::getDialCode($countryCode);
@@ -96,8 +99,8 @@ class PhoneNumber
         } elseif (strpos($cleanNumber, '+') === 0) {
             $cleanNumber = ltrim($cleanNumber, '+');
             // Remove the numeric part of dial code
-            $numericDialCode = ltrim($dialCode ?? '', '+');
-            if ($numericDialCode && strpos($cleanNumber, $numericDialCode) === 0) {
+            $numericDialCode = $dialCode ? ltrim($dialCode, '+') : '';
+            if ($numericDialCode !== '' && strpos($cleanNumber, $numericDialCode) === 0) {
                 $cleanNumber = substr($cleanNumber, strlen($numericDialCode));
             }
         }
@@ -123,6 +126,9 @@ class PhoneNumber
         
         // Clean the number
         $cleanNumber = preg_replace('/[^\d]/', '', $phoneNumber);
+        if ($cleanNumber === null) {
+            return null;
+        }
         
         // Remove country code if present
         $numericDialCode = ltrim($dialCode, '+');
@@ -134,7 +140,7 @@ class PhoneNumber
         $formatted = $format;
         for ($i = 0; $i < strlen($cleanNumber); $i++) {
             $pos = strpos($formatted, 'x');
-            if ($pos !== false) {
+            if ($pos !== false && isset($cleanNumber[$i])) {
                 $formatted = substr_replace($formatted, $cleanNumber[$i], $pos, 1);
             }
         }
@@ -163,6 +169,10 @@ class PhoneNumber
     {
         $dialCodeData = self::getDialCodeToCountryData();
         $cleanNumber = preg_replace('/[^\d]/', '', $phoneNumber);
+        
+        if ($cleanNumber === null) {
+            return null;
+        }
         
         // Try to match dial codes from longest to shortest
         $dialCodes = array_keys($dialCodeData);

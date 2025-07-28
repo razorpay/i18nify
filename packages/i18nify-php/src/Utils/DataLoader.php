@@ -10,7 +10,7 @@ class DataLoader
     /**
      * Base path to the i18nify-data directory
      */
-    private static string $dataPath;
+    private static ?string $dataPath = null;
 
     /**
      * Cache for loaded data
@@ -39,7 +39,7 @@ class DataLoader
      */
     public static function loadData(string $filePath): array
     {
-        if (!isset(self::$dataPath)) {
+        if (self::$dataPath === null) {
             self::init();
         }
 
@@ -62,6 +62,10 @@ class DataLoader
         $data = json_decode($content, true);
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new \RuntimeException("Invalid JSON in file {$fullPath}: " . json_last_error_msg());
+        }
+
+        if (!is_array($data)) {
+            throw new \RuntimeException("JSON data must be an array in file: {$fullPath}");
         }
 
         self::$cache[$cacheKey] = $data;

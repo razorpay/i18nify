@@ -41,7 +41,7 @@ class Currency
     public static function getCurrencyName(string $currencyCode): ?string
     {
         $currencyInfo = self::getCurrencyInfo($currencyCode);
-        return $currencyInfo['currency_name'] ?? null;
+        return $currencyInfo['name'] ?? null;
     }
 
     /**
@@ -59,7 +59,7 @@ class Currency
     public static function getMinorUnits(string $currencyCode): ?int
     {
         $currencyInfo = self::getCurrencyInfo($currencyCode);
-        return isset($currencyInfo['minor_units']) ? (int)$currencyInfo['minor_units'] : null;
+        return isset($currencyInfo['minor_unit']) ? (int)$currencyInfo['minor_unit'] : null;
     }
 
     /**
@@ -86,7 +86,8 @@ class Currency
         
         if ($locale && class_exists('NumberFormatter')) {
             $formatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
-            return $formatter->formatCurrency($amount, $currencyCode);
+            $formatted = $formatter->formatCurrency($amount, $currencyCode);
+            return $formatted !== false ? $formatted : $symbol . number_format($amount, $minorUnits);
         }
         
         return $symbol . number_format($amount, $minorUnits);
@@ -128,8 +129,8 @@ class Currency
         $searchTerm = strtolower($searchTerm);
         
         foreach ($currencies as $code => $info) {
-            if (isset($info['currency_name']) && 
-                strpos(strtolower($info['currency_name']), $searchTerm) !== false) {
+            if (isset($info['name']) && 
+                strpos(strtolower($info['name']), $searchTerm) !== false) {
                 $result[$code] = $info;
             }
         }
@@ -149,9 +150,9 @@ class Currency
         
         return [
             'code' => strtoupper($currencyCode),
-            'name' => $currencyInfo['currency_name'] ?? '',
+            'name' => $currencyInfo['name'] ?? '',
             'symbol' => $currencyInfo['symbol'] ?? $currencyCode,
-            'minor_units' => $currencyInfo['minor_units'] ?? 2,
+            'minor_units' => $currencyInfo['minor_unit'] ?? 2,
         ];
     }
 }

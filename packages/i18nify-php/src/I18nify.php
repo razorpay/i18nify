@@ -22,38 +22,6 @@ class I18nify
     }
 
     /**
-     * Country utilities
-     */
-    public static function country(): Country
-    {
-        return new Country();
-    }
-
-    /**
-     * Currency utilities
-     */
-    public static function currency(): Currency
-    {
-        return new Currency();
-    }
-
-    /**
-     * Phone number utilities
-     */
-    public static function phoneNumber(): PhoneNumber
-    {
-        return new PhoneNumber();
-    }
-
-    /**
-     * Bank code utilities
-     */
-    public static function bankCode(): BankCode
-    {
-        return new BankCode();
-    }
-
-    /**
      * Quick access methods for common operations
      */
     

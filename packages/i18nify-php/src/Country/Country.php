@@ -10,7 +10,6 @@ use Razorpay\I18nify\Utils\DataLoader;
 class Country
 {
     private static ?array $countryData = null;
-    private static ?array $subdivisionData = null;
 
     /**
      * Get all country metadata
@@ -161,8 +160,8 @@ class Country
         $searchTerm = strtolower($searchTerm);
         
         foreach ($countries as $code => $info) {
-            if (isset($info['country_name']) && 
-                strpos(strtolower($info['country_name']), $searchTerm) !== false) {
+            $countryName = $info['country_name'] ?? '';
+            if ($countryName !== '' && strpos(strtolower($countryName), $searchTerm) !== false) {
                 $result[$code] = $info;
             }
         }

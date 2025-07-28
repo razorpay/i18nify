@@ -61,8 +61,8 @@ class BankCode
         $searchTerm = strtolower($bankName);
         
         foreach ($banks as $bank) {
-            if (isset($bank['name']) && 
-                strpos(strtolower($bank['name']), $searchTerm) !== false) {
+            $bankNameField = $bank['name'] ?? '';
+            if ($bankNameField !== '' && strpos(strtolower($bankNameField), $searchTerm) !== false) {
                 $result[] = $bank;
             }
         }
@@ -79,8 +79,8 @@ class BankCode
         $shortCode = strtoupper($shortCode);
         
         foreach ($banks as $bank) {
-            if (isset($bank['short_code']) && 
-                strtoupper($bank['short_code']) === $shortCode) {
+            $bankShortCode = $bank['short_code'] ?? '';
+            if ($bankShortCode !== '' && strtoupper($bankShortCode) === $shortCode) {
                 return $bank;
             }
         }
@@ -112,8 +112,8 @@ class BankCode
             }
             
             foreach ($bank['branches'] as $branch) {
-                if (isset($branch['code']) && 
-                    strtoupper($branch['code']) === $branchCode) {
+                $branchCodeField = $branch['code'] ?? '';
+                if ($branchCodeField !== '' && strtoupper($branchCodeField) === $branchCode) {
                     $result[] = array_merge($branch, [
                         'bank_name' => $bank['name'] ?? '',
                         'bank_short_code' => $bank['short_code'] ?? '',
@@ -140,8 +140,8 @@ class BankCode
             }
             
             foreach ($bank['branches'] as $branch) {
-                if (isset($branch['city']) && 
-                    strpos(strtolower($branch['city']), $searchCity) !== false) {
+                $branchCity = $branch['city'] ?? '';
+                if ($branchCity !== '' && strpos(strtolower($branchCity), $searchCity) !== false) {
                     $result[] = array_merge($branch, [
                         'bank_name' => $bank['name'] ?? '',
                         'bank_short_code' => $bank['short_code'] ?? '',
@@ -199,21 +199,21 @@ class BankCode
      */
     public static function validateRoutingNumber(string $routingNumber): bool
     {
-        $routingNumber = preg_replace('/[^\d]/', '', $routingNumber);
+        $cleanRoutingNumber = preg_replace('/[^\d]/', '', $routingNumber);
         
-        if (strlen($routingNumber) !== 9) {
+        if ($cleanRoutingNumber === null || strlen($cleanRoutingNumber) !== 9) {
             return false;
         }
         
         // Check digit validation
         $checksum = 0;
         for ($i = 0; $i < 9; $i += 3) {
-            $checksum += (int)$routingNumber[$i] * 3;
-            if (isset($routingNumber[$i + 1])) {
-                $checksum += (int)$routingNumber[$i + 1] * 7;
+            $checksum += (int)$cleanRoutingNumber[$i] * 3;
+            if (isset($cleanRoutingNumber[$i + 1])) {
+                $checksum += (int)$cleanRoutingNumber[$i + 1] * 7;
             }
-            if (isset($routingNumber[$i + 2])) {
-                $checksum += (int)$routingNumber[$i + 2];
+            if (isset($cleanRoutingNumber[$i + 2])) {
+                $checksum += (int)$cleanRoutingNumber[$i + 2];
             }
         }
         
@@ -233,6 +233,10 @@ class BankCode
         $identifier = strtoupper($identifier);
         $identifierType = $type ?: self::getDefaultIdentifierType($countryCode);
         
+        if (!$identifierType) {
+            return null;
+        }
+        
         foreach ($banks as $bank) {
             if (!isset($bank['branches'])) {
                 continue;
@@ -245,7 +249,7 @@ class BankCode
                 
                 foreach ($branch['identifiers'] as $idType => $idValue) {
                     if (strtoupper($idType) === strtoupper($identifierType) && 
-                        strtoupper($idValue) === $identifier) {
+                        strtoupper((string)$idValue) === $identifier) {
                         return array_merge($branch, [
                             'bank_name' => $bank['name'] ?? '',
                             'bank_short_code' => $bank['short_code'] ?? '',
