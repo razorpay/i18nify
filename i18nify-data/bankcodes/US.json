@@ -36,13 +36,6 @@
                     }
                 },
                 {
-                    "code": "",
-                    "city": "MINNEAPOLIS",
-                    "identifiers": {
-                        "swift_code": "USBKUS44"
-                    }
-                },
-                {
                     "code": "SCF",
                     "city": "MINNEAPOLIS",
                     "identifiers": {
@@ -384,7 +377,7 @@
             ]
         },
         {
-            "name": "40/86 ADVISORS, INC.",
+            "name": "40\/86 ADVISORS, INC.",
             "short_code": "CCMI",
             "branches": [
                 {
@@ -547,7 +540,7 @@
             ]
         },
         {
-            "name": "ABEL/NOSER CORP",
+            "name": "ABEL\/NOSER CORP",
             "short_code": "ABEN",
             "branches": [
                 {
@@ -12361,7 +12354,7 @@
             ]
         },
         {
-            "name": "CAK CAPITAL MANAGEMENT D/B/A/ KNOTT CAPITAL MANAGEMENT",
+            "name": "CAK CAPITAL MANAGEMENT D\/B\/A\/ KNOTT CAPITAL MANAGEMENT",
             "short_code": "CCAD",
             "branches": [
                 {
@@ -22547,7 +22540,7 @@
             ]
         },
         {
-            "name": "CTC/JP MORGAN CHASE BANK, NA",
+            "name": "CTC\/JP MORGAN CHASE BANK, NA",
             "short_code": "CUTC",
             "branches": [
                 {
@@ -26259,7 +26252,7 @@
             ]
         },
         {
-            "name": "F/M INVESTMENTS LLC",
+            "name": "F\/M INVESTMENTS LLC",
             "short_code": "FMIV",
             "branches": [
                 {
@@ -34470,7 +34463,7 @@
             ]
         },
         {
-            "name": "HEITMAN REAL ESTATE SECURITIES LLC (FORMERLY HEITMAN/PRA SECURITIES ADVISORS LLC)",
+            "name": "HEITMAN REAL ESTATE SECURITIES LLC (FORMERLY HEITMAN\/PRA SECURITIES ADVISORS LLC)",
             "short_code": "HPRA",
             "branches": [
                 {
@@ -37324,7 +37317,7 @@
             ]
         },
         {
-            "name": "INTERSTATE/JOHNSON LANE CORP.",
+            "name": "INTERSTATE\/JOHNSON LANE CORP.",
             "short_code": "JOHN",
             "branches": [
                 {
@@ -43707,7 +43700,7 @@
             ]
         },
         {
-            "name": "MESSNER AND SMITH THEME/VALUE INVESTMENT MANAGEMENT, LTD.",
+            "name": "MESSNER AND SMITH THEME\/VALUE INVESTMENT MANAGEMENT, LTD.",
             "short_code": "MSTI",
             "branches": [
                 {
@@ -47436,7 +47429,7 @@
             ]
         },
         {
-            "name": "NORTH/SOUTH FINANCIAL GROUP, INC.",
+            "name": "NORTH\/SOUTH FINANCIAL GROUP, INC.",
             "short_code": "NOFG",
             "branches": [
                 {
@@ -54934,7 +54927,7 @@
             ]
         },
         {
-            "name": "SCHAFER/CULLEN CAPITAL MANAGEMENT, INC.",
+            "name": "SCHAFER\/CULLEN CAPITAL MANAGEMENT, INC.",
             "short_code": "SCCT",
             "branches": [
                 {
@@ -62691,7 +62684,7 @@
             ]
         },
         {
-            "name": "STIFEL, NICOLAUS AND COMPANY, INCORPORATED/STIFEL SECURITIES LENDING",
+            "name": "STIFEL, NICOLAUS AND COMPANY, INCORPORATED\/STIFEL SECURITIES LENDING",
             "short_code": "SNOI",
             "branches": [
                 {
@@ -64218,7 +64211,7 @@
             ]
         },
         {
-            "name": "TEMPLETON/FRANKLIN INVESTMENT SERVICES, INC.",
+            "name": "TEMPLETON\/FRANKLIN INVESTMENT SERVICES, INC.",
             "short_code": "TFIS",
             "branches": [
                 {
@@ -66029,7 +66022,7 @@
             ]
         },
         {
-            "name": "THE UNIVERSITY OF TEXAS/TEXAS A AND M INVESTMENT MANAGEMENT COMPANY",
+            "name": "THE UNIVERSITY OF TEXAS\/TEXAS A AND M INVESTMENT MANAGEMENT COMPANY",
             "short_code": "UTIM",
             "branches": [
                 {

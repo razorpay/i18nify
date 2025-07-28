@@ -269,6 +269,15 @@ class BankCode
      */
     public static function hasBankCodes(string $countryCode): bool
     {
-        return !empty(self::getBankCodeData($countryCode));
+        return file_exists(self::getBankDataPath($countryCode));
+    }
+
+    // Private helper methods
+
+    private static function getBankDataPath(string $countryCode): string
+    {
+        DataLoader::init(); // Ensure data path is initialized
+        $dataPath = DataLoader::getDataPath();
+        return $dataPath . "/bankcodes/{$countryCode}.json";
     }
 }

@@ -20,6 +20,17 @@ class DataLoader
     /**
      * Initialize the data path
      */
+    /**
+     * Get the current data path
+     */
+    public static function getDataPath(): string
+    {
+        if (self::$dataPath === null) {
+            self::init();
+        }
+        
+        return self::$dataPath;
+    }
     public static function init(?string $dataPath = null): void
     {
         if ($dataPath === null) {
