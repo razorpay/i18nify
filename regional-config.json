@@ -1,0 +1,25 @@
+{
+  "region": "global",
+  "currency": "EUR", 
+  "locale": "en-GB",
+  "timezone": "Europe/London",
+  "dateFormat": "DD-MM-YYYY",
+  "phoneFormat": "+44 XXXX XXXXXX",
+  "compliance": {
+    "gdpr": true,
+    "local_requirements": "This will conflict with regional branches"
+  },
+  "features": {
+    "banking": {
+      "sepa": true,
+      "faster_payments": true
+    },
+    "experimental": {
+      "new_feature": "This conflicts with both US and Singapore configs"
+    }
+  },
+  "api_endpoints": {
+    "base_url": "https://api.global.i18nify.com",
+    "banking": "/v1/global/banking"
+  }
+}
