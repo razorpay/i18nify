@@ -1,0 +1,75 @@
+name: (i18nify-php) Build & Validate
+
+on:
+  pull_request:
+
+defaults:
+  run:
+    working-directory: packages/i18nify-php
+
+jobs:
+  # JOB to run change detection
+  check-if-i18nify-php:
+    runs-on: ubuntu-latest
+    outputs:
+      modified: ${{ steps.filter.outputs.src }}
+    steps:
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            src:
+              - 'packages/i18nify-php/**'
+
+  validate:
+    name: Validate PHP Source code
+    runs-on: ubuntu-latest
+    needs: check-if-i18nify-php
+    if: |
+      needs.check-if-i18nify-php.outputs.modified == 'true' && !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot') &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: json
+          coverage: xdebug
+          tools: composer:v2
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+      - name: Check syntax errors
+        run: find src -name "*.php" -exec php -l {} \;
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse --error-format=github
+
+      - name: Run PHPCS
+        run: vendor/bin/phpcs
+
+      - name: Run PHPUnit tests
+        run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./packages/i18nify-php/coverage.xml
+          flags: php
+          name: php-coverage
+          fail_ci_if_error: false 
