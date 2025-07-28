@@ -2,10 +2,6 @@ name: (i18nify-js) Build & Validate
 on:
   pull_request:
 
-defaults:
-  run:
-    working-directory: packages/i18nify-js
-
 jobs:
   # JOB to run change detection
   check-if-i18nify-js:
@@ -43,6 +39,7 @@ jobs:
       
       - name: Install dependencies and run validation
         if: env.SHOULD_RUN == 'true'
+        working-directory: packages/i18nify-js
         run: |
           yarn
           yarn lint
@@ -71,6 +68,7 @@ jobs:
       
       - name: Install dependencies and build
         if: env.SHOULD_RUN == 'true'
+        working-directory: packages/i18nify-js
         run: |
           yarn
           yarn build

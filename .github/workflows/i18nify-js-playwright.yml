@@ -2,10 +2,6 @@ name: Playwright Tests
 on:
   pull_request:
 
-defaults:
-  run:
-    working-directory: packages/i18nify-js
-
 jobs:
   # JOB to run change detection
   check-if-i18nify-js:
@@ -43,6 +39,7 @@ jobs:
       
       - name: Install dependencies and run tests
         if: env.SHOULD_RUN == 'true'
+        working-directory: packages/i18nify-js
         run: |
           yarn install
           npx playwright install --with-deps
@@ -53,5 +50,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          path: playwright-report/
+          path: packages/i18nify-js/playwright-report/
           retention-days: 30
