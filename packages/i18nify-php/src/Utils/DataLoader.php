@@ -34,7 +34,7 @@ class DataLoader
         }
 
         return self::$dataPath;
-}
+    }
     public static function init(?string $dataPath = null): void
     {
         if ($dataPath === null) {
