@@ -22,3 +22,10 @@ If you are just looking for the dataset, go to [i18nify-data](i18nify-data) and 
 Contributions to i18nify are welcome! If you encounter any issues, have feature requests, or would like to contribute code, please refer to the respective contribution guidelines.
 
 - [i18nify-data](i18nify-data/contribution-guidelines.md)
+
+
+## US Regional Configuration
+This branch includes US-specific settings:
+- Currency: USD
+- Compliance: CCPA, COPPA
+- Banking: ACH, Wire transfers
