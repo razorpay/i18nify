@@ -1,0 +1,26 @@
+{
+  "name": "i18nify",
+  "version": "2.0.0-sg",
+  "description": "i18nify configured for Singapore regional deployment",
+  "regional_settings": {
+    "default_locale": "en-SG",
+    "default_currency": "SGD",
+    "timezone": "Asia/Singapore",
+    "date_format": "DD/MM/YYYY"
+  },
+  "compliance": {
+    "gdpr": false,
+    "pdpa": true,
+    "mas_regulations": true
+  },
+  "features": {
+    "paynow": true,
+    "giro": true,
+    "swift_transfers": true
+  },
+  "singapore_specific": {
+    "tax_handling": "gst",
+    "phone_format": "+65 XXXX XXXX",
+    "postal_code_format": "XXXXXX"
+  }
+}
