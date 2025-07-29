@@ -1,0 +1,26 @@
+{
+  "name": "i18nify",
+  "version": "2.0.0-us",
+  "description": "i18nify configured for US regional deployment",
+  "regional_settings": {
+    "default_locale": "en-US",
+    "default_currency": "USD",
+    "timezone": "America/New_York",
+    "date_format": "MM/DD/YYYY"
+  },
+  "compliance": {
+    "gdpr": false,
+    "ccpa": true,
+    "coppa": true
+  },
+  "features": {
+    "ach_payments": true,
+    "wire_transfers": true,
+    "routing_number_validation": true
+  },
+  "us_specific": {
+    "tax_handling": "state_and_federal",
+    "phone_format": "+1 (XXX) XXX-XXXX",
+    "postal_code_format": "XXXXX-XXXX"
+  }
+}
