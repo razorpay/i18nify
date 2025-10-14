@@ -220,7 +220,11 @@
             "534350",
             "534006",
             "534005",
-            "534215"
+            "534215",
+            "534136",
+            "534251",
+            "534229",
+            "534272"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
@@ -320,7 +324,8 @@
             "530022",
             "530013",
             "530041",
-            "530024"
+            "530024",
+            "530035"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Visakhapatnam Region"
@@ -500,7 +505,9 @@
             "524124",
             "524101",
             "524001",
-            "524005"
+            "524005",
+            "524301",
+            "524218"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
@@ -620,7 +627,8 @@
             "522004",
             "522007",
             "522006",
-            "522239"
+            "522239",
+            "522125"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
@@ -732,7 +740,9 @@
             "523001",
             "523316",
             "523002",
-            "523156"
+            "523156",
+            "523153",
+            "523345"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
@@ -868,7 +878,10 @@
             "533002",
             "533004",
             "533242",
-            "533255"
+            "533255",
+            "531110",
+            "533008",
+            "507130"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Visakhapatnam Region"
@@ -1057,7 +1070,10 @@
             "517506",
             "517101",
             "517001",
-            "517646"
+            "517646",
+            "517003",
+            "517621",
+            "517330"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kurnool Region"
@@ -1133,7 +1149,8 @@
             "532405",
             "532001",
             "532185",
-            "532201"
+            "532201",
+            "532323"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Visakhapatnam Region"
@@ -1225,7 +1242,9 @@
             "518102",
             "518101",
             "518186",
-            "518005"
+            "518005",
+            "518397",
+            "518673"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kurnool Region"
@@ -1351,7 +1370,8 @@
             "521231",
             "521301",
             "521001",
-            "521201"
+            "521201",
+            "521444"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
@@ -1382,7 +1402,17 @@
             "813221",
             "813201",
             "813205",
-            "813102"
+            "813102",
+            "813126",
+            "813124",
+            "813118",
+            "813116",
+            "813125",
+            "813224",
+            "813117",
+            "813123",
+            "813128",
+            "813127"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
@@ -1415,7 +1445,16 @@
             "812003",
             "812002",
             "813214",
-            "812007"
+            "812007",
+            "813112",
+            "813223",
+            "853207",
+            "813113",
+            "813129",
+            "813233",
+            "813231",
+            "813227",
+            "813225"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
@@ -1478,7 +1517,10 @@
             "851114",
             "851135",
             "851115",
-            "848203"
+            "848203",
+            "851119",
+            "851122",
+            "851103"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
@@ -1546,7 +1588,9 @@
             "848203",
             "851206",
             "852129",
-            "851202"
+            "851202",
+            "851219",
+            "851225"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
@@ -1579,7 +1623,11 @@
             "824122",
             "824121",
             "824127",
-            "824101"
+            "824101",
+            "824216",
+            "824218",
+            "824130"
+
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NPGCL Aditi Nagar S.O"
@@ -1624,7 +1672,9 @@
             "802166",
             "802112",
             "802209",
-            "802302"
+            "802302",
+            "802315",
+            "802237"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -1712,7 +1762,8 @@
             "847404",
             "847230",
             "847407",
-            "847211"
+            "847211",
+            "847406"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
@@ -1756,7 +1807,12 @@
             "848206",
             "848501",
             "848102",
-            "844506"
+            "844506",
+            "848118",
+            "848237",
+            "848111",
+            "848220",
+            "848116"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
@@ -1904,7 +1960,9 @@
             "841217",
             "841225",
             "841301",
-            "841418"
+            "841418",
+            "841105",
+            "841433"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
@@ -1934,7 +1992,8 @@
             "854327",
             "854301",
             "854305",
-            "854302"
+            "854302",
+            "854206"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
@@ -1988,7 +2047,8 @@
             "843333",
             "843324",
             "843325",
-            "843301"
+            "843301",
+            "843351"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
@@ -2012,7 +2072,8 @@
             "845454",
             "845105",
             "845455",
-            "845106"
+            "845106",
+            "845102"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
@@ -2052,7 +2113,10 @@
             "824209",
             "803116",
             "823001",
-            "823005"
+            "823005",
+            "805236",
+            "805135",
+            "804430"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -2127,7 +2191,17 @@
             "800010",
             "801106",
             "803215",
-            "801507"
+            "801507",
+            "801101",
+            "801502",
+            "801501",
+            "801118",
+            "800111",
+            "801117",
+            "803204",
+            "803206",
+            "803112",
+            "800029"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -2208,7 +2282,19 @@
             "842001",
             "842006",
             "843130",
-            "842005"
+            "842005",
+            "843161",
+            "843143",
+            "843146",
+            "843144",
+            "843141",
+            "843165",
+            "843152",
+            "843162",
+            "843153",
+            "843139",
+            "843147",
+            "843133"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
@@ -2301,7 +2387,9 @@
             "801303",
             "804454",
             "804452",
-            "804408"
+            "804408",
+            "804433",
+            "804434"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -2429,7 +2517,9 @@
             "803118",
             "804451",
             "803101",
-            "803121"
+            "803121",
+            "803123",
+            "803122"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
@@ -2481,7 +2571,11 @@
             "844121",
             "844507",
             "844506",
-            "844101"
+            "844101",
+            "844131",
+            "844141",
+            "844139",
+            "844134"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -2524,7 +2618,8 @@
             "805101",
             "801302",
             "805110",
-            "805114"
+            "805114",
+            "805133"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
@@ -2931,7 +3026,10 @@
             "507201",
             "507316",
             "507302",
-            "507001"
+            "507001",
+            "507121",
+            "507135",
+            "507113"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad Region"
@@ -3687,7 +3785,9 @@
             "342026",
             "342012",
             "342008",
-            "342030"
+            "342030",
+            "342010",
+            "342004"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jodhpur Region"
@@ -3746,7 +3846,9 @@
             "333028",
             "333029",
             "333036",
-            "333702"
+            "333702",
+            "333037",
+            "333310"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jodhpur Region"
@@ -3866,7 +3968,8 @@
             "305001",
             "305007",
             "305009",
-            "305817"
+            "305817",
+            "305008"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -3917,7 +4020,8 @@
             "324006",
             "324004",
             "324001",
-            "324009"
+            "324009",
+            "326510"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -3939,7 +4043,8 @@
             "325217",
             "325224",
             "325206",
-            "325207"
+            "325207",
+            "325225"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -3987,7 +4092,11 @@
             "313801",
             "313004",
             "313805",
-            "313002"
+            "313002",
+            "313025",
+            "313605",
+            "313015",
+            "313611"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -4007,7 +4116,8 @@
             "345021",
             "345023",
             "345026",
-            "345022"
+            "345022",
+            "345002"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jodhpur Region"
@@ -4098,7 +4208,14 @@
             "303122",
             "303123",
             "303121",
-            "302044"
+            "302044",
+            "303339",
+            "302025",
+            "302024",
+            "302023",
+            "303010",
+            "303802",
+            "303331"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -4158,7 +4275,9 @@
             "326514",
             "326516",
             "326039",
-            "345033"
+            "345033",
+            "326030",
+            "326003"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -4213,7 +4332,9 @@
             "301708",
             "301705",
             "301002",
-            "301416"
+            "301416",
+            "301712",
+            "321006"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -4238,7 +4359,9 @@
             "323603",
             "323801",
             "323615",
-            "323601"
+            "323601",
+            "323604",
+            "323302"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -4278,7 +4401,9 @@
             "321411",
             "321404",
             "321402",
-            "321408"
+            "321408",
+            "321305",
+            "321603"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -4331,7 +4456,8 @@
             "328030",
             "328025",
             "328027",
-            "328026"
+            "328026",
+            "328035"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -4447,7 +4573,8 @@
             "327001",
             "327031",
             "327032",
-            "327024"
+            "327024",
+            "327608"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -4479,7 +4606,8 @@
             "331302",
             "331303",
             "331403",
-            "331031"
+            "331031",
+            "331002"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jodhpur Region"
@@ -4505,7 +4633,8 @@
             "307510",
             "307024",
             "307023",
-            "307027"
+            "307027",
+            "307021"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jodhpur Region"
@@ -4539,7 +4668,8 @@
             "305925",
             "305901",
             "311302",
-            "313206"
+            "313206",
+            "313338"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -4602,7 +4732,8 @@
             "332706",
             "332721",
             "332708",
-            "332710"
+            "332710",
+            "331033"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jodhpur Region"
@@ -4644,7 +4775,10 @@
             "312627",
             "323305",
             "312617",
-            "323303"
+            "323303",
+            "312621",
+            "312026",
+            "312618"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -4733,7 +4867,8 @@
             "304505",
             "304801",
             "304024",
-            "304507"
+            "304507",
+            "304020"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -4774,7 +4909,15 @@
             "311021",
             "311805",
             "311022",
-            "311001"
+            "311001",
+            "311012",
+            "311303",
+            "311405",
+            "311810",
+            "311029",
+            "311013",
+            "311607",
+            "311028"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ajmer Region"
@@ -4825,7 +4968,9 @@
             "306301",
             "306703",
             "306116",
-            "306704"
+            "306704",
+            "306106",
+            "306027"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jodhpur Region"
@@ -4860,7 +5005,8 @@
             "335701",
             "335021",
             "335022",
-            "335023"
+            "335023",
+            "335771"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jodhpur Region"
@@ -5159,7 +5305,9 @@
             "144011",
             "144009",
             "144027",
-            "144012"
+            "144012",
+            "144014",
+            "144013"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Punjab West Region"
@@ -5239,7 +5387,8 @@
             "143005",
             "143002",
             "143003",
-            "143004"
+            "143004",
+            "143110"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Punjab West Region"
@@ -5618,7 +5767,8 @@
             "788738",
             "788160",
             "788802",
-            "788151"
+            "788151",
+            "788167"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -5662,7 +5812,10 @@
             "788709",
             "788710",
             "788803",
-            "788727"
+            "788727",
+            "788702",
+            "788706",
+            "788721"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -5808,7 +5961,10 @@
             "788118",
             "788103",
             "788014",
-            "788109"
+            "788109",
+            "788122",
+            "788008",
+            "788834"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -5865,7 +6021,13 @@
             "784010",
             "784001",
             "784028",
-            "784026"
+            "784026",
+            "784183",
+            "784151",
+            "784185",
+            "784181",
+            "784118",
+            "784152"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -5925,7 +6087,11 @@
             "787051",
             "787058",
             "787032",
-            "787001"
+            "787001",
+            "784162",
+            "787029",
+            "787160",
+            "787030"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Dibrugarh Region"
@@ -5962,7 +6128,10 @@
             "783334",
             "783371",
             "783325",
-            "783333"
+            "783333",
+            "783338",
+            "783351",
+            "786624"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -5995,7 +6164,10 @@
             "783129",
             "783125",
             "783130",
-            "783133"
+            "783133",
+            "783121",
+            "785604",
+            "785620"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -6012,7 +6184,8 @@
             "787053",
             "787034",
             "787060",
-            "787058"
+            "787058",
+            "786110"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Dibrugarh Region"
@@ -6049,7 +6222,9 @@
             "781133",
             "781039",
             "781128",
-            "781131"
+            "781131",
+            "781112",
+            "781130"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -6072,7 +6247,8 @@
             "783333",
             "783347",
             "783345",
-            "783331"
+            "783331",
+            "783374"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -6157,7 +6333,8 @@
             "782137",
             "782138",
             "782126",
-            "782001"
+            "782001",
+            "782107"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Dibrugarh Region"
@@ -6233,7 +6410,9 @@
             "785009",
             "785111",
             "785001",
-            "785013"
+            "785013",
+            "785005",
+            "785617"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Dibrugarh Region"
@@ -6290,7 +6469,8 @@
             "782425",
             "782447",
             "782136",
-            "782460"
+            "782460",
+            "782475"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Dibrugarh Region"
@@ -6417,7 +6597,9 @@
             "785666",
             "785701",
             "785683",
-            "785665"
+            "785665",
+            "785694",
+            "785695"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Dibrugarh Region"
@@ -6435,7 +6617,8 @@
             "782105",
             "782106",
             "782412",
-            "782410"
+            "782410",
+            "782108"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Dibrugarh Region"
@@ -6685,7 +6868,8 @@
             "211022",
             "212105",
             "211020",
-            "212212"
+            "212212",
+            "211009"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Allahabad Region"
@@ -7124,7 +7308,8 @@
             "242307",
             "242001",
             "242042",
-            "242220"
+            "242220",
+            "242123"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Bareilly Region"
@@ -7260,7 +7445,8 @@
             "272199",
             "272162",
             "272154",
-            "272152"
+            "272152",
+            "272170"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Gorakhpur Region"
@@ -8875,7 +9061,25 @@
             "574327",
             "574225",
             "575004",
-            "574148"
+            "574148",
+            "574189",
+            "574165",
+            "574266",
+            "575027",
+            "574166",
+            "574258",
+            "574272",
+            "574180",
+            "574179",
+            "574160",
+            "574169",
+            "576128",
+            "574173",
+            "575021",
+            "574164",
+            "574301",
+            "575328",
+            "574264"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -8931,7 +9135,10 @@
             "573101",
             "573113",
             "573142",
-            "573201"
+            "573201",
+            "573150",
+            "577119",
+            "573139"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -9107,7 +9314,13 @@
             "577135",
             "577181",
             "577125",
-            "577128"
+            "577128",
+            "577118",
+            "577142",
+            "573132",
+            "573114",
+            "572143",
+            "572144"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -9226,7 +9439,9 @@
             "570006",
             "570029",
             "570011",
-            "570017"
+            "570017",
+            "570021",
+            "571608"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -9346,7 +9561,8 @@
             "591246",
             "591308",
             "591223",
-            "591219"
+            "591219",
+            "591116"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
@@ -9376,7 +9592,9 @@
             "571316",
             "571123",
             "571312",
-            "571430"
+            "571430",
+            "571491",
+            "571319"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -9524,7 +9742,13 @@
             "560012",
             "560078",
             "560011",
-            "560109"
+            "560109",
+            "560039",
+            "560052",
+            "560069",
+            "560028",
+            "560019",
+            "560014"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Bengaluru HQ Region"
@@ -9551,7 +9775,9 @@
             "560087",
             "560067",
             "560049",
-            "562165"
+            "562165",
+            "571501",
+            "571502"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Bengaluru HQ Region"
@@ -9642,7 +9868,8 @@
             "583203",
             "583276",
             "583215",
-            "583225"
+            "583225",
+            "583138"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
@@ -9734,7 +9961,8 @@
             "587205",
             "587331",
             "587101",
-            "587156"
+            "587156",
+            "586126"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
@@ -9819,7 +10047,11 @@
             "577416",
             "577423",
             "577201",
-            "577451"
+            "577451",
+            "577450",
+            "577444",
+            "577448",
+            "577447"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -9898,7 +10130,14 @@
             "583234",
             "583282",
             "583231",
-            "583233"
+            "583233",
+            "584130",
+            "584112",
+            "584119",
+            "584121",
+            "584114",
+            "584166",
+            "584131"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
@@ -9976,7 +10215,14 @@
             "576114",
             "574112",
             "576228",
-            "576216"
+            "576216",
+            "576127",
+            "574504",
+            "576254",
+            "574139",
+            "576126",
+            "574138",
+            "576244"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -10027,7 +10273,9 @@
             "571418",
             "571401",
             "571438",
-            "571607"
+            "571607",
+            "571810",
+            "571437"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -10109,7 +10357,8 @@
             "581453",
             "581303",
             "581304",
-            "581307"
+            "581307",
+            "581305"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
@@ -10148,7 +10397,8 @@
             "563117",
             "563160",
             "563118",
-            "563119"
+            "563119",
+            "563102"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -10215,7 +10465,10 @@
             "572128",
             "572101",
             "572103",
-            "572168"
+            "572168",
+            "572163",
+            "572145",
+            "572202"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
@@ -10291,7 +10544,8 @@
             "581108",
             "581199",
             "581145",
-            "581212"
+            "581212",
+            "581197"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
@@ -10354,7 +10608,10 @@
             "488448",
             "488442",
             "488443",
-            "488220"
+            "488220",
+            "488051",
+            "488058",
+            "488101"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -10403,7 +10660,9 @@
             "464776",
             "464651",
             "464886",
-            "464986"
+            "464986",
+            "464995",
+            "464670"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -10426,7 +10685,15 @@
             "454331",
             "454446",
             "454773",
-            "454775"
+            "454775",
+            "454365",
+            "454749",
+            "454350",
+            "454020",
+            "454435",
+            "454448",
+            "454648",
+            "454345"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -10451,7 +10718,10 @@
             "451442",
             "451440",
             "451660",
-            "450551"
+            "450551",
+            "451337",
+            "451444",
+            "451443"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -10482,7 +10752,8 @@
             "482011",
             "482020",
             "482010",
-            "482009"
+            "482009",
+            "483050"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -10507,7 +10778,9 @@
             "466445",
             "466125",
             "466113",
-            "466118"
+            "466118",
+            "466119",
+            "466117"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -10528,7 +10801,10 @@
             "465333",
             "465339",
             "465113",
-            "465118"
+            "465118",
+            "465516",
+            "465440",
+            "465331"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -10597,7 +10873,9 @@
             "472331",
             "472101",
             "472221",
-            "472447"
+            "472447",
+            "472446",
+            "472338"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -10620,7 +10898,8 @@
             "487881",
             "487001",
             "461001",
-            "487225"
+            "487225",
+            "487771"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -10653,7 +10932,13 @@
             "480447",
             "460663",
             "480003",
-            "480112"
+            "480112",
+            "480000",
+            "480225",
+            "480002",
+            "480357",
+            "480554",
+            "480553"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -10679,7 +10964,9 @@
             "461881",
             "461005",
             "461114",
-            "461446"
+            "461446",
+            "461772",
+            "461222"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -10698,7 +10985,8 @@
             "470666",
             "470672",
             "470771",
-            "470772"
+            "470772",
+            "470662"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -10756,7 +11044,8 @@
             "486220",
             "486001",
             "486004",
-            "486002"
+            "486002",
+            "486451"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -10831,7 +11120,8 @@
             "485114",
             "485005",
             "485773",
-            "485001"
+            "485001",
+            "485336"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -10876,7 +11166,8 @@
             "471201",
             "471625",
             "471408",
-            "471411"
+            "471411",
+            "471202"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -10917,7 +11208,11 @@
             "462011",
             "462027",
             "462043",
-            "462045"
+            "462045",
+            "462007",
+            "462021",
+            "462013",
+            "462420"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -10938,7 +11233,8 @@
             "458553",
             "458330",
             "458336",
-            "458470"
+            "458470",
+            "458474"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -10953,7 +11249,8 @@
             "457773",
             "457775",
             "457777",
-            "457993"
+            "457993",
+            "457893"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -10981,7 +11278,9 @@
             "451770",
             "451447",
             "451666",
-            "451660"
+            "451660",
+            "451667",
+            "451661"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -11007,7 +11306,9 @@
             "460440",
             "460443",
             "460665",
-            "460447"
+            "460447",
+            "460660",
+            "460669"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -11129,7 +11430,8 @@
             "470002",
             "470124",
             "470229",
-            "470003"
+            "470003",
+            "470122"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -11150,7 +11452,8 @@
             "465669",
             "465683",
             "465661",
-            "465674"
+            "465674",
+            "465695"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -11171,7 +11474,10 @@
             "457550",
             "457333",
             "457118",
-            "457339"
+            "457339",
+            "457227",
+            "457769",
+            "457551"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -11243,7 +11549,10 @@
             "473670",
             "473770",
             "473865",
-            "473638"
+            "473638",
+            "473993",
+            "473583",
+            "473785"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -11263,7 +11572,8 @@
             "455336",
             "455339",
             "455459",
-            "455118"
+            "455118",
+            "455225"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -11288,7 +11598,8 @@
             "458990",
             "458888",
             "458556",
-            "458001"
+            "458001",
+            "458660"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -11362,7 +11673,9 @@
             "461331",
             "461228",
             "461441",
-            "461335"
+            "461335",
+            "461444",
+            "461251"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -11398,7 +11711,8 @@
             "484665",
             "484555",
             "484661",
-            "484664"
+            "484664",
+            "484552"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jabalpur Region"
@@ -11416,7 +11730,8 @@
             "473330",
             "473101",
             "473445",
-            "473440"
+            "473440",
+            "473338"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -11482,7 +11797,10 @@
             "452014",
             "453556",
             "452013",
-            "452018"
+            "452018",
+            "452008",
+            "453236",
+            "453332"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
@@ -11531,7 +11849,9 @@
             "827012",
             "829116",
             "827003",
-            "828404"
+            "828404",
+            "828311",
+            "827011"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NDC B.S.CITY"
@@ -11548,7 +11868,8 @@
             "825404",
             "825401",
             "825411",
-            "825415"
+            "825415",
+            "825420"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "KATIA BO"
@@ -11607,7 +11928,8 @@
             "822116",
             "822118",
             "822101",
-            "822117"
+            "822117",
+            "824119"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Tilo BO"
@@ -11633,7 +11955,12 @@
             "825317",
             "829209",
             "825301",
-            "825315"
+            "825315",
+            "829145",
+            "825335",
+            "825173",
+            "829120",
+            "824505"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "MALKOLA BO"
@@ -11705,7 +12032,9 @@
             "814146",
             "814112",
             "814115",
-            "814116"
+            "814116",
+            "815552",
+            "814122"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -11724,7 +12053,8 @@
             "829206",
             "829208",
             "835213",
-            "835218"
+            "835218",
+            "822127"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Mandal BO"
@@ -11751,7 +12081,8 @@
             "814145",
             "816117",
             "814101",
-            "814167"
+            "814167",
+            "814124"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -11801,7 +12132,8 @@
             "825318",
             "825132",
             "825407",
-            "825421"
+            "825421",
+            "825137"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -11867,7 +12199,10 @@
             "828207",
             "828120",
             "828206",
-            "828127"
+            "828127",
+            "828102",
+            "828308",
+            "826124"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -11911,7 +12246,12 @@
             "834014",
             "834005",
             "835215",
-            "834011"
+            "834011",
+            "835238",
+            "835239",
+            "835240",
+            "835236",
+            "835244"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12002,7 +12342,9 @@
             "835208",
             "835201",
             "835211",
-            "835207"
+            "835207",
+            "835324",
+            "835306"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12016,7 +12358,9 @@
             "835301",
             "835213",
             "835203",
-            "835231"
+            "835231",
+            "835305",
+            "835304"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12054,7 +12398,9 @@
             "833204",
             "831014",
             "832109",
-            "831013"
+            "831013",
+            "833210",
+            "832119"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12091,7 +12437,11 @@
             "831015",
             "831003",
             "832103",
-            "831016"
+            "831016",
+            "832110",
+            "831010",
+            "831008",
+            "831018"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12168,7 +12518,16 @@
             "753006",
             "754298",
             "754071",
-            "754026"
+            "754026",
+            "754159",
+            "753005",
+            "753051",
+            "754288",
+            "754282",
+            "754286",
+            "754016",
+            "754118",
+            "754157"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12320,7 +12679,22 @@
             "758025",
             "755001",
             "755020",
-            "755050"
+            "755050",
+            "755045",
+            "754081",
+            "755033",
+            "754261",
+            "755038",
+            "755039",
+            "754285",
+            "755035",
+            "755031",
+            "755041",
+            "755046",
+            "755030",
+            "755032",
+            "755047",
+            "755021"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12367,7 +12741,17 @@
             "754142",
             "754134",
             "754140",
-            "754211"
+            "754211",
+            "754156",
+            "754251",
+            "754241",
+            "754243",
+            "754242",
+            "754233",
+            "754226",
+            "754238",
+            "754237",
+            "754229"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12415,7 +12799,8 @@
             "756124",
             "756144",
             "756046",
-            "756100"
+            "756100",
+            "756142"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12484,7 +12869,9 @@
             "752050",
             "752019",
             "752108",
-            "752003"
+            "752003",
+            "752112",
+            "752033"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12560,7 +12947,8 @@
             "751029",
             "751028",
             "751016",
-            "752037"
+            "752037",
+            "752028"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12681,7 +13069,9 @@
             "758046",
             "758037",
             "758013",
-            "758001"
+            "758001",
+            "758072",
+            "758052"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12718,7 +13108,8 @@
             "754142",
             "754145",
             "754120",
-            "754143"
+            "754143",
+            "754155"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12783,7 +13174,9 @@
             "756001",
             "756032",
             "756089",
-            "756088"
+            "756088",
+            "756053",
+            "756018"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12813,7 +13206,8 @@
             "752065",
             "752080",
             "752091",
-            "752069"
+            "752069",
+            "752087"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -12958,7 +13352,8 @@
             "757039",
             "757043",
             "757001",
-            "757002"
+            "757002",
+            "757015"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -13063,7 +13458,8 @@
             "762015",
             "762018",
             "762030",
-            "762024"
+            "762024",
+            "760020"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Berhampur Region"
@@ -13150,7 +13546,9 @@
             "761052",
             "761025",
             "760008",
-            "760009"
+            "760009",
+            "761036",
+            "761128"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Berhampur Region"
@@ -13185,7 +13583,8 @@
             "768004",
             "768018",
             "768020",
-            "768210"
+            "768210",
+            "768026"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Sambalpur Region"
@@ -13354,7 +13753,23 @@
             "444810",
             "444606",
             "444605",
-            "444607"
+            "444607",
+            "444728",
+            "444819",
+            "444914",
+            "444911",
+            "444818",
+            "444811",
+            "444909",
+            "444713",
+            "444815",
+            "444726",
+            "444913",
+            "444718",
+            "444812",
+            "444921",
+            "444827",
+            "444814"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -13395,7 +13810,13 @@
             "442401",
             "442502",
             "442901",
-            "442501"
+            "442501",
+            "442910",
+            "442706",
+            "442506",
+            "442912",
+            "441227",
+            "441228"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -13427,7 +13848,8 @@
             "413534",
             "413624",
             "413526",
-            "413501"
+            "413501",
+            "413580"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Aurangabad Region"
@@ -13513,7 +13935,11 @@
             "415001",
             "415110",
             "415212",
-            "415516"
+            "415516",
+            "415120",
+            "415529",
+            "415210",
+            "415118"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Pune Region"
@@ -13601,7 +14027,8 @@
             "444126",
             "444002",
             "444001",
-            "444007"
+            "444007",
+            "444125"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -13671,7 +14098,18 @@
             "440033",
             "441109",
             "441123",
-            "440008"
+            "440008",
+            "440028",
+            "441115",
+            "441504",
+            "441406",
+            "441117",
+            "441114",
+            "441408",
+            "440004",
+            "440009",
+            "441002",
+            "441409"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -13800,7 +14238,23 @@
             "424101",
             "425001",
             "425101",
-            "425004"
+            "425004",
+            "425318",
+            "425326",
+            "425523",
+            "425121",
+            "424209",
+            "425434",
+            "425511",
+            "425510",
+            "424116",
+            "425519",
+            "425120",
+            "425124",
+            "425127",
+            "425135",
+            "425509",
+            "425106"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Aurangabad Region"
@@ -13841,7 +14295,11 @@
             "445211",
             "445102",
             "445110",
-            "445216"
+            "445216",
+            "445213",
+            "445309",
+            "445319",
+            "445208"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -13944,7 +14402,8 @@
             "444504",
             "444505",
             "444510",
-            "444402"
+            "444402",
+            "444512"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -14039,7 +14498,8 @@
             "414110",
             "414003",
             "413713",
-            "414605"
+            "414605",
+            "414307"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Pune Region"
@@ -14088,7 +14548,8 @@
             "431137",
             "431502",
             "431503",
-            "431203"
+            "431203",
+            "431106"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Aurangabad Region"
@@ -14168,7 +14629,9 @@
             "415705",
             "415717",
             "415614",
-            "415601"
+            "415601",
+            "415630",
+            "415704"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Goa-Panaji Region"
@@ -14206,7 +14669,15 @@
             "444201",
             "444306",
             "443001",
-            "444304"
+            "444304",
+            "444307",
+            "443306",
+            "443307",
+            "443406",
+            "443105",
+            "443209",
+            "443305",
+            "443405"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -14267,7 +14738,11 @@
             "416517",
             "416807",
             "416515",
-            "416623"
+            "416623",
+            "416538",
+            "416622",
+            "416541",
+            "416530"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Goa-Panaji Region"
@@ -14316,7 +14791,9 @@
             "431716",
             "431714",
             "431601",
-            "431604"
+            "431604",
+            "431815",
+            "431646"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Aurangabad Region"
@@ -14393,7 +14870,11 @@
             "413007",
             "413003",
             "413118",
-            "413303"
+            "413303",
+            "413233",
+            "413245",
+            "413235",
+            "413225"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Pune Region"
@@ -14419,7 +14900,12 @@
             "441915",
             "441912",
             "441913",
-            "441904"
+            "441904",
+            "441920",
+            "441917",
+            "441811",
+            "441808",
+            "441918"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -14492,7 +14978,18 @@
             "416307",
             "416437",
             "416417",
-            "416406"
+            "416406",
+            "416421",
+            "416319",
+            "415416",
+            "416423",
+            "416321",
+            "416422",
+            "416320",
+            "416425",
+            "416428",
+            "415417",
+            "416426"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Goa-Panaji Region"
@@ -14695,7 +15192,8 @@
             "411061",
             "411007",
             "411008",
-            "411041"
+            "411041",
+            "412114"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Pune Region"
@@ -14764,7 +15262,8 @@
             "410216",
             "410218",
             "402125",
-            "402207"
+            "402207",
+            "402118"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Navi Mumbai Region"
@@ -14847,7 +15346,13 @@
             "421202",
             "400606",
             "400604",
-            "401206"
+            "401206",
+            "421504",
+            "421001",
+            "421604",
+            "401610",
+            "401609",
+            "401104"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Navi Mumbai Region"
@@ -14919,7 +15424,12 @@
             "442111",
             "442105",
             "442107",
-            "442303"
+            "442303",
+            "442103",
+            "442204",
+            "442006",
+            "442005",
+            "442110"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -15005,7 +15515,17 @@
             "416527",
             "416007",
             "416144",
-            "416116"
+            "416116",
+            "416217",
+            "416224",
+            "416130",
+            "416134",
+            "416228",
+            "416129",
+            "416536",
+            "416532",
+            "416117",
+            "416127"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Goa-Panaji Region"
@@ -15045,7 +15565,9 @@
             "400009",
             "400010",
             "400019",
-            "400015"
+            "400015",
+            "400062",
+            "400090"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Mumbai Region"
@@ -15099,7 +15621,9 @@
             "441902",
             "441701",
             "441901",
-            "441601"
+            "441601",
+            "441923",
+            "441919"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Nagpur Region"
@@ -15207,7 +15731,8 @@
             "383220",
             "383410",
             "383240",
-            "383006"
+            "383006",
+            "383327"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
@@ -15295,7 +15820,12 @@
             "382475",
             "380049",
             "380050",
-            "382418"
+            "382418",
+            "387810",
+            "382451",
+            "363610",
+            "382440",
+            "382276"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
@@ -15350,7 +15880,16 @@
             "384002",
             "384345",
             "384470",
-            "384003"
+            "384003",
+            "384210",
+            "384176",
+            "384011",
+            "382711",
+            "382875",
+            "384350",
+            "382861",
+            "384228",
+            "382728"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
@@ -15385,7 +15924,8 @@
             "385310",
             "385566",
             "385515",
-            "385506"
+            "385506",
+            "385519"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
@@ -15433,7 +15973,9 @@
             "382041",
             "382006",
             "382630",
-            "382729"
+            "382729",
+            "382051",
+            "382655"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
@@ -15461,7 +16003,8 @@
             "384290",
             "384255",
             "384230",
-            "384260"
+            "384260",
+            "384273"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
@@ -15479,7 +16022,9 @@
             "393025",
             "393120",
             "393041",
-            "393040"
+            "393040",
+            "391111",
+            "391121"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
@@ -15528,7 +16073,13 @@
             "392001",
             "393017",
             "392135",
-            "392215"
+            "392215",
+            "392031",
+            "393155",
+            "392161",
+            "392021",
+            "392162",
+            "394116"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
@@ -15596,7 +16147,13 @@
             "390013",
             "390007",
             "391750",
-            "390002"
+            "390002",
+            "391155",
+            "391175",
+            "391460",
+            "391151",
+            "391346",
+            "391535"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
@@ -15667,7 +16224,8 @@
             "388470",
             "388465",
             "388410",
-            "388421"
+            "388421",
+            "388275"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
@@ -15725,7 +16283,11 @@
             "387315",
             "387375",
             "387003",
-            "387325"
+            "387325",
+            "387250",
+            "387140",
+            "387331",
+            "387385"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
@@ -15810,7 +16372,14 @@
             "364525",
             "365455",
             "365541",
-            "364530"
+            "364530",
+            "365545",
+            "365632",
+            "365565",
+            "365665",
+            "365660",
+            "365616",
+            "362730"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Rajkot Region"
@@ -15911,7 +16480,9 @@
             "360026",
             "360028",
             "360007",
-            "360460"
+            "360460",
+            "363636",
+            "360080"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Rajkot Region"
@@ -16016,7 +16587,9 @@
             "363030",
             "363001",
             "363002",
-            "363035"
+            "363035",
+            "363415",
+            "363425"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Rajkot Region"
@@ -16059,7 +16632,13 @@
             "362315",
             "362001",
             "362135",
-            "362226"
+            "362226",
+            "362266",
+            "362276",
+            "362004",
+            "362235",
+            "362725",
+            "362229"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Rajkot Region"
@@ -16101,7 +16680,8 @@
             "360490",
             "360575",
             "360577",
-            "360578"
+            "360578",
+            "360560"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Rajkot Region"
@@ -16188,7 +16768,8 @@
             "361002",
             "361005",
             "361142",
-            "361150"
+            "361150",
+            "361141"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Rajkot Region"
@@ -16274,7 +16855,9 @@
             "394518",
             "394327",
             "395023",
-            "394221"
+            "394221",
+            "395345",
+            "394220"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
@@ -16301,7 +16884,8 @@
             "389002",
             "389350",
             "389380",
-            "389001"
+            "389001",
+            "389240"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
@@ -16386,7 +16970,14 @@
             "370201",
             "370230",
             "370210",
-            "370203"
+            "370203",
+            "370640",
+            "370002",
+            "370411",
+            "370635",
+            "370429",
+            "370511",
+            "370602"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Rajkot Region"
@@ -16430,7 +17021,8 @@
             "396002",
             "396001",
             "396180",
-            "396115"
+            "396115",
+            "396175"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
@@ -16569,7 +17161,8 @@
             "494553",
             "494449",
             "494441",
-            "494556"
+            "494556",
+            "494551"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -16676,7 +17269,9 @@
             "494444",
             "494447",
             "494450",
-            "494441"
+            "494441",
+            "586245",
+            "586102"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -17378,7 +17973,9 @@
             "627009",
             "627003",
             "627004",
-            "627119"
+            "627119",
+            "627659",
+            "627131"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Southern Region, Madurai"
@@ -17553,7 +18150,9 @@
             "630003",
             "630301",
             "630102",
-            "630002"
+            "630002",
+            "630004",
+            "630006"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Southern Region, Madurai"
@@ -17936,7 +18535,8 @@
             "643105",
             "643203",
             "643006",
-            "643253"
+            "643253",
+            "643228"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Western Region, Coimbatore"
@@ -18003,7 +18603,9 @@
             "600037",
             "600060",
             "600110",
-            "600050"
+            "600050",
+            "600065",
+            "600098"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Chennai City Region"
@@ -18973,7 +19575,8 @@
             "622403",
             "622506",
             "621312",
-            "621305"
+            "621305",
+            "622408"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Central Region, Trichirapalli"
@@ -19240,7 +19843,8 @@
             "625513",
             "625601",
             "625556",
-            "625522"
+            "625522",
+            "625538"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Southern Region, Madurai"
@@ -19483,7 +20087,8 @@
             "600068",
             "600037",
             "600050",
-            "600076"
+            "600076",
+            "600029"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Chennai City Region"
@@ -19734,7 +20339,8 @@
             "721606",
             "721604",
             "721171",
-            "721624"
+            "721624",
+            "721167"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Bengal Region"
@@ -19884,7 +20490,38 @@
             "713150",
             "713515",
             "741316",
-            "741319"
+            "741319",
+            "713156",
+            "713383",
+            "713434",
+            "713380",
+            "713367",
+            "713165",
+            "713433",
+            "713173",
+            "713402",
+            "713172",
+            "713375",
+            "713419",
+            "713368",
+            "713516",
+            "713432",
+            "713171",
+            "713169",
+            "713168",
+            "713158",
+            "713160",
+            "713170",
+            "713501",
+            "713162",
+            "713167",
+            "713430",
+            "713219",
+            "713218",
+            "713429",
+            "713377",
+            "713155",
+            "713157"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Bengal Region"
@@ -19937,7 +20574,31 @@
             "722156",
             "722101",
             "722183",
-            "722204"
+            "722204",
+            "722181",
+            "722209",
+            "722178",
+            "722112",
+            "722163",
+            "722145",
+            "722111",
+            "713425",
+            "722169",
+            "722107",
+            "722179",
+            "722175",
+            "713517",
+            "722168",
+            "722172",
+            "722165",
+            "722110",
+            "722166",
+            "722180",
+            "722182",
+            "722174",
+            "722171",
+            "722177",
+            "722170"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Bengal Region"
@@ -19989,7 +20650,8 @@
             "731224",
             "731101",
             "713129",
-            "713143"
+            "713143",
+            "731213"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kolkata Region"
@@ -20028,7 +20690,14 @@
             "733142",
             "732101",
             "732144",
-            "732215"
+            "732215",
+            "732147",
+            "732212",
+            "732150",
+            "732143",
+            "732213",
+            "732214",
+            "732211"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kolkata Region"
@@ -20170,7 +20839,20 @@
             "700153",
             "700093",
             "700143",
-            "700096"
+            "700096",
+            "743392",
+            "743339",
+            "743606",
+            "743385",
+            "743391",
+            "743398",
+            "743507",
+            "743396",
+            "743603",
+            "743601",
+            "743390",
+            "743389",
+            "743384"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kolkata Region"
@@ -20345,7 +21027,8 @@
             "700134",
             "743130",
             "743129",
-            "743193"
+            "743193",
+            "700098"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kolkata Region"
@@ -20619,7 +21302,17 @@
             "712503",
             "712121",
             "712514",
-            "712504"
+            "712504",
+            "712418",
+            "712419",
+            "712411",
+            "712705",
+            "712424",
+            "712707",
+            "712704",
+            "712708",
+            "712247",
+            "712426"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Bengal Region"
@@ -20783,7 +21476,9 @@
             "723154",
             "723146",
             "723101",
-            "723142"
+            "723142",
+            "723168",
+            "723161"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Bengal Region"
@@ -20852,7 +21547,18 @@
             "734204",
             "734421",
             "734424",
-            "734011"
+            "734011",
+            "734436",
+            "734121",
+            "734123",
+            "734320",
+            "734122",
+            "734317",
+            "734431",
+            "734321",
+            "734124",
+            "734319",
+            "734227"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Bengal Region"
@@ -20969,7 +21675,16 @@
             "176066",
             "176002",
             "176062",
-            "176075"
+            "176075",
+            "176404",
+            "176226",
+            "177116",
+            "176223",
+            "176122",
+            "176072",
+            "176127",
+            "176222",
+            "176024"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21024,7 +21739,9 @@
             "176044",
             "176108",
             "177021",
-            "177005"
+            "177005",
+            "177046",
+            "177030"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21103,7 +21820,18 @@
             "175039",
             "175051",
             "175075",
-            "175020"
+            "175020",
+            "175137",
+            "174402",
+            "176123",
+            "171302",
+            "171303",
+            "171304",
+            "174403",
+            "176120",
+            "176121",
+            "176126",
+            "174401"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21137,7 +21865,8 @@
             "172002",
             "172025",
             "172033",
-            "172201"
+            "172201",
+            "175122"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21170,7 +21899,8 @@
             "174011",
             "174023",
             "174032",
-            "174005"
+            "174005",
+            "495223"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21213,7 +21943,8 @@
             "174317",
             "177202",
             "177205",
-            "174320"
+            "174320",
+            "177032"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21279,7 +22010,9 @@
             "172034",
             "171223",
             "171218",
-            "171010"
+            "171010",
+            "173219",
+            "173216"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21303,7 +22036,9 @@
             "173030",
             "173104",
             "173021",
-            "173026"
+            "173026",
+            "173028",
+            "173020"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21456,7 +22191,8 @@
             "134112",
             "134114",
             "134117",
-            "134105"
+            "134105",
+            "134111"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21486,7 +22222,10 @@
             "133207",
             "134005",
             "133006",
-            "133008"
+            "133008",
+            "134011",
+            "134012",
+            "133021"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21507,7 +22246,8 @@
             "123401",
             "122502",
             "123501",
-            "123110"
+            "123110",
+            "122100"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21548,7 +22288,9 @@
             "124202",
             "124201",
             "124001",
-            "124513"
+            "124513",
+            "124524",
+            "124416"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21603,7 +22345,11 @@
             "131403",
             "131306",
             "131103",
-            "131030"
+            "131030",
+            "131040",
+            "131002",
+            "131303",
+            "131310"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21650,7 +22396,8 @@
             "124201",
             "124202",
             "124507",
-            "124141"
+            "124141",
+            "123305"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21823,7 +22570,8 @@
             "121008",
             "121013",
             "121014",
-            "121009"
+            "121009",
+            "121011"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21844,7 +22592,9 @@
             "135004",
             "135021",
             "133202",
-            "135001"
+            "135001",
+            "135105",
+            "133105"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -21885,7 +22635,9 @@
             "127046",
             "127040",
             "127021",
-            "127045"
+            "127045",
+            "127110",
+            "127020"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -22064,7 +22816,43 @@
             "680020",
             "680021",
             "680654",
-            "680631"
+            "680631",
+            "680314",
+            "680621",
+            "680015",
+            "680597",
+            "680610",
+            "680593",
+            "680573",
+            "680549",
+            "680771",
+            "680608",
+            "680016",
+            "680322",
+            "680325",
+            "680752",
+            "680575",
+            "680321",
+            "680319",
+            "680595",
+            "680017",
+            "680673",
+            "680313",
+            "680603",
+            "680554",
+            "680124",
+            "680323",
+            "680693",
+            "680574",
+            "680672",
+            "680547",
+            "680316",
+            "680695",
+            "680592",
+            "680657",
+            "680018",
+            "680600",
+            "680735"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kochi Region"
@@ -22174,7 +22962,31 @@
             "670302",
             "670018",
             "670051",
-            "670503"
+            "670503",
+            "670110",
+            "670603",
+            "670647",
+            "670679",
+            "670333",
+            "670109",
+            "670597",
+            "670677",
+            "670337",
+            "670339",
+            "670346",
+            "670522",
+            "670678",
+            "670332",
+            "670330",
+            "670144",
+            "670564",
+            "670566",
+            "670015",
+            "670614",
+            "670016",
+            "670565",
+            "670343",
+            "670354"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
@@ -22324,7 +23136,35 @@
             "682317",
             "682503",
             "682004",
-            "682005"
+            "682005",
+            "686676",
+            "683554",
+            "686698",
+            "686726",
+            "686695",
+            "683109",
+            "686689",
+            "686686",
+            "686677",
+            "682320",
+            "683593",
+            "686687",
+            "686730",
+            "682510",
+            "683564",
+            "686674",
+            "682319",
+            "683582",
+            "686723",
+            "683553",
+            "683524",
+            "683107",
+            "686721",
+            "683557",
+            "683586",
+            "683583",
+            "686679",
+            "683584"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kochi Region"
@@ -22446,7 +23286,57 @@
             "688570",
             "690571",
             "690537",
-            "689574"
+            "689574",
+            "690570",
+            "688542",
+            "690552", 
+            "688545", 
+            "690556", 
+            "690555", 
+            "688557", 
+            "689125", 
+            "688556", 
+            "688564", 
+            "688567", 
+            "688583", 
+            "690564", 
+            "688581", 
+            "688565", 
+            "689575", 
+            "688554", 
+            "688566", 
+            "690557", 
+            "688547", 
+            "688544", 
+            "690565", 
+            "686107", 
+            "689598", 
+            "690109", 
+            "688508", 
+            "689723", 
+            "689721", 
+            "690551", 
+            "688543", 
+            "688558", 
+            "690560", 
+            "690541", 
+            "690549", 
+            "688546", 
+            "690563", 
+            "688549", 
+            "690566", 
+            "689722", 
+            "688584", 
+            "688587", 
+            "690553", 
+            "688552", 
+            "689577", 
+            "688559", 
+            "689579", 
+            "690550", 
+            "688548", 
+            "689576", 
+            "688550"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kochi Region"
@@ -22508,7 +23398,20 @@
             "685584",
             "685508",
             "685603",
-            "685591"
+            "685591",
+            "685536",
+            "685506",
+            "685537",
+            "685502",
+            "685538",
+            "685569",
+            "685556",
+            "685592",
+            "685621",
+            "685611",
+            "685510",
+            "685564",
+            "685539"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kochi Region"
@@ -22534,7 +23437,9 @@
             "673595",
             "673123",
             "673576",
-            "673121"
+            "673121",
+            "670732",
+            "673578"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
@@ -22644,7 +23549,40 @@
             "676104",
             "676522",
             "673635",
-            "673647"
+            "673647",
+            "676308",
+            "679355",
+            "679350",
+            "673644",
+            "676318",
+            "679342",
+            "676310",
+            "673651",
+            "679348",
+            "676110",
+            "676127",
+            "676315",
+            "676554",
+            "676556",
+            "673653",
+            "676126",
+            "679594",
+            "679354",
+            "676514",
+            "679589",
+            "679351",
+            "676515",
+            "673648",
+            "679588",
+            "676313",
+            "679592",
+            "676511",
+            "679343",
+            "676513",
+            "673652",
+            "673649",
+            "676111",
+            "679344"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
@@ -22741,7 +23679,44 @@
             "673302",
             "673027",
             "673570",
-            "673006"
+            "673006",
+            "673110",
+            "673532",
+            "673511",
+            "673026",
+            "673624",
+            "673617",
+            "673623",
+            "673111",
+            "673025",
+            "673643",
+            "673318",
+            "673512",
+            "673619",
+            "673327",
+            "673583",
+            "673530",
+            "673618",
+            "673108",
+            "673514",
+            "673023",
+            "673510",
+            "673326",
+            "673516",
+            "673520",
+            "673515",
+            "673534",
+            "673107",
+            "673024",
+            "673518",
+            "673321",
+            "673325",
+            "673109",
+            "673621",
+            "673615",
+            "673519",
+            "673013",
+            "673544"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
@@ -22869,7 +23844,48 @@
             "686007",
             "686009",
             "686531",
-            "686505"
+            "686505",
+            "686036",
+            "686596",
+            "686589",
+            "686640",
+            "686035",
+            "686027",
+            "686030",
+            "686594",
+            "686025",
+            "686568",
+            "686033",
+            "686641",
+            "686592",
+            "686549",
+            "686029",
+            "686614",
+            "686553",
+            "686124",
+            "686591",
+            "686615",
+            "686620",
+            "686142",
+            "686638",
+            "686032",
+            "686566",
+            "686038",
+            "686523",
+            "686617",
+            "686588",
+            "686026",
+            "686023",
+            "686145",
+            "686642",
+            "686600",
+            "686597",
+            "686039",
+            "686655",
+            "686037",
+            "686552",
+            "686024",
+            "686034"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kochi Region"
@@ -22988,7 +24004,28 @@
             "689654",
             "689661",
             "689713",
-            "689666"
+            "689666",
+            "689665",
+            "691528",
+            "689630",
+            "689629",
+            "689682",
+            "689114",
+            "689632",
+            "689578",
+            "689603",
+            "689680",
+            "689518",
+            "689657",
+            "689519",
+            "689516",
+            "689517",
+            "689616",
+            "689659",
+            "689620",
+            "689703",
+            "689660",
+            "689681"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kochi Region"
@@ -23110,7 +24147,42 @@
             "691002",
             "691014",
             "691572",
-            "691008"
+            "691008",
+            "691519",
+            "691548",
+            "691316",
+            "691329",
+            "691545",
+            "691318",
+            "690543",
+            "691546",
+            "691517",
+            "691018",
+            "691513",
+            "691550",
+            "691544",
+            "691330",
+            "691623",
+            "691320",
+            "690567",
+            "691625",
+            "691324",
+            "691547",
+            "691017",
+            "691518",
+            "690568",
+            "691315",
+            "689706",
+            "690569",
+            "691604",
+            "691587",
+            "691580",
+            "691539",
+            "691321",
+            "691542",
+            "691514",
+            "691562",
+            "691326"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23250,7 +24322,22 @@
             "695134",
             "695528",
             "695547",
-            "695570"
+            "695570",
+            "695131",
+            "695510",
+            "695120",
+            "695616",
+            "695618",
+            "695130",
+            "695557",
+            "695560",
+            "695314",
+            "695031",
+            "695544",
+            "695509",
+            "695315",
+            "695039",
+            "695127"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23398,7 +24485,43 @@
             "679104",
             "679551",
             "679516",
-            "679553"
+            "679553",
+            "678559",
+            "678015",
+            "679537",
+            "678616",
+            "678018",
+            "678637",
+            "679311",
+            "679517",
+            "679310",
+            "678558",
+            "678614",
+            "678707",
+            "679124",
+            "678020",
+            "679518",
+            "679538",
+            "678733",
+            "678575",
+            "678547",
+            "679125",
+            "678634",
+            "679314",
+            "678752",
+            "679312",
+            "678761",
+            "678689",
+            "678548",
+            "678709",
+            "678615",
+            "678635",
+            "678589",
+            "678017",
+            "678605",
+            "678609",
+            "678600",
+            "678019"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
@@ -23438,7 +24561,14 @@
             "671551",
             "671315",
             "671122",
-            "671320"
+            "671320",
+            "671329",
+            "671353",
+            "671544",
+            "671341",
+            "671328",
+            "671357",
+            "671349"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
@@ -23670,7 +24800,9 @@
             "192125",
             "192401",
             "192212",
-            "192122"
+            "192122",
+            "192230",
+            "192102"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23681,7 +24813,8 @@
             "185121",
             "185211",
             "185102",
-            "185101"
+            "185101",
+            "185111"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23703,7 +24836,9 @@
             "185152",
             "185151",
             "185135",
-            "185234"
+            "185234",
+            "185136",
+            "185159"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23747,7 +24882,8 @@
             "182147",
             "182203",
             "182221",
-            "182207"
+            "182207",
+            "182200"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23780,7 +24916,9 @@
             "182126",
             "180012",
             "182101",
-            "182104"
+            "182104",
+            "182117",
+            "182103"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23843,7 +24981,10 @@
             "193303",
             "193402",
             "193404",
-            "193403"
+            "193403",
+            "193202",
+            "193508",
+            "193198"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23857,7 +24998,11 @@
             "184121",
             "184120",
             "181141",
-            "184141"
+            "184141",
+            "181209",
+            "181104",
+            "181151",
+            "181103"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23972,7 +25117,8 @@
             "190020",
             "190019",
             "190025",
-            "190024"
+            "190024",
+            "191203"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -23997,7 +25143,9 @@
             "184204",
             "184205",
             "184203",
-            "184101"
+            "184101",
+            "184103",
+            "184111"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -24018,7 +25166,8 @@
             "190014",
             "190021",
             "191132",
-            "190007"
+            "190007",
+            "191515"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -24263,7 +25412,8 @@
             "795133",
             "795124",
             "795011",
-            "795126"
+            "795126",
+            "795158"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
@@ -24462,7 +25612,8 @@
             "796081",
             "796015",
             "796410",
-            "796075"
+            "796075",
+            "796082"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
@@ -24486,7 +25637,8 @@
             "796036",
             "796230",
             "796008",
-            "796421"
+            "796421",
+            "796025"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
@@ -24500,7 +25652,8 @@
             "796770",
             "796751",
             "796701",
-            "796017"
+            "796017",
+            "796730"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
@@ -24565,7 +25718,8 @@
         "Saiha": {
           "name": "Saiha",
           "zipcodes": [
-            "796901"
+            "796901",
+            "796911"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
@@ -24600,7 +25754,8 @@
             "194109",
             "194302",
             "194301",
-            "194303"
+            "194303",
+            "194403"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Srinagar HQ Region"
@@ -24648,7 +25803,8 @@
             "798627",
             "797104",
             "798601",
-            "797109"
+            "797109",
+            "798619"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
@@ -24664,7 +25820,8 @@
             "797004",
             "797109",
             "797001",
-            "797121"
+            "797121",
+            "797005"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
@@ -24686,7 +25843,8 @@
             "797108",
             "797104",
             "797107",
-            "797114"
+            "797114",
+            "797102"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
@@ -24715,7 +25873,8 @@
             "797112",
             "797111",
             "798601",
-            "797099"
+            "797099",
+            "797100"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
@@ -24979,7 +26138,8 @@
           "zipcodes": [
             "792001",
             "792111",
-            "792102"
+            "792102",
+            "792051"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
@@ -25042,7 +26202,8 @@
           "zipcodes": [
             "791103",
             "791105",
-            "791002"
+            "791002",
+            "792061"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
@@ -25107,7 +26268,10 @@
           "name": "Tirap",
           "zipcodes": [
             "792129",
-            "792130"
+            "792130",
+            "786630",
+            "786629",
+            "786631"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
@@ -25311,7 +26475,8 @@
             "403715",
             "403409",
             "403719",
-            "403726"
+            "403726",
+            "403604"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Goa-Panaji Region"
@@ -25363,7 +26528,8 @@
             "403002",
             "403005",
             "403204",
-            "403402"
+            "403402",
+            "403407"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Goa-Panaji Region"
@@ -25719,7 +26885,8 @@
             "249201",
             "248018",
             "248015",
-            "248019"
+            "248019",
+            "248141"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -25803,7 +26970,10 @@
             "737120",
             "737116",
             "737107",
-            "737103"
+            "737103",
+            "737118",
+            "737117",
+            "737119"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -25831,7 +27001,8 @@
             "737103",
             "737132",
             "737101",
-            "737136"
+            "737136",
+            "737138"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
@@ -25850,7 +27021,8 @@
             "744210",
             "744205",
             "744209",
-            "744203"
+            "744203",
+            "744208"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "DivReportingCircle"
