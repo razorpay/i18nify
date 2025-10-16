@@ -4,6 +4,7 @@ import React from 'react';
 import { DATE_FORMAT_INTL_INPUTS } from 'src/constants/date';
 import { useIntlOptionsDateContext } from 'src/context/intlOptionsDateContext';
 import RenderContainer from 'src/pages/common/DropdownContainer';
+import IntlOptionWithTooltip from './IntlOptionWithTooltip';
 
 const IntlOptionsDateForm = ({ utilName }) => {
   const { intlDateOptions, setIntlDateOptions } = useIntlOptionsDateContext();
@@ -21,11 +22,13 @@ const IntlOptionsDateForm = ({ utilName }) => {
   const renderInput = (input) => {
     if (input.supportedUtilName.includes(utilName)) {
       return (
-        <RenderContainer
-          input={input}
-          handleInputChange={handleInputChange}
-          intlOptions={intlDateOptions}
-        />
+        <IntlOptionWithTooltip optionKey={input.key}>
+          <RenderContainer
+            input={input}
+            handleInputChange={handleInputChange}
+            intlOptions={intlDateOptions}
+          />
+        </IntlOptionWithTooltip>
       );
     }
   };
