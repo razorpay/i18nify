@@ -5,13 +5,16 @@ on:
     types: [submitted]
     branches:
       - master
+      - pt/adding-gh-action
   pull_request:
     types: [opened, synchronize]
     branches:
       - master
+      - pt/adding-gh-action
   push:
     branches:
       - master
+      - pt/adding-gh-action
 
 jobs:
   # Check if currency data changed
@@ -44,7 +47,7 @@ jobs:
         (github.event_name == 'pull_request_review' && github.event.review.state == 'approved') ||
         (github.event_name == 'pull_request' && github.event.pull_request.state == 'open') ||
         (github.event.action == 'closed' && github.event.pull_request.merged == true) ||
-        (github.event_name == 'push' && github.ref == 'refs/heads/master')
+        (github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/pt/adding-gh-action'))
       )
     
     steps:
@@ -96,11 +99,15 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push changes (only on merge/push to master)
+      - name: Commit and push changes (only on merge/push to master or test branch)
         if: |
           steps.check-changes.outputs.has_changes == 'true' &&
-          (github.event_name == 'push' || 
-           (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true))
+          (
+            github.event_name == 'push' || 
+            (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true) ||
+            github.ref == 'refs/heads/pt/adding-gh-action' ||
+            (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'pt/adding-gh-action')
+          )
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
