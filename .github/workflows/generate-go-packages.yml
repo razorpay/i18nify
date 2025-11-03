@@ -1,8 +1,12 @@
 name: Generate Go Packages
 
 on:
+  pull_request_review:
+    types: [submitted]
+    branches:
+      - master
   pull_request:
-    types: [closed]
+    types: [opened, synchronize]
     branches:
       - master
   push:
@@ -20,6 +24,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.ref }}
       - uses: dorny/paths-filter@v3
         id: filter
         with:
@@ -32,10 +37,12 @@ jobs:
     name: Generate Currency Go Package
     runs-on: ubuntu-latest
     needs: check-currency-changes
-    # Only run when PR is merged (not closed without merging) and currency data changed
+    # Run when PR is approved or merged, and currency data changed
     if: |
       (needs.check-currency-changes.outputs.changed == 'true') &&
       (
+        (github.event_name == 'pull_request_review' && github.event.review.state == 'approved') ||
+        (github.event_name == 'pull_request' && github.event.pull_request.state == 'open') ||
         (github.event.action == 'closed' && github.event.pull_request.merged == true) ||
         (github.event_name == 'push' && github.ref == 'refs/heads/master')
       )
@@ -46,6 +53,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.sha || github.ref }}
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -88,8 +96,11 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push changes
-        if: steps.check-changes.outputs.has_changes == 'true'
+      - name: Commit and push changes (only on merge/push to master)
+        if: |
+          steps.check-changes.outputs.has_changes == 'true' &&
+          (github.event_name == 'push' || 
+           (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true))
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
