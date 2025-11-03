@@ -15916,7 +15916,13 @@
             "384350",
             "382861",
             "384228",
-            "382728"
+            "382728",
+            "382865",
+            "382870",
+            "382705",
+            "382830",
+            "382715",
+            "382840"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
@@ -16180,7 +16186,8 @@
             "391460",
             "391151",
             "391346",
-            "391535"
+            "391535",
+            "390008"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
@@ -16616,7 +16623,9 @@
             "363002",
             "363035",
             "363415",
-            "363425"
+            "363425",
+            "382765",
+            "382745"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Rajkot Region"
@@ -26413,7 +26422,8 @@
             "605011",
             "605006",
             "605013",
-            "605002"
+            "605002",
+            "605012"
           ],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Chennai City Region"
