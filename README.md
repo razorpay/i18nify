@@ -22,3 +22,17 @@ If you are just looking for the dataset, go to [i18nify-data](i18nify-data) and 
 Contributions to i18nify are welcome! If you encounter any issues, have feature requests, or would like to contribute code, please refer to the respective contribution guidelines.
 
 - [i18nify-data](i18nify-data/contribution-guidelines.md)
+
+
+## Global Multi-Regional Configuration POC
+This POC demonstrates advanced regional conflict resolution:
+- Universal currency support (USD, SGD, EUR)
+- Global compliance framework (GDPR, CCPA, PDPA)
+- Multi-regional banking integration
+- Intelligent merge queue automation
+
+🚀 Features:
+- Smart conflict detection across regional deployments
+- Auto-resolution for simple conflicts  
+- Merge queue integration for seamless workflows
+- Developer-friendly resolution guidance
