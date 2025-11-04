@@ -10,9 +10,9 @@ import (
 //go:embed data/data.json
 var dataFS embed.FS
 
-// root mirrors the top-level JSON with currency_information key
+// root mirrors the top-level JSON structure
 type root struct {
-	CurrencyInformation map[string]*{{.StructName}} `json:"currency_information"`
+	{{.RootFieldName}} map[string]*{{.StructName}} `json:"{{.RootJSONKey}}"`
 }
 
 var (
@@ -20,20 +20,20 @@ var (
 	data     map[string]*{{.StructName}}
 )
 
-// GetData returns a map keyed by ISO 4217 code to CurrencyInfo.
+// GetData returns a map keyed by code to {{.StructName}}.
 func GetData() map[string]*{{.StructName}} {
 	dataOnce.Do(func() {
 		// Read data from embedded filesystem
 		jsonBytes, err := dataFS.ReadFile("data/data.json")
 		if err != nil {
-			panic("failed to read embedded currency data: " + err.Error())
+			panic("failed to read embedded {{.DataContext}} data: " + err.Error())
 		}
 		
 		var r root
 		if err := json.Unmarshal(jsonBytes, &r); err != nil {
-			panic("failed to parse embedded currency data: " + err.Error())
+			panic("failed to parse embedded {{.DataContext}} data: " + err.Error())
 		}
-		data = r.CurrencyInformation
+		data = r.{{.RootFieldName}}
 		if data == nil {
 			data = map[string]*{{.StructName}}{}
 		}

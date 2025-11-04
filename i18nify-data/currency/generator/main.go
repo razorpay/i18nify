@@ -10,16 +10,20 @@ import (
 )
 
 type TemplateData struct {
-	PackageName string
-	StructName  string
+	PackageName   string
+	StructName    string
+	RootJSONKey   string // JSON key in root object (e.g., "currency_information")
+	RootFieldName string // Go struct field name (e.g., "CurrencyInformation")
+	DataContext   string // Context for error messages (e.g., "currency")
 }
 
 var (
-	baseDir, _      = filepath.Abs("..")
-	distDir         = filepath.Join(baseDir, "dist")
-	protoDir        = filepath.Join(baseDir, "proto")
-	dataFile        = filepath.Join(baseDir, "data.json")
-	templateFile, _ = template.New("go.template").ParseFiles("go.template")
+	baseDir, _          = filepath.Abs("..")
+	distDir             = filepath.Join(baseDir, "dist")
+	protoDir            = filepath.Join(baseDir, "proto")
+	dataFile            = filepath.Join(baseDir, "data.json")
+	templateFile, _     = template.ParseFiles("go.template")
+	testTemplateFile, _ = template.ParseFiles("data_loader_test.template")
 )
 
 func main() {
@@ -31,8 +35,14 @@ func main() {
 	if err := generateDataLoader(); err != nil {
 		log.Fatalf("data loader generation failed: %v", err)
 	}
+	if err := generateDataLoaderTest(); err != nil {
+		log.Fatalf("data loader test generation failed: %v", err)
+	}
 	if err := initGoModule(); err != nil {
 		log.Fatalf("go module init failed: %v", err)
+	}
+	if err := runTests(); err != nil {
+		log.Fatalf("tests failed: %v", err)
 	}
 	log.Println("Currency micro-package generated successfully.")
 }
@@ -70,8 +80,11 @@ func generateDataLoader() error {
 	}
 
 	view := TemplateData{
-		PackageName: "currency",
-		StructName:  "CurrencyInfo",
+		PackageName:   "currency",
+		StructName:    "CurrencyInfo",
+		RootJSONKey:   "currency_information",
+		RootFieldName: "CurrencyInformation",
+		DataContext:   "currency",
 	}
 	outPath := filepath.Join(currencyDir, "data_loader.go")
 	f, err := os.Create(outPath)
@@ -79,7 +92,8 @@ func generateDataLoader() error {
 		return err
 	}
 	defer f.Close()
-	return templateFile.Execute(f, view)
+	// Use the template name which is the base name of the file
+	return templateFile.ExecuteTemplate(f, filepath.Base("go.template"), view)
 }
 
 func copyFile(src, dst string) error {
@@ -99,6 +113,27 @@ func copyFile(src, dst string) error {
 	return err
 }
 
+func generateDataLoaderTest() error {
+	log.Println("Generating data_loader_test.go...")
+	currencyDir := filepath.Join(distDir, "currency")
+
+	view := TemplateData{
+		PackageName:   "currency",
+		StructName:    "CurrencyInfo",
+		RootJSONKey:   "currency_information",
+		RootFieldName: "CurrencyInformation",
+		DataContext:   "currency",
+	}
+	outPath := filepath.Join(currencyDir, "data_loader_test.go")
+	f, err := os.Create(outPath)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	// Use the template name which is the base name of the file
+	return testTemplateFile.ExecuteTemplate(f, filepath.Base("data_loader_test.template"), view)
+}
+
 func initGoModule() error {
 	log.Println("Initializing go module i18nify-data/currency...")
 	moduleDir := filepath.Join(distDir, "currency")
@@ -114,4 +149,14 @@ func initGoModule() error {
 	cmdTidy.Stdout = os.Stdout
 	cmdTidy.Stderr = os.Stderr
 	return cmdTidy.Run()
+}
+
+func runTests() error {
+	log.Println("Running tests for data_loader...")
+	moduleDir := filepath.Join(distDir, "currency")
+	cmd := exec.Command("go", "test", "-v", "./...")
+	cmd.Dir = moduleDir
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	return cmd.Run()
 }
