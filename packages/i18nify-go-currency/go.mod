@@ -1,4 +1,4 @@
-module github.com/razorpay/i18nify/packages/i18nify-go-currency
+module i18nify-data/currency
 
 go 1.23.12
 
