@@ -10,7 +10,7 @@ import (
 //go:embed data/data.json
 var dataFS embed.FS
 
-// root mirrors the top-level JSON with currency_information key
+// root mirrors the top-level JSON structure
 type root struct {
 	CurrencyInformation map[string]*CurrencyInfo `json:"currency_information"`
 }
@@ -20,7 +20,7 @@ var (
 	data     map[string]*CurrencyInfo
 )
 
-// GetData returns a map keyed by ISO 4217 code to CurrencyInfo.
+// GetData returns a map keyed by code to CurrencyInfo.
 func GetData() map[string]*CurrencyInfo {
 	dataOnce.Do(func() {
 		// Read data from embedded filesystem
