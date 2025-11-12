@@ -2,11 +2,11 @@ name: Auto-Generate Go Packages
 
 on:
   pull_request:
-    types: [opened, synchronize]
     branches:
       - master
-    paths:
-      - 'i18nify-data/**'
+  push:
+    branches:
+      - master
 
 jobs:
   detect-changes:
