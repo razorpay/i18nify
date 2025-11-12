@@ -135,9 +135,9 @@ func generateDataLoaderTest() error {
 }
 
 func initGoModule() error {
-	log.Println("Initializing go module i18nify-data/currency...")
+	log.Println("Initializing go module github.com/razorpay/i18nify/packages/i18nify-go/currency...")
 	moduleDir := filepath.Join(distDir, "currency")
-	cmdInit := exec.Command("go", "mod", "init", "i18nify-data/currency")
+	cmdInit := exec.Command("go", "mod", "init", "github.com/razorpay/i18nify/packages/i18nify-go/currency")
 	cmdInit.Dir = moduleDir
 	cmdInit.Stdout = os.Stdout
 	cmdInit.Stderr = os.Stderr

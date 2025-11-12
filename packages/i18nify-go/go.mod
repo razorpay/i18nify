@@ -1,13 +1,13 @@
 module github.com/razorpay/i18nify/packages/i18nify-go
 
-go 1.23.12
+go 1.20
 
 require (
-	github.com/razorpay/i18nify/packages/i18nify-go-currency v0.0.0
+	github.com/razorpay/i18nify/packages/i18nify-go/currency v0.0.0
 	github.com/stretchr/testify v1.9.0
 )
 
-replace github.com/razorpay/i18nify/packages/i18nify-go-currency => ../i18nify-go-currency
+replace github.com/razorpay/i18nify/packages/i18nify-go/currency => ./currency
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect

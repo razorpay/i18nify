@@ -83,17 +83,17 @@ jobs:
       - name: Clean and move generated package to packages directory
         run: |
           # Remove existing package directory to ensure clean state
-          rm -rf packages/i18nify-go-currency
-          mkdir -p packages/i18nify-go-currency
+          rm -rf packages/i18nify-go/currency
+          mkdir -p packages/i18nify-go/currency
           # Copy generated package
-          cp -r i18nify-data/currency/dist/currency/* packages/i18nify-go-currency/
+          cp -r i18nify-data/currency/dist/currency/* packages/i18nify-go/currency/
           
       - name: Check for changes
         id: check-changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          if [ -n "$(git status --porcelain packages/i18nify-go-currency)" ]; then
+          if [ -n "$(git status --porcelain packages/i18nify-go/currency)" ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
           else
             echo "has_changes=false" >> $GITHUB_OUTPUT
@@ -125,7 +125,7 @@ jobs:
           BRANCH_NAME="${{ steps.branch.outputs.branch }}"
           git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
           
-          git add packages/i18nify-go-currency
+          git add packages/i18nify-go/currency
           git commit -m "chore: regenerate currency Go package [skip ci]" || exit 0
           git push origin "$BRANCH_NAME"
 

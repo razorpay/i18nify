@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	// Import the generated currency package
-	gencurrency "github.com/razorpay/i18nify/packages/i18nify-go-currency"
+	gencurrency "github.com/razorpay/i18nify/packages/i18nify-go/currency"
 )
 
 // CurrencyInfo is a value type that mirrors the proto-generated CurrencyInfo.
