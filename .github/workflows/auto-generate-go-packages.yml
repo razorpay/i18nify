@@ -1,12 +1,17 @@
 name: Auto-Generate Go Packages
 on:
   pull_request:
+    types: [opened, synchronize]
     branches:
       - master
+    paths:
+      - 'i18nify-data/**'
   push:
     branches:
       - master
       - pt/adding-gh-action
+    paths:
+      - 'i18nify-data/**'
 
 jobs:
   detect-changes:
@@ -22,7 +27,7 @@ jobs:
       - uses: dorny/paths-filter@v3
         id: filter
         with:
-          base: ${{ github.event.pull_request.base.ref }}
+          base: ${{ github.event.pull_request.base.ref || github.event.before || 'HEAD~1' }}
           filters: |
             currency:
               - 'i18nify-data/currency/**'
@@ -39,8 +44,8 @@ jobs:
     name: Generate Go Packages
     runs-on: ubuntu-latest
     needs: detect-changes
-    # Only run if package has changes
-    if: contains(needs.detect-changes.outputs.packages, matrix.package)
+    # Only run if there are package changes detected
+    if: needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != ''
     strategy:
       matrix:
         package: ${{ fromJson(needs.detect-changes.outputs.packages) }}
@@ -52,7 +57,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -120,7 +125,11 @@ jobs:
       - name: Get branch name
         id: branch
         run: |
-          echo "branch=${{ github.event.pull_request.head.ref }}" >> $GITHUB_OUTPUT
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "branch=${{ github.event.pull_request.head.ref }}" >> $GITHUB_OUTPUT
+          else
+            echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          fi
 
       - name: Commit and push changes
         if: steps.check-changes.outputs.has_changes == 'true'
