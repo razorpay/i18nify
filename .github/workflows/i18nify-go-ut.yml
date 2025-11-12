@@ -22,8 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: check-if-i18nify-go
     if: |
-      needs.check-if-i18nify-go.outputs.modified == 'true' && !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot') &&
-      !contains(github.event.head_commit.message, '[skip ci]')
+      needs.check-if-i18nify-go.outputs.modified == 'true' && !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
