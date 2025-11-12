@@ -1,0 +1,161 @@
+name: Auto-Generate Go Packages
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - pt/adding-gh-action
+    paths:
+      - 'i18nify-data/**'
+  push:
+    branches:
+      - pt/adding-gh-action
+    paths:
+      - 'i18nify-data/**'
+
+jobs:
+  detect-changes:
+    name: Detect Package Changes
+    runs-on: ubuntu-latest
+    # TEMPORARY: Only run on pt/adding-gh-action branch for testing
+    if: |
+      github.ref == 'refs/heads/pt/adding-gh-action' ||
+      github.event.pull_request.head.ref == 'pt/adding-gh-action'
+    outputs:
+      packages: ${{ steps.filter.outputs.changes }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          base: ${{ github.event.pull_request.base.ref || github.ref }}
+          filters: |
+            currency:
+              - 'i18nify-data/currency/**'
+            country-metadata:
+              - 'i18nify-data/country/metadata/**'
+            country-subdivisions:
+              - 'i18nify-data/country/subdivisions/**'
+            bankcodes:
+              - 'i18nify-data/bankcodes/**'
+            phone-number:
+              - 'i18nify-data/phone-number/**'
+
+  generate-packages:
+    name: Generate Go Packages
+    runs-on: ubuntu-latest
+    needs: detect-changes
+    # TEMPORARY: Only run on pt/adding-gh-action branch for testing
+    if: |
+      (github.ref == 'refs/heads/pt/adding-gh-action' ||
+       github.event.pull_request.head.ref == 'pt/adding-gh-action') &&
+      contains(needs.detect-changes.outputs.packages, matrix.package)
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.detect-changes.outputs.packages) }}
+      fail-fast: false
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+
+      - name: Install protoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y protobuf-compiler
+
+      - name: Install protoc-gen-go
+        run: go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+
+      - name: Add Go bin to PATH
+        run: echo "$HOME/go/bin" >> $GITHUB_PATH
+
+      - name: Generate ${{ matrix.package }} Go package
+        run: |
+          cd i18nify-data
+          chmod +x generate-package.sh
+          export PATH=$PATH:$HOME/go/bin
+          ./generate-package.sh ${{ matrix.package }}
+
+      - name: Get package config
+        id: package-config
+        run: |
+          PACKAGE_NAME="${{ matrix.package }}"
+          CONFIG_FILE="i18nify-data/$PACKAGE_NAME/package-config.json"
+          if [ -f "$CONFIG_FILE" ]; then
+            PACKAGE_DIR=$(jq -r '.package_name // empty' "$CONFIG_FILE")
+            echo "package_dir=$PACKAGE_DIR" >> $GITHUB_OUTPUT
+          else
+            echo "package_dir=$PACKAGE_NAME" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Move generated package to packages directory
+        run: |
+          PACKAGE_NAME="${{ matrix.package }}"
+          PACKAGE_DIR="${{ steps.package-config.outputs.package_dir }}"
+          SOURCE_DIR="i18nify-data/$PACKAGE_NAME/dist/$PACKAGE_DIR"
+          DEST_DIR="packages/i18nify-go/$PACKAGE_DIR"
+          
+          if [ -d "$SOURCE_DIR" ]; then
+            rm -rf "$DEST_DIR"
+            mkdir -p "$DEST_DIR"
+            cp -r "$SOURCE_DIR"/* "$DEST_DIR"/
+          else
+            echo "Error: Generated package not found at $SOURCE_DIR"
+            exit 1
+          fi
+
+      - name: Check for changes
+        id: check-changes
+        run: |
+          PACKAGE_DIR="${{ steps.package-config.outputs.package_dir }}"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          if [ -n "$(git status --porcelain packages/i18nify-go/$PACKAGE_DIR)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get branch name
+        id: branch
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "branch=${{ github.event.pull_request.head.ref }}" >> $GITHUB_OUTPUT
+          else
+            echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        # TEMPORARY: Only commit on pt/adding-gh-action branch for testing
+        if: |
+          steps.check-changes.outputs.has_changes == 'true' &&
+          (
+            (github.event_name == 'push' && github.ref == 'refs/heads/pt/adding-gh-action') || 
+            (github.event_name == 'pull_request' && 
+             github.event.pull_request.head.ref == 'pt/adding-gh-action' &&
+             github.event.pull_request.merged == true)
+          )
+        run: |
+          PACKAGE_DIR="${{ steps.package-config.outputs.package_dir }}"
+          BRANCH_NAME="${{ steps.branch.outputs.branch }}"
+          
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
+          
+          git add "packages/i18nify-go/$PACKAGE_DIR"
+          git commit -m "chore: auto-regenerate ${{ matrix.package }} Go package [skip ci]" || exit 0
+          git push origin "$BRANCH_NAME"
+
