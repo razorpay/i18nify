@@ -1,12 +1,11 @@
 name: Auto-Generate Go Packages
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  pull_request_review:
+    types: [submitted]
     branches:
+      - master
       - pt/adding-gh-action
-    paths:
-      - 'i18nify-data/**'
   push:
     branches:
       - pt/adding-gh-action
@@ -18,9 +17,13 @@ jobs:
     name: Detect Package Changes
     runs-on: ubuntu-latest
     # TEMPORARY: Only run on pt/adding-gh-action branch for testing
+    # For PRs: only run if PR targets master and review is approved
     if: |
-      github.ref == 'refs/heads/pt/adding-gh-action' ||
-      github.event.pull_request.head.ref == 'pt/adding-gh-action'
+      (github.event_name == 'push' && github.ref == 'refs/heads/pt/adding-gh-action') ||
+      (github.event_name == 'pull_request_review' && 
+       github.event.review.state == 'approved' &&
+       (github.event.pull_request.base.ref == 'master' || github.event.pull_request.base.ref == 'pt/adding-gh-action') &&
+       github.event.pull_request.head.ref == 'pt/adding-gh-action')
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
@@ -31,7 +34,7 @@ jobs:
       - uses: dorny/paths-filter@v3
         id: filter
         with:
-          base: ${{ github.event.pull_request.base.ref || github.ref }}
+          base: ${{ github.event.pull_request.base.ref || github.event.before || github.ref }}
           filters: |
             currency:
               - 'i18nify-data/currency/**'
@@ -49,9 +52,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: detect-changes
     # TEMPORARY: Only run on pt/adding-gh-action branch for testing
+    # For PRs: only run if PR targets master and review is approved
     if: |
-      (github.ref == 'refs/heads/pt/adding-gh-action' ||
-       github.event.pull_request.head.ref == 'pt/adding-gh-action') &&
+      (
+        (github.event_name == 'push' && github.ref == 'refs/heads/pt/adding-gh-action') ||
+        (github.event_name == 'pull_request_review' && 
+         github.event.review.state == 'approved' &&
+         (github.event.pull_request.base.ref == 'master' || github.event.pull_request.base.ref == 'pt/adding-gh-action') &&
+         github.event.pull_request.head.ref == 'pt/adding-gh-action')
+      ) &&
       contains(needs.detect-changes.outputs.packages, matrix.package)
     strategy:
       matrix:
@@ -64,6 +73,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.ref || github.event.pull_request.head.sha || github.ref_name }}
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -131,7 +141,9 @@ jobs:
       - name: Get branch name
         id: branch
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
+          if [ "${{ github.event_name }}" = "pull_request_review" ]; then
+            echo "branch=${{ github.event.pull_request.head.ref }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
             echo "branch=${{ github.event.pull_request.head.ref }}" >> $GITHUB_OUTPUT
           else
             echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
@@ -139,13 +151,15 @@ jobs:
 
       - name: Commit and push changes
         # TEMPORARY: Only commit on pt/adding-gh-action branch for testing
+        # For PRs: only commit if PR review is approved and targets master
         if: |
           steps.check-changes.outputs.has_changes == 'true' &&
           (
             (github.event_name == 'push' && github.ref == 'refs/heads/pt/adding-gh-action') || 
-            (github.event_name == 'pull_request' && 
-             github.event.pull_request.head.ref == 'pt/adding-gh-action' &&
-             github.event.pull_request.merged == true)
+            (github.event_name == 'pull_request_review' && 
+             github.event.review.state == 'approved' &&
+             (github.event.pull_request.base.ref == 'master' || github.event.pull_request.base.ref == 'pt/adding-gh-action') &&
+             github.event.pull_request.head.ref == 'pt/adding-gh-action')
           )
         run: |
           PACKAGE_DIR="${{ steps.package-config.outputs.package_dir }}"
