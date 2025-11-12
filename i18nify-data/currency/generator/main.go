@@ -144,6 +144,14 @@ func initGoModule() error {
 	if err := cmdInit.Run(); err != nil {
 		return err
 	}
+	// Set minimum Go version to 1.20 (required for unsafe.StringData used in protobuf)
+	cmdEdit := exec.Command("go", "mod", "edit", "-go=1.20")
+	cmdEdit.Dir = moduleDir
+	cmdEdit.Stdout = os.Stdout
+	cmdEdit.Stderr = os.Stderr
+	if err := cmdEdit.Run(); err != nil {
+		return err
+	}
 	cmdTidy := exec.Command("go", "mod", "tidy")
 	cmdTidy.Dir = moduleDir
 	cmdTidy.Stdout = os.Stdout

@@ -1,8 +1,6 @@
 module github.com/razorpay/i18nify/packages/i18nify-go
 
-go 1.23.12
-
-toolchain go1.24.3
+go 1.20
 
 require (
 	github.com/razorpay/i18nify/packages/i18nify-go/currency v0.0.0
