@@ -152,6 +152,14 @@ func initGoModule() error {
 	if err := cmdEdit.Run(); err != nil {
 		return err
 	}
+	// Pin protobuf version to v1.31.0 which supports Go 1.20 (v1.36.10 requires Go 1.23+)
+	cmdRequire := exec.Command("go", "mod", "edit", "-require=google.golang.org/protobuf@v1.31.0")
+	cmdRequire.Dir = moduleDir
+	cmdRequire.Stdout = os.Stdout
+	cmdRequire.Stderr = os.Stderr
+	if err := cmdRequire.Run(); err != nil {
+		return err
+	}
 	cmdTidy := exec.Command("go", "mod", "tidy")
 	cmdTidy.Dir = moduleDir
 	cmdTidy.Stdout = os.Stdout
