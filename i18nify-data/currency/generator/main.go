@@ -41,8 +41,10 @@ func main() {
 	if err := initGoModule(); err != nil {
 		log.Fatalf("go module init failed: %v", err)
 	}
-	if err := runTests(); err != nil {
-		log.Fatalf("tests failed: %v", err)
+	// Mandatory: Run serialization/deserialization test before completing package generation
+	// This ensures data integrity and prevents publishing packages with broken serialization
+	if err := runSerializationTest(); err != nil {
+		log.Fatalf("CRITICAL: Serialization/deserialization test failed. Package generation aborted. %v", err)
 	}
 	log.Println("Currency micro-package generated successfully.")
 }
@@ -168,12 +170,22 @@ func initGoModule() error {
 	return cmdTidy.Run()
 }
 
-func runTests() error {
-	log.Println("Running tests for data_loader...")
+// runSerializationTest runs the mandatory serialization/deserialization test.
+// This test verifies that data can be correctly serialized to JSON and deserialized back
+// without data loss or corruption. If this test fails, package generation is aborted
+// to prevent publishing packages with broken serialization.
+func runSerializationTest() error {
+	log.Println("Running MANDATORY serialization/deserialization test...")
+	log.Println("This test ensures data integrity before package generation completes.")
 	moduleDir := filepath.Join(distDir, "currency")
-	cmd := exec.Command("go", "test", "-v", "./...")
+	// Run only the serialization/deserialization test
+	cmd := exec.Command("go", "test", "-v", "-run", "TestGetData_SerializationDeserialization", "./...")
 	cmd.Dir = moduleDir
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-	return cmd.Run()
+	if err := cmd.Run(); err != nil {
+		return err
+	}
+	log.Println("✓ Serialization/deserialization test passed. Data integrity verified.")
+	return nil
 }

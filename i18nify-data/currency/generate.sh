@@ -32,5 +32,3 @@ go run main.go
 popd >/dev/null
 
 echo "[currency] Done. Output at $(pwd)/dist/currency"
-
-
