@@ -1,5 +1,4 @@
 name: Auto-Generate Go Packages
-
 on:
   pull_request:
     branches:
@@ -7,6 +6,7 @@ on:
   push:
     branches:
       - master
+      - pt/adding-gh-action
 
 jobs:
   detect-changes:
