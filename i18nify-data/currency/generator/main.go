@@ -160,6 +160,7 @@ func initGoModule() error {
 	if err := cmdRequire.Run(); err != nil {
 		return err
 	}
+
 	cmdTidy := exec.Command("go", "mod", "tidy")
 	cmdTidy.Dir = moduleDir
 	cmdTidy.Stdout = os.Stdout
