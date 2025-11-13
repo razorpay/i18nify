@@ -142,6 +142,6 @@ jobs:
           git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
           
           git add "packages/i18nify-go/$PACKAGE_DIR"
-          git commit -m "chore: auto-regenerate ${{ matrix.package }} Go package [skip ci]" || exit 0
+          git commit -m "chore: auto-regenerate ${{ matrix.package }} Go package" || exit 0
           git push origin "$BRANCH_NAME"
 
