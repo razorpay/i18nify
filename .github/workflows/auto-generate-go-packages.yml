@@ -76,16 +76,19 @@ jobs:
         run: echo "$HOME/go/bin" >> $GITHUB_PATH
 
       - name: Generate ${{ matrix.package }} Go package
+        env:
+          PACKAGE_NAME: ${{ matrix.package }}
         run: |
           cd i18nify-data
           chmod +x generate-package.sh
           export PATH=$PATH:$HOME/go/bin
-          ./generate-package.sh ${{ matrix.package }}
+          ./generate-package.sh "$PACKAGE_NAME"
 
       - name: Get package config
         id: package-config
+        env:
+          PACKAGE_NAME: ${{ matrix.package }}
         run: |
-          PACKAGE_NAME="${{ matrix.package }}"
           CONFIG_FILE="i18nify-data/$PACKAGE_NAME/package-config.json"
           if [ -f "$CONFIG_FILE" ]; then
             PACKAGE_DIR=$(jq -r '.package_name // empty' "$CONFIG_FILE")
@@ -95,9 +98,10 @@ jobs:
           fi
 
       - name: Move generated package to packages directory
+        env:
+          PACKAGE_NAME: ${{ matrix.package }}
+          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
         run: |
-          PACKAGE_NAME="${{ matrix.package }}"
-          PACKAGE_DIR="${{ steps.package-config.outputs.package_dir }}"
           SOURCE_DIR="i18nify-data/$PACKAGE_NAME/dist/$PACKAGE_DIR"
           DEST_DIR="packages/i18nify-go/$PACKAGE_DIR"
           
@@ -112,8 +116,9 @@ jobs:
 
       - name: Check for changes
         id: check-changes
+        env:
+          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
         run: |
-          PACKAGE_DIR="${{ steps.package-config.outputs.package_dir }}"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           if [ -n "$(git status --porcelain packages/i18nify-go/$PACKAGE_DIR)" ]; then
@@ -124,24 +129,29 @@ jobs:
 
       - name: Get branch name
         id: branch
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          REF_NAME: ${{ github.ref_name }}
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "branch=${{ github.event.pull_request.head.ref }}" >> $GITHUB_OUTPUT
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "branch=$PR_HEAD_REF" >> $GITHUB_OUTPUT
           else
-            echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+            echo "branch=$REF_NAME" >> $GITHUB_OUTPUT
           fi
 
       - name: Commit and push changes
         if: steps.check-changes.outputs.has_changes == 'true'
+        env:
+          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+          BRANCH_NAME: ${{ steps.branch.outputs.branch }}
+          PACKAGE_NAME: ${{ matrix.package }}
         run: |
-          PACKAGE_DIR="${{ steps.package-config.outputs.package_dir }}"
-          BRANCH_NAME="${{ steps.branch.outputs.branch }}"
-          
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
           
           git add "packages/i18nify-go/$PACKAGE_DIR"
-          git commit -m "chore: auto-regenerate ${{ matrix.package }} Go package" || exit 0
+          git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package" || exit 0
           git push origin "$BRANCH_NAME"
 
