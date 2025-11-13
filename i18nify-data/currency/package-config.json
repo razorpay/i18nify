@@ -1,0 +1,11 @@
+{
+  "package_name": "currency",
+  "struct_name": "CurrencyInfo",
+  "root_json_key": "currency_information",
+  "root_field_name": "CurrencyInformation",
+  "data_context": "currency",
+  "module_path": "github.com/razorpay/i18nify/packages/i18nify-go/currency",
+  "has_proto": true,
+  "proto_file": "currency.proto"
+}
+
