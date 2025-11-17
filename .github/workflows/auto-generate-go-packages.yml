@@ -150,7 +150,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
-          
+
+          git pull origin "$BRANCH_NAME"
           git add "i18nify-data/go/$PACKAGE_DIR"
           git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package" || exit 0
           git push origin "$BRANCH_NAME"
