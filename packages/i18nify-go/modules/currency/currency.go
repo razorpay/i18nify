@@ -1,39 +1,62 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse and unparse this JSON data, add this code to your project and do:
-//
-//    SupportedCurrency, err := UnmarshalCurrency(bytes)
-//    bytes, err = SupportedCurrency.Marshal()
-
 // Package currency provides functionality to handle information about currencies.
+// This package uses the generated currency package from proto definitions.
+// All public APIs return value types (not pointers) for better API design.
 package currency
 
 import (
-	"embed"
-	"encoding/json"
 	"fmt"
+
+	// Import the generated currency package
+	gencurrency "github.com/razorpay/i18nify/i18nify-data/go/currency"
 )
 
-//go:embed data
-var currencyJsonDir embed.FS
-
-// DataFile defines the path to the JSON data file containing currency information.
-const DataFile = "data/data.json"
-
-// UnmarshalCurrency parses JSON data into a Currency struct.
-func UnmarshalCurrency(data []byte) (Currency, error) {
-	var r Currency
-	err := json.Unmarshal(data, &r)
-	return r, err
+// CurrencyInfo is a value type that mirrors the proto-generated CurrencyInfo.
+// We use a separate struct instead of exposing pointers from the generated package.
+type CurrencyInfo struct {
+	Name                          string   `json:"name,omitempty"`
+	NumericCode                   string   `json:"numeric_code,omitempty"`
+	MinorUnit                     string   `json:"minor_unit,omitempty"`
+	Symbol                        string   `json:"symbol,omitempty"`
+	PhysicalCurrencyDenominations []string `json:"physical_currency_denominations,omitempty"`
 }
 
-// Marshal converts a Currency struct into JSON data.
-func (r *Currency) Marshal() ([]byte, error) {
-	return json.Marshal(r)
+// CurrencyInformation is a type alias for backward compatibility.
+type CurrencyInformation = CurrencyInfo
+
+// GetCurrencyInformation retrieves currency information for a specific currency code.
+// It uses the generated package's GetData() function and returns a value type (not pointer).
+func GetCurrencyInformation(code string) (CurrencyInformation, error) {
+	data := gencurrency.GetData()
+	currencyInfo, exists := data[code]
+	if !exists {
+		return CurrencyInformation{}, fmt.Errorf("currency code '%s' not found", code)
+	}
+	if currencyInfo == nil {
+		return CurrencyInformation{}, fmt.Errorf("currency info for code '%s' is nil", code)
+	}
+	// Copy from pointer type to value type
+	return CurrencyInfo{
+		Name:                          currencyInfo.Name,
+		NumericCode:                   currencyInfo.NumericCode,
+		MinorUnit:                     currencyInfo.MinorUnit,
+		Symbol:                        currencyInfo.Symbol,
+		PhysicalCurrencyDenominations: currencyInfo.PhysicalCurrencyDenominations,
+	}, nil
 }
 
-// Currency represents information about currencies.
+// NewCurrencyInformation creates a new CurrencyInformation instance.
+func NewCurrencyInformation(minorUnit string, name string, numericCode string, physicalCurrencyDenominations []string, symbol string) *CurrencyInformation {
+	return &CurrencyInformation{
+		Name:                          name,
+		NumericCode:                   numericCode,
+		MinorUnit:                     minorUnit,
+		Symbol:                        symbol,
+		PhysicalCurrencyDenominations: physicalCurrencyDenominations,
+	}
+}
+
+// Currency represents information about currencies (for backward compatibility).
 type Currency struct {
-	// CurrencyInformation holds currency information, keyed by currency code.
 	CurrencyInformation map[string]CurrencyInformation `json:"currency_information"`
 }
 
@@ -42,58 +65,10 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 	return r.CurrencyInformation
 }
 
-// GetCurrencyInformation retrieves currency information for a specific currency code.
-func GetCurrencyInformation(code string) (CurrencyInformation, error) {
-	// Read JSON data file containing currency information.
-	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
-	if err != nil {
-		// Handle error reading the file
-		return CurrencyInformation{}, fmt.Errorf("error reading JSON file: %v", err)
-	}
-
-	// Unmarshal JSON data into SupportedCurrency struct.
-	allCurrencyData, err := UnmarshalCurrency(currencyJsonData)
-	if err != nil {
-		return CurrencyInformation{}, fmt.Errorf("error unmarshalling JSON data: %v", err)
-	}
-
-	// Retrieve currency information for the specified currency code.
-	currencyInfo, exists := allCurrencyData.CurrencyInformation[code]
-
-	if !exists {
-		return CurrencyInformation{}, fmt.Errorf("currency code '%s' not found", code)
-	}
-
-	return currencyInfo, nil
-
-}
-
 // NewCurrency creates a new Currency instance.
 func NewCurrency(currencyInformation map[string]CurrencyInformation) *Currency {
 	return &Currency{
 		CurrencyInformation: currencyInformation,
-	}
-}
-
-// CurrencyInformation contains details about a specific currency.
-type CurrencyInformation struct {
-	MinorUnit                     string   `json:"minor_unit"`                      // MinorUnit represents the minor unit of the currency.
-	Name                          string   `json:"name"`                            // Name represents the name of the currency.
-	NumericCode                   string   `json:"numeric_code"`                    // NumericCode represents the ISO 4217 numeric code of the currency.
-	PhysicalCurrencyDenominations []string `json:"physical_currency_denominations"` // PhysicalCurrencyDenominations represents the physical denominations of the currency.
-	Symbol                        string   `json:"symbol"`                          // Symbol represents the symbol or abbreviation of the currency.
-}
-
-// Getters for various fields of CurrencyInformation.
-
-// NewCurrencyInformation creates a new CurrencyInformation instance.
-func NewCurrencyInformation(minorUnit string, name string, numericCode string, physicalCurrencyDenominations []string, symbol string) *CurrencyInformation {
-	return &CurrencyInformation{
-		MinorUnit:                     minorUnit,
-		Name:                          name,
-		NumericCode:                   numericCode,
-		PhysicalCurrencyDenominations: physicalCurrencyDenominations,
-		Symbol:                        symbol,
 	}
 }
 
