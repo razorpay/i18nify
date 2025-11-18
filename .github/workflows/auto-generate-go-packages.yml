@@ -297,6 +297,34 @@ jobs:
           echo "Failed to push after $MAX_RETRIES attempts"
           exit 1
 
+  debug-conditions:
+    name: Debug - Show Condition Values
+    runs-on: ubuntu-latest
+    needs: [detect-changes, generate-packages]
+    if: always()
+    steps:
+      - name: Show all condition values
+        run: |
+          echo "=== Debug Information ==="
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Event name: ${{ github.event_name }}"
+          echo "Detected packages: ${{ needs.detect-changes.outputs.packages }}"
+          echo "Generate-packages result: ${{ needs.generate-packages.result }}"
+          echo ""
+          echo "=== Condition Checks ==="
+          echo "Is master/test branch: ${{ github.ref_name == 'master' || github.ref_name == 'vt/adding-gh-action' || github.ref_name == 'pt/adding-gh-action' }}"
+          echo "Packages not empty: ${{ needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != '' }}"
+          echo ""
+          echo "=== Testing currency check ==="
+          if [ '${{ needs.detect-changes.outputs.packages }}' = '[]' ] || [ '${{ needs.detect-changes.outputs.packages }}' = '' ]; then
+            echo "❌ No packages detected - that's why the job is skipped!"
+          elif echo '${{ needs.detect-changes.outputs.packages }}' | grep -q 'currency'; then
+            echo "✅ Currency detected in packages"
+          else
+            echo "❌ Currency NOT in detected packages"
+            echo "Detected: ${{ needs.detect-changes.outputs.packages }}"
+          fi
+
   update-i18nify-go-dependencies:
     name: Update i18nify-go Dependencies
     runs-on: ubuntu-latest
