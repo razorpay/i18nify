@@ -1,4 +1,4 @@
-name: Auto-Generate Go Packages
+name: Auto-Generate Go Packages [V1]
 on:
   pull_request:
     types: [opened, synchronize]
@@ -10,6 +10,7 @@ on:
     branches:
       - master
       - pt/adding-gh-action
+      - vt/adding-gh-action
     paths:
       - 'i18nify-data/**'
 

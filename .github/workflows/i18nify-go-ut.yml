@@ -1,4 +1,4 @@
-name: (i18nify-go) Unit Tests
+name: (i18nify-go) Unit Tests[V1]
 
 on:
   pull_request:
