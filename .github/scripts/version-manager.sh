@@ -154,8 +154,8 @@ main() {
             local current=$(get_current_version "$package_name")
             local beta=$(generate_beta_version "$current" "$context" "$identifier")
             
-            log_info "Current version: v${current}"
-            log_info "Beta version: v${beta}"
+            log_info "Current version: v${current}" >&2
+            log_info "Beta version: v${beta}" >&2
             echo "$beta"
             ;;
             
@@ -176,13 +176,13 @@ main() {
             if [ -z "$change_type" ]; then
                 local package_dir="i18nify-data/$package_name"
                 change_type=$(detect_change_type "$package_dir")
-                log_info "Auto-detected change type: $change_type"
+                log_info "Auto-detected change type: $change_type" >&2
             fi
             
             local release=$(generate_release_version "$current" "$change_type")
             
-            log_info "Current version: v${current}"
-            log_info "Release version: v${release}"
+            log_info "Current version: v${current}" >&2
+            log_info "Release version: v${release}" >&2
             echo "$release"
             ;;
             
@@ -200,12 +200,12 @@ main() {
             local tag="go-${package_name}-v${version}"
             
             if git rev-parse "$tag" >/dev/null 2>&1; then
-                log_warning "Tag $tag already exists"
+                log_warning "Tag $tag already exists" >&2
                 exit 0
             fi
             
             git tag -a "$tag" -m "Release ${package_name} v${version}"
-            log_info "Created tag: $tag"
+            log_info "Created tag: $tag" >&2
             echo "$tag"
             ;;
             

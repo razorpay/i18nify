@@ -108,18 +108,20 @@ jobs:
           chmod +x .github/scripts/version-manager.sh
           
           if [ "$IS_RELEASE" = "true" ]; then
+            # Log messages go to stderr, version goes to stdout
             VERSION=$(.github/scripts/version-manager.sh generate-release "$PACKAGE_NAME")
             echo "version=$VERSION" >> $GITHUB_OUTPUT
             echo "version_tag=v$VERSION" >> $GITHUB_OUTPUT
             echo "is_beta=false" >> $GITHUB_OUTPUT
+            echo "✅ Generated release version: v$VERSION"
           else
+            # Log messages go to stderr, version goes to stdout
             VERSION=$(.github/scripts/version-manager.sh generate-beta "$PACKAGE_NAME" "$CONTEXT" "$IDENTIFIER")
             echo "version=$VERSION" >> $GITHUB_OUTPUT
             echo "version_tag=v$VERSION" >> $GITHUB_OUTPUT
             echo "is_beta=true" >> $GITHUB_OUTPUT
+            echo "✅ Generated beta version: v$VERSION"
           fi
-          
-          echo "Generated version: $VERSION"
 
       - name: Generate ${{ matrix.package }} Go package
         env:
