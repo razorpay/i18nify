@@ -104,7 +104,7 @@ jobs:
           PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
         run: |
           SOURCE_DIR="i18nify-data/$PACKAGE_NAME/dist/$PACKAGE_DIR"
-          DEST_DIR="packages/i18nify-go/$PACKAGE_DIR"
+          DEST_DIR="i18nify-data/go/$PACKAGE_DIR"
           
           if [ -d "$SOURCE_DIR" ]; then
             rm -rf "$DEST_DIR"
@@ -122,7 +122,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          if [ -n "$(git status --porcelain packages/i18nify-go/$PACKAGE_DIR)" ]; then
+          if [ -n "$(git status --porcelain i18nify-data/go/$PACKAGE_DIR)" ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
           else
             echo "has_changes=false" >> $GITHUB_OUTPUT
@@ -151,8 +151,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
-          
-          git add "packages/i18nify-go/$PACKAGE_DIR"
+
+          git pull origin "$BRANCH_NAME"
+          git add "i18nify-data/go/$PACKAGE_DIR"
           git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package" || exit 0
           git push origin "$BRANCH_NAME"
 

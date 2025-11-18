@@ -4,7 +4,7 @@
   "root_json_key": "currency_information",
   "root_field_name": "CurrencyInformation",
   "data_context": "currency",
-  "module_path": "github.com/razorpay/i18nify/packages/i18nify-go/currency",
+  "module_path": "github.com/razorpay/i18nify/i18nify-data/go/currency",
   "has_proto": true,
   "proto_file": "currency.proto"
 }
