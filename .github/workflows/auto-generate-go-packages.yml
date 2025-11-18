@@ -301,9 +301,9 @@ jobs:
     name: Update i18nify-go Dependencies
     runs-on: ubuntu-latest
     needs: [detect-changes, generate-packages]
-    # Only run on master branch for release versions when currency package is updated
+    # Run on master and test branches when currency package is updated
     if: |
-      github.ref_name == 'master' &&
+      (github.ref_name == 'master' || github.ref_name == 'vt/adding-gh-action' || github.ref_name == 'pt/adding-gh-action') &&
       contains(fromJson(needs.detect-changes.outputs.packages), 'currency')
     
     steps:
@@ -312,7 +312,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-          ref: master
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -349,6 +349,7 @@ jobs:
         if: steps.check-dep-changes.outputs.has_changes == 'true'
         env:
           CURRENCY_VERSION: ${{ steps.currency-version.outputs.version }}
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -361,7 +362,7 @@ jobs:
           RETRY_COUNT=0
           while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
             # Pull latest changes and rebase our commit on top
-            git pull --rebase origin master || {
+            git pull --rebase origin "$BRANCH_NAME" || {
               echo "Failed to pull, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
               RETRY_COUNT=$((RETRY_COUNT + 1))
               sleep 2
@@ -369,8 +370,8 @@ jobs:
             }
             
             # Try to push
-            if git push origin master; then
-              echo "Successfully pushed dependency update"
+            if git push origin "$BRANCH_NAME"; then
+              echo "Successfully pushed dependency update to $BRANCH_NAME"
               exit 0
             else
               echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
