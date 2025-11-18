@@ -222,10 +222,34 @@ jobs:
           git config --local user.name "GitHub Action"
           git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
 
-          git pull origin "$BRANCH_NAME"
           git add "i18nify-data/go/$PACKAGE_DIR"
           git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package (v$VERSION)" || exit 0
-          git push origin "$BRANCH_NAME"
+          
+          # Retry push up to 3 times in case of concurrent modifications
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            # Pull latest changes and rebase our commit on top
+            git pull --rebase origin "$BRANCH_NAME" || {
+              echo "Failed to pull, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+              continue
+            }
+            
+            # Try to push
+            if git push origin "$BRANCH_NAME"; then
+              echo "Successfully pushed changes"
+              exit 0
+            else
+              echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+            fi
+          done
+          
+          echo "Failed to push after $MAX_RETRIES attempts"
+          exit 1
 
       - name: Commit, tag and push (Release)
         id: release-commit
@@ -239,19 +263,39 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          git pull origin "$BRANCH_NAME"
           git add "i18nify-data/go/$PACKAGE_DIR"
           git commit -m "release: $PACKAGE_NAME Go package v$VERSION" || exit 0
           
-          # Create and push git tag
+          # Create git tag
           chmod +x .github/scripts/version-manager.sh
           TAG=$(.github/scripts/version-manager.sh create-tag "$PACKAGE_NAME" "$VERSION")
           
-          git push origin "$BRANCH_NAME"
-          git push origin "$TAG"
+          # Retry push up to 3 times in case of concurrent modifications
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            # Pull latest changes and rebase our commit on top
+            git pull --rebase origin "$BRANCH_NAME" || {
+              echo "Failed to pull, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+              continue
+            }
+            
+            # Try to push both commit and tag
+            if git push origin "$BRANCH_NAME" && git push origin "$TAG"; then
+              echo "Successfully pushed changes and tag: $TAG"
+              echo "tag=$TAG" >> $GITHUB_OUTPUT
+              exit 0
+            else
+              echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+            fi
+          done
           
-          echo "Created and pushed tag: $TAG"
-          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "Failed to push after $MAX_RETRIES attempts"
+          exit 1
 
   update-i18nify-go-dependencies:
     name: Update i18nify-go Dependencies
@@ -311,5 +355,30 @@ jobs:
           
           git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
           git commit -m "chore: update currency dependency to v${CURRENCY_VERSION}"
-          git push origin master
+          
+          # Retry push up to 3 times in case of concurrent modifications
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            # Pull latest changes and rebase our commit on top
+            git pull --rebase origin master || {
+              echo "Failed to pull, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+              continue
+            }
+            
+            # Try to push
+            if git push origin master; then
+              echo "Successfully pushed dependency update"
+              exit 0
+            else
+              echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+            fi
+          done
+          
+          echo "Failed to push after $MAX_RETRIES attempts"
+          exit 1
 
