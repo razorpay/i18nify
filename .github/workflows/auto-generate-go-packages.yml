@@ -228,6 +228,7 @@ jobs:
           git push origin "$BRANCH_NAME"
 
       - name: Commit, tag and push (Release)
+        id: release-commit
         if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'false'
         env:
           PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
@@ -250,4 +251,65 @@ jobs:
           git push origin "$TAG"
           
           echo "Created and pushed tag: $TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+  update-i18nify-go-dependencies:
+    name: Update i18nify-go Dependencies
+    runs-on: ubuntu-latest
+    needs: [detect-changes, generate-packages]
+    # Only run on master branch for release versions when currency package is updated
+    if: |
+      github.ref_name == 'master' &&
+      contains(fromJson(needs.detect-changes.outputs.packages), 'currency')
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: master
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+
+      - name: Update i18nify-go dependencies
+        id: update-deps
+        run: |
+          chmod +x .github/scripts/update-i18nify-go-dependencies.sh
+          chmod +x .github/scripts/version-manager.sh
+          .github/scripts/update-i18nify-go-dependencies.sh currency
+
+      - name: Get updated currency version
+        id: currency-version
+        run: |
+          chmod +x .github/scripts/version-manager.sh
+          VERSION=$(.github/scripts/version-manager.sh get-current currency)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Updated currency version: v$VERSION"
+
+      - name: Check for dependency changes
+        id: check-dep-changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          if [ -n "$(git status --porcelain packages/i18nify-go/go.mod packages/i18nify-go/go.sum)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push dependency update
+        if: steps.check-dep-changes.outputs.has_changes == 'true'
+        env:
+          CURRENCY_VERSION: ${{ steps.currency-version.outputs.version }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
+          git commit -m "chore: update currency dependency to v${CURRENCY_VERSION}"
+          git push origin master
 
