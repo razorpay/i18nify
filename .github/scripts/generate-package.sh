@@ -12,10 +12,20 @@ if [ -z "$PACKAGE_NAME" ]; then
     exit 1
 fi
 
+# Resolve paths relative to script location
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PACKAGE_DIR="$SCRIPT_DIR/$PACKAGE_NAME"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+I18NIFY_DATA_DIR="$PROJECT_ROOT/i18nify-data"
+PACKAGE_DIR="$I18NIFY_DATA_DIR/$PACKAGE_NAME"
 CONFIG_FILE="$PACKAGE_DIR/package-config.json"
 GENERATOR_DIR="$SCRIPT_DIR/generator"
+GENERATOR_SCRIPT="$GENERATOR_DIR/generate.sh"
+
+# Check if i18nify-data directory exists
+if [ ! -d "$I18NIFY_DATA_DIR" ]; then
+    echo "Error: i18nify-data directory not found: $I18NIFY_DATA_DIR"
+    exit 1
+fi
 
 # Check if package directory exists
 if [ ! -d "$PACKAGE_DIR" ]; then
@@ -27,6 +37,12 @@ fi
 if [ ! -f "$CONFIG_FILE" ]; then
     echo "Error: Package config not found: $CONFIG_FILE"
     echo "Please create package-config.json in $PACKAGE_DIR"
+    exit 1
+fi
+
+# Check if generator script exists
+if [ ! -f "$GENERATOR_SCRIPT" ]; then
+    echo "Error: Generator script not found: $GENERATOR_SCRIPT"
     exit 1
 fi
 
@@ -47,14 +63,22 @@ if grep -q '"has_proto":\s*true' "$CONFIG_FILE"; then
     fi
 fi
 
+# Check for jq (required by generate.sh)
+if ! command -v jq &> /dev/null; then
+    echo "Error: jq is not installed but is required by the generator."
+    echo "Please install it using:"
+    echo "  - macOS: brew install jq"
+    echo "  - Linux: apt-get install jq"
+    exit 1
+fi
+
 echo "[$PACKAGE_NAME] Cleaning dist/"
 rm -rf "$PACKAGE_DIR/dist"
 mkdir -p "$PACKAGE_DIR/dist"
 
 echo "[$PACKAGE_NAME] Running generator"
-cd "$GENERATOR_DIR"
-go mod tidy || true
-go run main.go "$CONFIG_FILE"
+"$GENERATOR_SCRIPT" "$CONFIG_FILE"
 
 echo "[$PACKAGE_NAME] Done. Output at $PACKAGE_DIR/dist/$PACKAGE_NAME"
+
 
