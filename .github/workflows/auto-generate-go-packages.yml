@@ -297,6 +297,148 @@ jobs:
           echo "Failed to push after $MAX_RETRIES attempts"
           exit 1
 
+  update-go-mod-in-pr:
+    name: Update go.mod in PR
+    runs-on: ubuntu-latest
+    needs: [detect-changes, generate-packages]
+    # Only run on pull requests when packages have changed
+    if: |
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      needs.detect-changes.outputs.packages != '[]' &&
+      needs.detect-changes.outputs.packages != ''
+    
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for schema/proto changes
+        id: check-schema
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          echo "🔍 Checking for schema or proto file changes..."
+          
+          CHANGED_FILES=$(git diff --name-only $BASE_SHA $HEAD_SHA | grep "^i18nify-data/" || true)
+          SCHEMA_CHANGES=$(echo "$CHANGED_FILES" | grep -E "(schema\.json|\.proto)$" || true)
+          
+          if [ -n "$SCHEMA_CHANGES" ]; then
+            echo "⚠️  Schema or proto files changed - skipping automatic go.mod update"
+            echo "should_update=false" >> $GITHUB_OUTPUT
+          else
+            echo "✅ No schema or proto changes detected"
+            echo "should_update=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Go
+        if: steps.check-schema.outputs.should_update == 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+
+      - name: Generate pseudo-version
+        if: steps.check-schema.outputs.should_update == 'true'
+        id: pseudo-version
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          SHORT_SHA=$(echo $HEAD_SHA | cut -c1-12)
+          TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S $HEAD_SHA)
+          PSEUDO_VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
+          
+          echo "version=$PSEUDO_VERSION" >> $GITHUB_OUTPUT
+          echo "short_sha=$SHORT_SHA" >> $GITHUB_OUTPUT
+          echo "📌 Pseudo-version: $PSEUDO_VERSION"
+
+      - name: Update go.mod for changed packages
+        if: steps.check-schema.outputs.should_update == 'true'
+        id: update-gomod
+        env:
+          PSEUDO_VERSION: ${{ steps.pseudo-version.outputs.version }}
+          PACKAGES: ${{ needs.detect-changes.outputs.packages }}
+        run: |
+          cd packages/i18nify-go
+          
+          echo "🔄 Updating go.mod for packages: $PACKAGES"
+          
+          # Convert JSON array to bash array
+          PACKAGE_LIST=$(echo "$PACKAGES" | jq -r '.[]' | tr '\n' ' ')
+          
+          for pkg in $PACKAGE_LIST; do
+            MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${pkg}"
+            
+            if ! grep -q "$MODULE_PATH" go.mod; then
+              echo "⚠️  Module $pkg not found in go.mod, skipping"
+              continue
+            fi
+            
+            echo "📦 Updating $pkg to $PSEUDO_VERSION..."
+            
+            # Remove old replace directive
+            if grep -q "replace ${MODULE_PATH}" go.mod; then
+              go mod edit -dropreplace "${MODULE_PATH}"
+            fi
+            
+            # Update to pseudo-version
+            go mod edit -require "${MODULE_PATH}@${PSEUDO_VERSION}"
+            go mod edit -replace "${MODULE_PATH}=${MODULE_PATH}@${PSEUDO_VERSION}"
+          done
+          
+          if go mod tidy; then
+            echo "✅ go mod tidy completed"
+          else
+            echo "❌ go mod tidy failed"
+            exit 1
+          fi
+          
+          cd ../..
+          if [ -n "$(git status --porcelain packages/i18nify-go/go.mod packages/i18nify-go/go.sum)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push go.mod changes
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        env:
+          SHORT_SHA: ${{ steps.pseudo-version.outputs.short_sha }}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
+          git commit -m "chore(go): update dependencies to commit ${SHORT_SHA}" -m "Auto-updated by GitHub Actions"
+          
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+          echo "✅ Updated go.mod in PR"
+
+      - name: Comment on PR
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PSEUDO_VERSION: ${{ steps.pseudo-version.outputs.version }}
+          PACKAGES: ${{ needs.detect-changes.outputs.packages }}
+        run: |
+          EXISTING_COMMENT=$(gh pr view $PR_NUMBER --json comments --jq ".comments[] | select(.body | contains(\"go.mod updated\")) | .id" | head -1 || echo "")
+          
+          if [ -z "$EXISTING_COMMENT" ]; then
+            PACKAGE_LIST=$(echo "$PACKAGES" | jq -r '.[]' | tr '\n' ',' | sed 's/,$//')
+            
+            COMMENT="🤖 **Automated go.mod Update**"
+            COMMENT="${COMMENT}\n\nUpdated \`packages/i18nify-go/go.mod\` to reference this PR's latest commit."
+            COMMENT="${COMMENT}\n\n📦 **Packages:** \`${PACKAGE_LIST}\`"
+            COMMENT="${COMMENT}\n📌 **Version:** \`${PSEUDO_VERSION}\`"
+            
+            echo -e "$COMMENT" | gh pr comment $PR_NUMBER --body-file -
+            echo "✅ Added comment to PR"
+          fi
+
   debug-conditions:
     name: Debug - Show Condition Values
     runs-on: ubuntu-latest
@@ -306,13 +448,15 @@ jobs:
       - name: Show all condition values
         run: |
           echo "=== Debug Information ==="
-          echo "Branch: ${{ github.ref_name }}"
+          echo "Branch (ref_name): ${{ github.ref_name }}"
+          echo "Branch (ref): ${{ github.ref }}"
           echo "Event name: ${{ github.event_name }}"
           echo "Detected packages: ${{ needs.detect-changes.outputs.packages }}"
           echo "Generate-packages result: ${{ needs.generate-packages.result }}"
           echo ""
           echo "=== Condition Checks ==="
-          echo "Is master/test branch: ${{ github.ref_name == 'master' || github.ref_name == 'vt/adding-gh-action' || github.ref_name == 'pt/adding-gh-action' }}"
+          echo "Is master/test branch (old check): ${{ github.ref_name == 'master' || github.ref_name == 'vt/adding-gh-action' || github.ref_name == 'pt/adding-gh-action' }}"
+          echo "Contains 'adding-gh-action': ${{ contains(github.ref_name, 'adding-gh-action') }}"
           echo "Packages not empty: ${{ needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != '' }}"
           echo ""
           echo "=== Testing currency check ==="
@@ -335,7 +479,7 @@ jobs:
       always() &&
       !cancelled() &&
       (needs.generate-packages.result == 'success' || needs.generate-packages.result == 'skipped') &&
-      (github.ref_name == 'master' || github.ref_name == 'vt/adding-gh-action' || github.ref_name == 'pt/adding-gh-action') &&
+      (github.ref_name == 'master' || github.ref_name == 'vt/adding-gh-action' || github.ref_name == 'pt/adding-gh-action' || contains(github.ref_name, 'adding-gh-action')) &&
       contains(fromJson(needs.detect-changes.outputs.packages), 'currency')
     
     steps:
