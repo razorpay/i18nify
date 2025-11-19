@@ -381,14 +381,15 @@ jobs:
             
             echo "📦 Updating $pkg to $PSEUDO_VERSION..."
             
-            # Remove old replace directive
+            # Remove old replace directive if exists
             if grep -q "replace ${MODULE_PATH}" go.mod; then
               go mod edit -dropreplace "${MODULE_PATH}"
+              echo "  ✓ Removed old replace directive"
             fi
             
-            # Update to pseudo-version
+            # Update to pseudo-version (no replace directive)
             go mod edit -require "${MODULE_PATH}@${PSEUDO_VERSION}"
-            go mod edit -replace "${MODULE_PATH}=${MODULE_PATH}@${PSEUDO_VERSION}"
+            echo "  ✓ Updated require to ${PSEUDO_VERSION}"
           done
           
           if go mod tidy; then
