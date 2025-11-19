@@ -316,22 +316,24 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check for schema/proto changes
+      - name: Check for schema changes
         id: check-schema
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
-          echo "🔍 Checking for schema or proto file changes..."
+          echo "🔍 Checking for schema.json changes..."
           
           CHANGED_FILES=$(git diff --name-only $BASE_SHA $HEAD_SHA | grep "^i18nify-data/" || true)
-          SCHEMA_CHANGES=$(echo "$CHANGED_FILES" | grep -E "(schema\.json|\.proto)$" || true)
+          SCHEMA_CHANGES=$(echo "$CHANGED_FILES" | grep "schema\.json$" || true)
           
           if [ -n "$SCHEMA_CHANGES" ]; then
-            echo "⚠️  Schema or proto files changed - skipping automatic go.mod update"
+            echo "⚠️  schema.json files changed - skipping automatic go.mod update"
+            echo "Files changed:"
+            echo "$SCHEMA_CHANGES"
             echo "should_update=false" >> $GITHUB_OUTPUT
           else
-            echo "✅ No schema or proto changes detected"
+            echo "✅ No schema.json changes - will update go.mod"
             echo "should_update=true" >> $GITHUB_OUTPUT
           fi
 
@@ -438,203 +440,4 @@ jobs:
             echo -e "$COMMENT" | gh pr comment $PR_NUMBER --body-file -
             echo "✅ Added comment to PR"
           fi
-
-  debug-conditions:
-    name: Debug - Show Condition Values
-    runs-on: ubuntu-latest
-    needs: [detect-changes, generate-packages]
-    if: always()
-    steps:
-      - name: Show all condition values
-        run: |
-          echo "=== Debug Information ==="
-          echo "Branch (ref_name): ${{ github.ref_name }}"
-          echo "Branch (ref): ${{ github.ref }}"
-          echo "Event name: ${{ github.event_name }}"
-          echo "Detected packages: ${{ needs.detect-changes.outputs.packages }}"
-          echo "Generate-packages result: ${{ needs.generate-packages.result }}"
-          echo ""
-          echo "=== Condition Checks ==="
-          echo "Is master/test branch (old check): ${{ github.ref_name == 'master' || github.ref_name == 'vt/adding-gh-action' || github.ref_name == 'pt/adding-gh-action' }}"
-          echo "Contains 'adding-gh-action': ${{ contains(github.ref_name, 'adding-gh-action') }}"
-          echo "Packages not empty: ${{ needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != '' }}"
-          echo ""
-          echo "=== Testing currency check ==="
-          if [ '${{ needs.detect-changes.outputs.packages }}' = '[]' ] || [ '${{ needs.detect-changes.outputs.packages }}' = '' ]; then
-            echo "❌ No packages detected - that's why the job is skipped!"
-          elif echo '${{ needs.detect-changes.outputs.packages }}' | grep -q 'currency'; then
-            echo "✅ Currency detected in packages"
-          else
-            echo "❌ Currency NOT in detected packages"
-            echo "Detected: ${{ needs.detect-changes.outputs.packages }}"
-          fi
-
-  update-i18nify-go-dependencies:
-    name: Update i18nify-go Dependencies
-    runs-on: ubuntu-latest
-    needs: [detect-changes, generate-packages]
-    # Run on master and test branches when currency package is updated
-    # Run even if generate-packages was skipped, as long as currency was detected
-    if: |
-      always() &&
-      !cancelled() &&
-      (needs.generate-packages.result == 'success' || needs.generate-packages.result == 'skipped') &&
-      (github.ref_name == 'master' || github.ref_name == 'vt/adding-gh-action' || github.ref_name == 'pt/adding-gh-action' || contains(github.ref_name, 'adding-gh-action')) &&
-      contains(fromJson(needs.detect-changes.outputs.packages), 'currency')
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '1.20'
-
-      - name: Fetch latest tags
-        run: |
-          # Ensure we have all the latest tags from the previous job
-          git fetch --tags origin
-          echo "📥 Fetched latest tags from origin"
-
-      - name: Determine version context
-        id: version-context
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          REF_NAME: ${{ github.ref_name }}
-        run: |
-          if [ "$EVENT_NAME" = "pull_request" ]; then
-            echo "is_release=false" >> $GITHUB_OUTPUT
-            echo "context=pr" >> $GITHUB_OUTPUT
-            echo "identifier=$PR_NUMBER" >> $GITHUB_OUTPUT
-          elif [ "$REF_NAME" = "master" ] || [ "$REF_NAME" = "main" ]; then
-            echo "is_release=true" >> $GITHUB_OUTPUT
-            echo "context=release" >> $GITHUB_OUTPUT
-            echo "identifier=" >> $GITHUB_OUTPUT
-          else
-            echo "is_release=false" >> $GITHUB_OUTPUT
-            echo "context=branch" >> $GITHUB_OUTPUT
-            echo "identifier=$REF_NAME" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Get currency version
-        id: currency-version
-        env:
-          IS_RELEASE: ${{ steps.version-context.outputs.is_release }}
-          CONTEXT: ${{ steps.version-context.outputs.context }}
-          IDENTIFIER: ${{ steps.version-context.outputs.identifier }}
-        run: |
-          chmod +x .github/scripts/version-manager.sh
-          
-          if [ "$IS_RELEASE" = "true" ]; then
-            # For release/master: use git tags
-            VERSION=$(.github/scripts/version-manager.sh get-current currency)
-            echo "📦 Using release version from git tags: v$VERSION"
-            
-            if [ "$VERSION" = "0.0.0" ]; then
-              echo "⚠️  No release tags found yet. First release will be v0.0.1"
-              echo "Skipping dependency update until first release is tagged."
-              echo "has_version=false" >> $GITHUB_OUTPUT
-              exit 0
-            fi
-          else
-            # For PR/branch: generate beta version (same as generate-packages job did)
-            VERSION=$(.github/scripts/version-manager.sh generate-beta currency "$CONTEXT" "$IDENTIFIER")
-            echo "📦 Using beta version: v$VERSION"
-          fi
-          
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "has_version=true" >> $GITHUB_OUTPUT
-
-      - name: Check current dependency version
-        if: steps.currency-version.outputs.has_version == 'true'
-        id: current-dep-version
-        run: |
-          cd packages/i18nify-go
-          CURRENT=$(grep "github.com/razorpay/i18nify/i18nify-data/go/currency" go.mod | awk '{print $2}')
-          echo "current=$CURRENT" >> $GITHUB_OUTPUT
-          echo "📌 Current dependency version in i18nify-go: $CURRENT"
-
-      - name: Update i18nify-go dependencies
-        if: steps.currency-version.outputs.has_version == 'true'
-        id: update-deps
-        env:
-          NEW_VERSION: ${{ steps.currency-version.outputs.version }}
-          CURRENT_VERSION: ${{ steps.current-dep-version.outputs.current }}
-        run: |
-          echo "🔄 Updating from $CURRENT_VERSION to v$NEW_VERSION"
-          
-          chmod +x .github/scripts/update-i18nify-go-dependencies.sh
-          chmod +x .github/scripts/version-manager.sh
-          
-          # Temporarily set the version for the script to use
-          export FORCE_VERSION="$NEW_VERSION"
-          
-          if .github/scripts/update-i18nify-go-dependencies.sh currency; then
-            echo "✅ Update script completed successfully"
-          else
-            echo "❌ Update script failed!"
-            exit 1
-          fi
-
-      - name: Check for dependency changes
-        if: steps.currency-version.outputs.has_version == 'true'
-        id: check-dep-changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          echo "🔍 Checking for changes in go.mod and go.sum..."
-          git diff packages/i18nify-go/go.mod packages/i18nify-go/go.sum
-          
-          if [ -n "$(git status --porcelain packages/i18nify-go/go.mod packages/i18nify-go/go.sum)" ]; then
-            echo "✅ Changes detected!"
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-          else
-            echo "ℹ️  No changes detected - dependency is already at the correct version"
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Commit and push dependency update
-        if: steps.check-dep-changes.outputs.has_changes == 'true'
-        env:
-          CURRENCY_VERSION: ${{ steps.currency-version.outputs.version }}
-          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
-          git commit -m "chore: update currency dependency to v${CURRENCY_VERSION}"
-          
-          # Retry push up to 3 times in case of concurrent modifications
-          MAX_RETRIES=3
-          RETRY_COUNT=0
-          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-            # Pull latest changes and rebase our commit on top
-            git pull --rebase origin "$BRANCH_NAME" || {
-              echo "Failed to pull, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
-              RETRY_COUNT=$((RETRY_COUNT + 1))
-              sleep 2
-              continue
-            }
-            
-            # Try to push
-            if git push origin "$BRANCH_NAME"; then
-              echo "Successfully pushed dependency update to $BRANCH_NAME"
-              exit 0
-            else
-              echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
-              RETRY_COUNT=$((RETRY_COUNT + 1))
-              sleep 2
-            fi
-          done
-          
-          echo "Failed to push after $MAX_RETRIES attempts"
-          exit 1
 
