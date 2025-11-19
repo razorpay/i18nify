@@ -66,7 +66,17 @@ update_dependency() {
     # Check if dependency exists in go.mod
     if grep -q "$module_path" go.mod; then
         log_info "Updating ${package_name} to v${version}..."
+        
+        # Remove replace directive if it exists
+        if grep -q "replace ${module_path} =>" go.mod; then
+            log_info "Removing local replace directive for ${package_name}..."
+            go mod edit -dropreplace "${module_path}"
+        fi
+        
+        # Update to the tagged version
         go mod edit -require "${module_path}@v${version}"
+        
+        log_info "✅ Updated ${package_name} to use git tag v${version}"
     else
         log_warning "${package_name} not found in go.mod, skipping"
         return 0

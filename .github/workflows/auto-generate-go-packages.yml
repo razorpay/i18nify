@@ -351,29 +351,72 @@ jobs:
         with:
           go-version: '1.20'
 
-      - name: Update i18nify-go dependencies
-        id: update-deps
+      - name: Fetch latest tags
         run: |
-          chmod +x .github/scripts/update-i18nify-go-dependencies.sh
-          chmod +x .github/scripts/version-manager.sh
-          .github/scripts/update-i18nify-go-dependencies.sh currency
+          # Ensure we have all the latest tags from the previous job
+          git fetch --tags origin
+          echo "📥 Fetched latest tags from origin"
 
-      - name: Get updated currency version
+      - name: Get latest currency version
         id: currency-version
         run: |
           chmod +x .github/scripts/version-manager.sh
           VERSION=$(.github/scripts/version-manager.sh get-current currency)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "Updated currency version: v$VERSION"
+          echo "📦 Latest currency version from tags: v$VERSION"
+          
+          if [ "$VERSION" = "0.0.0" ]; then
+            echo "⚠️  WARNING: No currency tags found! Version is 0.0.0"
+            echo "This means no currency package has been released yet."
+            echo "Dependency update will be skipped."
+            echo "has_tag=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_tag=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check current dependency version
+        if: steps.currency-version.outputs.has_tag == 'true'
+        id: current-dep-version
+        run: |
+          cd packages/i18nify-go
+          CURRENT=$(grep "github.com/razorpay/i18nify/i18nify-data/go/currency" go.mod | awk '{print $2}')
+          echo "current=$CURRENT" >> $GITHUB_OUTPUT
+          echo "📌 Current dependency version in i18nify-go: $CURRENT"
+
+      - name: Update i18nify-go dependencies
+        if: steps.currency-version.outputs.has_tag == 'true'
+        id: update-deps
+        env:
+          NEW_VERSION: ${{ steps.currency-version.outputs.version }}
+          CURRENT_VERSION: ${{ steps.current-dep-version.outputs.current }}
+        run: |
+          echo "🔄 Updating from $CURRENT_VERSION to v$NEW_VERSION"
+          
+          chmod +x .github/scripts/update-i18nify-go-dependencies.sh
+          chmod +x .github/scripts/version-manager.sh
+          
+          if .github/scripts/update-i18nify-go-dependencies.sh currency; then
+            echo "✅ Update script completed successfully"
+          else
+            echo "❌ Update script failed!"
+            exit 1
+          fi
 
       - name: Check for dependency changes
+        if: steps.currency-version.outputs.has_tag == 'true'
         id: check-dep-changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          echo "🔍 Checking for changes in go.mod and go.sum..."
+          git diff packages/i18nify-go/go.mod packages/i18nify-go/go.sum
+          
           if [ -n "$(git status --porcelain packages/i18nify-go/go.mod packages/i18nify-go/go.sum)" ]; then
+            echo "✅ Changes detected!"
             echo "has_changes=true" >> $GITHUB_OUTPUT
           else
+            echo "ℹ️  No changes detected - dependency is already at the correct version"
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
