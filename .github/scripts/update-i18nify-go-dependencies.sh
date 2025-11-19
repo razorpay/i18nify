@@ -50,15 +50,20 @@ update_dependency() {
     
     log_info "Checking ${package_name} package..."
     
-    # Get the latest version
-    local version=$("$VERSION_MANAGER" get-current "$package_name")
+    # Get the version (use FORCE_VERSION if provided, otherwise query git tags)
+    local version
+    if [ -n "${FORCE_VERSION:-}" ]; then
+        version="$FORCE_VERSION"
+        log_info "Using provided version: v${version}"
+    else
+        version=$("$VERSION_MANAGER" get-current "$package_name")
+        log_info "Latest ${package_name} version from git tags: v${version}"
+    fi
     
     if [ "$version" = "0.0.0" ]; then
         log_warning "No version found for ${package_name}, skipping"
         return 0
     fi
-    
-    log_info "Latest ${package_name} version: v${version}"
     
     # Update the dependency in go.mod
     cd "$I18NIFY_GO_DIR"
