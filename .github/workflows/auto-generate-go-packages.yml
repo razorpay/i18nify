@@ -188,28 +188,6 @@ jobs:
             echo "branch=$REF_NAME" >> $GITHUB_OUTPUT
           fi
 
-      - name: Update package version
-        if: steps.check-changes.outputs.has_changes == 'true'
-        env:
-          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
-          VERSION: ${{ steps.version.outputs.version }}
-          IS_BETA: ${{ steps.version.outputs.is_beta }}
-        run: |
-          GO_MOD_FILE="i18nify-data/go/$PACKAGE_DIR/go.mod"
-          
-          if [ -f "$GO_MOD_FILE" ]; then
-            # Add version comment to go.mod
-            if [ "$IS_BETA" = "true" ]; then
-              echo "// Beta version: v$VERSION" > "${GO_MOD_FILE}.tmp"
-            else
-              echo "// Release version: v$VERSION" > "${GO_MOD_FILE}.tmp"
-            fi
-            cat "$GO_MOD_FILE" >> "${GO_MOD_FILE}.tmp"
-            mv "${GO_MOD_FILE}.tmp" "$GO_MOD_FILE"
-            
-            echo "Updated go.mod with version: v$VERSION"
-          fi
-
       - name: Commit and push changes (Beta)
         if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'true'
         env:

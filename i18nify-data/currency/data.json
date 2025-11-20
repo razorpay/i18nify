@@ -94,6 +94,7 @@
       "symbol": "EC$",
       "physical_currency_denominations": [
 
+        "2",
         "5",
         "10",
         "20",
