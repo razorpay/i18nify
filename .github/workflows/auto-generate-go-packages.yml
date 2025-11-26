@@ -276,7 +276,7 @@ jobs:
           exit 1
 
   update-go-mod-in-pr:
-    name: Update go.mod in PR
+    name: Update i18nify-go Dependencies
     runs-on: ubuntu-latest
     needs: [detect-changes, generate-packages]
     # Only run on pull requests when packages have changed
@@ -419,4 +419,186 @@ jobs:
             echo -e "$COMMENT" | gh pr comment $PR_NUMBER --body-file -
             echo "✅ Added comment to PR"
           fi
+
+  release-i18nify-go:
+    name: Release i18nify-go Package
+    runs-on: ubuntu-latest
+    needs: [detect-changes, generate-packages]
+    # Only run on push to master when packages have changed and releases were created
+    if: |
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/master' &&
+      needs.detect-changes.outputs.packages != '[]' &&
+      needs.detect-changes.outputs.packages != ''
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+      
+      - name: Get latest release tags for changed packages
+        id: get-tags
+        env:
+          PACKAGES: ${{ needs.detect-changes.outputs.packages }}
+        run: |
+          echo "📦 Getting latest release tags for changed packages..."
+          
+          # Fetch all tags
+          git fetch --tags origin
+          
+          # Convert JSON array to bash array
+          PACKAGE_LIST=$(echo "$PACKAGES" | jq -r '.[]' | tr '\n' ' ')
+          
+          # Build a JSON object with package -> tag mapping
+          TAGS_JSON="{"
+          FIRST=true
+          
+          for pkg in $PACKAGE_LIST; do
+            TAG_PREFIX="go-${pkg}"
+            LATEST_TAG=$(git tag -l "${TAG_PREFIX}-v*" --sort=-version:refname | head -n 1 || echo "")
+            
+            if [ -z "$LATEST_TAG" ]; then
+              echo "⚠️  No tag found for $pkg, skipping"
+              continue
+            fi
+            
+            # Extract version from tag (e.g., go-currency-v1.2.3 -> 1.2.3)
+            VERSION=$(echo "$LATEST_TAG" | sed "s/${TAG_PREFIX}-v//")
+            
+            echo "  ✓ $pkg -> $LATEST_TAG (v$VERSION)"
+            
+            if [ "$FIRST" = true ]; then
+              FIRST=false
+            else
+              TAGS_JSON="${TAGS_JSON},"
+            fi
+            TAGS_JSON="${TAGS_JSON}\"${pkg}\":\"${VERSION}\""
+          done
+          
+          TAGS_JSON="${TAGS_JSON}}"
+          echo "tags=$TAGS_JSON" >> $GITHUB_OUTPUT
+          echo "📋 Tags JSON: $TAGS_JSON"
+      
+      - name: Update i18nify-go dependencies to release versions
+        id: update-gomod
+        env:
+          TAGS_JSON: ${{ steps.get-tags.outputs.tags }}
+        run: |
+          cd packages/i18nify-go
+          
+          echo "🔄 Updating i18nify-go/go.mod with release versions..."
+          
+          # Check if there are any tags to process
+          if [ "$TAGS_JSON" = "{}" ]; then
+            echo "⚠️  No release tags found, skipping update"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Parse the tags JSON and update each package
+          echo "$TAGS_JSON" | jq -r 'to_entries | .[] | "\(.key) \(.value)"' | while read pkg version; do
+            MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${pkg}"
+            
+            if ! grep -q "$MODULE_PATH" go.mod; then
+              echo "⚠️  Module $pkg not found in go.mod, skipping"
+              continue
+            fi
+            
+            echo "📦 Updating $pkg to v$version..."
+            
+            # Remove old replace directive if exists
+            if grep -q "replace ${MODULE_PATH}" go.mod; then
+              go mod edit -dropreplace "${MODULE_PATH}"
+              echo "  ✓ Removed old replace directive"
+            fi
+            
+            # Update to release version
+            go mod edit -require "${MODULE_PATH}@v${version}"
+            echo "  ✓ Updated require to v${version}"
+          done
+          
+          if go mod tidy; then
+            echo "✅ go mod tidy completed"
+          else
+            echo "❌ go mod tidy failed"
+            exit 1
+          fi
+          
+          # Check if there are changes
+          if [ -n "$(git status --porcelain go.mod go.sum)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "✅ Changes detected in go.mod"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️  No changes needed"
+          fi
+      
+      - name: Get current i18nify-go version
+        id: current-version
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        run: |
+          # Get the latest i18nify-go tag
+          LATEST_TAG=$(git tag -l "i18nify-go-v*" --sort=-version:refname | head -n 1 || echo "")
+          
+          if [ -z "$LATEST_TAG" ]; then
+            echo "version=0.0.0" >> $GITHUB_OUTPUT
+            echo "📌 No existing tags, starting from v0.0.0"
+          else
+            VERSION=$(echo "$LATEST_TAG" | sed 's/i18nify-go-v//')
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "📌 Current version: v$VERSION"
+          fi
+      
+      - name: Bump i18nify-go version (minor)
+        id: new-version
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        env:
+          CURRENT_VERSION: ${{ steps.current-version.outputs.version }}
+        run: |
+          # Parse version (assuming semver: major.minor.patch)
+          IFS='.' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
+          MAJOR="${VERSION_PARTS[0]}"
+          MINOR="${VERSION_PARTS[1]}"
+          PATCH="${VERSION_PARTS[2]:-0}"
+          
+          # Bump minor version, reset patch
+          NEW_MINOR=$((MINOR + 1))
+          NEW_VERSION="${MAJOR}.${NEW_MINOR}.0"
+          
+          echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "🆙 Bumped version: v$CURRENT_VERSION -> v$NEW_VERSION"
+      
+      - name: Commit and push i18nify-go update
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        env:
+          NEW_VERSION: ${{ steps.new-version.outputs.version }}
+          TAGS_JSON: ${{ steps.get-tags.outputs.tags }}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Get package list for commit message
+          PACKAGE_LIST=$(echo "$TAGS_JSON" | jq -r 'keys | join(", ")')
+          
+          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
+          git commit -m "chore(i18nify-go): update dependencies to release versions" \
+                     -m "Updated packages: $PACKAGE_LIST" \
+                     -m "Auto-updated by GitHub Actions"
+          
+          # Create i18nify-go release tag
+          NEW_TAG="i18nify-go-v${NEW_VERSION}"
+          git tag -a "$NEW_TAG" -m "Release i18nify-go v${NEW_VERSION}"
+          
+          # Push commit and tag using GitHub App token (bypasses branch protection)
+          git push origin master
+          git push origin "$NEW_TAG"
+          
+          echo "✅ Pushed commit and created tag: $NEW_TAG"
 

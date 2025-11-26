@@ -27,18 +27,18 @@ log_warning() {
 # Get current version from git tags for a specific package
 get_current_version() {
     local package_name="$1"
-    local tag_prefix="go-${package_name}"
+    local tag_prefix="${package_name}/v"
     
-    # Get the latest tag for this package
-    local latest_tag=$(git tag -l "${tag_prefix}-v*" --sort=-version:refname | head -n 1 || echo "")
+    # Get the latest tag for this package (e.g., currency/v1.2.3)
+    local latest_tag=$(git tag -l "${tag_prefix}*" --sort=-version:refname | head -n 1 || echo "")
     
     if [ -z "$latest_tag" ]; then
         echo "0.0.0"
         return
     fi
     
-    # Extract version from tag (e.g., go-currency-v1.2.3 -> 1.2.3)
-    echo "$latest_tag" | sed "s/${tag_prefix}-v//"
+    # Extract version from tag (e.g., currency/v1.2.3 -> 1.2.3)
+    echo "$latest_tag" | sed "s|${tag_prefix}||"
 }
 
 # Increment version based on change type
@@ -197,7 +197,7 @@ main() {
                 exit 1
             fi
             
-            local tag="go-${package_name}-v${version}"
+            local tag="${package_name}/v${version}"
             
             if git rev-parse "$tag" >/dev/null 2>&1; then
                 log_warning "Tag $tag already exists" >&2
@@ -254,8 +254,8 @@ ${GREEN}Version Format:${NC}
   Beta:    v1.2.3-beta.pr123
 
 ${GREEN}Tag Format:${NC}
-  go-<package>-v<version>
-  Example: go-currency-v1.2.3
+  <package>/v<version>
+  Example: currency/v1.2.3
 EOF
             ;;
     esac
