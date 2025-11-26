@@ -9,8 +9,6 @@ on:
   push:
     branches:
       - master
-      - pt/adding-gh-action
-      - vt/adding-gh-action
     paths:
       - 'i18nify-data/**'
 
