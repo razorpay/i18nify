@@ -188,50 +188,50 @@ jobs:
             echo "branch=$REF_NAME" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push changes (Beta)
-        if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'true'
-        env:
-          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
-          BRANCH_NAME: ${{ steps.branch.outputs.branch }}
-          PACKAGE_NAME: ${{ matrix.package }}
-          VERSION: ${{ steps.version.outputs.version }}
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
+      # - name: Commit and push changes (Beta)
+      #   if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'true'
+      #   env:
+      #     PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+      #     BRANCH_NAME: ${{ steps.branch.outputs.branch }}
+      #     PACKAGE_NAME: ${{ matrix.package }}
+      #     VERSION: ${{ steps.version.outputs.version }}
+      #   run: |
+      #     git config --local user.email "action@github.com"
+      #     git config --local user.name "GitHub Action"
+      #     git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
 
-          git add "i18nify-data/go/$PACKAGE_DIR"
-          git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package" || exit 0
+      #     git add "i18nify-data/go/$PACKAGE_DIR"
+      #     git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package" || exit 0
           
-          # Retry push up to 3 times in case of concurrent modifications
-          MAX_RETRIES=3
-          RETRY_COUNT=0
-          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-            # Pull latest changes and rebase our commit on top
-            git pull --rebase origin "$BRANCH_NAME" || {
-              echo "Failed to pull, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
-              RETRY_COUNT=$((RETRY_COUNT + 1))
-              sleep 2
-              continue
-            }
+      #     # Retry push up to 3 times in case of concurrent modifications
+      #     MAX_RETRIES=3
+      #     RETRY_COUNT=0
+      #     while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+      #       # Pull latest changes and rebase our commit on top
+      #       git pull --rebase origin "$BRANCH_NAME" || {
+      #         echo "Failed to pull, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+      #         RETRY_COUNT=$((RETRY_COUNT + 1))
+      #         sleep 2
+      #         continue
+      #       }
             
-            # Try to push
-            if git push origin "$BRANCH_NAME"; then
-              echo "Successfully pushed changes"
-              exit 0
-            else
-              echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
-              RETRY_COUNT=$((RETRY_COUNT + 1))
-              sleep 2
-            fi
-          done
+      #       # Try to push
+      #       if git push origin "$BRANCH_NAME"; then
+      #         echo "Successfully pushed changes"
+      #         exit 0
+      #       else
+      #         echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+      #         RETRY_COUNT=$((RETRY_COUNT + 1))
+      #         sleep 2
+      #       fi
+      #     done
           
-          echo "Failed to push after $MAX_RETRIES attempts"
-          exit 1
+      #     echo "Failed to push after $MAX_RETRIES attempts"
+      #     exit 1
 
       - name: Commit, tag and push (Release)
         id: release-commit
-        if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'false'
+        # if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'false'
         env:
           PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
           BRANCH_NAME: ${{ steps.branch.outputs.branch }}
