@@ -439,15 +439,15 @@ jobs:
           FIRST=true
           
           for pkg in $PACKAGE_LIST; do
-            TAG_PREFIX="go-${pkg}"
-            LATEST_TAG=$(git tag -l "${TAG_PREFIX}-v*" --sort=-version:refname | head -n 1 || echo "")
+            TAG_PREFIX="${pkg}"
+            LATEST_TAG=$(git tag -l "${TAG_PREFIX}/v*" --sort=-version:refname | head -n 1 || echo "")
             
             if [ -z "$LATEST_TAG" ]; then
               continue
             fi
             
-            # Extract version from tag (e.g., go-currency-v1.2.3 -> 1.2.3)
-            VERSION=$(echo "$LATEST_TAG" | sed "s/${TAG_PREFIX}-v//")
+            # Extract version from tag (e.g., currency/v1.2.3 -> 1.2.3)
+            VERSION=$(echo "$LATEST_TAG" | sed "s|${TAG_PREFIX}/v||")
             
             if [ "$FIRST" = true ]; then
               FIRST=false
