@@ -85,7 +85,7 @@ jobs:
             echo "is_release=false" >> $GITHUB_OUTPUT
             echo "context=pr" >> $GITHUB_OUTPUT
             echo "identifier=$PR_NUMBER" >> $GITHUB_OUTPUT
-          elif [ "$REF_NAME" = "master" ] || [ "$REF_NAME" = "main" ]; then
+          elif [ "$REF_NAME" = "master" ]; then
             echo "is_release=true" >> $GITHUB_OUTPUT
             echo "context=release" >> $GITHUB_OUTPUT
             echo "identifier=" >> $GITHUB_OUTPUT
@@ -403,7 +403,7 @@ jobs:
     # Only run on push to master when packages have changed and releases were created
     if: |
       github.event_name == 'push' &&
-      github.ref == 'refs/heads/master' &&
+      github.ref == 'refs/heads/vt/adding-gh-action' &&
       needs.detect-changes.outputs.packages != '[]' &&
       needs.detect-changes.outputs.packages != ''
     
@@ -498,12 +498,12 @@ jobs:
         id: current-version
         if: steps.update-gomod.outputs.has_changes == 'true'
         run: |
-          LATEST_TAG=$(git tag -l "i18nify-go-v*" --sort=-version:refname | head -n 1 || echo "")
+          LATEST_TAG=$(git tag -l "v*" --sort=-version:refname | grep -v "go-" | head -n 1 || echo "")
           
           if [ -z "$LATEST_TAG" ]; then
             echo "version=0.0.0" >> $GITHUB_OUTPUT
           else
-            VERSION=$(echo "$LATEST_TAG" | sed 's/i18nify-go-v//')
+            VERSION=$(echo "$LATEST_TAG" | sed 's/^v//')
             echo "version=$VERSION" >> $GITHUB_OUTPUT
           fi
       
@@ -542,9 +542,9 @@ jobs:
                      -m "Updated packages: $PACKAGE_LIST" \
                      -m "Auto-updated by GitHub Actions"
           
-          # Create i18nify-go release tag
-          NEW_TAG="i18nify-go-v${NEW_VERSION}"
-          git tag -a "$NEW_TAG" -m "Release i18nify-go v${NEW_VERSION}"
+          # Create release tag
+          NEW_TAG="v${NEW_VERSION}-beta"
+          git tag -a "$NEW_TAG" -m "Release v${NEW_VERSION}"
           
           # Push commit and tag
           git push origin master
