@@ -3,7 +3,7 @@ module github.com/razorpay/i18nify/packages/i18nify-go
 go 1.20
 
 require (
-	github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20251127035358-81c1495dae6a
+	github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20251127053130-baebc48ae9ef
 	github.com/stretchr/testify v1.9.0
 )
 
