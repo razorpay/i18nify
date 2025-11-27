@@ -1,11 +1,10 @@
-name: (i18nify-go) Unit Tests[V1]
+name: (i18nify-go) Unit Tests
 
 on:
   pull_request:
   push:
     branches:
       - master
-      - main
 
 jobs:
   # JOB to detect which modules changed
