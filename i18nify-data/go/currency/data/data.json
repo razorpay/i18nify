@@ -82,6 +82,8 @@
       "minor_unit": "2",
       "symbol": "Kz",
       "physical_currency_denominations": [
+        "100",
+        "200",
         "500",
         "1000",
         "2000",
