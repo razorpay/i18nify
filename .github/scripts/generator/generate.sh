@@ -13,7 +13,7 @@ NC='\033[0m' # No Color
 
 # Logging functions
 log_info() {
-    echo -e "${GREEN}[INFO]${NC} $1"
+    echo -e "${GREEN}[INFO]${NC} $1" >&2
 }
 
 log_error() {
@@ -21,7 +21,7 @@ log_error() {
 }
 
 log_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
+    echo -e "${YELLOW}[WARNING]${NC} $1" >&2
 }
 
 # Check dependencies
@@ -243,7 +243,6 @@ main() {
     
     # Create temporary directory for generation
     mkdir -p "$dist_dir"
-    echo "$dist_dir" # Output the temp directory path for workflow consumption
     
     # Run protoc FIRST if needed (before generating data loader that references the struct)
     if [ "$HAS_PROTO" == "true" ]; then
@@ -267,6 +266,9 @@ main() {
     run_serialization_test "$dist_dir"
     
     log_info "$package_name micro-package generated successfully at $dist_dir"
+    
+    # Output the temp directory path to stdout (for workflow consumption)
+    echo "$dist_dir"
 }
 
 # Run main function with all arguments

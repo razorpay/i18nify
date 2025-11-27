@@ -73,10 +73,12 @@ if ! command -v jq &> /dev/null; then
 fi
 
 echo "[$PACKAGE_NAME] Running generator"
-OUTPUT_DIR=$("$GENERATOR_SCRIPT" "$CONFIG_FILE" | tail -1)
+# Capture stdout (last line is the temp directory path), stderr goes to console
+OUTPUT_DIR=$("$GENERATOR_SCRIPT" "$CONFIG_FILE" 2>&1 | tail -1)
 
 if [ -z "$OUTPUT_DIR" ] || [ ! -d "$OUTPUT_DIR" ]; then
     echo "Error: Generator did not produce output directory"
+    echo "Got: $OUTPUT_DIR"
     exit 1
 fi
 
