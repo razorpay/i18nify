@@ -552,6 +552,6 @@ jobs:
           git tag -a "$NEW_TAG" -m "Release v${NEW_VERSION}"
           
           # Push commit and tag
-          git push origin master
+          git push origin vt/adding-gh-action
           git push origin "$NEW_TAG"
 
