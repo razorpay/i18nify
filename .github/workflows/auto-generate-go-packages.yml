@@ -12,6 +12,10 @@ on:
     paths:
       - 'i18nify-data/**'
 
+concurrency:
+  group: auto-generate-go-packages-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   detect-changes:
     name: Detect Package Changes
@@ -400,13 +404,13 @@ jobs:
   release-i18nify-go:
     name: Release i18nify-go Package
     runs-on: ubuntu-latest
-    needs: [detect-changes, generate-packages]
+    needs: [detect-changes, generate-packages, update-go-mod-in-pr]
     # Only run on push to master when packages have changed and releases were created
-    if: |
-      github.event_name == 'push' &&
-      github.ref == 'refs/heads/master' &&
-      needs.detect-changes.outputs.packages != '[]' &&
-      needs.detect-changes.outputs.packages != ''
+    # if: |
+    #   github.event_name == 'push' &&
+    #   github.ref == 'refs/heads/master' &&
+    #   needs.detect-changes.outputs.packages != '[]' &&
+    #   needs.detect-changes.outputs.packages != ''
     
     steps:
       - name: Checkout repository
@@ -544,7 +548,7 @@ jobs:
                      -m "Auto-updated by GitHub Actions"
           
           # Create release tag
-          NEW_TAG="v${NEW_VERSION}"
+          NEW_TAG="v${NEW_VERSION}-beta"
           git tag -a "$NEW_TAG" -m "Release v${NEW_VERSION}"
           
           # Push commit and tag
