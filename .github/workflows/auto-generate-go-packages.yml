@@ -366,6 +366,7 @@ jobs:
         if: steps.update-gomod.outputs.has_changes == 'true'
         env:
           SHORT_SHA: ${{ steps.pseudo-version.outputs.short_sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -373,7 +374,7 @@ jobs:
           git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
           git commit -m "chore(go): update dependencies to commit ${SHORT_SHA}" -m "Auto-updated by GitHub Actions"
           
-          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+          git push origin HEAD:"$HEAD_REF"
 
       - name: Comment on PR
         if: steps.update-gomod.outputs.has_changes == 'true'
