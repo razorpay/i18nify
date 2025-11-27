@@ -72,13 +72,15 @@ if ! command -v jq &> /dev/null; then
     exit 1
 fi
 
-echo "[$PACKAGE_NAME] Cleaning dist/"
-rm -rf "$PACKAGE_DIR/dist"
-mkdir -p "$PACKAGE_DIR/dist"
-
 echo "[$PACKAGE_NAME] Running generator"
-"$GENERATOR_SCRIPT" "$CONFIG_FILE"
+OUTPUT_DIR=$("$GENERATOR_SCRIPT" "$CONFIG_FILE" | tail -1)
 
-echo "[$PACKAGE_NAME] Done. Output at $PACKAGE_DIR/dist/$PACKAGE_NAME"
+if [ -z "$OUTPUT_DIR" ] || [ ! -d "$OUTPUT_DIR" ]; then
+    echo "Error: Generator did not produce output directory"
+    exit 1
+fi
+
+echo "[$PACKAGE_NAME] Done. Generated files at $OUTPUT_DIR"
+echo "$OUTPUT_DIR"  # Output the path for workflow consumption
 
 

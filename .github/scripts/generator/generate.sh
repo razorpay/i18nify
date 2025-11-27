@@ -231,7 +231,8 @@ main() {
     fi
     
     # Set up directories and files
-    local dist_dir="$base_dir/dist/$PACKAGE_NAME"
+    # Use /tmp for temporary generation to avoid cluttering source tree
+    local dist_dir="/tmp/i18nify-gen-$PACKAGE_NAME-$$"
     local data_file="$base_dir/data.json"
     local proto_dir="$base_dir/proto"
     
@@ -240,8 +241,9 @@ main() {
         exit 1
     fi
     
-    # Create dist directory
+    # Create temporary directory for generation
     mkdir -p "$dist_dir"
+    echo "$dist_dir" # Output the temp directory path for workflow consumption
     
     # Run protoc FIRST if needed (before generating data loader that references the struct)
     if [ "$HAS_PROTO" == "true" ]; then
@@ -264,7 +266,7 @@ main() {
     # Mandatory: Run serialization/deserialization test
     run_serialization_test "$dist_dir"
     
-    log_info "$package_name micro-package generated successfully."
+    log_info "$package_name micro-package generated successfully at $dist_dir"
 }
 
 # Run main function with all arguments
