@@ -104,7 +104,7 @@ main() {
         log_info "Updating all dependencies..."
         
         # List of known data packages
-        local packages=("currency")
+        local packages=("currency" "phone-number")
         
         for pkg in "${packages[@]}"; do
             update_dependency "$pkg"

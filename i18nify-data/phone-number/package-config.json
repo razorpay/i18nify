@@ -1,0 +1,12 @@
+{
+  "package_name": "phonenumber",
+  "struct_name": "CountryTeleInformation",
+  "root_json_key": "country_tele_information",
+  "root_field_name": "CountryTeleInformation",
+  "data_context": "phone-number",
+  "module_path": "github.com/razorpay/i18nify/i18nify-data/go/phone-number",
+  "has_proto": true,
+  "proto_file": "phone-number.proto",
+  "data_file": "country-code-to-phone-number/data.json"
+}
+

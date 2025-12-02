@@ -61,6 +61,7 @@ load_config() {
     MODULE_PATH=$(jq -r '.module_path' "$config_path")
     HAS_PROTO=$(jq -r '.has_proto' "$config_path")
     PROTO_FILE=$(jq -r '.proto_file // ""' "$config_path")
+    DATA_FILE=$(jq -r '.data_file // "data.json"' "$config_path")
     
     # Validate required fields
     if [ "$PACKAGE_NAME" == "null" ] || [ -z "$PACKAGE_NAME" ]; then
@@ -233,7 +234,8 @@ main() {
     # Set up directories and files
     # Use /tmp for temporary generation to avoid cluttering source tree
     local dist_dir="/tmp/i18nify-gen-$PACKAGE_NAME-$$"
-    local data_file="$base_dir/data.json"
+    # Use DATA_FILE from config (defaults to "data.json" if not specified)
+    local data_file="$base_dir/$DATA_FILE"
     local proto_dir="$base_dir/proto"
     
     if [ ! -f "$data_file" ]; then

@@ -58,6 +58,17 @@ Generates Go packages from i18nify-data source files. Handles protobuf compilati
 - `protoc` and `protoc-gen-go` for packages with protobuf files
 - Package must have `package-config.json` in `i18nify-data/<package>/`
 
+**Package Configuration (`package-config.json`):**
+- `package_name`: Go package name (no hyphens, e.g., "phonenumber")
+- `struct_name`: Name of the struct type (e.g., "CountryTeleInformation")
+- `root_json_key`: Top-level JSON key in data file (e.g., "country_tele_information")
+- `root_field_name`: Go field name for root data (e.g., "CountryTeleInformation")
+- `data_context`: Context name for error messages (e.g., "phone-number")
+- `module_path`: Go module path (e.g., "github.com/razorpay/i18nify/i18nify-data/go/phone-number")
+- `has_proto`: Boolean, whether to use protobuf
+- `proto_file`: Proto file name (if `has_proto` is true)
+- `data_file`: (Optional) Path to data JSON file relative to package directory. Defaults to `"data.json"` if not specified.
+
 ### 3. `update-i18nify-go-dependencies.sh` ⚡ NEW
 
 Updates the `packages/i18nify-go` package to use the latest versions of i18nify-data Go packages.
@@ -77,6 +88,9 @@ Updates the `packages/i18nify-go` package to use the latest versions of i18nify-
 
 # Update only currency dependency
 ./update-i18nify-go-dependencies.sh currency
+
+# Update only phone-number dependency
+./update-i18nify-go-dependencies.sh phone-number
 ```
 
 **What it does:**
@@ -93,9 +107,11 @@ When you want to manually update dependencies:
 ```bash
 cd .github/scripts
 ./update-i18nify-go-dependencies.sh currency
+# or
+./update-i18nify-go-dependencies.sh phone-number
 cd ../../packages/i18nify-go
 git add go.mod go.sum
-git commit -m "chore: update currency dependency to vX.Y.Z"
+git commit -m "chore: update {package} dependency to vX.Y.Z"
 git push
 ```
 
@@ -123,9 +139,9 @@ Generates Go packages for changed data packages:
 
 #### 3. `update-i18nify-go-dependencies` ⚡ NEW
 Automatically updates `i18nify-go` package dependencies:
-- **Trigger:** Runs when currency package is updated on master branch
+- **Trigger:** Runs when currency or phone-number packages are updated on master branch
 - **Actions:**
-  - Gets latest currency version from git tags
+  - Gets latest package version from git tags
   - Updates `packages/i18nify-go/go.mod` with new version
   - Runs tests to verify compatibility
   - Commits and pushes changes to master
@@ -133,21 +149,21 @@ Automatically updates `i18nify-go` package dependencies:
 
 ### Dependency Update Flow
 
-When a currency data change is pushed to master:
+When a currency or phone-number data change is pushed to master:
 
 ```
-1. i18nify-data/currency/ modified
+1. i18nify-data/{package}/ modified (e.g., currency or phone-number)
    ↓
-2. detect-changes job detects currency changes
+2. detect-changes job detects package changes
    ↓
 3. generate-packages job:
-   - Generates new currency Go package
+   - Generates new {package} Go package
    - Creates version (e.g., v1.2.3)
-   - Commits to i18nify-data/go/currency/
-   - Creates tag: go-currency-v1.2.3
+   - Commits to i18nify-data/go/{package}/
+   - Creates tag: {package}/v1.2.3 (e.g., currency/v1.2.3 or phone-number/v1.2.3)
    ↓
-4. update-i18nify-go-dependencies job:
-   - Detects currency was updated
+4. release-i18nify-go job:
+   - Detects package was updated
    - Gets latest version (v1.2.3)
    - Updates packages/i18nify-go/go.mod
    - Runs tests

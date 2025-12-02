@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package phonenumber;
+option go_package = "./phonenumber";
+
+// CountryTeleInformation contains dial code, format, and regex for telephone numbers of a specific country.
+message CountryTeleInformation {
+  string dial_code = 1; // DialCode represents the international dialing code for the country.
+  string format = 2;    // Format represents the format of telephone numbers in the country.
+  string regex = 3;     // Regex represents the regular expression pattern for validating telephone numbers in the country.
+}
+
