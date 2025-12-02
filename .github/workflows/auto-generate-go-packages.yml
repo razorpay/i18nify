@@ -280,6 +280,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [detect-changes, generate-packages]
     # Only run on pull requests when packages have changed
+    # Note: generate-packages job may be skipped if no actual data changes,
+    # but we still need to check for actual data file changes in this job
     if: |
       github.event_name == 'pull_request' &&
       github.event.pull_request.head.repo.full_name == github.repository &&
@@ -294,21 +296,50 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check for schema changes
-        id: check-schema
+      - name: Check for actual data changes
+        id: check-data-changes
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
+          # Get all changed files in i18nify-data
           CHANGED_FILES=$(git diff --name-only $BASE_SHA $HEAD_SHA | grep "^i18nify-data/" || true)
-          SCHEMA_CHANGES=$(echo "$CHANGED_FILES" | grep "schema\.json$" || true)
           
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No changes in i18nify-data, skipping go.mod update"
+            echo "should_update=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check for schema changes (skip if schema changed)
+          SCHEMA_CHANGES=$(echo "$CHANGED_FILES" | grep "schema\.json$" || true)
           if [ -n "$SCHEMA_CHANGES" ]; then
             echo "Skipping go.mod update due to schema changes"
             echo "should_update=false" >> $GITHUB_OUTPUT
-          else
-            echo "should_update=true" >> $GITHUB_OUTPUT
+            exit 0
           fi
+          
+          # Check if only generated files changed (i18nify-data/go/**)
+          # If only generated files changed, skip the update
+          DATA_FILE_CHANGES=$(echo "$CHANGED_FILES" | grep -v "^i18nify-data/go/" || true)
+          
+          if [ -z "$DATA_FILE_CHANGES" ]; then
+            echo "Only generated files changed, no actual data changes. Skipping go.mod update"
+            echo "should_update=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check if actual data files changed (data.json, proto files, etc.)
+          ACTUAL_DATA_CHANGES=$(echo "$DATA_FILE_CHANGES" | grep -E "(data\.json|\.proto|package-config\.json)" || true)
+          
+          if [ -z "$ACTUAL_DATA_CHANGES" ]; then
+            echo "No actual data files changed (only config/metadata). Skipping go.mod update"
+            echo "should_update=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "Actual data files changed, proceeding with go.mod update"
+          echo "should_update=true" >> $GITHUB_OUTPUT
 
       - name: Set up Go
         if: steps.check-schema.outputs.should_update == 'true'
