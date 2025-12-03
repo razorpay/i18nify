@@ -351,13 +351,13 @@ jobs:
           echo "should_update=true" >> $GITHUB_OUTPUT
 
       - name: Set up Go
-        if: steps.check-schema.outputs.should_update == 'true'
+        if: steps.check-data-changes.outputs.should_update == 'true'
         uses: actions/setup-go@v5
         with:
           go-version: '1.20'
 
       - name: Generate pseudo-version
-        if: steps.check-schema.outputs.should_update == 'true'
+        if: steps.check-data-changes.outputs.should_update == 'true'
         id: pseudo-version
         env:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
@@ -370,7 +370,7 @@ jobs:
           echo "short_sha=$SHORT_SHA" >> $GITHUB_OUTPUT
 
       - name: Update go.mod for changed packages
-        if: steps.check-schema.outputs.should_update == 'true'
+        if: steps.check-data-changes.outputs.should_update == 'true'
         id: update-gomod
         env:
           PSEUDO_VERSION: ${{ steps.pseudo-version.outputs.version }}
