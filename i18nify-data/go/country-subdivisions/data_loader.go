@@ -40,47 +40,9 @@ func GetCountrySubdivisions(countryCode string) (*CountrySubdivisions, error) {
 		return nil, fmt.Errorf("failed to read embedded country subdivisions data for country %s: %w", countryCode, err)
 	}
 
-	// Use a temporary struct to handle the "region_name/district_name" JSON field
-	// since protobuf doesn't support special characters in JSON field names
-	type tempCity struct {
-		Name       string   `json:"name"`
-		RegionName string   `json:"region_name/district_name"`
-		Timezone   string   `json:"timezone"`
-		Zipcodes   []string `json:"zipcodes"`
-	}
-	type tempState struct {
-		Name   string              `json:"name"`
-		Cities map[string]tempCity `json:"cities"`
-	}
-	type tempSubdivisions struct {
-		CountryName string              `json:"country_name"`
-		States      map[string]tempState `json:"states"`
-	}
-
-	var tempData tempSubdivisions
-	if err := json.Unmarshal(jsonBytes, &tempData); err != nil {
+	var subdivisions CountrySubdivisions
+	if err := json.Unmarshal(jsonBytes, &subdivisions); err != nil {
 		return nil, fmt.Errorf("failed to parse embedded country subdivisions data for country %s: %w", countryCode, err)
-	}
-
-	// Convert temp struct to proto struct
-	subdivisions := CountrySubdivisions{
-		CountryName: tempData.CountryName,
-		States:      make(map[string]*State),
-	}
-	for stateCode, tempState := range tempData.States {
-		state := &State{
-			Name:   tempState.Name,
-			Cities: make(map[string]*City),
-		}
-		for cityName, tempCity := range tempState.Cities {
-			state.Cities[cityName] = &City{
-				Name:       tempCity.Name,
-				RegionName: tempCity.RegionName,
-				Timezone:   tempCity.Timezone,
-				Zipcodes:   tempCity.Zipcodes,
-			}
-		}
-		subdivisions.States[stateCode] = state
 	}
 
 	// Cache the result
