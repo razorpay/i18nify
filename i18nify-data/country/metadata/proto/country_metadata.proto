@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package country_metadata;
+option go_package = "./country_metadata";
+
+// MetadataInformation mirrors the structure inside metadata_information map.
+message MetadataInformation {
+  string alpha_3 = 1;
+  string continent_code = 2;
+  string continent_name = 3;
+  string country_name = 4;
+  repeated string supported_currency = 5;
+  string default_locale = 6;
+  string dial_code = 7;
+  string flag = 8;
+  map<string, Locale> locales = 9;
+  string numeric_code = 10;
+  string sovereignty = 11;
+  string timezone_of_capital = 12;
+  map<string, Timezone> timezones = 13;
+  string default_currency = 14;
+}
+
+// Locale represents a locale with its code and name.
+message Locale {
+  string name = 1;
+}
+
+// Timezone represents a timezone with its UTC offset.
+message Timezone {
+  string utc_offset = 1;
+}
+

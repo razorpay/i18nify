@@ -54,6 +54,8 @@ load_config() {
     
     # Parse JSON configuration using jq
     PACKAGE_NAME=$(jq -r '.package_name' "$config_path")
+    # Convert hyphens to underscores for Go package name (Go doesn't allow hyphens)
+    GO_PACKAGE_NAME=$(echo "$PACKAGE_NAME" | tr '-' '_')
     STRUCT_NAME=$(jq -r '.struct_name' "$config_path")
     ROOT_JSON_KEY=$(jq -r '.root_json_key' "$config_path")
     ROOT_FIELD_NAME=$(jq -r '.root_field_name' "$config_path")
@@ -117,18 +119,28 @@ generate_data_loader() {
     local dist_dir="$1"
     local data_file="$2"
     local template_file="$3"
+    local base_dir="$4"
     
     log_info "Generating data_loader.go..."
     
-    # Create data subdirectory and copy JSON file
+    # Create data subdirectory
     local data_dir="$dist_dir/data"
     mkdir -p "$data_dir"
-    cp "$data_file" "$data_dir/data.json"
+    
+    # For country-subdivisions, copy all JSON files; otherwise copy single data file
+    if [ "$PACKAGE_NAME" == "country-subdivisions" ]; then
+        log_info "Copying all country JSON files for country-subdivisions..."
+        # Copy all JSON files except schema.json and package-config.json
+        find "$base_dir" -maxdepth 1 -name "*.json" ! -name "schema.json" ! -name "package-config.json" -exec cp {} "$data_dir/" \;
+    else
+        # Copy single JSON file
+        cp "$data_file" "$data_dir/data.json"
+    fi
     
     # Generate Go file from template by replacing template variables
     local output_file="$dist_dir/data_loader.go"
     
-    sed -e "s/{{\.PackageName}}/$PACKAGE_NAME/g" \
+    sed -e "s/{{\.PackageName}}/$GO_PACKAGE_NAME/g" \
         -e "s/{{\.StructName}}/$STRUCT_NAME/g" \
         -e "s/{{\.RootJSONKey}}/$ROOT_JSON_KEY/g" \
         -e "s/{{\.RootFieldName}}/$ROOT_FIELD_NAME/g" \
@@ -145,7 +157,7 @@ generate_data_loader_test() {
     
     local output_file="$dist_dir/data_loader_test.go"
     
-    sed -e "s/{{\.PackageName}}/$PACKAGE_NAME/g" \
+    sed -e "s/{{\.PackageName}}/$GO_PACKAGE_NAME/g" \
         -e "s/{{\.StructName}}/$STRUCT_NAME/g" \
         -e "s/{{\.RootJSONKey}}/$ROOT_JSON_KEY/g" \
         -e "s/{{\.RootFieldName}}/$ROOT_FIELD_NAME/g" \
@@ -218,8 +230,15 @@ main() {
     local generator_dir
     generator_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
     local template_dir="$generator_dir/templates"
-    local go_template="$template_dir/go.template"
-    local test_template="$template_dir/data_loader_test.template"
+    
+    # Use custom template for country-subdivisions, otherwise use default
+    if [ "$PACKAGE_NAME" == "country-subdivisions" ]; then
+        local go_template="$template_dir/go_subdivisions.template"
+        local test_template="$template_dir/data_loader_test_subdivisions.template"
+    else
+        local go_template="$template_dir/go.template"
+        local test_template="$template_dir/data_loader_test.template"
+    fi
     
     if [ ! -f "$go_template" ]; then
         log_error "Template file not found: $go_template"
@@ -238,9 +257,12 @@ main() {
     local data_file="$base_dir/$DATA_FILE"
     local proto_dir="$base_dir/proto"
     
-    if [ ! -f "$data_file" ]; then
-        log_error "Data file not found: $data_file"
-        exit 1
+    # For country-subdivisions, skip data file check as we'll copy all JSON files
+    if [ "$PACKAGE_NAME" != "country-subdivisions" ]; then
+        if [ ! -f "$data_file" ]; then
+            log_error "Data file not found: $data_file"
+            exit 1
+        fi
     fi
     
     # Create temporary directory for generation
@@ -256,7 +278,7 @@ main() {
     fi
     
     # Generate data loader (after proto is generated)
-    generate_data_loader "$dist_dir" "$data_file" "$go_template"
+    generate_data_loader "$dist_dir" "$data_file" "$go_template" "$base_dir"
     
     # Generate test
     generate_data_loader_test "$dist_dir" "$test_template"
@@ -265,7 +287,20 @@ main() {
     init_go_module "$dist_dir"
     
     # Mandatory: Run serialization/deserialization test
-    run_serialization_test "$dist_dir"
+    # Skip for country-subdivisions as it uses a different test function name
+    if [ "$PACKAGE_NAME" != "country-subdivisions" ]; then
+        run_serialization_test "$dist_dir"
+    else
+        log_info "Running country-subdivisions serialization test..."
+        (
+            cd "$dist_dir"
+            if ! go test -v -run TestGetCountrySubdivisions_SerializationDeserialization ./...; then
+                log_error "CRITICAL: Serialization/deserialization test failed. Package generation aborted."
+                exit 1
+            fi
+        )
+        log_info "✓ Serialization/deserialization test passed. Data integrity verified."
+    fi
     
     log_info "$package_name micro-package generated successfully at $dist_dir"
     
