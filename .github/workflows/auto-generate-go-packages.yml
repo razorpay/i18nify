@@ -83,12 +83,20 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          GITHUB_SHA: ${{ github.sha }}
           REF_NAME: ${{ github.ref_name }}
         run: |
           if [ "$EVENT_NAME" = "pull_request" ]; then
             echo "is_release=false" >> $GITHUB_OUTPUT
-            echo "context=pr" >> $GITHUB_OUTPUT
-            echo "identifier=$PR_NUMBER" >> $GITHUB_OUTPUT
+            echo "context=commit" >> $GITHUB_OUTPUT
+            # Use commit SHA instead of PR number for version identifier
+            # Use PR head SHA if available, otherwise fall back to github.sha
+            if [ -n "$PR_HEAD_SHA" ] && [ "$PR_HEAD_SHA" != "" ]; then
+              echo "identifier=$PR_HEAD_SHA" >> $GITHUB_OUTPUT
+            else
+              echo "identifier=$GITHUB_SHA" >> $GITHUB_OUTPUT
+            fi
           elif [ "$REF_NAME" = "master" ]; then
             echo "is_release=true" >> $GITHUB_OUTPUT
             echo "context=release" >> $GITHUB_OUTPUT
