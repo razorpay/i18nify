@@ -139,7 +139,7 @@ type City struct {
 	unknownFields protoimpl.UnknownFields
 
 	Name       string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	RegionName string   `protobuf:"bytes,2,opt,name=region_name,json=regionName,proto3" json:"region_name,omitempty"` // region_name/district_name
+	RegionName string   `protobuf:"bytes,2,opt,name=region_name,json=regionName,proto3" json:"region_name,omitempty"` // JSON field is "region_name/district_name" - handled in data_loader
 	Timezone   string   `protobuf:"bytes,3,opt,name=timezone,proto3" json:"timezone,omitempty"`
 	Zipcodes   []string `protobuf:"bytes,4,rep,name=zipcodes,proto3" json:"zipcodes,omitempty"`
 }
