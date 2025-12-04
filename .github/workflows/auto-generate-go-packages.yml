@@ -387,17 +387,20 @@ jobs:
           for pkg in $PACKAGE_LIST; do
             MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${pkg}"
             
+            # Check if package exists in go.mod
             if ! grep -q "$MODULE_PATH" go.mod; then
-              continue
+              echo "Package $pkg not found in go.mod, adding it..."
+              # Add the package if it doesn't exist
+              go mod edit -require "${MODULE_PATH}@${PSEUDO_VERSION}"
+            else
+              # Remove old replace directive if exists
+              if grep -q "replace ${MODULE_PATH}" go.mod; then
+                go mod edit -dropreplace "${MODULE_PATH}"
+              fi
+              
+              # Update to pseudo-version
+              go mod edit -require "${MODULE_PATH}@${PSEUDO_VERSION}"
             fi
-            
-            # Remove old replace directive if exists
-            if grep -q "replace ${MODULE_PATH}" go.mod; then
-              go mod edit -dropreplace "${MODULE_PATH}"
-            fi
-            
-            # Update to pseudo-version
-            go mod edit -require "${MODULE_PATH}@${PSEUDO_VERSION}"
           done
           
           go mod tidy
@@ -520,17 +523,20 @@ jobs:
           echo "$TAGS_JSON" | jq -r 'to_entries | .[] | "\(.key) \(.value)"' | while read pkg version; do
             MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${pkg}"
             
+            # Check if package exists in go.mod
             if ! grep -q "$MODULE_PATH" go.mod; then
-              continue
+              echo "Package $pkg not found in go.mod, adding it..."
+              # Add the package if it doesn't exist
+              go mod edit -require "${MODULE_PATH}@v${version}"
+            else
+              # Remove old replace directive if exists
+              if grep -q "replace ${MODULE_PATH}" go.mod; then
+                go mod edit -dropreplace "${MODULE_PATH}"
+              fi
+              
+              # Update to release version
+              go mod edit -require "${MODULE_PATH}@v${version}"
             fi
-            
-            # Remove old replace directive if exists
-            if grep -q "replace ${MODULE_PATH}" go.mod; then
-              go mod edit -dropreplace "${MODULE_PATH}"
-            fi
-            
-            # Update to release version
-            go mod edit -require "${MODULE_PATH}@v${version}"
           done
           
           go mod tidy
