@@ -2,36 +2,125 @@ name: (i18nify-go) Unit Tests
 
 on:
   pull_request:
+  push:
+    branches:
+      - master
 
 jobs:
-  # JOB to run change detection
-  check-if-i18nify-go:
+  # JOB to detect which modules changed
+  detect-changed-modules:
     runs-on: ubuntu-latest
     outputs:
-      modified: ${{ steps.filter.outputs.src }}
+      modules: ${{ steps.filter.outputs.changes }}
+      any_changed: ${{ steps.check.outputs.any_changed }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
       - uses: dorny/paths-filter@v3
         id: filter
         with:
           filters: |
-            src:
-              - 'packages/i18nify-go/**'
+            bankcodes:
+              - 'packages/i18nify-go/modules/bankcodes/**'
+            country_metadata:
+              - 'packages/i18nify-go/modules/country_metadata/**'
+            country_subdivisions:
+              - 'packages/i18nify-go/modules/country_subdivisions/**'
+            currency:
+              - 'packages/i18nify-go/modules/currency/**'
+            phonenumber:
+              - 'packages/i18nify-go/modules/phonenumber/**'
+            common:
+              - 'packages/i18nify-go/*.go'
+              - 'packages/i18nify-go/go.mod'
+              - 'packages/i18nify-go/go.sum'
+      
+      - name: Check if any modules changed
+        id: check
+        run: |
+          if [ "${{ steps.filter.outputs.changes }}" != "[]" ]; then
+            echo "any_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "any_changed=false" >> $GITHUB_OUTPUT
+          fi
 
-  run-test:
-    name: Run Unit Tests
+  run-module-tests:
+    name: Test Module - ${{ matrix.module }}
     runs-on: ubuntu-latest
-    needs: check-if-i18nify-go
+    needs: detect-changed-modules
     if: |
-      needs.check-if-i18nify-go.outputs.modified == 'true' && !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot') &&
-      !contains(github.event.head_commit.message, '[skip ci]')
+      needs.detect-changed-modules.outputs.any_changed == 'true' && 
+      !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot')
+    strategy:
+      matrix:
+        module: ${{ fromJson(needs.detect-changed-modules.outputs.modules) }}
+      fail-fast: false
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: '1.20'
-      - name: Run Unit Tests
+      
+      - name: Get module path
+        id: module-path
+        run: |
+          MODULE="${{ matrix.module }}"
+          
+          # Map module name to actual path
+          if [ "$MODULE" = "common" ]; then
+            echo "path=." >> $GITHUB_OUTPUT
+            echo "name=Common/Root" >> $GITHUB_OUTPUT
+          else
+            echo "path=modules/$MODULE" >> $GITHUB_OUTPUT
+            echo "name=$MODULE" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Run Tests for ${{ steps.module-path.outputs.name }}
         run: |
           cd $GITHUB_WORKSPACE/packages/i18nify-go
-          go test -v github.com/razorpay/i18nify/packages/i18nify-go/modules/...
+          MODULE_PATH="${{ steps.module-path.outputs.path }}"
+          
+          echo "📦 Testing module: ${{ steps.module-path.outputs.name }}"
+          echo "📂 Path: $MODULE_PATH"
+          echo ""
+          
+          if [ "$MODULE_PATH" = "." ]; then
+            # Test root level (common files)
+            go test -v -coverprofile=coverage.out ./...
+          else
+            # Test specific module
+            go test -v -coverprofile=coverage.out ./$MODULE_PATH/...
+          fi
+      
+      - name: Generate Coverage Report
+        if: always()
+        run: |
+          cd $GITHUB_WORKSPACE/packages/i18nify-go
+          
+          if [ -f coverage.out ]; then
+            echo "📊 Coverage Summary for ${{ steps.module-path.outputs.name }}:"
+            go tool cover -func=coverage.out | tail -1
+          fi
+
+  test-summary:
+    name: Test Summary
+    runs-on: ubuntu-latest
+    needs: [detect-changed-modules, run-module-tests]
+    if: always()
+    steps:
+      - name: Check test results
+        run: |
+          if [ "${{ needs.run-module-tests.result }}" = "success" ]; then
+            echo "✅ All module tests passed!"
+          elif [ "${{ needs.run-module-tests.result }}" = "skipped" ]; then
+            echo "ℹ️  No modules to test"
+          else
+            echo "❌ Some module tests failed"
+            exit 1
+          fi
