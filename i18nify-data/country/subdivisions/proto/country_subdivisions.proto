@@ -18,7 +18,7 @@ message State {
 // City contains information about a city.
 message City {
   string name = 1;
-  string region_name = 2; // region_name/district_name
+  string region_name = 2; // JSON field is "region_name/district_name" - handled in data_loader
   string timezone = 3;
   repeated string zipcodes = 4;
 }
