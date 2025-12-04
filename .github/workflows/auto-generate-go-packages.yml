@@ -181,9 +181,27 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          if [ -n "$(git status --porcelain i18nify-data/go/$PACKAGE_DIR)" ]; then
+          
+          DEST_DIR="i18nify-data/go/$PACKAGE_DIR"
+          
+          # Check if directory exists and has files
+          if [ ! -d "$DEST_DIR" ] || [ -z "$(ls -A "$DEST_DIR" 2>/dev/null)" ]; then
+            echo "Directory $DEST_DIR does not exist or is empty"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Add files to git staging to ensure they're tracked (including new files)
+          git add -A "$DEST_DIR" || true
+          
+          # Check for changes (including untracked, modified, and deleted files)
+          CHANGES=$(git status --porcelain "$DEST_DIR" 2>&1)
+          if [ -n "$CHANGES" ]; then
+            echo "Changes detected in $DEST_DIR:"
+            echo "$CHANGES"
             echo "has_changes=true" >> $GITHUB_OUTPUT
           else
+            echo "No changes detected in $DEST_DIR"
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
