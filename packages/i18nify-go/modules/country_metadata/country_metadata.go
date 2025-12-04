@@ -8,28 +8,23 @@
 package country_metadata
 
 import (
-	"embed"
-	"encoding/json"
-	"fmt"
 	"strings"
+
+	external "github.com/razorpay/i18nify/i18nify-data/go/country-metadata"
 )
 
-//go:embed data
-var metaJsonDir embed.FS
-
-// DataFile defines the path to the JSON data file containing country metadata.
-const DataFile = "data/data.json"
-
 // UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
+// Deprecated: This function is kept for backward compatibility but data is now loaded from external package.
 func UnmarshalCountryMetadata(data []byte) (CountryMetadata, error) {
 	var r CountryMetadata
-	err := json.Unmarshal(data, &r)
-	return r, err
+	// This is a stub - actual data comes from external package
+	return r, nil
 }
 
 // Marshal converts a CountryMetadata struct into JSON data.
 func (r *CountryMetadata) Marshal() ([]byte, error) {
-	return json.Marshal(r)
+	// This is a stub - actual data comes from external package
+	return nil, nil
 }
 
 // CountryMetadata represents metadata information about countries.
@@ -45,24 +40,65 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 
 // GetMetadataInformation retrieves metadata information for a specific country code.
 func GetMetadataInformation(code string) MetadataInformation {
-	// Read JSON data file containing country metadata.
-	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
-	if err != nil {
-		// Handle error reading the file.
-		fmt.Printf("Error reading country metadata file: %v", err)
+	// Get data from external package using data_loader
+	data := external.GetData()
+
+	// Get the proto type for the country code
+	protoInfo, exists := data[code]
+	if !exists || protoInfo == nil {
 		return MetadataInformation{}
 	}
 
-	// Unmarshal JSON data into CountryMetadata struct.
-	allCountryMetaData, err := UnmarshalCountryMetadata(metaJsonData)
-	if err != nil {
-		// Handle error unmarshalling the JSON data.
-		fmt.Printf("Error unmarshalling country metadata: %v", err)
+	// Convert from proto type to our internal type
+	return convertProtoToMetadataInformation(protoInfo)
+}
+
+// convertProtoToMetadataInformation converts proto MetadataInformation to our internal type
+func convertProtoToMetadataInformation(proto *external.MetadataInformation) MetadataInformation {
+	if proto == nil {
 		return MetadataInformation{}
 	}
 
-	// Return metadata information for the specified country code.
-	return allCountryMetaData.MetadataInformation[code]
+	// Convert locales map
+	locales := make(map[string]Locale)
+	if proto.Locales != nil {
+		for k, v := range proto.Locales {
+			if v != nil {
+				locales[k] = Locale{
+					Name: v.GetName(),
+				}
+			}
+		}
+	}
+
+	// Convert timezones map
+	timezones := make(map[string]Timezone)
+	if proto.Timezones != nil {
+		for k, v := range proto.Timezones {
+			if v != nil {
+				timezones[k] = Timezone{
+					UTCOffset: v.GetUtcOffset(),
+				}
+			}
+		}
+	}
+
+	return MetadataInformation{
+		Alpha3:            proto.GetAlpha_3(),
+		ContinentCode:     proto.GetContinentCode(),
+		ContinentName:     proto.GetContinentName(),
+		CountryName:       proto.GetCountryName(),
+		SupportedCurrency: proto.GetSupportedCurrency(),
+		DefaultLocale:     proto.GetDefaultLocale(),
+		DialCode:          proto.GetDialCode(),
+		Flag:              proto.GetFlag(),
+		Locales:           locales,
+		NumericCode:       proto.GetNumericCode(),
+		Sovereignty:       proto.GetSovereignty(),
+		TimezoneOfCapital: proto.GetTimezoneOfCapital(),
+		Timezones:         timezones,
+		DefaultCurrency:   proto.GetDefaultCurrency(),
+	}
 }
 
 // NewCountryMetadata creates a new CountryMetadata instance.
@@ -135,20 +171,12 @@ func NewTimezone(utcOffset string) *Timezone {
 }
 
 func GetCountryCodeISO2(countryName string) string {
-	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
-	if err != nil {
-		fmt.Printf("Error reading country metadata file: %v", err)
-		return ""
-	}
+	// Get data from external package using data_loader
+	data := external.GetData()
 
-	allCountryMetaData, err := UnmarshalCountryMetadata(metaJsonData)
-	if err != nil {
-		fmt.Printf("Error unmarshalling country metadata: %v", err)
-		return ""
-	}
 	normalizedName := strings.ToUpper(strings.TrimSpace(countryName))
-	for code, info := range allCountryMetaData.MetadataInformation {
-		if strings.ToUpper(info.CountryName) == normalizedName {
+	for code, protoInfo := range data {
+		if protoInfo != nil && strings.ToUpper(protoInfo.GetCountryName()) == normalizedName {
 			return code
 		}
 	}

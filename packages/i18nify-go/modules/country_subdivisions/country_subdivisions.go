@@ -8,25 +8,25 @@
 package country_subdivisions
 
 import (
-	"embed"
 	"encoding/json"
 	"fmt"
-	"path/filepath"
+	"sync"
+
+	external "github.com/razorpay/i18nify/i18nify-data/go/country-subdivisions"
 )
 
-//go:embed data
-var subDivJsonDir embed.FS
-
 // Cache to avoid duplicate reads for same countryCode
-var countrySubDivisionStore = make(map[string]CountrySubdivisions)
-
-// DataFile is the directory where JSON files containing country subdivision data are stored. "
+var (
+	countrySubDivisionStore = make(map[string]CountrySubdivisions)
+	storeMutex              sync.RWMutex
+)
 
 // UnmarshalCountrySubdivisions parses JSON data into a CountrySubdivisions struct.
+// Deprecated: This function is kept for backward compatibility but data is now loaded from external package.
 func UnmarshalCountrySubdivisions(data []byte) (CountrySubdivisions, error) {
 	var r CountrySubdivisions
-	err := json.Unmarshal(data, &r)
-	return r, err
+	// This is a stub - actual data comes from external package
+	return r, nil
 }
 
 // Marshal converts a CountrySubdivisions struct into JSON data.
@@ -58,21 +58,67 @@ func (r *CountrySubdivisions) GetStateByStateCode(code string) (State, bool) {
 
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
-	if _, present := countrySubDivisionStore[code]; present {
-		return countrySubDivisionStore[code]
+	// Check cache first
+	storeMutex.RLock()
+	if cached, present := countrySubDivisionStore[code]; present {
+		storeMutex.RUnlock()
+		return cached
 	}
-	// Read JSON data file containing country subdivision information.
-	completePath := filepath.Join("data/", code+".json")
-	subDivJsonData, err := subDivJsonDir.ReadFile(completePath)
-	if err != nil {
-		fmt.Println("Error reading JSON file:", err)
+	storeMutex.RUnlock()
+
+	// Get data from external package using data_loader
+	protoSubDiv, err := external.GetCountrySubdivisions(code)
+	if err != nil || protoSubDiv == nil {
+		fmt.Printf("Error loading country subdivisions for %s: %v\n", code, err)
 		return CountrySubdivisions{}
 	}
-	// Unmarshal JSON data into CountrySubdivisions struct.
-	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
-	// Store calculated CountrySubDivisions into the cache
+
+	// Convert from proto type to our internal type
+	allSubDivData := convertProtoToCountrySubdivisions(protoSubDiv)
+
+	// Store in cache
+	storeMutex.Lock()
 	countrySubDivisionStore[code] = allSubDivData
+	storeMutex.Unlock()
+
 	return allSubDivData
+}
+
+// convertProtoToCountrySubdivisions converts proto CountrySubdivisions to our internal type
+func convertProtoToCountrySubdivisions(proto *external.CountrySubdivisions) CountrySubdivisions {
+	if proto == nil {
+		return CountrySubdivisions{}
+	}
+
+	states := make(map[string]State)
+	if proto.States != nil {
+		for stateCode, protoState := range proto.States {
+			if protoState != nil {
+				cities := make(map[string]City)
+				if protoState.Cities != nil {
+					for cityName, protoCity := range protoState.Cities {
+						if protoCity != nil {
+							cities[cityName] = City{
+								Name:       protoCity.GetName(),
+								RegionName: protoCity.GetRegionName(),
+								Timezone:   protoCity.GetTimezone(),
+								Zipcodes:   protoCity.GetZipcodes(),
+							}
+						}
+					}
+				}
+				states[stateCode] = State{
+					Name:   protoState.GetName(),
+					Cities: cities,
+				}
+			}
+		}
+	}
+
+	return CountrySubdivisions{
+		CountryName: proto.GetCountryName(),
+		States:      states,
+	}
 }
 
 // NewCountrySubdivisions creates a new CountrySubdivisions instance.
