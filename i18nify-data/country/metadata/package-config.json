@@ -6,6 +6,7 @@
   "data_context": "country metadata",
   "module_path": "github.com/razorpay/i18nify/i18nify-data/go/country-metadata",
   "has_proto": true,
-  "proto_file": "country_metadata.proto"
+  "proto_file": "country_metadata.proto",
+  "dummy" : "true"
 }
 

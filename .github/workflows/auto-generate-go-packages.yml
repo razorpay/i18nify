@@ -123,10 +123,22 @@ jobs:
             echo "version_tag=v$VERSION" >> $GITHUB_OUTPUT
             echo "is_beta=false" >> $GITHUB_OUTPUT
           else
-            VERSION=$(.github/scripts/version-manager.sh generate-beta "$PACKAGE_NAME" "$CONTEXT" "$IDENTIFIER")
-            echo "version=$VERSION" >> $GITHUB_OUTPUT
-            echo "version_tag=v$VERSION" >> $GITHUB_OUTPUT
-            echo "is_beta=true" >> $GITHUB_OUTPUT
+            # For PRs, use Go pseudo-version format (timestamp-based) instead of beta format
+            if [ "$CONTEXT" = "commit" ]; then
+              # Generate pseudo-version: v0.0.0-TIMESTAMP-SHORTSHA
+              SHORT_SHA=$(echo "$IDENTIFIER" | cut -c1-12)
+              TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S "$IDENTIFIER" 2>/dev/null || TZ=UTC date +%Y%m%d%H%M%S)
+              VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
+              echo "version=$VERSION" >> $GITHUB_OUTPUT
+              echo "version_tag=$VERSION" >> $GITHUB_OUTPUT
+              echo "is_beta=true" >> $GITHUB_OUTPUT
+            else
+              # For branches, use beta format
+              VERSION=$(.github/scripts/version-manager.sh generate-beta "$PACKAGE_NAME" "$CONTEXT" "$IDENTIFIER")
+              echo "version=$VERSION" >> $GITHUB_OUTPUT
+              echo "version_tag=v$VERSION" >> $GITHUB_OUTPUT
+              echo "is_beta=true" >> $GITHUB_OUTPUT
+            fi
           fi
 
       - name: Generate ${{ matrix.package }} Go package
