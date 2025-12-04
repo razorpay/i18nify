@@ -137,21 +137,24 @@ jobs:
         env:
           PACKAGE_NAME: ${{ matrix.package }}
         run: |
-          CONFIG_FILE="i18nify-data/$PACKAGE_NAME/package-config.json"
-          if [ -f "$CONFIG_FILE" ]; then
-            # Extract directory name from module_path (e.g., github.com/.../go/phone-number -> phone-number)
-            MODULE_PATH=$(jq -r '.module_path // empty' "$CONFIG_FILE")
-            if [ -n "$MODULE_PATH" ] && [ "$MODULE_PATH" != "null" ]; then
-              # Extract the last part of the module path (after the last /)
-              PACKAGE_DIR=$(echo "$MODULE_PATH" | sed 's|.*/go/||')
-              echo "package_dir=$PACKAGE_DIR" >> $GITHUB_OUTPUT
-            else
-              # Fallback to package_name if module_path not found
-              PACKAGE_DIR=$(jq -r '.package_name // empty' "$CONFIG_FILE")
-              echo "package_dir=$PACKAGE_DIR" >> $GITHUB_OUTPUT
-            fi
+          # Find package-config.json file by searching for matching package_name
+          CONFIG_FILE=$(find i18nify-data -name "package-config.json" -type f | xargs grep -l "\"package_name\":\s*\"$PACKAGE_NAME\"" | head -1)
+          
+          if [ -z "$CONFIG_FILE" ] || [ ! -f "$CONFIG_FILE" ]; then
+            echo "Error: package-config.json not found for package: $PACKAGE_NAME"
+            exit 1
+          fi
+          
+          # Extract directory name from module_path (e.g., github.com/.../go/phone-number -> phone-number)
+          MODULE_PATH=$(jq -r '.module_path // empty' "$CONFIG_FILE")
+          if [ -n "$MODULE_PATH" ] && [ "$MODULE_PATH" != "null" ]; then
+            # Extract the last part of the module path (after the last /)
+            PACKAGE_DIR=$(echo "$MODULE_PATH" | sed 's|.*/go/||')
+            echo "package_dir=$PACKAGE_DIR" >> $GITHUB_OUTPUT
           else
-            echo "package_dir=$PACKAGE_NAME" >> $GITHUB_OUTPUT
+            # Fallback to package_name if module_path not found
+            PACKAGE_DIR=$(jq -r '.package_name // empty' "$CONFIG_FILE")
+            echo "package_dir=$PACKAGE_DIR" >> $GITHUB_OUTPUT
           fi
 
       - name: Copy generated package to final location

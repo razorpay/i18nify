@@ -64,6 +64,9 @@ load_config() {
     HAS_PROTO=$(jq -r '.has_proto' "$config_path")
     PROTO_FILE=$(jq -r '.proto_file // ""' "$config_path")
     DATA_FILE=$(jq -r '.data_file // "data.json"' "$config_path")
+    MULTIPLE_DATA_FILES=$(jq -r '.multiple_data_files // false' "$config_path")
+    CUSTOM_TEMPLATE=$(jq -r '.custom_template // ""' "$config_path")
+    CUSTOM_TEST_TEMPLATE=$(jq -r '.custom_test_template // ""' "$config_path")
     
     # Validate required fields
     if [ "$PACKAGE_NAME" == "null" ] || [ -z "$PACKAGE_NAME" ]; then
@@ -127,9 +130,9 @@ generate_data_loader() {
     local data_dir="$dist_dir/data"
     mkdir -p "$data_dir"
     
-    # For country-subdivisions, copy all JSON files; otherwise copy single data file
-    if [ "$PACKAGE_NAME" == "country-subdivisions" ]; then
-        log_info "Copying all country JSON files for country-subdivisions..."
+    # Copy data files based on configuration
+    if [ "$MULTIPLE_DATA_FILES" == "true" ]; then
+        log_info "Copying all JSON files (multiple_data_files=true)..."
         # Copy all JSON files except schema.json and package-config.json
         find "$base_dir" -maxdepth 1 -name "*.json" ! -name "schema.json" ! -name "package-config.json" -exec cp {} "$data_dir/" \;
     else
@@ -231,12 +234,16 @@ main() {
     generator_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
     local template_dir="$generator_dir/templates"
     
-    # Use custom template for country-subdivisions, otherwise use default
-    if [ "$PACKAGE_NAME" == "country-subdivisions" ]; then
-        local go_template="$template_dir/go_subdivisions.template"
-        local test_template="$template_dir/data_loader_test_subdivisions.template"
+    # Use custom templates if specified in config, otherwise use default
+    if [ -n "$CUSTOM_TEMPLATE" ] && [ "$CUSTOM_TEMPLATE" != "null" ]; then
+        local go_template="$template_dir/$CUSTOM_TEMPLATE"
     else
         local go_template="$template_dir/go.template"
+    fi
+    
+    if [ -n "$CUSTOM_TEST_TEMPLATE" ] && [ "$CUSTOM_TEST_TEMPLATE" != "null" ]; then
+        local test_template="$template_dir/$CUSTOM_TEST_TEMPLATE"
+    else
         local test_template="$template_dir/data_loader_test.template"
     fi
     
@@ -257,8 +264,8 @@ main() {
     local data_file="$base_dir/$DATA_FILE"
     local proto_dir="$base_dir/proto"
     
-    # For country-subdivisions, skip data file check as we'll copy all JSON files
-    if [ "$PACKAGE_NAME" != "country-subdivisions" ]; then
+    # Skip data file check if using multiple data files
+    if [ "$MULTIPLE_DATA_FILES" != "true" ]; then
         if [ ! -f "$data_file" ]; then
             log_error "Data file not found: $data_file"
             exit 1
@@ -287,19 +294,26 @@ main() {
     init_go_module "$dist_dir"
     
     # Mandatory: Run serialization/deserialization test
-    # Skip for country-subdivisions as it uses a different test function name
-    if [ "$PACKAGE_NAME" != "country-subdivisions" ]; then
-        run_serialization_test "$dist_dir"
-    else
-        log_info "Running country-subdivisions serialization test..."
+    # Use custom test function if custom test template is used, otherwise use default
+    if [ -n "$CUSTOM_TEST_TEMPLATE" ] && [ "$CUSTOM_TEST_TEMPLATE" != "null" ]; then
+        log_info "Running custom serialization test..."
         (
             cd "$dist_dir"
-            if ! go test -v -run TestGetCountrySubdivisions_SerializationDeserialization ./...; then
-                log_error "CRITICAL: Serialization/deserialization test failed. Package generation aborted."
+            # Try to find the test function name by grepping the test file
+            TEST_FUNC=$(grep -h "^func Test" data_loader_test.go | head -1 | sed 's/func //' | sed 's/(.*//' | tr -d ' ')
+            if [ -n "$TEST_FUNC" ]; then
+                if ! go test -v -run "$TEST_FUNC" ./...; then
+                    log_error "CRITICAL: Serialization/deserialization test failed. Package generation aborted."
+                    exit 1
+                fi
+            else
+                log_error "CRITICAL: Could not find test function in custom test template. Package generation aborted."
                 exit 1
             fi
         )
         log_info "✓ Serialization/deserialization test passed. Data integrity verified."
+    else
+        run_serialization_test "$dist_dir"
     fi
     
     log_info "$package_name micro-package generated successfully at $dist_dir"
