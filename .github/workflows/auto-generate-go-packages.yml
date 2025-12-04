@@ -211,14 +211,20 @@ jobs:
             exit 0
           fi
           
-          # Add files to git staging to ensure they're tracked (including new files)
-          git add -A "$DEST_DIR" || true
+          # Check if any files in the directory are tracked in git
+          TRACKED_FILES=$(git ls-files "$DEST_DIR" 2>/dev/null || echo "")
           
-          # Check for changes (including untracked, modified, and deleted files)
-          CHANGES=$(git status --porcelain "$DEST_DIR" 2>&1)
+          # Check for changes (modified, deleted, or untracked files)
+          # Use --untracked-files=all to ensure new files are detected
+          CHANGES=$(git status --porcelain --untracked-files=all "$DEST_DIR" 2>&1)
+          
           if [ -n "$CHANGES" ]; then
             echo "Changes detected in $DEST_DIR:"
             echo "$CHANGES"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          elif [ -z "$TRACKED_FILES" ]; then
+            # Directory is not tracked in git at all, so it's new
+            echo "Directory $DEST_DIR is not tracked in git (new directory with files)"
             echo "has_changes=true" >> $GITHUB_OUTPUT
           else
             echo "No changes detected in $DEST_DIR"
@@ -392,13 +398,13 @@ jobs:
           echo "should_update=true" >> $GITHUB_OUTPUT
 
       - name: Set up Go
-        if: steps.check-schema.outputs.should_update == 'true'
+        if: steps.check-data-changes.outputs.should_update == 'true'
         uses: actions/setup-go@v5
         with:
           go-version: '1.20'
 
       - name: Generate pseudo-version
-        if: steps.check-schema.outputs.should_update == 'true'
+        if: steps.check-data-changes.outputs.should_update == 'true'
         id: pseudo-version
         env:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
@@ -411,7 +417,7 @@ jobs:
           echo "short_sha=$SHORT_SHA" >> $GITHUB_OUTPUT
 
       - name: Update go.mod for changed packages
-        if: steps.check-schema.outputs.should_update == 'true'
+        if: steps.check-data-changes.outputs.should_update == 'true'
         id: update-gomod
         env:
           PSEUDO_VERSION: ${{ steps.pseudo-version.outputs.version }}
