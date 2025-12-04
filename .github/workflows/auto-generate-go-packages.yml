@@ -594,4 +594,3 @@ jobs:
           # Push commit and tag
           git push origin master
           git push origin "$NEW_TAG"
-
