@@ -20,7 +20,7 @@ GENERATOR_DIR="$SCRIPT_DIR/generator"
 GENERATOR_SCRIPT="$GENERATOR_DIR/generate.sh"
 
 # Find package-config.json file by searching for matching package_name
-CONFIG_FILE=$(find "$I18NIFY_DATA_DIR" -name "package-config.json" -type f | xargs grep -l "\"package_name\":\s*\"$PACKAGE_NAME\"" | head -1)
+CONFIG_FILE=$(find "$I18NIFY_DATA_DIR" -name "package-config.json" -type f | xargs grep -lE "\"package_name\":\s*\"$PACKAGE_NAME\"" | head -1)
 
 if [ -z "$CONFIG_FILE" ] || [ ! -f "$CONFIG_FILE" ]; then
     echo "Error: package-config.json not found for package: $PACKAGE_NAME"
@@ -57,7 +57,7 @@ if [ ! -f "$GENERATOR_SCRIPT" ]; then
 fi
 
 # Check if protoc is installed (if proto is used)
-if grep -q '"has_proto":\s*true' "$CONFIG_FILE"; then
+if grep -qE '"has_proto":\s*true' "$CONFIG_FILE"; then
     if ! command -v protoc &> /dev/null; then
         echo "Error: protoc is not installed."
         echo "Please install it using:"

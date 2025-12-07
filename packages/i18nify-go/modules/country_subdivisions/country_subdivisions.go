@@ -1,33 +1,11 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse and unparse this JSON data, add this code to your project and do:
-//
-//    countrySubdivisions, err := UnmarshalCountrySubdivisions(bytes)
-//    bytes, err = countrySubdivisions.Marshal()
-
 // Package country_subdivisions provides functionality to manage subdivisions (such as states, provinces, or regions) and cities within countries.
 package country_subdivisions
 
 import (
 	"encoding/json"
-	"fmt"
-	"sync"
 
 	external "github.com/razorpay/i18nify/i18nify-data/go/country-subdivisions"
 )
-
-// Cache to avoid duplicate reads for same countryCode
-var (
-	countrySubDivisionStore = make(map[string]CountrySubdivisions)
-	storeMutex              sync.RWMutex
-)
-
-// UnmarshalCountrySubdivisions parses JSON data into a CountrySubdivisions struct.
-// Deprecated: This function is kept for backward compatibility but data is now loaded from external package.
-func UnmarshalCountrySubdivisions(data []byte) (CountrySubdivisions, error) {
-	var r CountrySubdivisions
-	// This is a stub - actual data comes from external package
-	return r, nil
-}
 
 // Marshal converts a CountrySubdivisions struct into JSON data.
 func (r *CountrySubdivisions) Marshal() ([]byte, error) {
@@ -57,31 +35,16 @@ func (r *CountrySubdivisions) GetStateByStateCode(code string) (State, bool) {
 }
 
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
+// The external package handles caching, so no additional caching is needed here.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
-	// Check cache first
-	storeMutex.RLock()
-	if cached, present := countrySubDivisionStore[code]; present {
-		storeMutex.RUnlock()
-		return cached
-	}
-	storeMutex.RUnlock()
-
-	// Get data from external package using data_loader
+	// Get data from external package using data_loader (which handles caching)
 	protoSubDiv, err := external.GetCountrySubdivisions(code)
 	if err != nil || protoSubDiv == nil {
-		fmt.Printf("Error loading country subdivisions for %s: %v\n", code, err)
 		return CountrySubdivisions{}
 	}
 
 	// Convert from proto type to our internal type
-	allSubDivData := convertProtoToCountrySubdivisions(protoSubDiv)
-
-	// Store in cache
-	storeMutex.Lock()
-	countrySubDivisionStore[code] = allSubDivData
-	storeMutex.Unlock()
-
-	return allSubDivData
+	return convertProtoToCountrySubdivisions(protoSubDiv)
 }
 
 // convertProtoToCountrySubdivisions converts proto CountrySubdivisions to our internal type
@@ -90,34 +53,59 @@ func convertProtoToCountrySubdivisions(proto *external.CountrySubdivisions) Coun
 		return CountrySubdivisions{}
 	}
 
-	states := make(map[string]State)
-	if proto.States != nil {
-		for stateCode, protoState := range proto.States {
-			if protoState != nil {
-				cities := make(map[string]City)
-				if protoState.Cities != nil {
-					for cityName, protoCity := range protoState.Cities {
-						if protoCity != nil {
-							cities[cityName] = City{
-								Name:       protoCity.GetName(),
-								RegionName: protoCity.GetRegionName(),
-								Timezone:   protoCity.GetTimezone(),
-								Zipcodes:   protoCity.GetZipcodes(),
-							}
-						}
-					}
-				}
-				states[stateCode] = State{
-					Name:   protoState.GetName(),
-					Cities: cities,
-				}
-			}
-		}
-	}
-
+	states := convertProtoStates(proto.States)
 	return CountrySubdivisions{
 		CountryName: proto.GetCountryName(),
 		States:      states,
+	}
+}
+
+// convertProtoStates converts a map of proto States to our internal State map
+func convertProtoStates(protoStates map[string]*external.State) map[string]State {
+	if protoStates == nil {
+		return make(map[string]State)
+	}
+
+	states := make(map[string]State, len(protoStates))
+	for stateCode, protoState := range protoStates {
+		if protoState != nil {
+			states[stateCode] = convertProtoState(protoState)
+		}
+	}
+	return states
+}
+
+// convertProtoState converts a proto State to our internal State type
+func convertProtoState(protoState *external.State) State {
+	cities := convertProtoCities(protoState.Cities)
+	return State{
+		Name:   protoState.GetName(),
+		Cities: cities,
+	}
+}
+
+// convertProtoCities converts a map of proto Cities to our internal City map
+func convertProtoCities(protoCities map[string]*external.City) map[string]City {
+	if protoCities == nil {
+		return make(map[string]City)
+	}
+
+	cities := make(map[string]City, len(protoCities))
+	for cityName, protoCity := range protoCities {
+		if protoCity != nil {
+			cities[cityName] = convertProtoCity(protoCity)
+		}
+	}
+	return cities
+}
+
+// convertProtoCity converts a proto City to our internal City type
+func convertProtoCity(protoCity *external.City) City {
+	return City{
+		Name:       protoCity.GetName(),
+		RegionName: protoCity.GetRegionName(),
+		Timezone:   protoCity.GetTimezone(),
+		Zipcodes:   protoCity.GetZipcodes(),
 	}
 }
 

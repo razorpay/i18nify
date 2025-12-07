@@ -1,9 +1,3 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse and unparse this JSON data, add this code to your project and do:
-//
-//    countryMetadata, err := UnmarshalCountryMetadata(bytes)
-//    bytes, err = countryMetadata.Marshal()
-
 // Package country_metadata provides functionality to handle metadata information about countries.
 package country_metadata
 
@@ -12,20 +6,6 @@ import (
 
 	external "github.com/razorpay/i18nify/i18nify-data/go/country-metadata"
 )
-
-// UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
-// Deprecated: This function is kept for backward compatibility but data is now loaded from external package.
-func UnmarshalCountryMetadata(data []byte) (CountryMetadata, error) {
-	var r CountryMetadata
-	// This is a stub - actual data comes from external package
-	return r, nil
-}
-
-// Marshal converts a CountryMetadata struct into JSON data.
-func (r *CountryMetadata) Marshal() ([]byte, error) {
-	// This is a stub - actual data comes from external package
-	return nil, nil
-}
 
 // CountryMetadata represents metadata information about countries.
 type CountryMetadata struct {
@@ -59,30 +39,6 @@ func convertProtoToMetadataInformation(proto *external.MetadataInformation) Meta
 		return MetadataInformation{}
 	}
 
-	// Convert locales map
-	locales := make(map[string]Locale)
-	if proto.Locales != nil {
-		for k, v := range proto.Locales {
-			if v != nil {
-				locales[k] = Locale{
-					Name: v.GetName(),
-				}
-			}
-		}
-	}
-
-	// Convert timezones map
-	timezones := make(map[string]Timezone)
-	if proto.Timezones != nil {
-		for k, v := range proto.Timezones {
-			if v != nil {
-				timezones[k] = Timezone{
-					UTCOffset: v.GetUtcOffset(),
-				}
-			}
-		}
-	}
-
 	return MetadataInformation{
 		Alpha3:            proto.GetAlpha_3(),
 		ContinentCode:     proto.GetContinentCode(),
@@ -92,13 +48,47 @@ func convertProtoToMetadataInformation(proto *external.MetadataInformation) Meta
 		DefaultLocale:     proto.GetDefaultLocale(),
 		DialCode:          proto.GetDialCode(),
 		Flag:              proto.GetFlag(),
-		Locales:           locales,
+		Locales:           convertProtoLocales(proto.Locales),
 		NumericCode:       proto.GetNumericCode(),
 		Sovereignty:       proto.GetSovereignty(),
 		TimezoneOfCapital: proto.GetTimezoneOfCapital(),
-		Timezones:         timezones,
+		Timezones:         convertProtoTimezones(proto.Timezones),
 		DefaultCurrency:   proto.GetDefaultCurrency(),
 	}
+}
+
+// convertProtoLocales converts a map of proto Locales to our internal Locale map
+func convertProtoLocales(protoLocales map[string]*external.Locale) map[string]Locale {
+	if protoLocales == nil {
+		return make(map[string]Locale)
+	}
+
+	locales := make(map[string]Locale, len(protoLocales))
+	for k, v := range protoLocales {
+		if v != nil {
+			locales[k] = Locale{
+				Name: v.GetName(),
+			}
+		}
+	}
+	return locales
+}
+
+// convertProtoTimezones converts a map of proto Timezones to our internal Timezone map
+func convertProtoTimezones(protoTimezones map[string]*external.Timezone) map[string]Timezone {
+	if protoTimezones == nil {
+		return make(map[string]Timezone)
+	}
+
+	timezones := make(map[string]Timezone, len(protoTimezones))
+	for k, v := range protoTimezones {
+		if v != nil {
+			timezones[k] = Timezone{
+				UTCOffset: v.GetUtcOffset(),
+			}
+		}
+	}
+	return timezones
 }
 
 // NewCountryMetadata creates a new CountryMetadata instance.

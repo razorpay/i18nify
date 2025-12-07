@@ -158,7 +158,7 @@ jobs:
           PACKAGE_NAME: ${{ matrix.package }}
         run: |
           # Find package-config.json file by searching for matching package_name
-          CONFIG_FILE=$(find i18nify-data -name "package-config.json" -type f | xargs grep -l "\"package_name\":\s*\"$PACKAGE_NAME\"" | head -1)
+          CONFIG_FILE=$(find i18nify-data -name "package-config.json" -type f | xargs grep -lE "\"package_name\":\s*\"$PACKAGE_NAME\"" | head -1)
           
           if [ -z "$CONFIG_FILE" ] || [ ! -f "$CONFIG_FILE" ]; then
             echo "Error: package-config.json not found for package: $PACKAGE_NAME"
