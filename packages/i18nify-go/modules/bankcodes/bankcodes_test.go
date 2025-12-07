@@ -200,7 +200,7 @@ func TestGetBaseBranchIdentifierFromShortCode(t *testing.T) {
 			bankShortCode:      "USBK",
 			expectedIdentifier: "",
 			expectError:        true,
-			errorContains:      "failed to read file",
+			errorContains:      "failed to load bank information for country ZZ",
 		},
 		{
 			name:               "Valid IN bank short code",
