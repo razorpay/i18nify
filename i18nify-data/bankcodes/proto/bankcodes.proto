@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package bankcodes;
+option go_package = "./bankcodes";
+
+// BankInfo contains bank information for a country.
+message BankInfo {
+  Defaults defaults = 1;
+  repeated BankDetails details = 2;
+}
+
+// Defaults contains default settings for bank identifiers.
+message Defaults {
+  string identifier_type = 1;
+}
+
+// BankDetails contains information about a bank.
+message BankDetails {
+  string name = 1;
+  string short_code = 2;
+  repeated Branch branches = 3;
+}
+
+// Branch contains information about a bank branch.
+message Branch {
+  string code = 1;
+  string city = 2;
+  Identifier identifiers = 3;
+}
+
+// Identifier contains bank identifier codes.
+message Identifier {
+  string swift_code = 1;
+  repeated string routing_number = 2;
+  string ifsc_code = 3;
+}
+
