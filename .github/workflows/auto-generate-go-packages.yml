@@ -1,0 +1,649 @@
+name: Auto-Generate Go Packages
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - master
+    paths:
+      - 'i18nify-data/**'
+  push:
+    branches:
+      - master
+    paths:
+      - 'i18nify-data/**'
+
+concurrency:
+  group: auto-generate-go-packages-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  detect-changes:
+    name: Detect Package Changes
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.filter.outputs.changes }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          base: ${{ github.event.pull_request.base.ref || github.event.before || 'HEAD~1' }}
+          filters: |
+            currency:
+              - 'i18nify-data/currency/**'
+            country-metadata:
+              - 'i18nify-data/country/metadata/**'
+            country-subdivisions:
+              - 'i18nify-data/country/subdivisions/**'
+            bankcodes:
+              - 'i18nify-data/bankcodes/**'
+            phone-number:
+              - 'i18nify-data/phone-number/**'
+
+  generate-packages:
+    name: Generate Go Packages
+    runs-on: ubuntu-latest
+    needs: detect-changes
+    # Only run if there are package changes detected
+    if: needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != ''
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.detect-changes.outputs.packages) }}
+      fail-fast: false
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y protobuf-compiler jq
+
+      - name: Install protoc-gen-go
+        run: go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+
+      - name: Add Go bin to PATH
+        run: echo "$HOME/go/bin" >> $GITHUB_PATH
+
+      - name: Determine version context
+        id: version-context
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          GITHUB_SHA: ${{ github.sha }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "is_release=false" >> $GITHUB_OUTPUT
+            echo "context=commit" >> $GITHUB_OUTPUT
+            # Use commit SHA instead of PR number for version identifier
+            # Use PR head SHA if available, otherwise fall back to github.sha
+            if [ -n "$PR_HEAD_SHA" ] && [ "$PR_HEAD_SHA" != "" ]; then
+              echo "identifier=$PR_HEAD_SHA" >> $GITHUB_OUTPUT
+            else
+              echo "identifier=$GITHUB_SHA" >> $GITHUB_OUTPUT
+            fi
+          elif [ "$REF_NAME" = "master" ]; then
+            echo "is_release=true" >> $GITHUB_OUTPUT
+            echo "context=release" >> $GITHUB_OUTPUT
+            echo "identifier=" >> $GITHUB_OUTPUT
+          else
+            echo "is_release=false" >> $GITHUB_OUTPUT
+            echo "context=branch" >> $GITHUB_OUTPUT
+            echo "identifier=$REF_NAME" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Generate version
+        id: version
+        env:
+          PACKAGE_NAME: ${{ matrix.package }}
+          IS_RELEASE: ${{ steps.version-context.outputs.is_release }}
+          CONTEXT: ${{ steps.version-context.outputs.context }}
+          IDENTIFIER: ${{ steps.version-context.outputs.identifier }}
+        run: |
+          chmod +x .github/scripts/version-manager.sh
+          
+          if [ "$IS_RELEASE" = "true" ]; then
+            VERSION=$(.github/scripts/version-manager.sh generate-release "$PACKAGE_NAME")
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "version_tag=v$VERSION" >> $GITHUB_OUTPUT
+            echo "is_beta=false" >> $GITHUB_OUTPUT
+          else
+            # For PRs, use Go pseudo-version format (timestamp-based) instead of beta format
+            if [ "$CONTEXT" = "commit" ]; then
+              # Generate pseudo-version: v0.0.0-TIMESTAMP-SHORTSHA
+              SHORT_SHA=$(echo "$IDENTIFIER" | cut -c1-12)
+              TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S "$IDENTIFIER" 2>/dev/null || TZ=UTC date +%Y%m%d%H%M%S)
+              VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
+              echo "version=$VERSION" >> $GITHUB_OUTPUT
+              echo "version_tag=$VERSION" >> $GITHUB_OUTPUT
+              echo "is_beta=true" >> $GITHUB_OUTPUT
+            else
+              # For branches, use beta format
+              VERSION=$(.github/scripts/version-manager.sh generate-beta "$PACKAGE_NAME" "$CONTEXT" "$IDENTIFIER")
+              echo "version=$VERSION" >> $GITHUB_OUTPUT
+              echo "version_tag=v$VERSION" >> $GITHUB_OUTPUT
+              echo "is_beta=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Generate ${{ matrix.package }} Go package
+        id: generate-package
+        env:
+          PACKAGE_NAME: ${{ matrix.package }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          chmod +x .github/scripts/generate-package.sh
+          export PATH=$PATH:$HOME/go/bin
+          OUTPUT_DIR=$(.github/scripts/generate-package.sh "$PACKAGE_NAME" | tail -1)
+          echo "output_dir=$OUTPUT_DIR" >> $GITHUB_OUTPUT
+
+      - name: Get package config
+        id: package-config
+        env:
+          PACKAGE_NAME: ${{ matrix.package }}
+        run: |
+          # Find package-config.json file by searching for matching package_name
+          CONFIG_FILE=$(find i18nify-data -name "package-config.json" -type f | xargs grep -lE "\"package_name\":\s*\"$PACKAGE_NAME\"" | head -1)
+          
+          if [ -z "$CONFIG_FILE" ] || [ ! -f "$CONFIG_FILE" ]; then
+            echo "Error: package-config.json not found for package: $PACKAGE_NAME"
+            exit 1
+          fi
+          
+          # Extract directory name from module_path (e.g., github.com/.../go/phone-number -> phone-number)
+          MODULE_PATH=$(jq -r '.module_path // empty' "$CONFIG_FILE")
+          if [ -n "$MODULE_PATH" ] && [ "$MODULE_PATH" != "null" ]; then
+            # Extract the last part of the module path (after the last /)
+            PACKAGE_DIR=$(echo "$MODULE_PATH" | sed 's|.*/go/||')
+            echo "package_dir=$PACKAGE_DIR" >> $GITHUB_OUTPUT
+          else
+            # Fallback to package_name if module_path not found
+            PACKAGE_DIR=$(jq -r '.package_name // empty' "$CONFIG_FILE")
+            echo "package_dir=$PACKAGE_DIR" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Copy generated package to final location
+        env:
+          PACKAGE_NAME: ${{ matrix.package }}
+          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+          GEN_OUTPUT_DIR: ${{ steps.generate-package.outputs.output_dir }}
+        run: |
+          DEST_DIR="i18nify-data/go/$PACKAGE_DIR"
+          
+          if [ ! -d "$GEN_OUTPUT_DIR" ]; then
+            echo "Error: Generated package not found at $GEN_OUTPUT_DIR"
+            exit 1
+          fi
+          
+          rm -rf "$DEST_DIR"
+          mkdir -p "$DEST_DIR"
+          cp -r "$GEN_OUTPUT_DIR"/* "$DEST_DIR"/ 2>/dev/null || true
+
+      - name: Check for changes
+        id: check-changes
+        env:
+          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          DEST_DIR="i18nify-data/go/$PACKAGE_DIR"
+          
+          # Check if directory exists and has files
+          if [ ! -d "$DEST_DIR" ] || [ -z "$(ls -A "$DEST_DIR" 2>/dev/null)" ]; then
+            echo "Directory $DEST_DIR does not exist or is empty"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check if any files in the directory are tracked in git
+          TRACKED_FILES=$(git ls-files "$DEST_DIR" 2>/dev/null || echo "")
+          
+          # Check for changes (modified, deleted, or untracked files)
+          # Use --untracked-files=all to ensure new files are detected
+          CHANGES=$(git status --porcelain --untracked-files=all "$DEST_DIR" 2>&1)
+          
+          if [ -n "$CHANGES" ]; then
+            echo "Changes detected in $DEST_DIR:"
+            echo "$CHANGES"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          elif [ -z "$TRACKED_FILES" ]; then
+            # Directory is not tracked in git at all, so it's new
+            echo "Directory $DEST_DIR is not tracked in git (new directory with files)"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes detected in $DEST_DIR"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get branch name
+        id: branch
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "branch=$PR_HEAD_REF" >> $GITHUB_OUTPUT
+          else
+            echo "branch=$REF_NAME" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes (Beta)
+        if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'true'
+        env:
+          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+          BRANCH_NAME: ${{ steps.branch.outputs.branch }}
+          PACKAGE_NAME: ${{ matrix.package }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
+
+          git add "i18nify-data/go/$PACKAGE_DIR"
+          git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package" || exit 0
+          
+          # Retry push up to 3 times in case of concurrent modifications
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            # Pull latest changes and rebase our commit on top
+            git pull --rebase origin "$BRANCH_NAME" || {
+              echo "Failed to pull, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+              continue
+            }
+            
+            # Try to push
+            if git push origin "$BRANCH_NAME"; then
+              echo "Successfully pushed changes"
+              exit 0
+            else
+              echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+            fi
+          done
+          
+          echo "Failed to push after $MAX_RETRIES attempts"
+          exit 1
+
+      - name: Commit, tag and push (Release)
+        id: release-commit
+        if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'false'
+        env:
+          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+          BRANCH_NAME: ${{ steps.branch.outputs.branch }}
+          PACKAGE_NAME: ${{ matrix.package }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git add "i18nify-data/go/$PACKAGE_DIR"
+          git commit -m "release: $PACKAGE_NAME Go package" || exit 0
+          
+          # Create git tag
+          chmod +x .github/scripts/version-manager.sh
+          TAG=$(.github/scripts/version-manager.sh create-tag "$PACKAGE_NAME" "$VERSION")
+          
+          # Retry push up to 3 times in case of concurrent modifications
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            # Pull latest changes and rebase our commit on top
+            git pull --rebase origin "$BRANCH_NAME" || {
+              echo "Failed to pull, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+              continue
+            }
+            
+            # Try to push both commit and tag
+            if git push origin "$BRANCH_NAME" && git push origin "$TAG"; then
+              echo "Successfully pushed changes and tag: $TAG"
+              echo "tag=$TAG" >> $GITHUB_OUTPUT
+              exit 0
+            else
+              echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+            fi
+          done
+          
+          echo "Failed to push after $MAX_RETRIES attempts"
+          exit 1
+
+  update-go-mod-in-pr:
+    name: Update i18nify-go Dependencies
+    runs-on: ubuntu-latest
+    needs: [detect-changes, generate-packages]
+    # Only run on pull requests when packages have changed
+    # Note: generate-packages job may be skipped if no actual data changes,
+    # but we still need to check for actual data file changes in this job
+    if: |
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      needs.detect-changes.outputs.packages != '[]' &&
+      needs.detect-changes.outputs.packages != ''
+    
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for actual data changes
+        id: check-data-changes
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          # Get all changed files in i18nify-data
+          CHANGED_FILES=$(git diff --name-only $BASE_SHA $HEAD_SHA | grep "^i18nify-data/" || true)
+          
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No changes in i18nify-data, skipping go.mod update"
+            echo "should_update=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check for schema changes (skip if schema changed)
+          SCHEMA_CHANGES=$(echo "$CHANGED_FILES" | grep "schema\.json$" || true)
+          if [ -n "$SCHEMA_CHANGES" ]; then
+            echo "Skipping go.mod update due to schema changes"
+            echo "should_update=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check if only generated files changed (i18nify-data/go/**)
+          # If only generated files changed, skip the update
+          DATA_FILE_CHANGES=$(echo "$CHANGED_FILES" | grep -v "^i18nify-data/go/" || true)
+          
+          if [ -z "$DATA_FILE_CHANGES" ]; then
+            echo "Only generated files changed, no actual data changes. Skipping go.mod update"
+            echo "should_update=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check if actual data files changed (data.json, proto files, etc.)
+          ACTUAL_DATA_CHANGES=$(echo "$DATA_FILE_CHANGES" | grep -E "(data\.json|\.proto|package-config\.json)" || true)
+          
+          if [ -z "$ACTUAL_DATA_CHANGES" ]; then
+            echo "No actual data files changed (only config/metadata). Skipping go.mod update"
+            echo "should_update=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "Actual data files changed, proceeding with go.mod update"
+          echo "should_update=true" >> $GITHUB_OUTPUT
+
+      - name: Set up Go
+        if: steps.check-data-changes.outputs.should_update == 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+
+      - name: Generate pseudo-version
+        if: steps.check-data-changes.outputs.should_update == 'true'
+        id: pseudo-version
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          SHORT_SHA=$(echo $HEAD_SHA | cut -c1-12)
+          TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S $HEAD_SHA)
+          PSEUDO_VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
+          
+          echo "version=$PSEUDO_VERSION" >> $GITHUB_OUTPUT
+          echo "short_sha=$SHORT_SHA" >> $GITHUB_OUTPUT
+
+      - name: Update go.mod for changed packages
+        if: steps.check-data-changes.outputs.should_update == 'true'
+        id: update-gomod
+        env:
+          PSEUDO_VERSION: ${{ steps.pseudo-version.outputs.version }}
+          PACKAGES: ${{ needs.detect-changes.outputs.packages }}
+        run: |
+          cd packages/i18nify-go
+          
+          # Convert JSON array to bash array
+          PACKAGE_LIST=$(echo "$PACKAGES" | jq -r '.[]' | tr '\n' ' ')
+          
+          for pkg in $PACKAGE_LIST; do
+            MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${pkg}"
+            
+            # Check if package exists in go.mod
+            if ! grep -q "$MODULE_PATH" go.mod; then
+              echo "Package $pkg not found in go.mod, adding it..."
+              # Add the package if it doesn't exist
+              go mod edit -require "${MODULE_PATH}@${PSEUDO_VERSION}"
+            else
+              # Remove old replace directive if exists
+              if grep -q "replace ${MODULE_PATH}" go.mod; then
+                go mod edit -dropreplace "${MODULE_PATH}"
+              fi
+              
+              # Update to pseudo-version
+              go mod edit -require "${MODULE_PATH}@${PSEUDO_VERSION}"
+            fi
+          done
+          
+          go mod tidy
+          
+          cd ../..
+          if [ -n "$(git status --porcelain packages/i18nify-go/go.mod packages/i18nify-go/go.sum)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push go.mod changes
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        env:
+          SHORT_SHA: ${{ steps.pseudo-version.outputs.short_sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
+          git commit -m "chore(go): update dependencies to commit ${SHORT_SHA}" -m "Auto-updated by GitHub Actions"
+          
+          git push origin HEAD:"$HEAD_REF"
+
+      - name: Comment on PR
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PSEUDO_VERSION: ${{ steps.pseudo-version.outputs.version }}
+          PACKAGES: ${{ needs.detect-changes.outputs.packages }}
+        run: |
+          EXISTING_COMMENT=$(gh pr view $PR_NUMBER --json comments --jq ".comments[] | select(.body | contains(\"go.mod updated\")) | .id" | head -1 || echo "")
+          
+          if [ -z "$EXISTING_COMMENT" ]; then
+            PACKAGE_LIST=$(echo "$PACKAGES" | jq -r '.[]' | tr '\n' ',' | sed 's/,$//')
+            
+            COMMENT="**Automated go.mod Update**"
+            COMMENT="${COMMENT}\n\nUpdated \`packages/i18nify-go/go.mod\` to reference this PR's latest commit."
+            COMMENT="${COMMENT}\n\n**Packages:** \`${PACKAGE_LIST}\`"
+            COMMENT="${COMMENT}\n**Version:** \`${PSEUDO_VERSION}\`"
+            
+            echo -e "$COMMENT" | gh pr comment $PR_NUMBER --body-file -
+          fi
+
+  release-i18nify-go:
+    name: Release i18nify-go Package
+    runs-on: ubuntu-latest
+    needs: [detect-changes, generate-packages, update-go-mod-in-pr]
+    # Only run on push to master when packages have changed and releases were created
+    if: |
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/master' &&
+      needs.detect-changes.outputs.packages != '[]' &&
+      needs.detect-changes.outputs.packages != ''
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+      
+      - name: Get latest release tags for changed packages
+        id: get-tags
+        env:
+          PACKAGES: ${{ needs.detect-changes.outputs.packages }}
+        run: |
+          git fetch --tags origin
+          
+          # Convert JSON array to bash array
+          PACKAGE_LIST=$(echo "$PACKAGES" | jq -r '.[]' | tr '\n' ' ')
+          
+          # Build a JSON object with package -> tag mapping
+          TAGS_JSON="{"
+          FIRST=true
+          
+          for pkg in $PACKAGE_LIST; do
+            TAG_PREFIX="${pkg}"
+            LATEST_TAG=$(git tag -l "${TAG_PREFIX}/v*" --sort=-version:refname | head -n 1 || echo "")
+            
+            if [ -z "$LATEST_TAG" ]; then
+              continue
+            fi
+            
+            # Extract version from tag (e.g., currency/v1.2.3 -> 1.2.3)
+            VERSION=$(echo "$LATEST_TAG" | sed "s|${TAG_PREFIX}/v||")
+            
+            if [ "$FIRST" = true ]; then
+              FIRST=false
+            else
+              TAGS_JSON="${TAGS_JSON},"
+            fi
+            TAGS_JSON="${TAGS_JSON}\"${pkg}\":\"${VERSION}\""
+          done
+          
+          TAGS_JSON="${TAGS_JSON}}"
+          echo "tags=$TAGS_JSON" >> $GITHUB_OUTPUT
+      
+      - name: Update i18nify-go dependencies to release versions
+        id: update-gomod
+        env:
+          TAGS_JSON: ${{ steps.get-tags.outputs.tags }}
+        run: |
+          cd packages/i18nify-go
+          
+          # Check if there are any tags to process
+          if [ "$TAGS_JSON" = "{}" ]; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Parse the tags JSON and update each package
+          echo "$TAGS_JSON" | jq -r 'to_entries | .[] | "\(.key) \(.value)"' | while read pkg version; do
+            MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${pkg}"
+            
+            # Check if package exists in go.mod
+            if ! grep -q "$MODULE_PATH" go.mod; then
+              echo "Package $pkg not found in go.mod, adding it..."
+              # Add the package if it doesn't exist
+              go mod edit -require "${MODULE_PATH}@v${version}"
+            else
+              # Remove old replace directive if exists
+              if grep -q "replace ${MODULE_PATH}" go.mod; then
+                go mod edit -dropreplace "${MODULE_PATH}"
+              fi
+              
+              # Update to release version
+              go mod edit -require "${MODULE_PATH}@v${version}"
+            fi
+          done
+          
+          go mod tidy
+          
+          # Check if there are changes
+          if [ -n "$(git status --porcelain go.mod go.sum)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Get current i18nify-go version
+        id: current-version
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        run: |
+          LATEST_TAG=$(git tag -l "v*" --sort=-version:refname | grep -v "go-" | head -n 1 || echo "")
+          
+          if [ -z "$LATEST_TAG" ]; then
+            echo "version=0.0.0" >> $GITHUB_OUTPUT
+          else
+            VERSION=$(echo "$LATEST_TAG" | sed 's/^v//')
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Bump i18nify-go version (minor)
+        id: new-version
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        env:
+          CURRENT_VERSION: ${{ steps.current-version.outputs.version }}
+        run: |
+          # Parse version (assuming semver: major.minor.patch)
+          IFS='.' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
+          MAJOR="${VERSION_PARTS[0]}"
+          MINOR="${VERSION_PARTS[1]}"
+          PATCH="${VERSION_PARTS[2]:-0}"
+          
+          # Bump minor version, reset patch
+          NEW_MINOR=$((MINOR + 1))
+          NEW_VERSION="${MAJOR}.${NEW_MINOR}.0"
+          
+          echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push i18nify-go update
+        if: steps.update-gomod.outputs.has_changes == 'true'
+        env:
+          NEW_VERSION: ${{ steps.new-version.outputs.version }}
+          TAGS_JSON: ${{ steps.get-tags.outputs.tags }}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Get package list for commit message
+          PACKAGE_LIST=$(echo "$TAGS_JSON" | jq -r 'keys | join(", ")')
+          
+          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
+          git commit -m "chore(i18nify-go): update dependencies to release versions" \
+                     -m "Updated packages: $PACKAGE_LIST" \
+                     -m "Auto-updated by GitHub Actions"
+          
+          # Create release tag
+          NEW_TAG="v${NEW_VERSION}"
+          git tag -a "$NEW_TAG" -m "Release v${NEW_VERSION}"
+          
+          # Push commit and tag
+          git push origin master
+          git push origin "$NEW_TAG"

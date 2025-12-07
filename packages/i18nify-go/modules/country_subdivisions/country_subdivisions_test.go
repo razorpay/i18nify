@@ -1,22 +1,14 @@
 package country_subdivisions
 
 import (
-	"errors"
-	"fmt"
-	"github.com/stretchr/testify/assert"
-	"os"
-	"path/filepath"
 	"reflect"
-	"runtime"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
-//var testJSONData = []byte(`{"country_name": "India", "states": {"KA": {"name": "Karnataka", "cities": [{"name": "Bengaluru", "timezone": "Asia/Kolkata", "zipcodes": ["560018", "560116", "560500"], "region_name/district_name": "nan"}]}}}`)
-
-func TestUnmarshalCountrySubdivisions(t *testing.T) {
-	jsonData, err := subDivJsonDir.ReadFile("data/IN.json")
-	subDivData, err := UnmarshalCountrySubdivisions(jsonData)
-	assert.NoError(t, err, "Unexpected error during unmarshal")
+func TestGetCountrySubdivisions(t *testing.T) {
+	subDivData := GetCountrySubdivisions("IN")
 
 	assert.Equal(t, "India", subDivData.GetCountryName())
 	states := subDivData.GetStates()["KA"]
@@ -42,39 +34,6 @@ func TestMarshalCountrySubdivisions(t *testing.T) {
 	marshaledJSON, err := data.Marshal()
 	assert.NoError(t, err)
 	assert.JSONEq(t, expectedJSON, string(marshaledJSON))
-
-}
-
-var readFileFunc = os.ReadFile
-
-func TestGetCountrySubdivisions(t *testing.T) {
-	_, currentFileName, _, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Println("Error getting current file directory")
-	}
-	jsonData, err := os.ReadFile(filepath.Join(filepath.Dir(currentFileName), "IN.json"))
-
-	fileName := filepath.Join(filepath.Dir(currentFileName), "IN.json")
-	// Mock implementation of os.ReadFile
-	readFileFunc = func(filename string) ([]byte, error) {
-		return jsonData, errors.New("error reading JSON file")
-	}
-	defer func() {
-		// Restore the original implementation after the test
-		readFileFunc = os.ReadFile
-	}()
-
-	_, err = readFileFunc(fileName)
-	if err != nil {
-		return
-	}
-
-	subDivData := GetCountrySubdivisions("IN")
-
-	assert.Equal(t, "India", subDivData.GetCountryName())
-	states := subDivData.GetStates()["KA"]
-	assert.Equal(t, "Karnataka", states.GetName())
-	assertIsArray(t, states)
 }
 
 func assertIsArray(t *testing.T, value interface{}) {
