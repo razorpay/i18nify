@@ -54,6 +54,8 @@ load_config() {
     
     # Parse JSON configuration using jq
     PACKAGE_NAME=$(jq -r '.package_name' "$config_path")
+    # Convert hyphens to underscores for Go package name (Go doesn't allow hyphens)
+    GO_PACKAGE_NAME=$(echo "$PACKAGE_NAME" | tr '-' '_')
     STRUCT_NAME=$(jq -r '.struct_name' "$config_path")
     ROOT_JSON_KEY=$(jq -r '.root_json_key' "$config_path")
     ROOT_FIELD_NAME=$(jq -r '.root_field_name' "$config_path")
@@ -62,6 +64,9 @@ load_config() {
     HAS_PROTO=$(jq -r '.has_proto' "$config_path")
     PROTO_FILE=$(jq -r '.proto_file // ""' "$config_path")
     DATA_FILE=$(jq -r '.data_file // "data.json"' "$config_path")
+    MULTIPLE_DATA_FILES=$(jq -r '.multiple_data_files // false' "$config_path")
+    CUSTOM_TEMPLATE=$(jq -r '.custom_template // ""' "$config_path")
+    CUSTOM_TEST_TEMPLATE=$(jq -r '.custom_test_template // ""' "$config_path")
     
     # Validate required fields
     if [ "$PACKAGE_NAME" == "null" ] || [ -z "$PACKAGE_NAME" ]; then
@@ -117,18 +122,28 @@ generate_data_loader() {
     local dist_dir="$1"
     local data_file="$2"
     local template_file="$3"
+    local base_dir="$4"
     
     log_info "Generating data_loader.go..."
     
-    # Create data subdirectory and copy JSON file
+    # Create data subdirectory
     local data_dir="$dist_dir/data"
     mkdir -p "$data_dir"
-    cp "$data_file" "$data_dir/data.json"
+    
+    # Copy data files based on configuration
+    if [ "$MULTIPLE_DATA_FILES" == "true" ]; then
+        log_info "Copying all JSON files (multiple_data_files=true)..."
+        # Copy all JSON files except schema.json and package-config.json
+        find "$base_dir" -maxdepth 1 -name "*.json" ! -name "schema.json" ! -name "package-config.json" -exec cp {} "$data_dir/" \;
+    else
+        # Copy single JSON file
+        cp "$data_file" "$data_dir/data.json"
+    fi
     
     # Generate Go file from template by replacing template variables
     local output_file="$dist_dir/data_loader.go"
     
-    sed -e "s/{{\.PackageName}}/$PACKAGE_NAME/g" \
+    sed -e "s/{{\.PackageName}}/$GO_PACKAGE_NAME/g" \
         -e "s/{{\.StructName}}/$STRUCT_NAME/g" \
         -e "s/{{\.RootJSONKey}}/$ROOT_JSON_KEY/g" \
         -e "s/{{\.RootFieldName}}/$ROOT_FIELD_NAME/g" \
@@ -145,7 +160,7 @@ generate_data_loader_test() {
     
     local output_file="$dist_dir/data_loader_test.go"
     
-    sed -e "s/{{\.PackageName}}/$PACKAGE_NAME/g" \
+    sed -e "s/{{\.PackageName}}/$GO_PACKAGE_NAME/g" \
         -e "s/{{\.StructName}}/$STRUCT_NAME/g" \
         -e "s/{{\.RootJSONKey}}/$ROOT_JSON_KEY/g" \
         -e "s/{{\.RootFieldName}}/$ROOT_FIELD_NAME/g" \
@@ -218,8 +233,19 @@ main() {
     local generator_dir
     generator_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
     local template_dir="$generator_dir/templates"
-    local go_template="$template_dir/go.template"
-    local test_template="$template_dir/data_loader_test.template"
+    
+    # Use custom templates if specified in config, otherwise use default
+    if [ -n "$CUSTOM_TEMPLATE" ] && [ "$CUSTOM_TEMPLATE" != "null" ]; then
+        local go_template="$template_dir/$CUSTOM_TEMPLATE"
+    else
+        local go_template="$template_dir/go.template"
+    fi
+    
+    if [ -n "$CUSTOM_TEST_TEMPLATE" ] && [ "$CUSTOM_TEST_TEMPLATE" != "null" ]; then
+        local test_template="$template_dir/$CUSTOM_TEST_TEMPLATE"
+    else
+        local test_template="$template_dir/data_loader_test.template"
+    fi
     
     if [ ! -f "$go_template" ]; then
         log_error "Template file not found: $go_template"
@@ -238,9 +264,12 @@ main() {
     local data_file="$base_dir/$DATA_FILE"
     local proto_dir="$base_dir/proto"
     
-    if [ ! -f "$data_file" ]; then
-        log_error "Data file not found: $data_file"
-        exit 1
+    # Skip data file check if using multiple data files
+    if [ "$MULTIPLE_DATA_FILES" != "true" ]; then
+        if [ ! -f "$data_file" ]; then
+            log_error "Data file not found: $data_file"
+            exit 1
+        fi
     fi
     
     # Create temporary directory for generation
@@ -256,7 +285,7 @@ main() {
     fi
     
     # Generate data loader (after proto is generated)
-    generate_data_loader "$dist_dir" "$data_file" "$go_template"
+    generate_data_loader "$dist_dir" "$data_file" "$go_template" "$base_dir"
     
     # Generate test
     generate_data_loader_test "$dist_dir" "$test_template"
@@ -265,7 +294,27 @@ main() {
     init_go_module "$dist_dir"
     
     # Mandatory: Run serialization/deserialization test
-    run_serialization_test "$dist_dir"
+    # Use custom test function if custom test template is used, otherwise use default
+    if [ -n "$CUSTOM_TEST_TEMPLATE" ] && [ "$CUSTOM_TEST_TEMPLATE" != "null" ]; then
+        log_info "Running custom serialization test..."
+        (
+            cd "$dist_dir"
+            # Try to find the test function name by grepping the test file
+            TEST_FUNC=$(grep -h "^func Test" data_loader_test.go | head -1 | sed 's/func //' | sed 's/(.*//' | tr -d ' ')
+            if [ -n "$TEST_FUNC" ]; then
+                if ! go test -v -run "$TEST_FUNC" ./...; then
+                    log_error "CRITICAL: Serialization/deserialization test failed. Package generation aborted."
+                    exit 1
+                fi
+            else
+                log_error "CRITICAL: Could not find test function in custom test template. Package generation aborted."
+                exit 1
+            fi
+        )
+        log_info "✓ Serialization/deserialization test passed. Data integrity verified."
+    else
+        run_serialization_test "$dist_dir"
+    fi
     
     log_info "$package_name micro-package generated successfully at $dist_dir"
     

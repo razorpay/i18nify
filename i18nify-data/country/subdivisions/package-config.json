@@ -1,0 +1,16 @@
+{
+  "package_name": "country-subdivisions",
+  "struct_name": "CountrySubdivisions",
+  "root_json_key": "subdivisions",
+  "root_field_name": "Subdivisions",
+  "data_context": "country subdivisions",
+  "module_path": "github.com/razorpay/i18nify/i18nify-data/go/country-subdivisions",
+  "has_proto": true,
+  "proto_file": "country_subdivisions.proto",
+  "data_file": "data.json",
+  "multiple_data_files": true,
+  "custom_template": "go_subdivisions.template",
+  "custom_test_template": "data_loader_test_subdivisions.template",
+  "dummy" : "key"
+}
+

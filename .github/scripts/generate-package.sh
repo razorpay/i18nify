@@ -16,10 +16,20 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 I18NIFY_DATA_DIR="$PROJECT_ROOT/i18nify-data"
-PACKAGE_DIR="$I18NIFY_DATA_DIR/$PACKAGE_NAME"
-CONFIG_FILE="$PACKAGE_DIR/package-config.json"
 GENERATOR_DIR="$SCRIPT_DIR/generator"
 GENERATOR_SCRIPT="$GENERATOR_DIR/generate.sh"
+
+# Find package-config.json file by searching for matching package_name
+CONFIG_FILE=$(find "$I18NIFY_DATA_DIR" -name "package-config.json" -type f | xargs grep -lE "\"package_name\":\s*\"$PACKAGE_NAME\"" | head -1)
+
+if [ -z "$CONFIG_FILE" ] || [ ! -f "$CONFIG_FILE" ]; then
+    echo "Error: package-config.json not found for package: $PACKAGE_NAME"
+    echo "Searched in: $I18NIFY_DATA_DIR"
+    exit 1
+fi
+
+# Get the package directory from the config file location
+PACKAGE_DIR=$(dirname "$CONFIG_FILE")
 
 # Check if i18nify-data directory exists
 if [ ! -d "$I18NIFY_DATA_DIR" ]; then
@@ -47,7 +57,7 @@ if [ ! -f "$GENERATOR_SCRIPT" ]; then
 fi
 
 # Check if protoc is installed (if proto is used)
-if grep -q '"has_proto":\s*true' "$CONFIG_FILE"; then
+if grep -qE '"has_proto":\s*true' "$CONFIG_FILE"; then
     if ! command -v protoc &> /dev/null; then
         echo "Error: protoc is not installed."
         echo "Please install it using:"

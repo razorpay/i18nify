@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package country_subdivisions;
+option go_package = "./country_subdivisions";
+
+// CountrySubdivisions contains information about country subdivisions.
+message CountrySubdivisions {
+  string country_name = 1;
+  map<string, State> states = 2;
+}
+
+// State contains information about a state or province.
+message State {
+  string name = 1;
+  map<string, City> cities = 2;
+}
+
+// City contains information about a city.
+message City {
+  string name = 1;
+  string region_name = 2 [json_name = "region_name/district_name"];
+  string timezone = 3;
+  repeated string zipcodes = 4;
+}
+
