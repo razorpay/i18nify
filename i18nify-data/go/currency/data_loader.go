@@ -22,7 +22,7 @@ func init() {
 	if err != nil {
 		panic("failed to read embedded currency data: " + err.Error())
 	}
-
+	
 	var r root
 	if err := json.Unmarshal(jsonBytes, &r); err != nil {
 		panic("failed to parse embedded currency data: " + err.Error())
@@ -37,3 +37,5 @@ func init() {
 func GetData() map[string]*CurrencyInfo {
 	return data
 }
+
+
