@@ -1,0 +1,216 @@
+name: Validate Data Against Schema
+
+on:
+  pull_request:
+    paths:
+      - 'i18nify-data/**/data.json'
+      - 'i18nify-data/**/schema.json'
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - 'i18nify-data/**/data.json'
+      - 'i18nify-data/**/schema.json'
+
+jobs:
+  detect-changes:
+    name: Detect Changed Packages
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.find-packages.outputs.packages }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Find packages with data changes
+        id: find-packages
+        run: |
+          # Find all directories with both data.json and schema.json
+          PACKAGES=$(find i18nify-data -name "data.json" -type f | while read data_file; do
+            dir=$(dirname "$data_file")
+            schema_file="$dir/schema.json"
+            
+            if [ -f "$schema_file" ]; then
+              # Check if either file changed
+              if git diff --name-only ${{ github.event.pull_request.base.sha || 'HEAD~1' }} HEAD | grep -q "$dir"; then
+                echo "$dir"
+              fi
+            fi
+          done | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          
+          echo "packages=$PACKAGES" >> $GITHUB_OUTPUT
+          echo "Found packages: $PACKAGES"
+
+  validate-schema:
+    name: Validate ${{ matrix.package }}
+    runs-on: ubuntu-latest
+    needs: detect-changes
+    if: needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != ''
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.detect-changes.outputs.packages) }}
+      fail-fast: false
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install AJV (JSON Schema Validator)
+        run: npm install -g ajv-cli ajv-formats
+      
+      - name: Get package name
+        id: package-info
+        run: |
+          PACKAGE_NAME=$(basename "${{ matrix.package }}")
+          echo "name=$PACKAGE_NAME" >> $GITHUB_OUTPUT
+          echo "Validating package: $PACKAGE_NAME"
+      
+      - name: Validate data.json against schema.json
+        run: |
+          PACKAGE_DIR="${{ matrix.package }}"
+          DATA_FILE="$PACKAGE_DIR/data.json"
+          SCHEMA_FILE="$PACKAGE_DIR/schema.json"
+          
+          echo "📋 Validating: $DATA_FILE"
+          echo "📐 Schema: $SCHEMA_FILE"
+          echo ""
+          
+          # Validate JSON syntax
+          if ! jq empty "$DATA_FILE" 2>/dev/null; then
+            echo "❌ ERROR: Invalid JSON syntax in $DATA_FILE"
+            exit 1
+          fi
+          
+          if ! jq empty "$SCHEMA_FILE" 2>/dev/null; then
+            echo "❌ ERROR: Invalid JSON syntax in $SCHEMA_FILE"
+            exit 1
+          fi
+          
+          echo "✅ JSON syntax valid"
+          echo ""
+          
+          # Validate against schema using AJV
+          echo "🔍 Validating data against schema..."
+          if ajv validate -s "$SCHEMA_FILE" -d "$DATA_FILE" --strict=false --all-errors; then
+            echo ""
+            echo "✅ Schema validation passed for ${{ steps.package-info.outputs.name }}"
+          else
+            echo ""
+            echo "❌ Schema validation failed for ${{ steps.package-info.outputs.name }}"
+            exit 1
+          fi
+      
+      - name: Check for required fields
+        run: |
+          PACKAGE_DIR="${{ matrix.package }}"
+          DATA_FILE="$PACKAGE_DIR/data.json"
+          SCHEMA_FILE="$PACKAGE_DIR/schema.json"
+          
+          echo "🔍 Checking schema requirements..."
+          
+          # Check if schema has required fields defined
+          REQUIRED_FIELDS=$(jq -r '.required // [] | .[]' "$SCHEMA_FILE" 2>/dev/null || echo "")
+          
+          if [ -n "$REQUIRED_FIELDS" ]; then
+            echo "Required top-level fields in schema:"
+            echo "$REQUIRED_FIELDS" | sed 's/^/  - /'
+            
+            # Verify required fields exist in data
+            while IFS= read -r field; do
+              if ! jq -e "has(\"$field\")" "$DATA_FILE" > /dev/null; then
+                echo "❌ ERROR: Required field '$field' missing in data.json"
+                exit 1
+              fi
+            done <<< "$REQUIRED_FIELDS"
+            
+            echo "✅ All required fields present"
+          else
+            echo "ℹ️  No required fields defined in schema"
+          fi
+      
+      - name: Data statistics
+        run: |
+          PACKAGE_DIR="${{ matrix.package }}"
+          DATA_FILE="$PACKAGE_DIR/data.json"
+          PACKAGE_NAME="${{ steps.package-info.outputs.name }}"
+          
+          echo ""
+          echo "📊 Data Statistics for $PACKAGE_NAME:"
+          echo "─────────────────────────────────────"
+          
+          # Get file size
+          SIZE=$(du -h "$DATA_FILE" | cut -f1)
+          echo "File size: $SIZE"
+          
+          # Count entries (assumes top-level object with data)
+          ENTRIES=$(jq '. | to_entries | length' "$DATA_FILE" 2>/dev/null || echo "0")
+          echo "Top-level entries: $ENTRIES"
+          
+          # Try to detect nested structure
+          FIRST_KEY=$(jq -r 'keys[0]' "$DATA_FILE" 2>/dev/null || echo "")
+          if [ -n "$FIRST_KEY" ] && [ "$FIRST_KEY" != "null" ]; then
+            NESTED=$(jq -r ".\"$FIRST_KEY\" | type" "$DATA_FILE" 2>/dev/null || echo "")
+            if [ "$NESTED" = "object" ]; then
+              NESTED_COUNT=$(jq ".\"$FIRST_KEY\" | to_entries | length" "$DATA_FILE" 2>/dev/null || echo "0")
+              echo "Nested entries in '$FIRST_KEY': $NESTED_COUNT"
+            fi
+          fi
+          
+          echo "─────────────────────────────────────"
+      
+      - name: Check for schema compatibility (if previous version exists)
+        if: github.event_name == 'pull_request'
+        run: |
+          PACKAGE_DIR="${{ matrix.package }}"
+          DATA_FILE="$PACKAGE_DIR/data.json"
+          SCHEMA_FILE="$PACKAGE_DIR/schema.json"
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          
+          echo "🔄 Checking schema compatibility..."
+          
+          # Check if schema was modified
+          if git diff --name-only "$BASE_SHA" HEAD | grep -q "$SCHEMA_FILE"; then
+            echo "⚠️  Schema file was modified"
+            echo ""
+            echo "Schema changes detected. Please ensure:"
+            echo "  1. Changes are backward compatible, OR"
+            echo "  2. Version bump reflects breaking changes"
+            echo ""
+            
+            # Try to get old schema
+            if git cat-file -e "$BASE_SHA:$SCHEMA_FILE" 2>/dev/null; then
+              echo "Previous schema:"
+              git show "$BASE_SHA:$SCHEMA_FILE" | jq -r '.required // []' | head -5
+              echo ""
+              echo "New schema:"
+              jq -r '.required // []' "$SCHEMA_FILE" | head -5
+              echo ""
+              echo "⚠️  Manual review recommended"
+            fi
+          else
+            echo "✅ Schema unchanged (data-only update)"
+          fi
+
+  summary:
+    name: Validation Summary
+    runs-on: ubuntu-latest
+    needs: [detect-changes, validate-schema]
+    if: always()
+    steps:
+      - name: Check validation results
+        run: |
+          if [ "${{ needs.validate-schema.result }}" = "success" ]; then
+            echo "✅ All schema validations passed!"
+          elif [ "${{ needs.validate-schema.result }}" = "skipped" ]; then
+            echo "ℹ️  No packages to validate"
+          else
+            echo "❌ Schema validation failed"
+            exit 1
+          fi
+
