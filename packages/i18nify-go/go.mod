@@ -3,10 +3,10 @@ module github.com/razorpay/i18nify/packages/i18nify-go
 go 1.20
 
 require (
-	github.com/razorpay/i18nify/i18nify-data/go/bankcodes v0.0.0-20251216094326-fdada3c799d9
-	github.com/razorpay/i18nify/i18nify-data/go/country-metadata v0.0.0-20251216094326-fdada3c799d9
-	github.com/razorpay/i18nify/i18nify-data/go/country-subdivisions v0.0.0-20251216094326-fdada3c799d9
-	github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20251216094326-fdada3c799d9
+	github.com/razorpay/i18nify/i18nify-data/go/bankcodes v0.0.0-20251216112115-78fa3f889788
+	github.com/razorpay/i18nify/i18nify-data/go/country-metadata v0.0.0-20251216112115-78fa3f889788
+	github.com/razorpay/i18nify/i18nify-data/go/country-subdivisions v0.0.0-20251216112115-78fa3f889788
+	github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20251216112115-78fa3f889788
 	github.com/stretchr/testify v1.9.0
 )
 
