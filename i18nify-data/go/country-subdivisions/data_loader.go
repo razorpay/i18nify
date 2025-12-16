@@ -13,7 +13,7 @@ import (
 var dataFS embed.FS
 
 var (
-	dataCache  map[string]*CountrySubdivisions
+	dataCache map[string]*CountrySubdivisions
 	cacheMutex sync.RWMutex
 )
 
@@ -52,3 +52,4 @@ func GetCountrySubdivisions(countryCode string) (*CountrySubdivisions, error) {
 
 	return &subdivisions, nil
 }
+
