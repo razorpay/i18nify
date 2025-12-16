@@ -13,17 +13,17 @@ import (
 var dataFS embed.FS
 
 var (
-	dataOnce sync.Once
-	dataCache map[string]*CountrySubdivisions
+	dataCache  map[string]*CountrySubdivisions
 	cacheMutex sync.RWMutex
 )
 
+func init() {
+	// Initialize cache map
+	dataCache = make(map[string]*CountrySubdivisions)
+}
+
 // GetCountrySubdivisions returns the subdivisions data for a specific country code.
 func GetCountrySubdivisions(countryCode string) (*CountrySubdivisions, error) {
-	// Initialize cache on first call
-	dataOnce.Do(func() {
-		dataCache = make(map[string]*CountrySubdivisions)
-	})
 
 	// Check cache first
 	cacheMutex.RLock()
@@ -52,4 +52,3 @@ func GetCountrySubdivisions(countryCode string) (*CountrySubdivisions, error) {
 
 	return &subdivisions, nil
 }
-

@@ -4,7 +4,6 @@ package {{.PackageName}}
 import (
 	"embed"
 	"encoding/json"
-	"sync"
 )
 
 //go:embed data/data.json
@@ -15,14 +14,9 @@ type root struct {
 	{{.RootFieldName}} map[string]*{{.StructName}} `json:"{{.RootJSONKey}}"`
 }
 
-var (
-	dataOnce sync.Once
-	data     map[string]*{{.StructName}}
-)
+var data map[string]*{{.StructName}}
 
-// GetData returns a map keyed by code to {{.StructName}}.
-func GetData() map[string]*{{.StructName}} {
-	dataOnce.Do(func() {
+func init() {
 		// Read data from embedded filesystem
 		jsonBytes, err := dataFS.ReadFile("data/data.json")
 		if err != nil {
@@ -37,7 +31,10 @@ func GetData() map[string]*{{.StructName}} {
 		if data == nil {
 			data = map[string]*{{.StructName}}{}
 		}
-	})
+}
+
+// GetData returns a map keyed by code to {{.StructName}}.
+func GetData() map[string]*{{.StructName}} {
 	return data
 }
 

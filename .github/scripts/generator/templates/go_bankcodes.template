@@ -13,17 +13,17 @@ import (
 var dataFS embed.FS
 
 var (
-	dataOnce sync.Once
 	dataCache map[string]*{{.StructName}}
 	cacheMutex sync.RWMutex
 )
 
+func init() {
+	// Initialize cache map
+	dataCache = make(map[string]*{{.StructName}})
+}
+
 // GetBankInfo returns the bank information data for a specific country code.
 func GetBankInfo(countryCode string) (*{{.StructName}}, error) {
-	// Initialize cache on first call
-	dataOnce.Do(func() {
-		dataCache = make(map[string]*{{.StructName}})
-	})
 
 	// Check cache first
 	cacheMutex.RLock()
