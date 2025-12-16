@@ -10,6 +10,6 @@
   "data_file": "data.json",
   "multiple_data_files": true,
   "custom_template": "go_subdivisions.template",
-  "custom_test_template": "data_loader_test_subdivisions.template",
+  "custom_test_template": "data_loader_test_subdivisions.template"
 }
 
