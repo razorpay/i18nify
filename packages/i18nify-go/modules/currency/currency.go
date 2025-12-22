@@ -11,6 +11,8 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+	"golang.org/x/text/language"
+	"golang.org/x/text/message"
 )
 
 //go:embed data
@@ -116,4 +118,17 @@ func GetCurrencySymbol(currencyCode string) (string, error) {
 	}
 
 	return currencyInfo.Symbol, nil
+}
+
+// GetCurrencySymbol retrieves the currency symbol for a specific currency code.
+func FormatCurrency(amount float64, locale string) (string, error) {
+	tag, err := language.Parse(locale)
+	if err != nil {
+		return "", err
+	}
+
+	p := message.NewPrinter(tag)
+
+	// Format with 2 decimal places
+	return p.Sprintf("%.2f", amount), nil
 }
