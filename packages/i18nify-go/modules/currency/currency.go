@@ -11,6 +11,7 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+	i18nify_go "github.com/razorpay/i18nify/packages/i18nify-go"
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 )
@@ -89,7 +90,7 @@ type CurrencyInformation struct {
 // Getters for various fields of CurrencyInformation.
 
 // NewCurrencyInformation creates a new CurrencyInformation instance.
-func NewCurrencyInformation(minorUnit string, name string, numericCode string, physicalCurrencyDenominations []string, symbol string) *CurrencyInformation {
+func NewCurrencyInformation(minorUnit string, name string, numericCode string, physicalCurrencyDenominations []string, symbol string) i18nify_go.ICurrencyInfo {
 	return &CurrencyInformation{
 		MinorUnit:                     minorUnit,
 		Name:                          name,
