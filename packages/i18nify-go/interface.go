@@ -32,7 +32,3 @@ type IBank interface {
 	GetAllBanksWithShortCodes() (map[string]string, error)
 	GetBaseBranchIdentifierFromShortCode(bankName string) (string, error)
 }
-
-type ICurrencyInfo interface {
-	FormatCurrency(amount float64, locale string) (string, error)
-}
