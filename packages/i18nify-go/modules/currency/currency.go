@@ -121,7 +121,7 @@ func GetCurrencySymbol(currencyCode string) (string, error) {
 }
 
 // GetCurrencySymbol retrieves the currency symbol for a specific currency code.
-func FormatCurrency(amount float64, locale string) (string, error) {
+func (c *CurrencyInformation) FormatCurrency(amount float64, locale string) (string, error) {
 	tag, err := language.Parse(locale)
 	if err != nil {
 		return "", err
