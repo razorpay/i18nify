@@ -1,7 +1,13 @@
 syntax = "proto3";
 
 package country_metadata;
-option go_package = "./country_metadata";
+
+// i18nify metadata (package-level configuration - language-agnostic)
+// option package_name = "country_metadata";  // Language-agnostic package name
+// i18nify:root_json_key=metadata_information
+// i18nify:data_context=country metadata
+// i18nify:data_file=data.json
+// i18nify:multiple_data_files=false
 
 // MetadataInformation mirrors the structure inside metadata_information map.
 message MetadataInformation {

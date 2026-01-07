@@ -1,7 +1,13 @@
 syntax = "proto3";
 
 package currency;
-option go_package = "./currency";
+
+// i18nify metadata (package-level configuration - language-agnostic)
+// option package_name = "currency";  // Language-agnostic package name
+// i18nify:root_json_key=currency_information
+// i18nify:data_context=currency
+// i18nify:data_file=data.json
+// i18nify:multiple_data_files=false
 
 // CurrencyInfo mirrors the structure inside currency_information map.
 message CurrencyInfo {

@@ -1,7 +1,13 @@
 syntax = "proto3";
 
 package bankcodes;
-option go_package = "./bankcodes";
+
+// i18nify metadata (package-level configuration - language-agnostic)
+// option package_name = "bankcodes";  // Language-agnostic package name
+// i18nify:root_json_key=bank_info
+// i18nify:data_context=bankcodes
+// i18nify:data_file=  // Empty means use all JSON files in data directory
+// i18nify:multiple_data_files=true
 
 // BankInfo contains bank information for a country.
 message BankInfo {
