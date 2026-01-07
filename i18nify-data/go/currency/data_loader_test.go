@@ -20,9 +20,9 @@ func TestGetData_SerializationDeserialization(t *testing.T) {
 	
 	// Serialize to JSON
 	root := struct {
-		CurrencyInformation map[string]*CurrencyInfo `json:"currency_information"`
+		CurrencyInfo map[string]*CurrencyInfo `json:"currency_information"`
 	}{
-		CurrencyInformation: originalData,
+		CurrencyInfo: originalData,
 	}
 	
 	jsonBytes, err := json.Marshal(root)
@@ -32,7 +32,7 @@ func TestGetData_SerializationDeserialization(t *testing.T) {
 	
 	// Deserialize back from JSON
 	var deserializedRoot struct {
-		CurrencyInformation map[string]*CurrencyInfo `json:"currency_information"`
+		CurrencyInfo map[string]*CurrencyInfo `json:"currency_information"`
 	}
 	
 	if err := json.Unmarshal(jsonBytes, &deserializedRoot); err != nil {
@@ -40,19 +40,19 @@ func TestGetData_SerializationDeserialization(t *testing.T) {
 	}
 	
 	// Verify data integrity: count should match
-	if len(deserializedRoot.CurrencyInformation) != len(originalData) {
+	if len(deserializedRoot.CurrencyInfo) != len(originalData) {
 		t.Errorf("Deserialized data count = %d, want %d", 
-			len(deserializedRoot.CurrencyInformation), len(originalData))
+			len(deserializedRoot.CurrencyInfo), len(originalData))
 	}
 	
 	// Verify that all keys from original exist in deserialized and vice versa
 	for key := range originalData {
-		if _, exists := deserializedRoot.CurrencyInformation[key]; !exists {
+		if _, exists := deserializedRoot.CurrencyInfo[key]; !exists {
 			t.Errorf("Key %q exists in original but not in deserialized data", key)
 		}
 	}
 	
-	for key := range deserializedRoot.CurrencyInformation {
+	for key := range deserializedRoot.CurrencyInfo {
 		if _, exists := originalData[key]; !exists {
 			t.Errorf("Key %q exists in deserialized but not in original data", key)
 		}
@@ -70,7 +70,7 @@ func TestGetData_SerializationDeserialization(t *testing.T) {
 	
 	for _, key := range sampleKeys {
 		original := originalData[key]
-		deserialized := deserializedRoot.CurrencyInformation[key]
+		deserialized := deserializedRoot.CurrencyInfo[key]
 		
 		if original == nil && deserialized != nil {
 			t.Errorf("Key %q: original is nil but deserialized is not", key)

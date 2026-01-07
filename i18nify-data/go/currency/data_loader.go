@@ -11,7 +11,7 @@ var dataFS embed.FS
 
 // root mirrors the top-level JSON structure
 type root struct {
-	CurrencyInformation map[string]*CurrencyInfo `json:"currency_information"`
+	CurrencyInfo map[string]*CurrencyInfo `json:"currency_information"`
 }
 
 var data map[string]*CurrencyInfo
@@ -27,7 +27,7 @@ func init() {
 		if err := json.Unmarshal(jsonBytes, &r); err != nil {
 			panic("failed to parse embedded currency data: " + err.Error())
 		}
-		data = r.CurrencyInformation
+		data = r.CurrencyInfo
 		if data == nil {
 			data = map[string]*CurrencyInfo{}
 		}
