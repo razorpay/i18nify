@@ -3,7 +3,7 @@ syntax = "proto3";
 package country_metadata;
 
 // i18nify metadata (package-level configuration - language-agnostic)
-// option package_name = "country_metadata";  // Language-agnostic package name
+// option package_name = "country_metadata";
 // i18nify:root_json_key=metadata_information
 // i18nify:data_context=country metadata
 // i18nify:data_file=data.json

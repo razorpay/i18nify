@@ -3,7 +3,7 @@ syntax = "proto3";
 package currency;
 
 // i18nify metadata (package-level configuration - language-agnostic)
-// option package_name = "currency";  // Language-agnostic package name
+// option package_name = "currency";
 // i18nify:root_json_key=currency_information
 // i18nify:data_context=currency
 // i18nify:data_file=data.json

@@ -3,7 +3,7 @@ syntax = "proto3";
 package country_subdivisions;
 
 // i18nify metadata (package-level configuration - language-agnostic)
-// option package_name = "country_subdivisions";  // Language-agnostic package name
+// option package_name = "country_subdivisions";
 // i18nify:root_json_key=subdivisions
 // i18nify:data_context=country subdivisions
 // i18nify:data_file=  // Empty means use all JSON files in data directory
