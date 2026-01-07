@@ -1,5 +1,7 @@
 # Country Attribute Data
 
+> ⚠️ **IMPORTANT**: Do not add data directly inside language-specific packages (e.g., `i18nify-data/go/`, `i18nify-data/js/`, etc.). These are automatically generated directories. Always add or modify data in the source `data/` directory within each package. Changes to generated packages will be overwritten.
+
 **Note**: The word Attribute in this repository refers to any specific data related to countries. 
 
 Example: CountryLanguages, CountryTeleInformation, CountryInformation, CountryCurrency, etc.

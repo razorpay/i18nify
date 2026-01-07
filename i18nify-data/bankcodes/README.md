@@ -1,3 +1,5 @@
+> ⚠️ **IMPORTANT**: Do not add data directly inside language-specific packages (e.g., `i18nify-data/go/`, `i18nify-data/js/`, etc.). These are automatically generated directories. Always add or modify data in the source `data/` directory within this package. Changes to generated packages will be overwritten.
+
 ## Master Data Overview
 
 This project involves the use of **Master Data**, which acts as the foundational dataset for banking-related information. This master data serves as the source for generating country-specific datasets through a script. Below is a brief explanation of the data structure and its purpose.

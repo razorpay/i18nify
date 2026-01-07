@@ -46,9 +46,12 @@ fi
 # Function to update a specific dependency
 update_dependency() {
     local package_name="$1"
-    local module_path="github.com/razorpay/i18nify/i18nify-data/go/${package_name}"
+    # Convert package name to nested path (country-metadata -> country/metadata)
+    # This matches the directory structure and module path convention
+    local package_path=$(echo "$package_name" | tr '-' '/')
+    local module_path="github.com/razorpay/i18nify/i18nify-data/go/${package_path}"
     
-    log_info "Checking ${package_name} package..."
+    log_info "Checking ${package_name} package (module: ${module_path})..."
     
     # Get the version (use FORCE_VERSION if provided, otherwise query git tags)
     local version

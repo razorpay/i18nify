@@ -165,19 +165,20 @@ extract_root_json_key_from_schema() {
 auto_detect_config() {
     local base_dir="$1"
     
-    # 1. Package name from directory (used for module path)
+    # 1. Get relative path from i18nify-data (preserves nested structure)
+    local rel_path=$(echo "$base_dir" | sed "s|.*i18nify-data/||")
+    
+    # 2. Package name for identification (use basename for flat, or convert nested to kebab-case)
     PACKAGE_NAME=$(basename "$base_dir")
-    # Handle nested directories (e.g., country/metadata -> country-metadata)
-    if [[ "$base_dir" == *"/"* ]]; then
-        # Get relative path from i18nify-data
-        local rel_path=$(echo "$base_dir" | sed "s|.*i18nify-data/||")
+    if [[ "$rel_path" == *"/"* ]]; then
+        # For nested directories, use kebab-case for package name identifier
         PACKAGE_NAME=$(echo "$rel_path" | tr '/' '-')
     fi
     GO_PACKAGE_NAME=$(echo "$PACKAGE_NAME" | tr '-' '_')
     
-    # 2. Go-specific: Module path - construct from directory-based package name (not proto package)
+    # 3. Go-specific: Module path - preserve directory structure (country/metadata -> country/metadata)
     # This is Go-specific and would be different for other languages (e.g., JS: @razorpay/i18nify-{package})
-    MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/$PACKAGE_NAME"
+    MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/$rel_path"
     
     # 3. Check for proto files
     local proto_dir="$base_dir/proto"
