@@ -1,18 +1,12 @@
 package bankcodes
 
 import (
-	"embed"
-	"encoding/json"
 	"errors"
 	"fmt"
 	"strings"
+
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/bankcodes"
 )
-
-//go:embed data
-var bankJsonDir embed.FS
-
-// DataFile defines the path to the JSON data file containing bank information.
-const DataFile = "data/%s.json"
 
 type Identifier struct {
 	SwiftCode     string   `json:"swift_code"`
@@ -45,28 +39,103 @@ const (
 	IdentifierTypeIFSC          = "IFSC"
 )
 
+// loadBankInfo loads bank information from the dataSource package and converts it to internal type.
 func loadBankInfo(countryCode string) (*BankInfo, error) {
 	if countryCode == "" {
 		return nil, errors.New("country code is empty")
 	}
 
-	// Construct file path
-	filePath := fmt.Sprintf(DataFile, strings.ToUpper(countryCode))
-
-	// Load JSON file from embedded filesystem
-	data, err := bankJsonDir.ReadFile(filePath)
+	// Get data from dataSource package using data_loader (which handles caching)
+	protoBankInfo, err := dataSource.GetBankInfo(strings.ToUpper(countryCode))
 	if err != nil {
-		return nil, fmt.Errorf("failed to read file: %w", err)
+		return nil, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
 	}
 
-	// Parse JSON data into Go struct
-	var bankInfo BankInfo
-	err = json.Unmarshal(data, &bankInfo)
-	if err != nil {
-		return nil, fmt.Errorf("failed to parse JSON: %w", err)
+	if protoBankInfo == nil {
+		return nil, fmt.Errorf("no bank information found for country %s", countryCode)
 	}
 
-	return &bankInfo, nil
+	// Convert from proto type to our internal type
+	return convertProtoToBankInfo(protoBankInfo), nil
+}
+
+// convertProtoToBankInfo converts proto BankInfo to our internal type
+func convertProtoToBankInfo(proto *dataSource.BankInfo) *BankInfo {
+	if proto == nil {
+		return &BankInfo{}
+	}
+
+	bankInfo := &BankInfo{
+		Defaults: struct {
+			IdentifierType string `json:"identifier_type"`
+		}{
+			IdentifierType: proto.GetDefaults().GetIdentifierType(),
+		},
+		Details: convertProtoBankDetails(proto.GetDetails()),
+	}
+
+	return bankInfo
+}
+
+// convertProtoBankDetails converts a slice of proto BankDetails to our internal BankDetails slice
+func convertProtoBankDetails(protoDetails []*dataSource.BankDetails) []BankDetails {
+	if protoDetails == nil {
+		return []BankDetails{}
+	}
+
+	details := make([]BankDetails, 0, len(protoDetails))
+	for _, protoDetail := range protoDetails {
+		if protoDetail != nil {
+			details = append(details, convertProtoBankDetail(protoDetail))
+		}
+	}
+	return details
+}
+
+// convertProtoBankDetail converts a proto BankDetails to our internal BankDetails type
+func convertProtoBankDetail(protoDetail *dataSource.BankDetails) BankDetails {
+	return BankDetails{
+		Name:      protoDetail.GetName(),
+		ShortCode: protoDetail.GetShortCode(),
+		Branches:  convertProtoBranches(protoDetail.GetBranches()),
+	}
+}
+
+// convertProtoBranches converts a slice of proto Branch to our internal Branch slice
+func convertProtoBranches(protoBranches []*dataSource.Branch) []Branch {
+	if protoBranches == nil {
+		return []Branch{}
+	}
+
+	branches := make([]Branch, 0, len(protoBranches))
+	for _, protoBranch := range protoBranches {
+		if protoBranch != nil {
+			branches = append(branches, convertProtoBranch(protoBranch))
+		}
+	}
+	return branches
+}
+
+// convertProtoBranch converts a proto Branch to our internal Branch type
+func convertProtoBranch(protoBranch *dataSource.Branch) Branch {
+	return Branch{
+		Code:        protoBranch.GetCode(),
+		City:        protoBranch.GetCity(),
+		Identifiers: convertProtoIdentifier(protoBranch.GetIdentifiers()),
+	}
+}
+
+// convertProtoIdentifier converts a proto Identifier to our internal Identifier type
+func convertProtoIdentifier(protoIdentifier *dataSource.Identifier) Identifier {
+	if protoIdentifier == nil {
+		return Identifier{}
+	}
+
+	return Identifier{
+		SwiftCode:     protoIdentifier.GetSwiftCode(),
+		RoutingNumber: protoIdentifier.GetRoutingNumber(),
+		IfscCode:      protoIdentifier.GetIfscCode(),
+	}
 }
 
 func IsValidBankIdentifier(countryCode, identifierType, identifierValue string) (bool, error) {

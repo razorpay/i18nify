@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package country_subdivisions;
+
+// i18nify metadata (package-level configuration - language-agnostic)
+// option package_name = "country_subdivisions";
+// i18nify:root_json_key=subdivisions
+// i18nify:data_context=country subdivisions
+// i18nify:data_file=  // Empty means use all JSON files in data directory
+// i18nify:multiple_data_files=true
+
+// CountrySubdivisions contains information about country subdivisions.
+message CountrySubdivisions {
+  string country_name = 1;
+  map<string, State> states = 2;
+}
+
+// State contains information about a state or province.
+message State {
+  string name = 1;
+  map<string, City> cities = 2;
+}
+
+// City contains information about a city.
+message City {
+  string name = 1;
+  string region_name = 2 [json_name = "region_name/district_name"];
+  string timezone = 3;
+  repeated string zipcodes = 4;
+}
+

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package bankcodes;
+
+// i18nify metadata (package-level configuration - language-agnostic)
+// option package_name = "bankcodes";
+// i18nify:root_json_key=bank_info
+// i18nify:data_context=bankcodes
+// i18nify:data_file=  // Empty means use all JSON files in data directory
+// i18nify:multiple_data_files=true
+
+// BankInfo contains bank information for a country.
+message BankInfo {
+  Defaults defaults = 1;
+  repeated BankDetails details = 2;
+}
+
+// Defaults contains default settings for bank identifiers.
+message Defaults {
+  string identifier_type = 1;
+}
+
+// BankDetails contains information about a bank.
+message BankDetails {
+  string name = 1;
+  string short_code = 2;
+  repeated Branch branches = 3;
+}
+
+// Branch contains information about a bank branch.
+message Branch {
+  string code = 1;
+  string city = 2;
+  Identifier identifiers = 3;
+}
+
+// Identifier contains bank identifier codes.
+message Identifier {
+  string swift_code = 1;
+  repeated string routing_number = 2;
+  string ifsc_code = 3;
+}
+

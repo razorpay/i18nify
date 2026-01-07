@@ -1,63 +1,18 @@
 package currency
 
 import (
-	"errors"
-	"github.com/stretchr/testify/assert"
-	"os"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
-func TestUnmarshalCurrency(t *testing.T) {
-	jsonData, err := os.ReadFile("data/data.json")
-	result, err := UnmarshalCurrency(jsonData)
-
-	assert.NoError(t, err, "Unexpected error during unmarshal")
-
-	currency := result.CurrencyInformation["USD"]
-	assert.Equal(t, "2", currency.MinorUnit, "MinorUnit field mismatch")
-	assert.Equal(t, "US Dollar", currency.Name, "Name field mismatch")
-	assert.Equal(t, "840", currency.NumericCode, "NumericCode field mismatch")
-	assert.Equal(t, []string{"1", "5", "10", "25", "50", "100"}, currency.PhysicalCurrencyDenominations, "PhysicalCurrencyDenominations field mismatch")
-	assert.Equal(t, "$", currency.Symbol, "Symbol field mismatch")
-}
-
-func TestMarshalCurrency(t *testing.T) {
-	expectedJSON := `{"currency_information": {"USD": {"name": "US Dollar", "numeric_code": "840", "minor_unit": "2", "symbol": "$", "physical_currency_denominations": ["1", "5", "10", "25", "50", "100"]}}}`
-
-	inputData := map[string]CurrencyInformation{
-		"USD": {
-			MinorUnit:                     "2",
-			Name:                          "US Dollar",
-			NumericCode:                   "840",
-			PhysicalCurrencyDenominations: []string{"1", "5", "10", "25", "50", "100"},
-			Symbol:                        "$",
-		},
-	}
-	currency := NewCurrency(inputData)
-	marshaledJSON, err := currency.Marshal()
-	assert.NoError(t, err)
-	assert.JSONEq(t, expectedJSON, string(marshaledJSON))
-}
-
-var readFileFunc = os.ReadFile
-
 func TestGetCurrencyInformation(t *testing.T) {
-	jsonData, err := os.ReadFile("data/data.json")
-	// Mock implementation of os.ReadFile
-	readFileFunc = func(filename string) ([]byte, error) {
-		return jsonData, errors.New("error reading JSON file")
-	}
-	defer func() {
-		// Restore the original implementation after the test
-		readFileFunc = os.ReadFile
-	}()
+	// Test uses the generated package's GetData() function
+	// No need for file mocking since data is embedded in the generated package
 
-	_, err = readFileFunc(DataFile)
-	if err != nil {
-		return
-	}
 	// Validate specific details for USD as a sample
-	result, _ := GetCurrencyInformation("USD")
+	result, err := GetCurrencyInformation("USD")
+	assert.NoError(t, err, "Should successfully get USD currency information")
 
 	assert.Equal(t, "2", result.MinorUnit, "MinorUnit field mismatch")
 	assert.Equal(t, "US Dollar", result.Name, "Name field mismatch")
@@ -83,7 +38,7 @@ func TestGetCurrencyInformation(t *testing.T) {
 		// South America
 		{"BRL", "Brazilian Real", "R$", "986"},
 		// Australia
-		{"AUD", "Australian Dollar", "$", "36"},
+		{"AUD", "Australian Dollar", "A$", "36"},
 		// Europe
 		{"EUR", "Euro", "€", "978"},
 		// Africa

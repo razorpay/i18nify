@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package currency;
+
+// i18nify metadata (package-level configuration - language-agnostic)
+// option package_name = "currency";
+// i18nify:root_json_key=currency_information
+// i18nify:data_context=currency
+// i18nify:data_file=data.json
+// i18nify:multiple_data_files=false
+
+// CurrencyInfo mirrors the structure inside currency_information map.
+message CurrencyInfo {
+  string name = 1;
+  string numeric_code = 2; // stored as string in source JSON
+  string minor_unit = 3;   // stored as string in source JSON
+  string symbol = 4;
+  repeated string physical_currency_denominations = 5; // strings include decimals/"nan"
+}
+
+

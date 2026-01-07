@@ -1,33 +1,11 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse and unparse this JSON data, add this code to your project and do:
-//
-//    countrySubdivisions, err := UnmarshalCountrySubdivisions(bytes)
-//    bytes, err = countrySubdivisions.Marshal()
-
 // Package country_subdivisions provides functionality to manage subdivisions (such as states, provinces, or regions) and cities within countries.
 package country_subdivisions
 
 import (
-	"embed"
 	"encoding/json"
-	"fmt"
-	"path/filepath"
+
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/country-subdivisions"
 )
-
-//go:embed data
-var subDivJsonDir embed.FS
-
-// Cache to avoid duplicate reads for same countryCode
-var countrySubDivisionStore = make(map[string]CountrySubdivisions)
-
-// DataFile is the directory where JSON files containing country subdivision data are stored. "
-
-// UnmarshalCountrySubdivisions parses JSON data into a CountrySubdivisions struct.
-func UnmarshalCountrySubdivisions(data []byte) (CountrySubdivisions, error) {
-	var r CountrySubdivisions
-	err := json.Unmarshal(data, &r)
-	return r, err
-}
 
 // Marshal converts a CountrySubdivisions struct into JSON data.
 func (r *CountrySubdivisions) Marshal() ([]byte, error) {
@@ -57,22 +35,78 @@ func (r *CountrySubdivisions) GetStateByStateCode(code string) (State, bool) {
 }
 
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
+// The dataSource package handles caching, so no additional caching is needed here.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
-	if _, present := countrySubDivisionStore[code]; present {
-		return countrySubDivisionStore[code]
-	}
-	// Read JSON data file containing country subdivision information.
-	completePath := filepath.Join("data/", code+".json")
-	subDivJsonData, err := subDivJsonDir.ReadFile(completePath)
-	if err != nil {
-		fmt.Println("Error reading JSON file:", err)
+	// Get data from dataSource package using data_loader (which handles caching)
+	protoSubDiv, err := dataSource.GetCountrySubdivisions(code)
+	if err != nil || protoSubDiv == nil {
 		return CountrySubdivisions{}
 	}
-	// Unmarshal JSON data into CountrySubdivisions struct.
-	allSubDivData, _ := UnmarshalCountrySubdivisions(subDivJsonData)
-	// Store calculated CountrySubDivisions into the cache
-	countrySubDivisionStore[code] = allSubDivData
-	return allSubDivData
+
+	// Convert from proto type to our internal type
+	return convertProtoToCountrySubdivisions(protoSubDiv)
+}
+
+// convertProtoToCountrySubdivisions converts proto CountrySubdivisions to our internal type
+func convertProtoToCountrySubdivisions(proto *dataSource.CountrySubdivisions) CountrySubdivisions {
+	if proto == nil {
+		return CountrySubdivisions{}
+	}
+
+	states := convertProtoStates(proto.States)
+	return CountrySubdivisions{
+		CountryName: proto.GetCountryName(),
+		States:      states,
+	}
+}
+
+// convertProtoStates converts a map of proto States to our internal State map
+func convertProtoStates(protoStates map[string]*dataSource.State) map[string]State {
+	if protoStates == nil {
+		return make(map[string]State)
+	}
+
+	states := make(map[string]State, len(protoStates))
+	for stateCode, protoState := range protoStates {
+		if protoState != nil {
+			states[stateCode] = convertProtoState(protoState)
+		}
+	}
+	return states
+}
+
+// convertProtoState converts a proto State to our internal State type
+func convertProtoState(protoState *dataSource.State) State {
+	cities := convertProtoCities(protoState.Cities)
+	return State{
+		Name:   protoState.GetName(),
+		Cities: cities,
+	}
+}
+
+// convertProtoCities converts a map of proto Cities to our internal City map
+func convertProtoCities(protoCities map[string]*dataSource.City) map[string]City {
+	if protoCities == nil {
+		return make(map[string]City)
+	}
+
+	cities := make(map[string]City, len(protoCities))
+	for cityName, protoCity := range protoCities {
+		if protoCity != nil {
+			cities[cityName] = convertProtoCity(protoCity)
+		}
+	}
+	return cities
+}
+
+// convertProtoCity converts a proto City to our internal City type
+func convertProtoCity(protoCity *dataSource.City) City {
+	return City{
+		Name:       protoCity.GetName(),
+		RegionName: protoCity.GetRegionName(),
+		Timezone:   protoCity.GetTimezone(),
+		Zipcodes:   protoCity.GetZipcodes(),
+	}
 }
 
 // NewCountrySubdivisions creates a new CountrySubdivisions instance.
