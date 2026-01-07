@@ -4,7 +4,7 @@ package country_metadata
 import (
 	"strings"
 
-	external "github.com/razorpay/i18nify/i18nify-data/go/country-metadata"
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/country-metadata"
 )
 
 // CountryMetadata represents metadata information about countries.
@@ -20,8 +20,8 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 
 // GetMetadataInformation retrieves metadata information for a specific country code.
 func GetMetadataInformation(code string) MetadataInformation {
-	// Get data from external package using data_loader
-	data := external.GetData()
+	// Get data from dataSource package using data_loader
+	data := dataSource.GetData()
 
 	// Get the proto type for the country code
 	protoInfo, exists := data[code]
@@ -34,7 +34,7 @@ func GetMetadataInformation(code string) MetadataInformation {
 }
 
 // convertProtoToMetadataInformation converts proto MetadataInformation to our internal type
-func convertProtoToMetadataInformation(proto *external.MetadataInformation) MetadataInformation {
+func convertProtoToMetadataInformation(proto *dataSource.MetadataInformation) MetadataInformation {
 	if proto == nil {
 		return MetadataInformation{}
 	}
@@ -58,7 +58,7 @@ func convertProtoToMetadataInformation(proto *external.MetadataInformation) Meta
 }
 
 // convertProtoLocales converts a map of proto Locales to our internal Locale map
-func convertProtoLocales(protoLocales map[string]*external.Locale) map[string]Locale {
+func convertProtoLocales(protoLocales map[string]*dataSource.Locale) map[string]Locale {
 	if protoLocales == nil {
 		return make(map[string]Locale)
 	}
@@ -75,7 +75,7 @@ func convertProtoLocales(protoLocales map[string]*external.Locale) map[string]Lo
 }
 
 // convertProtoTimezones converts a map of proto Timezones to our internal Timezone map
-func convertProtoTimezones(protoTimezones map[string]*external.Timezone) map[string]Timezone {
+func convertProtoTimezones(protoTimezones map[string]*dataSource.Timezone) map[string]Timezone {
 	if protoTimezones == nil {
 		return make(map[string]Timezone)
 	}
@@ -161,8 +161,8 @@ func NewTimezone(utcOffset string) *Timezone {
 }
 
 func GetCountryCodeISO2(countryName string) string {
-	// Get data from external package using data_loader
-	data := external.GetData()
+	// Get data from dataSource package using data_loader
+	data := dataSource.GetData()
 
 	normalizedName := strings.ToUpper(strings.TrimSpace(countryName))
 	for code, protoInfo := range data {

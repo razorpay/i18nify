@@ -4,7 +4,7 @@ package country_subdivisions
 import (
 	"encoding/json"
 
-	external "github.com/razorpay/i18nify/i18nify-data/go/country-subdivisions"
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/country-subdivisions"
 )
 
 // Marshal converts a CountrySubdivisions struct into JSON data.
@@ -35,10 +35,10 @@ func (r *CountrySubdivisions) GetStateByStateCode(code string) (State, bool) {
 }
 
 // GetCountrySubdivisions retrieves subdivision information for a specific country code.
-// The external package handles caching, so no additional caching is needed here.
+// The dataSource package handles caching, so no additional caching is needed here.
 func GetCountrySubdivisions(code string) CountrySubdivisions {
-	// Get data from external package using data_loader (which handles caching)
-	protoSubDiv, err := external.GetCountrySubdivisions(code)
+	// Get data from dataSource package using data_loader (which handles caching)
+	protoSubDiv, err := dataSource.GetCountrySubdivisions(code)
 	if err != nil || protoSubDiv == nil {
 		return CountrySubdivisions{}
 	}
@@ -48,7 +48,7 @@ func GetCountrySubdivisions(code string) CountrySubdivisions {
 }
 
 // convertProtoToCountrySubdivisions converts proto CountrySubdivisions to our internal type
-func convertProtoToCountrySubdivisions(proto *external.CountrySubdivisions) CountrySubdivisions {
+func convertProtoToCountrySubdivisions(proto *dataSource.CountrySubdivisions) CountrySubdivisions {
 	if proto == nil {
 		return CountrySubdivisions{}
 	}
@@ -61,7 +61,7 @@ func convertProtoToCountrySubdivisions(proto *external.CountrySubdivisions) Coun
 }
 
 // convertProtoStates converts a map of proto States to our internal State map
-func convertProtoStates(protoStates map[string]*external.State) map[string]State {
+func convertProtoStates(protoStates map[string]*dataSource.State) map[string]State {
 	if protoStates == nil {
 		return make(map[string]State)
 	}
@@ -76,7 +76,7 @@ func convertProtoStates(protoStates map[string]*external.State) map[string]State
 }
 
 // convertProtoState converts a proto State to our internal State type
-func convertProtoState(protoState *external.State) State {
+func convertProtoState(protoState *dataSource.State) State {
 	cities := convertProtoCities(protoState.Cities)
 	return State{
 		Name:   protoState.GetName(),
@@ -85,7 +85,7 @@ func convertProtoState(protoState *external.State) State {
 }
 
 // convertProtoCities converts a map of proto Cities to our internal City map
-func convertProtoCities(protoCities map[string]*external.City) map[string]City {
+func convertProtoCities(protoCities map[string]*dataSource.City) map[string]City {
 	if protoCities == nil {
 		return make(map[string]City)
 	}
@@ -100,7 +100,7 @@ func convertProtoCities(protoCities map[string]*external.City) map[string]City {
 }
 
 // convertProtoCity converts a proto City to our internal City type
-func convertProtoCity(protoCity *external.City) City {
+func convertProtoCity(protoCity *dataSource.City) City {
 	return City{
 		Name:       protoCity.GetName(),
 		RegionName: protoCity.GetRegionName(),

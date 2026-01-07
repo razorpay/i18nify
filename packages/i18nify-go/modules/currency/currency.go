@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	// Import the generated currency package
-	gencurrency "github.com/razorpay/i18nify/i18nify-data/go/currency"
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/currency"
 )
 
 // CurrencyInfo is a value type that mirrors the proto-generated CurrencyInfo.
@@ -26,7 +26,7 @@ type CurrencyInformation = CurrencyInfo
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 // It uses the generated package's GetData() function and returns a value type (not pointer).
 func GetCurrencyInformation(code string) (CurrencyInformation, error) {
-	data := gencurrency.GetData()
+	data := dataSource.GetData()
 	currencyInfo, exists := data[code]
 	if !exists {
 		return CurrencyInformation{}, fmt.Errorf("currency code '%s' not found", code)

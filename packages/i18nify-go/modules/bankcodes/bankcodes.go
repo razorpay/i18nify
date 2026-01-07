@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	external "github.com/razorpay/i18nify/i18nify-data/go/bankcodes"
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/bankcodes"
 )
 
 type Identifier struct {
@@ -39,14 +39,14 @@ const (
 	IdentifierTypeIFSC          = "IFSC"
 )
 
-// loadBankInfo loads bank information from the external package and converts it to internal type.
+// loadBankInfo loads bank information from the dataSource package and converts it to internal type.
 func loadBankInfo(countryCode string) (*BankInfo, error) {
 	if countryCode == "" {
 		return nil, errors.New("country code is empty")
 	}
 
-	// Get data from external package using data_loader (which handles caching)
-	protoBankInfo, err := external.GetBankInfo(strings.ToUpper(countryCode))
+	// Get data from dataSource package using data_loader (which handles caching)
+	protoBankInfo, err := dataSource.GetBankInfo(strings.ToUpper(countryCode))
 	if err != nil {
 		return nil, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
 	}
@@ -60,7 +60,7 @@ func loadBankInfo(countryCode string) (*BankInfo, error) {
 }
 
 // convertProtoToBankInfo converts proto BankInfo to our internal type
-func convertProtoToBankInfo(proto *external.BankInfo) *BankInfo {
+func convertProtoToBankInfo(proto *dataSource.BankInfo) *BankInfo {
 	if proto == nil {
 		return &BankInfo{}
 	}
@@ -78,7 +78,7 @@ func convertProtoToBankInfo(proto *external.BankInfo) *BankInfo {
 }
 
 // convertProtoBankDetails converts a slice of proto BankDetails to our internal BankDetails slice
-func convertProtoBankDetails(protoDetails []*external.BankDetails) []BankDetails {
+func convertProtoBankDetails(protoDetails []*dataSource.BankDetails) []BankDetails {
 	if protoDetails == nil {
 		return []BankDetails{}
 	}
@@ -93,7 +93,7 @@ func convertProtoBankDetails(protoDetails []*external.BankDetails) []BankDetails
 }
 
 // convertProtoBankDetail converts a proto BankDetails to our internal BankDetails type
-func convertProtoBankDetail(protoDetail *external.BankDetails) BankDetails {
+func convertProtoBankDetail(protoDetail *dataSource.BankDetails) BankDetails {
 	return BankDetails{
 		Name:      protoDetail.GetName(),
 		ShortCode: protoDetail.GetShortCode(),
@@ -102,7 +102,7 @@ func convertProtoBankDetail(protoDetail *external.BankDetails) BankDetails {
 }
 
 // convertProtoBranches converts a slice of proto Branch to our internal Branch slice
-func convertProtoBranches(protoBranches []*external.Branch) []Branch {
+func convertProtoBranches(protoBranches []*dataSource.Branch) []Branch {
 	if protoBranches == nil {
 		return []Branch{}
 	}
@@ -117,7 +117,7 @@ func convertProtoBranches(protoBranches []*external.Branch) []Branch {
 }
 
 // convertProtoBranch converts a proto Branch to our internal Branch type
-func convertProtoBranch(protoBranch *external.Branch) Branch {
+func convertProtoBranch(protoBranch *dataSource.Branch) Branch {
 	return Branch{
 		Code:        protoBranch.GetCode(),
 		City:        protoBranch.GetCity(),
@@ -126,7 +126,7 @@ func convertProtoBranch(protoBranch *external.Branch) Branch {
 }
 
 // convertProtoIdentifier converts a proto Identifier to our internal Identifier type
-func convertProtoIdentifier(protoIdentifier *external.Identifier) Identifier {
+func convertProtoIdentifier(protoIdentifier *dataSource.Identifier) Identifier {
 	if protoIdentifier == nil {
 		return Identifier{}
 	}
