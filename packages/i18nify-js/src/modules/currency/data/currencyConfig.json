@@ -776,12 +776,12 @@
   },
   "UYI": {
     "name": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
-    "minor_unit": "2",
+    "minor_unit": "0",
     "symbol": "$U"
   },
   "UYU": {
     "name": "Peso Uruguayo",
-    "minor_unit": "0",
+    "minor_unit": "2",
     "symbol": "$U"
   },
   "UYW": {
