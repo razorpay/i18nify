@@ -1841,15 +1841,15 @@
     },
     "UYI": {
       "name": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
-      "numeric_code": "858",
-      "minor_unit": "2",
+      "numeric_code": "940",
+      "minor_unit": "0",
       "symbol": "$U",
       "physical_currency_denominations": ["nan"]
     },
     "UYU": {
       "name": "Peso Uruguayo",
-      "numeric_code": "940",
-      "minor_unit": "0",
+      "numeric_code": "858",
+      "minor_unit": "2",
       "symbol": "$U",
       "physical_currency_denominations": [
         "20",
