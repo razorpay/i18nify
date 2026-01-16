@@ -21,11 +21,23 @@ on:
       - 'i18nify-data/country/metadata/**'
       - '!i18nify-data/go/**'
   
-  # Manual trigger via PR comment
+  # Manual trigger via PR comment (only works from default branch)
   # Comment "generate-package-go" to regenerate all packages with proto
   # Comment "generate-package-go country/subdivisions" to regenerate specific package
   issue_comment:
     types: [created]
+  
+  # Manual trigger via GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Package to generate (e.g., country/subdivisions). Leave empty for all.'
+        required: false
+        default: ''
+      branch:
+        description: 'Branch to run on'
+        required: true
+        default: 'master'
 
 concurrency:
   group: auto-generate-go-${{ github.event_name }}-${{ github.event.issue.number || github.ref }}
@@ -96,10 +108,35 @@ jobs:
         run: |
           gh api repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions -f content='+1'
 
+  # Handle workflow_dispatch (manual UI trigger)
+  check-dispatch:
+    name: Check Manual Dispatch
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    outputs:
+      packages: ${{ steps.setup.outputs.packages }}
+      branch: ${{ steps.setup.outputs.branch }}
+    steps:
+      - name: Setup dispatch parameters
+        id: setup
+        run: |
+          PACKAGE="${{ github.event.inputs.package }}"
+          BRANCH="${{ github.event.inputs.branch }}"
+          
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+          
+          if [ -n "$PACKAGE" ]; then
+            echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
+            echo "Specific package: $PACKAGE"
+          else
+            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata"]' >> $GITHUB_OUTPUT
+            echo "All packages will be checked"
+          fi
+
   detect-changes:
     name: Detect Package Changes
     runs-on: ubuntu-latest
-    if: github.event_name != 'issue_comment'
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
@@ -128,16 +165,17 @@ jobs:
   generate-packages:
     name: Generate Go Package
     runs-on: ubuntu-latest
-    needs: [detect-changes, check-comment]
-    # Run if: (auto-trigger with changes) OR (comment trigger)
+    needs: [detect-changes, check-comment, check-dispatch]
+    # Run if: (auto-trigger with changes) OR (comment trigger) OR (manual dispatch)
     if: |
       always() && (
         (needs.detect-changes.result == 'success' && needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != '') ||
-        (needs.check-comment.result == 'success' && needs.check-comment.outputs.should_run == 'true')
+        (needs.check-comment.result == 'success' && needs.check-comment.outputs.should_run == 'true') ||
+        (needs.check-dispatch.result == 'success')
       )
     strategy:
       matrix:
-        package: ${{ fromJson(needs.check-comment.outputs.packages || needs.detect-changes.outputs.packages || '[]') }}
+        package: ${{ fromJson(needs.check-dispatch.outputs.packages || needs.check-comment.outputs.packages || needs.detect-changes.outputs.packages || '[]') }}
       fail-fast: false
     
     steps:
@@ -146,7 +184,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ needs.check-comment.outputs.pr_head_ref || github.event.pull_request.head.ref || github.ref_name }}
+          ref: ${{ needs.check-dispatch.outputs.branch || needs.check-comment.outputs.pr_head_ref || github.event.pull_request.head.ref || github.ref_name }}
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -248,7 +286,7 @@ jobs:
       - name: Push changes
         if: steps.check-changes.outputs.has_changes == 'true'
         run: |
-          BRANCH="${{ needs.check-comment.outputs.pr_head_ref || github.event.pull_request.head.ref || github.ref_name }}"
+          BRANCH="${{ needs.check-dispatch.outputs.branch || needs.check-comment.outputs.pr_head_ref || github.event.pull_request.head.ref || github.ref_name }}"
           
           # Retry push up to 3 times
           MAX_RETRIES=3
