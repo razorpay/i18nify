@@ -1,7 +1,6 @@
 {
   "country_name": "India",
   "states": {
-    "temp" : "hey",
     "AP": {
       "name": "Andhra Pradesh",
       "cities": {
