@@ -95,18 +95,13 @@ GENERATED_PACKAGE_PATH="../../i18nify-data/go/$PACKAGE_PATH"
 log_info "Setting require directive..."
 go mod edit -require "${MODULE_PATH}@${VERSION}"
 
-# Add temporary replace directive for go mod tidy
-# (The module isn't on GitHub yet, so we use local path)
-log_info "Adding temporary replace directive for go mod tidy..."
-go mod edit -replace "${MODULE_PATH}=${GENERATED_PACKAGE_PATH}"
-
-# Run go mod tidy with the local replace
+# Run go mod tidy - this requires the module to be resolvable
+# In CI, this should run AFTER the generated package commit is pushed
 log_info "Running go mod tidy..."
-go mod tidy || log_warning "go mod tidy had warnings"
-
-# Remove the replace directive (the final go.mod should use the version)
-log_info "Removing replace directive..."
-go mod edit -dropreplace "${MODULE_PATH}"
+if ! go mod tidy; then
+    log_warning "go mod tidy failed - module may not be pushed yet"
+    log_info "The module should be pushed first, then run go mod tidy"
+fi
 
 log_info "✅ Updated $MODULE_PATH to $VERSION"
 log_info ""

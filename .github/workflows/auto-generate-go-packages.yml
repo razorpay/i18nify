@@ -269,24 +269,12 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
 
-      - name: Update i18nify-go dependencies
-        if: steps.check-changes.outputs.has_changes == 'true'
-        run: |
-          chmod +x .github/scripts/go/update-dependencies.sh
-          .github/scripts/go/update-dependencies.sh "${{ matrix.package }}" "${{ steps.version.outputs.version }}"
-
-      - name: Commit go.mod update
-        if: steps.check-changes.outputs.has_changes == 'true'
-        run: |
-          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
-          git commit -m "chore(go): update ${{ matrix.package }} dependency to ${{ steps.version.outputs.version }}" || echo "No go.mod changes to commit"
-
-      - name: Push changes
+      # Push generated package FIRST so go mod tidy can resolve the module
+      - name: Push generated package
         if: steps.check-changes.outputs.has_changes == 'true'
         env:
           BRANCH: ${{ needs.check-dispatch.outputs.branch || needs.check-comment.outputs.pr_head_ref || github.event.pull_request.head.ref || github.ref_name }}
         run: |
-          # Retry push up to 3 times
           MAX_RETRIES=3
           RETRY_COUNT=0
 
@@ -294,7 +282,44 @@ jobs:
             git pull --rebase origin "$BRANCH" || true
             
             if git push origin HEAD:"$BRANCH"; then
-              echo "Successfully pushed changes"
+              echo "Successfully pushed generated package"
+              exit 0
+            else
+              echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+            fi
+          done
+
+          echo "Failed to push after $MAX_RETRIES attempts"
+          exit 1
+
+      # Now that module is on GitHub, update go.mod with proper go.sum
+      - name: Update i18nify-go dependencies
+        if: steps.check-changes.outputs.has_changes == 'true'
+        run: |
+          chmod +x .github/scripts/go/update-dependencies.sh
+          .github/scripts/go/update-dependencies.sh "${{ matrix.package }}" "${{ steps.version.outputs.version }}"
+
+      - name: Commit and push go.mod update
+        if: steps.check-changes.outputs.has_changes == 'true'
+        env:
+          BRANCH: ${{ needs.check-dispatch.outputs.branch || needs.check-comment.outputs.pr_head_ref || github.event.pull_request.head.ref || github.ref_name }}
+        run: |
+          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
+          git commit -m "chore(go): update ${{ matrix.package }} dependency to ${{ steps.version.outputs.version }}" || {
+            echo "No go.mod changes to commit"
+            exit 0
+          }
+
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            git pull --rebase origin "$BRANCH" || true
+            
+            if git push origin HEAD:"$BRANCH"; then
+              echo "Successfully pushed go.mod update"
               exit 0
             else
               echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
