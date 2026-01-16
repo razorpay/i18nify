@@ -27,17 +27,24 @@ on:
   issue_comment:
     types: [created]
 
-  # Manual trigger via GitHub Actions UI
+  # Manual trigger via GitHub Actions UI (use this before workflow is on master)
   workflow_dispatch:
     inputs:
       package:
-        description: 'Package to generate (e.g., country/subdivisions). Leave empty for all.'
+        description: 'Package to generate'
         required: false
-        default: ''
+        type: choice
+        default: 'all'
+        options:
+          - 'all'
+          - 'country/subdivisions'
+          - 'currency'
+          - 'bankcodes'
+          - 'country/metadata'
       branch:
         description: 'Branch to run on'
         required: true
-        default: 'master'
+        default: 'pt/externalize-packages'
 
 concurrency:
   group: auto-generate-go-${{ github.event_name }}-${{ github.event.issue.number || github.ref }}
@@ -113,7 +120,7 @@ jobs:
           BRANCH: ${{ github.event.inputs.branch }}
         run: |
           echo "branch=$BRANCH" >> $GITHUB_OUTPUT
-          if [ -n "$PACKAGE" ]; then
+          if [ "$PACKAGE" != "all" ] && [ -n "$PACKAGE" ]; then
             echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
             echo "Specific package: $PACKAGE"
           else
