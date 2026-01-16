@@ -1,7 +1,6 @@
 {
   "country_name": "India",
   "states": {
-    "temp" : "hey",
     "AP": {
       "name": "Andhra Pradesh",
       "cities": {
@@ -215,9 +214,7 @@
         },
         "Madanapalle": {
           "name": "Madanapalle",
-          "zipcodes": [
-            "517326"
-          ],
+          "zipcodes": ["517326"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kurnool Region"
         },
@@ -314,27 +311,19 @@
         },
         "Hindupur": {
           "name": "Hindupur",
-          "zipcodes": [
-            "515202",
-            "515301"
-          ],
+          "zipcodes": ["515202", "515301"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kurnool Region"
         },
         "Dharmavaram": {
           "name": "Dharmavaram",
-          "zipcodes": [
-            "515591",
-            "515134"
-          ],
+          "zipcodes": ["515591", "515134"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kurnool Region"
         },
         "Anantapur": {
           "name": "Anantapur",
-          "zipcodes": [
-            "515211"
-          ],
+          "zipcodes": ["515211"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kurnool Region"
         },
@@ -666,9 +655,7 @@
         },
         "Palakol": {
           "name": "Palakol",
-          "zipcodes": [
-            "534268"
-          ],
+          "zipcodes": ["534268"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
         },
@@ -1087,45 +1074,31 @@
         },
         "Machilipatnam": {
           "name": "Machilipatnam",
-          "zipcodes": [
-            "521003",
-            "521002"
-          ],
+          "zipcodes": ["521003", "521002"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
         },
         "Avanigadda": {
           "name": "Avanigadda",
-          "zipcodes": [
-            "521328"
-          ],
+          "zipcodes": ["521328"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
         },
         "Warangal": {
           "name": "Warangal",
-          "zipcodes": [
-            "534198",
-            "534315"
-          ],
+          "zipcodes": ["534198", "534315"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
         },
         "Kovvur": {
           "name": "Kovvur",
-          "zipcodes": [
-            "534340",
-            "534342",
-            "534302"
-          ],
+          "zipcodes": ["534340", "534342", "534302"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
         },
         "Tadepalligudem": {
           "name": "Tadepalligudem",
-          "zipcodes": [
-            "534102"
-          ],
+          "zipcodes": ["534102"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
         },
@@ -1262,25 +1235,19 @@
         },
         "Bapatla": {
           "name": "Bapatla",
-          "zipcodes": [
-            "522102"
-          ],
+          "zipcodes": ["522102"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
         },
         "Karim Nagar": {
           "name": "Karim Nagar",
-          "zipcodes": [
-            "522124"
-          ],
+          "zipcodes": ["522124"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
         },
         "Amlapuram": {
           "name": "Amlapuram",
-          "zipcodes": [
-            "533221"
-          ],
+          "zipcodes": ["533221"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Visakhapatnam Region"
         },
@@ -1387,9 +1354,7 @@
         },
         "Yanam": {
           "name": "Yanam",
-          "zipcodes": [
-            "533464"
-          ],
+          "zipcodes": ["533464"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Visakhapatnam Region"
         },
@@ -1469,41 +1434,31 @@
         },
         "Bhadrachalam": {
           "name": "Bhadrachalam",
-          "zipcodes": [
-            "533352"
-          ],
+          "zipcodes": ["533352"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Visakhapatnam Region"
         },
         "Srikalahasti": {
           "name": "Srikalahasti",
-          "zipcodes": [
-            "533352"
-          ],
+          "zipcodes": ["533352"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Visakhapatnam Region"
         },
         "Bhongir": {
           "name": "Bhongir",
-          "zipcodes": [
-            "533352"
-          ],
+          "zipcodes": ["533352"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Visakhapatnam Region"
         },
         "Rangareddy": {
           "name": "Rangareddy",
-          "zipcodes": [
-            "500108"
-          ],
+          "zipcodes": ["500108"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad City Region"
         },
         "Mahabub Nagar": {
           "name": "Mahabub Nagar",
-          "zipcodes": [
-            "509219"
-          ],
+          "zipcodes": ["509219"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad Region"
         }
@@ -1514,47 +1469,31 @@
       "cities": {
         "West Godavari": {
           "name": "West Godavari",
-          "zipcodes": [
-            "534313"
-          ],
+          "zipcodes": ["534313"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vijayawada Region"
         },
         "Lower Dibang Valley": {
           "name": "Lower Dibang Valley",
-          "zipcodes": [
-            "792110"
-          ],
+          "zipcodes": ["792110"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "East Siang": {
           "name": "East Siang",
-          "zipcodes": [
-            "791103",
-            "791104",
-            "791102"
-          ],
+          "zipcodes": ["791103", "791104", "791102"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Dibang Valley": {
           "name": "Dibang Valley",
-          "zipcodes": [
-            "792101",
-            "792110"
-          ],
+          "zipcodes": ["792101", "792110"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "West Siang": {
           "name": "West Siang",
-          "zipcodes": [
-            "791001",
-            "791101",
-            "791125",
-            "791003"
-          ],
+          "zipcodes": ["791001", "791101", "791125", "791003"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
@@ -1592,11 +1531,7 @@
         },
         "Tawang": {
           "name": "Tawang",
-          "zipcodes": [
-            "790104",
-            "790106",
-            "790105"
-          ],
+          "zipcodes": ["790104", "790106", "790105"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
@@ -1615,20 +1550,13 @@
         },
         "East Kameng": {
           "name": "East Kameng",
-          "zipcodes": [
-            "790102",
-            "790103"
-          ],
+          "zipcodes": ["790102", "790103"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Lower Subansiri": {
           "name": "Lower Subansiri",
-          "zipcodes": [
-            "791120",
-            "791113",
-            "791119"
-          ],
+          "zipcodes": ["791120", "791113", "791119"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
@@ -1648,57 +1576,37 @@
         },
         "Tirap": {
           "name": "Tirap",
-          "zipcodes": [
-            "792130",
-            "792129",
-            "792131"
-          ],
+          "zipcodes": ["792130", "792129", "792131"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Kurung Kumey": {
           "name": "Kurung Kumey",
-          "zipcodes": [
-            "791118"
-          ],
+          "zipcodes": ["791118"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Upper Siang": {
           "name": "Upper Siang",
-          "zipcodes": [
-            "791103",
-            "791002",
-            "791105"
-          ],
+          "zipcodes": ["791103", "791002", "791105"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Upper Subansiri": {
           "name": "Upper Subansiri",
-          "zipcodes": [
-            "791122"
-          ],
+          "zipcodes": ["791122"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Upper Dibang Valley": {
           "name": "Upper Dibang Valley",
-          "zipcodes": [
-            "792101"
-          ],
+          "zipcodes": ["792101"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Na": {
           "name": "Na",
-          "zipcodes": [
-            "791120",
-            "791113",
-            "792131",
-            "791123",
-            "792122"
-          ],
+          "zipcodes": ["791120", "791113", "792131", "791123", "792122"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         }
@@ -1709,17 +1617,13 @@
       "cities": {
         "Vizianagaram": {
           "name": "Vizianagaram",
-          "zipcodes": [
-            "535559"
-          ],
+          "zipcodes": ["535559"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Visakhapatnam Region"
         },
         "Koderma": {
           "name": "Koderma",
-          "zipcodes": [
-            "825132"
-          ],
+          "zipcodes": ["825132"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -1899,12 +1803,7 @@
         },
         "Ranga Reddy": {
           "name": "Ranga Reddy",
-          "zipcodes": [
-            "500112",
-            "500115",
-            "500090",
-            "509360"
-          ],
+          "zipcodes": ["500112", "500115", "500090", "509360"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad City Region"
         },
@@ -2099,9 +1998,7 @@
         },
         "Zaheerabad": {
           "name": "Zaheerabad",
-          "zipcodes": [
-            "502286"
-          ],
+          "zipcodes": ["502286"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad City Region"
         },
@@ -2173,11 +2070,7 @@
         },
         "Trimulgherry": {
           "name": "Trimulgherry",
-          "zipcodes": [
-            "500078",
-            "500049",
-            "501102"
-          ],
+          "zipcodes": ["500078", "500049", "501102"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad City Region"
         },
@@ -2226,17 +2119,13 @@
         },
         "Secunderabad": {
           "name": "Secunderabad",
-          "zipcodes": [
-            "501504"
-          ],
+          "zipcodes": ["501504"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad City Region"
         },
         "K.v.rangareddy": {
           "name": "K.v.rangareddy",
-          "zipcodes": [
-            "501102"
-          ],
+          "zipcodes": ["501102"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad City Region"
         },
@@ -2446,19 +2335,13 @@
         },
         "Jayashankar": {
           "name": "Jayashankar",
-          "zipcodes": [
-            "506165",
-            "506347",
-            "506170"
-          ],
+          "zipcodes": ["506165", "506347", "506170"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad Region"
         },
         "Bhupalpalli": {
           "name": "Bhupalpalli",
-          "zipcodes": [
-            "506169"
-          ],
+          "zipcodes": ["506169"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad Region"
         },
@@ -2598,12 +2481,7 @@
         },
         "Bhadrachalam": {
           "name": "Bhadrachalam",
-          "zipcodes": [
-            "507118",
-            "507136",
-            "507137",
-            "507116"
-          ],
+          "zipcodes": ["507118", "507136", "507137", "507116"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad Region"
         },
@@ -2847,35 +2725,25 @@
         },
         "Stn. Jadcherla": {
           "name": "Stn. Jadcherla",
-          "zipcodes": [
-            "509385"
-          ],
+          "zipcodes": ["509385"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad Region"
         },
         "Mahabubabad": {
           "name": "Mahabubabad",
-          "zipcodes": [
-            "506112",
-            "506103"
-          ],
+          "zipcodes": ["506112", "506103"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad Region"
         },
         "Warangal Rural": {
           "name": "Warangal Rural",
-          "zipcodes": [
-            "506365",
-            "506333"
-          ],
+          "zipcodes": ["506365", "506333"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad Region"
         },
         "Mahabuababad": {
           "name": "Mahabuababad",
-          "zipcodes": [
-            "506368"
-          ],
+          "zipcodes": ["506368"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Hyderabad Region"
         }
@@ -3013,13 +2881,7 @@
         },
         "Dima Hasso - North Cachar Hill": {
           "name": "Dima Hasso - North Cachar Hill",
-          "zipcodes": [
-            "788931",
-            "788830",
-            "788831",
-            "788832",
-            "788819"
-          ],
+          "zipcodes": ["788931", "788830", "788831", "788832", "788819"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -3514,9 +3376,7 @@
         },
         "Sonapur": {
           "name": "Sonapur",
-          "zipcodes": [
-            "784160"
-          ],
+          "zipcodes": ["784160"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Dibrugarh Region"
         },
@@ -3844,9 +3704,7 @@
         },
         "Auranagabad": {
           "name": "Auranagabad",
-          "zipcodes": [
-            "824301"
-          ],
+          "zipcodes": ["824301"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -4432,9 +4290,7 @@
         },
         "Deoghar": {
           "name": "Deoghar",
-          "zipcodes": [
-            "814131"
-          ],
+          "zipcodes": ["814131"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
         },
@@ -4572,11 +4428,7 @@
         },
         "Sheohar": {
           "name": "Sheohar",
-          "zipcodes": [
-            "811105",
-            "843335",
-            "843329"
-          ],
+          "zipcodes": ["811105", "843335", "843329"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
         },
@@ -4832,9 +4684,7 @@
         },
         "Na": {
           "name": "Na",
-          "zipcodes": [
-            "845417"
-          ],
+          "zipcodes": ["845417"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
@@ -5015,9 +4865,7 @@
         },
         "Ballia": {
           "name": "Ballia",
-          "zipcodes": [
-            "277205"
-          ],
+          "zipcodes": ["277205"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Varanasi Region"
         }
@@ -5028,25 +4876,19 @@
       "cities": {
         "Aurangabad": {
           "name": "Aurangabad",
-          "zipcodes": [
-            "824202"
-          ],
+          "zipcodes": ["824202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124506"
-          ],
+          "zipcodes": ["124506"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Raigarh(mh)": {
           "name": "Raigarh(mh)",
-          "zipcodes": [
-            "410206"
-          ],
+          "zipcodes": ["410206"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Navi Mumbai Region"
         },
@@ -5708,9 +5550,7 @@
         },
         "Prayagraj Allahabad": {
           "name": "Prayagraj Allahabad",
-          "zipcodes": [
-            "211020"
-          ],
+          "zipcodes": ["211020"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Allahabad Region"
         },
@@ -6464,9 +6304,7 @@
         },
         "Haridwar": {
           "name": "Haridwar",
-          "zipcodes": [
-            "247662"
-          ],
+          "zipcodes": ["247662"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Bareilly Region"
         },
@@ -7434,17 +7272,13 @@
       "cities": {
         "Banka": {
           "name": "Banka",
-          "zipcodes": [
-            "813101"
-          ],
+          "zipcodes": ["813101"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "East Region, Bhagalpur"
         },
         "Darbhanga": {
           "name": "Darbhanga",
-          "zipcodes": [
-            "847202"
-          ],
+          "zipcodes": ["847202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
@@ -7586,9 +7420,7 @@
         },
         "Ahmedabad City": {
           "name": "Ahmedabad City",
-          "zipcodes": [
-            "380003"
-          ],
+          "zipcodes": ["380003"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
         },
@@ -7680,20 +7512,13 @@
         },
         "Na": {
           "name": "Na",
-          "zipcodes": [
-            "385421"
-          ],
+          "zipcodes": ["385421"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
         },
         "Botab": {
           "name": "Botab",
-          "zipcodes": [
-            "382245",
-            "382255",
-            "382450",
-            "382250"
-          ],
+          "zipcodes": ["382245", "382255", "382450", "382250"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
         },
@@ -7755,9 +7580,7 @@
         },
         "Gandhinagar": {
           "name": "Gandhinagar",
-          "zipcodes": [
-            "382722"
-          ],
+          "zipcodes": ["382722"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Ahmedabad HQ Region"
         },
@@ -8533,13 +8356,7 @@
         },
         "Dangs": {
           "name": "Dangs",
-          "zipcodes": [
-            "394710",
-            "394715",
-            "394730",
-            "394720",
-            "394716"
-          ],
+          "zipcodes": ["394710", "394715", "394730", "394720", "394716"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
         },
@@ -8741,17 +8558,13 @@
         },
         "Chhotaudepur": {
           "name": "Chhotaudepur",
-          "zipcodes": [
-            "391170"
-          ],
+          "zipcodes": ["391170"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
         },
         "Chhota Udepur": {
           "name": "Chhota Udepur",
-          "zipcodes": [
-            "391165"
-          ],
+          "zipcodes": ["391165"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
         },
@@ -8801,9 +8614,7 @@
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
-          "zipcodes": [
-            "847202"
-          ],
+          "zipcodes": ["847202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
@@ -8918,17 +8729,13 @@
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
-          "zipcodes": [
-            "847202"
-          ],
+          "zipcodes": ["847202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
         "South West Delhi": {
           "name": "South West Delhi",
-          "zipcodes": [
-            "110071"
-          ],
+          "zipcodes": ["110071"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -9012,9 +8819,7 @@
         },
         "Ambala City": {
           "name": "Ambala City",
-          "zipcodes": [
-            "134007"
-          ],
+          "zipcodes": ["134007"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -9081,23 +8886,13 @@
         },
         "Palwal": {
           "name": "Palwal",
-          "zipcodes": [
-            "121102",
-            "121105",
-            "121106"
-          ],
+          "zipcodes": ["121102", "121105", "121106"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Mewat": {
           "name": "Mewat",
-          "zipcodes": [
-            "122104",
-            "122107",
-            "122508",
-            "122105",
-            "122108"
-          ],
+          "zipcodes": ["122104", "122107", "122508", "122105", "122108"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -9447,25 +9242,19 @@
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
-          "zipcodes": [
-            "847202"
-          ],
+          "zipcodes": ["847202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
         "Bhiwani": {
           "name": "Bhiwani",
-          "zipcodes": [
-            "127311"
-          ],
+          "zipcodes": ["127311"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124505"
-          ],
+          "zipcodes": ["124505"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -9668,9 +9457,7 @@
         },
         "Na": {
           "name": "Na",
-          "zipcodes": [
-            "176023"
-          ],
+          "zipcodes": ["176023"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -9709,17 +9496,13 @@
         },
         "Hamirpur(hp)": {
           "name": "Hamirpur(hp)",
-          "zipcodes": [
-            "177001"
-          ],
+          "zipcodes": ["177001"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Bilaspur (hp)": {
           "name": "Bilaspur (hp)",
-          "zipcodes": [
-            "174026"
-          ],
+          "zipcodes": ["174026"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -10035,17 +9818,13 @@
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
-          "zipcodes": [
-            "847202"
-          ],
+          "zipcodes": ["847202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
         "Rohtak": {
           "name": "Rohtak",
-          "zipcodes": [
-            "124505"
-          ],
+          "zipcodes": ["124505"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -10104,25 +9883,13 @@
         },
         "Kulgam": {
           "name": "Kulgam",
-          "zipcodes": [
-            "193224",
-            "192233",
-            "192231",
-            "192232",
-            "192221"
-          ],
+          "zipcodes": ["193224", "192233", "192231", "192232", "192221"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Samba": {
           "name": "Samba",
-          "zipcodes": [
-            "181141",
-            "184121",
-            "184120",
-            "181133",
-            "181145"
-          ],
+          "zipcodes": ["181141", "184121", "184120", "181133", "181145"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -10211,13 +9978,7 @@
         },
         "Poonch": {
           "name": "Poonch",
-          "zipcodes": [
-            "181202",
-            "185102",
-            "185211",
-            "185121",
-            "185101"
-          ],
+          "zipcodes": ["181202", "185102", "185211", "185121", "185101"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -10357,20 +10118,13 @@
         },
         "Ganderbal": {
           "name": "Ganderbal",
-          "zipcodes": [
-            "191202",
-            "191201",
-            "191131"
-          ],
+          "zipcodes": ["191202", "191201", "191131"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Shopian": {
           "name": "Shopian",
-          "zipcodes": [
-            "192401",
-            "192303"
-          ],
+          "zipcodes": ["192401", "192303"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -10408,13 +10162,7 @@
         },
         "Ramban": {
           "name": "Ramban",
-          "zipcodes": [
-            "182145",
-            "182143",
-            "182146",
-            "182148",
-            "182144"
-          ],
+          "zipcodes": ["182145", "182143", "182146", "182148", "182144"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -10461,17 +10209,13 @@
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
-          "zipcodes": [
-            "847202"
-          ],
+          "zipcodes": ["847202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124105"
-          ],
+          "zipcodes": ["124105"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -10762,13 +10506,7 @@
         },
         "Harda": {
           "name": "Harda",
-          "zipcodes": [
-            "461331",
-            "461228",
-            "461771",
-            "461441",
-            "461221"
-          ],
+          "zipcodes": ["461331", "461228", "461771", "461441", "461221"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -11381,13 +11119,7 @@
         },
         "Burhanpur": {
           "name": "Burhanpur",
-          "zipcodes": [
-            "450331",
-            "450445",
-            "450221",
-            "450332",
-            "450771"
-          ],
+          "zipcodes": ["450331", "450445", "450221", "450332", "450771"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
         },
@@ -11492,12 +11224,7 @@
         },
         "Sheopur": {
           "name": "Sheopur",
-          "zipcodes": [
-            "476332",
-            "476335",
-            "476355",
-            "476224"
-          ],
+          "zipcodes": ["476332", "476335", "476355", "476224"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
         },
@@ -11558,13 +11285,7 @@
         },
         "Alirajpur": {
           "name": "Alirajpur",
-          "zipcodes": [
-            "457887",
-            "457882",
-            "457888",
-            "457990",
-            "457885"
-          ],
+          "zipcodes": ["457887", "457882", "457888", "457990", "457885"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Indore Region"
         },
@@ -11697,17 +11418,13 @@
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
-          "zipcodes": [
-            "847202"
-          ],
+          "zipcodes": ["847202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124105"
-          ],
+          "zipcodes": ["124105"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -11830,10 +11547,7 @@
         },
         "Bangalore": {
           "name": "Bangalore",
-          "zipcodes": [
-            "560007",
-            "560072"
-          ],
+          "zipcodes": ["560007", "560072"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -11899,18 +11613,13 @@
         },
         "Ramdurg": {
           "name": "Ramdurg",
-          "zipcodes": [
-            "562109",
-            "571201"
-          ],
+          "zipcodes": ["562109", "571201"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Bengaluru HQ Region"
         },
         "Ramanagara": {
           "name": "Ramanagara",
-          "zipcodes": [
-            "562159"
-          ],
+          "zipcodes": ["562159"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Bengaluru HQ Region"
         },
@@ -12067,9 +11776,7 @@
         },
         "Ballari": {
           "name": "Ballari",
-          "zipcodes": [
-            "583155"
-          ],
+          "zipcodes": ["583155"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
@@ -12230,17 +11937,13 @@
         },
         "Belgaum": {
           "name": "Belgaum",
-          "zipcodes": [
-            "591304"
-          ],
+          "zipcodes": ["591304"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
         "Hubballi": {
           "name": "Hubballi",
-          "zipcodes": [
-            "580028"
-          ],
+          "zipcodes": ["580028"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
@@ -12293,37 +11996,25 @@
         },
         "Madikeri": {
           "name": "Madikeri",
-          "zipcodes": [
-            "581195",
-            "571201"
-          ],
+          "zipcodes": ["581195", "571201"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
         "Arsikere": {
           "name": "Arsikere",
-          "zipcodes": [
-            "581196",
-            "571201",
-            "570008"
-          ],
+          "zipcodes": ["581196", "571201", "570008"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
         "Kundgol": {
           "name": "Kundgol",
-          "zipcodes": [
-            "582201",
-            "581195"
-          ],
+          "zipcodes": ["582201", "581195"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
         "Kalghatgi": {
           "name": "Kalghatgi",
-          "zipcodes": [
-            "581196"
-          ],
+          "zipcodes": ["581196"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
@@ -12522,9 +12213,7 @@
         },
         "Gulbarga": {
           "name": "Gulbarga",
-          "zipcodes": [
-            "585320"
-          ],
+          "zipcodes": ["585320"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
@@ -12649,23 +12338,13 @@
         },
         "Siddapur": {
           "name": "Siddapur",
-          "zipcodes": [
-            "581340",
-            "581355",
-            "581450"
-          ],
+          "zipcodes": ["581340", "581355", "581450"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
         "Joida": {
           "name": "Joida",
-          "zipcodes": [
-            "581453",
-            "581121",
-            "581365",
-            "581186",
-            "581187"
-          ],
+          "zipcodes": ["581453", "581121", "581365", "581186", "581187"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
@@ -12718,9 +12397,7 @@
         },
         "Bijapur": {
           "name": "Bijapur",
-          "zipcodes": [
-            "586101"
-          ],
+          "zipcodes": ["586101"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Karnataka Region"
         },
@@ -12778,10 +12455,7 @@
         },
         "Chikkamagaluru": {
           "name": "Chikkamagaluru",
-          "zipcodes": [
-            "577124",
-            "571213"
-          ],
+          "zipcodes": ["577124", "571213"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
@@ -12926,28 +12600,19 @@
         },
         "Athani": {
           "name": "Athani",
-          "zipcodes": [
-            "571201"
-          ],
+          "zipcodes": ["571201"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
         "Jamkhandi": {
           "name": "Jamkhandi",
-          "zipcodes": [
-            "571201"
-          ],
+          "zipcodes": ["571201"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
         "Kollegal": {
           "name": "Kollegal",
-          "zipcodes": [
-            "571201",
-            "571320",
-            "571440",
-            "571490"
-          ],
+          "zipcodes": ["571201", "571320", "571440", "571490"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
@@ -13333,33 +12998,25 @@
         },
         "Saraswathipuram": {
           "name": "Saraswathipuram",
-          "zipcodes": [
-            "571106"
-          ],
+          "zipcodes": ["571106"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
         "Hanagodu": {
           "name": "Hanagodu",
-          "zipcodes": [
-            "571106"
-          ],
+          "zipcodes": ["571106"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
         "Mysore": {
           "name": "Mysore",
-          "zipcodes": [
-            "570001"
-          ],
+          "zipcodes": ["570001"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
         "Hunsur": {
           "name": "Hunsur",
-          "zipcodes": [
-            "571106"
-          ],
+          "zipcodes": ["571106"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
@@ -13392,33 +13049,25 @@
         },
         "Bailhongal": {
           "name": "Bailhongal",
-          "zipcodes": [
-            "571440"
-          ],
+          "zipcodes": ["571440"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
         "Nanjangud": {
           "name": "Nanjangud",
-          "zipcodes": [
-            "571320"
-          ],
+          "zipcodes": ["571320"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
         "Sagar": {
           "name": "Sagar",
-          "zipcodes": [
-            "571440"
-          ],
+          "zipcodes": ["571440"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
         "Chamarajanagar": {
           "name": "Chamarajanagar",
-          "zipcodes": [
-            "571320"
-          ],
+          "zipcodes": ["571320"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
@@ -13558,25 +13207,19 @@
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
-          "zipcodes": [
-            "847202"
-          ],
+          "zipcodes": ["847202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124105"
-          ],
+          "zipcodes": ["124105"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Kollegal": {
           "name": "Kollegal",
-          "zipcodes": [
-            "571320"
-          ],
+          "zipcodes": ["571320"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Karnataka Region"
         },
@@ -14470,9 +14113,7 @@
         },
         "Kasaragod": {
           "name": "Kasaragod",
-          "zipcodes": [
-            "671320"
-          ],
+          "zipcodes": ["671320"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
         },
@@ -14625,25 +14266,19 @@
         },
         "Thalassery": {
           "name": "Thalassery",
-          "zipcodes": [
-            "670702"
-          ],
+          "zipcodes": ["670702"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
         },
         "Malappurm": {
           "name": "Malappurm",
-          "zipcodes": [
-            "679582"
-          ],
+          "zipcodes": ["679582"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
         },
         "Mahe": {
           "name": "Mahe",
-          "zipcodes": [
-            "673310"
-          ],
+          "zipcodes": ["673310"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calicut Region"
         },
@@ -15168,17 +14803,13 @@
       "cities": {
         "Darbhanga": {
           "name": "Darbhanga",
-          "zipcodes": [
-            "847202"
-          ],
+          "zipcodes": ["847202"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Muzaffarpur Region"
         },
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -15373,9 +15004,7 @@
         },
         "Bhusawal": {
           "name": "Bhusawal",
-          "zipcodes": [
-            "425201"
-          ],
+          "zipcodes": ["425201"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Aurangabad Region"
         },
@@ -15441,9 +15070,7 @@
         },
         "Jalgoan": {
           "name": "Jalgoan",
-          "zipcodes": [
-            "424119"
-          ],
+          "zipcodes": ["424119"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Aurangabad Region"
         },
@@ -15870,9 +15497,7 @@
         },
         "Miraj": {
           "name": "Miraj",
-          "zipcodes": [
-            "416437"
-          ],
+          "zipcodes": ["416437"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Goa-Panaji Region"
         },
@@ -16469,9 +16094,7 @@
         },
         "Na": {
           "name": "Na",
-          "zipcodes": [
-            "423110"
-          ],
+          "zipcodes": ["423110"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Navi Mumbai Region"
         },
@@ -17092,9 +16715,7 @@
         },
         "Shrirampur": {
           "name": "Shrirampur",
-          "zipcodes": [
-            "413705"
-          ],
+          "zipcodes": ["413705"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Pune Region"
         }
@@ -17181,20 +16802,13 @@
         },
         "Mungeli": {
           "name": "Mungeli",
-          "zipcodes": [
-            "495115",
-            "495335",
-            "495334",
-            "495692"
-          ],
+          "zipcodes": ["495115", "495335", "495334", "495692"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Janjgir-champa": {
           "name": "Janjgir-champa",
-          "zipcodes": [
-            "495669"
-          ],
+          "zipcodes": ["495669"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -17283,13 +16897,7 @@
         },
         "Kawardha": {
           "name": "Kawardha",
-          "zipcodes": [
-            "491559",
-            "491995",
-            "491336",
-            "491888",
-            "491996"
-          ],
+          "zipcodes": ["491559", "491995", "491336", "491888", "491996"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -17595,43 +17203,31 @@
         },
         "Bilaspur": {
           "name": "Bilaspur",
-          "zipcodes": [
-            "494450",
-            "494553"
-          ],
+          "zipcodes": ["494450", "494553"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Raipur Region"
         },
         "Narayanpur": {
           "name": "Narayanpur",
-          "zipcodes": [
-            "494661"
-          ],
+          "zipcodes": ["494661"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Raipur Region"
         },
         "Sukma": {
           "name": "Sukma",
-          "zipcodes": [
-            "494114",
-            "494111"
-          ],
+          "zipcodes": ["494114", "494111"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Raipur Region"
         },
         "Makdi": {
           "name": "Makdi",
-          "zipcodes": [
-            "494237"
-          ],
+          "zipcodes": ["494237"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Raipur Region"
         },
         "Kondagaon": {
           "name": "Kondagaon",
-          "zipcodes": [
-            "494226"
-          ],
+          "zipcodes": ["494226"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Raipur Region"
         }
@@ -17642,25 +17238,13 @@
       "cities": {
         "East Delhi": {
           "name": "East Delhi",
-          "zipcodes": [
-            "110092",
-            "110091",
-            "110031",
-            "110096",
-            "110095"
-          ],
+          "zipcodes": ["110092", "110091", "110031", "110096", "110095"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Shahdara": {
           "name": "Shahdara",
-          "zipcodes": [
-            "110051",
-            "110032",
-            "110053",
-            "110095",
-            "110092"
-          ],
+          "zipcodes": ["110051", "110032", "110053", "110095", "110092"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -17838,9 +17422,7 @@
         },
         "Siddharthnagar": {
           "name": "Siddharthnagar",
-          "zipcodes": [
-            "272206"
-          ],
+          "zipcodes": ["272206"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Gorakhpur Region"
         }
@@ -17851,41 +17433,25 @@
       "cities": {
         "Diu": {
           "name": "Diu",
-          "zipcodes": [
-            "362570",
-            "362520",
-            "362540"
-          ],
+          "zipcodes": ["362570", "362520", "362540"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Rajkot Region"
         },
         "Dadra  Nagar Haveli": {
           "name": "Dadra  Nagar Haveli",
-          "zipcodes": [
-            "396230",
-            "396235",
-            "396240",
-            "396193"
-          ],
+          "zipcodes": ["396230", "396235", "396240", "396193"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
         },
         "Daman": {
           "name": "Daman",
-          "zipcodes": [
-            "396210",
-            "396215",
-            "396220"
-          ],
+          "zipcodes": ["396210", "396215", "396220"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Vadodara Region"
         },
         "Basti": {
           "name": "Basti",
-          "zipcodes": [
-            "272129",
-            "272124"
-          ],
+          "zipcodes": ["272129", "272124"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Gorakhpur Region"
         }
@@ -17896,9 +17462,7 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -17923,13 +17487,7 @@
         },
         "Churachandpur": {
           "name": "Churachandpur",
-          "zipcodes": [
-            "795006",
-            "795128",
-            "795139",
-            "795117",
-            "795118"
-          ],
+          "zipcodes": ["795006", "795128", "795139", "795117", "795118"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
@@ -17950,36 +17508,19 @@
         },
         "Ukhrul": {
           "name": "Ukhrul",
-          "zipcodes": [
-            "795145",
-            "795142",
-            "795144",
-            "795015",
-            "795105"
-          ],
+          "zipcodes": ["795145", "795142", "795144", "795015", "795105"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Tamenglong": {
           "name": "Tamenglong",
-          "zipcodes": [
-            "795141",
-            "795125",
-            "795159",
-            "795147"
-          ],
+          "zipcodes": ["795141", "795125", "795159", "795147"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Chandel": {
           "name": "Chandel",
-          "zipcodes": [
-            "795102",
-            "795131",
-            "795127",
-            "795135",
-            "795101"
-          ],
+          "zipcodes": ["795102", "795131", "795127", "795135", "795101"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
@@ -18031,50 +17572,37 @@
         },
         "Na": {
           "name": "Na",
-          "zipcodes": [
-            "795006"
-          ],
+          "zipcodes": ["795006"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Tengnoupal": {
           "name": "Tengnoupal",
-          "zipcodes": [
-            "795131"
-          ],
+          "zipcodes": ["795131"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Imphal": {
           "name": "Imphal",
-          "zipcodes": [
-            "795001",
-            "795006"
-          ],
+          "zipcodes": ["795001", "795006"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Jiribam": {
           "name": "Jiribam",
-          "zipcodes": [
-            "795115"
-          ],
+          "zipcodes": ["795115"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Thanlon": {
           "name": "Thanlon",
-          "zipcodes": [
-            "795006"
-          ],
+          "zipcodes": ["795006"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "West Tripura": {
           "name": "West Tripura",
-          "zipcodes": [
-            "799046"
-          ],
+          "zipcodes": ["799046"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         }
@@ -18085,9 +17613,7 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -18185,10 +17711,7 @@
         },
         "South Garo Hills": {
           "name": "South Garo Hills",
-          "zipcodes": [
-            "794102",
-            "794114"
-          ],
+          "zipcodes": ["794102", "794114"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
@@ -18221,9 +17744,7 @@
         },
         "Shillong": {
           "name": "Shillong",
-          "zipcodes": [
-            "793116"
-          ],
+          "zipcodes": ["793116"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
@@ -18243,33 +17764,25 @@
         },
         "Tura": {
           "name": "Tura",
-          "zipcodes": [
-            "794003"
-          ],
+          "zipcodes": ["794003"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "West Jaintia Hills": {
           "name": "West Jaintia Hills",
-          "zipcodes": [
-            "793150"
-          ],
+          "zipcodes": ["793150"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "South West Khasi Hills": {
           "name": "South West Khasi Hills",
-          "zipcodes": [
-            "793114"
-          ],
+          "zipcodes": ["793114"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "East Jaintia Hills": {
           "name": "East Jaintia Hills",
-          "zipcodes": [
-            "793210"
-          ],
+          "zipcodes": ["793210"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         }
@@ -18280,9 +17793,7 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -18317,13 +17828,7 @@
         },
         "Mammit": {
           "name": "Mammit",
-          "zipcodes": [
-            "796501",
-            "796470",
-            "796431",
-            "796441",
-            "796410"
-          ],
+          "zipcodes": ["796501", "796470", "796431", "796441", "796410"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
@@ -18344,90 +17849,55 @@
         },
         "Kolasib": {
           "name": "Kolasib",
-          "zipcodes": [
-            "796081",
-            "796091",
-            "796070",
-            "796101",
-            "796075"
-          ],
+          "zipcodes": ["796081", "796091", "796070", "796101", "796075"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Lawngtlai": {
           "name": "Lawngtlai",
-          "zipcodes": [
-            "796891",
-            "796770",
-            "796772",
-            "796810"
-          ],
+          "zipcodes": ["796891", "796770", "796772", "796810"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Na": {
           "name": "Na",
-          "zipcodes": [
-            "796701",
-            "796571",
-            "796186"
-          ],
+          "zipcodes": ["796701", "796571", "796186"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Champhai": {
           "name": "Champhai",
-          "zipcodes": [
-            "796321",
-            "796370",
-            "796320",
-            "796310",
-            "796290"
-          ],
+          "zipcodes": ["796321", "796370", "796320", "796310", "796290"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Saiha": {
           "name": "Saiha",
-          "zipcodes": [
-            "796901"
-          ],
+          "zipcodes": ["796901"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Serchhip": {
           "name": "Serchhip",
-          "zipcodes": [
-            "796181",
-            "796370",
-            "796184",
-            "796186"
-          ],
+          "zipcodes": ["796181", "796370", "796184", "796186"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Aizawal": {
           "name": "Aizawal",
-          "zipcodes": [
-            "796015"
-          ],
+          "zipcodes": ["796015"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Mamit": {
           "name": "Mamit",
-          "zipcodes": [
-            "796470",
-            "796431"
-          ],
+          "zipcodes": ["796470", "796431"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "West Tripura": {
           "name": "West Tripura",
-          "zipcodes": [
-            "799004"
-          ],
+          "zipcodes": ["799004"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         }
@@ -18438,20 +17908,13 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Zunhebotto": {
           "name": "Zunhebotto",
-          "zipcodes": [
-            "798620",
-            "798627",
-            "798619",
-            "797109"
-          ],
+          "zipcodes": ["798620", "798627", "798619", "797109"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
@@ -18472,29 +17935,19 @@
         },
         "Wokha": {
           "name": "Wokha",
-          "zipcodes": [
-            "797111",
-            "797099"
-          ],
+          "zipcodes": ["797111", "797099"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Phek": {
           "name": "Phek",
-          "zipcodes": [
-            "797114",
-            "797104",
-            "797107",
-            "797108"
-          ],
+          "zipcodes": ["797114", "797104", "797107", "797108"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Zunheboto": {
           "name": "Zunheboto",
-          "zipcodes": [
-            "798627"
-          ],
+          "zipcodes": ["798627"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
@@ -18515,29 +17968,19 @@
         },
         "Kiphire": {
           "name": "Kiphire",
-          "zipcodes": [
-            "798611"
-          ],
+          "zipcodes": ["798611"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Tuensang": {
           "name": "Tuensang",
-          "zipcodes": [
-            "798616",
-            "798612"
-          ],
+          "zipcodes": ["798616", "798612"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Mon": {
           "name": "Mon",
-          "zipcodes": [
-            "798603",
-            "798622",
-            "798621",
-            "798602"
-          ],
+          "zipcodes": ["798603", "798622", "798621", "798602"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
@@ -18562,27 +18005,19 @@
         },
         "Peren": {
           "name": "Peren",
-          "zipcodes": [
-            "797110",
-            "797101"
-          ],
+          "zipcodes": ["797110", "797101"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Longleng": {
           "name": "Longleng",
-          "zipcodes": [
-            "798625"
-          ],
+          "zipcodes": ["798625"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
         "Na": {
           "name": "Na",
-          "zipcodes": [
-            "797107",
-            "798612"
-          ],
+          "zipcodes": ["797107", "798612"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         }
@@ -18593,9 +18028,7 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -18727,9 +18160,7 @@
         },
         "Balasore": {
           "name": "Balasore",
-          "zipcodes": [
-            "756056"
-          ],
+          "zipcodes": ["756056"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -19706,13 +19137,7 @@
         },
         "Debagarh": {
           "name": "Debagarh",
-          "zipcodes": [
-            "768110",
-            "768109",
-            "768108",
-            "768121",
-            "768119"
-          ],
+          "zipcodes": ["768110", "768109", "768108", "768121", "768119"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Sambalpur Region"
         },
@@ -19790,9 +19215,7 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -19893,9 +19316,7 @@
         },
         "Rupnagar": {
           "name": "Rupnagar",
-          "zipcodes": [
-            "140117"
-          ],
+          "zipcodes": ["140117"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -20215,9 +19636,7 @@
         },
         "Barnala": {
           "name": "Barnala",
-          "zipcodes": [
-            "151509"
-          ],
+          "zipcodes": ["151509"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Punjab West Region"
         },
@@ -20306,9 +19725,7 @@
         },
         "Ferozepur": {
           "name": "Ferozepur",
-          "zipcodes": [
-            "152002"
-          ],
+          "zipcodes": ["152002"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Punjab West Region"
         },
@@ -20584,9 +20001,7 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -21874,9 +21289,7 @@
         },
         "Sriganganagar": {
           "name": "Sriganganagar",
-          "zipcodes": [
-            "335708"
-          ],
+          "zipcodes": ["335708"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Jodhpur Region"
         }
@@ -21887,18 +21300,13 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Dimapur": {
           "name": "Dimapur",
-          "zipcodes": [
-            "797113",
-            "797115"
-          ],
+          "zipcodes": ["797113", "797115"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Eastern Region"
         },
@@ -21928,11 +21336,7 @@
         },
         "West Sikkim": {
           "name": "West Sikkim",
-          "zipcodes": [
-            "737111",
-            "737121",
-            "737113"
-          ],
+          "zipcodes": ["737111", "737121", "737113"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -21951,11 +21355,7 @@
         },
         "North Sikkim": {
           "name": "North Sikkim",
-          "zipcodes": [
-            "737107",
-            "737120",
-            "737116"
-          ],
+          "zipcodes": ["737107", "737120", "737116"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         }
@@ -21966,9 +21366,7 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -24383,9 +23781,7 @@
       "cities": {
         "Jhajjar": {
           "name": "Jhajjar",
-          "zipcodes": [
-            "124508"
-          ],
+          "zipcodes": ["124508"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -24458,44 +23854,31 @@
         },
         "Gomati": {
           "name": "Gomati",
-          "zipcodes": [
-            "799113",
-            "799013",
-            "799114"
-          ],
+          "zipcodes": ["799113", "799013", "799114"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Na": {
           "name": "Na",
-          "zipcodes": [
-            "799113"
-          ],
+          "zipcodes": ["799113"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Sepahijala": {
           "name": "Sepahijala",
-          "zipcodes": [
-            "799132",
-            "799131"
-          ],
+          "zipcodes": ["799132", "799131"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Agartala�": {
           "name": "Agartala�",
-          "zipcodes": [
-            "799011"
-          ],
+          "zipcodes": ["799011"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Gomti": {
           "name": "Gomti",
-          "zipcodes": [
-            "799113"
-          ],
+          "zipcodes": ["799113"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
@@ -24544,18 +23927,13 @@
         },
         "Khowai": {
           "name": "Khowai",
-          "zipcodes": [
-            "799201"
-          ],
+          "zipcodes": ["799201"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         },
         "Dharmanagar": {
           "name": "Dharmanagar",
-          "zipcodes": [
-            "799266",
-            "799282"
-          ],
+          "zipcodes": ["799266", "799282"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Shillong HQ Region"
         }
@@ -24801,11 +24179,7 @@
         },
         "Hazaribagh": {
           "name": "Hazaribagh",
-          "zipcodes": [
-            "825323",
-            "825411",
-            "825405"
-          ],
+          "zipcodes": ["825323", "825411", "825405"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -24967,12 +24341,7 @@
         },
         "Lohardaga": {
           "name": "Lohardaga",
-          "zipcodes": [
-            "835302",
-            "835213",
-            "835218",
-            "835325"
-          ],
+          "zipcodes": ["835302", "835213", "835218", "835325"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -25179,9 +24548,7 @@
         },
         "Shopian": {
           "name": "Shopian",
-          "zipcodes": [
-            "833220"
-          ],
+          "zipcodes": ["833220"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         }
@@ -25192,9 +24559,7 @@
       "cities": {
         "Hazaribag": {
           "name": "Hazaribag",
-          "zipcodes": [
-            "825302"
-          ],
+          "zipcodes": ["825302"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
@@ -25643,17 +25008,13 @@
         },
         "Kochi": {
           "name": "Kochi",
-          "zipcodes": [
-            "682554"
-          ],
+          "zipcodes": ["682554"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kochi Region"
         },
         "Siddharthnagar": {
           "name": "Siddharthnagar",
-          "zipcodes": [
-            "272205"
-          ],
+          "zipcodes": ["272205"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Gorakhpur Region"
         }
@@ -25692,17 +25053,13 @@
         },
         "Mohali": {
           "name": "Mohali",
-          "zipcodes": [
-            "160055"
-          ],
+          "zipcodes": ["160055"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Basti": {
           "name": "Basti",
-          "zipcodes": [
-            "272131"
-          ],
+          "zipcodes": ["272131"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Gorakhpur Region"
         }
@@ -25734,18 +25091,13 @@
         },
         "Villupuram": {
           "name": "Villupuram",
-          "zipcodes": [
-            "605104",
-            "605106"
-          ],
+          "zipcodes": ["605104", "605106"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Chennai City Region"
         },
         "Siddharthnagar": {
           "name": "Siddharthnagar",
-          "zipcodes": [
-            "272208"
-          ],
+          "zipcodes": ["272208"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Gorakhpur Region"
         }
@@ -25756,17 +25108,13 @@
       "cities": {
         "Agra": {
           "name": "Agra",
-          "zipcodes": [
-            "282006"
-          ],
+          "zipcodes": ["282006"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Agra Region"
         },
         "Basti": {
           "name": "Basti",
-          "zipcodes": [
-            "272151"
-          ],
+          "zipcodes": ["272151"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Gorakhpur Region"
         },
@@ -25804,28 +25152,19 @@
         },
         "Nicobar": {
           "name": "Nicobar",
-          "zipcodes": [
-            "744302",
-            "744301",
-            "744303",
-            "744304"
-          ],
+          "zipcodes": ["744302", "744301", "744303", "744304"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calcutta HQ Region"
         },
         "North & Middle Andaman": {
           "name": "North & Middle Andaman",
-          "zipcodes": [
-            "744204"
-          ],
+          "zipcodes": ["744204"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calcutta HQ Region"
         },
         "Kolkata": {
           "name": "Kolkata",
-          "zipcodes": [
-            "700107"
-          ],
+          "zipcodes": ["700107"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Kolkata Region"
         }
@@ -25836,43 +25175,31 @@
       "cities": {
         "Siddharthnagar": {
           "name": "Siddharthnagar",
-          "zipcodes": [
-            "272153"
-          ],
+          "zipcodes": ["272153"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Gorakhpur Region"
         },
         "East Sikkim": {
           "name": "East Sikkim",
-          "zipcodes": [
-            "737103",
-            "737106",
-            "737102"
-          ],
+          "zipcodes": ["737103", "737106", "737102"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "North Sikkim": {
           "name": "North Sikkim",
-          "zipcodes": [
-            "737116"
-          ],
+          "zipcodes": ["737116"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "South Sikkim": {
           "name": "South Sikkim",
-          "zipcodes": [
-            "737134"
-          ],
+          "zipcodes": ["737134"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "NA"
         },
         "Port Blair": {
           "name": "Port Blair",
-          "zipcodes": [
-            "744103"
-          ],
+          "zipcodes": ["744103"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "Calcutta HQ Region"
         },
@@ -26662,10 +25989,7 @@
         },
         "Kalimpong": {
           "name": "Kalimpong",
-          "zipcodes": [
-            "734301",
-            "734314"
-          ],
+          "zipcodes": ["734301", "734314"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "North Bengal Region"
         },
@@ -26973,9 +26297,7 @@
         },
         "Paschim Bardhaman": {
           "name": "Paschim Bardhaman",
-          "zipcodes": [
-            "713325"
-          ],
+          "zipcodes": ["713325"],
           "timezone": "Asia/Kolkata",
           "region_name/district_name": "South Bengal Region"
         },
