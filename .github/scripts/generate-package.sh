@@ -96,15 +96,27 @@ set -e # Re-enable strict mode
 # Handle Result
 if [ $GEN_EXIT_CODE -ne 0 ]; then
     echo "Error: Generator failed (Exit Code: $GEN_EXIT_CODE)"
-    # If the script printed anything to stdout during error, show it
-    cat "$TEMP_STDOUT"
+    echo "Generator output:"
+    cat "$TEMP_STDOUT" || echo "(no output captured)"
+    echo ""
+    echo "This usually indicates an error in the generator script."
+    echo "Check the logs above for details."
     exit 1
 fi
 
-OUTPUT_DIR=$(tail -n 1 "$TEMP_STDOUT")
+OUTPUT_DIR=$(tail -n 1 "$TEMP_STDOUT" 2>/dev/null || echo "")
 
-if [ -z "$OUTPUT_DIR" ] || [ ! -d "$OUTPUT_DIR" ]; then
-    echo "Error: Generator finished but returned invalid directory: '$OUTPUT_DIR'"
+if [ -z "$OUTPUT_DIR" ]; then
+    echo "Error: Generator did not output directory path"
+    echo "Generator stdout content:"
+    cat "$TEMP_STDOUT" || echo "(no output)"
+    exit 1
+fi
+
+if [ ! -d "$OUTPUT_DIR" ]; then
+    echo "Error: Generator output directory does not exist: '$OUTPUT_DIR'"
+    echo "Generator stdout content:"
+    cat "$TEMP_STDOUT" || echo "(no output)"
     exit 1
 fi
 

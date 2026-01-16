@@ -158,30 +158,43 @@ jobs:
           PACKAGE_NAME: ${{ matrix.package }}
         run: |
           # Derive package directory from package name
-          # Module path is always: github.com/razorpay/i18nify/i18nify-data/go/{package_name}
-          # So package_dir is just the package_name
-          PACKAGE_DIR="$PACKAGE_NAME"
-          echo "package_dir=$PACKAGE_DIR" >> $GITHUB_OUTPUT
+          # Package name might be kebab-case (country-metadata) but directory is nested (country/metadata)
+          # Convert to nested path for module paths
+          PACKAGE_PATH=$(echo "$PACKAGE_NAME" | tr '-' '/')
           
-          # Verify package directory exists (try both flat and nested structures)
-          if [ ! -d "i18nify-data/$PACKAGE_DIR" ] && [ ! -d "i18nify-data/$(echo "$PACKAGE_DIR" | tr '-' '/')" ]; then
+          # Try to find the actual directory (nested or flat)
+          if [ -d "i18nify-data/$PACKAGE_PATH" ]; then
+            PACKAGE_DIR="$PACKAGE_PATH"
+          elif [ -d "i18nify-data/$PACKAGE_NAME" ]; then
+            PACKAGE_DIR="$PACKAGE_NAME"
+          else
             echo "Warning: Package directory not found for: $PACKAGE_NAME"
-            echo "Tried: i18nify-data/$PACKAGE_DIR and i18nify-data/$(echo "$PACKAGE_DIR" | tr '-' '/')"
+            echo "Tried: i18nify-data/$PACKAGE_PATH and i18nify-data/$PACKAGE_NAME"
+            # Use the nested path as fallback (for module path construction)
+            PACKAGE_DIR="$PACKAGE_PATH"
           fi
+          
+          echo "package_dir=$PACKAGE_DIR" >> $GITHUB_OUTPUT
+          echo "package_path=$PACKAGE_PATH" >> $GITHUB_OUTPUT
 
       - name: Copy generated package to final location
         env:
           PACKAGE_NAME: ${{ matrix.package }}
           PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+          PACKAGE_PATH: ${{ steps.package-config.outputs.package_path }}
           GEN_OUTPUT_DIR: ${{ steps.generate-package.outputs.output_dir }}
         run: |
-          DEST_DIR="i18nify-data/go/$PACKAGE_DIR"
+          # Use PACKAGE_PATH (nested structure) for DEST_DIR to match generator output
+          # This preserves directory structure: country/subdivisions -> go/country/subdivisions
+          DEST_DIR="i18nify-data/go/$PACKAGE_PATH"
           
-          if [ ! -d "$GEN_OUTPUT_DIR" ]; then
+          if [ -z "$GEN_OUTPUT_DIR" ] || [ ! -d "$GEN_OUTPUT_DIR" ]; then
             echo "Error: Generated package not found at $GEN_OUTPUT_DIR"
+            echo "Expected output directory but generator may have failed"
             exit 1
           fi
           
+          echo "Copying from $GEN_OUTPUT_DIR to $DEST_DIR"
           rm -rf "$DEST_DIR"
           mkdir -p "$DEST_DIR"
           cp -r "$GEN_OUTPUT_DIR"/* "$DEST_DIR"/ 2>/dev/null || true
@@ -189,12 +202,13 @@ jobs:
       - name: Check for changes
         id: check-changes
         env:
-          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+          PACKAGE_PATH: ${{ steps.package-config.outputs.package_path }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          DEST_DIR="i18nify-data/go/$PACKAGE_DIR"
+          # Use nested path to match the DEST_DIR from copy step
+          DEST_DIR="i18nify-data/go/$PACKAGE_PATH"
           
           # Check if directory exists and has files
           if [ ! -d "$DEST_DIR" ] || [ -z "$(ls -A "$DEST_DIR" 2>/dev/null)" ]; then
@@ -239,7 +253,7 @@ jobs:
       - name: Commit and push changes (Beta)
         if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'true'
         env:
-          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+          PACKAGE_PATH: ${{ steps.package-config.outputs.package_path }}
           BRANCH_NAME: ${{ steps.branch.outputs.branch }}
           PACKAGE_NAME: ${{ matrix.package }}
           VERSION: ${{ steps.version.outputs.version }}
@@ -248,7 +262,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git checkout -B "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
 
-          git add "i18nify-data/go/$PACKAGE_DIR"
+          git add "i18nify-data/go/$PACKAGE_PATH"
           git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package" || exit 0
           
           # Retry push up to 3 times in case of concurrent modifications
@@ -281,7 +295,7 @@ jobs:
         id: release-commit
         if: steps.check-changes.outputs.has_changes == 'true' && steps.version.outputs.is_beta == 'false'
         env:
-          PACKAGE_DIR: ${{ steps.package-config.outputs.package_dir }}
+          PACKAGE_PATH: ${{ steps.package-config.outputs.package_path }}
           BRANCH_NAME: ${{ steps.branch.outputs.branch }}
           PACKAGE_NAME: ${{ matrix.package }}
           VERSION: ${{ steps.version.outputs.version }}
@@ -289,7 +303,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          git add "i18nify-data/go/$PACKAGE_DIR"
+          git add "i18nify-data/go/$PACKAGE_PATH"
           git commit -m "release: $PACKAGE_NAME Go package" || exit 0
           
           # Create git tag
