@@ -96,8 +96,10 @@ else
 fi
 
 # --- Create Output Directory ---
-rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR/data"
+
+# Clean old generated files but keep the directory
+rm -f "$OUTPUT_DIR"/*.go "$OUTPUT_DIR"/*.mod "$OUTPUT_DIR"/*.sum 2>/dev/null || true
 
 # --- Copy Data Files ---
 log_info "Copying data files..."
@@ -247,10 +249,25 @@ fi
 
 log_info "Generated: data_loader.go"
 
+# --- Verify files were created ---
+if [ ! -f "$OUTPUT_DIR/go.mod" ]; then
+    log_error "Failed to create go.mod"
+    exit 1
+fi
+
+if [ ! -f "$OUTPUT_DIR/data_loader.go" ]; then
+    log_error "Failed to create data_loader.go"
+    exit 1
+fi
+
 # --- Generate go.sum (run go mod tidy) ---
 log_info "Running go mod tidy..."
 cd "$OUTPUT_DIR"
-go mod tidy 2>/dev/null || log_warning "go mod tidy had warnings (this is usually okay)"
+go mod tidy || log_warning "go mod tidy had warnings (this is usually okay)"
+
+# --- Final verification ---
+log_info "Generated files:"
+ls -la "$OUTPUT_DIR"
 
 log_info "✅ Package generated successfully at: $OUTPUT_DIR"
 echo "$OUTPUT_DIR"
