@@ -117,11 +117,16 @@ protoc --go_out="$OUTPUT_DIR" \
        --proto_path="$PROTO_DIR" \
        "$PROTO_FILENAME"
 
-# Rename generated file to avoid confusion
-GENERATED_PB=$(find "$OUTPUT_DIR" -name "*.pb.go" | head -1)
+# Rename generated file if needed
+GENERATED_PB=$(find "$OUTPUT_DIR" -maxdepth 1 -name "*.pb.go" | head -1)
+EXPECTED_PB="$OUTPUT_DIR/${GO_PACKAGE_NAME}.pb.go"
 if [ -n "$GENERATED_PB" ]; then
-    mv "$GENERATED_PB" "$OUTPUT_DIR/${GO_PACKAGE_NAME}.pb.go"
-    log_info "Generated: ${GO_PACKAGE_NAME}.pb.go"
+    if [ "$GENERATED_PB" != "$EXPECTED_PB" ]; then
+        mv "$GENERATED_PB" "$EXPECTED_PB"
+        log_info "Renamed: $(basename "$GENERATED_PB") -> ${GO_PACKAGE_NAME}.pb.go"
+    else
+        log_info "Generated: ${GO_PACKAGE_NAME}.pb.go (already correctly named)"
+    fi
 fi
 
 # --- Generate go.mod ---
