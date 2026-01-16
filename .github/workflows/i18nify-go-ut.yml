@@ -16,6 +16,8 @@ jobs:
           filters: |
             src:
               - 'packages/i18nify-go/**'
+              - 'i18nify-data/go/**'
+              - 'i18nify-data/country/subdivisions/**'
 
   run-test:
     name: Run Unit Tests
@@ -30,6 +32,19 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '1.20'
+      - name: Setup local replace directives
+        run: |
+          cd $GITHUB_WORKSPACE/packages/i18nify-go
+          
+          # Check if generated package exists locally and add replace directive
+          # This allows tests to run even before the package is pushed to GitHub
+          GENERATED_PKG="../../i18nify-data/go/country/subdivisions"
+          if [ -d "$GENERATED_PKG" ] && [ -f "$GENERATED_PKG/go.mod" ]; then
+            echo "Adding replace directive for local generated package..."
+            go mod edit -replace "github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions=${GENERATED_PKG}"
+            go mod tidy
+          fi
+
       - name: Run Unit Tests
         run: |
           cd $GITHUB_WORKSPACE/packages/i18nify-go
