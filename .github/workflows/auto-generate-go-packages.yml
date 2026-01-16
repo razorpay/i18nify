@@ -48,38 +48,27 @@ jobs:
   check-comment:
     name: Check Comment Trigger
     runs-on: ubuntu-latest
-    if: github.event_name == 'issue_comment'
+    if: |
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request != null &&
+      contains(github.event.comment.body, 'generate-package-go')
     outputs:
       should_run: ${{ steps.check.outputs.should_run }}
       packages: ${{ steps.check.outputs.packages }}
       pr_number: ${{ steps.check.outputs.pr_number }}
       pr_head_ref: ${{ steps.pr-info.outputs.pr_head_ref }}
     steps:
-      - name: Check if comment triggers workflow
+      - name: Parse comment and extract package
         id: check
         env:
           COMMENT_BODY: ${{ github.event.comment.body }}
-          IS_PR: ${{ github.event.issue.pull_request != null }}
         run: |
-          # Only run on PR comments
-          if [ "$IS_PR" != "true" ]; then
-            echo "Not a PR comment, skipping"
-            echo "should_run=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          # Check if comment starts with "generate-package-go"
-          if [[ "$COMMENT_BODY" != generate-package-go* ]]; then
-            echo "Comment doesn't match trigger, skipping"
-            echo "should_run=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
           echo "should_run=true" >> $GITHUB_OUTPUT
           echo "pr_number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
 
           # Extract package name if specified (e.g., "generate-package-go country/subdivisions")
-          PACKAGE=$(echo "$COMMENT_BODY" | sed 's/generate-package-go//' | xargs)
+          # Handle both "generate-package-go country/subdivisions" and just "generate-package-go"
+          PACKAGE=$(echo "$COMMENT_BODY" | grep -oP 'generate-package-go\s+\K[^\s]+' || echo "")
 
           if [ -n "$PACKAGE" ]; then
             # Specific package requested
