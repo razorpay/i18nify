@@ -88,19 +88,25 @@ cd "$I18NIFY_GO_DIR"
 
 log_info "Updating $MODULE_PATH to $VERSION"
 
-# Remove replace directive if it exists
-if grep -q "replace ${MODULE_PATH}" go.mod; then
-    log_info "Removing replace directive..."
-    go mod edit -dropreplace "${MODULE_PATH}"
-fi
+# Path to the generated package (relative from i18nify-go)
+GENERATED_PACKAGE_PATH="../../i18nify-data/go/$PACKAGE_PATH"
 
 # Update or add the require directive
 log_info "Setting require directive..."
 go mod edit -require "${MODULE_PATH}@${VERSION}"
 
-# Run go mod tidy
+# Add temporary replace directive for go mod tidy
+# (The module isn't on GitHub yet, so we use local path)
+log_info "Adding temporary replace directive for go mod tidy..."
+go mod edit -replace "${MODULE_PATH}=${GENERATED_PACKAGE_PATH}"
+
+# Run go mod tidy with the local replace
 log_info "Running go mod tidy..."
-go mod tidy 2>/dev/null || log_warning "go mod tidy had warnings"
+go mod tidy || log_warning "go mod tidy had warnings"
+
+# Remove the replace directive (the final go.mod should use the version)
+log_info "Removing replace directive..."
+go mod edit -dropreplace "${MODULE_PATH}"
 
 log_info "✅ Updated $MODULE_PATH to $VERSION"
 log_info ""
