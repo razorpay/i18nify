@@ -2,33 +2,17 @@ const fs = require('fs');
 const Ajv = require('ajv');
 
 /*
-  This validation script is to validate the data file with respective schema files
+  This validation script validates data files against their respective schema files.
 
-  The validation part is same for all the files, but fetching the file paths is different for files in
-  data/country-zipcode folder and the remaining folder.
+  Note: Some packages have migrated to using proto files as schema definitions.
+  For these packages, validation is handled at compile time by the proto compiler.
+  This script will skip validation for packages without a schema.json file.
 
   Assumptions:
-   - All the folder's except data/country-zipcode folder have one data.json & schema.json files
-   - In data/country-zipcode folder, we have different files for different countries like IN.json, US.json,...
-   and have only one common schema.json file for all the country data files
-
-
-  Validation-script
-  - Fetching file paths
-      - for data/country-zipcode folder
-          - get the path till the version (eg: data/country-zipcode/version_1.0.0)
-          - Add all the country data files and the common schema file in the new version folder, to the list of validation files
-              (eg: {data/country-zipcode/version_1.0.0/IN.json, data/country-zipcode/version_1.0.0/schema.json},
-                    {data/country-zipcode/version_1.0.0/US.json, data/country-zipcode/version_1.0.0/schema.json})
-      - for remaining folders
-          - get the path till the version (eg: data/country-data-info/version_1.0.0)
-          - All the data.json & schema.json files in the new version folder, to the list of validation files
-            (eg:{data/country/version_1.0.0/data.json, data/country/version_1.0.0/schema.json})
-  - Validating the files
-      - Reading the data and scheme files
-      - Validating with ajv
-
-  - Sending the status of each data and schema files validation
+   - Packages with schema.json will be validated against it
+   - Packages without schema.json (using proto) will be skipped
+   - In data/country-zipcode folder, we have different files for different countries
+     and have only one common schema.json file for all the country data files
 */
 
 function isInterfaceInArray(arr: Files[], obj: Files): boolean {
@@ -43,11 +27,27 @@ function isInterfaceInArray(arr: Files[], obj: Files): boolean {
   return false;
 }
 
-function getFilesFromPath(filePath: string, fileName: string): Files {
+function fileExists(filePath: string): boolean {
+  try {
+    fs.accessSync(filePath, fs.constants.F_OK);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function getFilesFromPath(filePath: string, fileName: string): Files | null {
   const ind = filePath.indexOf(fileName);
   const dir = filePath.slice(0, ind);
   const schema_file_path = dir + 'schema.json';
   const data_file_path = dir + 'data.json';
+  
+  // Skip if schema.json doesn't exist (package uses proto for schema)
+  if (!fileExists(schema_file_path)) {
+    console.log(`ℹ️  Skipping ${dir} - no schema.json (using proto schema)`);
+    return null;
+  }
+  
   return {
     schema_file: schema_file_path,
     data_file: data_file_path,
@@ -55,9 +55,17 @@ function getFilesFromPath(filePath: string, fileName: string): Files {
 }
 
 // Getting the country Data file along with the Scheme file from Country-zipcode folder
-function getCountryZipcodesFilePaths(filePath: string, country: string): Files {
+function getCountryZipcodesFilePaths(filePath: string, country: string): Files | null {
+  const schema_file_path = filePath + 'schema.json';
+  
+  // Skip if schema.json doesn't exist
+  if (!fileExists(schema_file_path)) {
+    console.log(`ℹ️  Skipping ${filePath}${country}.json - no schema.json (using proto schema)`);
+    return null;
+  }
+  
   return {
-    schema_file: filePath + 'schema.json',
+    schema_file: schema_file_path,
     data_file: filePath + country + '.json',
   };
 }
@@ -92,12 +100,12 @@ for (let i = 0; i < files.length; i++) {
   if (!path.includes('data/country-zipcode')) {
     if (path.includes('schema.json')) {
       const valid_files = getFilesFromPath(path, 'schema.json');
-      if (!isInterfaceInArray(validation_files, valid_files)) {
+      if (valid_files && !isInterfaceInArray(validation_files, valid_files)) {
         validation_files.push(valid_files);
       }
     } else if (path.includes('data.json')) {
       const valid_files = getFilesFromPath(path, 'data.json');
-      if (!isInterfaceInArray(validation_files, valid_files)) {
+      if (valid_files && !isInterfaceInArray(validation_files, valid_files)) {
         validation_files.push(valid_files);
       }
     }
@@ -113,12 +121,19 @@ for (let i = 0; i < files.length; i++) {
         file_path,
         available_countries[j],
       );
-      if (!isInterfaceInArray(validation_files, valid_files)) {
+      if (valid_files && !isInterfaceInArray(validation_files, valid_files)) {
         validation_files.push(valid_files);
       }
     }
   }
 }
+
+if (validation_files.length === 0) {
+  console.log('ℹ️  No files to validate (all packages use proto schema)');
+  process.exit(0);
+}
+
+let hasErrors = false;
 
 for (let i = 0; i < validation_files.length; i++) {
   try {
@@ -143,12 +158,13 @@ for (let i = 0; i < validation_files.length; i++) {
       console.log(
         '✅ ' +
           validation_files[i].data_file +
-          ' follow the Schema from ' +
+          ' follows the Schema from ' +
           validation_files[i].schema_file +
           ' file',
       );
     }
   } catch (error: any) {
+    hasErrors = true;
     if (error instanceof InvalidFilesError) {
       console.error(
         '❌ ' +
@@ -169,4 +185,8 @@ for (let i = 0; i < validation_files.length; i++) {
       );
     }
   }
+}
+
+if (hasErrors) {
+  process.exit(1);
 }

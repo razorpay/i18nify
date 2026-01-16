@@ -12,78 +12,62 @@ This repository acts as a Power Source of all geographical data, to any SDK that
 
 ## Folder Structure
 
-The sample folder structure for the `i18nify-data` is as follows:
+The folder structure for `i18nify-data` is as follows:
+
 ```
 i18nify-data/
 │
 ├── country/
-│   └── Description.md
-│   └── data.json
-│   └── schema.json
+│   ├── metadata/
+│   │   ├── data.json
+│   │   ├── schema.json         # JSON Schema (legacy)
+│   │   └── proto/              # Proto schema (new)
+│   │       └── country_metadata.proto
+│   └── subdivisions/
+│       ├── IN.json, MY.json, SG.json, US.json
+│       └── proto/
+│           └── country_subdivisions.proto
 ├── currency/
-│   └── Description.md
-│   └── data.json
+│   ├── data.json
 │   └── schema.json
-├── ...
+├── bankcodes/
+│   ├── IN.json, MY.json, SG.json, US.json
+│   └── schema.json
+├── go/                         # Generated Go packages
+│   ├── country/
+│   │   └── subdivisions/
+│   └── ...
+└── ...
 ```
 
-Each Country Attribute Folder (`country`, `currency`, etc.) maintains version based two JSON file (`data.json, schema.json`) that has attributes mapped to a country code along with a `Description.md` file that gives a brief about the Source and the descriptions of various fields..
+## Schema Definition
 
+Packages can define their schema in two ways:
 
-**Sample Json files:**
+1. **JSON Schema** (`schema.json`) - Traditional JSON Schema for validation
+2. **Protocol Buffers** (`proto/*.proto`) - Type definitions that can generate code for multiple languages
 
-**_Scheme.Json_:**
+Packages with proto files will have Go packages auto-generated in the `go/` directory.
+
+## Data Validation
+
+Data files are validated against their schema on every pull request:
+- Packages with `schema.json` are validated using JSON Schema (ajv)
+- Packages with proto files are validated at compile time when generating language-specific packages
+
+## Generated Packages
+
+Go packages are auto-generated from proto definitions:
+
+```go
+import subdivisions "github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions"
+
+data, err := subdivisions.GetCountrySubdivisions("IN")
 ```
-{
-  "type": "object",
-  "properties": {
-    "country_information": {
-      "type": "object",
-      "patternProperties": {
-        "^[A-Z]{2}$": {
-          "type": "object",
-          "properties": {
-            "country_name": { "type": "string" },
-            "country_code_3": { "type": "string" },
-            "numeric_code": { "type": "string" },
-            "sovereignty": { "type": "string" }
-          },
-          "required": ["country_name", "country_code_3", "numeric_code", "sovereignty"]
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "required": ["country_information"]
-}
-```
-
-**_Data.Json:_**
-```
-{
-  "country_information": {
-    "AF": {
-      "country_name": "Afghanistan",
-      "country_code_3": "AFG",
-      "numeric_code": "004",
-      "sovereignty": "UN member state"
-    },
-    "AX": {
-      "country_name": "Åland Islands",
-      "country_code_3": "ALA",
-      "numeric_code": "248",
-      "sovereignty": "Finland"
-    }
-}
-```
-
-<br>
-We validate data files to ensure they conform to the schema specified in the schema file for individual information. This ensures data integrity and consistency, maintaining high-quality country attribute data throughout the repository.
 
 ## Contributing
 
 We welcome contributions from the community! If you have any suggestions, improvements, or would like to report issues, please feel free to submit a Pull Request or open an issue.
-
 
 For making a Contribution, Please go through the [Contribution Guidelines](contribution-guidelines.md)
 
