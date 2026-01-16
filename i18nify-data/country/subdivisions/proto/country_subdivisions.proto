@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package country_subdivisions;
 
-option go_package = "github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions;country_subdivisions";
-
 // CountrySubdivisions contains subdivision information for a country.
 // Data files: Multiple JSON files per country code (IN.json, MY.json, SG.json, US.json)
 message CountrySubdivisions {

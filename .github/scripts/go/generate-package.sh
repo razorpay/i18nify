@@ -4,6 +4,7 @@
 # 
 # This script generates a Go package from proto files and data.
 # It auto-detects configuration from directory structure and proto files.
+# The go_package is derived from the package path (not stored in proto).
 #
 # Usage: ./generate-package.sh <package-path>
 # Example: ./generate-package.sh country/subdivisions
@@ -35,6 +36,9 @@ I18NIFY_DATA_DIR="$PROJECT_ROOT/i18nify-data"
 SOURCE_DIR="$I18NIFY_DATA_DIR/$PACKAGE_PATH"
 OUTPUT_DIR="$I18NIFY_DATA_DIR/go/$PACKAGE_PATH"
 
+# Fixed module path prefix
+MODULE_PATH_PREFIX="github.com/razorpay/i18nify/i18nify-data/go"
+
 # --- Validation ---
 if [ ! -d "$SOURCE_DIR" ]; then
     log_error "Source directory not found: $SOURCE_DIR"
@@ -53,25 +57,19 @@ if [ -z "$PROTO_FILE" ]; then
     log_error "No proto file found in $PROTO_DIR"
     exit 1
 fi
+PROTO_FILENAME=$(basename "$PROTO_FILE")
 
 log_info "Found proto file: $PROTO_FILE"
 
-# --- Extract Package Info from Proto ---
-# Extract go_package option
-GO_PACKAGE_FULL=$(grep -m 1 "option go_package" "$PROTO_FILE" | sed -E 's/.*"([^"]+)".*/\1/')
-if [ -z "$GO_PACKAGE_FULL" ]; then
-    log_error "No go_package option found in proto file"
-    exit 1
-fi
+# --- Derive Go Package Info from Path ---
+# Module path: github.com/razorpay/i18nify/i18nify-data/go/{package_path}
+MODULE_PATH="$MODULE_PATH_PREFIX/$PACKAGE_PATH"
 
-# Parse go_package: "path;package_name" or just "path"
-if [[ "$GO_PACKAGE_FULL" == *";"* ]]; then
-    MODULE_PATH=$(echo "$GO_PACKAGE_FULL" | cut -d';' -f1)
-    GO_PACKAGE_NAME=$(echo "$GO_PACKAGE_FULL" | cut -d';' -f2)
-else
-    MODULE_PATH="$GO_PACKAGE_FULL"
-    GO_PACKAGE_NAME=$(basename "$MODULE_PATH")
-fi
+# Go package name: replace / with _ (e.g., country/subdivisions -> country_subdivisions)
+GO_PACKAGE_NAME=$(echo "$PACKAGE_PATH" | tr '/' '_')
+
+# Full go_package option for protoc: "module_path;package_name"
+GO_PACKAGE_OPTION="${MODULE_PATH};${GO_PACKAGE_NAME}"
 
 log_info "Module path: $MODULE_PATH"
 log_info "Go package name: $GO_PACKAGE_NAME"
@@ -109,11 +107,13 @@ for data_file in "${DATA_FILES[@]}"; do
 done
 
 # --- Compile Proto ---
+# Pass go_package via --go_opt instead of requiring it in proto file
 log_info "Compiling proto file..."
 protoc --go_out="$OUTPUT_DIR" \
        --go_opt=paths=source_relative \
+       --go_opt="M${PROTO_FILENAME}=${GO_PACKAGE_OPTION}" \
        --proto_path="$PROTO_DIR" \
-       "$(basename "$PROTO_FILE")"
+       "$PROTO_FILENAME"
 
 # Rename generated file to avoid confusion
 GENERATED_PB=$(find "$OUTPUT_DIR" -name "*.pb.go" | head -1)
@@ -254,4 +254,3 @@ go mod tidy 2>/dev/null || log_warning "go mod tidy had warnings (this is usuall
 
 log_info "✅ Package generated successfully at: $OUTPUT_DIR"
 echo "$OUTPUT_DIR"
-
