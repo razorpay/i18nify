@@ -1,0 +1,231 @@
+name: Auto-Generate Go Packages
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - master
+    paths:
+      - 'i18nify-data/country/subdivisions/**'
+      - 'i18nify-data/currency/**'
+      - 'i18nify-data/bankcodes/**'
+      - 'i18nify-data/country/metadata/**'
+      - '!i18nify-data/go/**'  # Ignore generated files
+  push:
+    branches:
+      - master
+    paths:
+      - 'i18nify-data/country/subdivisions/**'
+      - 'i18nify-data/currency/**'
+      - 'i18nify-data/bankcodes/**'
+      - 'i18nify-data/country/metadata/**'
+      - '!i18nify-data/go/**'
+
+concurrency:
+  group: auto-generate-go-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  detect-changes:
+    name: Detect Package Changes
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.filter.outputs.changes }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          base: ${{ github.event.pull_request.base.ref || github.event.before || 'HEAD~1' }}
+          filters: |
+            country/subdivisions:
+              - 'i18nify-data/country/subdivisions/**'
+              - '!i18nify-data/country/subdivisions/README.md'
+            currency:
+              - 'i18nify-data/currency/**'
+              - '!i18nify-data/currency/README.md'
+            bankcodes:
+              - 'i18nify-data/bankcodes/**'
+              - '!i18nify-data/bankcodes/README.md'
+            country/metadata:
+              - 'i18nify-data/country/metadata/**'
+              - '!i18nify-data/country/metadata/README.md'
+
+  generate-packages:
+    name: Generate Go Package
+    runs-on: ubuntu-latest
+    needs: detect-changes
+    if: needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != ''
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.detect-changes.outputs.packages) }}
+      fail-fast: false
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y protobuf-compiler jq
+
+      - name: Install protoc-gen-go
+        run: go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+
+      - name: Add Go bin to PATH
+        run: echo "$HOME/go/bin" >> $GITHUB_PATH
+
+      - name: Check if proto exists for package
+        id: check-proto
+        run: |
+          PACKAGE_PATH="${{ matrix.package }}"
+          PROTO_DIR="i18nify-data/$PACKAGE_PATH/proto"
+          
+          if [ -d "$PROTO_DIR" ] && ls "$PROTO_DIR"/*.proto 1> /dev/null 2>&1; then
+            echo "has_proto=true" >> $GITHUB_OUTPUT
+            echo "Proto found for $PACKAGE_PATH"
+          else
+            echo "has_proto=false" >> $GITHUB_OUTPUT
+            echo "No proto found for $PACKAGE_PATH - skipping generation"
+          fi
+
+      - name: Generate Go package
+        if: steps.check-proto.outputs.has_proto == 'true'
+        id: generate
+        run: |
+          chmod +x .github/scripts/go/generate-package.sh
+          OUTPUT_DIR=$(.github/scripts/go/generate-package.sh "${{ matrix.package }}" | tail -1)
+          echo "output_dir=$OUTPUT_DIR" >> $GITHUB_OUTPUT
+
+      - name: Check for changes
+        if: steps.check-proto.outputs.has_proto == 'true'
+        id: check-changes
+        run: |
+          PACKAGE_PATH="${{ matrix.package }}"
+          DEST_DIR="i18nify-data/go/$PACKAGE_PATH"
+          
+          if [ ! -d "$DEST_DIR" ]; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          CHANGES=$(git status --porcelain "$DEST_DIR" 2>&1 || echo "")
+          
+          if [ -n "$CHANGES" ]; then
+            echo "Changes detected:"
+            echo "$CHANGES"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes detected"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit generated package
+        if: steps.check-changes.outputs.has_changes == 'true'
+        run: |
+          PACKAGE_PATH="${{ matrix.package }}"
+          PACKAGE_NAME=$(echo "$PACKAGE_PATH" | tr '/' '-')
+          
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add "i18nify-data/go/$PACKAGE_PATH"
+          git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package"
+
+      - name: Generate pseudo-version
+        if: steps.check-changes.outputs.has_changes == 'true'
+        id: version
+        run: |
+          COMMIT_SHA=$(git rev-parse HEAD)
+          SHORT_SHA=$(echo "$COMMIT_SHA" | cut -c1-12)
+          TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S "$COMMIT_SHA")
+          VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
+          
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
+
+      - name: Update i18nify-go dependencies
+        if: steps.check-changes.outputs.has_changes == 'true'
+        run: |
+          chmod +x .github/scripts/go/update-dependencies.sh
+          .github/scripts/go/update-dependencies.sh "${{ matrix.package }}" "${{ steps.version.outputs.version }}"
+
+      - name: Commit go.mod update
+        if: steps.check-changes.outputs.has_changes == 'true'
+        run: |
+          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
+          git commit -m "chore(go): update ${{ matrix.package }} dependency to ${{ steps.version.outputs.version }}" || echo "No go.mod changes to commit"
+
+      - name: Push changes
+        if: steps.check-changes.outputs.has_changes == 'true'
+        run: |
+          BRANCH="${{ github.event.pull_request.head.ref || github.ref_name }}"
+          
+          # Retry push up to 3 times
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            git pull --rebase origin "$BRANCH" || true
+            
+            if git push origin HEAD:"$BRANCH"; then
+              echo "Successfully pushed changes"
+              exit 0
+            else
+              echo "Push failed, attempt $((RETRY_COUNT + 1))/$MAX_RETRIES"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 2
+            fi
+          done
+          
+          echo "Failed to push after $MAX_RETRIES attempts"
+          exit 1
+
+      - name: Comment on PR
+        if: steps.check-changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PACKAGE_PATH="${{ matrix.package }}"
+          PACKAGE_NAME=$(echo "$PACKAGE_PATH" | tr '/' '-')
+          VERSION="${{ steps.version.outputs.version }}"
+          MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/$PACKAGE_PATH"
+          
+          COMMENT="## 📦 Data Package Update
+
+**Package:** \`$PACKAGE_NAME\`
+**Version:** \`$VERSION\`
+**Module:** \`$MODULE_PATH\`
+
+### To manually update to this version:
+
+\`\`\`bash
+cd packages/i18nify-go
+go get ${MODULE_PATH}@${VERSION}
+go mod tidy
+\`\`\`
+
+Or use the update script:
+
+\`\`\`bash
+.github/scripts/go/update-dependencies.sh $PACKAGE_PATH $VERSION
+\`\`\`
+
+---
+*Auto-generated by GitHub Actions*"
+
+          gh pr comment ${{ github.event.pull_request.number }} --body "$COMMENT"
+
