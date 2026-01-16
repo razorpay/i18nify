@@ -20,15 +20,86 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - '!i18nify-data/go/**'
+  
+  # Manual trigger via PR comment
+  # Comment "generate-package-go" to regenerate all packages with proto
+  # Comment "generate-package-go country/subdivisions" to regenerate specific package
+  issue_comment:
+    types: [created]
 
 concurrency:
-  group: auto-generate-go-${{ github.event_name }}-${{ github.ref }}
+  group: auto-generate-go-${{ github.event_name }}-${{ github.event.issue.number || github.ref }}
   cancel-in-progress: false
 
 jobs:
+  # Check if comment trigger is valid
+  check-comment:
+    name: Check Comment Trigger
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issue_comment'
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+      packages: ${{ steps.check.outputs.packages }}
+      pr_number: ${{ steps.check.outputs.pr_number }}
+      pr_head_ref: ${{ steps.check.outputs.pr_head_ref }}
+    steps:
+      - name: Check if comment triggers workflow
+        id: check
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          IS_PR: ${{ github.event.issue.pull_request != null }}
+        run: |
+          # Only run on PR comments
+          if [ "$IS_PR" != "true" ]; then
+            echo "Not a PR comment, skipping"
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check if comment starts with "generate-package-go"
+          if [[ "$COMMENT_BODY" != generate-package-go* ]]; then
+            echo "Comment doesn't match trigger, skipping"
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "should_run=true" >> $GITHUB_OUTPUT
+          echo "pr_number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+          
+          # Extract package name if specified (e.g., "generate-package-go country/subdivisions")
+          PACKAGE=$(echo "$COMMENT_BODY" | sed 's/generate-package-go//' | xargs)
+          
+          if [ -n "$PACKAGE" ]; then
+            # Specific package requested
+            echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
+            echo "Specific package requested: $PACKAGE"
+          else
+            # All packages with proto
+            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata"]' >> $GITHUB_OUTPUT
+            echo "All packages will be checked"
+          fi
+
+      - name: Get PR head ref
+        if: steps.check.outputs.should_run == 'true'
+        id: pr-info
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_DATA=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }})
+          HEAD_REF=$(echo "$PR_DATA" | jq -r '.head.ref')
+          echo "pr_head_ref=$HEAD_REF" >> $GITHUB_OUTPUT
+
+      - name: React to comment
+        if: steps.check.outputs.should_run == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions -f content='+1'
+
   detect-changes:
     name: Detect Package Changes
     runs-on: ubuntu-latest
+    if: github.event_name != 'issue_comment'
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
@@ -57,11 +128,16 @@ jobs:
   generate-packages:
     name: Generate Go Package
     runs-on: ubuntu-latest
-    needs: detect-changes
-    if: needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != ''
+    needs: [detect-changes, check-comment]
+    # Run if: (auto-trigger with changes) OR (comment trigger)
+    if: |
+      always() && (
+        (needs.detect-changes.result == 'success' && needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != '') ||
+        (needs.check-comment.result == 'success' && needs.check-comment.outputs.should_run == 'true')
+      )
     strategy:
       matrix:
-        package: ${{ fromJson(needs.detect-changes.outputs.packages) }}
+        package: ${{ fromJson(needs.check-comment.outputs.packages || needs.detect-changes.outputs.packages || '[]') }}
       fail-fast: false
     
     steps:
@@ -70,7 +146,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+          ref: ${{ needs.check-comment.outputs.pr_head_ref || github.event.pull_request.head.ref || github.ref_name }}
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -172,7 +248,7 @@ jobs:
       - name: Push changes
         if: steps.check-changes.outputs.has_changes == 'true'
         run: |
-          BRANCH="${{ github.event.pull_request.head.ref || github.ref_name }}"
+          BRANCH="${{ needs.check-comment.outputs.pr_head_ref || github.event.pull_request.head.ref || github.ref_name }}"
           
           # Retry push up to 3 times
           MAX_RETRIES=3
@@ -195,7 +271,7 @@ jobs:
           exit 1
 
       - name: Comment on PR
-        if: steps.check-changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
+        if: steps.check-changes.outputs.has_changes == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -203,6 +279,13 @@ jobs:
           PACKAGE_NAME=$(echo "$PACKAGE_PATH" | tr '/' '-')
           VERSION="${{ steps.version.outputs.version }}"
           MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/$PACKAGE_PATH"
+          PR_NUMBER="${{ needs.check-comment.outputs.pr_number || github.event.pull_request.number }}"
+          
+          # Skip if no PR number (push to master)
+          if [ -z "$PR_NUMBER" ]; then
+            echo "No PR number, skipping comment"
+            exit 0
+          fi
           
           COMMENT="## 📦 Data Package Update
 
@@ -227,5 +310,4 @@ Or use the update script:
 ---
 *Auto-generated by GitHub Actions*"
 
-          gh pr comment ${{ github.event.pull_request.number }} --body "$COMMENT"
-
+          gh pr comment "$PR_NUMBER" --body "$COMMENT"
