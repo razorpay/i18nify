@@ -21,10 +21,6 @@ on:
       - 'i18nify-data/country/metadata/**'
       - '!i18nify-data/go/**'
 
-  # Manual trigger via PR comment (only works from default branch)
-  issue_comment:
-    types: [created]
-
   # Manual trigger via GitHub Actions UI
   workflow_dispatch:
     inputs:
@@ -42,17 +38,13 @@ on:
       branch:
         description: 'Branch to run on'
         required: true
-        default: 'pt/externalize-packages'
+        default: 'master'
 
 concurrency:
-  group: auto-generate-go-${{ github.event_name }}-${{ github.event.issue.number || github.ref }}
+  group: auto-generate-go-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  # ============================================
-  # STEP 1: Determine what packages to generate
-  # ============================================
-  
   # For PR/push: detect which packages have data changes
   detect-changes:
     name: Detect Data Changes
@@ -85,45 +77,6 @@ jobs:
               - 'i18nify-data/country/metadata/**'
               - '!i18nify-data/country/metadata/README.md'
 
-  # For comment trigger: parse comment and get packages
-  check-comment:
-    name: Parse Comment Trigger
-    runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'issue_comment' &&
-      github.event.issue.pull_request != null &&
-      contains(github.event.comment.body, 'generate-package-go')
-    outputs:
-      packages: ${{ steps.parse.outputs.packages }}
-      branch: ${{ steps.pr-info.outputs.branch }}
-      pr_number: ${{ github.event.issue.number }}
-    steps:
-      - name: Parse comment
-        id: parse
-        env:
-          COMMENT_BODY: ${{ github.event.comment.body }}
-        run: |
-          PACKAGE=$(echo "$COMMENT_BODY" | grep -oP 'generate-package-go\s+\K[^\s]+' || echo "")
-          if [ -n "$PACKAGE" ]; then
-            echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
-          else
-            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata"]' >> $GITHUB_OUTPUT
-          fi
-
-      - name: Get PR branch
-        id: pr-info
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          BRANCH=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }} --jq '.head.ref')
-          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
-
-      - name: React to comment
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh api repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions -f content='+1'
-
   # For workflow_dispatch: get inputs
   check-dispatch:
     name: Parse Manual Dispatch
@@ -144,27 +97,24 @@ jobs:
             echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata"]' >> $GITHUB_OUTPUT
           fi
 
-  # ============================================
-  # STEP 2: Generate packages (only if needed)
-  # ============================================
+  # Generate packages
   generate:
     name: Generate ${{ matrix.package }}
     runs-on: ubuntu-latest
-    needs: [detect-changes, check-comment, check-dispatch]
+    needs: [detect-changes, check-dispatch]
     if: |
       always() && (
         (needs.detect-changes.result == 'success' && needs.detect-changes.outputs.packages != '[]' && needs.detect-changes.outputs.packages != '') ||
-        (needs.check-comment.result == 'success') ||
         (needs.check-dispatch.result == 'success')
       )
     strategy:
       matrix:
-        package: ${{ fromJson(needs.check-dispatch.outputs.packages || needs.check-comment.outputs.packages || needs.detect-changes.outputs.packages || '[]') }}
+        package: ${{ fromJson(needs.check-dispatch.outputs.packages || needs.detect-changes.outputs.packages || '[]') }}
       fail-fast: false
     
     env:
-      BRANCH: ${{ needs.check-dispatch.outputs.branch || needs.check-comment.outputs.branch || needs.detect-changes.outputs.branch }}
-      PR_NUMBER: ${{ needs.check-comment.outputs.pr_number || needs.detect-changes.outputs.pr_number || '' }}
+      BRANCH: ${{ needs.check-dispatch.outputs.branch || needs.detect-changes.outputs.branch }}
+      PR_NUMBER: ${{ needs.detect-changes.outputs.pr_number || '' }}
 
     steps:
       - name: Checkout
@@ -207,7 +157,6 @@ jobs:
 
       - name: Commit and push generated package
         if: steps.check-proto.outputs.has_proto == 'true'
-        id: commit
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -216,26 +165,22 @@ jobs:
           
           if git diff --cached --quiet; then
             echo "No changes to commit"
-            echo "has_changes=false" >> $GITHUB_OUTPUT
           else
             git commit -m "chore: auto-regenerate ${{ matrix.package }} Go package"
             git pull --rebase origin "$BRANCH" || true
             git push origin HEAD:"$BRANCH"
-            echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Generate version and update go.mod
         if: steps.check-proto.outputs.has_proto == 'true'
         id: version
         run: |
-          # Generate pseudo-version from HEAD
           COMMIT_SHA=$(git rev-parse HEAD)
           SHORT_SHA=$(echo "$COMMIT_SHA" | cut -c1-12)
           TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S "$COMMIT_SHA")
           VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           
-          # Update go.mod
           chmod +x .github/scripts/go/update-dependencies.sh
           .github/scripts/go/update-dependencies.sh "${{ matrix.package }}" "$VERSION"
 
