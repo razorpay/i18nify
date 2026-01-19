@@ -221,9 +221,19 @@ jobs:
       - name: Check for changes
         if: steps.check-proto.outputs.has_proto == 'true'
         id: check-changes
+        env:
+          IS_MANUAL_TRIGGER: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'issue_comment' }}
         run: |
           PACKAGE_PATH="${{ matrix.package }}"
           DEST_DIR="i18nify-data/go/$PACKAGE_PATH"
+
+          # For manual triggers, always proceed (force regeneration)
+          if [ "$IS_MANUAL_TRIGGER" == "true" ]; then
+            echo "Manual trigger detected - forcing regeneration"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "is_force=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
 
           if [ ! -d "$DEST_DIR" ]; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
@@ -243,6 +253,7 @@ jobs:
 
       - name: Commit generated package
         if: steps.check-changes.outputs.has_changes == 'true'
+        id: commit-package
         run: |
           PACKAGE_PATH="${{ matrix.package }}"
           PACKAGE_NAME=$(echo "$PACKAGE_PATH" | tr '/' '-')
@@ -251,12 +262,21 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
           git add "i18nify-data/go/$PACKAGE_PATH"
-          git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package"
+          
+          # Check if there are actual changes to commit
+          if git diff --cached --quiet; then
+            echo "No file changes to commit (force mode with existing data)"
+            echo "committed=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "chore: auto-regenerate $PACKAGE_NAME Go package"
+            echo "committed=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Generate pseudo-version
         if: steps.check-changes.outputs.has_changes == 'true'
         id: version
         run: |
+          # Use HEAD commit (either the new commit or existing if no changes)
           COMMIT_SHA=$(git rev-parse HEAD)
           SHORT_SHA=$(echo "$COMMIT_SHA" | cut -c1-12)
           TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S "$COMMIT_SHA")
@@ -264,10 +284,11 @@ jobs:
 
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
+          echo "Generated version: $VERSION"
 
       # Push generated package FIRST so go mod tidy can resolve the module
       - name: Push generated package
-        if: steps.check-changes.outputs.has_changes == 'true'
+        if: steps.check-changes.outputs.has_changes == 'true' && steps.commit-package.outputs.committed == 'true'
         env:
           BRANCH: ${{ needs.check-dispatch.outputs.branch || needs.check-comment.outputs.pr_head_ref || github.event.pull_request.head.ref || github.ref_name }}
         run: |
