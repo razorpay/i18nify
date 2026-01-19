@@ -111,7 +111,7 @@ jobs:
       matrix:
         package: ${{ fromJson(needs.check-dispatch.outputs.packages || needs.detect-changes.outputs.packages || '[]') }}
       fail-fast: false
-    
+
     env:
       BRANCH: ${{ needs.check-dispatch.outputs.branch || needs.detect-changes.outputs.branch }}
       PR_NUMBER: ${{ needs.detect-changes.outputs.pr_number || '' }}
@@ -160,9 +160,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          
+
           git add "i18nify-data/go/${{ matrix.package }}"
-          
+
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
@@ -180,7 +180,7 @@ jobs:
           TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S "$COMMIT_SHA")
           VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          
+
           chmod +x .github/scripts/go/update-dependencies.sh
           .github/scripts/go/update-dependencies.sh "${{ matrix.package }}" "$VERSION"
 
@@ -188,12 +188,12 @@ jobs:
         if: steps.check-proto.outputs.has_proto == 'true'
         run: |
           git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
-          
+
           if git diff --cached --quiet; then
             echo "No go.mod changes"
             exit 0
           fi
-          
+
           git commit -m "chore(go): update ${{ matrix.package }} to ${{ steps.version.outputs.version }}"
           git pull --rebase origin "$BRANCH" || true
           git push origin HEAD:"$BRANCH"
@@ -205,7 +205,7 @@ jobs:
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           MODULE="github.com/razorpay/i18nify/i18nify-data/go/${{ matrix.package }}"
-          
+
           gh pr comment "$PR_NUMBER" --body "## 📦 Package Updated
 
           **Package:** \`${{ matrix.package }}\`
