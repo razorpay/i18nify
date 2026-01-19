@@ -14,3 +14,9 @@ require (
 	github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20260116155723-377dc9ad04bc
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions => ../../i18nify-data/go/country/subdivisions
+
+replace github.com/razorpay/i18nify/i18nify-data/go/bankcodes => ../../i18nify-data/go/bankcodes
+
+replace github.com/razorpay/i18nify/i18nify-data/go/currency => ../../i18nify-data/go/currency
