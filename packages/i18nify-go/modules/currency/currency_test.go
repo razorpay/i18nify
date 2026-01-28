@@ -130,3 +130,44 @@ func TestGetCurrencySymbol(t *testing.T) {
 		}
 	}
 }
+
+func TestFormatCurrency(t *testing.T) {
+	c := &CurrencyInformation{}
+
+	tests := []struct {
+		name      string
+		amount    float64
+		locale    string
+		wantErr   bool
+		Eexpected string
+	}{
+		{
+			name:      "valid locale en-US with positive amount",
+			amount:    15300000,
+			locale:    "en-US",
+			wantErr:   false,
+			Eexpected: "15,300,000.00",
+		},
+		{
+			name:      "valid locale en-IN with positive amount",
+			amount:    15300000,
+			locale:    "en-IN",
+			wantErr:   false,
+			Eexpected: "1,53,00,000.00",
+		},
+		{
+			name:      "valid locale en-MY with positive amount",
+			amount:    15300000,
+			locale:    "en-MY",
+			wantErr:   false,
+			Eexpected: "15,300,000.00",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result, _ := c.FormatCurrency(tt.amount, tt.locale)
+			assert.Equal(t, tt.Eexpected, result)
+		})
+	}
+}
