@@ -159,11 +159,26 @@ jobs:
           go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
           echo "$HOME/go/bin" >> $GITHUB_PATH
 
+      - name: Validate package data
+        if: steps.check-proto.outputs.has_proto == 'true'
+        run: |
+          chmod +x .github/scripts/go/validate-package.sh
+          .github/scripts/go/validate-package.sh "${{ matrix.package }}"
+
       - name: Generate package
         if: steps.check-proto.outputs.has_proto == 'true'
         run: |
           chmod +x .github/scripts/go/generate-package.sh
+          chmod +x .github/scripts/go/generate-test.sh
           .github/scripts/go/generate-package.sh "${{ matrix.package }}"
+
+      - name: Verify package (run tests)
+        if: steps.check-proto.outputs.has_proto == 'true'
+        run: |
+          cd "i18nify-data/go/${{ matrix.package }}"
+          echo "Running tests to verify data loads correctly..."
+          go test -v ./...
+          echo "✅ All tests passed - data is valid and loadable"
 
       - name: Commit and push generated package
         if: steps.check-proto.outputs.has_proto == 'true'

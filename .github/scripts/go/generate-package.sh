@@ -268,6 +268,10 @@ fi
 
 log_info "Generated: data_loader.go"
 
+# --- Generate Data Loader Test ---
+# Use separate script for test generation (easier to update independently)
+"$SCRIPT_DIR/generate-test.sh" "$OUTPUT_DIR" "$GO_PACKAGE_NAME" "$ROOT_MESSAGE" "$MULTIPLE_FILES"
+
 # --- Verify files were created ---
 if [ ! -f "$OUTPUT_DIR/go.mod" ]; then
     log_error "Failed to create go.mod"
@@ -276,6 +280,11 @@ fi
 
 if [ ! -f "$OUTPUT_DIR/data_loader.go" ]; then
     log_error "Failed to create data_loader.go"
+    exit 1
+fi
+
+if [ ! -f "$OUTPUT_DIR/data_loader_test.go" ]; then
+    log_error "Failed to create data_loader_test.go"
     exit 1
 fi
 
