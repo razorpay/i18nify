@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package bankcodes;
+
+// BankCodes contains bank and branch information for a country.
+// Data files: Multiple JSON files per country code (IN.json, MY.json, etc.)
+message BankCodes {
+  Defaults defaults = 1;
+  repeated Bank details = 2;
+}
+
+// Defaults contains default settings for bank codes.
+message Defaults {
+  string identifier_type = 1;
+}
+
+// Bank represents a financial institution.
+message Bank {
+  string name = 1;
+  string short_code = 2;
+  repeated Branch branches = 3;
+}
+
+// Branch represents a bank branch.
+message Branch {
+  string code = 1;
+  string city = 2;
+  Identifiers identifiers = 3;
+}
+
+// Identifiers contains branch identifiers like SWIFT codes.
+message Identifiers {
+  string swift_code = 1;
+}
+
