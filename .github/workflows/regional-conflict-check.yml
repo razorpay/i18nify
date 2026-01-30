@@ -1,0 +1,202 @@
+name: Regional Conflict Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  merge_group:  # This triggers for merge queue
+  workflow_dispatch:
+    inputs:
+      target_branches:
+        description: 'Comma-separated list of regional branches to check'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+  statuses: write
+  actions: read
+
+concurrency:
+  group: ${{ github.repository }}-${{ github.event.pull_request.number || github.event.merge_group.head_sha || github.sha }}-regional-conflict-check
+  cancel-in-progress: true
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  regional-conflict-check:
+    name: Check Regional Conflicts
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Determine event details
+        id: event-details
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "pr_number=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+            echo "head_ref=${{ github.head_ref }}" >> $GITHUB_OUTPUT
+            echo "event_type=pull_request" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event_name }}" = "merge_group" ]; then
+            echo "pr_number=" >> $GITHUB_OUTPUT
+            echo "head_ref=${{ github.event.merge_group.head_ref }}" >> $GITHUB_OUTPUT
+            echo "event_type=merge_group" >> $GITHUB_OUTPUT
+          else
+            echo "pr_number=" >> $GITHUB_OUTPUT
+            echo "head_ref=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+            echo "event_type=workflow_dispatch" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ steps.event-details.outputs.head_ref }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install requests
+
+      - name: Run Regional Conflict Checker
+        id: conflict-check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ steps.event-details.outputs.pr_number }}
+          HEAD_REF: ${{ steps.event-details.outputs.head_ref }}
+          TARGET_BRANCHES_INPUT: ${{ github.event.inputs.target_branches || '' }}
+          EVENT_TYPE: ${{ steps.event-details.outputs.event_type }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          echo "Running regional conflict checker..."
+          echo "Event type: $EVENT_TYPE"
+          echo "PR Number: $PR_NUMBER"
+          echo "Head Ref: $HEAD_REF"
+          
+          if [ "$EVENT_TYPE" = "merge_group" ]; then
+            echo "🔄 Triggered by merge queue - validating regional compatibility"
+          else
+            echo "📋 Triggered by PR workflow - checking for regional conflicts"
+          fi
+          
+          python3 scripts/regional_conflict_checker.py
+
+      - name: Upload conflict results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: conflict-results-${{ steps.event-details.outputs.pr_number || github.run_id }}
+          path: conflict_results.json
+          retention-days: 7
+
+      - name: Auto-create resolution branches
+        if: steps.conflict-check.outputs.has-conflicts == 'true' && github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.event-details.outputs.pr_number }}
+          HEAD_REF: ${{ steps.event-details.outputs.head_ref }}
+        run: |
+          echo "🤖 Auto-creating resolution branches..."
+          
+          # Read conflict results
+          if [ -f "conflict_results.json" ]; then
+            echo "Conflicts detected - would create resolution branches here"
+            echo "This is where auto-resolution magic would happen!"
+            
+            # In a real implementation, this would:
+            # 1. Create resolution branches for each conflicting regional branch
+            # 2. Attempt automatic merge resolution
+            # 3. Create PRs for manual conflicts
+            # 4. Post helpful comments with guidance
+          fi
+
+      - name: Comment on PR
+        if: steps.conflict-check.outputs.has-conflicts == 'true' && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // Read conflict results
+            const results = JSON.parse(fs.readFileSync('conflict_results.json', 'utf8'));
+            
+            let comment = `## 🚨 Regional Conflicts Detected\n\n`;
+            comment += `This PR has merge conflicts with **${results.conflict_count}** regional branch(es):\n\n`;
+            
+            for (const conflict of results.conflicts) {
+              comment += `### 🔴 \`${conflict.branch}\`\n`;
+              comment += `\`\`\`\n${conflict.details}\n\`\`\`\n\n`;
+            }
+            
+            comment += `## 🎯 Merge Queue Integration\n\n`;
+            comment += `This PR is **blocked from merge queue** until conflicts are resolved.\n\n`;
+            
+            if (results.resolution_prs && results.resolution_prs.length > 0) {
+              comment += `## 🔍 Auto-detected Resolution PRs\n\n`;
+              comment += `Found potential resolution PRs: ${results.resolution_prs.map(pr => `#${pr}`).join(', ')}\n\n`;
+            }
+            
+            comment += `## 🛠️ Resolution Options\n\n`;
+            comment += `**Option 1: Automatic Resolution** (Future)\n`;
+            comment += `- Merge queue will auto-create resolution branches\n`;
+            comment += `- Auto-resolve simple conflicts\n`;
+            comment += `- Guide manual resolution for complex conflicts\n\n`;
+            
+            comment += `**Option 2: Manual Resolution** (Current)\n`;
+            for (const conflict of results.conflicts) {
+              comment += `\n### Resolve conflicts with \`${conflict.branch}\`:\n`;
+              comment += `\`\`\`bash\n`;
+              comment += `# Create resolution branch\n`;
+              comment += `git checkout origin/${conflict.branch}\n`;
+              comment += `git checkout -b resolve-conflicts-${conflict.branch}-pr-${results.pr_number || 'XXX'}\n\n`;
+              comment += `# Merge and resolve conflicts\n`;
+              comment += `git merge origin/${results.source_branch}\n`;
+              comment += `# Fix conflicts manually, then:\n`;
+              comment += `git add .\n`;
+              comment += `git commit -m "Resolve conflicts for PR #${results.pr_number || 'XXX'}"\n`;
+              comment += `git push origin resolve-conflicts-${conflict.branch}-pr-${results.pr_number || 'XXX'}\n`;
+              comment += `\`\`\`\n`;
+            }
+            
+            comment += `\n**Status:** 🔴 **BLOCKED** - Cannot merge until conflicts resolved\n`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+      - name: Set merge queue status
+        if: github.event_name == 'merge_group'
+        run: |
+          echo "Setting merge queue status based on conflict check results"
+          
+          if [ "${{ steps.conflict-check.outputs.has-conflicts }}" = "true" ]; then
+            echo "❌ Merge queue validation failed - conflicts detected"
+            exit 1
+          else
+            echo "✅ Merge queue validation passed - no conflicts"
+            exit 0
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "Regional conflict check completed"
+          echo "Event: ${{ steps.event-details.outputs.event_type }}"
+          echo "Conflicts: ${{ steps.conflict-check.outputs.has-conflicts }}"
+          echo "Count: ${{ steps.conflict-check.outputs.conflict-count }}"
+          
+          if [ -f "conflict_results.json" ]; then
+            echo "Results:"
+            cat conflict_results.json | python3 -m json.tool || echo "Could not parse results JSON"
+          fi
