@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package country_metadata;
+
+// CountryMetadataData contains metadata information for all countries.
+// Data files: data.json
+message CountryMetadataData {
+  map<string, CountryMetadata> metadata_information = 1;
+}
+
+// CountryMetadata contains metadata for a specific country.
+message CountryMetadata {
+  string country_name = 1;
+  string continent_code = 2;
+  string continent_name = 3;
+  string alpha_3 = 4;
+  string numeric_code = 5;
+  string flag = 6;
+  string sovereignty = 7;
+  string dial_code = 8;
+  repeated string supportedCurrency = 9;
+  map<string, TimezoneInfo> timezones = 10;
+  string timezone_of_capital = 11;
+  map<string, LocaleInfo> locales = 12;
+  string default_locale = 13;
+  string default_currency = 14;
+}
+
+// TimezoneInfo contains timezone details.
+message TimezoneInfo {
+  string utc_offset = 1;
+}
+
+// LocaleInfo contains locale details.
+message LocaleInfo {
+  string name = 1;
+}
+

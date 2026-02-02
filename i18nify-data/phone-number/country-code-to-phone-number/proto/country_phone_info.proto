@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package country_phone_info;
+
+// CountryPhoneData contains telephone information for all countries.
+// Data files: data.json
+message CountryPhoneData {
+  map<string, PhoneInfo> country_tele_information = 1;
+}
+
+// PhoneInfo contains phone format information for a country.
+message PhoneInfo {
+  string dial_code = 1;
+  string format = 2;
+  string regex = 3;
+}
+

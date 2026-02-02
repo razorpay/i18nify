@@ -1,172 +1,194 @@
 const fs = require('fs');
-const Ajv = require('ajv');
+const path = require('path');
+const protobuf = require('protobufjs');
 
 /*
-  This validation script is to validate the data file with respective schema files
-
-  The validation part is same for all the files, but fetching the file paths is different for files in
-  data/country-zipcode folder and the remaining folder.
-
-  Assumptions:
-   - All the folder's except data/country-zipcode folder have one data.json & schema.json files
-   - In data/country-zipcode folder, we have different files for different countries like IN.json, US.json,...
-   and have only one common schema.json file for all the country data files
-
-
-  Validation-script
-  - Fetching file paths
-      - for data/country-zipcode folder
-          - get the path till the version (eg: data/country-zipcode/version_1.0.0)
-          - Add all the country data files and the common schema file in the new version folder, to the list of validation files
-              (eg: {data/country-zipcode/version_1.0.0/IN.json, data/country-zipcode/version_1.0.0/schema.json},
-                    {data/country-zipcode/version_1.0.0/US.json, data/country-zipcode/version_1.0.0/schema.json})
-      - for remaining folders
-          - get the path till the version (eg: data/country-data-info/version_1.0.0)
-          - All the data.json & schema.json files in the new version folder, to the list of validation files
-            (eg:{data/country/version_1.0.0/data.json, data/country/version_1.0.0/schema.json})
-  - Validating the files
-      - Reading the data and scheme files
-      - Validating with ajv
-
-  - Sending the status of each data and schema files validation
+  This validation script validates data files against their respective proto schema files.
 */
 
-function isInterfaceInArray(arr: Files[], obj: Files): boolean {
-  for (const item of arr) {
-    if (
-      item.schema_file === obj.schema_file &&
-      item.data_file === obj.data_file
-    ) {
-      return true;
-    }
-  }
-  return false;
+export interface ProtoConfig {
+  protoPath: string;
+  dataPattern: 'single' | 'multiple';
+  rootMessageName: string;
 }
 
-function getFilesFromPath(filePath: string, fileName: string): Files {
-  const ind = filePath.indexOf(fileName);
-  const dir = filePath.slice(0, ind);
-  const schema_file_path = dir + 'schema.json';
-  const data_file_path = dir + 'data.json';
-  return {
-    schema_file: schema_file_path,
-    data_file: data_file_path,
-  };
-}
+// Configuration for each data package
+export const PACKAGE_CONFIGS: Record<string, ProtoConfig> = {
+  bankcodes: {
+    protoPath: 'i18nify-data/bankcodes/proto/bankcodes.proto',
+    dataPattern: 'multiple',
+    rootMessageName: 'BankCodes',
+  },
+  currency: {
+    protoPath: 'i18nify-data/currency/proto/currency.proto',
+    dataPattern: 'single',
+    rootMessageName: 'CurrencyData',
+  },
+  'country/metadata': {
+    protoPath: 'i18nify-data/country/metadata/proto/country_metadata.proto',
+    dataPattern: 'single',
+    rootMessageName: 'CountryMetadataData',
+  },
+  'country/subdivisions': {
+    protoPath:
+      'i18nify-data/country/subdivisions/proto/country_subdivisions.proto',
+    dataPattern: 'multiple',
+    rootMessageName: 'CountrySubdivisions',
+  },
+  'phone-number/country-code-to-phone-number': {
+    protoPath:
+      'i18nify-data/phone-number/country-code-to-phone-number/proto/country_phone_info.proto',
+    dataPattern: 'single',
+    rootMessageName: 'CountryPhoneData',
+  },
+  'phone-number/dial-code-to-country': {
+    protoPath:
+      'i18nify-data/phone-number/dial-code-to-country/proto/dial_code_to_country.proto',
+    dataPattern: 'single',
+    rootMessageName: 'DialCodeToCountryData',
+  },
+};
 
-// Getting the country Data file along with the Scheme file from Country-zipcode folder
-function getCountryZipcodesFilePaths(filePath: string, country: string): Files {
-  return {
-    schema_file: filePath + 'schema.json',
-    data_file: filePath + country + '.json',
-  };
-}
-
-class InvalidFilesError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = 'In Valid Files Error';
-  }
-}
-
-interface Files {
-  schema_file: string;
-  data_file: string;
-}
-
-//Reading File
-if (process.argv.length < 3) {
-  console.error('Please provide a file path as a command line argument.');
-  process.exit(1);
-}
-const filePath: string = process.argv[2];
-const fileString = fs.readFileSync(filePath, 'utf8');
-const files = fileString.split('\n');
-
-// Fetching the Files from the paths
-const validation_files: Files[] = [];
-
-for (let i = 0; i < files.length; i++) {
-  const path = files[i];
-
-  if (!path.includes('data/country-zipcode')) {
-    if (path.includes('schema.json')) {
-      const valid_files = getFilesFromPath(path, 'schema.json');
-      if (!isInterfaceInArray(validation_files, valid_files)) {
-        validation_files.push(valid_files);
-      }
-    } else if (path.includes('data.json')) {
-      const valid_files = getFilesFromPath(path, 'data.json');
-      if (!isInterfaceInArray(validation_files, valid_files)) {
-        validation_files.push(valid_files);
-      }
-    }
-  } else if (path.includes('data/country-zipcode')) {
-    let version_path_ind = path.length - 1;
-    while (path[version_path_ind] != '/') {
-      version_path_ind = version_path_ind - 1;
-    }
-    const file_path = path.slice(0, version_path_ind + 1);
-    const available_countries = ['IN', 'US', 'MY', 'SG'];
-    for (let j = 0; j < available_countries.length; j++) {
-      const valid_files = getCountryZipcodesFilePaths(
-        file_path,
-        available_countries[j],
-      );
-      if (!isInterfaceInArray(validation_files, valid_files)) {
-        validation_files.push(valid_files);
-      }
-    }
-  }
-}
-
-for (let i = 0; i < validation_files.length; i++) {
+export function fileExists(filePath: string): boolean {
   try {
-    // Validating the files
-    const schema = JSON.parse(
-      fs.readFileSync(validation_files[i].schema_file, 'utf-8'),
-    );
-    const data = JSON.parse(
-      fs.readFileSync(validation_files[i].data_file, 'utf-8'),
-    );
-    const ajv = new Ajv();
-    const validate = ajv.compile(schema);
-    const isValid = validate(data);
-    if (!isValid) {
-      throw new InvalidFilesError(
-        validation_files[i].data_file +
-          ' Does not follow the Schema from ' +
-          validation_files[i].schema_file +
-          ' file',
-      );
-    } else {
-      console.log(
-        '✅ ' +
-          validation_files[i].data_file +
-          ' follow the Schema from ' +
-          validation_files[i].schema_file +
-          ' file',
-      );
+    fs.accessSync(filePath, fs.constants.F_OK);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function getDataFiles(
+  packagePath: string,
+  pattern: 'single' | 'multiple',
+  baseDir: string = 'i18nify-data',
+): string[] {
+  const dir = path.join(baseDir, packagePath);
+
+  if (pattern === 'single') {
+    const dataFile = path.join(dir, 'data.json');
+    return fileExists(dataFile) ? [dataFile] : [];
+  }
+
+  const files: string[] = [];
+  try {
+    const entries = fs.readdirSync(dir);
+    for (const entry of entries) {
+      if (entry.endsWith('.json') && entry !== 'schema.json') {
+        files.push(path.join(dir, entry));
+      }
     }
+  } catch {
+    // Directory doesn't exist
+  }
+  return files;
+}
+
+export async function validateWithProto(
+  protoPath: string,
+  rootMessageName: string,
+  dataFile: string,
+): Promise<{ valid: boolean; error?: string }> {
+  try {
+    const root = await protobuf.load(protoPath);
+    const MessageType = root.lookupType(rootMessageName);
+    const jsonData = JSON.parse(fs.readFileSync(dataFile, 'utf-8'));
+    const errMsg = MessageType.verify(jsonData);
+
+    if (errMsg) {
+      return { valid: false, error: errMsg };
+    }
+    return { valid: true };
   } catch (error: any) {
-    if (error instanceof InvalidFilesError) {
-      console.error(
-        '❌ ' +
-          validation_files[i].schema_file +
-          ' & ' +
-          validation_files[i].data_file +
-          ' Mismatch Error:',
-        error.message,
-      );
-    } else {
-      console.error(
-        '❌ An unexpected error occurred in ' +
-          validation_files[i].schema_file +
-          ' or ' +
-          validation_files[i].data_file +
-          ':',
-        error.message,
-      );
+    return { valid: false, error: error.message };
+  }
+}
+
+export function getPackagesToValidate(
+  changedFiles: string[],
+  configs: Record<string, ProtoConfig> = PACKAGE_CONFIGS,
+): Set<string> {
+  const packagesToValidate = new Set<string>();
+
+  for (const file of changedFiles) {
+    for (const packageName of Object.keys(configs)) {
+      const packageDir = `i18nify-data/${packageName}`;
+      if (file.startsWith(packageDir)) {
+        packagesToValidate.add(packageName);
+        break;
+      }
     }
   }
+
+  return packagesToValidate;
+}
+
+// Main function - only runs when executed directly
+async function main() {
+  if (process.argv.length < 3) {
+    console.error('Please provide a file path as a command line argument.');
+    process.exit(1);
+  }
+
+  const filePath: string = process.argv[2];
+  const fileString = fs.readFileSync(filePath, 'utf8');
+  const changedFiles = fileString.split('\n').filter((f: string) => f.trim());
+
+  const packagesToValidate = getPackagesToValidate(changedFiles);
+
+  if (packagesToValidate.size === 0) {
+    console.log('ℹ️  No data packages changed, skipping validation');
+    process.exit(0);
+  }
+
+  console.log(`📦 Validating ${packagesToValidate.size} package(s)...\n`);
+
+  let hasErrors = false;
+
+  for (const packageName of packagesToValidate) {
+    const config = PACKAGE_CONFIGS[packageName];
+
+    if (!fileExists(config.protoPath)) {
+      console.log(
+        `⚠️  ${packageName}: No proto file found at ${config.protoPath}`,
+      );
+      continue;
+    }
+
+    const dataFiles = getDataFiles(packageName, config.dataPattern);
+
+    if (dataFiles.length === 0) {
+      console.log(`⚠️  ${packageName}: No data files found`);
+      continue;
+    }
+
+    for (const dataFile of dataFiles) {
+      const result = await validateWithProto(
+        config.protoPath,
+        config.rootMessageName,
+        dataFile,
+      );
+
+      if (result.valid) {
+        console.log(`✅ ${dataFile} validates against ${config.protoPath}`);
+      } else {
+        hasErrors = true;
+        console.error(`❌ ${dataFile} validation failed: ${result.error}`);
+      }
+    }
+  }
+
+  if (hasErrors) {
+    process.exit(1);
+  }
+
+  console.log('\n✨ All validations passed!');
+}
+
+// Only run main when executed directly (not when imported)
+if (require.main === module) {
+  main().catch((error) => {
+    console.error('Validation error:', error);
+    process.exit(1);
+  });
 }

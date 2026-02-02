@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package currency;
+
+// CurrencyData contains information about all currencies.
+// Data files: data.json
+message CurrencyData {
+  map<string, CurrencyInfo> currency_information = 1;
+}
+
+// CurrencyInfo contains details about a specific currency.
+message CurrencyInfo {
+  string name = 1;
+  string numeric_code = 2;
+  string minor_unit = 3;
+  string symbol = 4;
+  repeated string physical_currency_denominations = 5;
+}
+
