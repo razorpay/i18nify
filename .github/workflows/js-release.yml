@@ -12,6 +12,10 @@ on:
 env:
   GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   release:
     name: Release
@@ -41,6 +45,4 @@ jobs:
           title: 'build(i18nify): update version'
       - name: Publish to public npm registry
         if: steps.changesets.outputs.published == 'true' || github.event_name == 'workflow_dispatch' # run when the package is published via changeset or if a release is triggered manually.
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
         run: yarn publish-npm
