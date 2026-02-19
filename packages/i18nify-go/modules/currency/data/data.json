@@ -35,7 +35,7 @@
     },
     "ALL": {
       "name": "Lek",
-      "numeric_code": "8",
+      "numeric_code": "008",
       "minor_unit": "2",
       "symbol": "L",
       "physical_currency_denominations": [
@@ -53,7 +53,7 @@
     },
     "DZD": {
       "name": "Algerian Dinar",
-      "numeric_code": "12",
+      "numeric_code": "012",
       "minor_unit": "2",
       "symbol": "د.ج",
       "physical_currency_denominations": [
@@ -111,7 +111,7 @@
     },
     "ARS": {
       "name": "Argentine Peso",
-      "numeric_code": "32",
+      "numeric_code": "032",
       "minor_unit": "2",
       "symbol": "ARS",
       "physical_currency_denominations": [
@@ -129,7 +129,7 @@
     },
     "AMD": {
       "name": "Armenian Dram",
-      "numeric_code": "51",
+      "numeric_code": "051",
       "minor_unit": "2",
       "symbol": "֏",
       "physical_currency_denominations": [
@@ -165,7 +165,7 @@
     },
     "AUD": {
       "name": "Australian Dollar",
-      "numeric_code": "36",
+      "numeric_code": "036",
       "minor_unit": "2",
       "symbol": "A$",
       "physical_currency_denominations": ["5", "10", "20", "50", "100"]
@@ -179,14 +179,14 @@
     },
     "BSD": {
       "name": "Bahamian Dollar",
-      "numeric_code": "44",
+      "numeric_code": "044",
       "minor_unit": "2",
       "symbol": "BSD",
       "physical_currency_denominations": ["1", "5", "10", "25", "50", "100"]
     },
     "BHD": {
       "name": "Bahraini Dinar",
-      "numeric_code": "48",
+      "numeric_code": "048",
       "minor_unit": "3",
       "symbol": ".د.ب",
       "physical_currency_denominations": [
@@ -202,7 +202,7 @@
     },
     "BDT": {
       "name": "Taka",
-      "numeric_code": "50",
+      "numeric_code": "050",
       "minor_unit": "2",
       "symbol": "৳",
       "physical_currency_denominations": [
@@ -219,7 +219,7 @@
     },
     "BBD": {
       "name": "Barbados Dollar",
-      "numeric_code": "52",
+      "numeric_code": "052",
       "minor_unit": "2",
       "symbol": "Bds$",
       "physical_currency_denominations": ["1", "5", "10", "25"]
@@ -233,7 +233,7 @@
     },
     "BZD": {
       "name": "Belize Dollar",
-      "numeric_code": "84",
+      "numeric_code": "084",
       "minor_unit": "2",
       "symbol": "BZ$",
       "physical_currency_denominations": [
@@ -271,7 +271,7 @@
     },
     "BMD": {
       "name": "Bermudian Dollar",
-      "numeric_code": "60",
+      "numeric_code": "060",
       "minor_unit": "2",
       "symbol": "BD$",
       "physical_currency_denominations": ["1", "5", "10", "20", "50", "100"]
@@ -296,7 +296,7 @@
     },
     "BTN": {
       "name": "Ngultrum",
-      "numeric_code": "64",
+      "numeric_code": "064",
       "minor_unit": "2",
       "symbol": "Nu.",
       "physical_currency_denominations": [
@@ -312,7 +312,7 @@
     },
     "BOB": {
       "name": "Boliviano",
-      "numeric_code": "68",
+      "numeric_code": "068",
       "minor_unit": "2",
       "symbol": "Bs.",
       "physical_currency_denominations": ["10", "20", "50", "100", "200"]
@@ -333,7 +333,7 @@
     },
     "BWP": {
       "name": "Pula",
-      "numeric_code": "72",
+      "numeric_code": "072",
       "minor_unit": "2",
       "symbol": "P",
       "physical_currency_denominations": [
@@ -382,7 +382,7 @@
     },
     "BND": {
       "name": "Brunei Dollar",
-      "numeric_code": "96",
+      "numeric_code": "096",
       "minor_unit": "2",
       "symbol": "B$",
       "physical_currency_denominations": [
@@ -1587,7 +1587,7 @@
     },
     "SBD": {
       "name": "Solomon Islands Dollar",
-      "numeric_code": "90",
+      "numeric_code": "090",
       "minor_unit": "2",
       "symbol": "SI$",
       "physical_currency_denominations": ["5", "10", "20", "50", "100"]
