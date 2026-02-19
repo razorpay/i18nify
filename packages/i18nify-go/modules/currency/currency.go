@@ -11,7 +11,13 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+	"golang.org/x/text/language"
+	"golang.org/x/text/message"
 )
+
+type ICurrencyInfo interface {
+	FormatCurrency(amount float64, locale string) (string, error)
+}
 
 //go:embed data
 var currencyJsonDir embed.FS
@@ -91,7 +97,7 @@ type CurrencyInformation struct {
 // Getters for various fields of CurrencyInformation.
 
 // NewCurrencyInformation creates a new CurrencyInformation instance.
-func NewCurrencyInformation(minorUnit string, name string, numericCode string, physicalCurrencyDenominations []string, symbol string) *CurrencyInformation {
+func NewCurrencyInformation(minorUnit string, name string, numericCode string, physicalCurrencyDenominations []string, symbol string) ICurrencyInfo {
 	return &CurrencyInformation{
 		MinorUnit:                     minorUnit,
 		Name:                          name,
@@ -120,4 +126,17 @@ func GetCurrencySymbol(currencyCode string) (string, error) {
 	}
 
 	return currencyInfo.Symbol, nil
+}
+
+// GetCurrencySymbol retrieves the currency symbol for a specific currency code.
+func (c *CurrencyInformation) FormatCurrency(amount float64, locale string) (string, error) {
+	tag, err := language.Parse(locale)
+	if err != nil {
+		return "", err
+	}
+
+	p := message.NewPrinter(tag)
+
+	// Format with 2 decimal places
+	return p.Sprintf("%.2f", amount), nil
 }
