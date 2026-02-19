@@ -19,6 +19,24 @@ var currencyJsonDir embed.FS
 // DataFile defines the path to the JSON data file containing currency information.
 const DataFile = "data/data.json"
 
+// Package-level cache for currency data (loaded once at package initialization)
+var cachedCurrencyData *Currency
+
+// init loads the currency data from the embedded JSON file when the package is imported.
+func init() {
+	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
+	if err != nil {
+		panic(fmt.Sprintf("failed to read currency data file: %v", err))
+	}
+
+	data, err := UnmarshalCurrency(currencyJsonData)
+	if err != nil {
+		panic(fmt.Sprintf("failed to unmarshal currency data: %v", err))
+	}
+
+	cachedCurrencyData = &data
+}
+
 // UnmarshalCurrency parses JSON data into a Currency struct.
 func UnmarshalCurrency(data []byte) (Currency, error) {
 	var r Currency
@@ -44,28 +62,14 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) (CurrencyInformation, error) {
-	// Read JSON data file containing currency information.
-	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
-	if err != nil {
-		// Handle error reading the file
-		return CurrencyInformation{}, fmt.Errorf("error reading JSON file: %v", err)
-	}
-
-	// Unmarshal JSON data into SupportedCurrency struct.
-	allCurrencyData, err := UnmarshalCurrency(currencyJsonData)
-	if err != nil {
-		return CurrencyInformation{}, fmt.Errorf("error unmarshalling JSON data: %v", err)
-	}
-
-	// Retrieve currency information for the specified currency code.
-	currencyInfo, exists := allCurrencyData.CurrencyInformation[code]
+	// Retrieve currency information from the cached data.
+	currencyInfo, exists := cachedCurrencyData.CurrencyInformation[code]
 
 	if !exists {
 		return CurrencyInformation{}, fmt.Errorf("currency code '%s' not found", code)
 	}
 
 	return currencyInfo, nil
-
 }
 
 // NewCurrency creates a new Currency instance.
