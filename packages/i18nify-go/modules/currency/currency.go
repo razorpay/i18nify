@@ -11,6 +11,7 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 )
@@ -24,6 +25,24 @@ var currencyJsonDir embed.FS
 
 // DataFile defines the path to the JSON data file containing currency information.
 const DataFile = "data/data.json"
+
+// Package-level cache for currency data (loaded once at package initialization)
+var cachedCurrencyData *Currency
+
+// init loads the currency data from the embedded JSON file when the package is imported.
+func init() {
+	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
+	if err != nil {
+		panic(fmt.Sprintf("failed to read currency data file: %v", err))
+	}
+
+	data, err := UnmarshalCurrency(currencyJsonData)
+	if err != nil {
+		panic(fmt.Sprintf("failed to unmarshal currency data: %v", err))
+	}
+
+	cachedCurrencyData = &data
+}
 
 // UnmarshalCurrency parses JSON data into a Currency struct.
 func UnmarshalCurrency(data []byte) (Currency, error) {
@@ -50,21 +69,10 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) (CurrencyInformation, error) {
-	// Read JSON data file containing currency information.
-	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
-	if err != nil {
-		// Handle error reading the file
-		return CurrencyInformation{}, fmt.Errorf("error reading JSON file: %v", err)
+	if cachedCurrencyData == nil || cachedCurrencyData.CurrencyInformation == nil {
+		return CurrencyInformation{}, fmt.Errorf("currency data not loaded")
 	}
-
-	// Unmarshal JSON data into SupportedCurrency struct.
-	allCurrencyData, err := UnmarshalCurrency(currencyJsonData)
-	if err != nil {
-		return CurrencyInformation{}, fmt.Errorf("error unmarshalling JSON data: %v", err)
-	}
-
-	// Retrieve currency information for the specified currency code.
-	currencyInfo, exists := allCurrencyData.CurrencyInformation[code]
+	currencyInfo, exists := cachedCurrencyData.CurrencyInformation[code]
 
 	if !exists {
 		return CurrencyInformation{}, fmt.Errorf("currency code '%s' not found", code)
@@ -75,17 +83,10 @@ func GetCurrencyInformation(code string) (CurrencyInformation, error) {
 
 // GetCurrencyCodeByISONumericCode returns the alphabetic currency code (e.g. "USD") for the given ISO 4217 numeric code (e.g. "840").
 func GetCurrencyCodeByISONumericCode(numericCode string) (string, error) {
-	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
-	if err != nil {
-		return "", fmt.Errorf("error reading JSON file: %v", err)
+	if cachedCurrencyData == nil || cachedCurrencyData.CurrencyInformation == nil {
+		return "", fmt.Errorf("currency data not loaded")
 	}
-
-	allCurrencyData, err := UnmarshalCurrency(currencyJsonData)
-	if err != nil {
-		return "", fmt.Errorf("error unmarshalling JSON data: %v", err)
-	}
-
-	for code, currencyInfo := range allCurrencyData.CurrencyInformation {
+	for code, currencyInfo := range cachedCurrencyData.CurrencyInformation {
 		if currencyInfo.NumericCode == numericCode {
 			return code, nil
 		}
