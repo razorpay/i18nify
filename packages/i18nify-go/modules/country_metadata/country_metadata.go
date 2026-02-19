@@ -65,6 +65,7 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 func GetMetadataInformation(code string) MetadataInformation {
 	countryMetadataInfo, exists := cachedCountyMetaData.MetadataInformation[code]
 	if !exists {
+		fmt.Printf("failed to retrive the country metadata for country code: %s", code)
 		return MetadataInformation{}
 	}
 
@@ -78,7 +79,7 @@ func GetMetadataInformationByISONumericCode(numericCode string) MetadataInformat
 			return info
 		}
 	}
-
+	fmt.Printf("failed to retrive the country metadata for numeric code: %s", numericCode)
 	return MetadataInformation{}
 }
 
