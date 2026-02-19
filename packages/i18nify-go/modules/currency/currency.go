@@ -71,7 +71,27 @@ func GetCurrencyInformation(code string) (CurrencyInformation, error) {
 	}
 
 	return currencyInfo, nil
+}
 
+// GetCurrencyCodeByISONumericCode returns the alphabetic currency code (e.g. "USD") for the given ISO 4217 numeric code (e.g. "840").
+func GetCurrencyCodeByISONumericCode(numericCode string) (string, error) {
+	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
+	if err != nil {
+		return "", fmt.Errorf("error reading JSON file: %v", err)
+	}
+
+	allCurrencyData, err := UnmarshalCurrency(currencyJsonData)
+	if err != nil {
+		return "", fmt.Errorf("error unmarshalling JSON data: %v", err)
+	}
+
+	for code, currencyInfo := range allCurrencyData.CurrencyInformation {
+		if currencyInfo.NumericCode == numericCode {
+			return code, nil
+		}
+	}
+
+	return "", fmt.Errorf("currency with numeric code '%s' not found", numericCode)
 }
 
 // NewCurrency creates a new Currency instance.

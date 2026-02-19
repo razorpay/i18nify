@@ -2,9 +2,10 @@ package currency
 
 import (
 	"errors"
-	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestUnmarshalCurrency(t *testing.T) {
@@ -128,6 +129,36 @@ func TestGetCurrencySymbol(t *testing.T) {
 		} else {
 			assert.Equal(t, country.symbol, symbol, "Symbol mismatch for %s", country.code)
 		}
+	}
+}
+
+func TestGetCurrencyCodeByISONumericCode(t *testing.T) {
+	tests := []struct {
+		name        string
+		numericCode string
+		wantCode    string
+		wantErr     bool
+	}{
+		{"USD by numeric code 840", "840", "USD", false},
+		{"INR by numeric code 356", "356", "INR", false},
+		{"JPY by numeric code 392", "392", "JPY", false},
+		{"CNY by numeric code 156", "156", "CNY", false},
+		{"AED by numeric code 784", "784", "AED", false},
+		{"unknown numeric code", "999", "", true},
+		{"empty numeric code", "", "", true},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			code, err := GetCurrencyCodeByISONumericCode(tt.numericCode)
+			if tt.wantErr {
+				assert.Error(t, err)
+				assert.Empty(t, code)
+				return
+			}
+			assert.NoError(t, err)
+			assert.Equal(t, tt.wantCode, code, "currency code mismatch for numeric code %s", tt.numericCode)
+		})
 	}
 }
 

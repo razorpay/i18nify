@@ -65,6 +65,29 @@ func GetMetadataInformation(code string) MetadataInformation {
 	return allCountryMetaData.MetadataInformation[code]
 }
 
+// GetMetadataInformationByISONumericCode retrieves metadata information for a specific ISO 3166-1 numeric code.
+func GetMetadataInformationByISONumericCode(numericCode string) MetadataInformation {
+	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
+	if err != nil {
+		fmt.Printf("Error reading country metadata file: %v", err)
+		return MetadataInformation{}
+	}
+
+	allCountryMetaData, err := UnmarshalCountryMetadata(metaJsonData)
+	if err != nil {
+		fmt.Printf("Error unmarshalling country metadata: %v", err)
+		return MetadataInformation{}
+	}
+
+	for _, info := range allCountryMetaData.MetadataInformation {
+		if info.NumericCode == numericCode {
+			return info
+		}
+	}
+
+	return MetadataInformation{}
+}
+
 // NewCountryMetadata creates a new CountryMetadata instance.
 func NewCountryMetadata(metadataInformation map[string]MetadataInformation) *CountryMetadata {
 	return &CountryMetadata{
