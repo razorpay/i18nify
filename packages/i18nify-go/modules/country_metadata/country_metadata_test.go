@@ -86,6 +86,62 @@ func TestGetMetadataInformation(t *testing.T) {
 	assertINMetaData(t, result)
 }
 
+func TestGetMetadataInformationByISONumericCode(t *testing.T) {
+	tests := []struct {
+		name        string
+		numericCode string
+		validate    func(*testing.T, MetadataInformation)
+	}{
+		{
+			name:        "India by ISO numeric code 356",
+			numericCode: "356",
+			validate:    func(t *testing.T, result MetadataInformation) { assertINMetaData(t, result) },
+		},
+		{
+			name:        "Afghanistan by ISO numeric code 004",
+			numericCode: "004",
+			validate: func(t *testing.T, result MetadataInformation) {
+				assert.Equal(t, "AFG", result.Alpha3)
+				assert.Equal(t, "Afghanistan", result.CountryName)
+				assert.Equal(t, "004", result.NumericCode)
+			},
+		},
+		{
+			name:        "Albania by ISO numeric code 008",
+			numericCode: "008",
+			validate: func(t *testing.T, result MetadataInformation) {
+				assert.Equal(t, "ALB", result.Alpha3)
+				assert.Equal(t, "Albania", result.CountryName)
+				assert.Equal(t, "008", result.NumericCode)
+			},
+		},
+		{
+			name:        "unknown ISO numeric code returns empty",
+			numericCode: "999",
+			validate: func(t *testing.T, result MetadataInformation) {
+				assert.Empty(t, result.CountryName)
+				assert.Empty(t, result.Alpha3)
+				assert.Empty(t, result.NumericCode)
+			},
+		},
+		{
+			name:        "empty ISO numeric code returns empty",
+			numericCode: "",
+			validate: func(t *testing.T, result MetadataInformation) {
+				assert.Empty(t, result.CountryName)
+				assert.Empty(t, result.Alpha3)
+			},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := GetMetadataInformationByISONumericCode(tt.numericCode)
+			tt.validate(t, result)
+		})
+	}
+}
+
 func TestNewCountryMetadata(t *testing.T) {
 	locales := make(map[string]Locale)
 	locales["en_IN"] = *NewLocale("English (India)")

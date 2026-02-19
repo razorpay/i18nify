@@ -11,6 +11,7 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 )
@@ -68,7 +69,6 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) (CurrencyInformation, error) {
-	// Retrieve currency information from the cached data.
 	currencyInfo, exists := cachedCurrencyData.CurrencyInformation[code]
 
 	if !exists {
@@ -76,6 +76,17 @@ func GetCurrencyInformation(code string) (CurrencyInformation, error) {
 	}
 
 	return currencyInfo, nil
+}
+
+// GetCurrencyCodeByISONumericCode returns the alphabetic currency code (e.g. "USD") for the given ISO 4217 numeric code (e.g. "840").
+func GetCurrencyCodeByISONumericCode(numericCode string) (string, error) {
+	for code, currencyInfo := range cachedCurrencyData.CurrencyInformation {
+		if currencyInfo.NumericCode == numericCode {
+			return code, nil
+		}
+	}
+
+	return "", fmt.Errorf("currency with numeric code '%s' not found", numericCode)
 }
 
 // NewCurrency creates a new Currency instance.

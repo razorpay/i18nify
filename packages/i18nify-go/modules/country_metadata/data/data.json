@@ -1844,12 +1844,12 @@
       "continent_code": "EU",
       "continent_name": "Europe",
       "alpha_3": "HRV",
-      "numeric_code": "191",
+      "numeric_code": "978",
       "flag": "https://flagcdn.com/hr.svg",
       "sovereignty": "UN member state",
       "dial_code": "+385",
       "supported_currency": [
-        "HRK"
+        "EUR"
       ],
       "timezones": {
         "Europe/Zagreb": {
@@ -1866,7 +1866,7 @@
         }
       },
       "default_locale": "hr_HR",
-      "default_currency": "HRK"
+      "default_currency": "EUR"
     },
     "CU": {
       "country_name": "Cuba",

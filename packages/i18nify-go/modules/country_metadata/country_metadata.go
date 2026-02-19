@@ -20,6 +20,24 @@ var metaJsonDir embed.FS
 // DataFile defines the path to the JSON data file containing country metadata.
 const DataFile = "data/data.json"
 
+// Package-level cache for country meta_data (loaded once at package initialization)
+var cachedCountyMetaData *CountryMetadata
+
+// init loads the country mata data from the embedded JSON file when the package is imported.
+func init() {
+	countryJsonData, err := metaJsonDir.ReadFile(DataFile)
+	if err != nil {
+		panic(fmt.Sprintf("failed to read country meta data file: %v", err))
+	}
+
+	data, err := UnmarshalCountryMetadata(countryJsonData)
+	if err != nil {
+		panic(fmt.Sprintf("failed to unmarshal country meta data: %v", err))
+	}
+
+	cachedCountyMetaData = &data
+}
+
 // UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
 func UnmarshalCountryMetadata(data []byte) (CountryMetadata, error) {
 	var r CountryMetadata
@@ -45,24 +63,24 @@ func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInforma
 
 // GetMetadataInformation retrieves metadata information for a specific country code.
 func GetMetadataInformation(code string) MetadataInformation {
-	// Read JSON data file containing country metadata.
-	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
-	if err != nil {
-		// Handle error reading the file.
-		fmt.Printf("Error reading country metadata file: %v", err)
+	countryMetadataInfo, exists := cachedCountyMetaData.MetadataInformation[code]
+	if !exists {
+		fmt.Printf("failed to retrive the country metadata for country code: %s", code)
 		return MetadataInformation{}
 	}
 
-	// Unmarshal JSON data into CountryMetadata struct.
-	allCountryMetaData, err := UnmarshalCountryMetadata(metaJsonData)
-	if err != nil {
-		// Handle error unmarshalling the JSON data.
-		fmt.Printf("Error unmarshalling country metadata: %v", err)
-		return MetadataInformation{}
-	}
+	return countryMetadataInfo
+}
 
-	// Return metadata information for the specified country code.
-	return allCountryMetaData.MetadataInformation[code]
+// GetMetadataInformationByISONumericCode retrieves metadata information for a specific ISO 3166-1 numeric code.
+func GetMetadataInformationByISONumericCode(numericCode string) MetadataInformation {
+	for _, info := range cachedCountyMetaData.MetadataInformation {
+		if info.NumericCode == numericCode {
+			return info
+		}
+	}
+	fmt.Printf("failed to retrive the country metadata for numeric code: %s", numericCode)
+	return MetadataInformation{}
 }
 
 // NewCountryMetadata creates a new CountryMetadata instance.
