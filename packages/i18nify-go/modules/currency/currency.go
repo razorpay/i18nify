@@ -69,9 +69,6 @@ func (r *Currency) GetAllCurrencyInformation() map[string]CurrencyInformation {
 
 // GetCurrencyInformation retrieves currency information for a specific currency code.
 func GetCurrencyInformation(code string) (CurrencyInformation, error) {
-	if cachedCurrencyData == nil || cachedCurrencyData.CurrencyInformation == nil {
-		return CurrencyInformation{}, fmt.Errorf("currency data not loaded")
-	}
 	currencyInfo, exists := cachedCurrencyData.CurrencyInformation[code]
 
 	if !exists {
@@ -83,9 +80,6 @@ func GetCurrencyInformation(code string) (CurrencyInformation, error) {
 
 // GetCurrencyCodeByISONumericCode returns the alphabetic currency code (e.g. "USD") for the given ISO 4217 numeric code (e.g. "840").
 func GetCurrencyCodeByISONumericCode(numericCode string) (string, error) {
-	if cachedCurrencyData == nil || cachedCurrencyData.CurrencyInformation == nil {
-		return "", fmt.Errorf("currency data not loaded")
-	}
 	for code, currencyInfo := range cachedCurrencyData.CurrencyInformation {
 		if currencyInfo.NumericCode == numericCode {
 			return code, nil
