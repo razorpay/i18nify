@@ -1,0 +1,12 @@
+{
+    "ownership": {
+        "type": "Team Specific",
+        "business_unit": "I18N",
+        "group": "I18N",
+        "sub_group": "I18N",
+        "pod": "i18n Subscriptions",
+        "engineering_manager": {
+            "email": "vibhav.srivastava@razorpay.com"
+        }
+    }
+}
