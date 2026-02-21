@@ -17,27 +17,52 @@ on:
         review_requested,
         review_request_removed,
       ]
-    paths:
-      - 'packages/i18nify-js/**'
 
 jobs:
+  # JOB to run change detection
+  check-if-i18nify-js:
+    runs-on: ubuntu-latest
+    outputs:
+      modified: ${{ steps.filter.outputs.src }}
+    steps:
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            src:
+              - 'packages/i18nify-js/**'
+
   build-base:
     name: Generate Base Build
     runs-on: ubuntu-latest
+    needs: check-if-i18nify-js
+    env:
+      SHOULD_RUN: ${{ needs.check-if-i18nify-js.outputs.modified == 'true' }}
     steps:
-      - name: Checkout Codebase
+      - name: Skip base build (no changes)
+        if: env.SHOULD_RUN != 'true'
+        run: echo "No i18nify-js changes detected, skipping base build"
+      
+      - name: Checkout base ref
+        if: env.SHOULD_RUN == 'true'
         uses: actions/checkout@v3
         with:
           ref: ${{ github.base_ref }}
-      - name: Use Node v20
+      
+      - name: Setup Node and build
+        if: env.SHOULD_RUN == 'true'
         uses: actions/setup-node@v2
         with:
           node-version: 20.3.1
-      - name: Install Dependencies
-        run: yarn
-      - name: Make Build
-        run: yarn build-js
+      
+      - name: Install dependencies and build
+        if: env.SHOULD_RUN == 'true'
+        run: |
+          yarn
+          yarn build-js
+      
       - name: Upload base stats
+        if: env.SHOULD_RUN == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: base
@@ -49,18 +74,32 @@ jobs:
   build-pr:
     name: Generate PR Build
     runs-on: ubuntu-latest
+    needs: check-if-i18nify-js
+    env:
+      SHOULD_RUN: ${{ needs.check-if-i18nify-js.outputs.modified == 'true' }}
     steps:
-      - name: Checkout Codebase
+      - name: Skip PR build (no changes)
+        if: env.SHOULD_RUN != 'true'
+        run: echo "No i18nify-js changes detected, skipping PR build"
+      
+      - name: Checkout PR code
+        if: env.SHOULD_RUN == 'true'
         uses: actions/checkout@v3
-      - name: Use Node v20
+      
+      - name: Setup Node and build
+        if: env.SHOULD_RUN == 'true'
         uses: actions/setup-node@v2
         with:
           node-version: 20.3.1
-      - name: Install Dependencies
-        run: yarn
-      - name: Make Build
-        run: yarn build-js
-      - name: Upload pr build
+      
+      - name: Install dependencies and build
+        if: env.SHOULD_RUN == 'true'
+        run: |
+          yarn
+          yarn build-js
+      
+      - name: Upload PR build
+        if: env.SHOULD_RUN == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: pr
@@ -72,8 +111,9 @@ jobs:
   Danger:
     name: Run Danger JS
     runs-on: ubuntu-latest
-    needs: [build-base, build-pr]
+    needs: [build-base, build-pr, check-if-i18nify-js]
     env:
+      SHOULD_RUN: ${{ needs.check-if-i18nify-js.outputs.modified == 'true' }}
       # As Danger uses a bot to put comments on your pr you need to
       # use `secrets.CI_BOT_TOKEN` (Personal Access Token) to provide write access to bot.
       DANGER_GITHUB_API_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
@@ -81,22 +121,32 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Checkout Codebase
+      - name: Skip Danger (no changes)
+        if: env.SHOULD_RUN != 'true'
+        run: echo "No i18nify-js changes detected, skipping Danger analysis"
+
+      - name: Checkout and setup
+        if: env.SHOULD_RUN == 'true'
         uses: actions/checkout@v3
 
-      - name: Use Node v20
+      - name: Setup Node
+        if: env.SHOULD_RUN == 'true'
         uses: actions/setup-node@v2
         with:
           node-version: 20.3.1
 
-      - name: Download stats
+      - name: Download and analyze artifacts
+        if: env.SHOULD_RUN == 'true'
         uses: actions/download-artifact@v4
         with:
           path: ./build
 
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: ./build
+      - name: Display structure and run Danger
+        if: env.SHOULD_RUN == 'true'
+        run: |
+          ls -R ./build
+        working-directory: ./
 
-      - name: Danger
+      - name: Run Danger analysis
+        if: env.SHOULD_RUN == 'true'
         uses: danger/danger-js@11.2.6
