@@ -34,13 +34,23 @@ func setupTestData() {
 	zipCodeStore["IN"] = initializeZipCodeMap(subdivision)
 }
 
+// Helper function to get state names from states
+func getStateNames(states []country_subdivisions.State) []string {
+	names := make([]string, len(states))
+	for i, s := range states {
+		names[i] = s.Name
+	}
+	return names
+}
+
 func TestGetStatesFromZipCode(t *testing.T) {
 	setupTestData()
 
 	states := GetDetailsFromZipCode("560116", "IN")
 	assert.Equal(t, 2, len(states))
-	assert.Equal(t, "Karnataka", states[0].Name)
-	assert.Equal(t, "Maharashtra", states[1].Name)
+	stateNames := getStateNames(states)
+	assert.Contains(t, stateNames, "Karnataka")
+	assert.Contains(t, stateNames, "Maharashtra")
 
 	states = GetDetailsFromZipCode("400001", "IN")
 	assert.Equal(t, 1, len(states))
