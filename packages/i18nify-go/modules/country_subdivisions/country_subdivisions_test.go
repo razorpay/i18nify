@@ -87,6 +87,42 @@ func TestGetStateByStateCode(t *testing.T) {
 }
 
 
+// TestConvertFromDataSource_StructFieldCount guards against silent field drops
+// in convertFromDataSource(). If a new field is added to City, State, or
+// CountrySubdivisions (because the proto schema changed), this test will fail
+// and force the developer to also update convertFromDataSource().
+func TestConvertFromDataSource_StructFieldCount(t *testing.T) {
+	assert.Equal(t, 4, reflect.TypeOf(City{}).NumField(),
+		"City has a new field — update convertFromDataSource() to copy it, then update this count")
+	assert.Equal(t, 2, reflect.TypeOf(State{}).NumField(),
+		"State has a new field — update convertFromDataSource() to copy it, then update this count")
+	assert.Equal(t, 2, reflect.TypeOf(CountrySubdivisions{}).NumField(),
+		"CountrySubdivisions has a new field — update convertFromDataSource() to copy it, then update this count")
+}
+
+// TestConvertFromDataSource_AllFieldValues validates that every field is
+// actually copied correctly through the conversion, not just present.
+func TestConvertFromDataSource_AllFieldValues(t *testing.T) {
+	data := GetCountrySubdivisions("IN")
+
+	state, exists := data.GetStateByStateCode("KA")
+	assert.True(t, exists)
+	assert.Equal(t, "Karnataka", state.GetName())
+
+	var bengaluru *City
+	for _, c := range state.GetCities() {
+		if c.Name == "Bengaluru" {
+			bengaluru = &c
+			break
+		}
+	}
+	assert.NotNil(t, bengaluru, "Bengaluru not found in KA cities")
+	assert.Equal(t, "Bengaluru", bengaluru.Name)
+	assert.Equal(t, "Asia/Kolkata", bengaluru.Timezone)
+	assert.Equal(t, "NA", bengaluru.RegionName)
+	assert.Contains(t, bengaluru.Zipcodes, "560001")
+}
+
 func assertIsArray(t *testing.T, value interface{}) {
 	t.Helper()
 	if reflect.TypeOf(value).Kind() != reflect.Array && reflect.TypeOf(value).Kind() != reflect.Slice {

@@ -18,7 +18,7 @@ message State {
 // City represents a city within a state.
 message City {
   string name = 1;
-  string region_name = 2;  // Also known as district_name
+  string region_name = 2 [json_name = "region_name/district_name"];  // Also known as district_name
   string timezone = 3;
   repeated string zipcodes = 4;
 }

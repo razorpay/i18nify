@@ -168,11 +168,12 @@ package $GO_PACKAGE_NAME
 
 import (
 	"embed"
-	"encoding/json"
 	"fmt"
 	"path/filepath"
 	"strings"
 	"sync"
+
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 //go:embed data/*.json
@@ -204,7 +205,8 @@ func Get$ROOT_MESSAGE(countryCode string) (*$ROOT_MESSAGE, error) {
 	}
 
 	var data $ROOT_MESSAGE
-	if err := json.Unmarshal(content, &data); err != nil {
+	unmarshaler := protojson.UnmarshalOptions{DiscardUnknown: true}
+	if err := unmarshaler.Unmarshal(content, &data); err != nil {
 		return nil, fmt.Errorf("failed to parse data for country %s: %w", code, err)
 	}
 
@@ -242,8 +244,9 @@ package $GO_PACKAGE_NAME
 
 import (
 	_ "embed"
-	"encoding/json"
 	"sync"
+
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 //go:embed data/data.json
@@ -259,7 +262,8 @@ var (
 func Get$ROOT_MESSAGE() (*$ROOT_MESSAGE, error) {
 	dataOnce.Do(func() {
 		data = &$ROOT_MESSAGE{}
-		dataErr = json.Unmarshal(dataJSON, data)
+		unmarshaler := protojson.UnmarshalOptions{DiscardUnknown: true}
+		dataErr = unmarshaler.Unmarshal(dataJSON, data)
 	})
 	return data, dataErr
 }
