@@ -4,11 +4,12 @@ package bankcodes
 
 import (
 	"embed"
-	"encoding/json"
 	"fmt"
 	"path/filepath"
 	"strings"
 	"sync"
+
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 //go:embed data/*.json
@@ -40,7 +41,8 @@ func GetBankCodes(countryCode string) (*BankCodes, error) {
 	}
 
 	var data BankCodes
-	if err := json.Unmarshal(content, &data); err != nil {
+	unmarshaler := protojson.UnmarshalOptions{DiscardUnknown: true}
+	if err := unmarshaler.Unmarshal(content, &data); err != nil {
 		return nil, fmt.Errorf("failed to parse data for country %s: %w", code, err)
 	}
 
