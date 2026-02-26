@@ -180,6 +180,30 @@ jobs:
           go test -v ./...
           echo "✅ All tests passed - data is valid and loadable"
 
+      - name: Verify consumer package tests with new data
+        if: steps.check-proto.outputs.has_proto == 'true'
+        run: |
+          PACKAGE="${{ matrix.package }}"
+          DATA_MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${PACKAGE}"
+          CONSUMER_MODULE="packages/i18nify-go"
+
+          # Only run if the consumer module actually depends on this data package
+          if ! grep -q "$DATA_MODULE_PATH" "${CONSUMER_MODULE}/go.mod"; then
+            echo "ℹ️ Consumer module does not depend on ${DATA_MODULE_PATH}, skipping"
+            exit 0
+          fi
+
+          echo "Running consumer package tests against newly generated data..."
+
+          # Use a temporary Go workspace so the consumer module resolves
+          # the local generated package without modifying go.mod
+          go work init
+          go work use "./${CONSUMER_MODULE}"
+          go work use "./i18nify-data/go/${PACKAGE}"
+
+          go test -v "./${CONSUMER_MODULE}/modules/..."
+          echo "✅ Consumer package tests passed with new data"
+
       - name: Commit and push generated package
         if: steps.check-proto.outputs.has_proto == 'true'
         run: |

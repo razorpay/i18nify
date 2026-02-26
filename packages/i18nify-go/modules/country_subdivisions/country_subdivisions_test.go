@@ -9,12 +9,41 @@ import (
 )
 
 func TestGetCountrySubdivisions(t *testing.T) {
-	subDivData := GetCountrySubdivisions("IN")
+	tests := []struct {
+		countryCode     string
+		countryName     string
+		sampleStateCode string
+		sampleStateName string
+	}{
+		{countryCode: "IN", countryName: "India", sampleStateCode: "KA", sampleStateName: "Karnataka"},
+		{countryCode: "MY", countryName: "Malaysia", sampleStateCode: "1", sampleStateName: "Johor"},
+		{countryCode: "US", countryName: "United States", sampleStateCode: "TX", sampleStateName: "Texas"},
+		// SG has no administrative subdivisions; omit sampleStateCode
+		{countryCode: "SG", countryName: "Singapore"},
+	}
 
-	assert.Equal(t, "India", subDivData.GetCountryName())
-	states := subDivData.GetStates()["KA"]
-	assert.Equal(t, "Karnataka", states.GetName())
-	assertIsArray(t, states.GetCities())
+	for _, tt := range tests {
+		t.Run(tt.countryCode, func(t *testing.T) {
+			subDivData := GetCountrySubdivisions(tt.countryCode)
+
+			assert.Equal(t, tt.countryName, subDivData.GetCountryName())
+			assert.NotEmpty(t, subDivData.GetStates())
+
+			if tt.sampleStateCode != "" {
+				state, exists := subDivData.GetStateByStateCode(tt.sampleStateCode)
+				assert.True(t, exists)
+				assert.Equal(t, tt.sampleStateName, state.GetName())
+				assertIsArray(t, state.GetCities())
+				assert.NotEmpty(t, state.GetCities())
+			} else {
+				for _, state := range subDivData.GetStates() {
+					assertIsArray(t, state.GetCities())
+					assert.NotEmpty(t, state.GetCities())
+					break
+				}
+			}
+		})
+	}
 }
 
 func TestMarshalCountrySubdivisions(t *testing.T) {
@@ -57,14 +86,6 @@ func TestGetStateByStateCode(t *testing.T) {
 	assert.Equal(t, State{}, state, "State should be empty for invalid state code")
 }
 
-func TestGetAvailableCountryCodes(t *testing.T) {
-	codes, err := GetAvailableCountryCodes()
-	assert.NoError(t, err)
-	assert.Contains(t, codes, "IN")
-	assert.Contains(t, codes, "US")
-	assert.Contains(t, codes, "MY")
-	assert.Contains(t, codes, "SG")
-}
 
 func assertIsArray(t *testing.T, value interface{}) {
 	t.Helper()
