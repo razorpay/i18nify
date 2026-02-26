@@ -4,8 +4,9 @@ package country_metadata
 
 import (
 	_ "embed"
-	"encoding/json"
 	"sync"
+
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 //go:embed data/data.json
@@ -21,7 +22,8 @@ var (
 func GetCountryMetadataData() (*CountryMetadataData, error) {
 	dataOnce.Do(func() {
 		data = &CountryMetadataData{}
-		dataErr = json.Unmarshal(dataJSON, data)
+		unmarshaler := protojson.UnmarshalOptions{DiscardUnknown: true}
+		dataErr = unmarshaler.Unmarshal(dataJSON, data)
 	})
 	return data, dataErr
 }
