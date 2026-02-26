@@ -4,8 +4,9 @@ package currency
 
 import (
 	_ "embed"
-	"encoding/json"
 	"sync"
+
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 //go:embed data/data.json
@@ -21,7 +22,8 @@ var (
 func GetCurrencyData() (*CurrencyData, error) {
 	dataOnce.Do(func() {
 		data = &CurrencyData{}
-		dataErr = json.Unmarshal(dataJSON, data)
+		unmarshaler := protojson.UnmarshalOptions{DiscardUnknown: true}
+		dataErr = unmarshaler.Unmarshal(dataJSON, data)
 	})
 	return data, dataErr
 }
