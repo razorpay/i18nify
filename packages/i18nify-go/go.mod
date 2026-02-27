@@ -12,6 +12,6 @@ require google.golang.org/protobuf v1.31.0 // indirect
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v0.0.0-20260226111931-19139c24f4ef
+	github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v0.0.0-20260227084754-0356b5a4ecab
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
