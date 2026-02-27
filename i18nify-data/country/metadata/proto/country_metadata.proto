@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package country_metadata;
 
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/country/metadata;country_metadata";
+
 // CountryMetadataData contains metadata information for all countries.
 // Data files: data.json
 message CountryMetadataData {

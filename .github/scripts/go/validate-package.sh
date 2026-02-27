@@ -96,7 +96,7 @@ if [ -f "$SOURCE_DIR/data.json" ]; then
 else
     while IFS= read -r -d '' file; do
         DATA_FILES+=("$file")
-    done < <(find "$SOURCE_DIR" -maxdepth 1 -name "*.json" -type f ! -name "schema.json" ! -name "package-config.json" -print0)
+    done < <(find "$SOURCE_DIR" -maxdepth 1 -name "*.json" -type f ! -name "package-config.json" -print0)
 fi
 
 if [ ${#DATA_FILES[@]} -eq 0 ]; then

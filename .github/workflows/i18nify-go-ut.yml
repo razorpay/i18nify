@@ -32,5 +32,13 @@ jobs:
           go-version: '1.20'
       - name: Run Unit Tests
         run: |
-          cd $GITHUB_WORKSPACE/packages/i18nify-go
+          # If any i18nify-data/go/* packages were modified in this PR, use a
+          # temporary Go workspace so the consumer tests run against the local
+          # versions rather than the pinned published module versions.
+          cd $GITHUB_WORKSPACE
+          go work init
+          go work use ./packages/i18nify-go
+          for pkg_dir in i18nify-data/go/*/; do
+            [ -f "${pkg_dir}go.mod" ] && go work use "./${pkg_dir}"
+          done
           go test -v github.com/razorpay/i18nify/packages/i18nify-go/modules/...
