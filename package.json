@@ -12,7 +12,7 @@
     "prepare": "husky install",
     "build-js": "yarn workspace @razorpay/i18nify-js run build",
     "build-react": "yarn build-js && yarn workspace @razorpay/i18nify-react run build",
-    "validate-i18nify-data": "ts-node scripts/dataValidate.ts",
+    "validate-i18nify-data": "ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/dataValidate.ts",
     "test:data-validate": "jest scripts/dataValidate.test.ts --passWithNoTests"
   },
   "devDependencies": {
