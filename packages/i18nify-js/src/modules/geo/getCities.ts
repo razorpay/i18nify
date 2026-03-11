@@ -31,7 +31,10 @@ const getCities = (
   return fetch(
     `${I18NIFY_DATA_SOURCE}/country/subdivisions/${countryCode}.json`,
   )
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      return res.json();
+    })
     .then((res) => {
       // return cities from all states if state code is not provided
       if (!stateCode) {
