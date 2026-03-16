@@ -1,0 +1,31 @@
+{
+  "name": "@razorpay/i18nify-cli",
+  "version": "0.1.0",
+  "description": "CLI for i18nify utilities",
+  "author": "Razorpay I18N Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "i18n": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js --format=cjs --banner:js='#!/usr/bin/env node'",
+    "postbuild": "node -e \"require('fs').chmodSync('dist/index.js', '755')\"",
+    "validate": "tsc --noEmit && eslint src",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@razorpay/i18nify-js": "*",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "esbuild": "^0.21.0",
+    "typescript": "^5.2.2"
+  }
+}
