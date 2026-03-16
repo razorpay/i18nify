@@ -14,8 +14,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js --format=cjs --banner:js='#!/usr/bin/env node'",
-    "postbuild": "node -e \"require('fs').chmodSync('dist/index.js', '755')\"",
+    "build": "rm -rf dist && rollup -c",
     "validate": "tsc --noEmit && eslint src",
     "test": "jest"
   },
@@ -24,8 +23,13 @@
     "commander": "^12.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^20.10.5",
-    "esbuild": "^0.21.0",
+    "rollup": "^4.0.2",
     "typescript": "^5.2.2"
   }
 }
