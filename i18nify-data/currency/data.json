@@ -1596,6 +1596,21 @@
         "100000"
       ]
     },
+    "SLE": {
+      "name": "Sierra Leonean Leone",
+      "numeric_code": "925",
+      "minor_unit": "2",
+      "symbol": "Le",
+      "physical_currency_denominations": [
+        "1",
+        "2",
+        "5",
+        "10",
+        "20",
+        "50",
+        "100"
+      ]
+    },
     "SGD": {
       "name": "Singapore Dollar",
       "numeric_code": "702",

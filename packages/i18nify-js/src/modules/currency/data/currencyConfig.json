@@ -659,6 +659,11 @@
     "minor_unit": "2",
     "symbol": "Le"
   },
+  "SLE": {
+    "name": "Sierra Leonean Leone",
+    "minor_unit": "2",
+    "symbol": "Le"
+  },
   "SGD": {
     "name": "Singapore Dollar",
     "minor_unit": "2",

@@ -6674,7 +6674,8 @@
       "sovereignty": "UN member state",
       "dial_code": "+232",
       "supported_currency": [
-        "SLL"
+        "SLL",
+        "SLE"
       ],
       "timezones": {
         "Africa/Freetown": {
@@ -6694,7 +6695,7 @@
         }
       },
       "default_locale": "en_SL",
-      "default_currency": "SLL"
+      "default_currency": "SLE"
     },
     "SG": {
       "country_name": "Singapore",
