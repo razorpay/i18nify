@@ -1,5 +1,15 @@
 # @razorpay/i18nify-js
 
+## 1.13.0
+
+### Minor Changes
+
+- 610e764: Version bump
+
+### Patch Changes
+
+- c3b70d7: fix: migrate SLL to SLE currency code for Sierra Leone across JS, Go, and data packages
+
 ## 1.12.7
 
 ### Patch Changes
