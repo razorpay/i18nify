@@ -9,6 +9,10 @@ on:
       - 'packages/i18nify-react/**'
       - 'i18nify-data/**'
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 env:
   GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
 
