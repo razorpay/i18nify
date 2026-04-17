@@ -8,6 +8,7 @@ on:
       - 'packages/i18nify-js/**'
       - 'packages/i18nify-react/**'
       - 'i18nify-data/**'
+      - '.changeset/**'
 
 permissions:
   id-token: write  # Required for OIDC
