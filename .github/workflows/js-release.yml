@@ -30,6 +30,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.3.1
+          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: yarn
       - name: Build core package
@@ -46,4 +47,4 @@ jobs:
           title: 'build(i18nify): update version'
       - name: Publish to public npm registry
         if: steps.changesets.outputs.published == 'true' || github.event_name == 'workflow_dispatch' # run when the package is published via changeset or if a release is triggered manually.
-        run: cd packages/i18nify-js; npm publish --provenance --force
+        run: cd packages/i18nify-js; npm publish --force
