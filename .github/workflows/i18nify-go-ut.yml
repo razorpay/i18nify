@@ -4,7 +4,6 @@ on:
   pull_request:
 
 jobs:
-  # JOB to run change detection
   check-if-i18nify-go:
     runs-on: ubuntu-latest
     outputs:
@@ -16,14 +15,14 @@ jobs:
           filters: |
             src:
               - 'packages/i18nify-go/**'
+              - 'i18nify-data/go/**'
 
   run-test:
     name: Run Unit Tests
     runs-on: ubuntu-latest
     needs: check-if-i18nify-go
     if: |
-      needs.check-if-i18nify-go.outputs.modified == 'true' && !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot') &&
-      !contains(github.event.head_commit.message, '[skip ci]')
+      needs.check-if-i18nify-go.outputs.modified == 'true' && !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,5 +32,13 @@ jobs:
           go-version: '1.20'
       - name: Run Unit Tests
         run: |
-          cd $GITHUB_WORKSPACE/packages/i18nify-go
+          # If any i18nify-data/go/* packages were modified in this PR, use a
+          # temporary Go workspace so the consumer tests run against the local
+          # versions rather than the pinned published module versions.
+          cd $GITHUB_WORKSPACE
+          go work init
+          go work use ./packages/i18nify-go
+          for pkg_dir in i18nify-data/go/*/; do
+            [ -f "${pkg_dir}go.mod" ] && go work use "./${pkg_dir}"
+          done
           go test -v github.com/razorpay/i18nify/packages/i18nify-go/modules/...

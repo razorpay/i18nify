@@ -1,0 +1,6 @@
+{
+  "name": "Test Item",
+  "count": 42,
+  "items": ["item1", "item2", "item3"]
+}
+
