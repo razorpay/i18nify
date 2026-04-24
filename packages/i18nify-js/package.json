@@ -1,6 +1,6 @@
 {
   "name": "@razorpay/i18nify-js",
-  "version": "1.12.9",
+  "version": "1.12.10",
   "author": "tarun khanna <tarun.khanna@razorpay.com>",
   "license": "MIT",
   "contributors": [
@@ -18,7 +18,7 @@
   "types": "lib/types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:razorpay/i18nify.git"
+    "url": "https://github.com/razorpay/i18nify"
   },
   "files": [
     "lib",
