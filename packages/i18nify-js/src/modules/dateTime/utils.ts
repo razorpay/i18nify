@@ -57,8 +57,7 @@ export const stringToDate = (dateString: string): Date => {
 };
 
 export const convertToStandardDate = (date: DateInput): Date => {
-  const standardDate =
-    typeof date === 'string' ? new Date(stringToDate(date)) : new Date(date);
-
-  return standardDate;
+  if (date instanceof Date) return new Date(date.getTime());
+  if (typeof date === 'number') return new Date(date);
+  return stringToDate(date);
 };
