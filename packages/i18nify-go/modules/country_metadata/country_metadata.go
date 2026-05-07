@@ -152,6 +152,17 @@ func NewTimezone(utcOffset string) *Timezone {
 	}
 }
 
+// GetCountryCodeFromAlpha3 returns the ISO 3166-1 alpha-2 country code for a given alpha-3 code.
+func GetCountryCodeFromAlpha3(alpha3 string) string {
+	normalized := strings.ToUpper(strings.TrimSpace(alpha3))
+	for iso2, info := range cachedCountyMetaData.MetadataInformation {
+		if info.Alpha3 == normalized {
+			return iso2
+		}
+	}
+	return ""
+}
+
 func GetCountryCodeISO2(countryName string) string {
 	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
 	if err != nil {
