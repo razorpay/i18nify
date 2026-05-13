@@ -1,0 +1,6 @@
+.github/scripts/go/generate-package.sh
+  77d808ee-a1e2-42ab-a293-0ed32b2c09b6:2026-05-13T11:20:05.242Z 277
+.github/workflows/auto-generate-go-packages.yml
+  77d808ee-a1e2-42ab-a293-0ed32b2c09b6:2026-05-13T11:19:22.288Z 109
+---
+{"schema_version": "authorship/3.0.0", "base_commit_sha": "HEAD~1", "prompts": {"77d808ee-a1e2-42ab-a293-0ed32b2c09b6:2026-05-13T11:20:05.242Z": {"agent_id": {"tool": "claude_code", "model": ""}, "human_author": "arnav.gaur@razorpay.com", "accepted_lines": 1, "overriden_lines": 0}, "77d808ee-a1e2-42ab-a293-0ed32b2c09b6:2026-05-13T11:19:22.288Z": {"agent_id": {"tool": "claude_code", "model": ""}, "human_author": "arnav.gaur@razorpay.com", "accepted_lines": 1, "overriden_lines": 0}}}
