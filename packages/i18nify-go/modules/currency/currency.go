@@ -8,10 +8,10 @@
 package currency
 
 import (
-	"embed"
 	"encoding/json"
 	"fmt"
 
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/currency"
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 )
@@ -20,28 +20,39 @@ type ICurrencyInfo interface {
 	FormatCurrency(amount float64, locale string) (string, error)
 }
 
-//go:embed data
-var currencyJsonDir embed.FS
-
-// DataFile defines the path to the JSON data file containing currency information.
-const DataFile = "data/data.json"
-
 // Package-level cache for currency data (loaded once at package initialization)
 var cachedCurrencyData *Currency
 
-// init loads the currency data from the embedded JSON file when the package is imported.
+// init loads the currency data from the externalized data package when the package is imported.
 func init() {
-	currencyJsonData, err := currencyJsonDir.ReadFile(DataFile)
+	src, err := dataSource.GetCurrencyData()
 	if err != nil {
-		panic(fmt.Sprintf("failed to read currency data file: %v", err))
+		panic(fmt.Sprintf("failed to load currency data: %v", err))
 	}
 
-	data, err := UnmarshalCurrency(currencyJsonData)
-	if err != nil {
-		panic(fmt.Sprintf("failed to unmarshal currency data: %v", err))
-	}
-
+	data := convertFromDataSource(src)
 	cachedCurrencyData = &data
+}
+
+// convertFromDataSource maps the proto-generated CurrencyData to the module's Currency type.
+func convertFromDataSource(src *dataSource.CurrencyData) Currency {
+	if src == nil {
+		return Currency{}
+	}
+	info := make(map[string]CurrencyInformation, len(src.GetCurrencyInformation()))
+	for code, ci := range src.GetCurrencyInformation() {
+		if ci == nil {
+			continue
+		}
+		info[code] = CurrencyInformation{
+			Name:                          ci.GetName(),
+			NumericCode:                   ci.GetNumericCode(),
+			MinorUnit:                     ci.GetMinorUnit(),
+			Symbol:                        ci.GetSymbol(),
+			PhysicalCurrencyDenominations: ci.GetPhysicalCurrencyDenominations(),
+		}
+	}
+	return Currency{CurrencyInformation: info}
 }
 
 // UnmarshalCurrency parses JSON data into a Currency struct.

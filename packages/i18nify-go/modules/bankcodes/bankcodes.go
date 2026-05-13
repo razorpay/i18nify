@@ -1,18 +1,12 @@
 package bankcodes
 
 import (
-	"embed"
-	"encoding/json"
 	"errors"
 	"fmt"
 	"strings"
+
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/bankcodes"
 )
-
-//go:embed data
-var bankJsonDir embed.FS
-
-// DataFile defines the path to the JSON data file containing bank information.
-const DataFile = "data/%s.json"
 
 type Identifier struct {
 	SwiftCode     string   `json:"swift_code"`
@@ -45,27 +39,53 @@ const (
 	IdentifierTypeIFSC          = "IFSC"
 )
 
+// convertFromDataSource maps the proto-generated BankCodes to the module's BankInfo type.
+func convertFromDataSource(src *dataSource.BankCodes) BankInfo {
+	if src == nil {
+		return BankInfo{}
+	}
+	result := BankInfo{}
+	if d := src.GetDefaults(); d != nil {
+		result.Defaults.IdentifierType = d.GetIdentifierType()
+	}
+	for _, bank := range src.GetDetails() {
+		if bank == nil {
+			continue
+		}
+		bd := BankDetails{
+			Name:      bank.GetName(),
+			ShortCode: bank.GetShortCode(),
+		}
+		for _, branch := range bank.GetBranches() {
+			if branch == nil {
+				continue
+			}
+			b := Branch{City: branch.GetCity(), Code: branch.GetCode()}
+			if ids := branch.GetIdentifiers(); ids != nil {
+				b.Identifiers = Identifier{
+					SwiftCode:     ids.GetSwiftCode(),
+					RoutingNumber: ids.GetRoutingNumber(),
+					IfscCode:      ids.GetIfscCode(),
+				}
+			}
+			bd.Branches = append(bd.Branches, b)
+		}
+		result.Details = append(result.Details, bd)
+	}
+	return result
+}
+
 func loadBankInfo(countryCode string) (*BankInfo, error) {
 	if countryCode == "" {
 		return nil, errors.New("country code is empty")
 	}
 
-	// Construct file path
-	filePath := fmt.Sprintf(DataFile, strings.ToUpper(countryCode))
-
-	// Load JSON file from embedded filesystem
-	data, err := bankJsonDir.ReadFile(filePath)
+	srcData, err := dataSource.GetBankCodes(strings.ToUpper(countryCode))
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}
 
-	// Parse JSON data into Go struct
-	var bankInfo BankInfo
-	err = json.Unmarshal(data, &bankInfo)
-	if err != nil {
-		return nil, fmt.Errorf("failed to parse JSON: %w", err)
-	}
-
+	bankInfo := convertFromDataSource(srcData)
 	return &bankInfo, nil
 }
 

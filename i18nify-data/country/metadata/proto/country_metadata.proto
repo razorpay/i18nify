@@ -20,7 +20,7 @@ message CountryMetadata {
   string flag = 6;
   string sovereignty = 7;
   string dial_code = 8;
-  repeated string supportedCurrency = 9;
+  repeated string supported_currency = 9;
   map<string, TimezoneInfo> timezones = 10;
   string timezone_of_capital = 11;
   map<string, LocaleInfo> locales = 12;

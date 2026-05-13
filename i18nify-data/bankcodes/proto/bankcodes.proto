@@ -33,5 +33,7 @@ message Branch {
 // Identifiers contains branch identifiers like SWIFT codes.
 message Identifiers {
   string swift_code = 1;
+  repeated string routing_number = 2;
+  string ifsc_code = 3;
 }
 

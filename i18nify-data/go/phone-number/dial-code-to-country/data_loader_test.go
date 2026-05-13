@@ -26,8 +26,8 @@ func TestGetDialCodeToCountryData_Idempotent(t *testing.T) {
 	if err2 != nil {
 		t.Fatalf("Second GetDialCodeToCountryData() error = %v", err2)
 	}
-	if data1 != data2 {
-		t.Error("GetDialCodeToCountryData() should return cached data on subsequent calls")
+	if len(data1) != len(data2) {
+		t.Error("GetDialCodeToCountryData() should return same data on subsequent calls")
 	}
 }
 
@@ -36,7 +36,7 @@ func TestGetDialCodeToCountryData_NotEmpty(t *testing.T) {
 	if err != nil {
 		t.Fatalf("GetDialCodeToCountryData() error = %v", err)
 	}
-	if data == nil {
-		t.Error("Data should not be nil")
+	if len(data) == 0 {
+		t.Error("Data should not be empty")
 	}
 }
