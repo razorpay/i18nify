@@ -11,6 +11,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/phone-number/dial-code-to-country/**'
       - '!i18nify-data/go/**'
   push:
     branches:
@@ -21,6 +22,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/phone-number/dial-code-to-country/**'
       - '!i18nify-data/go/**'
 
   # Manual trigger via GitHub Actions UI
@@ -38,6 +40,7 @@ on:
           - 'bankcodes'
           - 'country/metadata'
           - 'phone-number/country-code-to-phone-number'
+          - 'phone-number/dial-code-to-country'
       branch:
         description: 'Branch to run on'
         required: true
@@ -87,6 +90,8 @@ jobs:
               - '!i18nify-data/country/metadata/README.md'
             phone-number/country-code-to-phone-number:
               - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+            phone-number/dial-code-to-country:
+              - 'i18nify-data/phone-number/dial-code-to-country/**'
 
   # For workflow_dispatch: get inputs
   check-dispatch:
@@ -106,7 +111,7 @@ jobs:
           if [ "$PACKAGE" != "all" ] && [ -n "$PACKAGE" ]; then
             echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
           else
-            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number"]' >> $GITHUB_OUTPUT
+            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number","phone-number/dial-code-to-country"]' >> $GITHUB_OUTPUT
           fi
 
   # Generate packages
