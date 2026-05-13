@@ -1,0 +1,6 @@
+.github/scripts/go/validate-package.sh
+  ff8eff0a-a07e-4d21-a31d-508ea1894b37:2026-05-13T11:38:39.160Z 71-73,75,141-146,151,155-156,158-163,167-171,173-182,184-188,190-204,206-210,212-217,221,229-240,242,248-249
+package.json
+  ff8eff0a-a07e-4d21-a31d-508ea1894b37:2026-05-13T11:45:45.234Z 29,32,35
+---
+{"schema_version": "authorship/3.0.0", "base_commit_sha": "HEAD~1", "prompts": {"ff8eff0a-a07e-4d21-a31d-508ea1894b37:2026-05-13T11:38:39.160Z": {"agent_id": {"tool": "claude_code", "model": ""}, "human_author": "arnav.gaur@razorpay.com", "accepted_lines": 81, "overriden_lines": 0}, "ff8eff0a-a07e-4d21-a31d-508ea1894b37:2026-05-13T11:45:45.234Z": {"agent_id": {"tool": "claude_code", "model": ""}, "human_author": "arnav.gaur@razorpay.com", "accepted_lines": 3, "overriden_lines": 0}}}
