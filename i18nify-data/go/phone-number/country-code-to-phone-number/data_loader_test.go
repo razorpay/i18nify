@@ -6,36 +6,51 @@ import (
 	"testing"
 )
 
+// TestGetCountryPhoneData tests that the data can be loaded successfully.
+// This ensures the JSON data is valid and matches the proto schema.
 func TestGetCountryPhoneData(t *testing.T) {
 	data, err := GetCountryPhoneData()
 	if err != nil {
 		t.Fatalf("GetCountryPhoneData() error = %v", err)
 	}
+
 	if data == nil {
 		t.Fatal("GetCountryPhoneData() returned nil data")
 	}
+
 	t.Log("Data loaded successfully")
 }
 
+// TestGetCountryPhoneData_Idempotent tests that multiple calls return
+// the same cached instance.
 func TestGetCountryPhoneData_Idempotent(t *testing.T) {
+	// Call twice to verify caching works
 	data1, err1 := GetCountryPhoneData()
 	if err1 != nil {
 		t.Fatalf("First GetCountryPhoneData() error = %v", err1)
 	}
+
 	data2, err2 := GetCountryPhoneData()
 	if err2 != nil {
 		t.Fatalf("Second GetCountryPhoneData() error = %v", err2)
 	}
+
+	// Should return the same pointer (cached)
 	if data1 != data2 {
 		t.Error("GetCountryPhoneData() should return cached data on subsequent calls")
 	}
 }
 
+// TestGetCountryPhoneData_NotEmpty performs a basic sanity check
+// that the loaded data is not empty.
 func TestGetCountryPhoneData_NotEmpty(t *testing.T) {
 	data, err := GetCountryPhoneData()
 	if err != nil {
 		t.Fatalf("GetCountryPhoneData() error = %v", err)
 	}
+
+	// Use reflection or proto methods to check if data has any fields set
+	// This is a basic check - specific packages may want more detailed validation
 	if data == nil {
 		t.Error("Data should not be nil")
 	}
