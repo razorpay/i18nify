@@ -10,7 +10,7 @@ on:
       - 'i18nify-data/currency/**'
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
-      - 'i18nify-data/phone-number/**'
+      - 'i18nify-data/phone-number/country-code-to-phone-number/**'
       - '!i18nify-data/go/**'
   push:
     branches:
@@ -20,7 +20,7 @@ on:
       - 'i18nify-data/currency/**'
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
-      - 'i18nify-data/phone-number/**'
+      - 'i18nify-data/phone-number/country-code-to-phone-number/**'
       - '!i18nify-data/go/**'
 
   # Manual trigger via GitHub Actions UI
@@ -38,7 +38,6 @@ on:
           - 'bankcodes'
           - 'country/metadata'
           - 'phone-number/country-code-to-phone-number'
-          - 'phone-number/dial-code-to-country'
       branch:
         description: 'Branch to run on'
         required: true
@@ -88,8 +87,6 @@ jobs:
               - '!i18nify-data/country/metadata/README.md'
             phone-number/country-code-to-phone-number:
               - 'i18nify-data/phone-number/country-code-to-phone-number/**'
-            phone-number/dial-code-to-country:
-              - 'i18nify-data/phone-number/dial-code-to-country/**'
 
   # For workflow_dispatch: get inputs
   check-dispatch:
@@ -109,7 +106,7 @@ jobs:
           if [ "$PACKAGE" != "all" ] && [ -n "$PACKAGE" ]; then
             echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
           else
-            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number","phone-number/dial-code-to-country"]' >> $GITHUB_OUTPUT
+            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number"]' >> $GITHUB_OUTPUT
           fi
 
   # Generate packages
@@ -289,8 +286,10 @@ jobs:
           fi
 
           git commit -m "chore(go): update ${{ matrix.package }} to ${{ steps.version.outputs.version }}"
-          git pull --rebase origin "$BRANCH" || true
-          git push origin HEAD:"$BRANCH"
+          for i in 1 2 3; do
+            git pull --rebase origin "$BRANCH" && git push origin HEAD:"$BRANCH" && break
+            sleep $((i * 3))
+          done
 
       - name: Create and push release tag
         if: steps.check-proto.outputs.has_proto == 'true' && steps.version.outputs.is_release == 'true'

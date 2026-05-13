@@ -38,7 +38,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           go work init
           go work use ./packages/i18nify-go
-          for pkg_dir in i18nify-data/go/*/; do
+          for pkg_dir in i18nify-data/go/*/ i18nify-data/go/*/*/; do
             [ -f "${pkg_dir}go.mod" ] && go work use "./${pkg_dir}"
           done
           go test -v github.com/razorpay/i18nify/packages/i18nify-go/modules/...
