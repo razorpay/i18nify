@@ -204,10 +204,12 @@ jobs:
           echo "Running consumer package tests against newly generated data..."
 
           # Use a temporary Go workspace so the consumer module resolves
-          # the local generated package without modifying go.mod
+          # all local generated packages without modifying go.mod
           go work init
           go work use "./${CONSUMER_MODULE}"
-          go work use "./i18nify-data/go/${PACKAGE}"
+          for pkg_dir in i18nify-data/go/*/ i18nify-data/go/*/*/; do
+            [ -f "${pkg_dir}go.mod" ] && go work use "./${pkg_dir}"
+          done
 
           go test -v "./${CONSUMER_MODULE}/modules/..."
           echo "✅ Consumer package tests passed with new data"

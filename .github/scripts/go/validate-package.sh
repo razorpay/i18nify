@@ -148,7 +148,7 @@ if command -v go &> /dev/null && [ "$VALIDATION_FAILED" = false ]; then
     mkdir -p "$TEMP_VALIDATE_DIR"
     
     # Generate proto Go file
-    GO_PACKAGE_NAME=$(echo "$PACKAGE_PATH" | tr '/' '_')
+    GO_PACKAGE_NAME=$(echo "$PACKAGE_PATH" | tr '/-' '__')
     MODULE_PATH="validate/$GO_PACKAGE_NAME"
     
     if protoc --go_out="$TEMP_VALIDATE_DIR" \

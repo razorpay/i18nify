@@ -4,7 +4,7 @@
 // 	protoc        v6.33.0
 // source: dial_code_to_country.proto
 
-package dial_code_to_country
+package phone_number_dial_code_to_country
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

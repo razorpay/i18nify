@@ -65,8 +65,8 @@ log_info "Found proto file: $PROTO_FILE"
 # Module path: github.com/razorpay/i18nify/i18nify-data/go/{package_path}
 MODULE_PATH="$MODULE_PATH_PREFIX/$PACKAGE_PATH"
 
-# Go package name: replace / with _ (e.g., country/subdivisions -> country_subdivisions)
-GO_PACKAGE_NAME=$(echo "$PACKAGE_PATH" | tr '/' '_')
+# Go package name: replace / and - with _ (e.g., phone-number/country-code-to-phone-number -> phone_number_country_code_to_phone_number)
+GO_PACKAGE_NAME=$(echo "$PACKAGE_PATH" | tr '/-' '__')
 
 # Full go_package option for protoc: "module_path;package_name"
 GO_PACKAGE_OPTION="${MODULE_PATH};${GO_PACKAGE_NAME}"

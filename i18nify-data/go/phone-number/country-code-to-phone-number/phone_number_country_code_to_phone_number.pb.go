@@ -4,7 +4,7 @@
 // 	protoc        v6.33.0
 // source: country_phone_info.proto
 
-package country_phone_info
+package phone_number_country_code_to_phone_number
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
