@@ -98,29 +98,8 @@ fi
 # --- Create Output Directory ---
 mkdir -p "$OUTPUT_DIR/data"
 
-# Check if package uses a custom data loader (incompatible with standard protojson generation)
-CUSTOM_DATA_LOADER="false"
-if [ -f "$SOURCE_DIR/package-config.json" ] && \
-   jq -e '.custom_data_loader == true' "$SOURCE_DIR/package-config.json" > /dev/null 2>&1; then
-    CUSTOM_DATA_LOADER="true"
-    log_info "Custom data loader detected - preserving existing data_loader.go"
-fi
-
 # Clean old generated files but keep the directory
-# If custom data loader, preserve data_loader files before cleanup
-if [ "$CUSTOM_DATA_LOADER" = "true" ]; then
-    _tmp=$(mktemp -d)
-    cp "$OUTPUT_DIR/data_loader.go" "$_tmp/" 2>/dev/null || true
-    cp "$OUTPUT_DIR/data_loader_test.go" "$_tmp/" 2>/dev/null || true
-fi
-
 rm -f "$OUTPUT_DIR"/*.go "$OUTPUT_DIR"/*.mod "$OUTPUT_DIR"/*.sum 2>/dev/null || true
-
-if [ "$CUSTOM_DATA_LOADER" = "true" ]; then
-    cp "$_tmp/data_loader.go" "$OUTPUT_DIR/" 2>/dev/null || true
-    cp "$_tmp/data_loader_test.go" "$OUTPUT_DIR/" 2>/dev/null || true
-    rm -rf "$_tmp"
-fi
 
 # --- Copy Data Files ---
 log_info "Copying data files..."
@@ -166,9 +145,6 @@ log_info "go.mod contents:"
 cat "$OUTPUT_DIR/go.mod" || log_error "Failed to read go.mod"
 
 # --- Generate Data Loader ---
-if [ "$CUSTOM_DATA_LOADER" = "true" ]; then
-    log_info "Skipping data loader generation (custom data loader preserved)"
-else
 log_info "Generating data loader..."
 
 # Extract first message name from proto (the root type)
@@ -298,12 +274,7 @@ log_info "Generated: data_loader.go"
 
 # --- Generate Data Loader Test ---
 # Use separate script for test generation (easier to update independently)
-if [ "$CUSTOM_DATA_LOADER" = "false" ]; then
-    "$SCRIPT_DIR/generate-test.sh" "$OUTPUT_DIR" "$GO_PACKAGE_NAME" "$ROOT_MESSAGE" "$MULTIPLE_FILES"
-fi
-
-# Close the else block opened for CUSTOM_DATA_LOADER check
-fi
+"$SCRIPT_DIR/generate-test.sh" "$OUTPUT_DIR" "$GO_PACKAGE_NAME" "$ROOT_MESSAGE" "$MULTIPLE_FILES"
 
 # --- Verify files were created ---
 if [ ! -f "$OUTPUT_DIR/go.mod" ]; then
