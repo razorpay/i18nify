@@ -179,6 +179,8 @@ jobs:
 
       - name: Verify package (run tests)
         if: steps.check-proto.outputs.has_proto == 'true'
+        env:
+          GONOSUMDB: github.com/razorpay/i18nify
         run: |
           cd "i18nify-data/go/${{ matrix.package }}"
           echo "Running tests to verify data loads correctly..."
@@ -187,6 +189,8 @@ jobs:
 
       - name: Verify consumer package tests with new data
         if: steps.check-proto.outputs.has_proto == 'true'
+        env:
+          GONOSUMDB: github.com/razorpay/i18nify
         run: |
           PACKAGE="${{ matrix.package }}"
           DATA_MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${PACKAGE}"
