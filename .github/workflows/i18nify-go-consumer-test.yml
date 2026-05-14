@@ -52,235 +52,218 @@ jobs:
           mkdir -p "$TEST_DIR"
           cd "$TEST_DIR"
 
-          # Init a completely external module — nothing from the repo lives here.
           go mod init consumer-test
-
-          # Pull i18nify-go at the current commit — no replace directives.
-          # Replace directives inside the dependency's own go.mod are ignored by Go
-          # (only the main module's replace directives apply), so data packages are
-          # resolved from the module proxy at their pinned pseudo-versions.
           go get github.com/razorpay/i18nify/packages/i18nify-go@${COMMIT_SHA}
 
-          # Write the integration test file inline
           cat > integration_test.go << 'GOEOF'
-package consumer
+          package consumer
 
-import (
-	"testing"
+          import (
+          	"testing"
 
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/phonenumber"
-)
+          	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
+          	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
+          	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
+          	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
+          	"github.com/razorpay/i18nify/packages/i18nify-go/modules/phonenumber"
+          )
 
-// --- currency ---
+          func TestCurrency_GetCurrencyInformation(t *testing.T) {
+          	info, err := currency.GetCurrencyInformation("USD")
+          	if err != nil {
+          		t.Fatalf("GetCurrencyInformation(USD): %v", err)
+          	}
+          	if info.Name != "US Dollar" {
+          		t.Errorf("expected 'US Dollar', got %q", info.Name)
+          	}
+          	if info.Symbol != "$" {
+          		t.Errorf("expected '$', got %q", info.Symbol)
+          	}
+          	if info.NumericCode != "840" {
+          		t.Errorf("expected '840', got %q", info.NumericCode)
+          	}
+          }
 
-func TestCurrency_GetCurrencyInformation(t *testing.T) {
-	info, err := currency.GetCurrencyInformation("USD")
-	if err != nil {
-		t.Fatalf("GetCurrencyInformation(USD): %v", err)
-	}
-	if info.Name != "US Dollar" {
-		t.Errorf("expected 'US Dollar', got %q", info.Name)
-	}
-	if info.Symbol != "$" {
-		t.Errorf("expected '$', got %q", info.Symbol)
-	}
-	if info.NumericCode != "840" {
-		t.Errorf("expected '840', got %q", info.NumericCode)
-	}
-}
+          func TestCurrency_GetCurrencySymbol(t *testing.T) {
+          	sym, err := currency.GetCurrencySymbol("INR")
+          	if err != nil {
+          		t.Fatalf("GetCurrencySymbol(INR): %v", err)
+          	}
+          	if sym != "\u20b9" {
+          		t.Errorf("expected INR symbol, got %q", sym)
+          	}
+          }
 
-func TestCurrency_GetCurrencySymbol(t *testing.T) {
-	sym, err := currency.GetCurrencySymbol("INR")
-	if err != nil {
-		t.Fatalf("GetCurrencySymbol(INR): %v", err)
-	}
-	if sym != "₹" {
-		t.Errorf("expected '₹', got %q", sym)
-	}
-}
+          func TestCurrency_GetCurrencyCodeByISONumericCode(t *testing.T) {
+          	code, err := currency.GetCurrencyCodeByISONumericCode("356")
+          	if err != nil {
+          		t.Fatalf("GetCurrencyCodeByISONumericCode(356): %v", err)
+          	}
+          	if code != "INR" {
+          		t.Errorf("expected 'INR', got %q", code)
+          	}
+          }
 
-func TestCurrency_GetCurrencyCodeByISONumericCode(t *testing.T) {
-	code, err := currency.GetCurrencyCodeByISONumericCode("356")
-	if err != nil {
-		t.Fatalf("GetCurrencyCodeByISONumericCode(356): %v", err)
-	}
-	if code != "INR" {
-		t.Errorf("expected 'INR', got %q", code)
-	}
-}
+          func TestCurrency_UnknownCode(t *testing.T) {
+          	_, err := currency.GetCurrencyInformation("ZZZ")
+          	if err == nil {
+          		t.Error("expected error for unknown currency code, got nil")
+          	}
+          }
 
-func TestCurrency_UnknownCode(t *testing.T) {
-	_, err := currency.GetCurrencyInformation("ZZZ")
-	if err == nil {
-		t.Error("expected error for unknown currency code, got nil")
-	}
-}
+          func TestBankcodes_GetAllBanksWithShortCodes(t *testing.T) {
+          	banks, err := bankcodes.GetAllBanksWithShortCodes("US")
+          	if err != nil {
+          		t.Fatalf("GetAllBanksWithShortCodes(US): %v", err)
+          	}
+          	if len(banks) == 0 {
+          		t.Error("expected non-empty bank map for US")
+          	}
+          	if _, ok := banks["USBK"]; !ok {
+          		t.Error("expected USBK in US bank list")
+          	}
+          }
 
-// --- bankcodes ---
+          func TestBankcodes_IsValidBankIdentifier_SWIFT(t *testing.T) {
+          	valid, err := bankcodes.IsValidBankIdentifier("US", "SWIFT", "BNNEUS66")
+          	if err != nil {
+          		t.Fatalf("IsValidBankIdentifier(SWIFT): %v", err)
+          	}
+          	if !valid {
+          		t.Error("expected BNNEUS66 to be a valid SWIFT code for US")
+          	}
+          }
 
-func TestBankcodes_GetAllBanksWithShortCodes(t *testing.T) {
-	banks, err := bankcodes.GetAllBanksWithShortCodes("US")
-	if err != nil {
-		t.Fatalf("GetAllBanksWithShortCodes(US): %v", err)
-	}
-	if len(banks) == 0 {
-		t.Error("expected non-empty bank map for US")
-	}
-	if _, ok := banks["USBK"]; !ok {
-		t.Error("expected USBK in US bank list")
-	}
-}
+          func TestBankcodes_IsValidBankIdentifier_IFSC(t *testing.T) {
+          	valid, err := bankcodes.IsValidBankIdentifier("IN", "IFSC", "ABHY0065001")
+          	if err != nil {
+          		t.Fatalf("IsValidBankIdentifier(IFSC): %v", err)
+          	}
+          	if !valid {
+          		t.Error("expected ABHY0065001 to be a valid IFSC code for IN")
+          	}
+          }
 
-func TestBankcodes_IsValidBankIdentifier_SWIFT(t *testing.T) {
-	valid, err := bankcodes.IsValidBankIdentifier("US", "SWIFT", "BNNEUS66")
-	if err != nil {
-		t.Fatalf("IsValidBankIdentifier(SWIFT): %v", err)
-	}
-	if !valid {
-		t.Error("expected BNNEUS66 to be a valid SWIFT code for US")
-	}
-}
+          func TestBankcodes_GetBankNameFromShortCode(t *testing.T) {
+          	name, err := bankcodes.GetBankNameFromShortCode("US", "USBK")
+          	if err != nil {
+          		t.Fatalf("GetBankNameFromShortCode: %v", err)
+          	}
+          	if name == "" {
+          		t.Error("expected non-empty bank name for USBK")
+          	}
+          }
 
-func TestBankcodes_IsValidBankIdentifier_IFSC(t *testing.T) {
-	valid, err := bankcodes.IsValidBankIdentifier("IN", "IFSC", "ABHY0065001")
-	if err != nil {
-		t.Fatalf("IsValidBankIdentifier(IFSC): %v", err)
-	}
-	if !valid {
-		t.Error("expected ABHY0065001 to be a valid IFSC code for IN")
-	}
-}
+          func TestBankcodes_GetBankNameFromBankIdentifier(t *testing.T) {
+          	name, err := bankcodes.GetBankNameFromBankIdentifier("US", "USBKUS44")
+          	if err != nil {
+          		t.Fatalf("GetBankNameFromBankIdentifier: %v", err)
+          	}
+          	if name == "" {
+          		t.Error("expected non-empty bank name")
+          	}
+          }
 
-func TestBankcodes_GetBankNameFromShortCode(t *testing.T) {
-	name, err := bankcodes.GetBankNameFromShortCode("US", "USBK")
-	if err != nil {
-		t.Fatalf("GetBankNameFromShortCode: %v", err)
-	}
-	if name == "" {
-		t.Error("expected non-empty bank name for USBK")
-	}
-}
+          func TestBankcodes_InvalidCountry(t *testing.T) {
+          	_, err := bankcodes.GetAllBanksWithShortCodes("ZZ")
+          	if err == nil {
+          		t.Error("expected error for non-existent country ZZ")
+          	}
+          }
 
-func TestBankcodes_GetBankNameFromBankIdentifier(t *testing.T) {
-	name, err := bankcodes.GetBankNameFromBankIdentifier("US", "USBKUS44")
-	if err != nil {
-		t.Fatalf("GetBankNameFromBankIdentifier: %v", err)
-	}
-	if name == "" {
-		t.Error("expected non-empty bank name")
-	}
-}
+          func TestCountryMetadata_GetMetadataInformation(t *testing.T) {
+          	info := country_metadata.GetMetadataInformation("IN")
+          	if info.CountryName != "India" {
+          		t.Errorf("expected 'India', got %q", info.CountryName)
+          	}
+          	if info.Alpha3 != "IND" {
+          		t.Errorf("expected alpha3 'IND', got %q", info.Alpha3)
+          	}
+          	if info.DialCode != "+91" {
+          		t.Errorf("expected dial code '+91', got %q", info.DialCode)
+          	}
+          	if len(info.SupportedCurrency) == 0 {
+          		t.Error("expected non-empty SupportedCurrency for India")
+          	}
+          }
 
-func TestBankcodes_InvalidCountry(t *testing.T) {
-	_, err := bankcodes.GetAllBanksWithShortCodes("ZZ")
-	if err == nil {
-		t.Error("expected error for non-existent country ZZ")
-	}
-}
+          func TestCountryMetadata_GetMetadataInformationByISONumericCode(t *testing.T) {
+          	info := country_metadata.GetMetadataInformationByISONumericCode("356")
+          	if info.CountryName != "India" {
+          		t.Errorf("expected 'India' for numeric code 356, got %q", info.CountryName)
+          	}
+          }
 
-// --- country_metadata ---
+          func TestCountryMetadata_GetCountryCodeFromAlpha3(t *testing.T) {
+          	code := country_metadata.GetCountryCodeFromAlpha3("IND")
+          	if code != "IN" {
+          		t.Errorf("expected 'IN' for IND, got %q", code)
+          	}
+          }
 
-func TestCountryMetadata_GetMetadataInformation(t *testing.T) {
-	info := country_metadata.GetMetadataInformation("IN")
-	if info.CountryName != "India" {
-		t.Errorf("expected 'India', got %q", info.CountryName)
-	}
-	if info.Alpha3 != "IND" {
-		t.Errorf("expected alpha3 'IND', got %q", info.Alpha3)
-	}
-	if info.DialCode != "+91" {
-		t.Errorf("expected dial code '+91', got %q", info.DialCode)
-	}
-	if len(info.SupportedCurrency) == 0 {
-		t.Error("expected non-empty SupportedCurrency for India")
-	}
-}
+          func TestCountryMetadata_GetCountryCodeISO2(t *testing.T) {
+          	code := country_metadata.GetCountryCodeISO2("India")
+          	if code != "IN" {
+          		t.Errorf("expected 'IN' for 'India', got %q", code)
+          	}
+          }
 
-func TestCountryMetadata_GetMetadataInformationByISONumericCode(t *testing.T) {
-	info := country_metadata.GetMetadataInformationByISONumericCode("356")
-	if info.CountryName != "India" {
-		t.Errorf("expected 'India' for numeric code 356, got %q", info.CountryName)
-	}
-}
+          func TestCountrySubdivisions_GetCountrySubdivisions(t *testing.T) {
+          	data := country_subdivisions.GetCountrySubdivisions("IN")
+          	if data.CountryName == "" {
+          		t.Error("expected non-empty country name for IN")
+          	}
+          	if len(data.States) == 0 {
+          		t.Error("expected non-empty states for IN")
+          	}
+          }
 
-func TestCountryMetadata_GetCountryCodeFromAlpha3(t *testing.T) {
-	code := country_metadata.GetCountryCodeFromAlpha3("IND")
-	if code != "IN" {
-		t.Errorf("expected 'IN' for IND, got %q", code)
-	}
-}
+          func TestCountrySubdivisions_GetAvailableCountryCodes(t *testing.T) {
+          	codes, err := country_subdivisions.GetAvailableCountryCodes()
+          	if err != nil {
+          		t.Fatalf("GetAvailableCountryCodes: %v", err)
+          	}
+          	if len(codes) == 0 {
+          		t.Error("expected non-empty country codes list")
+          	}
+          }
 
-func TestCountryMetadata_GetCountryCodeISO2(t *testing.T) {
-	code := country_metadata.GetCountryCodeISO2("India")
-	if code != "IN" {
-		t.Errorf("expected 'IN' for 'India', got %q", code)
-	}
-}
+          func TestCountrySubdivisions_InvalidCode(t *testing.T) {
+          	data := country_subdivisions.GetCountrySubdivisions("ZZ")
+          	if data.CountryName != "" {
+          		t.Error("expected empty result for non-existent country code ZZ")
+          	}
+          }
 
-// --- country_subdivisions ---
+          func TestPhoneNumber_GetCountryTeleInformation(t *testing.T) {
+          	info := phonenumber.GetCountryTeleInformation("IN")
+          	if info.DialCode != "+91" {
+          		t.Errorf("expected '+91' for IN, got %q", info.DialCode)
+          	}
+          	if info.Format == "" {
+          		t.Error("expected non-empty format for IN")
+          	}
+          	if info.Regex == "" {
+          		t.Error("expected non-empty regex for IN")
+          	}
+          }
 
-func TestCountrySubdivisions_GetCountrySubdivisions(t *testing.T) {
-	data := country_subdivisions.GetCountrySubdivisions("IN")
-	if data.CountryName == "" {
-		t.Error("expected non-empty country name for IN")
-	}
-	if len(data.States) == 0 {
-		t.Error("expected non-empty states for IN")
-	}
-}
+          func TestPhoneNumber_EmptyCode(t *testing.T) {
+          	info := phonenumber.GetCountryTeleInformation("")
+          	if info.DialCode != "" {
+          		t.Error("expected empty result for empty country code")
+          	}
+          }
 
-func TestCountrySubdivisions_GetAvailableCountryCodes(t *testing.T) {
-	codes, err := country_subdivisions.GetAvailableCountryCodes()
-	if err != nil {
-		t.Fatalf("GetAvailableCountryCodes: %v", err)
-	}
-	if len(codes) == 0 {
-		t.Error("expected non-empty country codes list")
-	}
-}
-
-func TestCountrySubdivisions_InvalidCode(t *testing.T) {
-	data := country_subdivisions.GetCountrySubdivisions("ZZ")
-	if data.CountryName != "" {
-		t.Error("expected empty result for non-existent country code ZZ")
-	}
-}
-
-// --- phonenumber ---
-
-func TestPhoneNumber_GetCountryTeleInformation(t *testing.T) {
-	info := phonenumber.GetCountryTeleInformation("IN")
-	if info.DialCode != "+91" {
-		t.Errorf("expected '+91' for IN, got %q", info.DialCode)
-	}
-	if info.Format == "" {
-		t.Error("expected non-empty format for IN")
-	}
-	if info.Regex == "" {
-		t.Error("expected non-empty regex for IN")
-	}
-}
-
-func TestPhoneNumber_EmptyCode(t *testing.T) {
-	info := phonenumber.GetCountryTeleInformation("")
-	if info.DialCode != "" {
-		t.Error("expected empty result for empty country code")
-	}
-}
-
-func TestPhoneNumber_InvalidCode(t *testing.T) {
-	info := phonenumber.GetCountryTeleInformation("ZZ")
-	if info.DialCode != "" {
-		t.Error("expected empty result for non-existent country code ZZ")
-	}
-}
-GOEOF
+          func TestPhoneNumber_InvalidCode(t *testing.T) {
+          	info := phonenumber.GetCountryTeleInformation("ZZ")
+          	if info.DialCode != "" {
+          		t.Error("expected empty result for non-existent country code ZZ")
+          	}
+          }
+          GOEOF
 
           go mod tidy
-          echo "Running consumer integration tests against latest branch commit..."
+          echo "Running consumer integration tests..."
           go test -v ./...
-          echo "✅ All consumer integration tests passed"
+          echo "All consumer integration tests passed"
