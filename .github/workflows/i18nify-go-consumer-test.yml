@@ -1,23 +1,43 @@
 name: (i18nify-go) Consumer Integration Tests
 
-# Runs AFTER Auto-Generate Go Packages succeeds.
-# At that point go.mod has real pseudo-versions and no replace directives,
-# which is exactly what an end user gets when they run `go get`.
+# Simulates an end-user doing `go get github.com/razorpay/i18nify/packages/i18nify-go`.
+# No replace directives are added in the consumer module — the data packages
+# are resolved purely via the module proxy at their pinned pseudo-versions,
+# exactly as a real consumer would experience.
+#
+# Note: replace directives inside the dependency's own go.mod are ignored by
+# downstream consumers (Go only applies replace directives from the main module).
 on:
-  workflow_run:
-    workflows: ["Auto-Generate Go Packages"]
-    types: [completed]
+  pull_request:
 
 jobs:
+  check-if-relevant:
+    runs-on: ubuntu-latest
+    outputs:
+      modified: ${{ steps.filter.outputs.src }}
+    steps:
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            src:
+              - 'packages/i18nify-go/**'
+              - 'i18nify-data/go/**'
+
   run-consumer-test:
     name: Run Consumer Integration Tests
     runs-on: ubuntu-latest
-    # Only run when the triggering workflow succeeded
-    if: github.event.workflow_run.conclusion == 'success'
+    needs: check-if-relevant
+    if: |
+      needs.check-if-relevant.outputs.modified == 'true' &&
+      !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot')
     env:
       GONOSUMDB: github.com/razorpay/i18nify
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
@@ -25,27 +45,21 @@ jobs:
 
       - name: Run consumer integration tests
         run: |
-          # Get the latest commit on the branch AFTER auto-generate committed.
-          # auto-generate may have pushed new commits (updated go.mod, regenerated
-          # packages) so we fetch the tip of the branch, not the original trigger SHA.
-          BRANCH="${{ github.event.workflow_run.head_branch }}"
-          LATEST_SHA=$(git ls-remote https://github.com/${{ github.repository }}.git "refs/heads/${BRANCH}" | awk '{print $1}')
-
-          echo "Testing branch: ${BRANCH} at commit: ${LATEST_SHA}"
+          COMMIT_SHA=$(git rev-parse HEAD)
+          echo "Testing commit: ${COMMIT_SHA}"
 
           TEST_DIR=/tmp/i18nify-consumer-test
           mkdir -p "$TEST_DIR"
           cd "$TEST_DIR"
 
           # Init a completely external module — nothing from the repo lives here.
-          # This is exactly what an end user would do.
           go mod init consumer-test
 
-          # Pull i18nify-go at the latest branch commit.
-          # No replace directives — pure end-user experience.
-          # Replace directives inside the dependency's go.mod are ignored by Go
-          # (only the main module's replace directives apply).
-          go get github.com/razorpay/i18nify/packages/i18nify-go@${LATEST_SHA}
+          # Pull i18nify-go at the current commit — no replace directives.
+          # Replace directives inside the dependency's own go.mod are ignored by Go
+          # (only the main module's replace directives apply), so data packages are
+          # resolved from the module proxy at their pinned pseudo-versions.
+          go get github.com/razorpay/i18nify/packages/i18nify-go@${COMMIT_SHA}
 
           # Write the integration test file inline
           cat > integration_test.go << 'GOEOF'
