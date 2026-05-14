@@ -1,0 +1,4 @@
+.github/workflows/i18nify-go-consumer-test.yml
+  77d808ee-a1e2-42ab-a293-0ed32b2c09b6:2026-05-14T13:31:14.128Z 53,58-60,62,67-68,70,72-75,285-287,289,291-293,295,297,299
+---
+{"schema_version": "authorship/3.0.0", "base_commit_sha": "HEAD~1", "prompts": {"77d808ee-a1e2-42ab-a293-0ed32b2c09b6:2026-05-14T13:31:14.128Z": {"agent_id": {"tool": "claude_code", "model": ""}, "human_author": "arnav.gaur@razorpay.com", "accepted_lines": 22, "overriden_lines": 0}}}
