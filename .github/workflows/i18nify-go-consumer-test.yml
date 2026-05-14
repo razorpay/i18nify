@@ -50,18 +50,29 @@ jobs:
 
       - name: Run consumer integration tests
         run: |
+          echo "::group::Setup — resolve branch tip"
           # Fetch the latest tip of the branch — auto-generate CI may have pushed
           # additional commits (regenerated packages, updated go.mod) after the PR head.
           git fetch origin ${{ github.head_ref }}
           COMMIT_SHA=$(git rev-parse origin/${{ github.head_ref }})
-          echo "Testing branch tip: ${COMMIT_SHA}"
+          echo "Branch : ${{ github.head_ref }}"
+          echo "Commit : ${COMMIT_SHA}"
+          echo "::endgroup::"
 
+          echo "::group::Setup — init consumer module"
           TEST_DIR=/tmp/i18nify-consumer-test
           mkdir -p "$TEST_DIR"
           cd "$TEST_DIR"
-
           go mod init consumer-test
+          echo "Module initialised at ${TEST_DIR}"
+          echo "::endgroup::"
+
+          echo "::group::Setup — go get i18nify-go"
           go get github.com/razorpay/i18nify/packages/i18nify-go@${COMMIT_SHA}
+          echo "go get succeeded"
+          echo "go.mod after get:"
+          cat go.mod
+          echo "::endgroup::"
 
           cat > integration_test.go << 'GOEOF'
           package consumer
@@ -271,7 +282,18 @@ jobs:
           }
           GOEOF
 
+          echo "::group::Setup — write integration test file"
+          echo "Writing integration_test.go..."
+          echo "::endgroup::"
+
+          echo "::group::Setup — go mod tidy"
           go mod tidy
-          echo "Running consumer integration tests..."
+          echo "go.mod after tidy:"
+          cat go.mod
+          echo "::endgroup::"
+
+          echo "::group::Run integration tests"
           go test -v ./...
-          echo "All consumer integration tests passed"
+          echo "::endgroup::"
+
+          echo "✅ All consumer integration tests passed"
