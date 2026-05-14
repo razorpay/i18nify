@@ -33,6 +33,7 @@ jobs:
       !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot')
     env:
       GONOSUMDB: github.com/razorpay/i18nify
+      GOPROXY: direct
 
     steps:
       - name: Checkout repository
