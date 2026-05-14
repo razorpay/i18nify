@@ -44,10 +44,17 @@ jobs:
         with:
           go-version: '1.20'
 
+      - name: Configure git auth for Go direct VCS access
+        run: |
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
       - name: Run consumer integration tests
         run: |
-          COMMIT_SHA=$(git rev-parse HEAD)
-          echo "Testing commit: ${COMMIT_SHA}"
+          # Fetch the latest tip of the branch — auto-generate CI may have pushed
+          # additional commits (regenerated packages, updated go.mod) after the PR head.
+          git fetch origin ${{ github.head_ref }}
+          COMMIT_SHA=$(git rev-parse origin/${{ github.head_ref }})
+          echo "Testing branch tip: ${COMMIT_SHA}"
 
           TEST_DIR=/tmp/i18nify-consumer-test
           mkdir -p "$TEST_DIR"
