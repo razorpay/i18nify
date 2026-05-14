@@ -13,7 +13,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/razorpay/i18nify/i18nify-data/go/bankcodes v0.0.0-20260514120731-667ad1a4babe
-	github.com/razorpay/i18nify/i18nify-data/go/country/metadata v0.0.0-20260514131831-5b22229d6ce5
+	github.com/razorpay/i18nify/i18nify-data/go/country/metadata v0.0.0-20260514132243-2f5d05348f7b
 	github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v0.0.0-20260513110808-4917ac39d336
 	github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20260514122226-d9b38b6e9422
 	github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number v0.0.0-20260514131831-5b22229d6ce5
