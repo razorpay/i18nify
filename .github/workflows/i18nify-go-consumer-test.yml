@@ -23,6 +23,8 @@ jobs:
             src:
               - 'packages/i18nify-go/**'
               - 'i18nify-data/go/**'
+              - 'i18nify-data/**'
+              - '!i18nify-data/go/**'
 
   run-consumer-test:
     name: Run Consumer Integration Tests
