@@ -49,13 +49,15 @@ jobs:
           git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
 
       - name: Run consumer integration tests
+        env:
+          HEAD_REF: ${{ github.head_ref }}
         run: |
           echo "::group::Setup — resolve branch tip"
           # Fetch the latest tip of the branch — auto-generate CI may have pushed
           # additional commits (regenerated packages, updated go.mod) after the PR head.
-          git fetch origin ${{ github.head_ref }}
-          COMMIT_SHA=$(git rev-parse origin/${{ github.head_ref }})
-          echo "Branch : ${{ github.head_ref }}"
+          git fetch origin "$HEAD_REF"
+          COMMIT_SHA=$(git rev-parse origin/"$HEAD_REF")
+          echo "Branch : $HEAD_REF"
           echo "Commit : ${COMMIT_SHA}"
           echo "::endgroup::"
 
