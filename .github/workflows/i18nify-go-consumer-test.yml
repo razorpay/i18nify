@@ -52,15 +52,6 @@ jobs:
         env:
           HEAD_REF: ${{ github.head_ref }}
         run: |
-          echo "::group::Setup — resolve branch tip"
-          # Fetch the latest tip of the branch — auto-generate CI may have pushed
-          # additional commits (regenerated packages, updated go.mod) after the PR head.
-          git fetch origin "$HEAD_REF"
-          COMMIT_SHA=$(git rev-parse origin/"$HEAD_REF")
-          echo "Branch : $HEAD_REF"
-          echo "Commit : ${COMMIT_SHA}"
-          echo "::endgroup::"
-
           echo "::group::Setup — init consumer module"
           TEST_DIR=/tmp/i18nify-consumer-test
           mkdir -p "$TEST_DIR"
@@ -70,7 +61,10 @@ jobs:
           echo "::endgroup::"
 
           echo "::group::Setup — go get i18nify-go"
-          go get github.com/razorpay/i18nify/packages/i18nify-go@${COMMIT_SHA}
+          # Use the branch name directly — with GOPROXY=direct Go fetches from
+          # GitHub VCS and resolves to the latest commit on the branch,
+          # picking up any commits pushed by the auto-generate CI after the PR head.
+          go get github.com/razorpay/i18nify/packages/i18nify-go@"$HEAD_REF"
           echo "go get succeeded"
           echo "go.mod after get:"
           cat go.mod
