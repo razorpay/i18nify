@@ -7,7 +7,6 @@
         "Yio Chu Kang": {
           "name": "Yio Chu Kang",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "544604",
             "545506",
@@ -403,24 +402,24 @@
             "786316",
             "786317",
             "786318"
-          ]
+          ],
+          "region_name/district_name": "North-East Region"
         },
         "Yew Tee": {
           "name": "Yew Tee",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
-          "zipcodes": []
+          "zipcodes": [],
+          "region_name/district_name": "West Region"
         },
         "Ulu Bedok": {
           "name": "Ulu Bedok",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
-          "zipcodes": []
+          "zipcodes": [],
+          "region_name/district_name": "East Region"
         },
         "Tuas": {
           "name": "Tuas",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "636833",
             "637041",
@@ -1422,12 +1421,12 @@
             "638593",
             "638594",
             "638595"
-          ]
+          ],
+          "region_name/district_name": "West Region"
         },
         "Toa Payoh New Town": {
           "name": "Toa Payoh New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "298104",
             "298105",
@@ -1816,12 +1815,12 @@
             "319076",
             "319941",
             "319944"
-          ]
+          ],
+          "region_name/district_name": "Central Region"
         },
         "Tampines Estate": {
           "name": "Tampines Estate",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "506901",
             "506902",
@@ -2823,12 +2822,12 @@
             "520864",
             "520865",
             "520866"
-          ]
+          ],
+          "region_name/district_name": "East Region"
         },
         "nan": {
           "name": "nan",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "199135",
             "199136",
@@ -3818,18 +3817,18 @@
             "638273",
             "638274",
             "638275"
-          ]
+          ],
+          "region_name/district_name": ""
         },
         "Singapore": {
           "name": "Singapore",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
-          "zipcodes": []
+          "zipcodes": [],
+          "region_name/district_name": "Singapore"
         },
         "Sembawang Estate": {
           "name": "Sembawang Estate",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "575880",
             "575881",
@@ -4326,12 +4325,12 @@
             "759250",
             "759251",
             "759252"
-          ]
+          ],
+          "region_name/district_name": "North Region"
         },
         "Punggol": {
           "name": "Punggol",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "546636",
             "546637",
@@ -4951,12 +4950,12 @@
             "828855",
             "828694",
             "828871"
-          ]
+          ],
+          "region_name/district_name": "Unknown"
         },
         "Marsiling": {
           "name": "Marsiling",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "730001",
             "730002",
@@ -5106,12 +5105,12 @@
             "739277",
             "739278",
             "739279"
-          ]
+          ],
+          "region_name/district_name": "Unknown"
         },
         "Kent Ridge": {
           "name": "Kent Ridge",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "117555",
             "119073",
@@ -5155,24 +5154,24 @@
             "119278",
             "119279",
             "119280"
-          ]
+          ],
+          "region_name/district_name": "Central Region"
         },
         "Kampong Ubi": {
           "name": "Kampong Ubi",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
-          "zipcodes": []
+          "zipcodes": [],
+          "region_name/district_name": "North-East Region"
         },
         "Kampong Pasir Ris": {
           "name": "Kampong Pasir Ris",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
-          "zipcodes": []
+          "zipcodes": [],
+          "region_name/district_name": "North-East Region"
         },
         "Geylang": {
           "name": "Geylang",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "330053",
             "330054",
@@ -6174,12 +6173,12 @@
             "389473",
             "389474",
             "389476"
-          ]
+          ],
+          "region_name/district_name": "Unknown"
         },
         "Changi Village": {
           "name": "Changi Village",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "415899",
             "419701",
@@ -7181,12 +7180,12 @@
             "499643",
             "499675",
             "499676"
-          ]
+          ],
+          "region_name/district_name": "East Region"
         },
         "Buona Vista": {
           "name": "Buona Vista",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "117293",
             "117294",
@@ -7287,12 +7286,12 @@
             "139350",
             "275757",
             "275983"
-          ]
+          ],
+          "region_name/district_name": "Central Region"
         },
         "Bukit Timah Estate": {
           "name": "Bukit Timah Estate",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "229832",
             "229833",
@@ -7660,18 +7659,18 @@
             "589666",
             "589667",
             "599938"
-          ]
+          ],
+          "region_name/district_name": "Central Region"
         },
         "Bukit Mandai Village": {
           "name": "Bukit Mandai Village",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
-          "zipcodes": []
+          "zipcodes": [],
+          "region_name/district_name": "North Region"
         },
         "Boon Lay": {
           "name": "Boon Lay",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "609957",
             "609958",
@@ -7810,12 +7809,12 @@
             "649883",
             "649884",
             "649886"
-          ]
+          ],
+          "region_name/district_name": "Unknown"
         },
         "Alexandra Estate": {
           "name": "Alexandra Estate",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "119931",
             "119932",
@@ -7894,12 +7893,12 @@
             "158748",
             "158749",
             "158750"
-          ]
+          ],
+          "region_name/district_name": "Central Region"
         },
         "Ayer Raja New Town": {
           "name": "Ayer Raja New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "138647",
             "138676",
@@ -7934,12 +7933,12 @@
             "139965",
             "139966",
             "139967"
-          ]
+          ],
+          "region_name/district_name": "West Region"
         },
         "Bukit Batok New Town": {
           "name": "Bukit Batok New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "650101",
             "650102",
@@ -8641,12 +8640,12 @@
             "659919",
             "659920",
             "659921"
-          ]
+          ],
+          "region_name/district_name": "North Region"
         },
         "Hougang": {
           "name": "Hougang",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "530001",
             "530002",
@@ -9355,24 +9354,24 @@
             "538688",
             "534238",
             "534256"
-          ]
+          ],
+          "region_name/district_name": "North-East Region"
         },
         "Jurong Town": {
           "name": "Jurong Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "609431",
             "609432",
             "609433",
             "609434",
             "609435"
-          ]
+          ],
+          "region_name/district_name": "West Region"
         },
         "Jurong West": {
           "name": "Jurong West",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "640271",
             "640272",
@@ -10147,12 +10146,12 @@
             "648196",
             "648310",
             "648886"
-          ]
+          ],
+          "region_name/district_name": "Unknown"
         },
         "Serangoon New Town": {
           "name": "Serangoon New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "217956",
             "217957",
@@ -11154,12 +11153,12 @@
             "550541",
             "550542",
             "551506"
-          ]
+          ],
+          "region_name/district_name": "North-East Region"
         },
         "Simei New Town": {
           "name": "Simei New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "486047",
             "520101",
@@ -11359,12 +11358,12 @@
             "528809",
             "528810",
             "528811"
-          ]
+          ],
+          "region_name/district_name": "East Region"
         },
         "Tampines New Town": {
           "name": "Tampines New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "506901",
             "506902",
@@ -12366,12 +12365,12 @@
             "520864",
             "520865",
             "520866"
-          ]
+          ],
+          "region_name/district_name": "East Region"
         },
         "Yishun New Town": {
           "name": "Yishun New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "760101",
             "760102",
@@ -13372,12 +13371,12 @@
             "768773",
             "768774",
             "768775"
-          ]
+          ],
+          "region_name/district_name": "North Region"
         },
         "Woodlands": {
           "name": "Woodlands",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "677636",
             "677637",
@@ -14379,12 +14378,12 @@
             "731866",
             "738488",
             "738489"
-          ]
+          ],
+          "region_name/district_name": "North Region"
         },
         "Marine Parade": {
           "name": "Marine Parade",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "440080",
             "440081",
@@ -14450,18 +14449,18 @@
             "449315",
             "449316",
             "449317"
-          ]
+          ],
+          "region_name/district_name": "Unknown"
         },
         "Tiong Guan Estate": {
           "name": "Tiong Guan Estate",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
-          "zipcodes": []
+          "zipcodes": [],
+          "region_name/district_name": "Central Region"
         },
         "Bukit Panjang New Town": {
           "name": "Bukit Panjang New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "670234",
             "670235",
@@ -14524,12 +14523,12 @@
             "679946",
             "679947",
             "679910"
-          ]
+          ],
+          "region_name/district_name": "North Region"
         },
         "Bedok New Town": {
           "name": "Bedok New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "410633",
             "410634",
@@ -15531,24 +15530,24 @@
             "469132",
             "469133",
             "469134"
-          ]
+          ],
+          "region_name/district_name": "East Region"
         },
         "Clementi Housing Estate": {
           "name": "Clementi Housing Estate",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
-          "zipcodes": []
+          "zipcodes": [],
+          "region_name/district_name": "Central Region"
         },
         "Queenstown Estate": {
           "name": "Queenstown Estate",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
-          "zipcodes": []
+          "zipcodes": [],
+          "region_name/district_name": "Central Region"
         },
         "Choa Chu Kang New Town": {
           "name": "Choa Chu Kang New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "680130",
             "680131",
@@ -16348,12 +16347,12 @@
             "699817",
             "698933",
             "698940"
-          ]
+          ],
+          "region_name/district_name": "North Region"
         },
         "Admiralty": {
           "name": "Admiralty",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "732006",
             "739979",
@@ -16473,12 +16472,12 @@
             "759990",
             "759991",
             "759992"
-          ]
+          ],
+          "region_name/district_name": "Unknown"
         },
         "Newton": {
           "name": "Newton",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "307943",
             "307945",
@@ -16512,12 +16511,12 @@
             "307994",
             "307995",
             "307997"
-          ]
+          ],
+          "region_name/district_name": "Unknown"
         },
         "Sengkang New Town": {
           "name": "Sengkang New Town",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "540122",
             "540260",
@@ -16728,12 +16727,12 @@
             "792457",
             "792458",
             "793458"
-          ]
+          ],
+          "region_name/district_name": "North-East Region"
         },
         "Sentosa": {
           "name": "Sentosa",
           "timezone": "Asia/Singapore",
-          "region_name": "nan",
           "zipcodes": [
             "098072",
             "098132",
@@ -16802,7 +16801,8 @@
             "418259",
             "418260",
             "418261"
-          ]
+          ],
+          "region_name/district_name": "Central Region"
         }
       }
     }
