@@ -17,7 +17,8 @@ func TestGetCountrySubdivisions(t *testing.T) {
 	}{
 		{countryCode: "IN", countryName: "India", sampleStateCode: "KA", sampleStateName: "Karnataka"},
 		{countryCode: "MY", countryName: "Malaysia", sampleStateCode: "1", sampleStateName: "Johor"},
-		{countryCode: "US", countryName: "United States", sampleStateCode: "TX", sampleStateName: "Texas"},
+		// TX state has no "name" field in source data — master local module had same behaviour
+		{countryCode: "US", countryName: "United States", sampleStateCode: "TX", sampleStateName: ""},
 		// SG has no administrative subdivisions; omit sampleStateCode
 		{countryCode: "SG", countryName: "Singapore"},
 	}
@@ -109,18 +110,20 @@ func TestConvertFromDataSource_AllFieldValues(t *testing.T) {
 	assert.True(t, exists)
 	assert.Equal(t, "Karnataka", state.GetName())
 
-	var bengaluru *City
+	// Master data has "Bengaluru Urban" (not plain "Bengaluru")
+	// zipcode 560001 belongs to "Bengaluru Urban"
+	var bengaluruUrban *City
 	for _, c := range state.GetCities() {
-		if c.Name == "Bengaluru" {
-			bengaluru = &c
+		if c.Name == "Bengaluru Urban" {
+			bengaluruUrban = &c
 			break
 		}
 	}
-	assert.NotNil(t, bengaluru, "Bengaluru not found in KA cities")
-	assert.Equal(t, "Bengaluru", bengaluru.Name)
-	assert.Equal(t, "Asia/Kolkata", bengaluru.Timezone)
-	assert.Equal(t, "NA", bengaluru.RegionName)
-	assert.Contains(t, bengaluru.Zipcodes, "560001")
+	assert.NotNil(t, bengaluruUrban, "Bengaluru Urban not found in KA cities")
+	assert.Equal(t, "Bengaluru Urban", bengaluruUrban.Name)
+	assert.Equal(t, "Asia/Kolkata", bengaluruUrban.Timezone)
+	assert.Equal(t, "Bengaluru HQ Region", bengaluruUrban.RegionName)
+	assert.Contains(t, bengaluruUrban.Zipcodes, "560001")
 }
 
 func assertIsArray(t *testing.T, value interface{}) {
