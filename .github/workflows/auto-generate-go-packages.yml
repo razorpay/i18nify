@@ -286,12 +286,14 @@ jobs:
           VERSION="${{ steps.version.outputs.version }}"
           PACKAGE="${{ matrix.package }}"
 
-          # Retry loop: pull → update → commit → push.
-          # Concurrent matrix jobs all write go.mod; each retry pulls the latest
-          # state and re-applies this package's version on top, ensuring it always
-          # lands regardless of which job wins the push race.
+          # Retry loop: fetch+reset → update → commit → push.
+          # Using reset --hard instead of rebase avoids broken rebase state when
+          # git pull --rebase fails mid-way (e.g. conflicts from concurrent jobs).
+          # Each iteration cleanly resets to remote HEAD, applies our version, then pushes.
           for i in 1 2 3; do
-            git pull --rebase origin "$BRANCH" || true
+            git rebase --abort 2>/dev/null || true
+            git fetch origin "$BRANCH"
+            git reset --hard "origin/$BRANCH"
 
             .github/scripts/go/update-dependencies.sh "$PACKAGE" "$VERSION"
 
