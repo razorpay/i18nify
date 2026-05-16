@@ -103,6 +103,15 @@ if ! go mod tidy; then
     log_info "The module should be pushed first, then run go mod tidy"
 fi
 
+# Guard: go mod tidy can silently revert a require version when a replace
+# directive is present (it resolves the module locally and may decide the
+# version is unnecessary or inconsistent). Re-assert the version we want.
+CURRENT_VERSION=$(grep "^	${MODULE_PATH} " go.mod 2>/dev/null | awk '{print $2}' || echo "")
+if [ "$CURRENT_VERSION" != "$VERSION" ]; then
+    log_warning "go mod tidy changed version from $VERSION to '$CURRENT_VERSION', restoring..."
+    go mod edit -require "${MODULE_PATH}@${VERSION}"
+fi
+
 log_info "✅ Updated $MODULE_PATH to $VERSION"
 log_info ""
 log_info "Updated go.mod:"

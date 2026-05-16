@@ -282,6 +282,14 @@ jobs:
       - name: Commit and push go.mod
         if: steps.check-proto.outputs.has_proto == 'true'
         run: |
+          # Pull latest before staging to reduce race conflicts with concurrent jobs
+          git pull --rebase origin "$BRANCH" || true
+
+          # Re-run the update after pulling so our version wins even if a concurrent
+          # job already committed a different version for this package
+          chmod +x .github/scripts/go/update-dependencies.sh
+          .github/scripts/go/update-dependencies.sh "${{ matrix.package }}" "${{ steps.version.outputs.version }}"
+
           git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
 
           if git diff --cached --quiet; then
