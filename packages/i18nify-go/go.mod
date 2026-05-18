@@ -15,7 +15,7 @@ require (
 	github.com/razorpay/i18nify/i18nify-data/go/bankcodes v0.0.0-20260518064859-308aae52dfce
 	github.com/razorpay/i18nify/i18nify-data/go/country/metadata v0.0.0-20260518064859-308aae52dfce
 	github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v0.0.0-20260518064859-308aae52dfce
-	github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20260518064859-308aae52dfce
+	github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20260518070236-75c1009caa64
 	github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number v0.0.0-20260518070236-75c1009caa64
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
