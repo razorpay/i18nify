@@ -1,0 +1,4 @@
+packages/i18nify-go/modules/currency/currency_test.go
+  77d808ee-a1e2-42ab-a293-0ed32b2c09b6:2026-05-18T06:43:58.587Z 64
+---
+{"schema_version": "authorship/3.0.0", "base_commit_sha": "HEAD~1", "prompts": {"77d808ee-a1e2-42ab-a293-0ed32b2c09b6:2026-05-18T06:43:58.587Z": {"agent_id": {"tool": "claude_code", "model": ""}, "human_author": "arnav.gaur@razorpay.com", "accepted_lines": 1, "overriden_lines": 0}}}
