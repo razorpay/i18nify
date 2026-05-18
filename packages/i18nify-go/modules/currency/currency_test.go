@@ -61,7 +61,7 @@ func TestGetCurrencyInformation(t *testing.T) {
 		{"AED", "UAE Dirham", "د.إ", "784"},
 		{"USD", "US Dollar", "$", "840"},
 		{"BRL", "Brazilian Real", "R$", "986"},
-		{"AUD", "Australian Dollar", "A$", "36"},
+		{"AUD", "Australian Dollar", "A$", "036"},
 		{"EUR", "Euro", "€", "978"},
 		{"ZAR", "South African Rand", "R", "710"},
 	}
