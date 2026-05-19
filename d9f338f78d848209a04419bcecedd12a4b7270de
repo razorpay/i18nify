@@ -1,0 +1,4 @@
+.github/workflows/auto-generate-go-packages.yml
+  b637b576-3d21-4cbf-9cd0-4cfa0493332e:2026-05-19T12:47:28.507Z 74
+---
+{"schema_version": "authorship/3.0.0", "base_commit_sha": "HEAD~1", "prompts": {"b637b576-3d21-4cbf-9cd0-4cfa0493332e:2026-05-19T12:47:28.507Z": {"agent_id": {"tool": "claude_code", "model": ""}, "human_author": "arnav.gaur@razorpay.com", "accepted_lines": 1, "overriden_lines": 0}}}
