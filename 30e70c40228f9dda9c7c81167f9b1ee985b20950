@@ -1,0 +1,4 @@
+.github/workflows/auto-generate-go-packages.yml
+  b637b576-3d21-4cbf-9cd0-4cfa0493332e:2026-05-19T08:34:47.972Z 306-308,310,312-319,327,334,340-341,343,345,350-351,355-362,364-371,375-377,379,381-383,386-388,390-398,400-405,407-411,421,424,429-430,433
+---
+{"schema_version": "authorship/3.0.0", "base_commit_sha": "HEAD~1", "prompts": {"b637b576-3d21-4cbf-9cd0-4cfa0493332e:2026-05-19T08:34:47.972Z": {"agent_id": {"tool": "claude_code", "model": ""}, "human_author": "arnav.gaur@razorpay.com", "accepted_lines": 71, "overriden_lines": 0}}}
