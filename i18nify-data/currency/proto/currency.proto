@@ -19,3 +19,4 @@ message CurrencyInfo {
   repeated string physical_currency_denominations = 5;
 }
 
+
