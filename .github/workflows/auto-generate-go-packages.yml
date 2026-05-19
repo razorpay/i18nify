@@ -226,7 +226,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: auto-regenerate ${{ matrix.package }} Go package"
+            git commit -m "chore: auto-regenerate ${{ matrix.package }} Go package [skip ci]"
             git pull --rebase origin "$BRANCH" || true
             git push origin HEAD:"$BRANCH"
           fi
@@ -384,7 +384,7 @@ jobs:
           fi
 
           PACKAGES_LABEL=$(echo "$PACKAGES" | jq -r 'join(", ")' 2>/dev/null || echo "data packages")
-          git commit -m "chore(go): update go.mod dependencies [${PACKAGES_LABEL}]"
+          git commit -m "chore(go): update go.mod dependencies [${PACKAGES_LABEL}] [skip ci]"
           git push origin HEAD:"$BRANCH"
 
   # Release i18nify-go with updated dependencies (only on master push)
