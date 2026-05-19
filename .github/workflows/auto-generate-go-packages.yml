@@ -405,10 +405,11 @@ jobs:
           token: ${{ secrets.CI_BOT_TOKEN }}
           ref: ${{ env.BRANCH }}
 
-      - name: Configure git
+      - name: Pull latest changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          git pull origin master
 
       - name: Get current i18nify-go version
         id: current-version
