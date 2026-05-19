@@ -250,8 +250,9 @@ jobs:
         id: version
         run: |
           PACKAGE="${{ matrix.package }}"
-          # Convert package path to tag prefix (e.g., country/subdivisions -> country-subdivisions)
-          TAG_PREFIX=$(echo "$PACKAGE" | tr '/' '-')
+          # Tag prefix must match the full module path for Go module resolution
+          # e.g. country/subdivisions -> i18nify-data/go/country/subdivisions/v1.0.0
+          TAG_PREFIX="i18nify-data/go/$PACKAGE"
           
           if [ "$IS_RELEASE" == "true" ]; then
             # For release: get latest tag and bump version
@@ -331,6 +332,8 @@ jobs:
       BRANCH: ${{ needs.check-dispatch.outputs.branch || needs.detect-changes.outputs.branch }}
       IS_RELEASE: ${{ needs.check-dispatch.outputs.is_release || needs.detect-changes.outputs.is_release }}
       PACKAGES: ${{ needs.check-dispatch.outputs.packages || needs.detect-changes.outputs.packages }}
+      GONOSUMDB: github.com/razorpay/i18nify
+      GOPROXY: direct
 
     steps:
       - name: Checkout
@@ -367,7 +370,7 @@ jobs:
             fi
 
             if [ "$IS_RELEASE" == "true" ]; then
-              TAG_PREFIX=$(echo "$pkg" | tr '/' '-')
+              TAG_PREFIX="i18nify-data/go/$pkg"
               LATEST_TAG=$(git tag -l "${TAG_PREFIX}/v*" --sort=-version:refname | head -n 1 || echo "")
               if [ -z "$LATEST_TAG" ]; then
                 echo "No release tag for $pkg, skipping"
@@ -375,19 +378,20 @@ jobs:
               fi
               VERSION="v$(echo "$LATEST_TAG" | sed "s|${TAG_PREFIX}/v||")"
 
-              cd packages/i18nify-go
-              if grep -q "replace ${MODULE_PATH}" go.mod; then
-                go mod edit -dropreplace "${MODULE_PATH}"
-              fi
-              go mod edit -require "${MODULE_PATH}@${VERSION}"
-              cd ../..
+              (
+                cd packages/i18nify-go
+                if grep -q "replace ${MODULE_PATH}" go.mod; then
+                  go mod edit -dropreplace "${MODULE_PATH}"
+                fi
+                go mod edit -require "${MODULE_PATH}@${VERSION}"
+              )
             else
               .github/scripts/go/update-dependencies.sh "$pkg"
             fi
           done
 
           if [ "$IS_RELEASE" == "true" ]; then
-            cd packages/i18nify-go && go mod tidy && cd ../..
+            (cd packages/i18nify-go && go mod tidy)
           fi
 
           git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
@@ -417,7 +421,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.CI_BOT_TOKEN }}
-          ref: ${{ env.BRANCH }}
+          ref: master
 
       - name: Pull latest changes
         run: |
