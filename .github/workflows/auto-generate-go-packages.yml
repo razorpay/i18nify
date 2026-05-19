@@ -110,7 +110,7 @@ jobs:
     outputs:
       packages: ${{ steps.parse.outputs.packages }}
       branch: ${{ github.event.inputs.branch }}
-      is_release: ${{ github.event.inputs.release == 'true' }}
+      is_release: ${{ github.event.inputs.release == 'true' && github.event.inputs.branch == 'master' }}
     steps:
       - name: Parse inputs
         id: parse
