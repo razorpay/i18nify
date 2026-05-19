@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' || github.event_name == 'push'
     outputs:
-      packages: ${{ steps.filter.outputs.changes }}
+      packages: ${{ steps.filter.outputs.changes || '[]' }}
       branch: ${{ github.event.pull_request.head.ref || github.ref_name }}
       pr_number: ${{ github.event.pull_request.number }}
       is_release: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
@@ -68,10 +68,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check if triggering push has i18nify-data changes
+        id: trigger-check
+        run: |
+          git diff --name-only "${{ github.event.before }}" HEAD \
+            | grep -qE "^i18nify-data/(country/subdivisions|currency|bankcodes|country/metadata|phone-number/country-code-to-phone-number)/" \
+            && echo "has_data_changes=true" >> $GITHUB_OUTPUT \
+            || echo "has_data_changes=false" >> $GITHUB_OUTPUT
+
       - uses: dorny/paths-filter@v3
         id: filter
+        if: steps.trigger-check.outputs.has_data_changes == 'true'
         with:
-          base: ${{ github.event.before || 'HEAD~1' }}
+          base: ${{ github.event.pull_request.base.ref || github.event.before || 'HEAD~1' }}
           filters: |
             country/subdivisions:
               - 'i18nify-data/country/subdivisions/**'
