@@ -19,15 +19,3 @@ require (
 	github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number v0.0.0-20260519122052-8d578ddd3fa9
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-// Local replace directives: these modules live in the same repo and are not
-// yet published to a module proxy. Replace directives make `go` resolve them
-// from disk without hitting sum.golang.org. The release workflow
-// (update-dependencies.sh) drops these and pins real version tags on merge.
-replace (
-	github.com/razorpay/i18nify/i18nify-data/go/bankcodes => ../../i18nify-data/go/bankcodes
-	github.com/razorpay/i18nify/i18nify-data/go/country/metadata => ../../i18nify-data/go/country/metadata
-	github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions => ../../i18nify-data/go/country/subdivisions
-	github.com/razorpay/i18nify/i18nify-data/go/currency => ../../i18nify-data/go/currency
-	github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number => ../../i18nify-data/go/phone-number/country-code-to-phone-number
-)
