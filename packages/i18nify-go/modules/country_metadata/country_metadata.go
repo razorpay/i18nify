@@ -8,34 +8,67 @@
 package country_metadata
 
 import (
-	"embed"
 	"encoding/json"
 	"fmt"
 	"strings"
+
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/country/metadata"
 )
-
-//go:embed data
-var metaJsonDir embed.FS
-
-// DataFile defines the path to the JSON data file containing country metadata.
-const DataFile = "data/data.json"
 
 // Package-level cache for country meta_data (loaded once at package initialization)
 var cachedCountyMetaData *CountryMetadata
 
-// init loads the country mata data from the embedded JSON file when the package is imported.
+// init loads the country metadata from the externalized data package when the package is imported.
 func init() {
-	countryJsonData, err := metaJsonDir.ReadFile(DataFile)
+	src, err := dataSource.GetCountryMetadataData()
 	if err != nil {
-		panic(fmt.Sprintf("failed to read country meta data file: %v", err))
+		panic(fmt.Sprintf("failed to load country metadata: %v", err))
 	}
 
-	data, err := UnmarshalCountryMetadata(countryJsonData)
-	if err != nil {
-		panic(fmt.Sprintf("failed to unmarshal country meta data: %v", err))
-	}
-
+	data := convertFromDataSource(src)
 	cachedCountyMetaData = &data
+}
+
+// convertFromDataSource maps the proto-generated CountryMetadataData to the module's CountryMetadata type.
+func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata {
+	if src == nil {
+		return CountryMetadata{}
+	}
+	info := make(map[string]MetadataInformation, len(src.GetMetadataInformation()))
+	for code, cm := range src.GetMetadataInformation() {
+		if cm == nil {
+			continue
+		}
+		timezones := make(map[string]Timezone, len(cm.GetTimezones()))
+		for tzKey, tzVal := range cm.GetTimezones() {
+			if tzVal != nil {
+				timezones[tzKey] = Timezone{UTCOffset: tzVal.GetUtcOffset()}
+			}
+		}
+		locales := make(map[string]Locale, len(cm.GetLocales()))
+		for locKey, locVal := range cm.GetLocales() {
+			if locVal != nil {
+				locales[locKey] = Locale{Name: locVal.GetName()}
+			}
+		}
+		info[code] = MetadataInformation{
+			Alpha3:            cm.GetAlpha_3(),
+			ContinentCode:     cm.GetContinentCode(),
+			ContinentName:     cm.GetContinentName(),
+			CountryName:       cm.GetCountryName(),
+			SupportedCurrency: cm.GetSupportedCurrency(),
+			DefaultLocale:     cm.GetDefaultLocale(),
+			DialCode:          cm.GetDialCode(),
+			Flag:              cm.GetFlag(),
+			Locales:           locales,
+			NumericCode:       cm.GetNumericCode(),
+			Sovereignty:       cm.GetSovereignty(),
+			TimezoneOfCapital: cm.GetTimezoneOfCapital(),
+			Timezones:         timezones,
+			DefaultCurrency:   cm.GetDefaultCurrency(),
+		}
+	}
+	return CountryMetadata{MetadataInformation: info}
 }
 
 // UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
@@ -164,23 +197,11 @@ func GetCountryCodeFromAlpha3(alpha3 string) string {
 }
 
 func GetCountryCodeISO2(countryName string) string {
-	metaJsonData, err := metaJsonDir.ReadFile(DataFile)
-	if err != nil {
-		fmt.Printf("Error reading country metadata file: %v", err)
-		return ""
-	}
-
-	allCountryMetaData, err := UnmarshalCountryMetadata(metaJsonData)
-	if err != nil {
-		fmt.Printf("Error unmarshalling country metadata: %v", err)
-		return ""
-	}
 	normalizedName := strings.ToUpper(strings.TrimSpace(countryName))
-	for code, info := range allCountryMetaData.MetadataInformation {
+	for code, info := range cachedCountyMetaData.MetadataInformation {
 		if strings.ToUpper(info.CountryName) == normalizedName {
 			return code
 		}
 	}
-
 	return ""
 }

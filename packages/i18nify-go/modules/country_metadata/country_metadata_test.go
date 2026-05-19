@@ -1,15 +1,12 @@
 package country_metadata
 
 import (
-	_ "encoding/json"
-	"errors"
 	"github.com/stretchr/testify/assert"
-	"os"
 	"testing"
 )
 
 func TestUnmarshalCountryMetadata(t *testing.T) {
-	jsonData, err := os.ReadFile("data/data.json")
+	jsonData := []byte(`{"metadata_information":{"IN":{"country_name":"India","continent_code":"AS","continent_name":"Asia","alpha_3":"IND","numeric_code":"356","flag":"https://flagcdn.com/in.svg","sovereignty":"UN member state","dial_code":"+91","supported_currency":["INR"],"timezones":{"Asia/Kolkata":{"utc_offset":"UTC +05:30"}},"timezone_of_capital":"Asia/Kolkata","locales":{"en_IN":{"name":"English (India)"},"hi":{"name":"Hindi"}},"default_locale":"en_IN","default_currency":"INR"}}}`)
 	countryMetadata, err := UnmarshalCountryMetadata(jsonData)
 
 	assert.NoError(t, err, "Unexpected error during unmarshal")
@@ -63,25 +60,7 @@ func TestMarshalCountryMetadata(t *testing.T) {
 	assert.JSONEq(t, expectedJSON, string(marshaledJSON))
 }
 
-var readFileFunc = os.ReadFile
-
 func TestGetMetadataInformation(t *testing.T) {
-	jsonData, err := os.ReadFile("data/data.json")
-
-	// Mock implementation of os.ReadFile
-	readFileFunc = func(filename string) ([]byte, error) {
-		return jsonData, errors.New("error reading JSON file")
-	}
-	defer func() {
-		// Restore the original implementation after the test
-		readFileFunc = os.ReadFile
-	}()
-
-	_, err = readFileFunc(DataFile)
-	if err != nil {
-		return
-	}
-
 	result := GetMetadataInformation("IN")
 	assertINMetaData(t, result)
 }

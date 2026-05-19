@@ -1,16 +1,13 @@
 package phonenumber
 
 import (
-	_ "encoding/json"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
 func TestUnmarshalPhoneNumber(t *testing.T) {
-	jsonData, err := teleJsonDir.ReadFile(DataFile)
-	assert.NoError(t, err, "Failed to read test data file")
-
+	jsonData := []byte(`{"country_tele_information":{"IN":{"dial_code":"+91","format":"xxxx xxxxxx","regex":"^[6-9]\\d{9}$"}}}`)
 	result, err := UnmarshalPhoneNumber(jsonData)
 	assert.NoError(t, err, "Unexpected error during unmarshal")
 

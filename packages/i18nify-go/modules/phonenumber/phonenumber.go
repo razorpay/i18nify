@@ -8,15 +8,42 @@
 package phonenumber
 
 import (
-	"embed"
 	"encoding/json"
+	"fmt"
+
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number"
 )
 
-//go:embed data
-var teleJsonDir embed.FS
+// cachedPhoneData holds phone data loaded once at package initialization.
+var cachedPhoneData *PhoneNumber
 
-// DataFile defines the path to the JSON data file containing country telephone number information.
-const DataFile = "data/data.json"
+func init() {
+	src, err := dataSource.GetCountryPhoneData()
+	if err != nil {
+		panic(fmt.Sprintf("failed to load phone number data: %v", err))
+	}
+	data := convertFromDataSource(src)
+	cachedPhoneData = &data
+}
+
+// convertFromDataSource maps proto-generated CountryPhoneData to the module's PhoneNumber type.
+func convertFromDataSource(src *dataSource.CountryPhoneData) PhoneNumber {
+	if src == nil {
+		return PhoneNumber{}
+	}
+	info := make(map[string]CountryTeleInformation, len(src.GetCountryTeleInformation()))
+	for code, pi := range src.GetCountryTeleInformation() {
+		if pi == nil {
+			continue
+		}
+		info[code] = CountryTeleInformation{
+			DialCode: pi.GetDialCode(),
+			Format:   pi.GetFormat(),
+			Regex:    pi.GetRegex(),
+		}
+	}
+	return PhoneNumber{CountryTeleInformation: info}
+}
 
 // UnmarshalPhoneNumber parses JSON data into a PhoneNumber struct.
 func UnmarshalPhoneNumber(data []byte) (PhoneNumber, error) {
@@ -45,25 +72,10 @@ func GetCountryTeleInformation(code string) CountryTeleInformation {
 	if code == "" {
 		return CountryTeleInformation{}
 	}
-
-	// Read JSON data file containing country telephone information.
-	teleJsonData, err := teleJsonDir.ReadFile(DataFile)
-	if err != nil {
-		return CountryTeleInformation{}
-	}
-
-	// Unmarshal JSON data into PhoneNumber struct.
-	allCountryTeleInfo, err := UnmarshalPhoneNumber(teleJsonData)
-	if err != nil {
-		return CountryTeleInformation{}
-	}
-
-	// Retrieve telephone information for the specified country code.
-	info, exists := allCountryTeleInfo.CountryTeleInformation[code]
+	info, exists := cachedPhoneData.CountryTeleInformation[code]
 	if !exists {
 		return CountryTeleInformation{}
 	}
-
 	return info
 }
 

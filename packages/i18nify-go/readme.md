@@ -1,91 +1,9 @@
 # i18nify-go
+
 A comprehensive internationalization solution for Go applications, providing easy access to country, currency, phone number, bank codes, and subdivision data.
 
 ## Requirements
-- Go 1.16 or higher
-- No external dependencies
-
-## Features
-
-### 1. Country Metadata
-- Country names and codes
-- Supported currencies
-- International dial codes
-- Timezone information
-- Default locale settings
-- Example:
-```go
-country := i18nify_go.NewCountry("IN")
-metaData := country.GetCountryMetadata()
-fmt.Printf("Country: %s\n", metaData.CountryName)       // India
-fmt.Printf("Currency: %v\n", metaData.SupportedCurrency) // [INR]
-fmt.Printf("Dial Code: %s\n", metaData.DialCode)        // +91
-```
-
-### 2. Currency Module
-- Currency names and symbols
-- Currency codes (ISO 4217)
-- Minor unit information
-- Physical currency denominations
-- Numeric codes
-- Direct currency symbol retrieval
-- Currency conversion between major and minor units
-- Example:
-```go
-// Get currency information
-currencyIN := country.GetCountryCurrency()
-fmt.Printf("Currency Name: %s\n", currencyIN[0].Name) // Indian Rupee
-fmt.Printf("Symbol: %s\n", currencyIN[0].Symbol)      // ₹
-
-// Convert between major and minor units
-majorAmount, _ := currency.ConvertToMajorUnit("INR", 1234) // 12.34 rupees
-minorAmount, _ := currency.ConvertToMinorUnit("USD", 12.34) // 1234 cents
-```
-
-### 3. Phone Number Handling
-- International dial codes
-- Phone number validation patterns
-- Country-specific phone number formats
-- Direct phone number information retrieval
-- Example:
-```go
-phoneNumber := country.GetCountryPhoneNumber()
-fmt.Printf("Dial Code: %s\n", phoneNumber.DialCode)  // +91
-fmt.Printf("Regex: %s\n", phoneNumber.Regex)         // /^(?:(?:\+|0{0,2})91\s*[-]?\s*|[0]?)?[6789]\d{9}$/
-```
-
-### 4. Subdivisions (States) Information
-- State/province names and codes
-- City information
-- Postal/ZIP code data
-- City-to-ZIP code mapping
-- State lookup by ZIP code
-- Example:
-```go
-subdivisions := country.GetCountrySubDivisions()
-state := subdivisions.GetStates()["KA"]
-fmt.Printf("State: %s\n", state.GetName())        // Karnataka
-fmt.Printf("Cities: %d\n", len(state.GetCities())) // 58
-
-// Get state by zipcode
-states := country.GetStatesByZipCode("452010")
-fmt.Printf("State: %s\n", states[0].GetName())    // Madhya Pradesh
-```
-
-### 5. Bank Codes
-- IFSC code validation
-- Bank name lookup by short code
-- Bank identifier retrieval
-- Bank name lookup by identifier
-- Example:
-```go
-// Validate IFSC code
-isValid, _ := bankcodes.IsValidBankIdentifier("IN", bankcodes.IdentifierTypeIFSC, "HDFC0000001")
-
-// Get bank information
-bankName, _ := bankcodes.GetBankNameFromShortCode("IN", "HDFC") // HDFC Bank Limited
-identifiers, _ := bankcodes.GetDefaultBankIdentifiersFromShortCode("IN", "HDFC")
-```
+- Go 1.20 or higher
 
 ## Installation
 
@@ -93,82 +11,210 @@ identifiers, _ := bankcodes.GetDefaultBankIdentifiersFromShortCode("IN", "HDFC")
 go get github.com/razorpay/i18nify/packages/i18nify-go
 ```
 
-## Quick Start
+## How Data Is Loaded
 
-```go
-package main
+This package uses an **externalized data architecture**. All data lives in dedicated Go modules under [`i18nify-data/go/`](../../i18nify-data/go/) in this repository, separate from the consumer code.
 
-import (
-    "fmt"
-    i18nify_go "github.com/razorpay/i18nify/packages/i18nify-go"
-)
-
-func main() {
-    // Initialize for a country
-    country := i18nify_go.NewCountry("IN")
-    
-    // Get basic country information
-    metaData := country.GetCountryMetadata()
-    fmt.Printf("Country: %s\n", metaData.CountryName)       // India
-    fmt.Printf("Currency: %v\n", metaData.SupportedCurrency) // [INR]
-    fmt.Printf("Dial Code: %s\n", metaData.DialCode)        // +91
-}
+```
+i18nify-data/go/
+├── bankcodes/                          # Bank codes data package
+├── currency/                           # Currency data package
+├── country/
+│   ├── metadata/                       # Country metadata data package
+│   └── subdivisions/                   # Country subdivisions data package
+└── phone-number/
+    └── country-code-to-phone-number/   # Phone number data package
 ```
 
-## Usage
+### How it works
 
-For comprehensive examples of how to use all features of i18nify-go, please refer to the [example.go](example/example.go) file. The examples cover:
+Each data package:
+1. Contains a **proto-generated Go struct** (`*.pb.go`) defining the data schema
+2. Embeds the source JSON data via `//go:embed data/*.json`
+3. Exposes a **`Get*Data()` function** that deserializes the JSON into the proto struct once (lazy, cached)
 
-1. Basic country information retrieval
-2. Currency operations and information
-3. Phone number handling and validation
-4. Subdivision and location data access
-5. Bank code validation and information retrieval
+The consumer modules (`packages/i18nify-go/modules/`) import these data packages and call the getter functions. They then convert the proto types into their own exported types via a `convertFromDataSource()` function.
 
-Each example includes proper error handling and demonstrates real-world usage scenarios.
+```
+Source JSON (i18nify-data/*)
+    ↓  copied by generate-package.sh
+Embedded JSON (i18nify-data/go/*/data/*.json)
+    ↓  protojson.Unmarshal (once, cached)
+Proto struct (*pb.go)
+    ↓  convertFromDataSource()
+Consumer struct (returned to callers)
+```
+
+### Data lifecycle
+
+- Data is loaded **once** on first call via `sync.Once` (single file) or an RWMutex cache keyed by country code (multi-file)
+- All subsequent calls return from the in-memory cache
+- The Go binary embeds all data at compile time — no network calls, no file I/O at runtime
+
+### Updating data
+
+Data is updated automatically by the **Auto-Generate Go Packages** CI workflow whenever source data changes in `i18nify-data/`. The workflow:
+1. Validates the source data against the proto schema
+2. Regenerates the data package (copies JSON, recompiles proto)
+3. Commits the updated package and bumps the version in `go.mod`
+
+---
+
+## Features
+
+### 1. Country Metadata
+- Country names and codes (ISO 3166-1 alpha-2 and alpha-3)
+- Supported currencies and default currency
+- International dial codes
+- Timezone information with UTC offsets
+- Default locale settings
+- Locale list
+
+```go
+import "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
+
+info := country_metadata.GetMetadataInformation("IN")
+fmt.Println(info.CountryName)       // India
+fmt.Println(info.DialCode)          // +91
+fmt.Println(info.SupportedCurrency) // [INR]
+fmt.Println(info.Alpha3)            // IND
+
+// Lookup by numeric code
+info = country_metadata.GetMetadataInformationByISONumericCode("356") // India
+
+// Lookup by alpha-3
+code := country_metadata.GetCountryCodeFromAlpha3("IND") // IN
+
+// Lookup by country name
+code = country_metadata.GetCountryCodeISO2("India") // IN
+```
+
+### 2. Currency
+- Currency names, symbols, and ISO 4217 numeric codes
+- Minor unit (decimal places)
+- Physical currency denominations
+- Conversion between major and minor units
+
+```go
+import "github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
+
+info, _ := currency.GetCurrencyInformation("INR")
+fmt.Println(info.Name)    // Indian Rupee
+fmt.Println(info.Symbol)  // ₹
+fmt.Println(info.NumericCode) // 356
+
+sym, _ := currency.GetCurrencySymbol("USD")  // $
+
+code, _ := currency.GetCurrencyCodeByISONumericCode("840") // USD
+
+// Format amounts
+formatted, _ := info.FormatCurrency(1500000, "en-IN") // 15,00,000.00
+```
+
+### 3. Phone Numbers
+- International dial codes
+- Country-specific phone number format patterns
+- Regex for validation
+
+```go
+import "github.com/razorpay/i18nify/packages/i18nify-go/modules/phonenumber"
+
+info := phonenumber.GetCountryTeleInformation("IN")
+fmt.Println(info.DialCode) // +91
+fmt.Println(info.Format)   // xxxx xxxxxx
+fmt.Println(info.Regex)    // (?:000800|[2-9]\d\d)\d{7}|1\d{7,12}
+```
+
+### 4. Country Subdivisions
+- State/province names and codes
+- City information with timezones and district names
+- Postal/ZIP code data
+- City-to-ZIP code mapping
+- Available country codes
+
+```go
+import "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
+
+data := country_subdivisions.GetCountrySubdivisions("IN")
+fmt.Println(data.CountryName) // India
+
+state, _ := data.GetStateByStateCode("KA")
+fmt.Println(state.GetName())         // Karnataka
+fmt.Println(len(state.GetCities()))  // 30
+
+// List all available country codes
+codes, _ := country_subdivisions.GetAvailableCountryCodes() // [IN MY SG US]
+```
+
+**Supported countries:** IN (India), MY (Malaysia), SG (Singapore), US (United States)
+
+### 5. Bank Codes
+- SWIFT / BIC code validation
+- Routing number validation (US)
+- IFSC code validation (India)
+- Bank name lookup by short code or identifier
+- Full bank list per country
+
+```go
+import "github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
+
+// Validate an identifier
+valid, _ := bankcodes.IsValidBankIdentifier("IN", "IFSC", "ABHY0065001") // true
+valid, _ = bankcodes.IsValidBankIdentifier("US", "ROUTING_NUMBER", "053208066") // true
+
+// Lookup by short code
+name, _ := bankcodes.GetBankNameFromShortCode("US", "USBK")  // U.S. BANK N.A.
+ids, _  := bankcodes.GetDefaultBankIdentifiersFromShortCode("US", "BUYE")
+
+// All banks for a country
+banks, _ := bankcodes.GetAllBanksWithShortCodes("IN") // map[shortCode]bankName
+```
+
+**Supported countries:** IN (India), MY (Malaysia), SG (Singapore), US (United States)
+
+---
 
 ## Package Structure
 
 ```
-i18nify-go/
+packages/i18nify-go/
 ├── modules/
-│   ├── bankcodes/        # Bank code validation and information
-│   ├── currency/         # Currency-related operations
-│   ├── phonenumber/      # Phone number handling
-│   ├── country_metadata/ # Country information
-│   └── country_subdivisions/ # State and city information
+│   ├── bankcodes/            # Bank code validation and information
+│   ├── currency/             # Currency information and formatting
+│   ├── phonenumber/          # Phone number formats and dial codes
+│   ├── country_metadata/     # Country metadata (dial code, flag, locale, etc.)
+│   └── country_subdivisions/ # States, cities, and postal codes
 └── example/
-    └── example.go        # Comprehensive usage examples
+    └── example.go            # Usage examples
+
+i18nify-data/go/              # Externalized data packages (auto-generated)
+├── bankcodes/
+├── currency/
+├── country/
+│   ├── metadata/
+│   └── subdivisions/
+└── phone-number/
+    └── country-code-to-phone-number/
 ```
 
-## Performance Considerations
-
-- The package loads data from JSON files on first use and caches it in memory
-- All operations after initial load are performed in memory
-- Consider the memory footprint when working with large datasets
-- For optimal performance, initialize country objects once and reuse them
-- Data is loaded lazily, only when needed
-- Memory usage is optimized by sharing common data structures
-
 ## Data Sources
-- India (IN): [All India Pincode Directory](https://www.data.gov.in/catalog/all-india-pincode-directory)
-- Malaysia (MY): [Malaysia Postcode](https://malaysiapostcode.com/)
-- USA (US): [United States ZIP Codes](https://www.unitedstateszipcodes.org)
-- Singapore (SG): To be determined
+
+| Module | Countries | Source |
+|---|---|---|
+| Subdivisions | IN | [All India Pincode Directory](https://www.data.gov.in/catalog/all-india-pincode-directory) |
+| Subdivisions | MY | [Malaysia Postcode](https://malaysiapostcode.com/) |
+| Subdivisions | US | [United States ZIP Codes](https://www.unitedstateszipcodes.org) |
+| Subdivisions | SG | Singapore postal data |
+| Currency | All | ISO 4217 |
+| Country Metadata | 249 countries | ISO 3166-1 |
+| Bank Codes | IN, MY, SG, US | Country-specific banking registries |
+| Phone Numbers | 260 countries | ITU-T E.164 |
 
 ## Contributing
-We welcome contributions to improve this package! Please feel free to:
+
 - Open issues for bugs or feature requests
 - Submit pull requests with improvements
-- Help expand the data coverage for more countries
-- Add more test cases
-- Improve documentation
-- Add support for more data formats
+- To add a new country to subdivisions or bankcodes, add the source data under `i18nify-data/` — the CI pipeline auto-generates the Go package
 
 ## License
 [License details to be added]
-
-## Support
-For support, please:
-- Open an issue in the GitHub repository
-- Check the [example.go](example/example.go) file for usage examples

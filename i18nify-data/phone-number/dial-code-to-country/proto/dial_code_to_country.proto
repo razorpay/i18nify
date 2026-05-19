@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package dial_code_to_country;
+
+// DialCodeToCountryData maps dial codes to country codes.
+// Data files: data.json
+message DialCodeToCountryData {
+  map<string, CountryCodes> dial_code_to_country = 1;
+}
+
+// CountryCodes contains a list of country codes for a dial code.
+message CountryCodes {
+  repeated string codes = 1;
+}
+
