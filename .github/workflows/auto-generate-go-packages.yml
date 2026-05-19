@@ -403,7 +403,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.CI_BOT_TOKEN }}
-          ref: master
+          ref: ${{ env.BRANCH }}
 
       - name: Configure git
         run: |
