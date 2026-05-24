@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package address;
+
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/address;address";
+
+// AddressData is the top-level container for all country address configurations.
+// Data files: address_config.json
+message AddressData {
+  map<string, AddressConfig> countries = 1;
+}
+
+// AddressConfig holds the address form specification for a single country.
+message AddressConfig {
+  string country_code = 1;
+  string country_name = 2;
+  repeated AddressField fields = 3;
+  string format_template = 4;
+}
+
+// AddressField describes a single input field in a country's address form.
+message AddressField {
+  // key uniquely identifies the field within a country's address form.
+  // Common values: area, block, canton, city, colonia, complement, county,
+  // department, district, eircode, emirate, governorate, line1, line2,
+  // neighborhood, oblast, pincode, poBox, postalCode, postcode, prefecture,
+  // province, region, sortingCode, state, subdistrict, suburb, ward, zipCode, zone.
+  string key = 1;
+
+  // label is the human-readable field name shown in the UI (e.g. "PIN Code", "ZIP Code").
+  string label = 2;
+
+  // placeholder is the hint text shown inside the input (e.g. "6-digit PIN code").
+  string placeholder = 3;
+
+  // required indicates whether this field must be filled for a valid address.
+  bool required = 4;
+
+  // type controls the input widget and validation behaviour.
+  FieldType type = 5;
+
+  // max_length is the maximum number of characters allowed (0 = unlimited).
+  int32 max_length = 6;
+
+  // validation_regex is an optional Java-compatible regular expression used to
+  // validate the field value.  Primarily used for postal_code fields.
+  string validation_regex = 7;
+
+  // validation_message is the error shown when validation_regex fails.
+  string validation_message = 8;
+}
+
+// FieldType controls the input widget rendered for an AddressField.
+enum FieldType {
+  // Default / unknown – treat as text.
+  FIELD_TYPE_UNSPECIFIED = 0;
+
+  // Free-form text input (street lines, city names, etc.).
+  FIELD_TYPE_TEXT = 1;
+
+  // Dropdown populated from a predefined list of administrative subdivisions
+  // (states, provinces, prefectures, emirates, etc.).
+  FIELD_TYPE_SELECT = 2;
+
+  // Postal / ZIP / PIN code input.  May carry a validation_regex.
+  FIELD_TYPE_POSTAL_CODE = 3;
+}

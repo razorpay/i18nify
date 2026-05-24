@@ -1,0 +1,3253 @@
+{
+  "IN": {
+    "countryCode": "IN",
+    "countryName": "India",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House / Flat / Block No.",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Street, Colony, Locality",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "state",
+        "label": "State",
+        "placeholder": "Select State",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "pincode",
+        "label": "PIN Code",
+        "placeholder": "6-digit PIN code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{6}$",
+        "validationMessage": "Enter a valid India postal code (e.g. 110034)",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {pincode}\n{state}\nIndia"
+  },
+  "MY": {
+    "countryCode": "MY",
+    "countryName": "Malaysia",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Unit / Floor / Building",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Street name, Area",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "state",
+        "label": "State",
+        "placeholder": "Select State",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postcode",
+        "label": "Postcode",
+        "placeholder": "5-digit postcode",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Malaysia postal code (e.g. 43000)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postcode} {city}\n{state}\nMalaysia"
+  },
+  "SG": {
+    "countryCode": "SG",
+    "countryName": "Singapore",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Block / House number, Street name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Unit number, Building name",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "6-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{6}$",
+        "validationMessage": "Enter a valid Singapore postal code (e.g. 546080)",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\nSINGAPORE {postalCode}\nSingapore"
+  },
+  "US": {
+    "countryCode": "US",
+    "countryName": "United States",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street address, P.O. box",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, suite, unit, building, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "state",
+        "label": "State",
+        "placeholder": "Select State",
+        "required": true,
+        "type": "select",
+        "maxLength": 2
+      },
+      {
+        "key": "zipCode",
+        "label": "ZIP Code",
+        "placeholder": "12345 or 12345-6789",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^(\\d{5})(?:[ \\-](\\d{4}))?$",
+        "validationMessage": "Enter a valid United States postal code (e.g. 95014)",
+        "maxLength": 10
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}, {state} {zipCode}\nUnited States"
+  },
+  "GB": {
+    "countryCode": "GB",
+    "countryName": "United Kingdom",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House name or number, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "District, Town",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "county",
+        "label": "County",
+        "placeholder": "County (optional)",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postcode",
+        "label": "Postcode",
+        "placeholder": "e.g. SW1A 1AA",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^GIR ?0AA|(?:(?:AB|AL|B|BA|BB|BD|BF|BH|BL|BN|BR|BS|BT|BX|CA|CB|CF|CH|CM|CO|CR|CT|CV|CW|DA|DD|DE|DG|DH|DL|DN|DT|DY|E|EC|EH|EN|EX|FK|FY|G|GL|GY|GU|HA|HD|HG|HP|HR|HS|HU|HX|IG|IM|IP|IV|JE|KA|KT|KW|KY|L|LA|LD|LE|LL|LN|LS|LU|M|ME|MK|ML|N|NE|NG|NN|NP|NR|NW|OL|OX|PA|PE|PH|PL|PO|PR|RG|RH|RM|S|SA|SE|SG|SK|SL|SM|SN|SO|SP|SR|SS|ST|SW|SY|TA|TD|TF|TN|TQ|TR|TS|TW|UB|W|WA|WC|WD|WF|WN|WR|WS|WV|YO|ZE)(?:\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}))|BFPO ?\\d{1,4}$",
+        "validationMessage": "Enter a valid United Kingdom postal code (e.g. EC1Y 8SY)",
+        "maxLength": 8
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}\n{postcode}\nUnited Kingdom"
+  },
+  "AE": {
+    "countryCode": "AE",
+    "countryName": "United Arab Emirates",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Apartment / Villa / Building name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Street / Area",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "emirate",
+        "label": "Emirate",
+        "placeholder": "Select Emirate",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "poBox",
+        "label": "P.O. Box",
+        "placeholder": "P.O. Box number (optional)",
+        "required": false,
+        "type": "text",
+        "validationRegex": "^[0-9]{1,6}$",
+        "validationMessage": "Enter a valid P.O. Box number",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{emirate}\nUnited Arab Emirates"
+  },
+  "AU": {
+    "countryCode": "AU",
+    "countryName": "Australia",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Unit / Street number and name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Building, floor, etc.",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "suburb",
+        "label": "Suburb",
+        "placeholder": "Suburb / Town",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "state",
+        "label": "State / Territory",
+        "placeholder": "Select State",
+        "required": true,
+        "type": "select",
+        "maxLength": 3
+      },
+      {
+        "key": "postcode",
+        "label": "Postcode",
+        "placeholder": "4-digit postcode",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Australia postal code (e.g. 2060)",
+        "maxLength": 4
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{suburb} {state} {postcode}\nAustralia"
+  },
+  "CA": {
+    "countryCode": "CA",
+    "countryName": "Canada",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street number and name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, suite, unit",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "province",
+        "label": "Province / Territory",
+        "placeholder": "Select Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 2
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "e.g. A1A 1A1",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^[ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJ-NPRSTV-Z] ?\\d[ABCEGHJ-NPRSTV-Z]\\d$",
+        "validationMessage": "Enter a valid Canada postal code (e.g. H3Z 2Y7)",
+        "maxLength": 7
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {province} {postalCode}\nCanada"
+  },
+  "SA": {
+    "countryCode": "SA",
+    "countryName": "Saudi Arabia",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Building / Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Neighbourhood / District",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "district",
+        "label": "District",
+        "placeholder": "District (optional)",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Saudi Arabia postal code (e.g. 11564)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{district}\n{city} {postalCode}\nSaudi Arabia"
+  },
+  "PH": {
+    "countryCode": "PH",
+    "countryName": "Philippines",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House / Unit / Building",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Street / Barangay",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Municipality",
+        "placeholder": "City or Municipality",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "province",
+        "label": "Province",
+        "placeholder": "Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Philippines postal code (e.g. 1008)",
+        "maxLength": 4
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}, {province} {postalCode}\nPhilippines"
+  },
+  "ID": {
+    "countryCode": "ID",
+    "countryName": "Indonesia",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "RT/RW, Village / Kelurahan",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Regency",
+        "placeholder": "Kota / Kabupaten",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "province",
+        "label": "Province",
+        "placeholder": "Select Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Indonesia postal code (e.g. 40115)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}\n{province} {postalCode}\nIndonesia"
+  },
+  "BD": {
+    "countryCode": "BD",
+    "countryName": "Bangladesh",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House / Flat / Road",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Block / Area / Thana",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "district",
+        "label": "District",
+        "placeholder": "District (optional)",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Bangladesh postal code (e.g. 1340)",
+        "maxLength": 4
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} - {postalCode}\nBangladesh"
+  },
+  "DE": {
+    "countryCode": "DE",
+    "countryName": "Germany",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and house number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor, c/o",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Germany postal code (e.g. 26133)",
+        "maxLength": 5
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nGermany"
+  },
+  "FR": {
+    "countryCode": "FR",
+    "countryName": "France",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street number and name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, building, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{2} ?\\d{3}$",
+        "validationMessage": "Enter a valid France postal code (e.g. 33380)",
+        "maxLength": 5
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "sortingCode",
+        "label": "CEDEX",
+        "placeholder": "CEDEX (business only, optional)",
+        "required": false,
+        "type": "text",
+        "maxLength": 20
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nFrance"
+  },
+  "IT": {
+    "countryCode": "IT",
+    "countryName": "Italy",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "CAP (Postal Code)",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Italy postal code (e.g. 00144)",
+        "maxLength": 5
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "province",
+        "label": "Province",
+        "placeholder": "Select Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 2
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city} {province}\nItaly"
+  },
+  "ES": {
+    "countryCode": "ES",
+    "countryName": "Spain",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Floor, door, staircase",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Spain postal code (e.g. 28039)",
+        "maxLength": 5
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "province",
+        "label": "Province",
+        "placeholder": "Select Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city} {province}\nSpain"
+  },
+  "NL": {
+    "countryCode": "NL",
+    "countryName": "Netherlands",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postcode",
+        "placeholder": "e.g. 1234 AB",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^[1-9]\\d{3} ?(?:[A-RT-Z][A-Z]|S[BCE-RT-Z])$",
+        "validationMessage": "Enter a valid Netherlands postal code (e.g. 1234 AB)",
+        "maxLength": 7
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nNetherlands"
+  },
+  "BE": {
+    "countryCode": "BE",
+    "countryName": "Belgium",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Belgium postal code (e.g. 4000)",
+        "maxLength": 4
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nBelgium"
+  },
+  "CH": {
+    "countryCode": "CH",
+    "countryName": "Switzerland",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, c/o",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Switzerland postal code (e.g. 2544)",
+        "maxLength": 4
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "canton",
+        "label": "Canton",
+        "placeholder": "Select Canton",
+        "required": false,
+        "type": "select",
+        "maxLength": 2
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\nCH-{postalCode} {city}\nSwitzerland"
+  },
+  "AT": {
+    "countryCode": "AT",
+    "countryName": "Austria",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, door",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Austria postal code (e.g. 1010)",
+        "maxLength": 4
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nAustria"
+  },
+  "PL": {
+    "countryCode": "PL",
+    "countryName": "Poland",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "e.g. 00-001",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{2}-\\d{3}$",
+        "validationMessage": "Enter a valid Poland postal code (e.g. 00-950)",
+        "maxLength": 6
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nPoland"
+  },
+  "SE": {
+    "countryCode": "SE",
+    "countryName": "Sweden",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor, c/o",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "e.g. 123 45",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{3} ?\\d{2}$",
+        "validationMessage": "Enter a valid Sweden postal code (e.g. 11455)",
+        "maxLength": 6
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\nSE-{postalCode} {city}\nSweden"
+  },
+  "NO": {
+    "countryCode": "NO",
+    "countryName": "Norway",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, c/o",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Norway postal code (e.g. 0025)",
+        "maxLength": 4
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nNorway"
+  },
+  "DK": {
+    "countryCode": "DK",
+    "countryName": "Denmark",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Floor, apartment",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Denmark postal code (e.g. 8660)",
+        "maxLength": 4
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nDenmark"
+  },
+  "FI": {
+    "countryCode": "FI",
+    "countryName": "Finland",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, c/o",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Finland postal code (e.g. 00550)",
+        "maxLength": 5
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\nFI-{postalCode} {city}\nFinland"
+  },
+  "PT": {
+    "countryCode": "PT",
+    "countryName": "Portugal",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "e.g. 1000-001",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}-\\d{3}$",
+        "validationMessage": "Enter a valid Portugal postal code (e.g. 2725-079)",
+        "maxLength": 8
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nPortugal"
+  },
+  "GR": {
+    "countryCode": "GR",
+    "countryName": "Greece",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "e.g. 123 45",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{3} ?\\d{2}$",
+        "validationMessage": "Enter a valid Greece postal code (e.g. 151 24)",
+        "maxLength": 6
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nGreece"
+  },
+  "IE": {
+    "countryCode": "IE",
+    "countryName": "Ireland",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House name / number, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Town / Village",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City or Town",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "county",
+        "label": "County",
+        "placeholder": "Select County",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "eircode",
+        "label": "Eircode",
+        "placeholder": "e.g. A65 F4E2",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^[\\dA-Z]{3} ?[\\dA-Z]{4}$",
+        "validationMessage": "Enter a valid Ireland postal code (e.g. A65 F4E2)",
+        "maxLength": 8
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}\n{county}\n{eircode}\nIreland"
+  },
+  "CZ": {
+    "countryCode": "CZ",
+    "countryName": "Czech Republic",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "e.g. 110 00",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{3} ?\\d{2}$",
+        "validationMessage": "Enter a valid Czech Republic postal code (e.g. 100 00)",
+        "maxLength": 6
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\nCzech Republic"
+  },
+  "HU": {
+    "countryCode": "HU",
+    "countryName": "Hungary",
+    "fields": [
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Hungary postal code (e.g. 1037)",
+        "maxLength": 4
+      }
+    ],
+    "formatTemplate": "{city}\n{line1}\n{line2}\n{postalCode}\nHungary"
+  },
+  "RO": {
+    "countryCode": "RO",
+    "countryName": "Romania",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, building, staircase",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "county",
+        "label": "County (Judet)",
+        "placeholder": "Select County",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "6-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{6}$",
+        "validationMessage": "Enter a valid Romania postal code (e.g. 060274)",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {county} {city}\nRomania"
+  },
+  "UA": {
+    "countryCode": "UA",
+    "countryName": "Ukraine",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "oblast",
+        "label": "Oblast / Region",
+        "placeholder": "Select Oblast",
+        "required": false,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Ukraine postal code (e.g. 15432)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}\n{oblast}\n{postalCode}\nUkraine"
+  },
+  "RU": {
+    "countryCode": "RU",
+    "countryName": "Russia",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, building",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "region",
+        "label": "Region / Oblast",
+        "placeholder": "Select Region",
+        "required": false,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "6-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{6}$",
+        "validationMessage": "Enter a valid Russia postal code (e.g. 247112)",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}\n{region}\n{postalCode}\nRussia"
+  },
+  "JP": {
+    "countryCode": "JP",
+    "countryName": "Japan",
+    "fields": [
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "e.g. 100-0001",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{3}-?\\d{4}$",
+        "validationMessage": "Enter a valid Japan postal code (e.g. 154-0023)",
+        "maxLength": 8
+      },
+      {
+        "key": "prefecture",
+        "label": "Prefecture",
+        "placeholder": "Select Prefecture",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City / Town / Village",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "ward",
+        "label": "Ward / District",
+        "placeholder": "Ward or District (optional)",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Block, lot, building",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Room / Apartment number",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      }
+    ],
+    "formatTemplate": "〒{postalCode}\n{prefecture}\n{line1}\n{line2}\nJapan"
+  },
+  "CN": {
+    "countryCode": "CN",
+    "countryName": "China",
+    "fields": [
+      {
+        "key": "province",
+        "label": "Province / Municipality",
+        "placeholder": "Select Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "district",
+        "label": "District / County",
+        "placeholder": "District",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street and building",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Room / Apartment",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "6-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{6}$",
+        "validationMessage": "Enter a valid China postal code (e.g. 266033)",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{postalCode}\n{province}{city}{district}\n{line1}\n{line2}\nChina"
+  },
+  "KR": {
+    "countryCode": "KR",
+    "countryName": "South Korea",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street address",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, building details",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Province",
+        "placeholder": "City or Province",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid South Korea postal code (e.g. 03051)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {postalCode}\nSouth Korea"
+  },
+  "TH": {
+    "countryCode": "TH",
+    "countryName": "Thailand",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House number, Street name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Moo, Village",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "subdistrict",
+        "label": "Sub-district (Tambon)",
+        "placeholder": "Sub-district",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "district",
+        "label": "District (Amphoe)",
+        "placeholder": "District",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "province",
+        "label": "Province",
+        "placeholder": "Select Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Thailand postal code (e.g. 10150)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{district} {city}\n{province} {postalCode}\nThailand"
+  },
+  "VN": {
+    "countryCode": "VN",
+    "countryName": "Vietnam",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House number, Street name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Building, Floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "ward",
+        "label": "Ward / Commune (Phuong / Xa)",
+        "placeholder": "Ward or Commune",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "district",
+        "label": "District (Quan / Huyen)",
+        "placeholder": "District",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City / Province",
+        "placeholder": "City or Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "6-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}\\d?$",
+        "validationMessage": "Enter a valid Vietnam postal code (e.g. 70010)",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{district}\n{city} {postalCode}\nVietnam"
+  },
+  "HK": {
+    "countryCode": "HK",
+    "countryName": "Hong Kong",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Flat / Floor, Building name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Street number and name",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "district",
+        "label": "District",
+        "placeholder": "Select District",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "Region",
+        "placeholder": "e.g. Kowloon, Hong Kong Island",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{city}\n{district}\n{line1}\n{line2}\nHong Kong"
+  },
+  "TW": {
+    "countryCode": "TW",
+    "countryName": "Taiwan",
+    "fields": [
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "3 or 5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{3}(?:\\d{2,3})?$",
+        "validationMessage": "Enter a valid Taiwan postal code (e.g. 104)",
+        "maxLength": 5
+      },
+      {
+        "key": "city",
+        "label": "City / County",
+        "placeholder": "Select City or County",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "district",
+        "label": "District / Township",
+        "placeholder": "Select District",
+        "required": false,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Floor, room, building",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      }
+    ],
+    "formatTemplate": "{postalCode}\n{city}\n{line1}\n{line2}\nTaiwan"
+  },
+  "PK": {
+    "countryCode": "PK",
+    "countryName": "Pakistan",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House / Plot number, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Block, Sector, Colony",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Pakistan postal code (e.g. 44000)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}-{postalCode}\nPakistan"
+  },
+  "LK": {
+    "countryCode": "LK",
+    "countryName": "Sri Lanka",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House number, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Village / Town",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Sri Lanka postal code (e.g. 20000)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}\n{postalCode}\nSri Lanka"
+  },
+  "NP": {
+    "countryCode": "NP",
+    "countryName": "Nepal",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Ward number, Tole / Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Municipality / VDC",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / District",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Nepal postal code (e.g. 44601)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {postalCode}\nNepal"
+  },
+  "MM": {
+    "countryCode": "MM",
+    "countryName": "Myanmar",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street / Quarter / Ward",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Township",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "state",
+        "label": "State / Region",
+        "placeholder": "Select State or Region",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Myanmar postal code (e.g. 11181)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}, {state} {postalCode}\nMyanmar"
+  },
+  "BR": {
+    "countryCode": "BR",
+    "countryName": "Brazil",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1 (Logradouro)",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "complement",
+        "label": "Complement",
+        "placeholder": "Apartment, floor, building (optional)",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "neighborhood",
+        "label": "Neighbourhood (Bairro)",
+        "placeholder": "Neighbourhood",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City (Cidade)",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "state",
+        "label": "State (Estado)",
+        "placeholder": "Select State",
+        "required": true,
+        "type": "select",
+        "maxLength": 2
+      },
+      {
+        "key": "postalCode",
+        "label": "CEP (Postal Code)",
+        "placeholder": "e.g. 01310-100",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}-?\\d{3}$",
+        "validationMessage": "Enter a valid Brazil postal code (e.g. 40301-110)",
+        "maxLength": 9
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{neighborhood}\n{city}-{state}\n{postalCode}\nBrazil"
+  },
+  "MX": {
+    "countryCode": "MX",
+    "countryName": "Mexico",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "colonia",
+        "label": "Colonia / Neighbourhood",
+        "placeholder": "Colonia",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City / Municipality",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "state",
+        "label": "State",
+        "placeholder": "Select State",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code (CP)",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Mexico postal code (e.g. 02860)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{colonia}\n{postalCode} {city}, {state}\nMexico"
+  },
+  "AR": {
+    "countryCode": "AR",
+    "countryName": "Argentina",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Floor, apartment",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "province",
+        "label": "Province",
+        "placeholder": "Select Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code (CPA)",
+        "placeholder": "e.g. C1420ABC",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^((?:[A-HJ-NP-Z])?\\d{4})([A-Z]{3})?$",
+        "validationMessage": "Enter a valid Argentina postal code (e.g. C1070AAM)",
+        "maxLength": 8
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\n{province}\nArgentina"
+  },
+  "CO": {
+    "countryCode": "CO",
+    "countryName": "Colombia",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street / Carrera / Avenue and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, tower, office",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Municipality",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "department",
+        "label": "Department",
+        "placeholder": "Select Department",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "6-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{6}$",
+        "validationMessage": "Enter a valid Colombia postal code (e.g. 111221)",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}, {department}\n{postalCode}\nColombia"
+  },
+  "CL": {
+    "countryCode": "CL",
+    "countryName": "Chile",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor, department",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Commune",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "region",
+        "label": "Region",
+        "placeholder": "Select Region",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "7-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{7}$",
+        "validationMessage": "Enter a valid Chile postal code (e.g. 8340457)",
+        "maxLength": 7
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode} {city}\n{region}\nChile"
+  },
+  "PE": {
+    "countryCode": "PE",
+    "countryName": "Peru",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Floor, apartment, interior",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "district",
+        "label": "District",
+        "placeholder": "District",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City / Province",
+        "placeholder": "City or Province",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "region",
+        "label": "Region",
+        "placeholder": "Select Region",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^(?:LIMA \\d{1,2}|CALLAO 0?\\d)|[0-2]\\d{4}$",
+        "validationMessage": "Enter a valid Peru postal code (e.g. LIMA 23)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{district}\n{city} {postalCode}\n{region}\nPeru"
+  },
+  "NZ": {
+    "countryCode": "NZ",
+    "countryName": "New Zealand",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street number and name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, unit, RD number",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "suburb",
+        "label": "Suburb",
+        "placeholder": "Suburb (optional)",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City or Town",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postcode",
+        "label": "Postcode",
+        "placeholder": "4-digit postcode",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid New Zealand postal code (e.g. 6001)",
+        "maxLength": 4
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{suburb}\n{city} {postcode}\nNew Zealand"
+  },
+  "ZA": {
+    "countryCode": "ZA",
+    "countryName": "South Africa",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street number and name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Unit, complex, estate",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "suburb",
+        "label": "Suburb",
+        "placeholder": "Suburb",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "province",
+        "label": "Province",
+        "placeholder": "Select Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid South Africa postal code (e.g. 0083)",
+        "maxLength": 4
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{suburb}\n{city}\n{postalCode}\nSouth Africa"
+  },
+  "NG": {
+    "countryCode": "NG",
+    "countryName": "Nigeria",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House number, Street name",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Area, Estate, Ward",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / LGA",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "state",
+        "label": "State",
+        "placeholder": "Select State",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "6-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{6}$",
+        "validationMessage": "Enter a valid Nigeria postal code (e.g. 930283)",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {postalCode}\n{state}\nNigeria"
+  },
+  "KE": {
+    "countryCode": "KE",
+    "countryName": "Kenya",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House / Building, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Estate / Area",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Kenya postal code (e.g. 20100)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {postalCode}\nKenya"
+  },
+  "GH": {
+    "countryCode": "GH",
+    "countryName": "Ghana",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "House number / Digital address",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Street, Suburb",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "region",
+        "label": "Region",
+        "placeholder": "Select Region",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}\n{region}\nGhana"
+  },
+  "EG": {
+    "countryCode": "EG",
+    "countryName": "Egypt",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Building, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Floor, Apartment",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "district",
+        "label": "District",
+        "placeholder": "District / Hay (optional)",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "governorate",
+        "label": "Governorate",
+        "placeholder": "Select Governorate",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Egypt postal code (e.g. 12411)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{district}\n{city}\n{governorate} {postalCode}\nEgypt"
+  },
+  "TR": {
+    "countryCode": "TR",
+    "countryName": "Turkey",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor, building",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "district",
+        "label": "District (Ilce)",
+        "placeholder": "District",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City (Il)",
+        "placeholder": "City / Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Turkey postal code (e.g. 01960)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{district}\n{postalCode} {city}\nTurkey"
+  },
+  "IL": {
+    "countryCode": "IL",
+    "countryName": "Israel",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street name and number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, entrance",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "7-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}(?:\\d{2})?$",
+        "validationMessage": "Enter a valid Israel postal code (e.g. 9614303)",
+        "maxLength": 7
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {postalCode}\nIsrael"
+  },
+  "KW": {
+    "countryCode": "KW",
+    "countryName": "Kuwait",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Building name / number, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "block",
+        "label": "Block",
+        "placeholder": "Block number",
+        "required": false,
+        "type": "text",
+        "maxLength": 10
+      },
+      {
+        "key": "area",
+        "label": "Area",
+        "placeholder": "Area / Residential area",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "governorate",
+        "label": "Governorate",
+        "placeholder": "Select Governorate",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "maxLength": 5,
+        "validationRegex": "^\\d{5}$"
+      }
+    ],
+    "formatTemplate": "{line1}\n{area}\n{governorate}\n{postalCode}\nKuwait"
+  },
+  "QA": {
+    "countryCode": "QA",
+    "countryName": "Qatar",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Building name, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Floor, apartment",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "zone",
+        "label": "Zone",
+        "placeholder": "Zone number",
+        "required": false,
+        "type": "text",
+        "maxLength": 10
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{zone}\n{city}\nQatar"
+  },
+  "BH": {
+    "countryCode": "BH",
+    "countryName": "Bahrain",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Building / House, Road",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Block, Area",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "district",
+        "label": "District",
+        "placeholder": "District",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "e.g. 317",
+        "required": false,
+        "type": "postal_code",
+        "maxLength": 4,
+        "validationRegex": "^(?:^|\\b)(?:1[0-2]|[1-9])\\d{2}(?:$|\\b)$"
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{district}\n{city} {postalCode}\nBahrain"
+  },
+  "OM": {
+    "countryCode": "OM",
+    "countryName": "Oman",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street / Way / Building",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Block, Flat",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Wilayat",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "governorate",
+        "label": "Governorate",
+        "placeholder": "Select Governorate",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "3-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^(?:PC )?\\d{3}$",
+        "validationMessage": "Enter a valid Oman postal code (e.g. 133)",
+        "maxLength": 3
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{postalCode}\n{city}\nOman"
+  },
+  "JO": {
+    "countryCode": "JO",
+    "countryName": "Jordan",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street / Building",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Floor, Apartment",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "governorate",
+        "label": "Governorate",
+        "placeholder": "Select Governorate",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Jordan postal code (e.g. 11937)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {postalCode}\nJordan"
+  },
+  "LB": {
+    "countryCode": "LB",
+    "countryName": "Lebanon",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Building, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Floor, Apartment",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City / Town",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "district",
+        "label": "District (Caza)",
+        "placeholder": "District",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "e.g. 2038 3054",
+        "required": false,
+        "type": "postal_code",
+        "maxLength": 9,
+        "validationRegex": "^(?:\\d{4})(?: ?(?:\\d{4}))?$"
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city}\n{district}\n{postalCode}\nLebanon"
+  },
+  "IQ": {
+    "countryCode": "IQ",
+    "countryName": "Iraq",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street / Mahala / Building",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "House number, Floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "district",
+        "label": "District",
+        "placeholder": "District",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "governorate",
+        "label": "Governorate",
+        "placeholder": "Select Governorate",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "5-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}$",
+        "validationMessage": "Enter a valid Iraq postal code (e.g. 31001)",
+        "maxLength": 5
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{district}\n{city}, {governorate}\n{postalCode}\nIraq"
+  },
+  "IR": {
+    "countryCode": "IR",
+    "countryName": "Iran",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street / Alley, number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Unit, floor, building",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "district",
+        "label": "District",
+        "placeholder": "District",
+        "required": false,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "province",
+        "label": "Province",
+        "placeholder": "Select Province",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "10-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{5}-?\\d{5}$",
+        "validationMessage": "Enter a valid Iran postal code (e.g. 11936-12345)",
+        "maxLength": 10
+      }
+    ],
+    "formatTemplate": "{province}\n{city}, {district}\n{line1}\n{line2}\n{postalCode}\nIran"
+  },
+  "KZ": {
+    "countryCode": "KZ",
+    "countryName": "Kazakhstan",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street and house number",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, office",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "region",
+        "label": "Region / Oblast",
+        "placeholder": "Select Region",
+        "required": false,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "6-digit postal code",
+        "required": true,
+        "type": "postal_code",
+        "validationRegex": "^\\d{6}$",
+        "validationMessage": "Enter a valid Kazakhstan postal code (e.g. 040900)",
+        "maxLength": 6
+      }
+    ],
+    "formatTemplate": "{postalCode}\n{region}\n{city}\n{line1}\n{line2}\nKazakhstan"
+  },
+  "ET": {
+    "countryCode": "ET",
+    "countryName": "Ethiopia",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Building / House number, Street",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Kebele, Sub-city",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "maxLength": 4,
+        "validationRegex": "^\\d{4}$"
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {postalCode}\nEthiopia"
+  },
+  "VE": {
+    "countryCode": "VE",
+    "countryName": "Venezuela",
+    "fields": [
+      {
+        "key": "line1",
+        "label": "Address Line 1",
+        "placeholder": "Street / Avenue, Building",
+        "required": true,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "line2",
+        "label": "Address Line 2",
+        "placeholder": "Apartment, floor",
+        "required": false,
+        "type": "text",
+        "maxLength": 100
+      },
+      {
+        "key": "city",
+        "label": "City",
+        "placeholder": "City",
+        "required": true,
+        "type": "text",
+        "maxLength": 50
+      },
+      {
+        "key": "state",
+        "label": "State",
+        "placeholder": "Select State",
+        "required": true,
+        "type": "select",
+        "maxLength": 50
+      },
+      {
+        "key": "postalCode",
+        "label": "Postal Code",
+        "placeholder": "4-digit postal code",
+        "required": false,
+        "type": "postal_code",
+        "validationRegex": "^\\d{4}$",
+        "validationMessage": "Enter a valid Venezuela postal code (e.g. 1010)",
+        "maxLength": 4
+      }
+    ],
+    "formatTemplate": "{line1}\n{line2}\n{city} {postalCode}, {state}\nVenezuela"
+  }
+}
