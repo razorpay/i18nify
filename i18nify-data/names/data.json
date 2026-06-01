@@ -1,0 +1,83 @@
+{
+  "names_information": {
+    "honorific_titles": {
+      "english": [
+        {"code": "MR", "title": "Mr.", "gender": "male", "description": "Title for men"},
+        {"code": "MRS", "title": "Mrs.", "gender": "female", "description": "Title for married women"},
+        {"code": "MS", "title": "Ms.", "gender": "female", "description": "Title for women, regardless of marital status"},
+        {"code": "MISS", "title": "Miss", "gender": "female", "description": "Title for unmarried women"},
+        {"code": "MX", "title": "Mx.", "gender": "neutral", "description": "Gender-neutral title"},
+        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for holders of doctoral degrees or medical doctors"},
+        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"},
+        {"code": "REV", "title": "Rev.", "gender": "neutral", "description": "Title for religious clergy"},
+        {"code": "SIR", "title": "Sir", "gender": "male", "description": "Title for knights and baronets"},
+        {"code": "DAME", "title": "Dame", "gender": "female", "description": "Title for female equivalents of knights"},
+        {"code": "LORD", "title": "Lord", "gender": "male", "description": "Title for nobility"},
+        {"code": "LADY", "title": "Lady", "gender": "female", "description": "Title for female nobility"},
+        {"code": "ESQ", "title": "Esq.", "gender": "neutral", "description": "Courtesy title for lawyers"}
+      ],
+      "hindi": [
+        {"code": "SHRI", "title": "Shri", "gender": "male", "description": "Respectful title for men"},
+        {"code": "SMT", "title": "Smt.", "gender": "female", "description": "Respectful title for married women"},
+        {"code": "KM", "title": "Km.", "gender": "female", "description": "Title for unmarried women"},
+        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
+        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+      ],
+      "french": [
+        {"code": "M", "title": "M.", "gender": "male", "description": "Title for men"},
+        {"code": "MME", "title": "Mme", "gender": "female", "description": "Title for women"},
+        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
+        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+      ],
+      "german": [
+        {"code": "HERR", "title": "Herr", "gender": "male", "description": "Title for men"},
+        {"code": "FRAU", "title": "Frau", "gender": "female", "description": "Title for women"},
+        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
+        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+      ],
+      "spanish": [
+        {"code": "SR", "title": "Sr.", "gender": "male", "description": "Title for men"},
+        {"code": "SRA", "title": "Sra.", "gender": "female", "description": "Title for married women"},
+        {"code": "SRTA", "title": "Srta.", "gender": "female", "description": "Title for unmarried women"},
+        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
+        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+      ],
+      "arabic": [
+        {"code": "AL_SAYYID", "title": "السيد", "gender": "male", "description": "Title for men"},
+        {"code": "AL_SAYYIDA", "title": "السيدة", "gender": "female", "description": "Title for women"},
+        {"code": "AL_ANISA", "title": "الآنسة", "gender": "female", "description": "Title for unmarried women"},
+        {"code": "AL_DOCTOR", "title": "الدكتور", "gender": "neutral", "description": "Title for doctors"},
+        {"code": "AL_USTADH", "title": "الأستاذ", "gender": "neutral", "description": "Title for professors"}
+      ],
+      "japanese": [
+        {"code": "SAMA", "title": "様", "gender": "neutral", "description": "Highly respectful honorific"},
+        {"code": "SAN", "title": "さん", "gender": "neutral", "description": "Standard polite honorific"},
+        {"code": "KUN", "title": "くん", "gender": "male", "description": "Informal honorific for males"},
+        {"code": "CHAN", "title": "ちゃん", "gender": "neutral", "description": "Affectionate honorific"},
+        {"code": "SENSEI", "title": "先生", "gender": "neutral", "description": "Title for teachers and doctors"}
+      ],
+      "chinese": [
+        {"code": "XIANSHENG", "title": "先生", "gender": "male", "description": "Title for men"},
+        {"code": "NVSHI", "title": "女士", "gender": "female", "description": "Title for women"},
+        {"code": "BOSHI", "title": "博士", "gender": "neutral", "description": "Title for doctoral degree holders"},
+        {"code": "JIAOSHOU", "title": "教授", "gender": "neutral", "description": "Title for professors"}
+      ],
+      "portuguese": [
+        {"code": "SR", "title": "Sr.", "gender": "male", "description": "Title for men"},
+        {"code": "SRA", "title": "Sra.", "gender": "female", "description": "Title for women"},
+        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
+        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+      ],
+      "russian": [
+        {"code": "GOSPODIN", "title": "Господин", "gender": "male", "description": "Title for men"},
+        {"code": "GOSPOZHA", "title": "Госпожа", "gender": "female", "description": "Title for women"},
+        {"code": "DR", "title": "Д-р", "gender": "neutral", "description": "Title for doctors"},
+        {"code": "PROF", "title": "Проф.", "gender": "neutral", "description": "Title for professors"}
+      ]
+    },
+    "validation_rules": {
+      "min_length": 2,
+      "max_length": 100
+    }
+  }
+}
