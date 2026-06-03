@@ -50,6 +50,7 @@ EVAL_MODULES=(
   "test_data_precision.py"    # reads canonical data from repo
   "test_recipe8_structure.py" # subprocess Recipe 8 in temp dir (slowest)
   "test_output_quality.py"    # data.json + utils code quality rubric (slowest)
+  "test_execution_harness.py" # end-to-end: clean workspace → skill run → file+content checks
 )
 
 PASS=0
