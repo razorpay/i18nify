@@ -36,7 +36,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List
 
 REPO_ROOT      = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
 RUNNER_JS      = os.path.join(os.path.dirname(__file__), "fixtures", "recipe8_runner.py")
@@ -760,10 +760,9 @@ def build_report() -> Dict[str, Any]:
         go_fmt_errors.append("gofmt not found in PATH — Go syntax checks skipped")
 
     # ── Summary ───────────────────────────────────────────────────────────────
-    all_errors = json_errors + proto_errors + [e for e in go_fmt_errors if "skipped" not in e]
+    all_errors   = json_errors + proto_errors + [e for e in go_fmt_errors if "skipped" not in e]
     total_checks = len(ALL_EXPECTED_FILES)
     passed       = len(generated)
-    failed       = len(missing) + len(all_errors)
     success      = len(missing) == 0 and len(json_errors) == 0 and len(proto_errors) == 0
 
     return {
