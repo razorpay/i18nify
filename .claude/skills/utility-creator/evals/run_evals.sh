@@ -49,6 +49,7 @@ EVAL_MODULES=(
   "test_cache_routing.py"     # creates/reads temp files
   "test_data_precision.py"    # reads canonical data from repo
   "test_recipe8_structure.py" # subprocess Recipe 8 in temp dir (slowest)
+  "test_output_quality.py"    # data.json + utils code quality rubric (slowest)
 )
 
 PASS=0
@@ -68,6 +69,11 @@ for module in "${EVAL_MODULES[@]}"; do
   fi
   echo ""
 done
+
+# ── Quality report (rubric-style score card) ──────────────────────────────────
+echo "── Quality Report"
+"$PY" "$EVALS_DIR/test_output_quality.py" --report 2>/dev/null || true
+echo ""
 
 # ── Summary ───────────────────────────────────────────────────────────────────
 echo "══════════════════════════════════════════"
