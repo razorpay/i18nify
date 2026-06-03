@@ -186,6 +186,16 @@ Synonyms: `corporate tax rates`, `cit rates`, `corporate income tax`, `company t
 - Expected coverage: ~112 jurisdictions (2024–2025 OECD Inclusive Framework members)
 - Note: Alpha-3 REF_AREA codes are enriched to alpha-2 (cc) + country_name in the parse step.
 
+### vat_rates_global
+Synonyms: `vat rates`, `gst rates global`, `standard vat rate`, `value added tax rates`, `indirect tax rates`, `consumption tax rates global`, `global tax rates`
+- T1: OECD Consumption Tax Trends 2024 (Table 2.A.1) — compiled static dataset from https://www.oecd.org/en/topics/sub-issues/tax-policy/tax-database.html
+  - Use `crawl4ai_runner.py --topic vat_global` which returns authoritative static data via `fetch_vat_global()` / `parse_vat_global()`.
+  - OECD SDMX API has no dedicated VAT-rates dataflow; data is compiled from T1 OECD + EC TEDB publications.
+  - Covers ~75 jurisdictions: all OECD members, EU, G20, and key emerging markets (Razorpay footprint).
+- Expected coverage: ~75 countries (standard rate only; granularity=summary)
+- TTL: 365 days (OECD annual publication cadence)
+- Coverage gap: Non-OECD/non-G20 countries not included. Use `gst_rates_india` for India HSN detail.
+
 ### Unknown topic — research hunt
 
 If the query doesn't match any known topic, the registry is not your ceiling — it is just a cache of previously solved topics. Activate the **Section 13 research protocol**:

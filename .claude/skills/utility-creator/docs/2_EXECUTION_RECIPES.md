@@ -66,6 +66,7 @@ CANONICAL_PATH = {
     "gst_rates_india":     "i18nify-data/gst/data.json",
     "population_data":     "i18nify-data/population/data.json",
     "corporate_tax_rates": "i18nify-data/corporate-tax/data.json",
+    "vat_rates_global":    "i18nify-data/vat-global/data.json",
 }
 
 ttl_map = {
@@ -74,6 +75,7 @@ ttl_map = {
     "phone_calling_codes":30,"timezones":7,"mime_types":30,
     "unicode_blocks":30,"gst_rates_india":30,"population_data":365,
     "corporate_tax_rates":30,
+    "vat_rates_global":365,
 }
 ttl = ttl_map.get(topic, 30)
 
@@ -152,6 +154,7 @@ PATH_DATA_KEY = {
     "i18nify-data/unicode-blocks/data.json":    "unicode_block_information",
     "i18nify-data/address/data.json":           "address_format_information",
     "i18nify-data/population/data.json":        "population_information",
+    "i18nify-data/vat-global/data.json":        "vat_global_information",
 }
 
 # Maps canonical file path → T1 source URL for display in the widget
@@ -167,6 +170,7 @@ PATH_SOURCE_URL = {
     "i18nify-data/unicode-blocks/data.json":    "https://www.unicode.org/Public/UNIDATA/Blocks.txt",
     "i18nify-data/address/data.json":           "https://chromium-i18n.appspot.com/ssl-address/data",
     "i18nify-data/population/data.json":        "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&mrv=1&per_page=300",
+    "i18nify-data/vat-global/data.json":        "https://www.oecd.org/en/topics/sub-issues/tax-policy/tax-database.html",
 }
 
 try:
@@ -262,6 +266,7 @@ PIPELINE_NAME = {
     "gst_rates_india":     "gst",
     "population_data":     "population",
     "corporate_tax_rates": "corporate_tax",
+    "vat_rates_global":    "vat_global",
 }
 
 tsf_topic     = "{TOPIC_KEY}"
@@ -390,7 +395,7 @@ from_cache = any(s.get("from_cache") for s in sources)
 # ── TTL and cache age ─────────────────────────────────────────────────────
 TTL_DAYS = {"currency_codes":30,"country_codes":30,"address_formats":30,
             "tld_list":7,"language_codes":30,"http_status_codes":7,
-            "phone_calling_codes":30,"timezones":7}
+            "phone_calling_codes":30,"timezones":7,"vat_rates_global":365}
 topic_ttl = TTL_DAYS.get(topic, 30)
 
 # ── Cache freshness factor ────────────────────────────────────────────────
@@ -435,7 +440,8 @@ conflict_penalty = min(1.0, len(conflicts) / total_fields) if total_fields else 
 # ── Score per source ──────────────────────────────────────────────────────
 EXPECTED = {"currency_codes":180,"country_codes":249,"address_formats":240,
             "tld_list":1500,"language_codes":184,"http_status_codes":60,
-            "phone_calling_codes":240,"timezones":600,"population_data":217}
+            "phone_calling_codes":240,"timezones":600,"population_data":217,
+            "vat_rates_global":75}
 expected = EXPECTED.get(topic, 100)
 n = len(sources)
 
@@ -537,7 +543,8 @@ TOPIC_MAP = {
     "country_metadata":    {"snake": "countryMetadata", "pascal": "CountryMetadata", "data_key": "country_metadata_information",  "id_field": "cc"},
     "gst_rates_india":     {"snake": "gst",             "pascal": "Gst",             "data_key": "gst_information",               "id_field": "code"},
     "population_data":     {"snake": "population",      "pascal": "Population",      "data_key": "population_information",        "id_field": "cc"},
-    "corporate_tax_rates": {"snake": "corporateTax",    "pascal": "CorporateTax",    "data_key": "corporate_tax_information",     "id_field": "cc"},
+    "corporate_tax_rates": {"snake": "corporateTax",    "pascal": "CorporateTax",    "data_key": "corporate_tax_information",     "id_field": "cc", "canonical_dir": "corporate-tax"},
+    "vat_rates_global":    {"snake": "vatRates",        "pascal": "VatRates",        "data_key": "vat_global_information",        "id_field": "cc", "canonical_dir": "vat-global"},
 }
 
 cfg = TOPIC_MAP.get(TOPIC_KEY)
@@ -545,10 +552,11 @@ if not cfg:
     print(f"UTILITY_ERROR|unsupported topic '{TOPIC_KEY}' — add a mapping entry in Recipe 8 TOPIC_MAP")
     sys.exit(1)
 
-snake    = cfg["snake"]      # camelCase module name  e.g. "currency"
-pascal   = cfg["pascal"]     # PascalCase             e.g. "Currency"
-data_key = cfg["data_key"]   # i18nify-data root key  e.g. "currency_information"
-id_field = cfg["id_field"]   # row identifier field   e.g. "code"
+snake         = cfg["snake"]                         # camelCase module name  e.g. "currency"
+pascal        = cfg["pascal"]                        # PascalCase             e.g. "Currency"
+data_key      = cfg["data_key"]                      # i18nify-data root key  e.g. "currency_information"
+id_field      = cfg["id_field"]                      # row identifier field   e.g. "code"
+canonical_dir = cfg.get("canonical_dir", snake)      # i18nify-data/ dir — defaults to snake when they match
 
 # ── Load winner rows from Recipe 7 output ─────────────────────────
 with open("/tmp/tsf_result.json") as f:
@@ -729,7 +737,7 @@ f_proto = "\n".join(_proto_parts) + "\n"
 snake_upper = re.sub(r"(?<=[a-z])(?=[A-Z])", "_", snake).upper()
 
 module_dir = os.path.join(PROJECT_ROOT, "packages", "i18nify-js", "src", "modules", snake)
-data_dir   = os.path.join(PROJECT_ROOT, "i18nify-data", snake)
+data_dir   = os.path.join(PROJECT_ROOT, "i18nify-data", canonical_dir)
 
 # ── File content templates ─────────────────────────────────────────
 
@@ -876,6 +884,7 @@ TOPIC_MAP = {
     "country_metadata":    {"snake": "countryMetadata", "pascal": "CountryMetadata", "data_key": "country_metadata_information", "go_pkg": "countrymetadata"},
     "gst_rates_india":     {"snake": "gst",             "pascal": "Gst",             "data_key": "gst_information",              "go_pkg": "gst"},
     "population_data":     {"snake": "population",      "pascal": "Population",      "data_key": "population_information",       "go_pkg": "population"},
+    "vat_rates_global":    {"snake": "vatRates",        "pascal": "VatRates",        "data_key": "vat_global_information",       "go_pkg": "vatrates",  "canonical_dir": "vat-global"},
 }
 
 cfg = TOPIC_MAP.get(TOPIC_KEY)
@@ -883,17 +892,16 @@ if not cfg:
     print(f"GO_UTILITY_ERROR|unsupported topic '{TOPIC_KEY}' — add a mapping entry in Recipe 8-Go TOPIC_MAP")
     sys.exit(1)
 
-snake    = cfg["snake"]
-pascal   = cfg["pascal"]
-data_key = cfg["data_key"]
-go_pkg   = cfg["go_pkg"]
+snake         = cfg["snake"]
+pascal        = cfg["pascal"]
+data_key      = cfg["data_key"]
+go_pkg        = cfg["go_pkg"]
+canonical_dir = cfg.get("canonical_dir", snake)
 
 # ── Load canonical data ───────────────────────────────────────────
-data_path = os.path.join(PROJECT_ROOT, "i18nify-data", snake, "data.json")
+data_path = os.path.join(PROJECT_ROOT, "i18nify-data", canonical_dir, "data.json")
 if not os.path.exists(data_path):
-    data_path = os.path.join(PROJECT_ROOT, "i18nify-data", go_pkg, "data.json")
-if not os.path.exists(data_path):
-    print(f"GO_UTILITY_ERROR|canonical data not found at i18nify-data/{snake}/data.json")
+    print(f"GO_UTILITY_ERROR|canonical data not found at i18nify-data/{canonical_dir}/data.json")
     sys.exit(1)
 
 with open(data_path, encoding="utf-8") as f:
