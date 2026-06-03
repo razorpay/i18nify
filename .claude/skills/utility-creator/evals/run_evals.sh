@@ -40,7 +40,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 # ── Install test dependencies (idempotent) ────────────────────────────────────
-"$PY" -m pip install pytest -q 2>&1 | tail -1
+"$PY" -m pip install "pytest==8.2.2" -q 2>&1 | tail -1
 
 # ── Eval modules (order = fast → slow) ───────────────────────────────────────
 EVAL_MODULES=(
