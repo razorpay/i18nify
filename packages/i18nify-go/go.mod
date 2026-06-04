@@ -18,4 +18,6 @@ require (
 	github.com/razorpay/i18nify/i18nify-data/go/currency v1.0.3
 	github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number v1.0.3
 	gopkg.in/yaml.v3 v3.0.1 // indirect
+	github.com/razorpay/i18nify/i18nify-data/go/address v1.0.0
 )
+replace github.com/razorpay/i18nify/i18nify-data/go/address => ../../i18nify-data/go/address

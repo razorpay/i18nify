@@ -1,0 +1,28 @@
+syntax = "proto3";
+package address;
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/address;address";
+
+// AddressData is the root message.
+// The map key is the ISO 3166-1 alpha-2 country code.
+message AddressData {
+  map<string, AddressInfo> address_format_information = 1;
+}
+
+// AddressInfo holds all fields for a single address entry, keyed by country code.
+message AddressInfo {
+  string country_name = 1;
+  string fmt = 2;
+  string zip_regex = 3;
+  string zip_example = 4;
+  string lang = 5;
+  string languages = 6;
+  string post_url = 7;
+  repeated string sub_keys = 8;
+  repeated string sub_names = 9;
+  repeated string sub_isoids = 10;
+  string require = 11;
+  string state_name_type = 12;
+  string zip_name_type = 13;
+  string locality_name_type = 14;
+  string sublocality_name_type = 15;
+}
