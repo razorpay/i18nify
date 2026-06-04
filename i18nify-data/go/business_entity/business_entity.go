@@ -1,18 +1,31 @@
 // Hand-written Go structs for business entity data.
-// These mirror the data.json schema for the business_entity module.
+// Data is split across two JSON files:
+//   - data/categories_data.json  → categories + sub-categories
+//   - data/entity_types_data.json → country-keyed entity types
 
 package business_entity
 
-// BusinessEntityData is the root structure loaded from data/data.json.
+// CategoriesFileData is the structure loaded from data/categories_data.json.
+type CategoriesFileData struct {
+	Categories    []BusinessCategory               `json:"categories"`
+	SubCategories map[string][]BusinessSubCategory `json:"sub_categories"`
+}
+
+// EntityTypesFileData is the structure loaded from data/entity_types_data.json.
+type EntityTypesFileData struct {
+	EntityTypes map[string][]BusinessEntityType `json:"entity_types"`
+}
+
+// BusinessEntityData is the merged runtime structure exposed to callers.
 type BusinessEntityData struct {
-	BusinessEntityInformation BusinessEntityInformation `json:"business_entity_information"`
+	BusinessEntityInformation BusinessEntityInformation
 }
 
 // BusinessEntityInformation holds categories, sub-categories, and country entity types.
 type BusinessEntityInformation struct {
-	Categories    []BusinessCategory                   `json:"categories"`
-	SubCategories map[string][]BusinessSubCategory     `json:"sub_categories"`
-	EntityTypes   map[string][]BusinessEntityType      `json:"entity_types"`
+	Categories    []BusinessCategory
+	SubCategories map[string][]BusinessSubCategory
+	EntityTypes   map[string][]BusinessEntityType
 }
 
 // BusinessCategory represents a top-level business category.

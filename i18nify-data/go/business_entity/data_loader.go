@@ -8,8 +8,11 @@ import (
 	"sync"
 )
 
-//go:embed data/data.json
-var dataJSON []byte
+//go:embed data/categories_data.json
+var categoriesJSON []byte
+
+//go:embed data/entity_types_data.json
+var entityTypesJSON []byte
 
 var (
 	data     *BusinessEntityData
@@ -17,12 +20,28 @@ var (
 	dataErr  error
 )
 
-// GetBusinessEntityData retrieves the business entity configuration data.
-// The JSON is parsed exactly once; subsequent calls return the cached result.
+// GetBusinessEntityData loads and merges both data files into a single
+// BusinessEntityData value. The JSON is parsed exactly once; subsequent
+// calls return the cached result.
 func GetBusinessEntityData() (*BusinessEntityData, error) {
 	dataOnce.Do(func() {
-		data = &BusinessEntityData{}
-		dataErr = json.Unmarshal(dataJSON, data)
+		var cats CategoriesFileData
+		if dataErr = json.Unmarshal(categoriesJSON, &cats); dataErr != nil {
+			return
+		}
+
+		var ets EntityTypesFileData
+		if dataErr = json.Unmarshal(entityTypesJSON, &ets); dataErr != nil {
+			return
+		}
+
+		data = &BusinessEntityData{
+			BusinessEntityInformation: BusinessEntityInformation{
+				Categories:    cats.Categories,
+				SubCategories: cats.SubCategories,
+				EntityTypes:   ets.EntityTypes,
+			},
+		}
 	})
 	return data, dataErr
 }
