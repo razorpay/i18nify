@@ -539,6 +539,9 @@ TOPIC_MAP = {
     "language_codes":      {"snake": "language",        "pascal": "Language",        "data_key": "language_information",          "id_field": "cc"},
     "timezones":           {"snake": "timezone",        "pascal": "Timezone",        "data_key": "timezone_information",          "id_field": "cc"},
     "tld_list":            {"snake": "tld",             "pascal": "Tld",             "data_key": "tld_information",               "id_field": "cc"},
+    # address_formats JS files ARE generated (data + TS module).
+    # Recipe 8-Go is intentionally skipped for this topic — address Go logic
+    # lives in packages/i18nify-go/modules/geo/ to avoid duplicating geo's ownership.
     "address_formats":     {"snake": "address",         "pascal": "Address",         "data_key": "address_format_information",    "id_field": "cc"},
     "country_metadata":    {"snake": "countryMetadata", "pascal": "CountryMetadata", "data_key": "country_metadata_information",  "id_field": "cc"},
     "gst_rates_india":     {"snake": "gst",             "pascal": "Gst",             "data_key": "gst_information",               "id_field": "code"},
@@ -880,7 +883,11 @@ TOPIC_MAP = {
     "language_codes":      {"snake": "language",        "pascal": "Language",        "data_key": "language_information",         "go_pkg": "language"},
     "timezones":           {"snake": "timezone",        "pascal": "Timezone",        "data_key": "timezone_information",         "go_pkg": "timezone"},
     "tld_list":            {"snake": "tld",             "pascal": "Tld",             "data_key": "tld_information",              "go_pkg": "tld"},
-    "address_formats":     {"snake": "address",         "pascal": "Address",         "data_key": "address_format_information",   "go_pkg": "address"},
+    # address_formats Go module is intentionally OMITTED — address functionality
+    # lives in packages/i18nify-go/modules/geo/ (FormatAddressWithFormat).
+    # Generating a standalone `address` module would duplicate geo's ownership.
+    # Only the i18nify-data/go/address/ data layer is generated (by Recipe 8 JS side).
+    # "address_formats": SKIP Recipe 8-Go
     "country_metadata":    {"snake": "countryMetadata", "pascal": "CountryMetadata", "data_key": "country_metadata_information", "go_pkg": "countrymetadata"},
     "gst_rates_india":     {"snake": "gst",             "pascal": "Gst",             "data_key": "gst_information",              "go_pkg": "gst"},
     "population_data":     {"snake": "population",      "pascal": "Population",      "data_key": "population_information",       "go_pkg": "population"},
