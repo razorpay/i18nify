@@ -51,6 +51,7 @@ EVAL_MODULES=(
   "test_recipe8_structure.py" # subprocess Recipe 8 in temp dir (slowest)
   "test_output_quality.py"    # data.json + utils code quality rubric (slowest)
   "test_execution_harness.py" # end-to-end: clean workspace → skill run → file+content checks
+  "test_functional.py"        # behavioural: Japan sim, content quality, barrel, build, dev, test
 )
 
 PASS=0
