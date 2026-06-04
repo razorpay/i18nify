@@ -17,7 +17,7 @@ var (
 	dataErr  error
 )
 
-// GetNamesData retrieves the names configuration data.
+// GetNamesData retrieves the names data (honorific titles + validation rules).
 // The JSON is parsed exactly once; subsequent calls return the cached result.
 func GetNamesData() (*NamesData, error) {
 	dataOnce.Do(func() {

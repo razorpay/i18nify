@@ -33,6 +33,34 @@ var langCodeToName = map[string]string{
 	"zh": "chinese",
 	"pt": "portuguese",
 	"ru": "russian",
+	"it": "italian",
+	"nl": "dutch",
+	"ko": "korean",
+	"vi": "vietnamese",
+	"tr": "turkish",
+	"pl": "polish",
+	"sv": "swedish",
+	"da": "danish",
+	"no": "norwegian",
+	"fi": "finnish",
+	"el": "greek",
+	"he": "hebrew",
+	"fa": "persian",
+	"ur": "urdu",
+	"bn": "bengali",
+	"th": "thai",
+	"id": "indonesian",
+	"ms": "malay",
+	"sw": "swahili",
+	"uk": "ukrainian",
+	"ro": "romanian",
+	"hu": "hungarian",
+	"cs": "czech",
+	"sk": "slovak",
+	"bg": "bulgarian",
+	"sr": "serbian",
+	"hr": "croatian",
+	"ca": "catalan",
 }
 
 func init() {
@@ -68,7 +96,7 @@ func IsValidName(name string) bool {
 		case unicode.IsLetter(r):
 			hasLetter = true
 		case unicode.IsMark(r):
-			// Unicode combining marks (e.g., Devanagari vowel signs ा, Arabic
+			// Unicode combining marks (e.g., Devanagari vowel signs, Arabic
 			// diacritics) are integral parts of properly spelled names in many scripts.
 		case r == ' ', r == '-', r == '\'', r == '.':
 			// allowed separators
@@ -90,10 +118,8 @@ func GetHonorificTitles(locale string) ([]HonorificTitle, error) {
 		return nil, fmt.Errorf("locale must not be empty")
 	}
 
-	// Normalise: lowercase and take only the base language subtag.
 	base := strings.ToLower(strings.SplitN(locale, "-", 2)[0])
 
-	// Resolve BCP 47 code to the full language name used as the JSON key.
 	key, known := langCodeToName[base]
 	if !known {
 		return nil, fmt.Errorf("no honorific titles found for locale: %q", locale)

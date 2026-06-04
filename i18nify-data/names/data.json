@@ -2,82 +2,3527 @@
   "names_information": {
     "honorific_titles": {
       "english": [
-        {"code": "MR", "title": "Mr.", "gender": "male", "description": "Title for men"},
-        {"code": "MRS", "title": "Mrs.", "gender": "female", "description": "Title for married women"},
-        {"code": "MS", "title": "Ms.", "gender": "female", "description": "Title for women, regardless of marital status"},
-        {"code": "MISS", "title": "Miss", "gender": "female", "description": "Title for unmarried women"},
-        {"code": "MX", "title": "Mx.", "gender": "neutral", "description": "Gender-neutral title"},
-        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for holders of doctoral degrees or medical doctors"},
-        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"},
-        {"code": "REV", "title": "Rev.", "gender": "neutral", "description": "Title for religious clergy"},
-        {"code": "SIR", "title": "Sir", "gender": "male", "description": "Title for knights and baronets"},
-        {"code": "DAME", "title": "Dame", "gender": "female", "description": "Title for female equivalents of knights"},
-        {"code": "LORD", "title": "Lord", "gender": "male", "description": "Title for nobility"},
-        {"code": "LADY", "title": "Lady", "gender": "female", "description": "Title for female nobility"},
-        {"code": "ESQ", "title": "Esq.", "gender": "neutral", "description": "Courtesy title for lawyers"}
+        {
+          "code": "MR",
+          "title": "Mr.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "MRS",
+          "title": "Mrs.",
+          "gender": "female",
+          "description": "Title for married women"
+        },
+        {
+          "code": "MS",
+          "title": "Ms.",
+          "gender": "female",
+          "description": "Title for women, regardless of marital status"
+        },
+        {
+          "code": "MISS",
+          "title": "Miss",
+          "gender": "female",
+          "description": "Title for unmarried women"
+        },
+        {
+          "code": "MX",
+          "title": "Mx.",
+          "gender": "neutral",
+          "description": "Gender-neutral title"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for holders of doctoral degrees or medical doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        },
+        {
+          "code": "REV",
+          "title": "Rev.",
+          "gender": "neutral",
+          "description": "Title for religious clergy"
+        },
+        {
+          "code": "SIR",
+          "title": "Sir",
+          "gender": "male",
+          "description": "Title for knights and baronets"
+        },
+        {
+          "code": "DAME",
+          "title": "Dame",
+          "gender": "female",
+          "description": "Title for female equivalents of knights"
+        },
+        {
+          "code": "LORD",
+          "title": "Lord",
+          "gender": "male",
+          "description": "Title for nobility"
+        },
+        {
+          "code": "LADY",
+          "title": "Lady",
+          "gender": "female",
+          "description": "Title for female nobility"
+        },
+        {
+          "code": "ESQ",
+          "title": "Esq.",
+          "gender": "neutral",
+          "description": "Courtesy title for lawyers"
+        }
       ],
       "hindi": [
-        {"code": "SHRI", "title": "Shri", "gender": "male", "description": "Respectful title for men"},
-        {"code": "SMT", "title": "Smt.", "gender": "female", "description": "Respectful title for married women"},
-        {"code": "KM", "title": "Km.", "gender": "female", "description": "Title for unmarried women"},
-        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
-        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+        {
+          "code": "SHRI",
+          "title": "Shri",
+          "gender": "male",
+          "description": "Respectful title for men"
+        },
+        {
+          "code": "SMT",
+          "title": "Smt.",
+          "gender": "female",
+          "description": "Respectful title for married women"
+        },
+        {
+          "code": "KM",
+          "title": "Km.",
+          "gender": "female",
+          "description": "Title for unmarried women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
       ],
       "french": [
-        {"code": "M", "title": "M.", "gender": "male", "description": "Title for men"},
-        {"code": "MME", "title": "Mme", "gender": "female", "description": "Title for women"},
-        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
-        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+        {
+          "code": "M",
+          "title": "M.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "MME",
+          "title": "Mme",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
       ],
       "german": [
-        {"code": "HERR", "title": "Herr", "gender": "male", "description": "Title for men"},
-        {"code": "FRAU", "title": "Frau", "gender": "female", "description": "Title for women"},
-        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
-        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+        {
+          "code": "HERR",
+          "title": "Herr",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "FRAU",
+          "title": "Frau",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
       ],
       "spanish": [
-        {"code": "SR", "title": "Sr.", "gender": "male", "description": "Title for men"},
-        {"code": "SRA", "title": "Sra.", "gender": "female", "description": "Title for married women"},
-        {"code": "SRTA", "title": "Srta.", "gender": "female", "description": "Title for unmarried women"},
-        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
-        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+        {
+          "code": "SR",
+          "title": "Sr.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "SRA",
+          "title": "Sra.",
+          "gender": "female",
+          "description": "Title for married women"
+        },
+        {
+          "code": "SRTA",
+          "title": "Srta.",
+          "gender": "female",
+          "description": "Title for unmarried women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
       ],
       "arabic": [
-        {"code": "AL_SAYYID", "title": "السيد", "gender": "male", "description": "Title for men"},
-        {"code": "AL_SAYYIDA", "title": "السيدة", "gender": "female", "description": "Title for women"},
-        {"code": "AL_ANISA", "title": "الآنسة", "gender": "female", "description": "Title for unmarried women"},
-        {"code": "AL_DOCTOR", "title": "الدكتور", "gender": "neutral", "description": "Title for doctors"},
-        {"code": "AL_USTADH", "title": "الأستاذ", "gender": "neutral", "description": "Title for professors"}
+        {
+          "code": "AL_SAYYID",
+          "title": "السيد",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "AL_SAYYIDA",
+          "title": "السيدة",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "AL_ANISA",
+          "title": "الآنسة",
+          "gender": "female",
+          "description": "Title for unmarried women"
+        },
+        {
+          "code": "AL_DOCTOR",
+          "title": "الدكتور",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "AL_USTADH",
+          "title": "الأستاذ",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
       ],
       "japanese": [
-        {"code": "SAMA", "title": "様", "gender": "neutral", "description": "Highly respectful honorific"},
-        {"code": "SAN", "title": "さん", "gender": "neutral", "description": "Standard polite honorific"},
-        {"code": "KUN", "title": "くん", "gender": "male", "description": "Informal honorific for males"},
-        {"code": "CHAN", "title": "ちゃん", "gender": "neutral", "description": "Affectionate honorific"},
-        {"code": "SENSEI", "title": "先生", "gender": "neutral", "description": "Title for teachers and doctors"}
+        {
+          "code": "SAMA",
+          "title": "様",
+          "gender": "neutral",
+          "description": "Highly respectful honorific"
+        },
+        {
+          "code": "SAN",
+          "title": "さん",
+          "gender": "neutral",
+          "description": "Standard polite honorific"
+        },
+        {
+          "code": "KUN",
+          "title": "くん",
+          "gender": "male",
+          "description": "Informal honorific for males"
+        },
+        {
+          "code": "CHAN",
+          "title": "ちゃん",
+          "gender": "neutral",
+          "description": "Affectionate honorific"
+        },
+        {
+          "code": "SENSEI",
+          "title": "先生",
+          "gender": "neutral",
+          "description": "Title for teachers and doctors"
+        }
       ],
       "chinese": [
-        {"code": "XIANSHENG", "title": "先生", "gender": "male", "description": "Title for men"},
-        {"code": "NVSHI", "title": "女士", "gender": "female", "description": "Title for women"},
-        {"code": "BOSHI", "title": "博士", "gender": "neutral", "description": "Title for doctoral degree holders"},
-        {"code": "JIAOSHOU", "title": "教授", "gender": "neutral", "description": "Title for professors"}
+        {
+          "code": "XIANSHENG",
+          "title": "先生",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "NVSHI",
+          "title": "女士",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "BOSHI",
+          "title": "博士",
+          "gender": "neutral",
+          "description": "Title for doctoral degree holders"
+        },
+        {
+          "code": "JIAOSHOU",
+          "title": "教授",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
       ],
       "portuguese": [
-        {"code": "SR", "title": "Sr.", "gender": "male", "description": "Title for men"},
-        {"code": "SRA", "title": "Sra.", "gender": "female", "description": "Title for women"},
-        {"code": "DR", "title": "Dr.", "gender": "neutral", "description": "Title for doctors"},
-        {"code": "PROF", "title": "Prof.", "gender": "neutral", "description": "Title for professors"}
+        {
+          "code": "SR",
+          "title": "Sr.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "SRA",
+          "title": "Sra.",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
       ],
       "russian": [
-        {"code": "GOSPODIN", "title": "Господин", "gender": "male", "description": "Title for men"},
-        {"code": "GOSPOZHA", "title": "Госпожа", "gender": "female", "description": "Title for women"},
-        {"code": "DR", "title": "Д-р", "gender": "neutral", "description": "Title for doctors"},
-        {"code": "PROF", "title": "Проф.", "gender": "neutral", "description": "Title for professors"}
+        {
+          "code": "GOSPODIN",
+          "title": "Господин",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "GOSPOZHA",
+          "title": "Госпожа",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Д-р",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Проф.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "italian": [
+        {
+          "code": "SIG",
+          "title": "Sig.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "SIGRA",
+          "title": "Sig.ra",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dott.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "dutch": [
+        {
+          "code": "DHR",
+          "title": "Dhr.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "MVR",
+          "title": "Mevr.",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "korean": [
+        {
+          "code": "SSI",
+          "title": "씨",
+          "gender": "neutral",
+          "description": "Standard polite honorific"
+        },
+        {
+          "code": "NIM",
+          "title": "님",
+          "gender": "neutral",
+          "description": "Respectful honorific"
+        },
+        {
+          "code": "BAKSAKI",
+          "title": "박사",
+          "gender": "neutral",
+          "description": "Title for doctoral degree holders"
+        },
+        {
+          "code": "GYOSU",
+          "title": "교수",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "vietnamese": [
+        {
+          "code": "ANH",
+          "title": "Anh",
+          "gender": "male",
+          "description": "Title for men (elder/peer)"
+        },
+        {
+          "code": "CHI",
+          "title": "Chị",
+          "gender": "female",
+          "description": "Title for women (elder/peer)"
+        },
+        {
+          "code": "ONG",
+          "title": "Ông",
+          "gender": "male",
+          "description": "Formal title for older men"
+        },
+        {
+          "code": "BA",
+          "title": "Bà",
+          "gender": "female",
+          "description": "Formal title for older women"
+        },
+        {
+          "code": "TS",
+          "title": "TS.",
+          "gender": "neutral",
+          "description": "Title for doctoral degree holders"
+        }
+      ],
+      "turkish": [
+        {
+          "code": "BAY",
+          "title": "Bay",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "BAYAN",
+          "title": "Bayan",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "polish": [
+        {
+          "code": "PAN",
+          "title": "Pan",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "PANI",
+          "title": "Pani",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "swedish": [
+        {
+          "code": "HR",
+          "title": "Hr",
+          "gender": "male",
+          "description": "Title for men (rare in modern use)"
+        },
+        {
+          "code": "FRU",
+          "title": "Fru",
+          "gender": "female",
+          "description": "Title for women (rare in modern use)"
+        },
+        {
+          "code": "DR",
+          "title": "Dr",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        }
+      ],
+      "danish": [
+        {
+          "code": "HR",
+          "title": "Hr.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "FRU",
+          "title": "Fru",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "norwegian": [
+        {
+          "code": "HR",
+          "title": "Hr.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "FRU",
+          "title": "Fru",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        }
+      ],
+      "finnish": [
+        {
+          "code": "HRR",
+          "title": "Herra",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "NTI",
+          "title": "Neiti",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "greek": [
+        {
+          "code": "KOS",
+          "title": "Κος",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "KA",
+          "title": "Κα",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Δρ.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "KATH",
+          "title": "Καθ.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "hebrew": [
+        {
+          "code": "MAR",
+          "title": "מר",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "GVRT",
+          "title": "גברת",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "ד\"ר",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "פרופ'",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "persian": [
+        {
+          "code": "AGHA",
+          "title": "آقای",
+          "gender": "male",
+          "description": "Respectful title for men"
+        },
+        {
+          "code": "KHANOM",
+          "title": "خانم",
+          "gender": "female",
+          "description": "Respectful title for women"
+        },
+        {
+          "code": "DR",
+          "title": "دکتر",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "استاد",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "urdu": [
+        {
+          "code": "JANAB",
+          "title": "جناب",
+          "gender": "male",
+          "description": "Respectful title for men"
+        },
+        {
+          "code": "MOHTRAM",
+          "title": "محترمہ",
+          "gender": "female",
+          "description": "Respectful title for women"
+        },
+        {
+          "code": "DR",
+          "title": "ڈاکٹر",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        }
+      ],
+      "bengali": [
+        {
+          "code": "SHRI",
+          "title": "শ্রী",
+          "gender": "male",
+          "description": "Respectful title for men"
+        },
+        {
+          "code": "SMT",
+          "title": "শ্রীমতী",
+          "gender": "female",
+          "description": "Title for married women"
+        },
+        {
+          "code": "DR",
+          "title": "ড.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "অধ্যাপক",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "thai": [
+        {
+          "code": "KHUN",
+          "title": "คุณ",
+          "gender": "neutral",
+          "description": "Polite title for all genders"
+        },
+        {
+          "code": "DR",
+          "title": "ดร.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "ศ.",
+          "gender": "neutral",
+          "description": "Title for full professors"
+        }
+      ],
+      "indonesian": [
+        {
+          "code": "BAPAK",
+          "title": "Bapak",
+          "gender": "male",
+          "description": "Respectful title for men"
+        },
+        {
+          "code": "IBU",
+          "title": "Ibu",
+          "gender": "female",
+          "description": "Respectful title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "malay": [
+        {
+          "code": "ENCIK",
+          "title": "Encik",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "PUAN",
+          "title": "Puan",
+          "gender": "female",
+          "description": "Title for married women"
+        },
+        {
+          "code": "CIK",
+          "title": "Cik",
+          "gender": "female",
+          "description": "Title for unmarried women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        }
+      ],
+      "swahili": [
+        {
+          "code": "BW",
+          "title": "Bw.",
+          "gender": "male",
+          "description": "Title for men (Bwana)"
+        },
+        {
+          "code": "BI",
+          "title": "Bi.",
+          "gender": "female",
+          "description": "Title for women (Bibi)"
+        },
+        {
+          "code": "DKT",
+          "title": "Dkt.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "ukrainian": [
+        {
+          "code": "PAN",
+          "title": "Пан",
+          "gender": "male",
+          "description": "Formal title for men"
+        },
+        {
+          "code": "PANI",
+          "title": "Пані",
+          "gender": "female",
+          "description": "Formal title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Д-р",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Проф.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "romanian": [
+        {
+          "code": "DL",
+          "title": "Dl",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "DNA",
+          "title": "Dna",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "hungarian": [
+        {
+          "code": "UR",
+          "title": "Úr",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "ASSZONY",
+          "title": "Asszony",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "czech": [
+        {
+          "code": "PAN",
+          "title": "Pan",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "PANI",
+          "title": "Paní",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "slovak": [
+        {
+          "code": "PAN",
+          "title": "Pan",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "PANI",
+          "title": "Pani",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        }
+      ],
+      "bulgarian": [
+        {
+          "code": "G_N",
+          "title": "Г-н",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "G_ZHA",
+          "title": "Г-жа",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Д-р",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Проф.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "serbian": [
+        {
+          "code": "G_DIN",
+          "title": "г-дин",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "G_DJA",
+          "title": "г-ђа",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Др",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "Проф.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "croatian": [
+        {
+          "code": "G",
+          "title": "g.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "GDA",
+          "title": "gđa.",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        },
+        {
+          "code": "PROF",
+          "title": "prof.",
+          "gender": "neutral",
+          "description": "Title for professors"
+        }
+      ],
+      "catalan": [
+        {
+          "code": "SR",
+          "title": "Sr.",
+          "gender": "male",
+          "description": "Title for men"
+        },
+        {
+          "code": "SRA",
+          "title": "Sra.",
+          "gender": "female",
+          "description": "Title for women"
+        },
+        {
+          "code": "DR",
+          "title": "Dr.",
+          "gender": "neutral",
+          "description": "Title for doctors"
+        }
       ]
     },
     "validation_rules": {
       "min_length": 2,
       "max_length": 100
+    },
+    "country_name_data": {
+      "AD": {
+        "country_name": "Andorra",
+        "primary_language": {
+          "code": "ca",
+          "name": "Catalan"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "catalan"
+      },
+      "AE": {
+        "country_name": "United Arab Emirates",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "AF": {
+        "country_name": "Afghanistan",
+        "primary_language": {
+          "code": "fa",
+          "name": "Persian"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "persian"
+      },
+      "AG": {
+        "country_name": "Antigua and Barbuda",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "AI": {
+        "country_name": "Anguilla",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "AL": {
+        "country_name": "Albania",
+        "primary_language": {
+          "code": "sq",
+          "name": "Albanian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "AM": {
+        "country_name": "Armenia",
+        "primary_language": {
+          "code": "hy",
+          "name": "Armenian"
+        },
+        "name_order": "western",
+        "script": "Armenian",
+        "honorific_language": "english"
+      },
+      "AO": {
+        "country_name": "Angola",
+        "primary_language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "portuguese"
+      },
+      "AR": {
+        "country_name": "Argentina",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "AS": {
+        "country_name": "American Samoa",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "AT": {
+        "country_name": "Austria",
+        "primary_language": {
+          "code": "de",
+          "name": "German"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "german"
+      },
+      "AU": {
+        "country_name": "Australia",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "AW": {
+        "country_name": "Aruba",
+        "primary_language": {
+          "code": "nl",
+          "name": "Dutch"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "dutch"
+      },
+      "AX": {
+        "country_name": "Åland Islands",
+        "primary_language": {
+          "code": "sv",
+          "name": "Swedish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "swedish"
+      },
+      "AZ": {
+        "country_name": "Azerbaijan",
+        "primary_language": {
+          "code": "az",
+          "name": "Azerbaijani"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "BA": {
+        "country_name": "Bosnia and Herzegovina",
+        "primary_language": {
+          "code": "bs",
+          "name": "Bosnian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "croatian"
+      },
+      "BB": {
+        "country_name": "Barbados",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "BD": {
+        "country_name": "Bangladesh",
+        "primary_language": {
+          "code": "bn",
+          "name": "Bengali"
+        },
+        "name_order": "western",
+        "script": "Bengali",
+        "honorific_language": "bengali"
+      },
+      "BE": {
+        "country_name": "Belgium",
+        "primary_language": {
+          "code": "nl",
+          "name": "Dutch"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "dutch"
+      },
+      "BF": {
+        "country_name": "Burkina Faso",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "BG": {
+        "country_name": "Bulgaria",
+        "primary_language": {
+          "code": "bg",
+          "name": "Bulgarian"
+        },
+        "name_order": "western",
+        "script": "Cyrillic",
+        "honorific_language": "bulgarian"
+      },
+      "BH": {
+        "country_name": "Bahrain",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "BI": {
+        "country_name": "Burundi",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "BJ": {
+        "country_name": "Benin",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "BL": {
+        "country_name": "Saint Barthélemy",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "BM": {
+        "country_name": "Bermuda",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "BN": {
+        "country_name": "Brunei Darussalam",
+        "primary_language": {
+          "code": "ms",
+          "name": "Malay (macrolanguage)"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "malay"
+      },
+      "BO": {
+        "country_name": "Bolivia, Plurinational State of",
+        "primary_language": {
+          "code": "ay",
+          "name": "Aymara"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "BQ": {
+        "country_name": "Bonaire, Sint Eustatius and Saba",
+        "primary_language": {
+          "code": "nl",
+          "name": "Dutch"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "dutch"
+      },
+      "BR": {
+        "country_name": "Brazil",
+        "primary_language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "portuguese"
+      },
+      "BS": {
+        "country_name": "Bahamas",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "BT": {
+        "country_name": "Bhutan",
+        "primary_language": {
+          "code": "dz",
+          "name": "Dzongkha"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "BW": {
+        "country_name": "Botswana",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "BY": {
+        "country_name": "Belarus",
+        "primary_language": {
+          "code": "be",
+          "name": "Belarusian"
+        },
+        "name_order": "western",
+        "script": "Cyrillic",
+        "honorific_language": "russian"
+      },
+      "BZ": {
+        "country_name": "Belize",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "CA": {
+        "country_name": "Canada",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "CC": {
+        "country_name": "Cocos (Keeling) Islands",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "CD": {
+        "country_name": "Congo, The Democratic Republic of the",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "CF": {
+        "country_name": "Central African Republic",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "CG": {
+        "country_name": "Congo",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "CH": {
+        "country_name": "Switzerland",
+        "primary_language": {
+          "code": "de",
+          "name": "German"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "german"
+      },
+      "CI": {
+        "country_name": "Côte d'Ivoire",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "CK": {
+        "country_name": "Cook Islands",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "CL": {
+        "country_name": "Chile",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "CM": {
+        "country_name": "Cameroon",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "CN": {
+        "country_name": "China",
+        "primary_language": {
+          "code": "zh",
+          "name": "Chinese"
+        },
+        "name_order": "eastern",
+        "script": "Han",
+        "honorific_language": "chinese"
+      },
+      "CO": {
+        "country_name": "Colombia",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "CQ": {
+        "country_name": "Sark",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "CR": {
+        "country_name": "Costa Rica",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "CU": {
+        "country_name": "Cuba",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "CV": {
+        "country_name": "Cabo Verde",
+        "primary_language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "portuguese"
+      },
+      "CW": {
+        "country_name": "Curaçao",
+        "primary_language": {
+          "code": "nl",
+          "name": "Dutch"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "dutch"
+      },
+      "CX": {
+        "country_name": "Christmas Island",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "CY": {
+        "country_name": "Cyprus",
+        "primary_language": {
+          "code": "el",
+          "name": "Modern Greek (1453-)"
+        },
+        "name_order": "western",
+        "script": "Greek",
+        "honorific_language": "greek"
+      },
+      "CZ": {
+        "country_name": "Czechia",
+        "primary_language": {
+          "code": "cs",
+          "name": "Czech"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "czech"
+      },
+      "DE": {
+        "country_name": "Germany",
+        "primary_language": {
+          "code": "de",
+          "name": "German"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "german"
+      },
+      "DG": {
+        "country_name": "Diego Garcia",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "DJ": {
+        "country_name": "Djibouti",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "DK": {
+        "country_name": "Denmark",
+        "primary_language": {
+          "code": "da",
+          "name": "Danish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "danish"
+      },
+      "DM": {
+        "country_name": "Dominica",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "DO": {
+        "country_name": "Dominican Republic",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "DZ": {
+        "country_name": "Algeria",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "EA": {
+        "country_name": "Ceuta and Melilla",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "EC": {
+        "country_name": "Ecuador",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "EE": {
+        "country_name": "Estonia",
+        "primary_language": {
+          "code": "et",
+          "name": "Estonian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "EG": {
+        "country_name": "Egypt",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "EH": {
+        "country_name": "Western Sahara",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "ER": {
+        "country_name": "Eritrea",
+        "primary_language": {
+          "code": "ti",
+          "name": "Tigrinya"
+        },
+        "name_order": "western",
+        "script": "Ethiopic",
+        "honorific_language": "arabic"
+      },
+      "ES": {
+        "country_name": "Spain",
+        "primary_language": {
+          "code": "ca",
+          "name": "Catalan"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "catalan"
+      },
+      "ET": {
+        "country_name": "Ethiopia",
+        "primary_language": {
+          "code": "am",
+          "name": "Amharic"
+        },
+        "name_order": "western",
+        "script": "Ethiopic",
+        "honorific_language": "english"
+      },
+      "FI": {
+        "country_name": "Finland",
+        "primary_language": {
+          "code": "fi",
+          "name": "Finnish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "finnish"
+      },
+      "FJ": {
+        "country_name": "Fiji",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "FK": {
+        "country_name": "Falkland Islands (Malvinas)",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "FM": {
+        "country_name": "Micronesia, Federated States of",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "FO": {
+        "country_name": "Faroe Islands",
+        "primary_language": {
+          "code": "fo",
+          "name": "Faroese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "FR": {
+        "country_name": "France",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "GA": {
+        "country_name": "Gabon",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "GB": {
+        "country_name": "United Kingdom",
+        "primary_language": {
+          "code": "cy",
+          "name": "Welsh"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "GD": {
+        "country_name": "Grenada",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "GE": {
+        "country_name": "Georgia",
+        "primary_language": {
+          "code": "ka",
+          "name": "Georgian"
+        },
+        "name_order": "western",
+        "script": "Georgian",
+        "honorific_language": "english"
+      },
+      "GF": {
+        "country_name": "French Guiana",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "GG": {
+        "country_name": "Guernsey",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "GH": {
+        "country_name": "Ghana",
+        "primary_language": {
+          "code": "ak",
+          "name": "Akan"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "GI": {
+        "country_name": "Gibraltar",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "GL": {
+        "country_name": "Greenland",
+        "primary_language": {
+          "code": "kl",
+          "name": "Kalaallisut"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "GM": {
+        "country_name": "Gambia",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "GN": {
+        "country_name": "Guinea",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "GP": {
+        "country_name": "Guadeloupe",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "GQ": {
+        "country_name": "Equatorial Guinea",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "GR": {
+        "country_name": "Greece",
+        "primary_language": {
+          "code": "el",
+          "name": "Modern Greek (1453-)"
+        },
+        "name_order": "western",
+        "script": "Greek",
+        "honorific_language": "greek"
+      },
+      "GS": {
+        "country_name": "South Georgia and the South Sandwich Islands",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "GT": {
+        "country_name": "Guatemala",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "GU": {
+        "country_name": "Guam",
+        "primary_language": {
+          "code": "ch",
+          "name": "Chamorro"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "GW": {
+        "country_name": "Guinea-Bissau",
+        "primary_language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "portuguese"
+      },
+      "GY": {
+        "country_name": "Guyana",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "HK": {
+        "country_name": "Hong Kong",
+        "primary_language": {
+          "code": "zh",
+          "name": "zh"
+        },
+        "name_order": "eastern",
+        "script": "Han",
+        "honorific_language": "chinese"
+      },
+      "HN": {
+        "country_name": "Honduras",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "HR": {
+        "country_name": "Croatia",
+        "primary_language": {
+          "code": "hr",
+          "name": "Croatian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "croatian"
+      },
+      "HT": {
+        "country_name": "Haiti",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "HU": {
+        "country_name": "Hungary",
+        "primary_language": {
+          "code": "hu",
+          "name": "Hungarian"
+        },
+        "name_order": "eastern",
+        "script": "Latin",
+        "honorific_language": "hungarian"
+      },
+      "IC": {
+        "country_name": "Canary Islands",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "ID": {
+        "country_name": "Indonesia",
+        "primary_language": {
+          "code": "id",
+          "name": "Indonesian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "indonesian"
+      },
+      "IE": {
+        "country_name": "Ireland",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "IL": {
+        "country_name": "Israel",
+        "primary_language": {
+          "code": "he",
+          "name": "Hebrew"
+        },
+        "name_order": "western",
+        "script": "Hebrew",
+        "honorific_language": "hebrew"
+      },
+      "IM": {
+        "country_name": "Isle of Man",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "IN": {
+        "country_name": "India",
+        "primary_language": {
+          "code": "hi",
+          "name": "Hindi"
+        },
+        "name_order": "western",
+        "script": "Devanagari",
+        "honorific_language": "hindi"
+      },
+      "IO": {
+        "country_name": "British Indian Ocean Territory",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "IQ": {
+        "country_name": "Iraq",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "IR": {
+        "country_name": "Iran, Islamic Republic of",
+        "primary_language": {
+          "code": "fa",
+          "name": "Persian"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "persian"
+      },
+      "IS": {
+        "country_name": "Iceland",
+        "primary_language": {
+          "code": "is",
+          "name": "Icelandic"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "IT": {
+        "country_name": "Italy",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "JE": {
+        "country_name": "Jersey",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "JM": {
+        "country_name": "Jamaica",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "JO": {
+        "country_name": "Jordan",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "JP": {
+        "country_name": "Japan",
+        "primary_language": {
+          "code": "ja",
+          "name": "Japanese"
+        },
+        "name_order": "eastern",
+        "script": "Japanese",
+        "honorific_language": "japanese"
+      },
+      "KE": {
+        "country_name": "Kenya",
+        "primary_language": {
+          "code": "sw",
+          "name": "Swahili (macrolanguage)"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "swahili"
+      },
+      "KG": {
+        "country_name": "Kyrgyzstan",
+        "primary_language": {
+          "code": "ky",
+          "name": "Kirghiz"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "russian"
+      },
+      "KH": {
+        "country_name": "Cambodia",
+        "primary_language": {
+          "code": "km",
+          "name": "Khmer"
+        },
+        "name_order": "western",
+        "script": "Khmer",
+        "honorific_language": "english"
+      },
+      "KI": {
+        "country_name": "Kiribati",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "KM": {
+        "country_name": "Comoros",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "KN": {
+        "country_name": "Saint Kitts and Nevis",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "KP": {
+        "country_name": "Korea, Democratic People's Republic of",
+        "primary_language": {
+          "code": "ko",
+          "name": "Korean"
+        },
+        "name_order": "eastern",
+        "script": "Hangul",
+        "honorific_language": "korean"
+      },
+      "KR": {
+        "country_name": "Korea, Republic of",
+        "primary_language": {
+          "code": "ko",
+          "name": "Korean"
+        },
+        "name_order": "eastern",
+        "script": "Hangul",
+        "honorific_language": "korean"
+      },
+      "KW": {
+        "country_name": "Kuwait",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "KY": {
+        "country_name": "Cayman Islands",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "KZ": {
+        "country_name": "Kazakhstan",
+        "primary_language": {
+          "code": "kk",
+          "name": "Kazakh"
+        },
+        "name_order": "western",
+        "script": "Cyrillic",
+        "honorific_language": "russian"
+      },
+      "LA": {
+        "country_name": "Lao People's Democratic Republic",
+        "primary_language": {
+          "code": "lo",
+          "name": "Lao"
+        },
+        "name_order": "western",
+        "script": "Lao",
+        "honorific_language": "english"
+      },
+      "LB": {
+        "country_name": "Lebanon",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "LC": {
+        "country_name": "Saint Lucia",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "LI": {
+        "country_name": "Liechtenstein",
+        "primary_language": {
+          "code": "de",
+          "name": "German"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "german"
+      },
+      "LK": {
+        "country_name": "Sri Lanka",
+        "primary_language": {
+          "code": "si",
+          "name": "Sinhala"
+        },
+        "name_order": "western",
+        "script": "Sinhala",
+        "honorific_language": "english"
+      },
+      "LR": {
+        "country_name": "Liberia",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "LS": {
+        "country_name": "Lesotho",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "LT": {
+        "country_name": "Lithuania",
+        "primary_language": {
+          "code": "lt",
+          "name": "Lithuanian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "LU": {
+        "country_name": "Luxembourg",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "LV": {
+        "country_name": "Latvia",
+        "primary_language": {
+          "code": "lv",
+          "name": "Latvian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "LY": {
+        "country_name": "Libya",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "MA": {
+        "country_name": "Morocco",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "MC": {
+        "country_name": "Monaco",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "MD": {
+        "country_name": "Moldova, Republic of",
+        "primary_language": {
+          "code": "ro",
+          "name": "Romanian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "romanian"
+      },
+      "MF": {
+        "country_name": "Saint Martin (French part)",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "MG": {
+        "country_name": "Madagascar",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "MH": {
+        "country_name": "Marshall Islands",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "MK": {
+        "country_name": "North Macedonia",
+        "primary_language": {
+          "code": "mk",
+          "name": "Macedonian"
+        },
+        "name_order": "western",
+        "script": "Cyrillic",
+        "honorific_language": "english"
+      },
+      "ML": {
+        "country_name": "Mali",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "MM": {
+        "country_name": "Myanmar",
+        "primary_language": {
+          "code": "my",
+          "name": "Burmese"
+        },
+        "name_order": "western",
+        "script": "Myanmar",
+        "honorific_language": "english"
+      },
+      "MN": {
+        "country_name": "Mongolia",
+        "primary_language": {
+          "code": "mn",
+          "name": "Mongolian"
+        },
+        "name_order": "eastern",
+        "script": "Cyrillic",
+        "honorific_language": "english"
+      },
+      "MO": {
+        "country_name": "Macao",
+        "primary_language": {
+          "code": "zh",
+          "name": "zh"
+        },
+        "name_order": "eastern",
+        "script": "Han",
+        "honorific_language": "chinese"
+      },
+      "MP": {
+        "country_name": "Northern Mariana Islands",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "MQ": {
+        "country_name": "Martinique",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "MR": {
+        "country_name": "Mauritania",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "MS": {
+        "country_name": "Montserrat",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "MT": {
+        "country_name": "Malta",
+        "primary_language": {
+          "code": "mt",
+          "name": "Maltese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "MU": {
+        "country_name": "Mauritius",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "MV": {
+        "country_name": "Maldives",
+        "primary_language": {
+          "code": "dv",
+          "name": "Dhivehi"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "english"
+      },
+      "MW": {
+        "country_name": "Malawi",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "MX": {
+        "country_name": "Mexico",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "MY": {
+        "country_name": "Malaysia",
+        "primary_language": {
+          "code": "ms",
+          "name": "Malay (macrolanguage)"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "malay"
+      },
+      "MZ": {
+        "country_name": "Mozambique",
+        "primary_language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "portuguese"
+      },
+      "NA": {
+        "country_name": "Namibia",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "NC": {
+        "country_name": "New Caledonia",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "NE": {
+        "country_name": "Niger",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "NF": {
+        "country_name": "Norfolk Island",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "NG": {
+        "country_name": "Nigeria",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "NI": {
+        "country_name": "Nicaragua",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "NL": {
+        "country_name": "Netherlands",
+        "primary_language": {
+          "code": "fy",
+          "name": "Western Frisian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "dutch"
+      },
+      "NO": {
+        "country_name": "Norway",
+        "primary_language": {
+          "code": "nb",
+          "name": "Norwegian Bokmål"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "norwegian"
+      },
+      "NP": {
+        "country_name": "Nepal",
+        "primary_language": {
+          "code": "ne",
+          "name": "Nepali (macrolanguage)"
+        },
+        "name_order": "western",
+        "script": "Devanagari",
+        "honorific_language": "english"
+      },
+      "NR": {
+        "country_name": "Nauru",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "NU": {
+        "country_name": "Niue",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "NZ": {
+        "country_name": "New Zealand",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "OM": {
+        "country_name": "Oman",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "PA": {
+        "country_name": "Panama",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "PE": {
+        "country_name": "Peru",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "PF": {
+        "country_name": "French Polynesia",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "PG": {
+        "country_name": "Papua New Guinea",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "PH": {
+        "country_name": "Philippines",
+        "primary_language": {
+          "code": "tl",
+          "name": "tl"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "PK": {
+        "country_name": "Pakistan",
+        "primary_language": {
+          "code": "ur",
+          "name": "Urdu"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "urdu"
+      },
+      "PL": {
+        "country_name": "Poland",
+        "primary_language": {
+          "code": "de",
+          "name": "German"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "german"
+      },
+      "PM": {
+        "country_name": "Saint Pierre and Miquelon",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "PN": {
+        "country_name": "Pitcairn",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "PR": {
+        "country_name": "Puerto Rico",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "PS": {
+        "country_name": "Palestine, State of",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "PT": {
+        "country_name": "Portugal",
+        "primary_language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "portuguese"
+      },
+      "PW": {
+        "country_name": "Palau",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "PY": {
+        "country_name": "Paraguay",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "QA": {
+        "country_name": "Qatar",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "RE": {
+        "country_name": "Réunion",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "RO": {
+        "country_name": "Romania",
+        "primary_language": {
+          "code": "ro",
+          "name": "Romanian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "romanian"
+      },
+      "RS": {
+        "country_name": "Serbia",
+        "primary_language": {
+          "code": "hr",
+          "name": "Croatian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "croatian"
+      },
+      "RU": {
+        "country_name": "Russian Federation",
+        "primary_language": {
+          "code": "av",
+          "name": "Avaric"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "russian"
+      },
+      "RW": {
+        "country_name": "Rwanda",
+        "primary_language": {
+          "code": "rw",
+          "name": "Kinyarwanda"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "SA": {
+        "country_name": "Saudi Arabia",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "SB": {
+        "country_name": "Solomon Islands",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "SC": {
+        "country_name": "Seychelles",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "SD": {
+        "country_name": "Sudan",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "SE": {
+        "country_name": "Sweden",
+        "primary_language": {
+          "code": "fi",
+          "name": "Finnish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "finnish"
+      },
+      "SG": {
+        "country_name": "Singapore",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "SH": {
+        "country_name": "Saint Helena, Ascension and Tristan da Cunha",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "SI": {
+        "country_name": "Slovenia",
+        "primary_language": {
+          "code": "sl",
+          "name": "Slovenian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "SJ": {
+        "country_name": "Svalbard and Jan Mayen",
+        "primary_language": {
+          "code": "nb",
+          "name": "Norwegian Bokmål"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "SK": {
+        "country_name": "Slovakia",
+        "primary_language": {
+          "code": "sk",
+          "name": "Slovak"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "slovak"
+      },
+      "SL": {
+        "country_name": "Sierra Leone",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "SM": {
+        "country_name": "San Marino",
+        "primary_language": {
+          "code": "it",
+          "name": "Italian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "italian"
+      },
+      "SN": {
+        "country_name": "Senegal",
+        "primary_language": {
+          "code": "ff",
+          "name": "Fulah"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "SO": {
+        "country_name": "Somalia",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "SR": {
+        "country_name": "Suriname",
+        "primary_language": {
+          "code": "nl",
+          "name": "Dutch"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "dutch"
+      },
+      "SS": {
+        "country_name": "South Sudan",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "ST": {
+        "country_name": "Sao Tome and Principe",
+        "primary_language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "portuguese"
+      },
+      "SV": {
+        "country_name": "El Salvador",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "SX": {
+        "country_name": "Sint Maarten (Dutch part)",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "SY": {
+        "country_name": "Syrian Arab Republic",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "SZ": {
+        "country_name": "Eswatini",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "TC": {
+        "country_name": "Turks and Caicos Islands",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "TD": {
+        "country_name": "Chad",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "TG": {
+        "country_name": "Togo",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "TH": {
+        "country_name": "Thailand",
+        "primary_language": {
+          "code": "th",
+          "name": "Thai"
+        },
+        "name_order": "western",
+        "script": "Thai",
+        "honorific_language": "thai"
+      },
+      "TJ": {
+        "country_name": "Tajikistan",
+        "primary_language": {
+          "code": "tg",
+          "name": "Tajik"
+        },
+        "name_order": "western",
+        "script": "Cyrillic",
+        "honorific_language": "english"
+      },
+      "TK": {
+        "country_name": "Tokelau",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "TL": {
+        "country_name": "Timor-Leste",
+        "primary_language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "portuguese"
+      },
+      "TM": {
+        "country_name": "Turkmenistan",
+        "primary_language": {
+          "code": "tk",
+          "name": "Turkmen"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "TN": {
+        "country_name": "Tunisia",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "TO": {
+        "country_name": "Tonga",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "TR": {
+        "country_name": "Türkiye",
+        "primary_language": {
+          "code": "tr",
+          "name": "Turkish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "turkish"
+      },
+      "TT": {
+        "country_name": "Trinidad and Tobago",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "TV": {
+        "country_name": "Tuvalu",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "TZ": {
+        "country_name": "Tanzania, United Republic of",
+        "primary_language": {
+          "code": "sw",
+          "name": "Swahili (macrolanguage)"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "swahili"
+      },
+      "UA": {
+        "country_name": "Ukraine",
+        "primary_language": {
+          "code": "ru",
+          "name": "Russian"
+        },
+        "name_order": "western",
+        "script": "Cyrillic",
+        "honorific_language": "russian"
+      },
+      "UG": {
+        "country_name": "Uganda",
+        "primary_language": {
+          "code": "sw",
+          "name": "Swahili (macrolanguage)"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "swahili"
+      },
+      "UM": {
+        "country_name": "United States Minor Outlying Islands",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "US": {
+        "country_name": "United States",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "UY": {
+        "country_name": "Uruguay",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "UZ": {
+        "country_name": "Uzbekistan",
+        "primary_language": {
+          "code": "uz",
+          "name": "Uzbek"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "VA": {
+        "country_name": "Holy See (Vatican City State)",
+        "primary_language": {
+          "code": "it",
+          "name": "Italian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "italian"
+      },
+      "VC": {
+        "country_name": "Saint Vincent and the Grenadines",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "VE": {
+        "country_name": "Venezuela, Bolivarian Republic of",
+        "primary_language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "spanish"
+      },
+      "VG": {
+        "country_name": "Virgin Islands, British",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "VI": {
+        "country_name": "Virgin Islands, U.S.",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "VN": {
+        "country_name": "Viet Nam",
+        "primary_language": {
+          "code": "vi",
+          "name": "Vietnamese"
+        },
+        "name_order": "eastern",
+        "script": "Latin",
+        "honorific_language": "vietnamese"
+      },
+      "VU": {
+        "country_name": "Vanuatu",
+        "primary_language": {
+          "code": "bi",
+          "name": "Bislama"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "WF": {
+        "country_name": "Wallis and Futuna",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "WS": {
+        "country_name": "Samoa",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "XK": {
+        "country_name": "Kosovo",
+        "primary_language": {
+          "code": "sq",
+          "name": "Albanian"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "serbian"
+      },
+      "YE": {
+        "country_name": "Yemen",
+        "primary_language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "name_order": "western",
+        "script": "Arabic",
+        "honorific_language": "arabic"
+      },
+      "YT": {
+        "country_name": "Mayotte",
+        "primary_language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "french"
+      },
+      "ZA": {
+        "country_name": "South Africa",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "ZM": {
+        "country_name": "Zambia",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      },
+      "ZW": {
+        "country_name": "Zimbabwe",
+        "primary_language": {
+          "code": "en",
+          "name": "English"
+        },
+        "name_order": "western",
+        "script": "Latin",
+        "honorific_language": "english"
+      }
     }
   }
 }

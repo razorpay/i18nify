@@ -84,7 +84,12 @@ func TestGetHonorificTitles_Hindi(t *testing.T) {
 }
 
 func TestGetHonorificTitles_AllSupportedLocales(t *testing.T) {
-	locales := []string{"en", "hi", "fr", "de", "es", "ar", "ja", "zh", "pt", "ru"}
+	locales := []string{
+		"en", "hi", "fr", "de", "es", "ar", "ja", "zh", "pt", "ru",
+		"it", "nl", "ko", "vi", "tr", "pl", "sv", "da", "no", "fi",
+		"el", "he", "fa", "ur", "bn", "th", "id", "ms", "sw", "uk",
+		"ro", "hu", "cs", "sk", "bg", "sr", "hr", "ca",
+	}
 	for _, locale := range locales {
 		t.Run(locale, func(t *testing.T) {
 			titles, err := GetHonorificTitles(locale)
@@ -93,6 +98,7 @@ func TestGetHonorificTitles_AllSupportedLocales(t *testing.T) {
 		})
 	}
 }
+
 
 func TestGetHonorificTitles_BCP47TagStripped(t *testing.T) {
 	// "en-US" should resolve to the same data as "en"
