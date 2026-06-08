@@ -22,7 +22,7 @@ type AddressInfo struct {
 	ZipRegex string `json:"zip_regex,omitempty"`
 	ZipExample string `json:"zip_example,omitempty"`
 	Lang string `json:"lang,omitempty"`
-	Languages string `json:"languages,omitempty"`
+	Languages []string `json:"languages,omitempty"`
 	PostUrl string `json:"post_url,omitempty"`
 	SubKeys []string `json:"sub_keys,omitempty"`
 	SubNames []string `json:"sub_names,omitempty"`
@@ -69,11 +69,11 @@ func (x *AddressInfo) GetLang() string {
 	return ""
 }
 
-func (x *AddressInfo) GetLanguages() string {
+func (x *AddressInfo) GetLanguages() []string {
 	if x != nil {
 		return x.Languages
 	}
-	return ""
+	return nil
 }
 
 func (x *AddressInfo) GetPostUrl() string {

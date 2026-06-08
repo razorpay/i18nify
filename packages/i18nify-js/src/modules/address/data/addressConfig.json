@@ -8,7 +8,9 @@
   "AD": {
     "country_name": "ANDORRA",
     "lang": "ca",
-    "languages": "ca",
+    "languages": [
+      "ca"
+    ],
     "fmt": "%N%n%O%n%A%n%Z %C",
     "zip_regex": "AD[1-7]0\\d",
     "zip_example": "AD100,AD501,AD700",
@@ -44,7 +46,9 @@
   "AE": {
     "country_name": "UNITED ARAB EMIRATES",
     "lang": "ar",
-    "languages": "ar",
+    "languages": [
+      "ar"
+    ],
     "fmt": "%N%n%O%n%A%n%S",
     "require": "AS",
     "state_name_type": "emirate",
@@ -101,7 +105,9 @@
   "AM": {
     "country_name": "ARMENIA",
     "lang": "hy",
-    "languages": "hy",
+    "languages": [
+      "hy"
+    ],
     "fmt": "%N%n%O%n%A%n%Z%n%C%n%S",
     "zip_regex": "(?:37)?\\d{4}",
     "zip_example": "375010,0002,0010",
@@ -141,7 +147,9 @@
   "AR": {
     "country_name": "ARGENTINA",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%Z %C%n%S",
     "zip_regex": "((?:[A-HJ-NP-Z])?\\d{4})([A-Z]{3})?",
     "zip_example": "C1070AAM,C1000WAM,B1000TBU,X5187XAB",
@@ -246,7 +254,9 @@
   "AU": {
     "country_name": "AUSTRALIA",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%O%n%N%n%A%n%C %S %Z",
     "require": "ACSZ",
     "zip_regex": "\\d{4}",
@@ -387,7 +397,9 @@
   "BR": {
     "country_name": "BRAZIL",
     "lang": "pt",
-    "languages": "pt",
+    "languages": [
+      "pt"
+    ],
     "fmt": "%O%n%N%n%A%n%D%n%C-%S%n%Z",
     "require": "ASCZ",
     "zip_regex": "\\d{5}-?\\d{3}",
@@ -486,7 +498,9 @@
   "BS": {
     "country_name": "BAHAMAS",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%N%n%O%n%A%n%C, %S",
     "state_name_type": "island",
     "sub_keys": [
@@ -667,7 +681,9 @@
   "CL": {
     "country_name": "CHILE",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%Z %C%n%S",
     "zip_regex": "\\d{7}",
     "zip_example": "8340457,8720019,1230000,8329100",
@@ -733,7 +749,9 @@
   "CN": {
     "country_name": "CHINA",
     "lang": "zh",
-    "languages": "zh",
+    "languages": [
+      "zh"
+    ],
     "fmt": "%Z%n%S%C%D%n%A%n%O%n%N",
     "require": "ACSZ",
     "zip_regex": "\\d{6}",
@@ -852,7 +870,9 @@
   "CO": {
     "country_name": "COLOMBIA",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%D%n%C, %S, %Z",
     "require": "AS",
     "zip_regex": "\\d{6}",
@@ -941,7 +961,9 @@
   "CU": {
     "country_name": "CUBA",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%C %S%n%Z",
     "zip_regex": "\\d{5}",
     "zip_example": "10700",
@@ -985,7 +1007,9 @@
   "CV": {
     "country_name": "CAPE VERDE",
     "lang": "pt",
-    "languages": "pt",
+    "languages": [
+      "pt"
+    ],
     "fmt": "%N%n%O%n%A%n%Z %C%n%S",
     "zip_regex": "\\d{4}",
     "zip_example": "7600",
@@ -1089,7 +1113,9 @@
   "EG": {
     "country_name": "EGYPT",
     "lang": "ar",
-    "languages": "ar",
+    "languages": [
+      "ar"
+    ],
     "fmt": "%N%n%O%n%A%n%C%n%S%n%Z",
     "zip_regex": "\\d{5}",
     "zip_example": "12411,11599",
@@ -1507,7 +1533,9 @@
   "ID": {
     "country_name": "INDONESIA",
     "lang": "id",
-    "languages": "id",
+    "languages": [
+      "id"
+    ],
     "fmt": "%N%n%O%n%A%n%C%n%S %Z",
     "require": "AS",
     "zip_regex": "\\d{5}",
@@ -1588,7 +1616,9 @@
   "IE": {
     "country_name": "IRELAND",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%N%n%O%n%A%n%D%n%C%n%S%n%Z",
     "zip_regex": "[\\dA-Z]{3} ?[\\dA-Z]{4}",
     "zip_example": "A65 F4E2",
@@ -1814,7 +1844,9 @@
   "IR": {
     "country_name": "IRAN",
     "lang": "fa",
-    "languages": "fa",
+    "languages": [
+      "fa"
+    ],
     "fmt": "%O%n%N%n%S%n%C, %D%n%A%n%Z",
     "zip_regex": "\\d{5}-?\\d{5}",
     "zip_example": "11936-12345",
@@ -1896,7 +1928,9 @@
   "IT": {
     "country_name": "ITALY",
     "lang": "it",
-    "languages": "it",
+    "languages": [
+      "it"
+    ],
     "fmt": "%N%n%O%n%A%n%Z %C %S",
     "require": "ACSZ",
     "zip_regex": "\\d{5}",
@@ -2241,7 +2275,9 @@
   "JM": {
     "country_name": "JAMAICA",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%N%n%O%n%A%n%C%n%S %X",
     "require": "ACS",
     "state_name_type": "parish",
@@ -2287,7 +2323,9 @@
   "JP": {
     "country_name": "JAPAN",
     "lang": "ja",
-    "languages": "ja",
+    "languages": [
+      "ja"
+    ],
     "fmt": "〒%Z%n%S%n%A%n%O%n%N",
     "require": "ASZ",
     "zip_regex": "\\d{3}-?\\d{4}",
@@ -2423,7 +2461,9 @@
   "KN": {
     "country_name": "SAINT KITTS AND NEVIS",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%N%n%O%n%A%n%C, %S",
     "require": "ACS",
     "state_name_type": "island",
@@ -2439,7 +2479,9 @@
   "KP": {
     "country_name": "NORTH KOREA",
     "lang": "ko",
-    "languages": "ko",
+    "languages": [
+      "ko"
+    ],
     "fmt": "%Z%n%S%n%C%n%A%n%O%n%N",
     "sub_keys": [
       "강원도",
@@ -2471,7 +2513,9 @@
   "KR": {
     "country_name": "SOUTH KOREA",
     "lang": "ko",
-    "languages": "ko",
+    "languages": [
+      "ko"
+    ],
     "fmt": "%S %C%D%n%A%n%O%n%N%n%Z",
     "require": "ACSZ",
     "zip_regex": "\\d{5}",
@@ -2546,7 +2590,9 @@
   "KY": {
     "country_name": "CAYMAN ISLANDS",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%N%n%O%n%A%n%S %Z",
     "require": "AS",
     "zip_regex": "KY\\d-\\d{4}",
@@ -2760,7 +2806,9 @@
   "MX": {
     "country_name": "MEXICO",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%D%n%Z %C, %S",
     "require": "ACSZ",
     "zip_regex": "\\d{5}",
@@ -2874,7 +2922,9 @@
   "MY": {
     "country_name": "MALAYSIA",
     "lang": "ms",
-    "languages": "ms",
+    "languages": [
+      "ms"
+    ],
     "fmt": "%N%n%O%n%A%n%D%n%Z %C%n%S",
     "require": "ACZ",
     "zip_regex": "\\d{5}",
@@ -2922,7 +2972,9 @@
   "MZ": {
     "country_name": "MOZAMBIQUE",
     "lang": "pt",
-    "languages": "pt",
+    "languages": [
+      "pt"
+    ],
     "fmt": "%N%n%O%n%A%n%Z %C%S",
     "zip_regex": "\\d{4}",
     "zip_example": "1102,1119,3212",
@@ -2982,7 +3034,9 @@
   "NG": {
     "country_name": "NIGERIA",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%N%n%O%n%A%n%D%n%C %Z%n%S",
     "zip_regex": "\\d{6}",
     "zip_example": "930283,300001,931104",
@@ -3070,7 +3124,9 @@
   "NI": {
     "country_name": "NICARAGUA",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%Z%n%C, %S",
     "zip_regex": "\\d{5}",
     "zip_example": "52000",
@@ -3142,7 +3198,9 @@
   "NR": {
     "country_name": "NAURU CENTRAL PACIFIC",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%N%n%O%n%A%n%S",
     "require": "AS",
     "state_name_type": "district",
@@ -3203,7 +3261,9 @@
   "PE": {
     "country_name": "PERU",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%C %Z%n%S",
     "zip_regex": "(?:LIMA \\d{1,2}|CALLAO 0?\\d)|[0-2]\\d{4}",
     "zip_example": "LIMA 23,LIMA 42,CALLAO 2,02001",
@@ -3284,7 +3344,9 @@
   "PH": {
     "country_name": "PHILIPPINES",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%N%n%O%n%A%n%D, %C%n%Z %S",
     "zip_regex": "\\d{4}",
     "zip_example": "1008,1050,1135,1207,2000,1000",
@@ -3552,7 +3614,9 @@
   "RU": {
     "country_name": "RUSSIAN FEDERATION",
     "lang": "ru",
-    "languages": "ru",
+    "languages": [
+      "ru"
+    ],
     "fmt": "%N%n%O%n%A%n%C%n%S%n%Z",
     "require": "ACSZ",
     "zip_regex": "\\d{6}",
@@ -3912,7 +3976,9 @@
   "SO": {
     "country_name": "SOMALIA",
     "lang": "so",
-    "languages": "so",
+    "languages": [
+      "so"
+    ],
     "fmt": "%N%n%O%n%A%n%C, %S %Z",
     "require": "ACS",
     "zip_regex": "[A-Z]{2} ?\\d{5}",
@@ -3981,7 +4047,9 @@
   "SR": {
     "country_name": "SURINAME",
     "lang": "nl",
-    "languages": "nl",
+    "languages": [
+      "nl"
+    ],
     "fmt": "%N%n%O%n%A%n%C%n%S",
     "sub_keys": [
       "Brokopondo",
@@ -4017,7 +4085,9 @@
   "SV": {
     "country_name": "EL SALVADOR",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%Z-%C%n%S",
     "require": "ACS",
     "zip_regex": "CP [1-3][1-7][0-2]\\d",
@@ -4110,7 +4180,9 @@
   "TH": {
     "country_name": "THAILAND",
     "lang": "th",
-    "languages": "th",
+    "languages": [
+      "th"
+    ],
     "fmt": "%N%n%O%n%A%n%D %C%n%S %Z",
     "zip_regex": "\\d{5}",
     "zip_example": "10150,10210",
@@ -4304,7 +4376,9 @@
   "TR": {
     "country_name": "TURKEY",
     "lang": "tr",
-    "languages": "tr",
+    "languages": [
+      "tr"
+    ],
     "fmt": "%N%n%O%n%A%n%Z %C/%S",
     "require": "ACZ",
     "zip_regex": "\\d{5}",
@@ -4484,7 +4558,9 @@
   "TV": {
     "country_name": "TUVALU",
     "lang": "tyv",
-    "languages": "tyv",
+    "languages": [
+      "tyv"
+    ],
     "fmt": "%N%n%O%n%A%n%C%n%S",
     "state_name_type": "island",
     "sub_keys": [
@@ -4513,7 +4589,9 @@
   "TW": {
     "country_name": "TAIWAN",
     "lang": "zh-Hant",
-    "languages": "zh-Hant",
+    "languages": [
+      "zh-Hant"
+    ],
     "fmt": "%Z%n%S%C%n%A%n%O%n%N",
     "require": "ACSZ",
     "zip_regex": "\\d{3}(?:\\d{2,3})?",
@@ -4579,7 +4657,9 @@
   "UA": {
     "country_name": "UKRAINE",
     "lang": "uk",
-    "languages": "uk",
+    "languages": [
+      "uk"
+    ],
     "fmt": "%N%n%O%n%A%n%C%n%S%n%Z",
     "require": "ACZ",
     "zip_regex": "\\d{5}",
@@ -4690,7 +4770,9 @@
   "US": {
     "country_name": "UNITED STATES",
     "lang": "en",
-    "languages": "en",
+    "languages": [
+      "en"
+    ],
     "fmt": "%N%n%O%n%A%n%C, %S %Z",
     "require": "ACSZ",
     "zip_regex": "(\\d{5})(?:[ \\-](\\d{4}))?",
@@ -4894,7 +4976,9 @@
   "UY": {
     "country_name": "URUGUAY",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%Z %C %S",
     "zip_regex": "\\d{5}",
     "zip_example": "11600",
@@ -4965,7 +5049,9 @@
   "VE": {
     "country_name": "VENEZUELA",
     "lang": "es",
-    "languages": "es",
+    "languages": [
+      "es"
+    ],
     "fmt": "%N%n%O%n%A%n%C %Z, %S",
     "require": "ACS",
     "zip_regex": "\\d{4}",
@@ -5047,7 +5133,9 @@
   "VN": {
     "country_name": "VIET NAM",
     "lang": "vi",
-    "languages": "vi",
+    "languages": [
+      "vi"
+    ],
     "fmt": "%N%n%O%n%A%n%C%n%S %Z",
     "zip_regex": "\\d{5}\\d?",
     "zip_example": "70010,55999",

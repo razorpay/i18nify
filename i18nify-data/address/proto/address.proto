@@ -15,7 +15,7 @@ message AddressInfo {
   string zip_regex = 3;
   string zip_example = 4;
   string lang = 5;
-  string languages = 6;
+  repeated string languages = 6;
   string post_url = 7;
   repeated string sub_keys = 8;
   repeated string sub_names = 9;
