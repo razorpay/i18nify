@@ -6,25 +6,12 @@ import (
 	"strings"
 	"unicode"
 
-	xcurrency "golang.org/x/text/currency"
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 	"golang.org/x/text/number"
 )
 
 const defaultLocale = "en-IN"
-
-// suffixCurrencyBases lists BCP 47 language base codes whose locales conventionally place
-// the currency symbol after the number (suffix position) per CLDR data.
-var suffixCurrencyBases = map[string]bool{
-	"de": true, "nl": true, "fr": true, "it": true,
-	"es": true, "pt": true, "pl": true, "cs": true,
-	"sk": true, "ro": true, "hu": true, "sv": true,
-	"da": true, "nb": true, "nn": true, "fi": true,
-	"et": true, "lv": true, "lt": true, "bg": true,
-	"hr": true, "sl": true, "ca": true, "el": true,
-	"sr": true, "uk": true, "tr": true,
-}
 
 // NumberFormatOptions mirrors the JS options object accepted by formatNumber / formatNumberByParts.
 type NumberFormatOptions struct {
@@ -96,7 +83,7 @@ func buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, e
 	}
 
 	if opts.Currency != "" {
-		return buildCurrencyParts(amount, opts.Currency, tag, p, numOpts, decSep, grpSep)
+		return buildCurrencyParts(amount, opts.Currency, p, numOpts, decSep, grpSep)
 	}
 
 	// Plain decimal: format then split into parts.
@@ -160,20 +147,15 @@ func isAllDigits(s string) bool {
 }
 
 // buildCurrencyParts formats amount with the canonical i18nify currency symbol.
-//
-// golang.org/x/text/currency does not implement locale-aware symbol positioning (it always
-// prefixes). Position is therefore determined via isCurrencyPrefixLocale, which consults the
-// BCP 47 language base against the CLDR-derived suffixCurrencyBases map.
-//
-// Separators follow browser/Intl conventions:
-//   - Prefix + known currency: no separator        (e.g. "$1,234.56", "¥5,000")
-//   - Suffix + known currency: U+00A0 (NBSP)       (e.g. "1.234,56 €")
-//   - Unknown currency code:   prefix + U+00A0     (matches JS Intl output for unknown codes)
-func buildCurrencyParts(amount float64, currCode string, tag language.Tag, p *message.Printer, numOpts []number.Option, decSep, grpSep string) ([]FormattedPart, error) {
-	canonicalSymbol, err := GetCurrencySymbol(currCode)
-	if err != nil {
-		// Unknown currency code: fall back to the code string itself (matches JS Intl behaviour).
-		canonicalSymbol = currCode
+// Symbol position is read from the currency data (symbol_position field, derived from CLDR),
+// the same source JS Intl.NumberFormat uses — no hardcoded language map needed.
+func buildCurrencyParts(amount float64, currCode string, p *message.Printer, numOpts []number.Option, decSep, grpSep string) ([]FormattedPart, error) {
+	info, infoErr := GetCurrencyInformation(currCode)
+	unknownCurrency := infoErr != nil
+
+	canonicalSymbol := currCode
+	if !unknownCurrency {
+		canonicalSymbol = info.Symbol
 	}
 
 	isNegative := amount < 0
@@ -184,23 +166,20 @@ func buildCurrencyParts(amount float64, currCode string, tag language.Tag, p *me
 
 	absNumStr := p.Sprintf("%v", number.Decimal(absAmount, numOpts...))
 
-	// Determine prefix vs suffix and what separator lies between symbol and number.
-	_, parseErr := xcurrency.ParseISO(currCode)
-	isPrefix := isCurrencyPrefixLocale(tag)
+	// Symbol position comes from currency data (CLDR-derived symbol_position field).
+	// Unknown currencies fall back to prefix with a space separator (matches JS Intl behaviour).
+	isPrefix := true
 	separator := ""
-	if parseErr != nil {
-		// Currency unknown to x/text (e.g. "XYZ"): JS Intl uses prefix + NBSP.
-		isPrefix = true
+	if unknownCurrency {
 		separator = " "
-	} else if !isPrefix {
-		// Suffix locale: U+00A0 between number and symbol, matching browser output.
-		separator = " "
+	} else {
+		isPrefix = info.SymbolPosition != "suffix"
+		if !isPrefix {
+			separator = " "
+		}
 	}
-	// Prefix + known currency: no separator (e.g. "$1,234.56" not "$ 1,234.56").
 
 	var parts []FormattedPart
-
-	// Minus sign is always the very first element, matching JS/Intl formatting.
 	if isNegative {
 		parts = append(parts, FormattedPart{Type: "minusSign", Value: "-"})
 	}
@@ -222,13 +201,6 @@ func buildCurrencyParts(amount float64, currCode string, tag language.Tag, p *me
 	}
 
 	return parts, nil
-}
-
-// isCurrencyPrefixLocale returns true when the locale conventionally places the currency
-// symbol before the number. Consults the BCP 47 language base against suffixCurrencyBases.
-func isCurrencyPrefixLocale(tag language.Tag) bool {
-	base, _, _ := tag.Raw()
-	return !suffixCurrencyBases[base.String()]
 }
 
 // parseFormattedStr splits a fully-formatted number string (may include a leading sign) into parts.

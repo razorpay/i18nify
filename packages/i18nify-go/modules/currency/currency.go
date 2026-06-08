@@ -50,6 +50,7 @@ func convertFromDataSource(src *dataSource.CurrencyData) Currency {
 			MinorUnit:                     ci.GetMinorUnit(),
 			Symbol:                        ci.GetSymbol(),
 			PhysicalCurrencyDenominations: ci.GetPhysicalCurrencyDenominations(),
+			SymbolPosition:                ci.GetSymbolPosition(),
 		}
 	}
 	return Currency{CurrencyInformation: info}
@@ -114,6 +115,7 @@ type CurrencyInformation struct {
 	NumericCode                   string   `json:"numeric_code"`                    // NumericCode represents the ISO 4217 numeric code of the currency.
 	PhysicalCurrencyDenominations []string `json:"physical_currency_denominations"` // PhysicalCurrencyDenominations represents the physical denominations of the currency.
 	Symbol                        string   `json:"symbol"`                          // Symbol represents the symbol or abbreviation of the currency.
+	SymbolPosition                string   `json:"symbol_position"`                 // SymbolPosition is "prefix" or "suffix" per CLDR locale data.
 }
 
 // Getters for various fields of CurrencyInformation.
