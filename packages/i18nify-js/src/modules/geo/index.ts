@@ -14,3 +14,4 @@ export { default as validateZipCode } from './validateZipCode';
 export { default as getStatesByZipCode } from './getStatesByZipCode';
 export { default as getDefaultLocaleList } from './getDefaultLocaleList';
 export { default as getCountriesByTimezone } from './getCountriesByTimezone';
+export { default as getCountriesByUtcOffset } from './getCountriesByUtcOffset';
