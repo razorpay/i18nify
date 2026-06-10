@@ -1,1 +1,10 @@
 export { default as getListOfBanks } from './getListOfBanks';
+export { default as getBankCode } from './getBankCode';
+export { default as getBankNameByCode } from './getBankNameByCode';
+export { default as getPaymentNetwork } from './getPaymentNetwork';
+export { default as getRoutingLabel } from './getRoutingLabel';
+export { default as normalizeIFSC } from './normalizeIFSC';
+export { default as validateGSTIN } from './validateGSTIN';
+export { default as validateIFSC } from './validateIFSC';
+export { default as validatePAN } from './validatePAN';
+export type * from './types';

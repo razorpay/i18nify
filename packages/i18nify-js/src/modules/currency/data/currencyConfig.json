@@ -224,11 +224,6 @@
     "minor_unit": "2",
     "symbol": "₡"
   },
-  "HRK": {
-    "name": "Kuna",
-    "minor_unit": "2",
-    "symbol": "kn"
-  },
   "CUP": {
     "name": "Cuban Peso",
     "minor_unit": "2",
