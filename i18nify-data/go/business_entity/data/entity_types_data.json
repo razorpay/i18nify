@@ -1,0 +1,359 @@
+{
+  "entity_types": {
+    "IN": [
+      {
+        "code": "PRIVATE_LIMITED",
+        "name": "Private Limited Company",
+        "abbreviation": "Pvt Ltd",
+        "category": "CORPORATION",
+        "description": "A privately held company with limited liability for shareholders."
+      },
+      {
+        "code": "PUBLIC_LIMITED",
+        "name": "Public Limited Company",
+        "abbreviation": "Ltd",
+        "category": "CORPORATION",
+        "description": "A company whose shares can be publicly traded."
+      },
+      {
+        "code": "ONE_PERSON_COMPANY",
+        "name": "One Person Company",
+        "abbreviation": "OPC",
+        "category": "CORPORATION",
+        "description": "A company with a single person as owner and director."
+      },
+      {
+        "code": "LLP",
+        "name": "Limited Liability Partnership",
+        "abbreviation": "LLP",
+        "category": "PARTNERSHIP",
+        "description": "A partnership that limits partners' personal liability."
+      },
+      {
+        "code": "PARTNERSHIP_FIRM",
+        "name": "Partnership Firm",
+        "abbreviation": "",
+        "category": "PARTNERSHIP",
+        "description": "A business formed by two or more partners."
+      },
+      {
+        "code": "SOLE_PROPRIETORSHIP",
+        "name": "Sole Proprietorship",
+        "abbreviation": "",
+        "category": "SOLE_PROPRIETORSHIP",
+        "description": "A business owned and operated by a single person."
+      },
+      {
+        "code": "TRUST",
+        "name": "Trust",
+        "abbreviation": "",
+        "category": "TRUST",
+        "description": "A fiduciary arrangement for charitable or business purposes."
+      },
+      {
+        "code": "SOCIETY",
+        "name": "Society",
+        "abbreviation": "",
+        "category": "NON_PROFIT",
+        "description": "An organization registered under the Societies Registration Act."
+      },
+      {
+        "code": "SECTION_8_COMPANY",
+        "name": "Section 8 Company",
+        "abbreviation": "",
+        "category": "NON_PROFIT",
+        "description": "A company established for charitable purposes under Section 8 of the Companies Act."
+      },
+      {
+        "code": "NIDHI_COMPANY",
+        "name": "Nidhi Company",
+        "abbreviation": "",
+        "category": "CORPORATION",
+        "description": "A type of NBFC that deals with deposits and lending among members."
+      },
+      {
+        "code": "PRODUCER_COMPANY",
+        "name": "Producer Company",
+        "abbreviation": "",
+        "category": "COOPERATIVE",
+        "description": "A company formed by agricultural producers."
+      }
+    ],
+    "US": [
+      {
+        "code": "LLC",
+        "name": "Limited Liability Company",
+        "abbreviation": "LLC",
+        "category": "LIMITED_LIABILITY",
+        "description": "A flexible business structure providing personal liability protection."
+      },
+      {
+        "code": "C_CORPORATION",
+        "name": "C Corporation",
+        "abbreviation": "Corp",
+        "category": "CORPORATION",
+        "description": "A standard corporation taxed separately from its owners."
+      },
+      {
+        "code": "S_CORPORATION",
+        "name": "S Corporation",
+        "abbreviation": "S Corp",
+        "category": "CORPORATION",
+        "description": "A corporation with pass-through tax treatment."
+      },
+      {
+        "code": "SOLE_PROPRIETORSHIP",
+        "name": "Sole Proprietorship",
+        "abbreviation": "",
+        "category": "SOLE_PROPRIETORSHIP",
+        "description": "The simplest business structure for individual owners."
+      },
+      {
+        "code": "GENERAL_PARTNERSHIP",
+        "name": "General Partnership",
+        "abbreviation": "GP",
+        "category": "PARTNERSHIP",
+        "description": "A partnership where all partners share equal responsibility."
+      },
+      {
+        "code": "LIMITED_PARTNERSHIP",
+        "name": "Limited Partnership",
+        "abbreviation": "LP",
+        "category": "PARTNERSHIP",
+        "description": "A partnership with limited and general partners."
+      },
+      {
+        "code": "LLP",
+        "name": "Limited Liability Partnership",
+        "abbreviation": "LLP",
+        "category": "PARTNERSHIP",
+        "description": "A partnership that protects partners from personal liability."
+      },
+      {
+        "code": "NON_PROFIT_CORPORATION",
+        "name": "Non-Profit Corporation",
+        "abbreviation": "NPC",
+        "category": "NON_PROFIT",
+        "description": "A corporation organized for non-profit purposes."
+      },
+      {
+        "code": "COOPERATIVE",
+        "name": "Cooperative",
+        "abbreviation": "Co-op",
+        "category": "COOPERATIVE",
+        "description": "A business owned and operated by its members."
+      },
+      {
+        "code": "PROFESSIONAL_CORPORATION",
+        "name": "Professional Corporation",
+        "abbreviation": "PC",
+        "category": "CORPORATION",
+        "description": "A corporation formed by licensed professionals."
+      },
+      {
+        "code": "BENEFIT_CORPORATION",
+        "name": "Benefit Corporation",
+        "abbreviation": "PBC",
+        "category": "CORPORATION",
+        "description": "A for-profit corporation committed to public benefit."
+      }
+    ],
+    "GB": [
+      {
+        "code": "PRIVATE_LIMITED",
+        "name": "Private Limited Company",
+        "abbreviation": "Ltd",
+        "category": "CORPORATION",
+        "description": "A company whose shares are privately held."
+      },
+      {
+        "code": "PUBLIC_LIMITED",
+        "name": "Public Limited Company",
+        "abbreviation": "PLC",
+        "category": "CORPORATION",
+        "description": "A company that can offer shares to the general public."
+      },
+      {
+        "code": "LLP",
+        "name": "Limited Liability Partnership",
+        "abbreviation": "LLP",
+        "category": "PARTNERSHIP",
+        "description": "A partnership with limited liability for its members."
+      },
+      {
+        "code": "GENERAL_PARTNERSHIP",
+        "name": "General Partnership",
+        "abbreviation": "",
+        "category": "PARTNERSHIP",
+        "description": "A traditional partnership with shared liability."
+      },
+      {
+        "code": "SOLE_TRADER",
+        "name": "Sole Trader",
+        "abbreviation": "",
+        "category": "SOLE_PROPRIETORSHIP",
+        "description": "A self-employed individual running their own business."
+      },
+      {
+        "code": "COMMUNITY_INTEREST_COMPANY",
+        "name": "Community Interest Company",
+        "abbreviation": "CIC",
+        "category": "NON_PROFIT",
+        "description": "A company designed for social enterprises."
+      },
+      {
+        "code": "CHARITABLE_INCORPORATED_ORGANISATION",
+        "name": "Charitable Incorporated Organisation",
+        "abbreviation": "CIO",
+        "category": "NON_PROFIT",
+        "description": "A charity with a corporate structure."
+      },
+      {
+        "code": "COOPERATIVE",
+        "name": "Cooperative",
+        "abbreviation": "Co-op",
+        "category": "COOPERATIVE",
+        "description": "A business owned and democratically controlled by its members."
+      }
+    ],
+    "SG": [
+      {
+        "code": "PRIVATE_LIMITED",
+        "name": "Private Limited Company",
+        "abbreviation": "Pte Ltd",
+        "category": "CORPORATION",
+        "description": "The most common business structure in Singapore."
+      },
+      {
+        "code": "PUBLIC_LIMITED",
+        "name": "Public Limited Company",
+        "abbreviation": "Ltd",
+        "category": "CORPORATION",
+        "description": "A company whose shares can be publicly traded."
+      },
+      {
+        "code": "SOLE_PROPRIETORSHIP",
+        "name": "Sole Proprietorship",
+        "abbreviation": "",
+        "category": "SOLE_PROPRIETORSHIP",
+        "description": "A business owned and operated by a single individual."
+      },
+      {
+        "code": "GENERAL_PARTNERSHIP",
+        "name": "General Partnership",
+        "abbreviation": "",
+        "category": "PARTNERSHIP",
+        "description": "A partnership with shared liability among partners."
+      },
+      {
+        "code": "LIMITED_PARTNERSHIP",
+        "name": "Limited Partnership",
+        "abbreviation": "LP",
+        "category": "PARTNERSHIP",
+        "description": "A partnership with limited and general partners."
+      },
+      {
+        "code": "LLP",
+        "name": "Limited Liability Partnership",
+        "abbreviation": "LLP",
+        "category": "PARTNERSHIP",
+        "description": "A partnership with limited liability for its members."
+      },
+      {
+        "code": "VARIABLE_CAPITAL_COMPANY",
+        "name": "Variable Capital Company",
+        "abbreviation": "VCC",
+        "category": "CORPORATION",
+        "description": "A corporate structure for investment funds."
+      }
+    ],
+    "AU": [
+      {
+        "code": "PROPRIETARY_LIMITED",
+        "name": "Proprietary Limited Company",
+        "abbreviation": "Pty Ltd",
+        "category": "CORPORATION",
+        "description": "The most common company type in Australia with limited liability."
+      },
+      {
+        "code": "PUBLIC_COMPANY",
+        "name": "Public Company",
+        "abbreviation": "Ltd",
+        "category": "CORPORATION",
+        "description": "A company that can offer shares to the public."
+      },
+      {
+        "code": "SOLE_TRADER",
+        "name": "Sole Trader",
+        "abbreviation": "",
+        "category": "SOLE_PROPRIETORSHIP",
+        "description": "An individual operating a business."
+      },
+      {
+        "code": "PARTNERSHIP",
+        "name": "Partnership",
+        "abbreviation": "",
+        "category": "PARTNERSHIP",
+        "description": "A business structure involving two or more individuals."
+      },
+      {
+        "code": "TRUST",
+        "name": "Trust",
+        "abbreviation": "",
+        "category": "TRUST",
+        "description": "A legal arrangement for holding and managing assets."
+      },
+      {
+        "code": "COOPERATIVE",
+        "name": "Cooperative",
+        "abbreviation": "Co-op",
+        "category": "COOPERATIVE",
+        "description": "A business owned by its members."
+      },
+      {
+        "code": "NOT_FOR_PROFIT",
+        "name": "Not-for-Profit",
+        "abbreviation": "",
+        "category": "NON_PROFIT",
+        "description": "An organisation that does not operate for profit."
+      }
+    ],
+    "MY": [
+      {
+        "code": "PRIVATE_LIMITED",
+        "name": "Private Limited Company",
+        "abbreviation": "Sdn Bhd",
+        "category": "CORPORATION",
+        "description": "A privately held company with limited liability."
+      },
+      {
+        "code": "PUBLIC_LIMITED",
+        "name": "Public Limited Company",
+        "abbreviation": "Bhd",
+        "category": "CORPORATION",
+        "description": "A company whose shares can be traded publicly."
+      },
+      {
+        "code": "SOLE_PROPRIETORSHIP",
+        "name": "Sole Proprietorship",
+        "abbreviation": "",
+        "category": "SOLE_PROPRIETORSHIP",
+        "description": "A business owned and operated by a single person."
+      },
+      {
+        "code": "PARTNERSHIP",
+        "name": "Partnership",
+        "abbreviation": "",
+        "category": "PARTNERSHIP",
+        "description": "A business formed by two or more partners."
+      },
+      {
+        "code": "LLP",
+        "name": "Limited Liability Partnership",
+        "abbreviation": "PLT",
+        "category": "PARTNERSHIP",
+        "description": "A partnership with limited liability for its members."
+      }
+    ]
+  }
+}
