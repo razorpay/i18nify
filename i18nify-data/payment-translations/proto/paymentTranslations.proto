@@ -1,0 +1,52 @@
+syntax = "proto3";
+package paymentTranslations;
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/paymenttranslations;paymenttranslations";
+
+// PaymentTranslationsData is the root message.
+// The map key is the BCP 47 language code (e.g. "hi", "bn", "mr").
+message PaymentTranslationsData {
+  map<string, PaymentTranslationsInfo> payment_translation_information = 1;
+}
+
+// PaymentTranslationsInfo holds all fields for a single language entry.
+message PaymentTranslationsInfo {
+  string language_name = 1;
+  string native_name = 2;
+  PaymentStrings strings = 3;
+}
+
+// PaymentStrings contains the translated payment UI strings.
+message PaymentStrings {
+  string pay_now = 1;
+  string cancel = 2;
+  string amount = 3;
+  string card_number = 4;
+  string cvv = 5;
+  string expiry_date = 6;
+  string name_on_card = 7;
+  string upi_id = 8;
+  string bank = 9;
+  string processing = 10;
+  string payment_successful = 11;
+  string payment_failed = 12;
+  string retry = 13;
+  string mobile_number = 14;
+  string otp = 15;
+  string enter_otp = 16;
+  string resend_otp = 17;
+  string wallet = 18;
+  string net_banking = 19;
+  string select_bank = 20;
+  string enter_amount = 21;
+  string minimum_amount = 22;
+  string maximum_amount = 23;
+  string transaction_id = 24;
+  string order_id = 25;
+  string back = 26;
+  string next = 27;
+  string confirm = 28;
+  string done = 29;
+  string save = 30;
+  string error_occurred = 31;
+  string try_again = 32;
+}
