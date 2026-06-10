@@ -1,0 +1,786 @@
+{
+  "_source": {
+    "topic": "address_formats",
+    "name": "Google i18n · Address Data API",
+    "url": "https://chromium-i18n.appspot.com/ssl-address/data",
+    "tier": 1
+  },
+  "address_format_information": {
+    "AC": {
+      "country_name": "Ascension Island",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "AD": {
+      "country_name": "Andorra",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "AE": {
+      "country_name": "United Arab Emirates",
+      "template": "{name}\n{organization}\n{street_address}\n{state}"
+    },
+    "AF": {
+      "country_name": "Afghanistan",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "AI": {
+      "country_name": "Anguilla",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "AL": {
+      "country_name": "Albania",
+      "template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}"
+    },
+    "AM": {
+      "country_name": "Armenia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}\n{state}"
+    },
+    "AR": {
+      "country_name": "Argentina",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}"
+    },
+    "AS": {
+      "country_name": "American Samoa",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+    },
+    "AT": {
+      "country_name": "Austria",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city}"
+    },
+    "AU": {
+      "country_name": "Australia",
+      "template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+    },
+    "AX": {
+      "country_name": "Åland Islands",
+      "template": "{organization}\n{name}\n{street_address}\nAX-{zip} {city}\nÅLAND"
+    },
+    "AZ": {
+      "country_name": "Azerbaijan",
+      "template": "{name}\n{organization}\n{street_address}\nAZ {zip} {city}"
+    },
+    "BA": {
+      "country_name": "Bosnia and Herzegovina",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "BB": {
+      "country_name": "Barbados",
+      "template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}"
+    },
+    "BD": {
+      "country_name": "Bangladesh",
+      "template": "{name}\n{organization}\n{street_address}\n{city} - {zip}"
+    },
+    "BE": {
+      "country_name": "Belgium",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city}"
+    },
+    "BF": {
+      "country_name": "Burkina Faso",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {sorting_code}"
+    },
+    "BG": {
+      "country_name": "Bulgaria",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "BH": {
+      "country_name": "Bahrain",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "BL": {
+      "country_name": "Saint Barthélemy",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "BM": {
+      "country_name": "Bermuda",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "BN": {
+      "country_name": "Brunei Darussalam",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "BR": {
+      "country_name": "Brazil",
+      "template": "{organization}\n{name}\n{street_address}\n{district}\n{city}-{state}\n{zip}"
+    },
+    "BS": {
+      "country_name": "Bahamas",
+      "template": "{name}\n{organization}\n{street_address}\n{city}, {state}"
+    },
+    "BT": {
+      "country_name": "Bhutan",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "BY": {
+      "country_name": "Belarus",
+      "template": "{organization}\n{name}\n{street_address}\n{zip}, {city}\n{state}"
+    },
+    "CA": {
+      "country_name": "Canada",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+    },
+    "CC": {
+      "country_name": "Cocos (Keeling) Islands",
+      "template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+    },
+    "CH": {
+      "country_name": "Switzerland",
+      "template": "{organization}\n{name}\n{street_address}\nCH-{zip} {city}"
+    },
+    "CI": {
+      "country_name": "Côte d'Ivoire",
+      "template": "{name}\n{organization}\n{sorting_code} {street_address} {city} {sorting_code}"
+    },
+    "CL": {
+      "country_name": "Chile",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}"
+    },
+    "CN": {
+      "country_name": "China",
+      "template": "{zip}\n{state}{city}{district}\n{street_address}\n{organization}\n{name}"
+    },
+    "CO": {
+      "country_name": "Colombia",
+      "template": "{name}\n{organization}\n{street_address}\n{district}\n{city}, {state}, {zip}"
+    },
+    "CR": {
+      "country_name": "Costa Rica",
+      "template": "{name}\n{organization}\n{street_address}\n{state}, {city}\n{zip}"
+    },
+    "CU": {
+      "country_name": "Cuba",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {state}\n{zip}"
+    },
+    "CV": {
+      "country_name": "Cabo Verde",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}"
+    },
+    "CX": {
+      "country_name": "Christmas Island",
+      "template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+    },
+    "CY": {
+      "country_name": "Cyprus",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "CZ": {
+      "country_name": "Czechia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "DE": {
+      "country_name": "Germany",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "DK": {
+      "country_name": "Denmark",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "DO": {
+      "country_name": "Dominican Republic",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "DZ": {
+      "country_name": "Algeria",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "EC": {
+      "country_name": "Ecuador",
+      "template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}"
+    },
+    "EE": {
+      "country_name": "Estonia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+    },
+    "EG": {
+      "country_name": "Egypt",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}"
+    },
+    "EH": {
+      "country_name": "Western Sahara",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "ES": {
+      "country_name": "Spain",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+    },
+    "ET": {
+      "country_name": "Ethiopia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "FI": {
+      "country_name": "Finland",
+      "template": "{organization}\n{name}\n{street_address}\nFI-{zip} {city}"
+    },
+    "FK": {
+      "country_name": "Falkland Islands (Malvinas)",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "FM": {
+      "country_name": "Micronesia, Federated States of",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+    },
+    "FO": {
+      "country_name": "Faroe Islands",
+      "template": "{name}\n{organization}\n{street_address}\nFO{zip} {city}"
+    },
+    "FR": {
+      "country_name": "France",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city}"
+    },
+    "GB": {
+      "country_name": "United Kingdom",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "GE": {
+      "country_name": "Georgia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "GF": {
+      "country_name": "French Guiana",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "GG": {
+      "country_name": "Guernsey",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\nGUERNSEY\n{zip}"
+    },
+    "GI": {
+      "country_name": "Gibraltar",
+      "template": "{name}\n{organization}\n{street_address}\nGIBRALTAR\n{zip}"
+    },
+    "GL": {
+      "country_name": "Greenland",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "GN": {
+      "country_name": "Guinea",
+      "template": "{name}\n{organization}\n{zip} {street_address} {city}"
+    },
+    "GP": {
+      "country_name": "Guadeloupe",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "GR": {
+      "country_name": "Greece",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "GS": {
+      "country_name": "South Georgia and the South Sandwich Islands",
+      "template": "{name}\n{organization}\n{street_address}\n\n{city}\n{zip}"
+    },
+    "GT": {
+      "country_name": "Guatemala",
+      "template": "{name}\n{organization}\n{street_address}\n{zip}- {city}"
+    },
+    "GU": {
+      "country_name": "Guam",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "GW": {
+      "country_name": "Guinea-Bissau",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "HK": {
+      "country_name": "Hong Kong",
+      "template": "{state}\n{city}\n{street_address}\n{organization}\n{name}"
+    },
+    "HM": {
+      "country_name": "Heard Island and McDonald Islands",
+      "template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+    },
+    "HN": {
+      "country_name": "Honduras",
+      "template": "{name}\n{organization}\n{street_address}\n{city}, {state}\n{zip}"
+    },
+    "HR": {
+      "country_name": "Croatia",
+      "template": "{name}\n{organization}\n{street_address}\nHR-{zip} {city}"
+    },
+    "HT": {
+      "country_name": "Haiti",
+      "template": "{name}\n{organization}\n{street_address}\nHT{zip} {city}"
+    },
+    "HU": {
+      "country_name": "Hungary",
+      "template": "{name}\n{organization}\n{city}\n{street_address}\n{zip}"
+    },
+    "ID": {
+      "country_name": "Indonesia",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}"
+    },
+    "IE": {
+      "country_name": "Ireland",
+      "template": "{name}\n{organization}\n{street_address}\n{district}\n{city}\n{state}\n{zip}"
+    },
+    "IL": {
+      "country_name": "Israel",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "IM": {
+      "country_name": "Isle of Man",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "IN": {
+      "country_name": "India",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}\n{state}"
+    },
+    "IO": {
+      "country_name": "British Indian Ocean Territory",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "IQ": {
+      "country_name": "Iraq",
+      "template": "{organization}\n{name}\n{street_address}\n{city}, {state}\n{zip}"
+    },
+    "IR": {
+      "country_name": "Iran, Islamic Republic of",
+      "template": "{organization}\n{name}\n{state}\n{city}, {district}\n{street_address}\n{zip}"
+    },
+    "IS": {
+      "country_name": "Iceland",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "IT": {
+      "country_name": "Italy",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+    },
+    "JE": {
+      "country_name": "Jersey",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\nJERSEY\n{zip}"
+    },
+    "JM": {
+      "country_name": "Jamaica",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {sorting_code}"
+    },
+    "JO": {
+      "country_name": "Jordan",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "JP": {
+      "country_name": "Japan",
+      "template": "〒{zip}\n{state}\n{street_address}\n{organization}\n{name}"
+    },
+    "KE": {
+      "country_name": "Kenya",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "KG": {
+      "country_name": "Kyrgyzstan",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "KH": {
+      "country_name": "Cambodia",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "KI": {
+      "country_name": "Kiribati",
+      "template": "{name}\n{organization}\n{street_address}\n{state}\n{city}"
+    },
+    "KN": {
+      "country_name": "Saint Kitts and Nevis",
+      "template": "{name}\n{organization}\n{street_address}\n{city}, {state}"
+    },
+    "KP": {
+      "country_name": "Korea, Democratic People's Republic of",
+      "template": "{zip}\n{state}\n{city}\n{street_address}\n{organization}\n{name}"
+    },
+    "KR": {
+      "country_name": "Korea, Republic of",
+      "template": "{state} {city}{district}\n{street_address}\n{organization}\n{name}\n{zip}"
+    },
+    "KW": {
+      "country_name": "Kuwait",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "KZ": {
+      "country_name": "Kazakhstan",
+      "template": "{zip}\n{state}\n{city}\n{street_address}\n{organization}\n{name}"
+    },
+    "LA": {
+      "country_name": "Lao People's Democratic Republic",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "LB": {
+      "country_name": "Lebanon",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "LI": {
+      "country_name": "Liechtenstein",
+      "template": "{organization}\n{name}\n{street_address}\nFL-{zip} {city}"
+    },
+    "LK": {
+      "country_name": "Sri Lanka",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "LR": {
+      "country_name": "Liberia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "LS": {
+      "country_name": "Lesotho",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "LT": {
+      "country_name": "Lithuania",
+      "template": "{organization}\n{name}\n{street_address}\nLT-{zip} {city} {state}"
+    },
+    "LU": {
+      "country_name": "Luxembourg",
+      "template": "{organization}\n{name}\n{street_address}\nL-{zip} {city}"
+    },
+    "LV": {
+      "country_name": "Latvia",
+      "template": "{name}\n{organization}\n{street_address}\n{state}\n{city}, {zip}"
+    },
+    "MA": {
+      "country_name": "Morocco",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "MC": {
+      "country_name": "Monaco",
+      "template": "{name}\n{organization}\n{street_address}\nMC-{zip} {city} {sorting_code}"
+    },
+    "MD": {
+      "country_name": "Moldova, Republic of",
+      "template": "{name}\n{organization}\n{street_address}\nMD-{zip} {city}"
+    },
+    "ME": {
+      "country_name": "Montenegro",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "MF": {
+      "country_name": "Saint Martin (French part)",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "MG": {
+      "country_name": "Madagascar",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "MH": {
+      "country_name": "Marshall Islands",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+    },
+    "MK": {
+      "country_name": "North Macedonia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "MN": {
+      "country_name": "Mongolia",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}"
+    },
+    "MO": {
+      "country_name": "Macao",
+      "template": "{street_address}\n{organization}\n{name}"
+    },
+    "MQ": {
+      "country_name": "Martinique",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "MT": {
+      "country_name": "Malta",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "MU": {
+      "country_name": "Mauritius",
+      "template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}"
+    },
+    "MV": {
+      "country_name": "Maldives",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "MW": {
+      "country_name": "Malawi",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {sorting_code}"
+    },
+    "MX": {
+      "country_name": "Mexico",
+      "template": "{name}\n{organization}\n{street_address}\n{district}\n{zip} {city}, {state}"
+    },
+    "MY": {
+      "country_name": "Malaysia",
+      "template": "{name}\n{organization}\n{street_address}\n{district}\n{zip} {city}\n{state}"
+    },
+    "MZ": {
+      "country_name": "Mozambique",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}{state}"
+    },
+    "NA": {
+      "country_name": "Namibia",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "NC": {
+      "country_name": "New Caledonia",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "NE": {
+      "country_name": "Niger",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "NF": {
+      "country_name": "Norfolk Island",
+      "template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+    },
+    "NG": {
+      "country_name": "Nigeria",
+      "template": "{name}\n{organization}\n{street_address}\n{district}\n{city} {zip}\n{state}"
+    },
+    "NI": {
+      "country_name": "Nicaragua",
+      "template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}, {state}"
+    },
+    "NL": {
+      "country_name": "Netherlands",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city}"
+    },
+    "NO": {
+      "country_name": "Norway",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "NP": {
+      "country_name": "Nepal",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "NR": {
+      "country_name": "Nauru",
+      "template": "{name}\n{organization}\n{street_address}\n{state}"
+    },
+    "NZ": {
+      "country_name": "New Zealand",
+      "template": "{name}\n{organization}\n{street_address}\n{district}\n{city} {zip}"
+    },
+    "OM": {
+      "country_name": "Oman",
+      "template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}"
+    },
+    "PA": {
+      "country_name": "Panama",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state}"
+    },
+    "PE": {
+      "country_name": "Peru",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}\n{state}"
+    },
+    "PF": {
+      "country_name": "French Polynesia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+    },
+    "PG": {
+      "country_name": "Papua New Guinea",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip} {state}"
+    },
+    "PH": {
+      "country_name": "Philippines",
+      "template": "{name}\n{organization}\n{street_address}\n{district}, {city}\n{zip} {state}"
+    },
+    "PK": {
+      "country_name": "Pakistan",
+      "template": "{name}\n{organization}\n{street_address}\n{district}\n{city}-{zip}"
+    },
+    "PL": {
+      "country_name": "Poland",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "PM": {
+      "country_name": "Saint Pierre and Miquelon",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "PN": {
+      "country_name": "Pitcairn",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "PR": {
+      "country_name": "Puerto Rico",
+      "template": "{name}\n{organization}\n{street_address}\n{city} PR {zip}"
+    },
+    "PT": {
+      "country_name": "Portugal",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "PW": {
+      "country_name": "Palau",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+    },
+    "PY": {
+      "country_name": "Paraguay",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "RE": {
+      "country_name": "Réunion",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "RO": {
+      "country_name": "Romania",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {state} {city}"
+    },
+    "RS": {
+      "country_name": "Serbia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "RU": {
+      "country_name": "Russian Federation",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}"
+    },
+    "SA": {
+      "country_name": "Saudi Arabia",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "SC": {
+      "country_name": "Seychelles",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state}"
+    },
+    "SD": {
+      "country_name": "Sudan",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "SE": {
+      "country_name": "Sweden",
+      "template": "{organization}\n{name}\n{street_address}\nSE-{zip} {city}"
+    },
+    "SG": {
+      "country_name": "Singapore",
+      "template": "{name}\n{organization}\n{street_address}\nSINGAPORE {zip}"
+    },
+    "SH": {
+      "country_name": "Saint Helena, Ascension and Tristan da Cunha",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "SI": {
+      "country_name": "Slovenia",
+      "template": "{name}\n{organization}\n{street_address}\nSI-{zip} {city}"
+    },
+    "SJ": {
+      "country_name": "Svalbard and Jan Mayen",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "SK": {
+      "country_name": "Slovakia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "SM": {
+      "country_name": "San Marino",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "SN": {
+      "country_name": "Senegal",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "SO": {
+      "country_name": "Somalia",
+      "template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}"
+    },
+    "SR": {
+      "country_name": "Suriname",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state}"
+    },
+    "SV": {
+      "country_name": "El Salvador",
+      "template": "{name}\n{organization}\n{street_address}\n{zip}-{city}\n{state}"
+    },
+    "SZ": {
+      "country_name": "Eswatini",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "TA": {
+      "country_name": "Tristan da Cunha",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "TC": {
+      "country_name": "Turks and Caicos Islands",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "TH": {
+      "country_name": "Thailand",
+      "template": "{name}\n{organization}\n{street_address}\n{district} {city}\n{state} {zip}"
+    },
+    "TJ": {
+      "country_name": "Tajikistan",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "TM": {
+      "country_name": "Turkmenistan",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "TN": {
+      "country_name": "Tunisia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "TR": {
+      "country_name": "Türkiye",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}/{state}"
+    },
+    "TV": {
+      "country_name": "Tuvalu",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state}"
+    },
+    "TW": {
+      "country_name": "Taiwan, Province of China",
+      "template": "{zip}\n{state}{city}\n{street_address}\n{organization}\n{name}"
+    },
+    "TZ": {
+      "country_name": "Tanzania, United Republic of",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "UA": {
+      "country_name": "Ukraine",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}"
+    },
+    "UM": {
+      "country_name": "United States Minor Outlying Islands",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+    },
+    "US": {
+      "country_name": "United States",
+      "template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}"
+    },
+    "UY": {
+      "country_name": "Uruguay",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+    },
+    "UZ": {
+      "country_name": "Uzbekistan",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}"
+    },
+    "VA": {
+      "country_name": "Holy See (Vatican City State)",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "VC": {
+      "country_name": "Saint Vincent and the Grenadines",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+    },
+    "VE": {
+      "country_name": "Venezuela, Bolivarian Republic of",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {zip}, {state}"
+    },
+    "VG": {
+      "country_name": "Virgin Islands, British",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+    },
+    "VI": {
+      "country_name": "Virgin Islands, U.S.",
+      "template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+    },
+    "VN": {
+      "country_name": "Viet Nam",
+      "template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}"
+    },
+    "WF": {
+      "country_name": "Wallis and Futuna",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "XK": {
+      "country_name": "Kosovo",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    },
+    "YT": {
+      "country_name": "Mayotte",
+      "template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+    },
+    "ZA": {
+      "country_name": "South Africa",
+      "template": "{name}\n{organization}\n{street_address}\n{district}\n{city}\n{zip}"
+    },
+    "ZM": {
+      "country_name": "Zambia",
+      "template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+    }
+  }
+}
