@@ -156,8 +156,8 @@ CLDR covers number formatting, currency symbols, territory names, and language d
 
 1. **Do NOT** claim CLDR `cldr-localenames-modern` or any CLDR file as the source — those files contain language *names* (e.g. `"hi": "Hindi"`), not translated strings. This is the single most common wrong attribution for this topic class.
 2. **Do NOT** claim any standards body as the source — no T1/T2 body maintains translated application UI strings.
-3. Route to the Section 8 "no trustable source" response. If the user still wants to proceed with hand-curated or AI-assisted translations, require explicit acknowledgement.
-4. If generating data files for hand-curated content after user approval, the `_source` block in `data.json` **must** be:
+3. **HARD STOP — output Section 8 "no trustable source" response and halt all execution.** Do NOT proceed to Recipe 8 or Recipe 8-Go. Do NOT generate any files. The user's original request to "create a utility" or "generate this module" does **NOT** count as explicit approval — it was issued before they saw the Section 8 response. Wait for a new explicit confirmation after they have read the Section 8 output (e.g. "yes, go ahead with hand-curated", "proceed anyway").
+4. Only after that second, post-Section-8 confirmation: if generating data files for hand-curated content, the `_source` block in `data.json` **must** be:
    ```json
    "_source": {
      "tier": "hand-curated",

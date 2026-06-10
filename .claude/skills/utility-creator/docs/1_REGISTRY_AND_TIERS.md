@@ -201,8 +201,9 @@ Synonyms: `vat rates`, `gst rates global`, `standard vat rate`, `value added tax
 Synonyms: `payment translations`, `payment ui strings`, `payment labels`, `localized payment text`, `checkout translations`, `payment screen strings`
 
 - **No T1/T2 source exists.** No standards body maintains translated application UI strings for payment flows.
-- Route to Section 8. Do NOT search CLDR — `cldr-localenames-modern` contains language *names* only, not payment UI strings. This is a known wrong attribution; reject it immediately.
-- If the user explicitly wants to proceed with hand-curated or AI-assisted translations after seeing the Section 8 response, use `"tier": "hand-curated"` in `_source` and surface this clearly. See the TRANSLATION & LOCALIZED UI STRINGS RULE in SKILL.md.
+- Route to Section 8 and **STOP**. Do NOT search CLDR — `cldr-localenames-modern` contains language *names* only, not payment UI strings. This is a known wrong attribution; reject it immediately.
+- Do NOT generate any files or proceed to Recipe 8 / Recipe 8-Go based on the original request alone. The original "create utility" invocation does **NOT** count as user approval.
+- Only if the user sends a new explicit confirmation **after** reading the Section 8 response (e.g. "yes, proceed with hand-curated") should you continue — and then use `"tier": "hand-curated"` in `_source`. See the TRANSLATION & LOCALIZED UI STRINGS RULE in SKILL.md.
 
 ---
 
