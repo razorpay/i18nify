@@ -1,4 +1,6 @@
 import getPaymentTranslationsList from '../getPaymentTranslationsList';
+import type { PaymentTranslationsCodeType } from '../types';
+import { getPaymentTranslationsInfo } from '../utils';
 
 describe('getPaymentTranslationsList', () => {
   it('returns all 7 Indian language entries', () => {
@@ -31,5 +33,21 @@ describe('getPaymentTranslationsList', () => {
     const list = getPaymentTranslationsList();
     expect(list.hi.pay_now).toBeTruthy();
     expect(list.hi.language_name).toBe('Hindi');
+  });
+});
+
+describe('getPaymentTranslationsInfo', () => {
+  it('returns strings for a valid code', () => {
+    const info = getPaymentTranslationsInfo('hi');
+    expect(info).not.toBeNull();
+    expect(info?.language_name).toBe('Hindi');
+    expect(info?.pay_now.length).toBeGreaterThan(0);
+  });
+
+  it('returns null for an unknown code', () => {
+    const info = getPaymentTranslationsInfo(
+      'xx' as PaymentTranslationsCodeType,
+    );
+    expect(info).toBeNull();
   });
 });

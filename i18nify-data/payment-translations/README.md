@@ -8,7 +8,7 @@ Covers Hindi, Bengali, Marathi, Gujarati, Tamil, Telugu, and Kannada.
 - **Root key**: `payment_translations_information`
 - **Entry key**: BCP 47 language code (`hi`, `bn`, `mr`, `gu`, `ta`, `te`, `kn`)
 - **Total entries**: 7
-- **Strings per locale**: 24
+- **Strings per locale**: 22
 
 ## String keys
 
@@ -39,5 +39,5 @@ Covers Hindi, Bengali, Marathi, Gujarati, Tamil, Telugu, and Kannada.
 
 ## Source
 
-Data sourced from Unicode CLDR locale data (Tier 1 — maintained by Unicode Consortium).
+Data is hand-curated for Razorpay payment UI contexts (Tier 3).
 Language codes follow BCP 47 / ISO 639-1.

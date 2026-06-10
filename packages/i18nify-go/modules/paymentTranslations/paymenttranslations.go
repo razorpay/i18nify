@@ -10,30 +10,30 @@ import (
 
 // PaymentTranslationsInfo contains payment UI strings for one locale.
 type PaymentTranslationsInfo struct {
-	LanguageName string `json:"language_name"`
-	Script string `json:"script"`
-	PayNow string `json:"pay_now"`
-	Amount string `json:"amount"`
-	Cancel string `json:"cancel"`
-	Confirm string `json:"confirm"`
+	LanguageName      string `json:"language_name"`
+	Script            string `json:"script"`
+	PayNow            string `json:"pay_now"`
+	Amount            string `json:"amount"`
+	Cancel            string `json:"cancel"`
+	Confirm           string `json:"confirm"`
 	PaymentSuccessful string `json:"payment_successful"`
-	PaymentFailed string `json:"payment_failed"`
-	Processing string `json:"processing"`
-	Total string `json:"total"`
-	Retry string `json:"retry"`
-	EnterAmount string `json:"enter_amount"`
-	CardNumber string `json:"card_number"`
-	CardExpiry string `json:"card_expiry"`
-	Cvv string `json:"cvv"`
-	NameOnCard string `json:"name_on_card"`
-	UpiId string `json:"upi_id"`
-	NetBanking string `json:"net_banking"`
-	Wallet string `json:"wallet"`
-	TransactionId string `json:"transaction_id"`
-	Back string `json:"back"`
-	ErrorTryAgain string `json:"error_try_again"`
-	OrderId string `json:"order_id"`
-	Receipt string `json:"receipt"`
+	PaymentFailed     string `json:"payment_failed"`
+	Processing        string `json:"processing"`
+	Total             string `json:"total"`
+	Retry             string `json:"retry"`
+	EnterAmount       string `json:"enter_amount"`
+	CardNumber        string `json:"card_number"`
+	CardExpiry        string `json:"card_expiry"`
+	CVV               string `json:"cvv"`
+	NameOnCard        string `json:"name_on_card"`
+	UPIID             string `json:"upi_id"`
+	NetBanking        string `json:"net_banking"`
+	Wallet            string `json:"wallet"`
+	TransactionID     string `json:"transaction_id"`
+	Back              string `json:"back"`
+	ErrorTryAgain     string `json:"error_try_again"`
+	OrderID           string `json:"order_id"`
+	Receipt           string `json:"receipt"`
 }
 
 // PaymentTranslationsData holds translations keyed by BCP 47 language code.
@@ -61,12 +61,32 @@ func convertFromDataSource(src *dataSource.PaymentTranslationsData) PaymentTrans
 		if entry == nil {
 			continue
 		}
-		b, _ := json.Marshal(entry)
-		var v PaymentTranslationsInfo
-		if err := json.Unmarshal(b, &v); err != nil {
-			continue
+		info[code] = PaymentTranslationsInfo{
+			LanguageName:      entry.LanguageName,
+			Script:            entry.Script,
+			PayNow:            entry.PayNow,
+			Amount:            entry.Amount,
+			Cancel:            entry.Cancel,
+			Confirm:           entry.Confirm,
+			PaymentSuccessful: entry.PaymentSuccessful,
+			PaymentFailed:     entry.PaymentFailed,
+			Processing:        entry.Processing,
+			Total:             entry.Total,
+			Retry:             entry.Retry,
+			EnterAmount:       entry.EnterAmount,
+			CardNumber:        entry.CardNumber,
+			CardExpiry:        entry.CardExpiry,
+			CVV:               entry.CVV,
+			NameOnCard:        entry.NameOnCard,
+			UPIID:             entry.UPIID,
+			NetBanking:        entry.NetBanking,
+			Wallet:            entry.Wallet,
+			TransactionID:     entry.TransactionID,
+			Back:              entry.Back,
+			ErrorTryAgain:     entry.ErrorTryAgain,
+			OrderID:           entry.OrderID,
+			Receipt:           entry.Receipt,
 		}
-		info[code] = v
 	}
 	return PaymentTranslationsData{PaymentTranslationsInformation: info}
 }

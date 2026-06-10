@@ -1,9 +1,9 @@
 {
   "_source": {
     "topic": "payment_translations_india",
-    "name": "Unicode CLDR locale data — 7 Indian languages (payment UI strings)",
-    "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-localenames-modern/main/en/languages.json",
-    "tier": 1
+    "name": "Hand-curated payment UI string translations for 7 Indian languages (hi, bn, mr, gu, ta, te, kn)",
+    "url": "https://github.com/razorpay/i18nify",
+    "tier": 3
   },
   "payment_translations_information": {
     "hi": {

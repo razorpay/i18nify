@@ -28,6 +28,10 @@ func TestGetPaymentTranslationsInfo_Invalid(t *testing.T) {
 }
 
 func TestUnmarshalPaymentTranslationsData(t *testing.T) {
-	list := GetPaymentTranslationsList()
-	assert.NotEmpty(t, list)
+	jsonData := `{"payment_translations_information":{"hi":{"language_name":"Hindi","pay_now":"अभी भुगतान करें"}}}`
+	result, err := UnmarshalPaymentTranslationsData([]byte(jsonData))
+	assert.NoError(t, err)
+	assert.NotEmpty(t, result.PaymentTranslationsInformation)
+	assert.Equal(t, "Hindi", result.PaymentTranslationsInformation["hi"].LanguageName)
+	assert.Equal(t, "अभी भुगतान करें", result.PaymentTranslationsInformation["hi"].PayNow)
 }
