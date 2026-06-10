@@ -32,7 +32,7 @@ jobs:
       - name: Use Node v20
         uses: actions/setup-node@v2
         with:
-          node-version: 20.3.1
+          node-version: 20.19.1
       - name: Install Dependencies
         run: yarn
       - name: Make Build
@@ -55,7 +55,7 @@ jobs:
       - name: Use Node v20
         uses: actions/setup-node@v2
         with:
-          node-version: 20.3.1
+          node-version: 20.19.1
       - name: Install Dependencies
         run: yarn
       - name: Make Build
@@ -87,7 +87,7 @@ jobs:
       - name: Use Node v20
         uses: actions/setup-node@v2
         with:
-          node-version: 20.3.1
+          node-version: 20.19.1
 
       - name: Download stats
         uses: actions/download-artifact@v4
