@@ -196,6 +196,16 @@ Synonyms: `vat rates`, `gst rates global`, `standard vat rate`, `value added tax
 - TTL: 365 days (OECD annual publication cadence)
 - Coverage gap: Non-OECD/non-G20 countries not included. Use `gst_rates_india` for India HSN detail.
 
+### payment_translations
+
+Synonyms: `payment translations`, `payment ui strings`, `payment labels`, `localized payment text`, `checkout translations`, `payment screen strings`
+
+- **No T1/T2 source exists.** No standards body maintains translated application UI strings for payment flows.
+- Route to Section 8. Do NOT search CLDR — `cldr-localenames-modern` contains language *names* only, not payment UI strings. This is a known wrong attribution; reject it immediately.
+- If the user explicitly wants to proceed with hand-curated or AI-assisted translations after seeing the Section 8 response, use `"tier": "hand-curated"` in `_source` and surface this clearly. See the TRANSLATION & LOCALIZED UI STRINGS RULE in SKILL.md.
+
+---
+
 ### Unknown topic — research hunt
 
 If the query doesn't match any known topic, the registry is not your ceiling — it is just a cache of previously solved topics. Activate the **Section 13 research protocol**:

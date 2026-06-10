@@ -148,6 +148,29 @@ If the authoritative source does not contain specific data fields the user expli
 - **Do not** derive or infer a missing field from related fields (e.g., computing a calling code from a country name).
 - **Do not** silently omit the fact that requested fields are absent — surface the gap explicitly via the Missing Data Clarification Menu (Section 7, `docs/3_SCORING_AND_UI.md`).
 
+### TRANSLATION & LOCALIZED UI STRINGS RULE
+
+CLDR covers number formatting, currency symbols, territory names, and language display names — **NOT translated application UI strings** (form labels, button copy, payment screen text, localized messages).
+
+**If the topic is localized/translated UI strings (e.g. payment translations, checkout labels, error messages):**
+
+1. **Do NOT** claim CLDR `cldr-localenames-modern` or any CLDR file as the source — those files contain language *names* (e.g. `"hi": "Hindi"`), not translated strings. This is the single most common wrong attribution for this topic class.
+2. **Do NOT** claim any standards body as the source — no T1/T2 body maintains translated application UI strings.
+3. Route to the Section 8 "no trustable source" response. If the user still wants to proceed with hand-curated or AI-assisted translations, require explicit acknowledgement.
+4. If generating data files for hand-curated content after user approval, the `_source` block in `data.json` **must** be:
+   ```json
+   "_source": {
+     "tier": "hand-curated",
+     "url": "hand-curated",
+     "note": "Human-verified translations. No authoritative standards body governs this content."
+   }
+   ```
+   **NEVER** set `_source.url` to a CLDR URL or any URL that does not actually contain the translation strings you are claiming.
+
+### SOURCE URL VERIFICATION
+
+Before accepting any URL as `_source.url` in generated data files, verify that the URL actually contains the data fields being claimed. A URL that returns language names cannot be attributed as the source of payment UI translations. If in doubt, fetch a 1–2 record sample and confirm the structure matches the topic.
+
 ---
 
 ## MANDATORY EXECUTION CONSTRAINT — READ BEFORE ANYTHING ELSE
