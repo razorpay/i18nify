@@ -12,7 +12,7 @@ test.describe('getCities', () => {
   }) => {
     await injectScript(
       page,
-      `await getCities('IN', 'DL').then(res => res.includes('East Delhi'))`,
+      `await getCities('IN', 'DL').then(res => res.includes('New Delhi'))`,
     );
 
     await assertScriptText(page, 'true');
