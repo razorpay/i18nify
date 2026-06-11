@@ -80,6 +80,8 @@ describe('formatFromUnix', () => {
 
     it('honours 24-hour clock via intlOptions', () => {
       // 1609459200 = midnight UTC → 00:00:00 in 24h
+      // hourCycle: 'h23' explicitly forces 0–23 range (hour12: false alone
+      // returns '24:00:00' on newer ICU versions)
       const result = formatFromUnix(1609459200, {
         timezone: 'UTC',
         locale: 'en-US',
@@ -87,7 +89,7 @@ describe('formatFromUnix', () => {
           hour: 'numeric',
           minute: 'numeric',
           second: 'numeric',
-          hour12: false,
+          hourCycle: 'h23',
         },
       });
       expect(norm(result)).toBe('00:00:00');
