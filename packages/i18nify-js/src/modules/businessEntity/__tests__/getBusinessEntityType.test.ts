@@ -51,12 +51,21 @@ const MOCK_DATA: BusinessEntityData = {
 
 beforeEach(() => {
   jest.resetAllMocks();
-  global.fetch = jest.fn(() =>
-    Promise.resolve({
-      ok: true,
-      status: 200,
-      json: () => Promise.resolve(MOCK_DATA),
-    } as Response),
+  global.fetch = jest.fn((url: RequestInfo | URL) =>
+    url.toString().includes('categories_data')
+      ? Promise.resolve({
+          ok: true,
+          status: 200,
+          json: () => Promise.resolve({ categories: [], sub_categories: {} }),
+        } as Response)
+      : Promise.resolve({
+          ok: true,
+          status: 200,
+          json: () =>
+            Promise.resolve({
+              entity_types: MOCK_DATA.business_entity_information.entity_types,
+            }),
+        } as Response),
   );
 });
 
