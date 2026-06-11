@@ -37,3 +37,28 @@ export type CountryDetailType = {
 };
 
 export type I18nifyCountryCodeType = 'IN' | 'MY' | 'SG' | 'US';
+
+export type AddressComponents = {
+  name?: string;
+  organization?: string;
+  street_address?: string;
+  city?: string;
+  state?: string;
+  zip?: string;
+  district?: string;
+  sorting_code?: string;
+};
+
+export type AddressCodeType = string;
+
+export type AddressType = {
+  template: string;
+  [key: string]: unknown;
+};
+
+export type CountrySubdivisionData = {
+  country_name: string;
+  subdivisions: Array<{ code: string; name: string }>;
+};
+
+export type StatesByCountriesMap = Record<string, CountrySubdivisionData>;
