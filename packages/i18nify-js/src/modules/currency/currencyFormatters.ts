@@ -50,7 +50,7 @@ export const CURRENCY_FORMATTERS: Readonly<
   INDIAN: { thousandsSep: ',', decimalSep: '.', groupSizes: [3, 2] },
   EUROPEAN: { thousandsSep: '.', decimalSep: ',', groupSizes: [3] },
   FRENCH: {
-    thousandsSep: ' ', // narrow no-break space
+    thousandsSep: '\u202f',
     decimalSep: ',',
     groupSizes: [3],
   },
