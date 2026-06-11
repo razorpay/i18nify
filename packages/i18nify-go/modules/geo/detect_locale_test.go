@@ -71,7 +71,7 @@ func TestDetectLocale_Currency(t *testing.T) {
 		want     string
 	}{
 		{"INR", "en_IN"},
-		{"USD", "en_US"},
+		{"CAD", "en_CA"},
 		{"JPY", "ja"},
 	}
 	for _, tt := range tests {

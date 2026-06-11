@@ -50,7 +50,7 @@ jobs:
 
       - name: Run consumer integration tests
         env:
-          HEAD_REF: ${{ github.head_ref }}
+          WORKSPACE: ${{ github.workspace }}
         run: |
           echo "::group::Setup — init consumer module"
           TEST_DIR=/tmp/i18nify-consumer-test
@@ -60,13 +60,17 @@ jobs:
           echo "Module initialised at ${TEST_DIR}"
           echo "::endgroup::"
 
-          echo "::group::Setup — go get i18nify-go"
-          # Use the branch name directly — with GOPROXY=direct Go fetches from
-          # GitHub VCS and resolves to the latest commit on the branch,
-          # picking up any commits pushed by the auto-generate CI after the PR head.
-          go get github.com/razorpay/i18nify/packages/i18nify-go@"$HEAD_REF"
-          echo "go get succeeded"
-          echo "go.mod after get:"
+          echo "::group::Setup — resolve i18nify-go from local checkout"
+          # Use local checkout of i18nify-go (not yet published at this PR commit).
+          go mod edit -replace "github.com/razorpay/i18nify/packages/i18nify-go=$WORKSPACE/packages/i18nify-go"
+          # Forward any replace directives declared in i18nify-go/go.mod so that
+          # new data sub-modules introduced by this PR (not yet tagged) resolve
+          # from the local workspace rather than the module proxy.
+          while IFS=' ' read -r old_path _arrow rel_path; do
+            abs_path=$(realpath "$WORKSPACE/packages/i18nify-go/$rel_path" 2>/dev/null || true)
+            [ -n "$abs_path" ] && go mod edit -replace "$old_path=$abs_path"
+          done < <(grep '^replace' "$WORKSPACE/packages/i18nify-go/go.mod" | sed 's/^replace //')
+          echo "go.mod after replace:"
           cat go.mod
           echo "::endgroup::"
 
