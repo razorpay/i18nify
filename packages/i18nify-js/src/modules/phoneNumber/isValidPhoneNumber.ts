@@ -6,6 +6,7 @@ import {
   matchesEntirely,
   getPhoneNumberWithoutDialCode,
 } from './utils';
+import getDialCodes from './getDialCodes';
 import { CountryCodeType } from '../types';
 
 // Validates whether a given phone number is valid based on the provided country code or auto-detects the country code and checks if the number matches the defined regex pattern for that country.
@@ -21,18 +22,26 @@ const isValidPhoneNumber = (
   if (!cleanedPhoneNumber) return false;
 
   const regexMapper = PHONE_REGEX_MAPPER;
+  const dialCodes = getDialCodes();
   const phoneInfo = detectCountryAndDialCodeFromPhone(cleanedPhoneNumber);
+  const hasExplicitCountryCode = !!(countryCode && countryCode in regexMapper);
   // Detect or validate the country code
   countryCode = (
-    countryCode && countryCode in regexMapper
-      ? countryCode
-      : phoneInfo.countryCode
+    hasExplicitCountryCode ? countryCode : phoneInfo.countryCode
   ) as CountryCodeType;
 
   // Check if the countryCode exists in the PHONE_REGEX_MAPPER
   if (countryCode in regexMapper) {
-    const phoneNumberWithoutDialCode =
-      getPhoneNumberWithoutDialCode(cleanedPhoneNumber);
+    const explicitDialCode = hasExplicitCountryCode
+      ? dialCodes[countryCode as CountryCodeType]?.replace('+', '')
+      : '';
+    const phoneNumberWithoutDialCode = hasExplicitCountryCode
+      ? phoneInfo.dialCode
+        ? cleanedPhoneNumber.replace(phoneInfo.dialCode, '')
+        : explicitDialCode && cleanedPhoneNumber.startsWith(explicitDialCode)
+          ? cleanedPhoneNumber.slice(explicitDialCode.length)
+          : cleanedPhoneNumber
+      : getPhoneNumberWithoutDialCode(cleanedPhoneNumber);
 
     // Fetch the regex pattern for the countryCode
     const regex = regexMapper[countryCode];
