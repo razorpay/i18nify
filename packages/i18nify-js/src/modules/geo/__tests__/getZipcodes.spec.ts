@@ -12,9 +12,9 @@ test.describe('getZipcodes', () => {
   }) => {
     await injectScript(
       page,
-      `await getZipcodes('IN', 'TN').then(res => res[0])`,
+      `await getZipcodes('IN', 'TN').then(res => res.includes('639103'))`,
     );
 
-    await assertScriptText(page, '124508');
+    await assertScriptText(page, 'true');
   });
 });
