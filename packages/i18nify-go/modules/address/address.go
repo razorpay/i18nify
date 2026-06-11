@@ -15,7 +15,7 @@ type AddressInfo struct {
 	ZipRegex string `json:"zip_regex"`
 	ZipExample string `json:"zip_example"`
 	Lang string `json:"lang"`
-	Languages string `json:"languages"`
+	Languages []string `json:"languages"`
 	PostUrl string `json:"post_url"`
 	SubKeys []string `json:"sub_keys"`
 	SubNames []string `json:"sub_names"`

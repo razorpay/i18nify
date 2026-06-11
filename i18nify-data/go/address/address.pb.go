@@ -3,6 +3,26 @@
 
 package address
 
+import "encoding/json"
+
+// StringOrSlice unmarshals a JSON value that is either a bare string or an
+// array of strings (both forms appear in the address data for "languages").
+type StringOrSlice []string
+
+func (s *StringOrSlice) UnmarshalJSON(data []byte) error {
+	var arr []string
+	if err := json.Unmarshal(data, &arr); err == nil {
+		*s = arr
+		return nil
+	}
+	var str string
+	if err := json.Unmarshal(data, &str); err != nil {
+		return err
+	}
+	*s = []string{str}
+	return nil
+}
+
 // AddressData is the root container.
 type AddressData struct {
 	AddressFormatInformation map[string]*AddressInfo `json:"address_format_information,omitempty"`
@@ -22,7 +42,7 @@ type AddressInfo struct {
 	ZipRegex string `json:"zip_regex,omitempty"`
 	ZipExample string `json:"zip_example,omitempty"`
 	Lang string `json:"lang,omitempty"`
-	Languages string `json:"languages,omitempty"`
+	Languages StringOrSlice `json:"languages,omitempty"`
 	PostUrl string `json:"post_url,omitempty"`
 	SubKeys []string `json:"sub_keys,omitempty"`
 	SubNames []string `json:"sub_names,omitempty"`
@@ -69,11 +89,11 @@ func (x *AddressInfo) GetLang() string {
 	return ""
 }
 
-func (x *AddressInfo) GetLanguages() string {
+func (x *AddressInfo) GetLanguages() []string {
 	if x != nil {
 		return x.Languages
 	}
-	return ""
+	return nil
 }
 
 func (x *AddressInfo) GetPostUrl() string {
