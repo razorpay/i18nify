@@ -37,7 +37,13 @@ func UnflattenKeys(obj map[string]any, opts *UnflattenOptions) (map[string]any, 
 			cursor[part] = nested
 			cursor = nested
 		}
-		cursor[parts[len(parts)-1]] = value
+		leafKey := parts[len(parts)-1]
+		if existing, ok := cursor[leafKey]; ok {
+			if _, isNested := existing.(map[string]any); isNested {
+				continue
+			}
+		}
+		cursor[leafKey] = value
 	}
 	return result, nil
 }

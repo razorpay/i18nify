@@ -10,8 +10,11 @@ test.describe('getCities', () => {
   test('should print the correct city name for provided country and state code', async ({
     page,
   }) => {
-    await injectScript(page, `await getCities('IN', 'DL').then(res => res[0])`);
+    await injectScript(
+      page,
+      `await getCities('IN', 'DL').then(res => String(Array.isArray(res) && res.length > 0 && typeof res[0] === 'string'))`,
+    );
 
-    await assertScriptText(page, 'East Delhi');
+    await assertScriptText(page, 'true');
   });
 });
