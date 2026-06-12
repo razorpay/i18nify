@@ -172,6 +172,28 @@ banks, _ := bankcodes.GetAllBanksWithShortCodes("IN") // map[shortCode]bankName
 
 **Supported countries:** IN (India), MY (Malaysia), SG (Singapore), US (United States)
 
+### 6. Date & Time
+- Primary timezone lookup by country code
+- Reverse timezone lookup from IANA timezone to country codes
+- Unix timestamp formatting with locale-aware defaults
+- Flexible date parsing for common global string formats
+- Financial year calculation for supported countries
+
+```go
+import "github.com/razorpay/i18nify/packages/i18nify-go/modules/datetime"
+
+timezone, _ := datetime.GetPrimaryTimezone("IN")
+countries, _ := datetime.TimezoneToCountry("Asia/Kolkata")
+formatted, _ := datetime.FormatFromUnix(1609459200)
+parsed, _ := datetime.ParseFlexibleDate("2024-01-15")
+fy, _ := datetime.GetFinancialYear(parsed.Date, "IN")
+
+fmt.Println(timezone)  // Asia/Kolkata
+fmt.Println(countries) // [IN]
+fmt.Println(formatted) // 1/1/2021, 12:00:00 AM
+fmt.Println(fy)        // 2023-24 / 2024-25 depending on date
+```
+
 ---
 
 ## Package Structure
@@ -180,6 +202,7 @@ banks, _ := bankcodes.GetAllBanksWithShortCodes("IN") // map[shortCode]bankName
 packages/i18nify-go/
 ├── modules/
 │   ├── bankcodes/            # Bank code validation and information
+│   ├── datetime/             # Timezone, unix formatting, date parsing, financial year
 │   ├── currency/             # Currency information and formatting
 │   ├── phonenumber/          # Phone number formats and dial codes
 │   ├── country_metadata/     # Country metadata (dial code, flag, locale, etc.)
