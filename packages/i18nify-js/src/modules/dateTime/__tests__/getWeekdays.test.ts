@@ -91,4 +91,46 @@ describe('dateTime - getWeekdays', () => {
       );
     });
   });
+
+  describe('narrow weekday style', () => {
+    test('returns single-letter narrow weekdays for en-US', () => {
+      const weekdays = getWeekdays({ locale: 'en-US', weekday: 'narrow' });
+      expect(weekdays).toHaveLength(7);
+      expect(weekdays).toEqual(['S', 'M', 'T', 'W', 'T', 'F', 'S']);
+    });
+
+    test('returns narrow weekdays for fr-FR locale', () => {
+      const weekdays = getWeekdays({ locale: 'fr-FR', weekday: 'narrow' });
+      expect(weekdays).toHaveLength(7);
+    });
+  });
+
+  describe('week always starts from Sunday', () => {
+    test('first element is Sunday for en-US long format', () => {
+      const weekdays = getWeekdays({ locale: 'en-US' });
+      expect(weekdays[0]).toBe('Sunday');
+      expect(weekdays[6]).toBe('Saturday');
+    });
+
+    test('first element is Sunday for en-US short format', () => {
+      const weekdays = getWeekdays({ locale: 'en-US', weekday: 'short' });
+      expect(weekdays[0]).toBe('Sun');
+      expect(weekdays[6]).toBe('Sat');
+    });
+
+    test('first element is Sunday equivalent for de-DE', () => {
+      const weekdays = getWeekdays({ locale: 'de-DE' });
+      expect(weekdays[0]).toBe('Sonntag');
+      expect(weekdays[6]).toBe('Samstag');
+    });
+  });
+
+  describe('always returns exactly 7 days', () => {
+    test.each(['long', 'short', 'narrow'] as const)(
+      'returns 7 weekdays for %s format',
+      (weekday) => {
+        expect(getWeekdays({ locale: 'en-US', weekday })).toHaveLength(7);
+      },
+    );
+  });
 });
