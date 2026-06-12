@@ -5,8 +5,6 @@
 //   - GetRelativeTime       — human-readable relative time (e.g., "3 hours ago")
 //   - GetWeekdays           — ordered list of weekday names for a locale
 //   - GetTimeZoneByCountry  — timezone identifiers + UTC offsets for a country
-//   - GetTimezoneList       — all IANA timezones aggregated with observing countries
-//   - GetPrimaryTimezone    — primary (capital) IANA timezone for a country code
 //
 // Configuration data (locale ordering, separators, supported date formats) is
 // loaded at startup from the embedded i18nify-data/go/datetime package.
@@ -49,9 +47,3 @@ type TimeZoneInfo struct {
 	UTCOffset string `json:"utc_offset"`
 }
 
-// TimezoneListEntry holds a timezone's UTC offset and the ISO 3166-1 alpha-2
-// country codes that observe it.
-type TimezoneListEntry struct {
-	UTCOffset string   `json:"utc_offset"`
-	Countries []string `json:"countries"`
-}
