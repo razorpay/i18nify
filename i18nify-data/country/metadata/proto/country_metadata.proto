@@ -37,6 +37,3 @@ message TimezoneInfo {
 message LocaleInfo {
   string name = 1;
 }
-
-
-
