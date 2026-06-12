@@ -184,44 +184,6 @@ func main() {
 		fmt.Printf("Formatted date time: %s\n", formattedDT) // 3/5/2024 14:30:0
 	}
 
-	// Format from Unix timestamp with timezone
-	formattedUnix, err := datetime.FormatFromUnix(1609459200, datetime.FormatFromUnixOptions{
-		Timezone: "Asia/Kolkata",
-		FormatDateTimeOptions: datetime.FormatDateTimeOptions{
-			DateTimeMode: datetime.ModeDateOnly,
-			Locale:       "en-US",
-		},
-	})
-	if err != nil {
-		fmt.Printf("Error formatting from Unix timestamp: %v\n", err)
-	} else {
-		fmt.Printf("Formatted from Unix: %s\n", formattedUnix) // 1/1/2021
-	}
-
-	// Get financial year label for a date
-	fy, err := datetime.GetFinancialYear(time.Date(2024, 8, 15, 0, 0, 0, 0, time.UTC), "IN")
-	if err != nil {
-		fmt.Printf("Error getting financial year: %v\n", err)
-	} else {
-		fmt.Printf("Financial year: %s\n", fy) // 2024-25
-	}
-
-	// Get English ordinal suffix for a number
-	suffix, err := datetime.GetOrdinalSuffix(21)
-	if err != nil {
-		fmt.Printf("Error getting ordinal suffix: %v\n", err)
-	} else {
-		fmt.Printf("Ordinal suffix for 21: %s\n", suffix) // st
-	}
-
-	// Get primary timezone for a country
-	tz, err := datetime.GetPrimaryTimezone("IN")
-	if err != nil {
-		fmt.Printf("Error getting primary timezone: %v\n", err)
-	} else {
-		fmt.Printf("Primary timezone: %s\n", tz) // Asia/Kolkata
-	}
-
 	// Get relative time from a past date
 	relTime, err := datetime.GetRelativeTime(
 		time.Now().Add(-2*time.Hour),
@@ -239,14 +201,6 @@ func main() {
 		fmt.Printf("Error getting timezones by country: %v\n", err)
 	} else {
 		fmt.Printf("Timezones for IN: %v\n", tzs) // map[Asia/Kolkata:{+05:30}]
-	}
-
-	// Get global timezone list with UTC offsets and countries
-	tzList, err := datetime.GetTimezoneList()
-	if err != nil {
-		fmt.Printf("Error getting timezone list: %v\n", err)
-	} else {
-		fmt.Printf("Asia/Kolkata entry: %v\n", tzList["Asia/Kolkata"]) // {UTC +05:30 [IN]}
 	}
 
 	// Get weekday names
