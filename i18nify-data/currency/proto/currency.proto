@@ -18,6 +18,3 @@ message CurrencyInfo {
   string symbol = 4;
   repeated string physical_currency_denominations = 5;
 }
-
-
-
