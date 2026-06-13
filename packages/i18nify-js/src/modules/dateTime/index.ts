@@ -10,6 +10,7 @@ export { default as getWeekdays } from './getWeekdays';
 export { default as parseDateTime } from './parseDateTime';
 export { default as formatFromUnix } from './formatFromUnix';
 export { default as getFinancialYear } from './getFinancialYear';
+export { default as getOrdinalSuffix } from './getOrdinalSuffix';
 export { default as getPrimaryTimezone } from './getPrimaryTimezone';
 export { default as timezoneToCountry } from './timezoneToCountry';
 export { default as parseFlexibleDate } from './parseFlexibleDate';
