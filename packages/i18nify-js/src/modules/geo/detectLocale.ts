@@ -26,6 +26,27 @@ const parseAcceptLanguage = (header: string): string | null => {
   return entries[0].locale;
 };
 
+const getLocaleFromCurrency = (
+  currency: string,
+  metadata: Record<CountryCodeType, CountryMetaType>,
+): string | null => {
+  const normalizedCurrency = currency.toUpperCase();
+  const derivedCountryCode = normalizedCurrency.slice(0, 2) as CountryCodeType;
+
+  const derivedCountry = metadata[derivedCountryCode];
+  if (derivedCountry?.default_currency === normalizedCurrency) {
+    return derivedCountry.default_locale;
+  }
+
+  const matchingLocales = Object.values(metadata)
+    .filter((info) => info.default_currency === normalizedCurrency)
+    .map((info) => info.default_locale)
+    .filter(Boolean)
+    .sort();
+
+  return matchingLocales[0] ?? null;
+};
+
 /**
  * Detects a BCP 47 locale string from one or more signals.
  * Priority: countryCode → acceptLanguage → browserLocale → currency.
@@ -80,11 +101,8 @@ const detectLocale = (options: DetectLocaleOptions): Promise<string> => {
         if (browserLocale?.trim()) return browserLocale.trim();
 
         if (currency) {
-          const cu = currency.toUpperCase();
-          const entry = Object.values(meta).find(
-            (info) => info.default_currency === cu,
-          );
-          if (entry?.default_locale) return entry.default_locale;
+          const locale = getLocaleFromCurrency(currency, meta);
+          if (locale) return locale;
         }
 
         return Promise.reject(

@@ -7,6 +7,7 @@ jest.mock('../../shared', () => ({
 const MOCK_METADATA = {
   metadata_information: {
     IN: { default_locale: 'en_IN', default_currency: 'INR' },
+    IO: { default_locale: 'en_IO', default_currency: 'USD' },
     US: { default_locale: 'en_US', default_currency: 'USD' },
     DE: { default_locale: 'de', default_currency: 'EUR' },
     JP: { default_locale: 'ja', default_currency: 'JPY' },
@@ -61,6 +62,10 @@ describe('detectLocale', () => {
 
   it('currency lookup is case-insensitive', async () => {
     expect(await detectLocale({ currency: 'usd' })).toBe('en_US');
+  });
+
+  it('prefers the canonical country locale for ambiguous currencies', async () => {
+    expect(await detectLocale({ currency: 'USD' })).toBe('en_US');
   });
 
   // Priority order

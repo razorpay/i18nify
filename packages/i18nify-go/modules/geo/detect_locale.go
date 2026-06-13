@@ -61,10 +61,25 @@ func DetectLocale(opts DetectLocaleOptions) (string, error) {
 	// Priority 4: Currency reverse lookup
 	if opts.Currency != "" {
 		cu := strings.ToUpper(strings.TrimSpace(opts.Currency))
-		for _, info := range meta {
-			if info != nil && strings.ToUpper(info.GetDefaultCurrency()) == cu && info.GetDefaultLocale() != "" {
+
+		// Prefer the ISO currency prefix when it maps back to a country using
+		// the same default currency, e.g. USD -> US, INR -> IN.
+		if len(cu) >= 2 {
+			if info, ok := meta[cu[:2]]; ok && info != nil && strings.ToUpper(info.GetDefaultCurrency()) == cu && info.GetDefaultLocale() != "" {
 				return info.GetDefaultLocale(), nil
 			}
+		}
+
+		matchingLocales := make([]string, 0)
+		for _, info := range meta {
+			if info != nil && strings.ToUpper(info.GetDefaultCurrency()) == cu && info.GetDefaultLocale() != "" {
+				matchingLocales = append(matchingLocales, info.GetDefaultLocale())
+			}
+		}
+
+		if len(matchingLocales) > 0 {
+			sort.Strings(matchingLocales)
+			return matchingLocales[0], nil
 		}
 	}
 
