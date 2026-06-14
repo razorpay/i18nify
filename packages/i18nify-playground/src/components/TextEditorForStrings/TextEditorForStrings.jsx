@@ -6,8 +6,7 @@ const TextEditorForStrings = ({ value }) => {
     <Box
       padding="spacing.4"
       width="100%"
-      // backgroundColor="surface.background.primary.intense"
-      backgroundColor="#223545"
+      backgroundColor="surface.background.primary.intense"
       borderRadius="medium"
     >
       <Text
