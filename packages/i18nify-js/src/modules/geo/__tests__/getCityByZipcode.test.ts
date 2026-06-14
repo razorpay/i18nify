@@ -1,4 +1,4 @@
-import getCityByZipCode from '../getCityByZipCode';
+import getCityByZipCode from '../getCityByZipcode';
 import { CountryCodeType } from '../../types';
 
 jest.mock('../../shared', () => ({
