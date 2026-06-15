@@ -11,6 +11,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/phone-number/dial-code-to-country/**'
       - '!i18nify-data/go/**'
   push:
     branches:
@@ -21,6 +22,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/phone-number/dial-code-to-country/**'
       - '!i18nify-data/go/**'
 
   # Manual trigger via GitHub Actions UI
@@ -38,6 +40,7 @@ on:
           - 'bankcodes'
           - 'country/metadata'
           - 'phone-number/country-code-to-phone-number'
+          - 'phone-number/dial-code-to-country'
       branch:
         description: 'Branch to run on'
         required: true
