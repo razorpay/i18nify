@@ -4,33 +4,26 @@ package phone_number_dial_code_to_country
 
 import (
 	_ "embed"
-	"encoding/json"
-	"fmt"
 	"sync"
+
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 //go:embed data/data.json
 var dataJSON []byte
 
-type dialCodeData struct {
-	DialCodeToCountry map[string][]string `json:"dial_code_to_country"`
-}
-
 var (
-	data     map[string][]string
+	data     *DialCodeToCountryData
 	dataOnce sync.Once
 	dataErr  error
 )
 
-// GetDialCodeToCountryData returns a map of dial code to list of country codes.
-func GetDialCodeToCountryData() (map[string][]string, error) {
+// GetDialCodeToCountryData retrieves the data.
+func GetDialCodeToCountryData() (*DialCodeToCountryData, error) {
 	dataOnce.Do(func() {
-		var parsed dialCodeData
-		if err := json.Unmarshal(dataJSON, &parsed); err != nil {
-			dataErr = fmt.Errorf("failed to parse dial-code-to-country data: %w", err)
-			return
-		}
-		data = parsed.DialCodeToCountry
+		data = &DialCodeToCountryData{}
+		unmarshaler := protojson.UnmarshalOptions{DiscardUnknown: true}
+		dataErr = unmarshaler.Unmarshal(dataJSON, data)
 	})
 	return data, dataErr
 }
