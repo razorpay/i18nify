@@ -11,6 +11,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/datetime/**'
       - '!i18nify-data/go/**'
   push:
     branches:
@@ -21,6 +22,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/datetime/**'
       - '!i18nify-data/go/**'
 
   # Manual trigger via GitHub Actions UI
@@ -38,6 +40,7 @@ on:
           - 'bankcodes'
           - 'country/metadata'
           - 'phone-number/country-code-to-phone-number'
+          - 'datetime'
       branch:
         description: 'Branch to run on'
         required: true
@@ -81,7 +84,7 @@ jobs:
             exit 0
           fi
           git diff --name-only "$BEFORE" HEAD \
-            | grep -qE "^i18nify-data/(country/subdivisions|currency|bankcodes|country/metadata|phone-number/country-code-to-phone-number)/" \
+            | grep -qE "^i18nify-data/(country/subdivisions|currency|bankcodes|country/metadata|phone-number/country-code-to-phone-number|datetime)/" \
             && echo "has_data_changes=true" >> $GITHUB_OUTPUT \
             || echo "has_data_changes=false" >> $GITHUB_OUTPUT
 
@@ -105,6 +108,9 @@ jobs:
               - '!i18nify-data/country/metadata/README.md'
             phone-number/country-code-to-phone-number:
               - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+            datetime:
+              - 'i18nify-data/datetime/**'
+              - '!i18nify-data/datetime/README.md'
 
   # For workflow_dispatch: get inputs
   check-dispatch:
@@ -124,7 +130,7 @@ jobs:
           if [ "$PACKAGE" != "all" ] && [ -n "$PACKAGE" ]; then
             echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
           else
-            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number"]' >> $GITHUB_OUTPUT
+            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number","datetime"]' >> $GITHUB_OUTPUT
           fi
 
   # Generate packages
