@@ -20,49 +20,6 @@ type HonorificTitle struct {
 
 var cachedData *dataSource.NamesData
 
-// langCodeToName maps a BCP 47 base language subtag to the full English name
-// used as the key in honorific_titles within data.json.
-var langCodeToName = map[string]string{
-	"en": "english",
-	"hi": "hindi",
-	"fr": "french",
-	"de": "german",
-	"es": "spanish",
-	"ar": "arabic",
-	"ja": "japanese",
-	"zh": "chinese",
-	"pt": "portuguese",
-	"ru": "russian",
-	"it": "italian",
-	"nl": "dutch",
-	"ko": "korean",
-	"vi": "vietnamese",
-	"tr": "turkish",
-	"pl": "polish",
-	"sv": "swedish",
-	"da": "danish",
-	"no": "norwegian",
-	"fi": "finnish",
-	"el": "greek",
-	"he": "hebrew",
-	"fa": "persian",
-	"ur": "urdu",
-	"bn": "bengali",
-	"th": "thai",
-	"id": "indonesian",
-	"ms": "malay",
-	"sw": "swahili",
-	"uk": "ukrainian",
-	"ro": "romanian",
-	"hu": "hungarian",
-	"cs": "czech",
-	"sk": "slovak",
-	"bg": "bulgarian",
-	"sr": "serbian",
-	"hr": "croatian",
-	"ca": "catalan",
-}
-
 func init() {
 	d, err := dataSource.GetNamesData()
 	if err != nil {
@@ -107,27 +64,28 @@ func IsValidName(name string) bool {
 	return hasLetter
 }
 
-// GetHonorificTitles returns the list of honorific titles for the given BCP 47
-// base language tag (e.g., "en", "hi", "fr").
+// GetHonorificTitles returns the list of honorific titles for the given
+// ISO 3166-1 alpha-2 country code (e.g., "US", "IN", "DE").
 //
-// The locale is matched case-insensitively against the base language subtag only
-// (i.e., "en-US" → "en"). Returns an error for empty or unsupported locales.
-func GetHonorificTitles(locale string) ([]HonorificTitle, error) {
-	locale = strings.TrimSpace(locale)
-	if locale == "" {
-		return nil, fmt.Errorf("locale must not be empty")
+// The country code is matched case-insensitively. The function resolves the
+// country's primary language internally via country_to_languages data and
+// returns the corresponding honorific titles.
+func GetHonorificTitles(countryCode string) ([]HonorificTitle, error) {
+	countryCode = strings.TrimSpace(countryCode)
+	if countryCode == "" {
+		return nil, fmt.Errorf("country code must not be empty")
 	}
 
-	base := strings.ToLower(strings.SplitN(locale, "-", 2)[0])
+	cc := strings.ToUpper(countryCode)
 
-	key, known := langCodeToName[base]
-	if !known {
-		return nil, fmt.Errorf("no honorific titles found for locale: %q", locale)
+	languages, ok := cachedData.NamesInformation.CountryToLanguages[cc]
+	if !ok || len(languages) == 0 {
+		return nil, fmt.Errorf("no honorific titles found for country code: %q", countryCode)
 	}
 
-	raw, ok := cachedData.NamesInformation.HonorificTitles[key]
+	raw, ok := cachedData.NamesInformation.HonorificTitles[languages[0]]
 	if !ok {
-		return nil, fmt.Errorf("no honorific titles found for locale: %q", locale)
+		return nil, fmt.Errorf("no honorific titles found for country code: %q", countryCode)
 	}
 
 	out := make([]HonorificTitle, len(raw))

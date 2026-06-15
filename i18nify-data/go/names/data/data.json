@@ -1,5 +1,751 @@
 {
   "names_information": {
+    "country_to_languages": {
+      "AD": [
+        "catalan"
+      ],
+      "AE": [
+        "arabic"
+      ],
+      "AF": [
+        "persian"
+      ],
+      "AG": [
+        "english"
+      ],
+      "AI": [
+        "english"
+      ],
+      "AL": [
+        "english"
+      ],
+      "AM": [
+        "english"
+      ],
+      "AO": [
+        "portuguese"
+      ],
+      "AR": [
+        "spanish"
+      ],
+      "AS": [
+        "english"
+      ],
+      "AT": [
+        "german"
+      ],
+      "AU": [
+        "english"
+      ],
+      "AW": [
+        "dutch"
+      ],
+      "AX": [
+        "swedish"
+      ],
+      "AZ": [
+        "english"
+      ],
+      "BA": [
+        "croatian"
+      ],
+      "BB": [
+        "english"
+      ],
+      "BD": [
+        "bengali"
+      ],
+      "BE": [
+        "dutch"
+      ],
+      "BF": [
+        "french"
+      ],
+      "BG": [
+        "bulgarian"
+      ],
+      "BH": [
+        "arabic"
+      ],
+      "BI": [
+        "english"
+      ],
+      "BJ": [
+        "french"
+      ],
+      "BL": [
+        "french"
+      ],
+      "BM": [
+        "english"
+      ],
+      "BN": [
+        "malay"
+      ],
+      "BO": [
+        "spanish"
+      ],
+      "BQ": [
+        "dutch"
+      ],
+      "BR": [
+        "portuguese"
+      ],
+      "BS": [
+        "english"
+      ],
+      "BT": [
+        "english"
+      ],
+      "BW": [
+        "english"
+      ],
+      "BY": [
+        "russian"
+      ],
+      "BZ": [
+        "english"
+      ],
+      "CA": [
+        "english"
+      ],
+      "CC": [
+        "english"
+      ],
+      "CD": [
+        "french"
+      ],
+      "CF": [
+        "french"
+      ],
+      "CG": [
+        "french"
+      ],
+      "CH": [
+        "german"
+      ],
+      "CI": [
+        "french"
+      ],
+      "CK": [
+        "english"
+      ],
+      "CL": [
+        "spanish"
+      ],
+      "CM": [
+        "english"
+      ],
+      "CN": [
+        "chinese"
+      ],
+      "CO": [
+        "spanish"
+      ],
+      "CQ": [
+        "english"
+      ],
+      "CR": [
+        "spanish"
+      ],
+      "CU": [
+        "spanish"
+      ],
+      "CV": [
+        "portuguese"
+      ],
+      "CW": [
+        "dutch"
+      ],
+      "CX": [
+        "english"
+      ],
+      "CY": [
+        "greek"
+      ],
+      "CZ": [
+        "czech"
+      ],
+      "DE": [
+        "german"
+      ],
+      "DG": [
+        "english"
+      ],
+      "DJ": [
+        "arabic"
+      ],
+      "DK": [
+        "danish"
+      ],
+      "DM": [
+        "english"
+      ],
+      "DO": [
+        "spanish"
+      ],
+      "DZ": [
+        "arabic"
+      ],
+      "EA": [
+        "spanish"
+      ],
+      "EC": [
+        "spanish"
+      ],
+      "EE": [
+        "english"
+      ],
+      "EG": [
+        "arabic"
+      ],
+      "EH": [
+        "arabic"
+      ],
+      "ER": [
+        "arabic"
+      ],
+      "ES": [
+        "catalan"
+      ],
+      "ET": [
+        "english"
+      ],
+      "FI": [
+        "finnish"
+      ],
+      "FJ": [
+        "english"
+      ],
+      "FK": [
+        "english"
+      ],
+      "FM": [
+        "english"
+      ],
+      "FO": [
+        "english"
+      ],
+      "FR": [
+        "french"
+      ],
+      "GA": [
+        "french"
+      ],
+      "GB": [
+        "english"
+      ],
+      "GD": [
+        "english"
+      ],
+      "GE": [
+        "english"
+      ],
+      "GF": [
+        "french"
+      ],
+      "GG": [
+        "english"
+      ],
+      "GH": [
+        "english"
+      ],
+      "GI": [
+        "english"
+      ],
+      "GL": [
+        "english"
+      ],
+      "GM": [
+        "english"
+      ],
+      "GN": [
+        "french"
+      ],
+      "GP": [
+        "french"
+      ],
+      "GQ": [
+        "spanish"
+      ],
+      "GR": [
+        "greek"
+      ],
+      "GS": [
+        "english"
+      ],
+      "GT": [
+        "spanish"
+      ],
+      "GU": [
+        "english"
+      ],
+      "GW": [
+        "portuguese"
+      ],
+      "GY": [
+        "english"
+      ],
+      "HK": [
+        "chinese"
+      ],
+      "HN": [
+        "spanish"
+      ],
+      "HR": [
+        "croatian"
+      ],
+      "HT": [
+        "french"
+      ],
+      "HU": [
+        "hungarian"
+      ],
+      "IC": [
+        "spanish"
+      ],
+      "ID": [
+        "indonesian"
+      ],
+      "IE": [
+        "english"
+      ],
+      "IL": [
+        "hebrew"
+      ],
+      "IM": [
+        "english"
+      ],
+      "IN": [
+        "hindi"
+      ],
+      "IO": [
+        "english"
+      ],
+      "IQ": [
+        "arabic"
+      ],
+      "IR": [
+        "persian"
+      ],
+      "IS": [
+        "english"
+      ],
+      "IT": [
+        "french"
+      ],
+      "JE": [
+        "english"
+      ],
+      "JM": [
+        "english"
+      ],
+      "JO": [
+        "arabic"
+      ],
+      "JP": [
+        "japanese"
+      ],
+      "KE": [
+        "swahili"
+      ],
+      "KG": [
+        "russian"
+      ],
+      "KH": [
+        "english"
+      ],
+      "KI": [
+        "english"
+      ],
+      "KM": [
+        "arabic"
+      ],
+      "KN": [
+        "english"
+      ],
+      "KP": [
+        "korean"
+      ],
+      "KR": [
+        "korean"
+      ],
+      "KW": [
+        "arabic"
+      ],
+      "KY": [
+        "english"
+      ],
+      "KZ": [
+        "russian"
+      ],
+      "LA": [
+        "english"
+      ],
+      "LB": [
+        "arabic"
+      ],
+      "LC": [
+        "english"
+      ],
+      "LI": [
+        "german"
+      ],
+      "LK": [
+        "english"
+      ],
+      "LR": [
+        "english"
+      ],
+      "LS": [
+        "english"
+      ],
+      "LT": [
+        "english"
+      ],
+      "LU": [
+        "french"
+      ],
+      "LV": [
+        "english"
+      ],
+      "LY": [
+        "arabic"
+      ],
+      "MA": [
+        "arabic"
+      ],
+      "MC": [
+        "french"
+      ],
+      "MD": [
+        "romanian"
+      ],
+      "MF": [
+        "french"
+      ],
+      "MG": [
+        "english"
+      ],
+      "MH": [
+        "english"
+      ],
+      "MK": [
+        "english"
+      ],
+      "ML": [
+        "french"
+      ],
+      "MM": [
+        "english"
+      ],
+      "MN": [
+        "english"
+      ],
+      "MO": [
+        "chinese"
+      ],
+      "MP": [
+        "english"
+      ],
+      "MQ": [
+        "french"
+      ],
+      "MR": [
+        "arabic"
+      ],
+      "MS": [
+        "english"
+      ],
+      "MT": [
+        "english"
+      ],
+      "MU": [
+        "english"
+      ],
+      "MV": [
+        "english"
+      ],
+      "MW": [
+        "english"
+      ],
+      "MX": [
+        "spanish"
+      ],
+      "MY": [
+        "malay"
+      ],
+      "MZ": [
+        "portuguese"
+      ],
+      "NA": [
+        "english"
+      ],
+      "NC": [
+        "french"
+      ],
+      "NE": [
+        "french"
+      ],
+      "NF": [
+        "english"
+      ],
+      "NG": [
+        "english"
+      ],
+      "NI": [
+        "spanish"
+      ],
+      "NL": [
+        "dutch"
+      ],
+      "NO": [
+        "norwegian"
+      ],
+      "NP": [
+        "english"
+      ],
+      "NR": [
+        "english"
+      ],
+      "NU": [
+        "english"
+      ],
+      "NZ": [
+        "english"
+      ],
+      "OM": [
+        "arabic"
+      ],
+      "PA": [
+        "spanish"
+      ],
+      "PE": [
+        "spanish"
+      ],
+      "PF": [
+        "french"
+      ],
+      "PG": [
+        "english"
+      ],
+      "PH": [
+        "english"
+      ],
+      "PK": [
+        "urdu"
+      ],
+      "PL": [
+        "german"
+      ],
+      "PM": [
+        "french"
+      ],
+      "PN": [
+        "english"
+      ],
+      "PR": [
+        "english"
+      ],
+      "PS": [
+        "arabic"
+      ],
+      "PT": [
+        "portuguese"
+      ],
+      "PW": [
+        "english"
+      ],
+      "PY": [
+        "spanish"
+      ],
+      "QA": [
+        "arabic"
+      ],
+      "RE": [
+        "french"
+      ],
+      "RO": [
+        "romanian"
+      ],
+      "RS": [
+        "croatian"
+      ],
+      "RU": [
+        "russian"
+      ],
+      "RW": [
+        "english"
+      ],
+      "SA": [
+        "arabic"
+      ],
+      "SB": [
+        "english"
+      ],
+      "SC": [
+        "english"
+      ],
+      "SD": [
+        "arabic"
+      ],
+      "SE": [
+        "finnish"
+      ],
+      "SG": [
+        "english"
+      ],
+      "SH": [
+        "english"
+      ],
+      "SI": [
+        "english"
+      ],
+      "SJ": [
+        "english"
+      ],
+      "SK": [
+        "slovak"
+      ],
+      "SL": [
+        "english"
+      ],
+      "SM": [
+        "italian"
+      ],
+      "SN": [
+        "french"
+      ],
+      "SO": [
+        "arabic"
+      ],
+      "SR": [
+        "dutch"
+      ],
+      "SS": [
+        "english"
+      ],
+      "ST": [
+        "portuguese"
+      ],
+      "SV": [
+        "spanish"
+      ],
+      "SX": [
+        "english"
+      ],
+      "SY": [
+        "arabic"
+      ],
+      "SZ": [
+        "english"
+      ],
+      "TC": [
+        "english"
+      ],
+      "TD": [
+        "arabic"
+      ],
+      "TG": [
+        "french"
+      ],
+      "TH": [
+        "thai"
+      ],
+      "TJ": [
+        "english"
+      ],
+      "TK": [
+        "english"
+      ],
+      "TL": [
+        "portuguese"
+      ],
+      "TM": [
+        "english"
+      ],
+      "TN": [
+        "arabic"
+      ],
+      "TO": [
+        "english"
+      ],
+      "TR": [
+        "turkish"
+      ],
+      "TT": [
+        "english"
+      ],
+      "TV": [
+        "english"
+      ],
+      "TZ": [
+        "swahili"
+      ],
+      "UA": [
+        "russian"
+      ],
+      "UG": [
+        "swahili"
+      ],
+      "UM": [
+        "english"
+      ],
+      "US": [
+        "english"
+      ],
+      "UY": [
+        "spanish"
+      ],
+      "UZ": [
+        "english"
+      ],
+      "VA": [
+        "italian"
+      ],
+      "VC": [
+        "english"
+      ],
+      "VE": [
+        "spanish"
+      ],
+      "VG": [
+        "english"
+      ],
+      "VI": [
+        "english"
+      ],
+      "VN": [
+        "vietnamese"
+      ],
+      "VU": [
+        "english"
+      ],
+      "WF": [
+        "french"
+      ],
+      "WS": [
+        "english"
+      ],
+      "XK": [
+        "serbian"
+      ],
+      "YE": [
+        "arabic"
+      ],
+      "YT": [
+        "french"
+      ],
+      "ZA": [
+        "english"
+      ],
+      "ZM": [
+        "english"
+      ],
+      "ZW": [
+        "english"
+      ]
+    },
     "honorific_titles": {
       "english": [
         {

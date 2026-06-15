@@ -8,10 +8,11 @@ type NamesData struct {
 	NamesInformation NamesInformation `json:"names_information"`
 }
 
-// NamesInformation holds honorific titles and validation rules.
+// NamesInformation holds country-to-language mappings, honorific titles, and validation rules.
 type NamesInformation struct {
-	HonorificTitles map[string][]HonorificTitle `json:"honorific_titles"`
-	ValidationRules ValidationRules             `json:"validation_rules"`
+	CountryToLanguages map[string][]string            `json:"country_to_languages"`
+	HonorificTitles    map[string][]HonorificTitle     `json:"honorific_titles"`
+	ValidationRules    ValidationRules                 `json:"validation_rules"`
 }
 
 // HonorificTitle represents a single honorific title entry.

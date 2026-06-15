@@ -220,23 +220,23 @@ func main() {
 	fmt.Printf("Is valid name 'John2': %v\n", names.IsValidName("John2"))              // false
 	fmt.Printf("Is valid name 'A': %v\n", names.IsValidName("A"))                      // false
 
-	// Get honorific titles for a locale
-	honorifics, err := names.GetHonorificTitles("en")
+	// Get honorific titles for a country
+	honorifics, err := names.GetHonorificTitles("US")
 	if err != nil {
 		fmt.Printf("Error getting honorific titles: %v\n", err)
 	} else {
-		fmt.Printf("English honorifics:\n")
+		fmt.Printf("US honorifics:\n")
 		for _, h := range honorifics {
 			fmt.Printf("  %s (%s) — %s\n", h.Title, h.Gender, h.Description)
 		}
 	}
 
-	// Get honorific titles for Hindi
-	hiHonorifics, err := names.GetHonorificTitles("hi")
+	// Get honorific titles for India
+	inHonorifics, err := names.GetHonorificTitles("IN")
 	if err != nil {
-		fmt.Printf("Error getting Hindi honorific titles: %v\n", err)
+		fmt.Printf("Error getting India honorific titles: %v\n", err)
 	} else {
-		fmt.Printf("Hindi honorifics count: %d\n", len(hiHonorifics)) // e.g. 4
+		fmt.Printf("India honorifics count: %d\n", len(inHonorifics)) // e.g. 5
 	}
 
 	// Multiple Countries
