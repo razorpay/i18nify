@@ -15,6 +15,9 @@
     "validate-i18nify-data": "ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/dataValidate.ts",
     "test:data-validate": "jest scripts/dataValidate.test.ts --passWithNoTests"
   },
+  "resolutions": {
+    "esbuild": "0.28.1"
+  },
   "overrides": {
     "js-yaml": "^3.14.2",
     "@eslint/eslintrc": {
