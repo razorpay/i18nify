@@ -12,6 +12,6 @@ test.describe('getCities', () => {
   }) => {
     await injectScript(page, `await getCities('IN', 'DL').then(res => res[0])`);
 
-    await assertScriptText(page, 'South');
+    await assertScriptText(page, 'East Delhi');
   });
 });
