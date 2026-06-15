@@ -3,7 +3,7 @@ syntax = "proto3";
 package dial_code_to_country;
 
 // Import the Struct proto which contains ListValue (for JSON arrays)
-import "google.protobuf/struct.proto";
+import "google/protobuf/struct.proto";
 
 // Data files: data.json
 message DialCodeToCountryData {
