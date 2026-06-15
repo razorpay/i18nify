@@ -36,6 +36,3 @@ message Identifiers {
   repeated string routing_number = 2;
   string ifsc_code = 3;
 }
-
-
-
