@@ -11,6 +11,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/phone-number/dial-code-to-country/**'
       - '!i18nify-data/go/**'
   push:
     branches:
@@ -21,6 +22,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/phone-number/dial-code-to-country/**'
       - '!i18nify-data/go/**'
 
   # Manual trigger via GitHub Actions UI
@@ -38,6 +40,7 @@ on:
           - 'bankcodes'
           - 'country/metadata'
           - 'phone-number/country-code-to-phone-number'
+          - 'phone-number/dial-code-to-country'
       branch:
         description: 'Branch to run on'
         required: true
@@ -81,7 +84,7 @@ jobs:
             exit 0
           fi
           git diff --name-only "$BEFORE" HEAD \
-            | grep -qE "^i18nify-data/(country/subdivisions|currency|bankcodes|country/metadata|phone-number/country-code-to-phone-number)/" \
+            | grep -qE "^i18nify-data/(country/subdivisions|currency|bankcodes|country/metadata|phone-number/country-code-to-phone-number|phone-number/dial-code-to-country)/" \
             && echo "has_data_changes=true" >> $GITHUB_OUTPUT \
             || echo "has_data_changes=false" >> $GITHUB_OUTPUT
 
@@ -105,6 +108,8 @@ jobs:
               - '!i18nify-data/country/metadata/README.md'
             phone-number/country-code-to-phone-number:
               - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+            phone-number/dial-code-to-country:
+              - 'i18nify-data/phone-number/dial-code-to-country/**'
 
   # For workflow_dispatch: get inputs
   check-dispatch:
@@ -124,7 +129,7 @@ jobs:
           if [ "$PACKAGE" != "all" ] && [ -n "$PACKAGE" ]; then
             echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
           else
-            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number"]' >> $GITHUB_OUTPUT
+            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number","phone-number/dial-code-to-country"]' >> $GITHUB_OUTPUT
           fi
 
   # Generate packages
@@ -278,7 +283,7 @@ jobs:
             # For release: get latest tag and bump version
             git fetch --tags origin
             LATEST_TAG=$(git tag -l "${TAG_PREFIX}/v*" --sort=-version:refname | head -n 1 || echo "")
-            
+          
             if [ -z "$LATEST_TAG" ]; then
               # No existing tag, start at v1.0.0
               NEW_VERSION="1.0.0"
@@ -292,7 +297,7 @@ jobs:
               NEW_PATCH=$((PATCH + 1))
               NEW_VERSION="${MAJOR}.${MINOR}.${NEW_PATCH}"
             fi
-            
+          
             echo "version=v${NEW_VERSION}" >> $GITHUB_OUTPUT
             echo "tag=${TAG_PREFIX}/v${NEW_VERSION}" >> $GITHUB_OUTPUT
             echo "is_release=true" >> $GITHUB_OUTPUT
@@ -302,7 +307,7 @@ jobs:
             SHORT_SHA=$(echo "$COMMIT_SHA" | cut -c1-12)
             TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S "$COMMIT_SHA")
             VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
-            
+          
             echo "version=$VERSION" >> $GITHUB_OUTPUT
             echo "tag=" >> $GITHUB_OUTPUT
             echo "is_release=false" >> $GITHUB_OUTPUT
