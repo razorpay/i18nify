@@ -15,6 +15,6 @@ test.describe('getZipcodes', () => {
       `await getZipcodes('IN', 'TN').then(res => res[0])`,
     );
 
-    await assertScriptText(page, '639103');
+    await assertScriptText(page, '124508');
   });
 });
