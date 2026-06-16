@@ -67,21 +67,31 @@ jobs:
 
       - name: Set event metadata
         id: meta
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_BRANCH: ${{ github.event.inputs.branch }}
+          INPUT_RELEASE: ${{ github.event.inputs.release }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REF_NAME: ${{ github.ref_name }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "branch=${{ github.event.inputs.branch }}" >> $GITHUB_OUTPUT
-            echo "pr_number=" >> $GITHUB_OUTPUT
-            IS_RELEASE=${{ github.event.inputs.release == 'true' && github.event.inputs.branch == 'master' }}
-            echo "is_release=$IS_RELEASE" >> $GITHUB_OUTPUT
-          elif [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "branch=${{ github.event.pull_request.head.ref }}" >> $GITHUB_OUTPUT
-            echo "pr_number=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
-            echo "is_release=false" >> $GITHUB_OUTPUT
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "branch=$INPUT_BRANCH" >> "$GITHUB_OUTPUT"
+            echo "pr_number=" >> "$GITHUB_OUTPUT"
+            IS_RELEASE=false
+            if [ "$INPUT_RELEASE" = "true" ] && [ "$INPUT_BRANCH" = "master" ]; then
+              IS_RELEASE=true
+            fi
+            echo "is_release=$IS_RELEASE" >> "$GITHUB_OUTPUT"
+          elif [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "branch=$PR_HEAD_REF" >> "$GITHUB_OUTPUT"
+            echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+            echo "is_release=false" >> "$GITHUB_OUTPUT"
           else
             # push to master
-            echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
-            echo "pr_number=" >> $GITHUB_OUTPUT
-            echo "is_release=true" >> $GITHUB_OUTPUT
+            echo "branch=$REF_NAME" >> "$GITHUB_OUTPUT"
+            echo "pr_number=" >> "$GITHUB_OUTPUT"
+            echo "is_release=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Install jq
@@ -89,23 +99,27 @@ jobs:
 
       - name: Resolve package list
         id: resolve
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_PACKAGE: ${{ github.event.inputs.package }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
         run: |
           chmod +x .github/scripts/go/discover-packages.sh
 
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            INPUT="${{ github.event.inputs.package }}"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            INPUT="$INPUT_PACKAGE"
             if [ "$INPUT" = "all" ] || [ -z "$INPUT" ]; then
               PACKAGES=$(.github/scripts/go/discover-packages.sh --all)
             else
               # Validate user-provided names against actual repo structure
               PACKAGES=$(.github/scripts/go/discover-packages.sh --validate "$INPUT")
             fi
-          elif [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
-            PACKAGES=$(.github/scripts/go/discover-packages.sh --changed "$BASE")
+          elif [ "$EVENT_NAME" = "pull_request" ]; then
+            PACKAGES=$(.github/scripts/go/discover-packages.sh --changed "$PR_BASE_SHA")
           else
             # Push: compare against previous commit (before the push)
-            BEFORE="${{ github.event.before }}"
+            BEFORE="$PUSH_BEFORE"
             if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
               BEFORE="HEAD~1"
             fi
@@ -116,7 +130,7 @@ jobs:
 
           # Compact to single line for GitHub Actions output
           PACKAGES_ONELINE=$(echo "$PACKAGES" | jq -c .)
-          echo "packages=$PACKAGES_ONELINE" >> $GITHUB_OUTPUT
+          echo "packages=$PACKAGES_ONELINE" >> "$GITHUB_OUTPUT"
 
   # ─── Generate each package (matrix from discover output) ───────────────────────
   generate:
