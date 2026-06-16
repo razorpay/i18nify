@@ -11,6 +11,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/phone-number/dial-code-to-country/**'
       - '!i18nify-data/go/**'
   push:
     branches:
@@ -21,6 +22,7 @@ on:
       - 'i18nify-data/bankcodes/**'
       - 'i18nify-data/country/metadata/**'
       - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+      - 'i18nify-data/phone-number/dial-code-to-country/**'
       - '!i18nify-data/go/**'
 
   # Manual trigger via GitHub Actions UI
@@ -38,6 +40,7 @@ on:
           - 'bankcodes'
           - 'country/metadata'
           - 'phone-number/country-code-to-phone-number'
+          - 'phone-number/dial-code-to-country'
       branch:
         description: 'Branch to run on'
         required: true
@@ -56,6 +59,15 @@ concurrency:
   group: auto-generate-go-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: false
 
+env:
+  DATA_PACKAGE_REGISTRY: |
+    country/subdivisions|i18nify-data/country/subdivisions/|i18nify-data/country/subdivisions/README.md
+    currency|i18nify-data/currency/|i18nify-data/currency/README.md
+    bankcodes|i18nify-data/bankcodes/|i18nify-data/bankcodes/README.md
+    country/metadata|i18nify-data/country/metadata/|i18nify-data/country/metadata/README.md
+    phone-number/country-code-to-phone-number|i18nify-data/phone-number/country-code-to-phone-number/|
+    phone-number/dial-code-to-country|i18nify-data/phone-number/dial-code-to-country/|
+
 jobs:
   # For PR/push: detect which packages have data changes
   detect-changes:
@@ -63,7 +75,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' || github.event_name == 'push'
     outputs:
-      packages: ${{ steps.filter.outputs.changes || '[]' }}
+      packages: ${{ steps.detect-packages.outputs.packages || '[]' }}
       branch: ${{ github.event.pull_request.head.ref || github.ref_name }}
       pr_number: ${{ github.event.pull_request.number }}
       is_release: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
@@ -75,36 +87,92 @@ jobs:
       - name: Check if triggering push has i18nify-data changes
         id: trigger-check
         run: |
+          set -euo pipefail
+
           BEFORE="${{ github.event.before }}"
           if [ -z "$BEFORE" ]; then
             echo "has_data_changes=true" >> $GITHUB_OUTPUT
             exit 0
           fi
-          git diff --name-only "$BEFORE" HEAD \
-            | grep -qE "^i18nify-data/(country/subdivisions|currency|bankcodes|country/metadata|phone-number/country-code-to-phone-number)/" \
-            && echo "has_data_changes=true" >> $GITHUB_OUTPUT \
-            || echo "has_data_changes=false" >> $GITHUB_OUTPUT
 
-      - uses: dorny/paths-filter@v3
-        id: filter
-        if: steps.trigger-check.outputs.has_data_changes == 'true'
-        with:
-          base: ${{ github.event.pull_request.base.ref || github.event.before || 'HEAD~1' }}
-          filters: |
-            country/subdivisions:
-              - 'i18nify-data/country/subdivisions/**'
-              - '!i18nify-data/country/subdivisions/README.md'
-            currency:
-              - 'i18nify-data/currency/**'
-              - '!i18nify-data/currency/README.md'
-            bankcodes:
-              - 'i18nify-data/bankcodes/**'
-              - '!i18nify-data/bankcodes/README.md'
-            country/metadata:
-              - 'i18nify-data/country/metadata/**'
-              - '!i18nify-data/country/metadata/README.md'
-            phone-number/country-code-to-phone-number:
-              - 'i18nify-data/phone-number/country-code-to-phone-number/**'
+          CHANGED_FILES=$(git diff --name-only "$BEFORE" HEAD)
+          HAS_DATA_CHANGES=false
+
+          while IFS= read -r file; do
+            case "$file" in
+              i18nify-data/go/*|'')
+                continue
+                ;;
+            esac
+
+            while IFS='|' read -r _ prefix ignored_file; do
+              if [ -n "$ignored_file" ] && [ "$file" = "$ignored_file" ]; then
+                break
+              fi
+
+              if [[ "$file" == "$prefix"* ]]; then
+                HAS_DATA_CHANGES=true
+                break 2
+              fi
+            done <<< "$DATA_PACKAGE_REGISTRY"
+          done <<< "$CHANGED_FILES"
+
+          echo "has_data_changes=$HAS_DATA_CHANGES" >> $GITHUB_OUTPUT
+
+      - name: Detect changed packages
+        id: detect-packages
+        run: |
+          set -euo pipefail
+
+          if [ "${{ steps.trigger-check.outputs.has_data_changes }}" != 'true' ]; then
+            echo 'packages=[]' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_REF="origin/${{ github.event.pull_request.base.ref }}"
+            git fetch origin "${{ github.event.pull_request.base.ref }}"
+            CHANGED_FILES=$(git diff --name-only "$BASE_REF...HEAD")
+          else
+            CHANGED_FILES=$(git diff --name-only "${{ github.event.before }}" HEAD)
+          fi
+
+          echo "Changed files:"
+          printf '%s\n' "$CHANGED_FILES"
+
+          PACKAGES=''
+
+          add_package() {
+            local package="$1"
+            case ",${PACKAGES}," in
+              *,"${package}",*) ;;
+              *) PACKAGES="${PACKAGES}${PACKAGES:+,}\"${package}\"" ;;
+            esac
+          }
+
+          while IFS= read -r file; do
+            case "$file" in
+              i18nify-data/go/*|'')
+                continue
+                ;;
+            esac
+
+            while IFS='|' read -r package prefix ignored_file; do
+              if [ -n "$ignored_file" ] && [ "$file" = "$ignored_file" ]; then
+                break
+              fi
+
+              if [[ "$file" == "$prefix"* ]]; then
+                add_package "$package"
+                break
+              fi
+            done <<< "$DATA_PACKAGE_REGISTRY"
+          done <<< "$CHANGED_FILES"
+
+          PACKAGES="[${PACKAGES}]"
+
+          echo "Detected packages: $PACKAGES"
+          echo "packages=$PACKAGES" >> "$GITHUB_OUTPUT"
 
   # For workflow_dispatch: get inputs
   check-dispatch:
@@ -124,7 +192,13 @@ jobs:
           if [ "$PACKAGE" != "all" ] && [ -n "$PACKAGE" ]; then
             echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
           else
-            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number"]' >> $GITHUB_OUTPUT
+            PACKAGES=''
+
+            while IFS='|' read -r package _; do
+              PACKAGES="${PACKAGES}${PACKAGES:+,}\"${package}\""
+            done <<< "$DATA_PACKAGE_REGISTRY"
+
+            echo "packages=[${PACKAGES}]" >> $GITHUB_OUTPUT
           fi
 
   # Generate packages
@@ -278,7 +352,7 @@ jobs:
             # For release: get latest tag and bump version
             git fetch --tags origin
             LATEST_TAG=$(git tag -l "${TAG_PREFIX}/v*" --sort=-version:refname | head -n 1 || echo "")
-            
+          
             if [ -z "$LATEST_TAG" ]; then
               # No existing tag, start at v1.0.0
               NEW_VERSION="1.0.0"
@@ -292,7 +366,7 @@ jobs:
               NEW_PATCH=$((PATCH + 1))
               NEW_VERSION="${MAJOR}.${MINOR}.${NEW_PATCH}"
             fi
-            
+          
             echo "version=v${NEW_VERSION}" >> $GITHUB_OUTPUT
             echo "tag=${TAG_PREFIX}/v${NEW_VERSION}" >> $GITHUB_OUTPUT
             echo "is_release=true" >> $GITHUB_OUTPUT
@@ -302,7 +376,7 @@ jobs:
             SHORT_SHA=$(echo "$COMMIT_SHA" | cut -c1-12)
             TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S "$COMMIT_SHA")
             VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
-            
+          
             echo "version=$VERSION" >> $GITHUB_OUTPUT
             echo "tag=" >> $GITHUB_OUTPUT
             echo "is_release=false" >> $GITHUB_OUTPUT
