@@ -87,15 +87,37 @@ jobs:
       - name: Check if triggering push has i18nify-data changes
         id: trigger-check
         run: |
+          set -euo pipefail
+
           BEFORE="${{ github.event.before }}"
           if [ -z "$BEFORE" ]; then
             echo "has_data_changes=true" >> $GITHUB_OUTPUT
             exit 0
           fi
-          git diff --name-only "$BEFORE" HEAD \
-            | grep -qE "^i18nify-data/(country/subdivisions|currency|bankcodes|country/metadata|phone-number/country-code-to-phone-number|phone-number/dial-code-to-country)/" \
-            && echo "has_data_changes=true" >> $GITHUB_OUTPUT \
-            || echo "has_data_changes=false" >> $GITHUB_OUTPUT
+
+          CHANGED_FILES=$(git diff --name-only "$BEFORE" HEAD)
+          HAS_DATA_CHANGES=false
+
+          while IFS= read -r file; do
+            case "$file" in
+              i18nify-data/go/*|'')
+                continue
+                ;;
+            esac
+
+            while IFS='|' read -r _ prefix ignored_file; do
+              if [ -n "$ignored_file" ] && [ "$file" = "$ignored_file" ]; then
+                break
+              fi
+
+              if [[ "$file" == "$prefix"* ]]; then
+                HAS_DATA_CHANGES=true
+                break 2
+              fi
+            done <<< "$DATA_PACKAGE_REGISTRY"
+          done <<< "$CHANGED_FILES"
+
+          echo "has_data_changes=$HAS_DATA_CHANGES" >> $GITHUB_OUTPUT
 
       - name: Detect changed packages
         id: detect-packages
