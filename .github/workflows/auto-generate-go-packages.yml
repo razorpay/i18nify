@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' || github.event_name == 'push'
     outputs:
-      packages: ${{ steps.filter.outputs.changes || '[]' }}
+      packages: ${{ steps.detect-packages.outputs.packages || '[]' }}
       branch: ${{ github.event.pull_request.head.ref || github.ref_name }}
       pr_number: ${{ github.event.pull_request.number }}
       is_release: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
@@ -88,28 +88,67 @@ jobs:
             && echo "has_data_changes=true" >> $GITHUB_OUTPUT \
             || echo "has_data_changes=false" >> $GITHUB_OUTPUT
 
-      - uses: dorny/paths-filter@v3
-        id: filter
-        if: steps.trigger-check.outputs.has_data_changes == 'true'
-        with:
-          base: ${{ github.event.pull_request.base.ref || github.event.before || 'HEAD~1' }}
-          filters: |
-            country/subdivisions:
-              - 'i18nify-data/country/subdivisions/**'
-              - '!i18nify-data/country/subdivisions/README.md'
-            currency:
-              - 'i18nify-data/currency/**'
-              - '!i18nify-data/currency/README.md'
-            bankcodes:
-              - 'i18nify-data/bankcodes/**'
-              - '!i18nify-data/bankcodes/README.md'
-            country/metadata:
-              - 'i18nify-data/country/metadata/**'
-              - '!i18nify-data/country/metadata/README.md'
-            phone-number/country-code-to-phone-number:
-              - 'i18nify-data/phone-number/country-code-to-phone-number/**'
-            phone-number/dial-code-to-country:
-              - 'i18nify-data/phone-number/dial-code-to-country/**'
+      - name: Detect changed packages
+        id: detect-packages
+        run: |
+          set -euo pipefail
+
+          if [ "${{ steps.trigger-check.outputs.has_data_changes }}" != 'true' ]; then
+            echo 'packages=[]' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_REF="origin/${{ github.event.pull_request.base.ref }}"
+            git fetch origin "${{ github.event.pull_request.base.ref }}"
+            CHANGED_FILES=$(git diff --name-only "$BASE_REF...HEAD")
+          else
+            CHANGED_FILES=$(git diff --name-only "${{ github.event.before }}" HEAD)
+          fi
+
+          echo "Changed files:"
+          printf '%s\n' "$CHANGED_FILES"
+
+          PACKAGES=''
+
+          add_package() {
+            local package="$1"
+            case ",${PACKAGES}," in
+              *,"${package}",*) ;;
+              *) PACKAGES="${PACKAGES}${PACKAGES:+,}\"${package}\"" ;;
+            esac
+          }
+
+          while IFS= read -r file; do
+            case "$file" in
+              i18nify-data/country/subdivisions/README.md|i18nify-data/currency/README.md|i18nify-data/bankcodes/README.md|i18nify-data/country/metadata/README.md|i18nify-data/go/*|'')
+                continue
+                ;;
+              i18nify-data/country/subdivisions/*)
+                add_package "country/subdivisions"
+                ;;
+              i18nify-data/currency/*)
+                add_package "currency"
+                ;;
+              i18nify-data/bankcodes/*)
+                add_package "bankcodes"
+                ;;
+              i18nify-data/country/metadata/*)
+                add_package "country/metadata"
+                ;;
+              i18nify-data/phone-number/country-code-to-phone-number/*)
+                add_package "phone-number/country-code-to-phone-number"
+                ;;
+              i18nify-data/phone-number/dial-code-to-country/*)
+                add_package "phone-number/dial-code-to-country"
+                ;;
+            esac
+          done <<< "$CHANGED_FILES"
+
+          PACKAGES="[${PACKAGES}]"
+
+          echo "Detected packages: $PACKAGES"
+          echo "packages=$PACKAGES" >> "$GITHUB_OUTPUT"
 
   # For workflow_dispatch: get inputs
   check-dispatch:
