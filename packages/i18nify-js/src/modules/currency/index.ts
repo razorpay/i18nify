@@ -4,4 +4,7 @@ export { default as getCurrencySymbol } from './getCurrencySymbol';
 export { default as formatNumberByParts } from './formatNumberByParts';
 export { default as convertToMajorUnit } from './convertToMajorUnit';
 export { default as convertToMinorUnit } from './convertToMinorUnit';
+export { default as convertBasisPointsToPercent } from './convertBasisPointsToPercent';
+export { default as convertPercentToBasisPoints } from './convertPercentToBasisPoints';
+export { default as getMinorUnitRawString } from './getMinorUnitRawString';
 export type { CurrencyCodeType } from './types';
