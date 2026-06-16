@@ -55,6 +55,10 @@ jobs:
   discover:
     name: Discover Packages
     runs-on: ubuntu-latest
+    # Prevent recursion: on pull_request, the paths filter evaluates the FULL PR
+    # diff (base→head), not just the latest push. So the bot's push still matches
+    # because the original data change remains in the diff. Skip if bot triggered it.
+    if: github.actor != 'github-actions[bot]'
     outputs:
       packages: ${{ steps.resolve.outputs.packages }}
       branch: ${{ steps.meta.outputs.branch }}
