@@ -89,6 +89,17 @@ jobs:
         run: |
           set -euo pipefail
 
+          if [ "${{ github.event_name }}" = "pull_request" ] && [ "${{ github.actor }}" = "rzpcibot" ]; then
+            HEAD_COMMIT_SUBJECT=$(git log -1 --format=%s "${{ github.event.pull_request.head.sha }}")
+            case "$HEAD_COMMIT_SUBJECT" in
+              "chore: auto-regenerate "*|"chore(go): update go.mod dependencies "*)
+                echo "Skipping bot-triggered pull_request rerun for commit: $HEAD_COMMIT_SUBJECT"
+                echo "has_data_changes=false" >> $GITHUB_OUTPUT
+                exit 0
+                ;;
+            esac
+          fi
+
           BEFORE="${{ github.event.before }}"
           if [ -z "$BEFORE" ]; then
             echo "has_data_changes=true" >> $GITHUB_OUTPUT
@@ -106,6 +117,8 @@ jobs:
             esac
 
             while IFS='|' read -r _ prefix ignored_file; do
+              [ -n "$prefix" ] || continue
+
               if [ -n "$ignored_file" ] && [ "$file" = "$ignored_file" ]; then
                 break
               fi
@@ -158,6 +171,9 @@ jobs:
             esac
 
             while IFS='|' read -r package prefix ignored_file; do
+              [ -n "$package" ] || continue
+              [ -n "$prefix" ] || continue
+
               if [ -n "$ignored_file" ] && [ "$file" = "$ignored_file" ]; then
                 break
               fi
@@ -195,6 +211,7 @@ jobs:
             PACKAGES=''
 
             while IFS='|' read -r package _; do
+              [ -n "$package" ] || continue
               PACKAGES="${PACKAGES}${PACKAGES:+,}\"${package}\""
             done <<< "$DATA_PACKAGE_REGISTRY"
 
