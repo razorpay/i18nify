@@ -69,12 +69,12 @@ discover_changed_packages() {
     local all_valid
     all_valid=$(discover_all_packages)
 
-    # Get list of changed files under i18nify-data/ (exclude go/ output dir)
+    # Get list of changed files under i18nify-data/ (exclude non-data files)
     local changed_files
     changed_files=$(git diff --name-only "$base_ref" -- \
         "$I18NIFY_DATA_DIR" \
         ':!i18nify-data/go' \
-        ':!i18nify-data/README.md' \
+        ':!**/README.md' \
         ':!i18nify-data/contribution-guidelines.md' \
         ':!i18nify-data/versioning-policy.md' \
         ':!i18nify-data/assets' \
