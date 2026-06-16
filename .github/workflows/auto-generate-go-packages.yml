@@ -59,6 +59,15 @@ concurrency:
   group: auto-generate-go-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: false
 
+env:
+  DATA_PACKAGE_REGISTRY: |
+    country/subdivisions|i18nify-data/country/subdivisions/|i18nify-data/country/subdivisions/README.md
+    currency|i18nify-data/currency/|i18nify-data/currency/README.md
+    bankcodes|i18nify-data/bankcodes/|i18nify-data/bankcodes/README.md
+    country/metadata|i18nify-data/country/metadata/|i18nify-data/country/metadata/README.md
+    phone-number/country-code-to-phone-number|i18nify-data/phone-number/country-code-to-phone-number/|
+    phone-number/dial-code-to-country|i18nify-data/phone-number/dial-code-to-country/|
+
 jobs:
   # For PR/push: detect which packages have data changes
   detect-changes:
@@ -121,28 +130,21 @@ jobs:
 
           while IFS= read -r file; do
             case "$file" in
-              i18nify-data/country/subdivisions/README.md|i18nify-data/currency/README.md|i18nify-data/bankcodes/README.md|i18nify-data/country/metadata/README.md|i18nify-data/go/*|'')
+              i18nify-data/go/*|'')
                 continue
                 ;;
-              i18nify-data/country/subdivisions/*)
-                add_package "country/subdivisions"
-                ;;
-              i18nify-data/currency/*)
-                add_package "currency"
-                ;;
-              i18nify-data/bankcodes/*)
-                add_package "bankcodes"
-                ;;
-              i18nify-data/country/metadata/*)
-                add_package "country/metadata"
-                ;;
-              i18nify-data/phone-number/country-code-to-phone-number/*)
-                add_package "phone-number/country-code-to-phone-number"
-                ;;
-              i18nify-data/phone-number/dial-code-to-country/*)
-                add_package "phone-number/dial-code-to-country"
-                ;;
             esac
+
+            while IFS='|' read -r package prefix ignored_file; do
+              if [ -n "$ignored_file" ] && [ "$file" = "$ignored_file" ]; then
+                break
+              fi
+
+              if [[ "$file" == "$prefix"* ]]; then
+                add_package "$package"
+                break
+              fi
+            done <<< "$DATA_PACKAGE_REGISTRY"
           done <<< "$CHANGED_FILES"
 
           PACKAGES="[${PACKAGES}]"
@@ -168,7 +170,13 @@ jobs:
           if [ "$PACKAGE" != "all" ] && [ -n "$PACKAGE" ]; then
             echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
           else
-            echo 'packages=["country/subdivisions","currency","bankcodes","country/metadata","phone-number/country-code-to-phone-number","phone-number/dial-code-to-country"]' >> $GITHUB_OUTPUT
+            PACKAGES=''
+
+            while IFS='|' read -r package _; do
+              PACKAGES="${PACKAGES}${PACKAGES:+,}\"${package}\""
+            done <<< "$DATA_PACKAGE_REGISTRY"
+
+            echo "packages=[${PACKAGES}]" >> $GITHUB_OUTPUT
           fi
 
   # Generate packages
