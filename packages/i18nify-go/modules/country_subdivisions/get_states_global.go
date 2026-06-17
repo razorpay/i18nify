@@ -1,15 +1,13 @@
 package country_subdivisions
 
 import (
-	_ "embed"
 	"encoding/json"
 	"fmt"
 	"strings"
 	"sync"
-)
 
-//go:embed data/states_global.json
-var rawStatesGlobal []byte
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions"
+)
 
 // SubdivisionInfo is a single first-level administrative division
 // with its ISO 3166-2 code (e.g. "US-CA") and English name.
@@ -38,7 +36,7 @@ var (
 func loadStatesGlobal() (map[string]CountrySubdivisionData, error) {
 	statesGlobalOnce.Do(func() {
 		var env statesGlobalEnvelope
-		if err := json.Unmarshal(rawStatesGlobal, &env); err != nil {
+		if err := json.Unmarshal(dataSource.GetStatesGlobalJSON(), &env); err != nil {
 			statesGlobalErr = fmt.Errorf("country_subdivisions: failed to parse states_global.json: %w", err)
 			return
 		}
