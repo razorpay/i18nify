@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package datetime;
+
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/datetime;datetime";
+
+// SupportedDateFormat describes a regex pattern and its component capture-group indices.
+message SupportedDateFormat {
+  string regex = 1;
+  int32  year_index   = 2 [json_name = "year_index"];
+  int32  month_index  = 3 [json_name = "month_index"];
+  int32  day_index    = 4 [json_name = "day_index"];
+  int32  hour_index   = 5 [json_name = "hour_index"];
+  int32  minute_index = 6 [json_name = "minute_index"];
+  int32  second_index = 7 [json_name = "second_index"];
+  string format = 8;
+}
+
+// DateTimeData holds locale-specific datetime configuration.
+// Data file: data/data.json
+message DateTimeData {
+  // locale_date_orders maps a locale code (e.g. "en-US", "de") to its
+  // conventional date field ordering: "MDY", "DMY", or "YMD".
+  map<string, string> locale_date_orders     = 1 [json_name = "locale_date_orders"];
+
+  // locale_date_separators maps a locale code to its conventional date
+  // separator character (e.g. "/", ".", "-").
+  map<string, string> locale_date_separators = 2 [json_name = "locale_date_separators"];
+
+  // supported_date_formats lists recognised date/datetime format patterns.
+  repeated SupportedDateFormat supported_date_formats = 3 [json_name = "supported_date_formats"];
+}
