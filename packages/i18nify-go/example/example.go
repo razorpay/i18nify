@@ -2,14 +2,10 @@ package main
 
 import (
 	"fmt"
-	"time"
 
 	i18nify_go "github.com/razorpay/i18nify/packages/i18nify-go"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/datetime"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/geo"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/phonenumber"
 )
@@ -59,28 +55,6 @@ func main() {
 	// Format a sample phone number
 	phoneInfo := phonenumber.GetCountryTeleInformation("IN")
 	fmt.Printf("Formatted Phone Number: %s%s\n", phoneInfo.DialCode, "9876543210") // +919876543210
-
-	// Format phone number according to country template
-	formattedPhone, err := phonenumber.FormatPhoneNumber("+917394926646", "IN")
-	if err != nil {
-		fmt.Printf("Error formatting phone number: %v\n", err)
-	} else {
-		fmt.Printf("Formatted phone number: %s\n", formattedPhone) // +91 7394 926646
-	}
-
-	// Validate phone number
-	fmt.Printf("Is valid phone number: %v\n", phonenumber.IsValidPhoneNumber("+917394926646", "IN")) // true
-
-	// Parse phone number into structured components
-	phoneData, err := phonenumber.ParsePhoneNumber("+917394926646", "IN")
-	if err != nil {
-		fmt.Printf("Error parsing phone number: %v\n", err)
-	} else {
-		fmt.Printf("Country Code: %s\n", phoneData.CountryCode)       // IN
-		fmt.Printf("Dial Code: %s\n", phoneData.DialCode)             // +91
-		fmt.Printf("Formatted: %s\n", phoneData.FormattedPhoneNumber) // +91 7394 926646
-		fmt.Printf("Local Number: %s\n", phoneData.PhoneNumber)       // 7394926646
-	}
 
 	// Country Subdivisions
 	subdivisions := countryIN.GetCountrySubDivisions()
@@ -148,151 +122,6 @@ func main() {
 		fmt.Printf("Bank name from identifier: %s\n", bankName) // HDFC Bank Limited
 	}
 
-	// Format number as a locale-aware currency string
-	formattedINR, err := currency.FormatNumber(123456.78, currency.NumberFormatOptions{
-		Currency: "INR",
-		Locale:   "en-IN",
-	})
-	if err != nil {
-		fmt.Printf("Error formatting number: %v\n", err)
-	} else {
-		fmt.Printf("Formatted number: %s\n", formattedINR) // ₹1,23,456.78
-	}
-
-	// FormatNumberByParts — breakdown into typed components (integer, fraction, currency, decimal)
-	parts, err := currency.FormatNumberByParts(12345.67, currency.NumberFormatOptions{
-		Currency: "USD",
-		Locale:   "en-US",
-	})
-	if err != nil {
-		fmt.Printf("Error formatting number by parts: %v\n", err)
-	} else {
-		fmt.Printf("Currency: %s\n", parts.Currency)               // $
-		fmt.Printf("Integer: %s\n", parts.Integer)                 // 12,345
-		fmt.Printf("Decimal: %s\n", parts.Decimal)                 // .
-		fmt.Printf("Fraction: %s\n", parts.Fraction)               // 67
-		fmt.Printf("Is prefix symbol: %v\n", parts.IsPrefixSymbol) // true
-	}
-
-	// Date and Time Utilities
-	// Format a date and time value
-	ts := time.Date(2024, 3, 5, 14, 30, 0, 0, time.UTC)
-	formattedDT, err := datetime.FormatDateTime(ts, datetime.FormatDateTimeOptions{
-		Locale:       "en-US",
-		DateTimeMode: datetime.ModeDateTime,
-	})
-	if err != nil {
-		fmt.Printf("Error formatting date time: %v\n", err)
-	} else {
-		fmt.Printf("Formatted date time: %s\n", formattedDT) // 3/5/2024 14:30:0
-	}
-
-	// Format from Unix timestamp with timezone
-	formattedUnix, err := datetime.FormatFromUnix(1609459200, datetime.FormatFromUnixOptions{
-		Timezone: "Asia/Kolkata",
-		FormatDateTimeOptions: datetime.FormatDateTimeOptions{
-			DateTimeMode: datetime.ModeDateOnly,
-			Locale:       "en-US",
-		},
-	})
-	if err != nil {
-		fmt.Printf("Error formatting from Unix timestamp: %v\n", err)
-	} else {
-		fmt.Printf("Formatted from Unix: %s\n", formattedUnix) // 1/1/2021
-	}
-
-	// Get financial year label for a date
-	fy, err := datetime.GetFinancialYear(time.Date(2024, 8, 15, 0, 0, 0, 0, time.UTC), "IN")
-	if err != nil {
-		fmt.Printf("Error getting financial year: %v\n", err)
-	} else {
-		fmt.Printf("Financial year: %s\n", fy) // 2024-25
-	}
-
-	// Get English ordinal suffix for a number
-	suffix, err := datetime.GetOrdinalSuffix(21)
-	if err != nil {
-		fmt.Printf("Error getting ordinal suffix: %v\n", err)
-	} else {
-		fmt.Printf("Ordinal suffix for 21: %s\n", suffix) // st
-	}
-
-	// Get primary timezone for a country
-	tz, err := datetime.GetPrimaryTimezone("IN")
-	if err != nil {
-		fmt.Printf("Error getting primary timezone: %v\n", err)
-	} else {
-		fmt.Printf("Primary timezone: %s\n", tz) // Asia/Kolkata
-	}
-
-	// Get relative time from a past date
-	relTime, err := datetime.GetRelativeTime(
-		time.Now().Add(-2*time.Hour),
-		datetime.GetRelativeTimeOptions{Numeric: "always"},
-	)
-	if err != nil {
-		fmt.Printf("Error getting relative time: %v\n", err)
-	} else {
-		fmt.Printf("Relative time: %s\n", relTime) // 2 hours ago
-	}
-
-	// Get all timezones for a country
-	tzs, err := datetime.GetTimeZoneByCountry("IN")
-	if err != nil {
-		fmt.Printf("Error getting timezones by country: %v\n", err)
-	} else {
-		fmt.Printf("Timezones for IN: %v\n", tzs) // map[Asia/Kolkata:{+05:30}]
-	}
-
-	// Get global timezone list with UTC offsets and countries
-	tzList, err := datetime.GetTimezoneList()
-	if err != nil {
-		fmt.Printf("Error getting timezone list: %v\n", err)
-	} else {
-		fmt.Printf("Asia/Kolkata entry: %v\n", tzList["Asia/Kolkata"]) // {UTC +05:30 [IN]}
-	}
-
-	// Get weekday names
-	weekdays, err := datetime.GetWeekdays(datetime.GetWeekdaysOptions{Locale: "en-US"})
-	if err != nil {
-		fmt.Printf("Error getting weekdays: %v\n", err)
-	} else {
-		fmt.Printf("Weekdays: %v\n", weekdays) // [Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
-	}
-
-	// Geo Utilities
-	// Convert alpha-2 country code to alpha-3
-	alpha3, err := geo.Alpha2ToAlpha3("IN")
-	if err != nil {
-		fmt.Printf("Error converting alpha-2 to alpha-3: %v\n", err)
-	} else {
-		fmt.Printf("Alpha-3 for IN: %s\n", alpha3) // IND
-	}
-
-	// Convert alpha-3 country code to alpha-2
-	alpha2, err := geo.Alpha3ToAlpha2("IND")
-	if err != nil {
-		fmt.Printf("Error converting alpha-3 to alpha-2: %v\n", err)
-	} else {
-		fmt.Printf("Alpha-2 for IND: %s\n", alpha2) // IN
-	}
-
-	// Bidirectional country code conversion
-	converted, err := geo.ConvertCountryCode("IN")
-	if err != nil {
-		fmt.Printf("Error converting country code: %v\n", err)
-	} else {
-		fmt.Printf("Converted IN: %s\n", converted) // IND
-	}
-
-	// Detect locale from country code
-	locale, err := geo.DetectLocale(geo.DetectLocaleOptions{CountryCode: "IN"})
-	if err != nil {
-		fmt.Printf("Error detecting locale: %v\n", err)
-	} else {
-		fmt.Printf("Detected locale: %s\n", locale) // en_IN
-	}
-
 	// Format address using a custom template
 	formattedAddr, err := geo.FormatAddress(
 		"{name}\n{street_address}\n{city}, {state} {zip}",
@@ -323,39 +152,6 @@ func main() {
 		fmt.Printf("Error formatting address with format: %v\n", err)
 	} else {
 		fmt.Printf("Formatted IN address:\n%s\n", formattedAddrIN)
-	}
-
-	// Get currency for a country
-	currencyCode, err := geo.GetCurrencyByCountry("IN")
-	if err != nil {
-		fmt.Printf("Error getting currency by country: %v\n", err)
-	} else {
-		fmt.Printf("Currency for IN: %s\n", currencyCode) // INR
-	}
-
-	// Get default locale list for all countries
-	localeList, err := geo.GetDefaultLocaleList()
-	if err != nil {
-		fmt.Printf("Error getting default locale list: %v\n", err)
-	} else {
-		fmt.Printf("Default locale for IN: %s\n", localeList["IN"]) // en_IN
-	}
-
-	// Get country code by name
-	countryCode, err := country_metadata.GetCountryCodeByName("India")
-	if err != nil {
-		fmt.Printf("Error getting country code by name: %v\n", err)
-	} else {
-		fmt.Printf("Country code for India: %s\n", countryCode) // IN
-	}
-
-	// Get states/subdivisions for a country
-	subdivisionData, err := country_subdivisions.GetStatesByCountry("IN")
-	if err != nil {
-		fmt.Printf("Error getting states by country: %v\n", err)
-	} else {
-		fmt.Printf("Country: %s\n", subdivisionData.CountryName)                  // India
-		fmt.Printf("Total subdivisions: %d\n", len(subdivisionData.Subdivisions)) // 36
 	}
 
 	// Multiple Countries
