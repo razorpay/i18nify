@@ -5,7 +5,6 @@
 ### Minor Changes
 
 - 610e764: Version bump
-- feat(banking): add getBankCode and getBankNameByCode utilities for bidirectional bank name ↔ short code lookup (supported countries: IN, MY, SG, US)
 
 ### Patch Changes
 
