@@ -1,0 +1,489 @@
+name: Auto-Generate Go Packages
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - master
+    paths:
+      # Trigger on any data file change under i18nify-data/ (except generated output).
+      # The discover-packages.sh script narrows this to only valid packages.
+      - 'i18nify-data/**'
+      - '!i18nify-data/go/**'
+      - '!i18nify-data/README.md'
+      - '!i18nify-data/assets/**'
+      - '!i18nify-data/media/**'
+  push:
+    branches:
+      - master
+    paths:
+      - 'i18nify-data/**'
+      - '!i18nify-data/go/**'
+      - '!i18nify-data/README.md'
+      - '!i18nify-data/assets/**'
+      - '!i18nify-data/media/**'
+
+  # Manual trigger. Package list is now a free-text string (not a hardcoded choice)
+  # so new packages are picked up without workflow edits.
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Package(s) to generate — "all" or comma-separated names (e.g. "currency, bankcodes")'
+        required: false
+        default: 'all'
+        type: string
+      branch:
+        description: 'Branch to run on'
+        required: true
+        default: 'master'
+      release:
+        description: 'Create release version (only for master)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: auto-generate-go-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  # ─── Discover which packages to generate ───────────────────────────────────────
+  discover:
+    name: Discover Packages
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.resolve.outputs.packages }}
+      branch: ${{ steps.meta.outputs.branch }}
+      pr_number: ${{ steps.meta.outputs.pr_number }}
+      is_release: ${{ steps.meta.outputs.is_release }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set event metadata
+        id: meta
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_BRANCH: ${{ github.event.inputs.branch }}
+          INPUT_RELEASE: ${{ github.event.inputs.release }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "branch=$INPUT_BRANCH" >> "$GITHUB_OUTPUT"
+            echo "pr_number=" >> "$GITHUB_OUTPUT"
+            IS_RELEASE=false
+            if [ "$INPUT_RELEASE" = "true" ] && [ "$INPUT_BRANCH" = "master" ]; then
+              IS_RELEASE=true
+            fi
+            echo "is_release=$IS_RELEASE" >> "$GITHUB_OUTPUT"
+          elif [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "branch=$PR_HEAD_REF" >> "$GITHUB_OUTPUT"
+            echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+            echo "is_release=false" >> "$GITHUB_OUTPUT"
+          else
+            # push to master
+            echo "branch=$REF_NAME" >> "$GITHUB_OUTPUT"
+            echo "pr_number=" >> "$GITHUB_OUTPUT"
+            echo "is_release=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install jq
+        run: command -v jq >/dev/null || sudo apt-get install -y jq
+
+      - name: Resolve package list
+        id: resolve
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_PACKAGE: ${{ github.event.inputs.package }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          chmod +x .github/scripts/go/discover-packages.sh
+
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            INPUT="$INPUT_PACKAGE"
+            if [ "$INPUT" = "all" ] || [ -z "$INPUT" ]; then
+              PACKAGES=$(.github/scripts/go/discover-packages.sh --all)
+            else
+              # Validate user-provided names against actual repo structure
+              PACKAGES=$(.github/scripts/go/discover-packages.sh --validate "$INPUT")
+            fi
+          else
+            # For both pull_request and push: use github.event.before (the HEAD
+            # before this specific push) rather than the PR base SHA. This prevents
+            # recursion: when the bot pushes generated code, the diff of THAT push
+            # won't contain data file changes, so packages=[] and the workflow stops.
+            BEFORE="$PUSH_BEFORE"
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              BEFORE="HEAD~1"
+            fi
+            PACKAGES=$(.github/scripts/go/discover-packages.sh --changed "$BEFORE")
+          fi
+
+          echo "Discovered packages: $PACKAGES"
+
+          # Compact to single line for GitHub Actions output
+          PACKAGES_ONELINE=$(echo "$PACKAGES" | jq -c .)
+          echo "packages=$PACKAGES_ONELINE" >> "$GITHUB_OUTPUT"
+
+  # ─── Generate each package (matrix from discover output) ───────────────────────
+  generate:
+    name: Generate ${{ matrix.package }}
+    runs-on: ubuntu-latest
+    needs: [discover]
+    if: needs.discover.outputs.packages != '[]' && needs.discover.outputs.packages != ''
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.discover.outputs.packages) }}
+      fail-fast: false
+
+    env:
+      BRANCH: ${{ needs.discover.outputs.branch }}
+      PR_NUMBER: ${{ needs.discover.outputs.pr_number }}
+      IS_RELEASE: ${{ needs.discover.outputs.is_release }}
+      GH_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.CI_BOT_TOKEN }}
+          ref: ${{ env.BRANCH }}
+
+      - name: Check if proto exists
+        id: check-proto
+        run: |
+          PROTO_DIR="i18nify-data/${{ matrix.package }}/proto"
+          if [ -d "$PROTO_DIR" ] && ls "$PROTO_DIR"/*.proto 1> /dev/null 2>&1; then
+            echo "has_proto=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_proto=false" >> $GITHUB_OUTPUT
+            echo "⚠️ No proto found for ${{ matrix.package }} - skipping"
+          fi
+
+      - name: Setup Go
+        if: steps.check-proto.outputs.has_proto == 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+
+      - name: Install protoc
+        if: steps.check-proto.outputs.has_proto == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y protobuf-compiler jq
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+          echo "$HOME/go/bin" >> $GITHUB_PATH
+
+      - name: Validate package data
+        if: steps.check-proto.outputs.has_proto == 'true'
+        run: |
+          chmod +x .github/scripts/go/validate-package.sh
+          .github/scripts/go/validate-package.sh "${{ matrix.package }}"
+
+      - name: Generate package
+        if: steps.check-proto.outputs.has_proto == 'true'
+        run: |
+          chmod +x .github/scripts/go/generate-package.sh
+          chmod +x .github/scripts/go/generate-test.sh
+          .github/scripts/go/generate-package.sh "${{ matrix.package }}"
+
+      - name: Verify package (run tests)
+        if: steps.check-proto.outputs.has_proto == 'true'
+        env:
+          GONOSUMDB: github.com/razorpay/i18nify
+        run: |
+          cd "i18nify-data/go/${{ matrix.package }}"
+          echo "Running tests to verify data loads correctly..."
+          go test -v ./...
+          echo "✅ All tests passed - data is valid and loadable"
+
+      - name: Verify consumer package tests with new data
+        if: steps.check-proto.outputs.has_proto == 'true'
+        env:
+          GONOSUMDB: github.com/razorpay/i18nify
+        run: |
+          PACKAGE="${{ matrix.package }}"
+          DATA_MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${PACKAGE}"
+          CONSUMER_MODULE="packages/i18nify-go"
+
+          # Only run if the consumer module actually depends on this data package
+          if ! grep -q "$DATA_MODULE_PATH" "${CONSUMER_MODULE}/go.mod"; then
+            echo "ℹ️ Consumer module does not depend on ${DATA_MODULE_PATH}, skipping"
+            exit 0
+          fi
+
+          echo "Running consumer package tests against newly generated data..."
+
+          # Use a temporary Go workspace so the consumer module resolves
+          # all local generated packages without modifying go.mod
+          go work init
+          go work use "./${CONSUMER_MODULE}"
+          for pkg_dir in i18nify-data/go/*/ i18nify-data/go/*/*/; do
+            [ -f "${pkg_dir}go.mod" ] && go work use "./${pkg_dir}"
+          done
+
+          go test -v "./${CONSUMER_MODULE}/modules/..."
+          echo "✅ Consumer package tests passed with new data"
+
+      - name: Commit and push generated package
+        if: steps.check-proto.outputs.has_proto == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add "i18nify-data/go/${{ matrix.package }}"
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: auto-regenerate ${{ matrix.package }} Go package"
+            git pull --rebase origin "$BRANCH" || true
+            if [ "$IS_RELEASE" == "true" ]; then
+              TEMP_BRANCH="chore/regen-$(echo "${{ matrix.package }}" | tr '/' '-')-$(git rev-parse --short HEAD)"
+              git push origin HEAD:"$TEMP_BRANCH"
+              PR_URL=$(gh pr create \
+                --title "chore: auto-regenerate ${{ matrix.package }} Go package" \
+                --body "Auto-generated by CI after master merge." \
+                --base master \
+                --head "$TEMP_BRANCH")
+              PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
+              GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" gh pr review "$PR_NUMBER" --approve \
+                --body "Auto-approved: bot-generated package regeneration."
+              gh pr merge --auto --squash "$TEMP_BRANCH" \
+                || echo "ℹ️ Auto-merge not enabled — PR created for manual review"
+            else
+              git push origin HEAD:"$BRANCH"
+            fi
+          fi
+
+      - name: Generate version
+        if: steps.check-proto.outputs.has_proto == 'true'
+        id: version
+        run: |
+          PACKAGE="${{ matrix.package }}"
+          # Tag prefix must match the full module path for Go module resolution
+          TAG_PREFIX="i18nify-data/go/$PACKAGE"
+
+          if [ "$IS_RELEASE" == "true" ]; then
+            # For release: get latest tag and bump version
+            git fetch --tags origin
+            LATEST_TAG=$(git tag -l "${TAG_PREFIX}/v*" --sort=-version:refname | head -n 1 || echo "")
+
+            if [ -z "$LATEST_TAG" ]; then
+              # No existing tag, start at v1.0.0
+              NEW_VERSION="1.0.0"
+            else
+              # Extract version and bump patch
+              CURRENT_VERSION=$(echo "$LATEST_TAG" | sed "s|${TAG_PREFIX}/v||")
+              IFS='.' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
+              MAJOR="${VERSION_PARTS[0]}"
+              MINOR="${VERSION_PARTS[1]}"
+              PATCH="${VERSION_PARTS[2]:-0}"
+              NEW_PATCH=$((PATCH + 1))
+              NEW_VERSION="${MAJOR}.${MINOR}.${NEW_PATCH}"
+            fi
+
+            echo "version=v${NEW_VERSION}" >> $GITHUB_OUTPUT
+            echo "tag=${TAG_PREFIX}/v${NEW_VERSION}" >> $GITHUB_OUTPUT
+            echo "is_release=true" >> $GITHUB_OUTPUT
+          else
+            # For PR/non-release: use pseudo-version
+            COMMIT_SHA=$(git rev-parse HEAD)
+            SHORT_SHA=$(echo "$COMMIT_SHA" | cut -c1-12)
+            TIMESTAMP=$(TZ=UTC git show -s --format=%cd --date=format-local:%Y%m%d%H%M%S "$COMMIT_SHA")
+            VERSION="v0.0.0-${TIMESTAMP}-${SHORT_SHA}"
+
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "tag=" >> $GITHUB_OUTPUT
+            echo "is_release=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create and push release tag
+        if: steps.check-proto.outputs.has_proto == 'true' && steps.version.outputs.is_release == 'true'
+        id: release-tag
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          PACKAGE="${{ matrix.package }}"
+
+          git tag -a "$TAG" -m "Release $PACKAGE ${{ steps.version.outputs.version }}"
+          git push origin "$TAG"
+
+          echo "Released $PACKAGE with tag $TAG"
+          echo "released_packages=${PACKAGE}:${{ steps.version.outputs.version }}" >> $GITHUB_OUTPUT
+
+      - name: Comment on PR
+        if: steps.check-proto.outputs.has_proto == 'true' && env.PR_NUMBER != ''
+        env:
+          GH_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          MODULE="github.com/razorpay/i18nify/i18nify-data/go/${{ matrix.package }}"
+
+          gh pr comment "$PR_NUMBER" --body "## 📦 Package Updated
+
+          **Package:** \`${{ matrix.package }}\`
+          **Version:** \`$VERSION\`
+
+          \`\`\`bash
+          go get ${MODULE}@${VERSION}
+          \`\`\`"
+
+  # ─── Update go.mod once after all matrix jobs finish ────────────────────────────
+  update-go-mod:
+    name: Update go.mod dependencies
+    runs-on: ubuntu-latest
+    needs: [discover, generate]
+    if: |
+      always() &&
+      needs.discover.outputs.packages != '[]' &&
+      needs.discover.outputs.packages != '' &&
+      needs.generate.result == 'success'
+    env:
+      BRANCH: ${{ needs.discover.outputs.branch }}
+      IS_RELEASE: ${{ needs.discover.outputs.is_release }}
+      PACKAGES: ${{ needs.discover.outputs.packages }}
+      GONOSUMDB: github.com/razorpay/i18nify
+      GOPROXY: direct
+      GH_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.CI_BOT_TOKEN }}
+          ref: ${{ env.BRANCH }}
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.20'
+
+      - name: Update go.mod for all changed packages
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git fetch --tags origin
+          git fetch origin "$BRANCH"
+          git reset --hard "origin/$BRANCH"
+
+          chmod +x .github/scripts/go/update-dependencies.sh
+
+          PACKAGE_LIST=$(echo "$PACKAGES" | jq -r '.[]' 2>/dev/null || echo "")
+
+          for pkg in $PACKAGE_LIST; do
+            MODULE_PATH="github.com/razorpay/i18nify/i18nify-data/go/${pkg}"
+
+            if ! grep -q "$MODULE_PATH" packages/i18nify-go/go.mod; then
+              echo "Module $MODULE_PATH not in go.mod, skipping"
+              continue
+            fi
+
+            if [ "$IS_RELEASE" == "true" ]; then
+              TAG_PREFIX="i18nify-data/go/$pkg"
+              LATEST_TAG=$(git tag -l "${TAG_PREFIX}/v*" --sort=-version:refname | head -n 1 || echo "")
+              if [ -z "$LATEST_TAG" ]; then
+                echo "No release tag for $pkg, skipping"
+                continue
+              fi
+              VERSION="v$(echo "$LATEST_TAG" | sed "s|${TAG_PREFIX}/v||")"
+
+              (
+                cd packages/i18nify-go
+                if grep -q "replace ${MODULE_PATH}" go.mod; then
+                  go mod edit -dropreplace "${MODULE_PATH}"
+                fi
+                go mod edit -require "${MODULE_PATH}@${VERSION}"
+              )
+            else
+              .github/scripts/go/update-dependencies.sh "$pkg"
+            fi
+          done
+
+          if [ "$IS_RELEASE" == "true" ]; then
+            (cd packages/i18nify-go && go mod tidy)
+          fi
+
+          git add packages/i18nify-go/go.mod packages/i18nify-go/go.sum
+
+          if git diff --cached --quiet; then
+            echo "No go.mod changes to commit"
+            exit 0
+          fi
+
+          PACKAGES_LABEL=$(echo "$PACKAGES" | jq -r 'join(", ")' 2>/dev/null || echo "data packages")
+          git commit -m "chore(go): update go.mod dependencies [${PACKAGES_LABEL}]"
+
+          if [ "$IS_RELEASE" == "true" ]; then
+            TEMP_BRANCH="chore/go-mod-release-$(git rev-parse --short HEAD)"
+            git push origin HEAD:"$TEMP_BRANCH"
+            PR_URL=$(gh pr create \
+              --title "chore(go): update go.mod to release versions [${PACKAGES_LABEL}]" \
+              --body "Auto-generated by CI: updates data package dependencies to released versions after a master merge." \
+              --base master \
+              --head "$TEMP_BRANCH")
+            PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
+            GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" gh pr review "$PR_NUMBER" --approve \
+              --body "Auto-approved: bot-generated go.mod dependency update."
+            gh pr merge --auto --squash "$TEMP_BRANCH" \
+              || echo "ℹ️ Auto-merge not enabled — PR created for manual review"
+          else
+            git push origin HEAD:"$BRANCH"
+          fi
+
+  # ─── Release i18nify-go with updated dependencies (only on master push) ────────
+  release-i18nify-go:
+    name: Release i18nify-go
+    runs-on: ubuntu-latest
+    needs: [discover, update-go-mod]
+    if: |
+      always() &&
+      needs.discover.outputs.is_release == 'true' &&
+      needs.update-go-mod.result == 'success'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.CI_BOT_TOKEN }}
+          ref: master
+
+      - name: Pull latest changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git pull origin master
+
+      - name: Get current i18nify-go version
+        id: current-version
+        run: |
+          git fetch --tags origin
+          LATEST_TAG=$(git tag -l "i18nify-go/v*" --sort=-version:refname | head -n 1 || echo "")
+          if [ -z "$LATEST_TAG" ]; then
+            echo "version=0.0.0" >> $GITHUB_OUTPUT
+          else
+            echo "version=$(echo "$LATEST_TAG" | sed 's|i18nify-go/v||')" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Bump and tag i18nify-go release
+        env:
+          CURRENT_VERSION: ${{ steps.current-version.outputs.version }}
+          PACKAGES: ${{ needs.discover.outputs.packages }}
+        run: |
+          IFS='.' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
+          NEW_VERSION="${VERSION_PARTS[0]}.$((VERSION_PARTS[1] + 1)).0"
+          NEW_TAG="i18nify-go/v${NEW_VERSION}"
+
+          echo "Releasing i18nify-go v${NEW_VERSION}"
+          git tag -a "$NEW_TAG" -m "Release i18nify-go v${NEW_VERSION}"
+          git push origin "$NEW_TAG"

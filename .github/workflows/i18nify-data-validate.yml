@@ -1,0 +1,32 @@
+name: i18nify Data Validation
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+            fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: run build
+        run: yarn build-react
+
+      - name: Get changed files
+        run: git diff --name-only origin/master >> changed_files.txt
+
+      - name: Compile TypeScript
+        run: npm run validate-i18nify-data changed_files.txt
