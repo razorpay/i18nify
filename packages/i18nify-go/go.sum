@@ -9,8 +9,8 @@ github.com/razorpay/i18nify/i18nify-data/go/bankcodes v1.0.3 h1:buNThlDg9YE1aHhU
 github.com/razorpay/i18nify/i18nify-data/go/bankcodes v1.0.3/go.mod h1:IIGgMZsudL2XeV/k2wJzNvne80aU5n7FLK+Eybq+Jeg=
 github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.3 h1:Ygt1DXbCg5XUmEzWjYzbt7aheJXCqiSTTpgsyWLy4DI=
 github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.3/go.mod h1:8/bUffLHRUapN6J4R61kcaOZKr8yjKb0YXrlpCumy0g=
-github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.3 h1:u+L/ZAqwLWPpYiTC1Ofac+wl28oHe/G8klE1kc7kPA8=
-github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.3/go.mod h1:Co4OyvFG2HC9ohJbdw8Ydqd1Y7MJHCBAw9Ee8U1Cfxw=
+github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v0.0.0-20260617183101-39077c84dc79 h1:HgVSZu6CSktyHlJFD/gFsHouI4frlfKV/pC6KGcLOB0=
+github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v0.0.0-20260617183101-39077c84dc79/go.mod h1:Co4OyvFG2HC9ohJbdw8Ydqd1Y7MJHCBAw9Ee8U1Cfxw=
 github.com/razorpay/i18nify/i18nify-data/go/currency v1.0.3 h1:if86lfklVTB1PRW0CuSvTpWyO22xPxajYN6BgW5jOTU=
 github.com/razorpay/i18nify/i18nify-data/go/currency v1.0.3/go.mod h1:hVdGzMUMfaZS0AwsHBaHENYxqYWYrfpRnYW7mJeRDB8=
 github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number v1.0.3 h1:Ze1O/o5XFgNYpBI1S8oH/RoOic57p57999ee5uvTT2w=
