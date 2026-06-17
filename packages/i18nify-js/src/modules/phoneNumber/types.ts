@@ -22,3 +22,9 @@ export interface PhoneNumberMockEntry {
 export interface PhoneNumbersMockData {
   [countryCode: string]: PhoneNumberMockEntry[];
 }
+
+// From masking/types.ts
+export type MaskPhoneOptions = {
+  maskChar?: string;
+  visibleCount?: number;
+};
