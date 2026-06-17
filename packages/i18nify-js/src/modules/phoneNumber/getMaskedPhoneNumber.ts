@@ -1,6 +1,6 @@
 import getDialCodeByCountryCode from './getDialCodeByCountryCode';
 import { withErrorBoundary } from '../../common/errorBoundary';
-import PHONE_FORMATTER_MAPPER from './data/phoneFormatterMapper.json';
+import PHONE_FORMATTER_MAPPER from '#/i18nify-data/phone-number/phoneFormatterMapper.json';
 import {
   cleanPhoneNumber,
   detectCountryAndDialCodeFromPhone,

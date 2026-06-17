@@ -1,6 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
 import { CountryCodeType } from '../types';
-import PHONE_FORMATTER_MAPPER from './data/phoneFormatterMapper.json';
+import PHONE_FORMATTER_MAPPER from '#/i18nify-data/phone-number/phoneFormatterMapper.json';
 import formatPhoneNumber from './formatPhoneNumber';
 import { detectCountryAndDialCodeFromPhone, cleanPhoneNumber } from './utils';
 

@@ -1,6 +1,6 @@
 import { CountryCodeType } from '../types';
 import DIAL_CODE_MAPPER from '#/i18nify-data/phone-number/dial-code-to-country/data.json';
-import PHONE_REGEX_MAPPER from './data/phoneRegexMapper.json';
+import PHONE_REGEX_MAPPER from '#/i18nify-data/phone-number/phoneRegexMapper.json';
 
 /**
  * Determines the country data (countryCode, dialCode) based on the provided phone number.
