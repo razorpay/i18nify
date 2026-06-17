@@ -1,8 +1,6 @@
 package phonenumber
 
-import (
-	"fmt"
-)
+// No imports needed — helpers are in the same package.
 
 // PhoneInfo holds the structured result of parsing a phone number.
 // It mirrors the JS PhoneInfo interface returned by parsePhoneNumber.
@@ -31,10 +29,7 @@ type PhoneInfo struct {
 // Mirrors the JS parsePhoneNumber function exactly.
 func ParsePhoneNumber(phoneNumber string, country string) (PhoneInfo, error) {
 	if phoneNumber == "" {
-		return PhoneInfo{}, fmt.Errorf(
-			"parameter 'phoneNumber' is invalid! The received value was: %s. Please ensure you provide a valid phone number",
-			phoneNumber,
-		)
+		return PhoneInfo{}, invalidPhoneErr(phoneNumber)
 	}
 
 	cleaned := cleanPhoneNumber(phoneNumber)
@@ -43,12 +38,7 @@ func ParsePhoneNumber(phoneNumber string, country string) (PhoneInfo, error) {
 	detectedCC, detectedDC := detectCountryAndDialCodeFromPhone(cleaned)
 	dialCode := detectedDC
 
-	// Resolve effective country code: prefer the explicit parameter when the
-	// dataset has a format entry for it, otherwise fall back to detection.
-	activeCC := detectedCC
-	if country != "" && GetCountryTeleInformation(country).Format != "" {
-		activeCC = country
-	}
+	activeCC := resolveCountryCode(country, detectedCC)
 
 	// Format the number.
 	formattedPhoneNumber, err := FormatPhoneNumber(cleaned, activeCC)
@@ -72,18 +62,7 @@ func ParsePhoneNumber(phoneNumber string, country string) (PhoneInfo, error) {
 		}, nil
 	}
 
-	// Count 'x' placeholders to determine the local subscriber number.
-	xCount := 0
-	for _, ch := range pattern {
-		if ch == 'x' {
-			xCount++
-		}
-	}
-	diff := len([]rune(cleaned)) - xCount
-	if diff < 0 {
-		diff = 0
-	}
-	localNumber := string([]rune(cleaned)[diff:])
+	_, localNumber := splitAtXBoundary(cleaned, pattern)
 
 	return PhoneInfo{
 		CountryCode:          activeCC,
