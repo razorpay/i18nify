@@ -56,9 +56,3 @@ export type AddressType = {
   template: string;
 };
 
-export type CountrySubdivisionData = {
-  country_name: string;
-  subdivisions: { code: string; name: string }[];
-};
-
-export type StatesByCountriesMap = Record<string, CountrySubdivisionData>;

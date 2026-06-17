@@ -16,7 +16,7 @@ import { CountryDetailType } from './types';
  * @param countryCode The country code to search in
  * @returns {Promise<string>} Promise object for the city name
  */
-const getCityByZipCode = (_zipcode: string, _countryCode?: CountryCodeType) => {
+const getCityByZipcode = (_zipcode: string, _countryCode?: CountryCodeType) => {
   const countryCode = _countryCode ? _countryCode.toUpperCase() : undefined;
   const zipcode = _zipcode.trim();
 
@@ -72,4 +72,4 @@ const getCityByZipCode = (_zipcode: string, _countryCode?: CountryCodeType) => {
     });
 };
 
-export default withErrorBoundary<typeof getCityByZipCode>(getCityByZipCode);
+export default withErrorBoundary<typeof getCityByZipcode>(getCityByZipcode);

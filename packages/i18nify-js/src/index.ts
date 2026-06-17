@@ -5,4 +5,3 @@ export * from './modules/dateTime';
 export * from './modules/geo';
 export * from './modules/banking';
 export * from './modules/types';
-export * from './modules/postalCode';
