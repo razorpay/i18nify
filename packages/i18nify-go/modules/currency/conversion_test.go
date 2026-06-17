@@ -3,7 +3,7 @@ package currency
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	assert "github.com/razorpay/i18nify/packages/i18nify-go/internal/testassert"
 )
 
 func TestConvertCurrency(t *testing.T) {

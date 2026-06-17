@@ -1,9 +1,10 @@
 package currency
 
 import (
+	"fmt"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	assert "github.com/razorpay/i18nify/packages/i18nify-go/internal/testassert"
 )
 
 func TestUnmarshalCurrency(t *testing.T) {
@@ -69,10 +70,10 @@ func TestGetCurrencyInformation(t *testing.T) {
 	for _, country := range countries {
 		t.Run(country.code, func(t *testing.T) {
 			result, err := GetCurrencyInformation(country.code)
-			assert.NoError(t, err, "Unexpected error retrieving currency information for %s", country.code)
-			assert.Equal(t, country.name, result.Name, "Name mismatch for %s", country.code)
-			assert.Equal(t, country.symbol, result.Symbol, "Symbol mismatch for %s", country.code)
-			assert.Equal(t, country.numeric, result.NumericCode, "Numeric code mismatch for %s", country.code)
+			assert.NoError(t, err, fmt.Sprintf("Unexpected error retrieving currency information for %s", country.code))
+			assert.Equal(t, country.name, result.Name, fmt.Sprintf("Name mismatch for %s", country.code))
+			assert.Equal(t, country.symbol, result.Symbol, fmt.Sprintf("Symbol mismatch for %s", country.code))
+			assert.Equal(t, country.numeric, result.NumericCode, fmt.Sprintf("Numeric code mismatch for %s", country.code))
 		})
 	}
 }
@@ -101,7 +102,7 @@ func TestGetCurrencySymbol(t *testing.T) {
 		if err != nil {
 			t.Errorf("Error for code %s: %v", country.code, err)
 		} else {
-			assert.Equal(t, country.symbol, symbol, "Symbol mismatch for %s", country.code)
+			assert.Equal(t, country.symbol, symbol, fmt.Sprintf("Symbol mismatch for %s", country.code))
 		}
 	}
 }
@@ -131,7 +132,7 @@ func TestGetCurrencyCodeByISONumericCode(t *testing.T) {
 				return
 			}
 			assert.NoError(t, err)
-			assert.Equal(t, tt.wantCode, code, "currency code mismatch for numeric code %s", tt.numericCode)
+			assert.Equal(t, tt.wantCode, code, fmt.Sprintf("currency code mismatch for numeric code %s", tt.numericCode))
 		})
 	}
 }

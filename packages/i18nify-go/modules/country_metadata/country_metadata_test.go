@@ -1,8 +1,10 @@
 package country_metadata
 
 import (
-	"github.com/stretchr/testify/assert"
+	"fmt"
 	"testing"
+
+	assert "github.com/razorpay/i18nify/packages/i18nify-go/internal/testassert"
 )
 
 func TestUnmarshalCountryMetadata(t *testing.T) {
@@ -206,7 +208,7 @@ func TestGetCountryCodeFromAlpha3(t *testing.T) {
 	for alpha3, expectedISO2 := range coverage {
 		t.Run(alpha3, func(t *testing.T) {
 			result := GetCountryCodeFromAlpha3(alpha3)
-			assert.Equal(t, expectedISO2, result, "alpha-3 %s should map to %s", alpha3, expectedISO2)
+			assert.Equal(t, expectedISO2, result, fmt.Sprintf("alpha-3 %s should map to %s", alpha3, expectedISO2))
 		})
 	}
 
