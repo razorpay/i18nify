@@ -3,7 +3,7 @@ package phonenumber
 import (
 	"testing"
 
-	assert "github.com/razorpay/i18nify/packages/i18nify-go/internal/testassert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestUnmarshalPhoneNumber(t *testing.T) {

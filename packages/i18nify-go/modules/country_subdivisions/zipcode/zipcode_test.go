@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
-	assert "github.com/razorpay/i18nify/packages/i18nify-go/internal/testassert"
+	"github.com/stretchr/testify/assert"
 )
 
 func getTestCountrySubdivisions() country_subdivisions.CountrySubdivisions {

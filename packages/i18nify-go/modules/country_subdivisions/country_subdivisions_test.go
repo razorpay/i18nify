@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	assert "github.com/razorpay/i18nify/packages/i18nify-go/internal/testassert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetCountrySubdivisions(t *testing.T) {

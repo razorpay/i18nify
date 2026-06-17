@@ -1,10 +1,10 @@
 package phonenumber
 
 import (
-	"fmt"
 	"testing"
 
-	assert "github.com/razorpay/i18nify/packages/i18nify-go/internal/testassert"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 // ---- IsValidPhoneNumber ----
@@ -118,7 +118,7 @@ func TestFormatPhoneNumber(t *testing.T) {
 				assert.Error(t, err)
 				return
 			}
-			assert.RequireNoError(t, err)
+			require.NoError(t, err)
 			assert.Equal(t, tt.want, got)
 		})
 	}
@@ -129,7 +129,7 @@ func TestFormatPhoneNumber(t *testing.T) {
 func TestParsePhoneNumber(t *testing.T) {
 	t.Run("US with explicit country", func(t *testing.T) {
 		info, err := ParsePhoneNumber("+15853042806", "US")
-		assert.RequireNoError(t, err)
+		require.NoError(t, err)
 		assert.Equal(t, "US", info.CountryCode)
 		assert.Equal(t, "+1", info.DialCode)
 		assert.Equal(t, "+1 585-304-2806", info.FormattedPhoneNumber)
@@ -139,7 +139,7 @@ func TestParsePhoneNumber(t *testing.T) {
 
 	t.Run("GB auto-detected", func(t *testing.T) {
 		info, err := ParsePhoneNumber("+447123456789", "")
-		assert.RequireNoError(t, err)
+		require.NoError(t, err)
 		assert.Equal(t, "GB", info.CountryCode)
 		assert.Equal(t, "+44", info.DialCode)
 		assert.Equal(t, "+44 7123 456 789", info.FormattedPhoneNumber)
@@ -149,7 +149,7 @@ func TestParsePhoneNumber(t *testing.T) {
 
 	t.Run("IN auto-detected", func(t *testing.T) {
 		info, err := ParsePhoneNumber("+917394926646", "")
-		assert.RequireNoError(t, err)
+		require.NoError(t, err)
 		assert.Equal(t, "IN", info.CountryCode)
 		assert.Equal(t, "+91", info.DialCode)
 		assert.Equal(t, "+91 7394 926646", info.FormattedPhoneNumber)
@@ -159,7 +159,7 @@ func TestParsePhoneNumber(t *testing.T) {
 
 	t.Run("undetectable number returns raw cleaned", func(t *testing.T) {
 		info, err := ParsePhoneNumber("+1969123456789", "")
-		assert.RequireNoError(t, err)
+		require.NoError(t, err)
 		assert.Equal(t, "", info.CountryCode)
 		assert.Equal(t, "", info.DialCode)
 		assert.Equal(t, "+1969123456789", info.FormattedPhoneNumber)
@@ -191,7 +191,7 @@ func TestCleanPhoneNumber(t *testing.T) {
 		{"", ""},
 	}
 	for _, tt := range tests {
-		assert.Equal(t, tt.want, cleanPhoneNumber(tt.input), fmt.Sprintf("input=%q", tt.input))
+		assert.Equal(t, tt.want, cleanPhoneNumber(tt.input), "input=%q", tt.input)
 	}
 }
 
@@ -218,7 +218,7 @@ func TestDetectCountryAndDialCodeFromPhone(t *testing.T) {
 	}
 	for _, tt := range tests {
 		cc, dc := detectCountryAndDialCodeFromPhone(tt.phone)
-		assert.Equal(t, tt.wantCC, cc, fmt.Sprintf("phone=%q", tt.phone))
-		assert.Equal(t, tt.wantDC, dc, fmt.Sprintf("phone=%q", tt.phone))
+		assert.Equal(t, tt.wantCC, cc, "phone=%q", tt.phone)
+		assert.Equal(t, tt.wantDC, dc, "phone=%q", tt.phone)
 	}
 }
