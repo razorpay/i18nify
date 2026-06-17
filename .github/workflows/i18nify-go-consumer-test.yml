@@ -1,6 +1,12 @@
 name: (i18nify-go) Consumer Integration Tests
 
 # Simulates an end-user doing `go get github.com/razorpay/i18nify/packages/i18nify-go`.
+# No replace directives are added in the consumer module — the data packages
+# are resolved purely via the module proxy at their pinned pseudo-versions,
+# exactly as a real consumer would experience.
+#
+# Note: replace directives inside the dependency's own go.mod are ignored by
+# downstream consumers (Go only applies replace directives from the main module).
 on:
   pull_request:
 
@@ -27,6 +33,7 @@ jobs:
       !(github.head_ref == 'changeset-release/master' && github.actor == 'rzpcibot')
     env:
       GONOSUMDB: github.com/razorpay/i18nify
+      GOPROXY: direct
 
     steps:
       - name: Checkout repository
@@ -37,7 +44,13 @@ jobs:
         with:
           go-version: '1.20'
 
+      - name: Configure git auth for Go direct VCS access
+        run: |
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
       - name: Run consumer integration tests
+        env:
+          HEAD_REF: ${{ github.head_ref }}
         run: |
           echo "::group::Setup — init consumer module"
           TEST_DIR=/tmp/i18nify-consumer-test
@@ -47,16 +60,13 @@ jobs:
           echo "Module initialised at ${TEST_DIR}"
           echo "::endgroup::"
 
-          echo "::group::Setup — add i18nify-go via local checkout"
-          # Use the workspace checkout so fork PRs (where the branch doesn't
-          # exist in the upstream repo) resolve correctly. This tests the
-          # actual code in the PR rather than a published version.
-          # The special zero pseudo-version is required when using a local
-          # directory replace directive.
-          go mod edit \
-            -require github.com/razorpay/i18nify/packages/i18nify-go@v0.0.0-00010101000000-000000000000 \
-            -replace github.com/razorpay/i18nify/packages/i18nify-go="${GITHUB_WORKSPACE}/packages/i18nify-go"
-          echo "go.mod after edit:"
+          echo "::group::Setup — go get i18nify-go"
+          # Use the branch name directly — with GOPROXY=direct Go fetches from
+          # GitHub VCS and resolves to the latest commit on the branch,
+          # picking up any commits pushed by the auto-generate CI after the PR head.
+          go get github.com/razorpay/i18nify/packages/i18nify-go@"$HEAD_REF"
+          echo "go get succeeded"
+          echo "go.mod after get:"
           cat go.mod
           echo "::endgroup::"
 
