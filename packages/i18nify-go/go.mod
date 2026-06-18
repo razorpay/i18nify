@@ -14,7 +14,7 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/razorpay/i18nify/i18nify-data/go/bankcodes v1.0.3
 	github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.3
-	github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v0.0.0-20260617183101-39077c84dc79
+	github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.6
 	github.com/razorpay/i18nify/i18nify-data/go/currency v1.0.3
 	github.com/razorpay/i18nify/i18nify-data/go/datetime v0.0.0-20260617111627-6f4b0b39e407
 	github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number v1.0.3
