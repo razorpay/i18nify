@@ -13,17 +13,15 @@ var (
 	ErrUnknownCountryCode = errors.New("country code not found in dataset")
 )
 
-// phoneContext holds the validated and resolved data produced by preprocessPhone.
-// All three public functions consume it instead of repeating the same preamble.
+// phoneContext holds validated and resolved data shared across all three public functions.
 type phoneContext struct {
 	Cleaned    string // cleaned phone number (leading '+' preserved)
 	ActiveCC   string // resolved country code (provided or auto-detected)
 	DetectedDC string // dial code detected from the number's prefix (e.g. "+91")
 }
 
-// preprocessPhone validates phoneNumber, cleans it, auto-detects the country,
-// and resolves the effective country code. It is the single source of truth for
-// input validation shared by FormatPhoneNumber, IsValidPhoneNumber, and ParsePhoneNumber.
+// preprocessPhone validates, cleans, and resolves the country code for a phone number.
+// It is the single validation entry point for FormatPhoneNumber, IsValidPhoneNumber, and ParsePhoneNumber.
 func preprocessPhone(phoneNumber, countryCode string) (phoneContext, error) {
 	if phoneNumber == "" {
 		return phoneContext{}, ErrEmptyPhoneNumber
@@ -49,8 +47,7 @@ func preprocessPhone(phoneNumber, countryCode string) (phoneContext, error) {
 	}, nil
 }
 
-// invalidPhoneErr returns the standard validation error for a missing or empty
-// phoneNumber parameter, keeping the message consistent across public functions.
+// invalidPhoneErr returns a standard validation error for an empty or missing phoneNumber.
 func invalidPhoneErr(phoneNumber string) error {
 	return fmt.Errorf(
 		"parameter 'phoneNumber' is invalid! The received value was: %s. Please ensure you provide a valid phone number",
@@ -58,10 +55,8 @@ func invalidPhoneErr(phoneNumber string) error {
 	)
 }
 
-// splitAtXBoundary splits a cleaned phone number at the boundary defined by the
-// count of 'x' placeholders in pattern. Returns (prefix, local) where prefix is
-// the dial-code segment (e.g. "+91") and local is the digit string that maps to
-// the 'x' slots in the template.
+// splitAtXBoundary splits cleaned at the 'x'-count boundary of pattern.
+// Returns (prefix, local) where prefix is the dial-code segment and local maps to 'x' slots.
 func splitAtXBoundary(cleaned, pattern string) (prefix, local string) {
 	xCount := strings.Count(pattern, "x")
 	runes := []rune(cleaned)
@@ -72,9 +67,8 @@ func splitAtXBoundary(cleaned, pattern string) (prefix, local string) {
 	return string(runes[:diff]), string(runes[diff:])
 }
 
-// resolveCountryCode returns the best country code to use for formatting.
-// It prefers provided when it has a known format template in the dataset;
-// otherwise it falls back to detected.
+// resolveCountryCode returns provided if it has a format entry in the dataset;
+// otherwise returns detected.
 func resolveCountryCode(provided, detected string) string {
 	if GetCountryTeleInformation(provided).Format != "" {
 		return provided
