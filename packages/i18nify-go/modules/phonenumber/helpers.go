@@ -1,9 +1,53 @@
 package phonenumber
 
 import (
+	"errors"
 	"fmt"
 	"strings"
 )
+
+// Sentinel errors returned by FormatPhoneNumber and ParsePhoneNumber.
+var (
+	ErrEmptyPhoneNumber   = errors.New("phone number must not be empty")
+	ErrInvalidPhoneNumber = errors.New("phone number contains no valid digits")
+	ErrUnknownCountryCode = errors.New("country code not found in dataset")
+)
+
+// phoneContext holds the validated and resolved data produced by preprocessPhone.
+// All three public functions consume it instead of repeating the same preamble.
+type phoneContext struct {
+	Cleaned    string // cleaned phone number (leading '+' preserved)
+	ActiveCC   string // resolved country code (provided or auto-detected)
+	DetectedDC string // dial code detected from the number's prefix (e.g. "+91")
+}
+
+// preprocessPhone validates phoneNumber, cleans it, auto-detects the country,
+// and resolves the effective country code. It is the single source of truth for
+// input validation shared by FormatPhoneNumber, IsValidPhoneNumber, and ParsePhoneNumber.
+func preprocessPhone(phoneNumber, countryCode string) (phoneContext, error) {
+	if phoneNumber == "" {
+		return phoneContext{}, ErrEmptyPhoneNumber
+	}
+
+	cleaned := cleanPhoneNumber(phoneNumber)
+	if cleaned == "" || cleaned == "+" {
+		return phoneContext{}, fmt.Errorf("%w: %q", ErrInvalidPhoneNumber, phoneNumber)
+	}
+
+	detectedCC, detectedDC := detectCountryAndDialCodeFromPhone(cleaned)
+
+	if countryCode != "" && GetCountryTeleInformation(countryCode).Format == "" {
+		if detectedCC == "" {
+			return phoneContext{}, fmt.Errorf("%w: %q", ErrUnknownCountryCode, countryCode)
+		}
+	}
+
+	return phoneContext{
+		Cleaned:    cleaned,
+		ActiveCC:   resolveCountryCode(countryCode, detectedCC),
+		DetectedDC: detectedDC,
+	}, nil
+}
 
 // invalidPhoneErr returns the standard validation error for a missing or empty
 // phoneNumber parameter, keeping the message consistent across public functions.

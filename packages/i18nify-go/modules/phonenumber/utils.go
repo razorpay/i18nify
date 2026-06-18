@@ -18,8 +18,7 @@ var (
 	regexCacheMu sync.RWMutex
 )
 
-// loadDialCodeMap returns the dial-code → []countryCode map once, caching the result.
-// The per-dial-code slice order is preserved from JSON, mirroring the JS DIAL_CODE_MAPPER.
+// loadDialCodeMap returns the dial-code → []countryCode map, loaded once.
 func loadDialCodeMap() map[string][]string {
 	dialCodeMapOnce.Do(func() {
 		m, err := dialDataSource.GetDialCodeToCountryData()
@@ -32,8 +31,7 @@ func loadDialCodeMap() map[string][]string {
 	return dialCodeMapCache
 }
 
-// compiledRegex returns a cached *regexp.Regexp for the given pattern,
-// anchored as ^(?:pattern)$ to match the full string.
+// compiledRegex returns a cached *regexp.Regexp anchored as ^(?:pattern)$.
 func compiledRegex(pattern string) (*regexp.Regexp, error) {
 	anchored := `^(?:` + pattern + `)$`
 
@@ -54,11 +52,7 @@ func compiledRegex(pattern string) (*regexp.Regexp, error) {
 	return re, nil
 }
 
-// cleanPhoneNumber removes every character that is not a digit, preserving a
-// single leading '+'. Mirrors the JS cleanPhoneNumber utility exactly:
-//
-//	const regex = /[^0-9+]|(?!A)\+/g;
-//	return phone[0] === '+' ? `+${cleaned}` : cleaned;
+// cleanPhoneNumber strips all non-digit characters, preserving a leading '+'.
 func cleanPhoneNumber(phone string) string {
 	if phone == "" {
 		return ""
@@ -76,10 +70,7 @@ func cleanPhoneNumber(phone string) string {
 	return b.String()
 }
 
-// matchesEntirely tests whether text matches regexPattern anchored to the full string.
-// Mirrors the JS matchesEntirely utility:
-//
-//	new RegExp('^(?:' + pattern + ')$').test(text)
+// matchesEntirely reports whether text fully matches regexPattern.
 func matchesEntirely(text, regexPattern string) bool {
 	re, err := compiledRegex(regexPattern)
 	if err != nil {
@@ -88,25 +79,20 @@ func matchesEntirely(text, regexPattern string) bool {
 	return re.MatchString(text)
 }
 
-// detectCountryAndDialCodeFromPhone identifies the best-matching country and its
-// dial code for a cleaned phone number. Returns ("", "") when:
-//   - the number has no leading '+', or
-//   - no regex-verified match is found.
+// detectCountryAndDialCodeFromPhone returns the best-matching (countryCode, dialCode)
+// for a cleaned phone number that starts with '+'. Returns ("", "") on no match.
 //
-// Candidates are collected by iterating dial codes in ascending numeric order
-// (matching V8 JS engine's integer-key iteration) and then searched in the
-// per-dial-code array order preserved from the JSON source. This reproduces the
-// same first-match priority as the JS detectCountryAndDialCodeFromPhone utility.
+// Dial codes are evaluated in ascending numeric order (matching V8 JS key iteration),
+// then per-dial-code countries are checked in JSON-preserved order — reproducing the
+// same first-match priority as the JS implementation.
 func detectCountryAndDialCodeFromPhone(phone string) (countryCode, dialCode string) {
 	if len(phone) == 0 || phone[0] != '+' {
 		return "", ""
 	}
 
-	digits := phone[1:] // strip leading '+'
-
+	digits := phone[1:]
 	dialMap := loadDialCodeMap()
 
-	// Collect all dial code keys and sort them numerically ascending.
 	dcs := make([]string, 0, len(dialMap))
 	for dc := range dialMap {
 		dcs = append(dcs, dc)
@@ -121,12 +107,10 @@ func detectCountryAndDialCodeFromPhone(phone string) (countryCode, dialCode stri
 	})
 
 	type candidate struct {
-		cc      string
+		cc       string
 		dialCode string
 	}
 
-	// Build ordered candidate list: for each matching dial code (in numeric order),
-	// add countries in the JSON-preserved slice order.
 	var candidates []candidate
 	for _, dc := range dcs {
 		if strings.HasPrefix(digits, dc) {
@@ -136,7 +120,6 @@ func detectCountryAndDialCodeFromPhone(phone string) (countryCode, dialCode stri
 		}
 	}
 
-	// Return the first candidate whose regex validates the number without the dial code.
 	for _, c := range candidates {
 		numWithoutDial := strings.TrimPrefix(phone, c.dialCode)
 		info := GetCountryTeleInformation(c.cc)
@@ -148,9 +131,8 @@ func detectCountryAndDialCodeFromPhone(phone string) (countryCode, dialCode stri
 	return "", ""
 }
 
-// getPhoneNumberWithoutDialCode strips the detected dial code from phone and
-// returns the local subscriber number. Returns the cleaned number unchanged
-// when no dial code is detected. Mirrors the JS utility of the same name.
+// getPhoneNumberWithoutDialCode returns the local subscriber number by stripping
+// the detected dial code. Returns the cleaned number unchanged when no dial code is found.
 func getPhoneNumberWithoutDialCode(phone string) string {
 	cleaned := cleanPhoneNumber(phone)
 	_, dc := detectCountryAndDialCodeFromPhone(cleaned)
