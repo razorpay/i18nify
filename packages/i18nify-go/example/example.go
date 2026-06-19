@@ -64,7 +64,11 @@ func main() {
 	}
 
 	// Validate phone number
-	fmt.Printf("Is valid phone number: %v\n", phonenumber.IsValidPhoneNumber("+917394926646", "IN")) // true
+	if err := phonenumber.IsValidPhoneNumber("+917394926646", "IN"); err != nil {
+		fmt.Printf("Phone validation failed: %v\n", err)
+	} else {
+		fmt.Println("Phone number is valid")
+	}
 
 	// Parse phone number into structured components
 	phoneData, err := phonenumber.ParsePhoneNumber("+917394926646", "IN")
