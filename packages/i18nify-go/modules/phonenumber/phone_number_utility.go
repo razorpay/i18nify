@@ -37,26 +37,20 @@ func FormatPhoneNumber(phoneNumber string, countryCode string) (string, error) {
     return strings.TrimSpace(prefix + " " + string(result)), nil
 }
 
-// IsValidPhoneNumber validates phoneNumber for countryCode.
-// Returns nil if valid, or a descriptive error explaining why it failed.
+// IsValidPhoneNumber reports whether phoneNumber is valid for countryCode.
 // Auto-detects country from the dial code prefix when countryCode is empty or unknown.
-// Errors: ErrEmptyPhoneNumber, ErrInvalidPhoneNumber, ErrUnknownCountryCode, ErrNoRegexForCountry, ErrPhoneNumberMismatch.
-func IsValidPhoneNumber(phoneNumber string, countryCode string) error {
+func IsValidPhoneNumber(phoneNumber string, countryCode string) bool {
     ctx, err := preprocessPhone(phoneNumber, countryCode)
     if err != nil {
-        return err
+        return false
     }
 
     info := GetCountryTeleInformation(ctx.ActiveCC)
     if info.Regex == "" {
-        return fmt.Errorf("%w: %q", ErrNoRegexForCountry, ctx.ActiveCC)
+        return false
     }
 
-    if !matchesEntirely(getPhoneNumberWithoutDialCode(ctx.Cleaned), info.Regex) {
-        return fmt.Errorf("%w: %q for country %q", ErrPhoneNumberMismatch, phoneNumber, ctx.ActiveCC)
-    }
-
-    return nil
+    return matchesEntirely(getPhoneNumberWithoutDialCode(ctx.Cleaned), info.Regex)
 }
 
 // PhoneInfo holds the structured result of parsing a phone number.

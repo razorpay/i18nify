@@ -6,13 +6,11 @@ import (
 	"strings"
 )
 
-// Sentinel errors returned by FormatPhoneNumber, ParsePhoneNumber, and IsValidPhoneNumber.
+// Sentinel errors returned by FormatPhoneNumber and ParsePhoneNumber.
 var (
 	ErrEmptyPhoneNumber   = errors.New("phone number must not be empty")
 	ErrInvalidPhoneNumber = errors.New("phone number contains no valid digits")
 	ErrUnknownCountryCode = errors.New("country code not found in dataset")
-	ErrNoRegexForCountry  = errors.New("no validation pattern available for country")
-	ErrPhoneNumberMismatch = errors.New("phone number does not match expected format")
 )
 
 // phoneContext holds validated and resolved data shared across all three public functions.

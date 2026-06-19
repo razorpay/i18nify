@@ -123,35 +123,29 @@ func TestIsValidPhoneNumber(t *testing.T) {
 		name        string
 		phoneNumber string
 		countryCode string
-		wantErr     error
+		want        bool
 	}{
-		{"IN valid with dial code", "+917394926646", "IN", nil},
-		{"MY valid with dial code", "+60123456789", "MY", nil},
-		{"IN valid without dial code", "7394926646", "IN", nil},
-		{"IN too short", "1234", "IN", ErrPhoneNumberMismatch},
-		{"MY too short", "60123", "MY", ErrPhoneNumberMismatch},
-		{"empty phone", "", "IN", ErrEmptyPhoneNumber},
-		{"whitespace only", "   ", "IN", ErrInvalidPhoneNumber},
-		{"plus only", "+", "IN", ErrInvalidPhoneNumber},
-		{"special chars only", "()- ", "IN", ErrInvalidPhoneNumber},
-		{"invalid CC falls back to detection", "+917394926646", "XX", nil},
-		{"unknown CC no detection possible", "+999999999999", "XX", ErrUnknownCountryCode},
-		{"unsupported CC and bad number", "1234567890", "XYZ", ErrUnknownCountryCode},
-		{"IN with spaces and dashes", "+91-739-492-6646", "IN", nil},
-		{"IN with parens and spaces", "+91 (739) 492-6646", "IN", nil},
-		{"valid CC but short number", "+91123", "IN", ErrPhoneNumberMismatch},
-		{"empty CC auto-detects IN", "+917394926646", "", nil},
+		{"IN valid with dial code", "+917394926646", "IN", true},
+		{"MY valid with dial code", "+60123456789", "MY", true},
+		{"IN valid without dial code", "7394926646", "IN", true},
+		{"IN too short", "1234", "IN", false},
+		{"MY too short", "60123", "MY", false},
+		{"empty phone", "", "IN", false},
+		{"whitespace only", "   ", "IN", false},
+		{"plus only", "+", "IN", false},
+		{"special chars only", "()- ", "IN", false},
+		{"invalid CC falls back to detection", "+917394926646", "XX", true},
+		{"unknown CC no detection possible", "+999999999999", "XX", false},
+		{"unsupported CC and bad number", "1234567890", "XYZ", false},
+		{"IN with spaces and dashes", "+91-739-492-6646", "IN", true},
+		{"IN with parens and spaces", "+91 (739) 492-6646", "IN", true},
+		{"valid CC but short number", "+91123", "IN", false},
+		{"empty CC auto-detects IN", "+917394926646", "", true},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			err := IsValidPhoneNumber(tt.phoneNumber, tt.countryCode)
-			if tt.wantErr != nil {
-				require.Error(t, err)
-				assert.ErrorIs(t, err, tt.wantErr)
-			} else {
-				assert.NoError(t, err)
-			}
+			assert.Equal(t, tt.want, IsValidPhoneNumber(tt.phoneNumber, tt.countryCode))
 		})
 	}
 }
