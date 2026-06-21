@@ -4,7 +4,6 @@ package datetime
 
 import (
 	_ "embed"
-	"fmt"
 	"sync"
 
 	"google.golang.org/protobuf/encoding/protojson"
@@ -14,21 +13,17 @@ import (
 var dataJSON []byte
 
 var (
-	dataOnce sync.Once
 	data     *DateTimeData
+	dataOnce sync.Once
 	dataErr  error
 )
 
-// GetDateTimeData returns the locale datetime configuration.
+// GetDateTimeData retrieves the data.
 func GetDateTimeData() (*DateTimeData, error) {
 	dataOnce.Do(func() {
-		d := &DateTimeData{}
+		data = &DateTimeData{}
 		unmarshaler := protojson.UnmarshalOptions{DiscardUnknown: true}
-		if err := unmarshaler.Unmarshal(dataJSON, d); err != nil {
-			dataErr = fmt.Errorf("datetime: failed to parse data.json: %w", err)
-			return
-		}
-		data = d
+		dataErr = unmarshaler.Unmarshal(dataJSON, data)
 	})
 	return data, dataErr
 }
