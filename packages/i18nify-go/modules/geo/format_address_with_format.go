@@ -35,27 +35,7 @@ func FormatAddressWithFormat(countryCode string, components AddressComponents) (
 		return "", fmt.Errorf("formatAddressWithFormat: address format for country code %q not found", code)
 	}
 
-	replacer := strings.NewReplacer(
-		"{name}", components.Name,
-		"{organization}", components.Organization,
-		"{street_address}", components.StreetAddress,
-		"{city}", components.City,
-		"{state}", components.State,
-		"{zip}", components.Zip,
-		"{district}", components.District,
-		"{sorting_code}", components.SortingCode,
-	)
-	substituted := replacer.Replace(addrInfo.GetTemplate())
-
-	// Split the substituted template into lines and drop any that are blank —
-	// this happens when an optional field (e.g. Organization) was not provided.
-	rawLines := strings.Split(substituted, "\n")
-	formatted := make([]string, 0, len(rawLines))
-	for _, line := range rawLines {
-		if trimmed := strings.TrimSpace(line); trimmed != "" {
-			formatted = append(formatted, trimmed)
-		}
-	}
-
-	return strings.Join(formatted, "\n"), nil
+	// Reuse the base formatter so template substitution and blank-line cleanup
+	// remain defined in one place for the Go geo module.
+	return FormatAddress(addrInfo.GetTemplate(), components)
 }
