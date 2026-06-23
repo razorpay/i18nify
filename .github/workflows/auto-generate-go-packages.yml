@@ -102,7 +102,6 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           INPUT_PACKAGE: ${{ github.event.inputs.package }}
-          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
           PUSH_BEFORE: ${{ github.event.before }}
         run: |
           chmod +x .github/scripts/go/discover-packages.sh
@@ -115,10 +114,11 @@ jobs:
               # Validate user-provided names against actual repo structure
               PACKAGES=$(.github/scripts/go/discover-packages.sh --validate "$INPUT")
             fi
-          elif [ "$EVENT_NAME" = "pull_request" ]; then
-            PACKAGES=$(.github/scripts/go/discover-packages.sh --changed "$PR_BASE_SHA")
           else
-            # Push: compare against previous commit (before the push)
+            # For both pull_request and push: use github.event.before (the HEAD
+            # before this specific push) rather than the PR base SHA. This prevents
+            # recursion: when the bot pushes generated code, the diff of THAT push
+            # won't contain data file changes, so packages=[] and the workflow stops.
             BEFORE="$PUSH_BEFORE"
             if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
               BEFORE="HEAD~1"
