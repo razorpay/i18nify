@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package business_entity;
+
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/business_entity;business_entity";
+
+// CategoriesData is the root message for categories_data.json.
+message CategoriesData {
+  repeated BusinessCategory categories = 1;
+  map<string, SubCategoryList> sub_categories = 2 [json_name = "sub_categories"];
+}
+
+// BusinessCategory represents a top-level or sub-level business category.
+message BusinessCategory {
+  string code        = 1;
+  string name        = 2;
+  string description = 3;
+}
+
+// SubCategoryList wraps repeated BusinessCategory as a map value.
+message SubCategoryList {
+  repeated BusinessCategory items = 1;
+}
