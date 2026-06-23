@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package names;
+
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/names;names";
+
+// NamesData is the top-level container for all names-related reference data.
+// Data files: data.json
+message NamesData {
+  NamesInformation names_information = 1;
+}
+
+// NamesInformation holds country-to-language mappings, per-language honorific
+// titles, and name validation rules.
+message NamesInformation {
+  // country_to_languages maps an ISO 3166-1 alpha-2 country code (e.g. "IN")
+  // to the list of language names conventionally used in that country.
+  map<string, LanguageList> country_to_languages = 1;
+
+  // honorific_titles maps a language name (e.g. "english", "hindi") to its
+  // ordered list of honorific title entries.
+  map<string, HonorificTitleList> honorific_titles = 2;
+
+  // validation_rules defines length constraints applied to name fields.
+  ValidationRules validation_rules = 3;
+}
+
+// LanguageList is a wrapper required by protobuf to use repeated strings as
+// a map value.
+message LanguageList {
+  repeated string languages = 1;
+}
+
+// HonorificTitleList is a wrapper required by protobuf to use repeated
+// HonorificTitle entries as a map value.
+message HonorificTitleList {
+  repeated HonorificTitle titles = 1;
+}
+
+// HonorificTitle represents a single honorific title entry for a language.
+message HonorificTitle {
+  // code is the canonical uppercase identifier (e.g. "MR", "SHRI").
+  string code = 1;
+
+  // title is the display form used in UIs (e.g. "Mr.", "Shri").
+  string title = 2;
+
+  // gender indicates the conventional gender association: "male", "female",
+  // or "neutral".
+  string gender = 3;
+
+  // description is a short English explanation of the title's usage.
+  string description = 4;
+}
+
+// ValidationRules defines the character-length bounds for a person's name.
+message ValidationRules {
+  int32 min_length = 1;
+  int32 max_length = 2;
+}
