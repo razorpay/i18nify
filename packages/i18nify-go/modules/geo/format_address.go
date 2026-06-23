@@ -6,6 +6,8 @@ import (
 )
 
 // FormatAddress formats address components using a caller-supplied template string.
+// Use FormatAddressWithFormat when you have a country code and want the canonical
+// country-specific template from i18nify-data.
 func FormatAddress(template string, components AddressComponents) (string, error) {
 	if strings.TrimSpace(template) == "" {
 		return "", fmt.Errorf("template must be a non-empty string")

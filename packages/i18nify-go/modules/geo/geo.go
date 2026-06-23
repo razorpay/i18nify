@@ -11,6 +11,8 @@ import (
 var cachedCountryMetadata *countryMetadata.CountryMetadataData
 var cachedAddressData *addressData.AddressData
 
+// init eagerly loads embedded data at startup; panics on failure so
+// misconfigured builds fail fast rather than silently returning bad data.
 func init() {
 	cm, err := countryMetadata.GetCountryMetadataData()
 	if err != nil {

@@ -5,6 +5,9 @@ import (
 	"strings"
 )
 
+// AddressComponents holds address field values for template substitution.
+// All fields are optional; empty fields substitute as blank strings and
+// lines that become blank after substitution are dropped from the output.
 type AddressComponents struct {
 	Name          string
 	Organization  string

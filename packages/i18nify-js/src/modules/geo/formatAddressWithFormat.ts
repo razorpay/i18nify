@@ -2,6 +2,11 @@ import { withErrorBoundary } from '../../common/errorBoundary';
 import { getAddressInfo } from './getAddressInfo';
 import { AddressCodeType, AddressType, AddressComponents } from './types';
 
+/**
+ * Formats address components using the country-specific template from i18nify-data.
+ * Empty component fields substitute as blank strings; lines that become empty
+ * after substitution are removed from the output.
+ */
 const formatAddressWithFormat = (
   countryCode: string,
   components: AddressComponents,
