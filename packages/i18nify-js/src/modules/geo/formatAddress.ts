@@ -5,7 +5,7 @@ const formatAddress = (
   template: string,
   components: AddressComponents,
 ): string => {
-  if (!template || typeof template !== 'string')
+  if (!template || typeof template !== 'string' || !template.trim())
     throw new Error('template must be a non-empty string.');
 
   const substituted = template

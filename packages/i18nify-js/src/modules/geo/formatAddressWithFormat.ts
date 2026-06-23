@@ -42,14 +42,17 @@ const formatAddressWithFormat = (
   countryCode: string,
   components: AddressComponents,
 ): string => {
-  // Cast to AddressCodeType for the address module's typed lookup.
-  const addressInfo = getAddressInfo(
-    countryCode as AddressCodeType,
-  ) as AddressType | null;
+  const trimmed = countryCode.trim();
+  if (trimmed === '') {
+    throw new Error('formatAddressWithFormat: country code must not be empty.');
+  }
+  const code = trimmed.toUpperCase() as AddressCodeType;
+
+  const addressInfo = getAddressInfo(code) as AddressType | null;
 
   if (!addressInfo) {
     throw new Error(
-      `formatAddressWithFormat: address format for country code "${countryCode}" not found.`,
+      `formatAddressWithFormat: address format for country code "${code}" not found.`,
     );
   }
 

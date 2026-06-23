@@ -186,6 +186,12 @@ describe('formatAddress', () => {
       expect(() => formatAddress('', { name: 'Alice' })).toThrow();
     });
 
+    it('throws for whitespace-only template', () => {
+      expect(() => formatAddress('   ', { name: 'Alice' })).toThrow(
+        'template must be a non-empty string.',
+      );
+    });
+
     it('throws for null template', () => {
       // @ts-expect-error testing invalid type
       expect(() => formatAddress(null, {})).toThrow();

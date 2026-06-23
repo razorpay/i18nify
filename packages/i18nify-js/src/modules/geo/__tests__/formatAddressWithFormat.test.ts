@@ -1,41 +1,5 @@
 import formatAddressWithFormat from '../formatAddressWithFormat';
 
-jest.mock('../getAddressInfo', () => ({
-  getAddressInfo: jest.fn((code: string) => {
-    const DATA: Record<string, { template: string }> = {
-      // city, state, zip on one line — most common US pattern
-      US: {
-        template:
-          '{name}\n{organization}\n{street_address}\n{city}, {state} {zip}',
-      },
-      // city and zip on same line, state on its own line
-      IN: {
-        template:
-          '{name}\n{organization}\n{street_address}\n{city} {zip}\n{state}',
-      },
-      // no state field
-      DE: {
-        template: '{name}\n{organization}\n{street_address}\n{zip} {city}',
-      },
-      // district field
-      BR: {
-        template:
-          '{organization}\n{name}\n{street_address}\n{district}\n{city}-{state}\n{zip}',
-      },
-      // sorting_code field
-      BF: {
-        template:
-          '{name}\n{organization}\n{street_address}\n{city} {sorting_code}',
-      },
-      // reversed order (name last)
-      JP: {
-        template: '〒{zip}\n{state}\n{street_address}\n{organization}\n{name}',
-      },
-    };
-    return DATA[code] ?? null;
-  }),
-}));
-
 describe('formatAddressWithFormat', () => {
   describe('full substitution', () => {
     it('formats a US address with all fields', () => {
@@ -121,6 +85,30 @@ describe('formatAddressWithFormat', () => {
     });
   });
 
+  describe('country code normalization', () => {
+    it('accepts lowercase country code', () => {
+      const result = formatAddressWithFormat('us', {
+        name: 'Jane',
+        street_address: '1 Main St',
+        city: 'Boston',
+        state: 'MA',
+        zip: '02101',
+      });
+      expect(result).toBe('Jane\n1 Main St\nBoston, MA 02101');
+    });
+
+    it('accepts country code with surrounding whitespace', () => {
+      const result = formatAddressWithFormat('  IN  ', {
+        name: 'Priya',
+        street_address: '12 MG Road',
+        city: 'Pune',
+        zip: '411001',
+        state: 'Maharashtra',
+      });
+      expect(result).toBe('Priya\n12 MG Road\nPune 411001\nMaharashtra');
+    });
+  });
+
   describe('blank line removal', () => {
     it('removes the organization line when organization is omitted', () => {
       const result = formatAddressWithFormat('US', {
@@ -147,8 +135,6 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('removes multiple blank optional lines at once', () => {
-      // omit organization and state — US template has state inline with city/zip
-      // so state being empty leaves "city,  zip" — not a blank line, still kept
       const result = formatAddressWithFormat('DE', {
         street_address: 'Unter den Linden 77',
         city: 'Berlin',
@@ -195,7 +181,13 @@ describe('formatAddressWithFormat', () => {
 
     it('throws for empty string country code', () => {
       expect(() => formatAddressWithFormat('', {})).toThrow(
-        'formatAddressWithFormat: address format for country code "" not found.',
+        'formatAddressWithFormat: country code must not be empty.',
+      );
+    });
+
+    it('throws for whitespace-only country code', () => {
+      expect(() => formatAddressWithFormat('   ', {})).toThrow(
+        'formatAddressWithFormat: country code must not be empty.',
       );
     });
   });
