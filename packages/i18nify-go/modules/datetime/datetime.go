@@ -1,20 +1,6 @@
-// Package datetime provides date and time helpers inspired by the i18nify-js
-// dateTime module.
-//
-//   - FormatDateTime        — date/time formatting with locale-based ordering,
-//     separators, and hour-cycle defaults
-//   - GetRelativeTime       — human-readable relative time in English
-//   - GetWeekdays           — ordered list of weekday names in English
-//   - GetTimeZoneByCountry  — timezone identifiers + UTC offsets for a country
-//
-// Scope note:
-//   - GetTimeZoneByCountry is a close data-parity helper.
-//   - FormatDateTime, GetRelativeTime, and GetWeekdays are simplified Go
-//     equivalents, not full Intl-powered replicas of the JS implementation.
-//
-// Configuration data (locale ordering, separators, supported date formats) is
-// loaded at startup from the embedded i18nify-data/go/datetime package.
-// Timezone data is sourced from i18nify-data/go/country/metadata.
+// Package datetime provides Go helpers for formatting dates, relative time,
+// weekdays, and country timezone data. Data is loaded from embedded i18nify
+// datasets at package init.
 package datetime
 
 import (
@@ -30,9 +16,7 @@ var cachedDateTimeData *datetimeData.DateTimeData
 // cachedCountryMetadata is the country metadata used by GetTimeZoneByCountry.
 var cachedCountryMetadata *countryMetadata.CountryMetadataData
 
-// init loads both data packages once at package startup.
-// Panics on failure so misconfiguration is caught immediately,
-// matching the convention used by all other i18nify-go service modules.
+// init loads datetime and country metadata once at package startup.
 func init() {
 	dt, err := datetimeData.GetDateTimeData()
 	if err != nil {
@@ -47,14 +31,12 @@ func init() {
 	cachedCountryMetadata = cm
 }
 
-// TimeZoneInfo holds details for a single IANA timezone identifier.
+// TimeZoneInfo stores details for a single IANA timezone.
 type TimeZoneInfo struct {
-	// UTCOffset is the UTC offset string (e.g., "UTC +05:30").
 	UTCOffset string `json:"utc_offset"`
 }
 
-// TimezoneListEntry aggregates the UTC offset and all country codes that observe
-// a given IANA timezone identifier.
+// TimezoneListEntry stores a timezone offset and its matching countries.
 type TimezoneListEntry struct {
 	UTCOffset string   `json:"utc_offset"`
 	Countries []string `json:"countries"`

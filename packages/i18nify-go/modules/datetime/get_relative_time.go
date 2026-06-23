@@ -8,30 +8,21 @@ import (
 )
 
 // GetRelativeTimeOptions configures GetRelativeTime output.
-// It mirrors the options parameter of the JS getRelativeTime function.
 type GetRelativeTimeOptions struct {
-	// Locale is an IETF BCP 47 language tag. Defaults to "en-IN".
-	// Non-English locales fall back to English templates; locale-specific
-	// relative-time strings can be added to relTemplateSets as needed.
+	// Locale defaults to "en-IN" and currently uses English templates.
 	Locale string
 
-	// BaseDate is the reference point for the relative calculation.
-	// When zero-valued, the current time (time.Now()) is used — matching JS behaviour
-	// where options.baseDate defaults to new Date().
+	// BaseDate defaults to time.Now() when zero.
 	BaseDate time.Time
 
-	// Numeric controls whether the output always uses a numeral ("always") or
-	// uses natural-language forms where possible ("auto").
-	// Mirrors Intl.RelativeTimeFormatOptions.numeric. Defaults to "auto".
+	// Numeric defaults to "auto".
 	Numeric string
 
-	// Style controls output verbosity: "long" (default), "short", or "narrow".
-	// Mirrors Intl.RelativeTimeFormatOptions.style.
-	// "narrow" produces the same output as "short" for English templates.
+	// Style defaults to "long". "narrow" uses the short template set.
 	Style string
 }
 
-// Time-unit thresholds in seconds — exact copies of the JS constants.
+// Time-unit thresholds in seconds.
 const (
 	thresholdMinute = 60
 	thresholdHour   = thresholdMinute * 60
@@ -41,7 +32,7 @@ const (
 	thresholdYear   = thresholdDay * 365
 )
 
-// relUnit is the resolved time unit used when formatting.
+// relUnit is the resolved time unit.
 type relUnit string
 
 const (
@@ -54,27 +45,9 @@ const (
 	relYear   relUnit = "year"
 )
 
-// GetRelativeTime returns an English relative-time string that describes the
-// time elapsed between date and a base date (defaults to now).
-//
-// This is a simplified Go equivalent of the JS helper. It mirrors the JS unit
-// selection thresholds and basic numeric/style behavior, but it does not use
-// Intl.RelativeTimeFormat and does not provide locale-specific text output.
-//
-// The selection of time unit mirrors the JS implementation exactly:
-//
-//	|diff| < 60 s       → "second"
-//	|diff| < 3600 s     → "minute"
-//	|diff| < 86400 s    → "hour"
-//	|diff| < 604800 s   → "day"
-//	|diff| < 2592000 s  → "week"
-//	|diff| < 31536000 s → "month"
-//	otherwise           → "year"
-//
-// Example:
-//
-//	s, err := GetRelativeTime(yesterday, GetRelativeTimeOptions{Locale: "en-IN"})
-//	// → "yesterday"  (Numeric="auto" default, Style="long" default)
+// GetRelativeTime returns a human-readable relative-time string.
+// It follows the JS helper's threshold behavior but currently formats output
+// with English templates only.
 func GetRelativeTime(date time.Time, opts GetRelativeTimeOptions) (string, error) {
 	baseDate := opts.BaseDate
 	if baseDate.IsZero() {
@@ -91,7 +64,6 @@ func GetRelativeTime(date time.Time, opts GetRelativeTimeOptions) (string, error
 		style = "long"
 	}
 
-	// "narrow" uses the same abbreviated strings as "short" for English.
 	templates := relTemplateSets["long"]
 	if style == "short" || style == "narrow" {
 		templates = relTemplateSets["short"]
@@ -100,7 +72,6 @@ func GetRelativeTime(date time.Time, opts GetRelativeTimeOptions) (string, error
 	diffSeconds := date.Sub(baseDate).Seconds()
 	abs := math.Abs(diffSeconds)
 
-	// Determine unit — mirrors JS thresholds exactly.
 	var unit relUnit
 	var rawValue float64
 
@@ -135,10 +106,8 @@ func GetRelativeTime(date time.Time, opts GetRelativeTimeOptions) (string, error
 	return result, nil
 }
 
-// lookupRelativeTemplate returns the formatted relative time string using
-// the provided template map (from relTemplateSets).
+// lookupRelativeTemplate formats a relative-time string from the template map.
 func lookupRelativeTemplate(templates map[string]string, unit relUnit, direction string, value int, numeric string) (string, error) {
-	// Natural-language singular override when numeric != "always".
 	if numeric != "always" {
 		singularKey := fmt.Sprintf("%s:%s:%d", unit, direction, value)
 		if tmpl, ok := templates[singularKey]; ok {
@@ -146,7 +115,6 @@ func lookupRelativeTemplate(templates map[string]string, unit relUnit, direction
 		}
 	}
 
-	// Plural / numeric template.
 	pluralKey := fmt.Sprintf("%s:%s", unit, direction)
 	if tmpl, ok := templates[pluralKey]; ok {
 		return fmt.Sprintf(tmpl, value), nil

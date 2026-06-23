@@ -19,8 +19,7 @@ func localeBase(locale string) string {
 	return locale
 }
 
-// localeLanguage extracts the primary language subtag from a BCP 47 locale tag.
-// "en-US" → "en", "zh-Hans-CN" → "zh", "de" → "de".
+// localeLanguage returns the primary language subtag.
 func localeLanguage(locale string) string {
 	if locale == "" {
 		return "en"
@@ -28,9 +27,7 @@ func localeLanguage(locale string) string {
 	return strings.ToLower(localeBase(locale))
 }
 
-// localeUses12Hour reports whether locale conventionally uses a 12-hour clock.
-// Mirrors the JS behaviour where Intl picks the hour cycle from the locale when
-// options.hour12 is not explicitly set.
+// localeUses12Hour reports whether a locale conventionally uses a 12-hour clock.
 func localeUses12Hour(locale string) bool {
 	switch localeLanguage(locale) {
 	case "en", "hi", "ar", "bn", "pa", "ur", "fa", "mr", "ta", "te", "kn", "ml", "gu", "ne", "si":
@@ -41,10 +38,7 @@ func localeUses12Hour(locale string) bool {
 }
 
 // relTemplateSets contains English relative-time string templates keyed by style.
-// Keys follow "<unit>:<past|future>[:<value>]" — the two-part key is the plural
-// template (%d placeholder), the three-part key is a natural-language override
-// used when Numeric="auto".
-// "narrow" reuses the "short" table, matching CLDR English behaviour.
+// Keys use the form "<unit>:<past|future>[:<value>]".
 var relTemplateSets = map[string]map[string]string{
 	"long": {
 		"second:past":     "%d seconds ago",

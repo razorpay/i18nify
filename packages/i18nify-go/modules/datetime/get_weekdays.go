@@ -9,42 +9,24 @@ var englishWeekdays = map[WeekdayStyle][7]string{
 }
 
 // WeekdayStyle controls the display length of weekday names.
-// Mirrors the weekday option of Intl.DateTimeFormatOptions.
 type WeekdayStyle string
 
 const (
-	// WeekdayLong returns the full weekday name (e.g., "Monday", "Montag").
-	WeekdayLong WeekdayStyle = "long"
-	// WeekdayShort returns the abbreviated weekday name (e.g., "Mon", "Mo.").
-	WeekdayShort WeekdayStyle = "short"
-	// WeekdayNarrow returns the narrowest form (e.g., "M", "M").
+	WeekdayLong   WeekdayStyle = "long"
+	WeekdayShort  WeekdayStyle = "short"
 	WeekdayNarrow WeekdayStyle = "narrow"
 )
 
 // GetWeekdaysOptions configures GetWeekdays output.
 type GetWeekdaysOptions struct {
-	// Locale is accepted for API parity. Defaults to "en-IN" but does not
-	// affect the returned weekday names, which are English-only.
+	// Locale is accepted for API parity but output is English-only.
 	Locale string
 
-	// Weekday controls the display format. Defaults to WeekdayLong.
+	// Weekday defaults to WeekdayLong.
 	Weekday WeekdayStyle
 }
 
-// GetWeekdays returns a slice of seven weekday names starting from Sunday.
-// It mirrors the i18nify-js getWeekdays function.
-//
-// This is a simplified Go equivalent. Unlike the JS version, it does not use
-// Intl-backed locale data and therefore always returns English weekday names.
-//
-// The returned slice always has exactly 7 elements ordered
-// [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday].
-// Weekday names are English-only.
-//
-// Example:
-//
-//	days, err := GetWeekdays(GetWeekdaysOptions{Weekday: WeekdayShort})
-//	// → ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+// GetWeekdays returns seven weekday names starting from Sunday.
 func GetWeekdays(opts GetWeekdaysOptions) ([]string, error) {
 	_ = normalizeLocale(opts.Locale)
 
@@ -55,7 +37,6 @@ func GetWeekdays(opts GetWeekdaysOptions) ([]string, error) {
 
 	switch style {
 	case WeekdayLong, WeekdayShort, WeekdayNarrow:
-		// valid
 	default:
 		return nil, fmt.Errorf(
 			"getWeekdays: unsupported weekday style %q; valid values are 'long', 'short', 'narrow'",

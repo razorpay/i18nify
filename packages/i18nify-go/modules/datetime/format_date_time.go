@@ -8,50 +8,34 @@ import (
 
 var englishNarrowMonths = [12]string{"J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"}
 
-// DateTimeMode controls which date/time components are included in the output.
-// Mirrors the dateTimeMode option of the JS formatDateTime function.
+// DateTimeMode controls which date/time components are included.
 type DateTimeMode string
 
 const (
-	// ModeDateOnly formats only the date portion (year, month, day).
 	ModeDateOnly DateTimeMode = "dateOnly"
-	// ModeTimeOnly formats only the time portion (hour, minute, second).
 	ModeTimeOnly DateTimeMode = "timeOnly"
-	// ModeDateTime formats both date and time.
 	ModeDateTime DateTimeMode = "dateTime"
 )
 
-// FieldStyle controls how an individual date/time field is rendered.
-// Mirrors the Intl.DateTimeFormatOptions field style values.
+// FieldStyle controls how an individual field is rendered.
 type FieldStyle string
 
 const (
-	// StyleNumeric renders the field as a plain number (e.g., "1", "2006").
 	StyleNumeric FieldStyle = "numeric"
-	// Style2Digit renders the field zero-padded to two digits (e.g., "01", "06").
-	Style2Digit FieldStyle = "2-digit"
-	// StyleLong renders the field in full long form (e.g., "January", "Monday").
-	StyleLong FieldStyle = "long"
-	// StyleShort renders the field in abbreviated form (e.g., "Jan", "Mon").
-	StyleShort FieldStyle = "short"
-	// StyleNarrow renders the field in its narrowest form (e.g., "J").
-	StyleNarrow FieldStyle = "narrow"
+	Style2Digit  FieldStyle = "2-digit"
+	StyleLong    FieldStyle = "long"
+	StyleShort   FieldStyle = "short"
+	StyleNarrow  FieldStyle = "narrow"
 )
 
 // FormatDateTimeOptions configures FormatDateTime output.
-// It mirrors the options parameter of the JS formatDateTime function.
 type FormatDateTimeOptions struct {
-	// Locale is an IETF BCP 47 language tag (e.g., "en-US", "de", "ja").
-	// Defaults to "en-IN" when empty, matching the JS getLocale() fallback.
+	// Locale defaults to "en-IN" when empty.
 	Locale string
 
 	// DateTimeMode selects a preset set of components to include.
-	// Individual field styles below fall back to StyleNumeric if unset.
 	DateTimeMode DateTimeMode
 
-	// Individual field styles — each mirrors the corresponding
-	// Intl.DateTimeFormatOptions field. An empty value means "omit this field"
-	// unless DateTimeMode forces a default.
 	Year   FieldStyle
 	Month  FieldStyle
 	Day    FieldStyle
@@ -59,31 +43,24 @@ type FormatDateTimeOptions struct {
 	Minute FieldStyle
 	Second FieldStyle
 
-	// Hour12, when non-nil, overrides the locale default:
-	//   true  → 12-hour clock (AM/PM)
-	//   false → 24-hour clock
-	// When nil, the hour cycle is derived from the locale (e.g., "en" → 12-hour).
+	// Hour12 overrides the locale default when non-nil.
 	Hour12 *bool
 }
 
-// dateOrderForLocale returns the date-field ordering ("MDY"/"DMY"/"YMD") for
-// the given locale, sourced from the embedded datetime data package.
-// Falls back to "DMY" when the locale is not found.
+// dateOrderForLocale returns the date ordering for a locale.
 func dateOrderForLocale(locale string) string {
 	orders := cachedDateTimeData.LocaleDateOrders
 
 	if ord, ok := orders[locale]; ok {
 		return ord
 	}
-	// Try primary language subtag (e.g., "zh-SG" → "zh").
 	if ord, ok := orders[localeBase(locale)]; ok {
 		return ord
 	}
 	return "DMY"
 }
 
-// dateSepForLocale returns the conventional date separator for a locale,
-// sourced from the embedded datetime data package. Falls back to "/".
+// dateSepForLocale returns the date separator for a locale.
 func dateSepForLocale(locale string) string {
 	seps := cachedDateTimeData.LocaleDateSeparators
 
@@ -99,7 +76,7 @@ func defaultFieldStyle(style *FieldStyle) {
 	}
 }
 
-// yearFmt maps a FieldStyle to Go's time.Format token for the year component.
+// yearFmt maps a year style to a Go layout token.
 func yearFmt(s FieldStyle) string {
 	if s == Style2Digit {
 		return "06"
@@ -107,7 +84,7 @@ func yearFmt(s FieldStyle) string {
 	return "2006"
 }
 
-// dayFmt maps a FieldStyle to Go's time.Format token for the day component.
+// dayFmt maps a day style to a Go layout token.
 func dayFmt(s FieldStyle) string {
 	if s == Style2Digit {
 		return "02"
@@ -115,7 +92,7 @@ func dayFmt(s FieldStyle) string {
 	return "2"
 }
 
-// hourFmt maps a FieldStyle + hour12 flag to Go's time.Format token for the hour.
+// hourFmt maps an hour style to a Go layout token.
 func hourFmt(s FieldStyle, hour12 bool) string {
 	if hour12 {
 		if s == Style2Digit {
@@ -123,11 +100,10 @@ func hourFmt(s FieldStyle, hour12 bool) string {
 		}
 		return "3"
 	}
-	// 24-hour: Go only provides zero-padded "15".
 	return "15"
 }
 
-// minuteFmt maps a FieldStyle to Go's time.Format token for the minute.
+// minuteFmt maps a minute style to a Go layout token.
 func minuteFmt(s FieldStyle) string {
 	if s == StyleNumeric {
 		return "4"
@@ -135,7 +111,7 @@ func minuteFmt(s FieldStyle) string {
 	return "04"
 }
 
-// secondFmt maps a FieldStyle to Go's time.Format token for the second.
+// secondFmt maps a second style to a Go layout token.
 func secondFmt(s FieldStyle) string {
 	if s == StyleNumeric {
 		return "5"
@@ -143,26 +119,9 @@ func secondFmt(s FieldStyle) string {
 	return "05"
 }
 
-// FormatDateTime formats date according to the given locale and field options.
-// It mirrors the i18nify-js formatDateTime function from the dateTime module.
-//
-// This is a simplified Go equivalent, not a full Intl.DateTimeFormat replica.
-// In particular, it does not support the full JS option surface, and textual
-// month output is English-only.
-//
-// Locale affects:
-//   - date-field ordering (MDY/DMY/YMD) and separator, from i18nify-data
-//   - default hour cycle (12-hour vs 24-hour) when Hour12 is nil
-//
-// Month names are English-only.
-//
-// Example — format as a US date:
-//
-//	s, err := FormatDateTime(t, FormatDateTimeOptions{
-//	    Locale:       "en-US",
-//	    DateTimeMode: ModeDateOnly,
-//	})
-//	// → "5/30/2026"
+// FormatDateTime formats a date using locale-aware ordering and separators.
+// This is a simplified Go equivalent of the JS helper and keeps month names in
+// English.
 func FormatDateTime(date time.Time, opts FormatDateTimeOptions) (string, error) {
 	locale := normalizeLocale(opts.Locale)
 
@@ -173,13 +132,11 @@ func FormatDateTime(date time.Time, opts FormatDateTimeOptions) (string, error) 
 	minute := opts.Minute
 	second := opts.Second
 
-	// Derive hour cycle from locale; explicit Hour12 option overrides.
 	hour12 := localeUses12Hour(locale)
 	if opts.Hour12 != nil {
 		hour12 = *opts.Hour12
 	}
 
-	// Apply DateTimeMode defaults — mirrors the JS switch-case block exactly.
 	switch opts.DateTimeMode {
 	case ModeDateOnly:
 		defaultFieldStyle(&year)
@@ -204,12 +161,10 @@ func FormatDateTime(date time.Time, opts FormatDateTimeOptions) (string, error) 
 
 	var parts []string
 
-	// ── Date segment ─────────────────────────────────────────────────────────
 	if year != "" || month != "" || day != "" {
 		sep := dateSepForLocale(locale)
 		order := dateOrderForLocale(locale)
 
-		// Build each date component as an actual string.
 		var yearStr, monthStr, dayStr string
 		if year != "" {
 			yearStr = date.Format(yearFmt(year))
@@ -270,7 +225,6 @@ func FormatDateTime(date time.Time, opts FormatDateTimeOptions) (string, error) 
 		}
 	}
 
-	// ── Time segment ─────────────────────────────────────────────────────────
 	if hour != "" || minute != "" || second != "" {
 		var tp []string
 		if hour != "" {
