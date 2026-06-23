@@ -76,10 +76,8 @@ func dateOrderForLocale(locale string) string {
 		return ord
 	}
 	// Try primary language subtag (e.g., "zh-SG" → "zh").
-	if idx := strings.IndexByte(locale, '-'); idx > 0 {
-		if ord, ok := orders[locale[:idx]]; ok {
-			return ord
-		}
+	if ord, ok := orders[localeBase(locale)]; ok {
+		return ord
 	}
 	return "DMY"
 }
@@ -89,14 +87,16 @@ func dateOrderForLocale(locale string) string {
 func dateSepForLocale(locale string) string {
 	seps := cachedDateTimeData.LocaleDateSeparators
 
-	base := locale
-	if idx := strings.IndexByte(locale, '-'); idx > 0 {
-		base = locale[:idx]
-	}
-	if sep, ok := seps[base]; ok {
+	if sep, ok := seps[localeBase(locale)]; ok {
 		return sep
 	}
 	return "/"
+}
+
+func defaultFieldStyle(style *FieldStyle) {
+	if *style == "" {
+		*style = StyleNumeric
+	}
 }
 
 // yearFmt maps a FieldStyle to Go's time.Format token for the year component.
@@ -182,48 +182,24 @@ func FormatDateTime(date time.Time, opts FormatDateTimeOptions) (string, error) 
 	// Apply DateTimeMode defaults — mirrors the JS switch-case block exactly.
 	switch opts.DateTimeMode {
 	case ModeDateOnly:
-		if year == "" {
-			year = StyleNumeric
-		}
-		if month == "" {
-			month = StyleNumeric
-		}
-		if day == "" {
-			day = StyleNumeric
-		}
+		defaultFieldStyle(&year)
+		defaultFieldStyle(&month)
+		defaultFieldStyle(&day)
 		hour, minute, second = "", "", ""
 
 	case ModeTimeOnly:
-		if hour == "" {
-			hour = StyleNumeric
-		}
-		if minute == "" {
-			minute = StyleNumeric
-		}
-		if second == "" {
-			second = StyleNumeric
-		}
+		defaultFieldStyle(&hour)
+		defaultFieldStyle(&minute)
+		defaultFieldStyle(&second)
 		year, month, day = "", "", ""
 
 	case ModeDateTime:
-		if year == "" {
-			year = StyleNumeric
-		}
-		if month == "" {
-			month = StyleNumeric
-		}
-		if day == "" {
-			day = StyleNumeric
-		}
-		if hour == "" {
-			hour = StyleNumeric
-		}
-		if minute == "" {
-			minute = StyleNumeric
-		}
-		if second == "" {
-			second = StyleNumeric
-		}
+		defaultFieldStyle(&year)
+		defaultFieldStyle(&month)
+		defaultFieldStyle(&day)
+		defaultFieldStyle(&hour)
+		defaultFieldStyle(&minute)
+		defaultFieldStyle(&second)
 	}
 
 	var parts []string

@@ -12,16 +12,20 @@ func normalizeLocale(locale string) string {
 	return locale
 }
 
+func localeBase(locale string) string {
+	if idx := strings.IndexByte(locale, '-'); idx > 0 {
+		return locale[:idx]
+	}
+	return locale
+}
+
 // localeLanguage extracts the primary language subtag from a BCP 47 locale tag.
 // "en-US" → "en", "zh-Hans-CN" → "zh", "de" → "de".
 func localeLanguage(locale string) string {
 	if locale == "" {
 		return "en"
 	}
-	if idx := strings.IndexByte(locale, '-'); idx > 0 {
-		return strings.ToLower(locale[:idx])
-	}
-	return strings.ToLower(locale)
+	return strings.ToLower(localeBase(locale))
 }
 
 // localeUses12Hour reports whether locale conventionally uses a 12-hour clock.
