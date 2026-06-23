@@ -6,6 +6,8 @@ import (
 	"time"
 )
 
+var englishNarrowMonths = [12]string{"J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"}
+
 // DateTimeMode controls which date/time components are included in the output.
 // Mirrors the dateTimeMode option of the JS formatDateTime function.
 type DateTimeMode string
@@ -40,7 +42,7 @@ const (
 // It mirrors the options parameter of the JS formatDateTime function.
 type FormatDateTimeOptions struct {
 	// Locale is an IETF BCP 47 language tag (e.g., "en-US", "de", "ja").
-	// Defaults to "en-US" when empty.
+	// Defaults to "en-IN" when empty, matching the JS getLocale() fallback.
 	Locale string
 
 	// DateTimeMode selects a preset set of components to include.
@@ -60,6 +62,7 @@ type FormatDateTimeOptions struct {
 	// Hour12, when non-nil, overrides the locale default:
 	//   true  → 12-hour clock (AM/PM)
 	//   false → 24-hour clock
+	// When nil, the hour cycle is derived from the locale (e.g., "en" → 12-hour).
 	Hour12 *bool
 }
 
@@ -104,20 +107,6 @@ func yearFmt(s FieldStyle) string {
 	return "2006"
 }
 
-// monthFmt maps a FieldStyle to Go's time.Format token for the month component.
-func monthFmt(s FieldStyle) string {
-	switch s {
-	case StyleLong:
-		return "January"
-	case StyleShort, StyleNarrow:
-		return "Jan"
-	case Style2Digit:
-		return "01"
-	default: // numeric
-		return "1"
-	}
-}
-
 // dayFmt maps a FieldStyle to Go's time.Format token for the day component.
 func dayFmt(s FieldStyle) string {
 	if s == Style2Digit {
@@ -157,10 +146,15 @@ func secondFmt(s FieldStyle) string {
 // FormatDateTime formats date according to the given locale and field options.
 // It mirrors the i18nify-js formatDateTime function from the dateTime module.
 //
-// Locale affects date-field ordering (MDY/DMY/YMD) and separator character,
-// as configured in i18nify-data/go/datetime/data/data.json.
-// Month and weekday names are always in English because Go's time package does
-// not embed CLDR locale data.
+// This is a simplified Go equivalent, not a full Intl.DateTimeFormat replica.
+// In particular, it does not support the full JS option surface, and textual
+// month output is English-only.
+//
+// Locale affects:
+//   - date-field ordering (MDY/DMY/YMD) and separator, from i18nify-data
+//   - default hour cycle (12-hour vs 24-hour) when Hour12 is nil
+//
+// Month names are English-only.
 //
 // Example — format as a US date:
 //
@@ -170,10 +164,7 @@ func secondFmt(s FieldStyle) string {
 //	})
 //	// → "5/30/2026"
 func FormatDateTime(date time.Time, opts FormatDateTimeOptions) (string, error) {
-	locale := opts.Locale
-	if locale == "" {
-		locale = "en-US"
-	}
+	locale := normalizeLocale(opts.Locale)
 
 	year := opts.Year
 	month := opts.Month
@@ -182,7 +173,8 @@ func FormatDateTime(date time.Time, opts FormatDateTimeOptions) (string, error) 
 	minute := opts.Minute
 	second := opts.Second
 
-	hour12 := false
+	// Derive hour cycle from locale; explicit Hour12 option overrides.
+	hour12 := localeUses12Hour(locale)
 	if opts.Hour12 != nil {
 		hour12 = *opts.Hour12
 	}
@@ -234,48 +226,71 @@ func FormatDateTime(date time.Time, opts FormatDateTimeOptions) (string, error) 
 		}
 	}
 
-	var segments []string
+	var parts []string
 
 	// ── Date segment ─────────────────────────────────────────────────────────
 	if year != "" || month != "" || day != "" {
 		sep := dateSepForLocale(locale)
 		order := dateOrderForLocale(locale)
 
+		// Build each date component as an actual string.
+		var yearStr, monthStr, dayStr string
+		if year != "" {
+			yearStr = date.Format(yearFmt(year))
+		}
+		if month != "" {
+			switch month {
+			case StyleLong:
+				monthStr = date.Format("January")
+			case StyleShort:
+				monthStr = date.Format("Jan")
+			case StyleNarrow:
+				monthStr = englishNarrowMonths[int(date.Month())-1]
+			case Style2Digit:
+				monthStr = date.Format("01")
+			default: // numeric
+				monthStr = date.Format("1")
+			}
+		}
+		if day != "" {
+			dayStr = date.Format(dayFmt(day))
+		}
+
 		var dp []string
 		switch order {
 		case "MDY":
-			if month != "" {
-				dp = append(dp, monthFmt(month))
+			if monthStr != "" {
+				dp = append(dp, monthStr)
 			}
-			if day != "" {
-				dp = append(dp, dayFmt(day))
+			if dayStr != "" {
+				dp = append(dp, dayStr)
 			}
-			if year != "" {
-				dp = append(dp, yearFmt(year))
+			if yearStr != "" {
+				dp = append(dp, yearStr)
 			}
 		case "YMD":
-			if year != "" {
-				dp = append(dp, yearFmt(year))
+			if yearStr != "" {
+				dp = append(dp, yearStr)
 			}
-			if month != "" {
-				dp = append(dp, monthFmt(month))
+			if monthStr != "" {
+				dp = append(dp, monthStr)
 			}
-			if day != "" {
-				dp = append(dp, dayFmt(day))
+			if dayStr != "" {
+				dp = append(dp, dayStr)
 			}
 		default: // DMY
-			if day != "" {
-				dp = append(dp, dayFmt(day))
+			if dayStr != "" {
+				dp = append(dp, dayStr)
 			}
-			if month != "" {
-				dp = append(dp, monthFmt(month))
+			if monthStr != "" {
+				dp = append(dp, monthStr)
 			}
-			if year != "" {
-				dp = append(dp, yearFmt(year))
+			if yearStr != "" {
+				dp = append(dp, yearStr)
 			}
 		}
 		if len(dp) > 0 {
-			segments = append(segments, strings.Join(dp, sep))
+			parts = append(parts, strings.Join(dp, sep))
 		}
 	}
 
@@ -295,12 +310,12 @@ func FormatDateTime(date time.Time, opts FormatDateTimeOptions) (string, error) 
 		if hour12 {
 			timeLayout += " PM"
 		}
-		segments = append(segments, timeLayout)
+		parts = append(parts, date.Format(timeLayout))
 	}
 
-	if len(segments) == 0 {
+	if len(parts) == 0 {
 		return "", fmt.Errorf("formatDateTime: no date or time components specified in options")
 	}
 
-	return date.Format(strings.Join(segments, " ")), nil
+	return strings.Join(parts, " "), nil
 }

@@ -1,10 +1,16 @@
-// Package datetime provides locale-aware functions for formatting, computing,
-// and inspecting dates and times. It mirrors the i18nify-js dateTime module:
+// Package datetime provides date and time helpers inspired by the i18nify-js
+// dateTime module.
 //
-//   - FormatDateTime        — locale-aware date/time string formatting
-//   - GetRelativeTime       — human-readable relative time (e.g., "3 hours ago")
-//   - GetWeekdays           — ordered list of weekday names for a locale
+//   - FormatDateTime        — date/time formatting with locale-based ordering,
+//     separators, and hour-cycle defaults
+//   - GetRelativeTime       — human-readable relative time in English
+//   - GetWeekdays           — ordered list of weekday names in English
 //   - GetTimeZoneByCountry  — timezone identifiers + UTC offsets for a country
+//
+// Scope note:
+//   - GetTimeZoneByCountry is a close data-parity helper.
+//   - FormatDateTime, GetRelativeTime, and GetWeekdays are simplified Go
+//     equivalents, not full Intl-powered replicas of the JS implementation.
 //
 // Configuration data (locale ordering, separators, supported date formats) is
 // loaded at startup from the embedded i18nify-data/go/datetime package.
@@ -14,8 +20,8 @@ package datetime
 import (
 	"fmt"
 
-	datetimeData "github.com/razorpay/i18nify/i18nify-data/go/datetime"
 	countryMetadata "github.com/razorpay/i18nify/i18nify-data/go/country/metadata"
+	datetimeData "github.com/razorpay/i18nify/i18nify-data/go/datetime"
 )
 
 // cachedDateTimeData is the datetime configuration loaded at init.
@@ -47,3 +53,9 @@ type TimeZoneInfo struct {
 	UTCOffset string `json:"utc_offset"`
 }
 
+// TimezoneListEntry aggregates the UTC offset and all country codes that observe
+// a given IANA timezone identifier.
+type TimezoneListEntry struct {
+	UTCOffset string   `json:"utc_offset"`
+	Countries []string `json:"countries"`
+}
