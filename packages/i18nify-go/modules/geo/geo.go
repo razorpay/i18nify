@@ -8,6 +8,8 @@ import (
 	countryMetadata "github.com/razorpay/i18nify/i18nify-data/go/country/metadata"
 )
 
+// Package-level caches populated once by init below.
+// Stored globally so every function call avoids reloading the embedded JSON files.
 var cachedCountryMetadata *countryMetadata.CountryMetadataData
 var cachedAddressData *addressData.AddressData
 

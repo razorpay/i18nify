@@ -27,6 +27,7 @@ const formatAddressWithFormat = (
 
   const template: string = addressInfo.template;
 
+  // Replace each {placeholder} token in the template with the matching component value.
   const substituted = template
     .replace(/{name}/g, components.name || '')
     .replace(/{organization}/g, components.organization || '')
@@ -37,6 +38,7 @@ const formatAddressWithFormat = (
     .replace(/{district}/g, components.district || '')
     .replace(/{sorting_code}/g, components.sorting_code || '');
 
+  // Split into lines and drop any that are blank — happens when optional fields are empty.
   return substituted
     .split('\n')
     .map(function (line) {
@@ -48,6 +50,8 @@ const formatAddressWithFormat = (
     .join('\n');
 };
 
+// withErrorBoundary wraps the function so any thrown Error is caught and
+// re-thrown as an I18nifyError, keeping error handling consistent across modules.
 export default withErrorBoundary<typeof formatAddressWithFormat>(
   formatAddressWithFormat,
 );

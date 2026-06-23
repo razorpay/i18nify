@@ -8,6 +8,7 @@ const formatAddress = (
   if (!template || typeof template !== 'string' || !template.trim())
     throw new Error('template must be a non-empty string.');
 
+  // Replace each {placeholder} token in the template with the matching component value.
   const substituted = template
     .replace(/{name}/g, components.name ?? '')
     .replace(/{organization}/g, components.organization ?? '')
@@ -18,6 +19,7 @@ const formatAddress = (
     .replace(/{district}/g, components.district ?? '')
     .replace(/{sorting_code}/g, components.sorting_code ?? '');
 
+  // Split into lines and drop any that are blank — happens when optional fields are empty.
   return substituted
     .split('\n')
     .map((line) => line.trim())
@@ -25,4 +27,6 @@ const formatAddress = (
     .join('\n');
 };
 
+// withErrorBoundary wraps the function so any thrown Error is caught and
+// re-thrown as an I18nifyError, keeping error handling consistent across modules.
 export default withErrorBoundary<typeof formatAddress>(formatAddress);

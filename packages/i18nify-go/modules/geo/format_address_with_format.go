@@ -20,6 +20,8 @@ type AddressComponents struct {
 }
 
 // FormatAddressWithFormat formats address components using the country-specific template for countryCode.
+// Templates are loaded from embedded i18nify-data at startup (see geo.go init) and cached in cachedAddressData.
+// Each {placeholder} in the template is replaced with the matching field; blank lines in the result are removed.
 func FormatAddressWithFormat(countryCode string, components AddressComponents) (string, error) {
 	if strings.TrimSpace(countryCode) == "" {
 		return "", fmt.Errorf("formatAddressWithFormat: country code must not be empty")
@@ -45,6 +47,8 @@ func FormatAddressWithFormat(countryCode string, components AddressComponents) (
 	)
 	substituted := replacer.Replace(addrInfo.GetTemplate())
 
+	// Split the substituted template into lines and drop any that are blank —
+	// this happens when an optional field (e.g. Organization) was not provided.
 	rawLines := strings.Split(substituted, "\n")
 	formatted := make([]string, 0, len(rawLines))
 	for _, line := range rawLines {

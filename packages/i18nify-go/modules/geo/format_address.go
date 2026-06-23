@@ -25,6 +25,8 @@ func FormatAddress(template string, components AddressComponents) (string, error
 	)
 	substituted := replacer.Replace(template)
 
+	// Split the substituted template into lines and drop any that are blank —
+	// this happens when an optional field (e.g. Organization) was not provided.
 	rawLines := strings.Split(substituted, "\n")
 	formatted := make([]string, 0, len(rawLines))
 	for _, line := range rawLines {
