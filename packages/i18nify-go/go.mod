@@ -21,4 +21,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-
+replace github.com/razorpay/i18nify/i18nify-data/go/names => ../../i18nify-data/go/names
