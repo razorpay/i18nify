@@ -1,9 +1,12 @@
 package datetime
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
+
+var englishWeekdays = map[WeekdayStyle][7]string{
+	WeekdayLong:   {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"},
+	WeekdayShort:  {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"},
+	WeekdayNarrow: {"S", "M", "T", "W", "T", "F", "S"},
+}
 
 // WeekdayStyle controls the display length of weekday names.
 // Mirrors the weekday option of Intl.DateTimeFormatOptions.
@@ -29,41 +32,31 @@ type GetWeekdaysOptions struct {
 	Weekday WeekdayStyle
 }
 
-// sundayEpoch is January 4, 1970, which was a Sunday.
-// Starting from a known Sunday and iterating seven days reproduces the
-// same full-week sequence as the JS implementation, which uses
-// new Date(1970, 0, 4 + i) for i in [0, 6].
-var sundayEpoch = time.Date(1970, time.January, 4, 0, 0, 0, 0, time.UTC)
-
 // GetWeekdays returns a slice of seven weekday names starting from Sunday.
 // It mirrors the i18nify-js getWeekdays function.
 //
+// This is a simplified Go equivalent. Unlike the JS version, it does not use
+// Intl-backed locale data and therefore always returns English weekday names.
+//
 // The returned slice always has exactly 7 elements ordered
 // [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday].
-//
-// Note: Go's time.Format always produces English names. For fully localised
-// weekday names, use a CLDR-backed library.
+// Weekday names are English-only.
 //
 // Example:
 //
 //	days, err := GetWeekdays(GetWeekdaysOptions{Weekday: WeekdayShort})
 //	// → ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 func GetWeekdays(opts GetWeekdaysOptions) ([]string, error) {
+	_ = normalizeLocale(opts.Locale)
+
 	style := opts.Weekday
 	if style == "" {
 		style = WeekdayLong
 	}
 
-	var formatFn func(time.Time) string
 	switch style {
-	case WeekdayLong:
-		formatFn = func(t time.Time) string { return t.Format("Monday") }
-	case WeekdayShort:
-		formatFn = func(t time.Time) string { return t.Format("Mon") }
-	case WeekdayNarrow:
-		// Go has no built-in narrow weekday token; return the first letter of
-		// the abbreviated name, matching the JS "narrow" behaviour.
-		formatFn = func(t time.Time) string { return t.Format("Mon")[:1] }
+	case WeekdayLong, WeekdayShort, WeekdayNarrow:
+		// valid
 	default:
 		return nil, fmt.Errorf(
 			"getWeekdays: unsupported weekday style %q; valid values are 'long', 'short', 'narrow'",
@@ -71,9 +64,8 @@ func GetWeekdays(opts GetWeekdaysOptions) ([]string, error) {
 		)
 	}
 
-	weekdays := make([]string, 7)
-	for i := 0; i < 7; i++ {
-		weekdays[i] = formatFn(sundayEpoch.AddDate(0, 0, i))
-	}
-	return weekdays, nil
+	weekdays := englishWeekdays[style]
+	result := make([]string, len(weekdays))
+	copy(result, weekdays[:])
+	return result, nil
 }

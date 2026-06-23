@@ -47,7 +47,7 @@ func TestFormatDateTime_TimeOnly_24h(t *testing.T) {
 		DateTimeMode: ModeTimeOnly,
 	})
 	require.NoError(t, err)
-	assert.Equal(t, "14:5:9", got)
+	assert.Equal(t, "2:5:9 PM", got)
 }
 
 func TestFormatDateTime_TimeOnly_12h(t *testing.T) {
@@ -69,7 +69,7 @@ func TestFormatDateTime_DateTime(t *testing.T) {
 		DateTimeMode: ModeDateTime,
 	})
 	require.NoError(t, err)
-	assert.Equal(t, "3/5/2024 14:30:0", got)
+	assert.Equal(t, "3/5/2024 2:30:0 PM", got)
 }
 
 func TestFormatDateTime_LongMonth(t *testing.T) {
@@ -108,8 +108,8 @@ func TestFormatDateTime_DefaultLocale(t *testing.T) {
 		DateTimeMode: ModeDateOnly,
 	})
 	require.NoError(t, err)
-	// Default locale is "en-US" → MDY
-	assert.Equal(t, "3/5/2024", got)
+	// Default locale is "en-IN" → DMY
+	assert.Equal(t, "5/3/2024", got)
 }
 
 // ─── GetRelativeTime ──────────────────────────────────────────────────────────
@@ -254,4 +254,3 @@ func TestGetTimeZoneByCountry_MultipleTimezones(t *testing.T) {
 	require.NoError(t, err)
 	assert.Greater(t, len(tzs), 1, "US should have multiple timezone entries")
 }
-

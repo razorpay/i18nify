@@ -10,7 +10,9 @@ import (
 // GetRelativeTimeOptions configures GetRelativeTime output.
 // It mirrors the options parameter of the JS getRelativeTime function.
 type GetRelativeTimeOptions struct {
-	// Locale is an IETF BCP 47 language tag. Defaults to "en-US".
+	// Locale is an IETF BCP 47 language tag. Defaults to "en-IN".
+	// Non-English locales fall back to English templates; locale-specific
+	// relative-time strings can be added to relTemplateSets as needed.
 	Locale string
 
 	// BaseDate is the reference point for the relative calculation.
@@ -25,6 +27,7 @@ type GetRelativeTimeOptions struct {
 
 	// Style controls output verbosity: "long" (default), "short", or "narrow".
 	// Mirrors Intl.RelativeTimeFormatOptions.style.
+	// "narrow" produces the same output as "short" for English templates.
 	Style string
 }
 
@@ -51,49 +54,12 @@ const (
 	relYear   relUnit = "year"
 )
 
-// relTemplates is the lookup table for English relative-time strings.
-// Keys follow the pattern "<unit>:<past|future>[:<value>]":
-//   - The two-part key is the plural template (e.g., "3 days ago").
-//   - The three-part key (with value) is a natural-language override for
-//     Numeric="auto" (e.g., "yesterday", "last week").
+// GetRelativeTime returns an English relative-time string that describes the
+// time elapsed between date and a base date (defaults to now).
 //
-// Only English entries are included. Additional locales can be added as needed.
-var relTemplates = map[string]string{
-	// ── plural templates ───────────────────────────────────────────────────
-	"second:past":  "%d seconds ago",
-	"second:future": "in %d seconds",
-	"minute:past":  "%d minutes ago",
-	"minute:future": "in %d minutes",
-	"hour:past":    "%d hours ago",
-	"hour:future":  "in %d hours",
-	"day:past":     "%d days ago",
-	"day:future":   "in %d days",
-	"week:past":    "%d weeks ago",
-	"week:future":  "in %d weeks",
-	"month:past":   "%d months ago",
-	"month:future": "in %d months",
-	"year:past":    "%d years ago",
-	"year:future":  "in %d years",
-
-	// ── natural-language singular overrides (Numeric="auto") ───────────────
-	"second:past:1":  "a second ago",
-	"second:future:1": "in a second",
-	"minute:past:1":  "a minute ago",
-	"minute:future:1": "in a minute",
-	"hour:past:1":    "an hour ago",
-	"hour:future:1":  "in an hour",
-	"day:past:1":     "yesterday",
-	"day:future:1":   "tomorrow",
-	"week:past:1":    "last week",
-	"week:future:1":  "next week",
-	"month:past:1":   "last month",
-	"month:future:1": "next month",
-	"year:past:1":    "last year",
-	"year:future:1":  "next year",
-}
-
-// GetRelativeTime returns a locale-aware string that describes the time
-// elapsed between date and a base date (defaults to now).
+// This is a simplified Go equivalent of the JS helper. It mirrors the JS unit
+// selection thresholds and basic numeric/style behavior, but it does not use
+// Intl.RelativeTimeFormat and does not provide locale-specific text output.
 //
 // The selection of time unit mirrors the JS implementation exactly:
 //
@@ -107,14 +73,9 @@ var relTemplates = map[string]string{
 //
 // Example:
 //
-//	s, err := GetRelativeTime(yesterday, GetRelativeTimeOptions{Locale: "en-US"})
-//	// → "yesterday"  (Numeric="auto" default)
+//	s, err := GetRelativeTime(yesterday, GetRelativeTimeOptions{Locale: "en-IN"})
+//	// → "yesterday"  (Numeric="auto" default, Style="long" default)
 func GetRelativeTime(date time.Time, opts GetRelativeTimeOptions) (string, error) {
-	locale := opts.Locale
-	if locale == "" {
-		locale = "en-US"
-	}
-
 	baseDate := opts.BaseDate
 	if baseDate.IsZero() {
 		baseDate = time.Now()
@@ -123,6 +84,17 @@ func GetRelativeTime(date time.Time, opts GetRelativeTimeOptions) (string, error
 	numeric := strings.ToLower(opts.Numeric)
 	if numeric == "" {
 		numeric = "auto"
+	}
+
+	style := strings.ToLower(opts.Style)
+	if style == "" {
+		style = "long"
+	}
+
+	// "narrow" uses the same abbreviated strings as "short" for English.
+	templates := relTemplateSets["long"]
+	if style == "short" || style == "narrow" {
+		templates = relTemplateSets["short"]
 	}
 
 	diffSeconds := date.Sub(baseDate).Seconds()
@@ -156,26 +128,27 @@ func GetRelativeTime(date time.Time, opts GetRelativeTimeOptions) (string, error
 		rounded = -rounded
 	}
 
-	result, err := lookupRelativeTemplate(unit, direction, rounded, numeric)
+	result, err := lookupRelativeTemplate(templates, unit, direction, rounded, numeric)
 	if err != nil {
 		return "", fmt.Errorf("getRelativeTime: %w", err)
 	}
 	return result, nil
 }
 
-// lookupRelativeTemplate returns the formatted relative time string.
-func lookupRelativeTemplate(unit relUnit, direction string, value int, numeric string) (string, error) {
+// lookupRelativeTemplate returns the formatted relative time string using
+// the provided template map (from relTemplateSets).
+func lookupRelativeTemplate(templates map[string]string, unit relUnit, direction string, value int, numeric string) (string, error) {
 	// Natural-language singular override when numeric != "always".
 	if numeric != "always" {
 		singularKey := fmt.Sprintf("%s:%s:%d", unit, direction, value)
-		if tmpl, ok := relTemplates[singularKey]; ok {
+		if tmpl, ok := templates[singularKey]; ok {
 			return tmpl, nil
 		}
 	}
 
 	// Plural / numeric template.
 	pluralKey := fmt.Sprintf("%s:%s", unit, direction)
-	if tmpl, ok := relTemplates[pluralKey]; ok {
+	if tmpl, ok := templates[pluralKey]; ok {
 		return fmt.Sprintf(tmpl, value), nil
 	}
 
