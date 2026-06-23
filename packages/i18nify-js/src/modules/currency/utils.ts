@@ -24,7 +24,7 @@ export const transformPartsFromIntl = (
 
     if (part.type === 'currency' && currencyCode in INTL_MAPPING) {
       const mapping = INTL_MAPPING[currencyCode as keyof typeof INTL_MAPPING];
-      if ((part.value as any) in mapping) {
+      if ((part.value as string) in mapping) {
         parts[i].value = mapping[part.value as keyof typeof mapping];
         break; // Exit the loop after the first replacement
       }

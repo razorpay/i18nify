@@ -12,7 +12,10 @@ import { I18NIFY_DATA_SOURCE } from '../shared';
  */
 const getLocaleList = (): Promise<Record<string, string[]>> => {
   return fetch(`${I18NIFY_DATA_SOURCE}/country/metadata/data.json`)
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      return res.json();
+    })
     .then((res) => {
       const allLocales: Record<string, string[]> = {};
       Object.keys(res.metadata_information).forEach((code) => {

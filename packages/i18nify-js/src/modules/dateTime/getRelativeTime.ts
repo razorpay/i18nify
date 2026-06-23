@@ -36,8 +36,8 @@ const getRelativeTime = (
   const hour = minute * 60;
   const day = hour * 24;
   const week = day * 7;
-  const month = day * 30;
-  const year = day * 365;
+  const month = day * 30.44; // average days per month
+  const year = day * 365.25; // account for leap years
 
   let value: number;
   let unit: Intl.RelativeTimeFormatUnit;

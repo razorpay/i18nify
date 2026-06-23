@@ -27,7 +27,10 @@ const getStates = (_countryCode: I18nifyCountryCodeType) => {
   return fetch(
     `${I18NIFY_DATA_SOURCE}/country/subdivisions/${countryCode}.json`,
   )
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      return res.json();
+    })
     .then((res) => res.states)
     .catch((err) => {
       throw new Error(
