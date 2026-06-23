@@ -15,8 +15,6 @@ const (
 	bfTemplate = "{name}\n{organization}\n{street_address}\n{city} {sorting_code}"
 )
 
-// ─── Full substitution ───────────────────────────────────────────────────────
-
 func TestFormatAddress_USAllFields(t *testing.T) {
 	got, err := FormatAddress(usTemplate, AddressComponents{
 		Name:          "John Doe",
@@ -92,8 +90,6 @@ func TestFormatAddress_BFSortingCode(t *testing.T) {
 	assert.Equal(t, "Fatima Ouedraogo\nAvenue Kwame Nkrumah\nOuagadougou 01 BP 10", got)
 }
 
-// ─── Blank line removal ──────────────────────────────────────────────────────
-
 func TestFormatAddress_OmitOrganization(t *testing.T) {
 	got, err := FormatAddress(usTemplate, AddressComponents{
 		Name:          "Jane Smith",
@@ -155,8 +151,6 @@ func TestFormatAddress_LiteralSeparatorKeptWhenAllEmpty(t *testing.T) {
 	assert.Equal(t, ",", got)
 }
 
-// ─── Custom templates ────────────────────────────────────────────────────────
-
 func TestFormatAddress_SingleLineTemplate(t *testing.T) {
 	got, err := FormatAddress("{name}, {city}", AddressComponents{Name: "Alice", City: "Paris"})
 	assert.NoError(t, err)
@@ -174,8 +168,6 @@ func TestFormatAddress_UnknownPlaceholderUnchanged(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, "Alice\n{unknown_field}", got)
 }
-
-// ─── Error cases ─────────────────────────────────────────────────────────────
 
 func TestFormatAddress_EmptyTemplate(t *testing.T) {
 	_, err := FormatAddress("", AddressComponents{Name: "Alice"})

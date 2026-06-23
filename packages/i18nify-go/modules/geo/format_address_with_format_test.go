@@ -6,8 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// ─── Data-backed integration tests ──────────────────────────────────────────
-
 func TestFormatAddressWithFormat_US(t *testing.T) {
 	got, err := FormatAddressWithFormat("US", AddressComponents{
 		Name:          "John Doe",
@@ -72,8 +70,6 @@ func TestFormatAddressWithFormat_BR(t *testing.T) {
 	assert.Equal(t, "Empresa Ltda\nJoão Silva\nRua das Flores, 123\nCentro\nSão Paulo-SP\n01310-100", got)
 }
 
-// ─── Country code normalization ──────────────────────────────────────────────
-
 func TestFormatAddressWithFormat_LowercaseCode(t *testing.T) {
 	got, err := FormatAddressWithFormat("us", AddressComponents{
 		Name:          "Jane",
@@ -97,8 +93,6 @@ func TestFormatAddressWithFormat_WhitespacePaddedCode(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, "Priya\n12 MG Road\nPune 411001\nMaharashtra", got)
 }
-
-// ─── Blank line removal ──────────────────────────────────────────────────────
 
 func TestFormatAddressWithFormat_OmitOrganization(t *testing.T) {
 	got, err := FormatAddressWithFormat("US", AddressComponents{
@@ -125,8 +119,6 @@ func TestFormatAddressWithFormat_LiteralSeparatorKept(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, ",", got)
 }
-
-// ─── Error cases ─────────────────────────────────────────────────────────────
 
 func TestFormatAddressWithFormat_UnknownCode(t *testing.T) {
 	_, err := FormatAddressWithFormat("ZZ", AddressComponents{Name: "Test"})
