@@ -91,19 +91,23 @@ func GetHonorificTitles(locale string) ([]HonorificTitle, error) {
 		return nil, fmt.Errorf("no honorific titles found for locale: %q", locale)
 	}
 
-	raw, ok := cachedData.NamesInformation.HonorificTitles[langName]
+	rawList, ok := cachedData.NamesInformation.HonorificTitles[langName]
 	if !ok {
 		return nil, fmt.Errorf("no honorific titles found for locale: %q", locale)
 	}
 
-	out := make([]HonorificTitle, len(raw))
-	for i, h := range raw {
-		out[i] = HonorificTitle{
-			Code:        h.Code,
-			Title:       h.Title,
-			Gender:      h.Gender,
-			Description: h.Description,
-		}
+	// HonorificTitles values are google.protobuf.ListValue (proto3 map restriction).
+	// Each element is a Struct value with fields: code, title, gender, description.
+	values := rawList.GetValues()
+	out := make([]HonorificTitle, 0, len(values))
+	for _, v := range values {
+		f := v.GetStructValue().GetFields()
+		out = append(out, HonorificTitle{
+			Code:        f["code"].GetStringValue(),
+			Title:       f["title"].GetStringValue(),
+			Gender:      f["gender"].GetStringValue(),
+			Description: f["description"].GetStringValue(),
+		})
 	}
 	return out, nil
 }
