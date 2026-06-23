@@ -5,7 +5,6 @@ package names
 import (
 	"fmt"
 	"strings"
-	"unicode"
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/names"
 )
@@ -18,6 +17,50 @@ type HonorificTitle struct {
 	Description string
 }
 
+// langCodeToName maps a BCP 47 base language subtag to the full English name
+// used as the key in honorific_titles data. Mirrors the JS LANG_CODE_TO_NAME
+// map and extended to cover all 38 languages present in the dataset.
+var langCodeToName = map[string]string{
+	"en": "english",
+	"hi": "hindi",
+	"fr": "french",
+	"de": "german",
+	"es": "spanish",
+	"ar": "arabic",
+	"ja": "japanese",
+	"zh": "chinese",
+	"pt": "portuguese",
+	"ru": "russian",
+	"it": "italian",
+	"nl": "dutch",
+	"ko": "korean",
+	"vi": "vietnamese",
+	"tr": "turkish",
+	"pl": "polish",
+	"sv": "swedish",
+	"da": "danish",
+	"no": "norwegian",
+	"fi": "finnish",
+	"el": "greek",
+	"he": "hebrew",
+	"fa": "persian",
+	"ur": "urdu",
+	"bn": "bengali",
+	"th": "thai",
+	"id": "indonesian",
+	"ms": "malay",
+	"sw": "swahili",
+	"uk": "ukrainian",
+	"ro": "romanian",
+	"hu": "hungarian",
+	"cs": "czech",
+	"sk": "slovak",
+	"bg": "bulgarian",
+	"sr": "serbian",
+	"hr": "croatian",
+	"ca": "catalan",
+}
+
 var cachedData *dataSource.NamesData
 
 func init() {
@@ -28,64 +71,29 @@ func init() {
 	cachedData = d
 }
 
-// IsValidName reports whether name is a well-formed personal name.
-//
-// A valid name must:
-//   - Contain at least MinLength non-whitespace characters (default 2).
-//   - Contain at most MaxLength characters (default 100).
-//   - Consist only of Unicode letters, spaces, hyphens (-), apostrophes ('),
-//     and periods (.).
-//   - Contain at least one Unicode letter.
-func IsValidName(name string) bool {
-	trimmed := strings.TrimSpace(name)
-	rules := cachedData.NamesInformation.ValidationRules
-
-	if len([]rune(trimmed)) < rules.MinLength {
-		return false
-	}
-	if len([]rune(trimmed)) > rules.MaxLength {
-		return false
-	}
-
-	hasLetter := false
-	for _, r := range trimmed {
-		switch {
-		case unicode.IsLetter(r):
-			hasLetter = true
-		case unicode.IsMark(r):
-			// Unicode combining marks (e.g., Devanagari vowel signs, Arabic
-			// diacritics) are integral parts of properly spelled names in many scripts.
-		case r == ' ', r == '-', r == '\'', r == '.':
-			// allowed separators
-		default:
-			return false
-		}
-	}
-	return hasLetter
-}
-
 // GetHonorificTitles returns the list of honorific titles for the given
-// ISO 3166-1 alpha-2 country code (e.g., "US", "IN", "DE").
+// BCP 47 locale tag (e.g., "en", "hi", "en-US").
 //
-// The country code is matched case-insensitively. The function resolves the
-// country's primary language internally via country_to_languages data and
-// returns the corresponding honorific titles.
-func GetHonorificTitles(countryCode string) ([]HonorificTitle, error) {
-	countryCode = strings.TrimSpace(countryCode)
-	if countryCode == "" {
-		return nil, fmt.Errorf("country code must not be empty")
+// The locale is matched case-insensitively. If a full BCP 47 tag is supplied
+// (e.g., "en-US"), only the base language subtag ("en") is used for lookup.
+// This mirrors the JS getHonorificTitles(locale) signature exactly.
+func GetHonorificTitles(locale string) ([]HonorificTitle, error) {
+	locale = strings.TrimSpace(locale)
+	if locale == "" {
+		return nil, fmt.Errorf("locale must not be empty")
 	}
 
-	cc := strings.ToUpper(countryCode)
+	// Extract BCP 47 base language subtag (e.g. "en-US" → "en").
+	base := strings.ToLower(strings.SplitN(locale, "-", 2)[0])
 
-	languages, ok := cachedData.NamesInformation.CountryToLanguages[cc]
-	if !ok || len(languages) == 0 {
-		return nil, fmt.Errorf("no honorific titles found for country code: %q", countryCode)
-	}
-
-	raw, ok := cachedData.NamesInformation.HonorificTitles[languages[0]]
+	langName, ok := langCodeToName[base]
 	if !ok {
-		return nil, fmt.Errorf("no honorific titles found for country code: %q", countryCode)
+		return nil, fmt.Errorf("no honorific titles found for locale: %q", locale)
+	}
+
+	raw, ok := cachedData.NamesInformation.HonorificTitles[langName]
+	if !ok {
+		return nil, fmt.Errorf("no honorific titles found for locale: %q", locale)
 	}
 
 	out := make([]HonorificTitle, len(raw))

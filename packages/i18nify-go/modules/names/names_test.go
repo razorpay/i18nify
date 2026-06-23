@@ -1,59 +1,16 @@
 package names
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
-// ---- IsValidName ----
-
-func TestIsValidName(t *testing.T) {
-	tests := []struct {
-		name  string
-		input string
-		want  bool
-	}{
-		// Valid names
-		{"simple ASCII", "John", true},
-		{"full name with space", "John Smith", true},
-		{"hyphenated surname", "Mary-Jane Watson", true},
-		{"apostrophe surname", "O'Brien", true},
-		{"suffix with period", "Dr. Smith", true},
-		{"unicode letters – Hindi", "रामलाल", true},
-		{"unicode letters – Arabic", "محمد", true},
-		{"unicode letters – Chinese", "李明", true},
-		{"unicode letters – Japanese", "田中", true},
-		{"exactly min length (2)", "Jo", true},
-		{"100 char name", strings.Repeat("A", 100), true},
-		{"name with leading/trailing spaces", "  Alice  ", true},
-
-		// Invalid names
-		{"empty string", "", false},
-		{"single char", "A", false},
-		{"only spaces", "   ", false},
-		{"digits", "John2", false},
-		{"only digits", "12345", false},
-		{"special chars – @", "John@Doe", false},
-		{"special chars – #", "John#", false},
-		{"101 char name", strings.Repeat("A", 101), false},
-		{"tab character", "John\tDoe", false},
-		{"newline", "John\nDoe", false},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			assert.Equal(t, tt.want, IsValidName(tt.input))
-		})
-	}
-}
-
 // ---- GetHonorificTitles ----
 
-func TestGetHonorificTitles_US(t *testing.T) {
-	titles, err := GetHonorificTitles("US")
+func TestGetHonorificTitles_English(t *testing.T) {
+	titles, err := GetHonorificTitles("en")
 	require.NoError(t, err)
 	assert.NotEmpty(t, titles)
 
@@ -70,8 +27,8 @@ func TestGetHonorificTitles_US(t *testing.T) {
 	assert.True(t, codes["PROF"])
 }
 
-func TestGetHonorificTitles_IN(t *testing.T) {
-	titles, err := GetHonorificTitles("IN")
+func TestGetHonorificTitles_Hindi(t *testing.T) {
+	titles, err := GetHonorificTitles("hi")
 	require.NoError(t, err)
 	assert.NotEmpty(t, titles)
 
@@ -83,51 +40,59 @@ func TestGetHonorificTitles_IN(t *testing.T) {
 	assert.True(t, codes["SMT"])
 }
 
-func TestGetHonorificTitles_SampleCountries(t *testing.T) {
-	countries := []string{
-		"US", "IN", "FR", "DE", "ES", "AE", "JP", "CN", "BR", "RU",
-		"IT", "NL", "KR", "VN", "TR", "PL", "SE", "DK", "NO", "FI",
-		"GR", "IL", "IR", "PK", "BD", "TH", "ID", "MY", "KE", "UA",
-		"RO", "HU", "CZ", "SK", "BG", "RS", "HR", "AD",
+func TestGetHonorificTitles_SampleLocales(t *testing.T) {
+	locales := []string{
+		"en", "hi", "fr", "de", "es", "ar", "ja", "zh", "pt", "ru",
+		"it", "nl", "ko", "vi", "tr", "pl", "sv", "da", "no", "fi",
+		"el", "he", "fa", "ur", "bn", "th", "id", "ms", "sw", "uk",
+		"ro", "hu", "cs", "sk", "bg", "sr", "hr", "ca",
 	}
-	for _, cc := range countries {
-		t.Run(cc, func(t *testing.T) {
-			titles, err := GetHonorificTitles(cc)
+	for _, locale := range locales {
+		t.Run(locale, func(t *testing.T) {
+			titles, err := GetHonorificTitles(locale)
 			require.NoError(t, err)
 			assert.NotEmpty(t, titles)
 		})
 	}
 }
 
-func TestGetHonorificTitles_CaseInsensitive(t *testing.T) {
-	upper, err := GetHonorificTitles("US")
+func TestGetHonorificTitles_BCPSubtagStripped(t *testing.T) {
+	enUS, err := GetHonorificTitles("en-US")
 	require.NoError(t, err)
-	lower, err := GetHonorificTitles("us")
+	en, err := GetHonorificTitles("en")
+	require.NoError(t, err)
+	assert.Equal(t, en, enUS)
+}
+
+func TestGetHonorificTitles_CaseInsensitive(t *testing.T) {
+	upper, err := GetHonorificTitles("EN")
+	require.NoError(t, err)
+	lower, err := GetHonorificTitles("en")
 	require.NoError(t, err)
 	assert.Equal(t, upper, lower)
 }
 
-func TestGetHonorificTitles_EmptyCode(t *testing.T) {
+func TestGetHonorificTitles_EmptyLocale(t *testing.T) {
 	_, err := GetHonorificTitles("")
 	assert.Error(t, err)
 	assert.Contains(t, err.Error(), "empty")
 }
 
-func TestGetHonorificTitles_UnsupportedCode(t *testing.T) {
-	_, err := GetHonorificTitles("ZZ")
+func TestGetHonorificTitles_UnsupportedLocale(t *testing.T) {
+	_, err := GetHonorificTitles("zz")
 	assert.Error(t, err)
 	assert.Contains(t, err.Error(), "no honorific titles found")
 }
 
 func TestGetHonorificTitles_WhitespaceTrimmed(t *testing.T) {
-	titles, err := GetHonorificTitles("  US  ")
+	titles, err := GetHonorificTitles("  en  ")
 	require.NoError(t, err)
 	assert.NotEmpty(t, titles)
 }
 
 func TestGetHonorificTitles_GenderValues(t *testing.T) {
 	validGenders := map[string]bool{"male": true, "female": true, "neutral": true}
-	titles, err := GetHonorificTitles("US")
+	titles, err := GetHonorificTitles("en")
 	require.NoError(t, err)
 	for _, tt := range titles {
 		assert.True(t, validGenders[tt.Gender],
