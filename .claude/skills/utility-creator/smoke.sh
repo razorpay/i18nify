@@ -8,10 +8,23 @@ set -euo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
-VENV_PY="$REPO_ROOT/venv/bin/python"
-if [ -x "$VENV_PY" ]; then
-  PY="$VENV_PY"
-else
+PY=""
+for _name in python python3 python3.12 python3.11 python3.10 python3.9; do
+  if [ -x "$REPO_ROOT/venv/bin/$_name" ]; then
+    PY="$REPO_ROOT/venv/bin/$_name"
+    break
+  fi
+done
+if [ -z "$PY" ]; then
+  # venv/bin/ missing — try to use venv site-packages via PYTHONPATH
+  _site=$(ls -d "$REPO_ROOT/venv/lib/python"*/site-packages 2>/dev/null | head -1)
+  if [ -n "$_site" ]; then
+    export PYTHONPATH="$_site${PYTHONPATH:+:$PYTHONPATH}"
+    echo "    NOTE: venv/bin/ missing — using system python3 with PYTHONPATH=$_site"
+    echo "    (Recipe 3 / crawl4ai_runner.py will still need a working venv)"
+  else
+    echo "    WARNING: no venv found at $REPO_ROOT/venv — using bare system python3"
+  fi
   PY="python3"
 fi
 
@@ -24,7 +37,7 @@ echo ""
 
 # ── Recipe 0 — deps ────────────────────────────────────────────────────────
 echo "[0] Recipe 0 — install deps"
-"$PY" -m pip install requests pyyaml lxml -q 2>&1 | tail -2
+"$PY" -m pip install 'requests==2.32.3' 'pyyaml==6.0.2' 'lxml==5.3.0' -q 2>&1 | tail -2
 ok "deps installed"
 
 # ── Recipe 1 — check local cache ───────────────────────────────────────────

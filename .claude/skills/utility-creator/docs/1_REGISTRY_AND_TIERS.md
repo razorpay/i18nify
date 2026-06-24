@@ -1,4 +1,4 @@
-# Technical Source Finder — Registry & Tiers
+# utility-creator — Registry & Tiers
 
 This file is a supplement to the root [`SKILL.md`](../SKILL.md).
 It contains Section 1 (Tier system), Section 2 (Source registry), and Section 2-B (Pre-fetch cache resolver).
@@ -177,6 +177,35 @@ Synonyms: `population`, `pop`, `world population`, `population counts`, `populat
   - Growth rate fetched from a second endpoint: `https://api.worldbank.org/v2/country/all/indicator/SP.POP.GROW?format=json&mrv=1&per_page=300`
 - Expected coverage: ~217 sovereign countries (ISO 3166-1 alpha-2)
 - TTL: 365 days (annual release cadence)
+
+### corporate_tax_rates
+Synonyms: `corporate tax rates`, `cit rates`, `corporate income tax`, `company tax rates`, `statutory tax rates`, `corporate tax by country`, `tax rates by country`
+- T1: OECD SDMX REST API — `https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_TAX_CIT@DF_CIT,1.0/all?format=csv`
+  - Filter MEASURE=CIT for standard statutory rate; take most recent year per country.
+  - Use `crawl4ai_runner.py --topic corporate_tax` which downloads via `fetch_corporate_tax()` and parses with `parse_corporate_tax()`.
+- Expected coverage: ~112 jurisdictions (2024–2025 OECD Inclusive Framework members)
+- Note: Alpha-3 REF_AREA codes are enriched to alpha-2 (cc) + country_name in the parse step.
+
+### vat_rates_global
+Synonyms: `vat rates`, `gst rates global`, `standard vat rate`, `value added tax rates`, `indirect tax rates`, `consumption tax rates global`, `global tax rates`
+- T1: OECD Consumption Tax Trends 2024 (Table 2.A.1) — compiled static dataset from https://www.oecd.org/en/topics/sub-issues/tax-policy/tax-database.html
+  - Use `crawl4ai_runner.py --topic vat_global` which returns authoritative static data via `fetch_vat_global()` / `parse_vat_global()`.
+  - OECD SDMX API has no dedicated VAT-rates dataflow; data is compiled from T1 OECD + EC TEDB publications.
+  - Covers ~75 jurisdictions: all OECD members, EU, G20, and key emerging markets (Razorpay footprint).
+- Expected coverage: ~75 countries (standard rate only; granularity=summary)
+- TTL: 365 days (OECD annual publication cadence)
+- Coverage gap: Non-OECD/non-G20 countries not included. Use `gst_rates_india` for India HSN detail.
+
+### payment_translations
+
+Synonyms: `payment translations`, `payment ui strings`, `payment labels`, `localized payment text`, `checkout translations`, `payment screen strings`
+
+- **No T1/T2 source exists.** No standards body maintains translated application UI strings for payment flows.
+- Route to Section 8 and **STOP**. Do NOT search CLDR — `cldr-localenames-modern` contains language *names* only, not payment UI strings. This is a known wrong attribution; reject it immediately.
+- Do NOT generate any files or proceed to Recipe 8 / Recipe 8-Go based on the original request alone. The original "create utility" invocation does **NOT** count as user approval.
+- Only if the user sends a new explicit confirmation **after** reading the Section 8 response (e.g. "yes, proceed with hand-curated") should you continue — and then use `"tier": "hand-curated"` in `_source`. See the TRANSLATION & LOCALIZED UI STRINGS RULE in SKILL.md.
+
+---
 
 ### Unknown topic — research hunt
 

@@ -1,4 +1,4 @@
-# Technical Source Finder — Execution Recipes
+# utility-creator — Execution Recipes
 
 This file is a supplement to the root [`SKILL.md`](../SKILL.md).
 It contains Section 2-C (all numbered Recipes), Section 12 (i18nify Utility Generation), and Section 13 (Handling Unknown Topics).
@@ -65,6 +65,8 @@ CANONICAL_PATH = {
     "address_formats":     "i18nify-data/address/data.json",
     "gst_rates_india":     "i18nify-data/gst/data.json",
     "population_data":     "i18nify-data/population/data.json",
+    "corporate_tax_rates": "i18nify-data/corporate-tax/data.json",
+    "vat_rates_global":    "i18nify-data/vat-global/data.json",
 }
 
 ttl_map = {
@@ -72,6 +74,8 @@ ttl_map = {
     "tld_list":7,"language_codes":30,"http_status_codes":7,
     "phone_calling_codes":30,"timezones":7,"mime_types":30,
     "unicode_blocks":30,"gst_rates_india":30,"population_data":365,
+    "corporate_tax_rates":30,
+    "vat_rates_global":365,
 }
 ttl = ttl_map.get(topic, 30)
 
@@ -150,6 +154,7 @@ PATH_DATA_KEY = {
     "i18nify-data/unicode-blocks/data.json":    "unicode_block_information",
     "i18nify-data/address/data.json":           "address_format_information",
     "i18nify-data/population/data.json":        "population_information",
+    "i18nify-data/vat-global/data.json":        "vat_global_information",
 }
 
 # Maps canonical file path → T1 source URL for display in the widget
@@ -165,6 +170,7 @@ PATH_SOURCE_URL = {
     "i18nify-data/unicode-blocks/data.json":    "https://www.unicode.org/Public/UNIDATA/Blocks.txt",
     "i18nify-data/address/data.json":           "https://chromium-i18n.appspot.com/ssl-address/data",
     "i18nify-data/population/data.json":        "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&mrv=1&per_page=300",
+    "i18nify-data/vat-global/data.json":        "https://www.oecd.org/en/topics/sub-issues/tax-policy/tax-database.html",
 }
 
 try:
@@ -259,6 +265,8 @@ PIPELINE_NAME = {
     "address_formats":     "address",
     "gst_rates_india":     "gst",
     "population_data":     "population",
+    "corporate_tax_rates": "corporate_tax",
+    "vat_rates_global":    "vat_global",
 }
 
 tsf_topic     = "{TOPIC_KEY}"
@@ -387,7 +395,7 @@ from_cache = any(s.get("from_cache") for s in sources)
 # ── TTL and cache age ─────────────────────────────────────────────────────
 TTL_DAYS = {"currency_codes":30,"country_codes":30,"address_formats":30,
             "tld_list":7,"language_codes":30,"http_status_codes":7,
-            "phone_calling_codes":30,"timezones":7}
+            "phone_calling_codes":30,"timezones":7,"vat_rates_global":365}
 topic_ttl = TTL_DAYS.get(topic, 30)
 
 # ── Cache freshness factor ────────────────────────────────────────────────
@@ -432,7 +440,8 @@ conflict_penalty = min(1.0, len(conflicts) / total_fields) if total_fields else 
 # ── Score per source ──────────────────────────────────────────────────────
 EXPECTED = {"currency_codes":180,"country_codes":249,"address_formats":240,
             "tld_list":1500,"language_codes":184,"http_status_codes":60,
-            "phone_calling_codes":240,"timezones":600,"population_data":217}
+            "phone_calling_codes":240,"timezones":600,"population_data":217,
+            "vat_rates_global":75}
 expected = EXPECTED.get(topic, 100)
 n = len(sources)
 
@@ -534,6 +543,8 @@ TOPIC_MAP = {
     "country_metadata":    {"snake": "countryMetadata", "pascal": "CountryMetadata", "data_key": "country_metadata_information",  "id_field": "cc"},
     "gst_rates_india":     {"snake": "gst",             "pascal": "Gst",             "data_key": "gst_information",               "id_field": "code"},
     "population_data":     {"snake": "population",      "pascal": "Population",      "data_key": "population_information",        "id_field": "cc"},
+    "corporate_tax_rates": {"snake": "corporateTax",    "pascal": "CorporateTax",    "data_key": "corporate_tax_information",     "id_field": "cc", "canonical_dir": "corporate-tax"},
+    "vat_rates_global":    {"snake": "vatRates",        "pascal": "VatRates",        "data_key": "vat_global_information",        "id_field": "cc", "canonical_dir": "vat-global"},
 }
 
 cfg = TOPIC_MAP.get(TOPIC_KEY)
@@ -541,10 +552,11 @@ if not cfg:
     print(f"UTILITY_ERROR|unsupported topic '{TOPIC_KEY}' — add a mapping entry in Recipe 8 TOPIC_MAP")
     sys.exit(1)
 
-snake    = cfg["snake"]      # camelCase module name  e.g. "currency"
-pascal   = cfg["pascal"]     # PascalCase             e.g. "Currency"
-data_key = cfg["data_key"]   # i18nify-data root key  e.g. "currency_information"
-id_field = cfg["id_field"]   # row identifier field   e.g. "code"
+snake         = cfg["snake"]                         # camelCase module name  e.g. "currency"
+pascal        = cfg["pascal"]                        # PascalCase             e.g. "Currency"
+data_key      = cfg["data_key"]                      # i18nify-data root key  e.g. "currency_information"
+id_field      = cfg["id_field"]                      # row identifier field   e.g. "code"
+canonical_dir = cfg.get("canonical_dir", snake)      # i18nify-data/ dir — defaults to snake when they match
 
 # ── Load winner rows from Recipe 7 output ─────────────────────────
 with open("/tmp/tsf_result.json") as f:
@@ -564,7 +576,15 @@ for row in rows:
     # Exclude cc / id_field from the value dict to avoid redundancy.
     data_dict[key] = {k: v for k, v in row.items() if k not in {"cc", id_field}}
 
-canonical_data = {data_key: data_dict}
+canonical_data = {
+    "_source": {
+        "topic": TOPIC_KEY,
+        "name":  winner.get("name", ""),
+        "url":   winner.get("url", ""),
+        "tier":  winner.get("tier", 0),
+    },
+    data_key: data_dict,
+}
 
 # ── Derive proto schema recursively from data_dict ────────────────
 
@@ -717,12 +737,12 @@ f_proto = "\n".join(_proto_parts) + "\n"
 snake_upper = re.sub(r"(?<=[a-z])(?=[A-Z])", "_", snake).upper()
 
 module_dir = os.path.join(PROJECT_ROOT, "packages", "i18nify-js", "src", "modules", snake)
-data_dir   = os.path.join(PROJECT_ROOT, "i18nify-data", snake)
+data_dir   = os.path.join(PROJECT_ROOT, "i18nify-data", canonical_dir)
 
 # ── File content templates ─────────────────────────────────────────
 
 # i18nify-data/{snake}/data.json
-f_data_json = json.dumps(canonical_data, ensure_ascii=False, indent=2)
+f_data_json = json.dumps(canonical_data, ensure_ascii=False, indent=2) + "\n"
 
 # i18nify-data/{snake}/README.md
 f_readme = (
@@ -744,7 +764,7 @@ module_config = {
     k: {fk: fv for fk, fv in v.items() if fk in CONFIG_FIELDS or not CONFIG_FIELDS.intersection(v)}
     for k, v in data_dict.items()
 }
-f_module_config = json.dumps(module_config, ensure_ascii=False, indent=2)
+f_module_config = json.dumps(module_config, ensure_ascii=False, indent=2) + "\n"
 
 # packages/.../modules/{snake}/types.ts
 f_types = (
@@ -788,7 +808,8 @@ f_index = (
 
 # packages/.../modules/{snake}/__tests__/get{Pascal}List.test.ts
 f_test = (
-    f"import get{pascal}List from '../get{pascal}List';\n\n"
+    f"import get{pascal}List from '../get{pascal}List';\n"
+    f"import type {{ {pascal}CodeType }} from '../types';\n\n"
     f"describe('get{pascal}List', () => {{\n"
     f"  it('returns all {snake} entries', () => {{\n"
     f"    const list = get{pascal}List();\n"
@@ -799,6 +820,11 @@ f_test = (
     f"    const list = get{pascal}List();\n"
     f"    const sample = Object.values(list)[0] as Record<string, unknown>;\n"
     f"    expect(typeof sample).toBe('object');\n"
+    f"  }});\n\n"
+    f"  it('returns entry for a valid code', () => {{\n"
+    f"    const list = get{pascal}List();\n"
+    f"    const code = Object.keys(list)[0] as {pascal}CodeType;\n"
+    f"    expect(list[code]).toBeTruthy();\n"
     f"  }});\n"
     f"}});\n"
 )
@@ -864,6 +890,7 @@ TOPIC_MAP = {
     "country_metadata":    {"snake": "countryMetadata", "pascal": "CountryMetadata", "data_key": "country_metadata_information", "go_pkg": "countrymetadata"},
     "gst_rates_india":     {"snake": "gst",             "pascal": "Gst",             "data_key": "gst_information",              "go_pkg": "gst"},
     "population_data":     {"snake": "population",      "pascal": "Population",      "data_key": "population_information",       "go_pkg": "population"},
+    "vat_rates_global":    {"snake": "vatRates",        "pascal": "VatRates",        "data_key": "vat_global_information",       "go_pkg": "vatrates",  "canonical_dir": "vat-global"},
 }
 
 cfg = TOPIC_MAP.get(TOPIC_KEY)
@@ -871,17 +898,16 @@ if not cfg:
     print(f"GO_UTILITY_ERROR|unsupported topic '{TOPIC_KEY}' — add a mapping entry in Recipe 8-Go TOPIC_MAP")
     sys.exit(1)
 
-snake    = cfg["snake"]
-pascal   = cfg["pascal"]
-data_key = cfg["data_key"]
-go_pkg   = cfg["go_pkg"]
+snake         = cfg["snake"]
+pascal        = cfg["pascal"]
+data_key      = cfg["data_key"]
+go_pkg        = cfg["go_pkg"]
+canonical_dir = cfg.get("canonical_dir", snake)
 
 # ── Load canonical data ───────────────────────────────────────────
-data_path = os.path.join(PROJECT_ROOT, "i18nify-data", snake, "data.json")
+data_path = os.path.join(PROJECT_ROOT, "i18nify-data", canonical_dir, "data.json")
 if not os.path.exists(data_path):
-    data_path = os.path.join(PROJECT_ROOT, "i18nify-data", go_pkg, "data.json")
-if not os.path.exists(data_path):
-    print(f"GO_UTILITY_ERROR|canonical data not found at i18nify-data/{snake}/data.json")
+    print(f"GO_UTILITY_ERROR|canonical data not found at i18nify-data/{canonical_dir}/data.json")
     sys.exit(1)
 
 with open(data_path, encoding="utf-8") as f:
@@ -893,9 +919,19 @@ if not data_dict:
     sys.exit(1)
 
 # ── Helpers ────────────────────────────────────────────────────────
+# Common Go acronyms that must be ALL-CAPS (not just Capitalized).
+_GO_ACRONYMS = {
+    "id": "ID", "url": "URL", "http": "HTTP", "api": "API",
+    "cvv": "CVV", "upi": "UPI", "json": "JSON", "xml": "XML",
+    "uuid": "UUID", "csv": "CSV", "iban": "IBAN", "bic": "BIC",
+}
+
 def _to_pascal(s):
     parts = re.split(r'[_\s]+', s)
-    return ''.join(p.capitalize() for p in parts if p)
+    return ''.join(
+        _GO_ACRONYMS.get(p.lower(), p.capitalize())
+        for p in parts if p
+    )
 
 def _go_type(val):
     if val is None: return "string"
@@ -945,9 +981,10 @@ fields_named = [(_to_pascal(fname), _go_type(fval), fname) for fname, fval in sa
 data_key_pascal = _to_pascal(data_key)
 needs_json_import = any(gt == "json.RawMessage" for _, gt, _ in fields_named)
 
-# ── 1. {go_pkg}.pb.go ─────────────────────────────────────────────
+# ── 1. {go_pkg}_structs.go ────────────────────────────────────────
+# Named _structs.go (not .pb.go) to avoid confusion with protoc-generated files.
 pb_lines = [
-    f"// Hand-written Go structs mirroring {go_pkg}.proto — protoc not available.",
+    f"// Hand-written Go structs for {go_pkg}.",
     f"// Matches the canonical i18nify-data/{go_pkg}/data.json schema.",
     "",
     f"package {go_pkg}",
@@ -1093,7 +1130,10 @@ f_go_module = (
     '\t\tif entry == nil {\n'
     '\t\t\tcontinue\n'
     '\t\t}\n'
-    '\t\tb, _ := json.Marshal(entry)\n'
+    '\t\tb, merr := json.Marshal(entry)\n'
+    '\t\tif merr != nil {\n'
+    '\t\t\tcontinue\n'
+    '\t\t}\n'
     f'\t\tvar v {pascal}Info\n'
     '\t\tif err := json.Unmarshal(b, &v); err != nil {\n'
     '\t\t\tcontinue\n'
@@ -1128,7 +1168,7 @@ f_go_module = (
 # ── 6. packages/i18nify-go/modules/{snake}/{go_pkg}_test.go ───────
 f_go_module_test = (
     f"package {go_pkg}\n\n"
-    'import (\n\t"testing"\n\n\t"github.com/stretchr/testify/assert"\n)\n\n'
+    'import (\n\t"encoding/json"\n\t"testing"\n\n\t"github.com/stretchr/testify/assert"\n)\n\n'
     f'func TestGet{pascal}List(t *testing.T) {{\n'
     f'\tlist := Get{pascal}List()\n'
     '\tassert.NotEmpty(t, list)\n'
@@ -1144,14 +1184,20 @@ f_go_module_test = (
     '\tassert.Error(t, err)\n'
     '}\n\n'
     f'func TestUnmarshal{pascal}Data(t *testing.T) {{\n'
-    f'\tlist := Get{pascal}List()\n'
-    '\tassert.NotEmpty(t, list)\n'
+    f'\tsrc, err := Get{pascal}Data()\n'
+    '\tif err != nil {\n'
+    f'\t\tt.Fatalf("Get{pascal}Data() error = %v", err)\n'
+    '\t}\n'
+    f'\traw, _ := json.Marshal(src)\n'
+    f'\tparsed, err := Unmarshal{pascal}Data(raw)\n'
+    '\tassert.NoError(t, err)\n'
+    f'\tassert.NotEmpty(t, parsed.{data_key_pascal})\n'
     '}\n'
 )
 
 # ── Write i18nify-data/go/{go_pkg}/ ──────────────────────────────
 go_data_dir = os.path.join(PROJECT_ROOT, "i18nify-data", "go", go_pkg)
-write_file(os.path.join(go_data_dir, f"{go_pkg}.pb.go"),     f_go_pb)
+write_file(os.path.join(go_data_dir, f"{go_pkg}_structs.go"), f_go_pb)
 write_file(os.path.join(go_data_dir, "data_loader.go"),      f_go_loader)
 write_file(os.path.join(go_data_dir, "data_loader_test.go"), f_go_loader_test)
 write_file(os.path.join(go_data_dir, "data", "data.json"),   json.dumps(canonical, ensure_ascii=False, indent=2))
@@ -1278,7 +1324,7 @@ Output a markdown summary table of files written, then the scoring diagnostic bl
 | packages/i18nify-js/src/modules/{snake}/index.ts | Barrel exports |
 | packages/i18nify-js/src/modules/{snake}/__tests__/get{Pascal}List.test.ts | Tests |
 | packages/i18nify-js/src/index.ts | Updated barrel |
-| i18nify-data/go/{go_pkg}/{go_pkg}.pb.go | Go proto structs |
+| i18nify-data/go/{go_pkg}/{go_pkg}_structs.go | Go structs |
 | i18nify-data/go/{go_pkg}/data_loader.go | Go data loader (//go:embed) |
 | i18nify-data/go/{go_pkg}/data_loader_test.go | Go data loader tests |
 | i18nify-data/go/{go_pkg}/data/data.json | Go embedded data |

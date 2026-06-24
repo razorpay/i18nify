@@ -65,7 +65,7 @@ Before touching any Recipe, internally check the four parameters against the use
 
 **If ALL four parameters are clearly determined** (either stated explicitly or unambiguously implied by the topic — e.g., "ISO 4217 currency codes" implies global scope, dataset type, and current version):
 
-→ **Bypass clarification entirely.** Proceed directly to Section 6, Step 1.
+→ **Bypass the Step 0-A questions. However, you MUST still evaluate Step 0-C. Do not proceed to Section 6 yet.**
 
 **If ANY parameter is missing AND matters for this topic:**
 
@@ -76,7 +76,7 @@ Before touching any Recipe, internally check the four parameters against the use
 - "Are you looking for raw datasets, API documentation, or regulatory/compliance guidelines?"
 - "Do you need the current standard or a specific historical version?"
 
-> **Rule:** Never ask about a parameter that is obviously implied by the topic. "Currency codes" is inherently global and dataset-typed — skip those questions entirely and proceed.
+> **Rule:** Never ask about a parameter that is obviously implied by the topic. "Currency codes" is inherently global and dataset-typed — skip those questions entirely and proceed. But this rule only bypasses Step 0-A. Step 0-C is always evaluated next.
 
 ### Step 0-C: Vague topic router (output format / depth gate)
 
@@ -117,6 +117,8 @@ Once the user replies, map their choice to the pipeline parameters below and **o
 
 > **Rule:** The clarification menu is a **single-shot gate**. Present it once. If the user ignores the menu and re-states a vague query, treat the second query as the same vague topic and re-present the menu. Never silently default to a granularity or output mode — that causes the 2-digit vs 8-digit data mismatch.
 
+> **Strict enforcement:** Even if the data topic is perfectly clear (e.g., "language codes", "currency"), if the user's prompt is just a single word or broad phrase **without specifying an output format** (data, schema, utility, or report), you **MUST** halt and present the clarification menu above. A clear topic does **not** imply a clear output intent. Never skip this gate.
+
 ## Core principle
 
 Source quality is guaranteed by the tier system — never recommend Tier 3 community sources when Tier 1 or Tier 2 exist. The output is exactly ONE thing: a live interactive widget. No sources tables, no API blocks, no JSON dumps in the response.
@@ -145,6 +147,29 @@ If the authoritative source does not contain specific data fields the user expli
 - **Do not** fill gaps by pulling columns from a Tier 3 community source.
 - **Do not** derive or infer a missing field from related fields (e.g., computing a calling code from a country name).
 - **Do not** silently omit the fact that requested fields are absent — surface the gap explicitly via the Missing Data Clarification Menu (Section 7, `docs/3_SCORING_AND_UI.md`).
+
+### TRANSLATION & LOCALIZED UI STRINGS RULE
+
+CLDR covers number formatting, currency symbols, territory names, and language display names — **NOT translated application UI strings** (form labels, button copy, payment screen text, localized messages).
+
+**If the topic is localized/translated UI strings (e.g. payment translations, checkout labels, error messages):**
+
+1. **Do NOT** claim CLDR `cldr-localenames-modern` or any CLDR file as the source — those files contain language *names* (e.g. `"hi": "Hindi"`), not translated strings. This is the single most common wrong attribution for this topic class.
+2. **Do NOT** claim any standards body as the source — no T1/T2 body maintains translated application UI strings.
+3. **HARD STOP — output Section 8 "no trustable source" response and halt all execution.** Do NOT proceed to Recipe 8 or Recipe 8-Go. Do NOT generate any files. The user's original request to "create a utility" or "generate this module" does **NOT** count as explicit approval — it was issued before they saw the Section 8 response. Wait for a new explicit confirmation after they have read the Section 8 output (e.g. "yes, go ahead with hand-curated", "proceed anyway").
+4. Only after that second, post-Section-8 confirmation: if generating data files for hand-curated content, the `_source` block in `data.json` **must** be:
+   ```json
+   "_source": {
+     "tier": "hand-curated",
+     "url": "hand-curated",
+     "note": "Human-verified translations. No authoritative standards body governs this content."
+   }
+   ```
+   **NEVER** set `_source.url` to a CLDR URL or any URL that does not actually contain the translation strings you are claiming.
+
+### SOURCE URL VERIFICATION
+
+Before accepting any URL as `_source.url` in generated data files, verify that the URL actually contains the data fields being claimed. A URL that returns language names cannot be attributed as the source of payment UI translations. If in doubt, fetch a 1–2 record sample and confirm the structure matches the topic.
 
 ---
 

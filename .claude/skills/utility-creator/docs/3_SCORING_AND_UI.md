@@ -1,4 +1,4 @@
-# Technical Source Finder — Scoring, UI & Output
+# utility-creator — Scoring, UI & Output
 
 This file is a supplement to the root [`SKILL.md`](../SKILL.md).
 It contains Sections 3, 4, 5, 7, 8, 9, and 9.5.
