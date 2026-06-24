@@ -66,3 +66,16 @@ func TestGetHonorificTitles(t *testing.T) {
 		})
 	}
 }
+
+func TestGetHonorificTitlesReturnsCopy(t *testing.T) {
+	titles, err := GetHonorificTitles("US")
+	require.NoError(t, err)
+	require.NotEmpty(t, titles)
+
+	titles[0].Title = "Changed"
+
+	freshTitles, err := GetHonorificTitles("US")
+	require.NoError(t, err)
+	require.NotEmpty(t, freshTitles)
+	assert.NotEqual(t, "Changed", freshTitles[0].Title)
+}

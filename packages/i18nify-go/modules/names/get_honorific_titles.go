@@ -3,9 +3,6 @@ package names
 import (
 	"fmt"
 	"strings"
-
-	dataSource "github.com/razorpay/i18nify/i18nify-data/go/names"
-	"google.golang.org/protobuf/types/known/structpb"
 )
 
 // HonorificTitle represents a locale-specific honorific title entry.
@@ -27,14 +24,9 @@ func GetHonorificTitles(countryCode string) ([]HonorificTitle, error) {
 		return nil, fmt.Errorf("names: GetHonorificTitles: countryCode must not be empty")
 	}
 
-	data, err := dataSource.GetNamesData()
+	info, err := loadNamesInformation("GetHonorificTitles")
 	if err != nil {
-		return nil, fmt.Errorf("names: GetHonorificTitles: failed to load names data: %w", err)
-	}
-
-	info := data.GetNamesInformation()
-	if info == nil {
-		return nil, fmt.Errorf("names: GetHonorificTitles: names data is missing names_information")
+		return nil, err
 	}
 
 	languageList, ok := info.GetCountryToLanguages()[cc]
@@ -54,42 +46,4 @@ func GetHonorificTitles(countryCode string) ([]HonorificTitle, error) {
 	}
 
 	return titles, nil
-}
-
-func listValueStrings(list *structpb.ListValue) []string {
-	if list == nil {
-		return nil
-	}
-
-	values := list.GetValues()
-	result := make([]string, 0, len(values))
-	for _, value := range values {
-		if text := value.GetStringValue(); text != "" {
-			result = append(result, text)
-		}
-	}
-	return result
-}
-
-func listValueHonorificTitles(list *structpb.ListValue) []HonorificTitle {
-	if list == nil {
-		return nil
-	}
-
-	values := list.GetValues()
-	titles := make([]HonorificTitle, 0, len(values))
-	for _, value := range values {
-		fields := value.GetStructValue().GetFields()
-		if fields == nil {
-			continue
-		}
-
-		titles = append(titles, HonorificTitle{
-			Code:        fields["code"].GetStringValue(),
-			Title:       fields["title"].GetStringValue(),
-			Gender:      fields["gender"].GetStringValue(),
-			Description: fields["description"].GetStringValue(),
-		})
-	}
-	return titles
 }

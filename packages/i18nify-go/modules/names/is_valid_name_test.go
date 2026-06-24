@@ -27,6 +27,11 @@ func TestIsValidName(t *testing.T) {
 			want:  NameValidationResult{IsValid: true},
 		},
 		{
+			name:  "accented latin letters",
+			input: "José Álvarez",
+			want:  NameValidationResult{IsValid: true},
+		},
+		{
 			name:  "surrounding whitespace is trimmed",
 			input: "  Grace Hopper  ",
 			want:  NameValidationResult{IsValid: true},
@@ -81,6 +86,15 @@ func TestIsValidName(t *testing.T) {
 		{
 			name:  "custom blocklist extends defaults",
 			input: "test",
+			opts: &IsValidNameOptions{
+				Blocklist:               []string{"blocked"},
+				AllowBlocklistExtension: true,
+			},
+			want: NameValidationResult{IsValid: false, Reason: "blocklisted"},
+		},
+		{
+			name:  "extended custom blocklist value",
+			input: "blocked",
 			opts: &IsValidNameOptions{
 				Blocklist:               []string{"blocked"},
 				AllowBlocklistExtension: true,
