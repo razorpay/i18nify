@@ -1,0 +1,79 @@
+// CODE GENERATED. DO NOT EDIT.
+package {{.PackageName}}
+
+import (
+	"encoding/json"
+	"testing"
+)
+
+// TestGetBankInfo_SerializationDeserialization tests that data can be successfully
+// serialized to JSON and deserialized back without data loss or corruption.
+// This test verifies the serialization/deserialization round-trip works correctly
+// for bankcodes data loaded by country code.
+func TestGetBankInfo_SerializationDeserialization(t *testing.T) {
+	// Test with a known country code (e.g., "IN" for India)
+	testCountryCode := "IN"
+	
+	// Get original data from embedded filesystem
+	originalData, err := GetBankInfo(testCountryCode)
+	if err != nil {
+		t.Fatalf("GetBankInfo(%q) failed: %v", testCountryCode, err)
+	}
+	
+	if originalData == nil {
+		t.Fatal("GetBankInfo() returned nil, expected bankcodes data")
+	}
+	
+	// Serialize to JSON
+	jsonBytes, err := json.Marshal(originalData)
+	if err != nil {
+		t.Fatalf("Failed to marshal data: %v", err)
+	}
+	
+	// Deserialize back from JSON
+	var deserializedData {{.StructName}}
+	if err := json.Unmarshal(jsonBytes, &deserializedData); err != nil {
+		t.Fatalf("Failed to unmarshal data: %v", err)
+	}
+	
+	// Verify that defaults identifier_type matches
+	if deserializedData.Defaults.IdentifierType != originalData.Defaults.IdentifierType {
+		t.Errorf("Deserialized identifier_type = %q, want %q", 
+			deserializedData.Defaults.IdentifierType, originalData.Defaults.IdentifierType)
+	}
+	
+	// Verify that details count matches
+	if len(deserializedData.Details) != len(originalData.Details) {
+		t.Errorf("Deserialized details count = %d, want %d", 
+			len(deserializedData.Details), len(originalData.Details))
+	}
+	
+	// Re-serialize both to JSON and compare bytes to ensure structural equality
+	originalBytes, err := json.Marshal(originalData)
+	if err != nil {
+		t.Errorf("Failed to marshal original: %v", err)
+	}
+	
+	deserializedBytes, err := json.Marshal(&deserializedData)
+	if err != nil {
+		t.Errorf("Failed to marshal deserialized: %v", err)
+	}
+	
+	// Compare JSON representations (normalized)
+	var originalJSON, deserializedJSON interface{}
+	if err := json.Unmarshal(originalBytes, &originalJSON); err != nil {
+		t.Errorf("Failed to unmarshal original JSON: %v", err)
+	}
+	if err := json.Unmarshal(deserializedBytes, &deserializedJSON); err != nil {
+		t.Errorf("Failed to unmarshal deserialized JSON: %v", err)
+	}
+	
+	// Re-marshal both to normalized JSON for comparison
+	originalNormalized, _ := json.Marshal(originalJSON)
+	deserializedNormalized, _ := json.Marshal(deserializedJSON)
+	
+	if string(originalNormalized) != string(deserializedNormalized) {
+		t.Errorf("Data mismatch after round-trip serialization")
+	}
+}
+
