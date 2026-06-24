@@ -85,6 +85,7 @@ jobs:
           	"testing"
 
           	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
+          	"github.com/razorpay/i18nify/packages/i18nify-go/modules/business_entity"
           	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
           	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
           	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
@@ -282,6 +283,26 @@ jobs:
           	info := phonenumber.GetCountryTeleInformation("ZZ")
           	if info.DialCode != "" {
           		t.Error("expected empty result for non-existent country code ZZ")
+          	}
+          }
+
+          func TestBusinessEntity_GetBusinessCategories(t *testing.T) {
+          	categories, err := business_entity.GetBusinessCategories()
+          	if err != nil {
+          		t.Fatalf("GetBusinessCategories: %v", err)
+          	}
+          	if len(categories) == 0 {
+          		t.Fatal("expected non-empty business categories")
+          	}
+          }
+
+          func TestBusinessEntity_GetBusinessEntityType(t *testing.T) {
+          	entityTypes, err := business_entity.GetBusinessEntityType("IN")
+          	if err != nil {
+          		t.Fatalf("GetBusinessEntityType(IN): %v", err)
+          	}
+          	if len(entityTypes) == 0 {
+          		t.Fatal("expected non-empty business entity types for IN")
           	}
           }
           GOEOF

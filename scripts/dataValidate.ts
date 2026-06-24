@@ -8,7 +8,14 @@ const protobuf = require('protobufjs');
 
 export interface ProtoConfig {
   protoPath: string;
-  dataPattern: 'single' | 'multiple';
+  dataPattern: 'single' | 'multiple' | 'explicit';
+  rootMessageName: string;
+  files?: ValidationFileConfig[];
+}
+
+export interface ValidationFileConfig {
+  dataFile: string;
+  protoPath: string;
   rootMessageName: string;
 }
 
@@ -47,6 +54,23 @@ export const PACKAGE_CONFIGS: Record<string, ProtoConfig> = {
     dataPattern: 'single',
     rootMessageName: 'DialCodeToCountryData',
   },
+  business_entity: {
+    protoPath: 'i18nify-data/business_entity/proto/categories_data.proto',
+    dataPattern: 'explicit',
+    rootMessageName: 'CategoriesData',
+    files: [
+      {
+        dataFile: 'i18nify-data/business_entity/categories_data.json',
+        protoPath: 'i18nify-data/business_entity/proto/categories_data.proto',
+        rootMessageName: 'CategoriesData',
+      },
+      {
+        dataFile: 'i18nify-data/business_entity/entity_types_data.json',
+        protoPath: 'i18nify-data/business_entity/proto/entity_types_data.proto',
+        rootMessageName: 'EntityTypesData',
+      },
+    ],
+  },
 };
 
 export function fileExists(filePath: string): boolean {
@@ -82,6 +106,21 @@ export function getDataFiles(
     // Directory doesn't exist
   }
   return files;
+}
+
+export function getValidationTargets(
+  packageName: string,
+  config: ProtoConfig,
+): ValidationFileConfig[] {
+  if (config.dataPattern === 'explicit') {
+    return config.files || [];
+  }
+
+  return getDataFiles(packageName, config.dataPattern).map((dataFile) => ({
+    dataFile,
+    protoPath: config.protoPath,
+    rootMessageName: config.rootMessageName,
+  }));
 }
 
 export async function validateWithProto(
@@ -148,32 +187,36 @@ async function main() {
   for (const packageName of packagesToValidate) {
     const config = PACKAGE_CONFIGS[packageName];
 
-    if (!fileExists(config.protoPath)) {
-      console.log(
-        `⚠️  ${packageName}: No proto file found at ${config.protoPath}`,
-      );
-      continue;
-    }
+    const validationTargets = getValidationTargets(packageName, config);
 
-    const dataFiles = getDataFiles(packageName, config.dataPattern);
-
-    if (dataFiles.length === 0) {
+    if (validationTargets.length === 0) {
       console.log(`⚠️  ${packageName}: No data files found`);
       continue;
     }
 
-    for (const dataFile of dataFiles) {
+    for (const target of validationTargets) {
+      if (!fileExists(target.protoPath)) {
+        console.log(
+          `⚠️  ${packageName}: No proto file found at ${target.protoPath}`,
+        );
+        continue;
+      }
+
       const result = await validateWithProto(
-        config.protoPath,
-        config.rootMessageName,
-        dataFile,
+        target.protoPath,
+        target.rootMessageName,
+        target.dataFile,
       );
 
       if (result.valid) {
-        console.log(`✅ ${dataFile} validates against ${config.protoPath}`);
+        console.log(
+          `✅ ${target.dataFile} validates against ${target.protoPath}`,
+        );
       } else {
         hasErrors = true;
-        console.error(`❌ ${dataFile} validation failed: ${result.error}`);
+        console.error(
+          `❌ ${target.dataFile} validation failed: ${result.error}`,
+        );
       }
     }
   }
