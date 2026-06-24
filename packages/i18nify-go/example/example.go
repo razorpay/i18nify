@@ -143,6 +143,32 @@ func main() {
 		fmt.Printf("Bank name from identifier: %s\n", bankName) // HDFC Bank Limited
 	}
 
+	// Format number as a locale-aware currency string
+	formattedINR, err := currency.FormatAmount(123456.78, currency.NumberFormatOptions{
+		Currency: "INR",
+		Locale:   "en-IN",
+	})
+	if err != nil {
+		fmt.Printf("Error formatting number: %v\n", err)
+	} else {
+		fmt.Printf("Formatted number: %s\n", formattedINR) // ₹1,23,456.78
+	}
+
+	// FormatAmountByParts — breakdown into typed components (integer, fraction, currency, decimal)
+	parts, err := currency.FormatAmountByParts(12345.67, currency.NumberFormatOptions{
+		Currency: "USD",
+		Locale:   "en-US",
+	})
+	if err != nil {
+		fmt.Printf("Error formatting number by parts: %v\n", err)
+	} else {
+		fmt.Printf("Currency: %s\n", parts.Currency)               // $
+		fmt.Printf("Integer: %s\n", parts.Integer)                 // 12,345
+		fmt.Printf("Decimal: %s\n", parts.Decimal)                 // .
+		fmt.Printf("Fraction: %s\n", parts.Fraction)               // 67
+		fmt.Printf("Is prefix symbol: %v\n", parts.IsPrefixSymbol) // true
+	}
+
 	// Multiple Countries
 	// United States
 	countryUS := i18nify_go.NewCountry("US")
