@@ -1,4 +1,4 @@
-# Technical Source Finder — Error Handling
+# utility-creator — Error Handling
 
 This file is a supplement to the root [`SKILL.md`](../SKILL.md).
 It contains Section 10 (What this skill does NOT do), Section 11 (Error Transparency), and Section 11.5 (Troubleshooting).
