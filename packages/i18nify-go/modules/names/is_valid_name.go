@@ -56,12 +56,21 @@ func IsValidName(name string, opts *IsValidNameOptions) (NameValidationResult, e
 		return NameValidationResult{}, fmt.Errorf("names: IsValidName: failed to load names data: %w", err)
 	}
 
-	rules := data.NamesInformation.ValidationRules
+	info := data.GetNamesInformation()
+	if info == nil {
+		return NameValidationResult{}, fmt.Errorf("names: IsValidName: names data is missing names_information")
+	}
+
+	rules := info.GetValidationRules()
+	if rules == nil {
+		return NameValidationResult{}, fmt.Errorf("names: IsValidName: names data is missing validation_rules")
+	}
+
 	nameLength := len([]rune(trimmed))
-	if nameLength < rules.MinLength {
+	if nameLength < int(rules.GetMinLength()) {
 		return NameValidationResult{IsValid: false, Reason: "too_short"}, nil
 	}
-	if nameLength > rules.MaxLength {
+	if nameLength > int(rules.GetMaxLength()) {
 		return NameValidationResult{IsValid: false, Reason: "too_long"}, nil
 	}
 

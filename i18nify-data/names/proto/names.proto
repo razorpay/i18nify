@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package names;
 
+import "google/protobuf/struct.proto";
+
 option go_package = "github.com/razorpay/i18nify/i18nify-data/go/names;names";
 
 // NamesData is the top-level container for all names-related reference data.
@@ -14,30 +16,22 @@ message NamesData {
 // titles, and name validation rules.
 message NamesInformation {
   // country_to_languages maps an ISO 3166-1 alpha-2 country code (e.g. "IN")
-  // to the list of language names conventionally used in that country.
-  map<string, LanguageList> country_to_languages = 1;
+  // to a JSON array of language name strings (e.g. ["hindi"]).
+  // ListValue is used because proto3 maps cannot have repeated string values.
+  map<string, google.protobuf.ListValue> country_to_languages = 1;
 
-  // honorific_titles maps a language name (e.g. "english", "hindi") to its
-  // ordered list of honorific title entries.
-  map<string, HonorificTitleList> honorific_titles = 2;
+  // honorific_titles maps a language name (e.g. "english", "hindi") to a JSON
+  // array of HonorificTitle objects (code, title, gender, description).
+  // ListValue is used because proto3 maps cannot have repeated message values.
+  map<string, google.protobuf.ListValue> honorific_titles = 2;
 
   // validation_rules defines length constraints applied to name fields.
   ValidationRules validation_rules = 3;
 }
 
-// LanguageList is a wrapper required by protobuf to use repeated strings as
-// a map value.
-message LanguageList {
-  repeated string languages = 1;
-}
-
-// HonorificTitleList is a wrapper required by protobuf to use repeated
-// HonorificTitle entries as a map value.
-message HonorificTitleList {
-  repeated HonorificTitle titles = 1;
-}
-
-// HonorificTitle represents a single honorific title entry for a language.
+// HonorificTitle documents the schema of each object in the honorific_titles
+// arrays. Entries are stored as generic ListValue elements in the proto map
+// but always conform to this four-field shape in the JSON data.
 message HonorificTitle {
   // code is the canonical uppercase identifier (e.g. "MR", "SHRI").
   string code = 1;

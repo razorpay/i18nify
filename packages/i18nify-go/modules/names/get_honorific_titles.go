@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/names"
+	"google.golang.org/protobuf/types/known/structpb"
 )
 
 // HonorificTitle represents a locale-specific honorific title entry.
@@ -31,25 +32,64 @@ func GetHonorificTitles(countryCode string) ([]HonorificTitle, error) {
 		return nil, fmt.Errorf("names: GetHonorificTitles: failed to load names data: %w", err)
 	}
 
-	languages, ok := data.NamesInformation.CountryToLanguages[cc]
+	info := data.GetNamesInformation()
+	if info == nil {
+		return nil, fmt.Errorf("names: GetHonorificTitles: names data is missing names_information")
+	}
+
+	languageList, ok := info.GetCountryToLanguages()[cc]
+	languages := listValueStrings(languageList)
 	if !ok || len(languages) == 0 {
 		return nil, fmt.Errorf("names: GetHonorificTitles: no honorific titles found for country code: %q", cc)
 	}
 
-	rawTitles, ok := data.NamesInformation.HonorificTitles[languages[0]]
+	rawTitles, ok := info.GetHonorificTitles()[languages[0]]
 	if !ok {
 		return nil, fmt.Errorf("names: GetHonorificTitles: no honorific titles found for country code: %q", cc)
 	}
 
-	titles := make([]HonorificTitle, len(rawTitles))
-	for i, title := range rawTitles {
-		titles[i] = HonorificTitle{
-			Code:        title.Code,
-			Title:       title.Title,
-			Gender:      title.Gender,
-			Description: title.Description,
-		}
+	titles := listValueHonorificTitles(rawTitles)
+	if len(titles) == 0 {
+		return nil, fmt.Errorf("names: GetHonorificTitles: no honorific titles found for country code: %q", cc)
 	}
 
 	return titles, nil
+}
+
+func listValueStrings(list *structpb.ListValue) []string {
+	if list == nil {
+		return nil
+	}
+
+	values := list.GetValues()
+	result := make([]string, 0, len(values))
+	for _, value := range values {
+		if text := value.GetStringValue(); text != "" {
+			result = append(result, text)
+		}
+	}
+	return result
+}
+
+func listValueHonorificTitles(list *structpb.ListValue) []HonorificTitle {
+	if list == nil {
+		return nil
+	}
+
+	values := list.GetValues()
+	titles := make([]HonorificTitle, 0, len(values))
+	for _, value := range values {
+		fields := value.GetStructValue().GetFields()
+		if fields == nil {
+			continue
+		}
+
+		titles = append(titles, HonorificTitle{
+			Code:        fields["code"].GetStringValue(),
+			Title:       fields["title"].GetStringValue(),
+			Gender:      fields["gender"].GetStringValue(),
+			Description: fields["description"].GetStringValue(),
+		})
+	}
+	return titles
 }

@@ -4,8 +4,9 @@ package names
 
 import (
 	_ "embed"
-	"encoding/json"
 	"sync"
+
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 //go:embed data/data.json
@@ -17,12 +18,12 @@ var (
 	dataErr  error
 )
 
-// GetNamesData retrieves the names data.
-// The JSON is parsed exactly once; subsequent calls return the cached result.
+// GetNamesData retrieves the data.
 func GetNamesData() (*NamesData, error) {
 	dataOnce.Do(func() {
 		data = &NamesData{}
-		dataErr = json.Unmarshal(dataJSON, data)
+		unmarshaler := protojson.UnmarshalOptions{DiscardUnknown: true}
+		dataErr = unmarshaler.Unmarshal(dataJSON, data)
 	})
 	return data, dataErr
 }
