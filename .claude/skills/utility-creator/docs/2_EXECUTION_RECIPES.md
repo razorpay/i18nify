@@ -1,4 +1,4 @@
-# Technical Source Finder — Execution Recipes
+# utility-creator — Execution Recipes
 
 This file is a supplement to the root [`SKILL.md`](../SKILL.md).
 It contains Section 2-C (all numbered Recipes), Section 12 (i18nify Utility Generation), and Section 13 (Handling Unknown Topics).

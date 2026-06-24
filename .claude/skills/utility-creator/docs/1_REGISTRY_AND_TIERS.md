@@ -1,4 +1,4 @@
-# Technical Source Finder — Registry & Tiers
+# utility-creator — Registry & Tiers
 
 This file is a supplement to the root [`SKILL.md`](../SKILL.md).
 It contains Section 1 (Tier system), Section 2 (Source registry), and Section 2-B (Pre-fetch cache resolver).
