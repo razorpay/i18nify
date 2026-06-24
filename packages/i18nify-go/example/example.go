@@ -144,7 +144,7 @@ func main() {
 	}
 
 	// Format number as a locale-aware currency string
-	formattedINR, err := currency.FormatAmount(123456.78, currency.NumberFormatOptions{
+	formattedINR, err := currency.FormatNumber(123456.78, currency.NumberFormatOptions{
 		Currency: "INR",
 		Locale:   "en-IN",
 	})
@@ -154,8 +154,8 @@ func main() {
 		fmt.Printf("Formatted number: %s\n", formattedINR) // ₹1,23,456.78
 	}
 
-	// FormatAmountByParts — breakdown into typed components (integer, fraction, currency, decimal)
-	parts, err := currency.FormatAmountByParts(12345.67, currency.NumberFormatOptions{
+	// FormatNumberByParts — breakdown into typed components (integer, fraction, currency, decimal)
+	parts, err := currency.FormatNumberByParts(12345.67, currency.NumberFormatOptions{
 		Currency: "USD",
 		Locale:   "en-US",
 	})
