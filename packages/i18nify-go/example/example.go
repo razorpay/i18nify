@@ -56,6 +56,28 @@ func main() {
 	phoneInfo := phonenumber.GetCountryTeleInformation("IN")
 	fmt.Printf("Formatted Phone Number: %s%s\n", phoneInfo.DialCode, "9876543210") // +919876543210
 
+	// Format phone number according to country template
+	formattedPhone, err := phonenumber.FormatPhoneNumber("+917394926646", "IN")
+	if err != nil {
+		fmt.Printf("Error formatting phone number: %v\n", err)
+	} else {
+		fmt.Printf("Formatted phone number: %s\n", formattedPhone) // +91 7394 926646
+	}
+
+	// Validate phone number
+	fmt.Printf("Is valid phone number: %v\n", phonenumber.IsValidPhoneNumber("+917394926646", "IN")) // true
+
+	// Parse phone number into structured components
+	phoneData, err := phonenumber.ParsePhoneNumber("+917394926646", "IN")
+	if err != nil {
+		fmt.Printf("Error parsing phone number: %v\n", err)
+	} else {
+		fmt.Printf("Country Code: %s\n", phoneData.CountryCode)       // IN
+		fmt.Printf("Dial Code: %s\n", phoneData.DialCode)             // +91
+		fmt.Printf("Formatted: %s\n", phoneData.FormattedPhoneNumber) // +91 7394 926646
+		fmt.Printf("Local Number: %s\n", phoneData.PhoneNumber)       // 7394926646
+	}
+
 	// Country Subdivisions
 	subdivisions := countryIN.GetCountrySubDivisions()
 	fmt.Printf("Country Name: %s\n", subdivisions.GetCountryName()) // India
