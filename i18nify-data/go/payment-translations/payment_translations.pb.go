@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// PaymentTranslationsConfig is the root message for paymentTranslationsConfig.json.
+// PaymentTranslationsConfig is the root message for data.json.
 type PaymentTranslationsConfig struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -4,7 +4,7 @@ package payment_translations;
 
 option go_package = "github.com/razorpay/i18nify/i18nify-data/go/payment-translations;payment_translations";
 
-// PaymentTranslationsConfig is the root message for paymentTranslationsConfig.json.
+// PaymentTranslationsConfig is the root message for data.json.
 message PaymentTranslationsConfig {
   PaymentTranslationsStrings hi = 1;
   PaymentTranslationsStrings bn = 2;
