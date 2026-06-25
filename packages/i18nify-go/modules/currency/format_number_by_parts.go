@@ -29,7 +29,7 @@ type ByParts struct {
 // FormatNumberByParts formats amount and returns a ByParts struct with each component separated.
 // Group separators are merged into the Integer field, matching JS formatNumberByParts.
 // Mirrors the JS formatNumberByParts function in i18nify-js/src/modules/currency/formatNumberByParts.ts.
-func FormatNumberByParts(amount interface{}, opts NumberFormatOptions) (*ByParts, error) {
+func (c *Currency) FormatNumberByParts(amount interface{}, opts NumberFormatOptions) (*ByParts, error) {
 	val, err := ValidateAndConvertAmount(amount)
 	if err != nil {
 		return nil, fmt.Errorf("parameter 'amount' is not a valid number: %v", err)

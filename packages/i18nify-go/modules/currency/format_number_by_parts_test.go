@@ -10,7 +10,7 @@ import (
 // ---- FormatNumberByParts ----
 
 func TestFormatNumberByParts_USD_enUS(t *testing.T) {
-	result, err := FormatNumberByParts(12345.67, NumberFormatOptions{
+	result, err := cachedCurrencyData.FormatNumberByParts(12345.67, NumberFormatOptions{
 		Currency: "USD",
 		Locale:   "en-US",
 	})
@@ -27,7 +27,7 @@ func TestFormatNumberByParts_USD_enUS(t *testing.T) {
 
 func TestFormatNumberByParts_EUR_deDE(t *testing.T) {
 	// de-DE: suffix symbol, period group sep, comma decimal sep.
-	result, err := FormatNumberByParts(12345.67, NumberFormatOptions{
+	result, err := cachedCurrencyData.FormatNumberByParts(12345.67, NumberFormatOptions{
 		Currency: "EUR",
 		Locale:   "de-DE",
 	})
@@ -47,7 +47,7 @@ func TestFormatNumberByParts_EUR_deDE(t *testing.T) {
 
 func TestFormatNumberByParts_Negative_Prefix(t *testing.T) {
 	// Minus sign must precede the currency symbol for prefix locales.
-	result, err := FormatNumberByParts(-500.0, NumberFormatOptions{
+	result, err := cachedCurrencyData.FormatNumberByParts(-500.0, NumberFormatOptions{
 		Currency: "USD",
 		Locale:   "en-US",
 	})
@@ -61,7 +61,7 @@ func TestFormatNumberByParts_Negative_Prefix(t *testing.T) {
 
 func TestFormatNumberByParts_Negative_Suffix(t *testing.T) {
 	// Minus sign must precede the number for suffix locales.
-	result, err := FormatNumberByParts(-1234567.0, NumberFormatOptions{
+	result, err := cachedCurrencyData.FormatNumberByParts(-1234567.0, NumberFormatOptions{
 		Currency: "EUR",
 		Locale:   "de-DE",
 	})
@@ -76,7 +76,7 @@ func TestFormatNumberByParts_Negative_Suffix(t *testing.T) {
 }
 
 func TestFormatNumberByParts_NoCurrency(t *testing.T) {
-	result, err := FormatNumberByParts(123.45, NumberFormatOptions{
+	result, err := cachedCurrencyData.FormatNumberByParts(123.45, NumberFormatOptions{
 		Locale: "en-US",
 	})
 	require.NoError(t, err)
@@ -90,7 +90,7 @@ func TestFormatNumberByParts_NoCurrency(t *testing.T) {
 
 func TestFormatNumberByParts_JPY_ZeroFraction(t *testing.T) {
 	// JPY has minor_unit = 0 → no decimal/fraction parts.
-	result, err := FormatNumberByParts(12346.0, NumberFormatOptions{
+	result, err := cachedCurrencyData.FormatNumberByParts(12346.0, NumberFormatOptions{
 		Currency: "JPY",
 		Locale:   "en-US",
 	})
@@ -102,7 +102,7 @@ func TestFormatNumberByParts_JPY_ZeroFraction(t *testing.T) {
 }
 
 func TestFormatNumberByParts_InvalidAmount(t *testing.T) {
-	_, err := FormatNumberByParts("not-a-number", NumberFormatOptions{
+	_, err := cachedCurrencyData.FormatNumberByParts("not-a-number", NumberFormatOptions{
 		Currency: "USD",
 		Locale:   "en-US",
 	})
@@ -111,7 +111,7 @@ func TestFormatNumberByParts_InvalidAmount(t *testing.T) {
 
 func TestFormatNumberByParts_UnknownCurrency(t *testing.T) {
 	// Unknown currency code: prefix, code-as-symbol, NBSP separator.
-	result, err := FormatNumberByParts(12345.67, NumberFormatOptions{
+	result, err := cachedCurrencyData.FormatNumberByParts(12345.67, NumberFormatOptions{
 		Currency: "XYZ",
 		Locale:   "en-US",
 	})
