@@ -14,7 +14,7 @@ const isValidCardNumber = (
   cardNumber: string,
   options?: CardValidationOptions,
 ): boolean => {
-  if (!cardNumber || typeof cardNumber !== 'string')
+  if (typeof cardNumber !== 'string' || cardNumber.trim() === '')
     throw new Error('cardNumber must be a non-empty string.');
 
   const digits = cardNumber.replace(CARD_SEPARATOR_REGEX, '');

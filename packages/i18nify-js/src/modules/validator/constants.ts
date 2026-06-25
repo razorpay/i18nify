@@ -12,8 +12,8 @@ export const EMAIL_REGEX =
 export const EMAIL_REGEX_REQUIRE_TLD =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
 
-/** Separators stripped from card numbers before digit analysis. */
-export const CARD_SEPARATOR_REGEX = /[\s-]/g;
+/** Literal spaces and hyphens stripped from card numbers before digit analysis. */
+export const CARD_SEPARATOR_REGEX = /[ -]/g;
 
 /**
  * Minimum and maximum digit lengths defined by ISO/IEC 7812-1 for

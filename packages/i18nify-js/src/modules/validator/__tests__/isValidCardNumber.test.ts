@@ -19,6 +19,10 @@ describe('isValidCardNumber', () => {
     expect(isValidCardNumber('4111 1111 1111 111a')).toBe(false);
   });
 
+  it('returns false for tab-separated digits', () => {
+    expect(isValidCardNumber('4111\t1111\t1111\t1111')).toBe(false);
+  });
+
   it('returns false when the card length is not allowed', () => {
     expect(
       isValidCardNumber('4111111111111111', { allowedLengths: [15] }),
@@ -27,6 +31,12 @@ describe('isValidCardNumber', () => {
 
   it('throws for an empty card number', () => {
     expect(() => isValidCardNumber('')).toThrow(
+      'cardNumber must be a non-empty string.',
+    );
+  });
+
+  it('throws for a whitespace-only card number', () => {
+    expect(() => isValidCardNumber('   ')).toThrow(
       'cardNumber must be a non-empty string.',
     );
   });

@@ -24,4 +24,10 @@ describe('isValidEmail', () => {
   it('throws for an empty email', () => {
     expect(() => isValidEmail('')).toThrow('email must be a non-empty string.');
   });
+
+  it('throws for a whitespace-only email', () => {
+    expect(() => isValidEmail('   ')).toThrow(
+      'email must be a non-empty string.',
+    );
+  });
 });

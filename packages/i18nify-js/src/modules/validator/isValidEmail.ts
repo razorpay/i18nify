@@ -6,7 +6,7 @@ const isValidEmail = (
   email: string,
   options?: EmailValidationOptions,
 ): boolean => {
-  if (!email || typeof email !== 'string')
+  if (typeof email !== 'string' || email.trim() === '')
     throw new Error('email must be a non-empty string.');
 
   const pattern = options?.allowNoTld ? EMAIL_REGEX : EMAIL_REGEX_REQUIRE_TLD;
