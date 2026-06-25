@@ -1,8 +1,21 @@
-import type { AddressCodeType, AddressType } from './types';
-import rawData from '#/i18nify-data/address/data.json';
+import type { AddressCodeType, AddressType, CountryMetaType } from './types';
+import rawData from '#/i18nify-data/country/metadata/data.json';
 
-const addressData = (rawData as unknown as { address_format_information: Record<string, AddressType> })
-  .address_format_information;
+const countryMetadata = (
+  rawData as unknown as {
+    metadata_information: Record<string, CountryMetaType>;
+  }
+).metadata_information;
 
-export const getAddressInfo = (code: AddressCodeType): AddressType | null =>
-  addressData[code] ?? null;
+export const getAddressInfo = (code: AddressCodeType): AddressType | null => {
+  const countryInfo = countryMetadata[code];
+
+  if (!countryInfo?.address_template) {
+    return null;
+  }
+
+  return {
+    country_name: countryInfo.country_name,
+    address_template: countryInfo.address_template,
+  };
+};

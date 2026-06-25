@@ -65,6 +65,11 @@ func TestGetMetadataInformation(t *testing.T) {
 	assertINMetaData(t, result)
 }
 
+func TestGetMetadataInformation_AddressTemplate(t *testing.T) {
+	result := GetMetadataInformation("US")
+	assert.Equal(t, "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}", result.AddressTemplate)
+}
+
 func TestGetMetadataInformationByISONumericCode(t *testing.T) {
 	tests := []struct {
 		name        string

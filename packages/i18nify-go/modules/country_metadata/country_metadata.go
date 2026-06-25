@@ -66,6 +66,7 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 			TimezoneOfCapital: cm.GetTimezoneOfCapital(),
 			Timezones:         timezones,
 			DefaultCurrency:   cm.GetDefaultCurrency(),
+			AddressTemplate:   cm.GetAddressFormat(),
 		}
 	}
 	return CountryMetadata{MetadataInformation: info}
@@ -125,20 +126,21 @@ func NewCountryMetadata(metadataInformation map[string]MetadataInformation) *Cou
 
 // MetadataInformation contains detailed information about a specific country.
 type MetadataInformation struct {
-	Alpha3            string              `json:"alpha_3"`             // Alpha3 represents the ISO 3166-1 alpha-3 code of the country.
-	ContinentCode     string              `json:"continent_code"`      // ContinentCode represents the continent code of the country.
-	ContinentName     string              `json:"continent_name"`      // ContinentName represents the name of the continent where the country belongs.
-	CountryName       string              `json:"country_name"`        // CountryName represents the official name of the country.
-	SupportedCurrency []string            `json:"supported_currency"`  // SupportedCurrency represents the official currencies used in the country.
-	DefaultLocale     string              `json:"default_locale"`      // DefaultLocale represents the default locale used in the country.
-	DialCode          string              `json:"dial_code"`           // DialCode represents the international dialing code of the country.
-	Flag              string              `json:"flag"`                // Flag represents the flag emoji or image URL of the country.
-	Locales           map[string]Locale   `json:"locales"`             // Locales represents the list of supported locales in the country.
-	NumericCode       string              `json:"numeric_code"`        // NumericCode represents the ISO 3166-1 numeric code of the country.
-	Sovereignty       string              `json:"sovereignty"`         // Sovereignty represents the official sovereignty status of the country.
-	TimezoneOfCapital string              `json:"timezone_of_capital"` // TimezoneOfCapital represents the timezone of the capital city of the country.
-	Timezones         map[string]Timezone `json:"timezones"`           // Timezones represents the list of timezones used in the country, keyed by timezone identifier.
-	DefaultCurrency   string              `json:"default_currency"`    // DefaultCurrency represents the default currency used in the country.
+	Alpha3            string              `json:"alpha_3"`                    // Alpha3 represents the ISO 3166-1 alpha-3 code of the country.
+	ContinentCode     string              `json:"continent_code"`             // ContinentCode represents the continent code of the country.
+	ContinentName     string              `json:"continent_name"`             // ContinentName represents the name of the continent where the country belongs.
+	CountryName       string              `json:"country_name"`               // CountryName represents the official name of the country.
+	SupportedCurrency []string            `json:"supported_currency"`         // SupportedCurrency represents the official currencies used in the country.
+	DefaultLocale     string              `json:"default_locale"`             // DefaultLocale represents the default locale used in the country.
+	DialCode          string              `json:"dial_code"`                  // DialCode represents the international dialing code of the country.
+	Flag              string              `json:"flag"`                       // Flag represents the flag emoji or image URL of the country.
+	Locales           map[string]Locale   `json:"locales"`                    // Locales represents the list of supported locales in the country.
+	NumericCode       string              `json:"numeric_code"`               // NumericCode represents the ISO 3166-1 numeric code of the country.
+	Sovereignty       string              `json:"sovereignty"`                // Sovereignty represents the official sovereignty status of the country.
+	TimezoneOfCapital string              `json:"timezone_of_capital"`        // TimezoneOfCapital represents the timezone of the capital city of the country.
+	Timezones         map[string]Timezone `json:"timezones"`                  // Timezones represents the list of timezones used in the country, keyed by timezone identifier.
+	DefaultCurrency   string              `json:"default_currency"`           // DefaultCurrency represents the default currency used in the country.
+	AddressTemplate   string              `json:"address_template,omitempty"` // AddressTemplate represents the country-specific address formatting template.
 }
 
 // NewMetadataInformation creates a new MetadataInformation instance.

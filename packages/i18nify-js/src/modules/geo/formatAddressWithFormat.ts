@@ -4,7 +4,7 @@ import { getAddressInfo } from './getAddressInfo';
 import { AddressCodeType, AddressType, AddressComponents } from './types';
 
 /**
- * Formats address components using the country-specific template from i18nify-data.
+ * Formats address components using the country-specific template from country metadata.
  * Empty component fields substitute as blank strings; lines that become empty
  * after substitution are removed from the output.
  */
@@ -28,7 +28,7 @@ const formatAddressWithFormat = (
 
   // Reuse the base formatter so placeholder substitution and blank-line cleanup
   // stay defined in exactly one place for the JS geo module.
-  return formatAddress(addressInfo.template, components);
+  return formatAddress(addressInfo.address_template, components);
 };
 
 export default withErrorBoundary<typeof formatAddressWithFormat>(

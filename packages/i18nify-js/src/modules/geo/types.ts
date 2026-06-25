@@ -13,6 +13,7 @@ export type CountryMetaType = {
   locales: Record<string, { name: string }>;
   default_locale: string;
   default_currency: string;
+  address_template?: string;
 };
 
 export type CityType = {
@@ -53,6 +54,5 @@ export type AddressCodeType = string;
 
 export type AddressType = {
   country_name: string;
-  template: string;
+  address_template: string;
 };
-

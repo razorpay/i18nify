@@ -20,7 +20,7 @@ type AddressComponents struct {
 }
 
 // FormatAddressWithFormat formats address components using the country-specific template for countryCode.
-// Templates are loaded from embedded i18nify-data at startup (see geo.go init) and cached in cachedAddressData.
+// Templates are loaded from embedded country metadata at startup (see geo.go init).
 // Each {placeholder} in the template is replaced with the matching field; blank lines in the result are removed.
 func FormatAddressWithFormat(countryCode string, components AddressComponents) (string, error) {
 	if strings.TrimSpace(countryCode) == "" {
@@ -29,13 +29,12 @@ func FormatAddressWithFormat(countryCode string, components AddressComponents) (
 
 	code := strings.ToUpper(strings.TrimSpace(countryCode))
 
-	addrMap := cachedAddressData.GetAddressFormatInformation()
-	addrInfo, exists := addrMap[code]
-	if !exists || addrInfo == nil {
+	countryMeta, exists := cachedCountryMetadata.GetMetadataInformation()[code]
+	if !exists || countryMeta == nil || countryMeta.GetAddressFormat() == "" {
 		return "", fmt.Errorf("formatAddressWithFormat: address format for country code %q not found", code)
 	}
 
 	// Reuse the base formatter so template substitution and blank-line cleanup
 	// remain defined in one place for the Go geo module.
-	return FormatAddress(addrInfo.GetTemplate(), components)
+	return FormatAddress(countryMeta.GetAddressFormat(), components)
 }
