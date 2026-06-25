@@ -1,4 +1,4 @@
-package i18n
+package core
 
 import (
 	"reflect"
@@ -69,11 +69,9 @@ func TestUnflattenKeys(t *testing.T) {
 				}
 				return
 			}
-
 			if err != nil {
 				t.Fatalf("unexpected error: %v", err)
 			}
-
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Fatalf("UnflattenKeys() = %#v, want %#v", got, tt.want)
 			}

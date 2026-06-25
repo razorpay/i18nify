@@ -1,4 +1,4 @@
-package i18n
+package core
 
 import (
 	"reflect"
@@ -68,11 +68,9 @@ func TestFlattenKeys(t *testing.T) {
 				}
 				return
 			}
-
 			if err != nil {
 				t.Fatalf("unexpected error: %v", err)
 			}
-
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Fatalf("FlattenKeys() = %#v, want %#v", got, tt.want)
 			}

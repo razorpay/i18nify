@@ -1,4 +1,4 @@
-package i18n
+package core
 
 import (
 	"fmt"
@@ -17,7 +17,7 @@ type FlattenOptions struct {
 // not recursed into.
 func FlattenKeys(obj map[string]any, opts *FlattenOptions) (map[string]any, error) {
 	if obj == nil {
-		return nil, fmt.Errorf("i18n: FlattenKeys: input must be a non-nil map")
+		return nil, fmt.Errorf("core: FlattenKeys: input must be a non-nil map")
 	}
 	delimiter := defaultDelimiter
 	if opts != nil && opts.Delimiter != "" {

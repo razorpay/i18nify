@@ -1,4 +1,4 @@
-package i18n
+package core
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ type UnflattenOptions struct {
 // delimiter-joined keys produced by FlattenKeys.
 func UnflattenKeys(obj map[string]any, opts *UnflattenOptions) (map[string]any, error) {
 	if obj == nil {
-		return nil, fmt.Errorf("i18n: UnflattenKeys: input must be a non-nil map")
+		return nil, fmt.Errorf("core: UnflattenKeys: input must be a non-nil map")
 	}
 	delimiter := defaultDelimiter
 	if opts != nil && opts.Delimiter != "" {
@@ -37,13 +37,12 @@ func UnflattenKeys(obj map[string]any, opts *UnflattenOptions) (map[string]any, 
 			cursor[part] = nested
 			cursor = nested
 		}
-		leafKey := parts[len(parts)-1]
-		if existing, ok := cursor[leafKey]; ok {
-			if _, isNested := existing.(map[string]any); isNested {
-				continue
-			}
+		// Only overwrite if a nested map hasn't already claimed this key,
+		// so that "a.b": v always wins over "a": scalar regardless of iteration order.
+		lastPart := parts[len(parts)-1]
+		if _, alreadyMap := cursor[lastPart].(map[string]any); !alreadyMap {
+			cursor[lastPart] = value
 		}
-		cursor[leafKey] = value
 	}
 	return result, nil
 }
