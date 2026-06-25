@@ -48,7 +48,11 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 		locales := make(map[string]Locale, len(cm.GetLocales()))
 		for locKey, locVal := range cm.GetLocales() {
 			if locVal != nil {
-				locales[locKey] = Locale{Name: locVal.GetName()}
+				locales[locKey] = Locale{
+					Name:          locVal.GetName(),
+					DateOrder:     locVal.GetDateOrder(),
+					DateSeparator: locVal.GetDateSeparator(),
+				}
 			}
 		}
 		info[code] = MetadataInformation{
@@ -163,7 +167,9 @@ func NewMetadataInformation(alpha_3 string, continentCode string, continentName 
 
 // Locale represents a locale with its code and name.
 type Locale struct {
-	Name string `json:"name"` // Name represents the name of the locale.
+	Name          string `json:"name"`                     // Name represents the name of the locale.
+	DateOrder     string `json:"date_order,omitempty"`     // DateOrder represents the locale-specific date field order when country-specific.
+	DateSeparator string `json:"date_separator,omitempty"` // DateSeparator represents the locale-specific date separator when country-specific.
 }
 
 // NewLocale creates a new Locale instance.

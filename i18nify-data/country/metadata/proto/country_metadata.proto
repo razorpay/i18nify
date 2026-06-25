@@ -33,7 +33,10 @@ message TimezoneInfo {
   string utc_offset = 1;
 }
 
-// LocaleInfo contains locale details.
+// LocaleInfo contains locale details including country-specific date formatting
+// moved from the shared datetime dataset.
 message LocaleInfo {
   string name = 1;
+  string date_order = 2;
+  string date_separator = 3;
 }

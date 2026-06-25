@@ -7,23 +7,13 @@ import (
 	"fmt"
 
 	countryMetadata "github.com/razorpay/i18nify/i18nify-data/go/country/metadata"
-	datetimeData "github.com/razorpay/i18nify/i18nify-data/go/datetime"
 )
-
-// cachedDateTimeData is the datetime configuration loaded at init.
-var cachedDateTimeData *datetimeData.DateTimeData
 
 // cachedCountryMetadata is the country metadata used by GetTimeZoneByCountry.
 var cachedCountryMetadata *countryMetadata.CountryMetadataData
 
-// init loads datetime and country metadata once at package startup.
+// init loads country metadata once at package startup.
 func init() {
-	dt, err := datetimeData.GetDateTimeData()
-	if err != nil {
-		panic(fmt.Sprintf("datetime: failed to load datetime data: %v", err))
-	}
-	cachedDateTimeData = dt
-
 	cm, err := countryMetadata.GetCountryMetadataData()
 	if err != nil {
 		panic(fmt.Sprintf("datetime: failed to load country metadata: %v", err))

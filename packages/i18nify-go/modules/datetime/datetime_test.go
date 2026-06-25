@@ -30,6 +30,16 @@ func TestFormatDateTime_DateOnly_enGB(t *testing.T) {
 	assert.Equal(t, "5/3/2024", got)
 }
 
+func TestFormatDateTime_DateOnly_frCAUsesCountryMetadata(t *testing.T) {
+	ts := time.Date(2024, 3, 5, 0, 0, 0, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale:       "fr-CA",
+		DateTimeMode: ModeDateOnly,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "5-3-2024", got)
+}
+
 func TestFormatDateTime_DateOnly_Japanese(t *testing.T) {
 	ts := time.Date(2024, 3, 5, 0, 0, 0, 0, time.UTC)
 	got, err := FormatDateTime(ts, FormatDateTimeOptions{
