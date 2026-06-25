@@ -33,8 +33,8 @@
         }
       },
       "default_locale": "fa_AF",
-      "default_currency": "AFN",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "AFN"
     },
     "AX": {
       "country_name": "Åland Islands",
@@ -60,8 +60,8 @@
         }
       },
       "default_locale": "sv_AX",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\nAX-{zip} {city}\nÅLAND"
+      "address_template": "{organization}\n{name}\n{street_address}\nAX-{zip} {city}\nÅLAND",
+      "default_currency": "EUR"
     },
     "AL": {
       "country_name": "Albania",
@@ -90,8 +90,8 @@
         }
       },
       "default_locale": "sq",
-      "default_currency": "ALL",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}",
+      "default_currency": "ALL"
     },
     "DZ": {
       "country_name": "Algeria",
@@ -117,8 +117,8 @@
         }
       },
       "default_locale": "ar_DZ",
-      "default_currency": "DZD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "DZD"
     },
     "AS": {
       "country_name": "American Samoa",
@@ -150,8 +150,8 @@
         }
       },
       "default_locale": "en_AS",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "USD"
     },
     "AD": {
       "country_name": "Andorra",
@@ -177,8 +177,8 @@
         }
       },
       "default_locale": "ca",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "AO": {
       "country_name": "Angola",
@@ -230,8 +230,8 @@
         }
       },
       "default_locale": "en_AI",
-      "default_currency": "XCD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "XCD"
     },
     "AQ": {
       "country_name": "Antarctica",
@@ -360,8 +360,8 @@
         }
       },
       "default_locale": "es_AR",
-      "default_currency": "ARS",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}",
+      "default_currency": "ARS"
     },
     "AM": {
       "country_name": "Armenia",
@@ -387,8 +387,8 @@
         }
       },
       "default_locale": "hy",
-      "default_currency": "AMD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}\n{state}",
+      "default_currency": "AMD"
     },
     "AW": {
       "country_name": "Aruba",
@@ -479,8 +479,8 @@
         }
       },
       "default_locale": "en_AU",
-      "default_currency": "AUD",
-      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "AUD"
     },
     "AT": {
       "country_name": "Austria",
@@ -515,8 +515,8 @@
         }
       },
       "default_locale": "de_AT",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "AZ": {
       "country_name": "Azerbaijan",
@@ -548,8 +548,8 @@
         }
       },
       "default_locale": "az",
-      "default_currency": "AZN",
-      "address_template": "{name}\n{organization}\n{street_address}\nAZ {zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\nAZ {zip} {city}",
+      "default_currency": "AZN"
     },
     "BS": {
       "country_name": "Bahamas (the)",
@@ -575,8 +575,8 @@
         }
       },
       "default_locale": "en_BS",
-      "default_currency": "BSD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state}",
+      "default_currency": "BSD"
     },
     "BH": {
       "country_name": "Bahrain",
@@ -611,8 +611,8 @@
         }
       },
       "default_locale": "ar_BH",
-      "default_currency": "BHD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "BHD"
     },
     "BD": {
       "country_name": "Bangladesh",
@@ -641,8 +641,8 @@
         }
       },
       "default_locale": "bn_BD",
-      "default_currency": "BDT",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} - {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} - {zip}",
+      "default_currency": "BDT"
     },
     "BB": {
       "country_name": "Barbados",
@@ -668,8 +668,8 @@
         }
       },
       "default_locale": "en_BB",
-      "default_currency": "BBD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}",
+      "default_currency": "BBD"
     },
     "BY": {
       "country_name": "Belarus",
@@ -698,8 +698,8 @@
         }
       },
       "default_locale": "be",
-      "default_currency": "BYN",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip}, {city}\n{state}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip}, {city}\n{state}",
+      "default_currency": "BYN"
     },
     "BE": {
       "country_name": "Belgium",
@@ -731,8 +731,8 @@
         }
       },
       "default_locale": "nl_BE",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "BZ": {
       "country_name": "Belize",
@@ -816,8 +816,8 @@
         }
       },
       "default_locale": "en_BM",
-      "default_currency": "BMD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "BMD"
     },
     "BT": {
       "country_name": "Bhutan",
@@ -844,8 +844,8 @@
         }
       },
       "default_locale": "dz",
-      "default_currency": "BTN",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "BTN"
     },
     "BO": {
       "country_name": "Bolivia",
@@ -942,8 +942,8 @@
         }
       },
       "default_locale": "bs",
-      "default_currency": "BAM",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "BAM"
     },
     "BW": {
       "country_name": "Botswana",
@@ -1075,8 +1075,8 @@
         }
       },
       "default_locale": "pt_BR",
-      "default_currency": "BRL",
-      "address_template": "{organization}\n{name}\n{street_address}\n{district}\n{city}-{state}\n{zip}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{district}\n{city}-{state}\n{zip}",
+      "default_currency": "BRL"
     },
     "IO": {
       "country_name": "British Indian Ocean Territory (the)",
@@ -1102,8 +1102,8 @@
         }
       },
       "default_locale": "en_IO",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "USD"
     },
     "BN": {
       "country_name": "Brunei Darussalam",
@@ -1132,8 +1132,8 @@
         }
       },
       "default_locale": "ms_BN",
-      "default_currency": "BND",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "BND"
     },
     "BG": {
       "country_name": "Bulgaria",
@@ -1165,8 +1165,8 @@
         }
       },
       "default_locale": "bg",
-      "default_currency": "BGN",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "BGN"
     },
     "BF": {
       "country_name": "Burkina Faso",
@@ -1195,8 +1195,8 @@
         }
       },
       "default_locale": "fr_BF",
-      "default_currency": "XOF",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {sorting_code}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {sorting_code}",
+      "default_currency": "XOF"
     },
     "BI": {
       "country_name": "Burundi",
@@ -1251,8 +1251,8 @@
         }
       },
       "default_locale": "pt_CV",
-      "default_currency": "CVE",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}",
+      "default_currency": "CVE"
     },
     "KH": {
       "country_name": "Cambodia",
@@ -1284,8 +1284,8 @@
         }
       },
       "default_locale": "km",
-      "default_currency": "KHR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "KHR"
     },
     "CM": {
       "country_name": "Cameroon",
@@ -1418,8 +1418,8 @@
         }
       },
       "default_locale": "en_CA",
-      "default_currency": "CAD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "CAD"
     },
     "KY": {
       "country_name": "Cayman Islands (the)",
@@ -1545,8 +1545,8 @@
         }
       },
       "default_locale": "es_CL",
-      "default_currency": "CLP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}",
+      "default_currency": "CLP"
     },
     "CN": {
       "country_name": "China",
@@ -1590,8 +1590,8 @@
         }
       },
       "default_locale": "zh_CN",
-      "default_currency": "CNY",
-      "address_template": "{zip}\n{state}{city}{district}\n{street_address}\n{organization}\n{name}"
+      "address_template": "{zip}\n{state}{city}{district}\n{street_address}\n{organization}\n{name}",
+      "default_currency": "CNY"
     },
     "CX": {
       "country_name": "Christmas Island",
@@ -1623,8 +1623,8 @@
         }
       },
       "default_locale": "en",
-      "default_currency": "AUD",
-      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "AUD"
     },
     "CC": {
       "country_name": "Cocos (Keeling) Islands (the)",
@@ -1653,8 +1653,8 @@
         }
       },
       "default_locale": "ms_CC",
-      "default_currency": "AUD",
-      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "AUD"
     },
     "CO": {
       "country_name": "Colombia",
@@ -1681,8 +1681,8 @@
         }
       },
       "default_locale": "es_CO",
-      "default_currency": "COP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}, {state}, {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}, {state}, {zip}",
+      "default_currency": "COP"
     },
     "KM": {
       "country_name": "Comoros (the)",
@@ -1845,8 +1845,8 @@
         }
       },
       "default_locale": "es_CR",
-      "default_currency": "CRC",
-      "address_template": "{name}\n{organization}\n{street_address}\n{state}, {city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}, {city}\n{zip}",
+      "default_currency": "CRC"
     },
     "CI": {
       "country_name": "Côte d'Ivoire",
@@ -1872,8 +1872,8 @@
         }
       },
       "default_locale": "fr_CI",
-      "default_currency": "XOF",
-      "address_template": "{name}\n{organization}\n{sorting_code} {street_address} {city} {sorting_code}"
+      "address_template": "{name}\n{organization}\n{sorting_code} {street_address} {city} {sorting_code}",
+      "default_currency": "XOF"
     },
     "HR": {
       "country_name": "Croatia",
@@ -1902,8 +1902,8 @@
         }
       },
       "default_locale": "hr_HR",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\nHR-{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\nHR-{zip} {city}",
+      "default_currency": "EUR"
     },
     "CU": {
       "country_name": "Cuba",
@@ -1933,8 +1933,8 @@
         }
       },
       "default_locale": "es_CU",
-      "default_currency": "CUP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state}\n{zip}",
+      "default_currency": "CUP"
     },
     "CW": {
       "country_name": "Curaçao",
@@ -1998,8 +1998,8 @@
         }
       },
       "default_locale": "el_CY",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "CZ": {
       "country_name": "Czechia",
@@ -2028,8 +2028,8 @@
         }
       },
       "default_locale": "cs",
-      "default_currency": "CZK",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "CZK"
     },
     "DK": {
       "country_name": "Denmark",
@@ -2064,8 +2064,8 @@
         }
       },
       "default_locale": "da_DK",
-      "default_currency": "DKK",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "DKK"
     },
     "DJ": {
       "country_name": "Djibouti",
@@ -2152,8 +2152,8 @@
         }
       },
       "default_locale": "es_DO",
-      "default_currency": "DOP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "DOP"
     },
     "EC": {
       "country_name": "Ecuador",
@@ -2182,8 +2182,8 @@
         }
       },
       "default_locale": "es_EC",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}",
+      "default_currency": "USD"
     },
     "EG": {
       "country_name": "Egypt",
@@ -2215,8 +2215,8 @@
         }
       },
       "default_locale": "ar_EG",
-      "default_currency": "EGP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}",
+      "default_currency": "EGP"
     },
     "SV": {
       "country_name": "El Salvador",
@@ -2243,8 +2243,8 @@
         }
       },
       "default_locale": "es_SV",
-      "default_currency": "SVC",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip}-{city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}-{city}\n{state}",
+      "default_currency": "SVC"
     },
     "GQ": {
       "country_name": "Equatorial Guinea",
@@ -2343,8 +2343,8 @@
         }
       },
       "default_locale": "et",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
+      "default_currency": "EUR"
     },
     "SZ": {
       "country_name": "Eswatini",
@@ -2373,8 +2373,8 @@
         }
       },
       "default_locale": "en_SZ",
-      "default_currency": "SZL",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "SZL"
     },
     "ET": {
       "country_name": "Ethiopia",
@@ -2415,8 +2415,8 @@
         }
       },
       "default_locale": "am",
-      "default_currency": "ETB",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "ETB"
     },
     "FK": {
       "country_name": "Falkland Islands (the) [Malvinas]",
@@ -2442,8 +2442,8 @@
         }
       },
       "default_locale": "en_FK",
-      "default_currency": "FKP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "FKP"
     },
     "FO": {
       "country_name": "Faroe Islands (the)",
@@ -2472,8 +2472,8 @@
         }
       },
       "default_locale": "fo",
-      "default_currency": "DKK",
-      "address_template": "{name}\n{organization}\n{street_address}\nFO{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\nFO{zip} {city}",
+      "default_currency": "DKK"
     },
     "FJ": {
       "country_name": "Fiji",
@@ -2534,8 +2534,8 @@
         }
       },
       "default_locale": "fi_FI",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\nFI-{zip} {city}"
+      "address_template": "{organization}\n{name}\n{street_address}\nFI-{zip} {city}",
+      "default_currency": "EUR"
     },
     "FR": {
       "country_name": "France [m]",
@@ -2579,8 +2579,8 @@
         }
       },
       "default_locale": "fr_FR",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "GF": {
       "country_name": "French Guiana",
@@ -2606,8 +2606,8 @@
         }
       },
       "default_locale": "fr_GF",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "EUR"
     },
     "PF": {
       "country_name": "French Polynesia",
@@ -2642,8 +2642,8 @@
         }
       },
       "default_locale": "fr_PF",
-      "default_currency": "XPF",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
+      "default_currency": "XPF"
     },
     "TF": {
       "country_name": "French Southern Territories (the)",
@@ -2768,8 +2768,8 @@
         }
       },
       "default_locale": "ka",
-      "default_currency": "GEL",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "GEL"
     },
     "DE": {
       "country_name": "Germany",
@@ -2795,8 +2795,8 @@
         }
       },
       "default_locale": "de",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "GH": {
       "country_name": "Ghana",
@@ -2866,8 +2866,8 @@
         }
       },
       "default_locale": "en_GI",
-      "default_currency": "GIP",
-      "address_template": "{name}\n{organization}\n{street_address}\nGIBRALTAR\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\nGIBRALTAR\n{zip}",
+      "default_currency": "GIP"
     },
     "GR": {
       "country_name": "Greece",
@@ -2899,8 +2899,8 @@
         }
       },
       "default_locale": "el_GR",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "GL": {
       "country_name": "Greenland",
@@ -2938,8 +2938,8 @@
         }
       },
       "default_locale": "kl",
-      "default_currency": "DKK",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "DKK"
     },
     "GD": {
       "country_name": "Grenada",
@@ -2991,8 +2991,8 @@
         }
       },
       "default_locale": "fr_GP",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "EUR"
     },
     "GU": {
       "country_name": "Guam",
@@ -3021,8 +3021,8 @@
         }
       },
       "default_locale": "en_GU",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "USD"
     },
     "GT": {
       "country_name": "Guatemala",
@@ -3048,8 +3048,8 @@
         }
       },
       "default_locale": "es_GT",
-      "default_currency": "GTQ",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip}- {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}- {city}",
+      "default_currency": "GTQ"
     },
     "GG": {
       "country_name": "Guernsey",
@@ -3078,8 +3078,8 @@
         }
       },
       "default_locale": "en",
-      "default_currency": "GBP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\nGUERNSEY\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\nGUERNSEY\n{zip}",
+      "default_currency": "GBP"
     },
     "GN": {
       "country_name": "Guinea",
@@ -3105,8 +3105,8 @@
         }
       },
       "default_locale": "fr_GN",
-      "default_currency": "GNF",
-      "address_template": "{name}\n{organization}\n{zip} {street_address} {city}"
+      "address_template": "{name}\n{organization}\n{zip} {street_address} {city}",
+      "default_currency": "GNF"
     },
     "GW": {
       "country_name": "Guinea-Bissau",
@@ -3135,8 +3135,8 @@
         }
       },
       "default_locale": "pt_GW",
-      "default_currency": "XOF",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "XOF"
     },
     "GY": {
       "country_name": "Guyana",
@@ -3192,8 +3192,8 @@
         }
       },
       "default_locale": "ht",
-      "default_currency": "HTG",
-      "address_template": "{name}\n{organization}\n{street_address}\nHT{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\nHT{zip} {city}",
+      "default_currency": "HTG"
     },
     "HM": {
       "country_name": "Heard Island and McDonald Islands",
@@ -3219,8 +3219,8 @@
         }
       },
       "default_locale": "nan",
-      "default_currency": "AUD",
-      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "AUD"
     },
     "VA": {
       "country_name": "Holy See (the)",
@@ -3252,8 +3252,8 @@
         }
       },
       "default_locale": "la",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "HN": {
       "country_name": "Honduras",
@@ -3285,8 +3285,8 @@
         }
       },
       "default_locale": "es_HN",
-      "default_currency": "HNL",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state}\n{zip}",
+      "default_currency": "HNL"
     },
     "HK": {
       "country_name": "Hong Kong",
@@ -3321,8 +3321,8 @@
         }
       },
       "default_locale": "zh_HK",
-      "default_currency": "HKD",
-      "address_template": "{state}\n{city}\n{street_address}\n{organization}\n{name}"
+      "address_template": "{state}\n{city}\n{street_address}\n{organization}\n{name}",
+      "default_currency": "HKD"
     },
     "HU": {
       "country_name": "Hungary",
@@ -3348,8 +3348,8 @@
         }
       },
       "default_locale": "hu_HU",
-      "default_currency": "HUF",
-      "address_template": "{name}\n{organization}\n{city}\n{street_address}\n{zip}"
+      "address_template": "{name}\n{organization}\n{city}\n{street_address}\n{zip}",
+      "default_currency": "HUF"
     },
     "IS": {
       "country_name": "Iceland",
@@ -3390,8 +3390,8 @@
         }
       },
       "default_locale": "is",
-      "default_currency": "ISK",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "ISK"
     },
     "IN": {
       "country_name": "India",
@@ -3492,8 +3492,8 @@
         }
       },
       "default_locale": "en_IN",
-      "default_currency": "INR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}\n{state}",
+      "default_currency": "INR"
     },
     "ID": {
       "country_name": "Indonesia",
@@ -3537,8 +3537,8 @@
         }
       },
       "default_locale": "id",
-      "default_currency": "IDR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}",
+      "default_currency": "IDR"
     },
     "IR": {
       "country_name": "Iran (Islamic Republic of)",
@@ -3567,8 +3567,8 @@
         }
       },
       "default_locale": "fa_IR",
-      "default_currency": "IRR",
-      "address_template": "{organization}\n{name}\n{state}\n{city}, {district}\n{street_address}\n{zip}"
+      "address_template": "{organization}\n{name}\n{state}\n{city}, {district}\n{street_address}\n{zip}",
+      "default_currency": "IRR"
     },
     "IQ": {
       "country_name": "Iraq",
@@ -3600,8 +3600,8 @@
         }
       },
       "default_locale": "ar_IQ",
-      "default_currency": "IQD",
-      "address_template": "{organization}\n{name}\n{street_address}\n{city}, {state}\n{zip}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{city}, {state}\n{zip}",
+      "default_currency": "IQD"
     },
     "IE": {
       "country_name": "Ireland",
@@ -3630,8 +3630,8 @@
         }
       },
       "default_locale": "en_IE",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}\n{state}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}\n{state}\n{zip}",
+      "default_currency": "EUR"
     },
     "IM": {
       "country_name": "Isle of Man",
@@ -3660,8 +3660,8 @@
         }
       },
       "default_locale": "en",
-      "default_currency": "GBP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "GBP"
     },
     "IL": {
       "country_name": "Israel",
@@ -3693,8 +3693,8 @@
         }
       },
       "default_locale": "he",
-      "default_currency": "ILS",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "ILS"
     },
     "IT": {
       "country_name": "Italy",
@@ -3738,8 +3738,8 @@
         }
       },
       "default_locale": "it_IT",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
+      "default_currency": "EUR"
     },
     "JM": {
       "country_name": "Jamaica",
@@ -3765,8 +3765,8 @@
         }
       },
       "default_locale": "en_JM",
-      "default_currency": "JMD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {sorting_code}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {sorting_code}",
+      "default_currency": "JMD"
     },
     "JP": {
       "country_name": "Japan",
@@ -3792,8 +3792,8 @@
         }
       },
       "default_locale": "ja",
-      "default_currency": "JPY",
-      "address_template": "〒{zip}\n{state}\n{street_address}\n{organization}\n{name}"
+      "address_template": "〒{zip}\n{state}\n{street_address}\n{organization}\n{name}",
+      "default_currency": "JPY"
     },
     "JE": {
       "country_name": "Jersey",
@@ -3825,8 +3825,8 @@
         }
       },
       "default_locale": "en",
-      "default_currency": "GBP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\nJERSEY\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\nJERSEY\n{zip}",
+      "default_currency": "GBP"
     },
     "JO": {
       "country_name": "Jordan",
@@ -3855,8 +3855,8 @@
         }
       },
       "default_locale": "ar_JO",
-      "default_currency": "JOD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "JOD"
     },
     "KZ": {
       "country_name": "Kazakhstan",
@@ -3903,8 +3903,8 @@
         }
       },
       "default_locale": "kk",
-      "default_currency": "KZT",
-      "address_template": "{zip}\n{state}\n{city}\n{street_address}\n{organization}\n{name}"
+      "address_template": "{zip}\n{state}\n{city}\n{street_address}\n{organization}\n{name}",
+      "default_currency": "KZT"
     },
     "KE": {
       "country_name": "Kenya",
@@ -3933,8 +3933,8 @@
         }
       },
       "default_locale": "en_KE",
-      "default_currency": "KES",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "KES"
     },
     "KI": {
       "country_name": "Kiribati",
@@ -3969,8 +3969,8 @@
         }
       },
       "default_locale": "en_KI",
-      "default_currency": "AUD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{state}\n{city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}\n{city}",
+      "default_currency": "AUD"
     },
     "KP": {
       "country_name": "Korea (the Democratic People's Republic of)",
@@ -3996,8 +3996,8 @@
         }
       },
       "default_locale": "ko_KP",
-      "default_currency": "KPW",
-      "address_template": "{zip}\n{state}\n{city}\n{street_address}\n{organization}\n{name}"
+      "address_template": "{zip}\n{state}\n{city}\n{street_address}\n{organization}\n{name}",
+      "default_currency": "KPW"
     },
     "KR": {
       "country_name": "Korea (the Republic of)",
@@ -4026,8 +4026,8 @@
         }
       },
       "default_locale": "ko_KR",
-      "default_currency": "KRW",
-      "address_template": "{state} {city}{district}\n{street_address}\n{organization}\n{name}\n{zip}"
+      "address_template": "{state} {city}{district}\n{street_address}\n{organization}\n{name}\n{zip}",
+      "default_currency": "KRW"
     },
     "KW": {
       "country_name": "Kuwait",
@@ -4056,8 +4056,8 @@
         }
       },
       "default_locale": "ar_KW",
-      "default_currency": "KWD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "KWD"
     },
     "KG": {
       "country_name": "Kyrgyzstan",
@@ -4089,8 +4089,8 @@
         }
       },
       "default_locale": "ky",
-      "default_currency": "KGS",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "KGS"
     },
     "LA": {
       "country_name": "Lao People's Democratic Republic (the)",
@@ -4122,8 +4122,8 @@
         }
       },
       "default_locale": "lo",
-      "default_currency": "LAK",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "LAK"
     },
     "LV": {
       "country_name": "Latvia",
@@ -4155,8 +4155,8 @@
         }
       },
       "default_locale": "lv",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{state}\n{city}, {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}\n{city}, {zip}",
+      "default_currency": "EUR"
     },
     "LB": {
       "country_name": "Lebanon",
@@ -4191,8 +4191,8 @@
         }
       },
       "default_locale": "ar_LB",
-      "default_currency": "LBP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "LBP"
     },
     "LS": {
       "country_name": "Lesotho",
@@ -4228,8 +4228,8 @@
         }
       },
       "default_locale": "en_LS",
-      "default_currency": "LSL",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "LSL"
     },
     "LR": {
       "country_name": "Liberia",
@@ -4255,8 +4255,8 @@
         }
       },
       "default_locale": "en_LR",
-      "default_currency": "LRD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "LRD"
     },
     "LY": {
       "country_name": "Libya",
@@ -4314,8 +4314,8 @@
         }
       },
       "default_locale": "de_LI",
-      "default_currency": "CHF",
-      "address_template": "{organization}\n{name}\n{street_address}\nFL-{zip} {city}"
+      "address_template": "{organization}\n{name}\n{street_address}\nFL-{zip} {city}",
+      "default_currency": "CHF"
     },
     "LT": {
       "country_name": "Lithuania",
@@ -4347,8 +4347,8 @@
         }
       },
       "default_locale": "lt",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\nLT-{zip} {city} {state}"
+      "address_template": "{organization}\n{name}\n{street_address}\nLT-{zip} {city} {state}",
+      "default_currency": "EUR"
     },
     "LU": {
       "country_name": "Luxembourg",
@@ -4380,8 +4380,8 @@
         }
       },
       "default_locale": "lb",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\nL-{zip} {city}"
+      "address_template": "{organization}\n{name}\n{street_address}\nL-{zip} {city}",
+      "default_currency": "EUR"
     },
     "MO": {
       "country_name": "Macao",
@@ -4413,8 +4413,8 @@
         }
       },
       "default_locale": "zh",
-      "default_currency": "MOP",
-      "address_template": "{street_address}\n{organization}\n{name}"
+      "address_template": "{street_address}\n{organization}\n{name}",
+      "default_currency": "MOP"
     },
     "MG": {
       "country_name": "Madagascar",
@@ -4443,8 +4443,8 @@
         }
       },
       "default_locale": "fr_MG",
-      "default_currency": "MGA",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "MGA"
     },
     "MW": {
       "country_name": "Malawi",
@@ -4479,8 +4479,8 @@
         }
       },
       "default_locale": "ny",
-      "default_currency": "MWK",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {sorting_code}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {sorting_code}",
+      "default_currency": "MWK"
     },
     "MY": {
       "country_name": "Malaysia",
@@ -4530,8 +4530,8 @@
         }
       },
       "default_locale": "ms_MY",
-      "default_currency": "MYR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{zip} {city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{zip} {city}\n{state}",
+      "default_currency": "MYR"
     },
     "MV": {
       "country_name": "Maldives",
@@ -4560,8 +4560,8 @@
         }
       },
       "default_locale": "dv",
-      "default_currency": "MVR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "MVR"
     },
     "ML": {
       "country_name": "Mali",
@@ -4619,8 +4619,8 @@
         }
       },
       "default_locale": "mt",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "EUR"
     },
     "MH": {
       "country_name": "Marshall Islands (the)",
@@ -4652,8 +4652,8 @@
         }
       },
       "default_locale": "mh",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "USD"
     },
     "MQ": {
       "country_name": "Martinique",
@@ -4679,8 +4679,8 @@
         }
       },
       "default_locale": "fr_MQ",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "EUR"
     },
     "MR": {
       "country_name": "Mauritania",
@@ -4753,8 +4753,8 @@
         }
       },
       "default_locale": "en_MU",
-      "default_currency": "MUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}",
+      "default_currency": "MUR"
     },
     "YT": {
       "country_name": "Mayotte",
@@ -4780,8 +4780,8 @@
         }
       },
       "default_locale": "fr_YT",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "EUR"
     },
     "MX": {
       "country_name": "Mexico",
@@ -4838,8 +4838,8 @@
         }
       },
       "default_locale": "es_MX",
-      "default_currency": "MXN",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{zip} {city}, {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{zip} {city}, {state}",
+      "default_currency": "MXN"
     },
     "FM": {
       "country_name": "Micronesia (Federated States of)",
@@ -4895,8 +4895,8 @@
         }
       },
       "default_locale": "en_FM",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "USD"
     },
     "MD": {
       "country_name": "Moldova (the Republic of)",
@@ -4931,8 +4931,8 @@
         }
       },
       "default_locale": "ro",
-      "default_currency": "MDL",
-      "address_template": "{name}\n{organization}\n{street_address}\nMD-{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\nMD-{zip} {city}",
+      "default_currency": "MDL"
     },
     "MC": {
       "country_name": "Monaco",
@@ -4964,8 +4964,8 @@
         }
       },
       "default_locale": "fr_MC",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\nMC-{zip} {city} {sorting_code}"
+      "address_template": "{name}\n{organization}\n{street_address}\nMC-{zip} {city} {sorting_code}",
+      "default_currency": "EUR"
     },
     "MN": {
       "country_name": "Mongolia",
@@ -5000,8 +5000,8 @@
         }
       },
       "default_locale": "mn",
-      "default_currency": "MNT",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}",
+      "default_currency": "MNT"
     },
     "ME": {
       "country_name": "Montenegro",
@@ -5042,8 +5042,8 @@
         }
       },
       "default_locale": "sr",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "MS": {
       "country_name": "Montserrat",
@@ -5101,8 +5101,8 @@
         }
       },
       "default_locale": "ar_MA",
-      "default_currency": "MAD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "MAD"
     },
     "MZ": {
       "country_name": "Mozambique",
@@ -5131,8 +5131,8 @@
         }
       },
       "default_locale": "pt_MZ",
-      "default_currency": "MZN",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}{state}",
+      "default_currency": "MZN"
     },
     "MM": {
       "country_name": "Myanmar",
@@ -5203,8 +5203,8 @@
         }
       },
       "default_locale": "en_NA",
-      "default_currency": "NAD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "NAD"
     },
     "NR": {
       "country_name": "Nauru",
@@ -5233,8 +5233,8 @@
         }
       },
       "default_locale": "na",
-      "default_currency": "AUD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}",
+      "default_currency": "AUD"
     },
     "NP": {
       "country_name": "Nepal",
@@ -5263,8 +5263,8 @@
         }
       },
       "default_locale": "ne",
-      "default_currency": "NPR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "NPR"
     },
     "NL": {
       "country_name": "Netherlands, Kingdom of the",
@@ -5293,8 +5293,8 @@
         }
       },
       "default_locale": "nl_NL",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "NC": {
       "country_name": "New Caledonia",
@@ -5320,8 +5320,8 @@
         }
       },
       "default_locale": "fr_NC",
-      "default_currency": "XPF",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "XPF"
     },
     "NZ": {
       "country_name": "New Zealand",
@@ -5353,8 +5353,8 @@
         }
       },
       "default_locale": "en_NZ",
-      "default_currency": "NZD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city} {zip}",
+      "default_currency": "NZD"
     },
     "NI": {
       "country_name": "Nicaragua",
@@ -5383,8 +5383,8 @@
         }
       },
       "default_locale": "es_NI",
-      "default_currency": "NIO",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}, {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}, {state}",
+      "default_currency": "NIO"
     },
     "NE": {
       "country_name": "Niger (the)",
@@ -5419,8 +5419,8 @@
         }
       },
       "default_locale": "fr_NE",
-      "default_currency": "XOF",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "XOF"
     },
     "NG": {
       "country_name": "Nigeria",
@@ -5458,8 +5458,8 @@
         }
       },
       "default_locale": "en_NG",
-      "default_currency": "NGN",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city} {zip}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city} {zip}\n{state}",
+      "default_currency": "NGN"
     },
     "NU": {
       "country_name": "Niue",
@@ -5514,8 +5514,8 @@
         }
       },
       "default_locale": "en_NF",
-      "default_currency": "AUD",
-      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "AUD"
     },
     "MK": {
       "country_name": "North Macedonia",
@@ -5553,8 +5553,8 @@
         }
       },
       "default_locale": "mk",
-      "default_currency": "MKD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "MKD"
     },
     "MP": {
       "country_name": "Northern Mariana Islands (the)",
@@ -5630,8 +5630,8 @@
         }
       },
       "default_locale": "no",
-      "default_currency": "NOK",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "NOK"
     },
     "OM": {
       "country_name": "Oman",
@@ -5666,8 +5666,8 @@
         }
       },
       "default_locale": "ar_OM",
-      "default_currency": "OMR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}",
+      "default_currency": "OMR"
     },
     "PK": {
       "country_name": "Pakistan",
@@ -5708,8 +5708,8 @@
         }
       },
       "default_locale": "ur_PK",
-      "default_currency": "PKR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}-{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}-{zip}",
+      "default_currency": "PKR"
     },
     "PW": {
       "country_name": "Palau",
@@ -5753,8 +5753,8 @@
         }
       },
       "default_locale": "pau",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "USD"
     },
     "PS": {
       "country_name": "Palestine, State of",
@@ -5813,8 +5813,8 @@
         }
       },
       "default_locale": "es_PA",
-      "default_currency": "PAB",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}",
+      "default_currency": "PAB"
     },
     "PG": {
       "country_name": "Papua New Guinea",
@@ -5852,8 +5852,8 @@
         }
       },
       "default_locale": "en_PG",
-      "default_currency": "PGK",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip} {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip} {state}",
+      "default_currency": "PGK"
     },
     "PY": {
       "country_name": "Paraguay",
@@ -5882,8 +5882,8 @@
         }
       },
       "default_locale": "es_PY",
-      "default_currency": "PYG",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "PYG"
     },
     "PE": {
       "country_name": "Peru",
@@ -5915,8 +5915,8 @@
         }
       },
       "default_locale": "es_PE",
-      "default_currency": "PEN",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}\n{state}",
+      "default_currency": "PEN"
     },
     "PH": {
       "country_name": "Philippines (the)",
@@ -6008,8 +6008,8 @@
         }
       },
       "default_locale": "tl",
-      "default_currency": "PHP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district}, {city}\n{zip} {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}, {city}\n{zip} {state}",
+      "default_currency": "PHP"
     },
     "PN": {
       "country_name": "Pitcairn",
@@ -6035,8 +6035,8 @@
         }
       },
       "default_locale": "en_PN",
-      "default_currency": "NZD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "NZD"
     },
     "PL": {
       "country_name": "Poland",
@@ -6062,8 +6062,8 @@
         }
       },
       "default_locale": "pl",
-      "default_currency": "PLN",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "PLN"
     },
     "PT": {
       "country_name": "Portugal",
@@ -6098,8 +6098,8 @@
         }
       },
       "default_locale": "pt_PT",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "PR": {
       "country_name": "Puerto Rico",
@@ -6128,8 +6128,8 @@
         }
       },
       "default_locale": "en_PR",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} PR {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} PR {zip}",
+      "default_currency": "USD"
     },
     "QA": {
       "country_name": "Qatar",
@@ -6184,8 +6184,8 @@
         }
       },
       "default_locale": "fr_RE",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "EUR"
     },
     "RO": {
       "country_name": "Romania",
@@ -6217,8 +6217,8 @@
         }
       },
       "default_locale": "ro",
-      "default_currency": "RON",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {state} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {state} {city}",
+      "default_currency": "RON"
     },
     "RU": {
       "country_name": "Russian Federation (the)",
@@ -6379,8 +6379,8 @@
         }
       },
       "default_locale": "ru",
-      "default_currency": "RUB",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}",
+      "default_currency": "RUB"
     },
     "RW": {
       "country_name": "Rwanda",
@@ -6441,8 +6441,8 @@
         }
       },
       "default_locale": "fr",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "EUR"
     },
     "SH": {
       "country_name": "Saint Helena,Ascension Island, Tristan da Cunha",
@@ -6468,8 +6468,8 @@
         }
       },
       "default_locale": "en_SH",
-      "default_currency": "SHP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "SHP"
     },
     "KN": {
       "country_name": "Saint Kitts and Nevis",
@@ -6495,8 +6495,8 @@
         }
       },
       "default_locale": "en_KN",
-      "default_currency": "XCD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state}",
+      "default_currency": "XCD"
     },
     "LC": {
       "country_name": "Saint Lucia",
@@ -6548,8 +6548,8 @@
         }
       },
       "default_locale": "fr",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "EUR"
     },
     "PM": {
       "country_name": "Saint Pierre and Miquelon",
@@ -6575,8 +6575,8 @@
         }
       },
       "default_locale": "fr_PM",
-      "default_currency": "EUR",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "EUR"
     },
     "VC": {
       "country_name": "Saint Vincent and the Grenadines",
@@ -6605,8 +6605,8 @@
         }
       },
       "default_locale": "en_VC",
-      "default_currency": "XCD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "XCD"
     },
     "WS": {
       "country_name": "Samoa",
@@ -6661,8 +6661,8 @@
         }
       },
       "default_locale": "it_SM",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "ST": {
       "country_name": "Sao Tome and Principe",
@@ -6714,8 +6714,8 @@
         }
       },
       "default_locale": "ar_SA",
-      "default_currency": "SAR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
+      "default_currency": "SAR"
     },
     "SN": {
       "country_name": "Senegal",
@@ -6750,8 +6750,8 @@
         }
       },
       "default_locale": "fr_SN",
-      "default_currency": "XOF",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "XOF"
     },
     "RS": {
       "country_name": "Serbia",
@@ -6786,8 +6786,8 @@
         }
       },
       "default_locale": "sr",
-      "default_currency": "RSD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "RSD"
     },
     "SC": {
       "country_name": "Seychelles",
@@ -6816,8 +6816,8 @@
         }
       },
       "default_locale": "en_SC",
-      "default_currency": "SCR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}",
+      "default_currency": "SCR"
     },
     "SL": {
       "country_name": "Sierra Leone",
@@ -6887,8 +6887,8 @@
         }
       },
       "default_locale": "cmn",
-      "default_currency": "SGD",
-      "address_template": "{name}\n{organization}\n{street_address}\nSINGAPORE {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\nSINGAPORE {zip}",
+      "default_currency": "SGD"
     },
     "SX": {
       "country_name": "Sint Maarten (Dutch part)",
@@ -6946,8 +6946,8 @@
         }
       },
       "default_locale": "sk",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "EUR"
     },
     "SI": {
       "country_name": "Slovenia",
@@ -6976,8 +6976,8 @@
         }
       },
       "default_locale": "sl",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\nSI-{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\nSI-{zip} {city}",
+      "default_currency": "EUR"
     },
     "SB": {
       "country_name": "Solomon Islands",
@@ -7041,8 +7041,8 @@
         }
       },
       "default_locale": "so_SO",
-      "default_currency": "SOS",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}",
+      "default_currency": "SOS"
     },
     "ZA": {
       "country_name": "South Africa",
@@ -7098,8 +7098,8 @@
         }
       },
       "default_locale": "zu",
-      "default_currency": "ZAR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}\n{zip}",
+      "default_currency": "ZAR"
     },
     "GS": {
       "country_name": "South Georgia and the South Sandwich Islands",
@@ -7125,8 +7125,8 @@
         }
       },
       "default_locale": "en",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n\n{city}\n{zip}",
+      "default_currency": "USD"
     },
     "SS": {
       "country_name": "South Sudan",
@@ -7196,8 +7196,8 @@
         }
       },
       "default_locale": "es_ES",
-      "default_currency": "EUR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
+      "default_currency": "EUR"
     },
     "LK": {
       "country_name": "Sri Lanka",
@@ -7229,8 +7229,8 @@
         }
       },
       "default_locale": "si",
-      "default_currency": "LKR",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "LKR"
     },
     "SD": {
       "country_name": "Sudan (the)",
@@ -7262,8 +7262,8 @@
         }
       },
       "default_locale": "ar_SD",
-      "default_currency": "SDG",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "SDG"
     },
     "SR": {
       "country_name": "Suriname",
@@ -7301,8 +7301,8 @@
         }
       },
       "default_locale": "nl_SR",
-      "default_currency": "SRD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}",
+      "default_currency": "SRD"
     },
     "SJ": {
       "country_name": "Svalbard, Jan Mayen",
@@ -7331,8 +7331,8 @@
         }
       },
       "default_locale": "no",
-      "default_currency": "SRD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "SRD"
     },
     "SE": {
       "country_name": "Sweden",
@@ -7367,8 +7367,8 @@
         }
       },
       "default_locale": "sv_SE",
-      "default_currency": "SEK",
-      "address_template": "{organization}\n{name}\n{street_address}\nSE-{zip} {city}"
+      "address_template": "{organization}\n{name}\n{street_address}\nSE-{zip} {city}",
+      "default_currency": "SEK"
     },
     "CH": {
       "country_name": "Switzerland",
@@ -7405,8 +7405,8 @@
         }
       },
       "default_locale": "de_CH",
-      "default_currency": "CHW",
-      "address_template": "{organization}\n{name}\n{street_address}\nCH-{zip} {city}"
+      "address_template": "{organization}\n{name}\n{street_address}\nCH-{zip} {city}",
+      "default_currency": "CHW"
     },
     "SY": {
       "country_name": "Syrian Arab Republic (the)",
@@ -7482,8 +7482,8 @@
         }
       },
       "default_locale": "zh_TW",
-      "default_currency": "TWD",
-      "address_template": "{zip}\n{state}{city}\n{street_address}\n{organization}\n{name}"
+      "address_template": "{zip}\n{state}{city}\n{street_address}\n{organization}\n{name}",
+      "default_currency": "TWD"
     },
     "TJ": {
       "country_name": "Tajikistan",
@@ -7512,8 +7512,8 @@
         }
       },
       "default_locale": "tg",
-      "default_currency": "TJS",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "TJS"
     },
     "TZ": {
       "country_name": "Tanzania, the United Republic of",
@@ -7545,8 +7545,8 @@
         }
       },
       "default_locale": "sw_TZ",
-      "default_currency": "TZS",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "TZS"
     },
     "TH": {
       "country_name": "Thailand",
@@ -7575,8 +7575,8 @@
         }
       },
       "default_locale": "th",
-      "default_currency": "THB",
-      "address_template": "{name}\n{organization}\n{street_address}\n{district} {city}\n{state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{district} {city}\n{state} {zip}",
+      "default_currency": "THB"
     },
     "TL": {
       "country_name": "Timor-Leste",
@@ -7777,8 +7777,8 @@
         }
       },
       "default_locale": "ar_TN",
-      "default_currency": "TND",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "TND"
     },
     "TR": {
       "country_name": "Türkiye",
@@ -7816,8 +7816,8 @@
         }
       },
       "default_locale": "tr_TR",
-      "default_currency": "TRY",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}/{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}/{state}",
+      "default_currency": "TRY"
     },
     "TM": {
       "country_name": "Turkmenistan",
@@ -7849,8 +7849,8 @@
         }
       },
       "default_locale": "tk",
-      "default_currency": "TMT",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "TMT"
     },
     "TC": {
       "country_name": "Turks and Caicos Islands (the)",
@@ -7876,8 +7876,8 @@
         }
       },
       "default_locale": "en_TC",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "USD"
     },
     "TV": {
       "country_name": "Tuvalu",
@@ -7912,8 +7912,8 @@
         }
       },
       "default_locale": "tvl",
-      "default_currency": "AUD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}",
+      "default_currency": "AUD"
     },
     "UG": {
       "country_name": "Uganda",
@@ -7989,8 +7989,8 @@
         }
       },
       "default_locale": "uk",
-      "default_currency": "UAH",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}",
+      "default_currency": "UAH"
     },
     "AE": {
       "country_name": "United Arab Emirates (the)",
@@ -8028,8 +8028,8 @@
         }
       },
       "default_locale": "ar_AE",
-      "default_currency": "AED",
-      "address_template": "{name}\n{organization}\n{street_address}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}",
+      "default_currency": "AED"
     },
     "GB": {
       "country_name": "United Kingdom of Great Britain and Northern Ireland (the)",
@@ -8061,8 +8061,8 @@
         }
       },
       "default_locale": "en_GB",
-      "default_currency": "GBP",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "GBP"
     },
     "UM": {
       "country_name": "United States Minor Outlying Islands (the) [ae]",
@@ -8091,8 +8091,8 @@
         }
       },
       "default_locale": "en_UM",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "USD"
     },
     "US": {
       "country_name": "United States of America (the)",
@@ -8208,8 +8208,8 @@
         }
       },
       "default_locale": "en_US",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}",
+      "default_currency": "USD"
     },
     "UY": {
       "country_name": "Uruguay",
@@ -8237,8 +8237,8 @@
         }
       },
       "default_locale": "es_UY",
-      "default_currency": "UYI",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
+      "default_currency": "UYI"
     },
     "UZ": {
       "country_name": "Uzbekistan",
@@ -8273,8 +8273,8 @@
         }
       },
       "default_locale": "uz",
-      "default_currency": "UZS",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}",
+      "default_currency": "UZS"
     },
     "VU": {
       "country_name": "Vanuatu",
@@ -8333,8 +8333,8 @@
         }
       },
       "default_locale": "es_VE",
-      "default_currency": "VES",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}, {state}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}, {state}",
+      "default_currency": "VES"
     },
     "VN": {
       "country_name": "Viet Nam",
@@ -8375,8 +8375,8 @@
         }
       },
       "default_locale": "vi",
-      "default_currency": "VND",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}",
+      "default_currency": "VND"
     },
     "VG": {
       "country_name": "Virgin Islands (British)",
@@ -8402,8 +8402,8 @@
         }
       },
       "default_locale": "en_VG",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
+      "default_currency": "USD"
     },
     "VI": {
       "country_name": "Virgin Islands (U.S.)",
@@ -8429,8 +8429,8 @@
         }
       },
       "default_locale": "en_VI",
-      "default_currency": "USD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
+      "default_currency": "USD"
     },
     "WF": {
       "country_name": "Wallis and Futuna",
@@ -8462,8 +8462,8 @@
         }
       },
       "default_locale": "wls",
-      "default_currency": "XPF",
-      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}"
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
+      "default_currency": "XPF"
     },
     "EH": {
       "country_name": "Western Sahara",
@@ -8492,8 +8492,8 @@
         }
       },
       "default_locale": "ar",
-      "default_currency": "MAD",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "MAD"
     },
     "YE": {
       "country_name": "Yemen",
@@ -8563,8 +8563,8 @@
         }
       },
       "default_locale": "en_ZM",
-      "default_currency": "ZMW",
-      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}"
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
+      "default_currency": "ZMW"
     },
     "ZW": {
       "country_name": "Zimbabwe",
