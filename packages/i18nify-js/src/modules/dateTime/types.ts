@@ -31,12 +31,3 @@ export interface SupportedDateFormats {
   secondIndex?: number;
   format: string;
 }
-
-export type TimezoneDetail = {
-  utc_offset: string;
-};
-
-export type TimezoneListEntry = {
-  utc_offset: string;
-  countries: string[];
-};
