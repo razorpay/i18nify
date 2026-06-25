@@ -21,7 +21,7 @@ func TestUnmarshalCurrency(t *testing.T) {
 }
 
 func TestMarshalCurrency(t *testing.T) {
-	expectedJSON := `{"currency_information": {"USD": {"name": "US Dollar", "numeric_code": "840", "minor_unit": "2", "symbol": "$", "physical_currency_denominations": ["1", "5", "10", "25", "50", "100"]}}}`
+	expectedJSON := `{"currency_information": {"USD": {"name": "US Dollar", "numeric_code": "840", "minor_unit": "2", "symbol": "$", "physical_currency_denominations": ["1", "5", "10", "25", "50", "100"], "symbol_position": ""}}}`
 
 	inputData := map[string]CurrencyInformation{
 		"USD": {
