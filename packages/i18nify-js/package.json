@@ -25,6 +25,7 @@
     "assets",
     "core.js",
     "currency.js",
+    "validator.js",
     "phoneNumber.js",
     "types.js"
   ],
@@ -53,6 +54,10 @@
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/geo/index.js"
     },
+    "./validator": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/validator/index.js"
+    },
     "./types": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/types/index.d.ts"
@@ -74,6 +79,9 @@
       ],
       "geo": [
         "./lib/esm/geo/index.d.ts"
+      ],
+      "validator": [
+        "./lib/esm/validator/index.d.ts"
       ],
       "types": [
         "./lib/esm/types/index.d.ts"
