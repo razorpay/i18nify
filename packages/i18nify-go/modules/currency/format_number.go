@@ -42,7 +42,7 @@ type FormattedPart struct {
 // FormatNumber formats amount as a locale-aware number or currency string.
 // When opts.Currency is set the result includes the canonical i18nify currency symbol.
 // Mirrors the JS formatNumber function in i18nify-js/src/modules/currency/formatNumber.ts.
-func FormatNumber(amount interface{}, opts NumberFormatOptions) (string, error) {
+func (c *Currency) FormatNumber(amount interface{}, opts NumberFormatOptions) (string, error) {
 	val, err := ValidateAndConvertAmount(amount)
 	if err != nil {
 		return "", fmt.Errorf("parameter 'amount' is not a valid number: %v", err)

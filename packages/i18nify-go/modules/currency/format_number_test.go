@@ -101,7 +101,7 @@ func TestFormatNumber(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := FormatNumber(tt.amount, tt.opts)
+			got, err := cachedCurrencyData.FormatNumber(tt.amount, tt.opts)
 			if tt.wantErr {
 				assert.Error(t, err)
 				return
@@ -127,7 +127,7 @@ func TestFormatNumber_IntlMappedCurrencies(t *testing.T) {
 
 	for _, tc := range cases {
 		t.Run(tc.currency, func(t *testing.T) {
-			result, err := FormatNumber(1000.0, NumberFormatOptions{
+			result, err := cachedCurrencyData.FormatNumber(1000.0, NumberFormatOptions{
 				Currency: tc.currency,
 				Locale:   tc.locale,
 			})
