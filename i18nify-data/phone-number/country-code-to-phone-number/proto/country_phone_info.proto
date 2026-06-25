@@ -14,6 +14,3 @@ message PhoneInfo {
   string format = 2;
   string regex = 3;
 }
-
-
-
