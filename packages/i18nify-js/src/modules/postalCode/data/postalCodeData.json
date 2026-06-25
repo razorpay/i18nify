@@ -1,0 +1,1166 @@
+{
+  "AC": {
+    "country_name": "Ascension Island",
+    "format": "alphanumeric",
+    "zip_regex": "ASCN 1ZZ",
+    "examples": ["ASCN 1ZZ"]
+  },
+  "AD": {
+    "country_name": "Andorra",
+    "format": "alphanumeric",
+    "zip_regex": "AD[1-7]0\\d",
+    "examples": ["AD100", "AD501", "AD700"]
+  },
+  "AE": {
+    "country_name": "United Arab Emirates",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "AF": {
+    "country_name": "Afghanistan",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1001", "2601", "3801"]
+  },
+  "AI": {
+    "country_name": "Anguilla",
+    "format": "alphanumeric",
+    "zip_regex": "(?:AI-)?2640",
+    "examples": ["2640"]
+  },
+  "AL": {
+    "country_name": "Albania",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1001", "1017", "3501"]
+  },
+  "AM": {
+    "country_name": "Armenia",
+    "format": "numeric",
+    "zip_regex": "(?:37)?\\d{4}",
+    "examples": ["375010", "0002", "0010"]
+  },
+  "AR": {
+    "country_name": "Argentina",
+    "format": "alphanumeric",
+    "zip_regex": "((?:[A-HJ-NP-Z])?\\d{4})([A-Z]{3})?",
+    "examples": ["C1070AAM", "C1000WAM", "B1000TBU"]
+  },
+  "AS": {
+    "country_name": "American Samoa",
+    "format": "numeric",
+    "zip_regex": "(96799)(?:[ \\-](\\d{4}))?",
+    "examples": ["96799"]
+  },
+  "AT": {
+    "country_name": "Austria",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1010", "3741"]
+  },
+  "AU": {
+    "country_name": "Australia",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["2060", "3171", "6430"]
+  },
+  "AX": {
+    "country_name": "Åland Islands",
+    "format": "numeric",
+    "zip_regex": "22\\d{3}",
+    "examples": ["22150", "22550", "22240"]
+  },
+  "AZ": {
+    "country_name": "Azerbaijan",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1000"]
+  },
+  "BA": {
+    "country_name": "Bosnia and Herzegovina",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["71000"]
+  },
+  "BB": {
+    "country_name": "Barbados",
+    "format": "alphanumeric",
+    "zip_regex": "BB\\d{5}",
+    "examples": ["BB23026", "BB22025"]
+  },
+  "BD": {
+    "country_name": "Bangladesh",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1340", "1000"]
+  },
+  "BE": {
+    "country_name": "Belgium",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["4000", "1000"]
+  },
+  "BF": {
+    "country_name": "Burkina Faso",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "BG": {
+    "country_name": "Bulgaria",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1000", "1700"]
+  },
+  "BH": {
+    "country_name": "Bahrain",
+    "format": "alphanumeric",
+    "zip_regex": "(?:^|\\b)(?:1[0-2]|[1-9])\\d{2}(?:$|\\b)",
+    "examples": ["317"]
+  },
+  "BL": {
+    "country_name": "Saint Barthélemy",
+    "format": "numeric",
+    "zip_regex": "9[78][01]\\d{2}",
+    "examples": ["97100"]
+  },
+  "BM": {
+    "country_name": "Bermuda",
+    "format": "alphanumeric",
+    "zip_regex": "[A-Z]{2} ?[A-Z0-9]{2}",
+    "examples": ["FL 07", "HM GX", "HM 12"]
+  },
+  "BN": {
+    "country_name": "Brunei Darussalam",
+    "format": "alphanumeric",
+    "zip_regex": "[A-Z]{2} ?\\d{4}",
+    "examples": ["BT2328", "KA1131", "BA1511"]
+  },
+  "BR": {
+    "country_name": "Brazil",
+    "format": "numeric",
+    "zip_regex": "\\d{5}-?\\d{3}",
+    "examples": ["40301-110", "70002-900"]
+  },
+  "BS": {
+    "country_name": "Bahamas",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "BT": {
+    "country_name": "Bhutan",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["11001", "31101", "35003"]
+  },
+  "BY": {
+    "country_name": "Belarus",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["223016", "225860", "220050"]
+  },
+  "CA": {
+    "country_name": "Canada",
+    "format": "alphanumeric",
+    "zip_regex": "[ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJ-NPRSTV-Z] ?\\d[ABCEGHJ-NPRSTV-Z]\\d",
+    "examples": ["H3Z 2Y7", "V8X 3X4", "T0L 1K0"]
+  },
+  "CC": {
+    "country_name": "Cocos (Keeling) Islands",
+    "format": "numeric",
+    "zip_regex": "6799",
+    "examples": ["6799"]
+  },
+  "CH": {
+    "country_name": "Switzerland",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["2544", "1211", "1556"]
+  },
+  "CI": {
+    "country_name": "Côte d'Ivoire",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "CL": {
+    "country_name": "Chile",
+    "format": "numeric",
+    "zip_regex": "\\d{7}",
+    "examples": ["8340457", "8720019", "1230000"]
+  },
+  "CN": {
+    "country_name": "China",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["266033", "317204", "100096"]
+  },
+  "CO": {
+    "country_name": "Colombia",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["111221", "130001", "760011"]
+  },
+  "CR": {
+    "country_name": "Costa Rica",
+    "format": "numeric",
+    "zip_regex": "\\d{4,5}|\\d{3}-\\d{4}",
+    "examples": ["1000", "2010", "1001"]
+  },
+  "CU": {
+    "country_name": "Cuba",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["10700"]
+  },
+  "CV": {
+    "country_name": "Cabo Verde",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["7600"]
+  },
+  "CX": {
+    "country_name": "Christmas Island",
+    "format": "numeric",
+    "zip_regex": "6798",
+    "examples": ["6798"]
+  },
+  "CY": {
+    "country_name": "Cyprus",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["2008", "3304", "1900"]
+  },
+  "CZ": {
+    "country_name": "Czechia",
+    "format": "numeric",
+    "zip_regex": "\\d{3} ?\\d{2}",
+    "examples": ["100 00", "251 66", "530 87"]
+  },
+  "DE": {
+    "country_name": "Germany",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["26133", "53225"]
+  },
+  "DK": {
+    "country_name": "Denmark",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["8660", "1566"]
+  },
+  "DO": {
+    "country_name": "Dominican Republic",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["11903", "10101"]
+  },
+  "DZ": {
+    "country_name": "Algeria",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["40304", "16027"]
+  },
+  "EC": {
+    "country_name": "Ecuador",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["090105", "092301"]
+  },
+  "EE": {
+    "country_name": "Estonia",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["69501", "11212"]
+  },
+  "EG": {
+    "country_name": "Egypt",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["12411", "11599"]
+  },
+  "EH": {
+    "country_name": "Western Sahara",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["70000", "72000"]
+  },
+  "ES": {
+    "country_name": "Spain",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["28039", "28300", "28070"]
+  },
+  "ET": {
+    "country_name": "Ethiopia",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1000"]
+  },
+  "FI": {
+    "country_name": "Finland",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["00550", "00011"]
+  },
+  "FK": {
+    "country_name": "Falkland Islands (Malvinas)",
+    "format": "alphanumeric",
+    "zip_regex": "FIQQ 1ZZ",
+    "examples": ["FIQQ 1ZZ"]
+  },
+  "FM": {
+    "country_name": "Micronesia, Federated States of",
+    "format": "numeric",
+    "zip_regex": "(9694[1-4])(?:[ \\-](\\d{4}))?",
+    "examples": ["96941", "96944"]
+  },
+  "FO": {
+    "country_name": "Faroe Islands",
+    "format": "numeric",
+    "zip_regex": "\\d{3}",
+    "examples": ["100"]
+  },
+  "FR": {
+    "country_name": "France",
+    "format": "numeric",
+    "zip_regex": "\\d{2} ?\\d{3}",
+    "examples": ["33380", "34092", "33506"]
+  },
+  "GB": {
+    "country_name": "United Kingdom",
+    "format": "alphanumeric",
+    "zip_regex": "GIR ?0AA|(?:(?:AB|AL|B|BA|BB|BD|BF|BH|BL|BN|BR|BS|BT|BX|CA|CB|CF|CH|CM|CO|CR|CT|CV|CW|DA|DD|DE|DG|DH|DL|DN|DT|DY|E|EC|EH|EN|EX|FK|FY|G|GL|GY|GU|HA|HD|HG|HP|HR|HS|HU|HX|IG|IM|IP|IV|JE|KA|KT|KW|KY|L|LA|LD|LE|LL|LN|LS|LU|M|ME|MK|ML|N|NE|NG|NN|NP|NR|NW|OL|OX|PA|PE|PH|PL|PO|PR|RG|RH|RM|S|SA|SE|SG|SK|SL|SM|SN|SO|SP|SR|SS|ST|SW|SY|TA|TD|TF|TN|TQ|TR|TS|TW|UB|W|WA|WC|WD|WF|WN|WR|WS|WV|YO|ZE)(?:\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}))|BFPO ?\\d{1,4}",
+    "examples": ["EC1Y 8SY", "GIR 0AA", "M2 5BQ"]
+  },
+  "GE": {
+    "country_name": "Georgia",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["0101"]
+  },
+  "GF": {
+    "country_name": "French Guiana",
+    "format": "numeric",
+    "zip_regex": "9[78]3\\d{2}",
+    "examples": ["97300"]
+  },
+  "GG": {
+    "country_name": "Guernsey",
+    "format": "alphanumeric",
+    "zip_regex": "GY\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}",
+    "examples": ["GY1 1AA", "GY2 2BT"]
+  },
+  "GI": {
+    "country_name": "Gibraltar",
+    "format": "alphanumeric",
+    "zip_regex": "GX11 1AA",
+    "examples": ["GX11 1AA"]
+  },
+  "GL": {
+    "country_name": "Greenland",
+    "format": "numeric",
+    "zip_regex": "39\\d{2}",
+    "examples": ["3900", "3950", "3911"]
+  },
+  "GN": {
+    "country_name": "Guinea",
+    "format": "numeric",
+    "zip_regex": "\\d{3}",
+    "examples": ["001", "200", "100"]
+  },
+  "GP": {
+    "country_name": "Guadeloupe",
+    "format": "numeric",
+    "zip_regex": "9[78][01]\\d{2}",
+    "examples": ["97100"]
+  },
+  "GR": {
+    "country_name": "Greece",
+    "format": "numeric",
+    "zip_regex": "\\d{3} ?\\d{2}",
+    "examples": ["151 24", "151 10", "101 88"]
+  },
+  "GS": {
+    "country_name": "South Georgia and the South Sandwich Islands",
+    "format": "alphanumeric",
+    "zip_regex": "SIQQ 1ZZ",
+    "examples": ["SIQQ 1ZZ"]
+  },
+  "GT": {
+    "country_name": "Guatemala",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["09001", "01501"]
+  },
+  "GU": {
+    "country_name": "Guam",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "GW": {
+    "country_name": "Guinea-Bissau",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1000", "1011"]
+  },
+  "HK": {
+    "country_name": "Hong Kong",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "HM": {
+    "country_name": "Heard Island and McDonald Islands",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["7050"]
+  },
+  "HN": {
+    "country_name": "Honduras",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["31301"]
+  },
+  "HR": {
+    "country_name": "Croatia",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["10000", "21001", "10002"]
+  },
+  "HT": {
+    "country_name": "Haiti",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["6120", "5310", "6110"]
+  },
+  "HU": {
+    "country_name": "Hungary",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1037", "2380", "1540"]
+  },
+  "ID": {
+    "country_name": "Indonesia",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["40115"]
+  },
+  "IE": {
+    "country_name": "Ireland",
+    "format": "alphanumeric",
+    "zip_regex": "[\\dA-Z]{3} ?[\\dA-Z]{4}",
+    "examples": ["A65 F4E2"]
+  },
+  "IL": {
+    "country_name": "Israel",
+    "format": "numeric",
+    "zip_regex": "\\d{5}(?:\\d{2})?",
+    "examples": ["9614303"]
+  },
+  "IM": {
+    "country_name": "Isle of Man",
+    "format": "alphanumeric",
+    "zip_regex": "IM\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}",
+    "examples": ["IM2 1AA", "IM99 1PS"]
+  },
+  "IN": {
+    "country_name": "India",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["110034", "110001"]
+  },
+  "IO": {
+    "country_name": "British Indian Ocean Territory",
+    "format": "alphanumeric",
+    "zip_regex": "BBND 1ZZ",
+    "examples": ["BBND 1ZZ"]
+  },
+  "IQ": {
+    "country_name": "Iraq",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["31001"]
+  },
+  "IR": {
+    "country_name": "Iran, Islamic Republic of",
+    "format": "numeric",
+    "zip_regex": "\\d{5}-?\\d{5}",
+    "examples": ["11936-12345"]
+  },
+  "IS": {
+    "country_name": "Iceland",
+    "format": "numeric",
+    "zip_regex": "\\d{3}",
+    "examples": ["320", "121", "220"]
+  },
+  "IT": {
+    "country_name": "Italy",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["00144", "47037", "39049"]
+  },
+  "JE": {
+    "country_name": "Jersey",
+    "format": "alphanumeric",
+    "zip_regex": "JE\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}",
+    "examples": ["JE1 1AA", "JE2 2BT"]
+  },
+  "JM": {
+    "country_name": "Jamaica",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "JO": {
+    "country_name": "Jordan",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["11937", "11190"]
+  },
+  "JP": {
+    "country_name": "Japan",
+    "format": "numeric",
+    "zip_regex": "\\d{3}-?\\d{4}",
+    "examples": ["154-0023", "350-1106", "951-8073"]
+  },
+  "KE": {
+    "country_name": "Kenya",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["20100", "00100"]
+  },
+  "KG": {
+    "country_name": "Kyrgyzstan",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["720001"]
+  },
+  "KH": {
+    "country_name": "Cambodia",
+    "format": "numeric",
+    "zip_regex": "\\d{5,6}",
+    "examples": ["120101", "120108"]
+  },
+  "KI": {
+    "country_name": "Kiribati",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "KN": {
+    "country_name": "Saint Kitts and Nevis",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "KP": {
+    "country_name": "Korea, Democratic People's Republic of",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "KR": {
+    "country_name": "Korea, Republic of",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["03051"]
+  },
+  "KW": {
+    "country_name": "Kuwait",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["54541", "54551", "54404"]
+  },
+  "KZ": {
+    "country_name": "Kazakhstan",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["040900", "050012"]
+  },
+  "LA": {
+    "country_name": "Lao People's Democratic Republic",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["01160", "01000"]
+  },
+  "LB": {
+    "country_name": "Lebanon",
+    "format": "numeric",
+    "zip_regex": "(?:\\d{4})(?: ?(?:\\d{4}))?",
+    "examples": ["2038 3054", "1107 2810", "1000"]
+  },
+  "LI": {
+    "country_name": "Liechtenstein",
+    "format": "numeric",
+    "zip_regex": "948[5-9]|949[0-8]",
+    "examples": ["9496", "9491", "9490"]
+  },
+  "LK": {
+    "country_name": "Sri Lanka",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["20000", "00100"]
+  },
+  "LR": {
+    "country_name": "Liberia",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1000"]
+  },
+  "LS": {
+    "country_name": "Lesotho",
+    "format": "numeric",
+    "zip_regex": "\\d{3}",
+    "examples": ["100"]
+  },
+  "LT": {
+    "country_name": "Lithuania",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["04340", "03500"]
+  },
+  "LU": {
+    "country_name": "Luxembourg",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["4750", "2998"]
+  },
+  "LV": {
+    "country_name": "Latvia",
+    "format": "alphanumeric",
+    "zip_regex": "LV-\\d{4}",
+    "examples": ["LV-1073", "LV-1000"]
+  },
+  "MA": {
+    "country_name": "Morocco",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["53000", "10000", "20050"]
+  },
+  "MC": {
+    "country_name": "Monaco",
+    "format": "numeric",
+    "zip_regex": "980\\d{2}",
+    "examples": ["98000", "98020", "98011"]
+  },
+  "MD": {
+    "country_name": "Moldova, Republic of",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["2012", "2019"]
+  },
+  "ME": {
+    "country_name": "Montenegro",
+    "format": "numeric",
+    "zip_regex": "8\\d{4}",
+    "examples": ["81257", "81258", "81217"]
+  },
+  "MF": {
+    "country_name": "Saint Martin (French part)",
+    "format": "numeric",
+    "zip_regex": "9[78][01]\\d{2}",
+    "examples": ["97100"]
+  },
+  "MG": {
+    "country_name": "Madagascar",
+    "format": "numeric",
+    "zip_regex": "\\d{3}",
+    "examples": ["501", "101"]
+  },
+  "MH": {
+    "country_name": "Marshall Islands",
+    "format": "numeric",
+    "zip_regex": "(969[67]\\d)(?:[ \\-](\\d{4}))?",
+    "examples": ["96960", "96970"]
+  },
+  "MK": {
+    "country_name": "North Macedonia",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1314", "1321", "1443"]
+  },
+  "MN": {
+    "country_name": "Mongolia",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["65030", "65270"]
+  },
+  "MO": {
+    "country_name": "Macao",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "MQ": {
+    "country_name": "Martinique",
+    "format": "numeric",
+    "zip_regex": "9[78]2\\d{2}",
+    "examples": ["97220"]
+  },
+  "MT": {
+    "country_name": "Malta",
+    "format": "alphanumeric",
+    "zip_regex": "[A-Z]{3} ?\\d{2,4}",
+    "examples": ["NXR 01", "ZTN 05", "GPO 01"]
+  },
+  "MU": {
+    "country_name": "Mauritius",
+    "format": "alphanumeric",
+    "zip_regex": "\\d{3}(?:\\d{2}|[A-Z]{2}\\d{3})",
+    "examples": ["42602"]
+  },
+  "MV": {
+    "country_name": "Maldives",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["20026"]
+  },
+  "MW": {
+    "country_name": "Malawi",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "MX": {
+    "country_name": "Mexico",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "MY": {
+    "country_name": "Malaysia",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["43000", "50754", "88990"]
+  },
+  "MZ": {
+    "country_name": "Mozambique",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1102", "1119", "3212"]
+  },
+  "NA": {
+    "country_name": "Namibia",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "NC": {
+    "country_name": "New Caledonia",
+    "format": "numeric",
+    "zip_regex": "988\\d{2}",
+    "examples": ["98814", "98800", "98810"]
+  },
+  "NE": {
+    "country_name": "Niger",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["8001"]
+  },
+  "NF": {
+    "country_name": "Norfolk Island",
+    "format": "numeric",
+    "zip_regex": "2899",
+    "examples": ["2899"]
+  },
+  "NG": {
+    "country_name": "Nigeria",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["930283", "300001", "931104"]
+  },
+  "NI": {
+    "country_name": "Nicaragua",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["52000"]
+  },
+  "NL": {
+    "country_name": "Netherlands",
+    "format": "alphanumeric",
+    "zip_regex": "[1-9]\\d{3} ?(?:[A-RT-Z][A-Z]|S[BCE-RT-Z])",
+    "examples": ["1234 AB", "2490 AA"]
+  },
+  "NO": {
+    "country_name": "Norway",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["0025", "0107", "6631"]
+  },
+  "NP": {
+    "country_name": "Nepal",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["44601"]
+  },
+  "NR": {
+    "country_name": "Nauru",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "NZ": {
+    "country_name": "New Zealand",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["6001", "6015", "6332"]
+  },
+  "OM": {
+    "country_name": "Oman",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "PA": {
+    "country_name": "Panama",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "PE": {
+    "country_name": "Peru",
+    "format": "alphanumeric",
+    "zip_regex": "(?:LIMA \\d{1,2}|CALLAO 0?\\d)|[0-2]\\d{4}",
+    "examples": ["LIMA 23", "LIMA 42", "CALLAO 2"]
+  },
+  "PF": {
+    "country_name": "French Polynesia",
+    "format": "numeric",
+    "zip_regex": "987\\d{2}",
+    "examples": ["98709"]
+  },
+  "PG": {
+    "country_name": "Papua New Guinea",
+    "format": "numeric",
+    "zip_regex": "\\d{3}",
+    "examples": ["111"]
+  },
+  "PH": {
+    "country_name": "Philippines",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1008", "1050", "1135"]
+  },
+  "PK": {
+    "country_name": "Pakistan",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["44000"]
+  },
+  "PL": {
+    "country_name": "Poland",
+    "format": "numeric",
+    "zip_regex": "\\d{2}-\\d{3}",
+    "examples": ["00-950", "05-470", "48-300"]
+  },
+  "PM": {
+    "country_name": "Saint Pierre and Miquelon",
+    "format": "numeric",
+    "zip_regex": "9[78]5\\d{2}",
+    "examples": ["97500"]
+  },
+  "PN": {
+    "country_name": "Pitcairn",
+    "format": "alphanumeric",
+    "zip_regex": "PCRN 1ZZ",
+    "examples": ["PCRN 1ZZ"]
+  },
+  "PR": {
+    "country_name": "Puerto Rico",
+    "format": "numeric",
+    "zip_regex": "(00[679]\\d{2})(?:[ \\-](\\d{4}))?",
+    "examples": ["00930"]
+  },
+  "PT": {
+    "country_name": "Portugal",
+    "format": "numeric",
+    "zip_regex": "\\d{4}-\\d{3}",
+    "examples": ["2725-079", "1250-096", "1201-950"]
+  },
+  "PW": {
+    "country_name": "Palau",
+    "format": "numeric",
+    "zip_regex": "(969(?:39|40))(?:[ \\-](\\d{4}))?",
+    "examples": ["96940"]
+  },
+  "PY": {
+    "country_name": "Paraguay",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1536", "1538", "1209"]
+  },
+  "RE": {
+    "country_name": "Réunion",
+    "format": "numeric",
+    "zip_regex": "9[78]4\\d{2}",
+    "examples": ["97400"]
+  },
+  "RO": {
+    "country_name": "Romania",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["060274", "061357", "200716"]
+  },
+  "RS": {
+    "country_name": "Serbia",
+    "format": "numeric",
+    "zip_regex": "\\d{5,6}",
+    "examples": ["106314"]
+  },
+  "RU": {
+    "country_name": "Russian Federation",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["247112", "103375", "188300"]
+  },
+  "SA": {
+    "country_name": "Saudi Arabia",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["11564", "11187", "11142"]
+  },
+  "SC": {
+    "country_name": "Seychelles",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "SD": {
+    "country_name": "Sudan",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["11042", "11113"]
+  },
+  "SE": {
+    "country_name": "Sweden",
+    "format": "numeric",
+    "zip_regex": "\\d{3} ?\\d{2}",
+    "examples": ["11455", "12345", "10500"]
+  },
+  "SG": {
+    "country_name": "Singapore",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["546080", "308125", "408600"]
+  },
+  "SH": {
+    "country_name": "Saint Helena, Ascension and Tristan da Cunha",
+    "format": "alphanumeric",
+    "zip_regex": "(?:ASCN|STHL) 1ZZ",
+    "examples": ["STHL 1ZZ"]
+  },
+  "SI": {
+    "country_name": "Slovenia",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["4000", "1001", "2500"]
+  },
+  "SJ": {
+    "country_name": "Svalbard and Jan Mayen",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["9170"]
+  },
+  "SK": {
+    "country_name": "Slovakia",
+    "format": "numeric",
+    "zip_regex": "\\d{3} ?\\d{2}",
+    "examples": ["010 01", "023 14", "972 48"]
+  },
+  "SM": {
+    "country_name": "San Marino",
+    "format": "numeric",
+    "zip_regex": "4789\\d",
+    "examples": ["47890", "47891", "47895"]
+  },
+  "SN": {
+    "country_name": "Senegal",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["12500", "46024", "16556"]
+  },
+  "SO": {
+    "country_name": "Somalia",
+    "format": "alphanumeric",
+    "zip_regex": "[A-Z]{2} ?\\d{5}",
+    "examples": ["JH 09010", "AD 11010"]
+  },
+  "SR": {
+    "country_name": "Suriname",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "SV": {
+    "country_name": "El Salvador",
+    "format": "alphanumeric",
+    "zip_regex": "CP [1-3][1-7][0-2]\\d",
+    "examples": ["CP 1101"]
+  },
+  "SZ": {
+    "country_name": "Eswatini",
+    "format": "alphanumeric",
+    "zip_regex": "[HLMS]\\d{3}",
+    "examples": ["H100"]
+  },
+  "TA": {
+    "country_name": "Tristan da Cunha",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "TC": {
+    "country_name": "Turks and Caicos Islands",
+    "format": "alphanumeric",
+    "zip_regex": "TKCA 1ZZ",
+    "examples": ["TKCA 1ZZ"]
+  },
+  "TH": {
+    "country_name": "Thailand",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["10150", "10210"]
+  },
+  "TJ": {
+    "country_name": "Tajikistan",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["735450", "734025"]
+  },
+  "TM": {
+    "country_name": "Turkmenistan",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["744000"]
+  },
+  "TN": {
+    "country_name": "Tunisia",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1002", "8129", "3100"]
+  },
+  "TR": {
+    "country_name": "Türkiye",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["01960", "06101"]
+  },
+  "TV": {
+    "country_name": "Tuvalu",
+    "format": "none",
+    "zip_regex": "",
+    "examples": []
+  },
+  "TW": {
+    "country_name": "Taiwan, Province of China",
+    "format": "numeric",
+    "zip_regex": "\\d{3}(?:\\d{2,3})?",
+    "examples": ["104", "106", "10603"]
+  },
+  "TZ": {
+    "country_name": "Tanzania, United Republic of",
+    "format": "numeric",
+    "zip_regex": "\\d{4,5}",
+    "examples": ["6090", "34413"]
+  },
+  "UA": {
+    "country_name": "Ukraine",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["15432", "01055", "01001"]
+  },
+  "UM": {
+    "country_name": "United States Minor Outlying Islands",
+    "format": "numeric",
+    "zip_regex": "96898",
+    "examples": ["96898"]
+  },
+  "US": {
+    "country_name": "United States",
+    "format": "numeric",
+    "zip_regex": "(\\d{5})(?:[ \\-](\\d{4}))?",
+    "examples": ["95014", "22162-1010"]
+  },
+  "UY": {
+    "country_name": "Uruguay",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["11600"]
+  },
+  "UZ": {
+    "country_name": "Uzbekistan",
+    "format": "numeric",
+    "zip_regex": "\\d{6}",
+    "examples": ["702100", "700000"]
+  },
+  "VA": {
+    "country_name": "Holy See (Vatican City State)",
+    "format": "numeric",
+    "zip_regex": "00120",
+    "examples": ["00120"]
+  },
+  "VC": {
+    "country_name": "Saint Vincent and the Grenadines",
+    "format": "alphanumeric",
+    "zip_regex": "VC\\d{4}",
+    "examples": ["VC0100", "VC0110", "VC0400"]
+  },
+  "VE": {
+    "country_name": "Venezuela, Bolivarian Republic of",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["1010", "3001", "8011"]
+  },
+  "VG": {
+    "country_name": "Virgin Islands, British",
+    "format": "alphanumeric",
+    "zip_regex": "VG\\d{4}",
+    "examples": ["VG1110", "VG1150", "VG1160"]
+  },
+  "VI": {
+    "country_name": "Virgin Islands, U.S.",
+    "format": "numeric",
+    "zip_regex": "(008(?:(?:[0-4]\\d)|(?:5[01])))(?:[ \\-](\\d{4}))?",
+    "examples": ["00802-1222", "00850-9802"]
+  },
+  "VN": {
+    "country_name": "Viet Nam",
+    "format": "numeric",
+    "zip_regex": "\\d{5}\\d?",
+    "examples": ["70010", "55999"]
+  },
+  "WF": {
+    "country_name": "Wallis and Futuna",
+    "format": "numeric",
+    "zip_regex": "986\\d{2}",
+    "examples": ["98600"]
+  },
+  "XK": {
+    "country_name": "Kosovo",
+    "format": "numeric",
+    "zip_regex": "[1-7]\\d{4}",
+    "examples": ["10000"]
+  },
+  "YT": {
+    "country_name": "Mayotte",
+    "format": "numeric",
+    "zip_regex": "976\\d{2}",
+    "examples": ["97600"]
+  },
+  "ZA": {
+    "country_name": "South Africa",
+    "format": "numeric",
+    "zip_regex": "\\d{4}",
+    "examples": ["0083", "1451", "0001"]
+  },
+  "ZM": {
+    "country_name": "Zambia",
+    "format": "numeric",
+    "zip_regex": "\\d{5}",
+    "examples": ["50100", "50101"]
+  }
+}
