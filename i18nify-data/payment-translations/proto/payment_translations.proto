@@ -5,9 +5,14 @@ package payment_translations;
 option go_package = "github.com/razorpay/i18nify/i18nify-data/go/payment-translations;payment_translations";
 
 // PaymentTranslationsConfig is the root message for paymentTranslationsConfig.json.
-// The source JSON is a top-level map keyed by language or locale code.
 message PaymentTranslationsConfig {
-  map<string, PaymentTranslationsStrings> payment_translations = 1 [json_name = "payment_translations"];
+  PaymentTranslationsStrings hi = 1;
+  PaymentTranslationsStrings bn = 2;
+  PaymentTranslationsStrings mr = 3;
+  PaymentTranslationsStrings gu = 4;
+  PaymentTranslationsStrings ta = 5;
+  PaymentTranslationsStrings te = 6;
+  PaymentTranslationsStrings kn = 7;
 }
 
 // PaymentTranslationsStrings holds payment UI strings for a single language or locale.
