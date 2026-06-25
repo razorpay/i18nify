@@ -1,5 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import PAYMENT_TRANSLATIONS_INFO from './data/paymentTranslationsConfig.json';
+import PAYMENT_TRANSLATIONS_INFO from '#/i18nify-data/payment-translations/paymentTranslationsConfig.json';
 import type {
   PaymentTranslationsCodeType,
   PaymentTranslationsStrings,
