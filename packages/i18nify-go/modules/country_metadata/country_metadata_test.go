@@ -95,6 +95,18 @@ func TestGetLocaleByIdentifier(t *testing.T) {
 	assert.False(t, ok)
 }
 
+func TestGetSupportedDateFormats(t *testing.T) {
+	jsonData := []byte(`{"metadata_information":{"IN":{"country_name":"India","continent_code":"AS","continent_name":"Asia","alpha_3":"IND","numeric_code":"356","flag":"https://flagcdn.com/in.svg","sovereignty":"UN member state","dial_code":"+91","supported_currency":["INR"],"timezones":{"Asia/Kolkata":{"utc_offset":"UTC +05:30"}},"timezone_of_capital":"Asia/Kolkata","locales":{"en_IN":{"name":"English (India)"}},"default_locale":"en_IN","default_currency":"INR"}},"supported_date_formats":[{"regex":"^(\\d{4})/(0[1-9]|1[0-2])/(\\d{2})$","year_index":1,"month_index":2,"day_index":3,"format":"YYYY/MM/DD"}]}`)
+	countryMetadata, err := UnmarshalCountryMetadata(jsonData)
+	assert.NoError(t, err)
+	assert.Len(t, countryMetadata.SupportedDateFormats, 1)
+	assert.Equal(t, "YYYY/MM/DD", countryMetadata.SupportedDateFormats[0].Format)
+	assert.Equal(t, int32(1), countryMetadata.SupportedDateFormats[0].YearIndex)
+
+	actual := cachedCountyMetaData.GetSupportedDateFormats()
+	assert.NotEmpty(t, actual)
+}
+
 func TestGetMetadataInformationByISONumericCode(t *testing.T) {
 	tests := []struct {
 		name        string

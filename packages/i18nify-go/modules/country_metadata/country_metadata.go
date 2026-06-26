@@ -36,6 +36,22 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 	if src == nil {
 		return CountryMetadata{}
 	}
+	formats := make([]SupportedDateFormat, 0, len(src.GetSupportedDateFormats()))
+	for _, format := range src.GetSupportedDateFormats() {
+		if format == nil {
+			continue
+		}
+		formats = append(formats, SupportedDateFormat{
+			Regex:       format.GetRegex(),
+			YearIndex:   format.GetYearIndex(),
+			MonthIndex:  format.GetMonthIndex(),
+			DayIndex:    format.GetDayIndex(),
+			HourIndex:   format.GetHourIndex(),
+			MinuteIndex: format.GetMinuteIndex(),
+			SecondIndex: format.GetSecondIndex(),
+			Format:      format.GetFormat(),
+		})
+	}
 	info := make(map[string]MetadataInformation, len(src.GetMetadataInformation()))
 	for code, cm := range src.GetMetadataInformation() {
 		if cm == nil {
@@ -74,7 +90,7 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 			DefaultCurrency:   cm.GetDefaultCurrency(),
 		}
 	}
-	return CountryMetadata{MetadataInformation: info}
+	return CountryMetadata{MetadataInformation: info, SupportedDateFormats: formats}
 }
 
 // UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
@@ -92,12 +108,18 @@ func (r *CountryMetadata) Marshal() ([]byte, error) {
 // CountryMetadata represents metadata information about countries.
 type CountryMetadata struct {
 	// MetadataInformation holds metadata information for each country, keyed by country code.
-	MetadataInformation map[string]MetadataInformation `json:"metadata_information"`
+	MetadataInformation  map[string]MetadataInformation `json:"metadata_information"`
+	SupportedDateFormats []SupportedDateFormat          `json:"supported_date_formats,omitempty"`
 }
 
 // GetAllMetadataInformation returns all metadata information about countries.
 func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInformation {
 	return r.MetadataInformation
+}
+
+// GetSupportedDateFormats returns all globally supported date input patterns.
+func (r *CountryMetadata) GetSupportedDateFormats() []SupportedDateFormat {
+	return r.SupportedDateFormats
 }
 
 // GetMetadataInformation retrieves metadata information for a specific country code.
@@ -206,6 +228,18 @@ type MetadataInformation struct {
 	TimezoneOfCapital string              `json:"timezone_of_capital"` // TimezoneOfCapital represents the timezone of the capital city of the country.
 	Timezones         map[string]Timezone `json:"timezones"`           // Timezones represents the list of timezones used in the country, keyed by timezone identifier.
 	DefaultCurrency   string              `json:"default_currency"`    // DefaultCurrency represents the default currency used in the country.
+}
+
+// SupportedDateFormat describes a globally supported input date/time pattern.
+type SupportedDateFormat struct {
+	Regex       string `json:"regex"`
+	YearIndex   int32  `json:"year_index"`
+	MonthIndex  int32  `json:"month_index"`
+	DayIndex    int32  `json:"day_index"`
+	HourIndex   int32  `json:"hour_index,omitempty"`
+	MinuteIndex int32  `json:"minute_index,omitempty"`
+	SecondIndex int32  `json:"second_index,omitempty"`
+	Format      string `json:"format"`
 }
 
 // NewMetadataInformation creates a new MetadataInformation instance.
