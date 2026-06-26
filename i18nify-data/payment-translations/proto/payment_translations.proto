@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package payment_translations;
+
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/payment-translations;payment_translations";
+
+// PaymentTranslationsConfig is the root message for data.json.
+message PaymentTranslationsConfig {
+  PaymentTranslationsStrings hi = 1;
+  PaymentTranslationsStrings bn = 2;
+  PaymentTranslationsStrings mr = 3;
+  PaymentTranslationsStrings gu = 4;
+  PaymentTranslationsStrings ta = 5;
+  PaymentTranslationsStrings te = 6;
+  PaymentTranslationsStrings kn = 7;
+}
+
+// PaymentTranslationsStrings holds payment UI strings for a single language or locale.
+message PaymentTranslationsStrings {
+  string language_name = 1;
+  string script = 2;
+  string pay_now = 3;
+  string amount = 4;
+  string cancel = 5;
+  string confirm = 6;
+  string payment_successful = 7;
+  string payment_failed = 8;
+  string processing = 9;
+  string total = 10;
+  string retry = 11;
+  string enter_amount = 12;
+  string card_number = 13;
+  string card_expiry = 14;
+  string cvv = 15;
+  string name_on_card = 16;
+  string upi_id = 17;
+  string net_banking = 18;
+  string wallet = 19;
+  string transaction_id = 20;
+  string back = 21;
+  string error_try_again = 22;
+  string order_id = 23;
+  string receipt = 24;
+}
