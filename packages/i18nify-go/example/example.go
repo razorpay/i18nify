@@ -5,6 +5,7 @@ import (
 
 	i18nify_go "github.com/razorpay/i18nify/packages/i18nify-go"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
+	business_entity "github.com/razorpay/i18nify/packages/i18nify-go/modules/business_entity"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/phonenumber"
 )
@@ -141,6 +142,36 @@ func main() {
 		fmt.Printf("Error getting bank name from identifier: %v\n", err)
 	} else {
 		fmt.Printf("Bank name from identifier: %s\n", bankName) // HDFC Bank Limited
+	}
+
+	// Business Entity Utilities
+	// Get all top-level business categories
+	categories, err := business_entity.GetBusinessCategories()
+	if err != nil {
+		fmt.Printf("Error getting business categories: %v\n", err)
+	} else {
+		fmt.Printf("Business categories count: %d\n", len(categories)) // 8
+		fmt.Printf("First category: %s - %s\n", categories[0].Code, categories[0].Name)
+	}
+
+	// Get sub-categories for a category code
+	subCategories, err := business_entity.GetBusinessSubCategories("SOLE_PROPRIETORSHIP")
+	if err != nil {
+		fmt.Printf("Error getting sub-categories: %v\n", err)
+	} else {
+		fmt.Printf("Sub-categories for SOLE_PROPRIETORSHIP: %d\n", len(subCategories))
+		fmt.Printf("First sub-category: %s - %s\n", subCategories[0].Code, subCategories[0].Name)
+	}
+
+	// Get legal entity types for a country
+	entityTypes, err := business_entity.GetBusinessEntityType("IN")
+	if err != nil {
+		fmt.Printf("Error getting entity types: %v\n", err)
+	} else {
+		fmt.Printf("Entity types for IN: %d\n", len(entityTypes))
+		for _, e := range entityTypes {
+			fmt.Printf("  %s (%s) — %s\n", e.Name, e.Abbreviation, e.Category)
+		}
 	}
 
 	// Multiple Countries
