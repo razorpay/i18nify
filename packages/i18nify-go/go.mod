@@ -3,6 +3,7 @@ module github.com/razorpay/i18nify/packages/i18nify-go
 go 1.20
 
 require (
+	github.com/razorpay/i18nify/i18nify-data/go/phone-number/dial-code-to-country v0.0.0-20260626102338-a3da62891c62
 	github.com/stretchr/testify v1.9.0
 	golang.org/x/text v0.22.0
 )
