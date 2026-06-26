@@ -12,7 +12,7 @@ import (
 )
 
 // buildRawParts constructs the []FormattedPart for the given amount and options.
-func buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, error) {
+func (c *Currency) buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, error) {
 	locale := opts.Locale
 	if locale == "" {
 		locale = defaultLocale
@@ -46,7 +46,7 @@ func buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, e
 
 // resolveFractionDigits returns the effective min/max fraction digit counts.
 // Defaults to the currency's minor_unit when a currency code is set, or 0/3 for plain decimal.
-func resolveFractionDigits(opts NumberFormatOptions) (min, max int) {
+func (c *Currency) resolveFractionDigits(opts NumberFormatOptions) (min, max int) {
 	min, max = 0, 3
 	if opts.Currency != "" {
 		if info, ok := c.CurrencyInformation[opts.Currency]; ok {
@@ -96,7 +96,7 @@ func isAllDigits(s string) bool {
 
 // buildCurrencyParts formats amount with the canonical i18nify currency symbol.
 // Symbol position defaults to prefix unless optional currency data marks it as suffix.
-func buildCurrencyParts(amount float64, currCode string, p *message.Printer, numOpts []number.Option, decSep, grpSep string) ([]FormattedPart, error) {
+func (c *Currency) buildCurrencyParts(amount float64, currCode string, p *message.Printer, numOpts []number.Option, decSep, grpSep string) ([]FormattedPart, error) {
 	info, ok := c.CurrencyInformation[currCode]
 	unknownCurrency := !ok
 
