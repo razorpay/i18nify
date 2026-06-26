@@ -147,7 +147,7 @@ func GetMetadataInformationByISONumericCode(numericCode string) MetadataInformat
 // GetLocaleByIdentifier returns locale metadata for a locale tag like en_US or en-US.
 // It first checks the country implied by the locale, then falls back to a full
 // scan across all countries for language-only locales.
-func GetLocaleByIdentifier(locale string) (Locale, bool) {
+func getLocaleByIdentifier(locale string) (Locale, bool) {
 	localeKey := normalizeLocaleKey(locale)
 	if localeKey == "" {
 		return Locale{}, false
