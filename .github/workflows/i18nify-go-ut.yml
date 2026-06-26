@@ -45,17 +45,4 @@ jobs:
           for pkg_dir in i18nify-data/go/*/ i18nify-data/go/*/*/; do
             [ -f "${pkg_dir}go.mod" ] && go work use "./${pkg_dir}"
           done
-
-          git fetch --no-tags --depth=1 origin ${{ github.event.pull_request.base.sha }}
-          changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD)
-
-          test_packages=()
-          if printf '%s\n' "$changed_files" | grep -Eq '^(packages/i18nify-go/modules/country_metadata/|i18nify-data/(go/)?country/metadata/)'; then
-            test_packages+=(github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata)
-          fi
-
-          if [ ${#test_packages[@]} -eq 0 ]; then
-            test_packages+=(github.com/razorpay/i18nify/packages/i18nify-go/modules/...)
-          fi
-
-          go test -v "${test_packages[@]}"
+          go test -v github.com/razorpay/i18nify/packages/i18nify-go/modules/...
