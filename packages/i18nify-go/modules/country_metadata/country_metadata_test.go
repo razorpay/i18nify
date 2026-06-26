@@ -77,6 +77,21 @@ func TestGetMetadataInformation_LocaleDateConfig(t *testing.T) {
 	assert.Equal(t, "-", frCA.DateSeparator)
 }
 
+func TestGetLocaleByIdentifier(t *testing.T) {
+	enCA, ok := GetLocaleByIdentifier("en-CA")
+	assert.True(t, ok)
+	assert.Equal(t, "English (Canada)", enCA.Name)
+	assert.Equal(t, "MDY", enCA.DateOrder)
+	assert.Equal(t, "/", enCA.DateSeparator)
+
+	fr, ok := GetLocaleByIdentifier("fr")
+	assert.True(t, ok)
+	assert.Equal(t, "French", fr.Name)
+
+	_, ok = GetLocaleByIdentifier("")
+	assert.False(t, ok)
+}
+
 func TestGetMetadataInformationByISONumericCode(t *testing.T) {
 	tests := []struct {
 		name        string

@@ -3,6 +3,8 @@ package datetime
 import (
 	"fmt"
 	"strings"
+
+	countrymetadata "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
 )
 
 // GetTimeZoneByCountry returns timezone identifiers and UTC offsets for an
@@ -14,26 +16,19 @@ func GetTimeZoneByCountry(countryCode string) (map[string]TimeZoneInfo, error) {
 
 	code := strings.ToUpper(strings.TrimSpace(countryCode))
 
-	if cachedCountryMetadata == nil {
-		return nil, fmt.Errorf("getTimeZoneByCountry: country metadata not loaded")
-	}
-
-	metadataMap := cachedCountryMetadata.GetMetadataInformation()
-	countryMeta, exists := metadataMap[code]
-	if !exists {
+	countryMeta := countrymetadata.GetMetadataInformation(code)
+	if countryMeta.CountryName == "" {
 		return nil, fmt.Errorf("getTimeZoneByCountry: country code %q not found", code)
 	}
 
-	rawTimezones := countryMeta.GetTimezones()
+	rawTimezones := countryMeta.Timezones
 	if len(rawTimezones) == 0 {
 		return nil, fmt.Errorf("getTimeZoneByCountry: no timezone data for country code %q", code)
 	}
 
 	result := make(map[string]TimeZoneInfo, len(rawTimezones))
 	for tzKey, tzVal := range rawTimezones {
-		if tzVal != nil {
-			result[tzKey] = TimeZoneInfo{UTCOffset: tzVal.GetUtcOffset()}
-		}
+		result[tzKey] = TimeZoneInfo{UTCOffset: tzVal.UTCOffset}
 	}
 
 	return result, nil

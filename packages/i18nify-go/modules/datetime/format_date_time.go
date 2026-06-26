@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	countryMetadata "github.com/razorpay/i18nify/i18nify-data/go/country/metadata"
+	countrymetadata "github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
 )
 
 var englishNarrowMonths = [12]string{"J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"}
@@ -51,87 +51,24 @@ type FormatDateTimeOptions struct {
 
 // dateOrderForLocale returns the date ordering for a locale.
 func dateOrderForLocale(locale string) string {
-	if loc, ok := localeInfoForLocale(locale); ok && loc.GetDateOrder() != "" {
-		return loc.GetDateOrder()
+	if loc, ok := countrymetadata.GetLocaleByIdentifier(locale); ok && loc.DateOrder != "" {
+		return loc.DateOrder
 	}
-	if loc, ok := localeInfoForLocale(localeBase(locale)); ok && loc.GetDateOrder() != "" {
-		return loc.GetDateOrder()
+	if loc, ok := countrymetadata.GetLocaleByIdentifier(localeBase(locale)); ok && loc.DateOrder != "" {
+		return loc.DateOrder
 	}
 	return "DMY"
 }
 
 // dateSepForLocale returns the date separator for a locale.
 func dateSepForLocale(locale string) string {
-	if loc, ok := localeInfoForLocale(locale); ok && loc.GetDateSeparator() != "" {
-		return loc.GetDateSeparator()
+	if loc, ok := countrymetadata.GetLocaleByIdentifier(locale); ok && loc.DateSeparator != "" {
+		return loc.DateSeparator
 	}
-	if loc, ok := localeInfoForLocale(localeBase(locale)); ok && loc.GetDateSeparator() != "" {
-		return loc.GetDateSeparator()
+	if loc, ok := countrymetadata.GetLocaleByIdentifier(localeBase(locale)); ok && loc.DateSeparator != "" {
+		return loc.DateSeparator
 	}
 	return "/"
-}
-
-func localeInfoForLocale(locale string) (*countryMetadata.LocaleInfo, bool) {
-	if cachedCountryMetadata == nil {
-		return nil, false
-	}
-
-	localeKey := normalizeLocaleKey(locale)
-	if localeKey == "" {
-		return nil, false
-	}
-
-	if loc, ok := countryLocaleForLocale(localeKey); ok {
-		return loc, true
-	}
-
-	for _, countryMeta := range cachedCountryMetadata.GetMetadataInformation() {
-		if countryMeta == nil {
-			continue
-		}
-		loc, ok := countryMeta.GetLocales()[localeKey]
-		if ok && loc != nil {
-			return loc, true
-		}
-	}
-
-	return nil, false
-}
-
-func countryLocaleForLocale(localeKey string) (*countryMetadata.LocaleInfo, bool) {
-	parts := strings.FieldsFunc(localeKey, func(r rune) bool {
-		return r == '_'
-	})
-	if len(parts) < 2 {
-		return nil, false
-	}
-
-	countryCode := parts[len(parts)-1]
-	countryMeta, ok := cachedCountryMetadata.GetMetadataInformation()[countryCode]
-	if !ok || countryMeta == nil {
-		return nil, false
-	}
-	loc, ok := countryMeta.GetLocales()[localeKey]
-	if !ok || loc == nil {
-		return nil, false
-	}
-	return loc, true
-}
-
-func normalizeLocaleKey(locale string) string {
-	parts := strings.FieldsFunc(locale, func(r rune) bool {
-		return r == '-' || r == '_'
-	})
-	if len(parts) == 0 {
-		return ""
-	}
-
-	parts[0] = strings.ToLower(parts[0])
-	if len(parts) >= 2 {
-		parts[len(parts)-1] = strings.ToUpper(parts[len(parts)-1])
-	}
-
-	return strings.Join(parts, "_")
 }
 
 func defaultFieldStyle(style *FieldStyle) {
