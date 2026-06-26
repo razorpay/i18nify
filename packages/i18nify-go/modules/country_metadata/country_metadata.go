@@ -66,6 +66,7 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 			TimezoneOfCapital: cm.GetTimezoneOfCapital(),
 			Timezones:         timezones,
 			DefaultCurrency:   cm.GetDefaultCurrency(),
+			AddressTemplate:   cm.GetAddressFormat(),
 		}
 	}
 	return CountryMetadata{MetadataInformation: info}
@@ -139,6 +140,8 @@ type MetadataInformation struct {
 	TimezoneOfCapital string              `json:"timezone_of_capital"` // TimezoneOfCapital represents the timezone of the capital city of the country.
 	Timezones         map[string]Timezone `json:"timezones"`           // Timezones represents the list of timezones used in the country, keyed by timezone identifier.
 	DefaultCurrency   string              `json:"default_currency"`    // DefaultCurrency represents the default currency used in the country.
+	// AddressTemplate represents the country-specific address formatting template.
+	AddressTemplate string `json:"address_template,omitempty"`
 }
 
 // NewMetadataInformation creates a new MetadataInformation instance.
@@ -204,4 +207,72 @@ func GetCountryCodeISO2(countryName string) string {
 		}
 	}
 	return ""
+}
+
+// AddressComponents holds address field values for template substitution.
+// All fields are optional; empty fields substitute as blank strings and
+// lines that become blank after substitution are dropped from the output.
+type AddressComponents struct {
+	Name          string
+	Organization  string
+	StreetAddress string
+	City          string
+	State         string
+	Zip           string
+	District      string
+	SortingCode   string
+}
+
+// FormatAddress formats address components using a caller-supplied template string.
+// Use FormatAddressWithFormat when you have a country code and want the canonical
+// country-specific template from i18nify-data.
+func FormatAddress(template string, components AddressComponents) (string, error) {
+	if strings.TrimSpace(template) == "" {
+		return "", fmt.Errorf("template must be a non-empty string")
+	}
+
+	replacer := strings.NewReplacer(
+		"{name}", components.Name,
+		"{organization}", components.Organization,
+		"{street_address}", components.StreetAddress,
+		"{city}", components.City,
+		"{state}", components.State,
+		"{zip}", components.Zip,
+		"{district}", components.District,
+		"{sorting_code}", components.SortingCode,
+	)
+	substituted := replacer.Replace(template)
+
+	// Split the substituted template into lines and drop any that are blank —
+	// this happens when an optional field (e.g. Organization) was not provided.
+	rawLines := strings.Split(substituted, "\n")
+	formatted := make([]string, 0, len(rawLines))
+	for _, line := range rawLines {
+		if trimmed := strings.TrimSpace(line); trimmed != "" {
+			formatted = append(formatted, trimmed)
+		}
+	}
+
+	return strings.Join(formatted, "\n"), nil
+}
+
+// FormatAddressWithFormat formats address components using the country-specific
+// template for countryCode. The template is sourced from the country metadata
+// (MetadataInformation.AddressTemplate). Each {placeholder} in the template is
+// replaced with the matching field; blank lines in the result are removed.
+func FormatAddressWithFormat(countryCode string, components AddressComponents) (string, error) {
+	if strings.TrimSpace(countryCode) == "" {
+		return "", fmt.Errorf("formatAddressWithFormat: country code must not be empty")
+	}
+
+	code := strings.ToUpper(strings.TrimSpace(countryCode))
+
+	template := GetMetadataInformation(code).AddressTemplate
+	if template == "" {
+		return "", fmt.Errorf("formatAddressWithFormat: address format for country code %q not found", code)
+	}
+
+	// Reuse the base formatter so template substitution and blank-line cleanup
+	// remain defined in one place.
+	return FormatAddress(template, components)
 }

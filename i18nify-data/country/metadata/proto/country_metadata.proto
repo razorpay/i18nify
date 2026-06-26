@@ -26,6 +26,8 @@ message CountryMetadata {
   map<string, LocaleInfo> locales = 12;
   string default_locale = 13;
   string default_currency = 14;
+  // The canonical JSON dataset still stores this under the address_template key.
+  string address_format = 15 [json_name = "address_template"];
 }
 
 // TimezoneInfo contains timezone details.
