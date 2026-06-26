@@ -10,6 +10,7 @@ package currency
 import (
 	"encoding/json"
 	"fmt"
+	"strings"
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/currency"
 	"golang.org/x/text/language"
@@ -100,6 +101,11 @@ func GetCurrencyCodeByISONumericCode(numericCode string) (string, error) {
 	return "", fmt.Errorf("currency with numeric code '%s' not found", numericCode)
 }
 
+// GetCurrency returns the package-level cached Currency instance.
+func GetCurrency() *Currency {
+	return cachedCurrencyData
+}
+
 // NewCurrency creates a new Currency instance.
 func NewCurrency(currencyInformation map[string]CurrencyInformation) *Currency {
 	return &Currency{
@@ -114,6 +120,7 @@ type CurrencyInformation struct {
 	NumericCode                   string   `json:"numeric_code"`                    // NumericCode represents the ISO 4217 numeric code of the currency.
 	PhysicalCurrencyDenominations []string `json:"physical_currency_denominations"` // PhysicalCurrencyDenominations represents the physical denominations of the currency.
 	Symbol                        string   `json:"symbol"`                          // Symbol represents the symbol or abbreviation of the currency.
+	SymbolPosition                string   `json:"symbol_position,omitempty"`       // SymbolPosition represents whether the symbol is prefix or suffix when available.
 }
 
 // Getters for various fields of CurrencyInformation.
@@ -148,6 +155,82 @@ func GetCurrencySymbol(currencyCode string) (string, error) {
 	}
 
 	return currencyInfo.Symbol, nil
+}
+
+// FormatNumber formats amount as a locale-aware number or currency string.
+// When opts.Currency is set the result includes the canonical i18nify currency symbol.
+// Mirrors the JS formatNumber function in i18nify-js/src/modules/currency/formatNumber.ts.
+func (c *Currency) FormatNumber(amount interface{}, opts NumberFormatOptions) (string, error) {
+	val, err := ValidateAndConvertAmount(amount)
+	if err != nil {
+		return "", fmt.Errorf("parameter 'amount' is not a valid number: %v", err)
+	}
+
+	parts, err := c.buildRawParts(val, opts)
+	if err != nil {
+		return "", err
+	}
+
+	var sb strings.Builder
+	for _, p := range parts {
+		sb.WriteString(p.Value)
+	}
+	return sb.String(), nil
+}
+
+// FormatNumberByParts formats amount and returns a ByParts struct with each component separated.
+// Group separators are merged into the Integer field, matching JS formatNumberByParts.
+// Mirrors the JS formatNumberByParts function in i18nify-js/src/modules/currency/formatNumberByParts.ts.
+func (c *Currency) FormatNumberByParts(amount interface{}, opts NumberFormatOptions) (*ByParts, error) {
+	val, err := ValidateAndConvertAmount(amount)
+	if err != nil {
+		return nil, fmt.Errorf("parameter 'amount' is not a valid number: %v", err)
+	}
+
+	rawParts, err := c.buildRawParts(val, opts)
+	if err != nil {
+		return nil, fmt.Errorf("an error occurred while formatting the number: %v", err)
+	}
+
+	result := &ByParts{
+		RawParts:       rawParts,
+		IsPrefixSymbol: true,
+	}
+
+	currencyIdx := -1
+	integerIdx := -1
+	for i, p := range rawParts {
+		if p.Type == PartCurrency && currencyIdx == -1 {
+			currencyIdx = i
+		}
+		if p.Type == PartInteger && integerIdx == -1 {
+			integerIdx = i
+		}
+	}
+	if currencyIdx >= 0 && integerIdx >= 0 {
+		result.IsPrefixSymbol = currencyIdx < integerIdx
+	}
+
+	for _, p := range rawParts {
+		switch p.Type {
+		case PartGroup:
+			result.Integer += p.Value
+		case PartInteger:
+			result.Integer += p.Value
+		case PartFraction:
+			result.Fraction += p.Value
+		case PartDecimal:
+			result.Decimal += p.Value
+		case PartCurrency:
+			result.Currency += p.Value
+		case PartPlusSign:
+			result.PlusSign += p.Value
+		case PartMinusSign:
+			result.MinusSign += p.Value
+		}
+	}
+
+	return result, nil
 }
 
 // GetCurrencySymbol retrieves the currency symbol for a specific currency code.
