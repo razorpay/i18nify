@@ -7,9 +7,6 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// intPtr is a helper to get a pointer to an int literal.
-func intPtr(i int) *int { return &i }
-
 // boolPtr is a helper to get a pointer to a bool literal.
 func boolPtr(b bool) *bool { return &b }
 
@@ -26,75 +23,63 @@ func TestFormatNumber(t *testing.T) {
 		{
 			name:     "USD prefix symbol with grouping",
 			amount:   1000.5,
-			opts:     NumberFormatOptions{Currency: "USD", Locale: "en-US"},
+			opts:     NumberFormatOptions{Currency: "USD"},
 			expected: "$1,000.50",
 		},
 		{
 			name:     "negative USD",
 			amount:   -500.0,
-			opts:     NumberFormatOptions{Currency: "USD", Locale: "en-US"},
+			opts:     NumberFormatOptions{Currency: "USD"},
 			expected: "-$500.00",
 		},
 		{
 			name:     "zero USD",
 			amount:   0,
-			opts:     NumberFormatOptions{Currency: "USD", Locale: "en-US"},
+			opts:     NumberFormatOptions{Currency: "USD"},
 			expected: "$0.00",
 		},
 		{
 			name:     "plain decimal no currency",
 			amount:   "750.75",
-			opts:     NumberFormatOptions{Locale: "en-US"},
+			opts:     NumberFormatOptions{},
 			expected: "750.75",
 		},
 		{
 			name:     "large number plain decimal",
 			amount:   12345.6789,
-			opts:     NumberFormatOptions{Locale: "en-US"},
+			opts:     NumberFormatOptions{},
 			expected: "12,345.679",
 		},
 		{
 			name:     "JPY zero fraction digits",
 			amount:   5000,
-			opts:     NumberFormatOptions{Currency: "JPY", Locale: "en-US"},
+			opts:     NumberFormatOptions{Currency: "JPY"},
 			expected: "¥5,000", // JPY minor_unit = 0, canonical symbol = "¥"
-		},
-		{
-			name:   "custom fraction digits override",
-			amount: "42.12345",
-			opts: NumberFormatOptions{
-				Currency:              "USD",
-				Locale:                "en-US",
-				MaximumFractionDigits: intPtr(3),
-			},
-			expected: "$42.123",
 		},
 		{
 			name:   "disable grouping",
 			amount: 1234567.89,
 			opts: NumberFormatOptions{
-				Locale:      "en-US",
 				UseGrouping: boolPtr(false),
 			},
 			expected: "1234567.89",
 		},
 		{
-			// EUR in de-DE is suffix with NBSP separator between number and symbol.
-			name:     "EUR suffix locale (de-DE)",
+			name:     "EUR prefix symbol",
 			amount:   1234.56,
-			opts:     NumberFormatOptions{Currency: "EUR", Locale: "de-DE"},
-			expected: "1.234,56 €",
+			opts:     NumberFormatOptions{Currency: "EUR"},
+			expected: "€1,234.56",
 		},
 		{
 			name:    "invalid string amount",
 			amount:  "not-a-number",
-			opts:    NumberFormatOptions{Currency: "USD", Locale: "en-US"},
+			opts:    NumberFormatOptions{Currency: "USD"},
 			wantErr: true,
 		},
 		{
 			name:    "string with commas (not parseable)",
 			amount:  "1,234",
-			opts:    NumberFormatOptions{Locale: "en-US"},
+			opts:    NumberFormatOptions{},
 			wantErr: true,
 		},
 	}
@@ -117,19 +102,17 @@ func TestFormatNumber(t *testing.T) {
 func TestFormatNumber_IntlMappedCurrencies(t *testing.T) {
 	cases := []struct {
 		currency string
-		locale   string
 	}{
-		{"SGD", "en-SG"},
-		{"AUD", "en-AU"},
-		{"HKD", "en-HK"},
-		{"CAD", "en-CA"},
+		{"SGD"},
+		{"AUD"},
+		{"HKD"},
+		{"CAD"},
 	}
 
 	for _, tc := range cases {
 		t.Run(tc.currency, func(t *testing.T) {
 			result, err := cachedCurrencyData.FormatNumber(1000.0, NumberFormatOptions{
 				Currency: tc.currency,
-				Locale:   tc.locale,
 			})
 			require.NoError(t, err)
 

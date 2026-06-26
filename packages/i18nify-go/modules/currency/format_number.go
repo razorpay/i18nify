@@ -1,10 +1,5 @@
 package currency
 
-import (
-	"fmt"
-	"strings"
-)
-
 const defaultLocale = "en-IN"
 
 // NumberFormatOptions mirrors the JS options object accepted by formatNumber / formatNumberByParts.
@@ -37,25 +32,4 @@ const (
 type FormattedPart struct {
 	Type  string `json:"type"`
 	Value string `json:"value"`
-}
-
-// FormatNumber formats amount as a locale-aware number or currency string.
-// When opts.Currency is set the result includes the canonical i18nify currency symbol.
-// Mirrors the JS formatNumber function in i18nify-js/src/modules/currency/formatNumber.ts.
-func (c *Currency) FormatNumber(amount interface{}, opts NumberFormatOptions) (string, error) {
-	val, err := ValidateAndConvertAmount(amount)
-	if err != nil {
-		return "", fmt.Errorf("parameter 'amount' is not a valid number: %v", err)
-	}
-
-	parts, err := buildRawParts(val, opts)
-	if err != nil {
-		return "", err
-	}
-
-	var sb strings.Builder
-	for _, p := range parts {
-		sb.WriteString(p.Value)
-	}
-	return sb.String(), nil
 }
