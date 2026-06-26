@@ -101,6 +101,11 @@ func GetCurrencyCodeByISONumericCode(numericCode string) (string, error) {
 	return "", fmt.Errorf("currency with numeric code '%s' not found", numericCode)
 }
 
+// GetCurrency returns the package-level cached Currency instance.
+func GetCurrency() *Currency {
+	return cachedCurrencyData
+}
+
 // NewCurrency creates a new Currency instance.
 func NewCurrency(currencyInformation map[string]CurrencyInformation) *Currency {
 	return &Currency{
