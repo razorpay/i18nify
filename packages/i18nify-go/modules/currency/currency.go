@@ -161,7 +161,7 @@ func (c *Currency) FormatNumber(amount interface{}, opts NumberFormatOptions) (s
 		return "", fmt.Errorf("parameter 'amount' is not a valid number: %v", err)
 	}
 
-	parts, err := buildRawParts(val, opts)
+	parts, err := c.buildRawParts(val, opts)
 	if err != nil {
 		return "", err
 	}
@@ -182,7 +182,7 @@ func (c *Currency) FormatNumberByParts(amount interface{}, opts NumberFormatOpti
 		return nil, fmt.Errorf("parameter 'amount' is not a valid number: %v", err)
 	}
 
-	rawParts, err := buildRawParts(val, opts)
+	rawParts, err := c.buildRawParts(val, opts)
 	if err != nil {
 		return nil, fmt.Errorf("an error occurred while formatting the number: %v", err)
 	}

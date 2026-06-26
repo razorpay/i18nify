@@ -12,7 +12,7 @@ import (
 )
 
 // buildRawParts constructs the []FormattedPart for the given amount and options.
-func buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, error) {
+func (c *Currency) buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, error) {
 	locale := opts.Locale
 	if locale == "" {
 		locale = defaultLocale
@@ -23,7 +23,7 @@ func buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, e
 	}
 
 	p := message.NewPrinter(tag)
-	minFrac, maxFrac := resolveFractionDigits(opts)
+	minFrac, maxFrac := c.resolveFractionDigits(opts)
 	decSep, grpSep := detectLocaleSymbols(p)
 
 	useGrouping := opts.UseGrouping == nil || *opts.UseGrouping
@@ -37,7 +37,7 @@ func buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, e
 	}
 
 	if opts.Currency != "" {
-		return buildCurrencyParts(amount, opts.Currency, p, numOpts, decSep, grpSep)
+		return c.buildCurrencyParts(amount, opts.Currency, p, numOpts, decSep, grpSep)
 	}
 
 	formatted := p.Sprintf("%v", number.Decimal(amount, numOpts...))
@@ -46,10 +46,10 @@ func buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, e
 
 // resolveFractionDigits returns the effective min/max fraction digit counts.
 // Defaults to the currency's minor_unit when a currency code is set, or 0/3 for plain decimal.
-func resolveFractionDigits(opts NumberFormatOptions) (min, max int) {
+func (c *Currency) resolveFractionDigits(opts NumberFormatOptions) (min, max int) {
 	min, max = 0, 3
 	if opts.Currency != "" {
-		if info, err := GetCurrencyInformation(opts.Currency); err == nil {
+		if info, ok := c.CurrencyInformation[opts.Currency]; ok {
 			if mu, atoiErr := strconv.Atoi(info.MinorUnit); atoiErr == nil && mu >= 0 {
 				min, max = mu, mu
 			}
@@ -95,10 +95,10 @@ func isAllDigits(s string) bool {
 }
 
 // buildCurrencyParts formats amount with the canonical i18nify currency symbol.
-// Symbol position is read from the currency data (symbol_position field, derived from CLDR).
-func buildCurrencyParts(amount float64, currCode string, p *message.Printer, numOpts []number.Option, decSep, grpSep string) ([]FormattedPart, error) {
-	info, infoErr := GetCurrencyInformation(currCode)
-	unknownCurrency := infoErr != nil
+// Symbol position defaults to prefix unless optional currency data marks it as suffix.
+func (c *Currency) buildCurrencyParts(amount float64, currCode string, p *message.Printer, numOpts []number.Option, decSep, grpSep string) ([]FormattedPart, error) {
+	info, ok := c.CurrencyInformation[currCode]
+	unknownCurrency := !ok
 
 	canonicalSymbol := currCode
 	if !unknownCurrency {
