@@ -6,8 +6,8 @@ import (
 
 	i18nify_go "github.com/razorpay/i18nify/packages/i18nify-go"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
+	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
-	"github.com/razorpay/i18nify/packages/i18nify-go/modules/datetime"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/phonenumber"
 )
 
@@ -148,9 +148,9 @@ func main() {
 	// Date and Time Utilities
 	// Format a date and time value
 	ts := time.Date(2024, 3, 5, 14, 30, 0, 0, time.UTC)
-	formattedDT, err := datetime.FormatDateTime(ts, datetime.FormatDateTimeOptions{
+	formattedDT, err := country_metadata.FormatDateTime(ts, country_metadata.FormatDateTimeOptions{
 		Locale:       "en-US",
-		DateTimeMode: datetime.ModeDateTime,
+		DateTimeMode: country_metadata.ModeDateTime,
 	})
 	if err != nil {
 		fmt.Printf("Error formatting date time: %v\n", err)
@@ -159,9 +159,9 @@ func main() {
 	}
 
 	// Get relative time from a past date
-	relTime, err := datetime.GetRelativeTime(
+	relTime, err := country_metadata.GetRelativeTime(
 		time.Now().Add(-2*time.Hour),
-		datetime.GetRelativeTimeOptions{Numeric: "always"},
+		country_metadata.GetRelativeTimeOptions{Numeric: "always"},
 	)
 	if err != nil {
 		fmt.Printf("Error getting relative time: %v\n", err)
@@ -170,7 +170,7 @@ func main() {
 	}
 
 	// Get all timezones for a country
-	tzs, err := datetime.GetTimeZoneByCountry("IN")
+	tzs, err := country_metadata.GetTimeZoneByCountry("IN")
 	if err != nil {
 		fmt.Printf("Error getting timezones by country: %v\n", err)
 	} else {
@@ -178,7 +178,7 @@ func main() {
 	}
 
 	// Get weekday names
-	weekdays, err := datetime.GetWeekdays(datetime.GetWeekdaysOptions{Locale: "en-US"})
+	weekdays, err := country_metadata.GetWeekdays(country_metadata.GetWeekdaysOptions{Locale: "en-US"})
 	if err != nil {
 		fmt.Printf("Error getting weekdays: %v\n", err)
 	} else {
