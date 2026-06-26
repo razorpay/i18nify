@@ -52,6 +52,90 @@ jobs:
         env:
           HEAD_REF: ${{ github.head_ref }}
         run: |
+          cd $GITHUB_WORKSPACE
+          git fetch --no-tags --depth=1 origin ${{ github.event.pull_request.base.sha }}
+          changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }}...HEAD)
+
+          if printf '%s\n' "$changed_files" | grep -Eq '^(packages/i18nify-go/modules/country_metadata/|i18nify-data/(go/)?country/metadata/)'; then
+            echo "::group::Setup — scoped country_metadata consumer module"
+            TEST_DIR=/tmp/i18nify-country-metadata-consumer-test
+            rm -rf "$TEST_DIR"
+            mkdir -p "$TEST_DIR"
+            cd "$TEST_DIR"
+            go mod init consumer-test
+            go mod edit -replace=github.com/razorpay/i18nify/packages/i18nify-go=$GITHUB_WORKSPACE/packages/i18nify-go
+            go mod edit -replace=github.com/razorpay/i18nify/i18nify-data/go/country/metadata=$GITHUB_WORKSPACE/i18nify-data/go/country/metadata
+            echo "::endgroup::"
+
+            cat > integration_test.go << 'GOEOF'
+          package consumer
+
+          import (
+          	"testing"
+
+          	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
+          )
+
+          func TestCountryMetadata_GetMetadataInformation(t *testing.T) {
+          	info := country_metadata.GetMetadataInformation("IN")
+          	if info.CountryName != "India" {
+          		t.Errorf("expected 'India', got %q", info.CountryName)
+          	}
+          	if info.Alpha3 != "IND" {
+          		t.Errorf("expected alpha3 'IND', got %q", info.Alpha3)
+          	}
+          	if info.DialCode != "+91" {
+          		t.Errorf("expected dial code '+91', got %q", info.DialCode)
+          	}
+          	if len(info.SupportedCurrency) == 0 {
+          		t.Error("expected non-empty SupportedCurrency for India")
+          	}
+          }
+
+          func TestCountryMetadata_GetMetadataInformationByISONumericCode(t *testing.T) {
+          	info := country_metadata.GetMetadataInformationByISONumericCode("356")
+          	if info.CountryName != "India" {
+          		t.Errorf("expected 'India' for numeric code 356, got %q", info.CountryName)
+          	}
+          }
+
+          func TestCountryMetadata_GetCountryCodeFromAlpha3(t *testing.T) {
+          	code := country_metadata.GetCountryCodeFromAlpha3("IND")
+          	if code != "IN" {
+          		t.Errorf("expected 'IN' for IND, got %q", code)
+          	}
+          }
+
+          func TestCountryMetadata_GetCountryCodeISO2(t *testing.T) {
+          	code := country_metadata.GetCountryCodeISO2("India")
+          	if code != "IN" {
+          		t.Errorf("expected 'IN' for 'India', got %q", code)
+          	}
+          }
+
+          func TestCountryMetadata_GetTimeZoneByCountry(t *testing.T) {
+          	timezones, err := country_metadata.GetTimeZoneByCountry("IN")
+          	if err != nil {
+          		t.Fatalf("GetTimeZoneByCountry(IN): %v", err)
+          	}
+          	if _, ok := timezones["Asia/Kolkata"]; !ok {
+          		t.Errorf("expected Asia/Kolkata timezone, got %v", timezones)
+          	}
+          }
+          GOEOF
+
+            echo "::group::Setup — go mod tidy"
+            go mod tidy
+            echo "::endgroup::"
+
+            echo "::group::Run scoped consumer tests"
+            go test -v ./...
+            echo "::endgroup::"
+
+            echo "✅ Scoped country_metadata consumer integration tests passed"
+            exit 0
+          fi
+
           echo "::group::Setup — init consumer module"
           TEST_DIR=/tmp/i18nify-consumer-test
           mkdir -p "$TEST_DIR"
