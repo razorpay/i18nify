@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package names;
 
-import "google/protobuf/struct.proto";
-
 option go_package = "github.com/razorpay/i18nify/i18nify-data/go/names;names";
 
 // NamesData is the top-level container for all names-related reference data.
@@ -12,39 +10,10 @@ message NamesData {
   NamesInformation names_information = 1;
 }
 
-// NamesInformation holds country-to-language mappings, per-language honorific
-// titles, and name validation rules.
+// NamesInformation holds name validation rules.
 message NamesInformation {
-  // country_to_languages maps an ISO 3166-1 alpha-2 country code (e.g. "IN")
-  // to a JSON array of language name strings (e.g. ["hindi"]).
-  // ListValue is used because proto3 maps cannot have repeated string values.
-  map<string, google.protobuf.ListValue> country_to_languages = 1;
-
-  // honorific_titles maps a language name (e.g. "english", "hindi") to a JSON
-  // array of HonorificTitle objects (code, title, gender, description).
-  // ListValue is used because proto3 maps cannot have repeated message values.
-  map<string, google.protobuf.ListValue> honorific_titles = 2;
-
   // validation_rules defines length constraints applied to name fields.
-  ValidationRules validation_rules = 3;
-}
-
-// HonorificTitle documents the schema of each object in the honorific_titles
-// arrays. Entries are stored as generic ListValue elements in the proto map
-// but always conform to this four-field shape in the JSON data.
-message HonorificTitle {
-  // code is the canonical uppercase identifier (e.g. "MR", "SHRI").
-  string code = 1;
-
-  // title is the display form used in UIs (e.g. "Mr.", "Shri").
-  string title = 2;
-
-  // gender indicates the conventional gender association: "male", "female",
-  // or "neutral".
-  string gender = 3;
-
-  // description is a short English explanation of the title's usage.
-  string description = 4;
+  ValidationRules validation_rules = 1;
 }
 
 // ValidationRules defines the character-length bounds for a person's name.

@@ -36,4 +36,13 @@ message TimezoneInfo {
 // LocaleInfo contains locale details.
 message LocaleInfo {
   string name = 1;
+  repeated HonorificTitle honorific_titles = 2;
+}
+
+// HonorificTitle represents a single honorific title entry for a locale.
+message HonorificTitle {
+  string code = 1;
+  string title = 2;
+  string gender = 3;
+  string description = 4;
 }

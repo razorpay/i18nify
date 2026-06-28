@@ -48,7 +48,10 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 		locales := make(map[string]Locale, len(cm.GetLocales()))
 		for locKey, locVal := range cm.GetLocales() {
 			if locVal != nil {
-				locales[locKey] = Locale{Name: locVal.GetName()}
+				locales[locKey] = Locale{
+					Name:            locVal.GetName(),
+					HonorificTitles: convertHonorificTitlesFromDataSource(locVal.GetHonorificTitles()),
+				}
 			}
 		}
 		info[code] = MetadataInformation{
@@ -69,6 +72,27 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 		}
 	}
 	return CountryMetadata{MetadataInformation: info}
+}
+
+func convertHonorificTitlesFromDataSource(src []*dataSource.HonorificTitle) []HonorificTitle {
+	if len(src) == 0 {
+		return nil
+	}
+
+	titles := make([]HonorificTitle, 0, len(src))
+	for _, title := range src {
+		if title == nil {
+			continue
+		}
+		titles = append(titles, HonorificTitle{
+			Code:        title.GetCode(),
+			Title:       title.GetTitle(),
+			Gender:      title.GetGender(),
+			Description: title.GetDescription(),
+		})
+	}
+
+	return titles
 }
 
 // UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
@@ -163,7 +187,16 @@ func NewMetadataInformation(alpha_3 string, continentCode string, continentName 
 
 // Locale represents a locale with its code and name.
 type Locale struct {
-	Name string `json:"name"` // Name represents the name of the locale.
+	Name            string           `json:"name"`                       // Name represents the name of the locale.
+	HonorificTitles []HonorificTitle `json:"honorific_titles,omitempty"` // HonorificTitles represents locale-specific honorific titles.
+}
+
+// HonorificTitle represents a locale-specific honorific title entry.
+type HonorificTitle struct {
+	Code        string `json:"code"`
+	Title       string `json:"title"`
+	Gender      string `json:"gender"`
+	Description string `json:"description"`
 }
 
 // NewLocale creates a new Locale instance.

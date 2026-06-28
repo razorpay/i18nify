@@ -10,7 +10,18 @@ export type CountryMetaType = {
   supported_currency: string[];
   timezones: Record<string, { utc_offset: string }>;
   timezone_of_capital: string;
-  locales: Record<string, { name: string }>;
+  locales: Record<
+    string,
+    {
+      name: string;
+      honorific_titles?: {
+        code: string;
+        title: string;
+        gender: string;
+        description: string;
+      }[];
+    }
+  >;
   default_locale: string;
   default_currency: string;
 };

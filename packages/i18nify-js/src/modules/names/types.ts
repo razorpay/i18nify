@@ -46,8 +46,6 @@ export type HonorificTitle = {
 
 export type NamesData = {
   names_information: {
-    country_to_languages: Record<string, string[]>;
-    honorific_titles: Record<string, HonorificTitle[]>;
     validation_rules: NameValidationRules;
   };
 };
