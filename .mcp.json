@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "crawl4ai": {
-      "type": "http",
-      "url": "http://localhost:11235/mcp"
-    }
-  }
-}
