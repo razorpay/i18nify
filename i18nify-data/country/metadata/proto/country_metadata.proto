@@ -52,4 +52,13 @@ message LocaleInfo {
   string name = 1;
   string date_order = 2;
   string date_separator = 3;
+  repeated HonorificTitle honorific_titles = 4;
+}
+
+// HonorificTitle represents a single locale-specific honorific title entry.
+message HonorificTitle {
+  string code = 1;
+  string title = 2;
+  string gender = 3;
+  string description = 4;
 }

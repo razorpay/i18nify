@@ -11,6 +11,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"math"
+	"sort"
 	"strings"
 	"time"
 
@@ -67,9 +68,10 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 		for locKey, locVal := range cm.GetLocales() {
 			if locVal != nil {
 				locales[locKey] = Locale{
-					Name:          locVal.GetName(),
-					DateOrder:     locVal.GetDateOrder(),
-					DateSeparator: locVal.GetDateSeparator(),
+					Name:            locVal.GetName(),
+					DateOrder:       locVal.GetDateOrder(),
+					DateSeparator:   locVal.GetDateSeparator(),
+					HonorificTitles: convertHonorificTitlesFromDataSource(locVal.GetHonorificTitles()),
 				}
 			}
 		}
@@ -264,9 +266,18 @@ func NewMetadataInformation(alpha_3 string, continentCode string, continentName 
 
 // Locale represents a locale with its code and name.
 type Locale struct {
-	Name          string `json:"name"`                     // Name represents the name of the locale.
-	DateOrder     string `json:"date_order,omitempty"`     // DateOrder represents the locale-specific date field order when country-specific.
-	DateSeparator string `json:"date_separator,omitempty"` // DateSeparator represents the locale-specific date separator when country-specific.
+	Name            string           `json:"name"`                       // Name represents the name of the locale.
+	DateOrder       string           `json:"date_order,omitempty"`       // DateOrder represents the locale-specific date field order when country-specific.
+	DateSeparator   string           `json:"date_separator,omitempty"`   // DateSeparator represents the locale-specific date separator when country-specific.
+	HonorificTitles []HonorificTitle `json:"honorific_titles,omitempty"` // HonorificTitles represents locale-specific honorific titles.
+}
+
+// HonorificTitle represents a locale-specific honorific title entry.
+type HonorificTitle struct {
+	Code        string `json:"code"`
+	Title       string `json:"title"`
+	Gender      string `json:"gender"`
+	Description string `json:"description"`
 }
 
 // NewLocale creates a new Locale instance.
@@ -719,4 +730,80 @@ func GetWeekdays(opts GetWeekdaysOptions) ([]string, error) {
 	result := make([]string, len(weekdays))
 	copy(result, weekdays[:])
 	return result, nil
+}
+
+// convertHonorificTitlesFromDataSource maps proto-generated honorific titles to the module type.
+func convertHonorificTitlesFromDataSource(src []*dataSource.HonorificTitle) []HonorificTitle {
+	if len(src) == 0 {
+		return nil
+	}
+
+	titles := make([]HonorificTitle, 0, len(src))
+	for _, title := range src {
+		if title == nil {
+			continue
+		}
+		titles = append(titles, HonorificTitle{
+			Code:        title.GetCode(),
+			Title:       title.GetTitle(),
+			Gender:      title.GetGender(),
+			Description: title.GetDescription(),
+		})
+	}
+
+	return titles
+}
+
+// GetHonorificTitles returns honorific titles for the given ISO 3166-1 alpha-2
+// country code (matched case-insensitively). Titles are sourced from the
+// country's locales — the default locale first, then the remaining locales in
+// alphabetical order. The returned slice is a copy and safe to mutate.
+func GetHonorificTitles(countryCode string) ([]HonorificTitle, error) {
+	cc := strings.ToUpper(strings.TrimSpace(countryCode))
+	if cc == "" {
+		return nil, fmt.Errorf("getHonorificTitles: countryCode must not be empty")
+	}
+
+	info, ok := cachedCountyMetaData.MetadataInformation[cc]
+	if !ok {
+		return nil, fmt.Errorf("getHonorificTitles: no honorific titles found for country code: %q", cc)
+	}
+
+	titles := honorificTitlesFromLocales(info)
+	if len(titles) == 0 {
+		return nil, fmt.Errorf("getHonorificTitles: no honorific titles found for country code: %q", cc)
+	}
+
+	// Return a copy so callers cannot mutate the cached data.
+	out := make([]HonorificTitle, len(titles))
+	copy(out, titles)
+	return out, nil
+}
+
+// honorificTitlesFromLocales returns the first non-empty honorific title set for
+// the country, preferring the default locale then alphabetical locale order.
+func honorificTitlesFromLocales(info MetadataInformation) []HonorificTitle {
+	if len(info.Locales) == 0 {
+		return nil
+	}
+
+	if info.DefaultLocale != "" {
+		if titles := info.Locales[info.DefaultLocale].HonorificTitles; len(titles) > 0 {
+			return titles
+		}
+	}
+
+	keys := make([]string, 0, len(info.Locales))
+	for key := range info.Locales {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+
+	for _, key := range keys {
+		if titles := info.Locales[key].HonorificTitles; len(titles) > 0 {
+			return titles
+		}
+	}
+
+	return nil
 }
