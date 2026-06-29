@@ -11,8 +11,8 @@ github.com/razorpay/i18nify/i18nify-data/go/country/metadata v0.0.0-202606290704
 github.com/razorpay/i18nify/i18nify-data/go/country/metadata v0.0.0-20260629070441-5cd56018c166/go.mod h1:8/bUffLHRUapN6J4R61kcaOZKr8yjKb0YXrlpCumy0g=
 github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.6 h1:l7B9/v9yYcznGXOB0i9Dmjus6QgAT1SwrNmkcW8iLV4=
 github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.6/go.mod h1:Co4OyvFG2HC9ohJbdw8Ydqd1Y7MJHCBAw9Ee8U1Cfxw=
-github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20260626130948-d7dea57dc3c2 h1:zCtIaWWSkqsC6Zm4yIh7Q0Ev8AfXpW2Tb45SLGtBeHY=
-github.com/razorpay/i18nify/i18nify-data/go/currency v0.0.0-20260626130948-d7dea57dc3c2/go.mod h1:hVdGzMUMfaZS0AwsHBaHENYxqYWYrfpRnYW7mJeRDB8=
+github.com/razorpay/i18nify/i18nify-data/go/currency v1.0.5 h1:WdbG4qmKFqr42SOm/jJNp9j/UJt/q0A5eiaweetmibM=
+github.com/razorpay/i18nify/i18nify-data/go/currency v1.0.5/go.mod h1:hVdGzMUMfaZS0AwsHBaHENYxqYWYrfpRnYW7mJeRDB8=
 github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number v1.0.3 h1:Ze1O/o5XFgNYpBI1S8oH/RoOic57p57999ee5uvTT2w=
 github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number v1.0.3/go.mod h1:HvSOTUZOOOhGddT7h8X6ZrQ7L++aIrOfRLDIGGJqImg=
 github.com/razorpay/i18nify/i18nify-data/go/phone-number/dial-code-to-country v0.0.0-20260626102338-a3da62891c62 h1:bCOmObSZ9k+FlkQYWDr9pVddIxcm+dFDVIUyQEk4tRU=
