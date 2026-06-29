@@ -10,6 +10,7 @@ package country_metadata
 import (
 	"encoding/json"
 	"fmt"
+	"sort"
 	"strings"
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/country/metadata"
@@ -237,4 +238,58 @@ func GetCountryCodeISO2(countryName string) string {
 		}
 	}
 	return ""
+}
+
+// GetHonorificTitles returns honorific titles for the given ISO 3166-1 alpha-2
+// country code (matched case-insensitively). Titles are sourced from the
+// country's locales — the default locale first, then the remaining locales in
+// alphabetical order. The returned slice is a copy and safe to mutate.
+func GetHonorificTitles(countryCode string) ([]HonorificTitle, error) {
+	cc := strings.ToUpper(strings.TrimSpace(countryCode))
+	if cc == "" {
+		return nil, fmt.Errorf("getHonorificTitles: countryCode must not be empty")
+	}
+
+	info, ok := cachedCountyMetaData.MetadataInformation[cc]
+	if !ok {
+		return nil, fmt.Errorf("getHonorificTitles: no honorific titles found for country code: %q", cc)
+	}
+
+	titles := honorificTitlesFromLocales(info)
+	if len(titles) == 0 {
+		return nil, fmt.Errorf("getHonorificTitles: no honorific titles found for country code: %q", cc)
+	}
+
+	// Return a copy so callers cannot mutate the cached data.
+	out := make([]HonorificTitle, len(titles))
+	copy(out, titles)
+	return out, nil
+}
+
+// honorificTitlesFromLocales returns the first non-empty honorific title set for
+// the country, preferring the default locale then alphabetical locale order.
+func honorificTitlesFromLocales(info MetadataInformation) []HonorificTitle {
+	if len(info.Locales) == 0 {
+		return nil
+	}
+
+	if info.DefaultLocale != "" {
+		if titles := info.Locales[info.DefaultLocale].HonorificTitles; len(titles) > 0 {
+			return titles
+		}
+	}
+
+	keys := make([]string, 0, len(info.Locales))
+	for key := range info.Locales {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+
+	for _, key := range keys {
+		if titles := info.Locales[key].HonorificTitles; len(titles) > 0 {
+			return titles
+		}
+	}
+
+	return nil
 }

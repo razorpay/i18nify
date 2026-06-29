@@ -1,8 +1,0 @@
-{
-  "names_information": {
-    "validation_rules": {
-      "min_length": 2,
-      "max_length": 100
-    }
-  }
-}
