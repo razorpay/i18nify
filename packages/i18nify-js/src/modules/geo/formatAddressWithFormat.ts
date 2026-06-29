@@ -1,5 +1,4 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import formatAddress from './formatAddress';
 import { getAddressInfo } from './getAddressInfo';
 import { AddressCodeType, AddressType, AddressComponents } from './types';
 
@@ -26,9 +25,23 @@ const formatAddressWithFormat = (
     );
   }
 
-  // Reuse the base formatter so placeholder substitution and blank-line cleanup
-  // stay defined in exactly one place for the JS geo module.
-  return formatAddress(addressInfo.address_template, components);
+  // Replace each {placeholder} token in the template with the matching component value.
+  const substituted = addressInfo.address_template
+    .replace(/{name}/g, components.name ?? '')
+    .replace(/{organization}/g, components.organization ?? '')
+    .replace(/{street_address}/g, components.street_address ?? '')
+    .replace(/{city}/g, components.city ?? '')
+    .replace(/{state}/g, components.state ?? '')
+    .replace(/{zip}/g, components.zip ?? '')
+    .replace(/{district}/g, components.district ?? '')
+    .replace(/{sorting_code}/g, components.sorting_code ?? '');
+
+  // Split into lines and drop any that are blank — happens when optional fields are empty.
+  return substituted
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0)
+    .join('\n');
 };
 
 export default withErrorBoundary<typeof formatAddressWithFormat>(

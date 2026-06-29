@@ -13,5 +13,4 @@ export { default as getCityByZipcode } from './getCityByZipcode';
 export { default as validateZipCode } from './validateZipCode';
 export { default as getStatesByZipCode } from './getStatesByZipCode';
 export { default as getDefaultLocaleList } from './getDefaultLocaleList';
-export { default as formatAddress } from './formatAddress';
 export { default as formatAddressWithFormat } from './formatAddressWithFormat';
