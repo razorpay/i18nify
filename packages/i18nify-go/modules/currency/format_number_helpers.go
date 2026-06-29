@@ -12,7 +12,7 @@ import (
 )
 
 // buildRawParts constructs the []FormattedPart for the given amount and options.
-func (c *Currency) buildRawParts(amount float64, opts NumberFormatOptions) ([]FormattedPart, error) {
+func buildRawParts(currencyInfo map[string]CurrencyInformation, amount float64, opts NumberFormatOptions) ([]FormattedPart, error) {
 	locale := opts.Locale
 	if locale == "" {
 		locale = defaultLocale
@@ -23,7 +23,7 @@ func (c *Currency) buildRawParts(amount float64, opts NumberFormatOptions) ([]Fo
 	}
 
 	p := message.NewPrinter(tag)
-	minFrac, maxFrac := c.resolveFractionDigits(opts)
+	minFrac, maxFrac := resolveFractionDigits(currencyInfo, opts)
 	decSep, grpSep := detectLocaleSymbols(p)
 
 	useGrouping := opts.UseGrouping == nil || *opts.UseGrouping
@@ -37,7 +37,7 @@ func (c *Currency) buildRawParts(amount float64, opts NumberFormatOptions) ([]Fo
 	}
 
 	if opts.Currency != "" {
-		return c.buildCurrencyParts(amount, opts.Currency, p, numOpts, decSep, grpSep)
+		return buildCurrencyParts(currencyInfo, amount, opts.Currency, p, numOpts, decSep, grpSep)
 	}
 
 	formatted := p.Sprintf("%v", number.Decimal(amount, numOpts...))
@@ -46,10 +46,10 @@ func (c *Currency) buildRawParts(amount float64, opts NumberFormatOptions) ([]Fo
 
 // resolveFractionDigits returns the effective min/max fraction digit counts.
 // Defaults to the currency's minor_unit when a currency code is set, or 0/3 for plain decimal.
-func (c *Currency) resolveFractionDigits(opts NumberFormatOptions) (min, max int) {
+func resolveFractionDigits(currencyInfo map[string]CurrencyInformation, opts NumberFormatOptions) (min, max int) {
 	min, max = 0, 3
 	if opts.Currency != "" {
-		if info, ok := c.CurrencyInformation[opts.Currency]; ok {
+		if info, ok := currencyInfo[opts.Currency]; ok {
 			if mu, atoiErr := strconv.Atoi(info.MinorUnit); atoiErr == nil && mu >= 0 {
 				min, max = mu, mu
 			}
@@ -96,8 +96,8 @@ func isAllDigits(s string) bool {
 
 // buildCurrencyParts formats amount with the canonical i18nify currency symbol.
 // Symbol position defaults to prefix unless optional currency data marks it as suffix.
-func (c *Currency) buildCurrencyParts(amount float64, currCode string, p *message.Printer, numOpts []number.Option, decSep, grpSep string) ([]FormattedPart, error) {
-	info, ok := c.CurrencyInformation[currCode]
+func buildCurrencyParts(currencyInfo map[string]CurrencyInformation, amount float64, currCode string, p *message.Printer, numOpts []number.Option, decSep, grpSep string) ([]FormattedPart, error) {
+	info, ok := currencyInfo[currCode]
 	unknownCurrency := !ok
 
 	canonicalSymbol := currCode
