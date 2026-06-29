@@ -163,7 +163,7 @@ PATH_SOURCE_URL = {
     "i18nify-data/timezone/data.json":          "https://raw.githubusercontent.com/eggert/tz/main/zone1970.tab",
     "i18nify-data/media/data.json":             "https://www.iana.org/assignments/media-types/media-types.xml",
     "i18nify-data/unicode-blocks/data.json":    "https://www.unicode.org/Public/UNIDATA/Blocks.txt",
-    "i18nify-data/country/metadata/data.json":  "https://raw.githubusercontent.com/razorpay/i18nify/master/i18nify-data/country/metadata/data.json",
+    "i18nify-data/country/metadata/data.json":  "https://chromium-i18n.appspot.com/ssl-address/data",
     "i18nify-data/population/data.json":        "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&mrv=1&per_page=300",
 }
 
