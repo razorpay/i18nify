@@ -20,15 +20,21 @@
       "timezone_of_capital": "Asia/Kabul",
       "locales": {
         "fa_AF": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Persian (Afghanistan)"
         },
         "ps": {
           "name": "Pashto"
         },
         "uz_AF": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Uzbek"
         },
         "tk": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Turkmen"
         }
       },
@@ -56,6 +62,8 @@
       "timezone_of_capital": "Europe/Mariehamn",
       "locales": {
         "sv_AX": {
+          "date_order": "YMD",
+          "date_separator": "-",
           "name": "Swedish (Åland Islands)"
         }
       },
@@ -83,9 +91,13 @@
       "timezone_of_capital": "Europe/Tirane",
       "locales": {
         "sq": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Albanian"
         },
         "el": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Greek"
         }
       },
@@ -113,6 +125,8 @@
       "timezone_of_capital": "Africa/Algiers",
       "locales": {
         "ar_DZ": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Algeria)"
         }
       },
@@ -140,6 +154,8 @@
       "timezone_of_capital": "Pacific/Pago_Pago",
       "locales": {
         "en_AS": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (American Samoa)"
         },
         "sm": {
@@ -173,6 +189,8 @@
       "timezone_of_capital": "Europe/Andorra",
       "locales": {
         "ca": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Catalan"
         }
       },
@@ -200,6 +218,8 @@
       "timezone_of_capital": "Africa/Luanda",
       "locales": {
         "pt_AO": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese (Angola)"
         }
       },
@@ -226,6 +246,8 @@
       "timezone_of_capital": "America/Chicago",
       "locales": {
         "en_AI": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Anguilla)"
         }
       },
@@ -282,6 +304,8 @@
       "timezone_of_capital": "America/St_Johns",
       "locales": {
         "en_AG": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Antigua & Barbuda)"
         }
       },
@@ -341,18 +365,28 @@
       "timezone_of_capital": "America/Argentina/Buenos_Aires",
       "locales": {
         "es_AR": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Argentina)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "it": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Italian"
         },
         "de": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "gn": {
@@ -383,6 +417,8 @@
       "timezone_of_capital": "Asia/Yerevan",
       "locales": {
         "hy": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Armenian"
         }
       },
@@ -410,15 +446,21 @@
       "timezone_of_capital": "America/Aruba",
       "locales": {
         "nl_AW": {
+          "date_order": "DMY",
+          "date_separator": "-",
           "name": "Dutch (Aruba)"
         },
         "pap": {
           "name": "Papiamento"
         },
         "es": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -475,6 +517,8 @@
       "timezone_of_capital": "Australia/Sydney",
       "locales": {
         "en_AU": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "English (Australia)"
         }
       },
@@ -502,15 +546,23 @@
       "timezone_of_capital": "Europe/Vienna",
       "locales": {
         "de_AT": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German (Austria)"
         },
         "hr": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Croatian"
         },
         "hu": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Hungarian"
         },
         "sl": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Slovenian"
         }
       },
@@ -538,12 +590,18 @@
       "timezone_of_capital": "Asia/Baku",
       "locales": {
         "az": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Azerbaijani"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         },
         "hy": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Armenian"
         }
       },
@@ -571,6 +629,8 @@
       "timezone_of_capital": "America/Nassau",
       "locales": {
         "en_BS": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Bahamas)"
         }
       },
@@ -598,15 +658,23 @@
       "timezone_of_capital": "Asia/Bahrain",
       "locales": {
         "ar_BH": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Bahrain)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "fa": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Persian"
         },
         "ur": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Urdu"
         }
       },
@@ -634,9 +702,13 @@
       "timezone_of_capital": "Asia/Dhaka",
       "locales": {
         "bn_BD": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Bangla (Bangladesh)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -664,6 +736,8 @@
       "timezone_of_capital": "America/Barbados",
       "locales": {
         "en_BB": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Barbados)"
         }
       },
@@ -691,9 +765,13 @@
       "timezone_of_capital": "Europe/Minsk",
       "locales": {
         "be": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Belarusian"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         }
       },
@@ -721,12 +799,18 @@
       "timezone_of_capital": "Europe/Brussels",
       "locales": {
         "nl_BE": {
+          "date_order": "DMY",
+          "date_separator": "-",
           "name": "Dutch (Belgium)"
         },
         "fr_BE": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Belgium)"
         },
         "de_BE": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German (Belgium)"
         }
       },
@@ -754,9 +838,13 @@
       "timezone_of_capital": "America/Belize",
       "locales": {
         "en_BZ": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Belize)"
         },
         "es": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish"
         }
       },
@@ -783,6 +871,8 @@
       "timezone_of_capital": "Africa/Porto-Novo",
       "locales": {
         "fr_BJ": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Benin)"
         }
       },
@@ -809,9 +899,13 @@
       "timezone_of_capital": "America/Toronto",
       "locales": {
         "en_BM": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Bermuda)"
         },
         "pt": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese"
         }
       },
@@ -868,6 +962,8 @@
       "timezone_of_capital": "America/La_Paz",
       "locales": {
         "es_BO": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Bolivia)"
         },
         "qu": {
@@ -900,12 +996,16 @@
       "timezone_of_capital": "America/Kralendijk",
       "locales": {
         "nl": {
+          "date_order": "DMY",
+          "date_separator": "-",
           "name": "Dutch"
         },
         "pap": {
           "name": "Papiamento"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -932,12 +1032,18 @@
       "timezone_of_capital": "Europe/Sarajevo",
       "locales": {
         "bs": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Bosnian"
         },
         "hr_BA": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Croatian (Bosnia & Herzegovina)"
         },
         "sr_BA": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Serbian"
         }
       },
@@ -965,6 +1071,8 @@
       "timezone_of_capital": "Africa/Gaborone",
       "locales": {
         "en_BW": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Botswana)"
         },
         "tn_BW": {
@@ -1062,15 +1170,23 @@
       "timezone_of_capital": "America/Cuiaba",
       "locales": {
         "pt_BR": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese (Brazil)"
         },
         "es": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -1098,6 +1214,8 @@
       "timezone_of_capital": "Indian/Chagos",
       "locales": {
         "en_IO": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (British Indian Ocean Territory)"
         }
       },
@@ -1125,9 +1243,13 @@
       "timezone_of_capital": "Asia/Brunei",
       "locales": {
         "ms_BN": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Malay (Brunei)"
         },
         "en_BN": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -1155,9 +1277,13 @@
       "timezone_of_capital": "Indian/Antananarivo",
       "locales": {
         "bg": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Bulgarian"
         },
         "tr_BG": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Turkish"
         },
         "rom": {
@@ -1188,6 +1314,8 @@
       "timezone_of_capital": "Africa/Ouagadougou",
       "locales": {
         "fr_BF": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Burkina Faso)"
         },
         "mos": {
@@ -1218,6 +1346,8 @@
       "timezone_of_capital": "Africa/Bujumbura",
       "locales": {
         "fr_BI": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Burundi)"
         },
         "rn": {
@@ -1247,6 +1377,8 @@
       "timezone_of_capital": "Atlantic/Cape_Verde",
       "locales": {
         "pt_CV": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese (Cape Verde)"
         }
       },
@@ -1274,12 +1406,18 @@
       "timezone_of_capital": "Asia/Phnom_Penh",
       "locales": {
         "km": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Khmer"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -1307,9 +1445,13 @@
       "timezone_of_capital": "Africa/Douala",
       "locales": {
         "en_CM": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Cameroon)"
         },
         "fr_CM": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Cameroon)"
         }
       },
@@ -1408,9 +1550,13 @@
       "timezone_of_capital": "America/Toronto",
       "locales": {
         "en_CA": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Canada)"
         },
         "fr_CA": {
+          "date_order": "DMY",
+          "date_separator": "-",
           "name": "French (Canada)"
         },
         "iu": {
@@ -1441,6 +1587,8 @@
       "timezone_of_capital": "Asia/Kuala_Lumpur",
       "locales": {
         "en_KY": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Cayman Islands)"
         }
       },
@@ -1467,6 +1615,8 @@
       "timezone_of_capital": "Africa/Bangui",
       "locales": {
         "fr_CF": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Central African Republic)"
         },
         "sg": {
@@ -1502,9 +1652,13 @@
       "timezone_of_capital": "Africa/Ndjamena",
       "locales": {
         "fr_TD": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Chad)"
         },
         "ar_TD": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Chad)"
         },
         "sre": {
@@ -1541,6 +1695,8 @@
       "timezone_of_capital": "America/Costa_Rica",
       "locales": {
         "es_CL": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Chile)"
         }
       },
@@ -1571,6 +1727,8 @@
       "timezone_of_capital": "Asia/Shanghai",
       "locales": {
         "zh_CN": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "yue": {
@@ -1613,12 +1771,18 @@
       "timezone_of_capital": "Indian/Christmas",
       "locales": {
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "zh": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "ms_CX": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Malay"
         }
       },
@@ -1646,9 +1810,13 @@
       "timezone_of_capital": "Indian/Cocos",
       "locales": {
         "ms_CC": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Malay"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -1677,6 +1845,8 @@
       "timezone_of_capital": "America/Bogota",
       "locales": {
         "es_CO": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Colombia)"
         }
       },
@@ -1704,9 +1874,13 @@
       "timezone_of_capital": "Indian/Comoro",
       "locales": {
         "ar": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic"
         },
         "fr_KM": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Comoros)"
         }
       },
@@ -1736,6 +1910,8 @@
       "timezone_of_capital": "Africa/Kinshasa",
       "locales": {
         "fr_CD": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Congo - Kinshasa)"
         },
         "ln": {
@@ -1748,6 +1924,8 @@
           "name": "Kongo"
         },
         "sw": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Swahili"
         },
         "lua": {
@@ -1777,6 +1955,8 @@
       "timezone_of_capital": "Africa/Brazzaville",
       "locales": {
         "fr_CG": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Congo - Brazzaville)"
         },
         "kg": {
@@ -1809,6 +1989,8 @@
       "timezone_of_capital": "Pacific/Rarotonga",
       "locales": {
         "en_CK": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Cook Islands)"
         },
         "mi": {
@@ -1838,9 +2020,13 @@
       "timezone_of_capital": "America/Costa_Rica",
       "locales": {
         "es_CR": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Costa Rica)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -1868,6 +2054,8 @@
       "timezone_of_capital": "Africa/Abidjan",
       "locales": {
         "fr_CI": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Côte d’Ivoire)"
         }
       },
@@ -1895,9 +2083,13 @@
       "timezone_of_capital": "Europe/Zagreb",
       "locales": {
         "hr_HR": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Croatian (Croatia)"
         },
         "sr": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Serbian"
         }
       },
@@ -1926,6 +2118,8 @@
       "timezone_of_capital": "America/Havana",
       "locales": {
         "es_CU": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Cuba)"
         },
         "pap": {
@@ -1956,6 +2150,8 @@
       "timezone_of_capital": "America/Curacao",
       "locales": {
         "nl": {
+          "date_order": "DMY",
+          "date_separator": "-",
           "name": "Dutch"
         },
         "pap": {
@@ -1988,12 +2184,18 @@
       "timezone_of_capital": "Asia/Nicosia",
       "locales": {
         "el_CY": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Greek (Cyprus)"
         },
         "tr_CY": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Turkish (Cyprus)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -2021,9 +2223,13 @@
       "timezone_of_capital": "Europe/Prague",
       "locales": {
         "cs": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Czech"
         },
         "sk": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Slovak"
         }
       },
@@ -2051,15 +2257,21 @@
       "timezone_of_capital": "Europe/Copenhagen",
       "locales": {
         "da_DK": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Danish (Denmark)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "fo": {
           "name": "Faroese"
         },
         "de_DK": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German"
         }
       },
@@ -2087,9 +2299,13 @@
       "timezone_of_capital": "Africa/Djibouti",
       "locales": {
         "fr_DJ": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Djibouti)"
         },
         "ar": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic"
         },
         "so_DJ": {
@@ -2122,6 +2338,8 @@
       "timezone_of_capital": "America/Chicago",
       "locales": {
         "en_DM": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Dominica)"
         }
       },
@@ -2148,6 +2366,8 @@
       "timezone_of_capital": "America/Santo_Domingo",
       "locales": {
         "es_DO": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Dominican Republic)"
         }
       },
@@ -2178,6 +2398,8 @@
       "timezone_of_capital": "America/Guayaquil",
       "locales": {
         "es_EC": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Ecuador)"
         }
       },
@@ -2205,12 +2427,18 @@
       "timezone_of_capital": "Africa/Cairo",
       "locales": {
         "ar_EG": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Egypt)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -2239,6 +2467,8 @@
       "timezone_of_capital": "America/El_Salvador",
       "locales": {
         "es_SV": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (El Salvador)"
         }
       },
@@ -2266,12 +2496,18 @@
       "timezone_of_capital": "Africa/Malabo",
       "locales": {
         "es_GQ": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Equatorial Guinea)"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "pt": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese"
         }
       },
@@ -2301,6 +2537,8 @@
           "name": "Afar"
         },
         "ar": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic"
         },
         "tig": {
@@ -2336,9 +2574,13 @@
       "timezone_of_capital": "Europe/Tallinn",
       "locales": {
         "et": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Estonian"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         }
       },
@@ -2366,6 +2608,8 @@
       "timezone_of_capital": "Africa/Mbabane",
       "locales": {
         "en_SZ": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Swaziland)"
         },
         "ss_SZ": {
@@ -2396,9 +2640,13 @@
       "timezone_of_capital": "Africa/Addis_Ababa",
       "locales": {
         "am": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Amharic"
         },
         "en_ET": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "om_ET": {
@@ -2438,6 +2686,8 @@
       "timezone_of_capital": "Atlantic/Stanley",
       "locales": {
         "en_FK": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Falkland Islands)"
         }
       },
@@ -2468,6 +2718,8 @@
           "name": "Faroese"
         },
         "da_FO": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Danish"
         }
       },
@@ -2495,6 +2747,8 @@
       "timezone_of_capital": "Pacific/Fiji",
       "locales": {
         "en_FJ": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Fiji)"
         },
         "fj": {
@@ -2524,9 +2778,13 @@
       "timezone_of_capital": "Europe/Helsinki",
       "locales": {
         "fi_FI": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Finnish (Finland)"
         },
         "sv_FI": {
+          "date_order": "YMD",
+          "date_separator": "-",
           "name": "Swedish (Finland)"
         },
         "smn": {
@@ -2557,6 +2815,8 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "fr_FR": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (France)"
         },
         "frp": {
@@ -2569,9 +2829,13 @@
           "name": "Corsican"
         },
         "ca": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Catalan"
         },
         "eu": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Basque"
         },
         "oc": {
@@ -2602,6 +2866,8 @@
       "timezone_of_capital": "America/Cayenne",
       "locales": {
         "fr_GF": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (French Guiana)"
         }
       },
@@ -2635,6 +2901,8 @@
       "timezone_of_capital": "Pacific/Tahiti",
       "locales": {
         "fr_PF": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (French Polynesia)"
         },
         "ty": {
@@ -2665,6 +2933,8 @@
       "timezone_of_capital": "Indian/Kerguelen",
       "locales": {
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -2691,6 +2961,8 @@
       "timezone_of_capital": "Africa/Libreville",
       "locales": {
         "fr_GA": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Gabon)"
         }
       },
@@ -2717,6 +2989,8 @@
       "timezone_of_capital": "Africa/Banjul",
       "locales": {
         "en_GM": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Gambia)"
         },
         "mnk": {
@@ -2755,15 +3029,23 @@
       "timezone_of_capital": "Asia/Tbilisi",
       "locales": {
         "ka": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Georgian"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         },
         "hy": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Armenian"
         },
         "az": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Azerbaijani"
         }
       },
@@ -2791,6 +3073,8 @@
       "timezone_of_capital": "Europe/Berlin",
       "locales": {
         "de": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German"
         }
       },
@@ -2818,6 +3102,8 @@
       "timezone_of_capital": "Africa/Accra",
       "locales": {
         "en_GH": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Ghana)"
         },
         "ak": {
@@ -2853,15 +3139,23 @@
       "timezone_of_capital": "Europe/Gibraltar",
       "locales": {
         "en_GI": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Gibraltar)"
         },
         "es": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish"
         },
         "it": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Italian"
         },
         "pt": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese"
         }
       },
@@ -2889,12 +3183,18 @@
       "timezone_of_capital": "Europe/Athens",
       "locales": {
         "el_GR": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Greek (Greece)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -2931,9 +3231,13 @@
           "name": "Kalaallisut"
         },
         "da_GL": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Danish (Greenland)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -2961,6 +3265,8 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "en_GD": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Grenada)"
         }
       },
@@ -2987,6 +3293,8 @@
       "timezone_of_capital": "America/Guadeloupe",
       "locales": {
         "fr_GP": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Guadeloupe)"
         }
       },
@@ -3014,6 +3322,8 @@
       "timezone_of_capital": "Pacific/Guam",
       "locales": {
         "en_GU": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Guam)"
         },
         "ch_GU": {
@@ -3044,6 +3354,8 @@
       "timezone_of_capital": "America/Guatemala",
       "locales": {
         "es_GT": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Guatemala)"
         }
       },
@@ -3071,6 +3383,8 @@
       "timezone_of_capital": "Europe/Guernsey",
       "locales": {
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "nrf": {
@@ -3101,6 +3415,8 @@
       "timezone_of_capital": "Africa/Conakry",
       "locales": {
         "fr_GN": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Guinea)"
         }
       },
@@ -3128,6 +3444,8 @@
       "timezone_of_capital": "Africa/Bissau",
       "locales": {
         "pt_GW": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese (Guinea-Bissau)"
         },
         "pov": {
@@ -3158,6 +3476,8 @@
       "timezone_of_capital": "America/Guyana",
       "locales": {
         "en_GY": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Guyana)"
         }
       },
@@ -3188,6 +3508,8 @@
           "name": "Haitian; Haitian Creole"
         },
         "fr_HT": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Haiti)"
         }
       },
@@ -3245,9 +3567,13 @@
           "name": "Latin"
         },
         "it": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Italian"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -3275,6 +3601,8 @@
       "timezone_of_capital": "America/Tegucigalpa",
       "locales": {
         "es_HN": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Honduras)"
         },
         "cab": {
@@ -3308,15 +3636,21 @@
       "timezone_of_capital": "Australia/Melbourne",
       "locales": {
         "zh_HK": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "yue": {
           "name": "Cantonese"
         },
         "zh": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -3344,6 +3678,8 @@
       "timezone_of_capital": "Europe/Budapest",
       "locales": {
         "hu_HU": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Hungarian (Hungary)"
         }
       },
@@ -3371,18 +3707,28 @@
       "timezone_of_capital": "Atlantic/Reykjavik",
       "locales": {
         "is": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Icelandic"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "de": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German"
         },
         "da": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Danish"
         },
         "sv": {
+          "date_order": "YMD",
+          "date_separator": "-",
           "name": "Swedish"
         },
         "no": {
@@ -3413,39 +3759,63 @@
       "timezone_of_capital": "Asia/Kolkata",
       "locales": {
         "en_IN": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "English (India)"
         },
         "hi": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Hindi"
         },
         "bn": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Bangla"
         },
         "te": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Telugu"
         },
         "mr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Marathi"
         },
         "ta": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Tamil"
         },
         "ur": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Urdu"
         },
         "gu": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Gujarati"
         },
         "kn": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Kannada"
         },
         "ml": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Malayalam"
         },
         "or": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Odia"
         },
         "pa": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Punjabi"
         },
         "as": {
@@ -3461,6 +3831,8 @@
           "name": "Kashmiri"
         },
         "ne": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Nepali"
         },
         "sd": {
@@ -3482,6 +3854,8 @@
           "name": "Sanskrit"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "lus": {
@@ -3524,12 +3898,18 @@
       "timezone_of_capital": "Asia/Jakarta",
       "locales": {
         "id": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Indonesian"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "nl": {
+          "date_order": "DMY",
+          "date_separator": "-",
           "name": "Dutch"
         },
         "jv": {
@@ -3560,6 +3940,8 @@
       "timezone_of_capital": "Asia/Tehran",
       "locales": {
         "fa_IR": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Persian (Iran)"
         },
         "ku": {
@@ -3590,12 +3972,16 @@
       "timezone_of_capital": "Asia/Baghdad",
       "locales": {
         "ar_IQ": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Iraq)"
         },
         "ku": {
           "name": "Kurdish"
         },
         "hy": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Armenian"
         }
       },
@@ -3623,9 +4009,13 @@
       "timezone_of_capital": "Europe/Dublin",
       "locales": {
         "en_IE": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Ireland)"
         },
         "ga_IE": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Irish (Ireland)"
         }
       },
@@ -3653,6 +4043,8 @@
       "timezone_of_capital": "America/Chicago",
       "locales": {
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "gv": {
@@ -3683,12 +4075,18 @@
       "timezone_of_capital": "Asia/Jerusalem",
       "locales": {
         "he": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Hebrew"
         },
         "ar_IL": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Israel)"
         },
         "en_IL": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Israel)"
         }
       },
@@ -3716,24 +4114,34 @@
       "timezone_of_capital": "Europe/Rome",
       "locales": {
         "it_IT": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Italian (Italy)"
         },
         "de_IT": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German (Italy)"
         },
         "fr_IT": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "sc": {
           "name": "Sardinian"
         },
         "ca": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Catalan"
         },
         "co": {
           "name": "Corsican"
         },
         "sl": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Slovenian"
         }
       },
@@ -3761,6 +4169,8 @@
       "timezone_of_capital": "America/Jamaica",
       "locales": {
         "en_JM": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Jamaica)"
         }
       },
@@ -3788,6 +4198,8 @@
       "timezone_of_capital": "Asia/Tokyo",
       "locales": {
         "ja": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Japanese"
         }
       },
@@ -3815,9 +4227,13 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "nrf": {
@@ -3848,9 +4264,13 @@
       "timezone_of_capital": "Asia/Amman",
       "locales": {
         "ar_JO": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Jordan)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -3896,9 +4316,13 @@
       "timezone_of_capital": "Asia/Almaty",
       "locales": {
         "kk": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Kazakh"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         }
       },
@@ -3926,9 +4350,13 @@
       "timezone_of_capital": "Africa/Nairobi",
       "locales": {
         "en_KE": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Kenya)"
         },
         "sw_KE": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Swahili (Kenya)"
         }
       },
@@ -3962,6 +4390,8 @@
       "timezone_of_capital": "Pacific/Tarawa",
       "locales": {
         "en_KI": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Kiribati)"
         },
         "gil": {
@@ -3992,6 +4422,8 @@
       "timezone_of_capital": "Asia/Pyongyang",
       "locales": {
         "ko_KP": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Korean (North Korea)"
         }
       },
@@ -4019,9 +4451,13 @@
       "timezone_of_capital": "Asia/Seoul",
       "locales": {
         "ko_KR": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Korean (South Korea)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -4049,9 +4485,13 @@
       "timezone_of_capital": "Asia/Kuwait",
       "locales": {
         "ar_KW": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Kuwait)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -4079,12 +4519,18 @@
       "timezone_of_capital": "Asia/Bishkek",
       "locales": {
         "ky": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Kyrgyz"
         },
         "uz": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Uzbek"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         }
       },
@@ -4112,12 +4558,18 @@
       "timezone_of_capital": "Asia/Vientiane",
       "locales": {
         "lo": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Lao"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -4145,12 +4597,18 @@
       "timezone_of_capital": "Europe/Riga",
       "locales": {
         "lv": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Latvian"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         },
         "lt": {
+          "date_order": "YMD",
+          "date_separator": "-",
           "name": "Lithuanian"
         }
       },
@@ -4178,15 +4636,23 @@
       "timezone_of_capital": "Asia/Beirut",
       "locales": {
         "ar_LB": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Lebanon)"
         },
         "fr_LB": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "hy": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Armenian"
         }
       },
@@ -4215,12 +4681,16 @@
       "timezone_of_capital": "Africa/Maseru",
       "locales": {
         "en_LS": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Lesotho)"
         },
         "st": {
           "name": "Sotho, Southern"
         },
         "zu": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Zulu"
         },
         "xh": {
@@ -4251,6 +4721,8 @@
       "timezone_of_capital": "Africa/Monrovia",
       "locales": {
         "en_LR": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Liberia)"
         }
       },
@@ -4278,12 +4750,18 @@
       "timezone_of_capital": "Africa/Tripoli",
       "locales": {
         "ar_LY": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Libya)"
         },
         "it": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Italian"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -4310,6 +4788,8 @@
       "timezone_of_capital": "Europe/Vaduz",
       "locales": {
         "de_LI": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German (Liechtenstein)"
         }
       },
@@ -4337,12 +4817,18 @@
       "timezone_of_capital": "Europe/Vilnius",
       "locales": {
         "lt": {
+          "date_order": "YMD",
+          "date_separator": "-",
           "name": "Lithuanian"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         },
         "pl": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Polish"
         }
       },
@@ -4373,9 +4859,13 @@
           "name": "Luxembourgish"
         },
         "de_LU": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German (Luxembourg)"
         },
         "fr_LU": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Luxembourg)"
         }
       },
@@ -4403,12 +4893,18 @@
       "timezone_of_capital": "Asia/Macau",
       "locales": {
         "zh": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "zh_MO": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "pt": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese"
         }
       },
@@ -4436,6 +4932,8 @@
       "timezone_of_capital": "Indian/Antananarivo",
       "locales": {
         "fr_MG": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Madagascar)"
         },
         "mg": {
@@ -4505,27 +5003,43 @@
       "timezone_of_capital": "Asia/Kuala_Lumpur",
       "locales": {
         "ms_MY": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Malay (Malaysia)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "zh": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "ta": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Tamil"
         },
         "te": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Telugu"
         },
         "ml": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Malayalam"
         },
         "pa": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Punjabi"
         },
         "th": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Thai"
         }
       },
@@ -4556,6 +5070,8 @@
           "name": "Divehi; Dhivehi; Maldivian"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -4583,6 +5099,8 @@
       "timezone_of_capital": "Africa/Bamako",
       "locales": {
         "fr_ML": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Mali)"
         },
         "bm": {
@@ -4615,6 +5133,8 @@
           "name": "Maltese"
         },
         "en_MT": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Malta)"
         }
       },
@@ -4648,6 +5168,8 @@
           "name": "Marshallese"
         },
         "en_MH": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Marshall Islands)"
         }
       },
@@ -4675,6 +5197,8 @@
       "timezone_of_capital": "America/Martinique",
       "locales": {
         "fr_MQ": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Martinique)"
         }
       },
@@ -4702,6 +5226,8 @@
       "timezone_of_capital": "Africa/Nouakchott",
       "locales": {
         "ar_MR": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Mauritania)"
         },
         "fuc": {
@@ -4711,6 +5237,8 @@
           "name": "Soninke"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "mey": {
@@ -4743,12 +5271,16 @@
       "timezone_of_capital": "Indian/Mauritius",
       "locales": {
         "en_MU": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Mauritius)"
         },
         "bho": {
           "name": "Bhojpuri"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -4776,6 +5308,8 @@
       "timezone_of_capital": "Indian/Mayotte",
       "locales": {
         "fr_YT": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Mayotte)"
         }
       },
@@ -4834,6 +5368,8 @@
       "timezone_of_capital": "America/Mexico_City",
       "locales": {
         "es_MX": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Mexico)"
         }
       },
@@ -4867,6 +5403,8 @@
       "timezone_of_capital": "Pacific/Pohnpei",
       "locales": {
         "en_FM": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Micronesia)"
         },
         "chk": {
@@ -4918,15 +5456,21 @@
       "timezone_of_capital": "Europe/Chisinau",
       "locales": {
         "ro": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Romanian"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         },
         "gag": {
           "name": "Irish"
         },
         "tr": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Turkish"
         }
       },
@@ -4954,12 +5498,18 @@
       "timezone_of_capital": "Europe/Monaco",
       "locales": {
         "fr_MC": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Monaco)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "it": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Italian"
         }
       },
@@ -4993,9 +5543,13 @@
       "timezone_of_capital": "Asia/Ulaanbaatar",
       "locales": {
         "mn": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Mongolian"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         }
       },
@@ -5023,18 +5577,28 @@
       "timezone_of_capital": "Europe/Podgorica",
       "locales": {
         "sr": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Serbian"
         },
         "hu": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Hungarian"
         },
         "bs": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Bosnian"
         },
         "sq": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Albanian"
         },
         "hr": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Croatian"
         },
         "rom": {
@@ -5065,6 +5629,8 @@
       "timezone_of_capital": "Europe/London",
       "locales": {
         "en_MS": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Montserrat)"
         }
       },
@@ -5091,12 +5657,16 @@
       "timezone_of_capital": "Africa/Casablanca",
       "locales": {
         "ar_MA": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Morocco)"
         },
         "ber": {
           "name": "Berber languages"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -5124,6 +5694,8 @@
       "timezone_of_capital": "Africa/Maputo",
       "locales": {
         "pt_MZ": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese (Mozambique)"
         },
         "vmw": {
@@ -5154,6 +5726,8 @@
       "timezone_of_capital": "Asia/Yangon",
       "locales": {
         "my": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Burmese"
         }
       },
@@ -5187,12 +5761,18 @@
       "timezone_of_capital": "Africa/Windhoek",
       "locales": {
         "en_NA": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Namibia)"
         },
         "af": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Afrikaans"
         },
         "de": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German"
         },
         "hz": {
@@ -5229,6 +5809,8 @@
           "name": "Nauru"
         },
         "en_NR": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Nauru)"
         }
       },
@@ -5256,9 +5838,13 @@
       "timezone_of_capital": "Asia/Kathmandu",
       "locales": {
         "ne": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Nepali"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -5286,6 +5872,8 @@
       "timezone_of_capital": "Europe/Amsterdam",
       "locales": {
         "nl_NL": {
+          "date_order": "DMY",
+          "date_separator": "-",
           "name": "Dutch (Netherlands)"
         },
         "fy_NL": {
@@ -5316,6 +5904,8 @@
       "timezone_of_capital": "Pacific/Noumea",
       "locales": {
         "fr_NC": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (New Caledonia)"
         }
       },
@@ -5346,6 +5936,8 @@
       "timezone_of_capital": "Pacific/Auckland",
       "locales": {
         "en_NZ": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "English (New Zealand)"
         },
         "mi": {
@@ -5376,9 +5968,13 @@
       "timezone_of_capital": "America/Managua",
       "locales": {
         "es_NI": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Nicaragua)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -5406,6 +6002,8 @@
       "timezone_of_capital": "Africa/Niamey",
       "locales": {
         "fr_NE": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Niger)"
         },
         "ha": {
@@ -5442,6 +6040,8 @@
       "timezone_of_capital": "Africa/Lagos",
       "locales": {
         "en_NG": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Nigeria)"
         },
         "ha": {
@@ -5484,6 +6084,8 @@
           "name": "Niuean"
         },
         "en_NU": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Niue)"
         }
       },
@@ -5510,6 +6112,8 @@
       "timezone_of_capital": "America/Jamaica",
       "locales": {
         "en_NF": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Norfolk Island)"
         }
       },
@@ -5537,18 +6141,26 @@
       "timezone_of_capital": "Europe/Skopje",
       "locales": {
         "mk": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Macedonian"
         },
         "sq": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Albanian"
         },
         "tr": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Turkish"
         },
         "rmm": {
           "name": "Romansh"
         },
         "sr": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Serbian"
         }
       },
@@ -5576,18 +6188,24 @@
       "timezone_of_capital": "Pacific/Saipan",
       "locales": {
         "fil": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "Filipino"
         },
         "tl": {
           "name": "Tagalog"
         },
         "zh": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "ch_MP": {
           "name": "Chamorro"
         },
         "en_MP": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Northern Mariana Islands)"
         }
       },
@@ -5617,6 +6235,8 @@
           "name": "Norwegian"
         },
         "nb": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Norwegian Bokmål"
         },
         "nn": {
@@ -5626,6 +6246,8 @@
           "name": "Northern Sami"
         },
         "fi": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Finnish"
         }
       },
@@ -5653,15 +6275,21 @@
       "timezone_of_capital": "Asia/Muscat",
       "locales": {
         "ar_OM": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Oman)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "bal": {
           "name": "Baluchi"
         },
         "ur": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Urdu"
         }
       },
@@ -5689,12 +6317,18 @@
       "timezone_of_capital": "Asia/Karachi",
       "locales": {
         "ur_PK": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Urdu (Pakistan)"
         },
         "en_PK": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Pakistan)"
         },
         "pa": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Punjabi"
         },
         "sd": {
@@ -5737,18 +6371,26 @@
           "name": "Somali"
         },
         "en_PW": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Palau)"
         },
         "tox": {
           "name": "Tongan"
         },
         "ja": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Japanese"
         },
         "fil": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "Filipino"
         },
         "zh": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         }
       },
@@ -5779,6 +6421,8 @@
       "timezone_of_capital": "Asia/Gaza",
       "locales": {
         "ar_PS": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Palestinian Territories)"
         }
       },
@@ -5806,9 +6450,13 @@
       "timezone_of_capital": "America/Panama",
       "locales": {
         "es_PA": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Panama)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -5839,6 +6487,8 @@
       "timezone_of_capital": "Pacific/Port_Moresby",
       "locales": {
         "en_PG": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Papua New Guinea)"
         },
         "ho": {
@@ -5875,6 +6525,8 @@
       "timezone_of_capital": "America/Asuncion",
       "locales": {
         "es_PY": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Paraguay)"
         },
         "gn": {
@@ -5905,6 +6557,8 @@
       "timezone_of_capital": "America/Lima",
       "locales": {
         "es_PE": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Peru)"
         },
         "qu": {
@@ -5941,9 +6595,13 @@
           "name": "Tagalog"
         },
         "en_PH": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Philippines)"
         },
         "fil": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "Filipino"
         },
         "ceb": {
@@ -6031,6 +6689,8 @@
       "timezone_of_capital": "Pacific/Pitcairn",
       "locales": {
         "en_PN": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Pitcairn Islands)"
         }
       },
@@ -6058,6 +6718,8 @@
       "timezone_of_capital": "Europe/Warsaw",
       "locales": {
         "pl": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Polish"
         }
       },
@@ -6091,6 +6753,8 @@
       "timezone_of_capital": "Europe/Lisbon",
       "locales": {
         "pt_PT": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese (Portugal)"
         },
         "mwl": {
@@ -6121,9 +6785,13 @@
       "timezone_of_capital": "America/Puerto_Rico",
       "locales": {
         "en_PR": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Puerto Rico)"
         },
         "es_PR": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Puerto Rico)"
         }
       },
@@ -6151,9 +6819,13 @@
       "timezone_of_capital": "Asia/Qatar",
       "locales": {
         "ar_QA": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Qatar)"
         },
         "es": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish"
         }
       },
@@ -6180,6 +6852,8 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "fr_RE": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Réunion)"
         }
       },
@@ -6207,9 +6881,13 @@
       "timezone_of_capital": "Europe/Bucharest",
       "locales": {
         "ro": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Romanian"
         },
         "hu": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Hungarian"
         },
         "rom": {
@@ -6309,6 +6987,8 @@
       "timezone_of_capital": "Europe/Moscow",
       "locales": {
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         },
         "tt": {
@@ -6405,12 +7085,18 @@
           "name": "Kinyarwanda"
         },
         "en_RW": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Rwanda)"
         },
         "fr_RW": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Rwanda)"
         },
         "sw": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Swahili"
         }
       },
@@ -6437,6 +7123,8 @@
       "timezone_of_capital": "America/St_Barthelemy",
       "locales": {
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -6464,6 +7152,8 @@
       "timezone_of_capital": "America/New_York",
       "locales": {
         "en_SH": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (St Helena)"
         }
       },
@@ -6491,6 +7181,8 @@
       "timezone_of_capital": "America/St_Kitts",
       "locales": {
         "en_KN": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (St Kitts & Nevis)"
         }
       },
@@ -6518,6 +7210,8 @@
       "timezone_of_capital": "America/St_Lucia",
       "locales": {
         "en_LC": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (St Lucia)"
         }
       },
@@ -6544,6 +7238,8 @@
       "timezone_of_capital": "America/Marigot",
       "locales": {
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -6571,6 +7267,8 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "fr_PM": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (St Pierre & Miquelon)"
         }
       },
@@ -6598,9 +7296,13 @@
       "timezone_of_capital": "America/St_Vincent",
       "locales": {
         "en_VC": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (St Vincent & Grenadines)"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -6631,6 +7333,8 @@
           "name": "Samoan"
         },
         "en_WS": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Samoa)"
         }
       },
@@ -6657,6 +7361,8 @@
       "timezone_of_capital": "Europe/San_Marino",
       "locales": {
         "it_SM": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Italian (San Marino)"
         }
       },
@@ -6684,6 +7390,8 @@
       "timezone_of_capital": "Africa/Sao_Tome",
       "locales": {
         "pt_ST": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese (São Tomé & Príncipe)"
         }
       },
@@ -6710,6 +7418,8 @@
       "timezone_of_capital": "Asia/Riyadh",
       "locales": {
         "ar_SA": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Saudi Arabia)"
         }
       },
@@ -6737,6 +7447,8 @@
       "timezone_of_capital": "Africa/Dakar",
       "locales": {
         "fr_SN": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Senegal)"
         },
         "wo": {
@@ -6773,12 +7485,18 @@
       "timezone_of_capital": "Europe/Belgrade",
       "locales": {
         "sr": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Serbian"
         },
         "hu": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Hungarian"
         },
         "bs": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Bosnian"
         },
         "rom": {
@@ -6809,9 +7527,13 @@
       "timezone_of_capital": "Australia/Melbourne",
       "locales": {
         "en_SC": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Seychelles)"
         },
         "fr_SC": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Seychelles)"
         }
       },
@@ -6839,6 +7561,8 @@
       "timezone_of_capital": "Africa/Freetown",
       "locales": {
         "en_SL": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Sierra Leone)"
         },
         "men": {
@@ -6874,15 +7598,23 @@
           "name": "Mandarin Chinese"
         },
         "en_SG": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "English (Singapore)"
         },
         "ms_SG": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Malay (Singapore)"
         },
         "ta_SG": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Tamil (Singapore)"
         },
         "zh_SG": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         }
       },
@@ -6910,9 +7642,13 @@
       "timezone_of_capital": "America/Lower_Princes",
       "locales": {
         "nl": {
+          "date_order": "DMY",
+          "date_separator": "-",
           "name": "Dutch"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -6939,9 +7675,13 @@
       "timezone_of_capital": "Europe/Bratislava",
       "locales": {
         "sk": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Slovak"
         },
         "hu": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Hungarian"
         }
       },
@@ -6969,6 +7709,8 @@
       "timezone_of_capital": "Europe/Ljubljana",
       "locales": {
         "sl": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Slovenian"
         },
         "sh": {
@@ -6999,6 +7741,8 @@
       "timezone_of_capital": "Pacific/Guadalcanal",
       "locales": {
         "en_SB": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Solomon Islands)"
         },
         "tpi": {
@@ -7031,12 +7775,18 @@
           "name": "Somali (Somalia)"
         },
         "ar_SO": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Somalia)"
         },
         "it": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Italian"
         },
         "en_SO": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -7064,18 +7814,24 @@
       "timezone_of_capital": "Africa/Johannesburg",
       "locales": {
         "zu": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Zulu"
         },
         "xh": {
           "name": "Xhosa"
         },
         "af": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Afrikaans"
         },
         "nso": {
           "name": "Pedi; Sepedi; Northern Sotho"
         },
         "en_ZA": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "English (South Africa)"
         },
         "tn": {
@@ -7121,6 +7877,8 @@
       "timezone_of_capital": "Atlantic/South_Georgia",
       "locales": {
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -7148,6 +7906,8 @@
       "timezone_of_capital": "Africa/Juba",
       "locales": {
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -7180,15 +7940,23 @@
       "timezone_of_capital": "Europe/Madrid",
       "locales": {
         "es_ES": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Spain)"
         },
         "ca": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Catalan"
         },
         "gl": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Galician"
         },
         "eu": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Basque"
         },
         "oc": {
@@ -7219,12 +7987,18 @@
       "timezone_of_capital": "Asia/Colombo",
       "locales": {
         "si": {
+          "date_order": "YMD",
+          "date_separator": "-",
           "name": "Sinhala"
         },
         "ta": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Tamil"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -7252,9 +8026,13 @@
       "timezone_of_capital": "Africa/Khartoum",
       "locales": {
         "ar_SD": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Sudan)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "fia": {
@@ -7285,9 +8063,13 @@
       "timezone_of_capital": "America/Paramaribo",
       "locales": {
         "nl_SR": {
+          "date_order": "DMY",
+          "date_separator": "-",
           "name": "Dutch (Suriname)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "srn": {
@@ -7327,6 +8109,8 @@
           "name": "Norwegian"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         }
       },
@@ -7354,6 +8138,8 @@
       "timezone_of_capital": "Europe/Stockholm",
       "locales": {
         "sv_SE": {
+          "date_order": "YMD",
+          "date_separator": "-",
           "name": "Swedish (Sweden)"
         },
         "se": {
@@ -7363,6 +8149,8 @@
           "name": "Southern Sami"
         },
         "fi_SE": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Finnish"
         }
       },
@@ -7392,12 +8180,18 @@
       "timezone_of_capital": "Europe/Zurich",
       "locales": {
         "de_CH": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "German (Switzerland)"
         },
         "fr_CH": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Switzerland)"
         },
         "it_CH": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Italian (Switzerland)"
         },
         "rm": {
@@ -7428,21 +8222,29 @@
       "timezone_of_capital": "Asia/Damascus",
       "locales": {
         "ar_SY": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Syria)"
         },
         "ku": {
           "name": "Kurdish"
         },
         "hy": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Armenian"
         },
         "arc": {
           "name": "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -7469,9 +8271,13 @@
       "timezone_of_capital": "Asia/Taipei",
       "locales": {
         "zh_TW": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "zh": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "nan": {
@@ -7508,6 +8314,8 @@
           "name": "Tajik"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         }
       },
@@ -7535,12 +8343,18 @@
       "timezone_of_capital": "Africa/Dar_es_Salaam",
       "locales": {
         "sw_TZ": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Swahili (Tanzania)"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "ar": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic"
         }
       },
@@ -7568,9 +8382,13 @@
       "timezone_of_capital": "Asia/Bangkok",
       "locales": {
         "th": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Thai"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -7601,12 +8419,18 @@
           "name": "Tetum"
         },
         "pt_TL": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Portuguese (Timor-Leste)"
         },
         "id": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Indonesian"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         }
       },
@@ -7633,6 +8457,8 @@
       "timezone_of_capital": "Africa/Lome",
       "locales": {
         "fr_TG": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Togo)"
         },
         "ee": {
@@ -7677,6 +8503,8 @@
           "name": "Tokelau"
         },
         "en_TK": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Tokelau)"
         }
       },
@@ -7706,6 +8534,8 @@
           "name": "Tongan"
         },
         "en_TO": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Tonga)"
         }
       },
@@ -7732,18 +8562,26 @@
       "timezone_of_capital": "America/Port_of_Spain",
       "locales": {
         "en_TT": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Trinidad & Tobago)"
         },
         "hns": {
           "name": "Caribbean Hindustani language."
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "es": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish"
         },
         "zh": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         }
       },
@@ -7770,9 +8608,13 @@
       "timezone_of_capital": "Africa/Tunis",
       "locales": {
         "ar_TN": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Tunisia)"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -7800,6 +8642,8 @@
       "timezone_of_capital": "Europe/Istanbul",
       "locales": {
         "tr_TR": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Turkish (Turkey)"
         },
         "ku": {
@@ -7809,6 +8653,8 @@
           "name": "Dimli"
         },
         "az": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Azerbaijani"
         },
         "av": {
@@ -7839,12 +8685,18 @@
       "timezone_of_capital": "Asia/Ashgabat",
       "locales": {
         "tk": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Turkmen"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         },
         "uz": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Uzbek"
         }
       },
@@ -7872,6 +8724,8 @@
       "timezone_of_capital": "America/Grand_Turk",
       "locales": {
         "en_TC": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Turks & Caicos Islands)"
         }
       },
@@ -7902,6 +8756,8 @@
           "name": "Tuvalu"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "sm": {
@@ -7935,15 +8791,21 @@
       "timezone_of_capital": "Africa/Kampala",
       "locales": {
         "en_UG": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Uganda)"
         },
         "lg": {
           "name": "Ganda"
         },
         "sw": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Swahili"
         },
         "ar": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic"
         }
       },
@@ -7973,18 +8835,26 @@
       "timezone_of_capital": "Europe/Kyiv",
       "locales": {
         "uk": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Ukrainian"
         },
         "ru_UA": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian (Ukraine)"
         },
         "rom": {
           "name": "Romany"
         },
         "pl": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Polish"
         },
         "hu": {
+          "date_order": "YMD",
+          "date_separator": ".",
           "name": "Hungarian"
         }
       },
@@ -8012,18 +8882,28 @@
       "timezone_of_capital": "Asia/Dubai",
       "locales": {
         "ar_AE": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (United Arab Emirates)"
         },
         "fa": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Persian"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "hi": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Hindi"
         },
         "ur": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Urdu"
         }
       },
@@ -8051,9 +8931,13 @@
       "timezone_of_capital": "Europe/London",
       "locales": {
         "en_GB": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "English (United Kingdom)"
         },
         "cy_GB": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Welsh (United Kingdom)"
         },
         "gd": {
@@ -8087,6 +8971,8 @@
       "timezone_of_capital": "Pacific/Wake",
       "locales": {
         "en_UM": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (US Outlying Islands)"
         }
       },
@@ -8195,15 +9081,21 @@
       "timezone_of_capital": "America/New_York",
       "locales": {
         "en_US": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (United States)"
         },
         "es_US": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "Spanish (United States)"
         },
         "haw": {
           "name": "Hawaiian"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         }
       },
@@ -8233,6 +9125,8 @@
       "timezone_of_capital": "America/Montevideo",
       "locales": {
         "es_UY": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Uruguay)"
         }
       },
@@ -8263,9 +9157,13 @@
       "timezone_of_capital": "Asia/Tashkent",
       "locales": {
         "uz": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Uzbek"
         },
         "ru": {
+          "date_order": "DMY",
+          "date_separator": ".",
           "name": "Russian"
         },
         "tg": {
@@ -8299,9 +9197,13 @@
           "name": "Bislama"
         },
         "en_VU": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Vanuatu)"
         },
         "fr_VU": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Vanuatu)"
         }
       },
@@ -8329,6 +9231,8 @@
       "timezone_of_capital": "America/Caracas",
       "locales": {
         "es_VE": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Spanish (Venezuela)"
         }
       },
@@ -8359,18 +9263,28 @@
       "timezone_of_capital": "Asia/Bangkok",
       "locales": {
         "vi": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Vietnamese"
         },
         "en": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English"
         },
         "fr": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French"
         },
         "zh": {
+          "date_order": "YMD",
+          "date_separator": "/",
           "name": "Chinese"
         },
         "km": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Khmer"
         }
       },
@@ -8398,6 +9312,8 @@
       "timezone_of_capital": "America/Tortola",
       "locales": {
         "en_VG": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (British Virgin Islands)"
         }
       },
@@ -8425,6 +9341,8 @@
       "timezone_of_capital": "America/St_Thomas",
       "locales": {
         "en_VI": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (US Virgin Islands)"
         }
       },
@@ -8458,6 +9376,8 @@
           "name": ""
         },
         "fr_WF": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "French (Wallis & Futuna)"
         }
       },
@@ -8485,6 +9405,8 @@
       "timezone_of_capital": "Africa/El_Aaiun",
       "locales": {
         "ar": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic"
         },
         "mey": {
@@ -8515,6 +9437,8 @@
       "timezone_of_capital": "Asia/Aden",
       "locales": {
         "ar_YE": {
+          "date_order": "DMY",
+          "date_separator": "/",
           "name": "Arabic (Yemen)"
         }
       },
@@ -8541,6 +9465,8 @@
       "timezone_of_capital": "Africa/Lusaka",
       "locales": {
         "en_ZM": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Zambia)"
         },
         "bem": {
@@ -8586,6 +9512,8 @@
       "timezone_of_capital": "Africa/Harare",
       "locales": {
         "en_ZW": {
+          "date_order": "MDY",
+          "date_separator": "/",
           "name": "English (Zimbabwe)"
         },
         "sn": {
@@ -8601,5 +9529,140 @@
       "default_locale": "en_ZW",
       "default_currency": "ZWL"
     }
-  }
+  },
+  "supported_date_formats": [
+    {
+      "regex": "^(\\\\d{4})/(0[1-9]|1[0-2])/(\\\\d{2})$",
+      "year_index": 1,
+      "month_index": 2,
+      "day_index": 3,
+      "format": "YYYY/MM/DD"
+    },
+    {
+      "regex": "^(\\\\d{2})/(0[1-9]|1[0-2])/(\\\\d{4})$",
+      "year_index": 3,
+      "month_index": 2,
+      "day_index": 1,
+      "format": "DD/MM/YYYY"
+    },
+    {
+      "regex": "^(\\\\d{4})\\\\.(0[1-9]|1[0-2])\\\\.(\\\\d{2})$",
+      "year_index": 1,
+      "month_index": 2,
+      "day_index": 3,
+      "format": "YYYY.MM.DD"
+    },
+    {
+      "regex": "^(\\\\d{2})-(0[1-9]|1[0-2])-(\\\\d{4})$",
+      "year_index": 3,
+      "month_index": 2,
+      "day_index": 1,
+      "format": "DD-MM-YYYY"
+    },
+    {
+      "regex": "^(0[1-9]|1[0-2])/(\\\\d{2})/(\\\\d{4})$",
+      "year_index": 3,
+      "month_index": 1,
+      "day_index": 2,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "regex": "^(\\\\d{4})-(0[1-9]|1[0-2])-(\\\\d{2})$",
+      "year_index": 1,
+      "month_index": 2,
+      "day_index": 3,
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "regex": "^(\\\\d{4})\\\\.\\\\s*(0[1-9]|1[0-2])\\\\.\\\\s*(\\\\d{2})\\\\.\\\\s*$",
+      "year_index": 1,
+      "month_index": 2,
+      "day_index": 3,
+      "format": "YYYY. MM. DD."
+    },
+    {
+      "regex": "^(\\\\d{2})\\\\.(0[1-9]|1[0-2])\\\\.(\\\\d{4})$",
+      "year_index": 3,
+      "month_index": 2,
+      "day_index": 1,
+      "format": "DD.MM.YYYY"
+    },
+    {
+      "regex": "^(0[1-9]|1[0-2])\\\\.(\\\\d{2})\\\\.(\\\\d{4})$",
+      "year_index": 3,
+      "month_index": 1,
+      "day_index": 2,
+      "format": "MM.DD.YYYY"
+    },
+    {
+      "regex": "^(\\\\d{4})/(0[1-9]|1[0-2])/(\\\\d{2}) (\\\\d{2}):(\\\\d{2}):(\\\\d{2})$",
+      "year_index": 1,
+      "month_index": 2,
+      "day_index": 3,
+      "hour_index": 4,
+      "minute_index": 5,
+      "second_index": 6,
+      "format": "YYYY/MM/DD HH:MM:SS"
+    },
+    {
+      "regex": "^(\\\\d{2})/(0[1-9]|1[0-2])/(\\\\d{4}) (\\\\d{2}):(\\\\d{2}):(\\\\d{2})$",
+      "year_index": 3,
+      "month_index": 2,
+      "day_index": 1,
+      "hour_index": 4,
+      "minute_index": 5,
+      "second_index": 6,
+      "format": "DD/MM/YYYY HH:MM:SS"
+    },
+    {
+      "regex": "^(\\\\d{4})-(0[1-9]|1[0-2])-(\\\\d{2}) (\\\\d{2}):(\\\\d{2}):(\\\\d{2})$",
+      "year_index": 1,
+      "month_index": 2,
+      "day_index": 3,
+      "hour_index": 4,
+      "minute_index": 5,
+      "second_index": 6,
+      "format": "YYYY-MM-DD HH:MM:SS"
+    },
+    {
+      "regex": "^(\\\\d{2})-(0[1-9]|1[0-2])-(\\\\d{4}) (\\\\d{2}):(\\\\d{2}):(\\\\d{2})$",
+      "year_index": 3,
+      "month_index": 2,
+      "day_index": 1,
+      "hour_index": 4,
+      "minute_index": 5,
+      "second_index": 6,
+      "format": "DD-MM-YYYY HH:MM:SS"
+    },
+    {
+      "regex": "^(\\\\d{4})\\\\.(0[1-9]|1[0-2])\\\\.(\\\\d{2}) (\\\\d{2}):(\\\\d{2}):(\\\\d{2})$",
+      "year_index": 1,
+      "month_index": 2,
+      "day_index": 3,
+      "hour_index": 4,
+      "minute_index": 5,
+      "second_index": 6,
+      "format": "YYYY.MM.DD HH:MM:SS"
+    },
+    {
+      "regex": "^(\\\\d{2})\\\\.(0[1-9]|1[0-2])\\\\.(\\\\d{4}) (\\\\d{2}):(\\\\d{2}):(\\\\d{2})$",
+      "year_index": 3,
+      "month_index": 2,
+      "day_index": 1,
+      "hour_index": 4,
+      "minute_index": 5,
+      "second_index": 6,
+      "format": "DD.MM.YYYY HH:MM:SS"
+    },
+    {
+      "regex": "^(\\\\d{4})-(0[1-9]|1[0-2])-(\\\\d{2})T(\\\\d{2}):(\\\\d{2}):(\\\\d{2})$",
+      "year_index": 1,
+      "month_index": 2,
+      "day_index": 3,
+      "hour_index": 4,
+      "minute_index": 5,
+      "second_index": 6,
+      "format": "YYYY-MM-DDTHH:MM:SS"
+    }
+  ]
 }

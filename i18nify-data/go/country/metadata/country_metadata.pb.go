@@ -27,7 +27,8 @@ type CountryMetadataData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MetadataInformation map[string]*CountryMetadata `protobuf:"bytes,1,rep,name=metadata_information,json=metadataInformation,proto3" json:"metadata_information,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	MetadataInformation  map[string]*CountryMetadata `protobuf:"bytes,1,rep,name=metadata_information,json=metadataInformation,proto3" json:"metadata_information,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	SupportedDateFormats []*SupportedDateFormat      `protobuf:"bytes,2,rep,name=supported_date_formats,proto3" json:"supported_date_formats,omitempty"`
 }
 
 func (x *CountryMetadataData) Reset() {
@@ -69,6 +70,117 @@ func (x *CountryMetadataData) GetMetadataInformation() map[string]*CountryMetada
 	return nil
 }
 
+func (x *CountryMetadataData) GetSupportedDateFormats() []*SupportedDateFormat {
+	if x != nil {
+		return x.SupportedDateFormats
+	}
+	return nil
+}
+
+// SupportedDateFormat describes a globally accepted date/time input pattern.
+type SupportedDateFormat struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Regex       string `protobuf:"bytes,1,opt,name=regex,proto3" json:"regex,omitempty"`
+	YearIndex   int32  `protobuf:"varint,2,opt,name=year_index,proto3" json:"year_index,omitempty"`
+	MonthIndex  int32  `protobuf:"varint,3,opt,name=month_index,proto3" json:"month_index,omitempty"`
+	DayIndex    int32  `protobuf:"varint,4,opt,name=day_index,proto3" json:"day_index,omitempty"`
+	HourIndex   int32  `protobuf:"varint,5,opt,name=hour_index,proto3" json:"hour_index,omitempty"`
+	MinuteIndex int32  `protobuf:"varint,6,opt,name=minute_index,proto3" json:"minute_index,omitempty"`
+	SecondIndex int32  `protobuf:"varint,7,opt,name=second_index,proto3" json:"second_index,omitempty"`
+	Format      string `protobuf:"bytes,8,opt,name=format,proto3" json:"format,omitempty"`
+}
+
+func (x *SupportedDateFormat) Reset() {
+	*x = SupportedDateFormat{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_country_metadata_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SupportedDateFormat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SupportedDateFormat) ProtoMessage() {}
+
+func (x *SupportedDateFormat) ProtoReflect() protoreflect.Message {
+	mi := &file_country_metadata_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SupportedDateFormat.ProtoReflect.Descriptor instead.
+func (*SupportedDateFormat) Descriptor() ([]byte, []int) {
+	return file_country_metadata_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *SupportedDateFormat) GetRegex() string {
+	if x != nil {
+		return x.Regex
+	}
+	return ""
+}
+
+func (x *SupportedDateFormat) GetYearIndex() int32 {
+	if x != nil {
+		return x.YearIndex
+	}
+	return 0
+}
+
+func (x *SupportedDateFormat) GetMonthIndex() int32 {
+	if x != nil {
+		return x.MonthIndex
+	}
+	return 0
+}
+
+func (x *SupportedDateFormat) GetDayIndex() int32 {
+	if x != nil {
+		return x.DayIndex
+	}
+	return 0
+}
+
+func (x *SupportedDateFormat) GetHourIndex() int32 {
+	if x != nil {
+		return x.HourIndex
+	}
+	return 0
+}
+
+func (x *SupportedDateFormat) GetMinuteIndex() int32 {
+	if x != nil {
+		return x.MinuteIndex
+	}
+	return 0
+}
+
+func (x *SupportedDateFormat) GetSecondIndex() int32 {
+	if x != nil {
+		return x.SecondIndex
+	}
+	return 0
+}
+
+func (x *SupportedDateFormat) GetFormat() string {
+	if x != nil {
+		return x.Format
+	}
+	return ""
+}
+
 // CountryMetadata contains metadata for a specific country.
 type CountryMetadata struct {
 	state         protoimpl.MessageState
@@ -96,7 +208,7 @@ type CountryMetadata struct {
 func (x *CountryMetadata) Reset() {
 	*x = CountryMetadata{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_country_metadata_proto_msgTypes[1]
+		mi := &file_country_metadata_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -109,7 +221,7 @@ func (x *CountryMetadata) String() string {
 func (*CountryMetadata) ProtoMessage() {}
 
 func (x *CountryMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_country_metadata_proto_msgTypes[1]
+	mi := &file_country_metadata_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -122,7 +234,7 @@ func (x *CountryMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountryMetadata.ProtoReflect.Descriptor instead.
 func (*CountryMetadata) Descriptor() ([]byte, []int) {
-	return file_country_metadata_proto_rawDescGZIP(), []int{1}
+	return file_country_metadata_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CountryMetadata) GetCountryName() string {
@@ -242,7 +354,7 @@ type TimezoneInfo struct {
 func (x *TimezoneInfo) Reset() {
 	*x = TimezoneInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_country_metadata_proto_msgTypes[2]
+		mi := &file_country_metadata_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -255,7 +367,7 @@ func (x *TimezoneInfo) String() string {
 func (*TimezoneInfo) ProtoMessage() {}
 
 func (x *TimezoneInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_country_metadata_proto_msgTypes[2]
+	mi := &file_country_metadata_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -268,7 +380,7 @@ func (x *TimezoneInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TimezoneInfo.ProtoReflect.Descriptor instead.
 func (*TimezoneInfo) Descriptor() ([]byte, []int) {
-	return file_country_metadata_proto_rawDescGZIP(), []int{2}
+	return file_country_metadata_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *TimezoneInfo) GetUtcOffset() string {
@@ -278,19 +390,22 @@ func (x *TimezoneInfo) GetUtcOffset() string {
 	return ""
 }
 
-// LocaleInfo contains locale details.
+// LocaleInfo contains locale details including country-specific date formatting
+// moved from the shared datetime dataset.
 type LocaleInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Name          string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	DateOrder     string `protobuf:"bytes,2,opt,name=date_order,json=dateOrder,proto3" json:"date_order,omitempty"`
+	DateSeparator string `protobuf:"bytes,3,opt,name=date_separator,json=dateSeparator,proto3" json:"date_separator,omitempty"`
 }
 
 func (x *LocaleInfo) Reset() {
 	*x = LocaleInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_country_metadata_proto_msgTypes[3]
+		mi := &file_country_metadata_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -303,7 +418,7 @@ func (x *LocaleInfo) String() string {
 func (*LocaleInfo) ProtoMessage() {}
 
 func (x *LocaleInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_country_metadata_proto_msgTypes[3]
+	mi := &file_country_metadata_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -316,7 +431,7 @@ func (x *LocaleInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocaleInfo.ProtoReflect.Descriptor instead.
 func (*LocaleInfo) Descriptor() ([]byte, []int) {
-	return file_country_metadata_proto_rawDescGZIP(), []int{3}
+	return file_country_metadata_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *LocaleInfo) GetName() string {
@@ -326,12 +441,26 @@ func (x *LocaleInfo) GetName() string {
 	return ""
 }
 
+func (x *LocaleInfo) GetDateOrder() string {
+	if x != nil {
+		return x.DateOrder
+	}
+	return ""
+}
+
+func (x *LocaleInfo) GetDateSeparator() string {
+	if x != nil {
+		return x.DateSeparator
+	}
+	return ""
+}
+
 var File_country_metadata_proto protoreflect.FileDescriptor
 
 var file_country_metadata_proto_rawDesc = []byte{
 	0x0a, 0x16, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x5f, 0x6d, 0x65, 0x74, 0x61, 0x64, 0x61,
 	0x74, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x10, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72,
-	0x79, 0x5f, 0x6d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x22, 0xf3, 0x01, 0x0a, 0x13, 0x43,
+	0x79, 0x5f, 0x6d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x22, 0xd2, 0x02, 0x0a, 0x13, 0x43,
 	0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x44, 0x61,
 	0x74, 0x61, 0x12, 0x71, 0x0a, 0x14, 0x6d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x69,
 	0x6e, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
@@ -424,28 +553,30 @@ func file_country_metadata_proto_rawDescGZIP() []byte {
 	return file_country_metadata_proto_rawDescData
 }
 
-var file_country_metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_country_metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_country_metadata_proto_goTypes = []interface{}{
 	(*CountryMetadataData)(nil), // 0: country_metadata.CountryMetadataData
-	(*CountryMetadata)(nil),     // 1: country_metadata.CountryMetadata
-	(*TimezoneInfo)(nil),        // 2: country_metadata.TimezoneInfo
-	(*LocaleInfo)(nil),          // 3: country_metadata.LocaleInfo
-	nil,                         // 4: country_metadata.CountryMetadataData.MetadataInformationEntry
-	nil,                         // 5: country_metadata.CountryMetadata.TimezonesEntry
-	nil,                         // 6: country_metadata.CountryMetadata.LocalesEntry
+	(*SupportedDateFormat)(nil), // 1: country_metadata.SupportedDateFormat
+	(*CountryMetadata)(nil),     // 2: country_metadata.CountryMetadata
+	(*TimezoneInfo)(nil),        // 3: country_metadata.TimezoneInfo
+	(*LocaleInfo)(nil),          // 4: country_metadata.LocaleInfo
+	nil,                         // 5: country_metadata.CountryMetadataData.MetadataInformationEntry
+	nil,                         // 6: country_metadata.CountryMetadata.TimezonesEntry
+	nil,                         // 7: country_metadata.CountryMetadata.LocalesEntry
 }
 var file_country_metadata_proto_depIdxs = []int32{
-	4, // 0: country_metadata.CountryMetadataData.metadata_information:type_name -> country_metadata.CountryMetadataData.MetadataInformationEntry
-	5, // 1: country_metadata.CountryMetadata.timezones:type_name -> country_metadata.CountryMetadata.TimezonesEntry
-	6, // 2: country_metadata.CountryMetadata.locales:type_name -> country_metadata.CountryMetadata.LocalesEntry
-	1, // 3: country_metadata.CountryMetadataData.MetadataInformationEntry.value:type_name -> country_metadata.CountryMetadata
-	2, // 4: country_metadata.CountryMetadata.TimezonesEntry.value:type_name -> country_metadata.TimezoneInfo
-	3, // 5: country_metadata.CountryMetadata.LocalesEntry.value:type_name -> country_metadata.LocaleInfo
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	5, // 0: country_metadata.CountryMetadataData.metadata_information:type_name -> country_metadata.CountryMetadataData.MetadataInformationEntry
+	1, // 1: country_metadata.CountryMetadataData.supported_date_formats:type_name -> country_metadata.SupportedDateFormat
+	6, // 2: country_metadata.CountryMetadata.timezones:type_name -> country_metadata.CountryMetadata.TimezonesEntry
+	7, // 3: country_metadata.CountryMetadata.locales:type_name -> country_metadata.CountryMetadata.LocalesEntry
+	2, // 4: country_metadata.CountryMetadataData.MetadataInformationEntry.value:type_name -> country_metadata.CountryMetadata
+	3, // 5: country_metadata.CountryMetadata.TimezonesEntry.value:type_name -> country_metadata.TimezoneInfo
+	4, // 6: country_metadata.CountryMetadata.LocalesEntry.value:type_name -> country_metadata.LocaleInfo
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_country_metadata_proto_init() }
@@ -467,7 +598,7 @@ func file_country_metadata_proto_init() {
 			}
 		}
 		file_country_metadata_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountryMetadata); i {
+			switch v := v.(*SupportedDateFormat); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -479,7 +610,7 @@ func file_country_metadata_proto_init() {
 			}
 		}
 		file_country_metadata_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TimezoneInfo); i {
+			switch v := v.(*CountryMetadata); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -491,6 +622,18 @@ func file_country_metadata_proto_init() {
 			}
 		}
 		file_country_metadata_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TimezoneInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_country_metadata_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LocaleInfo); i {
 			case 0:
 				return &v.state
@@ -509,7 +652,7 @@ func file_country_metadata_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_country_metadata_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

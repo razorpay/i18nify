@@ -10,7 +10,9 @@ package country_metadata
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"strings"
+	"time"
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/country/metadata"
 )
@@ -34,6 +36,22 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 	if src == nil {
 		return CountryMetadata{}
 	}
+	formats := make([]SupportedDateFormat, 0, len(src.GetSupportedDateFormats()))
+	for _, format := range src.GetSupportedDateFormats() {
+		if format == nil {
+			continue
+		}
+		formats = append(formats, SupportedDateFormat{
+			Regex:       format.GetRegex(),
+			YearIndex:   format.GetYearIndex(),
+			MonthIndex:  format.GetMonthIndex(),
+			DayIndex:    format.GetDayIndex(),
+			HourIndex:   format.GetHourIndex(),
+			MinuteIndex: format.GetMinuteIndex(),
+			SecondIndex: format.GetSecondIndex(),
+			Format:      format.GetFormat(),
+		})
+	}
 	info := make(map[string]MetadataInformation, len(src.GetMetadataInformation()))
 	for code, cm := range src.GetMetadataInformation() {
 		if cm == nil {
@@ -48,7 +66,11 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 		locales := make(map[string]Locale, len(cm.GetLocales()))
 		for locKey, locVal := range cm.GetLocales() {
 			if locVal != nil {
-				locales[locKey] = Locale{Name: locVal.GetName()}
+				locales[locKey] = Locale{
+					Name:          locVal.GetName(),
+					DateOrder:     locVal.GetDateOrder(),
+					DateSeparator: locVal.GetDateSeparator(),
+				}
 			}
 		}
 		info[code] = MetadataInformation{
@@ -69,7 +91,7 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 			AddressTemplate:   cm.GetAddressFormat(),
 		}
 	}
-	return CountryMetadata{MetadataInformation: info}
+	return CountryMetadata{MetadataInformation: info, SupportedDateFormats: formats}
 }
 
 // UnmarshalCountryMetadata parses JSON data into a CountryMetadata struct.
@@ -87,12 +109,18 @@ func (r *CountryMetadata) Marshal() ([]byte, error) {
 // CountryMetadata represents metadata information about countries.
 type CountryMetadata struct {
 	// MetadataInformation holds metadata information for each country, keyed by country code.
-	MetadataInformation map[string]MetadataInformation `json:"metadata_information"`
+	MetadataInformation  map[string]MetadataInformation `json:"metadata_information"`
+	SupportedDateFormats []SupportedDateFormat          `json:"supported_date_formats,omitempty"`
 }
 
 // GetAllMetadataInformation returns all metadata information about countries.
 func (r *CountryMetadata) GetAllMetadataInformation() map[string]MetadataInformation {
 	return r.MetadataInformation
+}
+
+// GetSupportedDateFormats returns all globally supported date input patterns.
+func (r *CountryMetadata) GetSupportedDateFormats() []SupportedDateFormat {
+	return r.SupportedDateFormats
 }
 
 // GetMetadataInformation retrieves metadata information for a specific country code.
@@ -115,6 +143,67 @@ func GetMetadataInformationByISONumericCode(numericCode string) MetadataInformat
 	}
 	fmt.Printf("failed to retrive the country metadata for numeric code: %s", numericCode)
 	return MetadataInformation{}
+}
+
+// getLocaleByIdentifier returns locale metadata for a locale tag like en_US or en-US.
+// It first checks the country implied by the locale, then falls back to a full
+// scan across all countries for language-only locales.
+func getLocaleByIdentifier(locale string) (Locale, bool) {
+	localeKey := normalizeLocaleKey(locale)
+	if localeKey == "" {
+		return Locale{}, false
+	}
+
+	if loc, ok := countryLocaleForLocale(localeKey); ok {
+		return loc, true
+	}
+
+	for _, countryMeta := range cachedCountyMetaData.MetadataInformation {
+		loc, ok := countryMeta.Locales[localeKey]
+		if ok {
+			return loc, true
+		}
+	}
+
+	return Locale{}, false
+}
+
+func countryLocaleForLocale(localeKey string) (Locale, bool) {
+	parts := strings.FieldsFunc(localeKey, func(r rune) bool {
+		return r == '_'
+	})
+	if len(parts) < 2 {
+		return Locale{}, false
+	}
+
+	countryCode := parts[len(parts)-1]
+	countryMeta, ok := cachedCountyMetaData.MetadataInformation[countryCode]
+	if !ok {
+		return Locale{}, false
+	}
+
+	loc, ok := countryMeta.Locales[localeKey]
+	if !ok {
+		return Locale{}, false
+	}
+
+	return loc, true
+}
+
+func normalizeLocaleKey(locale string) string {
+	parts := strings.FieldsFunc(strings.TrimSpace(locale), func(r rune) bool {
+		return r == '-' || r == '_'
+	})
+	if len(parts) == 0 {
+		return ""
+	}
+
+	parts[0] = strings.ToLower(parts[0])
+	if len(parts) >= 2 {
+		parts[len(parts)-1] = strings.ToUpper(parts[len(parts)-1])
+	}
+
+	return strings.Join(parts, "_")
 }
 
 // NewCountryMetadata creates a new CountryMetadata instance.
@@ -144,6 +233,18 @@ type MetadataInformation struct {
 	AddressTemplate string `json:"address_template,omitempty"`
 }
 
+// SupportedDateFormat describes a globally supported input date/time pattern.
+type SupportedDateFormat struct {
+	Regex       string `json:"regex"`
+	YearIndex   int32  `json:"year_index"`
+	MonthIndex  int32  `json:"month_index"`
+	DayIndex    int32  `json:"day_index"`
+	HourIndex   int32  `json:"hour_index,omitempty"`
+	MinuteIndex int32  `json:"minute_index,omitempty"`
+	SecondIndex int32  `json:"second_index,omitempty"`
+	Format      string `json:"format"`
+}
+
 // NewMetadataInformation creates a new MetadataInformation instance.
 func NewMetadataInformation(alpha_3 string, continentCode string, continentName string, countryName string, currency []string, defaultCurrency string, defaultLocale string, dialCode string, flag string, locales map[string]Locale, numericCode string, sovereignty string, timezoneOfCapital string, timezones map[string]Timezone) *MetadataInformation {
 	return &MetadataInformation{
@@ -166,7 +267,9 @@ func NewMetadataInformation(alpha_3 string, continentCode string, continentName 
 
 // Locale represents a locale with its code and name.
 type Locale struct {
-	Name string `json:"name"` // Name represents the name of the locale.
+	Name          string `json:"name"`                     // Name represents the name of the locale.
+	DateOrder     string `json:"date_order,omitempty"`     // DateOrder represents the locale-specific date field order when country-specific.
+	DateSeparator string `json:"date_separator,omitempty"` // DateSeparator represents the locale-specific date separator when country-specific.
 }
 
 // NewLocale creates a new Locale instance.
