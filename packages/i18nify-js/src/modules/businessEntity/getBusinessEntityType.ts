@@ -12,7 +12,7 @@ import { getBusinessEntityData } from './data';
  *
  * @example
  * const types = await getBusinessEntityType('IN');
- * // [{ code: 'PRIVATE_LIMITED', name: 'Private Limited Company', abbreviation: 'Pvt Ltd', ... }, ...]
+ * // [{ code: '2DVA', name: 'Cooperative Society', abbreviation: '', transliterated_name: 'Cooperative Society', language: 'en' }, ...]
  */
 const getBusinessEntityType = async (
   countryCode: string,

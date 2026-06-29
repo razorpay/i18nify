@@ -34,11 +34,11 @@ const MOCK_DATA: BusinessEntityData = {
     entity_types: {
       IN: [
         {
-          code: 'PRIVATE_LIMITED',
+          code: 'B6ES',
           name: 'Private Limited Company',
           abbreviation: 'Pvt Ltd',
-          category: 'CORPORATION',
-          description: 'Pvt Ltd.',
+          transliterated_name: 'Private Limited Company',
+          language: 'en',
         },
       ],
     },

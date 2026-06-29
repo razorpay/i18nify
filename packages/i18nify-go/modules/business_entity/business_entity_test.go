@@ -112,16 +112,10 @@ func TestGetBusinessEntityType_India(t *testing.T) {
 	require.NoError(t, err)
 	assert.NotEmpty(t, types)
 
-	codes := make(map[string]bool, len(types))
 	for _, et := range types {
-		codes[et.Code] = true
-		assert.NotEmpty(t, et.Code)
-		assert.NotEmpty(t, et.Name)
-		assert.NotEmpty(t, et.Category)
+		assert.NotEmpty(t, et.Code, "every entity type must have an ELF code")
+		assert.NotEmpty(t, et.Name, "every entity type must have a name")
 	}
-	assert.True(t, codes["PRIVATE_LIMITED"], "IN should include PRIVATE_LIMITED")
-	assert.True(t, codes["LLP"], "IN should include LLP")
-	assert.True(t, codes["SOLE_PROPRIETORSHIP"], "IN should include SOLE_PROPRIETORSHIP")
 }
 
 func TestGetBusinessEntityType_US(t *testing.T) {
@@ -129,13 +123,10 @@ func TestGetBusinessEntityType_US(t *testing.T) {
 	require.NoError(t, err)
 	assert.NotEmpty(t, types)
 
-	codes := make(map[string]bool, len(types))
 	for _, et := range types {
-		codes[et.Code] = true
+		assert.NotEmpty(t, et.Code)
+		assert.NotEmpty(t, et.Name)
 	}
-	assert.True(t, codes["LLC"])
-	assert.True(t, codes["C_CORPORATION"])
-	assert.True(t, codes["S_CORPORATION"])
 }
 
 func TestGetBusinessEntityType_AllSupportedCountries(t *testing.T) {
@@ -175,21 +166,13 @@ func TestGetBusinessEntityType_WhitespaceTrimmed(t *testing.T) {
 	assert.NotEmpty(t, types)
 }
 
-func TestGetBusinessEntityType_CategoryFieldValid(t *testing.T) {
-	validCategories := map[string]bool{
-		"SOLE_PROPRIETORSHIP": true,
-		"PARTNERSHIP":         true,
-		"LIMITED_LIABILITY":   true,
-		"CORPORATION":         true,
-		"NON_PROFIT":          true,
-		"COOPERATIVE":         true,
-		"TRUST":               true,
-		"GOVERNMENT":          true,
-	}
+func TestGetBusinessEntityType_ELFFieldsValid(t *testing.T) {
 	types, err := GetBusinessEntityType("IN")
 	require.NoError(t, err)
+	require.NotEmpty(t, types)
 	for _, et := range types {
-		assert.True(t, validCategories[et.Category],
-			"entity %q has unknown category %q", et.Code, et.Category)
+		// GLEIF ELF codes are 4-character alphanumeric (ISO 20275).
+		assert.Len(t, et.Code, 4, "ELF code %q should be 4 chars", et.Code)
+		assert.NotEmpty(t, et.Name, "entity %q must have a name", et.Code)
 	}
 }

@@ -24,12 +24,13 @@ type BusinessSubCategory struct {
 }
 
 // BusinessEntityType mirrors the data layer type for consumer use.
+// Sourced from the GLEIF ISO 20275 Entity Legal Forms (ELF) code list.
 type BusinessEntityType struct {
-	Code         string
-	Name         string
-	Abbreviation string
-	Category     string
-	Description  string
+	Code               string
+	Name               string
+	Abbreviation       string
+	TransliteratedName string
+	Language           string
 }
 
 var cachedData *dataSource.BusinessEntityData
@@ -96,11 +97,11 @@ func GetBusinessEntityType(countryCode string) ([]BusinessEntityType, error) {
 	out := make([]BusinessEntityType, len(raw))
 	for i, e := range raw {
 		out[i] = BusinessEntityType{
-			Code:         e.Code,
-			Name:         e.Name,
-			Abbreviation: e.Abbreviation,
-			Category:     e.Category,
-			Description:  e.Description,
+			Code:               e.Code,
+			Name:               e.Name,
+			Abbreviation:       e.Abbreviation,
+			TransliteratedName: e.TransliteratedName,
+			Language:           e.Language,
 		}
 	}
 	return out, nil

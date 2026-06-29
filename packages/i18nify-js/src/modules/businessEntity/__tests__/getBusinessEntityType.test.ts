@@ -1,6 +1,7 @@
 import getBusinessEntityType from '../getBusinessEntityType';
 import { BusinessEntityData } from '../types';
 
+// Mock data mirrors the GLEIF ISO 20275 ELF shape (no category/description).
 const MOCK_DATA: BusinessEntityData = {
   business_entity_information: {
     categories: [],
@@ -8,41 +9,41 @@ const MOCK_DATA: BusinessEntityData = {
     entity_types: {
       IN: [
         {
-          code: 'PRIVATE_LIMITED',
+          code: '2DVA',
+          name: 'Cooperative Society',
+          abbreviation: '',
+          transliterated_name: 'Cooperative Society',
+          language: 'en',
+        },
+        {
+          code: '180P',
+          name: 'Stand Alone Primary Dealer',
+          abbreviation: '',
+          transliterated_name: 'Stand Alone Primary Dealer',
+          language: 'en',
+        },
+        {
+          code: 'B6ES',
           name: 'Private Limited Company',
           abbreviation: 'Pvt Ltd',
-          category: 'CORPORATION',
-          description: 'Pvt Ltd.',
-        },
-        {
-          code: 'LLP',
-          name: 'Limited Liability Partnership',
-          abbreviation: 'LLP',
-          category: 'PARTNERSHIP',
-          description: 'LLP.',
-        },
-        {
-          code: 'SOLE_PROPRIETORSHIP',
-          name: 'Sole Proprietorship',
-          abbreviation: '',
-          category: 'SOLE_PROPRIETORSHIP',
-          description: 'Sole prop.',
+          transliterated_name: 'Private Limited Company',
+          language: 'en',
         },
       ],
       US: [
         {
-          code: 'LLC',
-          name: 'Limited Liability Company',
-          abbreviation: 'LLC',
-          category: 'LIMITED_LIABILITY',
-          description: 'LLC.',
+          code: '14OD',
+          name: 'credit union',
+          abbreviation: '',
+          transliterated_name: 'credit union',
+          language: 'en',
         },
         {
-          code: 'C_CORPORATION',
-          name: 'C Corporation',
-          abbreviation: 'Corp',
-          category: 'CORPORATION',
-          description: 'C Corp.',
+          code: 'ZQHY',
+          name: 'Limited Liability Company',
+          abbreviation: 'LLC',
+          transliterated_name: 'Limited Liability Company',
+          language: 'en',
         },
       ],
     },
@@ -74,17 +75,15 @@ describe('getBusinessEntityType', () => {
     const types = await getBusinessEntityType('IN');
     expect(types).toHaveLength(3);
     const codes = types.map((t) => t.code);
-    expect(codes).toContain('PRIVATE_LIMITED');
-    expect(codes).toContain('LLP');
-    expect(codes).toContain('SOLE_PROPRIETORSHIP');
+    expect(codes).toContain('2DVA');
+    expect(codes).toContain('180P');
   });
 
   it('returns entity types for United States (US)', async () => {
     const types = await getBusinessEntityType('US');
     expect(types).toHaveLength(2);
     const codes = types.map((t) => t.code);
-    expect(codes).toContain('LLC');
-    expect(codes).toContain('C_CORPORATION');
+    expect(codes).toContain('14OD');
   });
 
   it('is case-insensitive (lowercase input)', async () => {
@@ -104,8 +103,8 @@ describe('getBusinessEntityType', () => {
       expect(et.code.length).toBeGreaterThan(0);
       expect(typeof et.name).toBe('string');
       expect(et.name.length).toBeGreaterThan(0);
-      expect(typeof et.category).toBe('string');
-      expect(et.category.length).toBeGreaterThan(0);
+      expect(typeof et.transliterated_name).toBe('string');
+      expect(typeof et.language).toBe('string');
     }
   });
 

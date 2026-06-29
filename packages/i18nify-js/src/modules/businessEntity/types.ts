@@ -10,12 +10,13 @@ export interface BusinessSubCategory {
   description: string;
 }
 
+// Sourced from the GLEIF ISO 20275 Entity Legal Forms (ELF) code list.
 export interface BusinessEntityType {
-  code: string;
-  name: string;
-  abbreviation: string;
-  category: string;
-  description: string;
+  code: string; // ELF code (4-char alphanumeric, ISO 20275)
+  name: string; // Entity legal form name in its local language
+  abbreviation: string; // Local-language abbreviation, if any
+  transliterated_name: string; // Transliterated name (ISO 01-140-10)
+  language: string; // ISO 639-1 language code of the local name
 }
 
 // Raw shapes of the two source JSON files.

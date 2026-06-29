@@ -15,11 +15,12 @@ message EntityTypeList {
   repeated EntityType items = 1;
 }
 
-// EntityType represents a legal business entity type for a specific country.
+// EntityType represents a legal business entity type for a specific country,
+// sourced from the GLEIF ISO 20275 Entity Legal Forms (ELF) code list.
 message EntityType {
-  string code         = 1;
-  string name         = 2;
-  string abbreviation = 3;
-  string category     = 4;
-  string description  = 5;
+  string code                = 1; // ELF code (4-char alphanumeric, ISO 20275)
+  string name                = 2; // Entity legal form name in its local language
+  string abbreviation        = 3; // Local-language abbreviation, if any
+  string transliterated_name = 4 [json_name = "transliterated_name"]; // Transliterated name (ISO 01-140-10)
+  string language            = 5; // ISO 639-1 language code of the local name
 }

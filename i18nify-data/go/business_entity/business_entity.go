@@ -42,11 +42,12 @@ type BusinessSubCategory struct {
 	Description string `json:"description"`
 }
 
-// BusinessEntityType represents a legal entity type specific to a country.
+// BusinessEntityType represents a legal entity type specific to a country,
+// sourced from the GLEIF ISO 20275 Entity Legal Forms (ELF) code list.
 type BusinessEntityType struct {
-	Code         string `json:"code"`
-	Name         string `json:"name"`
-	Abbreviation string `json:"abbreviation"`
-	Category     string `json:"category"`
-	Description  string `json:"description"`
+	Code               string `json:"code"`                // ELF code (4-char alphanumeric, ISO 20275)
+	Name               string `json:"name"`                // Local-language legal form name
+	Abbreviation       string `json:"abbreviation"`        // Local-language abbreviation, if any
+	TransliteratedName string `json:"transliterated_name"` // Transliterated name (ISO 01-140-10)
+	Language           string `json:"language"`            // ISO 639-1 language code
 }
