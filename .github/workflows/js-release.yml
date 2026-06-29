@@ -29,7 +29,7 @@ jobs:
       - name: Use Node v20
         uses: actions/setup-node@v3
         with:
-          node-version: 20.3.1
+          node-version: 20.19.1
       - name: Install dependencies
         run: yarn
       - name: Build core package
