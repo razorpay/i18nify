@@ -145,7 +145,34 @@ func main() {
 		fmt.Printf("Bank name from identifier: %s\n", bankName) // HDFC Bank Limited
 	}
 
-		// Date and Time Utilities
+	// Format number as a locale-aware currency string
+	cur := currency.GetCurrency()
+	formattedINR, err := cur.FormatNumber(123456.78, currency.NumberFormatOptions{
+		Currency: "INR",
+		Locale:   "en-IN",
+	})
+	if err != nil {
+		fmt.Printf("Error formatting number: %v\n", err)
+	} else {
+		fmt.Printf("Formatted number: %s\n", formattedINR) // ₹1,23,456.78
+	}
+
+	// FormatNumberByParts — breakdown into typed components (integer, fraction, currency, decimal)
+	parts, err := cur.FormatNumberByParts(12345.67, currency.NumberFormatOptions{
+		Currency: "USD",
+		Locale:   "en-US",
+	})
+	if err != nil {
+		fmt.Printf("Error formatting number by parts: %v\n", err)
+	} else {
+		fmt.Printf("Currency: %s\n", parts.Currency)               // $
+		fmt.Printf("Integer: %s\n", parts.Integer)                 // 12,345
+		fmt.Printf("Decimal: %s\n", parts.Decimal)                 // .
+		fmt.Printf("Fraction: %s\n", parts.Fraction)               // 67
+		fmt.Printf("Is prefix symbol: %v\n", parts.IsPrefixSymbol) // true
+	}
+
+	// Date and Time Utilities
 	// Format a date and time value
 	ts := time.Date(2024, 3, 5, 14, 30, 0, 0, time.UTC)
 	formattedDT, err := country_metadata.FormatDateTime(ts, country_metadata.FormatDateTimeOptions{
