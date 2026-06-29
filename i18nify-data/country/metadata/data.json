@@ -20,7 +20,6 @@
       "timezone_of_capital": "Asia/Kabul",
       "locales": {
         "fa_AF": {
-          "name": "Persian (Afghanistan)",
           "honorific_titles": [
             {
               "code": "AGHA",
@@ -46,7 +45,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Persian (Afghanistan)"
         },
         "ps": {
           "name": "Pashto"
@@ -81,7 +81,6 @@
       "timezone_of_capital": "Europe/Mariehamn",
       "locales": {
         "sv_AX": {
-          "name": "Swedish (Åland Islands)",
           "honorific_titles": [
             {
               "code": "HR",
@@ -101,7 +100,8 @@
               "gender": "neutral",
               "description": "Title for doctors"
             }
-          ]
+          ],
+          "name": "Swedish (Åland Islands)"
         }
       },
       "default_locale": "sv_AX",
@@ -133,7 +133,6 @@
           "name": "Greek"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -213,7 +212,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "sq",
@@ -239,7 +239,6 @@
       "timezone_of_capital": "Africa/Algiers",
       "locales": {
         "ar_DZ": {
-          "name": "Arabic (Algeria)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -271,7 +270,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Algeria)"
         }
       },
       "default_locale": "ar_DZ",
@@ -297,7 +297,6 @@
       "timezone_of_capital": "Pacific/Pago_Pago",
       "locales": {
         "en_AS": {
-          "name": "English (American Samoa)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -377,7 +376,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (American Samoa)"
         },
         "sm": {
           "name": "Samoan"
@@ -409,7 +409,6 @@
       "timezone_of_capital": "Europe/Andorra",
       "locales": {
         "ca": {
-          "name": "Catalan",
           "honorific_titles": [
             {
               "code": "SR",
@@ -429,7 +428,8 @@
               "gender": "neutral",
               "description": "Title for doctors"
             }
-          ]
+          ],
+          "name": "Catalan"
         }
       },
       "default_locale": "ca",
@@ -455,7 +455,6 @@
       "timezone_of_capital": "Africa/Luanda",
       "locales": {
         "pt_AO": {
-          "name": "Portuguese (Angola)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -481,7 +480,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Portuguese (Angola)"
         }
       },
       "default_locale": "pt_AO",
@@ -507,7 +507,6 @@
       "timezone_of_capital": "America/Chicago",
       "locales": {
         "en_AI": {
-          "name": "English (Anguilla)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -587,7 +586,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Anguilla)"
         }
       },
       "default_locale": "en_AI",
@@ -642,7 +642,6 @@
       "timezone_of_capital": "America/St_Johns",
       "locales": {
         "en_AG": {
-          "name": "English (Antigua & Barbuda)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -722,7 +721,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Antigua & Barbuda)"
         }
       },
       "default_locale": "en_AG",
@@ -781,7 +781,6 @@
       "timezone_of_capital": "America/Argentina/Buenos_Aires",
       "locales": {
         "es_AR": {
-          "name": "Spanish (Argentina)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -813,7 +812,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Argentina)"
         },
         "en": {
           "name": "English"
@@ -857,7 +857,6 @@
           "name": "Armenian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -937,7 +936,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "hy",
@@ -963,7 +963,6 @@
       "timezone_of_capital": "America/Aruba",
       "locales": {
         "nl_AW": {
-          "name": "Dutch (Aruba)",
           "honorific_titles": [
             {
               "code": "DHR",
@@ -989,7 +988,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Dutch (Aruba)"
         },
         "pap": {
           "name": "Papiamento"
@@ -1054,7 +1054,6 @@
       "timezone_of_capital": "Australia/Sydney",
       "locales": {
         "en_AU": {
-          "name": "English (Australia)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -1134,7 +1133,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Australia)"
         }
       },
       "default_locale": "en_AU",
@@ -1160,7 +1160,6 @@
       "timezone_of_capital": "Europe/Vienna",
       "locales": {
         "de_AT": {
-          "name": "German (Austria)",
           "honorific_titles": [
             {
               "code": "HERR",
@@ -1186,7 +1185,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "German (Austria)"
         },
         "hr": {
           "name": "Croatian"
@@ -1230,7 +1230,6 @@
           "name": "Armenian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -1310,7 +1309,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "az",
@@ -1336,7 +1336,6 @@
       "timezone_of_capital": "America/Nassau",
       "locales": {
         "en_BS": {
-          "name": "English (Bahamas)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -1416,7 +1415,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Bahamas)"
         }
       },
       "default_locale": "en_BS",
@@ -1442,7 +1442,6 @@
       "timezone_of_capital": "Asia/Bahrain",
       "locales": {
         "ar_BH": {
-          "name": "Arabic (Bahrain)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -1474,7 +1473,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Bahrain)"
         },
         "en": {
           "name": "English"
@@ -1509,7 +1509,6 @@
       "timezone_of_capital": "Asia/Dhaka",
       "locales": {
         "bn_BD": {
-          "name": "Bangla (Bangladesh)",
           "honorific_titles": [
             {
               "code": "SHRI",
@@ -1535,7 +1534,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Bangla (Bangladesh)"
         },
         "en": {
           "name": "English"
@@ -1564,7 +1564,6 @@
       "timezone_of_capital": "America/Barbados",
       "locales": {
         "en_BB": {
-          "name": "English (Barbados)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -1644,7 +1643,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Barbados)"
         }
       },
       "default_locale": "en_BB",
@@ -1673,7 +1673,6 @@
           "name": "Belarusian"
         },
         "ru": {
-          "name": "Russian",
           "honorific_titles": [
             {
               "code": "GOSPODIN",
@@ -1699,7 +1698,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Russian"
         }
       },
       "default_locale": "be",
@@ -1725,7 +1725,6 @@
       "timezone_of_capital": "Europe/Brussels",
       "locales": {
         "nl_BE": {
-          "name": "Dutch (Belgium)",
           "honorific_titles": [
             {
               "code": "DHR",
@@ -1751,7 +1750,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Dutch (Belgium)"
         },
         "fr_BE": {
           "name": "French (Belgium)"
@@ -1783,7 +1783,6 @@
       "timezone_of_capital": "America/Belize",
       "locales": {
         "en_BZ": {
-          "name": "English (Belize)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -1863,7 +1862,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Belize)"
         },
         "es": {
           "name": "Spanish"
@@ -1892,7 +1892,6 @@
       "timezone_of_capital": "Africa/Porto-Novo",
       "locales": {
         "fr_BJ": {
-          "name": "French (Benin)",
           "honorific_titles": [
             {
               "code": "M",
@@ -1918,7 +1917,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Benin)"
         }
       },
       "default_locale": "fr_BJ",
@@ -1944,7 +1944,6 @@
       "timezone_of_capital": "America/Toronto",
       "locales": {
         "en_BM": {
-          "name": "English (Bermuda)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -2024,7 +2023,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Bermuda)"
         },
         "pt": {
           "name": "Portuguese"
@@ -2057,7 +2057,6 @@
           "name": "Dzongkha"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -2137,7 +2136,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "dz",
@@ -2164,7 +2164,6 @@
       "timezone_of_capital": "America/La_Paz",
       "locales": {
         "es_BO": {
-          "name": "Spanish (Bolivia)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -2196,7 +2195,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Bolivia)"
         },
         "qu": {
           "name": "Quechua"
@@ -2228,7 +2228,6 @@
       "timezone_of_capital": "America/Kralendijk",
       "locales": {
         "nl": {
-          "name": "Dutch",
           "honorific_titles": [
             {
               "code": "DHR",
@@ -2254,7 +2253,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Dutch"
         },
         "pap": {
           "name": "Papiamento"
@@ -2289,7 +2289,6 @@
           "name": "Bosnian"
         },
         "hr_BA": {
-          "name": "Croatian (Bosnia & Herzegovina)",
           "honorific_titles": [
             {
               "code": "G",
@@ -2315,7 +2314,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Croatian (Bosnia & Herzegovina)"
         },
         "sr_BA": {
           "name": "Serbian"
@@ -2344,7 +2344,6 @@
       "timezone_of_capital": "Africa/Gaborone",
       "locales": {
         "en_BW": {
-          "name": "English (Botswana)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -2424,7 +2423,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Botswana)"
         },
         "tn_BW": {
           "name": "Tswana"
@@ -2521,7 +2521,6 @@
       "timezone_of_capital": "America/Cuiaba",
       "locales": {
         "pt_BR": {
-          "name": "Portuguese (Brazil)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -2547,7 +2546,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Portuguese (Brazil)"
         },
         "es": {
           "name": "Spanish"
@@ -2582,7 +2582,6 @@
       "timezone_of_capital": "Indian/Chagos",
       "locales": {
         "en_IO": {
-          "name": "English (British Indian Ocean Territory)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -2662,7 +2661,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (British Indian Ocean Territory)"
         }
       },
       "default_locale": "en_IO",
@@ -2688,7 +2688,6 @@
       "timezone_of_capital": "Asia/Brunei",
       "locales": {
         "ms_BN": {
-          "name": "Malay (Brunei)",
           "honorific_titles": [
             {
               "code": "ENCIK",
@@ -2714,7 +2713,8 @@
               "gender": "neutral",
               "description": "Title for doctors"
             }
-          ]
+          ],
+          "name": "Malay (Brunei)"
         },
         "en_BN": {
           "name": "English"
@@ -2743,7 +2743,6 @@
       "timezone_of_capital": "Indian/Antananarivo",
       "locales": {
         "bg": {
-          "name": "Bulgarian",
           "honorific_titles": [
             {
               "code": "G_N",
@@ -2769,7 +2768,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Bulgarian"
         },
         "tr_BG": {
           "name": "Turkish"
@@ -2801,7 +2801,6 @@
       "timezone_of_capital": "Africa/Ouagadougou",
       "locales": {
         "fr_BF": {
-          "name": "French (Burkina Faso)",
           "honorific_titles": [
             {
               "code": "M",
@@ -2827,7 +2826,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Burkina Faso)"
         },
         "mos": {
           "name": "Mossi"
@@ -2862,7 +2862,6 @@
           "name": "Rundi"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -2942,7 +2941,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "fr_BI",
@@ -2968,7 +2968,6 @@
       "timezone_of_capital": "Atlantic/Cape_Verde",
       "locales": {
         "pt_CV": {
-          "name": "Portuguese (Cape Verde)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -2994,7 +2993,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Portuguese (Cape Verde)"
         }
       },
       "default_locale": "pt_CV",
@@ -3026,7 +3026,6 @@
           "name": "French"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -3106,7 +3105,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "km",
@@ -3132,7 +3132,6 @@
       "timezone_of_capital": "Africa/Douala",
       "locales": {
         "en_CM": {
-          "name": "English (Cameroon)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -3212,7 +3211,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Cameroon)"
         },
         "fr_CM": {
           "name": "French (Cameroon)"
@@ -3313,7 +3313,6 @@
       "timezone_of_capital": "America/Toronto",
       "locales": {
         "en_CA": {
-          "name": "English (Canada)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -3393,7 +3392,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Canada)"
         },
         "fr_CA": {
           "name": "French (Canada)"
@@ -3425,7 +3425,6 @@
       "timezone_of_capital": "Asia/Kuala_Lumpur",
       "locales": {
         "en_KY": {
-          "name": "English (Cayman Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -3505,7 +3504,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Cayman Islands)"
         }
       },
       "default_locale": "en_KY",
@@ -3531,7 +3531,6 @@
       "timezone_of_capital": "Africa/Bangui",
       "locales": {
         "fr_CF": {
-          "name": "French (Central African Republic)",
           "honorific_titles": [
             {
               "code": "M",
@@ -3557,7 +3556,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Central African Republic)"
         },
         "sg": {
           "name": "Sango"
@@ -3595,7 +3595,6 @@
           "name": "French (Chad)"
         },
         "ar_TD": {
-          "name": "Arabic (Chad)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -3627,7 +3626,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Chad)"
         },
         "sre": {
           "name": "Serbian"
@@ -3663,7 +3663,6 @@
       "timezone_of_capital": "America/Costa_Rica",
       "locales": {
         "es_CL": {
-          "name": "Spanish (Chile)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -3695,7 +3694,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Chile)"
         }
       },
       "default_locale": "es_CL",
@@ -3724,7 +3724,6 @@
       "timezone_of_capital": "Asia/Shanghai",
       "locales": {
         "zh_CN": {
-          "name": "Chinese",
           "honorific_titles": [
             {
               "code": "XIANSHENG",
@@ -3750,7 +3749,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Chinese"
         },
         "yue": {
           "name": "Cantonese"
@@ -3791,7 +3791,6 @@
       "timezone_of_capital": "Indian/Christmas",
       "locales": {
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -3871,7 +3870,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         },
         "zh": {
           "name": "Chinese"
@@ -3906,7 +3906,6 @@
           "name": "Malay"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -3986,7 +3985,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "ms_CC",
@@ -4013,7 +4013,6 @@
       "timezone_of_capital": "America/Bogota",
       "locales": {
         "es_CO": {
-          "name": "Spanish (Colombia)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -4045,7 +4044,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Colombia)"
         }
       },
       "default_locale": "es_CO",
@@ -4071,7 +4071,6 @@
       "timezone_of_capital": "Indian/Comoro",
       "locales": {
         "ar": {
-          "name": "Arabic",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -4103,7 +4102,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic"
         },
         "fr_KM": {
           "name": "French (Comoros)"
@@ -4135,7 +4135,6 @@
       "timezone_of_capital": "Africa/Kinshasa",
       "locales": {
         "fr_CD": {
-          "name": "French (Congo - Kinshasa)",
           "honorific_titles": [
             {
               "code": "M",
@@ -4161,7 +4160,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Congo - Kinshasa)"
         },
         "ln": {
           "name": "Lingala"
@@ -4202,7 +4202,6 @@
       "timezone_of_capital": "Africa/Brazzaville",
       "locales": {
         "fr_CG": {
-          "name": "French (Congo - Brazzaville)",
           "honorific_titles": [
             {
               "code": "M",
@@ -4228,7 +4227,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Congo - Brazzaville)"
         },
         "kg": {
           "name": "Kongo"
@@ -4260,7 +4260,6 @@
       "timezone_of_capital": "Pacific/Rarotonga",
       "locales": {
         "en_CK": {
-          "name": "English (Cook Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -4340,7 +4339,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Cook Islands)"
         },
         "mi": {
           "name": "Maori"
@@ -4369,7 +4369,6 @@
       "timezone_of_capital": "America/Costa_Rica",
       "locales": {
         "es_CR": {
-          "name": "Spanish (Costa Rica)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -4401,7 +4400,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Costa Rica)"
         },
         "en": {
           "name": "English"
@@ -4430,7 +4430,6 @@
       "timezone_of_capital": "Africa/Abidjan",
       "locales": {
         "fr_CI": {
-          "name": "French (Côte d’Ivoire)",
           "honorific_titles": [
             {
               "code": "M",
@@ -4456,7 +4455,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Côte d’Ivoire)"
         }
       },
       "default_locale": "fr_CI",
@@ -4482,7 +4482,6 @@
       "timezone_of_capital": "Europe/Zagreb",
       "locales": {
         "hr_HR": {
-          "name": "Croatian (Croatia)",
           "honorific_titles": [
             {
               "code": "G",
@@ -4508,7 +4507,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Croatian (Croatia)"
         },
         "sr": {
           "name": "Serbian"
@@ -4538,7 +4538,6 @@
       "timezone_of_capital": "America/Havana",
       "locales": {
         "es_CU": {
-          "name": "Spanish (Cuba)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -4570,7 +4569,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Cuba)"
         },
         "pap": {
           "name": "Papiamento"
@@ -4599,7 +4599,6 @@
       "timezone_of_capital": "America/Curacao",
       "locales": {
         "nl": {
-          "name": "Dutch",
           "honorific_titles": [
             {
               "code": "DHR",
@@ -4625,7 +4624,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Dutch"
         },
         "pap": {
           "name": "Papiamento"
@@ -4657,7 +4657,6 @@
       "timezone_of_capital": "Asia/Nicosia",
       "locales": {
         "el_CY": {
-          "name": "Greek (Cyprus)",
           "honorific_titles": [
             {
               "code": "KOS",
@@ -4683,7 +4682,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Greek (Cyprus)"
         },
         "tr_CY": {
           "name": "Turkish (Cyprus)"
@@ -4715,7 +4715,6 @@
       "timezone_of_capital": "Europe/Prague",
       "locales": {
         "cs": {
-          "name": "Czech",
           "honorific_titles": [
             {
               "code": "PAN",
@@ -4741,7 +4740,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Czech"
         },
         "sk": {
           "name": "Slovak"
@@ -4770,7 +4770,6 @@
       "timezone_of_capital": "Europe/Copenhagen",
       "locales": {
         "da_DK": {
-          "name": "Danish (Denmark)",
           "honorific_titles": [
             {
               "code": "HR",
@@ -4796,7 +4795,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Danish (Denmark)"
         },
         "en": {
           "name": "English"
@@ -4834,7 +4834,6 @@
           "name": "French (Djibouti)"
         },
         "ar": {
-          "name": "Arabic",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -4866,7 +4865,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic"
         },
         "so_DJ": {
           "name": "Somali (Djibouti)"
@@ -4898,7 +4898,6 @@
       "timezone_of_capital": "America/Chicago",
       "locales": {
         "en_DM": {
-          "name": "English (Dominica)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -4978,7 +4977,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Dominica)"
         }
       },
       "default_locale": "en_DM",
@@ -5004,7 +5004,6 @@
       "timezone_of_capital": "America/Santo_Domingo",
       "locales": {
         "es_DO": {
-          "name": "Spanish (Dominican Republic)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -5036,7 +5035,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Dominican Republic)"
         }
       },
       "default_locale": "es_DO",
@@ -5065,7 +5065,6 @@
       "timezone_of_capital": "America/Guayaquil",
       "locales": {
         "es_EC": {
-          "name": "Spanish (Ecuador)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -5097,7 +5096,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Ecuador)"
         }
       },
       "default_locale": "es_EC",
@@ -5123,7 +5123,6 @@
       "timezone_of_capital": "Africa/Cairo",
       "locales": {
         "ar_EG": {
-          "name": "Arabic (Egypt)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -5155,7 +5154,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Egypt)"
         },
         "en": {
           "name": "English"
@@ -5188,7 +5188,6 @@
       "timezone_of_capital": "America/El_Salvador",
       "locales": {
         "es_SV": {
-          "name": "Spanish (El Salvador)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -5220,7 +5219,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (El Salvador)"
         }
       },
       "default_locale": "es_SV",
@@ -5246,7 +5246,6 @@
       "timezone_of_capital": "Africa/Malabo",
       "locales": {
         "es_GQ": {
-          "name": "Spanish (Equatorial Guinea)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -5278,7 +5277,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Equatorial Guinea)"
         },
         "fr": {
           "name": "French"
@@ -5313,7 +5313,6 @@
           "name": "Afar"
         },
         "ar": {
-          "name": "Arabic",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -5345,7 +5344,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic"
         },
         "tig": {
           "name": "Tigre"
@@ -5386,7 +5386,6 @@
           "name": "Russian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -5466,7 +5465,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "et",
@@ -5492,7 +5492,6 @@
       "timezone_of_capital": "Africa/Mbabane",
       "locales": {
         "en_SZ": {
-          "name": "English (Swaziland)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -5572,7 +5571,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Swaziland)"
         },
         "ss_SZ": {
           "name": "Swati"
@@ -5604,7 +5604,6 @@
           "name": "Amharic"
         },
         "en_ET": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -5684,7 +5683,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         },
         "om_ET": {
           "name": "Oromo (Ethiopia)"
@@ -5722,7 +5722,6 @@
       "timezone_of_capital": "Atlantic/Stanley",
       "locales": {
         "en_FK": {
-          "name": "English (Falkland Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -5802,7 +5801,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Falkland Islands)"
         }
       },
       "default_locale": "en_FK",
@@ -5834,7 +5834,6 @@
           "name": "Danish"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -5914,7 +5913,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "fo",
@@ -5940,7 +5940,6 @@
       "timezone_of_capital": "Pacific/Fiji",
       "locales": {
         "en_FJ": {
-          "name": "English (Fiji)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -6020,7 +6019,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Fiji)"
         },
         "fj": {
           "name": "Fijian"
@@ -6049,7 +6049,6 @@
       "timezone_of_capital": "Europe/Helsinki",
       "locales": {
         "fi_FI": {
-          "name": "Finnish (Finland)",
           "honorific_titles": [
             {
               "code": "HRR",
@@ -6075,7 +6074,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Finnish (Finland)"
         },
         "sv_FI": {
           "name": "Swedish (Finland)"
@@ -6107,7 +6107,6 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "fr_FR": {
-          "name": "French (France)",
           "honorific_titles": [
             {
               "code": "M",
@@ -6133,7 +6132,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (France)"
         },
         "frp": {
           "name": "French"
@@ -6177,7 +6177,6 @@
       "timezone_of_capital": "America/Cayenne",
       "locales": {
         "fr_GF": {
-          "name": "French (French Guiana)",
           "honorific_titles": [
             {
               "code": "M",
@@ -6203,7 +6202,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (French Guiana)"
         }
       },
       "default_locale": "fr_GF",
@@ -6235,7 +6235,6 @@
       "timezone_of_capital": "Pacific/Tahiti",
       "locales": {
         "fr_PF": {
-          "name": "French (French Polynesia)",
           "honorific_titles": [
             {
               "code": "M",
@@ -6261,7 +6260,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (French Polynesia)"
         },
         "ty": {
           "name": "Tahitian"
@@ -6316,7 +6316,6 @@
       "timezone_of_capital": "Africa/Libreville",
       "locales": {
         "fr_GA": {
-          "name": "French (Gabon)",
           "honorific_titles": [
             {
               "code": "M",
@@ -6342,7 +6341,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Gabon)"
         }
       },
       "default_locale": "fr_GA",
@@ -6368,7 +6368,6 @@
       "timezone_of_capital": "Africa/Banjul",
       "locales": {
         "en_GM": {
-          "name": "English (Gambia)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -6448,7 +6447,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Gambia)"
         },
         "mnk": {
           "name": "Mongolian"
@@ -6498,7 +6498,6 @@
           "name": "Azerbaijani"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -6578,7 +6577,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "ka",
@@ -6604,7 +6604,6 @@
       "timezone_of_capital": "Europe/Berlin",
       "locales": {
         "de": {
-          "name": "German",
           "honorific_titles": [
             {
               "code": "HERR",
@@ -6630,7 +6629,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "German"
         }
       },
       "default_locale": "de",
@@ -6656,7 +6656,6 @@
       "timezone_of_capital": "Africa/Accra",
       "locales": {
         "en_GH": {
-          "name": "English (Ghana)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -6736,7 +6735,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Ghana)"
         },
         "ak": {
           "name": "Akan"
@@ -6771,7 +6771,6 @@
       "timezone_of_capital": "Europe/Gibraltar",
       "locales": {
         "en_GI": {
-          "name": "English (Gibraltar)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -6851,7 +6850,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Gibraltar)"
         },
         "es": {
           "name": "Spanish"
@@ -6886,7 +6886,6 @@
       "timezone_of_capital": "Europe/Athens",
       "locales": {
         "el_GR": {
-          "name": "Greek (Greece)",
           "honorific_titles": [
             {
               "code": "KOS",
@@ -6912,7 +6911,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Greek (Greece)"
         },
         "en": {
           "name": "English"
@@ -6956,7 +6956,6 @@
           "name": "Danish (Greenland)"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -7036,7 +7035,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "kl",
@@ -7062,7 +7062,6 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "en_GD": {
-          "name": "English (Grenada)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -7142,7 +7141,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Grenada)"
         }
       },
       "default_locale": "en_GD",
@@ -7168,7 +7168,6 @@
       "timezone_of_capital": "America/Guadeloupe",
       "locales": {
         "fr_GP": {
-          "name": "French (Guadeloupe)",
           "honorific_titles": [
             {
               "code": "M",
@@ -7194,7 +7193,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Guadeloupe)"
         }
       },
       "default_locale": "fr_GP",
@@ -7220,7 +7220,6 @@
       "timezone_of_capital": "Pacific/Guam",
       "locales": {
         "en_GU": {
-          "name": "English (Guam)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -7300,7 +7299,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Guam)"
         },
         "ch_GU": {
           "name": "Chamorro"
@@ -7329,7 +7329,6 @@
       "timezone_of_capital": "America/Guatemala",
       "locales": {
         "es_GT": {
-          "name": "Spanish (Guatemala)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -7361,7 +7360,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Guatemala)"
         }
       },
       "default_locale": "es_GT",
@@ -7387,7 +7387,6 @@
       "timezone_of_capital": "Europe/Guernsey",
       "locales": {
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -7467,7 +7466,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         },
         "nrf": {
           "name": "Ndebele, South; South Ndebele"
@@ -7496,7 +7496,6 @@
       "timezone_of_capital": "Africa/Conakry",
       "locales": {
         "fr_GN": {
-          "name": "French (Guinea)",
           "honorific_titles": [
             {
               "code": "M",
@@ -7522,7 +7521,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Guinea)"
         }
       },
       "default_locale": "fr_GN",
@@ -7548,7 +7548,6 @@
       "timezone_of_capital": "Africa/Bissau",
       "locales": {
         "pt_GW": {
-          "name": "Portuguese (Guinea-Bissau)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -7574,7 +7573,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Portuguese (Guinea-Bissau)"
         },
         "pov": {
           "name": ""
@@ -7603,7 +7603,6 @@
       "timezone_of_capital": "America/Guyana",
       "locales": {
         "en_GY": {
-          "name": "English (Guyana)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -7683,7 +7682,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Guyana)"
         }
       },
       "default_locale": "en_GY",
@@ -7713,7 +7713,6 @@
           "name": "Haitian; Haitian Creole"
         },
         "fr_HT": {
-          "name": "French (Haiti)",
           "honorific_titles": [
             {
               "code": "M",
@@ -7739,7 +7738,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Haiti)"
         }
       },
       "default_locale": "ht",
@@ -7794,7 +7794,6 @@
           "name": "Latin"
         },
         "it": {
-          "name": "Italian",
           "honorific_titles": [
             {
               "code": "SIG",
@@ -7820,7 +7819,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Italian"
         },
         "fr": {
           "name": "French"
@@ -7849,7 +7849,6 @@
       "timezone_of_capital": "America/Tegucigalpa",
       "locales": {
         "es_HN": {
-          "name": "Spanish (Honduras)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -7881,7 +7880,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Honduras)"
         },
         "cab": {
           "name": "Catalan"
@@ -7913,7 +7913,6 @@
       "timezone_of_capital": "Australia/Melbourne",
       "locales": {
         "zh_HK": {
-          "name": "Chinese",
           "honorific_titles": [
             {
               "code": "XIANSHENG",
@@ -7939,7 +7938,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Chinese"
         },
         "yue": {
           "name": "Cantonese"
@@ -7974,7 +7974,6 @@
       "timezone_of_capital": "Europe/Budapest",
       "locales": {
         "hu_HU": {
-          "name": "Hungarian (Hungary)",
           "honorific_titles": [
             {
               "code": "UR",
@@ -8000,7 +7999,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Hungarian (Hungary)"
         }
       },
       "default_locale": "hu_HU",
@@ -8029,7 +8029,6 @@
           "name": "Icelandic"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -8109,7 +8108,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         },
         "de": {
           "name": "German"
@@ -8150,7 +8150,6 @@
           "name": "English (India)"
         },
         "hi": {
-          "name": "Hindi",
           "honorific_titles": [
             {
               "code": "SHRI",
@@ -8182,7 +8181,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Hindi"
         },
         "bn": {
           "name": "Bangla"
@@ -8289,7 +8289,6 @@
       "timezone_of_capital": "Asia/Jakarta",
       "locales": {
         "id": {
-          "name": "Indonesian",
           "honorific_titles": [
             {
               "code": "BAPAK",
@@ -8315,7 +8314,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Indonesian"
         },
         "en": {
           "name": "English"
@@ -8350,7 +8350,6 @@
       "timezone_of_capital": "Asia/Tehran",
       "locales": {
         "fa_IR": {
-          "name": "Persian (Iran)",
           "honorific_titles": [
             {
               "code": "AGHA",
@@ -8376,7 +8375,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Persian (Iran)"
         },
         "ku": {
           "name": "Kurdish"
@@ -8405,7 +8405,6 @@
       "timezone_of_capital": "Asia/Baghdad",
       "locales": {
         "ar_IQ": {
-          "name": "Arabic (Iraq)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -8437,7 +8436,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Iraq)"
         },
         "ku": {
           "name": "Kurdish"
@@ -8469,7 +8469,6 @@
       "timezone_of_capital": "Europe/Dublin",
       "locales": {
         "en_IE": {
-          "name": "English (Ireland)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -8549,7 +8548,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Ireland)"
         },
         "ga_IE": {
           "name": "Irish (Ireland)"
@@ -8578,7 +8578,6 @@
       "timezone_of_capital": "America/Chicago",
       "locales": {
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -8658,7 +8657,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         },
         "gv": {
           "name": "Manx"
@@ -8687,7 +8687,6 @@
       "timezone_of_capital": "Asia/Jerusalem",
       "locales": {
         "he": {
-          "name": "Hebrew",
           "honorific_titles": [
             {
               "code": "MAR",
@@ -8713,7 +8712,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Hebrew"
         },
         "ar_IL": {
           "name": "Arabic (Israel)"
@@ -8751,7 +8751,6 @@
           "name": "German (Italy)"
         },
         "fr_IT": {
-          "name": "French",
           "honorific_titles": [
             {
               "code": "M",
@@ -8777,7 +8776,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French"
         },
         "sc": {
           "name": "Sardinian"
@@ -8815,7 +8815,6 @@
       "timezone_of_capital": "America/Jamaica",
       "locales": {
         "en_JM": {
-          "name": "English (Jamaica)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -8895,7 +8894,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Jamaica)"
         }
       },
       "default_locale": "en_JM",
@@ -8921,7 +8921,6 @@
       "timezone_of_capital": "Asia/Tokyo",
       "locales": {
         "ja": {
-          "name": "Japanese",
           "honorific_titles": [
             {
               "code": "SAMA",
@@ -8953,7 +8952,8 @@
               "gender": "neutral",
               "description": "Title for teachers and doctors"
             }
-          ]
+          ],
+          "name": "Japanese"
         }
       },
       "default_locale": "ja",
@@ -8979,7 +8979,6 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -9059,7 +9058,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         },
         "fr": {
           "name": "French"
@@ -9091,7 +9091,6 @@
       "timezone_of_capital": "Asia/Amman",
       "locales": {
         "ar_JO": {
-          "name": "Arabic (Jordan)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -9123,7 +9122,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Jordan)"
         },
         "en": {
           "name": "English"
@@ -9173,7 +9173,6 @@
           "name": "Kazakh"
         },
         "ru": {
-          "name": "Russian",
           "honorific_titles": [
             {
               "code": "GOSPODIN",
@@ -9199,7 +9198,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Russian"
         }
       },
       "default_locale": "kk",
@@ -9228,7 +9228,6 @@
           "name": "English (Kenya)"
         },
         "sw_KE": {
-          "name": "Swahili (Kenya)",
           "honorific_titles": [
             {
               "code": "BW",
@@ -9254,7 +9253,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Swahili (Kenya)"
         }
       },
       "default_locale": "en_KE",
@@ -9286,7 +9286,6 @@
       "timezone_of_capital": "Pacific/Tarawa",
       "locales": {
         "en_KI": {
-          "name": "English (Kiribati)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -9366,7 +9365,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Kiribati)"
         },
         "gil": {
           "name": "Gilbertese"
@@ -9395,7 +9395,6 @@
       "timezone_of_capital": "Asia/Pyongyang",
       "locales": {
         "ko_KP": {
-          "name": "Korean (North Korea)",
           "honorific_titles": [
             {
               "code": "SSI",
@@ -9421,7 +9420,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Korean (North Korea)"
         }
       },
       "default_locale": "ko_KP",
@@ -9447,7 +9447,6 @@
       "timezone_of_capital": "Asia/Seoul",
       "locales": {
         "ko_KR": {
-          "name": "Korean (South Korea)",
           "honorific_titles": [
             {
               "code": "SSI",
@@ -9473,7 +9472,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Korean (South Korea)"
         },
         "en": {
           "name": "English"
@@ -9502,7 +9502,6 @@
       "timezone_of_capital": "Asia/Kuwait",
       "locales": {
         "ar_KW": {
-          "name": "Arabic (Kuwait)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -9534,7 +9533,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Kuwait)"
         },
         "en": {
           "name": "English"
@@ -9569,7 +9569,6 @@
           "name": "Uzbek"
         },
         "ru": {
-          "name": "Russian",
           "honorific_titles": [
             {
               "code": "GOSPODIN",
@@ -9595,7 +9594,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Russian"
         }
       },
       "default_locale": "ky",
@@ -9627,7 +9627,6 @@
           "name": "French"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -9707,7 +9706,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "lo",
@@ -9742,7 +9742,6 @@
           "name": "Lithuanian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -9822,7 +9821,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "lv",
@@ -9848,7 +9848,6 @@
       "timezone_of_capital": "Asia/Beirut",
       "locales": {
         "ar_LB": {
-          "name": "Arabic (Lebanon)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -9880,7 +9879,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Lebanon)"
         },
         "fr_LB": {
           "name": "French"
@@ -9916,7 +9916,6 @@
       "timezone_of_capital": "Africa/Maseru",
       "locales": {
         "en_LS": {
-          "name": "English (Lesotho)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -9996,7 +9995,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Lesotho)"
         },
         "st": {
           "name": "Sotho, Southern"
@@ -10031,7 +10031,6 @@
       "timezone_of_capital": "Africa/Monrovia",
       "locales": {
         "en_LR": {
-          "name": "English (Liberia)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -10111,7 +10110,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Liberia)"
         }
       },
       "default_locale": "en_LR",
@@ -10137,7 +10137,6 @@
       "timezone_of_capital": "Africa/Tripoli",
       "locales": {
         "ar_LY": {
-          "name": "Arabic (Libya)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -10169,7 +10168,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Libya)"
         },
         "it": {
           "name": "Italian"
@@ -10201,7 +10201,6 @@
       "timezone_of_capital": "Europe/Vaduz",
       "locales": {
         "de_LI": {
-          "name": "German (Liechtenstein)",
           "honorific_titles": [
             {
               "code": "HERR",
@@ -10227,7 +10226,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "German (Liechtenstein)"
         }
       },
       "default_locale": "de_LI",
@@ -10262,7 +10262,6 @@
           "name": "Polish"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -10342,7 +10341,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "lt",
@@ -10374,7 +10374,6 @@
           "name": "German (Luxembourg)"
         },
         "fr_LU": {
-          "name": "French (Luxembourg)",
           "honorific_titles": [
             {
               "code": "M",
@@ -10400,7 +10399,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Luxembourg)"
         }
       },
       "default_locale": "lb",
@@ -10426,7 +10426,6 @@
       "timezone_of_capital": "Asia/Macau",
       "locales": {
         "zh": {
-          "name": "Chinese",
           "honorific_titles": [
             {
               "code": "XIANSHENG",
@@ -10452,7 +10451,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Chinese"
         },
         "zh_MO": {
           "name": "Chinese"
@@ -10490,7 +10490,6 @@
           "name": "Malagasy"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -10570,7 +10569,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "fr_MG",
@@ -10608,7 +10608,6 @@
           "name": "Swahili"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -10688,7 +10687,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "ny",
@@ -10717,7 +10717,6 @@
       "timezone_of_capital": "Asia/Kuala_Lumpur",
       "locales": {
         "ms_MY": {
-          "name": "Malay (Malaysia)",
           "honorific_titles": [
             {
               "code": "ENCIK",
@@ -10743,7 +10742,8 @@
               "gender": "neutral",
               "description": "Title for doctors"
             }
-          ]
+          ],
+          "name": "Malay (Malaysia)"
         },
         "en": {
           "name": "English"
@@ -10793,7 +10793,6 @@
           "name": "Divehi; Dhivehi; Maldivian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -10873,7 +10872,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "dv",
@@ -10899,7 +10899,6 @@
       "timezone_of_capital": "Africa/Bamako",
       "locales": {
         "fr_ML": {
-          "name": "French (Mali)",
           "honorific_titles": [
             {
               "code": "M",
@@ -10925,7 +10924,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Mali)"
         },
         "bm": {
           "name": "Bambara"
@@ -10957,7 +10957,6 @@
           "name": "Maltese"
         },
         "en_MT": {
-          "name": "English (Malta)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -11037,7 +11036,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Malta)"
         }
       },
       "default_locale": "mt",
@@ -11069,7 +11069,6 @@
           "name": "Marshallese"
         },
         "en_MH": {
-          "name": "English (Marshall Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -11149,7 +11148,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Marshall Islands)"
         }
       },
       "default_locale": "mh",
@@ -11175,7 +11175,6 @@
       "timezone_of_capital": "America/Martinique",
       "locales": {
         "fr_MQ": {
-          "name": "French (Martinique)",
           "honorific_titles": [
             {
               "code": "M",
@@ -11201,7 +11200,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Martinique)"
         }
       },
       "default_locale": "fr_MQ",
@@ -11227,7 +11227,6 @@
       "timezone_of_capital": "Africa/Nouakchott",
       "locales": {
         "ar_MR": {
-          "name": "Arabic (Mauritania)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -11259,7 +11258,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Mauritania)"
         },
         "fuc": {
           "name": "Pulaar"
@@ -11300,7 +11300,6 @@
       "timezone_of_capital": "Indian/Mauritius",
       "locales": {
         "en_MU": {
-          "name": "English (Mauritius)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -11380,7 +11379,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Mauritius)"
         },
         "bho": {
           "name": "Bhojpuri"
@@ -11412,7 +11412,6 @@
       "timezone_of_capital": "Indian/Mayotte",
       "locales": {
         "fr_YT": {
-          "name": "French (Mayotte)",
           "honorific_titles": [
             {
               "code": "M",
@@ -11438,7 +11437,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Mayotte)"
         }
       },
       "default_locale": "fr_YT",
@@ -11495,7 +11495,6 @@
       "timezone_of_capital": "America/Mexico_City",
       "locales": {
         "es_MX": {
-          "name": "Spanish (Mexico)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -11527,7 +11526,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Mexico)"
         }
       },
       "default_locale": "es_MX",
@@ -11559,7 +11559,6 @@
       "timezone_of_capital": "Pacific/Pohnpei",
       "locales": {
         "en_FM": {
-          "name": "English (Micronesia)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -11639,7 +11638,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Micronesia)"
         },
         "chk": {
           "name": "Chuukese"
@@ -11689,7 +11689,6 @@
       "timezone_of_capital": "Europe/Chisinau",
       "locales": {
         "ro": {
-          "name": "Romanian",
           "honorific_titles": [
             {
               "code": "DL",
@@ -11715,7 +11714,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Romanian"
         },
         "ru": {
           "name": "Russian"
@@ -11750,7 +11750,6 @@
       "timezone_of_capital": "Europe/Monaco",
       "locales": {
         "fr_MC": {
-          "name": "French (Monaco)",
           "honorific_titles": [
             {
               "code": "M",
@@ -11776,7 +11775,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Monaco)"
         },
         "en": {
           "name": "English"
@@ -11820,7 +11820,6 @@
           "name": "Russian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -11900,7 +11899,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "mn",
@@ -11967,7 +11967,6 @@
       "timezone_of_capital": "Europe/London",
       "locales": {
         "en_MS": {
-          "name": "English (Montserrat)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -12047,7 +12046,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Montserrat)"
         }
       },
       "default_locale": "en_MS",
@@ -12073,7 +12073,6 @@
       "timezone_of_capital": "Africa/Casablanca",
       "locales": {
         "ar_MA": {
-          "name": "Arabic (Morocco)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -12105,7 +12104,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Morocco)"
         },
         "ber": {
           "name": "Berber languages"
@@ -12137,7 +12137,6 @@
       "timezone_of_capital": "Africa/Maputo",
       "locales": {
         "pt_MZ": {
-          "name": "Portuguese (Mozambique)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -12163,7 +12162,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Portuguese (Mozambique)"
         },
         "vmw": {
           "name": "Makhuwa"
@@ -12195,7 +12195,6 @@
           "name": "Burmese"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -12275,7 +12274,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "my",
@@ -12308,7 +12308,6 @@
       "timezone_of_capital": "Africa/Windhoek",
       "locales": {
         "en_NA": {
-          "name": "English (Namibia)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -12388,7 +12387,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Namibia)"
         },
         "af": {
           "name": "Afrikaans"
@@ -12429,7 +12429,6 @@
           "name": "Nauru"
         },
         "en_NR": {
-          "name": "English (Nauru)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -12509,7 +12508,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Nauru)"
         }
       },
       "default_locale": "na",
@@ -12538,7 +12538,6 @@
           "name": "Nepali"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -12618,7 +12617,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "ne",
@@ -12644,7 +12644,6 @@
       "timezone_of_capital": "Europe/Amsterdam",
       "locales": {
         "nl_NL": {
-          "name": "Dutch (Netherlands)",
           "honorific_titles": [
             {
               "code": "DHR",
@@ -12670,7 +12669,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Dutch (Netherlands)"
         },
         "fy_NL": {
           "name": "Western Frisian (Netherlands)"
@@ -12699,7 +12699,6 @@
       "timezone_of_capital": "Pacific/Noumea",
       "locales": {
         "fr_NC": {
-          "name": "French (New Caledonia)",
           "honorific_titles": [
             {
               "code": "M",
@@ -12725,7 +12724,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (New Caledonia)"
         }
       },
       "default_locale": "fr_NC",
@@ -12754,7 +12754,6 @@
       "timezone_of_capital": "Pacific/Auckland",
       "locales": {
         "en_NZ": {
-          "name": "English (New Zealand)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -12834,7 +12833,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (New Zealand)"
         },
         "mi": {
           "name": "Maori"
@@ -12863,7 +12863,6 @@
       "timezone_of_capital": "America/Managua",
       "locales": {
         "es_NI": {
-          "name": "Spanish (Nicaragua)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -12895,7 +12894,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Nicaragua)"
         },
         "en": {
           "name": "English"
@@ -12924,7 +12924,6 @@
       "timezone_of_capital": "Africa/Niamey",
       "locales": {
         "fr_NE": {
-          "name": "French (Niger)",
           "honorific_titles": [
             {
               "code": "M",
@@ -12950,7 +12949,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Niger)"
         },
         "ha": {
           "name": "Hausa"
@@ -12985,7 +12985,6 @@
       "timezone_of_capital": "Africa/Lagos",
       "locales": {
         "en_NG": {
-          "name": "English (Nigeria)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -13065,7 +13064,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Nigeria)"
         },
         "ha": {
           "name": "Hausa"
@@ -13106,7 +13106,6 @@
           "name": "Niuean"
         },
         "en_NU": {
-          "name": "English (Niue)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -13186,7 +13185,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Niue)"
         }
       },
       "default_locale": "niu",
@@ -13212,7 +13212,6 @@
       "timezone_of_capital": "America/Jamaica",
       "locales": {
         "en_NF": {
-          "name": "English (Norfolk Island)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -13292,7 +13291,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Norfolk Island)"
         }
       },
       "default_locale": "en_NF",
@@ -13333,7 +13333,6 @@
           "name": "Serbian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -13413,7 +13412,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "mk",
@@ -13451,7 +13451,6 @@
           "name": "Chamorro"
         },
         "en_MP": {
-          "name": "English (Northern Mariana Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -13531,7 +13530,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Northern Mariana Islands)"
         }
       },
       "default_locale": "fil",
@@ -13557,7 +13557,6 @@
       "timezone_of_capital": "Europe/Oslo",
       "locales": {
         "no": {
-          "name": "Norwegian",
           "honorific_titles": [
             {
               "code": "HR",
@@ -13577,7 +13576,8 @@
               "gender": "neutral",
               "description": "Title for doctors"
             }
-          ]
+          ],
+          "name": "Norwegian"
         },
         "nb": {
           "name": "Norwegian Bokmål"
@@ -13615,7 +13615,6 @@
       "timezone_of_capital": "Asia/Muscat",
       "locales": {
         "ar_OM": {
-          "name": "Arabic (Oman)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -13647,7 +13646,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Oman)"
         },
         "en": {
           "name": "English"
@@ -13682,7 +13682,6 @@
       "timezone_of_capital": "Asia/Karachi",
       "locales": {
         "ur_PK": {
-          "name": "Urdu (Pakistan)",
           "honorific_titles": [
             {
               "code": "JANAB",
@@ -13702,7 +13701,8 @@
               "gender": "neutral",
               "description": "Title for doctors"
             }
-          ]
+          ],
+          "name": "Urdu (Pakistan)"
         },
         "en_PK": {
           "name": "English (Pakistan)"
@@ -13749,7 +13749,6 @@
           "name": "Somali"
         },
         "en_PW": {
-          "name": "English (Palau)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -13829,7 +13828,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Palau)"
         },
         "tox": {
           "name": "Tongan"
@@ -13870,7 +13870,6 @@
       "timezone_of_capital": "Asia/Gaza",
       "locales": {
         "ar_PS": {
-          "name": "Arabic (Palestinian Territories)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -13902,7 +13901,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Palestinian Territories)"
         }
       },
       "default_locale": "ar_PS",
@@ -13929,7 +13929,6 @@
       "timezone_of_capital": "America/Panama",
       "locales": {
         "es_PA": {
-          "name": "Spanish (Panama)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -13961,7 +13960,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Panama)"
         },
         "en": {
           "name": "English"
@@ -13993,7 +13993,6 @@
       "timezone_of_capital": "Pacific/Port_Moresby",
       "locales": {
         "en_PG": {
-          "name": "English (Papua New Guinea)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -14073,7 +14072,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Papua New Guinea)"
         },
         "ho": {
           "name": "Hiri Motu"
@@ -14108,7 +14108,6 @@
       "timezone_of_capital": "America/Asuncion",
       "locales": {
         "es_PY": {
-          "name": "Spanish (Paraguay)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -14140,7 +14139,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Paraguay)"
         },
         "gn": {
           "name": "Guarani"
@@ -14169,7 +14169,6 @@
       "timezone_of_capital": "America/Lima",
       "locales": {
         "es_PE": {
-          "name": "Spanish (Peru)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -14201,7 +14200,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Peru)"
         },
         "qu": {
           "name": "Quechua"
@@ -14236,7 +14236,6 @@
           "name": "Tagalog"
         },
         "en_PH": {
-          "name": "English (Philippines)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -14316,7 +14315,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Philippines)"
         },
         "fil": {
           "name": "Filipino"
@@ -14405,7 +14405,6 @@
       "timezone_of_capital": "Pacific/Pitcairn",
       "locales": {
         "en_PN": {
-          "name": "English (Pitcairn Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -14485,7 +14484,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Pitcairn Islands)"
         }
       },
       "default_locale": "en_PN",
@@ -14514,7 +14514,6 @@
           "name": "Polish"
         },
         "de": {
-          "name": "German",
           "honorific_titles": [
             {
               "code": "HERR",
@@ -14540,7 +14539,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "German"
         }
       },
       "default_locale": "pl",
@@ -14572,7 +14572,6 @@
       "timezone_of_capital": "Europe/Lisbon",
       "locales": {
         "pt_PT": {
-          "name": "Portuguese (Portugal)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -14598,7 +14597,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Portuguese (Portugal)"
         },
         "mwl": {
           "name": "Mirandese"
@@ -14627,7 +14627,6 @@
       "timezone_of_capital": "America/Puerto_Rico",
       "locales": {
         "en_PR": {
-          "name": "English (Puerto Rico)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -14707,7 +14706,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Puerto Rico)"
         },
         "es_PR": {
           "name": "Spanish (Puerto Rico)"
@@ -14736,7 +14736,6 @@
       "timezone_of_capital": "Asia/Qatar",
       "locales": {
         "ar_QA": {
-          "name": "Arabic (Qatar)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -14768,7 +14767,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Qatar)"
         },
         "es": {
           "name": "Spanish"
@@ -14797,7 +14797,6 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "fr_RE": {
-          "name": "French (Réunion)",
           "honorific_titles": [
             {
               "code": "M",
@@ -14823,7 +14822,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Réunion)"
         }
       },
       "default_locale": "fr_RE",
@@ -14849,7 +14849,6 @@
       "timezone_of_capital": "Europe/Bucharest",
       "locales": {
         "ro": {
-          "name": "Romanian",
           "honorific_titles": [
             {
               "code": "DL",
@@ -14875,7 +14874,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Romanian"
         },
         "hu": {
           "name": "Hungarian"
@@ -14976,7 +14976,6 @@
       "timezone_of_capital": "Europe/Moscow",
       "locales": {
         "ru": {
-          "name": "Russian",
           "honorific_titles": [
             {
               "code": "GOSPODIN",
@@ -15002,7 +15001,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Russian"
         },
         "tt": {
           "name": "Tatar"
@@ -15097,7 +15097,6 @@
           "name": "Kinyarwanda"
         },
         "en_RW": {
-          "name": "English (Rwanda)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -15177,7 +15176,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Rwanda)"
         },
         "fr_RW": {
           "name": "French (Rwanda)"
@@ -15209,7 +15209,6 @@
       "timezone_of_capital": "America/St_Barthelemy",
       "locales": {
         "fr": {
-          "name": "French",
           "honorific_titles": [
             {
               "code": "M",
@@ -15235,7 +15234,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French"
         }
       },
       "default_locale": "fr",
@@ -15261,7 +15261,6 @@
       "timezone_of_capital": "America/New_York",
       "locales": {
         "en_SH": {
-          "name": "English (St Helena)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -15341,7 +15340,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (St Helena)"
         }
       },
       "default_locale": "en_SH",
@@ -15367,7 +15367,6 @@
       "timezone_of_capital": "America/St_Kitts",
       "locales": {
         "en_KN": {
-          "name": "English (St Kitts & Nevis)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -15447,7 +15446,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (St Kitts & Nevis)"
         }
       },
       "default_locale": "en_KN",
@@ -15473,7 +15473,6 @@
       "timezone_of_capital": "America/St_Lucia",
       "locales": {
         "en_LC": {
-          "name": "English (St Lucia)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -15553,7 +15552,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (St Lucia)"
         }
       },
       "default_locale": "en_LC",
@@ -15579,7 +15579,6 @@
       "timezone_of_capital": "America/Marigot",
       "locales": {
         "fr": {
-          "name": "French",
           "honorific_titles": [
             {
               "code": "M",
@@ -15605,7 +15604,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French"
         }
       },
       "default_locale": "fr",
@@ -15631,7 +15631,6 @@
       "timezone_of_capital": "Europe/Paris",
       "locales": {
         "fr_PM": {
-          "name": "French (St Pierre & Miquelon)",
           "honorific_titles": [
             {
               "code": "M",
@@ -15657,7 +15656,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (St Pierre & Miquelon)"
         }
       },
       "default_locale": "fr_PM",
@@ -15683,7 +15683,6 @@
       "timezone_of_capital": "America/St_Vincent",
       "locales": {
         "en_VC": {
-          "name": "English (St Vincent & Grenadines)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -15763,7 +15762,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (St Vincent & Grenadines)"
         },
         "fr": {
           "name": "French"
@@ -15795,7 +15795,6 @@
           "name": "Samoan"
         },
         "en_WS": {
-          "name": "English (Samoa)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -15875,7 +15874,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Samoa)"
         }
       },
       "default_locale": "sm",
@@ -15901,7 +15901,6 @@
       "timezone_of_capital": "Europe/San_Marino",
       "locales": {
         "it_SM": {
-          "name": "Italian (San Marino)",
           "honorific_titles": [
             {
               "code": "SIG",
@@ -15927,7 +15926,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Italian (San Marino)"
         }
       },
       "default_locale": "it_SM",
@@ -15953,7 +15953,6 @@
       "timezone_of_capital": "Africa/Sao_Tome",
       "locales": {
         "pt_ST": {
-          "name": "Portuguese (São Tomé & Príncipe)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -15979,7 +15978,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Portuguese (São Tomé & Príncipe)"
         }
       },
       "default_locale": "pt_ST",
@@ -16005,7 +16005,6 @@
       "timezone_of_capital": "Asia/Riyadh",
       "locales": {
         "ar_SA": {
-          "name": "Arabic (Saudi Arabia)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -16037,7 +16036,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Saudi Arabia)"
         }
       },
       "default_locale": "ar_SA",
@@ -16063,7 +16063,6 @@
       "timezone_of_capital": "Africa/Dakar",
       "locales": {
         "fr_SN": {
-          "name": "French (Senegal)",
           "honorific_titles": [
             {
               "code": "M",
@@ -16089,7 +16088,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Senegal)"
         },
         "wo": {
           "name": "Wolof"
@@ -16136,7 +16136,6 @@
           "name": "Romany"
         },
         "hr": {
-          "name": "Croatian",
           "honorific_titles": [
             {
               "code": "G",
@@ -16162,7 +16161,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Croatian"
         }
       },
       "default_locale": "sr",
@@ -16188,7 +16188,6 @@
       "timezone_of_capital": "Australia/Melbourne",
       "locales": {
         "en_SC": {
-          "name": "English (Seychelles)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -16268,7 +16267,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Seychelles)"
         },
         "fr_SC": {
           "name": "French (Seychelles)"
@@ -16297,7 +16297,6 @@
       "timezone_of_capital": "Africa/Freetown",
       "locales": {
         "en_SL": {
-          "name": "English (Sierra Leone)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -16377,7 +16376,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Sierra Leone)"
         },
         "men": {
           "name": "Mende"
@@ -16412,7 +16412,6 @@
           "name": "Mandarin Chinese"
         },
         "en_SG": {
-          "name": "English (Singapore)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -16492,7 +16491,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Singapore)"
         },
         "ms_SG": {
           "name": "Malay (Singapore)"
@@ -16530,7 +16530,6 @@
           "name": "Dutch"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -16610,7 +16609,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "nl",
@@ -16636,7 +16636,6 @@
       "timezone_of_capital": "Europe/Bratislava",
       "locales": {
         "sk": {
-          "name": "Slovak",
           "honorific_titles": [
             {
               "code": "PAN",
@@ -16656,7 +16655,8 @@
               "gender": "neutral",
               "description": "Title for doctors"
             }
-          ]
+          ],
+          "name": "Slovak"
         },
         "hu": {
           "name": "Hungarian"
@@ -16691,7 +16691,6 @@
           "name": "Serbo-Croatian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -16771,7 +16770,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "sl",
@@ -16797,7 +16797,6 @@
       "timezone_of_capital": "Pacific/Guadalcanal",
       "locales": {
         "en_SB": {
-          "name": "English (Solomon Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -16877,7 +16876,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Solomon Islands)"
         },
         "tpi": {
           "name": "Tok Pisin"
@@ -16909,7 +16909,6 @@
           "name": "Somali (Somalia)"
         },
         "ar_SO": {
-          "name": "Arabic (Somalia)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -16941,7 +16940,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Somalia)"
         },
         "it": {
           "name": "Italian"
@@ -16985,7 +16985,6 @@
           "name": "Pedi; Sepedi; Northern Sotho"
         },
         "en_ZA": {
-          "name": "English (South Africa)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -17065,7 +17064,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (South Africa)"
         },
         "tn": {
           "name": "Tswana"
@@ -17109,7 +17109,6 @@
       "timezone_of_capital": "Atlantic/South_Georgia",
       "locales": {
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -17189,7 +17188,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "en",
@@ -17215,7 +17215,6 @@
       "timezone_of_capital": "Africa/Juba",
       "locales": {
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -17295,7 +17294,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "en",
@@ -17330,7 +17330,6 @@
           "name": "Spanish (Spain)"
         },
         "ca": {
-          "name": "Catalan",
           "honorific_titles": [
             {
               "code": "SR",
@@ -17350,7 +17349,8 @@
               "gender": "neutral",
               "description": "Title for doctors"
             }
-          ]
+          ],
+          "name": "Catalan"
         },
         "gl": {
           "name": "Galician"
@@ -17391,7 +17391,6 @@
           "name": "Tamil"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -17471,7 +17470,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "si",
@@ -17497,7 +17497,6 @@
       "timezone_of_capital": "Africa/Khartoum",
       "locales": {
         "ar_SD": {
-          "name": "Arabic (Sudan)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -17529,7 +17528,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Sudan)"
         },
         "en": {
           "name": "English"
@@ -17561,7 +17561,6 @@
       "timezone_of_capital": "America/Paramaribo",
       "locales": {
         "nl_SR": {
-          "name": "Dutch (Suriname)",
           "honorific_titles": [
             {
               "code": "DHR",
@@ -17587,7 +17586,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Dutch (Suriname)"
         },
         "en": {
           "name": "English"
@@ -17631,7 +17631,6 @@
           "name": "Russian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -17711,7 +17710,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "no",
@@ -17746,7 +17746,6 @@
           "name": "Southern Sami"
         },
         "fi_SE": {
-          "name": "Finnish",
           "honorific_titles": [
             {
               "code": "HRR",
@@ -17772,7 +17771,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Finnish"
         }
       },
       "default_locale": "sv_SE",
@@ -17800,7 +17800,6 @@
       "timezone_of_capital": "Europe/Zurich",
       "locales": {
         "de_CH": {
-          "name": "German (Switzerland)",
           "honorific_titles": [
             {
               "code": "HERR",
@@ -17826,7 +17825,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "German (Switzerland)"
         },
         "fr_CH": {
           "name": "French (Switzerland)"
@@ -17861,7 +17861,6 @@
       "timezone_of_capital": "Asia/Damascus",
       "locales": {
         "ar_SY": {
-          "name": "Arabic (Syria)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -17893,7 +17892,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Syria)"
         },
         "ku": {
           "name": "Kurdish"
@@ -17975,7 +17975,6 @@
           "name": "Russian"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -18055,7 +18054,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "tg",
@@ -18081,7 +18081,6 @@
       "timezone_of_capital": "Africa/Dar_es_Salaam",
       "locales": {
         "sw_TZ": {
-          "name": "Swahili (Tanzania)",
           "honorific_titles": [
             {
               "code": "BW",
@@ -18107,7 +18106,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Swahili (Tanzania)"
         },
         "en": {
           "name": "English"
@@ -18139,7 +18139,6 @@
       "timezone_of_capital": "Asia/Bangkok",
       "locales": {
         "th": {
-          "name": "Thai",
           "honorific_titles": [
             {
               "code": "KHUN",
@@ -18159,7 +18158,8 @@
               "gender": "neutral",
               "description": "Title for full professors"
             }
-          ]
+          ],
+          "name": "Thai"
         },
         "en": {
           "name": "English"
@@ -18191,7 +18191,6 @@
           "name": "Tetum"
         },
         "pt_TL": {
-          "name": "Portuguese (Timor-Leste)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -18217,7 +18216,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Portuguese (Timor-Leste)"
         },
         "id": {
           "name": "Indonesian"
@@ -18249,7 +18249,6 @@
       "timezone_of_capital": "Africa/Lome",
       "locales": {
         "fr_TG": {
-          "name": "French (Togo)",
           "honorific_titles": [
             {
               "code": "M",
@@ -18275,7 +18274,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Togo)"
         },
         "ee": {
           "name": "Ewe"
@@ -18319,7 +18319,6 @@
           "name": "Tokelau"
         },
         "en_TK": {
-          "name": "English (Tokelau)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -18399,7 +18398,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Tokelau)"
         }
       },
       "default_locale": "tkl",
@@ -18428,7 +18428,6 @@
           "name": "Tongan"
         },
         "en_TO": {
-          "name": "English (Tonga)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -18508,7 +18507,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Tonga)"
         }
       },
       "default_locale": "to",
@@ -18534,7 +18534,6 @@
       "timezone_of_capital": "America/Port_of_Spain",
       "locales": {
         "en_TT": {
-          "name": "English (Trinidad & Tobago)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -18614,7 +18613,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Trinidad & Tobago)"
         },
         "hns": {
           "name": "Caribbean Hindustani language."
@@ -18652,7 +18652,6 @@
       "timezone_of_capital": "Africa/Tunis",
       "locales": {
         "ar_TN": {
-          "name": "Arabic (Tunisia)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -18684,7 +18683,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Tunisia)"
         },
         "fr": {
           "name": "French"
@@ -18713,7 +18713,6 @@
       "timezone_of_capital": "Europe/Istanbul",
       "locales": {
         "tr_TR": {
-          "name": "Turkish (Turkey)",
           "honorific_titles": [
             {
               "code": "BAY",
@@ -18739,7 +18738,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Turkish (Turkey)"
         },
         "ku": {
           "name": "Kurdish"
@@ -18786,7 +18786,6 @@
           "name": "Uzbek"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -18866,7 +18865,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "tk",
@@ -18892,7 +18892,6 @@
       "timezone_of_capital": "America/Grand_Turk",
       "locales": {
         "en_TC": {
-          "name": "English (Turks & Caicos Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -18972,7 +18971,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Turks & Caicos Islands)"
         }
       },
       "default_locale": "en_TC",
@@ -19001,7 +19001,6 @@
           "name": "Tuvalu"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -19081,7 +19080,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         },
         "sm": {
           "name": "Samoan"
@@ -19119,7 +19119,6 @@
           "name": "Ganda"
         },
         "sw": {
-          "name": "Swahili",
           "honorific_titles": [
             {
               "code": "BW",
@@ -19145,7 +19144,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Swahili"
         },
         "ar": {
           "name": "Arabic"
@@ -19180,7 +19180,6 @@
           "name": "Ukrainian"
         },
         "ru_UA": {
-          "name": "Russian (Ukraine)",
           "honorific_titles": [
             {
               "code": "GOSPODIN",
@@ -19206,7 +19205,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Russian (Ukraine)"
         },
         "rom": {
           "name": "Romany"
@@ -19241,7 +19241,6 @@
       "timezone_of_capital": "Asia/Dubai",
       "locales": {
         "ar_AE": {
-          "name": "Arabic (United Arab Emirates)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -19273,7 +19272,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (United Arab Emirates)"
         },
         "fa": {
           "name": "Persian"
@@ -19311,7 +19311,6 @@
       "timezone_of_capital": "Europe/London",
       "locales": {
         "en_GB": {
-          "name": "English (United Kingdom)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -19391,7 +19390,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (United Kingdom)"
         },
         "cy_GB": {
           "name": "Welsh (United Kingdom)"
@@ -19426,7 +19426,6 @@
       "timezone_of_capital": "Pacific/Wake",
       "locales": {
         "en_UM": {
-          "name": "English (US Outlying Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -19506,7 +19505,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (US Outlying Islands)"
         }
       },
       "default_locale": "en_UM",
@@ -19613,7 +19613,6 @@
       "timezone_of_capital": "America/New_York",
       "locales": {
         "en_US": {
-          "name": "English (United States)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -19693,7 +19692,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (United States)"
         },
         "es_US": {
           "name": "Spanish (United States)"
@@ -19730,7 +19730,6 @@
       "timezone_of_capital": "America/Montevideo",
       "locales": {
         "es_UY": {
-          "name": "Spanish (Uruguay)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -19762,7 +19761,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Uruguay)"
         }
       },
       "default_locale": "es_UY",
@@ -19800,7 +19800,6 @@
           "name": "Tajik"
         },
         "en": {
-          "name": "English",
           "honorific_titles": [
             {
               "code": "MR",
@@ -19880,7 +19879,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English"
         }
       },
       "default_locale": "uz",
@@ -19909,7 +19909,6 @@
           "name": "Bislama"
         },
         "en_VU": {
-          "name": "English (Vanuatu)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -19989,7 +19988,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Vanuatu)"
         },
         "fr_VU": {
           "name": "French (Vanuatu)"
@@ -20019,7 +20019,6 @@
       "timezone_of_capital": "America/Caracas",
       "locales": {
         "es_VE": {
-          "name": "Spanish (Venezuela)",
           "honorific_titles": [
             {
               "code": "SR",
@@ -20051,7 +20050,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Spanish (Venezuela)"
         }
       },
       "default_locale": "es_VE",
@@ -20080,7 +20080,6 @@
       "timezone_of_capital": "Asia/Bangkok",
       "locales": {
         "vi": {
-          "name": "Vietnamese",
           "honorific_titles": [
             {
               "code": "ANH",
@@ -20112,7 +20111,8 @@
               "gender": "neutral",
               "description": "Title for doctoral degree holders"
             }
-          ]
+          ],
+          "name": "Vietnamese"
         },
         "en": {
           "name": "English"
@@ -20150,7 +20150,6 @@
       "timezone_of_capital": "America/Tortola",
       "locales": {
         "en_VG": {
-          "name": "English (British Virgin Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -20230,7 +20229,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (British Virgin Islands)"
         }
       },
       "default_locale": "en_VG",
@@ -20256,7 +20256,6 @@
       "timezone_of_capital": "America/St_Thomas",
       "locales": {
         "en_VI": {
-          "name": "English (US Virgin Islands)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -20336,7 +20335,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (US Virgin Islands)"
         }
       },
       "default_locale": "en_VI",
@@ -20368,7 +20368,6 @@
           "name": ""
         },
         "fr_WF": {
-          "name": "French (Wallis & Futuna)",
           "honorific_titles": [
             {
               "code": "M",
@@ -20394,7 +20393,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "French (Wallis & Futuna)"
         }
       },
       "default_locale": "wls",
@@ -20420,7 +20420,6 @@
       "timezone_of_capital": "Africa/El_Aaiun",
       "locales": {
         "ar": {
-          "name": "Arabic",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -20452,7 +20451,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic"
         },
         "mey": {
           "name": "Sherdukpen"
@@ -20481,7 +20481,6 @@
       "timezone_of_capital": "Asia/Aden",
       "locales": {
         "ar_YE": {
-          "name": "Arabic (Yemen)",
           "honorific_titles": [
             {
               "code": "AL_SAYYID",
@@ -20513,7 +20512,8 @@
               "gender": "neutral",
               "description": "Title for professors"
             }
-          ]
+          ],
+          "name": "Arabic (Yemen)"
         }
       },
       "default_locale": "ar_YE",
@@ -20539,7 +20539,6 @@
       "timezone_of_capital": "Africa/Lusaka",
       "locales": {
         "en_ZM": {
-          "name": "English (Zambia)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -20619,7 +20618,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Zambia)"
         },
         "bem": {
           "name": "Bemba"
@@ -20663,7 +20663,6 @@
       "timezone_of_capital": "Africa/Harare",
       "locales": {
         "en_ZW": {
-          "name": "English (Zimbabwe)",
           "honorific_titles": [
             {
               "code": "MR",
@@ -20743,7 +20742,8 @@
               "gender": "neutral",
               "description": "Courtesy title for lawyers"
             }
-          ]
+          ],
+          "name": "English (Zimbabwe)"
         },
         "sn": {
           "name": "Shona"
