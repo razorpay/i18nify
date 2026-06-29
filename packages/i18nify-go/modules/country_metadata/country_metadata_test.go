@@ -1,8 +1,10 @@
 package country_metadata
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestUnmarshalCountryMetadata(t *testing.T) {
@@ -403,4 +405,71 @@ func TestFormatAddressWithFormat_WhitespaceOnlyCode(t *testing.T) {
 	_, err := FormatAddressWithFormat("   ", AddressComponents{})
 	assert.Error(t, err)
 	assert.Contains(t, err.Error(), "must not be empty")
+}
+
+func TestGetDefaultLocaleList(t *testing.T) {
+	got, err := GetDefaultLocaleList()
+	require.NoError(t, err)
+
+	assert.NotEmpty(t, got)
+	assert.Equal(t, "en_IN", got["IN"])
+	assert.Equal(t, "en_US", got["US"])
+	assert.Equal(t, "de", got["DE"])
+
+	for countryCode, locale := range got {
+		assert.NotEmpty(t, countryCode)
+		assert.NotEmpty(t, locale)
+	}
+}
+
+func TestGetDefaultLocaleList_SkipsCountriesWithoutDefaultLocale(t *testing.T) {
+	setCachedCountyMetaDataForTest(t, &CountryMetadata{
+		MetadataInformation: map[string]MetadataInformation{
+			"AA": {DefaultLocale: "aa_AA"},
+			"BB": {DefaultLocale: ""},
+			"DD": {DefaultLocale: "dd_DD"},
+		},
+	})
+
+	got, err := GetDefaultLocaleList()
+	require.NoError(t, err)
+
+	assert.Equal(t, map[string]string{
+		"AA": "aa_AA",
+		"DD": "dd_DD",
+	}, got)
+}
+
+func TestGetDefaultLocaleList_MetadataNotLoaded(t *testing.T) {
+	setCachedCountyMetaDataForTest(t, nil)
+
+	got, err := GetDefaultLocaleList()
+	require.Error(t, err)
+
+	assert.Nil(t, got)
+	assert.Contains(t, err.Error(), "country metadata not loaded")
+}
+
+func TestGetDefaultLocaleList_NoDefaultLocales(t *testing.T) {
+	setCachedCountyMetaDataForTest(t, &CountryMetadata{
+		MetadataInformation: map[string]MetadataInformation{
+			"AA": {DefaultLocale: ""},
+		},
+	})
+
+	got, err := GetDefaultLocaleList()
+	require.Error(t, err)
+
+	assert.Nil(t, got)
+	assert.Contains(t, err.Error(), "no default locales found")
+}
+
+func setCachedCountyMetaDataForTest(t *testing.T, metadata *CountryMetadata) {
+	t.Helper()
+
+	original := cachedCountyMetaData
+	cachedCountyMetaData = metadata
+	t.Cleanup(func() {
+		cachedCountyMetaData = original
+	})
 }

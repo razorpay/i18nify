@@ -209,6 +209,32 @@ func GetCountryCodeISO2(countryName string) string {
 	return ""
 }
 
+// GetDefaultLocaleList returns a map of ISO 3166-1 alpha-2 country codes to
+// their default locale tag (e.g., "IN" → "en_IN"). Countries whose metadata
+// has no default_locale set are skipped.
+//
+// It mirrors the JavaScript getDefaultLocaleList function in the i18nify-js
+// geo module.
+func GetDefaultLocaleList() (map[string]string, error) {
+	if cachedCountyMetaData == nil {
+		return nil, fmt.Errorf("getDefaultLocaleList: country metadata not loaded")
+	}
+
+	metadataMap := cachedCountyMetaData.MetadataInformation
+	result := make(map[string]string, len(metadataMap))
+	for code, info := range metadataMap {
+		if info.DefaultLocale != "" {
+			result[code] = info.DefaultLocale
+		}
+	}
+
+	if len(result) == 0 {
+		return nil, fmt.Errorf("getDefaultLocaleList: no default locales found in metadata")
+	}
+
+	return result, nil
+}
+
 // AddressComponents holds address field values for template substitution.
 // All fields are optional; empty fields substitute as blank strings and
 // lines that become blank after substitution are dropped from the output.
