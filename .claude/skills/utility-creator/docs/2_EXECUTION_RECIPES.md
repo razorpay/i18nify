@@ -62,7 +62,7 @@ CANONICAL_PATH = {
     "timezones":           "i18nify-data/timezone/data.json",
     "mime_types":          "i18nify-data/media/data.json",
     "unicode_blocks":      "i18nify-data/unicode-blocks/data.json",
-    "address_formats":     "i18nify-data/country/metadata/data.json",
+    "address_formats":     "i18nify-data/address/data.json",
     "gst_rates_india":     "i18nify-data/gst/data.json",
     "population_data":     "i18nify-data/population/data.json",
 }
@@ -148,7 +148,7 @@ PATH_DATA_KEY = {
     "i18nify-data/timezone/data.json":          "timezone_information",
     "i18nify-data/media/data.json":             "mime_type_information",
     "i18nify-data/unicode-blocks/data.json":    "unicode_block_information",
-    "i18nify-data/country/metadata/data.json":  "metadata_information",
+    "i18nify-data/address/data.json":           "address_format_information",
     "i18nify-data/population/data.json":        "population_information",
 }
 
@@ -163,7 +163,7 @@ PATH_SOURCE_URL = {
     "i18nify-data/timezone/data.json":          "https://raw.githubusercontent.com/eggert/tz/main/zone1970.tab",
     "i18nify-data/media/data.json":             "https://www.iana.org/assignments/media-types/media-types.xml",
     "i18nify-data/unicode-blocks/data.json":    "https://www.unicode.org/Public/UNIDATA/Blocks.txt",
-    "i18nify-data/country/metadata/data.json":  "https://chromium-i18n.appspot.com/ssl-address/data",
+    "i18nify-data/address/data.json":           "https://chromium-i18n.appspot.com/ssl-address/data",
     "i18nify-data/population/data.json":        "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&mrv=1&per_page=300",
 }
 
