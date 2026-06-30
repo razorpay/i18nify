@@ -14,7 +14,8 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/razorpay/i18nify/i18nify-data/go/bankcodes v1.0.3
-	github.com/razorpay/i18nify/i18nify-data/go/business_entity v1.0.0
+	github.com/razorpay/i18nify/i18nify-data/go/business_entity/categories v0.0.0-00010101000000-000000000000
+	github.com/razorpay/i18nify/i18nify-data/go/business_entity/entity_types v0.0.0-00010101000000-000000000000
 	github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.3
 	github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.6
 	github.com/razorpay/i18nify/i18nify-data/go/currency v1.0.5
@@ -22,3 +23,6 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
+replace github.com/razorpay/i18nify/i18nify-data/go/business_entity/categories => ../../i18nify-data/go/business_entity/categories
+
+replace github.com/razorpay/i18nify/i18nify-data/go/business_entity/entity_types => ../../i18nify-data/go/business_entity/entity_types

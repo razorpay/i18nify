@@ -2,9 +2,9 @@ syntax = "proto3";
 
 package business_entity;
 
-option go_package = "github.com/razorpay/i18nify/i18nify-data/go/business_entity;business_entity";
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/business_entity/categories;business_entity_categories";
 
-// CategoriesData is the root message for categories_data.json.
+// CategoriesData is the root message for the categories package.
 message CategoriesData {
   repeated BusinessCategory categories = 1;
   map<string, SubCategoryList> sub_categories = 2 [json_name = "sub_categories"];
@@ -17,7 +17,8 @@ message BusinessCategory {
   string description = 3;
 }
 
-// SubCategoryList wraps repeated BusinessCategory as a map value.
+// SubCategoryList wraps repeated BusinessCategory as a map value (proto3 maps
+// cannot hold repeated values directly).
 message SubCategoryList {
   repeated BusinessCategory items = 1;
 }

@@ -1,0 +1,213 @@
+{
+  "categories": [
+    {
+      "code": "SOLE_PROPRIETORSHIP",
+      "name": "Sole Proprietorship",
+      "description": "A business owned and operated by a single individual with no legal distinction between owner and business."
+    },
+    {
+      "code": "PARTNERSHIP",
+      "name": "Partnership",
+      "description": "A business arrangement where two or more individuals share ownership and management responsibilities."
+    },
+    {
+      "code": "LIMITED_LIABILITY",
+      "name": "Limited Liability Entity",
+      "description": "A business structure that provides personal liability protection for its owners."
+    },
+    {
+      "code": "CORPORATION",
+      "name": "Corporation",
+      "description": "A legal entity that is separate and distinct from its owners, offering the strongest personal liability protection."
+    },
+    {
+      "code": "NON_PROFIT",
+      "name": "Non-Profit Organization",
+      "description": "An organization that operates for purposes other than generating profit for owners or shareholders."
+    },
+    {
+      "code": "COOPERATIVE",
+      "name": "Cooperative",
+      "description": "A business owned and operated by its members who share the benefits and responsibilities."
+    },
+    {
+      "code": "TRUST",
+      "name": "Trust",
+      "description": "A fiduciary arrangement in which assets are managed by a trustee for the benefit of beneficiaries."
+    },
+    {
+      "code": "GOVERNMENT",
+      "name": "Government Entity",
+      "description": "A business or organization owned or controlled by a government body."
+    }
+  ],
+  "sub_categories": {
+    "SOLE_PROPRIETORSHIP": {
+      "items": [
+        {
+          "code": "INDIVIDUAL_ENTREPRENEUR",
+          "name": "Individual Entrepreneur",
+          "description": "A self-employed individual running a business independently."
+        },
+        {
+          "code": "FREELANCER",
+          "name": "Freelancer",
+          "description": "An independent contractor offering services to clients without long-term commitment."
+        },
+        {
+          "code": "SELF_EMPLOYED",
+          "name": "Self-Employed",
+          "description": "An individual who works for themselves rather than an employer."
+        }
+      ]
+    },
+    "PARTNERSHIP": {
+      "items": [
+        {
+          "code": "GENERAL_PARTNERSHIP",
+          "name": "General Partnership",
+          "description": "A partnership where all partners share equal management rights and liability."
+        },
+        {
+          "code": "LIMITED_PARTNERSHIP",
+          "name": "Limited Partnership",
+          "description": "A partnership with at least one general partner and one or more limited partners."
+        },
+        {
+          "code": "LIMITED_LIABILITY_PARTNERSHIP",
+          "name": "Limited Liability Partnership",
+          "description": "A partnership that limits partners' personal liability for the business's debts."
+        }
+      ]
+    },
+    "LIMITED_LIABILITY": {
+      "items": [
+        {
+          "code": "SINGLE_MEMBER_LLC",
+          "name": "Single-Member LLC",
+          "description": "A limited liability company owned by a single individual."
+        },
+        {
+          "code": "MULTI_MEMBER_LLC",
+          "name": "Multi-Member LLC",
+          "description": "A limited liability company owned by two or more individuals."
+        },
+        {
+          "code": "PROFESSIONAL_LLC",
+          "name": "Professional LLC",
+          "description": "A limited liability company formed by licensed professionals."
+        }
+      ]
+    },
+    "CORPORATION": {
+      "items": [
+        {
+          "code": "C_CORPORATION",
+          "name": "C Corporation",
+          "description": "A standard corporation taxed separately from its owners."
+        },
+        {
+          "code": "S_CORPORATION",
+          "name": "S Corporation",
+          "description": "A corporation with pass-through taxation, avoiding double taxation."
+        },
+        {
+          "code": "PUBLIC_LIMITED_COMPANY",
+          "name": "Public Limited Company",
+          "description": "A corporation whose shares can be traded publicly on a stock exchange."
+        },
+        {
+          "code": "PRIVATE_LIMITED_COMPANY",
+          "name": "Private Limited Company",
+          "description": "A corporation whose shares are not publicly traded."
+        },
+        {
+          "code": "ONE_PERSON_COMPANY",
+          "name": "One Person Company",
+          "description": "A corporation with a single person as both the director and shareholder."
+        }
+      ]
+    },
+    "NON_PROFIT": {
+      "items": [
+        {
+          "code": "CHARITABLE_ORGANIZATION",
+          "name": "Charitable Organization",
+          "description": "An organization focused on charitable purposes and public benefit."
+        },
+        {
+          "code": "FOUNDATION",
+          "name": "Foundation",
+          "description": "A non-profit that typically makes grants to other organizations or individuals."
+        },
+        {
+          "code": "ASSOCIATION",
+          "name": "Association",
+          "description": "An organization formed by individuals with a common interest or purpose."
+        },
+        {
+          "code": "NGO",
+          "name": "Non-Governmental Organization",
+          "description": "A non-profit organization operating independently of any government."
+        }
+      ]
+    },
+    "COOPERATIVE": {
+      "items": [
+        {
+          "code": "WORKER_COOPERATIVE",
+          "name": "Worker Cooperative",
+          "description": "A cooperative owned and managed by its worker-members."
+        },
+        {
+          "code": "CONSUMER_COOPERATIVE",
+          "name": "Consumer Cooperative",
+          "description": "A cooperative owned by its customers who share the benefits."
+        },
+        {
+          "code": "AGRICULTURAL_COOPERATIVE",
+          "name": "Agricultural Cooperative",
+          "description": "A cooperative formed by farmers to improve their marketing power."
+        }
+      ]
+    },
+    "TRUST": {
+      "items": [
+        {
+          "code": "REVOCABLE_TRUST",
+          "name": "Revocable Trust",
+          "description": "A trust that can be modified or revoked by the grantor during their lifetime."
+        },
+        {
+          "code": "IRREVOCABLE_TRUST",
+          "name": "Irrevocable Trust",
+          "description": "A trust that cannot be modified or terminated without the beneficiary's permission."
+        },
+        {
+          "code": "BUSINESS_TRUST",
+          "name": "Business Trust",
+          "description": "A trust established for commercial purposes."
+        }
+      ]
+    },
+    "GOVERNMENT": {
+      "items": [
+        {
+          "code": "FEDERAL_AGENCY",
+          "name": "Federal Agency",
+          "description": "An organization that is a part of the federal government."
+        },
+        {
+          "code": "STATE_AGENCY",
+          "name": "State Agency",
+          "description": "An organization that is a part of a state or provincial government."
+        },
+        {
+          "code": "MUNICIPAL_ENTITY",
+          "name": "Municipal Entity",
+          "description": "An organization that is a part of local government."
+        }
+      ]
+    }
+  }
+}
