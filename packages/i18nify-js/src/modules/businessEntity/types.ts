@@ -19,16 +19,14 @@ export interface BusinessEntityType {
   language: string; // ISO 639-1 language code of the local name
 }
 
-// Raw shapes of the two source JSON files. Each map value is wrapped in an
-// { items: [...] } object so the JSON validates against the proto3 schema
-// (proto3 maps cannot hold repeated values directly).
+// Raw shapes of the two source JSON files.
 export interface CategoriesFileData {
   categories: BusinessCategory[];
-  sub_categories: Record<string, { items: BusinessSubCategory[] }>;
+  sub_categories: Record<string, BusinessSubCategory[]>;
 }
 
 export interface EntityTypesFileData {
-  entity_types: Record<string, { items: BusinessEntityType[] }>;
+  entity_types: Record<string, BusinessEntityType[]>;
 }
 
 // Combined runtime type used by all utility functions.

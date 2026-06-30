@@ -6,8 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	categoriesSource "github.com/razorpay/i18nify/i18nify-data/go/business_entity/categories"
-	entityTypesSource "github.com/razorpay/i18nify/i18nify-data/go/business_entity/entity_types"
+	dataSource "github.com/razorpay/i18nify/i18nify-data/go/business_entity"
 )
 
 // BusinessCategory mirrors the data layer type for consumer use.
@@ -34,37 +33,28 @@ type BusinessEntityType struct {
 	Language           string
 }
 
-var (
-	cachedCategories  *categoriesSource.CategoriesData
-	cachedEntityTypes *entityTypesSource.EntityTypesData
-)
+var cachedData *dataSource.BusinessEntityData
 
 func init() {
-	cats, err := categoriesSource.GetCategoriesData()
+	d, err := dataSource.GetBusinessEntityData()
 	if err != nil {
-		panic(fmt.Sprintf("failed to load business entity categories data: %v", err))
+		panic(fmt.Sprintf("failed to load business entity data: %v", err))
 	}
-	cachedCategories = cats
-
-	ets, err := entityTypesSource.GetEntityTypesData()
-	if err != nil {
-		panic(fmt.Sprintf("failed to load business entity types data: %v", err))
-	}
-	cachedEntityTypes = ets
+	cachedData = d
 }
 
 // GetBusinessCategories returns all top-level business categories.
 func GetBusinessCategories() ([]BusinessCategory, error) {
-	raw := cachedCategories.GetCategories()
+	raw := cachedData.BusinessEntityInformation.Categories
 	if len(raw) == 0 {
 		return nil, fmt.Errorf("business entity data: no categories found")
 	}
 	out := make([]BusinessCategory, len(raw))
 	for i, c := range raw {
 		out[i] = BusinessCategory{
-			Code:        c.GetCode(),
-			Name:        c.GetName(),
-			Description: c.GetDescription(),
+			Code:        c.Code,
+			Name:        c.Name,
+			Description: c.Description,
 		}
 	}
 	return out, nil
@@ -77,17 +67,16 @@ func GetBusinessSubCategories(categoryCode string) ([]BusinessSubCategory, error
 	if categoryCode == "" {
 		return nil, fmt.Errorf("categoryCode must not be empty")
 	}
-	list, ok := cachedCategories.GetSubCategories()[categoryCode]
+	raw, ok := cachedData.BusinessEntityInformation.SubCategories[categoryCode]
 	if !ok {
 		return nil, fmt.Errorf("unknown category code: %q", categoryCode)
 	}
-	raw := list.GetItems()
 	out := make([]BusinessSubCategory, len(raw))
 	for i, s := range raw {
 		out[i] = BusinessSubCategory{
-			Code:        s.GetCode(),
-			Name:        s.GetName(),
-			Description: s.GetDescription(),
+			Code:        s.Code,
+			Name:        s.Name,
+			Description: s.Description,
 		}
 	}
 	return out, nil
@@ -101,19 +90,18 @@ func GetBusinessEntityType(countryCode string) ([]BusinessEntityType, error) {
 	if countryCode == "" {
 		return nil, fmt.Errorf("countryCode must not be empty")
 	}
-	list, ok := cachedEntityTypes.GetEntityTypes()[countryCode]
+	raw, ok := cachedData.BusinessEntityInformation.EntityTypes[countryCode]
 	if !ok {
 		return nil, fmt.Errorf("no entity types found for country code: %q", countryCode)
 	}
-	raw := list.GetItems()
 	out := make([]BusinessEntityType, len(raw))
 	for i, e := range raw {
 		out[i] = BusinessEntityType{
-			Code:               e.GetCode(),
-			Name:               e.GetName(),
-			Abbreviation:       e.GetAbbreviation(),
-			TransliteratedName: e.GetTransliteratedName(),
-			Language:           e.GetLanguage(),
+			Code:               e.Code,
+			Name:               e.Name,
+			Abbreviation:       e.Abbreviation,
+			TransliteratedName: e.TransliteratedName,
+			Language:           e.Language,
 		}
 	}
 	return out, nil

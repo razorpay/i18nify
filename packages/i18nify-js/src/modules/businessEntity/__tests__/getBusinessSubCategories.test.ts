@@ -32,27 +32,18 @@ const MOCK_DATA: BusinessEntityData = {
   },
 };
 
-// Stored JSON wraps each map value in { items: [...] } to satisfy the proto3
-// schema; the loader unwraps it back to arrays.
-const wrapItems = <T>(m: Record<string, T[]>): Record<string, { items: T[] }> =>
-  Object.keys(m).reduce(
-    (acc, k) => ({ ...acc, [k]: { items: m[k] } }),
-    {} as Record<string, { items: T[] }>,
-  );
-
 beforeEach(() => {
   jest.resetAllMocks();
   global.fetch = jest.fn((url: RequestInfo | URL) =>
-    url.toString().includes('categories/data')
+    url.toString().includes('categories_data')
       ? Promise.resolve({
           ok: true,
           status: 200,
           json: () =>
             Promise.resolve({
               categories: MOCK_DATA.business_entity_information.categories,
-              sub_categories: wrapItems(
+              sub_categories:
                 MOCK_DATA.business_entity_information.sub_categories,
-              ),
             }),
         } as Response)
       : Promise.resolve({
