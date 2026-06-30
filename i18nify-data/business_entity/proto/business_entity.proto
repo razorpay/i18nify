@@ -38,3 +38,4 @@ message EntityType {
   string transliterated_name = 4 [json_name = "transliterated_name"];
   string language            = 5;
 }
+
