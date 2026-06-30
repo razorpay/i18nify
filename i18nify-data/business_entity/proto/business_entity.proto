@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package business_entity;
+
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/business_entity;business_entity";
+
+// BusinessEntityData is the single root message for the business_entity package.
+message BusinessEntityData {
+  repeated BusinessCategory categories = 1;
+  map<string, SubCategoryList> sub_categories = 2 [json_name = "sub_categories"];
+  map<string, EntityTypeList> entity_types = 3 [json_name = "entity_types"];
+}
+
+// BusinessCategory represents a top-level or sub-level business category.
+message BusinessCategory {
+  string code        = 1;
+  string name        = 2;
+  string description = 3;
+}
+
+// SubCategoryList wraps repeated BusinessCategory as a map value
+// (proto3 maps cannot hold repeated values directly).
+message SubCategoryList {
+  repeated BusinessCategory items = 1;
+}
+
+// EntityTypeList wraps repeated EntityType as a map value.
+message EntityTypeList {
+  repeated EntityType items = 1;
+}
+
+// EntityType represents a legal business entity type for a specific country,
+// sourced from the GLEIF ISO 20275 Entity Legal Forms (ELF) code list.
+message EntityType {
+  string code                = 1;
+  string name                = 2;
+  string abbreviation        = 3;
+  string transliterated_name = 4 [json_name = "transliterated_name"];
+  string language            = 5;
+}
+
