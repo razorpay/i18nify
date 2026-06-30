@@ -3,7 +3,7 @@
 
 Separates the Manager (this file) from the Workhorse (crawl4ai_runner.py).
 Run with:
-    python tools/cli.py
+    python .claude/skills/utility-creator/tools/cli.py
 """
 from __future__ import annotations
 
@@ -16,9 +16,20 @@ import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-RUNNER    = REPO_ROOT / "tools" / "crawlers" / "crawl4ai_runner.py"
-VENV_PY   = REPO_ROOT / "venv" / "bin" / "python"
+SCRIPT_PATH = Path(__file__).resolve()
+SKILL_ROOT  = SCRIPT_PATH.parents[1]
+
+
+def _find_project_root(start: Path) -> Path:
+    for path in (start, *start.parents):
+        if (path / "package.json").exists() and (path / "i18nify-data").exists():
+            return path
+    raise RuntimeError(f"Could not find i18nify project root from {start}")
+
+
+PROJECT_ROOT = _find_project_root(SCRIPT_PATH)
+RUNNER       = SKILL_ROOT / "tools" / "crawlers" / "crawl4ai_runner.py"
+VENV_PY      = PROJECT_ROOT / "venv" / "bin" / "python"
 PYTHON    = str(VENV_PY) if VENV_PY.exists() else sys.executable
 
 # ── Topic registry (Manager-owned; mirrors SOURCE_URLS in crawl4ai_runner.py) ─
@@ -109,7 +120,7 @@ def _bold(s: str) -> str:
     return f"\033[1m{s}\033[0m"
 
 def _data_age(topic: str) -> str:
-    path = REPO_ROOT / DATA_PATH.get(topic, "")
+    path = PROJECT_ROOT / DATA_PATH.get(topic, "")
     if not path.exists():
         return _yellow("MISSING")
     age_d = (datetime.now(timezone.utc).timestamp() - os.path.getmtime(path)) / 86400
@@ -170,7 +181,7 @@ def fetch_data(topic: str) -> None:
     print(f"\n  Running pipeline for {_cyan(topic)} …\n")
     proc = subprocess.run(
         [PYTHON, str(RUNNER), "--topic", topic],
-        cwd=str(REPO_ROOT),
+        cwd=str(PROJECT_ROOT),
     )
     if proc.returncode != 0:
         print(f"\n  {_yellow('Pipeline exited with errors. Check output above.')}")
@@ -181,8 +192,8 @@ def fetch_data(topic: str) -> None:
 # ── Action 2: show schema ─────────────────────────────────────────────────────
 
 def show_schema(topic: str) -> None:
-    schemas_path = REPO_ROOT / "schemas" / "i18nify_schemas.py"
-    sys.path.insert(0, str(REPO_ROOT / "schemas"))
+    schemas_path = SKILL_ROOT / "i18nify_schemas.py"
+    sys.path.insert(0, str(SKILL_ROOT))
     try:
         import importlib
         mod = importlib.import_module("i18nify_schemas")
@@ -194,13 +205,13 @@ def show_schema(topic: str) -> None:
         if cls is None:
             print(f"  Class '{class_name}' not found in {schemas_path}.")
             return
-        print(f"\n  {_bold(f'Pydantic schema: {class_name}')}  (from schemas/i18nify_schemas.py)\n")
+        print(f"\n  {_bold(f'Pydantic schema: {class_name}')}  (from .claude/skills/utility-creator/i18nify_schemas.py)\n")
         src = inspect.getsource(cls)
         for line in src.splitlines():
             print(f"    {line}")
         print()
         # Show a sample row from the canonical file if it exists
-        data_file = REPO_ROOT / DATA_PATH.get(topic, "")
+        data_file = PROJECT_ROOT / DATA_PATH.get(topic, "")
         if data_file.exists():
             with open(data_file) as f:
                 canon = json.load(f)
@@ -221,7 +232,7 @@ def show_schema(topic: str) -> None:
 # ── Action 3: generate utility ────────────────────────────────────────────────
 
 def generate_utility(topic: str) -> None:
-    data_file = REPO_ROOT / DATA_PATH.get(topic, "")
+    data_file = PROJECT_ROOT / DATA_PATH.get(topic, "")
 
     # Ensure data is available — offer to fetch if missing or stale
     if not data_file.exists():
@@ -256,7 +267,7 @@ def generate_utility(topic: str) -> None:
         return
 
     rows = [{"code": k, **v} for k, v in data_dict.items()]
-    print(f"\n  {_green(str(len(rows)))} entries loaded from {data_file.relative_to(REPO_ROOT)}")
+    print(f"\n  {_green(str(len(rows)))} entries loaded from {data_file.relative_to(PROJECT_ROOT)}")
 
     # Build a minimal tsf_result.json so Recipe 8 (from SKILL.md) can consume it
     result = {
@@ -284,7 +295,7 @@ def generate_utility(topic: str) -> None:
     print("  Then type: generate utility")
     print()
     print("  Or to run Recipe 8 directly, paste this in your terminal:")
-    gen_cmd = "source venv/bin/activate && python3 tools/generate_utility.py"
+    gen_cmd = "source venv/bin/activate && python3 .claude/skills/utility-creator/tools/generate_utility.py"
     print(f"    {_cyan(gen_cmd)}")
     print()
 

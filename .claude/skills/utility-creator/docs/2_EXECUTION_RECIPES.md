@@ -238,7 +238,7 @@ EOF
 ### Recipe 3 — Crawl4AI pipeline runner
 
 Run this when Recipe 1 returns CACHE_STALE, CACHE_MISS, or CACHE_ERROR.
-Delegates to `tools/crawlers/crawl4ai_runner.py` which fetches from T1
+Delegates to `.claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py` which fetches from T1
 canonical sources, validates against Pydantic schemas, and writes the
 canonical output to `i18nify-data/{topic}/data.json`.
 
@@ -286,7 +286,7 @@ if not repo_root:
     print("RUNNER_ERROR|could not determine repo root via git")
     sys.exit(1)
 
-runner   = os.path.join(repo_root, "tools", "crawlers", "crawl4ai_runner.py")
+runner   = os.path.join(repo_root, ".claude", "skills", "utility-creator", "tools", "crawlers", "crawl4ai_runner.py")
 venv_py  = os.path.join(repo_root, "venv", "bin", "python")
 python   = venv_py if os.path.exists(venv_py) else sys.executable
 
@@ -1451,7 +1451,7 @@ Synonyms: `{comma-separated synonyms}`
 def fetch_{snake}():     # downloads from {source_url}
 def parse_{snake}(raw):  # returns list[dict] with fields {field_list}
 
-**3. schemas/i18nify_schemas.py — Add Pydantic schema:**
+**3. .claude/skills/utility-creator/i18nify_schemas.py — Add Pydantic schema:**
 class {Pascal}(BaseModel):
     {field: type for each field}
 

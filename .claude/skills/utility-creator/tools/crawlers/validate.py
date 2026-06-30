@@ -3,8 +3,8 @@
 i18nify pipeline status and staleness checker.
 
 Usage:
-  python tools/crawlers/validate.py --status               # table of all topics
-  python tools/crawlers/validate.py --check-age currency   # FRESH or STALE
+  python .claude/skills/utility-creator/tools/crawlers/validate.py --status               # table of all topics
+  python .claude/skills/utility-creator/tools/crawlers/validate.py --check-age currency   # FRESH or STALE
 """
 from __future__ import annotations
 
@@ -15,9 +15,19 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+SCRIPT_PATH = Path(__file__).resolve()
 
-# Canonical output paths (mirrors DATA_PATH_MAP in schemas/i18nify_schemas.py)
+
+def _find_project_root(start: Path) -> Path:
+    for path in (start, *start.parents):
+        if (path / "package.json").exists() and (path / "i18nify-data").exists():
+            return path
+    raise RuntimeError(f"Could not find i18nify project root from {start}")
+
+
+REPO_ROOT = _find_project_root(SCRIPT_PATH)
+
+# Canonical output paths (mirrors DATA_PATH_MAP in .claude/skills/utility-creator/i18nify_schemas.py)
 CANONICAL_PATH: dict[str, str] = {
     "currency":       "i18nify-data/currency/data.json",
     "country":        "i18nify-data/country/metadata/data.json",

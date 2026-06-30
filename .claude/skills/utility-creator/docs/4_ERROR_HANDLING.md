@@ -59,7 +59,7 @@ Real errors encountered during development. Symptom → cause → fix.
 
 - **`ENVELOPE_ERROR|[Errno 2] No such file or directory: 'i18nify-data/.../data.json'`**
   Cause: Recipe 1 returned `CACHE_HIT|LOCAL:…` for a path that doesn't exist yet (topic has never been fetched).
-  Fix: Run `python3 tools/crawlers/crawl4ai_runner.py --topic <name>` to generate the file, then re-run.
+  Fix: Run `python3 .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic <name>` to generate the file, then re-run.
 
 - **`RUNNER_FAILED|<topic>|no PARSE_OK in output`**
   Cause: Crawl4AI Docker container is not running.
@@ -74,7 +74,7 @@ Real errors encountered during development. Symptom → cause → fix.
 
 - **`smoke.sh` exits without `SMOKE_OK` when tld data is stale**
   Cause: tld_list data is older than 7 days; smoke hits `CACHE_STALE` branch and exits cleanly but does not run Recipes 2–7.
-  Fix: Refresh the data first: `python3 tools/crawlers/crawl4ai_runner.py --topic tld`, then re-run `smoke.sh`.
+  Fix: Refresh the data first: `python3 .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic tld`, then re-run `smoke.sh`.
 
 - **`UTILITY_ERROR|unsupported topic '…' — add a mapping entry in Recipe 8 TOPIC_MAP`**
   Cause: Topic key resolved in Step 1 isn't in Recipe 8's `TOPIC_MAP` (e.g. a newly added topic from Section 13).

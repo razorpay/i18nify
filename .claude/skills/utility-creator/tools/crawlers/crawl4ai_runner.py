@@ -4,10 +4,10 @@ i18nify data pipeline — extraction, validation, and save.
 
 Usage:
   # Fetch live from T1 source, parse, validate, save:
-  python tools/crawlers/crawl4ai_runner.py --topic currency
+  python .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic currency
 
   # Parse a previously-saved raw file:
-  python tools/crawlers/crawl4ai_runner.py --topic currency --input /tmp/i18nify_raw_currency.txt
+  python .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic currency --input /tmp/i18nify_raw_currency.txt
 
 Prints:
   FETCH_OK|{topic}|{count}   on success
@@ -146,11 +146,21 @@ def enrich_row(row: dict) -> dict:
 
 
 # ── Paths ────────────────────────────────────────────────────────────────────
-REPO_ROOT    = Path(__file__).resolve().parents[2]
-SCHEMAS_DIR  = REPO_ROOT / "schemas"
-sys.path.insert(0, str(REPO_ROOT))
+SCRIPT_PATH = Path(__file__).resolve()
+SKILL_ROOT  = SCRIPT_PATH.parents[2]
 
-from schemas.i18nify_schemas import SCHEMA_MAP, DATA_KEY_MAP, DATA_PATH_MAP
+
+def _find_project_root(start: Path) -> Path:
+    for path in (start, *start.parents):
+        if (path / "package.json").exists() and (path / "i18nify-data").exists():
+            return path
+    raise RuntimeError(f"Could not find i18nify project root from {start}")
+
+
+REPO_ROOT = _find_project_root(SCRIPT_PATH)
+sys.path.insert(0, str(SKILL_ROOT))
+
+from i18nify_schemas import SCHEMA_MAP, DATA_KEY_MAP, DATA_PATH_MAP
 
 DATA_OUT_DIR = REPO_ROOT / "i18nify-data"    # canonical data (existing structure)
 

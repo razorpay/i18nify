@@ -70,11 +70,11 @@ if [[ "$ROUTING" == "CACHE_HIT" ]]; then
   ok "local cache hit"
 elif [[ "$ROUTING" == "CACHE_STALE" ]]; then
   echo "    WARNING: cache stale — Recipe 3 (crawl4ai live fetch) NOT exercised by this smoke test"
-  echo "    To refresh: python3 tools/crawlers/crawl4ai_runner.py --topic http_status"
+  echo "    To refresh: python3 .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic http_status"
   ok "stale routing detected"
 elif [[ "$ROUTING" == "CACHE_MISS" ]]; then
   echo "    WARNING: no local data — Recipe 3 (crawl4ai live fetch) NOT exercised by this smoke test"
-  echo "    To populate: python3 tools/crawlers/crawl4ai_runner.py --topic http_status"
+  echo "    To populate: python3 .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic http_status"
   ok "miss routing detected"
 else
   fail "Recipe 1 returned unexpected token: $ROUTING"
