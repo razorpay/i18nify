@@ -8,6 +8,7 @@ set -euo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
+RUNNER="$REPO_ROOT/.claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py"
 PY=""
 for _name in python python3 python3.12 python3.11 python3.10 python3.9; do
   if [ -x "$REPO_ROOT/venv/bin/$_name" ]; then
@@ -31,18 +32,8 @@ fi
 fail() { echo "SMOKE_FAIL: $1" >&2; exit 1; }
 ok()   { echo "  OK  $1"; }
 
-echo "=== utility-creator smoke test: http_status_codes ==="
-echo "    python: $PY"
-echo ""
-
-# ── Recipe 0 — deps ────────────────────────────────────────────────────────
-echo "[0] Recipe 0 — install deps"
-"$PY" -m pip install 'requests==2.32.3' 'pyyaml==6.0.2' 'lxml==5.3.0' -q 2>&1 | tail -2
-ok "deps installed"
-
-# ── Recipe 1 — check local cache ───────────────────────────────────────────
-echo "[1] Recipe 1 — check local cache"
-R1=$("$PY" << 'PYEOF'
+check_cache() {
+  "$PY" << 'PYEOF'
 import os, sys
 from datetime import datetime, timezone
 
@@ -60,7 +51,20 @@ if os.path.exists(local_path):
 else:
     print("CACHE_MISS")
 PYEOF
-)
+}
+
+echo "=== utility-creator smoke test: http_status_codes ==="
+echo "    python: $PY"
+echo ""
+
+# ── Recipe 0 — deps ────────────────────────────────────────────────────────
+echo "[0] Recipe 0 — install deps"
+"$PY" -m pip install 'requests==2.32.3' 'pyyaml==6.0.2' 'lxml==5.3.0' -q 2>&1 | tail -2
+ok "deps installed"
+
+# ── Recipe 1 — check local cache ───────────────────────────────────────────
+echo "[1] Recipe 1 — check local cache"
+R1=$(check_cache)
 echo "    $R1"
 
 ROUTING=$(echo "$R1" | cut -d'|' -f1)
@@ -69,15 +73,25 @@ CACHE_PATH=$(echo "$R1" | cut -d'|' -f2)
 if [[ "$ROUTING" == "CACHE_HIT" ]]; then
   ok "local cache hit"
 elif [[ "$ROUTING" == "CACHE_STALE" ]]; then
-  echo "    WARNING: cache stale — Recipe 3 (crawl4ai live fetch) NOT exercised by this smoke test"
-  echo "    To refresh: python3 .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic http_status"
-  ok "stale routing detected"
+  echo "    cache stale — running Recipe 3 live fetch"
+  "$PY" "$RUNNER" --topic http_status
+  ok "live data refreshed"
 elif [[ "$ROUTING" == "CACHE_MISS" ]]; then
-  echo "    WARNING: no local data — Recipe 3 (crawl4ai live fetch) NOT exercised by this smoke test"
-  echo "    To populate: python3 .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic http_status"
-  ok "miss routing detected"
+  echo "    no local data — running Recipe 3 live fetch"
+  "$PY" "$RUNNER" --topic http_status
+  ok "live data populated"
 else
   fail "Recipe 1 returned unexpected token: $ROUTING"
+fi
+
+if [[ "$ROUTING" != "CACHE_HIT" ]]; then
+  echo "[1b] Recipe 1 — re-check local cache after Recipe 3"
+  R1=$(check_cache)
+  echo "    $R1"
+  ROUTING=$(echo "$R1" | cut -d'|' -f1)
+  CACHE_PATH=$(echo "$R1" | cut -d'|' -f2)
+  [[ "$ROUTING" == "CACHE_HIT" ]] || fail "Recipe 3 did not produce a fresh cache: $R1"
+  ok "local cache hit after fetch"
 fi
 
 # ── Recipe 2 — load cache (only if CACHE_HIT|LOCAL:...) ────────────────────
