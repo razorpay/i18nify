@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 
 	i18nify_go "github.com/razorpay/i18nify/packages/i18nify-go"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
@@ -171,7 +170,7 @@ func main() {
 	} else {
 		fmt.Printf("Entity types for IN: %d\n", len(entityTypes))
 		for _, e := range entityTypes {
-			fmt.Printf("  %s (%s) — %s\n", e.Name, e.Abbreviation, e.Category)
+			fmt.Printf("  %s (%s) — %s\n", e.Name, e.Abbreviation, e.Code)
 		}
 	}
 

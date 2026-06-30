@@ -11,8 +11,8 @@ github.com/razorpay/i18nify/i18nify-data/go/business_entity/categories v0.0.0-20
 github.com/razorpay/i18nify/i18nify-data/go/business_entity/categories v0.0.0-20260630095724-3fa18072facc/go.mod h1:+UN3koqDiW/FJ74dczLlfbZanHLCBoJ6EU5kb4b6MF0=
 github.com/razorpay/i18nify/i18nify-data/go/business_entity/entity_types v0.0.0-20260630095724-3fa18072facc h1:YNOBE9UM/poCWwcVpRHlzahKuT7l63SvfUo1u3Cq9J4=
 github.com/razorpay/i18nify/i18nify-data/go/business_entity/entity_types v0.0.0-20260630095724-3fa18072facc/go.mod h1:Dv+oPWwk/yczXeo90bpBrUOChGtRQ3W03JIOozdFzwo=
-github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.3 h1:Ygt1DXbCg5XUmEzWjYzbt7aheJXCqiSTTpgsyWLy4DI=
-github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.3/go.mod h1:8/bUffLHRUapN6J4R61kcaOZKr8yjKb0YXrlpCumy0g=
+github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.4 h1:Q1WmEFyzj0fKPcax35je7nG06C3xVb+7B4EO1hAOuaU=
+github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.4/go.mod h1:8/bUffLHRUapN6J4R61kcaOZKr8yjKb0YXrlpCumy0g=
 github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.6 h1:l7B9/v9yYcznGXOB0i9Dmjus6QgAT1SwrNmkcW8iLV4=
 github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.6/go.mod h1:Co4OyvFG2HC9ohJbdw8Ydqd1Y7MJHCBAw9Ee8U1Cfxw=
 github.com/razorpay/i18nify/i18nify-data/go/currency v1.0.5 h1:WdbG4qmKFqr42SOm/jJNp9j/UJt/q0A5eiaweetmibM=
