@@ -17,7 +17,7 @@ for _name in python python3 python3.12 python3.11 python3.10 python3.9; do
 done
 if [ -z "$PY" ]; then
   # venv/bin/ missing — try to use venv site-packages via PYTHONPATH
-  _site=$(ls -d "$REPO_ROOT/venv/lib/python"*/site-packages 2>/dev/null | head -1)
+  _site=$(ls -d "$REPO_ROOT/venv/lib/python"*/site-packages 2>/dev/null | head -1 || true)
   if [ -n "$_site" ]; then
     export PYTHONPATH="$_site${PYTHONPATH:+:$PYTHONPATH}"
     echo "    NOTE: venv/bin/ missing — using system python3 with PYTHONPATH=$_site"

@@ -141,6 +141,21 @@ def write_file(path, content):
     print("WROTE|" + rel)
 
 
+def update_root_barrel():
+    barrel_path = os.path.join(PROJECT_ROOT, "packages", "i18nify-js", "src", "index.ts")
+    export_line = "export * from './modules/%s';" % snake
+    os.makedirs(os.path.dirname(barrel_path), exist_ok=True)
+    content = ""
+    if os.path.exists(barrel_path):
+        with open(barrel_path, encoding="utf-8") as fh:
+            content = fh.read()
+    if export_line in content:
+        return
+    separator = "" if not content or content.endswith("\n") else "\n"
+    with open(barrel_path, "w", encoding="utf-8") as fh:
+        fh.write(content + separator + export_line + "\n")
+
+
 write_file(os.path.join(data_dir,   "data.json"),                         f_data_json)
 write_file(os.path.join(data_dir,   "proto", snake + ".proto"),           f_proto)
 write_file(os.path.join(data_dir,   "README.md"),                         f_readme)
@@ -151,5 +166,6 @@ write_file(os.path.join(module_dir, "utils.ts"),                          f_util
 write_file(os.path.join(module_dir, "get" + pascal + "List.ts"),          f_get_list)
 write_file(os.path.join(module_dir, "index.ts"),                          f_index)
 write_file(os.path.join(module_dir, "__tests__", "get" + pascal + "List.test.ts"), f_test)
+update_root_barrel()
 
 print("UTILITY_DONE|%s|files=10|entries=%d" % (snake, len(data_dict)))
