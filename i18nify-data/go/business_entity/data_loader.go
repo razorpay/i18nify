@@ -4,15 +4,13 @@ package business_entity
 
 import (
 	_ "embed"
-	"encoding/json"
 	"sync"
+
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
-//go:embed data/categories_data.json
-var categoriesJSON []byte
-
-//go:embed data/entity_types_data.json
-var entityTypesJSON []byte
+//go:embed data/data.json
+var dataJSON []byte
 
 var (
 	data     *BusinessEntityData
@@ -20,28 +18,12 @@ var (
 	dataErr  error
 )
 
-// GetBusinessEntityData loads and merges both data files into a single
-// BusinessEntityData value. The JSON is parsed exactly once; subsequent
-// calls return the cached result.
+// GetBusinessEntityData retrieves the data.
 func GetBusinessEntityData() (*BusinessEntityData, error) {
 	dataOnce.Do(func() {
-		var cats CategoriesFileData
-		if dataErr = json.Unmarshal(categoriesJSON, &cats); dataErr != nil {
-			return
-		}
-
-		var ets EntityTypesFileData
-		if dataErr = json.Unmarshal(entityTypesJSON, &ets); dataErr != nil {
-			return
-		}
-
-		data = &BusinessEntityData{
-			BusinessEntityInformation: BusinessEntityInformation{
-				Categories:    cats.Categories,
-				SubCategories: cats.SubCategories,
-				EntityTypes:   ets.EntityTypes,
-			},
-		}
+		data = &BusinessEntityData{}
+		unmarshaler := protojson.UnmarshalOptions{DiscardUnknown: true}
+		dataErr = unmarshaler.Unmarshal(dataJSON, data)
 	})
 	return data, dataErr
 }
