@@ -20,4 +20,3 @@ require (
 	github.com/razorpay/i18nify/i18nify-data/go/phone-number/country-code-to-phone-number v1.0.3
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
