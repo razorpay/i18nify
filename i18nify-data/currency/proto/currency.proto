@@ -17,4 +17,5 @@ message CurrencyInfo {
   string minor_unit = 3;
   string symbol = 4;
   repeated string physical_currency_denominations = 5;
+  string symbol_position = 6;
 }

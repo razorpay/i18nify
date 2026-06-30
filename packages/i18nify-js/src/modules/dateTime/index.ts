@@ -6,6 +6,7 @@
 
 export { default as formatDateTime } from './formatDateTime';
 export { default as getRelativeTime } from './getRelativeTime';
+export { default as getTimeZoneByCountry } from './getTimeZoneByCountry';
 export { default as getWeekdays } from './getWeekdays';
 export { default as parseDateTime } from './parseDateTime';
 
