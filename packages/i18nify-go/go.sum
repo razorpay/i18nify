@@ -7,6 +7,10 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/razorpay/i18nify/i18nify-data/go/bankcodes v1.0.3 h1:buNThlDg9YE1aHhUegIU/4AgX5/p+6o0Xg7fdlpfyFs=
 github.com/razorpay/i18nify/i18nify-data/go/bankcodes v1.0.3/go.mod h1:IIGgMZsudL2XeV/k2wJzNvne80aU5n7FLK+Eybq+Jeg=
+github.com/razorpay/i18nify/i18nify-data/go/business_entity/categories v0.0.0-20260630095724-3fa18072facc h1:cmxsMyFIS2AHkCPq0QUYMH+BmBvS8bdk9s+TqZIFmtM=
+github.com/razorpay/i18nify/i18nify-data/go/business_entity/categories v0.0.0-20260630095724-3fa18072facc/go.mod h1:+UN3koqDiW/FJ74dczLlfbZanHLCBoJ6EU5kb4b6MF0=
+github.com/razorpay/i18nify/i18nify-data/go/business_entity/entity_types v0.0.0-20260630095724-3fa18072facc h1:YNOBE9UM/poCWwcVpRHlzahKuT7l63SvfUo1u3Cq9J4=
+github.com/razorpay/i18nify/i18nify-data/go/business_entity/entity_types v0.0.0-20260630095724-3fa18072facc/go.mod h1:Dv+oPWwk/yczXeo90bpBrUOChGtRQ3W03JIOozdFzwo=
 github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.3 h1:Ygt1DXbCg5XUmEzWjYzbt7aheJXCqiSTTpgsyWLy4DI=
 github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.3/go.mod h1:8/bUffLHRUapN6J4R61kcaOZKr8yjKb0YXrlpCumy0g=
 github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.6 h1:l7B9/v9yYcznGXOB0i9Dmjus6QgAT1SwrNmkcW8iLV4=
