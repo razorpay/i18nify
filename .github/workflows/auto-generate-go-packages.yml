@@ -28,7 +28,7 @@ on:
   workflow_dispatch:
     inputs:
       package:
-        description: 'Package(s) to generate — "all" or comma-separated names (e.g. "currency, bankcodes")'
+        description: 'Package(s) to generate — "all" or comma-separated names (e.g. "business_entity" or "currency, bankcodes")'
         required: false
         default: 'all'
         type: string
