@@ -1,4 +1,4 @@
-# Technical Source Finder — Registry & Tiers
+# utility-creator — Registry & Tiers
 
 This file is a supplement to the root [`SKILL.md`](../SKILL.md).
 It contains Section 1 (Tier system), Section 2 (Source registry), and Section 2-B (Pre-fetch cache resolver).
@@ -177,6 +177,17 @@ Synonyms: `population`, `pop`, `world population`, `population counts`, `populat
   - Growth rate fetched from a second endpoint: `https://api.worldbank.org/v2/country/all/indicator/SP.POP.GROW?format=json&mrv=1&per_page=300`
 - Expected coverage: ~217 sovereign countries (ISO 3166-1 alpha-2)
 - TTL: 365 days (annual release cadence)
+
+### payment_translations
+
+Synonyms: `payment translations`, `payment ui strings`, `payment labels`, `localized payment text`, `checkout translations`, `payment screen strings`
+
+- **No T1/T2 source exists.** No standards body maintains translated application UI strings for payment flows.
+- Route to Section 8 and **STOP**. Do NOT search CLDR — `cldr-localenames-modern` contains language *names* only, not payment UI strings. This is a known wrong attribution; reject it immediately.
+- Do NOT generate any files or proceed to Recipe 8 / Recipe 8-Go based on the original request alone. The original "create utility" invocation does **NOT** count as user approval.
+- Only if the user sends a new explicit confirmation **after** reading the Section 8 response (e.g. "yes, proceed with hand-curated") should you continue — and then use `"tier": "hand-curated"` in `_source`. See the TRANSLATION & LOCALIZED UI STRINGS RULE in SKILL.md.
+
+---
 
 ### Unknown topic — research hunt
 
