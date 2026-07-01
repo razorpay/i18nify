@@ -43,7 +43,7 @@ export const I18nProvider = ({
    * @param data: new i18nState to set in Context
    */
   const updateI18nState = (data: Record<string, unknown>) => {
-    setI18nState((i18nState:any) => ({ ...i18nState, ...data }));
+    setI18nState((i18nState) => ({ ...i18nState, ...data }));
     setState({ ...i18nState, ...data });
   };
 
