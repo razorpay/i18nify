@@ -22,7 +22,7 @@ Adding a new data module used to be a manual chore:
 ```
 You type a topic
       ↓
-Claude resolves it to a canonical name  ("VAT rates" → "vat_rates_global")
+Claude resolves it to a canonical name  ("currency codes" → "currency_codes")
       ↓
 Claude checks if fresh data is already cached locally
       ↓  (cache miss or stale)
@@ -213,18 +213,18 @@ python3 .claude/skills/utility-creator/tools/cli.py
 python3 .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic currency
 ```
 
-**Fetch from a PDF source (e.g. OECD report):**
+**Fetch from a PDF source (e.g. a rate schedule):**
 
 ```bash
 python3 .claude/skills/utility-creator/tools/crawlers/pdf_scraper.py \
   --url https://example.com/oecd-report.pdf \
-  --topic vat_rates_global
+  --topic gst_rates_india
 ```
 
 **Let the router pick the right scraper automatically:**
 
 ```bash
-python3 .claude/skills/utility-creator/tools/crawlers/skill_router.py --topic corporate_tax_rates
+python3 .claude/skills/utility-creator/tools/crawlers/skill_router.py --topic population_data
 ```
 
 **Validate a data file you already have:**
@@ -262,8 +262,6 @@ The same `_source` block is embedded in the Go-side `data/data.json` so traceabi
 |---|---|---|---|
 | `currency_codes` | ISO currency codes, symbols, minor units | ISO 4217 XML via SIX Group | ~180 currencies |
 | `http_status_codes` | HTTP response codes and descriptions | IANA HTTP Status Code Registry | All registered |
-| `corporate_tax_rates` | Corporate income tax rates by country | OECD SDMX REST API | ~112 countries |
-| `vat_rates_global` | VAT / GST / consumption tax rates | OECD Consumption Tax Trends 2024 | ~75 countries |
 | `address_formats` | Postal address field ordering per country | Universal Postal Union PDF | 190+ countries |
 
 For full details — TTLs, fallback sources, synonyms — see [`docs/1_REGISTRY_AND_TIERS.md`](./docs/1_REGISTRY_AND_TIERS.md).

@@ -209,6 +209,24 @@ SOURCE_URLS: dict[str, str] = {
     "population":     "https://population.un.org/wpp/Download/Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
 }
 
+SOURCE_METADATA: dict[str, dict[str, Any]] = {
+    "currency":       {"name": "SIX Group ISO 4217 currency list", "tier": 1},
+    "country":        {"name": "ISO Online Browsing Platform", "tier": 1},
+    "tld":            {"name": "IANA Root Zone Database", "tier": 1},
+    "http_status":    {"name": "IANA HTTP Status Code Registry", "tier": 1},
+    "language":       {"name": "Unicode CLDR territoryInfo", "tier": 1},
+    "phone":          {"name": "Google libphonenumber metadata", "tier": 1},
+    "timezone":       {"name": "IANA time zone database", "tier": 1},
+    "mime":           {"name": "IANA Media Types Registry", "tier": 1},
+    "unicode_blocks": {"name": "Unicode Character Database Blocks", "tier": 1},
+    "address":        {"name": "Google i18n address data", "tier": 1},
+    "itu_e164":       {"name": "ITU E.164 numbering plan", "tier": 1},
+    "gst":            {"name": "CBIC GST rate schedule", "tier": 1},
+    "gst_au":         {"name": "Australian Taxation Office GST guidance", "tier": 1},
+    "eu_vat":         {"name": "vatnode EU VAT rates data", "tier": 2},
+    "population":     {"name": "UN World Population Prospects 2024", "tier": 1},
+}
+
 # ── Fetch helpers ────────────────────────────────────────────────────────────
 
 def _http_get(
@@ -1474,7 +1492,15 @@ def save_canonical(topic: str, rows: list[Any], source_url: str) -> Path:
         value = {k: v for k, v in d.items() if k not in {"cc", "code", "cca2"}}
         data_dict[key] = value
 
-    canonical = {data_key: data_dict}
+    source_meta = SOURCE_METADATA.get(topic, {})
+    canonical = {
+        "_source": {
+            "name": source_meta.get("name", topic),
+            "url": source_url,
+            "tier": source_meta.get("tier", 1),
+        },
+        data_key: data_dict,
+    }
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(canonical, f, ensure_ascii=False, indent=2)
     return out_path

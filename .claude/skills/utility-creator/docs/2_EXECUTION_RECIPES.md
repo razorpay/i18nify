@@ -65,8 +65,6 @@ CANONICAL_PATH = {
     "address_formats":     "i18nify-data/address/data.json",
     "gst_rates_india":     "i18nify-data/gst/data.json",
     "population_data":     "i18nify-data/population/data.json",
-    "corporate_tax_rates": "i18nify-data/corporate-tax/data.json",
-    "vat_rates_global":    "i18nify-data/vat-global/data.json",
 }
 
 ttl_map = {
@@ -74,8 +72,6 @@ ttl_map = {
     "tld_list":7,"language_codes":30,"http_status_codes":7,
     "phone_calling_codes":30,"timezones":7,"mime_types":30,
     "unicode_blocks":30,"gst_rates_india":30,"population_data":365,
-    "corporate_tax_rates":30,
-    "vat_rates_global":365,
 }
 ttl = ttl_map.get(topic, 30)
 
@@ -154,7 +150,6 @@ PATH_DATA_KEY = {
     "i18nify-data/unicode-blocks/data.json":    "unicode_block_information",
     "i18nify-data/address/data.json":           "address_format_information",
     "i18nify-data/population/data.json":        "population_information",
-    "i18nify-data/vat-global/data.json":        "vat_global_information",
 }
 
 # Maps canonical file path → T1 source URL for display in the widget
@@ -265,8 +260,6 @@ PIPELINE_NAME = {
     "address_formats":     "address",
     "gst_rates_india":     "gst",
     "population_data":     "population",
-    "corporate_tax_rates": "corporate_tax",
-    "vat_rates_global":    "vat_global",
 }
 
 tsf_topic     = "{TOPIC_KEY}"
@@ -395,7 +388,7 @@ from_cache = any(s.get("from_cache") for s in sources)
 # ── TTL and cache age ─────────────────────────────────────────────────────
 TTL_DAYS = {"currency_codes":30,"country_codes":30,"address_formats":30,
             "tld_list":7,"language_codes":30,"http_status_codes":7,
-            "phone_calling_codes":30,"timezones":7,"vat_rates_global":365}
+            "phone_calling_codes":30,"timezones":7}
 topic_ttl = TTL_DAYS.get(topic, 30)
 
 # ── Cache freshness factor ────────────────────────────────────────────────
@@ -440,8 +433,7 @@ conflict_penalty = min(1.0, len(conflicts) / total_fields) if total_fields else 
 # ── Score per source ──────────────────────────────────────────────────────
 EXPECTED = {"currency_codes":180,"country_codes":249,"address_formats":240,
             "tld_list":1500,"language_codes":184,"http_status_codes":60,
-            "phone_calling_codes":240,"timezones":600,"population_data":217,
-            "vat_rates_global":75}
+            "phone_calling_codes":240,"timezones":600,"population_data":217}
 expected = EXPECTED.get(topic, 100)
 n = len(sources)
 
@@ -543,8 +535,6 @@ TOPIC_MAP = {
     "country_metadata":    {"snake": "countryMetadata", "pascal": "CountryMetadata", "data_key": "country_metadata_information",  "id_field": "cc"},
     "gst_rates_india":     {"snake": "gst",             "pascal": "Gst",             "data_key": "gst_information",               "id_field": "code"},
     "population_data":     {"snake": "population",      "pascal": "Population",      "data_key": "population_information",        "id_field": "cc"},
-    "corporate_tax_rates": {"snake": "corporateTax",    "pascal": "CorporateTax",    "data_key": "corporate_tax_information",     "id_field": "cc", "canonical_dir": "corporate-tax"},
-    "vat_rates_global":    {"snake": "vatRates",        "pascal": "VatRates",        "data_key": "vat_global_information",        "id_field": "cc", "canonical_dir": "vat-global"},
 }
 
 cfg = TOPIC_MAP.get(TOPIC_KEY)
@@ -890,7 +880,6 @@ TOPIC_MAP = {
     "country_metadata":    {"snake": "countryMetadata", "pascal": "CountryMetadata", "data_key": "country_metadata_information", "go_pkg": "countrymetadata"},
     "gst_rates_india":     {"snake": "gst",             "pascal": "Gst",             "data_key": "gst_information",              "go_pkg": "gst"},
     "population_data":     {"snake": "population",      "pascal": "Population",      "data_key": "population_information",       "go_pkg": "population"},
-    "vat_rates_global":    {"snake": "vatRates",        "pascal": "VatRates",        "data_key": "vat_global_information",       "go_pkg": "vatrates",  "canonical_dir": "vat-global"},
 }
 
 cfg = TOPIC_MAP.get(TOPIC_KEY)

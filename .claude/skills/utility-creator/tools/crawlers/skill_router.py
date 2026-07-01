@@ -100,11 +100,13 @@ class SkillRouter:
         Expected format: "B and 2", "A, 1, and 3", "B2", etc.
         """
         text = reply.lower()
+        option_b = re.search(r"(?<![a-z0-9])b(?=$|[^a-z0-9]|\d)", text)
+        option_a = re.search(r"(?<![a-z0-9])a(?=$|[^a-z0-9]|\d)", text)
 
         # Granularity
-        if "b" in text or "granular" in text or "item" in text or "exact" in text:
+        if option_b or re.search(r"\b(?:granular|item|exact)\b", text):
             granularity = "item"
-        elif "a" in text or "high" in text or "broad" in text or "summary" in text:
+        elif option_a or re.search(r"\b(?:high|broad|summary)\b", text):
             granularity = "summary"
         else:
             granularity = "item"  # safer default for data accuracy

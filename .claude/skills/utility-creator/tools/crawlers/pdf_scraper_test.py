@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import tempfile
 from pathlib import Path
 
@@ -11,6 +12,7 @@ import fitz  # PyMuPDF
 import pytest
 
 # Module under test
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pdf_scraper
 
 
