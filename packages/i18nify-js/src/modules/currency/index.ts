@@ -5,7 +5,6 @@ export { default as formatNumberByParts } from './formatNumberByParts';
 export { default as convertToMajorUnit } from './convertToMajorUnit';
 export { default as convertToMinorUnit } from './convertToMinorUnit';
 export type { CurrencyCodeType } from './types';
-export { default as convertCurrency } from './convertCurrency';
 export { default as convertStringToMinorUnit } from './convertStringToMinorUnit';
 export { default as getDenomination } from './getDenomination';
 export { default as getISONumericCode } from './getISONumericCode';
