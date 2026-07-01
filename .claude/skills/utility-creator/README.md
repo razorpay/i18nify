@@ -1,137 +1,245 @@
 # utility-creator
 
-A Claude Code skill that fetches authoritative reference data, scores it against a tiered source registry, and scaffolds complete i18nify JS/TS + Go module files directly into the repo.
+> A Claude Code skill that automatically builds complete i18nify data modules — it finds the best data source online, validates it, and writes all the code files you need (TypeScript + Go) in one shot.
 
-## What it does
+---
 
-Given a topic like `currency`, `http_status_codes`, `vat_rates_global`, or `corporate_tax_rates`, the skill:
+## Background — what is this, and why does it exist?
 
-1. Resolves the topic to a canonical name via synonym lookup
-2. Checks a local file cache (TTL-aware); fetches fresh data on miss/stale
-3. Scores each source against a tier registry (T1 = standards body API, T2 = authoritative PDF, T3 = structured web)
-4. Outputs a scored widget + `_source` traceability block `{ name, url, tier }`
-5. Scaffolds JS/TS files (`types.ts`, `constants.ts`, `utils.ts`, `getCurrencyList.ts`, `index.ts`, test file) and Go files (`*_structs.go`, `data_loader.go`, `data_loader_test.go`, `data/data.json`, `go.mod`) under the correct repo paths
+**i18nify** is Razorpay's internationalisation library. It ships structured reference data (currency codes, country metadata, phone calling codes, VAT rates, etc.) along with TypeScript and Go utilities to look up and format that data.
 
-## Directory layout
+Adding a new data module used to be a manual chore:
+1. Find a reliable source (ISO body? IANA? OECD API?)
+2. Download and parse the data
+3. Write `data.json`, `types.ts`, `constants.ts`, `utils.ts`, `index.ts`, tests, and the Go equivalents
+
+**This skill automates the entire process.** You tell Claude "add a utility for VAT rates", and it handles everything — finding the source, scoring its reliability, fetching the data, and writing all the files.
+
+---
+
+## How it works (the big picture)
+
+```
+You type a topic
+      ↓
+Claude resolves it to a canonical name  ("VAT rates" → "vat_rates_global")
+      ↓
+Claude checks if fresh data is already cached locally
+      ↓  (cache miss or stale)
+Python scraper fetches data from the best official source
+      ↓
+Data is validated against a schema
+      ↓
+Claude writes JS/TS + Go module files into the repo
+      ↓
+You get a complete, working module with tests
+```
+
+The skill never guesses or uses random internet data. Every source is ranked on a **tier system**:
+
+| Tier | Meaning | Example |
+|---|---|---|
+| **T1** | Official standards body — always prefer | ISO 4217 for currencies, IANA for timezones |
+| **T2** | Trusted mirror of T1 — use only if T1 is inaccessible | datahub.io packaging ISO data |
+| **T3** | Community / unverified — never used | Random GitHub repos, blog posts |
+
+---
+
+## What's in this folder
 
 ```
 .claude/skills/utility-creator/
-├── SKILL.md                     # Entrypoint — start here
-├── smoke.sh                     # End-to-end smoke test (probe: http_status_codes)
-├── i18nify_schemas.py           # Pydantic models for all i18nify data types
-├── requirements.txt             # Python dependencies for scrapers
+│
+│  ← The skill itself (how Claude knows what to do)
+├── SKILL.md                      Main skill entrypoint. Claude reads this first.
+├── smoke.sh                      Quick sanity check — runs the full pipeline in ~5 s
+├── i18nify_schemas.py            Pydantic data models defining the shape of every
+│                                 i18nify data type (currency, country, language, etc.)
+├── requirements.txt              Python packages needed by the scrapers
+│
+│  ← Reference documentation
 ├── docs/
-│   ├── 1_REGISTRY_AND_TIERS.md  # Source tier definitions, topic registry, TTLs
-│   ├── 2_EXECUTION_RECIPES.md   # Recipes 0–8-Go — step-by-step execution
-│   ├── 3_SCORING_AND_UI.md      # Scoring formula, widget rendering, diagnostics
-│   └── 4_ERROR_HANDLING.md      # Error patterns, fallback behaviour, halt protocol
+│   ├── 1_REGISTRY_AND_TIERS.md  Which source to use for which topic, and why
+│   ├── 2_EXECUTION_RECIPES.md   Step-by-step "Recipes" Claude follows to fetch + generate
+│   ├── 3_SCORING_AND_UI.md      How sources are scored and displayed to the user
+│   └── 4_ERROR_HANDLING.md      What to do when a fetch fails or a source is unreachable
+│
+│  ← Automated tests for the skill itself
 ├── evals/
-│   ├── run_evals.sh             # Single-command runner for the full eval suite
-│   ├── test_synonyms.py         # Topic synonym resolution and registry lookup
-│   ├── test_cache_routing.py    # TTL-based cache hit/miss routing logic
-│   ├── test_data_precision.py   # Field-level precision of scraped output
-│   ├── test_scoring.py          # Source scoring and tier ranking
-│   ├── test_recipe8_structure.py# Recipe 8 output structure validation
-│   ├── test_output_quality.py   # Data JSON quality + TS/Go code generation rubric
-│   ├── test_functional.py       # 8-class behavioural suite (full lifecycle)
-│   ├── test_execution_harness.py# End-to-end execution harness (JS/TS + Go)
+│   ├── run_evals.sh             Runs every test below in one command
+│   ├── test_synonyms.py         Does "currencies" correctly resolve to "currency_codes"?
+│   ├── test_cache_routing.py    Does the skill skip fetching when data is fresh enough?
+│   ├── test_data_precision.py   Is the fetched data accurate (correct field values)?
+│   ├── test_scoring.py          Does the tier scoring algorithm rank sources correctly?
+│   ├── test_recipe8_structure.py Are the generated TS/Go files structured correctly?
+│   ├── test_output_quality.py   Do the generated files pass TypeScript + Go quality checks?
+│   ├── test_functional.py       Full end-to-end: invoke the skill, check all output files
+│   ├── test_execution_harness.py Full end-to-end: generates real files and runs gofmt on them
 │   └── fixtures/
-│       ├── recipe8_runner.py    # Standalone JS/TS file generator (reads tsf_result.json)
-│       └── recipe8go_runner.py  # Standalone Go file generator (reads tsf_result.json)
+│       ├── recipe8_runner.py    Standalone script that generates JS/TS files from a fixture
+│       └── recipe8go_runner.py  Standalone script that generates Go files from a fixture
+│
+│  ← Python scrapers (the data fetching layer)
 └── tools/
-    ├── cli.py                   # Interactive triage menu for topic scrapers
+    ├── cli.py                   Interactive menu — pick a topic and it fetches the data
     └── crawlers/
-        ├── crawl4ai_runner.py   # Crawl4AI-based web scraper (all topics)
-        ├── pdf_scraper.py       # PDF scraper for data sources in PDF form
-        ├── pdf_scraper_test.py  # Tests for the PDF scraper
-        ├── skill_router.py      # Routes topic requests to the correct scraper
-        └── validate.py          # Validates scraped data against Pydantic schemas
+        ├── crawl4ai_runner.py   Scrapes websites using the Crawl4AI library
+        ├── pdf_scraper.py       Extracts structured data from PDF sources (e.g. OECD reports)
+        ├── pdf_scraper_test.py  Tests for the PDF scraper
+        ├── skill_router.py      Decides whether to use the web scraper or the PDF scraper
+        └── validate.py          Checks that scraped data matches the expected schema
 ```
 
-## Quick start
+---
 
-**1. Smoke test** — verifies the end-to-end pipeline (~5 s):
+## First-time setup
 
-```bash
-cd "$(git rev-parse --show-toplevel)"
-bash .claude/skills/utility-creator/smoke.sh
-# → SMOKE_OK|http_status_codes|pipeline verified end-to-end
-```
+**1. Install Python dependencies**
 
-**2. Run the skill** — follow the steps in `SKILL.md`:
-
-- Step 0: Clarification gate (scope + intent)
-- Step 1: Topic resolution (synonym lookup → canonical name)
-- Step 3: Recipe 0 (cache check) → Recipe 1 (TTL routing) → Recipe 3 (fetch) → Recipe 8 (scaffold)
-
-**3. Python prerequisites** — activate the venv before any Recipe that calls scrapers:
+The scrapers are Python scripts. They need a virtual environment:
 
 ```bash
-source venv/bin/activate   # repo root venv; contains crawl4ai, PyMuPDF, pydantic
-```
-
-Install dependencies if the venv is fresh:
-
-```bash
+# From the repo root
+python3 -m venv venv
+source venv/bin/activate
 pip install -r .claude/skills/utility-creator/requirements.txt
 ```
 
-## Running the eval suite
+**2. Start the Crawl4AI server** (needed for web scraping)
+
+Crawl4AI runs as a local Docker container. The scrapers talk to it on port 11235:
 
 ```bash
+docker run -p 11235:11235 unclecode/crawl4ai
+```
+
+Leave this running in a separate terminal while you use the skill.
+
+**3. Verify everything works**
+
+```bash
+source venv/bin/activate   # if not already active
+bash .claude/skills/utility-creator/smoke.sh
+```
+
+Expected output:
+```
+SMOKE_OK|http_status_codes|pipeline verified end-to-end
+```
+
+If you see `SMOKE_OK`, you're ready.
+
+---
+
+## Using the skill
+
+You use this skill by talking to Claude Code. Just describe what you want:
+
+```
+"Add a utility for VAT rates"
+"Create a currency module"
+"Build an HTTP status codes utility"
+```
+
+Claude will walk you through a clarification step (to nail down scope), then handle everything automatically.
+
+**Under the hood**, Claude follows a numbered sequence of "Recipes" defined in `docs/2_EXECUTION_RECIPES.md`:
+
+| Recipe | What it does |
+|---|---|
+| Recipe 0 | Installs any missing Python packages |
+| Recipe 1 | Checks if local cached data is fresh enough to reuse |
+| Recipe 3 | Fetches fresh data from the official source |
+| Recipe 6 | Validates the fetched data against the schema |
+| Recipe 8 | Writes the JS/TS module files |
+| Recipe 8-Go | Writes the Go module files |
+
+You don't need to call these manually — Claude does it. The docs are there if you're debugging or extending the skill.
+
+---
+
+## Running the tests
+
+The `evals/` folder contains automated tests that verify the skill itself behaves correctly. Run them all:
+
+```bash
+source venv/bin/activate
 bash .claude/skills/utility-creator/evals/run_evals.sh
 ```
 
-Or run individual modules:
+Or run a specific test file:
 
 ```bash
+# Test that the full lifecycle works end-to-end (slowest, most thorough)
 python3 -m pytest .claude/skills/utility-creator/evals/test_functional.py -v
+
+# Test that generated files are valid TypeScript + Go (runs gofmt)
 python3 -m pytest .claude/skills/utility-creator/evals/test_execution_harness.py -v
+
+# Test data quality with a score report
 python3 -m pytest .claude/skills/utility-creator/evals/test_output_quality.py -v --report
 ```
 
-### Eval coverage
+### What each test file checks
 
-| Module | What it checks | Tests |
-|---|---|---|
-| `test_synonyms.py` | Synonym → canonical resolution, registry lookup | ~30 |
-| `test_cache_routing.py` | TTL-based cache hit/miss routing | ~25 |
-| `test_data_precision.py` | Field-level precision of scraped output | ~20 |
-| `test_scoring.py` | Source scoring algorithm, tier ranking | ~25 |
-| `test_recipe8_structure.py` | Recipe 8 JS/TS output structure | ~30 |
-| `test_output_quality.py` | JSON schema, TS type exports, Go codegen rubric | 30 |
-| `test_functional.py` | Full skill lifecycle (8 classes, JPY/Japan fixture) | ~50 |
-| `test_execution_harness.py` | End-to-end file generation + gofmt validation | 50 |
+| File | Plain-English description |
+|---|---|
+| `test_synonyms.py` | "currencies" → "currency_codes": does the alias system work? |
+| `test_cache_routing.py` | Fresh data is reused; stale or missing data triggers a new fetch |
+| `test_data_precision.py` | Fetched values match the real-world ground truth (e.g. JPY minor_unit = 0) |
+| `test_scoring.py` | T1 sources score higher than T2; T3 is rejected outright |
+| `test_recipe8_structure.py` | Generated TS files have `export`, `as const`, `withErrorBoundary`, etc. |
+| `test_output_quality.py` | JSON schema validity + TypeScript type exports + Go struct names |
+| `test_functional.py` | Invoke the full skill with a Japan/JPY fixture; check every output file |
+| `test_execution_harness.py` | Generate real files in a temp dir; run `gofmt -e` and `tsc --noEmit` on them |
 
-## Data pipeline tools
+---
 
-**Interactive scraper CLI:**
+## Using the scrapers directly
+
+If you want to fetch data without going through Claude, you can call the scrapers directly.
+
+**Interactive menu (easiest):**
 
 ```bash
+source venv/bin/activate
 python3 .claude/skills/utility-creator/tools/cli.py
+# Shows a menu — pick a topic, it fetches and validates the data
 ```
 
-**Run a scraper directly:**
+**Fetch a specific topic from the web:**
 
 ```bash
-# Web scrape (via Crawl4AI)
 python3 .claude/skills/utility-creator/tools/crawlers/crawl4ai_runner.py --topic currency
-
-# PDF scrape
-python3 .claude/skills/utility-creator/tools/crawlers/pdf_scraper.py --url <pdf_url> --topic vat_rates_global
-
-# Route automatically to the correct scraper
-python3 .claude/skills/utility-creator/tools/crawlers/skill_router.py --topic corporate_tax_rates
-
-# Validate scraped output against Pydantic schemas
-python3 .claude/skills/utility-creator/tools/crawlers/validate.py --file data.json --topic currency
 ```
 
-> **Note:** `crawl4ai_runner.py` connects directly to a local Crawl4AI instance at `http://localhost:11235`. Start it with `docker run -p 11235:11235 unclecode/crawl4ai` before running web scrapers.
+**Fetch from a PDF source (e.g. OECD report):**
+
+```bash
+python3 .claude/skills/utility-creator/tools/crawlers/pdf_scraper.py \
+  --url https://example.com/oecd-report.pdf \
+  --topic vat_rates_global
+```
+
+**Let the router pick the right scraper automatically:**
+
+```bash
+python3 .claude/skills/utility-creator/tools/crawlers/skill_router.py --topic corporate_tax_rates
+```
+
+**Validate a data file you already have:**
+
+```bash
+python3 .claude/skills/utility-creator/tools/crawlers/validate.py \
+  --file i18nify-data/currency/data.json \
+  --topic currency
+```
+
+---
 
 ## Source traceability
 
-Every canonical `data.json` now includes a `_source` block:
+Every `data.json` file generated by this skill includes a `_source` block at the top level. This tells you exactly where the data came from:
 
 ```json
 {
@@ -139,40 +247,49 @@ Every canonical `data.json` now includes a `_source` block:
     "name": "ISO 4217",
     "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
     "tier": 1
-  }
+  },
+  "currency_information": { ... }
 }
 ```
 
-This block is embedded verbatim in the Go-side `data/data.json` as well.
+The same `_source` block is embedded in the Go-side `data/data.json` so traceability is consistent across both languages.
 
-## Registered topics
+---
 
-| Topic | Tier | Source | Coverage |
+## Supported topics
+
+| Topic name | What it is | Where data comes from | Countries/entries |
 |---|---|---|---|
-| `currency` | T1 | ISO 4217 XML (SIX Group) | ~180 currencies |
-| `http_status_codes` | T1 | IANA HTTP Status Code Registry | All registered codes |
-| `corporate_tax_rates` | T1 | OECD SDMX REST API | ~112 jurisdictions |
-| `vat_rates_global` | T1 | OECD Consumption Tax Trends 2024 | ~75 countries |
-| `address_formats` | T2 | Universal Postal Union (PDF) | 190+ countries |
+| `currency_codes` | ISO currency codes, symbols, minor units | ISO 4217 XML via SIX Group | ~180 currencies |
+| `http_status_codes` | HTTP response codes and descriptions | IANA HTTP Status Code Registry | All registered |
+| `corporate_tax_rates` | Corporate income tax rates by country | OECD SDMX REST API | ~112 countries |
+| `vat_rates_global` | VAT / GST / consumption tax rates | OECD Consumption Tax Trends 2024 | ~75 countries |
+| `address_formats` | Postal address field ordering per country | Universal Postal Union PDF | 190+ countries |
 
-Full registry with TTLs and fallback sources: [`docs/1_REGISTRY_AND_TIERS.md`](./docs/1_REGISTRY_AND_TIERS.md).
+For full details — TTLs, fallback sources, synonyms — see [`docs/1_REGISTRY_AND_TIERS.md`](./docs/1_REGISTRY_AND_TIERS.md).
 
-## Security fixes (shipped in this PR)
+---
 
-| Package | Before | After | CVE |
+## Security dependency updates (also in this PR)
+
+This PR also bumps several npm and Node.js versions to fix known CVEs:
+
+| What was updated | Old version | New version | Issue fixed |
 |---|---|---|---|
-| `@playwright/test` | <1.55.1 | 1.60.0 | CVE-2025-59288 |
-| `js-yaml` | 3.x / 4.x | 3.14.2 / 4.2.0 | prototype pollution |
-| `rollup` | ^4.0.2 | ^4.59.0 | arbitrary file write |
-| `vite` | ^4.4.11 | ^6.4.2 | fs.deny bypass |
-| `esbuild` | <0.28.1 | 0.28.1 | CVE (via resolutions) |
-| Node.js (CI) | 20.3.1 | 20.19.1 | required by vite ^6 + @vitejs/plugin-react-swc ^4 |
+| `@playwright/test` | < 1.55.1 | 1.60.0 | CVE-2025-59288 — macOS installer used `curl -k` (no TLS verification) |
+| `js-yaml` | 3.x / 4.x | 3.14.2 / 4.2.0 | Prototype pollution vulnerability |
+| `rollup` | ^4.0.2 | ^4.59.0 | Arbitrary file write (CVE range 4.0.0–4.58.0) |
+| `vite` | ^4.4.11 | ^6.4.2 | `fs.deny` bypass (CVE range ≤ 6.4.1) |
+| `esbuild` | < 0.28.1 | 0.28.1 | CVE fixed via yarn resolutions |
+| Node.js in CI | 20.3.1 | 20.19.1 | Required by vite ^6 and `@vitejs/plugin-react-swc` ^4 |
 
-## Reference
+---
 
-| Need | File |
+## Reference docs
+
+| I want to… | Read this file |
 |---|---|
-| Source URLs, tier rules, topic synonyms | [`docs/1_REGISTRY_AND_TIERS.md`](./docs/1_REGISTRY_AND_TIERS.md) |
-| Run any Recipe (0–8-Go), utility generation | [`docs/2_EXECUTION_RECIPES.md`](./docs/2_EXECUTION_RECIPES.md) |
-| Scoring formula, widget rendering, diagnostics | [`docs/3_SCORING_AND_UI.md`](./docs/3_SCORING_AND_UI.md) |
-| Error handling, fallback behaviour, halt protocol | [`docs/4_ERROR_HANDLING.md`](./docs/4_ERROR_HANDLING.md) |
+| Find the right source for a topic / understand tiers | [`docs/1_REGISTRY_AND_TIERS.md`](./docs/1_REGISTRY_AND_TIERS.md) |
+| Understand or debug a specific Recipe step | [`docs/2_EXECUTION_RECIPES.md`](./docs/2_EXECUTION_RECIPES.md) |
+| Understand how sources are scored or how the output widget looks | [`docs/3_SCORING_AND_UI.md`](./docs/3_SCORING_AND_UI.md) |
+| Handle a fetch failure or an unreachable source | [`docs/4_ERROR_HANDLING.md`](./docs/4_ERROR_HANDLING.md) |
