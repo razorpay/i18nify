@@ -36,7 +36,7 @@ func FormatCompactNumber(amount interface{}, opts NumberFormatOptions) (string, 
 		return sign + compactStr(abs/lakh) + " L", nil
 	}
 
-	return FormatNumber(amount, opts)
+	return cachedCurrencyData.FormatNumber(amount, opts)
 }
 
 // compactStr formats a compact coefficient, trimming insignificant trailing zeros.

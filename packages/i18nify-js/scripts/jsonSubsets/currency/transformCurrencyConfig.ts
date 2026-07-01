@@ -39,12 +39,8 @@ export default () => {
     (acc: any, curr: any) => {
       acc[curr] = {
         name: currencyInfo[curr].name,
-        numeric_code: currencyInfo[curr].numeric_code,
         minor_unit: currencyInfo[curr].minor_unit,
         symbol: currencyInfo[curr].symbol,
-        physical_currency_denominations:
-          currencyInfo[curr].physical_currency_denominations,
-        symbol_position: currencyInfo[curr].symbol_position,
       };
       return acc;
     },

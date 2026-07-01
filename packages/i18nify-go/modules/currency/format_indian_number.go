@@ -7,7 +7,7 @@ import "fmt"
 // Equivalent to FormatNumber with opts.Locale = "en-IN".
 func FormatIndianNumber(amount interface{}, opts NumberFormatOptions) (string, error) {
 	opts.Locale = "en-IN"
-	result, err := FormatNumber(amount, opts)
+	result, err := cachedCurrencyData.FormatNumber(amount, opts)
 	if err != nil {
 		return "", fmt.Errorf("FormatIndianNumber: %v", err)
 	}

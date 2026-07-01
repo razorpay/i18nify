@@ -11,5 +11,5 @@ func FormatAmountByParts(amount interface{}, currency string, opts NumberFormatO
 		return nil, fmt.Errorf("currency code cannot be empty")
 	}
 	opts.Currency = currency
-	return FormatNumberByParts(amount, opts)
+	return cachedCurrencyData.FormatNumberByParts(amount, opts)
 }
