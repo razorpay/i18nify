@@ -2,7 +2,6 @@ package datetime
 
 import (
 	"sync"
-	"time"
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/country/metadata"
 )
@@ -19,16 +18,4 @@ func getCountryMetadataData() (*dataSource.CountryMetadataData, error) {
 	})
 
 	return countryMetadataData, countryMetadataDataErr
-}
-
-// ParsedFlexibleDate represents the structured result returned by ParseFlexibleDate.
-type ParsedFlexibleDate struct {
-	Date      time.Time
-	Year      int
-	Month     int
-	Day       int
-	Hour      int
-	Minute    int
-	Second    int
-	Timestamp int64
 }
