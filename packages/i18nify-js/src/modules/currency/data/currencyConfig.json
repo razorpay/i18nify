@@ -14,8 +14,7 @@
       "100",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "EUR": {
     "name": "Euro",
@@ -31,8 +30,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "ALL": {
     "name": "Lek",
@@ -50,8 +48,7 @@
       "500",
       "1000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "DZD": {
     "name": "Algerian Dinar",
@@ -69,8 +66,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "USD": {
     "name": "US Dollar",
@@ -84,8 +80,7 @@
       "25",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "AOA": {
     "name": "Kwanza",
@@ -103,8 +98,7 @@
       "1000",
       "2000",
       "5000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "XCD": {
     "name": "East Caribbean Dollar",
@@ -119,8 +113,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "ARS": {
     "name": "Argentine Peso",
@@ -138,8 +131,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "AMD": {
     "name": "Armenian Dram",
@@ -157,8 +149,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "AWG": {
     "name": "Aruban Florin",
@@ -176,8 +167,7 @@
       "1000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "AUD": {
     "name": "Australian Dollar",
@@ -190,8 +180,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "AZN": {
     "name": "Azerbaijan Manat",
@@ -205,8 +194,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BSD": {
     "name": "Bahamian Dollar",
@@ -220,8 +208,7 @@
       "25",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BHD": {
     "name": "Bahraini Dinar",
@@ -237,8 +224,7 @@
       "50",
       "100",
       "500"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BDT": {
     "name": "Taka",
@@ -255,8 +241,7 @@
       "100",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BBD": {
     "name": "Barbados Dollar",
@@ -268,8 +253,7 @@
       "5",
       "10",
       "25"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BYN": {
     "name": "Belarusian Ruble",
@@ -283,8 +267,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BZD": {
     "name": "Belize Dollar",
@@ -299,8 +282,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "XOF": {
     "name": "CFA Franc BCEAO",
@@ -323,8 +305,7 @@
       "10000",
       "20000",
       "50000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "BMD": {
     "name": "Bermudian Dollar",
@@ -338,8 +319,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "INR": {
     "name": "Indian Rupee",
@@ -357,8 +337,7 @@
       "200",
       "500",
       "2000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BTN": {
     "name": "Ngultrum",
@@ -374,8 +353,7 @@
       "100",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BOB": {
     "name": "Boliviano",
@@ -388,8 +366,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "BOV": {
     "name": "Mvdol",
@@ -402,8 +379,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BAM": {
     "name": "Convertible Mark",
@@ -417,8 +393,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BWP": {
     "name": "Pula",
@@ -434,8 +409,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "NOK": {
     "name": "Norwegian Krone",
@@ -453,8 +427,7 @@
       "500",
       "1000",
       "2000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BRL": {
     "name": "Brazilian Real",
@@ -469,8 +442,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "BND": {
     "name": "Brunei Dollar",
@@ -488,8 +460,7 @@
       "1000",
       "10000",
       "100000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "BGN": {
     "name": "Bulgarian Lev",
@@ -504,8 +475,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "BIF": {
     "name": "Burundi Franc",
@@ -522,8 +492,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "CVE": {
     "name": "Cabo Verde Escudo",
@@ -537,8 +506,7 @@
       "2000",
       "2500",
       "5000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "KHR": {
     "name": "Riel",
@@ -555,8 +523,7 @@
       "10000",
       "50000",
       "100000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "XAF": {
     "name": "CFA Franc BEAC",
@@ -572,8 +539,7 @@
       "20000",
       "50000",
       "100000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "CAD": {
     "name": "Canadian Dollar",
@@ -586,8 +552,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "KYD": {
     "name": "Cayman Islands Dollar",
@@ -601,8 +566,7 @@
       "25",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "CLP": {
     "name": "Chilean Peso",
@@ -619,8 +583,7 @@
       "1000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "CLF": {
     "name": "Unidad de Fomento",
@@ -629,8 +592,7 @@
     "symbol": "UF",
     "physical_currency_denominations": [
       "nan"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "CNY": {
     "name": "Yuan Renminbi",
@@ -645,8 +607,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "COP": {
     "name": "Colombian Peso",
@@ -660,8 +621,7 @@
       "10000",
       "20000",
       "50000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "COU": {
     "name": "Unidad de Valor Real",
@@ -670,8 +630,7 @@
     "symbol": "UVR",
     "physical_currency_denominations": [
       "nan"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "KMF": {
     "name": "Comorian Franc",
@@ -688,8 +647,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "CDF": {
     "name": "Congolese Franc",
@@ -706,8 +664,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "NZD": {
     "name": "New Zealand Dollar",
@@ -720,8 +677,7 @@
       "5",
       "10",
       "20"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "CRC": {
     "name": "Costa Rican Colon",
@@ -738,8 +694,7 @@
       "50000",
       "100000",
       "500000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "CUP": {
     "name": "Cuban Peso",
@@ -753,8 +708,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "CUC": {
     "name": "Peso Convertible",
@@ -769,8 +723,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "ANG": {
     "name": "Netherlands Antillean Guilder",
@@ -790,8 +743,7 @@
       "1000",
       "2500",
       "5000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "CZK": {
     "name": "Czech Koruna",
@@ -811,8 +763,7 @@
       "1000",
       "2000",
       "5000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "DKK": {
     "name": "Danish Krone",
@@ -825,8 +776,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "DJF": {
     "name": "Djibouti Franc",
@@ -838,8 +788,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "DOP": {
     "name": "Dominican Peso",
@@ -852,8 +801,7 @@
       "10",
       "25",
       "50"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "EGP": {
     "name": "Egyptian Pound",
@@ -865,8 +813,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SVC": {
     "name": "El Salvador Colon",
@@ -885,8 +832,7 @@
       "25",
       "50",
       "100"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "ERN": {
     "name": "Nakfa",
@@ -899,8 +845,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SZL": {
     "name": "Lilangeni",
@@ -909,8 +854,7 @@
     "symbol": "E",
     "physical_currency_denominations": [
       "2"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "ETB": {
     "name": "Ethiopian Birr",
@@ -923,8 +867,7 @@
       "10",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "FKP": {
     "name": "Falkland Islands Pound",
@@ -938,8 +881,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "FJD": {
     "name": "Fiji Dollar",
@@ -953,8 +895,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "XPF": {
     "name": "CFP Franc",
@@ -966,8 +907,7 @@
       "1000",
       "2000",
       "5000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "GMD": {
     "name": "Dalasi",
@@ -981,8 +921,7 @@
       "25",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "GEL": {
     "name": "Lari",
@@ -998,8 +937,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "GHS": {
     "name": "Ghana Cedi",
@@ -1013,8 +951,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "GIP": {
     "name": "Gibraltar Pound",
@@ -1028,8 +965,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "GTQ": {
     "name": "Quetzal",
@@ -1043,8 +979,7 @@
       "25",
       "50",
       "100"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "GBP": {
     "name": "Pound Sterling",
@@ -1058,8 +993,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "GNF": {
     "name": "Guinean Franc",
@@ -1075,8 +1009,7 @@
       "50000",
       "100000",
       "500000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "GYD": {
     "name": "Guyana Dollar",
@@ -1090,8 +1023,7 @@
       "1000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "HTG": {
     "name": "Gourde",
@@ -1109,8 +1041,7 @@
       "500",
       "1000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "HNL": {
     "name": "Lempira",
@@ -1125,8 +1056,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "HKD": {
     "name": "Hong Kong Dollar",
@@ -1140,8 +1070,7 @@
       "100",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "HUF": {
     "name": "Forint",
@@ -1161,8 +1090,7 @@
       "5000",
       "10000",
       "20000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "ISK": {
     "name": "Iceland Krona",
@@ -1176,8 +1104,7 @@
       "5000",
       "10000",
       "25000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "IDR": {
     "name": "Rupiah",
@@ -1194,8 +1121,7 @@
       "100000",
       "200000",
       "500000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "IRR": {
     "name": "Iranian Rial",
@@ -1213,8 +1139,7 @@
       "20000",
       "50000",
       "100000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "IQD": {
     "name": "Iraqi Dinar",
@@ -1231,8 +1156,7 @@
       "10000",
       "25000",
       "50000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "ILS": {
     "name": "New Israeli Sheqel",
@@ -1244,8 +1168,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "JMD": {
     "name": "Jamaican Dollar",
@@ -1258,8 +1181,7 @@
       "500",
       "1000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "JPY": {
     "name": "Yen",
@@ -1271,8 +1193,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "JOD": {
     "name": "Jordanian Dinar",
@@ -1285,8 +1206,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "KZT": {
     "name": "Tenge",
@@ -1303,8 +1223,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "KES": {
     "name": "Kenyan Shilling",
@@ -1317,8 +1236,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "KPW": {
     "name": "North Korean Won",
@@ -1330,8 +1248,7 @@
       "10",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "KRW": {
     "name": "Won",
@@ -1344,8 +1261,7 @@
       "10000",
       "50000",
       "100000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "KWD": {
     "name": "Kuwaiti Dinar",
@@ -1359,8 +1275,7 @@
       "5",
       "10",
       "20"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "KGS": {
     "name": "Som",
@@ -1375,8 +1290,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "LAK": {
     "name": "Kip",
@@ -1393,8 +1307,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "LBP": {
     "name": "Lebanese Pound",
@@ -1405,8 +1318,7 @@
       "25000",
       "50000",
       "100000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "LSL": {
     "name": "Loti",
@@ -1423,8 +1335,7 @@
       "100",
       "200",
       "500"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "ZAR": {
     "name": "South African Rand",
@@ -1437,8 +1348,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "LRD": {
     "name": "Liberian Dollar",
@@ -1452,8 +1362,7 @@
       "50",
       "100",
       "500"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "LYD": {
     "name": "Libyan Dinar",
@@ -1466,8 +1375,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "CHF": {
     "name": "Swiss Franc",
@@ -1481,8 +1389,7 @@
       "100",
       "200",
       "1000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "MOP": {
     "name": "Pataca",
@@ -1495,8 +1402,7 @@
       "50",
       "100",
       "500"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MKD": {
     "name": "Denar",
@@ -1510,8 +1416,7 @@
       "500",
       "1000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MGA": {
     "name": "Malagasy Ariary",
@@ -1533,8 +1438,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "MWK": {
     "name": "Malawi Kwacha",
@@ -1550,8 +1454,7 @@
       "1000",
       "2000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MYR": {
     "name": "Malaysian Ringgit",
@@ -1565,8 +1468,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MVR": {
     "name": "Rufiyaa",
@@ -1583,8 +1485,7 @@
       "100",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MRU": {
     "name": "Ouguiya",
@@ -1599,8 +1500,7 @@
       "1000",
       "2000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MUR": {
     "name": "Mauritian Rupee",
@@ -1616,8 +1516,7 @@
       "1000",
       "2000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MXN": {
     "name": "Mexican Peso",
@@ -1630,8 +1529,7 @@
       "100",
       "200",
       "500"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "MXV": {
     "name": "Mexican Unidad de Inversion (UDI)",
@@ -1640,8 +1538,7 @@
     "symbol": "UDI",
     "physical_currency_denominations": [
       "nan"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MDL": {
     "name": "Moldovan Leu",
@@ -1658,8 +1555,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "MNT": {
     "name": "Tugrik",
@@ -1678,8 +1574,7 @@
       "20000",
       "50000",
       "100000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MAD": {
     "name": "Moroccan Dirham",
@@ -1691,8 +1586,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "MZN": {
     "name": "Mozambique Metical",
@@ -1706,8 +1600,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "MMK": {
     "name": "Kyat",
@@ -1722,8 +1615,7 @@
       "1000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "NAD": {
     "name": "Namibia Dollar",
@@ -1736,8 +1628,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "NPR": {
     "name": "Nepalese Rupee",
@@ -1754,8 +1645,7 @@
       "100",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "NIO": {
     "name": "Cordoba Oro",
@@ -1770,8 +1660,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "NGN": {
     "name": "Naira",
@@ -1787,8 +1676,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "OMR": {
     "name": "Rial Omani",
@@ -1801,8 +1689,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "PKR": {
     "name": "Pakistan Rupee",
@@ -1816,8 +1703,7 @@
       "100",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "PAB": {
     "name": "Balboa",
@@ -1831,8 +1717,7 @@
       "25",
       "50",
       "100"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "PGK": {
     "name": "Kina",
@@ -1846,8 +1731,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "PYG": {
     "name": "Guarani",
@@ -1861,8 +1745,7 @@
       "20000",
       "50000",
       "100000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "PEN": {
     "name": "Sol",
@@ -1875,8 +1758,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "PHP": {
     "name": "Philippine Peso",
@@ -1890,8 +1772,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "PLN": {
     "name": "Zloty",
@@ -1904,8 +1785,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "QAR": {
     "name": "Qatari Rial",
@@ -1918,8 +1798,7 @@
       "10",
       "25",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "RON": {
     "name": "Romanian Leu",
@@ -1933,8 +1812,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "RUB": {
     "name": "Russian Ruble",
@@ -1949,8 +1827,7 @@
       "500",
       "1000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "RWF": {
     "name": "Rwandan Franc",
@@ -1962,8 +1839,7 @@
       "1000",
       "2000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SHP": {
     "name": "Saint Helena Pound",
@@ -1975,8 +1851,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "WST": {
     "name": "Tala",
@@ -1988,8 +1863,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "STN": {
     "name": "Dobra",
@@ -2001,8 +1875,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "SAR": {
     "name": "Saudi Riyal",
@@ -2016,8 +1889,7 @@
       "50",
       "100",
       "500"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "RSD": {
     "name": "Serbian Dinar",
@@ -2033,8 +1905,7 @@
       "500",
       "1000",
       "5000"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "SCR": {
     "name": "Seychelles Rupee",
@@ -2047,8 +1918,7 @@
       "50",
       "100",
       "500"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SLE": {
     "name": "Leone",
@@ -2061,8 +1931,7 @@
       "5",
       "10",
       "20"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SGD": {
     "name": "Singapore Dollar",
@@ -2076,8 +1945,7 @@
       "50",
       "100",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SBD": {
     "name": "Solomon Islands Dollar",
@@ -2090,8 +1958,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SOS": {
     "name": "Somali Shilling",
@@ -2103,8 +1970,7 @@
       "1000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SSP": {
     "name": "South Sudanese Pound",
@@ -2118,8 +1984,7 @@
       "25",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "LKR": {
     "name": "Sri Lanka Rupee",
@@ -2136,8 +2001,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SDG": {
     "name": "Sudanese Pound",
@@ -2152,8 +2016,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SRD": {
     "name": "Surinam Dollar",
@@ -2166,8 +2029,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "SEK": {
     "name": "Swedish Krona",
@@ -2182,8 +2044,7 @@
       "50",
       "100",
       "500"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "CHE": {
     "name": "WIR Euro",
@@ -2192,8 +2053,7 @@
     "symbol": "CHE",
     "physical_currency_denominations": [
       "nan"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "CHW": {
     "name": "WIR Franc",
@@ -2202,8 +2062,7 @@
     "symbol": "CHW",
     "physical_currency_denominations": [
       "nan"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "SYP": {
     "name": "Syrian Pound",
@@ -2216,8 +2075,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "TWD": {
     "name": "New Taiwan Dollar",
@@ -2230,8 +2088,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "TJS": {
     "name": "Somoni",
@@ -2246,8 +2103,7 @@
       "50",
       "100",
       "200"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "TZS": {
     "name": "Tanzanian Shilling",
@@ -2260,8 +2116,7 @@
       "2000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "THB": {
     "name": "Baht",
@@ -2274,8 +2129,7 @@
       "100",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "TOP": {
     "name": "Pa’anga",
@@ -2289,8 +2143,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "TTD": {
     "name": "Trinidad and Tobago Dollar",
@@ -2304,8 +2157,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "TND": {
     "name": "Tunisian Dinar",
@@ -2317,8 +2169,7 @@
       "10",
       "20",
       "50"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "TRY": {
     "name": "Turkish Lira",
@@ -2333,8 +2184,7 @@
       "100",
       "200",
       "500"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "TMT": {
     "name": "Turkmenistan New Manat",
@@ -2349,8 +2199,7 @@
       "50",
       "100",
       "500"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "UGX": {
     "name": "Uganda Shilling",
@@ -2364,8 +2213,7 @@
       "10000",
       "20000",
       "50000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "UAH": {
     "name": "Hryvnia",
@@ -2382,8 +2230,7 @@
       "100",
       "200",
       "500"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "AED": {
     "name": "UAE Dirham",
@@ -2399,8 +2246,7 @@
       "200",
       "500",
       "1000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "UYI": {
     "name": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
@@ -2409,8 +2255,7 @@
     "symbol": "$U",
     "physical_currency_denominations": [
       "nan"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "UYU": {
     "name": "Peso Uruguayo",
@@ -2426,8 +2271,7 @@
       "1000",
       "2000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "UYW": {
     "name": "Unidad Previsional",
@@ -2436,8 +2280,7 @@
     "symbol": "UR",
     "physical_currency_denominations": [
       "nan"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "UZS": {
     "name": "Uzbekistan Sum",
@@ -2453,8 +2296,7 @@
       "200000",
       "500000",
       "1000000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "VUV": {
     "name": "Vatu",
@@ -2468,8 +2310,7 @@
       "1000",
       "5000",
       "10000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "VES": {
     "name": "Bolívar Soberano",
@@ -2483,8 +2324,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "suffix"
+    ]
   },
   "VED": {
     "name": "Bolívar Soberano",
@@ -2498,8 +2338,7 @@
       "20",
       "50",
       "100"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "VND": {
     "name": "Dong",
@@ -2516,8 +2355,7 @@
       "100000",
       "200000",
       "500000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "YER": {
     "name": "Yemeni Rial",
@@ -2530,8 +2368,7 @@
       "1000",
       "2000",
       "5000"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "ZMW": {
     "name": "Zambian Kwacha",
@@ -2546,8 +2383,7 @@
       "50",
       "100",
       "500"
-    ],
-    "symbol_position": "prefix"
+    ]
   },
   "ZWL": {
     "name": "Zimbabwe Dollar",
@@ -2564,7 +2400,6 @@
       "500",
       "1000",
       "1000000000000"
-    ],
-    "symbol_position": "prefix"
+    ]
   }
 }

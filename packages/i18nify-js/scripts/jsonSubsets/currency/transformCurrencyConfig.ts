@@ -44,7 +44,6 @@ export default () => {
         symbol: currencyInfo[curr].symbol,
         physical_currency_denominations:
           currencyInfo[curr].physical_currency_denominations,
-        symbol_position: currencyInfo[curr].symbol_position,
       };
       return acc;
     },
