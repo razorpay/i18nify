@@ -7,13 +7,13 @@ import { AddressCodeType, AddressType, AddressComponents } from './types';
  * Empty component fields substitute as blank strings; lines that become empty
  * after substitution are removed from the output.
  */
-const formatAddressWithFormat = (
+const formatAddressByCountry = (
   countryCode: string,
   components: AddressComponents,
 ): string => {
   const trimmed = countryCode.trim();
   if (trimmed === '') {
-    throw new Error('formatAddressWithFormat: country code must not be empty.');
+    throw new Error('formatAddressByCountry: country code must not be empty.');
   }
   const code = trimmed.toUpperCase() as AddressCodeType;
 
@@ -21,7 +21,7 @@ const formatAddressWithFormat = (
 
   if (!addressInfo) {
     throw new Error(
-      `formatAddressWithFormat: address format for country code "${code}" not found.`,
+      `formatAddressByCountry: address format for country code "${code}" not found.`,
     );
   }
 
@@ -44,6 +44,6 @@ const formatAddressWithFormat = (
     .join('\n');
 };
 
-export default withErrorBoundary<typeof formatAddressWithFormat>(
-  formatAddressWithFormat,
+export default withErrorBoundary<typeof formatAddressByCountry>(
+  formatAddressByCountry,
 );

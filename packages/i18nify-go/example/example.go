@@ -223,7 +223,7 @@ func main() {
 	}
 
 	// Format an address using a country-specific template
-	formattedAddr, err := country_metadata.FormatAddressWithFormat("US", country_metadata.AddressComponents{
+	formattedAddr, err := country_metadata.FormatAddressByCountry("US", country_metadata.AddressComponents{
 		Name:          "John Doe",
 		Organization:  "Acme Corp",
 		StreetAddress: "1600 Amphitheatre Pkwy",

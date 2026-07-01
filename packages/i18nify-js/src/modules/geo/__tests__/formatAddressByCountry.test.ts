@@ -1,9 +1,9 @@
-import formatAddressWithFormat from '../formatAddressWithFormat';
+import formatAddressByCountry from '../formatAddressByCountry';
 
-describe('formatAddressWithFormat', () => {
+describe('formatAddressByCountry', () => {
   describe('full substitution', () => {
     it('formats a US address with all fields', () => {
-      const result = formatAddressWithFormat('US', {
+      const result = formatAddressByCountry('US', {
         name: 'John Doe',
         organization: 'Acme Corp',
         street_address: '1600 Amphitheatre Pkwy',
@@ -17,7 +17,7 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('formats an IN address with all fields', () => {
-      const result = formatAddressWithFormat('IN', {
+      const result = formatAddressByCountry('IN', {
         name: 'Rahul Sharma',
         organization: 'Razorpay',
         street_address: 'SJR Cyber, 22, Laskar Hosur Rd',
@@ -31,7 +31,7 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('formats a DE address (no state field)', () => {
-      const result = formatAddressWithFormat('DE', {
+      const result = formatAddressByCountry('DE', {
         name: 'Hans Müller',
         organization: 'Beispiel GmbH',
         street_address: 'Musterstraße 1',
@@ -44,7 +44,7 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('formats a JP address (reversed field order)', () => {
-      const result = formatAddressWithFormat('JP', {
+      const result = formatAddressByCountry('JP', {
         zip: '100-0001',
         state: '東京都',
         street_address: '千代田1-1',
@@ -57,7 +57,7 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('formats a BR address with district field', () => {
-      const result = formatAddressWithFormat('BR', {
+      const result = formatAddressByCountry('BR', {
         organization: 'Empresa Ltda',
         name: 'João Silva',
         street_address: 'Rua das Flores, 123',
@@ -72,7 +72,7 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('formats a BF address with sorting_code field', () => {
-      const result = formatAddressWithFormat('BF', {
+      const result = formatAddressByCountry('BF', {
         name: 'Fatima Ouedraogo',
         organization: '',
         street_address: 'Avenue Kwame Nkrumah',
@@ -87,7 +87,7 @@ describe('formatAddressWithFormat', () => {
 
   describe('country code normalization', () => {
     it('accepts lowercase country code', () => {
-      const result = formatAddressWithFormat('us', {
+      const result = formatAddressByCountry('us', {
         name: 'Jane',
         street_address: '1 Main St',
         city: 'Boston',
@@ -98,7 +98,7 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('accepts country code with surrounding whitespace', () => {
-      const result = formatAddressWithFormat('  IN  ', {
+      const result = formatAddressByCountry('  IN  ', {
         name: 'Priya',
         street_address: '12 MG Road',
         city: 'Pune',
@@ -111,7 +111,7 @@ describe('formatAddressWithFormat', () => {
 
   describe('blank line removal', () => {
     it('removes the organization line when organization is omitted', () => {
-      const result = formatAddressWithFormat('US', {
+      const result = formatAddressByCountry('US', {
         name: 'Jane Smith',
         street_address: '742 Evergreen Terrace',
         city: 'Springfield',
@@ -124,7 +124,7 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('removes the name line when name is omitted', () => {
-      const result = formatAddressWithFormat('US', {
+      const result = formatAddressByCountry('US', {
         organization: 'ACME',
         street_address: '1 Main St',
         city: 'Boston',
@@ -135,7 +135,7 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('removes multiple blank optional lines at once', () => {
-      const result = formatAddressWithFormat('DE', {
+      const result = formatAddressByCountry('DE', {
         street_address: 'Unter den Linden 77',
         city: 'Berlin',
         zip: '10117',
@@ -146,7 +146,7 @@ describe('formatAddressWithFormat', () => {
     it('keeps a line that has non-empty tokens even if some tokens on that line are empty', () => {
       // US: "{city}, {state} {zip}" — omitting state leaves "Springfield,  62704"
       // after trim → "Springfield,  62704" which is non-empty (kept)
-      const result = formatAddressWithFormat('US', {
+      const result = formatAddressByCountry('US', {
         name: 'Bob',
         street_address: '1 Park Ave',
         city: 'Springfield',
@@ -156,7 +156,7 @@ describe('formatAddressWithFormat', () => {
     });
 
     it('removes district line when district is omitted (BR)', () => {
-      const result = formatAddressWithFormat('BR', {
+      const result = formatAddressByCountry('BR', {
         name: 'Carlos',
         street_address: 'Rua A, 10',
         city: 'Rio de Janeiro',
@@ -170,31 +170,31 @@ describe('formatAddressWithFormat', () => {
   describe('error handling', () => {
     it('throws when country code is not found', () => {
       expect(() =>
-        formatAddressWithFormat('ZZ', {
+        formatAddressByCountry('ZZ', {
           name: 'Test',
           street_address: '1 Main St',
         }),
       ).toThrow(
-        'formatAddressWithFormat: address format for country code "ZZ" not found.',
+        'formatAddressByCountry: address format for country code "ZZ" not found.',
       );
     });
 
     it('throws for empty string country code', () => {
-      expect(() => formatAddressWithFormat('', {})).toThrow(
-        'formatAddressWithFormat: country code must not be empty.',
+      expect(() => formatAddressByCountry('', {})).toThrow(
+        'formatAddressByCountry: country code must not be empty.',
       );
     });
 
     it('throws for whitespace-only country code', () => {
-      expect(() => formatAddressWithFormat('   ', {})).toThrow(
-        'formatAddressWithFormat: country code must not be empty.',
+      expect(() => formatAddressByCountry('   ', {})).toThrow(
+        'formatAddressByCountry: country code must not be empty.',
       );
     });
   });
 
   describe('empty components', () => {
     it('returns only the non-blank lines when all optional fields are empty', () => {
-      const result = formatAddressWithFormat('US', {
+      const result = formatAddressByCountry('US', {
         street_address: '99 Test Blvd',
         city: 'Nowhere',
         state: 'NY',
@@ -206,13 +206,13 @@ describe('formatAddressWithFormat', () => {
     it('keeps lines with literal separators even when all tokens are empty', () => {
       // US template line "{city}, {state} {zip}" has a literal "," — after substitution
       // it becomes ", " which trims to "," — non-blank, so it is kept.
-      const result = formatAddressWithFormat('US', {});
+      const result = formatAddressByCountry('US', {});
       expect(result).toBe(',');
     });
 
     it('returns empty string when the template has only bare token lines', () => {
       // DE template: each token is on its own line with no literal separators
-      const result = formatAddressWithFormat('DE', {});
+      const result = formatAddressByCountry('DE', {});
       expect(result).toBe('');
     });
   });

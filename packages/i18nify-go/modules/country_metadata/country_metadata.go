@@ -764,20 +764,20 @@ type AddressComponents struct {
 	SortingCode   string
 }
 
-// FormatAddressWithFormat formats address components using the country-specific
+// FormatAddressByCountry formats address components using the country-specific
 // template for countryCode. The template is sourced from the country metadata
 // (MetadataInformation.AddressTemplate). Each {placeholder} in the template is
 // replaced with the matching field; blank lines in the result are removed.
-func FormatAddressWithFormat(countryCode string, components AddressComponents) (string, error) {
+func FormatAddressByCountry(countryCode string, components AddressComponents) (string, error) {
 	if strings.TrimSpace(countryCode) == "" {
-		return "", fmt.Errorf("formatAddressWithFormat: country code must not be empty")
+		return "", fmt.Errorf("formatAddressByCountry: country code must not be empty")
 	}
 
 	code := strings.ToUpper(strings.TrimSpace(countryCode))
 
 	template := GetMetadataInformation(code).AddressTemplate
 	if template == "" {
-		return "", fmt.Errorf("formatAddressWithFormat: address format for country code %q not found", code)
+		return "", fmt.Errorf("formatAddressByCountry: address format for country code %q not found", code)
 	}
 
 	replacer := strings.NewReplacer(

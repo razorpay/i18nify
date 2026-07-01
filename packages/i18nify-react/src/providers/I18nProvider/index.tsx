@@ -22,7 +22,7 @@ export const I18nProvider = ({
   children,
   initData = {},
 }: {
-  children: JSX.Element;
+  children: React.ReactNode;
   initData?: Record<string, unknown>;
 }) => {
   // initialising state by an initializer function so as to call i18nify.setState method here.
