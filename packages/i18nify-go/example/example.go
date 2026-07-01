@@ -212,6 +212,31 @@ func main() {
 		fmt.Printf("Weekdays: %v\n", weekdays) // [Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
 	}
 
+	// Geo / Locale Utilities
+	// Get the default locale for every country
+	localeList, err := country_metadata.GetDefaultLocaleList()
+	if err != nil {
+		fmt.Printf("Error getting default locale list: %v\n", err)
+	} else {
+		fmt.Printf("Default locale for IN: %s\n", localeList["IN"]) // en_IN
+		fmt.Printf("Default locale for US: %s\n", localeList["US"]) // en_US
+	}
+
+	// Format an address using a country-specific template
+	formattedAddr, err := country_metadata.FormatAddressByCountry("US", country_metadata.AddressComponents{
+		Name:          "John Doe",
+		Organization:  "Acme Corp",
+		StreetAddress: "1600 Amphitheatre Pkwy",
+		City:          "Mountain View",
+		State:         "CA",
+		Zip:           "94043",
+	})
+	if err != nil {
+		fmt.Printf("Error formatting address: %v\n", err)
+	} else {
+		fmt.Printf("Formatted address:\n%s\n", formattedAddr) // John Doe\nAcme Corp\n1600 Amphitheatre Pkwy\nMountain View, CA 94043
+	}
+
 	// Multiple Countries
 	// United States
 	countryUS := i18nify_go.NewCountry("US")

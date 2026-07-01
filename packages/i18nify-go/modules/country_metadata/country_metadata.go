@@ -88,6 +88,7 @@ func convertFromDataSource(src *dataSource.CountryMetadataData) CountryMetadata 
 			TimezoneOfCapital: cm.GetTimezoneOfCapital(),
 			Timezones:         timezones,
 			DefaultCurrency:   cm.GetDefaultCurrency(),
+			AddressTemplate:   cm.GetAddressFormat(),
 		}
 	}
 	return CountryMetadata{MetadataInformation: info, SupportedDateFormats: formats}
@@ -228,6 +229,8 @@ type MetadataInformation struct {
 	TimezoneOfCapital string              `json:"timezone_of_capital"` // TimezoneOfCapital represents the timezone of the capital city of the country.
 	Timezones         map[string]Timezone `json:"timezones"`           // Timezones represents the list of timezones used in the country, keyed by timezone identifier.
 	DefaultCurrency   string              `json:"default_currency"`    // DefaultCurrency represents the default currency used in the country.
+	// AddressTemplate represents the country-specific address formatting template.
+	AddressTemplate string `json:"address_template,omitempty"`
 }
 
 // SupportedDateFormat describes a globally supported input date/time pattern.
@@ -719,4 +722,85 @@ func GetWeekdays(opts GetWeekdaysOptions) ([]string, error) {
 	result := make([]string, len(weekdays))
 	copy(result, weekdays[:])
 	return result, nil
+}
+
+// GetDefaultLocaleList returns a map of ISO 3166-1 alpha-2 country codes to
+// their default locale tag (e.g., "IN" → "en_IN"). Countries whose metadata
+// has no default_locale set are skipped.
+//
+// It mirrors the JavaScript getDefaultLocaleList function in the i18nify-js
+// geo module.
+func GetDefaultLocaleList() (map[string]string, error) {
+	if cachedCountyMetaData == nil {
+		return nil, fmt.Errorf("getDefaultLocaleList: country metadata not loaded")
+	}
+
+	metadataMap := cachedCountyMetaData.MetadataInformation
+	result := make(map[string]string, len(metadataMap))
+	for code, info := range metadataMap {
+		if info.DefaultLocale != "" {
+			result[code] = info.DefaultLocale
+		}
+	}
+
+	if len(result) == 0 {
+		return nil, fmt.Errorf("getDefaultLocaleList: no default locales found in metadata")
+	}
+
+	return result, nil
+}
+
+// AddressComponents holds address field values for template substitution.
+// All fields are optional; empty fields substitute as blank strings and
+// lines that become blank after substitution are dropped from the output.
+type AddressComponents struct {
+	Name          string
+	Organization  string
+	StreetAddress string
+	City          string
+	State         string
+	Zip           string
+	District      string
+	SortingCode   string
+}
+
+// FormatAddressByCountry formats address components using the country-specific
+// template for countryCode. The template is sourced from the country metadata
+// (MetadataInformation.AddressTemplate). Each {placeholder} in the template is
+// replaced with the matching field; blank lines in the result are removed.
+func FormatAddressByCountry(countryCode string, components AddressComponents) (string, error) {
+	if strings.TrimSpace(countryCode) == "" {
+		return "", fmt.Errorf("formatAddressByCountry: country code must not be empty")
+	}
+
+	code := strings.ToUpper(strings.TrimSpace(countryCode))
+
+	template := GetMetadataInformation(code).AddressTemplate
+	if template == "" {
+		return "", fmt.Errorf("formatAddressByCountry: address format for country code %q not found", code)
+	}
+
+	replacer := strings.NewReplacer(
+		"{name}", components.Name,
+		"{organization}", components.Organization,
+		"{street_address}", components.StreetAddress,
+		"{city}", components.City,
+		"{state}", components.State,
+		"{zip}", components.Zip,
+		"{district}", components.District,
+		"{sorting_code}", components.SortingCode,
+	)
+	substituted := replacer.Replace(template)
+
+	// Drop any lines that are blank after substitution — this happens when an
+	// optional field (e.g. Organization) was not provided.
+	rawLines := strings.Split(substituted, "\n")
+	formatted := make([]string, 0, len(rawLines))
+	for _, line := range rawLines {
+		if trimmed := strings.TrimSpace(line); trimmed != "" {
+			formatted = append(formatted, trimmed)
+		}
+	}
+
+	return strings.Join(formatted, "\n"), nil
 }
