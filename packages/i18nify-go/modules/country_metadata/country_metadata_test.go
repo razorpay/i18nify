@@ -1,8 +1,11 @@
 package country_metadata
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+	"time"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestUnmarshalCountryMetadata(t *testing.T) {
@@ -63,6 +66,45 @@ func TestMarshalCountryMetadata(t *testing.T) {
 func TestGetMetadataInformation(t *testing.T) {
 	result := GetMetadataInformation("IN")
 	assertINMetaData(t, result)
+}
+
+func TestGetMetadataInformation_LocaleDateConfig(t *testing.T) {
+	result := GetMetadataInformation("CA")
+
+	enCA := result.Locales["en_CA"]
+	assert.Equal(t, "MDY", enCA.DateOrder)
+	assert.Equal(t, "/", enCA.DateSeparator)
+
+	frCA := result.Locales["fr_CA"]
+	assert.Equal(t, "DMY", frCA.DateOrder)
+	assert.Equal(t, "-", frCA.DateSeparator)
+}
+
+func TestGetLocaleByIdentifier(t *testing.T) {
+	enCA, ok := getLocaleByIdentifier("en-CA")
+	assert.True(t, ok)
+	assert.Equal(t, "English (Canada)", enCA.Name)
+	assert.Equal(t, "MDY", enCA.DateOrder)
+	assert.Equal(t, "/", enCA.DateSeparator)
+
+	fr, ok := getLocaleByIdentifier("fr")
+	assert.True(t, ok)
+	assert.Equal(t, "French", fr.Name)
+
+	_, ok = getLocaleByIdentifier("")
+	assert.False(t, ok)
+}
+
+func TestGetSupportedDateFormats(t *testing.T) {
+	jsonData := []byte(`{"metadata_information":{"IN":{"country_name":"India","continent_code":"AS","continent_name":"Asia","alpha_3":"IND","numeric_code":"356","flag":"https://flagcdn.com/in.svg","sovereignty":"UN member state","dial_code":"+91","supported_currency":["INR"],"timezones":{"Asia/Kolkata":{"utc_offset":"UTC +05:30"}},"timezone_of_capital":"Asia/Kolkata","locales":{"en_IN":{"name":"English (India)"}},"default_locale":"en_IN","default_currency":"INR"}},"supported_date_formats":[{"regex":"^(\\d{4})/(0[1-9]|1[0-2])/(\\d{2})$","year_index":1,"month_index":2,"day_index":3,"format":"YYYY/MM/DD"}]}`)
+	countryMetadata, err := UnmarshalCountryMetadata(jsonData)
+	assert.NoError(t, err)
+	assert.Len(t, countryMetadata.SupportedDateFormats, 1)
+	assert.Equal(t, "YYYY/MM/DD", countryMetadata.SupportedDateFormats[0].Format)
+	assert.Equal(t, int32(1), countryMetadata.SupportedDateFormats[0].YearIndex)
+
+	actual := cachedCountyMetaData.GetSupportedDateFormats()
+	assert.NotEmpty(t, actual)
 }
 
 func TestGetMetadataInformationByISONumericCode(t *testing.T) {
@@ -266,4 +308,261 @@ func TestGetCountryCodeISO2(t *testing.T) {
 			assert.Equal(t, tc.expectedCode, result, "Country code doesn't match expected value")
 		})
 	}
+}
+
+// ─── FormatDateTime ───────────────────────────────────────────────────────────
+
+func TestFormatDateTime_DateOnly_enUS(t *testing.T) {
+	ts := time.Date(2024, 3, 5, 0, 0, 0, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale:       "en-US",
+		DateTimeMode: ModeDateOnly,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "3/5/2024", got)
+}
+
+func TestFormatDateTime_DateOnly_enGB(t *testing.T) {
+	ts := time.Date(2024, 3, 5, 0, 0, 0, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale:       "en-GB",
+		DateTimeMode: ModeDateOnly,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "5/3/2024", got)
+}
+
+func TestFormatDateTime_DateOnly_frCAUsesCountryMetadata(t *testing.T) {
+	ts := time.Date(2024, 3, 5, 0, 0, 0, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale:       "fr-CA",
+		DateTimeMode: ModeDateOnly,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "5-3-2024", got)
+}
+
+func TestFormatDateTime_DateOnly_Japanese(t *testing.T) {
+	ts := time.Date(2024, 3, 5, 0, 0, 0, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale:       "ja",
+		DateTimeMode: ModeDateOnly,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "2024/3/5", got)
+}
+
+func TestFormatDateTime_TimeOnly_24h(t *testing.T) {
+	ts := time.Date(2024, 1, 1, 14, 5, 9, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale:       "en-US",
+		DateTimeMode: ModeTimeOnly,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "2:5:9 PM", got)
+}
+
+func TestFormatDateTime_TimeOnly_12h(t *testing.T) {
+	h12 := true
+	ts := time.Date(2024, 1, 1, 14, 5, 9, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale:       "en-US",
+		DateTimeMode: ModeTimeOnly,
+		Hour12:       &h12,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "2:5:9 PM", got)
+}
+
+func TestFormatDateTime_DateTime(t *testing.T) {
+	ts := time.Date(2024, 3, 5, 14, 30, 0, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale:       "en-US",
+		DateTimeMode: ModeDateTime,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "3/5/2024 2:30:0 PM", got)
+}
+
+func TestFormatDateTime_LongMonth(t *testing.T) {
+	ts := time.Date(2024, 3, 5, 0, 0, 0, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale: "en-US",
+		Year:   StyleNumeric,
+		Month:  StyleLong,
+		Day:    StyleNumeric,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "March/5/2024", got)
+}
+
+func TestFormatDateTime_TwoDigitYear(t *testing.T) {
+	ts := time.Date(2024, 3, 5, 0, 0, 0, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		Locale: "en-US",
+		Year:   Style2Digit,
+		Month:  Style2Digit,
+		Day:    Style2Digit,
+	})
+	require.NoError(t, err)
+	assert.Equal(t, "03/05/24", got)
+}
+
+func TestFormatDateTime_NoComponents_Error(t *testing.T) {
+	ts := time.Date(2024, 1, 1, 0, 0, 0, 0, time.UTC)
+	_, err := FormatDateTime(ts, FormatDateTimeOptions{})
+	require.Error(t, err)
+}
+
+func TestFormatDateTime_DefaultLocale(t *testing.T) {
+	ts := time.Date(2024, 3, 5, 0, 0, 0, 0, time.UTC)
+	got, err := FormatDateTime(ts, FormatDateTimeOptions{
+		DateTimeMode: ModeDateOnly,
+	})
+	require.NoError(t, err)
+	// Default locale is "en-IN" → DMY
+	assert.Equal(t, "5/3/2024", got)
+}
+
+// ─── GetRelativeTime ──────────────────────────────────────────────────────────
+
+func TestGetRelativeTime_SecondsAgo(t *testing.T) {
+	base := time.Date(2024, 1, 1, 12, 0, 0, 0, time.UTC)
+	past := base.Add(-30 * time.Second)
+	got, err := GetRelativeTime(past, GetRelativeTimeOptions{BaseDate: base, Numeric: "always"})
+	require.NoError(t, err)
+	assert.Equal(t, "30 seconds ago", got)
+}
+
+func TestGetRelativeTime_MinutesAgo(t *testing.T) {
+	base := time.Date(2024, 1, 1, 12, 0, 0, 0, time.UTC)
+	past := base.Add(-5 * time.Minute)
+	got, err := GetRelativeTime(past, GetRelativeTimeOptions{BaseDate: base, Numeric: "always"})
+	require.NoError(t, err)
+	assert.Equal(t, "5 minutes ago", got)
+}
+
+func TestGetRelativeTime_HoursAgo(t *testing.T) {
+	base := time.Date(2024, 1, 1, 12, 0, 0, 0, time.UTC)
+	past := base.Add(-3 * time.Hour)
+	got, err := GetRelativeTime(past, GetRelativeTimeOptions{BaseDate: base, Numeric: "always"})
+	require.NoError(t, err)
+	assert.Equal(t, "3 hours ago", got)
+}
+
+func TestGetRelativeTime_Yesterday_Auto(t *testing.T) {
+	base := time.Date(2024, 1, 2, 12, 0, 0, 0, time.UTC)
+	past := base.Add(-24 * time.Hour)
+	got, err := GetRelativeTime(past, GetRelativeTimeOptions{BaseDate: base})
+	require.NoError(t, err)
+	assert.Equal(t, "yesterday", got)
+}
+
+func TestGetRelativeTime_Tomorrow_Auto(t *testing.T) {
+	base := time.Date(2024, 1, 1, 12, 0, 0, 0, time.UTC)
+	future := base.Add(24 * time.Hour)
+	got, err := GetRelativeTime(future, GetRelativeTimeOptions{BaseDate: base})
+	require.NoError(t, err)
+	assert.Equal(t, "tomorrow", got)
+}
+
+func TestGetRelativeTime_LastWeek_Auto(t *testing.T) {
+	base := time.Date(2024, 1, 8, 0, 0, 0, 0, time.UTC)
+	past := base.Add(-7 * 24 * time.Hour)
+	got, err := GetRelativeTime(past, GetRelativeTimeOptions{BaseDate: base})
+	require.NoError(t, err)
+	assert.Equal(t, "last week", got)
+}
+
+func TestGetRelativeTime_InFuture(t *testing.T) {
+	base := time.Date(2024, 1, 1, 0, 0, 0, 0, time.UTC)
+	future := base.Add(2 * time.Hour)
+	got, err := GetRelativeTime(future, GetRelativeTimeOptions{BaseDate: base, Numeric: "always"})
+	require.NoError(t, err)
+	assert.Equal(t, "in 2 hours", got)
+}
+
+func TestGetRelativeTime_YearsAgo(t *testing.T) {
+	base := time.Date(2024, 1, 1, 0, 0, 0, 0, time.UTC)
+	past := base.AddDate(-3, 0, 0)
+	got, err := GetRelativeTime(past, GetRelativeTimeOptions{BaseDate: base, Numeric: "always"})
+	require.NoError(t, err)
+	assert.Equal(t, "3 years ago", got)
+}
+
+// ─── GetWeekdays ──────────────────────────────────────────────────────────────
+
+func TestGetWeekdays_Long(t *testing.T) {
+	days, err := GetWeekdays(GetWeekdaysOptions{Weekday: WeekdayLong})
+	require.NoError(t, err)
+	assert.Len(t, days, 7)
+	assert.Equal(t, "Sunday", days[0])
+	assert.Equal(t, "Saturday", days[6])
+}
+
+func TestGetWeekdays_Short(t *testing.T) {
+	days, err := GetWeekdays(GetWeekdaysOptions{Weekday: WeekdayShort})
+	require.NoError(t, err)
+	assert.Equal(t, []string{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, days)
+}
+
+func TestGetWeekdays_Narrow(t *testing.T) {
+	days, err := GetWeekdays(GetWeekdaysOptions{Weekday: WeekdayNarrow})
+	require.NoError(t, err)
+	assert.Equal(t, []string{"S", "M", "T", "W", "T", "F", "S"}, days)
+}
+
+func TestGetWeekdays_DefaultStyle(t *testing.T) {
+	days, err := GetWeekdays(GetWeekdaysOptions{})
+	require.NoError(t, err)
+	assert.Equal(t, "Sunday", days[0], "default style should be long")
+}
+
+func TestGetWeekdays_InvalidStyle(t *testing.T) {
+	_, err := GetWeekdays(GetWeekdaysOptions{Weekday: "invalid"})
+	require.Error(t, err)
+}
+
+func TestGetWeekdays_StartsOnSunday(t *testing.T) {
+	days, err := GetWeekdays(GetWeekdaysOptions{Weekday: WeekdayLong})
+	require.NoError(t, err)
+	assert.Equal(t, "Sunday", days[0], "first element must be Sunday to match JS behaviour")
+}
+
+// ─── GetTimeZoneByCountry ─────────────────────────────────────────────────────
+
+func TestGetTimeZoneByCountry_India(t *testing.T) {
+	tzs, err := GetTimeZoneByCountry("IN")
+	require.NoError(t, err)
+	require.NotEmpty(t, tzs)
+
+	// India has a single timezone.
+	tz, ok := tzs["Asia/Kolkata"]
+	require.True(t, ok, "expected Asia/Kolkata in result")
+	assert.Equal(t, "UTC +05:30", tz.UTCOffset)
+}
+
+func TestGetTimeZoneByCountry_CaseInsensitive(t *testing.T) {
+	tzs1, err1 := GetTimeZoneByCountry("IN")
+	tzs2, err2 := GetTimeZoneByCountry("in")
+	require.NoError(t, err1)
+	require.NoError(t, err2)
+	assert.Equal(t, tzs1, tzs2)
+}
+
+func TestGetTimeZoneByCountry_EmptyCode(t *testing.T) {
+	_, err := GetTimeZoneByCountry("")
+	require.Error(t, err)
+}
+
+func TestGetTimeZoneByCountry_UnknownCode(t *testing.T) {
+	_, err := GetTimeZoneByCountry("ZZ")
+	require.Error(t, err)
+}
+
+func TestGetTimeZoneByCountry_MultipleTimezones(t *testing.T) {
+	// The US observes multiple timezones.
+	tzs, err := GetTimeZoneByCountry("US")
+	require.NoError(t, err)
+	assert.Greater(t, len(tzs), 1, "US should have multiple timezone entries")
 }
