@@ -48,6 +48,14 @@ func main() {
 		fmt.Printf("USD $12.34 = %v cents\n", minorAmount) // USD $12.34 = 1234 cents
 	}
 
+	// Convert a formatted currency string to minor units
+	parsedMinorAmount, err := currency.ConvertStringToMinorUnit("USD", "$1,234.56")
+	if err != nil {
+		fmt.Printf("Error parsing currency string: %v\n", err)
+	} else {
+		fmt.Printf("USD $1,234.56 = %v cents\n", parsedMinorAmount) // USD $1,234.56 = 123456 cents
+	}
+
 	// Phone Number Information
 	phoneNumberIN := countryIN.GetCountryPhoneNumber()
 	fmt.Printf("Dial Code: %s\n", phoneNumberIN.DialCode)  // +91
