@@ -21,7 +21,7 @@ Recipe execution order is enforced by Section 6. Never run a Recipe out of order
 ### Recipe 0 — Setup (run once per session before anything else)
 
 ```bash
-pip3 install requests pyyaml lxml -q 2>&1 | tail -3
+pip3 install requests pyyaml lxml defusedxml -q 2>&1 | tail -3
 ```
 
 ---

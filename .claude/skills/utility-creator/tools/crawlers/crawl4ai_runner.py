@@ -33,9 +33,14 @@ except ImportError:
     yaml = None
 
 try:
-    from lxml import etree
+    from lxml import html as lxml_html
 except ImportError:
-    etree = None
+    lxml_html = None
+
+try:
+    from defusedxml import ElementTree as DefusedET
+except ImportError:
+    DefusedET = None
 
 try:
     import pycountry as _pycountry
@@ -88,6 +93,18 @@ _FMT_TOKENS: dict[str, str] = {
     "%X": "{sorting_code}",
     "%n": "\n",
 }
+
+
+def _safe_xml_fromstring(raw: bytes) -> Any:
+    """Parse untrusted XML without allowing external entity expansion."""
+    if DefusedET is None:
+        raise RuntimeError(
+            "defusedxml is required for safe XML parsing"
+        )
+
+    # SECURITY: Source XML is downloaded from third-party registries. defusedxml
+    # rejects external entities and expansion attacks.
+    return DefusedET.fromstring(raw)
 
 # Single-char code (from Google i18n `require` / `fmt` uppercase tokens) → field name
 _ADDR_CHAR_MAP: dict[str, str] = {
@@ -508,15 +525,8 @@ def fetch_raw(topic: str) -> bytes:
 # ── Parsers ──────────────────────────────────────────────────────────────────
 
 def parse_currency(raw: bytes) -> list[dict]:
-    if etree is None:
-        import xml.etree.ElementTree as ET
-        root = ET.fromstring(raw)
-        find = lambda el, tag: el.findtext(tag)
-        findall = lambda el, path: el.findall(path)
-    else:
-        root = etree.fromstring(raw)
-        find = lambda el, tag: el.findtext(tag)
-        findall = lambda el, path: el.findall(path)
+    root = _safe_xml_fromstring(raw)
+    find = lambda el, tag: el.findtext(tag)
 
     rows = []
     for entry in root.findall(".//CcyNtry"):
@@ -552,23 +562,12 @@ def parse_tld(raw: bytes) -> list[dict]:
 
 
 def parse_http_status(raw: bytes) -> list[dict]:
-    if etree is not None:
-        root = etree.fromstring(raw)
-        ns = {"i": "http://www.iana.org/assignments"}
-        rows = []
-        for rec in root.findall(".//i:record", ns):
-            code = rec.findtext("i:value", namespaces=ns)
-            desc = rec.findtext("i:description", namespaces=ns)
-            if code:
-                rows.append({"code": code.strip(), "description": (desc or "").strip()})
-        return rows
-    import xml.etree.ElementTree as ET
-    root = ET.fromstring(raw)
+    root = _safe_xml_fromstring(raw)
     ns = {"i": "http://www.iana.org/assignments"}
     rows = []
     for rec in root.findall(".//i:record", ns):
-        code = rec.findtext("i:value") or rec.findtext("{http://www.iana.org/assignments}value")
-        desc = rec.findtext("i:description") or rec.findtext("{http://www.iana.org/assignments}description")
+        code = rec.findtext("i:value", namespaces=ns)
+        desc = rec.findtext("i:description", namespaces=ns)
         if code:
             rows.append({"code": code.strip(), "description": (desc or "").strip()})
     return rows
@@ -603,11 +602,7 @@ def _pattern_to_xx(pattern: str) -> str:
 
 
 def parse_phone(raw: bytes) -> list[dict]:
-    if etree is not None:
-        root = etree.fromstring(raw)
-    else:
-        import xml.etree.ElementTree as ET
-        root = ET.fromstring(raw)
+    root = _safe_xml_fromstring(raw)
     rows = []
     for t in root.findall(".//territory"):
         cc   = t.get("id", "")
@@ -664,23 +659,23 @@ def parse_timezone(raw: bytes) -> list[dict]:
 
 
 def parse_mime(raw: bytes) -> list[dict]:
-    if etree is not None:
-        root = etree.fromstring(raw)
-        ns = {"i": "http://www.iana.org/assignments"}
-        rows = []
-        for rec in root.findall(".//i:record", ns):
+    root = _safe_xml_fromstring(raw)
+    ns = {"i": "http://www.iana.org/assignments"}
+    rows = []
+
+    registries = root.findall(".//i:registry", ns)
+    if root.tag in {"registry", "{http://www.iana.org/assignments}registry"}:
+        registries = [root, *registries]
+
+    for registry in registries:
+        registry_category = registry.get("id", "").split("/")[0]
+        for rec in registry.findall(".//i:record", ns):
             name = rec.findtext("i:name", namespaces=ns) or ""
             xref = rec.findtext("i:xref", namespaces=ns) or ""
-            # MIME records have a `type` attribute on the parent registry
-            registry = rec.getparent() if hasattr(rec, "getparent") else None
-            category = ""
-            if registry is not None:
-                category = registry.get("id", "").split("/")[0]
             if "/" in name:
-                parts = name.split("/", 1)
-                category = parts[0]
-                subtype  = parts[1]
+                category, subtype = name.split("/", 1)
             else:
+                category = registry_category
                 subtype = name
             if name:
                 rows.append({
@@ -689,17 +684,6 @@ def parse_mime(raw: bytes) -> list[dict]:
                     "category":  category,
                     "reference": xref,
                 })
-        return rows
-    # Fallback: minimal parse
-    import xml.etree.ElementTree as ET
-    root = ET.fromstring(raw)
-    rows = []
-    for rec in root.iter():
-        name_el = rec.find("{http://www.iana.org/assignments}name")
-        if name_el is not None and name_el.text and "/" in name_el.text:
-            name = name_el.text.strip()
-            category, subtype = name.split("/", 1)
-            rows.append({"type": name, "subtype": subtype, "category": category, "reference": ""})
     return rows
 
 
@@ -834,9 +818,8 @@ def parse_country(raw: bytes) -> list[dict]:
     html = raw.decode("utf-8", "replace")
 
     # lxml fast path
-    if etree is not None:
+    if lxml_html is not None:
         try:
-            from lxml import html as lxml_html
             doc = lxml_html.fromstring(html)
             rows = []
             for tr in doc.cssselect("table tbody tr"):

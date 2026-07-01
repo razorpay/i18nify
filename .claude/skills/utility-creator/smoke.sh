@@ -59,7 +59,7 @@ echo ""
 
 # ── Recipe 0 — deps ────────────────────────────────────────────────────────
 echo "[0] Recipe 0 — install deps"
-"$PY" -m pip install 'requests==2.32.3' 'pyyaml==6.0.2' 'lxml==5.3.0' -q 2>&1 | tail -2
+"$PY" -m pip install 'requests==2.32.3' 'pyyaml==6.0.2' 'lxml==5.3.0' 'defusedxml==0.7.1' -q 2>&1 | tail -2
 ok "deps installed"
 
 # ── Recipe 1 — check local cache ───────────────────────────────────────────
