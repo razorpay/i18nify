@@ -41,6 +41,8 @@ CANONICAL_PATH: dict[str, str] = {
     "address":        "i18nify-data/address/data.json",
     "gst":            "i18nify-data/gst/data.json",
     "gst_au":         "i18nify-data/gst-australia/data.json",
+    "eu_vat":         "i18nify-data/vat/data.json",
+    "population":     "i18nify-data/population/data.json",
 }
 
 # Root data key for each topic (to count entries)
@@ -57,6 +59,8 @@ DATA_KEY: dict[str, str] = {
     "address":        "address_format_information",
     "gst":            "gst_information",
     "gst_au":         "gst_information",
+    "eu_vat":         "vat_information",
+    "population":     "population_information",
 }
 
 # Topic TTL in days (mirrors SKILL.md Section 5)
@@ -73,6 +77,8 @@ TTL_DAYS: dict[str, int] = {
     "address":        30,
     "gst":            30,
     "gst_au":         30,
+    "eu_vat":         30,
+    "population":     365,
 }
 
 ALL_TOPICS = list(TTL_DAYS.keys())

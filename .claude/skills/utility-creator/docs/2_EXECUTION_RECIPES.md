@@ -164,8 +164,7 @@ PATH_SOURCE_URL = {
     "i18nify-data/media/data.json":             "https://www.iana.org/assignments/media-types/media-types.xml",
     "i18nify-data/unicode-blocks/data.json":    "https://www.unicode.org/Public/UNIDATA/Blocks.txt",
     "i18nify-data/address/data.json":           "https://chromium-i18n.appspot.com/ssl-address/data",
-    "i18nify-data/population/data.json":        "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&mrv=1&per_page=300",
-    "i18nify-data/vat-global/data.json":        "https://www.oecd.org/en/topics/sub-issues/tax-policy/tax-database.html",
+    "i18nify-data/population/data.json":        "https://population.un.org/wpp/Download/Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
 }
 
 try:

@@ -939,11 +939,11 @@ def parse_itu_e164_pdf(raw: bytes) -> list[dict]:
         for page_num in range(len(doc)):
             page = doc.load_page(page_num)
             tabs = page.find_tables()
-            for tab in tabs.tables:
-                table_data = tab.extract()
-                for row in table_data:
-                    if not row or len(row) < 2:
-                        continue
+        for tab in tabs.tables:
+            table_data = tab.extract()
+            for row in table_data:
+                if not row or len(row) < 2:
+                    continue
                 # Row format: [Country, Code, Notes...]
                 # Safely handle PyMuPDF returning None for empty / merged cells
                 country = str(row[0] or "").strip()
@@ -1487,7 +1487,10 @@ def save_canonical(topic: str, rows: list[Any], source_url: str) -> Path:
         else:
             continue
         # Choose key: prefer cc, then code, then first value
-        key = d.get("cc") or d.get("code") or d.get("cca2") or d.get("tld") or str(list(d.values())[0])
+        key = (
+            d.get("cc") or d.get("code") or d.get("cca2") or d.get("tld") or
+            d.get("calling_code") or d.get("country_name") or str(list(d.values())[0])
+        )
         # Remove key field from value to avoid redundancy
         value = {k: v for k, v in d.items() if k not in {"cc", "code", "cca2"}}
         data_dict[key] = value

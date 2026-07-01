@@ -268,18 +268,9 @@ For full details — TTLs, fallback sources, synonyms — see [`docs/1_REGISTRY_
 
 ---
 
-## Security dependency updates (also in this PR)
+## CI runtime update
 
-This PR also bumps several npm and Node.js versions to fix known CVEs:
-
-| What was updated | Old version | New version | Issue fixed |
-|---|---|---|---|
-| `@playwright/test` | < 1.55.1 | 1.60.0 | CVE-2025-59288 — macOS installer used `curl -k` (no TLS verification) |
-| `js-yaml` | 3.x / 4.x | 3.14.2 / 4.2.0 | Prototype pollution vulnerability |
-| `rollup` | ^4.0.2 | ^4.59.0 | Arbitrary file write (CVE range 4.0.0–4.58.0) |
-| `vite` | ^4.4.11 | ^6.4.2 | `fs.deny` bypass (CVE range ≤ 6.4.1) |
-| `esbuild` | < 0.28.1 | 0.28.1 | CVE fixed via yarn resolutions |
-| Node.js in CI | 20.3.1 | 20.19.1 | Required by vite ^6 and `@vitejs/plugin-react-swc` ^4 |
+This PR updates JavaScript workflow jobs from Node.js `20.3.1` to `20.19.1`.
 
 ---
 

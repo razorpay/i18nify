@@ -47,6 +47,8 @@ TOPICS: dict[str, dict] = {
     "address":        {"desc": "Postal address formats per country",   "source": "Google i18n address data"},
     "gst":            {"desc": "India GST rates by HSN chapter",       "source": "CBIC chapter-wise PDF"},
     "gst_au":         {"desc": "Australia GST supply classifications", "source": "ATO ato.gov.au"},
+    "eu_vat":         {"desc": "EU VAT rates and validation patterns",  "source": "vatnode / EC TEDB"},
+    "population":     {"desc": "Population by country",                "source": "UN WPP / World Bank"},
 }
 
 # ── Schema map (Manager-owned; mirrors SCHEMA_MAP in i18nify_schemas.py) ──────
@@ -64,6 +66,8 @@ SCHEMA_CLASS_NAMES: dict[str, str] = {
     "address":        "AddressFormat",
     "gst":            "GstRate",
     "gst_au":         "GstRateAustralia",
+    "eu_vat":         "EuVatRate",
+    "population":     "Population",
 }
 
 # ── Canonical data path map ───────────────────────────────────────────────────
@@ -81,6 +85,8 @@ DATA_PATH: dict[str, str] = {
     "address":        "i18nify-data/address/data.json",
     "gst":            "i18nify-data/gst/data.json",
     "gst_au":         "i18nify-data/gst-australia/data.json",
+    "eu_vat":         "i18nify-data/vat/data.json",
+    "population":     "i18nify-data/population/data.json",
 }
 
 DATA_KEY: dict[str, str] = {
@@ -96,12 +102,15 @@ DATA_KEY: dict[str, str] = {
     "address":        "address_format_information",
     "gst":            "gst_information",
     "gst_au":         "gst_information",
+    "eu_vat":         "vat_information",
+    "population":     "population_information",
 }
 
 TTL_DAYS: dict[str, int] = {
     "currency": 30, "country": 30, "tld": 7, "http_status": 7,
     "language": 30, "phone": 30, "timezone": 7, "mime": 30,
     "unicode_blocks": 30, "address": 30, "gst": 30, "gst_au": 30,
+    "eu_vat": 30, "population": 365,
 }
 
 
@@ -315,6 +324,8 @@ def _tsf_topic_key(topic: str) -> str:
         "address":        "address_formats",
         "gst":            "gst_rates_india",
         "gst_au":         "gst_rates_australia",
+        "eu_vat":         "eu_vat_rates",
+        "population":     "population_data",
     }.get(topic, topic)
 
 
