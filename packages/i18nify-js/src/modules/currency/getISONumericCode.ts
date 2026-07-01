@@ -1,6 +1,8 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import CURRENCY_INFO from './data/currencyConfig.json';
+import CURRENCY_DATA from '#/i18nify-data/currency/data.json';
 import { CurrencyCodeType } from './types';
+
+const CURRENCY_INFO = CURRENCY_DATA.currency_information;
 
 /**
  * Returns the ISO 4217 three-digit numeric code for the given alphabetic
@@ -16,11 +18,7 @@ const getISONumericCode = (currencyCode: CurrencyCodeType): string => {
       `Invalid currency code: "${String(currencyCode)}". Please provide a valid ISO 4217 alphabetic currency code.`,
     );
   }
-  type ExtendedCurrencyEntry =
-    (typeof CURRENCY_INFO)[keyof typeof CURRENCY_INFO] & {
-      numeric_code?: string;
-    };
-  const entry = CURRENCY_INFO[currencyCode] as ExtendedCurrencyEntry;
+  const entry = CURRENCY_INFO[currencyCode as keyof typeof CURRENCY_INFO];
   if (!entry.numeric_code) {
     throw new Error(
       `No numeric code found for currency: "${String(currencyCode)}".`,

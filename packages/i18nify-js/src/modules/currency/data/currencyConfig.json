@@ -1,2405 +1,832 @@
 {
   "AFN": {
     "name": "Afghani",
-    "numeric_code": "971",
     "minor_unit": "2",
-    "symbol": "؋",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000"
-    ]
+    "symbol": "؋"
   },
   "EUR": {
     "name": "Euro",
-    "numeric_code": "978",
     "minor_unit": "2",
-    "symbol": "€",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "€"
   },
   "ALL": {
     "name": "Lek",
-    "numeric_code": "008",
     "minor_unit": "2",
-    "symbol": "L",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "5000"
-    ]
+    "symbol": "L"
   },
   "DZD": {
     "name": "Algerian Dinar",
-    "numeric_code": "012",
     "minor_unit": "2",
-    "symbol": "د.ج",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "د.ج"
   },
   "USD": {
     "name": "US Dollar",
-    "numeric_code": "840",
     "minor_unit": "2",
-    "symbol": "$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100"
-    ]
+    "symbol": "$"
   },
   "AOA": {
     "name": "Kwanza",
-    "numeric_code": "973",
     "minor_unit": "2",
-    "symbol": "Kz",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000"
-    ]
+    "symbol": "Kz"
   },
   "XCD": {
     "name": "East Caribbean Dollar",
-    "numeric_code": "951",
     "minor_unit": "2",
-    "symbol": "EC$",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "EC$"
   },
   "ARS": {
     "name": "Argentine Peso",
-    "numeric_code": "032",
     "minor_unit": "2",
-    "symbol": "ARS",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "ARS"
   },
   "AMD": {
     "name": "Armenian Dram",
-    "numeric_code": "051",
     "minor_unit": "2",
-    "symbol": "֏",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "֏"
   },
   "AWG": {
     "name": "Aruban Florin",
-    "numeric_code": "533",
     "minor_unit": "2",
-    "symbol": "Aƒ",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "25",
-      "50",
-      "100",
-      "250",
-      "500",
-      "1000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "Aƒ"
   },
   "AUD": {
     "name": "Australian Dollar",
-    "numeric_code": "036",
     "minor_unit": "2",
-    "symbol": "A$",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "A$"
   },
   "AZN": {
     "name": "Azerbaijan Manat",
-    "numeric_code": "944",
     "minor_unit": "2",
-    "symbol": "₼",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "₼"
   },
   "BSD": {
     "name": "Bahamian Dollar",
-    "numeric_code": "044",
     "minor_unit": "2",
-    "symbol": "BSD",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100"
-    ]
+    "symbol": "BSD"
   },
   "BHD": {
     "name": "Bahraini Dinar",
-    "numeric_code": "048",
     "minor_unit": "3",
-    "symbol": ".د.ب",
-    "physical_currency_denominations": [
-      "0.5",
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500"
-    ]
+    "symbol": ".د.ب"
   },
   "BDT": {
     "name": "Taka",
-    "numeric_code": "050",
     "minor_unit": "2",
-    "symbol": "৳",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000"
-    ]
+    "symbol": "৳"
   },
   "BBD": {
     "name": "Barbados Dollar",
-    "numeric_code": "052",
     "minor_unit": "2",
-    "symbol": "Bds$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25"
-    ]
+    "symbol": "Bds$"
   },
   "BYN": {
     "name": "Belarusian Ruble",
-    "numeric_code": "933",
     "minor_unit": "2",
-    "symbol": "Rbl",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "Rbl"
   },
   "BZD": {
     "name": "Belize Dollar",
-    "numeric_code": "084",
     "minor_unit": "2",
-    "symbol": "BZ$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "BZ$"
   },
   "XOF": {
     "name": "CFA Franc BCEAO",
-    "numeric_code": "952",
     "minor_unit": "0",
-    "symbol": "CFA",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "20000",
-      "50000"
-    ]
+    "symbol": "CFA"
   },
   "BMD": {
     "name": "Bermudian Dollar",
-    "numeric_code": "060",
     "minor_unit": "2",
-    "symbol": "BD$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "BD$"
   },
   "INR": {
     "name": "Indian Rupee",
-    "numeric_code": "356",
     "minor_unit": "2",
-    "symbol": "₹",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "2000"
-    ]
+    "symbol": "₹"
   },
   "BTN": {
     "name": "Ngultrum",
-    "numeric_code": "064",
     "minor_unit": "2",
-    "symbol": "Nu.",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000"
-    ]
+    "symbol": "Nu."
   },
   "BOB": {
     "name": "Boliviano",
-    "numeric_code": "068",
     "minor_unit": "2",
-    "symbol": "Bs.",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "Bs."
   },
   "BOV": {
     "name": "Mvdol",
-    "numeric_code": "984",
     "minor_unit": "2",
-    "symbol": "Bs",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "Bs"
   },
   "BAM": {
     "name": "Convertible Mark",
-    "numeric_code": "977",
     "minor_unit": "2",
-    "symbol": "KM",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "KM"
   },
   "BWP": {
     "name": "Pula",
-    "numeric_code": "072",
     "minor_unit": "2",
-    "symbol": "P",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "P"
   },
   "NOK": {
     "name": "Norwegian Krone",
-    "numeric_code": "578",
     "minor_unit": "2",
-    "symbol": "kr",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000"
-    ]
+    "symbol": "kr"
   },
   "BRL": {
     "name": "Brazilian Real",
-    "numeric_code": "986",
     "minor_unit": "2",
-    "symbol": "R$",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "R$"
   },
   "BND": {
     "name": "Brunei Dollar",
-    "numeric_code": "096",
     "minor_unit": "2",
-    "symbol": "B$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000",
-      "10000",
-      "100000"
-    ]
+    "symbol": "B$"
   },
   "BGN": {
     "name": "Bulgarian Lev",
-    "numeric_code": "975",
     "minor_unit": "2",
-    "symbol": "лв.",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "лв."
   },
   "BIF": {
     "name": "Burundi Franc",
-    "numeric_code": "108",
     "minor_unit": "0",
-    "symbol": "FBu",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "FBu"
   },
   "CVE": {
     "name": "Cabo Verde Escudo",
-    "numeric_code": "132",
     "minor_unit": "2",
-    "symbol": "CVE",
-    "physical_currency_denominations": [
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "2500",
-      "5000"
-    ]
+    "symbol": "CVE"
   },
   "KHR": {
     "name": "Riel",
-    "numeric_code": "116",
     "minor_unit": "2",
-    "symbol": "៛",
-    "physical_currency_denominations": [
-      "50",
-      "100",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "50000",
-      "100000"
-    ]
+    "symbol": "៛"
   },
   "XAF": {
     "name": "CFA Franc BEAC",
-    "numeric_code": "950",
     "minor_unit": "0",
-    "symbol": "FCFA",
-    "physical_currency_denominations": [
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "20000",
-      "50000",
-      "100000"
-    ]
+    "symbol": "FCFA"
   },
   "CAD": {
     "name": "Canadian Dollar",
-    "numeric_code": "124",
     "minor_unit": "2",
-    "symbol": "CA$",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "CA$"
   },
   "KYD": {
     "name": "Cayman Islands Dollar",
-    "numeric_code": "136",
     "minor_unit": "2",
-    "symbol": "CI$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100"
-    ]
+    "symbol": "CI$"
   },
   "CLP": {
     "name": "Chilean Peso",
-    "numeric_code": "152",
     "minor_unit": "0",
-    "symbol": "CLP",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "50",
-      "100",
-      "500",
-      "1000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "CLP"
   },
   "CLF": {
     "name": "Unidad de Fomento",
-    "numeric_code": "990",
     "minor_unit": "4",
-    "symbol": "UF",
-    "physical_currency_denominations": [
-      "nan"
-    ]
+    "symbol": "UF"
   },
   "CNY": {
     "name": "Yuan Renminbi",
-    "numeric_code": "156",
     "minor_unit": "2",
-    "symbol": "CN¥",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "CN¥"
   },
   "COP": {
     "name": "Colombian Peso",
-    "numeric_code": "170",
     "minor_unit": "2",
-    "symbol": "COL$",
-    "physical_currency_denominations": [
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "20000",
-      "50000"
-    ]
+    "symbol": "COL$"
   },
   "COU": {
     "name": "Unidad de Valor Real",
-    "numeric_code": "970",
     "minor_unit": "2",
-    "symbol": "UVR",
-    "physical_currency_denominations": [
-      "nan"
-    ]
+    "symbol": "UVR"
   },
   "KMF": {
     "name": "Comorian Franc",
-    "numeric_code": "174",
     "minor_unit": "0",
-    "symbol": "CF",
-    "physical_currency_denominations": [
-      "25",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "CF"
   },
   "CDF": {
     "name": "Congolese Franc",
-    "numeric_code": "976",
     "minor_unit": "2",
-    "symbol": "FC",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "FC"
   },
   "NZD": {
     "name": "New Zealand Dollar",
-    "numeric_code": "554",
     "minor_unit": "2",
-    "symbol": "NZ$",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20"
-    ]
+    "symbol": "NZ$"
   },
   "CRC": {
     "name": "Costa Rican Colon",
-    "numeric_code": "188",
     "minor_unit": "2",
-    "symbol": "₡",
-    "physical_currency_denominations": [
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "20000",
-      "50000",
-      "100000",
-      "500000"
-    ]
+    "symbol": "₡"
+  },
+  "HRK": {
+    "name": "Kuna",
+    "minor_unit": "2",
+    "symbol": "kn"
   },
   "CUP": {
     "name": "Cuban Peso",
-    "numeric_code": "192",
     "minor_unit": "2",
-    "symbol": "$MN",
-    "physical_currency_denominations": [
-      "1",
-      "3",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "$MN"
   },
   "CUC": {
     "name": "Peso Convertible",
-    "numeric_code": "931",
     "minor_unit": "2",
-    "symbol": "CUC$",
-    "physical_currency_denominations": [
-      "1",
-      "3",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "CUC$"
   },
   "ANG": {
     "name": "Netherlands Antillean Guilder",
-    "numeric_code": "532",
     "minor_unit": "2",
-    "symbol": "ƒ",
-    "physical_currency_denominations": [
-      "1",
-      "2.5",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100",
-      "250",
-      "500",
-      "1000",
-      "2500",
-      "5000"
-    ]
+    "symbol": "ƒ"
   },
   "CZK": {
     "name": "Czech Koruna",
-    "numeric_code": "203",
     "minor_unit": "2",
-    "symbol": "Kč",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000"
-    ]
+    "symbol": "Kč"
   },
   "DKK": {
     "name": "Danish Krone",
-    "numeric_code": "208",
     "minor_unit": "2",
-    "symbol": "kr",
-    "physical_currency_denominations": [
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "kr"
   },
   "DJF": {
     "name": "Djibouti Franc",
-    "numeric_code": "262",
     "minor_unit": "0",
-    "symbol": "Fdj",
-    "physical_currency_denominations": [
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "Fdj"
   },
   "DOP": {
     "name": "Dominican Peso",
-    "numeric_code": "214",
     "minor_unit": "2",
-    "symbol": "RD$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25",
-      "50"
-    ]
+    "symbol": "RD$"
   },
   "EGP": {
     "name": "Egyptian Pound",
-    "numeric_code": "818",
     "minor_unit": "2",
-    "symbol": "E£",
-    "physical_currency_denominations": [
-      "25",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "E£"
   },
   "SVC": {
     "name": "El Salvador Colon",
-    "numeric_code": "222",
     "minor_unit": "2",
-    "symbol": "₡",
-    "physical_currency_denominations": [
-      "0.01",
-      "0.05",
-      "0.10",
-      "0.25",
-      "0.50",
-      "1",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100"
-    ]
+    "symbol": "₡"
   },
   "ERN": {
     "name": "Nakfa",
-    "numeric_code": "232",
     "minor_unit": "2",
-    "symbol": "Nfk",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "Nfk"
   },
   "SZL": {
     "name": "Lilangeni",
-    "numeric_code": "748",
     "minor_unit": "2",
-    "symbol": "E",
-    "physical_currency_denominations": [
-      "2"
-    ]
+    "symbol": "E"
   },
   "ETB": {
     "name": "Ethiopian Birr",
-    "numeric_code": "230",
     "minor_unit": "2",
-    "symbol": "Br",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "50",
-      "100"
-    ]
+    "symbol": "Br"
   },
   "FKP": {
     "name": "Falkland Islands Pound",
-    "numeric_code": "238",
     "minor_unit": "2",
-    "symbol": "FK£",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "FK£"
   },
   "FJD": {
     "name": "Fiji Dollar",
-    "numeric_code": "242",
     "minor_unit": "2",
-    "symbol": "FJ$",
-    "physical_currency_denominations": [
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "FJ$"
   },
   "XPF": {
     "name": "CFP Franc",
-    "numeric_code": "953",
     "minor_unit": "0",
-    "symbol": "F",
-    "physical_currency_denominations": [
-      "500",
-      "1000",
-      "2000",
-      "5000"
-    ]
+    "symbol": "F"
   },
   "GMD": {
     "name": "Dalasi",
-    "numeric_code": "270",
     "minor_unit": "2",
-    "symbol": "D",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100"
-    ]
+    "symbol": "D"
   },
   "GEL": {
     "name": "Lari",
-    "numeric_code": "981",
     "minor_unit": "2",
-    "symbol": "₾",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "₾"
   },
   "GHS": {
     "name": "Ghana Cedi",
-    "numeric_code": "936",
     "minor_unit": "2",
-    "symbol": "GH₵",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "GH₵"
   },
   "GIP": {
     "name": "Gibraltar Pound",
-    "numeric_code": "292",
     "minor_unit": "2",
-    "symbol": "£",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "£"
   },
   "GTQ": {
     "name": "Quetzal",
-    "numeric_code": "320",
     "minor_unit": "2",
-    "symbol": "Q",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100"
-    ]
+    "symbol": "Q"
   },
   "GBP": {
     "name": "Pound Sterling",
-    "numeric_code": "826",
     "minor_unit": "2",
-    "symbol": "£",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "£"
   },
   "GNF": {
     "name": "Guinean Franc",
-    "numeric_code": "324",
     "minor_unit": "0",
-    "symbol": "FG",
-    "physical_currency_denominations": [
-      "500",
-      "1000",
-      "5000",
-      "10000",
-      "20000",
-      "50000",
-      "100000",
-      "500000"
-    ]
+    "symbol": "FG"
   },
   "GYD": {
     "name": "Guyana Dollar",
-    "numeric_code": "328",
     "minor_unit": "2",
-    "symbol": "GY$",
-    "physical_currency_denominations": [
-      "20",
-      "100",
-      "500",
-      "1000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "GY$"
   },
   "HTG": {
     "name": "Gourde",
-    "numeric_code": "332",
     "minor_unit": "2",
-    "symbol": "G",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "5000"
-    ]
+    "symbol": "G"
   },
   "HNL": {
     "name": "Lempira",
-    "numeric_code": "340",
     "minor_unit": "2",
-    "symbol": "L",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "L"
   },
   "HKD": {
     "name": "Hong Kong Dollar",
-    "numeric_code": "344",
     "minor_unit": "2",
-    "symbol": "HK$",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000"
-    ]
+    "symbol": "HK$"
   },
   "HUF": {
     "name": "Forint",
-    "numeric_code": "348",
     "minor_unit": "2",
-    "symbol": "Ft",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "20000"
-    ]
+    "symbol": "Ft"
   },
   "ISK": {
     "name": "Iceland Krona",
-    "numeric_code": "352",
     "minor_unit": "0",
-    "symbol": "kr",
-    "physical_currency_denominations": [
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "25000"
-    ]
+    "symbol": "kr"
   },
   "IDR": {
     "name": "Rupiah",
-    "numeric_code": "360",
     "minor_unit": "2",
-    "symbol": "Rp",
-    "physical_currency_denominations": [
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "20000",
-      "50000",
-      "100000",
-      "200000",
-      "500000"
-    ]
+    "symbol": "Rp"
   },
   "IRR": {
     "name": "Iranian Rial",
-    "numeric_code": "364",
     "minor_unit": "2",
-    "symbol": "﷼",
-    "physical_currency_denominations": [
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "20000",
-      "50000",
-      "100000"
-    ]
+    "symbol": "﷼"
   },
   "IQD": {
     "name": "Iraqi Dinar",
-    "numeric_code": "368",
     "minor_unit": "3",
-    "symbol": "ع.د",
-    "physical_currency_denominations": [
-      "50",
-      "100",
-      "250",
-      "500",
-      "1000",
-      "5000",
-      "10000",
-      "25000",
-      "50000"
-    ]
+    "symbol": "ع.د"
   },
   "ILS": {
     "name": "New Israeli Sheqel",
-    "numeric_code": "376",
     "minor_unit": "2",
-    "symbol": "₪",
-    "physical_currency_denominations": [
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "₪"
   },
   "JMD": {
     "name": "Jamaican Dollar",
-    "numeric_code": "388",
     "minor_unit": "2",
-    "symbol": "J$",
-    "physical_currency_denominations": [
-      "50",
-      "100",
-      "500",
-      "1000",
-      "5000"
-    ]
+    "symbol": "J$"
   },
   "JPY": {
     "name": "Yen",
-    "numeric_code": "392",
     "minor_unit": "0",
-    "symbol": "¥",
-    "physical_currency_denominations": [
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "¥"
   },
   "JOD": {
     "name": "Jordanian Dinar",
-    "numeric_code": "400",
     "minor_unit": "3",
-    "symbol": "JD",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "JD"
   },
   "KZT": {
     "name": "Tenge",
-    "numeric_code": "398",
     "minor_unit": "2",
-    "symbol": "₸",
-    "physical_currency_denominations": [
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "₸"
   },
   "KES": {
     "name": "Kenyan Shilling",
-    "numeric_code": "404",
     "minor_unit": "2",
-    "symbol": "KSh",
-    "physical_currency_denominations": [
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "KSh"
   },
   "KPW": {
     "name": "North Korean Won",
-    "numeric_code": "408",
     "minor_unit": "2",
-    "symbol": "₩",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "50",
-      "100"
-    ]
+    "symbol": "₩"
   },
   "KRW": {
     "name": "Won",
-    "numeric_code": "410",
     "minor_unit": "0",
-    "symbol": "₩",
-    "physical_currency_denominations": [
-      "1000",
-      "5000",
-      "10000",
-      "50000",
-      "100000"
-    ]
+    "symbol": "₩"
   },
   "KWD": {
     "name": "Kuwaiti Dinar",
-    "numeric_code": "414",
     "minor_unit": "3",
-    "symbol": "د.ك",
-    "physical_currency_denominations": [
-      "0.25",
-      "0.5",
-      "1",
-      "5",
-      "10",
-      "20"
-    ]
+    "symbol": "د.ك"
   },
   "KGS": {
     "name": "Som",
-    "numeric_code": "417",
     "minor_unit": "2",
-    "symbol": "сом",
-    "physical_currency_denominations": [
-      "1",
-      "10",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "сом"
   },
   "LAK": {
     "name": "Kip",
-    "numeric_code": "418",
     "minor_unit": "2",
-    "symbol": "₭",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "₭"
   },
   "LBP": {
     "name": "Lebanese Pound",
-    "numeric_code": "422",
     "minor_unit": "2",
-    "symbol": "L£",
-    "physical_currency_denominations": [
-      "25000",
-      "50000",
-      "100000"
-    ]
+    "symbol": "L£"
   },
   "LSL": {
     "name": "Loti",
-    "numeric_code": "426",
     "minor_unit": "2",
-    "symbol": "M",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500"
-    ]
+    "symbol": "M"
   },
   "ZAR": {
     "name": "South African Rand",
-    "numeric_code": "710",
     "minor_unit": "2",
-    "symbol": "R",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "R"
   },
   "LRD": {
     "name": "Liberian Dollar",
-    "numeric_code": "430",
     "minor_unit": "2",
-    "symbol": "L$",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500"
-    ]
+    "symbol": "L$"
   },
   "LYD": {
     "name": "Libyan Dinar",
-    "numeric_code": "434",
     "minor_unit": "3",
-    "symbol": "LD",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "LD"
   },
   "CHF": {
     "name": "Swiss Franc",
-    "numeric_code": "756",
     "minor_unit": "2",
-    "symbol": "CHF",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "1000"
-    ]
+    "symbol": "CHF"
   },
   "MOP": {
     "name": "Pataca",
-    "numeric_code": "446",
     "minor_unit": "2",
-    "symbol": "MOP$",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "500"
-    ]
+    "symbol": "MOP$"
   },
   "MKD": {
     "name": "Denar",
-    "numeric_code": "807",
     "minor_unit": "2",
-    "symbol": "ден",
-    "physical_currency_denominations": [
-      "10",
-      "50",
-      "100",
-      "500",
-      "1000",
-      "5000"
-    ]
+    "symbol": "ден"
   },
   "MGA": {
     "name": "Malagasy Ariary",
-    "numeric_code": "969",
     "minor_unit": "2",
-    "symbol": "Ar",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "4",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "Ar"
   },
   "MWK": {
     "name": "Malawi Kwacha",
-    "numeric_code": "454",
     "minor_unit": "2",
-    "symbol": "MK",
-    "physical_currency_denominations": [
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000"
-    ]
+    "symbol": "MK"
   },
   "MYR": {
     "name": "Malaysian Ringgit",
-    "numeric_code": "458",
     "minor_unit": "2",
-    "symbol": "RM",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "RM"
   },
   "MVR": {
     "name": "Rufiyaa",
-    "numeric_code": "462",
     "minor_unit": "2",
-    "symbol": "Rf",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000"
-    ]
+    "symbol": "Rf"
   },
   "MRU": {
     "name": "Ouguiya",
-    "numeric_code": "929",
     "minor_unit": "2",
-    "symbol": "UM",
-    "physical_currency_denominations": [
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000"
-    ]
+    "symbol": "UM"
   },
   "MUR": {
     "name": "Mauritian Rupee",
-    "numeric_code": "480",
     "minor_unit": "2",
-    "symbol": "₨",
-    "physical_currency_denominations": [
-      "25",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000"
-    ]
+    "symbol": "₨"
   },
   "MXN": {
     "name": "Mexican Peso",
-    "numeric_code": "484",
     "minor_unit": "2",
-    "symbol": "Mex$",
-    "physical_currency_denominations": [
-      "20",
-      "50",
-      "100",
-      "200",
-      "500"
-    ]
+    "symbol": "Mex$"
   },
   "MXV": {
     "name": "Mexican Unidad de Inversion (UDI)",
-    "numeric_code": "979",
     "minor_unit": "2",
-    "symbol": "UDI",
-    "physical_currency_denominations": [
-      "nan"
-    ]
+    "symbol": "UDI"
   },
   "MDL": {
     "name": "Moldovan Leu",
-    "numeric_code": "498",
     "minor_unit": "2",
-    "symbol": "L",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "L"
   },
   "MNT": {
     "name": "Tugrik",
-    "numeric_code": "496",
     "minor_unit": "2",
-    "symbol": "₮",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000",
-      "5000",
-      "10000",
-      "20000",
-      "50000",
-      "100000"
-    ]
+    "symbol": "₮"
   },
   "MAD": {
     "name": "Moroccan Dirham",
-    "numeric_code": "504",
     "minor_unit": "2",
-    "symbol": "DH",
-    "physical_currency_denominations": [
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "DH"
   },
   "MZN": {
     "name": "Mozambique Metical",
-    "numeric_code": "943",
     "minor_unit": "2",
-    "symbol": "MT",
-    "physical_currency_denominations": [
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "MT"
   },
   "MMK": {
     "name": "Kyat",
-    "numeric_code": "104",
     "minor_unit": "2",
-    "symbol": "Ks",
-    "physical_currency_denominations": [
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "Ks"
   },
   "NAD": {
     "name": "Namibia Dollar",
-    "numeric_code": "516",
     "minor_unit": "2",
-    "symbol": "N$",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "N$"
   },
   "NPR": {
     "name": "Nepalese Rupee",
-    "numeric_code": "524",
     "minor_unit": "2",
-    "symbol": "₨",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000"
-    ]
+    "symbol": "₨"
   },
   "NIO": {
     "name": "Cordoba Oro",
-    "numeric_code": "558",
     "minor_unit": "2",
-    "symbol": "C$",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "C$"
   },
   "NGN": {
     "name": "Naira",
-    "numeric_code": "566",
     "minor_unit": "2",
-    "symbol": "₦",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "₦"
   },
   "OMR": {
     "name": "Rial Omani",
-    "numeric_code": "512",
     "minor_unit": "3",
-    "symbol": "ر.ع.",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "ر.ع."
   },
   "PKR": {
     "name": "Pakistan Rupee",
-    "numeric_code": "586",
     "minor_unit": "2",
-    "symbol": "₨",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000"
-    ]
+    "symbol": "₨"
   },
   "PAB": {
     "name": "Balboa",
-    "numeric_code": "590",
     "minor_unit": "2",
-    "symbol": "B/.",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100"
-    ]
+    "symbol": "B/."
   },
   "PGK": {
     "name": "Kina",
-    "numeric_code": "598",
     "minor_unit": "2",
-    "symbol": "K",
-    "physical_currency_denominations": [
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "K"
   },
   "PYG": {
     "name": "Guarani",
-    "numeric_code": "600",
     "minor_unit": "0",
-    "symbol": "₲",
-    "physical_currency_denominations": [
-      "1000",
-      "5000",
-      "10000",
-      "20000",
-      "50000",
-      "100000"
-    ]
+    "symbol": "₲"
   },
   "PEN": {
     "name": "Sol",
-    "numeric_code": "604",
     "minor_unit": "2",
-    "symbol": "S/",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "S/"
   },
   "PHP": {
     "name": "Philippine Peso",
-    "numeric_code": "608",
     "minor_unit": "2",
-    "symbol": "₱",
-    "physical_currency_denominations": [
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "₱"
   },
   "PLN": {
     "name": "Zloty",
-    "numeric_code": "985",
     "minor_unit": "2",
-    "symbol": "zł",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "zł"
   },
   "QAR": {
     "name": "Qatari Rial",
-    "numeric_code": "634",
     "minor_unit": "2",
-    "symbol": "ر.ق",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25",
-      "50"
-    ]
+    "symbol": "ر.ق"
   },
   "RON": {
     "name": "Romanian Leu",
-    "numeric_code": "946",
     "minor_unit": "2",
-    "symbol": "lei",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "lei"
   },
   "RUB": {
     "name": "Russian Ruble",
-    "numeric_code": "643",
     "minor_unit": "2",
-    "symbol": "₽",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "50",
-      "100",
-      "500",
-      "1000",
-      "5000"
-    ]
+    "symbol": "₽"
   },
   "RWF": {
     "name": "Rwandan Franc",
-    "numeric_code": "646",
     "minor_unit": "0",
-    "symbol": "FRw",
-    "physical_currency_denominations": [
-      "500",
-      "1000",
-      "2000",
-      "5000"
-    ]
+    "symbol": "FRw"
   },
   "SHP": {
     "name": "Saint Helena Pound",
-    "numeric_code": "654",
     "minor_unit": "2",
-    "symbol": "£",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "£"
   },
   "WST": {
     "name": "Tala",
-    "numeric_code": "882",
     "minor_unit": "2",
-    "symbol": "WS$",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "WS$"
   },
   "STN": {
     "name": "Dobra",
-    "numeric_code": "930",
     "minor_unit": "2",
-    "symbol": "Db",
-    "physical_currency_denominations": [
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "Db"
   },
   "SAR": {
     "name": "Saudi Riyal",
-    "numeric_code": "682",
     "minor_unit": "2",
-    "symbol": "ر.س",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "50",
-      "100",
-      "500"
-    ]
+    "symbol": "ر.س"
   },
   "RSD": {
     "name": "Serbian Dinar",
-    "numeric_code": "941",
     "minor_unit": "2",
-    "symbol": "дин.",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "5000"
-    ]
+    "symbol": "дин."
   },
   "SCR": {
     "name": "Seychelles Rupee",
-    "numeric_code": "690",
     "minor_unit": "2",
-    "symbol": "₨",
-    "physical_currency_denominations": [
-      "10",
-      "25",
-      "50",
-      "100",
-      "500"
-    ]
+    "symbol": "₨"
   },
   "SLE": {
     "name": "Leone",
-    "numeric_code": "925",
     "minor_unit": "2",
-    "symbol": "Le",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20"
-    ]
+    "symbol": "Le"
   },
   "SGD": {
     "name": "Singapore Dollar",
-    "numeric_code": "702",
     "minor_unit": "2",
-    "symbol": "S$",
-    "physical_currency_denominations": [
-      "2",
-      "5",
-      "10",
-      "50",
-      "100",
-      "1000"
-    ]
+    "symbol": "S$"
   },
   "SBD": {
     "name": "Solomon Islands Dollar",
-    "numeric_code": "090",
     "minor_unit": "2",
-    "symbol": "SI$",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "SI$"
   },
   "SOS": {
     "name": "Somali Shilling",
-    "numeric_code": "706",
     "minor_unit": "2",
-    "symbol": "S",
-    "physical_currency_denominations": [
-      "500",
-      "1000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "S"
   },
   "SSP": {
     "name": "South Sudanese Pound",
-    "numeric_code": "728",
     "minor_unit": "2",
-    "symbol": "SS£",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "25",
-      "50",
-      "100"
-    ]
+    "symbol": "SS£"
   },
   "LKR": {
     "name": "Sri Lanka Rupee",
-    "numeric_code": "144",
     "minor_unit": "2",
-    "symbol": "₨",
-    "physical_currency_denominations": [
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "₨"
   },
   "SDG": {
     "name": "Sudanese Pound",
-    "numeric_code": "938",
     "minor_unit": "2",
-    "symbol": "£",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "£"
   },
   "SRD": {
     "name": "Surinam Dollar",
-    "numeric_code": "968",
     "minor_unit": "2",
-    "symbol": "SRD",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "SRD"
   },
   "SEK": {
     "name": "Swedish Krona",
-    "numeric_code": "752",
     "minor_unit": "2",
-    "symbol": "kr",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500"
-    ]
+    "symbol": "kr"
   },
   "CHE": {
     "name": "WIR Euro",
-    "numeric_code": "947",
     "minor_unit": "2",
-    "symbol": "CHE",
-    "physical_currency_denominations": [
-      "nan"
-    ]
+    "symbol": "CHE"
   },
   "CHW": {
     "name": "WIR Franc",
-    "numeric_code": "948",
     "minor_unit": "2",
-    "symbol": "CHW",
-    "physical_currency_denominations": [
-      "nan"
-    ]
+    "symbol": "CHW"
   },
   "SYP": {
     "name": "Syrian Pound",
-    "numeric_code": "760",
     "minor_unit": "2",
-    "symbol": "£",
-    "physical_currency_denominations": [
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "£"
   },
   "TWD": {
     "name": "New Taiwan Dollar",
-    "numeric_code": "901",
     "minor_unit": "2",
-    "symbol": "NT$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "NT$"
   },
   "TJS": {
     "name": "Somoni",
-    "numeric_code": "972",
     "minor_unit": "2",
-    "symbol": "ЅМ",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200"
-    ]
+    "symbol": "ЅМ"
   },
   "TZS": {
     "name": "Tanzanian Shilling",
-    "numeric_code": "834",
     "minor_unit": "2",
-    "symbol": "Sh",
-    "physical_currency_denominations": [
-      "500",
-      "1000",
-      "2000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "Sh"
   },
   "THB": {
     "name": "Baht",
-    "numeric_code": "764",
     "minor_unit": "2",
-    "symbol": "฿",
-    "physical_currency_denominations": [
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000"
-    ]
+    "symbol": "฿"
   },
   "TOP": {
     "name": "Pa’anga",
-    "numeric_code": "776",
     "minor_unit": "2",
-    "symbol": "T$",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "T$"
   },
   "TTD": {
     "name": "Trinidad and Tobago Dollar",
-    "numeric_code": "780",
     "minor_unit": "2",
-    "symbol": "TT$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "TT$"
   },
   "TND": {
     "name": "Tunisian Dinar",
-    "numeric_code": "788",
     "minor_unit": "3",
-    "symbol": "DT",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50"
-    ]
+    "symbol": "DT"
   },
   "TRY": {
     "name": "Turkish Lira",
-    "numeric_code": "949",
     "minor_unit": "2",
-    "symbol": "₺",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500"
-    ]
+    "symbol": "₺"
   },
   "TMT": {
     "name": "Turkmenistan New Manat",
-    "numeric_code": "934",
     "minor_unit": "2",
-    "symbol": "T",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500"
-    ]
+    "symbol": "T"
   },
   "UGX": {
     "name": "Uganda Shilling",
-    "numeric_code": "800",
     "minor_unit": "0",
-    "symbol": "USh",
-    "physical_currency_denominations": [
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "20000",
-      "50000"
-    ]
+    "symbol": "USh"
   },
   "UAH": {
     "name": "Hryvnia",
-    "numeric_code": "980",
     "minor_unit": "2",
-    "symbol": "₴",
-    "physical_currency_denominations": [
-      "1",
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500"
-    ]
+    "symbol": "₴"
   },
   "AED": {
     "name": "UAE Dirham",
-    "numeric_code": "784",
     "minor_unit": "2",
-    "symbol": "د.إ",
-    "physical_currency_denominations": [
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000"
-    ]
+    "symbol": "د.إ"
   },
   "UYI": {
     "name": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
-    "numeric_code": "940",
     "minor_unit": "0",
-    "symbol": "$U",
-    "physical_currency_denominations": [
-      "nan"
-    ]
+    "symbol": "$U"
   },
   "UYU": {
     "name": "Peso Uruguayo",
-    "numeric_code": "858",
     "minor_unit": "2",
-    "symbol": "$U",
-    "physical_currency_denominations": [
-      "20",
-      "50",
-      "100",
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000"
-    ]
+    "symbol": "$U"
   },
   "UYW": {
     "name": "Unidad Previsional",
-    "numeric_code": "927",
     "minor_unit": "4",
-    "symbol": "UR",
-    "physical_currency_denominations": [
-      "nan"
-    ]
+    "symbol": "UR"
   },
   "UZS": {
     "name": "Uzbekistan Sum",
-    "numeric_code": "860",
     "minor_unit": "2",
-    "symbol": "so‘m",
-    "physical_currency_denominations": [
-      "1000",
-      "5000",
-      "10000",
-      "50000",
-      "100000",
-      "200000",
-      "500000",
-      "1000000"
-    ]
+    "symbol": "so‘m"
   },
   "VUV": {
     "name": "Vatu",
-    "numeric_code": "548",
     "minor_unit": "0",
-    "symbol": "VT",
-    "physical_currency_denominations": [
-      "100",
-      "200",
-      "500",
-      "1000",
-      "5000",
-      "10000"
-    ]
+    "symbol": "VT"
   },
   "VES": {
     "name": "Bolívar Soberano",
-    "numeric_code": "928",
     "minor_unit": "2",
-    "symbol": "Bs.S.",
-    "physical_currency_denominations": [
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "Bs.S."
   },
   "VED": {
     "name": "Bolívar Soberano",
-    "numeric_code": "926",
     "minor_unit": "2",
-    "symbol": "Bs.S.",
-    "physical_currency_denominations": [
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100"
-    ]
+    "symbol": "Bs.S."
   },
   "VND": {
     "name": "Dong",
-    "numeric_code": "704",
     "minor_unit": "0",
-    "symbol": "₫",
-    "physical_currency_denominations": [
-      "1000",
-      "2000",
-      "5000",
-      "10000",
-      "20000",
-      "50000",
-      "100000",
-      "200000",
-      "500000"
-    ]
+    "symbol": "₫"
   },
   "YER": {
     "name": "Yemeni Rial",
-    "numeric_code": "886",
     "minor_unit": "2",
-    "symbol": "﷼",
-    "physical_currency_denominations": [
-      "200",
-      "500",
-      "1000",
-      "2000",
-      "5000"
-    ]
+    "symbol": "﷼"
   },
   "ZMW": {
     "name": "Zambian Kwacha",
-    "numeric_code": "967",
     "minor_unit": "2",
-    "symbol": "ZK",
-    "physical_currency_denominations": [
-      "2",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500"
-    ]
+    "symbol": "ZK"
   },
   "ZWL": {
     "name": "Zimbabwe Dollar",
-    "numeric_code": "932",
     "minor_unit": "2",
-    "symbol": "Z$",
-    "physical_currency_denominations": [
-      "1",
-      "5",
-      "10",
-      "20",
-      "50",
-      "100",
-      "500",
-      "1000",
-      "1000000000000"
-    ]
+    "symbol": "Z$"
   }
 }
