@@ -46,8 +46,6 @@ TOPICS: dict[str, dict] = {
     "unicode_blocks": {"desc": "Unicode block ranges",                 "source": "Unicode Blocks.txt"},
     "address":        {"desc": "Postal address formats per country",   "source": "Google i18n address data"},
     "gst":            {"desc": "India GST rates by HSN chapter",       "source": "CBIC chapter-wise PDF"},
-    "gst_au":         {"desc": "Australia GST supply classifications", "source": "ATO ato.gov.au"},
-    "eu_vat":         {"desc": "EU VAT rates and validation patterns",  "source": "vatnode / EC TEDB"},
     "population":     {"desc": "Population by country",                "source": "UN WPP / World Bank"},
 }
 
@@ -65,8 +63,6 @@ SCHEMA_CLASS_NAMES: dict[str, str] = {
     "unicode_blocks": "UnicodeBlock",
     "address":        "AddressFormat",
     "gst":            "GstRate",
-    "gst_au":         "GstRateAustralia",
-    "eu_vat":         "EuVatRate",
     "population":     "Population",
 }
 
@@ -84,8 +80,6 @@ DATA_PATH: dict[str, str] = {
     "unicode_blocks": "i18nify-data/unicode-blocks/data.json",
     "address":        "i18nify-data/address/data.json",
     "gst":            "i18nify-data/gst/data.json",
-    "gst_au":         "i18nify-data/gst-australia/data.json",
-    "eu_vat":         "i18nify-data/vat/data.json",
     "population":     "i18nify-data/population/data.json",
 }
 
@@ -101,16 +95,14 @@ DATA_KEY: dict[str, str] = {
     "unicode_blocks": "unicode_block_information",
     "address":        "address_format_information",
     "gst":            "gst_information",
-    "gst_au":         "gst_information",
-    "eu_vat":         "vat_information",
     "population":     "population_information",
 }
 
 TTL_DAYS: dict[str, int] = {
     "currency": 30, "country": 30, "tld": 7, "http_status": 7,
     "language": 30, "phone": 30, "timezone": 7, "mime": 30,
-    "unicode_blocks": 30, "address": 30, "gst": 30, "gst_au": 30,
-    "eu_vat": 30, "population": 365,
+    "unicode_blocks": 30, "address": 30, "gst": 30,
+    "population": 365,
 }
 
 
@@ -303,12 +295,6 @@ def generate_utility(topic: str) -> None:
     print(f"    /technical-source-finder {_cyan(TOPICS[topic]['desc'])}")
     print("  Then type: generate utility")
     print()
-    print("  Or to run Recipe 8 directly, paste this in your terminal:")
-    gen_cmd = "source venv/bin/activate && python3 .claude/skills/utility-creator/tools/generate_utility.py"
-    print(f"    {_cyan(gen_cmd)}")
-    print()
-
-
 def _tsf_topic_key(topic: str) -> str:
     """Map workhorse topic name → TSF canonical topic key."""
     return {
@@ -323,8 +309,6 @@ def _tsf_topic_key(topic: str) -> str:
         "unicode_blocks": "unicode_blocks",
         "address":        "address_formats",
         "gst":            "gst_rates_india",
-        "gst_au":         "gst_rates_australia",
-        "eu_vat":         "eu_vat_rates",
         "population":     "population_data",
     }.get(topic, topic)
 

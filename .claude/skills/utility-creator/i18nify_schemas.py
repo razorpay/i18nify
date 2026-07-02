@@ -149,44 +149,6 @@ class GstRate(BaseModel):
     notes: str = ""
 
 
-class GstRateAustralia(BaseModel):
-    """Australia GST supply classification entry (A New Tax System (GST) Act 1999)."""
-    code: str               # "TAXABLE", "GST_FREE", "INPUT_TAXED"
-    category: str           # Human-readable category name
-    rate_pct: int           # 10 or 0
-    bas_codes: List[str]    # BAS G-codes e.g. ["G1"]
-    description: str        # ATO description of the category
-    examples: List[str]     # Representative goods/services
-
-
-class EuVatRate(BaseModel):
-    """EU VAT entry per country — rates + VAT number validation fields.
-
-    Keyed by ISO 3166-1 alpha-2 country code. Combines:
-      - Rate data (standard, reduced, super_reduced, parking) from EC DG TAXUD
-      - VAT number validation fields (regex, prefix, example) — VAT number patterns
-        are not available from any T1 source in machine-readable form; sourced from
-        vatnode/eu-vat-rates-data (T2, daily-synced from EC TEDB).
-
-    Field names match the JSON tags in packages/i18nify-go/modules/vat/vat.go.
-    """
-    cc: str                                # ISO 3166-1 alpha-2, e.g. "DE"
-    country_name: str                      # Full English name, e.g. "Germany"
-    standard_rate: float                   # Standard VAT rate %, e.g. 19.0
-    reduced_rates: List[float] = []        # Reduced rates, e.g. [7.0]
-    super_reduced_rate: Optional[float] = None  # Super-reduced rate, e.g. 2.1
-    parking_rate: Optional[float] = None   # Parking rate (BE, IE, LU, PT)
-    currency: str = "EUR"                  # ISO 4217, non-eurozone members differ
-    local_name: str = ""                   # Local language term, e.g. "Umsatzsteuer"
-    vat_abbreviation: str = ""             # Local abbreviation, e.g. "USt"
-    vat_number_format: str = ""            # Human-readable, e.g. "DE + 9 digits"
-    regex: str = ""                        # Regex validation pattern
-    vat_prefix: str = ""                   # VAT number prefix, e.g. "ATU", "EL"
-    vies_cc: str = ""                      # VIES country code (GR → "EL")
-    example: str = ""                      # Example VAT number, e.g. "DE123456789"
-    digits: int = 0                        # Total digit/char count in VAT number
-
-
 # ── Registry ────────────────────────────────────────────────────────────────
 SCHEMA_MAP: dict[str, type[BaseModel]] = {
     "currency":       Currency,
@@ -201,8 +163,6 @@ SCHEMA_MAP: dict[str, type[BaseModel]] = {
     "unicode_blocks": UnicodeBlock,
     "address":        AddressFormat,
     "gst":            GstRate,
-    "gst_au":         GstRateAustralia,
-    "eu_vat":         EuVatRate,
     "population":     Population,
 }
 
@@ -220,8 +180,6 @@ DATA_KEY_MAP: dict[str, str] = {
     "unicode_blocks": "unicode_block_information",
     "address":        "address_format_information",
     "gst":            "gst_information",
-    "gst_au":         "gst_information",
-    "eu_vat":         "vat_information",
     "population":     "population_information",
 }
 
@@ -239,7 +197,5 @@ DATA_PATH_MAP: dict[str, str] = {
     "unicode_blocks": "unicode-blocks/data.json",
     "address":        "address/data.json",
     "gst":            "gst/data.json",
-    "gst_au":         "gst-australia/data.json",
-    "eu_vat":         "vat/data.json",
     "population":     "population/data.json",
 }

@@ -201,10 +201,6 @@ SOURCE_URLS: dict[str, str] = {
     "address":        "https://chromium-i18n.appspot.com/ssl-address/data", # Google i18n — T1
     "itu_e164":       "https://www.itu.int/pub/T-SP-E.164D",  # ITU E.164 landing page (resolved → .pdf DMS link at runtime)
     "gst":            "https://cbic-gst.gov.in/gst-goods-services-rates.html",  # CBIC GST rate schedule PDF page — T1 (India GST)
-    "gst_au":         "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/when-to-charge-gst-and-when-not-to",  # ATO supply classifications — T1 (Australia GST)
-    # T2 sourced daily from EC TEDB (T1). T1 EC Excel provides rates only;
-    # VAT number patterns have no T1 machine-readable source → T2 permitted.
-    "eu_vat":         "https://raw.githubusercontent.com/vatnode/eu-vat-rates-data/main/data/eu-vat-rates-data.json",
     # T1: UN World Population Prospects 2024 (gzip'd CSV). T2 fallback: World Bank SP.POP.TOTL API.
     "population":     "https://population.un.org/wpp/Download/Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
 }
@@ -222,8 +218,6 @@ SOURCE_METADATA: dict[str, dict[str, Any]] = {
     "address":        {"name": "Google i18n address data", "tier": 1},
     "itu_e164":       {"name": "ITU E.164 numbering plan", "tier": 1},
     "gst":            {"name": "CBIC GST rate schedule", "tier": 1},
-    "gst_au":         {"name": "Australian Taxation Office GST guidance", "tier": 1},
-    "eu_vat":         {"name": "vatnode EU VAT rates data", "tier": 2},
     "population":     {"name": "UN World Population Prospects 2024", "tier": 1},
 }
 
@@ -529,10 +523,6 @@ def fetch_raw(topic: str) -> bytes:
         return fetch_itu_e164_pdf()
     if topic == "gst":
         return fetch_gst_india()
-    if topic == "gst_au":
-        return fetch_gst_australia()
-    if topic == "eu_vat":
-        return fetch_eu_vat()
     if topic == "population":
         return fetch_population()
     req = urllib.request.Request(url, headers={"User-Agent": "i18nify-pipeline/1.0"})
@@ -939,26 +929,26 @@ def parse_itu_e164_pdf(raw: bytes) -> list[dict]:
         for page_num in range(len(doc)):
             page = doc.load_page(page_num)
             tabs = page.find_tables()
-        for tab in tabs.tables:
-            table_data = tab.extract()
-            for row in table_data:
-                if not row or len(row) < 2:
-                    continue
-                # Row format: [Country, Code, Notes...]
-                # Safely handle PyMuPDF returning None for empty / merged cells
-                country = str(row[0] or "").strip()
-                code = str(row[1] or "").strip().lstrip("+")
-                if not country or not code:
-                    continue
-                if not re.fullmatch(r"\d{1,3}", code):
-                    continue
-                rows.append({
-                    "cc": "",
-                    "country_name": country,
-                    "calling_code": f"+{code}",
-                    "format": "",
-                    "regex": "",
-                })
+            for tab in tabs.tables:
+                table_data = tab.extract()
+                for row in table_data:
+                    if not row or len(row) < 2:
+                        continue
+                    # Row format: [Country, Code, Notes...]
+                    # Safely handle PyMuPDF returning None for empty / merged cells
+                    country = str(row[0] or "").strip()
+                    code = str(row[1] or "").strip().lstrip("+")
+                    if not country or not code:
+                        continue
+                    if not re.fullmatch(r"\d{1,3}", code):
+                        continue
+                    rows.append({
+                        "cc": "",
+                        "country_name": country,
+                        "calling_code": f"+{code}",
+                        "format": "",
+                        "regex": "",
+                    })
     finally:
         doc.close()
     return rows
@@ -1053,208 +1043,6 @@ def parse_gst_india(raw: bytes) -> list[dict]:
             "gst_rate": rate_str,
             "cess": "",
             "notes": "",
-        })
-    return rows
-
-
-def fetch_gst_australia() -> bytes:
-    """Fetch the ATO 'when to charge GST' page (static HTML, no JS required).
-
-    ATO's WAF may block direct urllib requests (403). parse_gst_australia() uses
-    authoritative static data drawn from the GST Act 1999 and returns valid rows
-    regardless of the HTML content, so a 403 is handled by returning a minimal
-    sentinel — the canonical data is not dependent on parsing the live page.
-    """
-    try:
-        return _http_get(SOURCE_URLS["gst_au"], timeout=20)
-    except Exception:
-        # WAF-blocked: return sentinel so the parser still runs with static data
-        return b"<html><body><!-- ATO GST classifications sentinel --></body></html>"
-
-
-def parse_gst_australia(raw: bytes) -> list[dict]:
-    """Parse Australia GST supply classifications from ATO HTML.
-
-    Australia GST has three categories defined by the
-    A New Tax System (Goods and Services Tax) Act 1999.
-    The data is legislatively stable; HTML is parsed for descriptions and
-    falls back to authoritative static data if the page structure changes.
-    """
-    html = raw.decode("utf-8", errors="replace")
-
-    # Authoritative static data (defined by the GST Act 1999)
-    categories = [
-        {
-            "code": "TAXABLE",
-            "category": "Taxable supply",
-            "rate_pct": 10,
-            "bas_codes": ["G1"],
-            "description": (
-                "Most goods and services sold in Australia. "
-                "GST is included in the price and must be remitted to the ATO."
-            ),
-            "examples": [
-                "electronics", "clothing", "most professional services",
-                "new residential premises", "commercial property",
-            ],
-        },
-        {
-            "code": "GST_FREE",
-            "category": "GST-free supply",
-            "rate_pct": 0,
-            "bas_codes": ["G2", "G3"],
-            "description": (
-                "Zero-rated supplies. No GST charged but GST credits on "
-                "purchases used to make these supplies can be claimed."
-            ),
-            "examples": [
-                "basic food and groceries", "medical and health services",
-                "education courses", "exports of goods and services",
-                "childcare", "religious services",
-            ],
-        },
-        {
-            "code": "INPUT_TAXED",
-            "category": "Input-taxed supply",
-            "rate_pct": 0,
-            "bas_codes": [],
-            "description": (
-                "No GST charged and no GST credits can be claimed on "
-                "purchases used to make these supplies."
-            ),
-            "examples": [
-                "financial services", "residential rental",
-                "selling residential premises", "some fundraising events",
-            ],
-        },
-    ]
-
-    # Attempt to enrich descriptions from live HTML (best-effort; never fails)
-    try:
-        for cat in categories:
-            # Look for the category heading followed by a short paragraph
-            pattern = re.escape(cat["category"]) + r"[^.]{0,40}?([A-Z][^<]{20,300}\.)"
-            m = re.search(pattern, html, re.IGNORECASE | re.DOTALL)
-            if m:
-                extracted = re.sub(r"\s+", " ", m.group(1)).strip()
-                if len(extracted) > 30:
-                    cat["description"] = extracted
-    except Exception:
-        pass
-
-    return categories
-
-
-# ── EU VAT static helpers ─────────────────────────────────────────────────────
-
-# Prefixes that differ from the ISO 3166-1 alpha-2 country code
-_EU_VAT_PREFIX_STATIC: dict[str, str] = {
-    "AT": "ATU",   # Austria — ATU prefix (not AT)
-    "GR": "EL",    # Greece  — EL in VIES  (not GR)
-    "CH": "CHE",   # Switzerland
-}
-
-# VIES country code overrides (same as prefix[:2] except Greece)
-_EU_VIES_CC_OVERRIDES: dict[str, str] = {"GR": "EL"}
-
-# Authoritative example VAT numbers for each country
-_EU_VAT_EXAMPLES: dict[str, str] = {
-    "AT": "ATU12345678",
-    "BE": "BE0123456789",
-    "BG": "BG123456789",
-    "CY": "CY12345678A",
-    "CZ": "CZ12345678",
-    "DE": "DE123456789",
-    "DK": "DK12345678",
-    "EE": "EE123456789",
-    "ES": "ESX1234567R",
-    "FI": "FI12345678",
-    "FR": "FRXX999999999",
-    "GR": "EL123456789",
-    "HR": "HR12345678901",
-    "HU": "HU12345678",
-    "IE": "IE1234567T",
-    "IT": "IT12345678901",
-    "LT": "LT123456789",
-    "LU": "LU12345678",
-    "LV": "LV12345678901",
-    "MT": "MT12345678",
-    "NL": "NL123456789B01",
-    "PL": "PL1234567890",
-    "PT": "PT123456789",
-    "RO": "RO12345678",
-    "SE": "SE123456789012",
-    "SI": "SI12345678",
-    "SK": "SK1234567890",
-    "NO": "NO123456789MVA",
-    "CH": "CHE-123.456.789MWST",
-    "GB": "GB123456789",
-    "XI": "XI123456789",
-}
-
-
-def _eu_vat_prefix(cc: str, pattern: str) -> str:
-    if cc in _EU_VAT_PREFIX_STATIC:
-        return _EU_VAT_PREFIX_STATIC[cc]
-    p = pattern.lstrip("^")
-    m = re.match(r"^([A-Z]+)", p)
-    return m.group(1) if m else cc
-
-
-def _eu_vat_digits(fmt: str) -> int:
-    """Sum of all digit counts mentioned in a format string like 'DE + 9 digits'."""
-    nums = re.findall(r"(\d+)\s*digit", fmt, re.IGNORECASE)
-    return sum(int(n) for n in nums) if nums else 0
-
-
-def fetch_eu_vat() -> bytes:
-    """Fetch EU VAT rates + number-format data from vatnode (T2, EC TEDB daily-sync).
-
-    Returns raw JSON bytes of the eu-vat-rates-data.json dataset.
-    """
-    return _http_get(
-        SOURCE_URLS["eu_vat"],
-        timeout=15,
-        extra_headers={"Accept": "application/json"},
-    )
-
-
-def parse_eu_vat(raw: bytes) -> list[dict]:
-    """Parse vatnode eu-vat-rates-data JSON into EuVatRate records.
-
-    Maps vatnode fields to the EuVatRate schema and derives VAT number
-    validation fields (vat_prefix, vies_cc, example, digits) from the
-    pattern and static lookup tables.
-    """
-    root: dict = json.loads(raw)
-    # vatnode wraps country data under a "rates" key (alongside "version", "source")
-    data: dict = root.get("rates", root)
-    rows: list[dict] = []
-    for cc, entry in data.items():
-        if not re.fullmatch(r"[A-Z]{2}", cc):
-            continue
-        pattern = entry.get("pattern", "")
-        fmt_str = entry.get("format", "")
-        vat_prefix = _eu_vat_prefix(cc, pattern)
-        vies_cc = _EU_VIES_CC_OVERRIDES.get(cc, vat_prefix[:2] if len(vat_prefix) >= 2 else cc)
-        super_red = entry.get("super_reduced")
-        parking   = entry.get("parking")
-        rows.append({
-            "cc":               cc,
-            "country_name":     entry.get("country", _country_name(cc)),
-            "standard_rate":    float(entry.get("standard", 0)),
-            "reduced_rates":    [float(r) for r in (entry.get("reduced") or [])],
-            "super_reduced_rate": float(super_red) if super_red is not None else None,
-            "parking_rate":     float(parking)   if parking   is not None else None,
-            "currency":         entry.get("currency", "EUR"),
-            "local_name":       entry.get("vat_name", ""),
-            "vat_abbreviation": entry.get("vat_abbr", ""),
-            "vat_number_format": fmt_str,
-            "regex":            pattern,
-            "vat_prefix":       vat_prefix,
-            "vies_cc":          vies_cc,
-            "example":          _EU_VAT_EXAMPLES.get(cc, vat_prefix + "123456789"),
-            "digits":           _eu_vat_digits(fmt_str),
         })
     return rows
 
@@ -1445,8 +1233,6 @@ PARSERS = {
     "address":        parse_address,
     "itu_e164":       parse_itu_e164_pdf,
     "gst":            parse_gst_india,
-    "gst_au":         parse_gst_australia,
-    "eu_vat":         parse_eu_vat,
     "population":     parse_population,
 }
 
@@ -1498,6 +1284,7 @@ def save_canonical(topic: str, rows: list[Any], source_url: str) -> Path:
     source_meta = SOURCE_METADATA.get(topic, {})
     canonical = {
         "_source": {
+            "topic": topic,
             "name": source_meta.get("name", topic),
             "url": source_url,
             "tier": source_meta.get("tier", 1),

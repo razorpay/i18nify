@@ -40,8 +40,6 @@ CANONICAL_PATH: dict[str, str] = {
     "unicode_blocks": "i18nify-data/unicode-blocks/data.json",
     "address":        "i18nify-data/address/data.json",
     "gst":            "i18nify-data/gst/data.json",
-    "gst_au":         "i18nify-data/gst-australia/data.json",
-    "eu_vat":         "i18nify-data/vat/data.json",
     "population":     "i18nify-data/population/data.json",
 }
 
@@ -58,8 +56,6 @@ DATA_KEY: dict[str, str] = {
     "unicode_blocks": "unicode_block_information",
     "address":        "address_format_information",
     "gst":            "gst_information",
-    "gst_au":         "gst_information",
-    "eu_vat":         "vat_information",
     "population":     "population_information",
 }
 
@@ -76,8 +72,6 @@ TTL_DAYS: dict[str, int] = {
     "unicode_blocks": 30,
     "address":        30,
     "gst":            30,
-    "gst_au":         30,
-    "eu_vat":         30,
     "population":     365,
 }
 
