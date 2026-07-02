@@ -21,6 +21,10 @@ export interface ParsedDateTime extends FormattedPartsObject {
   date: Date | null;
 }
 
+export type TimezoneDetail = {
+  utc_offset: string;
+};
+
 export interface SupportedDateFormats {
   regex: RegExp;
   yearIndex: number;
