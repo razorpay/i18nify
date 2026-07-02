@@ -8,7 +8,5 @@ export type { CurrencyCodeType } from './types';
 export { default as convertStringToMinorUnit } from './convertStringToMinorUnit';
 export { default as getDenomination } from './getDenomination';
 export { default as getISONumericCode } from './getISONumericCode';
-export { default as getMinimumValue } from './getMinimumValue';
-export { default as getMinorUnitName } from './getMinorUnitName';
 export { default as isValidAmount } from './isValidAmount';
 export { default as isValidCurrencyCode } from './isValidCurrencyCode';

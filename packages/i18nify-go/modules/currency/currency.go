@@ -32,82 +32,6 @@ var (
 	amountPattern     = regexp.MustCompile(`^-?\d+(\.\d+)?$`)
 )
 
-// minimumValueMap holds minimum transaction amounts in minor units per ISO 4217 currency code.
-// Source: Stripe's published minimum charge amounts.
-// For currencies not listed here GetMinimumValue falls back to a default derived from minor_unit:
-//   - minor_unit == 0 returns 1
-//   - minor_unit >= 1 returns 50
-var minimumValueMap = map[string]int{
-	"AED": 200,
-	"ARS": 50,
-	"AUD": 50,
-	"BRL": 50,
-	"CAD": 50,
-	"CHF": 50,
-	"COP": 50,
-	"CZK": 1500,
-	"DKK": 250,
-	"EUR": 50,
-	"GBP": 30,
-	"HKD": 400,
-	"HUF": 17500,
-	"IDR": 50,
-	"ILS": 50,
-	"INR": 50,
-	"JPY": 50,
-	"KRW": 50,
-	"MXN": 1000,
-	"MYR": 200,
-	"NOK": 300,
-	"NZD": 50,
-	"PHP": 50,
-	"PLN": 200,
-	"RON": 200,
-	"RUB": 50,
-	"SEK": 300,
-	"SGD": 50,
-	"THB": 1000,
-	"USD": 50,
-	"ZAR": 50,
-}
-
-var minorUnitNames = map[string]string{
-	// Major global
-	"USD": "cent", "EUR": "cent", "GBP": "penny", "JPY": "sen",
-	"CHF": "rappen", "CNY": "jiao", "HKD": "cent", "SGD": "cent",
-	"AUD": "cent", "NZD": "cent", "CAD": "cent",
-
-	// South / Southeast Asia
-	"INR": "paisa", "PKR": "paisa", "BDT": "poisha", "LKR": "cent",
-	"NPR": "paisa", "MVR": "laari", "MYR": "sen", "THB": "satang",
-	"PHP": "sentimo", "IDR": "sen", "VND": "xu", "KHR": "sen",
-	"MMK": "pya",
-
-	// East Asia
-	"KRW": "jeon", "TWD": "cent",
-
-	// Middle East / Arabic currencies and neighbours
-	"AED": "fils", "AFN": "pul", "BHD": "fils", "DZD": "centime",
-	"EGP": "piastre", "IQD": "fils", "IRR": "dinar", "JOD": "fils",
-	"KWD": "fils", "LBP": "piastre", "LYD": "dirham", "MAD": "centime",
-	"OMR": "baisa", "QAR": "dirham", "SAR": "halala", "SDG": "piastre",
-	"SYP": "piastre", "TND": "millime", "YER": "fils", "ILS": "agora",
-	"TRY": "kuruş",
-
-	// Europe
-	"NOK": "øre", "SEK": "öre", "DKK": "øre", "PLN": "grosz",
-	"CZK": "haléř", "HUF": "fillér", "RON": "ban", "RUB": "kopek",
-	"UAH": "kopiyka", "HRK": "lipa", "BGN": "stotinka",
-
-	// Americas
-	"BRL": "centavo", "MXN": "centavo", "ARS": "centavo", "CLP": "centavo",
-	"COP": "centavo", "PEN": "céntimo",
-
-	// Africa
-	"ZAR": "cent", "KES": "cent", "NGN": "kobo", "GHS": "pesewa",
-	"ETB": "santim", "TZS": "cent", "XOF": "centime", "XAF": "centime",
-}
-
 // init loads the currency data from the externalized data package when the package is imported.
 func init() {
 	src, err := dataSource.GetCurrencyData()
@@ -208,44 +132,6 @@ func GetISONumericCode(currencyCode string) (string, error) {
 		return "", fmt.Errorf("invalid currency code: %q", currencyCode)
 	}
 	return info.NumericCode, nil
-}
-
-// GetMinimumValue returns the minimum transaction amount in minor units for the given ISO 4217 currency code.
-func GetMinimumValue(currencyCode string) (int, error) {
-	if currencyCode == "" {
-		return 0, fmt.Errorf("currency code cannot be empty")
-	}
-
-	if explicit, ok := minimumValueMap[currencyCode]; ok {
-		return explicit, nil
-	}
-
-	info, err := GetCurrencyInformation(currencyCode)
-	if err != nil {
-		return 0, fmt.Errorf("failed to retrieve currency information for code %q: %v", currencyCode, err)
-	}
-
-	minorUnit, err := strconv.Atoi(info.MinorUnit)
-	if err != nil {
-		return 0, fmt.Errorf("invalid minor_unit value %q for currency %q", info.MinorUnit, currencyCode)
-	}
-
-	if minorUnit == 0 {
-		return 1, nil
-	}
-	return 50, nil
-}
-
-// GetMinorUnitName returns the English name of the minor unit for the given currency code.
-// It returns ("", nil) when the currency is valid but its subunit name is not in the lookup table.
-func GetMinorUnitName(currencyCode string) (string, error) {
-	if currencyCode == "" {
-		return "", fmt.Errorf("currency code cannot be empty")
-	}
-	if _, err := GetCurrencyInformation(currencyCode); err != nil {
-		return "", fmt.Errorf("failed to retrieve currency information for code '%s': %v", currencyCode, err)
-	}
-	return minorUnitNames[currencyCode], nil
 }
 
 // IsValidCurrencyCode reports whether code is a recognised ISO 4217 alphabetic

@@ -71,20 +71,6 @@ func main() {
 		fmt.Printf("INR ISO numeric code: %s\n", isoNumericCode) // 356
 	}
 
-	minimumValue, err := currency.GetMinimumValue("USD")
-	if err != nil {
-		fmt.Printf("Error getting minimum value: %v\n", err)
-	} else {
-		fmt.Printf("USD minimum value: %d cents\n", minimumValue) // 50 cents
-	}
-
-	minorUnitName, err := currency.GetMinorUnitName("INR")
-	if err != nil {
-		fmt.Printf("Error getting minor unit name: %v\n", err)
-	} else {
-		fmt.Printf("INR minor unit name: %s\n", minorUnitName) // paisa
-	}
-
 	isValidAmount, err := currency.IsValidAmount("10.50", "USD")
 	if err != nil {
 		fmt.Printf("Error validating amount: %v\n", err)
