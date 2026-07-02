@@ -263,8 +263,8 @@ def fetch_address_google_i18n() -> bytes:
             country_url = f"{root_url}/{cc}"
             country_data = json.loads(_http_get(country_url, timeout=10))
             result[cc] = country_data
-        except Exception:
-            pass  # individual country fetch failure — skip silently
+        except Exception as e:
+            print(f"WARN: address fetch failed for {cc}: {e}", file=sys.stderr)
     return json.dumps(result).encode("utf-8")
 
 

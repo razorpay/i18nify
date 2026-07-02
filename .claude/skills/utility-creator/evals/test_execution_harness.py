@@ -241,9 +241,7 @@ class TestCleanWorkspaceIsolation(unittest.TestCase):
             dirs[:] = [d for d in dirs if d != "__pycache__"]
             for fname in files:
                 rel = os.path.relpath(os.path.join(root, fname), _WS)
-                # Pass if it's in expected or is a sub-path of expected
-                matched = any(rel == e or rel.startswith(e.split("/")[0]) for e in expected)
-                self.assertTrue(matched, "Unexpected file in workspace: %s" % rel)
+                self.assertIn(rel, expected, "Unexpected file in workspace: %s" % rel)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
