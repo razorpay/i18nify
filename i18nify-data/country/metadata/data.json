@@ -65,6 +65,7 @@
         }
       },
       "default_locale": "fa_AF",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "AFN"
     },
     "AX": {
@@ -113,6 +114,7 @@
         }
       },
       "default_locale": "sv_AX",
+      "address_template": "{organization}\n{name}\n{street_address}\nAX-{zip} {city}\nÅLAND",
       "default_currency": "EUR"
     },
     "AL": {
@@ -229,6 +231,7 @@
         }
       },
       "default_locale": "sq",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}",
       "default_currency": "ALL"
     },
     "DZ": {
@@ -289,6 +292,7 @@
         }
       },
       "default_locale": "ar_DZ",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "DZD"
     },
     "AS": {
@@ -403,6 +407,7 @@
         }
       },
       "default_locale": "en_AS",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "USD"
     },
     "AD": {
@@ -451,6 +456,7 @@
         }
       },
       "default_locale": "ca",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "AO": {
@@ -613,6 +619,7 @@
         }
       },
       "default_locale": "en_AI",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "XCD"
     },
     "AQ": {
@@ -866,6 +873,7 @@
         }
       },
       "default_locale": "es_AR",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}",
       "default_currency": "ARS"
     },
     "AM": {
@@ -977,6 +985,7 @@
         }
       },
       "default_locale": "hy",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}\n{state}",
       "default_currency": "AMD"
     },
     "AW": {
@@ -1182,6 +1191,7 @@
         }
       },
       "default_locale": "en_AU",
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "AUD"
     },
     "AT": {
@@ -1251,6 +1261,7 @@
         }
       },
       "default_locale": "de_AT",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "AZ": {
@@ -1372,6 +1383,7 @@
         }
       },
       "default_locale": "az",
+      "address_template": "{name}\n{organization}\n{street_address}\nAZ {zip} {city}",
       "default_currency": "AZN"
     },
     "BS": {
@@ -1480,6 +1492,7 @@
         }
       },
       "default_locale": "en_BS",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state}",
       "default_currency": "BSD"
     },
     "BH": {
@@ -1555,6 +1568,7 @@
         }
       },
       "default_locale": "ar_BH",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "BHD"
     },
     "BD": {
@@ -1614,6 +1628,7 @@
         }
       },
       "default_locale": "bn_BD",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} - {zip}",
       "default_currency": "BDT"
     },
     "BB": {
@@ -1722,6 +1737,7 @@
         }
       },
       "default_locale": "en_BB",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}",
       "default_currency": "BBD"
     },
     "BY": {
@@ -1781,6 +1797,7 @@
         }
       },
       "default_locale": "be",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip}, {city}\n{state}",
       "default_currency": "BYN"
     },
     "BE": {
@@ -1845,6 +1862,7 @@
         }
       },
       "default_locale": "nl_BE",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "BZ": {
@@ -2125,6 +2143,7 @@
         }
       },
       "default_locale": "en_BM",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "BMD"
     },
     "BT": {
@@ -2235,6 +2254,7 @@
         }
       },
       "default_locale": "dz",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "BTN"
     },
     "BO": {
@@ -2428,6 +2448,7 @@
         }
       },
       "default_locale": "bs",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "BAM"
     },
     "BW": {
@@ -2676,6 +2697,7 @@
         }
       },
       "default_locale": "pt_BR",
+      "address_template": "{organization}\n{name}\n{street_address}\n{district}\n{city}-{state}\n{zip}",
       "default_currency": "BRL"
     },
     "IO": {
@@ -2784,6 +2806,7 @@
         }
       },
       "default_locale": "en_IO",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "USD"
     },
     "BN": {
@@ -2843,6 +2866,7 @@
         }
       },
       "default_locale": "ms_BN",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "BND"
     },
     "BG": {
@@ -2905,6 +2929,7 @@
         }
       },
       "default_locale": "bg",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "BGN"
     },
     "BF": {
@@ -2962,6 +2987,7 @@
         }
       },
       "default_locale": "fr_BF",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {sorting_code}",
       "default_currency": "XOF"
     },
     "BI": {
@@ -3130,6 +3156,7 @@
         }
       },
       "default_locale": "pt_CV",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}",
       "default_currency": "CVE"
     },
     "KH": {
@@ -3248,6 +3275,7 @@
         }
       },
       "default_locale": "km",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "KHR"
     },
     "CM": {
@@ -3549,6 +3577,7 @@
         }
       },
       "default_locale": "en_CA",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "CAD"
     },
     "KY": {
@@ -3855,6 +3884,7 @@
         }
       },
       "default_locale": "es_CL",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}",
       "default_currency": "CLP"
     },
     "CN": {
@@ -3927,6 +3957,7 @@
         }
       },
       "default_locale": "zh_CN",
+      "address_template": "{zip}\n{state}{city}{district}\n{street_address}\n{organization}\n{name}",
       "default_currency": "CNY"
     },
     "CX": {
@@ -4045,6 +4076,7 @@
         }
       },
       "default_locale": "en",
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "AUD"
     },
     "CC": {
@@ -4158,6 +4190,7 @@
         }
       },
       "default_locale": "ms_CC",
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "AUD"
     },
     "CO": {
@@ -4219,6 +4252,7 @@
         }
       },
       "default_locale": "es_CO",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}, {state}, {zip}",
       "default_currency": "COP"
     },
     "KM": {
@@ -4594,6 +4628,7 @@
         }
       },
       "default_locale": "es_CR",
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}, {city}\n{zip}",
       "default_currency": "CRC"
     },
     "CI": {
@@ -4648,6 +4683,7 @@
         }
       },
       "default_locale": "fr_CI",
+      "address_template": "{name}\n{organization}\n{sorting_code} {street_address} {city} {sorting_code}",
       "default_currency": "XOF"
     },
     "HR": {
@@ -4707,6 +4743,7 @@
         }
       },
       "default_locale": "hr_HR",
+      "address_template": "{name}\n{organization}\n{street_address}\nHR-{zip} {city}",
       "default_currency": "EUR"
     },
     "CU": {
@@ -4771,6 +4808,7 @@
         }
       },
       "default_locale": "es_CU",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state}\n{zip}",
       "default_currency": "CUP"
     },
     "CW": {
@@ -4895,6 +4933,7 @@
         }
       },
       "default_locale": "el_CY",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "CZ": {
@@ -4954,6 +4993,7 @@
         }
       },
       "default_locale": "cs",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "CZK"
     },
     "DK": {
@@ -5021,6 +5061,7 @@
         }
       },
       "default_locale": "da_DK",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "DKK"
     },
     "DJ": {
@@ -5260,6 +5301,7 @@
         }
       },
       "default_locale": "es_DO",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "DOP"
     },
     "EC": {
@@ -5323,6 +5365,7 @@
         }
       },
       "default_locale": "es_EC",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}",
       "default_currency": "USD"
     },
     "EG": {
@@ -5393,6 +5436,7 @@
         }
       },
       "default_locale": "ar_EG",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}",
       "default_currency": "EGP"
     },
     "SV": {
@@ -5454,6 +5498,7 @@
         }
       },
       "default_locale": "es_SV",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}-{city}\n{state}",
       "default_currency": "SVC"
     },
     "GQ": {
@@ -5712,6 +5757,7 @@
         }
       },
       "default_locale": "et",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
       "default_currency": "EUR"
     },
     "SZ": {
@@ -5823,6 +5869,7 @@
         }
       },
       "default_locale": "en_SZ",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "SZL"
     },
     "ET": {
@@ -5948,6 +5995,7 @@
         }
       },
       "default_locale": "am",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "ETB"
     },
     "FK": {
@@ -6056,6 +6104,7 @@
         }
       },
       "default_locale": "en_FK",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "FKP"
     },
     "FO": {
@@ -6170,6 +6219,7 @@
         }
       },
       "default_locale": "fo",
+      "address_template": "{name}\n{organization}\n{street_address}\nFO{zip} {city}",
       "default_currency": "DKK"
     },
     "FJ": {
@@ -6343,6 +6393,7 @@
         }
       },
       "default_locale": "fi_FI",
+      "address_template": "{organization}\n{name}\n{street_address}\nFI-{zip} {city}",
       "default_currency": "EUR"
     },
     "FR": {
@@ -6419,6 +6470,7 @@
         }
       },
       "default_locale": "fr_FR",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "GF": {
@@ -6473,6 +6525,7 @@
         }
       },
       "default_locale": "fr_GF",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "EUR"
     },
     "PF": {
@@ -6536,6 +6589,7 @@
         }
       },
       "default_locale": "fr_PF",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
       "default_currency": "XPF"
     },
     "TF": {
@@ -6864,6 +6918,7 @@
         }
       },
       "default_locale": "ka",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "GEL"
     },
     "DE": {
@@ -6918,6 +6973,7 @@
         }
       },
       "default_locale": "de",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "GH": {
@@ -7158,6 +7214,7 @@
         }
       },
       "default_locale": "en_GI",
+      "address_template": "{name}\n{organization}\n{street_address}\nGIBRALTAR\n{zip}",
       "default_currency": "GIP"
     },
     "GR": {
@@ -7222,6 +7279,7 @@
         }
       },
       "default_locale": "el_GR",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "GL": {
@@ -7344,6 +7402,7 @@
         }
       },
       "default_locale": "kl",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "DKK"
     },
     "GD": {
@@ -7506,6 +7565,7 @@
         }
       },
       "default_locale": "fr_GP",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "EUR"
     },
     "GU": {
@@ -7617,6 +7677,7 @@
         }
       },
       "default_locale": "en_GU",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "USD"
     },
     "GT": {
@@ -7677,6 +7738,7 @@
         }
       },
       "default_locale": "es_GT",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}- {city}",
       "default_currency": "GTQ"
     },
     "GG": {
@@ -7788,6 +7850,7 @@
         }
       },
       "default_locale": "en",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\nGUERNSEY\n{zip}",
       "default_currency": "GBP"
     },
     "GN": {
@@ -7842,6 +7905,7 @@
         }
       },
       "default_locale": "fr_GN",
+      "address_template": "{name}\n{organization}\n{zip} {street_address} {city}",
       "default_currency": "GNF"
     },
     "GW": {
@@ -7899,6 +7963,7 @@
         }
       },
       "default_locale": "pt_GW",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "XOF"
     },
     "GY": {
@@ -8065,6 +8130,7 @@
         }
       },
       "default_locale": "ht",
+      "address_template": "{name}\n{organization}\n{street_address}\nHT{zip} {city}",
       "default_currency": "HTG"
     },
     "HM": {
@@ -8091,6 +8157,7 @@
         }
       },
       "default_locale": "nan",
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "AUD"
     },
     "VA": {
@@ -8153,6 +8220,7 @@
         }
       },
       "default_locale": "la",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "HN": {
@@ -8219,6 +8287,7 @@
         }
       },
       "default_locale": "es_HN",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state}\n{zip}",
       "default_currency": "HNL"
     },
     "HK": {
@@ -8286,6 +8355,7 @@
         }
       },
       "default_locale": "zh_HK",
+      "address_template": "{state}\n{city}\n{street_address}\n{organization}\n{name}",
       "default_currency": "HKD"
     },
     "HU": {
@@ -8340,6 +8410,7 @@
         }
       },
       "default_locale": "hu_HU",
+      "address_template": "{name}\n{organization}\n{city}\n{street_address}\n{zip}",
       "default_currency": "HUF"
     },
     "IS": {
@@ -8471,6 +8542,7 @@
         }
       },
       "default_locale": "is",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "ISK"
     },
     "IN": {
@@ -8632,6 +8704,7 @@
         }
       },
       "default_locale": "en_IN",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}\n{state}",
       "default_currency": "INR"
     },
     "ID": {
@@ -8708,6 +8781,7 @@
         }
       },
       "default_locale": "id",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}",
       "default_currency": "IDR"
     },
     "IR": {
@@ -8765,6 +8839,7 @@
         }
       },
       "default_locale": "fa_IR",
+      "address_template": "{organization}\n{name}\n{state}\n{city}, {district}\n{street_address}\n{zip}",
       "default_currency": "IRR"
     },
     "IQ": {
@@ -8833,6 +8908,7 @@
         }
       },
       "default_locale": "ar_IQ",
+      "address_template": "{organization}\n{name}\n{street_address}\n{city}, {state}\n{zip}",
       "default_currency": "IQD"
     },
     "IE": {
@@ -8946,6 +9022,7 @@
         }
       },
       "default_locale": "en_IE",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}\n{state}\n{zip}",
       "default_currency": "EUR"
     },
     "IM": {
@@ -9057,6 +9134,7 @@
         }
       },
       "default_locale": "en",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "GBP"
     },
     "IL": {
@@ -9121,6 +9199,7 @@
         }
       },
       "default_locale": "he",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "ILS"
     },
     "IT": {
@@ -9201,6 +9280,7 @@
         }
       },
       "default_locale": "it_IT",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
       "default_currency": "EUR"
     },
     "JM": {
@@ -9309,6 +9389,7 @@
         }
       },
       "default_locale": "en_JM",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {sorting_code}",
       "default_currency": "JMD"
     },
     "JP": {
@@ -9369,6 +9450,7 @@
         }
       },
       "default_locale": "ja",
+      "address_template": "〒{zip}\n{state}\n{street_address}\n{organization}\n{name}",
       "default_currency": "JPY"
     },
     "JE": {
@@ -9485,6 +9567,7 @@
         }
       },
       "default_locale": "en",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\nJERSEY\n{zip}",
       "default_currency": "GBP"
     },
     "JO": {
@@ -9550,6 +9633,7 @@
         }
       },
       "default_locale": "ar_JO",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "JOD"
     },
     "KZ": {
@@ -9627,6 +9711,7 @@
         }
       },
       "default_locale": "kk",
+      "address_template": "{zip}\n{state}\n{city}\n{street_address}\n{organization}\n{name}",
       "default_currency": "KZT"
     },
     "KE": {
@@ -9686,6 +9771,7 @@
         }
       },
       "default_locale": "en_KE",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "KES"
     },
     "KI": {
@@ -9803,6 +9889,7 @@
         }
       },
       "default_locale": "en_KI",
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}\n{city}",
       "default_currency": "AUD"
     },
     "KP": {
@@ -9857,6 +9944,7 @@
         }
       },
       "default_locale": "ko_KP",
+      "address_template": "{zip}\n{state}\n{city}\n{street_address}\n{organization}\n{name}",
       "default_currency": "KPW"
     },
     "KR": {
@@ -9916,6 +10004,7 @@
         }
       },
       "default_locale": "ko_KR",
+      "address_template": "{state} {city}{district}\n{street_address}\n{organization}\n{name}\n{zip}",
       "default_currency": "KRW"
     },
     "KW": {
@@ -9981,6 +10070,7 @@
         }
       },
       "default_locale": "ar_KW",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "KWD"
     },
     "KG": {
@@ -10045,6 +10135,7 @@
         }
       },
       "default_locale": "ky",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "KGS"
     },
     "LA": {
@@ -10163,6 +10254,7 @@
         }
       },
       "default_locale": "lo",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "LAK"
     },
     "LV": {
@@ -10284,6 +10376,7 @@
         }
       },
       "default_locale": "lv",
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}\n{city}, {zip}",
       "default_currency": "EUR"
     },
     "LB": {
@@ -10359,6 +10452,7 @@
         }
       },
       "default_locale": "ar_LB",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "LBP"
     },
     "LS": {
@@ -10479,6 +10573,7 @@
         }
       },
       "default_locale": "en_LS",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "LSL"
     },
     "LR": {
@@ -10587,6 +10682,7 @@
         }
       },
       "default_locale": "en_LR",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "LRD"
     },
     "LY": {
@@ -10711,6 +10807,7 @@
         }
       },
       "default_locale": "de_LI",
+      "address_template": "{organization}\n{name}\n{street_address}\nFL-{zip} {city}",
       "default_currency": "CHF"
     },
     "LT": {
@@ -10832,6 +10929,7 @@
         }
       },
       "default_locale": "lt",
+      "address_template": "{organization}\n{name}\n{street_address}\nLT-{zip} {city} {state}",
       "default_currency": "EUR"
     },
     "LU": {
@@ -10894,6 +10992,7 @@
         }
       },
       "default_locale": "lb",
+      "address_template": "{organization}\n{name}\n{street_address}\nL-{zip} {city}",
       "default_currency": "EUR"
     },
     "MO": {
@@ -10958,6 +11057,7 @@
         }
       },
       "default_locale": "zh",
+      "address_template": "{street_address}\n{organization}\n{name}",
       "default_currency": "MOP"
     },
     "MG": {
@@ -11072,6 +11172,7 @@
         }
       },
       "default_locale": "fr_MG",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "MGA"
     },
     "MW": {
@@ -11190,6 +11291,7 @@
         }
       },
       "default_locale": "ny",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {sorting_code}",
       "default_currency": "MWK"
     },
     "MY": {
@@ -11282,6 +11384,7 @@
         }
       },
       "default_locale": "ms_MY",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{zip} {city}\n{state}",
       "default_currency": "MYR"
     },
     "MV": {
@@ -11393,6 +11496,7 @@
         }
       },
       "default_locale": "dv",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "MVR"
     },
     "ML": {
@@ -11561,6 +11665,7 @@
         }
       },
       "default_locale": "mt",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "EUR"
     },
     "MH": {
@@ -11675,6 +11780,7 @@
         }
       },
       "default_locale": "mh",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "USD"
     },
     "MQ": {
@@ -11729,6 +11835,7 @@
         }
       },
       "default_locale": "fr_MQ",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "EUR"
     },
     "MR": {
@@ -11922,6 +12029,7 @@
         }
       },
       "default_locale": "en_MU",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}",
       "default_currency": "MUR"
     },
     "YT": {
@@ -11976,6 +12084,7 @@
         }
       },
       "default_locale": "fr_YT",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "EUR"
     },
     "MX": {
@@ -12067,6 +12176,7 @@
         }
       },
       "default_locale": "es_MX",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{zip} {city}, {state}",
       "default_currency": "MXN"
     },
     "FM": {
@@ -12205,6 +12315,7 @@
         }
       },
       "default_locale": "en_FM",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "USD"
     },
     "MD": {
@@ -12272,6 +12383,7 @@
         }
       },
       "default_locale": "ro",
+      "address_template": "{name}\n{organization}\n{street_address}\nMD-{zip} {city}",
       "default_currency": "MDL"
     },
     "MC": {
@@ -12336,6 +12448,7 @@
         }
       },
       "default_locale": "fr_MC",
+      "address_template": "{name}\n{organization}\n{street_address}\nMC-{zip} {city} {sorting_code}",
       "default_currency": "EUR"
     },
     "MN": {
@@ -12458,6 +12571,7 @@
         }
       },
       "default_locale": "mn",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}",
       "default_currency": "MNT"
     },
     "ME": {
@@ -12509,6 +12623,7 @@
         }
       },
       "default_locale": "sr",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "MS": {
@@ -12685,6 +12800,7 @@
         }
       },
       "default_locale": "ar_MA",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "MAD"
     },
     "MZ": {
@@ -12742,6 +12858,7 @@
         }
       },
       "default_locale": "pt_MZ",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}{state}",
       "default_currency": "MZN"
     },
     "MM": {
@@ -12984,6 +13101,7 @@
         }
       },
       "default_locale": "en_NA",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "NAD"
     },
     "NR": {
@@ -13095,6 +13213,7 @@
         }
       },
       "default_locale": "na",
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}",
       "default_currency": "AUD"
     },
     "NP": {
@@ -13208,6 +13327,7 @@
         }
       },
       "default_locale": "ne",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "NPR"
     },
     "NL": {
@@ -13265,6 +13385,7 @@
         }
       },
       "default_locale": "nl_NL",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "NC": {
@@ -13319,6 +13440,7 @@
         }
       },
       "default_locale": "fr_NC",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "XPF"
     },
     "NZ": {
@@ -13433,6 +13555,7 @@
         }
       },
       "default_locale": "en_NZ",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city} {zip}",
       "default_currency": "NZD"
     },
     "NI": {
@@ -13498,6 +13621,7 @@
         }
       },
       "default_locale": "es_NI",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}, {state}",
       "default_currency": "NIO"
     },
     "NE": {
@@ -13561,6 +13685,7 @@
         }
       },
       "default_locale": "fr_NE",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "XOF"
     },
     "NG": {
@@ -13681,6 +13806,7 @@
         }
       },
       "default_locale": "en_NG",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city} {zip}\n{state}",
       "default_currency": "NGN"
     },
     "NU": {
@@ -13900,6 +14026,7 @@
         }
       },
       "default_locale": "en_NF",
+      "address_template": "{organization}\n{name}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "AUD"
     },
     "MK": {
@@ -14029,6 +14156,7 @@
         }
       },
       "default_locale": "mk",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "MKD"
     },
     "MP": {
@@ -14215,6 +14343,7 @@
         }
       },
       "default_locale": "no",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "NOK"
     },
     "OM": {
@@ -14288,6 +14417,7 @@
         }
       },
       "default_locale": "ar_OM",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip}\n{city}",
       "default_currency": "OMR"
     },
     "PK": {
@@ -14355,6 +14485,7 @@
         }
       },
       "default_locale": "ur_PK",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}-{zip}",
       "default_currency": "PKR"
     },
     "PW": {
@@ -14487,6 +14618,7 @@
         }
       },
       "default_locale": "pau",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "USD"
     },
     "PS": {
@@ -14616,6 +14748,7 @@
         }
       },
       "default_locale": "es_PA",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}",
       "default_currency": "PAB"
     },
     "PG": {
@@ -14736,6 +14869,7 @@
         }
       },
       "default_locale": "en_PG",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip} {state}",
       "default_currency": "PGK"
     },
     "PY": {
@@ -14799,6 +14933,7 @@
         }
       },
       "default_locale": "es_PY",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "PYG"
     },
     "PE": {
@@ -14865,6 +15000,7 @@
         }
       },
       "default_locale": "es_PE",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}\n{state}",
       "default_currency": "PEN"
     },
     "PH": {
@@ -15041,6 +15177,7 @@
         }
       },
       "default_locale": "tl",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}, {city}\n{zip} {state}",
       "default_currency": "PHP"
     },
     "PN": {
@@ -15149,6 +15286,7 @@
         }
       },
       "default_locale": "en_PN",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "NZD"
     },
     "PL": {
@@ -15206,6 +15344,7 @@
         }
       },
       "default_locale": "pl",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "PLN"
     },
     "PT": {
@@ -15269,6 +15408,7 @@
         }
       },
       "default_locale": "pt_PT",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "PR": {
@@ -15382,6 +15522,7 @@
         }
       },
       "default_locale": "en_PR",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} PR {zip}",
       "default_currency": "USD"
     },
     "QA": {
@@ -15501,6 +15642,7 @@
         }
       },
       "default_locale": "fr_RE",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "EUR"
     },
     "RO": {
@@ -15563,6 +15705,7 @@
         }
       },
       "default_locale": "ro",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {state} {city}",
       "default_currency": "RON"
     },
     "RU": {
@@ -15752,6 +15895,7 @@
         }
       },
       "default_locale": "ru",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}",
       "default_currency": "RUB"
     },
     "RW": {
@@ -15927,6 +16071,7 @@
         }
       },
       "default_locale": "fr",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "EUR"
     },
     "SH": {
@@ -16035,6 +16180,7 @@
         }
       },
       "default_locale": "en_SH",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "SHP"
     },
     "KN": {
@@ -16143,6 +16289,7 @@
         }
       },
       "default_locale": "en_KN",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state}",
       "default_currency": "XCD"
     },
     "LC": {
@@ -16305,6 +16452,7 @@
         }
       },
       "default_locale": "fr",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "EUR"
     },
     "PM": {
@@ -16359,6 +16507,7 @@
         }
       },
       "default_locale": "fr_PM",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "EUR"
     },
     "VC": {
@@ -16472,6 +16621,7 @@
         }
       },
       "default_locale": "en_VC",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "XCD"
     },
     "WS": {
@@ -16637,6 +16787,7 @@
         }
       },
       "default_locale": "it_SM",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "ST": {
@@ -16751,6 +16902,7 @@
         }
       },
       "default_locale": "ar_SA",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
       "default_currency": "SAR"
     },
     "SN": {
@@ -16814,6 +16966,7 @@
         }
       },
       "default_locale": "fr_SN",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "XOF"
     },
     "RS": {
@@ -16884,6 +17037,7 @@
         }
       },
       "default_locale": "sr",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "RSD"
     },
     "SC": {
@@ -16997,6 +17151,7 @@
         }
       },
       "default_locale": "en_SC",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}",
       "default_currency": "SCR"
     },
     "SL": {
@@ -17237,6 +17392,7 @@
         }
       },
       "default_locale": "cmn",
+      "address_template": "{name}\n{organization}\n{street_address}\nSINGAPORE {zip}",
       "default_currency": "SGD"
     },
     "SX": {
@@ -17403,6 +17559,7 @@
         }
       },
       "default_locale": "sk",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "EUR"
     },
     "SI": {
@@ -17517,6 +17674,7 @@
         }
       },
       "default_locale": "sl",
+      "address_template": "{name}\n{organization}\n{street_address}\nSI-{zip} {city}",
       "default_currency": "EUR"
     },
     "SB": {
@@ -17701,6 +17859,7 @@
         }
       },
       "default_locale": "so_SO",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}",
       "default_currency": "SOS"
     },
     "ZA": {
@@ -17843,6 +18002,7 @@
         }
       },
       "default_locale": "zu",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district}\n{city}\n{zip}",
       "default_currency": "ZAR"
     },
     "GS": {
@@ -17951,6 +18111,7 @@
         }
       },
       "default_locale": "en",
+      "address_template": "{name}\n{organization}\n{street_address}\n\n{city}\n{zip}",
       "default_currency": "USD"
     },
     "SS": {
@@ -18131,6 +18292,7 @@
         }
       },
       "default_locale": "es_ES",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
       "default_currency": "EUR"
     },
     "LK": {
@@ -18249,6 +18411,7 @@
         }
       },
       "default_locale": "si",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "LKR"
     },
     "SD": {
@@ -18317,6 +18480,7 @@
         }
       },
       "default_locale": "ar_SD",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "SDG"
     },
     "SR": {
@@ -18385,6 +18549,7 @@
         }
       },
       "default_locale": "nl_SR",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}",
       "default_currency": "SRD"
     },
     "SJ": {
@@ -18499,6 +18664,7 @@
         }
       },
       "default_locale": "no",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "SRD"
     },
     "SE": {
@@ -18564,6 +18730,7 @@
         }
       },
       "default_locale": "sv_SE",
+      "address_template": "{organization}\n{name}\n{street_address}\nSE-{zip} {city}",
       "default_currency": "SEK"
     },
     "CH": {
@@ -18633,6 +18800,7 @@
         }
       },
       "default_locale": "de_CH",
+      "address_template": "{organization}\n{name}\n{street_address}\nCH-{zip} {city}",
       "default_currency": "CHW"
     },
     "SY": {
@@ -18753,6 +18921,7 @@
         }
       },
       "default_locale": "zh_TW",
+      "address_template": "{zip}\n{state}{city}\n{street_address}\n{organization}\n{name}",
       "default_currency": "TWD"
     },
     "TJ": {
@@ -18867,6 +19036,7 @@
         }
       },
       "default_locale": "tg",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "TJS"
     },
     "TZ": {
@@ -18931,6 +19101,7 @@
         }
       },
       "default_locale": "sw_TZ",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "TZS"
     },
     "TH": {
@@ -18984,6 +19155,7 @@
         }
       },
       "default_locale": "th",
+      "address_template": "{name}\n{organization}\n{street_address}\n{district} {city}\n{state} {zip}",
       "default_currency": "THB"
     },
     "TL": {
@@ -19533,6 +19705,7 @@
         }
       },
       "default_locale": "ar_TN",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "TND"
     },
     "TR": {
@@ -19601,6 +19774,7 @@
         }
       },
       "default_locale": "tr_TR",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}/{state}",
       "default_currency": "TRY"
     },
     "TM": {
@@ -19722,6 +19896,7 @@
         }
       },
       "default_locale": "tk",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "TMT"
     },
     "TC": {
@@ -19830,6 +20005,7 @@
         }
       },
       "default_locale": "en_TC",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "USD"
     },
     "TV": {
@@ -19947,6 +20123,7 @@
         }
       },
       "default_locale": "tvl",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}",
       "default_currency": "AUD"
     },
     "UG": {
@@ -20089,6 +20266,7 @@
         }
       },
       "default_locale": "uk",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state}\n{zip}",
       "default_currency": "UAH"
     },
     "AE": {
@@ -20169,6 +20347,7 @@
         }
       },
       "default_locale": "ar_AE",
+      "address_template": "{name}\n{organization}\n{street_address}\n{state}",
       "default_currency": "AED"
     },
     "GB": {
@@ -20285,6 +20464,7 @@
         }
       },
       "default_locale": "en_GB",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "GBP"
     },
     "UM": {
@@ -20396,6 +20576,7 @@
         }
       },
       "default_locale": "en_UM",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "USD"
     },
     "US": {
@@ -20598,6 +20779,7 @@
         }
       },
       "default_locale": "en_US",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}, {state} {zip}",
       "default_currency": "USD"
     },
     "UY": {
@@ -20660,6 +20842,7 @@
         }
       },
       "default_locale": "es_UY",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city} {state}",
       "default_currency": "UYI"
     },
     "UZ": {
@@ -20782,6 +20965,7 @@
         }
       },
       "default_locale": "uz",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}\n{state}",
       "default_currency": "UZS"
     },
     "VU": {
@@ -20959,6 +21143,7 @@
         }
       },
       "default_locale": "es_VE",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}, {state}",
       "default_currency": "VES"
     },
     "VN": {
@@ -21042,6 +21227,7 @@
         }
       },
       "default_locale": "vi",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{state} {zip}",
       "default_currency": "VND"
     },
     "VG": {
@@ -21150,6 +21336,7 @@
         }
       },
       "default_locale": "en_VG",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city}\n{zip}",
       "default_currency": "USD"
     },
     "VI": {
@@ -21258,6 +21445,7 @@
         }
       },
       "default_locale": "en_VI",
+      "address_template": "{name}\n{organization}\n{street_address}\n{city} {state} {zip}",
       "default_currency": "USD"
     },
     "WF": {
@@ -21318,6 +21506,7 @@
         }
       },
       "default_locale": "wls",
+      "address_template": "{organization}\n{name}\n{street_address}\n{zip} {city} {sorting_code}",
       "default_currency": "XPF"
     },
     "EH": {
@@ -21381,6 +21570,7 @@
         }
       },
       "default_locale": "ar",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "MAD"
     },
     "YE": {
@@ -21567,6 +21757,7 @@
         }
       },
       "default_locale": "en_ZM",
+      "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
       "default_currency": "ZMW"
     },
     "ZW": {
