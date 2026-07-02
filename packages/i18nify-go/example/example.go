@@ -70,7 +70,8 @@ func main() {
 		fmt.Printf("Is valid USD amount: %v\n", isValidAmount) // true
 	}
 
-	fmt.Printf("Is valid currency code: %v\n", currency.IsValidCurrencyCode("USD")) // true
+	fmt.Printf("Is USD a valid currency code: %v\n", currency.IsValidCurrencyCode("USD")) // true
+	fmt.Printf("Is usd a valid currency code: %v\n", currency.IsValidCurrencyCode("usd")) // false
 
 	// Phone Number Information
 	phoneNumberIN := countryIN.GetCountryPhoneNumber()
