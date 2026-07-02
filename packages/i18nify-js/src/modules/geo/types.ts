@@ -13,6 +13,7 @@ export type CountryMetaType = {
   locales: Record<string, { name: string }>;
   default_locale: string;
   default_currency: string;
+  address_template?: string;
 };
 
 export type CityType = {
@@ -37,3 +38,21 @@ export type CountryDetailType = {
 };
 
 export type I18nifyCountryCodeType = 'IN' | 'MY' | 'SG' | 'US';
+
+export type AddressComponents = {
+  name?: string;
+  organization?: string;
+  street_address?: string;
+  city?: string;
+  state?: string;
+  zip?: string;
+  district?: string;
+  sorting_code?: string;
+};
+
+export type AddressCodeType = string;
+
+export type AddressType = {
+  country_name: string;
+  address_template: string;
+};
