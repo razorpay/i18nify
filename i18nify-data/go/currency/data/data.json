@@ -492,22 +492,6 @@
       ],
       "symbol_position": "prefix"
     },
-    "BGN": {
-      "name": "Bulgarian Lev",
-      "numeric_code": "975",
-      "minor_unit": "2",
-      "symbol": "лв.",
-      "physical_currency_denominations": [
-        "1",
-        "2",
-        "5",
-        "10",
-        "20",
-        "50",
-        "100"
-      ],
-      "symbol_position": "suffix"
-    },
     "BIF": {
       "name": "Burundi Franc",
       "numeric_code": "108",
@@ -868,26 +852,6 @@
         "200"
       ],
       "symbol_position": "prefix"
-    },
-    "SVC": {
-      "name": "El Salvador Colon",
-      "numeric_code": "222",
-      "minor_unit": "2",
-      "symbol": "₡",
-      "physical_currency_denominations": [
-        "0.01",
-        "0.05",
-        "0.10",
-        "0.25",
-        "0.50",
-        "1",
-        "5",
-        "10",
-        "25",
-        "50",
-        "100"
-      ],
-      "symbol_position": "suffix"
     },
     "ERN": {
       "name": "Nakfa",
@@ -1406,24 +1370,6 @@
         "25000",
         "50000",
         "100000"
-      ],
-      "symbol_position": "prefix"
-    },
-    "LSL": {
-      "name": "Loti",
-      "numeric_code": "426",
-      "minor_unit": "2",
-      "symbol": "M",
-      "physical_currency_denominations": [
-        "1",
-        "2",
-        "5",
-        "10",
-        "20",
-        "50",
-        "100",
-        "200",
-        "500"
       ],
       "symbol_position": "prefix"
     },

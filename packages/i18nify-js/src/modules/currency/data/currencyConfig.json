@@ -144,11 +144,6 @@
     "minor_unit": "2",
     "symbol": "B$"
   },
-  "BGN": {
-    "name": "Bulgarian Lev",
-    "minor_unit": "2",
-    "symbol": "лв."
-  },
   "BIF": {
     "name": "Burundi Franc",
     "minor_unit": "0",
@@ -224,11 +219,6 @@
     "minor_unit": "2",
     "symbol": "₡"
   },
-  "HRK": {
-    "name": "Kuna",
-    "minor_unit": "2",
-    "symbol": "kn"
-  },
   "CUP": {
     "name": "Cuban Peso",
     "minor_unit": "2",
@@ -268,11 +258,6 @@
     "name": "Egyptian Pound",
     "minor_unit": "2",
     "symbol": "E£"
-  },
-  "SVC": {
-    "name": "El Salvador Colon",
-    "minor_unit": "2",
-    "symbol": "₡"
   },
   "ERN": {
     "name": "Nakfa",
@@ -443,11 +428,6 @@
     "name": "Lebanese Pound",
     "minor_unit": "2",
     "symbol": "L£"
-  },
-  "LSL": {
-    "name": "Loti",
-    "minor_unit": "2",
-    "symbol": "M"
   },
   "ZAR": {
     "name": "South African Rand",

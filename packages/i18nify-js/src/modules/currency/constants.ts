@@ -37,7 +37,6 @@ export const INTL_MAPPING = {
   COP: { $: CURRENCY_INFO.COP.symbol }, // Colombian Peso
   NZD: { $: CURRENCY_INFO.NZD.symbol }, // New Zealand Dollar
   CUP: { $: CURRENCY_INFO.CUP.symbol }, // Cuban Peso
-  SVC: { $: CURRENCY_INFO.SVC.symbol }, // El Salvador Colon
   FJD: { $: CURRENCY_INFO.FJD.symbol }, // Fiji Dollar
   GYD: { $: CURRENCY_INFO.GYD.symbol }, // Guyana Dollar
   HKD: { $: CURRENCY_INFO.HKD.symbol }, // Hong Kong Dollar
@@ -49,7 +48,6 @@ export const INTL_MAPPING = {
   SBD: { $: CURRENCY_INFO.SBD.symbol }, // Solomon Islands Dollar
   SRD: { $: CURRENCY_INFO.SRD.symbol }, // Surinam Dollar
   ZWL: { $: CURRENCY_INFO.ZWL.symbol }, // Zimbabwe Dollar
-  LSL: { L: CURRENCY_INFO.LSL.symbol }, // Loti
   AWG: { 'Afl.': CURRENCY_INFO.AWG.symbol }, // Aruban Florin
   BYN: { Br: CURRENCY_INFO.BYN.symbol }, // Belarusian Ruble
   XAF: { FCFA: CURRENCY_INFO.XAF.symbol }, // CFA Franc BEAC
