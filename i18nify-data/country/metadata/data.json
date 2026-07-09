@@ -1267,7 +1267,7 @@
       "sovereignty": "UN member state",
       "dial_code": "+359",
       "supported_currency": [
-        "BGN"
+        "EUR"
       ],
       "timezones": {
         "Europe/Sofia": {
@@ -1292,7 +1292,7 @@
       },
       "default_locale": "bg",
       "address_template": "{name}\n{organization}\n{street_address}\n{zip} {city}",
-      "default_currency": "BGN"
+      "default_currency": "EUR"
     },
     "BF": {
       "country_name": "Burkina Faso",
@@ -2456,7 +2456,6 @@
       "sovereignty": "UN member state",
       "dial_code": "+503",
       "supported_currency": [
-        "SVC",
         "USD"
       ],
       "timezones": {
@@ -2474,7 +2473,7 @@
       },
       "default_locale": "es_SV",
       "address_template": "{name}\n{organization}\n{street_address}\n{zip}-{city}\n{state}",
-      "default_currency": "SVC"
+      "default_currency": "USD"
     },
     "GQ": {
       "country_name": "Equatorial Guinea",
@@ -4670,7 +4669,6 @@
       "sovereignty": "UN member state",
       "dial_code": "+266",
       "supported_currency": [
-        "LSL",
         "ZAR"
       ],
       "timezones": {
@@ -4699,7 +4697,7 @@
       },
       "default_locale": "en_LS",
       "address_template": "{name}\n{organization}\n{street_address}\n{city} {zip}",
-      "default_currency": "LSL"
+      "default_currency": "ZAR"
     },
     "LR": {
       "country_name": "Liberia",
