@@ -566,3 +566,202 @@ func TestGetTimeZoneByCountry_MultipleTimezones(t *testing.T) {
 	require.NoError(t, err)
 	assert.Greater(t, len(tzs), 1, "US should have multiple timezone entries")
 }
+
+func TestFormatAddressByCountry_US(t *testing.T) {
+	got, err := FormatAddressByCountry("US", AddressComponents{
+		Name:          "John Doe",
+		Organization:  "Acme Corp",
+		StreetAddress: "1600 Amphitheatre Pkwy",
+		City:          "Mountain View",
+		State:         "CA",
+		Zip:           "94043",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, "John Doe\nAcme Corp\n1600 Amphitheatre Pkwy\nMountain View, CA 94043", got)
+}
+
+func TestFormatAddressByCountry_IN(t *testing.T) {
+	got, err := FormatAddressByCountry("IN", AddressComponents{
+		Name:          "Rahul Sharma",
+		Organization:  "Razorpay",
+		StreetAddress: "SJR Cyber, 22, Laskar Hosur Rd",
+		City:          "Bengaluru",
+		Zip:           "560102",
+		State:         "Karnataka",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, "Rahul Sharma\nRazorpay\nSJR Cyber, 22, Laskar Hosur Rd\nBengaluru 560102\nKarnataka", got)
+}
+
+func TestFormatAddressByCountry_DE(t *testing.T) {
+	got, err := FormatAddressByCountry("DE", AddressComponents{
+		Name:          "Hans Müller",
+		Organization:  "Beispiel GmbH",
+		StreetAddress: "Musterstraße 1",
+		Zip:           "10115",
+		City:          "Berlin",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, "Hans Müller\nBeispiel GmbH\nMusterstraße 1\n10115 Berlin", got)
+}
+
+func TestFormatAddressByCountry_JP(t *testing.T) {
+	got, err := FormatAddressByCountry("JP", AddressComponents{
+		Zip:           "100-0001",
+		State:         "東京都",
+		StreetAddress: "千代田1-1",
+		Organization:  "株式会社テスト",
+		Name:          "山田太郎",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, "〒100-0001\n東京都\n千代田1-1\n株式会社テスト\n山田太郎", got)
+}
+
+func TestFormatAddressByCountry_BR(t *testing.T) {
+	got, err := FormatAddressByCountry("BR", AddressComponents{
+		Organization:  "Empresa Ltda",
+		Name:          "João Silva",
+		StreetAddress: "Rua das Flores, 123",
+		District:      "Centro",
+		City:          "São Paulo",
+		State:         "SP",
+		Zip:           "01310-100",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, "Empresa Ltda\nJoão Silva\nRua das Flores, 123\nCentro\nSão Paulo-SP\n01310-100", got)
+}
+
+func TestFormatAddressByCountry_LowercaseCode(t *testing.T) {
+	got, err := FormatAddressByCountry("us", AddressComponents{
+		Name:          "Jane",
+		StreetAddress: "1 Main St",
+		City:          "Boston",
+		State:         "MA",
+		Zip:           "02101",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, "Jane\n1 Main St\nBoston, MA 02101", got)
+}
+
+func TestFormatAddressByCountry_WhitespacePaddedCode(t *testing.T) {
+	got, err := FormatAddressByCountry("  IN  ", AddressComponents{
+		Name:          "Priya",
+		StreetAddress: "12 MG Road",
+		City:          "Pune",
+		Zip:           "411001",
+		State:         "Maharashtra",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, "Priya\n12 MG Road\nPune 411001\nMaharashtra", got)
+}
+
+func TestFormatAddressByCountry_OmitOrganization(t *testing.T) {
+	got, err := FormatAddressByCountry("US", AddressComponents{
+		Name:          "Jane Smith",
+		StreetAddress: "742 Evergreen Terrace",
+		City:          "Springfield",
+		State:         "IL",
+		Zip:           "62704",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, "Jane Smith\n742 Evergreen Terrace\nSpringfield, IL 62704", got)
+}
+
+func TestFormatAddressByCountry_AllTokensEmpty(t *testing.T) {
+	// DE: no literal separators — all lines blank
+	got, err := FormatAddressByCountry("DE", AddressComponents{})
+	assert.NoError(t, err)
+	assert.Equal(t, "", got)
+}
+
+func TestFormatAddressByCountry_LiteralSeparatorKept(t *testing.T) {
+	// US: "{city}, {state} {zip}" → ",  " → trims to ","
+	got, err := FormatAddressByCountry("US", AddressComponents{})
+	assert.NoError(t, err)
+	assert.Equal(t, ",", got)
+}
+
+func TestFormatAddressByCountry_UnknownCode(t *testing.T) {
+	_, err := FormatAddressByCountry("ZZ", AddressComponents{Name: "Test"})
+	assert.Error(t, err)
+	assert.Contains(t, err.Error(), `"ZZ"`)
+}
+
+func TestFormatAddressByCountry_EmptyCode(t *testing.T) {
+	_, err := FormatAddressByCountry("", AddressComponents{})
+	assert.Error(t, err)
+	assert.Contains(t, err.Error(), "must not be empty")
+}
+
+func TestFormatAddressByCountry_WhitespaceOnlyCode(t *testing.T) {
+	_, err := FormatAddressByCountry("   ", AddressComponents{})
+	assert.Error(t, err)
+	assert.Contains(t, err.Error(), "must not be empty")
+}
+
+func TestGetDefaultLocaleList(t *testing.T) {
+	got, err := GetDefaultLocaleList()
+	require.NoError(t, err)
+
+	assert.NotEmpty(t, got)
+	assert.Equal(t, "en_IN", got["IN"])
+	assert.Equal(t, "en_US", got["US"])
+	assert.Equal(t, "de", got["DE"])
+
+	for countryCode, locale := range got {
+		assert.NotEmpty(t, countryCode)
+		assert.NotEmpty(t, locale)
+	}
+}
+
+func TestGetDefaultLocaleList_SkipsCountriesWithoutDefaultLocale(t *testing.T) {
+	setCachedCountyMetaDataForTest(t, &CountryMetadata{
+		MetadataInformation: map[string]MetadataInformation{
+			"AA": {DefaultLocale: "aa_AA"},
+			"BB": {DefaultLocale: ""},
+			"DD": {DefaultLocale: "dd_DD"},
+		},
+	})
+
+	got, err := GetDefaultLocaleList()
+	require.NoError(t, err)
+
+	assert.Equal(t, map[string]string{
+		"AA": "aa_AA",
+		"DD": "dd_DD",
+	}, got)
+}
+
+func TestGetDefaultLocaleList_MetadataNotLoaded(t *testing.T) {
+	setCachedCountyMetaDataForTest(t, nil)
+
+	got, err := GetDefaultLocaleList()
+	require.Error(t, err)
+
+	assert.Nil(t, got)
+	assert.Contains(t, err.Error(), "country metadata not loaded")
+}
+
+func TestGetDefaultLocaleList_NoDefaultLocales(t *testing.T) {
+	setCachedCountyMetaDataForTest(t, &CountryMetadata{
+		MetadataInformation: map[string]MetadataInformation{
+			"AA": {DefaultLocale: ""},
+		},
+	})
+
+	got, err := GetDefaultLocaleList()
+	require.Error(t, err)
+
+	assert.Nil(t, got)
+	assert.Contains(t, err.Error(), "no default locales found")
+}
+
+func setCachedCountyMetaDataForTest(t *testing.T, metadata *CountryMetadata) {
+	t.Helper()
+
+	original := cachedCountyMetaData
+	cachedCountyMetaData = metadata
+	t.Cleanup(func() {
+		cachedCountyMetaData = original
+	})
+}
