@@ -4,6 +4,7 @@ import {
   getDataFiles,
   validateWithProto,
   getPackagesToValidate,
+  getValidationTargets,
   PACKAGE_CONFIGS,
 } from './dataValidate';
 
@@ -67,6 +68,31 @@ describe('dataValidate', () => {
       expect(packages.size).toBe(1);
       expect(packages.has('currency')).toBe(true);
     });
+
+    test('identifies business entity files', () => {
+      const changedFiles = [
+        'i18nify-data/business_entity/data.json',
+        'i18nify-data/business_entity/proto/business_entity.proto',
+      ];
+      const packages = getPackagesToValidate(changedFiles);
+      expect(packages.size).toBe(1);
+      expect(packages.has('business_entity')).toBe(true);
+    });
+  });
+
+  describe('getValidationTargets', () => {
+    test('returns validation target for business entity data', () => {
+      const targets = getValidationTargets(
+        'business_entity',
+        PACKAGE_CONFIGS.business_entity,
+      );
+      expect(targets).toHaveLength(1);
+      expect(targets[0]).toEqual({
+        dataFile: 'i18nify-data/business_entity/data.json',
+        protoPath: 'i18nify-data/business_entity/proto/business_entity.proto',
+        rootMessageName: 'BusinessEntityData',
+      });
+    });
   });
 
   describe('validateWithProto', () => {
@@ -125,7 +151,7 @@ describe('dataValidate', () => {
     test('all configs have required fields', () => {
       for (const config of Object.values(PACKAGE_CONFIGS)) {
         expect(config.protoPath).toBeDefined();
-        expect(config.dataPattern).toMatch(/^(single|multiple)$/);
+        expect(config.dataPattern).toMatch(/^(single|multiple|explicit)$/);
         expect(config.rootMessageName).toBeDefined();
       }
     });
@@ -133,6 +159,9 @@ describe('dataValidate', () => {
     test('all proto files exist', () => {
       for (const config of Object.values(PACKAGE_CONFIGS)) {
         expect(fileExists(config.protoPath)).toBe(true);
+        for (const fileConfig of config.files || []) {
+          expect(fileExists(fileConfig.protoPath)).toBe(true);
+        }
       }
     });
   });
@@ -152,6 +181,20 @@ describe('dataValidate', () => {
         PACKAGE_CONFIGS['country/subdivisions'].protoPath,
         PACKAGE_CONFIGS['country/subdivisions'].rootMessageName,
         path.join(TEST_DIR, 'country/subdivisions/IN.json'),
+      );
+      expect(result.valid).toBe(true);
+    });
+
+    test('business_entity/data.json validates', async () => {
+      const target = getValidationTargets(
+        'business_entity',
+        PACKAGE_CONFIGS.business_entity,
+      )[0];
+      expect(target).toBeDefined();
+      const result = await validateWithProto(
+        target.protoPath,
+        target.rootMessageName,
+        target.dataFile,
       );
       expect(result.valid).toBe(true);
     });
