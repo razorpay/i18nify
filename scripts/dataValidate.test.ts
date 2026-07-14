@@ -4,7 +4,6 @@ import {
   getDataFiles,
   validateWithProto,
   getPackagesToValidate,
-  getValidationTargets,
   PACKAGE_CONFIGS,
 } from './dataValidate';
 
@@ -80,21 +79,6 @@ describe('dataValidate', () => {
     });
   });
 
-  describe('getValidationTargets', () => {
-    test('returns validation target for business entity data', () => {
-      const targets = getValidationTargets(
-        'business_entity',
-        PACKAGE_CONFIGS.business_entity,
-      );
-      expect(targets).toHaveLength(1);
-      expect(targets[0]).toEqual({
-        dataFile: 'i18nify-data/business_entity/data.json',
-        protoPath: 'i18nify-data/business_entity/proto/business_entity.proto',
-        rootMessageName: 'BusinessEntityData',
-      });
-    });
-  });
-
   describe('validateWithProto', () => {
     const fixtureProto = path.join(
       FIXTURES_DIR,
@@ -151,7 +135,7 @@ describe('dataValidate', () => {
     test('all configs have required fields', () => {
       for (const config of Object.values(PACKAGE_CONFIGS)) {
         expect(config.protoPath).toBeDefined();
-        expect(config.dataPattern).toMatch(/^(single|multiple|explicit)$/);
+        expect(config.dataPattern).toMatch(/^(single|multiple)$/);
         expect(config.rootMessageName).toBeDefined();
       }
     });
@@ -159,9 +143,6 @@ describe('dataValidate', () => {
     test('all proto files exist', () => {
       for (const config of Object.values(PACKAGE_CONFIGS)) {
         expect(fileExists(config.protoPath)).toBe(true);
-        for (const fileConfig of config.files || []) {
-          expect(fileExists(fileConfig.protoPath)).toBe(true);
-        }
       }
     });
   });
@@ -186,15 +167,10 @@ describe('dataValidate', () => {
     });
 
     test('business_entity/data.json validates', async () => {
-      const target = getValidationTargets(
-        'business_entity',
-        PACKAGE_CONFIGS.business_entity,
-      )[0];
-      expect(target).toBeDefined();
       const result = await validateWithProto(
-        target.protoPath,
-        target.rootMessageName,
-        target.dataFile,
+        PACKAGE_CONFIGS.business_entity.protoPath,
+        PACKAGE_CONFIGS.business_entity.rootMessageName,
+        path.join(TEST_DIR, 'business_entity/data.json'),
       );
       expect(result.valid).toBe(true);
     });

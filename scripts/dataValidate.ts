@@ -8,14 +8,7 @@ const protobuf = require('protobufjs');
 
 export interface ProtoConfig {
   protoPath: string;
-  dataPattern: 'single' | 'multiple' | 'explicit';
-  rootMessageName: string;
-  files?: ValidationFileConfig[];
-}
-
-export interface ValidationFileConfig {
-  dataFile: string;
-  protoPath: string;
+  dataPattern: 'single' | 'multiple';
   rootMessageName: string;
 }
 
@@ -96,21 +89,6 @@ export function getDataFiles(
   return files;
 }
 
-export function getValidationTargets(
-  packageName: string,
-  config: ProtoConfig,
-): ValidationFileConfig[] {
-  if (config.dataPattern === 'explicit') {
-    return config.files || [];
-  }
-
-  return getDataFiles(packageName, config.dataPattern).map((dataFile) => ({
-    dataFile,
-    protoPath: config.protoPath,
-    rootMessageName: config.rootMessageName,
-  }));
-}
-
 export async function validateWithProto(
   protoPath: string,
   rootMessageName: string,
@@ -175,36 +153,32 @@ async function main() {
   for (const packageName of packagesToValidate) {
     const config = PACKAGE_CONFIGS[packageName];
 
-    const validationTargets = getValidationTargets(packageName, config);
+    if (!fileExists(config.protoPath)) {
+      console.log(
+        `⚠️  ${packageName}: No proto file found at ${config.protoPath}`,
+      );
+      continue;
+    }
 
-    if (validationTargets.length === 0) {
+    const dataFiles = getDataFiles(packageName, config.dataPattern);
+
+    if (dataFiles.length === 0) {
       console.log(`⚠️  ${packageName}: No data files found`);
       continue;
     }
 
-    for (const target of validationTargets) {
-      if (!fileExists(target.protoPath)) {
-        console.log(
-          `⚠️  ${packageName}: No proto file found at ${target.protoPath}`,
-        );
-        continue;
-      }
-
+    for (const dataFile of dataFiles) {
       const result = await validateWithProto(
-        target.protoPath,
-        target.rootMessageName,
-        target.dataFile,
+        config.protoPath,
+        config.rootMessageName,
+        dataFile,
       );
 
       if (result.valid) {
-        console.log(
-          `✅ ${target.dataFile} validates against ${target.protoPath}`,
-        );
+        console.log(`✅ ${dataFile} validates against ${config.protoPath}`);
       } else {
         hasErrors = true;
-        console.error(
-          `❌ ${target.dataFile} validation failed: ${result.error}`,
-        );
+        console.error(`❌ ${dataFile} validation failed: ${result.error}`);
       }
     }
   }
