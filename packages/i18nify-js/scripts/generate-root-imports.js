@@ -20,6 +20,7 @@ const EXPORT_MODULES = [
   'types',
   'geo',
   'banking',
+  'businessEntity',
   'names',
 ];
 const BUILD_DIRECTORY = 'lib';

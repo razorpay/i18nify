@@ -25,6 +25,7 @@
     "assets",
     "core.js",
     "currency.js",
+    "businessEntity.js",
     "names.js",
     "phoneNumber.js",
     "types.js"
@@ -54,6 +55,10 @@
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/geo/index.js"
     },
+    "./businessEntity": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/businessEntity/index.js"
+    },
     "./names": {
       "require": "./lib/cjs/index.js",
       "import": "./lib/esm/names/index.js"
@@ -79,6 +84,9 @@
       ],
       "geo": [
         "./lib/esm/geo/index.d.ts"
+      ],
+      "businessEntity": [
+        "./lib/esm/businessEntity/index.d.ts"
       ],
       "names": [
         "./lib/esm/names/index.d.ts"
