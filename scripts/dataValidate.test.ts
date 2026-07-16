@@ -67,6 +67,16 @@ describe('dataValidate', () => {
       expect(packages.size).toBe(1);
       expect(packages.has('currency')).toBe(true);
     });
+
+    test('identifies business entity files', () => {
+      const changedFiles = [
+        'i18nify-data/business_entity/data.json',
+        'i18nify-data/business_entity/proto/business_entity.proto',
+      ];
+      const packages = getPackagesToValidate(changedFiles);
+      expect(packages.size).toBe(1);
+      expect(packages.has('business_entity')).toBe(true);
+    });
   });
 
   describe('validateWithProto', () => {
@@ -152,6 +162,15 @@ describe('dataValidate', () => {
         PACKAGE_CONFIGS['country/subdivisions'].protoPath,
         PACKAGE_CONFIGS['country/subdivisions'].rootMessageName,
         path.join(TEST_DIR, 'country/subdivisions/IN.json'),
+      );
+      expect(result.valid).toBe(true);
+    });
+
+    test('business_entity/data.json validates', async () => {
+      const result = await validateWithProto(
+        PACKAGE_CONFIGS.business_entity.protoPath,
+        PACKAGE_CONFIGS.business_entity.rootMessageName,
+        path.join(TEST_DIR, 'business_entity/data.json'),
       );
       expect(result.valid).toBe(true);
     });

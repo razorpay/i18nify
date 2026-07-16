@@ -47,6 +47,11 @@ export const PACKAGE_CONFIGS: Record<string, ProtoConfig> = {
     dataPattern: 'single',
     rootMessageName: 'DialCodeToCountryData',
   },
+  business_entity: {
+    protoPath: 'i18nify-data/business_entity/proto/business_entity.proto',
+    dataPattern: 'single',
+    rootMessageName: 'BusinessEntityData',
+  },
 };
 
 export function fileExists(filePath: string): boolean {
