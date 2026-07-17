@@ -49,6 +49,31 @@ func main() {
 		fmt.Printf("USD $12.34 = %v cents\n", minorAmount) // USD $12.34 = 1234 cents
 	}
 
+	// Currency metadata utility examples
+	denominations, err := currency.GetDenomination("INR")
+	if err != nil {
+		fmt.Printf("Error getting denominations: %v\n", err)
+	} else {
+		fmt.Printf("INR denominations: %v\n", denominations) // [1 2 5 10 20 50 100 200 500 2000]
+	}
+
+	isoNumericCode, err := currency.GetISONumericCode("INR")
+	if err != nil {
+		fmt.Printf("Error getting ISO numeric code: %v\n", err)
+	} else {
+		fmt.Printf("INR ISO numeric code: %s\n", isoNumericCode) // 356
+	}
+
+	isValidAmount, err := currency.IsValidAmount("10.50", "USD")
+	if err != nil {
+		fmt.Printf("Error validating amount: %v\n", err)
+	} else {
+		fmt.Printf("Is valid USD amount: %v\n", isValidAmount) // true
+	}
+
+	fmt.Printf("Is USD a valid currency code: %v\n", currency.IsValidCurrencyCode("USD")) // true
+	fmt.Printf("Is usd a valid currency code: %v\n", currency.IsValidCurrencyCode("usd")) // false
+
 	// Phone Number Information
 	phoneNumberIN := countryIN.GetCountryPhoneNumber()
 	fmt.Printf("Dial Code: %s\n", phoneNumberIN.DialCode)  // +91

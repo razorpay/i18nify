@@ -10,6 +10,8 @@ package currency
 import (
 	"encoding/json"
 	"fmt"
+	"regexp"
+	"strconv"
 	"strings"
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/currency"
@@ -23,6 +25,8 @@ type ICurrencyInfo interface {
 
 // Package-level cache for currency data (loaded once at package initialization)
 var cachedCurrencyData *Currency
+
+var amountPattern = regexp.MustCompile(`^-?\d+(\.\d+)?$`)
 
 // init loads the currency data from the externalized data package when the package is imported.
 func init() {
@@ -99,6 +103,68 @@ func GetCurrencyCodeByISONumericCode(numericCode string) (string, error) {
 	}
 
 	return "", fmt.Errorf("currency with numeric code '%s' not found", numericCode)
+}
+
+// GetDenomination returns the list of physical currency denominations for the given ISO 4217 currency code.
+// Denominations are returned as strings, for example ["1", "5", "10", "50", "100"].
+func GetDenomination(currencyCode string) ([]string, error) {
+	if currencyCode == "" {
+		return nil, fmt.Errorf("currency code cannot be empty")
+	}
+
+	info, err := GetCurrencyInformation(currencyCode)
+	if err != nil {
+		return nil, fmt.Errorf("failed to retrieve currency information for code '%s': %v", currencyCode, err)
+	}
+
+	return info.PhysicalCurrencyDenominations, nil
+}
+
+// GetISONumericCode returns the ISO 4217 three-digit numeric code string for
+// the given alphabetic currency code, for example "USD" to "840".
+func GetISONumericCode(currencyCode string) (string, error) {
+	info, exists := cachedCurrencyData.CurrencyInformation[currencyCode]
+	if !exists {
+		return "", fmt.Errorf("invalid currency code: %q", currencyCode)
+	}
+	return info.NumericCode, nil
+}
+
+// IsValidCurrencyCode reports whether code is a recognised ISO 4217 alphabetic
+// currency code present in the i18nify currency dataset.
+func IsValidCurrencyCode(code string) bool {
+	if code == "" {
+		return false
+	}
+	_, exists := cachedCurrencyData.CurrencyInformation[code]
+	return exists
+}
+
+// IsValidAmount reports whether amount has decimal precision within the
+// allowed minor units for currencyCode.
+func IsValidAmount(amount string, currencyCode string) (bool, error) {
+	currencyInfo, exists := cachedCurrencyData.CurrencyInformation[currencyCode]
+	if !exists {
+		return false, fmt.Errorf("invalid currency code: %s", currencyCode)
+	}
+
+	trimmed := strings.TrimSpace(amount)
+	if !amountPattern.MatchString(trimmed) {
+		return false, nil
+	}
+
+	allowedDecimals, err := strconv.Atoi(currencyInfo.MinorUnit)
+	if err != nil {
+		return false, fmt.Errorf("malformed minor_unit for currency %s", currencyCode)
+	}
+
+	dotIdx := strings.Index(trimmed, ".")
+	actualDecimals := 0
+	if dotIdx != -1 {
+		actualDecimals = len(trimmed) - dotIdx - 1
+	}
+
+	return actualDecimals <= allowedDecimals, nil
 }
 
 // GetCurrency returns the package-level cached Currency instance.

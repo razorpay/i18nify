@@ -99,4 +99,4 @@ jobs:
         working-directory: ./build
 
       - name: Danger
-        uses: danger/danger-js@11.2.6
+        uses: danger/danger-js@13.0.10
