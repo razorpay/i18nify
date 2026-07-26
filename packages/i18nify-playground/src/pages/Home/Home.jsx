@@ -60,6 +60,7 @@ const Home = () => {
               {MODULES.map((module) => {
                 return (
                   <Link
+                    key={module.title}
                     color="primary"
                     onClick={() => navigate(module.navigatePath)}
                   >
@@ -100,18 +101,11 @@ const Home = () => {
               flexWrap="wrap"
               rowGap="spacing.2"
             >
-              <Box>
-                <Text>i18nify-go</Text>
-              </Box>
-              <Box>
-                <Text>i18nify-java</Text>
-              </Box>
-              <Box>
-                <Text>i18nify-php</Text>
-              </Box>
-              <Box>
-                <Text>i18nify-python</Text>
-              </Box>
+              {['go', 'java', 'php', 'python'].map((lang) => (
+                <Box key={lang}>
+                  <Text>i18nify-{lang}</Text>
+                </Box>
+              ))}
             </Box>
           </Box>
         </Box>

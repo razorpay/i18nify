@@ -22,37 +22,52 @@ const SideNavBar = ({ toggleMobileNav, isMobileSidebarOpen }) => {
       top="52px"
       zIndex={2}
     >
-      <SideNavBody>
-        {sidebarItems.map((l1Sections) => (
-          <SideNavSection key={l1Sections.title} title={l1Sections.title}>
-            {l1Sections?.items.map((l1Item) => {
+      <SideNavBody key="sidebar-body">
+        {sidebarItems.map((l1Sections, index) => (
+          <SideNavSection
+            key={`section-${l1Sections.title || index}`}
+            title={l1Sections.title}
+          >
+            {l1Sections?.items.map((l1Item, l1Index) => {
               if (!l1Item.items) {
-                return <NavLink key={l1Item.title} {...l1Item} />;
+                return (
+                  <NavLink key={`l1-${l1Item.title || l1Index}`} {...l1Item} />
+                );
               }
 
               return (
                 <NavLink
-                  key={l1Item.title}
+                  key={`l1-${l1Item.title || l1Index}`}
                   {...l1Item}
                   activeOnLinks={getAllChildHrefs(l1Item.items)}
                   href={l1Item.items[0].href}
                 >
-                  <SideNavLevel key={l1Item.title}>
-                    {l1Item.items?.map((l2Item) => {
+                  <SideNavLevel key={`level-${l1Item.title || l1Index}`}>
+                    {l1Item.items?.map((l2Item, l2Index) => {
                       if (!l2Item.items) {
-                        return <NavLink key={l2Item.title} {...l2Item} />;
+                        return (
+                          <NavLink
+                            key={`l2-${l2Item.title || l2Index}`}
+                            {...l2Item}
+                          />
+                        );
                       }
 
                       return (
                         <NavLink
-                          key={l2Item.title}
+                          key={`l2-${l2Item.title || l2Index}`}
                           {...l2Item}
                           activeOnLinks={getAllChildHrefs(l2Item.items)}
                           href={undefined}
                         >
-                          <SideNavLevel key={l2Item.title}>
-                            {l2Item.items?.map((l3Item) => (
-                              <NavLink key={l3Item.title} {...l3Item} />
+                          <SideNavLevel
+                            key={`level-${l2Item.title || l2Index}`}
+                          >
+                            {l2Item.items?.map((l3Item, l3Index) => (
+                              <NavLink
+                                key={`l3-${l3Item.title || l3Index}`}
+                                {...l3Item}
+                              />
                             ))}
                           </SideNavLevel>
                         </NavLink>
