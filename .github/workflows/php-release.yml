@@ -1,0 +1,200 @@
+name: i18nify PHP Release
+
+# Packagist cannot serve a package that lives in a monorepo subdirectory, so the
+# release flow mirrors the Go one: on a master merge we (1) copy the canonical
+# dataset into the package, (2) split packages/i18nify-php
+# into the read-only mirror repo razorpay/i18nify-php, (3) tag both the monorepo
+# (i18nify-php/vX.Y.Z) and the mirror (vX.Y.Z). Packagist tracks the mirror and
+# picks up the new tag from its GitHub webhook.
+#
+# Version bumping is the changeset equivalent for PHP: the bump level comes from
+# the PR label (php:major / php:minor / php:patch), defaulting to patch, and the
+# version itself is derived from git tags — composer.json carries no version
+# field, which is what Packagist expects.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'packages/i18nify-php/**'
+      - 'i18nify-data/currency/**'
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Version bump level'
+        required: true
+        default: 'patch'
+        type: choice
+        options: [patch, minor, major]
+      dry_run:
+        description: 'Build and split but do not tag or notify Packagist'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: php-release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PACKAGE_DIR: packages/i18nify-php
+  MIRROR_REPO: razorpay/i18nify-php
+  TAG_PREFIX: i18nify-php
+
+jobs:
+  release:
+    name: Release razorpay/i18nify-php
+    runs-on: ubuntu-latest # nosemgrep: non-self-hosted-runner
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.CI_BOT_TOKEN }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: intl, json
+          coverage: none
+          tools: composer:v2
+
+      # Guard: never publish a broken package.
+      - name: Materialise canonical dataset
+        run: |
+          chmod +x scripts/php/sync-data.sh
+          scripts/php/sync-data.sh --deref
+
+      - name: Validate and test
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: |
+          composer validate --strict --no-check-lock
+          composer install --prefer-dist --no-interaction --no-progress
+          vendor/bin/phpunit --colors=always
+
+      - name: Resolve next version
+        id: version
+        env:
+          BUMP_INPUT: ${{ github.event.inputs.bump }}
+          EVENT_NAME: ${{ github.event_name }}
+          GH_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+        run: |
+          git fetch --tags origin
+
+          LATEST_TAG=$(git tag -l "${TAG_PREFIX}/v*" --sort=-version:refname | head -n 1 || echo "")
+
+          if [ -z "$LATEST_TAG" ]; then
+            CURRENT="0.0.0"
+          else
+            CURRENT="${LATEST_TAG#${TAG_PREFIX}/v}"
+          fi
+
+          # Bump level: workflow input, else the merged PR's php:* label, else patch.
+          BUMP="patch"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            BUMP="$BUMP_INPUT"
+          else
+            PR_NUMBER=$(gh pr list --search "${{ github.sha }}" --state merged --json number --jq '.[0].number' || echo "")
+            if [ -n "$PR_NUMBER" ] && [ "$PR_NUMBER" != "null" ]; then
+              LABELS=$(gh pr view "$PR_NUMBER" --json labels --jq '.labels[].name' || echo "")
+              case "$LABELS" in
+                *php:major*) BUMP="major" ;;
+                *php:minor*) BUMP="minor" ;;
+                *)           BUMP="patch" ;;
+              esac
+            fi
+          fi
+
+          IFS='.' read -ra P <<< "$CURRENT"
+          MAJOR="${P[0]:-0}"; MINOR="${P[1]:-0}"; PATCH="${P[2]:-0}"
+
+          case "$BUMP" in
+            major) MAJOR=$((MAJOR + 1)); MINOR=0; PATCH=0 ;;
+            minor) MINOR=$((MINOR + 1)); PATCH=0 ;;
+            patch) PATCH=$((PATCH + 1)) ;;
+          esac
+
+          NEW="${MAJOR}.${MINOR}.${PATCH}"
+
+          echo "Current: ${CURRENT} | bump: ${BUMP} | new: ${NEW}"
+          echo "bump=$BUMP" >> "$GITHUB_OUTPUT"
+          echo "version=v${NEW}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG_PREFIX}/v${NEW}" >> "$GITHUB_OUTPUT"
+
+      # Remove dev-only files so the mirror repo contains a clean library, and
+      # un-ignore the materialised dataset — it is a build artefact in the
+      # monorepo but a shipped file in the published package.
+      - name: Prepare split payload
+        run: |
+          rm -rf "${PACKAGE_DIR}/vendor" "${PACKAGE_DIR}/.phpunit.cache"
+          rm -f  "${PACKAGE_DIR}/composer.lock"
+
+          # Drop the src/Currency/data/ ignore rule (and its comment block) so
+          # the split repo commits the dataset.
+          sed -i '/^# Build artefact/,$d' "${PACKAGE_DIR}/.gitignore"
+
+          DATA="${PACKAGE_DIR}/src/Currency/data/currency.json"
+          test -f "$DATA"
+          test ! -L "$DATA"
+          grep -q 'src/Currency/data' "${PACKAGE_DIR}/.gitignore" \
+            && { echo "✗ dataset still gitignored — the published package would be broken" >&2; exit 1; } \
+            || echo "✓ dataset will be committed to the mirror"
+
+      - name: Split into ${{ env.MIRROR_REPO }}
+        uses: symplify/monorepo-split-github-action@v2.3.0
+        if: github.event.inputs.dry_run != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+        with:
+          package_directory: ${{ env.PACKAGE_DIR }}
+          repository_organization: razorpay
+          repository_name: i18nify-php
+          branch: master
+          tag: ${{ steps.version.outputs.version }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Tag the monorepo
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git tag -a "${{ steps.version.outputs.tag }}" \
+            -m "Release i18nify-php ${{ steps.version.outputs.version }}"
+          git push origin "${{ steps.version.outputs.tag }}"
+
+      # Packagist normally picks the tag up from the mirror's own webhook. This
+      # is a belt-and-braces nudge; it no-ops if the secrets are unset.
+      - name: Notify Packagist
+        if: github.event.inputs.dry_run != 'true'
+        env:
+          PACKAGIST_USERNAME: ${{ secrets.PACKAGIST_USERNAME }}
+          PACKAGIST_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
+        run: |
+          if [ -z "$PACKAGIST_USERNAME" ] || [ -z "$PACKAGIST_TOKEN" ]; then
+            echo "ℹ️ Packagist credentials not configured — relying on the mirror repo webhook."
+            exit 0
+          fi
+          curl -sSf -XPOST \
+            -H 'content-type:application/json' \
+            "https://packagist.org/api/update-package?username=${PACKAGIST_USERNAME}&apiToken=${PACKAGIST_TOKEN}" \
+            -d "{\"repository\":{\"url\":\"https://github.com/${MIRROR_REPO}\"}}"
+
+      - name: Summary
+        run: |
+          {
+            echo "## 📦 razorpay/i18nify-php released"
+            echo ""
+            echo "- **Version:** \`${{ steps.version.outputs.version }}\` (${{ steps.version.outputs.bump }})"
+            echo "- **Monorepo tag:** \`${{ steps.version.outputs.tag }}\`"
+            echo "- **Mirror:** https://github.com/${MIRROR_REPO}"
+            echo ""
+            echo '```bash'
+            echo "composer require razorpay/i18nify-php:^${{ steps.version.outputs.version }}"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

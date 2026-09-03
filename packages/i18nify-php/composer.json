@@ -1,0 +1,39 @@
+{
+  "name": "razorpay/i18nify-php",
+  "description": "Razorpay i18nify PHP SDK (currency formatting)",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["i18n", "currency", "formatting", "intl", "razorpay"],
+  "homepage": "https://github.com/razorpay/i18nify",
+  "support": {
+    "issues": "https://github.com/razorpay/i18nify/issues",
+    "source": "https://github.com/razorpay/i18nify/tree/master/packages/i18nify-php"
+  },
+  "autoload": {
+    "psr-4": {
+      "RZP\\I18nify\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "RZP\\I18nify\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "ext-intl": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "scripts": {
+    "test": "phpunit",
+    "validate-data": "php -r \"require 'vendor/autoload.php'; echo RZP\\\\I18nify\\\\Currency\\\\Currency::resolveDataPath(), PHP_EOL; exit(count(RZP\\\\I18nify\\\\Currency\\\\Currency::getCurrencyList()) > 0 ? 0 : 1);\""
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
