@@ -7,7 +7,7 @@ import DIAL_CODE_MAPPER from '#/i18nify-data/phone-number/dial-code-to-country/d
  * @returns {Object} An object where each key is a country code (e.g., 'US', 'CA') and its value is the corresponding dial code (e.g., '+1' for 'US' and 'CA').
  */
 const getDialCodes = (): { [key in CountryCodeType]: string } => {
-  const countryDialCode: { [key in CountryCodeType]: string } = {} as any;
+  const countryDialCode = {} as { [key in CountryCodeType]: string };
 
   for (const [dialCode, countryCodes] of Object.entries(
     DIAL_CODE_MAPPER.dial_code_to_country,

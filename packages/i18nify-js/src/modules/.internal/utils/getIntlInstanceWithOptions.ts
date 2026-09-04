@@ -26,7 +26,7 @@ export const getIntlInstanceWithOptions = (
     );
 
   return new Intl.NumberFormat(
-    locale || undefined,
+    locale,
     intlOptions as Intl.NumberFormatOptions,
   );
 };

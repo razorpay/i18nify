@@ -15,8 +15,15 @@ const getByCountry = (
   _countryCode: CountryCodeType,
 ): Promise<CountryMetaType> => {
   return fetch(`${I18NIFY_DATA_SOURCE}/country/metadata/data.json`)
-    .then((res) => res.json())
-    .then((res) => res.metadata_information[_countryCode])
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      return res.json();
+    })
+    .then((res) => {
+      const result = res.metadata_information[_countryCode];
+      if (!result) throw new Error(`Country code '${_countryCode}' not found`);
+      return result;
+    })
     .catch((err) => {
       throw new Error(
         `An error occurred while fetching country metadata. The error details are: ${err.message}.`,
