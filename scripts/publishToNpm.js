@@ -37,6 +37,10 @@ try {
     cwd: './packages/i18nify-react',
     stdio: 'inherit',
   });
+  execa.commandSync('npm publish --access public', {
+    cwd: './packages/i18nify-cli',
+    stdio: 'inherit',
+  });
 } finally {
   fs.rmSync(NPMRC_PATH);
 }
