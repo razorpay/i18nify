@@ -11,7 +11,7 @@ import (
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
 )
 
-// *Bank must satisfy IBank, including the new GetBanksByIdentifiers method.
+// *Bank must satisfy IBank, including the new GetBanksByBankCodes method.
 var _ IBank = (*Bank)(nil)
 
 func TestPackageGetCountriesByCodes(t *testing.T) {
@@ -43,35 +43,35 @@ func TestPackageGetCountriesByCodes_UnknownCode(t *testing.T) {
 	assert.Contains(t, err.Error(), "XK")
 }
 
-func TestBankGetBanksByIdentifiers(t *testing.T) {
+func TestBankGetBanksByBankCodes(t *testing.T) {
 	bank := NewBank("SG")
 
-	got, err := bank.GetBanksByIdentifiers([]string{"OCBCSGSG", "DBSSSGSG"})
+	got, err := bank.GetBanksByBankCodes([]string{"UOVB", "DBSS"})
 	require.NoError(t, err)
 	assert.Equal(t, []bankcodes.BankIdentity{
-		{Identifier: "DBSSSGSG", ShortCode: "DBSS", Name: "DBS BANK LTD"},
-		{Identifier: "OCBCSGSG", ShortCode: "OCBC", Name: "OVERSEA-CHINESE BANKING CORPORATION LIMITED"},
+		{BankCode: "DBSS", Name: "DBS BANK LTD"},
+		{BankCode: "UOVB", Name: "UNITED OVERSEAS BANK LIMITED"},
 	}, got)
 
 	// Delegates to the module, so results must be identical.
-	direct, err := bankcodes.GetBanksByIdentifiers("SG", []string{"OCBCSGSG", "DBSSSGSG"})
+	direct, err := bankcodes.GetBanksByBankCodes("SG", []string{"UOVB", "DBSS"})
 	require.NoError(t, err)
 	assert.Equal(t, direct, got)
 }
 
-func TestBankGetBanksByIdentifiers_UnknownIdentifier(t *testing.T) {
+func TestBankGetBanksByBankCodes_UnknownBankCode(t *testing.T) {
 	bank := NewBank("SG")
 
-	got, err := bank.GetBanksByIdentifiers([]string{"DBSSSGSG", "NOTABANK"})
+	got, err := bank.GetBanksByBankCodes([]string{"DBSS", "NOTABANK"})
 	require.Error(t, err)
 	assert.Nil(t, got)
 	assert.Contains(t, err.Error(), "NOTABANK")
 }
 
-func TestBankGetBanksByIdentifiers_EmptyIsAnError(t *testing.T) {
+func TestBankGetBanksByBankCodes_EmptyIsAnError(t *testing.T) {
 	bank := NewBank("SG")
 
-	got, err := bank.GetBanksByIdentifiers(nil)
+	got, err := bank.GetBanksByBankCodes(nil)
 	require.Error(t, err)
-	assert.Nil(t, got, "empty identifiers must not fall back to every bank")
+	assert.Nil(t, got, "empty bank codes must not fall back to every bank")
 }

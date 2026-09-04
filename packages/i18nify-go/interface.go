@@ -31,6 +31,6 @@ type ICountry interface {
 
 type IBank interface {
 	GetAllBanksWithShortCodes() (map[string]string, error)
-	GetBanksByIdentifiers(identifiers []string) ([]bankcodes.BankIdentity, error)
+	GetBanksByBankCodes(bankCodes []string) ([]bankcodes.BankIdentity, error)
 	GetBaseBranchIdentifierFromShortCode(bankName string) (string, error)
 }

@@ -281,29 +281,28 @@ func GetAllBanksWithShortCodes(countryCode string) (map[string]string, error) {
 	return bankNamesMap, nil
 }
 
-// BankIdentity is a bank resolved from one of its branch identifiers.
+// BankIdentity is a bank resolved from its bank code.
 type BankIdentity struct {
-	// Identifier is the branch identifier that matched (BIC/SWIFT, IFSC, or
-	// routing number), echoed back so callers can use it directly. It is the
-	// normalised form of the requested value: trimmed and upper-cased.
-	Identifier string `json:"identifier"`
-	ShortCode  string `json:"short_code"`
-	Name       string `json:"name"`
+	// BankCode is the bank's code in the data set (the short_code field, e.g.
+	// "CITI", "HDFC"), echoed back in the normalised form used for matching:
+	// trimmed and upper-cased.
+	BankCode string `json:"bank_code"`
+	Name     string `json:"name"`
 }
 
-func GetBanksByIdentifiers(countryCode string, identifiers []string) ([]BankIdentity, error) {
-	wanted := make(map[string]struct{}, len(identifiers))
-	for _, raw := range identifiers {
-		identifier := strings.ToUpper(strings.TrimSpace(raw))
-		if identifier == "" {
+func GetBanksByBankCodes(countryCode string, bankCodes []string) ([]BankIdentity, error) {
+	wanted := make(map[string]struct{}, len(bankCodes))
+	for _, raw := range bankCodes {
+		bankCode := strings.ToUpper(strings.TrimSpace(raw))
+		if bankCode == "" {
 			// Skip blank entries — a stray empty string in a config list is not
 			// a typo worth failing the whole lookup for.
 			continue
 		}
-		wanted[identifier] = struct{}{}
+		wanted[bankCode] = struct{}{}
 	}
 	if len(wanted) == 0 {
-		return nil, errors.New("getBanksByIdentifiers: at least one non-blank bank identifier is required")
+		return nil, errors.New("getBanksByBankCodes: at least one non-blank bank code is required")
 	}
 
 	bankInfo, err := loadBankInfo(countryCode)
@@ -311,61 +310,54 @@ func GetBanksByIdentifiers(countryCode string, identifiers []string) ([]BankIden
 		return nil, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
 	}
 
-	resolved := make(map[string]BankIdentity, len(wanted))
-	record := func(name, shortCode, candidate string) {
-		identifier := strings.ToUpper(strings.TrimSpace(candidate))
-		if identifier == "" {
-			return
-		}
-		if _, want := wanted[identifier]; !want {
-			return
-		}
-		// First match wins. Identifiers are unique per bank name in the data set,
-		// so a later duplicate branch row cannot change the answer.
-		if _, done := resolved[identifier]; done {
-			return
-		}
-		resolved[identifier] = BankIdentity{
-			Identifier: identifier,
-			ShortCode:  shortCode,
-			Name:       name,
-		}
+	type bankKey struct {
+		bankCode string
+		name     string
 	}
+
+	seen := make(map[bankKey]struct{}, len(wanted))
+	matched := make(map[string]struct{}, len(wanted))
+	result := make([]BankIdentity, 0, len(wanted))
 
 	for _, bank := range bankInfo.Details {
-		for _, branch := range bank.Branches {
-			record(bank.Name, bank.ShortCode, branch.Identifiers.SwiftCode)
-			record(bank.Name, bank.ShortCode, branch.Identifiers.IfscCode)
-			for _, routingNumber := range branch.Identifiers.RoutingNumber {
-				record(bank.Name, bank.ShortCode, routingNumber)
-			}
+		bankCode := strings.ToUpper(strings.TrimSpace(bank.ShortCode))
+		if bankCode == "" {
+			// US records in particular carry no short code; they are only
+			// reachable by branch identifier.
+			continue
 		}
+		if _, want := wanted[bankCode]; !want {
+			continue
+		}
+		matched[bankCode] = struct{}{}
+
+		key := bankKey{bankCode: bankCode, name: bank.Name}
+		if _, dup := seen[key]; dup {
+			continue
+		}
+		seen[key] = struct{}{}
+		result = append(result, BankIdentity{BankCode: bankCode, Name: bank.Name})
 	}
 
-	if len(resolved) != len(wanted) {
-		unknown := make([]string, 0, len(wanted)-len(resolved))
-		for identifier := range wanted {
-			if _, ok := resolved[identifier]; !ok {
-				unknown = append(unknown, identifier)
+	if len(matched) != len(wanted) {
+		unknown := make([]string, 0, len(wanted)-len(matched))
+		for bankCode := range wanted {
+			if _, ok := matched[bankCode]; !ok {
+				unknown = append(unknown, bankCode)
 			}
 		}
 		sort.Strings(unknown)
-		return nil, fmt.Errorf("getBanksByIdentifiers: unknown bank identifiers for country %s: %v",
+		return nil, fmt.Errorf("getBanksByBankCodes: unknown bank codes for country %s: %v",
 			strings.ToUpper(strings.TrimSpace(countryCode)), unknown)
 	}
 
-	result := make([]BankIdentity, 0, len(resolved))
-	for _, bank := range resolved {
-		result = append(result, bank)
-	}
-
-	// sort.Slice is not stable and the source map iterates in random order, so
-	// the Identifier tiebreak is what makes the output reproducible.
+	// sort.Slice is not stable, so the BankCode tiebreak is what makes the
+	// output reproducible when two codes share a bank name.
 	sort.Slice(result, func(i, j int) bool {
 		if result[i].Name != result[j].Name {
 			return result[i].Name < result[j].Name
 		}
-		return result[i].Identifier < result[j].Identifier
+		return result[i].BankCode < result[j].BankCode
 	})
 
 	return result, nil
