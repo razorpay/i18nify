@@ -1,0 +1,19 @@
+# GitHub Merge Queue Configuration
+merge_queue:
+  # Status checks required before merge queue processes the PR
+  required_status_checks:
+    - 'Regional Conflict Check'
+    - 'Auto-Resolution Validation'
+  
+  # How to merge PRs (squash combines all commits into one)
+  merge_method: 'squash'
+  
+  # Queue capacity controls
+  max_entries_to_build: 5      # Max PRs building simultaneously
+  max_entries_to_merge: 2      # Max PRs merging simultaneously
+  
+  # Commit message strategy when merging
+  merge_commit_message_strategy: 'PR_TITLE'
+  
+  # Optional: Require branches to be up to date
+  require_strict_status_checks: true
