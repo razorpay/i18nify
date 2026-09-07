@@ -1,0 +1,11 @@
+vendor/
+composer.lock
+.phpunit.cache/
+.phpunit.result.cache
+coverage/
+
+# Build artefact: the canonical dataset lives at i18nify-data/currency/data.json
+# and is read from there in the monorepo. The release pipeline copies it here
+# (scripts/php/sync-data.sh --deref) only so published Composer installs are
+# self-contained. Never commit it.
+src/Currency/data/
