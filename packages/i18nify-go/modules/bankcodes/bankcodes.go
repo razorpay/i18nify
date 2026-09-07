@@ -3,6 +3,7 @@ package bankcodes
 import (
 	"errors"
 	"fmt"
+	"sort"
 	"strings"
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/bankcodes"
@@ -278,4 +279,86 @@ func GetAllBanksWithShortCodes(countryCode string) (map[string]string, error) {
 	}
 
 	return bankNamesMap, nil
+}
+
+// BankIdentity is a bank resolved from its bank code.
+type BankIdentity struct {
+	// BankCode is the bank's code in the data set (the short_code field, e.g.
+	// "CITI", "HDFC"), echoed back in the normalised form used for matching:
+	// trimmed and upper-cased.
+	BankCode string `json:"bank_code"`
+	Name     string `json:"name"`
+}
+
+func GetBanksByBankCodes(countryCode string, bankCodes []string) ([]BankIdentity, error) {
+	wanted := make(map[string]struct{}, len(bankCodes))
+	for _, raw := range bankCodes {
+		bankCode := strings.ToUpper(strings.TrimSpace(raw))
+		if bankCode == "" {
+			// Skip blank entries — a stray empty string in a config list is not
+			// a typo worth failing the whole lookup for.
+			continue
+		}
+		wanted[bankCode] = struct{}{}
+	}
+	if len(wanted) == 0 {
+		return nil, errors.New("getBanksByBankCodes: at least one non-blank bank code is required")
+	}
+
+	bankInfo, err := loadBankInfo(countryCode)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load bank information for country %s: %w", countryCode, err)
+	}
+
+	type bankKey struct {
+		bankCode string
+		name     string
+	}
+
+	seen := make(map[bankKey]struct{}, len(wanted))
+	matched := make(map[string]struct{}, len(wanted))
+	result := make([]BankIdentity, 0, len(wanted))
+
+	for _, bank := range bankInfo.Details {
+		bankCode := strings.ToUpper(strings.TrimSpace(bank.ShortCode))
+		if bankCode == "" {
+			// US records in particular carry no short code; they are only
+			// reachable by branch identifier.
+			continue
+		}
+		if _, want := wanted[bankCode]; !want {
+			continue
+		}
+		matched[bankCode] = struct{}{}
+
+		key := bankKey{bankCode: bankCode, name: bank.Name}
+		if _, dup := seen[key]; dup {
+			continue
+		}
+		seen[key] = struct{}{}
+		result = append(result, BankIdentity{BankCode: bankCode, Name: bank.Name})
+	}
+
+	if len(matched) != len(wanted) {
+		unknown := make([]string, 0, len(wanted)-len(matched))
+		for bankCode := range wanted {
+			if _, ok := matched[bankCode]; !ok {
+				unknown = append(unknown, bankCode)
+			}
+		}
+		sort.Strings(unknown)
+		return nil, fmt.Errorf("getBanksByBankCodes: unknown bank codes for country %s: %v",
+			strings.ToUpper(strings.TrimSpace(countryCode)), unknown)
+	}
+
+	// sort.Slice is not stable, so the BankCode tiebreak is what makes the
+	// output reproducible when two codes share a bank name.
+	sort.Slice(result, func(i, j int) bool {
+		if result[i].Name != result[j].Name {
+			return result[i].Name < result[j].Name
+		}
+		return result[i].BankCode < result[j].BankCode
+	})
+
+	return result, nil
 }
