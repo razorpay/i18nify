@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package duitnow_bank;
+package duitnow;
 
-option go_package = "github.com/razorpay/i18nify/i18nify-data/go/duitnow/bank;duitnow_bank";
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/duitnow;duitnow";
 
 // DuitNowBanks is the bank master data for DuitNow online banking (PayNet, Malaysia).
 // Data file: data.json
