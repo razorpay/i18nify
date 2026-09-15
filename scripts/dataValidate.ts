@@ -52,8 +52,8 @@ export const PACKAGE_CONFIGS: Record<string, ProtoConfig> = {
     dataPattern: 'single',
     rootMessageName: 'BusinessEntityData',
   },
-  duitnow: {
-    protoPath: 'i18nify-data/duitnow/proto/duitnow.proto',
+  'duitnow/bank': {
+    protoPath: 'i18nify-data/duitnow/bank/proto/bank.proto',
     dataPattern: 'single',
     rootMessageName: 'DuitNowBanks',
   },

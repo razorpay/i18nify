@@ -78,14 +78,14 @@ describe('dataValidate', () => {
       expect(packages.has('business_entity')).toBe(true);
     });
 
-    test('identifies duitnow files', () => {
+    test('identifies duitnow bank files', () => {
       const changedFiles = [
-        'i18nify-data/duitnow/data.json',
-        'i18nify-data/duitnow/proto/duitnow.proto',
+        'i18nify-data/duitnow/bank/data.json',
+        'i18nify-data/duitnow/bank/proto/bank.proto',
       ];
       const packages = getPackagesToValidate(changedFiles);
       expect(packages.size).toBe(1);
-      expect(packages.has('duitnow')).toBe(true);
+      expect(packages.has('duitnow/bank')).toBe(true);
     });
   });
 
@@ -185,11 +185,11 @@ describe('dataValidate', () => {
       expect(result.valid).toBe(true);
     });
 
-    test('duitnow/data.json validates', async () => {
+    test('duitnow/bank/data.json validates', async () => {
       const result = await validateWithProto(
-        PACKAGE_CONFIGS.duitnow.protoPath,
-        PACKAGE_CONFIGS.duitnow.rootMessageName,
-        path.join(TEST_DIR, 'duitnow/data.json'),
+        PACKAGE_CONFIGS['duitnow/bank'].protoPath,
+        PACKAGE_CONFIGS['duitnow/bank'].rootMessageName,
+        path.join(TEST_DIR, 'duitnow/bank/data.json'),
       );
       expect(result.valid).toBe(true);
     });
