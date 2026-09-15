@@ -837,6 +837,107 @@ func GetDefaultLocaleList() (map[string]string, error) {
 	return result, nil
 }
 
+// CountryInfo pairs a country's ISO 3166-1 alpha-2 code with its metadata.
+//
+// MetadataInformation on its own does not carry the country code — in the
+// underlying dataset the code is only the map key — so CountryInfo re-attaches
+// it for callers that need both (e.g. rendering <option value=code>label</option>).
+type CountryInfo struct {
+	Code string `json:"code"`
+	MetadataInformation
+}
+
+func GetCountriesByCodes(codes []string) ([]CountryInfo, error) {
+	if cachedCountyMetaData == nil {
+		return nil, fmt.Errorf("getCountriesByCodes: country metadata not loaded")
+	}
+
+	metadataMap := cachedCountyMetaData.MetadataInformation
+	if len(metadataMap) == 0 {
+		return nil, fmt.Errorf("getCountriesByCodes: no country metadata found")
+	}
+
+	var (
+		result  []CountryInfo
+		unknown []string
+	)
+
+	if len(codes) == 0 {
+		result = make([]CountryInfo, 0, len(metadataMap))
+		for code, info := range metadataMap {
+			result = append(result, CountryInfo{Code: code, MetadataInformation: copyMetadataInformation(info)})
+		}
+	} else {
+		result = make([]CountryInfo, 0, len(codes))
+		seen := make(map[string]struct{}, len(codes))
+		for _, raw := range codes {
+			code := strings.ToUpper(strings.TrimSpace(raw))
+			if code == "" {
+				// Skip blank entries — a stray empty string in a config list is
+				// not a typo worth failing the whole lookup for.
+				continue
+			}
+			if _, dup := seen[code]; dup {
+				continue
+			}
+			seen[code] = struct{}{}
+
+			info, ok := metadataMap[code]
+			if !ok {
+				unknown = append(unknown, code)
+				continue
+			}
+			result = append(result, CountryInfo{Code: code, MetadataInformation: copyMetadataInformation(info)})
+		}
+	}
+
+	if len(unknown) > 0 {
+		sort.Strings(unknown)
+		return nil, fmt.Errorf("getCountriesByCodes: unknown country codes: %v", unknown)
+	}
+
+	sort.Slice(result, func(i, j int) bool {
+		if result[i].CountryName != result[j].CountryName {
+			return result[i].CountryName < result[j].CountryName
+		}
+		return result[i].Code < result[j].Code
+	})
+
+	return result, nil
+}
+
+// copyMetadataInformation returns a deep copy of info so that callers mutating
+// the result cannot corrupt the package-level metadata cache.
+func copyMetadataInformation(info MetadataInformation) MetadataInformation {
+	out := info
+
+	if info.SupportedCurrency != nil {
+		out.SupportedCurrency = make([]string, len(info.SupportedCurrency))
+		copy(out.SupportedCurrency, info.SupportedCurrency)
+	}
+
+	if info.Timezones != nil {
+		out.Timezones = make(map[string]Timezone, len(info.Timezones))
+		for key, val := range info.Timezones {
+			out.Timezones[key] = val
+		}
+	}
+
+	if info.Locales != nil {
+		out.Locales = make(map[string]Locale, len(info.Locales))
+		for key, val := range info.Locales {
+			locale := val
+			if val.HonorificTitles != nil {
+				locale.HonorificTitles = make([]HonorificTitle, len(val.HonorificTitles))
+				copy(locale.HonorificTitles, val.HonorificTitles)
+			}
+			out.Locales[key] = locale
+		}
+	}
+
+	return out
+}
+
 // AddressComponents holds address field values for template substitution.
 // All fields are optional; empty fields substitute as blank strings and
 // lines that become blank after substitution are dropped from the output.

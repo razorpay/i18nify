@@ -2,6 +2,7 @@
 package i18nify_go
 
 import (
+	"github.com/razorpay/i18nify/packages/i18nify-go/modules/bankcodes"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_metadata"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/country_subdivisions"
 	"github.com/razorpay/i18nify/packages/i18nify-go/modules/currency"
@@ -30,5 +31,6 @@ type ICountry interface {
 
 type IBank interface {
 	GetAllBanksWithShortCodes() (map[string]string, error)
+	GetBanksByBankCodes(bankCodes []string) ([]bankcodes.BankIdentity, error)
 	GetBaseBranchIdentifierFromShortCode(bankName string) (string, error)
 }

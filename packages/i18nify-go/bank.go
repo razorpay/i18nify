@@ -12,6 +12,10 @@ func (b *Bank) GetAllBanksWithShortCodes() (map[string]string, error) {
 	return bankcodes.GetAllBanksWithShortCodes(b.CountryCode)
 }
 
+func (b *Bank) GetBanksByBankCodes(bankCodes []string) ([]bankcodes.BankIdentity, error) {
+	return bankcodes.GetBanksByBankCodes(b.CountryCode, bankCodes)
+}
+
 func (b *Bank) GetBaseBranchIdentifierFromShortCode(bankName string) (string, error) {
 	return bankcodes.GetBaseBranchIdentifierFromShortCode(b.CountryCode, bankName)
 }
