@@ -1,4 +1,4 @@
-package duitnow
+package bank
 
 import (
 	"strings"

@@ -1,7 +1,7 @@
-// Package duitnow provides the bank master data for DuitNow online banking
+// Package bank provides the bank master data for DuitNow online banking
 // (PayNet, Malaysia): the supported bank codes, the FPX/OBW bank table, the codes
 // for which the OBW rail is enabled, and lookups over them.
-package duitnow
+package bank
 
 import (
 	"fmt"
