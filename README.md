@@ -12,6 +12,7 @@ To get started with i18nify, please refer to the language-specific README files:
 - [Go](./packages/i18nify-go/readme.md)
 - [JavaScript](./packages/i18nify-js/README.md)
 - [React](./packages/i18nify-react/README.md)
+- [PHP](./packages/i18nify-php/README.md)
 
 ## Dataset
 
