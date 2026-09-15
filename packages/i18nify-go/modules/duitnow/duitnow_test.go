@@ -106,6 +106,15 @@ func TestCanonicalKey(t *testing.T) {
 	}
 }
 
+func TestIsCorporateBank(t *testing.T) {
+	for _, code := range []string{"AFBQ_C", "PHBM_C", "UOMY_C", "BNPA_C"} {
+		assert.True(t, IsCorporateBank(code), "code %q", code)
+	}
+	for _, code := range []string{"", "AFBQ", "PHBM", "A_CB", "PHBM_c"} {
+		assert.False(t, IsCorporateBank(code), "code %q", code)
+	}
+}
+
 func TestLookupBank(t *testing.T) {
 	b, ok := LookupBank("CIMY")
 	require.True(t, ok)
@@ -115,13 +124,34 @@ func TestLookupBank(t *testing.T) {
 	require.True(t, ok)
 	assert.Equal(t, Bank{Key: "PHBM", Name: "Affin Bank", FPXCode: "PHBM", OBWCode: "PHMY"}, b)
 
-	// Corporate codes have no row of their own; callers trim the suffix first.
-	_, ok = LookupBank("PHBM_C")
-	assert.False(t, ok)
-
 	_, ok = LookupBank("ZZZZ")
 	assert.False(t, ok)
 	_, ok = LookupBank("")
+	assert.False(t, ok)
+}
+
+// Corporate codes have no row of their own: LookupBank strips CorporateSuffix and resolves them
+// onto their retail row, so every corporate bank resolves exactly like its retail code.
+func TestLookupBank_CorporateCodesResolveOntoTheirRetailRow(t *testing.T) {
+	retail, ok := LookupBank("PHBM")
+	require.True(t, ok)
+	corporate, ok := LookupBank("PHBM_C")
+	require.True(t, ok)
+	assert.Equal(t, retail, corporate)
+
+	b, ok := LookupBank("CIMY_C")
+	require.True(t, ok)
+	assert.Equal(t, "CIMY", b.Key, "the overlapping-row rule still applies after the suffix is stripped")
+
+	for _, code := range GetCorporateBanks() {
+		_, retailOK := LookupBank(strings.TrimSuffix(code, CorporateSuffix))
+		_, corporateOK := LookupBank(code)
+		assert.Equal(t, retailOK, corporateOK, "corporate code %q must resolve like its retail code", code)
+	}
+
+	_, ok = LookupBank(CorporateSuffix)
+	assert.False(t, ok, "a bare suffix is not a bank")
+	_, ok = LookupBank("ZZZZ_C")
 	assert.False(t, ok)
 }
 

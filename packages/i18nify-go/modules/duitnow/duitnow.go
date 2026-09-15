@@ -5,6 +5,7 @@ package duitnow
 
 import (
 	"fmt"
+	"strings"
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/duitnow"
 )
@@ -131,6 +132,12 @@ func IsSupportedBank(code string) bool {
 	return ok
 }
 
+// IsCorporateBank reports whether a bank code is a corporate code, i.e. ends in CorporateSuffix.
+// It checks the code's form only; use IsSupportedBank to check that the bank is accepted.
+func IsCorporateBank(code string) bool {
+	return strings.HasSuffix(code, CorporateSuffix)
+}
+
 // IsObwEnabled reports whether the OBW rail is enabled for a bank code.
 func IsObwEnabled(code string) bool {
 	_, ok := obwEnabledSet[code]
@@ -138,9 +145,10 @@ func IsObwEnabled(code string) bool {
 }
 
 // LookupBank returns the table row for a bank code, matching on the canonical key or
-// either rail's code. Corporate codes have no row of their own; trim CorporateSuffix first.
+// either rail's code. Corporate codes have no row of their own, so CorporateSuffix is
+// stripped first and a corporate code resolves onto its retail row.
 func LookupBank(code string) (Bank, bool) {
-	b, ok := bankIndex[code]
+	b, ok := bankIndex[strings.TrimSuffix(code, CorporateSuffix)]
 	return b, ok
 }
 
