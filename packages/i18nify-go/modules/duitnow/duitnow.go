@@ -1,6 +1,6 @@
 // Package duitnow provides the bank master data for DuitNow online banking
-// (PayNet, Malaysia): the supported bank codes, the FPX/OBW bank table, and the
-// codes for which the OBW rail is enabled.
+// (PayNet, Malaysia): the supported bank codes, the FPX/OBW bank table, the codes
+// for which the OBW rail is enabled, and lookups over them.
 package duitnow
 
 import (
@@ -8,6 +8,9 @@ import (
 
 	dataSource "github.com/razorpay/i18nify/i18nify-data/go/duitnow"
 )
+
+// CorporateSuffix marks a corporate bank code: "PHBM" is retail, "PHBM_C" is corporate.
+const CorporateSuffix = "_C"
 
 // SupportedBank is a bank code accepted for DuitNow online banking, and the
 // segments it is accepted for.
@@ -30,6 +33,13 @@ var (
 	supportedBanks  []SupportedBank
 	banks           []Bank
 	obwEnabledCodes []string
+
+	retailBanks    []string
+	corporateBanks []string
+
+	supportedSet  map[string]struct{}
+	obwEnabledSet map[string]struct{}
+	bankIndex     map[string]Bank
 )
 
 func init() {
@@ -54,6 +64,50 @@ func init() {
 		})
 	}
 	obwEnabledCodes = append(obwEnabledCodes, d.GetObwEnabledCodes()...)
+
+	supportedSet = make(map[string]struct{}, len(supportedBanks)*2)
+	for _, b := range supportedBanks {
+		if b.Retail {
+			retailBanks = append(retailBanks, b.Code)
+			supportedSet[b.Code] = struct{}{}
+		}
+		if b.Corporate {
+			corporateBanks = append(corporateBanks, b.Code+CorporateSuffix)
+			supportedSet[b.Code+CorporateSuffix] = struct{}{}
+		}
+	}
+
+	obwEnabledSet = make(map[string]struct{}, len(obwEnabledCodes))
+	for _, code := range obwEnabledCodes {
+		obwEnabledSet[code] = struct{}{}
+	}
+
+	bankIndex = buildBankIndex(banks)
+}
+
+// buildBankIndex resolves a rail code onto its table row.
+//
+// Rows overlap: CIMB has both {Key: CIBB, FPX: CIBB, OBW: CIMY} and {Key: CIMY, OBW: CIMY}, so
+// the code CIMY matches two rows. Indexing OBW then FPX per row, in table order, makes the LAST
+// matching row win, so CIMY keys as CIMY. Taking the first match instead would key it as CIBB,
+// collapsing CIMB's online-banking entry into its FPX one. Keep the build order.
+func buildBankIndex(rows []Bank) map[string]Bank {
+	m := make(map[string]Bank, len(rows)*2)
+	for _, b := range rows {
+		if b.OBWCode != "" {
+			m[b.OBWCode] = b
+		}
+		if b.FPXCode != "" {
+			m[b.FPXCode] = b
+		}
+	}
+	// Canonical keys resolve to themselves unless a rail code already claimed them.
+	for _, b := range rows {
+		if _, taken := m[b.Key]; !taken {
+			m[b.Key] = b
+		}
+	}
+	return m
 }
 
 // GetSupportedBanks returns every bank code accepted for DuitNow online banking.
@@ -61,8 +115,17 @@ func GetSupportedBanks() []SupportedBank {
 	return append([]SupportedBank(nil), supportedBanks...)
 }
 
-// GetBanks returns the FPX/OBW bank table in data order. Rows can share a code,
-// so callers that index the table by code must respect this order.
+// GetRetailBanks returns the supported retail bank codes, in data order.
+func GetRetailBanks() []string {
+	return append([]string(nil), retailBanks...)
+}
+
+// GetCorporateBanks returns the supported corporate bank codes, each carrying CorporateSuffix.
+func GetCorporateBanks() []string {
+	return append([]string(nil), corporateBanks...)
+}
+
+// GetBanks returns the FPX/OBW bank table in data order.
 func GetBanks() []Bank {
 	return append([]Bank(nil), banks...)
 }
@@ -70,4 +133,33 @@ func GetBanks() []Bank {
 // GetObwEnabledCodes returns the bank codes for which the OBW rail is enabled.
 func GetObwEnabledCodes() []string {
 	return append([]string(nil), obwEnabledCodes...)
+}
+
+// IsSupportedBank reports whether a bank code, retail or corporate, is accepted.
+// Matching is exact: codes are upper-case and corporate codes carry CorporateSuffix.
+func IsSupportedBank(code string) bool {
+	_, ok := supportedSet[code]
+	return ok
+}
+
+// IsObwEnabled reports whether the OBW rail is enabled for a bank code.
+func IsObwEnabled(code string) bool {
+	_, ok := obwEnabledSet[code]
+	return ok
+}
+
+// LookupBank returns the table row for a bank code, matching on the canonical key or
+// either rail's code. Corporate codes have no row of their own; trim CorporateSuffix first.
+func LookupBank(code string) (Bank, bool) {
+	b, ok := bankIndex[code]
+	return b, ok
+}
+
+// CanonicalKey maps a rail code onto its bank's canonical key, falling back to the code
+// itself so an unrecognised bank is passed through.
+func CanonicalKey(code string) string {
+	if b, ok := bankIndex[code]; ok {
+		return b.Key
+	}
+	return code
 }
