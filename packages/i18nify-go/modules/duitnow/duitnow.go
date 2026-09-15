@@ -12,14 +12,6 @@ import (
 // CorporateSuffix marks a corporate bank code: "PHBM" is retail, "PHBM_C" is corporate.
 const CorporateSuffix = "_C"
 
-// SupportedBank is a bank code accepted for DuitNow online banking, and the
-// segments it is accepted for.
-type SupportedBank struct {
-	Code      string
-	Retail    bool
-	Corporate bool
-}
-
 // Bank maps a canonical bank key onto its FPX and OBW codes. An empty code means
 // that rail is unavailable for the bank.
 type Bank struct {
@@ -30,7 +22,6 @@ type Bank struct {
 }
 
 var (
-	supportedBanks  []SupportedBank
 	banks           []Bank
 	obwEnabledCodes []string
 
@@ -48,13 +39,20 @@ func init() {
 		panic(fmt.Sprintf("failed to load duitnow bank data: %v", err))
 	}
 
-	for _, b := range d.GetSupportedBanks() {
-		supportedBanks = append(supportedBanks, SupportedBank{
-			Code:      b.GetCode(),
-			Retail:    b.GetRetail(),
-			Corporate: b.GetCorporate(),
-		})
+	supported := d.GetSupportedBanks()
+	supportedSet = make(map[string]struct{}, len(supported)*2)
+	for _, b := range supported {
+		if b.GetRetail() {
+			retailBanks = append(retailBanks, b.GetCode())
+			supportedSet[b.GetCode()] = struct{}{}
+		}
+		if b.GetCorporate() {
+			code := b.GetCode() + CorporateSuffix
+			corporateBanks = append(corporateBanks, code)
+			supportedSet[code] = struct{}{}
+		}
 	}
+
 	for _, b := range d.GetBanks() {
 		banks = append(banks, Bank{
 			Key:     b.GetKey(),
@@ -63,20 +61,8 @@ func init() {
 			OBWCode: b.GetObwCode(),
 		})
 	}
+
 	obwEnabledCodes = append(obwEnabledCodes, d.GetObwEnabledCodes()...)
-
-	supportedSet = make(map[string]struct{}, len(supportedBanks)*2)
-	for _, b := range supportedBanks {
-		if b.Retail {
-			retailBanks = append(retailBanks, b.Code)
-			supportedSet[b.Code] = struct{}{}
-		}
-		if b.Corporate {
-			corporateBanks = append(corporateBanks, b.Code+CorporateSuffix)
-			supportedSet[b.Code+CorporateSuffix] = struct{}{}
-		}
-	}
-
 	obwEnabledSet = make(map[string]struct{}, len(obwEnabledCodes))
 	for _, code := range obwEnabledCodes {
 		obwEnabledSet[code] = struct{}{}
@@ -110,9 +96,12 @@ func buildBankIndex(rows []Bank) map[string]Bank {
 	return m
 }
 
-// GetSupportedBanks returns every bank code accepted for DuitNow online banking.
-func GetSupportedBanks() []SupportedBank {
-	return append([]SupportedBank(nil), supportedBanks...)
+// GetSupportedBanks returns every accepted bank code: the retail codes followed by the
+// corporate codes, which carry CorporateSuffix.
+func GetSupportedBanks() []string {
+	out := make([]string, 0, len(retailBanks)+len(corporateBanks))
+	out = append(out, retailBanks...)
+	return append(out, corporateBanks...)
 }
 
 // GetRetailBanks returns the supported retail bank codes, in data order.

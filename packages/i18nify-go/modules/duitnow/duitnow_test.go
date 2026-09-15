@@ -1,6 +1,7 @@
 package duitnow
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -9,29 +10,26 @@ import (
 
 func TestGetSupportedBanks(t *testing.T) {
 	banks := GetSupportedBanks()
-	require.Len(t, banks, 48)
+	require.Len(t, banks, 44+32)
 
-	var retail, corporate int
-	byCode := make(map[string]SupportedBank, len(banks))
-	for _, b := range banks {
-		require.NotEmpty(t, b.Code)
-		require.True(t, b.Retail || b.Corporate, "code %q must be supported for at least one segment", b.Code)
-		_, dup := byCode[b.Code]
-		require.False(t, dup, "code %q listed twice", b.Code)
-		byCode[b.Code] = b
-		if b.Retail {
-			retail++
-		}
-		if b.Corporate {
-			corporate++
-		}
+	// The allow-list is the retail codes followed by the corporate codes.
+	assert.Equal(t, append(GetRetailBanks(), GetCorporateBanks()...), banks)
+
+	seen := make(map[string]struct{}, len(banks))
+	for _, code := range banks {
+		require.NotEmpty(t, code)
+		_, dup := seen[code]
+		require.False(t, dup, "code %q listed twice", code)
+		seen[code] = struct{}{}
+		assert.True(t, IsSupportedBank(code), "listed code %q must be supported", code)
 	}
-	assert.Equal(t, 44, retail)
-	assert.Equal(t, 32, corporate)
 
-	assert.Equal(t, SupportedBank{Code: "CIBB", Retail: true, Corporate: true}, byCode["CIBB"])
-	assert.Equal(t, SupportedBank{Code: "MB2U", Retail: true, Corporate: false}, byCode["MB2U"])
-	assert.Equal(t, SupportedBank{Code: "DEUT", Retail: false, Corporate: true}, byCode["DEUT"])
+	for _, code := range []string{"CIBB", "CIBB_C", "MB2U", "DEUT_C", "UOMY_C", "BNPA_C"} {
+		assert.Contains(t, banks, code)
+	}
+	for _, code := range []string{"DEUT", "MB2U_C", "HBMY"} {
+		assert.NotContains(t, banks, code)
+	}
 }
 
 func TestGetBanks(t *testing.T) {
@@ -65,7 +63,7 @@ func TestGetCorporateBanks(t *testing.T) {
 	banks := GetCorporateBanks()
 	require.Len(t, banks, 32)
 	for _, code := range banks {
-		assert.True(t, len(code) > len(CorporateSuffix) && code[len(code)-len(CorporateSuffix):] == CorporateSuffix,
+		assert.True(t, strings.HasSuffix(code, CorporateSuffix) && len(code) > len(CorporateSuffix),
 			"corporate code %q must carry the %s suffix", code, CorporateSuffix)
 	}
 	assert.Contains(t, banks, "UOMY_C")
@@ -128,16 +126,15 @@ func TestLookupBank(t *testing.T) {
 }
 
 func TestGettersReturnCopies(t *testing.T) {
+	GetSupportedBanks()[0] = "MUTATED"
 	GetRetailBanks()[0] = "MUTATED"
 	GetCorporateBanks()[0] = "MUTATED"
-	assert.NotEqual(t, "MUTATED", GetRetailBanks()[0])
-	assert.NotEqual(t, "MUTATED", GetCorporateBanks()[0])
-
-	GetSupportedBanks()[0].Code = "MUTATED"
 	GetBanks()[0].Key = "MUTATED"
 	GetObwEnabledCodes()[0] = "MUTATED"
 
-	assert.NotEqual(t, "MUTATED", GetSupportedBanks()[0].Code)
+	assert.NotEqual(t, "MUTATED", GetSupportedBanks()[0])
+	assert.NotEqual(t, "MUTATED", GetRetailBanks()[0])
+	assert.NotEqual(t, "MUTATED", GetCorporateBanks()[0])
 	assert.NotEqual(t, "MUTATED", GetBanks()[0].Key)
 	assert.NotEqual(t, "MUTATED", GetObwEnabledCodes()[0])
 }
