@@ -52,6 +52,11 @@ export const PACKAGE_CONFIGS: Record<string, ProtoConfig> = {
     dataPattern: 'single',
     rootMessageName: 'BusinessEntityData',
   },
+  duitnow: {
+    protoPath: 'i18nify-data/duitnow/proto/duitnow.proto',
+    dataPattern: 'single',
+    rootMessageName: 'DuitNowBanks',
+  },
 };
 
 export function fileExists(filePath: string): boolean {

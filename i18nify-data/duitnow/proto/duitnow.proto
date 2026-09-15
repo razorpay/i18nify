@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package duitnow;
+
+option go_package = "github.com/razorpay/i18nify/i18nify-data/go/duitnow;duitnow";
+
+// DuitNowBanks is the bank master data for DuitNow online banking (PayNet, Malaysia).
+// Data file: data.json
+message DuitNowBanks {
+  repeated SupportedBank supported_banks = 1 [json_name = "supported_banks"];
+  repeated Bank banks = 2;
+  repeated string obw_enabled_codes = 3 [json_name = "obw_enabled_codes"];
+}
+
+// SupportedBank is a bank code accepted for DuitNow online banking, and the
+// segments it is accepted for.
+message SupportedBank {
+  string code = 1;
+  bool retail = 2;
+  bool corporate = 3;
+}
+
+// Bank maps a canonical bank key onto its FPX and OBW codes. A bank may support
+// one rail or both; an empty code means that rail is unavailable. Order is
+// significant: rows can share a code, and consumers resolve such codes by row order.
+message Bank {
+  string key = 1;
+  string name = 2;
+  string fpx_code = 3 [json_name = "fpx_code"];
+  string obw_code = 4 [json_name = "obw_code"];
+}

@@ -1,0 +1,405 @@
+{
+  "supported_banks": [
+    {
+      "code": "PHBM",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "MFBB",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "ARBK",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "AGOB",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "BIMB",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "BKRM",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "BMMB",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "BKCH",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "BSNA",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "CIBB",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "HSBC",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "HLBB",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "KFHO",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "MBBE",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "MB2U",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "OCBC",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "PBBE",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "RHBB",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "SCBL",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "UOVB",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "DASH",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "SBIA",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "SBIB",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "SBIC",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "PHBT",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "LOAD",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "CITI",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "PICA",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "ACFB",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "AFBQ",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "AGMY",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "ARMY",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "BIMY",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "BMMY",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "BSMY",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "CIMY",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "FNXS",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "HBMB",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "HLMY",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "OCMY",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "PBMY",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "PHMY",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "RHB0",
+      "retail": true,
+      "corporate": false
+    },
+    {
+      "code": "UOMY",
+      "retail": true,
+      "corporate": true
+    },
+    {
+      "code": "BNPA",
+      "retail": false,
+      "corporate": true
+    },
+    {
+      "code": "DEUT",
+      "retail": false,
+      "corporate": true
+    },
+    {
+      "code": "PBBN",
+      "retail": false,
+      "corporate": true
+    },
+    {
+      "code": "MFMY",
+      "retail": false,
+      "corporate": true
+    }
+  ],
+  "banks": [
+    {
+      "key": "AGOB",
+      "name": "Agro Bank",
+      "fpx_code": "AGOB",
+      "obw_code": "AGMY"
+    },
+    {
+      "key": "ARBK",
+      "name": "Ambank Berhad",
+      "fpx_code": "ARBK",
+      "obw_code": "ARMY"
+    },
+    {
+      "key": "BIMB",
+      "name": "Bank Islam",
+      "fpx_code": "BIMB",
+      "obw_code": "BIMY"
+    },
+    {
+      "key": "BKRM",
+      "name": "Bank Kerjasama Rakyat Malaysia Berhad",
+      "fpx_code": "BKRM",
+      "obw_code": ""
+    },
+    {
+      "key": "BMMB",
+      "name": "Bank Muamalat",
+      "fpx_code": "BMMB",
+      "obw_code": "BMMY"
+    },
+    {
+      "key": "BSNA",
+      "name": "Bank Simpanan Nasional Berhad",
+      "fpx_code": "BSNA",
+      "obw_code": "BSMY"
+    },
+    {
+      "key": "CIBB",
+      "name": "CIMB Bank",
+      "fpx_code": "CIBB",
+      "obw_code": "CIMY"
+    },
+    {
+      "key": "HLBB",
+      "name": "Hong Leong Bank Berhad",
+      "fpx_code": "HLBB",
+      "obw_code": "HLMY"
+    },
+    {
+      "key": "HSBC",
+      "name": "HSBC Bank",
+      "fpx_code": "HSBC",
+      "obw_code": "HBMY"
+    },
+    {
+      "key": "KFHO",
+      "name": "Kuwait Finance House",
+      "fpx_code": "KFHO",
+      "obw_code": ""
+    },
+    {
+      "key": "MB2U",
+      "name": "MayBank Berhad",
+      "fpx_code": "MB2U",
+      "obw_code": ""
+    },
+    {
+      "key": "MFBB",
+      "name": "Alliance Bank Malaysia Berhad",
+      "fpx_code": "MFBB",
+      "obw_code": ""
+    },
+    {
+      "key": "OCBC",
+      "name": "OCBC Bank (Malaysia) Berhad",
+      "fpx_code": "OCBC",
+      "obw_code": "OCMY"
+    },
+    {
+      "key": "PBBE",
+      "name": "Public Bank Berhad",
+      "fpx_code": "PBBE",
+      "obw_code": "PBMY"
+    },
+    {
+      "key": "PHBM",
+      "name": "Affin Bank",
+      "fpx_code": "PHBM",
+      "obw_code": "PHMY"
+    },
+    {
+      "key": "RHBB",
+      "name": "RHB Banking Group",
+      "fpx_code": "RHBB",
+      "obw_code": "RHB0"
+    },
+    {
+      "key": "SCBL",
+      "name": "Standard Chartered Bank Malaysia Berhad",
+      "fpx_code": "SCBL",
+      "obw_code": ""
+    },
+    {
+      "key": "AFBQ",
+      "name": "MBSB Bank Berhad",
+      "fpx_code": "",
+      "obw_code": "AFBQ"
+    },
+    {
+      "key": "FNXS",
+      "name": "Finexus",
+      "fpx_code": "",
+      "obw_code": "FNXS"
+    },
+    {
+      "key": "UOVB",
+      "name": "United Overseas Bank Berhad (UOB)",
+      "fpx_code": "",
+      "obw_code": "UOVB"
+    },
+    {
+      "key": "PICA",
+      "name": "PayNet Simulator Bank",
+      "fpx_code": "",
+      "obw_code": "PICA"
+    },
+    {
+      "key": "DASH",
+      "name": "DASH Bank",
+      "fpx_code": "",
+      "obw_code": "DASH"
+    },
+    {
+      "key": "SBIA",
+      "name": "SBI BANK A",
+      "fpx_code": "SBIA",
+      "obw_code": ""
+    },
+    {
+      "key": "SBIB",
+      "name": "SBI BANK B",
+      "fpx_code": "SBIB",
+      "obw_code": ""
+    },
+    {
+      "key": "CIMY",
+      "name": "CIMB Bank",
+      "fpx_code": "",
+      "obw_code": "CIMY"
+    }
+  ],
+  "obw_enabled_codes": [
+    "AFBQ",
+    "FNXS",
+    "UOVB",
+    "PICA",
+    "AGMY",
+    "DASH",
+    "CIMY"
+  ]
+}
