@@ -1,16 +1,1 @@
-<svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_85465_14189)">
-<rect width="20" height="15" rx="1" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V15H20V0H0Z" fill="#C51918"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V15L20 0H0Z" fill="#5EAA22"/>
-<path d="M0.397324 17.4702L0.849429 17.9746L1.41278 17.5986L24.0759 2.47139L24.8254 1.97112L24.2239 1.30012L20.8984 -2.40966L20.4463 -2.91401L19.8829 -2.53798L-2.78016 12.5892L-3.52966 13.0895L-2.92817 13.7605L0.397324 17.4702Z" fill="#272727" stroke="#FFD018" stroke-width="1.5625"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M7.55521 10.5742L6.87483 11.7584L6.44032 10.4244L5.08901 9.99489L6.21505 9.30699L6.07937 7.91173L7.19072 8.76617L8.34182 8.12811L8.01899 9.54936L8.94252 10.6122L7.55521 10.5742Z" fill="#F7FCFF"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M13.8052 6.47852L13.1248 7.66267L12.6903 6.32873L11.339 5.89919L12.465 5.21129L12.3294 3.81602L13.4407 4.67046L14.5918 4.0324L14.269 5.45366L15.1925 6.51653L13.8052 6.47852Z" fill="#F7FCFF"/>
-</g>
-<rect x="0.5" y="0.5" width="19" height="14" rx="0.5" stroke="black" stroke-opacity="0.1"/>
-<defs>
-<clipPath id="clip0_85465_14189">
-<rect width="20" height="15" rx="1" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" fill="none" viewBox="0 0 20 15"><g clip-path="url(#kn_svg__a)"><rect width="20" height="15" fill="#fff" rx="1"/><path fill="#c51918" fill-rule="evenodd" d="M0 0v15h20V0z" clip-rule="evenodd"/><path fill="#5eaa22" fill-rule="evenodd" d="M0 0v15L20 0z" clip-rule="evenodd"/><path fill="#272727" stroke="#ffd018" stroke-width="1.563" d="m.397 17.47.452.505.564-.376L24.076 2.47l.75-.5-.602-.67-3.326-3.71-.452-.505-.563.376L-2.78 12.589l-.75.5.602.672z"/><path fill="#f7fcff" fill-rule="evenodd" d="m7.555 10.574-.68 1.184-.435-1.334-1.351-.43 1.126-.687-.136-1.395 1.112.854 1.15-.638L8.02 9.55l.924 1.063zm6.25-4.095-.68 1.184-.435-1.334-1.351-.43 1.126-.688-.136-1.395 1.112.854 1.15-.638-.322 1.422.924 1.063z" clip-rule="evenodd"/></g><rect width="19" height="14" x=".5" y=".5" stroke="#000" stroke-opacity=".1" rx=".5"/><defs><clipPath id="kn_svg__a"><rect width="20" height="15" fill="#fff" rx="1"/></clipPath></defs></svg>
