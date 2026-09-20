@@ -5,6 +5,7 @@
 | `4x3/` | 20×15 viewBox, rounded corners, 10% inner border | Inline flags, lists, the `4X3` URL from `getFlagOfCountry` |
 | `1x1/` | square, no frame | Circular avatars and badges, the `1X1` URL from `getFlagOfCountry` |
 | `4x3/<code>-60x45.webp`, `4x3/<code>-40x30.webp` | raster, lossless WebP with alpha | `<img>` where an SVG is not wanted; regenerate with `yarn rasterize-flags` |
+| `1x1/<code>-60x60.webp`, `1x1/<code>-40x40.webp` | raster, lossless WebP | square `<img>` for circular avatars; regenerate with `yarn rasterize-flags` |
 
 Filenames are lowercase ISO 3166-1 alpha-2 codes (`in.svg`) or ISO 3166-2 style
 subdivision codes (`gb-eng.svg`, `sh-ac.svg`). Both folders contain the same set
@@ -15,7 +16,7 @@ at an unversioned unpkg URL.
 ## Maintenance
 
 WebP rasters are produced by `../rasterize-flags.sh` (needs `rsvg-convert` and
-`cwebp` or ImageMagick); rerun it after changing a 4:3 SVG. They are copied to
+`cwebp` or ImageMagick); rerun it after changing an SVG. They are copied to
 `lib/assets/flags/` alongside the SVGs.
 
 Every SVG is optimised with svgo (`yarn optimize-flags`, config in
