@@ -23,8 +23,12 @@ Before Rollup runs, `scripts/jsonSubsets/index.ts` strips the large `i18nify-dat
 | Source | Output | Strips to |
 |---|---|---|
 | `currency/data.json` → `currency_information` | `src/modules/currency/data/currencyConfig.json` | `{name, minor_unit, symbol}` per code |
+| `currency/data.json` → `currency_information` | `src/modules/currency/data/denominations.json` | `{CC: [denominations]}` (only `getDenomination` imports it) |
+| `currency/data.json` → `currency_information` | `src/modules/currency/data/numericCodes.json` | `{CC: "numeric_code"}` (only `getISONumericCode` imports it) |
 | `phone-number/country-code-to-phone-number/data.json` → `country_tele_information` | `src/modules/phoneNumber/data/phoneFormatterMapper.json` | `{CC: "format_string"}` |
 | `phone-number/country-code-to-phone-number/data.json` → `country_tele_information` | `src/modules/phoneNumber/data/phoneRegexMapper.json` | `{CC: "regex_string"}` |
+
+JS source must import these subsets, never `#/i18nify-data/**/*.json` directly: a full-dataset import ends up in every consumer's bundle. Export each utility as `/*#__PURE__*/ withErrorBoundary(fn)` and keep module scope free of side effects so bundlers can drop unused utilities (`package.json` declares `"sideEffects": false`).
 
 These generated files are **committed to the repo** and must be regenerated when i18nify-data changes:
 ```
@@ -42,9 +46,16 @@ yarn workspace @razorpay/i18nify-js run generate:jsonSubsets
 
 ## Adding/Updating Currency Data
 
-1. Edit `i18nify-data/currency/data.json`
+1. Pull the latest ISO 4217 list into `i18nify-data/currency/data.json`:
+   ```
+   yarn update-currency-data            # fetches from SIX Group (ISO 4217 maintenance agency)
+   yarn update-currency-data --dry-run  # report only
+   yarn update-currency-data --prune    # also drop codes ISO has withdrawn
+   ```
+   `scripts/updateCurrencyData.js` refreshes `name`, `numeric_code` and `minor_unit`, keeps the curated `symbol`, `symbol_position` and `physical_currency_denominations`, and appends new currencies with a best-effort symbol and empty denominations. Curate those by hand afterwards.
 2. Regenerate subsets: `yarn workspace @razorpay/i18nify-js run generate:jsonSubsets`
 3. If the new currency has an ambiguous symbol (e.g., `$`), add it to `INTL_MAPPING` in `packages/i18nify-js/src/modules/currency/constants.ts`
+4. Validate: `yarn validate-i18nify-data <file listing changed paths>`
 
 ## Data Validation
 

@@ -1380,7 +1380,7 @@
       "symbol_position": "prefix"
     },
     "LAK": {
-      "name": "Kip",
+      "name": "Lao Kip",
       "numeric_code": "418",
       "minor_unit": "2",
       "symbol": "₭",
@@ -1428,7 +1428,7 @@
       "symbol_position": "prefix"
     },
     "ZAR": {
-      "name": "South African Rand",
+      "name": "Rand",
       "numeric_code": "710",
       "minor_unit": "2",
       "symbol": "R",
@@ -1604,7 +1604,7 @@
       "symbol_position": "prefix"
     },
     "MUR": {
-      "name": "Mauritian Rupee",
+      "name": "Mauritius Rupee",
       "numeric_code": "480",
       "minor_unit": "2",
       "symbol": "₨",
@@ -1954,7 +1954,7 @@
       "symbol_position": "prefix"
     },
     "RWF": {
-      "name": "Rwandan Franc",
+      "name": "Rwanda Franc",
       "numeric_code": "646",
       "minor_unit": "0",
       "symbol": "FRw",
@@ -2404,7 +2404,7 @@
       "symbol_position": "prefix"
     },
     "UYI": {
-      "name": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
+      "name": "Uruguay Peso en Unidades Indexadas (UI)",
       "numeric_code": "940",
       "minor_unit": "0",
       "symbol": "$U",
@@ -2565,6 +2565,39 @@
         "500",
         "1000",
         "1000000000000"
+      ],
+      "symbol_position": "prefix"
+    },
+    "XCG": {
+      "name": "Caribbean Guilder",
+      "numeric_code": "532",
+      "minor_unit": "2",
+      "symbol": "Cg.",
+      "physical_currency_denominations": [
+        "1",
+        "5",
+        "10",
+        "20",
+        "50",
+        "100",
+        "200"
+      ],
+      "symbol_position": "prefix"
+    },
+    "ZWG": {
+      "name": "Zimbabwe Gold",
+      "numeric_code": "924",
+      "minor_unit": "2",
+      "symbol": "ZiG",
+      "physical_currency_denominations": [
+        "1",
+        "2",
+        "5",
+        "10",
+        "20",
+        "50",
+        "100",
+        "200"
       ],
       "symbol_position": "prefix"
     }
