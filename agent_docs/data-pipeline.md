@@ -26,6 +26,8 @@ Before Rollup runs, `scripts/jsonSubsets/index.ts` strips the large `i18nify-dat
 | `currency/data.json` → `currency_information` | `src/modules/currency/data/currencyConfig.json` | `{name, minor_unit, symbol}` per code |
 | `currency/data.json` → `currency_information` | `src/modules/currency/data/denominations.json` | `{CC: [denominations]}` (only `getDenomination` imports it) |
 | `currency/data.json` → `currency_information` | `src/modules/currency/data/numericCodes.json` | `{CC: "numeric_code"}` (only `getISONumericCode` imports it) |
+| `country/metadata/data.json` → `metadata_information` | `src/modules/geo/data/addressTemplates.json` | `{CC: {country_name, address_template}}` for countries with a template |
+| `country/metadata/data.json` → `metadata_information` | `src/modules/names/data/honorificTitles.json` | `{CC: {default_locale, locales: {locale: {honorific_titles}}}}` |
 | `phone-number/country-code-to-phone-number/data.json` → `country_tele_information` | `src/modules/phoneNumber/data/phoneFormatterMapper.json` | `{CC: "format_string"}` |
 | `phone-number/country-code-to-phone-number/data.json` → `country_tele_information` | `src/modules/phoneNumber/data/phoneRegexMapper.json` | `{CC: "regex_string"}` |
 

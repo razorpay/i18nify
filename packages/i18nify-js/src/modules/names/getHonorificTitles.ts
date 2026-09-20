@@ -1,5 +1,5 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import COUNTRY_METADATA_DATA from '#/i18nify-data/country/metadata/data.json';
+import HONORIFIC_TITLES from './data/honorificTitles.json';
 import type { HonorificTitle } from './types';
 
 type CountryMetadata = {
@@ -7,9 +7,9 @@ type CountryMetadata = {
   locales?: Record<string, { honorific_titles?: HonorificTitle[] }>;
 };
 
-const countryMetadataData = COUNTRY_METADATA_DATA as {
-  metadata_information: Record<string, CountryMetadata>;
-};
+// Generated subset of the country metadata (scripts/jsonSubsets): only the
+// locales that define honorific titles.
+const honorificTitles = HONORIFIC_TITLES as Record<string, CountryMetadata>;
 
 /**
  * Returns honorific titles for the given ISO 3166-1 alpha-2 country code.
@@ -23,7 +23,7 @@ const getHonorificTitles = (countryCode: string): HonorificTitle[] => {
     throw new Error('countryCode must not be empty');
   }
 
-  const country = countryMetadataData.metadata_information[cc];
+  const country = honorificTitles[cc];
   if (!country?.locales) {
     throw new Error(`No honorific titles found for country code: "${cc}"`);
   }

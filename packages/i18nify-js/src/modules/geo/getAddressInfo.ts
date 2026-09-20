@@ -1,14 +1,16 @@
 import type { AddressCodeType, AddressType, CountryMetaType } from './types';
-import rawData from '#/i18nify-data/country/metadata/data.json';
+import ADDRESS_TEMPLATES from './data/addressTemplates.json';
 
-const countryMetadata = (
-  rawData as unknown as {
-    metadata_information: Record<string, CountryMetaType>;
-  }
-).metadata_information;
+// Generated subset of the country metadata (scripts/jsonSubsets). Only read
+// inside the function: a module-level property access would keep the data in
+// every bundle that imports anything from the geo module.
+const addressTemplates = ADDRESS_TEMPLATES as unknown as Record<
+  string,
+  Pick<CountryMetaType, 'country_name' | 'address_template'>
+>;
 
 export const getAddressInfo = (code: AddressCodeType): AddressType | null => {
-  const countryInfo = countryMetadata[code];
+  const countryInfo = addressTemplates[code];
 
   if (!countryInfo?.address_template) {
     return null;
