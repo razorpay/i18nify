@@ -35,6 +35,6 @@ const getBusinessSubCategories = async (
   return subs;
 };
 
-export default withErrorBoundary<typeof getBusinessSubCategories>(
+export default /*#__PURE__*/ withErrorBoundary<typeof getBusinessSubCategories>(
   getBusinessSubCategories,
 );

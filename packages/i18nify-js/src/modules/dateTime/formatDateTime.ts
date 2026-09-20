@@ -80,4 +80,6 @@ const formatDateTime = (
   return formatter.format(new Date(standardDate));
 };
 
-export default withErrorBoundary<typeof formatDateTime>(formatDateTime);
+export default /*#__PURE__*/ withErrorBoundary<typeof formatDateTime>(
+  formatDateTime,
+);

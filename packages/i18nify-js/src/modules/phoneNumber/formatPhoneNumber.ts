@@ -71,4 +71,6 @@ const formatPhoneNumber = (
   return formattedPhoneNumberWithPrefix.trim();
 };
 
-export default withErrorBoundary<typeof formatPhoneNumber>(formatPhoneNumber);
+export default /*#__PURE__*/ withErrorBoundary<typeof formatPhoneNumber>(
+  formatPhoneNumber,
+);

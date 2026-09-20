@@ -34,6 +34,6 @@ const getFlagsForAllCountries = (): {
   return flagsForAllCountriesMap;
 };
 
-export default withErrorBoundary<typeof getFlagsForAllCountries>(
+export default /*#__PURE__*/ withErrorBoundary<typeof getFlagsForAllCountries>(
   getFlagsForAllCountries,
 );

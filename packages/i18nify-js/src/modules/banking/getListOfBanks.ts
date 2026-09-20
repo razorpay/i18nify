@@ -49,4 +49,6 @@ const getListOfBanks = (_countryCode: I18nifyCountryCodeType) => {
     });
 };
 
-export default withErrorBoundary<typeof getListOfBanks>(getListOfBanks);
+export default /*#__PURE__*/ withErrorBoundary<typeof getListOfBanks>(
+  getListOfBanks,
+);

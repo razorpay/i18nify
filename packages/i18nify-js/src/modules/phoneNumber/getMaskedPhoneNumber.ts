@@ -117,6 +117,6 @@ const getMaskedPhoneNumber = ({
   }
 };
 
-export default withErrorBoundary<typeof getMaskedPhoneNumber>(
+export default /*#__PURE__*/ withErrorBoundary<typeof getMaskedPhoneNumber>(
   getMaskedPhoneNumber,
 );

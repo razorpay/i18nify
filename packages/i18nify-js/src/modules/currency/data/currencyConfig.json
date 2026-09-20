@@ -224,11 +224,6 @@
     "minor_unit": "2",
     "symbol": "₡"
   },
-  "HRK": {
-    "name": "Kuna",
-    "minor_unit": "2",
-    "symbol": "kn"
-  },
   "CUP": {
     "name": "Cuban Peso",
     "minor_unit": "2",
@@ -435,7 +430,7 @@
     "symbol": "сом"
   },
   "LAK": {
-    "name": "Kip",
+    "name": "Lao Kip",
     "minor_unit": "2",
     "symbol": "₭"
   },
@@ -450,7 +445,7 @@
     "symbol": "M"
   },
   "ZAR": {
-    "name": "South African Rand",
+    "name": "Rand",
     "minor_unit": "2",
     "symbol": "R"
   },
@@ -505,7 +500,7 @@
     "symbol": "UM"
   },
   "MUR": {
-    "name": "Mauritian Rupee",
+    "name": "Mauritius Rupee",
     "minor_unit": "2",
     "symbol": "₨"
   },
@@ -620,7 +615,7 @@
     "symbol": "₽"
   },
   "RWF": {
-    "name": "Rwandan Franc",
+    "name": "Rwanda Franc",
     "minor_unit": "0",
     "symbol": "FRw"
   },
@@ -775,7 +770,7 @@
     "symbol": "د.إ"
   },
   "UYI": {
-    "name": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
+    "name": "Uruguay Peso en Unidades Indexadas (UI)",
     "minor_unit": "0",
     "symbol": "$U"
   },
@@ -828,5 +823,15 @@
     "name": "Zimbabwe Dollar",
     "minor_unit": "2",
     "symbol": "Z$"
+  },
+  "XCG": {
+    "name": "Caribbean Guilder",
+    "minor_unit": "2",
+    "symbol": "Cg."
+  },
+  "ZWG": {
+    "name": "Zimbabwe Gold",
+    "minor_unit": "2",
+    "symbol": "ZiG"
   }
 }

@@ -24,4 +24,6 @@ const getAllCountries = (): Promise<
     });
 };
 
-export default withErrorBoundary<typeof getAllCountries>(getAllCountries);
+export default /*#__PURE__*/ withErrorBoundary<typeof getAllCountries>(
+  getAllCountries,
+);

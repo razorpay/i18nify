@@ -67,6 +67,6 @@ const formatNumberByParts = (
   }
 };
 
-export default withErrorBoundary<typeof formatNumberByParts>(
+export default /*#__PURE__*/ withErrorBoundary<typeof formatNumberByParts>(
   formatNumberByParts,
 );

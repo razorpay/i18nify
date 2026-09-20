@@ -58,7 +58,7 @@ describe('formatNumber', () => {
         currency: 'USD',
       }),
     ).toThrow(
-      "Error: Parameter 'amount' is not a valid number. The received value was: invalid-amount of type string. Please ensure you pass a valid number.",
+      "Parameter 'amount' is not a valid number. The received value was: invalid-amount of type string. Please ensure you pass a valid number.",
     );
   });
 
@@ -92,7 +92,7 @@ describe('formatNumber', () => {
 
   it('should throw error with thousands separators', () => {
     expect(() => formatNumber('1,234,567.89', { currency: 'USD' })).toThrow(
-      "Error: Parameter 'amount' is not a valid number. The received value was: 1,234,567.89 of type string. Please ensure you pass a valid number.",
+      "Parameter 'amount' is not a valid number. The received value was: 1,234,567.89 of type string. Please ensure you pass a valid number.",
     );
   });
 
@@ -103,7 +103,7 @@ describe('formatNumber', () => {
         intlOptions: { useGrouping: false },
       }),
     ).toThrow(
-      "Error: Parameter 'amount' is not a valid number. The received value was: 1000,5 of type string. Please ensure you pass a valid number.",
+      "Parameter 'amount' is not a valid number. The received value was: 1000,5 of type string. Please ensure you pass a valid number.",
     );
   });
 
@@ -151,20 +151,18 @@ describe('formatNumber', () => {
 
   it('should rethrow the caught Error instance with the same message', () => {
     const errorMessage =
-      'Error: An error occurred while formatting the number: Invalid currency code : undefined';
+      'An error occurred while formatting the number: Invalid currency code : undefined';
 
     expect(() => {
       formatNumber(123, { intlOptions: { currency: 'undefined' } } as any);
-    }).toThrow(new Error(errorMessage));
+    }).toThrow(errorMessage);
   });
 
   it('should handle non-Error throws by creating a new Error with a generic message', () => {
     expect(() => {
       formatNumber(123, { intlOptions: { style: 'hola' } } as any);
     }).toThrow(
-      new Error(
-        'Error: An error occurred while formatting the number: Value hola out of range for Intl.NumberFormat options property style',
-      ),
+      'An error occurred while formatting the number: Value hola out of range for Intl.NumberFormat options property style',
     );
   });
 
@@ -178,11 +176,7 @@ describe('formatNumber', () => {
           },
         },
       } as any);
-    }).toThrow(
-      new Error(
-        'Error: An unknown error occurred. Error details: [object Object]',
-      ),
-    );
+    }).toThrow('An unknown error occurred. Error details: [object Object]');
   });
 
   it('should handle scientific notation', () => {

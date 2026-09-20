@@ -16,4 +16,4 @@ const getState = (): I18nState => {
   return state.getState();
 };
 
-export default withErrorBoundary<typeof getState>(getState);
+export default /*#__PURE__*/ withErrorBoundary<typeof getState>(getState);

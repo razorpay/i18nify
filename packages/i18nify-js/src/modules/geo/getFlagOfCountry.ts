@@ -29,4 +29,6 @@ const getFlagOfCountry = (_countryCode: CountryCodeType): GetFlagReturnType => {
   };
 };
 
-export default withErrorBoundary<typeof getFlagOfCountry>(getFlagOfCountry);
+export default /*#__PURE__*/ withErrorBoundary<typeof getFlagOfCountry>(
+  getFlagOfCountry,
+);

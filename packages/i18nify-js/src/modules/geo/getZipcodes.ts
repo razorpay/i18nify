@@ -79,4 +79,4 @@ const getZipcodes = (_countryCode: CountryCodeType, _stateCode?: string) => {
     });
 };
 
-export default withErrorBoundary<typeof getZipcodes>(getZipcodes);
+export default /*#__PURE__*/ withErrorBoundary<typeof getZipcodes>(getZipcodes);

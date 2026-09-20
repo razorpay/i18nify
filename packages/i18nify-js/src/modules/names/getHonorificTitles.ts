@@ -46,4 +46,6 @@ const getHonorificTitles = (countryCode: string): HonorificTitle[] => {
   return titles.map((title) => ({ ...title }));
 };
 
-export default withErrorBoundary<typeof getHonorificTitles>(getHonorificTitles);
+export default /*#__PURE__*/ withErrorBoundary<typeof getHonorificTitles>(
+  getHonorificTitles,
+);

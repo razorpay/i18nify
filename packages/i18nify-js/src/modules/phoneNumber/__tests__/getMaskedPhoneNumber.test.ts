@@ -7,7 +7,7 @@ describe('phoneNumber - getMaskedPhoneNumber', () => {
     expect(() =>
       getMaskedPhoneNumber({} as GetMaskedPhoneNumberOptions),
     ).toThrow(
-      "Error: Either 'countryCode' or 'phoneNumber' is mandatory. Please provide a valid 'countryCode' or 'phoneNumber'.",
+      "Either 'countryCode' or 'phoneNumber' is mandatory. Please provide a valid 'countryCode' or 'phoneNumber'.",
     );
   });
 
@@ -15,7 +15,7 @@ describe('phoneNumber - getMaskedPhoneNumber', () => {
     expect(() =>
       getMaskedPhoneNumber({ countryCode: 'ZZ' as CountryCodeType }),
     ).toThrow(
-      "Error: Parameter 'countryCode' is invalid. The received value was: ZZ.",
+      "Parameter 'countryCode' is invalid. The received value was: ZZ.",
     );
   });
 

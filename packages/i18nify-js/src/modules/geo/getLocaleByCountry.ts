@@ -23,4 +23,6 @@ const getLocaleByCountry = (
     });
 };
 
-export default withErrorBoundary<typeof getLocaleByCountry>(getLocaleByCountry);
+export default /*#__PURE__*/ withErrorBoundary<typeof getLocaleByCountry>(
+  getLocaleByCountry,
+);

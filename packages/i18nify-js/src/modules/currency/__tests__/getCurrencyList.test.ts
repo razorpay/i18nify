@@ -28,3 +28,11 @@ describe('getCurrencyList', () => {
     expect(sampleCurrency.name).toBe(CURRENCY_INFO[sampleCurrencyCode].name);
   });
 });
+
+describe('getCurrencyList immutability', () => {
+  it('returns a copy so callers cannot mutate library data', () => {
+    const list = getCurrencyList();
+    (list as Record<string, { symbol: string }>).USD.symbol = 'mutated';
+    expect(getCurrencyList().USD.symbol).toBe(CURRENCY_INFO.USD.symbol);
+  });
+});

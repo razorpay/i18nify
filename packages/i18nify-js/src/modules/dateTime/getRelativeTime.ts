@@ -83,4 +83,6 @@ const getRelativeTime = (
   return relativeTime;
 };
 
-export default withErrorBoundary<typeof getRelativeTime>(getRelativeTime);
+export default /*#__PURE__*/ withErrorBoundary<typeof getRelativeTime>(
+  getRelativeTime,
+);

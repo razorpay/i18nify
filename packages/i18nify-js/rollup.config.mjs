@@ -130,12 +130,17 @@ export default [
     },
     plugins: [...COMMON_PLUGINS, terser()],
   },
-  // CommonJS (CJS) build
+  // CommonJS (CJS) build: one entry per module (plus the root index) so that
+  // `require('@razorpay/i18nify-js/currency')` loads only that module.
   {
-    input: 'src/index.ts',
+    input: {
+      index: 'src/index.ts',
+      ...moduleInputs,
+    },
     output: {
-      file: 'lib/cjs/index.js',
+      dir: 'lib/cjs',
       format: 'cjs',
+      exports: 'named',
     },
     plugins: [...COMMON_PLUGINS],
   },

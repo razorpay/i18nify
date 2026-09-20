@@ -26,7 +26,7 @@ describe('formatPhoneNumber', () => {
     const phoneNumber = '';
     const countryCode = 'MY';
     expect(() => formatPhoneNumber(phoneNumber, countryCode)).toThrow(
-      "Error: Parameter 'phoneNumber' is invalid! The received value was: . Please ensure you provide a valid phone number.",
+      "Parameter 'phoneNumber' is invalid! The received value was: . Please ensure you provide a valid phone number.",
     );
   });
 });

@@ -22,4 +22,6 @@ const isValidAmount = (amount: string, currencyCode: string): boolean => {
   return actualDecimals <= allowedDecimals;
 };
 
-export default withErrorBoundary<typeof isValidAmount>(isValidAmount);
+export default /*#__PURE__*/ withErrorBoundary<typeof isValidAmount>(
+  isValidAmount,
+);

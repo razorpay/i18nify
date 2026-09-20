@@ -35,6 +35,6 @@ const getBusinessEntityType = async (
   return types;
 };
 
-export default withErrorBoundary<typeof getBusinessEntityType>(
+export default /*#__PURE__*/ withErrorBoundary<typeof getBusinessEntityType>(
   getBusinessEntityType,
 );

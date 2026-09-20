@@ -27,7 +27,7 @@ describe('currency - convertToMinorUnit', () => {
         currency: unsupportedCurrencyCode as CurrencyCodeType,
       });
     }).toThrow(
-      `Error: The provided currency code is either empty or not supported. The received value was : ${unsupportedCurrencyCode}. Please ensure you pass a valid currency code.`,
+      `The provided currency code is either empty or not supported. The received value was : ${unsupportedCurrencyCode}. Please ensure you pass a valid currency code.`,
     );
   });
 

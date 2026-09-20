@@ -24,6 +24,6 @@ const getDefaultLocaleByCountry = (
     });
 };
 
-export default withErrorBoundary<typeof getDefaultLocaleByCountry>(
-  getDefaultLocaleByCountry,
-);
+export default /*#__PURE__*/ withErrorBoundary<
+  typeof getDefaultLocaleByCountry
+>(getDefaultLocaleByCountry);

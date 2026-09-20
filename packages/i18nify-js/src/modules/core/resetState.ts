@@ -14,4 +14,4 @@ const resetState = (): void => {
   state.resetState();
 };
 
-export default withErrorBoundary<typeof resetState>(resetState);
+export default /*#__PURE__*/ withErrorBoundary<typeof resetState>(resetState);

@@ -72,6 +72,6 @@ const getTimeZoneByCountry = (
     });
 };
 
-export default withErrorBoundary<typeof getTimeZoneByCountry>(
+export default /*#__PURE__*/ withErrorBoundary<typeof getTimeZoneByCountry>(
   getTimeZoneByCountry,
 );

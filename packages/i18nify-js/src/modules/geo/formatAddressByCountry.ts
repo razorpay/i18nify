@@ -44,6 +44,6 @@ const formatAddressByCountry = (
     .join('\n');
 };
 
-export default withErrorBoundary<typeof formatAddressByCountry>(
+export default /*#__PURE__*/ withErrorBoundary<typeof formatAddressByCountry>(
   formatAddressByCountry,
 );

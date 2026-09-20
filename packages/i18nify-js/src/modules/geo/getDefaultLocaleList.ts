@@ -68,6 +68,6 @@ const getDefaultLocaleList = async (): Promise<Record<string, string>> => {
 };
 
 // Export the function wrapped with error boundary for consistent error handling
-export default withErrorBoundary<typeof getDefaultLocaleList>(
+export default /*#__PURE__*/ withErrorBoundary<typeof getDefaultLocaleList>(
   getDefaultLocaleList,
 );

@@ -26,6 +26,6 @@ const getDialCodeByCountryCode = (countryCode: CountryCodeType): string => {
     );
 };
 
-export default withErrorBoundary<typeof getDialCodeByCountryCode>(
+export default /*#__PURE__*/ withErrorBoundary<typeof getDialCodeByCountryCode>(
   getDialCodeByCountryCode,
 );

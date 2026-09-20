@@ -35,4 +35,6 @@ const convertToMajorUnit = (
   return higherCurrencyValue;
 };
 
-export default withErrorBoundary<typeof convertToMajorUnit>(convertToMajorUnit);
+export default /*#__PURE__*/ withErrorBoundary<typeof convertToMajorUnit>(
+  convertToMajorUnit,
+);

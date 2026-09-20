@@ -1,5 +1,3 @@
-import CURRENCY_INFO from './data/currencyConfig.json';
-
 export const ALLOWED_FORMAT_PARTS_KEYS = [
   'nan',
   'infinity',
@@ -22,41 +20,47 @@ export const ALLOWED_FORMAT_PARTS_KEYS = [
   'unit',
 ] as const;
 
+/**
+ * Intl sometimes returns a symbol for these currencies that differs from the
+ * curated one in i18nify-data (e.g. "$" for SGD). The values are literals so
+ * that formatters do not pull the whole currency table into the bundle; a unit
+ * test keeps them in sync with currencyConfig.json.
+ */
 export const INTL_MAPPING = {
-  SGD: { $: CURRENCY_INFO.SGD.symbol }, // Singapore Dollar
-  XCD: { $: CURRENCY_INFO.XCD.symbol }, // East Caribbean Dollar
-  ARS: { $: CURRENCY_INFO.ARS.symbol }, // Argentine Peso
-  AUD: { $: CURRENCY_INFO.AUD.symbol }, // Australian Dollar
-  BSD: { $: CURRENCY_INFO.BSD.symbol }, // Bahamian Dollar
-  BBD: { $: CURRENCY_INFO.BBD.symbol }, // Barbados Dollar
-  BMD: { $: CURRENCY_INFO.BMD.symbol }, // Bermudian Dollar
-  CVE: { $: CURRENCY_INFO.CVE.symbol }, // Cabo Verde Escudo
-  CAD: { $: CURRENCY_INFO.CAD.symbol }, // Canadian Dollar
-  KYD: { $: CURRENCY_INFO.KYD.symbol }, // Cayman Islands Dollar
-  CLP: { $: CURRENCY_INFO.CLP.symbol }, // Chilean Peso
-  COP: { $: CURRENCY_INFO.COP.symbol }, // Colombian Peso
-  NZD: { $: CURRENCY_INFO.NZD.symbol }, // New Zealand Dollar
-  CUP: { $: CURRENCY_INFO.CUP.symbol }, // Cuban Peso
-  SVC: { $: CURRENCY_INFO.SVC.symbol }, // El Salvador Colon
-  FJD: { $: CURRENCY_INFO.FJD.symbol }, // Fiji Dollar
-  GYD: { $: CURRENCY_INFO.GYD.symbol }, // Guyana Dollar
-  HKD: { $: CURRENCY_INFO.HKD.symbol }, // Hong Kong Dollar
-  JMD: { $: CURRENCY_INFO.JMD.symbol }, // Jamaican Dollar
-  LRD: { $: CURRENCY_INFO.LRD.symbol }, // Liberian Dollar
-  MOP: { $: CURRENCY_INFO.MOP.symbol }, // Pataca
-  MXN: { $: CURRENCY_INFO.MXN.symbol }, // Mexican Peso
-  NAD: { $: CURRENCY_INFO.NAD.symbol }, // Namibia Dollar
-  SBD: { $: CURRENCY_INFO.SBD.symbol }, // Solomon Islands Dollar
-  SRD: { $: CURRENCY_INFO.SRD.symbol }, // Surinam Dollar
-  ZWL: { $: CURRENCY_INFO.ZWL.symbol }, // Zimbabwe Dollar
-  LSL: { L: CURRENCY_INFO.LSL.symbol }, // Loti
-  AWG: { 'Afl.': CURRENCY_INFO.AWG.symbol }, // Aruban Florin
-  BYN: { Br: CURRENCY_INFO.BYN.symbol }, // Belarusian Ruble
-  XAF: { FCFA: CURRENCY_INFO.XAF.symbol }, // CFA Franc BEAC
-  CNY: { '¥': CURRENCY_INFO.CNY.symbol }, // Yuan Renminbi
-  EGP: { '£': CURRENCY_INFO.EGP.symbol }, // Egyptian Pound
-  FKP: { '£': CURRENCY_INFO.FKP.symbol }, // Falkland Islands Pound
-  LBP: { '£': CURRENCY_INFO.LBP.symbol }, // Lebanese Pound
-  SSP: { '£': CURRENCY_INFO.SSP.symbol }, // South Sudanese Pound
-  WST: { T: CURRENCY_INFO.WST.symbol }, // Tala
+  SGD: { $: 'S$' }, // Singapore Dollar
+  XCD: { $: 'EC$' }, // East Caribbean Dollar
+  ARS: { $: 'ARS' }, // Argentine Peso
+  AUD: { $: 'A$' }, // Australian Dollar
+  BSD: { $: 'BSD' }, // Bahamian Dollar
+  BBD: { $: 'Bds$' }, // Barbados Dollar
+  BMD: { $: 'BD$' }, // Bermudian Dollar
+  CVE: { $: 'CVE' }, // Cabo Verde Escudo
+  CAD: { $: 'CA$' }, // Canadian Dollar
+  KYD: { $: 'CI$' }, // Cayman Islands Dollar
+  CLP: { $: 'CLP' }, // Chilean Peso
+  COP: { $: 'COL$' }, // Colombian Peso
+  NZD: { $: 'NZ$' }, // New Zealand Dollar
+  CUP: { $: '$MN' }, // Cuban Peso
+  SVC: { $: '₡' }, // El Salvador Colon
+  FJD: { $: 'FJ$' }, // Fiji Dollar
+  GYD: { $: 'GY$' }, // Guyana Dollar
+  HKD: { $: 'HK$' }, // Hong Kong Dollar
+  JMD: { $: 'J$' }, // Jamaican Dollar
+  LRD: { $: 'L$' }, // Liberian Dollar
+  MOP: { $: 'MOP$' }, // Pataca
+  MXN: { $: 'Mex$' }, // Mexican Peso
+  NAD: { $: 'N$' }, // Namibia Dollar
+  SBD: { $: 'SI$' }, // Solomon Islands Dollar
+  SRD: { $: 'SRD' }, // Surinam Dollar
+  ZWL: { $: 'Z$' }, // Zimbabwe Dollar
+  LSL: { L: 'M' }, // Loti
+  AWG: { 'Afl.': 'Aƒ' }, // Aruban Florin
+  BYN: { Br: 'Rbl' }, // Belarusian Ruble
+  XAF: { FCFA: 'FCFA' }, // CFA Franc BEAC
+  CNY: { '¥': 'CN¥' }, // Yuan Renminbi
+  EGP: { '£': 'E£' }, // Egyptian Pound
+  FKP: { '£': 'FK£' }, // Falkland Islands Pound
+  LBP: { '£': 'L£' }, // Lebanese Pound
+  SSP: { '£': 'SS£' }, // South Sudanese Pound
+  WST: { T: 'WS$' }, // Tala
 };

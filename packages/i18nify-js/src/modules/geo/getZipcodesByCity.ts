@@ -80,4 +80,6 @@ const getZipcodesByCity = (
     });
 };
 
-export default withErrorBoundary<typeof getZipcodesByCity>(getZipcodesByCity);
+export default /*#__PURE__*/ withErrorBoundary<typeof getZipcodesByCity>(
+  getZipcodesByCity,
+);

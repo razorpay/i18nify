@@ -20,6 +20,6 @@ const getBusinessCategories = async (): Promise<BusinessCategory[]> => {
   return data.business_entity_information.categories;
 };
 
-export default withErrorBoundary<typeof getBusinessCategories>(
+export default /*#__PURE__*/ withErrorBoundary<typeof getBusinessCategories>(
   getBusinessCategories,
 );

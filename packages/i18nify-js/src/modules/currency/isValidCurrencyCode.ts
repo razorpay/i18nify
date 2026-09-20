@@ -11,6 +11,6 @@ import type { CurrencyCodeType } from './types';
 const isValidCurrencyCode = (code: unknown): code is CurrencyCodeType =>
   typeof code === 'string' && code.length > 0 && code in CURRENCY_INFO;
 
-export default withErrorBoundary<typeof isValidCurrencyCode>(
+export default /*#__PURE__*/ withErrorBoundary<typeof isValidCurrencyCode>(
   isValidCurrencyCode,
 );

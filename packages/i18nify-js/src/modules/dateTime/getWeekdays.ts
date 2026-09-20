@@ -41,4 +41,4 @@ const getWeekdays = (options: {
   }
 };
 
-export default withErrorBoundary<typeof getWeekdays>(getWeekdays);
+export default /*#__PURE__*/ withErrorBoundary<typeof getWeekdays>(getWeekdays);

@@ -66,4 +66,6 @@ const parseDateTime = (
   }
 };
 
-export default withErrorBoundary<typeof parseDateTime>(parseDateTime);
+export default /*#__PURE__*/ withErrorBoundary<typeof parseDateTime>(
+  parseDateTime,
+);

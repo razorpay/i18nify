@@ -24,4 +24,6 @@ const getByCountry = (
     });
 };
 
-export default withErrorBoundary<typeof getByCountry>(getByCountry);
+export default /*#__PURE__*/ withErrorBoundary<typeof getByCountry>(
+  getByCountry,
+);

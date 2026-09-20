@@ -60,7 +60,7 @@ describe('formatNumberByParts', () => {
         locale: 'en-US',
       }),
     ).toThrow(
-      "Error: Parameter 'amount' is not a valid number. The received value was: not a number of type string. Please ensure you pass a valid number.",
+      "Parameter 'amount' is not a valid number. The received value was: not a number of type string. Please ensure you pass a valid number.",
     );
   });
 
@@ -241,9 +241,7 @@ describe('formatNumberByParts', () => {
     expect(() => {
       formatNumberByParts(123, { intlOptions: { style: 'hola' } } as any);
     }).toThrow(
-      new Error(
-        'Error: An error occurred while formatting the number: Value hola out of range for Intl.NumberFormat options property style',
-      ),
+      'An error occurred while formatting the number: Value hola out of range for Intl.NumberFormat options property style',
     );
   });
 
@@ -257,11 +255,7 @@ describe('formatNumberByParts', () => {
           },
         },
       } as any);
-    }).toThrow(
-      new Error(
-        'Error: An unknown error occurred. Error details: [object Object]',
-      ),
-    );
+    }).toThrow('An unknown error occurred. Error details: [object Object]');
   });
 
   it('should return correct value for isPrefixSymbol for negative amounts', () => {

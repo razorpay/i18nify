@@ -36,4 +36,4 @@ const getStates = (_countryCode: I18nifyCountryCodeType) => {
     });
 };
 
-export default withErrorBoundary<typeof getStates>(getStates);
+export default /*#__PURE__*/ withErrorBoundary<typeof getStates>(getStates);

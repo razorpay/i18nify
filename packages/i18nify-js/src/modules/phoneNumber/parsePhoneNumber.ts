@@ -75,4 +75,6 @@ const parsePhoneNumber = (
   };
 };
 
-export default withErrorBoundary<typeof parsePhoneNumber>(parsePhoneNumber);
+export default /*#__PURE__*/ withErrorBoundary<typeof parsePhoneNumber>(
+  parsePhoneNumber,
+);

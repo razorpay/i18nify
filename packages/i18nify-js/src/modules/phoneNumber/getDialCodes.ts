@@ -20,4 +20,6 @@ const getDialCodes = (): { [key in CountryCodeType]: string } => {
   return countryDialCode;
 };
 
-export default withErrorBoundary<typeof getDialCodes>(getDialCodes);
+export default /*#__PURE__*/ withErrorBoundary<typeof getDialCodes>(
+  getDialCodes,
+);

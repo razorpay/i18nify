@@ -47,4 +47,6 @@ const isValidPhoneNumber = (
   return false;
 };
 
-export default withErrorBoundary<typeof isValidPhoneNumber>(isValidPhoneNumber);
+export default /*#__PURE__*/ withErrorBoundary<typeof isValidPhoneNumber>(
+  isValidPhoneNumber,
+);

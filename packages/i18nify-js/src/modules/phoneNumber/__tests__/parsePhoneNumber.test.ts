@@ -44,7 +44,7 @@ describe('parsePhoneNumber function', () => {
     const phoneNumber = '';
 
     expect(() => parsePhoneNumber(phoneNumber)).toThrow(
-      "Error: Parameter 'phoneNumber' is invalid! The received value was: . Please ensure you provide a valid phone number.",
+      "Parameter 'phoneNumber' is invalid! The received value was: . Please ensure you provide a valid phone number.",
     );
   });
 });

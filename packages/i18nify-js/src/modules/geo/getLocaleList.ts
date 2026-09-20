@@ -27,4 +27,6 @@ const getLocaleList = (): Promise<Record<string, string[]>> => {
     });
 };
 
-export default withErrorBoundary<typeof getLocaleList>(getLocaleList);
+export default /*#__PURE__*/ withErrorBoundary<typeof getLocaleList>(
+  getLocaleList,
+);

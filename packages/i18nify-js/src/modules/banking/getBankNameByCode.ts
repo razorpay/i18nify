@@ -86,4 +86,6 @@ const getBankNameByCode = (
     });
 };
 
-export default withErrorBoundary<typeof getBankNameByCode>(getBankNameByCode);
+export default /*#__PURE__*/ withErrorBoundary<typeof getBankNameByCode>(
+  getBankNameByCode,
+);

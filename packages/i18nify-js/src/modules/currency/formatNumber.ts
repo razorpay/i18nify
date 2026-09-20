@@ -43,4 +43,6 @@ const formatNumber = (
   }
 };
 
-export default withErrorBoundary<typeof formatNumber>(formatNumber);
+export default /*#__PURE__*/ withErrorBoundary<typeof formatNumber>(
+  formatNumber,
+);

@@ -15,4 +15,4 @@ const setState = (newState: Partial<I18nState>): void => {
   state.setState(newState);
 };
 
-export default withErrorBoundary<typeof setState>(setState);
+export default /*#__PURE__*/ withErrorBoundary<typeof setState>(setState);

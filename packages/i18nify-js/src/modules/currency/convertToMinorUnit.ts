@@ -37,4 +37,6 @@ const convertToMinorUnit = (
   return lowerCurrencyValue;
 };
 
-export default withErrorBoundary<typeof convertToMinorUnit>(convertToMinorUnit);
+export default /*#__PURE__*/ withErrorBoundary<typeof convertToMinorUnit>(
+  convertToMinorUnit,
+);

@@ -150,4 +150,4 @@ export const validateZipCode = async (
 };
 
 // Wrap the function with error boundary for consistent error handling
-export default withErrorBoundary(validateZipCode);
+export default /*#__PURE__*/ withErrorBoundary(validateZipCode);

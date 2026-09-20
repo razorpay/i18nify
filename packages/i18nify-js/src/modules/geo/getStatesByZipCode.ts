@@ -117,4 +117,6 @@ const getStatesByZipCode = (
     });
 };
 
-export default withErrorBoundary<typeof getStatesByZipCode>(getStatesByZipCode);
+export default /*#__PURE__*/ withErrorBoundary<typeof getStatesByZipCode>(
+  getStatesByZipCode,
+);

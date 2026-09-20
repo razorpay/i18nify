@@ -72,4 +72,6 @@ const getCityByZipcode = (_zipcode: string, _countryCode?: CountryCodeType) => {
     });
 };
 
-export default withErrorBoundary<typeof getCityByZipcode>(getCityByZipcode);
+export default /*#__PURE__*/ withErrorBoundary<typeof getCityByZipcode>(
+  getCityByZipcode,
+);

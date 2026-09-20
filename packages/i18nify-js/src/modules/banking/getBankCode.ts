@@ -94,4 +94,4 @@ const getBankCode = (
     });
 };
 
-export default withErrorBoundary<typeof getBankCode>(getBankCode);
+export default /*#__PURE__*/ withErrorBoundary<typeof getBankCode>(getBankCode);

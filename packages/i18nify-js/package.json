@@ -36,38 +36,39 @@
       "import": "./lib/esm/index.js"
     },
     "./core": {
-      "require": "./lib/cjs/index.js",
+      "require": "./lib/cjs/core/index.js",
       "import": "./lib/esm/core/index.js"
     },
     "./currency": {
-      "require": "./lib/cjs/index.js",
+      "require": "./lib/cjs/currency/index.js",
       "import": "./lib/esm/currency/index.js"
     },
     "./phoneNumber": {
-      "require": "./lib/cjs/index.js",
+      "require": "./lib/cjs/phoneNumber/index.js",
       "import": "./lib/esm/phoneNumber/index.js"
     },
     "./dateTime": {
-      "require": "./lib/cjs/index.js",
+      "require": "./lib/cjs/dateTime/index.js",
       "import": "./lib/esm/dateTime/index.js"
     },
     "./geo": {
-      "require": "./lib/cjs/index.js",
+      "require": "./lib/cjs/geo/index.js",
       "import": "./lib/esm/geo/index.js"
     },
     "./businessEntity": {
-      "require": "./lib/cjs/index.js",
+      "require": "./lib/cjs/businessEntity/index.js",
       "import": "./lib/esm/businessEntity/index.js"
     },
     "./names": {
-      "require": "./lib/cjs/index.js",
+      "require": "./lib/cjs/names/index.js",
       "import": "./lib/esm/names/index.js"
     },
     "./types": {
-      "require": "./lib/cjs/index.js",
-      "import": "./lib/esm/types/index.d.ts"
+      "require": "./lib/cjs/types/index.js",
+      "import": "./lib/esm/types/index.js"
     }
   },
+  "sideEffects": false,
   "typesVersions": {
     "*": {
       "core": [

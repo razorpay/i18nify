@@ -12,4 +12,6 @@ const getCurrencySymbol = (currencyCode: CurrencyCodeType): string => {
     );
 };
 
-export default withErrorBoundary<typeof getCurrencySymbol>(getCurrencySymbol);
+export default /*#__PURE__*/ withErrorBoundary<typeof getCurrencySymbol>(
+  getCurrencySymbol,
+);

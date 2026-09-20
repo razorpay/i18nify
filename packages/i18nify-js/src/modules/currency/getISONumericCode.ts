@@ -1,8 +1,6 @@
 import { withErrorBoundary } from '../../common/errorBoundary';
-import CURRENCY_DATA from '#/i18nify-data/currency/data.json';
+import NUMERIC_CODES from './data/numericCodes.json';
 import { CurrencyCodeType } from './types';
-
-const CURRENCY_INFO = CURRENCY_DATA.currency_information;
 
 /**
  * Returns the ISO 4217 three-digit numeric code for the given alphabetic
@@ -13,18 +11,20 @@ const CURRENCY_INFO = CURRENCY_DATA.currency_information;
  * @throws When the currency code is not in the dataset.
  */
 const getISONumericCode = (currencyCode: CurrencyCodeType): string => {
-  if (!(currencyCode in CURRENCY_INFO)) {
+  if (!(currencyCode in NUMERIC_CODES)) {
     throw new Error(
       `Invalid currency code: "${String(currencyCode)}". Please provide a valid ISO 4217 alphabetic currency code.`,
     );
   }
-  const entry = CURRENCY_INFO[currencyCode as keyof typeof CURRENCY_INFO];
-  if (!entry.numeric_code) {
+  const numericCode = NUMERIC_CODES[currencyCode as keyof typeof NUMERIC_CODES];
+  if (!numericCode) {
     throw new Error(
       `No numeric code found for currency: "${String(currencyCode)}".`,
     );
   }
-  return entry.numeric_code;
+  return numericCode;
 };
 
-export default withErrorBoundary<typeof getISONumericCode>(getISONumericCode);
+export default /*#__PURE__*/ withErrorBoundary<typeof getISONumericCode>(
+  getISONumericCode,
+);

@@ -58,4 +58,4 @@ const getCities = (
     });
 };
 
-export default withErrorBoundary<typeof getCities>(getCities);
+export default /*#__PURE__*/ withErrorBoundary<typeof getCities>(getCities);
