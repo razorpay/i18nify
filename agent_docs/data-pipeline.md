@@ -12,7 +12,8 @@
 | `bankcodes/{CC}.json` | `defaults`, `details` | Bank list with branches, SWIFT/IFSC/routing identifiers |
 | `phone-number/country-code-to-phone-number/data.json` | `country_tele_information` | Per-country: dial_code, format (`xxxx xxxxxx`), regex |
 | `phone-number/dial-code-to-country/data.json` | `dial_code_to_country` | Dial code → [country codes] (multiple countries can share a dial code) |
-| `assets/flags/*.svg` | — | SVG flags, lowercase filenames (e.g., `in.svg`) |
+| `assets/flags/4x3/*.svg` | — | 4:3 SVG flags with rounded corners, lowercase filenames (e.g., `in.svg`); the JS build copies them flat to `lib/assets/flags/` |
+| `assets/flags/1x1/*.svg` | — | 1:1 SVG flags for circular avatars, same filenames; copied to `lib/assets/flags/1x1/` |
 
 Each folder also has a `schema.json` for validation.
 
@@ -69,4 +70,4 @@ https://raw.githubusercontent.com/razorpay/i18nify/master/i18nify-data
 ```
 This constant is at `packages/i18nify-js/src/modules/shared/sourceConstants.ts:I18NIFY_DATA_SOURCE`.
 
-Flags are served from `https://flagcdn.com` (original aspect ratio) and `https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags` (4×3).
+Flags are served from `https://flagcdn.com` (original aspect ratio), `https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags` (4×3) and `https://unpkg.com/@razorpay/i18nify-js/lib/assets/flags/1x1` (1×1). Run `yarn optimize-flags` after adding or changing SVGs (see `i18nify-data/assets/flags/README.md`).

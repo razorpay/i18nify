@@ -1,6 +1,10 @@
 import { getFlagOfCountry } from '../index';
 import { LIST_OF_ALL_COUNTRIES } from '../data/listOfAllCountries';
-import { FLAG_4X3_BASE_PATH, FLAG_BASE_PATH } from '../../shared';
+import {
+  FLAG_1X1_BASE_PATH,
+  FLAG_4X3_BASE_PATH,
+  FLAG_BASE_PATH,
+} from '../../shared';
 import { CountryCodeType } from '../../types';
 
 describe('geo - getFlagOfCountry', () => {
@@ -10,6 +14,7 @@ describe('geo - getFlagOfCountry', () => {
       expect(getFlagOfCountry(code as CountryCodeType)).toEqual({
         original: `${FLAG_BASE_PATH}/${code.toLowerCase()}.svg`,
         '4X3': `${FLAG_4X3_BASE_PATH}/${code.toLowerCase()}.svg`,
+        '1X1': `${FLAG_1X1_BASE_PATH}/${code.toLowerCase()}.svg`,
       });
     });
   });
@@ -34,6 +39,7 @@ describe('geo - getFlagOfCountry', () => {
       expect(getFlagOfCountry(code)).toEqual({
         original: `${FLAG_BASE_PATH}/${code.toLowerCase()}.svg`,
         '4X3': `${FLAG_4X3_BASE_PATH}/${code.toLowerCase()}.svg`,
+        '1X1': `${FLAG_1X1_BASE_PATH}/${code.toLowerCase()}.svg`,
       });
     });
   });

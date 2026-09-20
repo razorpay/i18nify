@@ -93,7 +93,16 @@ export default [
       ...COMMON_PLUGINS,
       copy({
         targets: [
-          { src: '../../i18nify-data/assets/flags', dest: './lib/assets' },
+          // 4x3 stays flat at lib/assets/flags/*.svg: FLAG_4X3_BASE_PATH is an
+          // unversioned unpkg URL, so older published versions rely on it.
+          {
+            src: '../../i18nify-data/assets/flags/4x3/*.svg',
+            dest: './lib/assets/flags',
+          },
+          {
+            src: '../../i18nify-data/assets/flags/1x1',
+            dest: './lib/assets/flags',
+          },
         ],
       }),
     ],

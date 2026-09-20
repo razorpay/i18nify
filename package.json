@@ -14,7 +14,7 @@
     "build-react": "yarn build-js && yarn workspace @razorpay/i18nify-react run build",
     "validate-i18nify-data": "ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/dataValidate.ts",
     "update-currency-data": "node ./scripts/updateCurrencyData.js",
-    "optimize-flags": "svgo -f i18nify-data/assets/flags --config i18nify-data/assets/svgo.config.mjs",
+    "optimize-flags": "svgo -rf i18nify-data/assets/flags --config i18nify-data/assets/svgo.config.mjs",
     "test:data-validate": "jest scripts/dataValidate.test.ts --passWithNoTests"
   },
   "devDependencies": {

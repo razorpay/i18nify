@@ -263,4 +263,5 @@ export type CountryCodeType =
 export interface GetFlagReturnType {
   original: string;
   '4X3': string;
+  '1X1': string;
 }
