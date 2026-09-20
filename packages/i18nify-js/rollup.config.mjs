@@ -96,7 +96,7 @@ export default [
           // 4x3 stays flat at lib/assets/flags/*.svg: FLAG_4X3_BASE_PATH is an
           // unversioned unpkg URL, so older published versions rely on it.
           {
-            src: '../../i18nify-data/assets/flags/4x3/*.svg',
+            src: '../../i18nify-data/assets/flags/4x3/*.{svg,avif}',
             dest: './lib/assets/flags',
           },
           {

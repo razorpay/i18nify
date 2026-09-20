@@ -4,6 +4,7 @@
 |---|---|---|
 | `4x3/` | 20×15 viewBox, rounded corners, 10% inner border | Inline flags, lists, the `4X3` URL from `getFlagOfCountry` |
 | `1x1/` | square, no frame | Circular avatars and badges, the `1X1` URL from `getFlagOfCountry` |
+| `4x3/<code>-60x45.avif`, `4x3/<code>-40x30.avif` | raster, q75 AVIF with alpha | `<img>`/`<picture>` where an SVG is not wanted; regenerate with `yarn rasterize-flags` |
 
 Filenames are lowercase ISO 3166-1 alpha-2 codes (`in.svg`) or ISO 3166-2 style
 subdivision codes (`gb-eng.svg`, `sh-ac.svg`). Both folders contain the same set
@@ -12,6 +13,10 @@ of codes. The i18nify-js build copies `4x3/` flat to `lib/assets/flags/` and
 at an unversioned unpkg URL.
 
 ## Maintenance
+
+AVIF rasters are produced by `../rasterize-flags.sh` (needs `rsvg-convert` and
+`avifenc`); rerun it after changing a 4:3 SVG. They are copied to
+`lib/assets/flags/` alongside the SVGs.
 
 Every SVG is optimised with svgo (`yarn optimize-flags`, config in
 `../svgo.config.mjs`). Ids are prefixed per file and folder (`in_4x3__a`) so
