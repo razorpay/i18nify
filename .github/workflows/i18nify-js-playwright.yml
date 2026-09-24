@@ -14,6 +14,12 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - name: Setup PMG proxy
+        uses: safedep/pmg@v1
+        with:
+          server-mode: true
+          api-key: ${{ secrets.PMG_PUBLIC_REPOS_TOKEN }}
+          tenant-id: ${{ secrets.PMG_TENANT_ID }}
       - uses: actions/setup-node@v3
         with:
           node-version: 20.3.1
@@ -29,3 +35,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+      - name: Enforce PMG policy
+        if: always()
+        run: pmg proxy stop --fail-on-violation

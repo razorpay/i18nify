@@ -27,6 +27,12 @@ jobs:
     if: ${{ needs.check-if-i18nify-js.outputs.modified == 'true' }}
     steps:
       - uses: actions/checkout@v3
+      - name: Setup PMG proxy
+        uses: safedep/pmg@v1
+        with:
+          server-mode: true
+          api-key: ${{ secrets.PMG_PUBLIC_REPOS_TOKEN }}
+          tenant-id: ${{ secrets.PMG_TENANT_ID }}
       - uses: actions/setup-node@v2
         with:
           node-version: 20.3.1
@@ -36,6 +42,9 @@ jobs:
         run: yarn lint
       - name: run tsc
         run: yarn tsc
+      - name: Enforce PMG policy
+        if: always()
+        run: pmg proxy stop --fail-on-violation
 
   build:
     name: Run Build
@@ -44,6 +53,12 @@ jobs:
     if: ${{ needs.check-if-i18nify-js.outputs.modified == 'true' }}
     steps:
       - uses: actions/checkout@v3
+      - name: Setup PMG proxy
+        uses: safedep/pmg@v1
+        with:
+          server-mode: true
+          api-key: ${{ secrets.PMG_PUBLIC_REPOS_TOKEN }}
+          tenant-id: ${{ secrets.PMG_TENANT_ID }}
       - uses: actions/setup-node@v2
         with:
           node-version: 20.3.1
@@ -51,3 +66,6 @@ jobs:
         run: yarn
       - name: run build
         run: yarn build
+      - name: Enforce PMG policy
+        if: always()
+        run: pmg proxy stop --fail-on-violation
