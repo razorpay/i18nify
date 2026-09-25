@@ -1,0 +1,21 @@
+{
+  "name": "i18nify",
+  "version": "2.0.0-poc",
+  "description": "Global internationalization library with regional conflict resolution POC",
+  "regional_settings": {
+    "default_locale": "en-US",
+    "default_currency": "USD",
+    "timezone": "UTC",
+    "date_format": "YYYY-MM-DD"
+  },
+  "features": {
+    "merge_queue_integration": true,
+    "conflict_detection": true,
+    "auto_resolution": true
+  },
+  "poc_metadata": {
+    "demonstration": "regional-conflict-resolution",
+    "created_by": "Clean POC workflow",
+    "purpose": "Demonstrate intelligent merge queue integration"
+  }
+}
