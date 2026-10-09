@@ -4,63 +4,63 @@ import { SupportedDateFormats } from '../types';
 export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
   // Date formats
   {
-    regex: /^(\d{4})\/(0[1-9]|1[0-2])\/(\d{2})$/,
+    regex: /^(\d{4})\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])$/,
     yearIndex: 1,
     monthIndex: 2,
     dayIndex: 3,
     format: 'YYYY/MM/DD',
   },
   {
-    regex: /^(\d{2})\/(0[1-9]|1[0-2])\/(\d{4})$/,
+    regex: /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/(\d{4})$/,
     yearIndex: 3,
     monthIndex: 2,
     dayIndex: 1,
     format: 'DD/MM/YYYY',
   },
   {
-    regex: /^(\d{4})\.(0[1-9]|1[0-2])\.(\d{2})$/,
+    regex: /^(\d{4})\.(0[1-9]|1[0-2])\.(0[1-9]|[12]\d|3[01])$/,
     yearIndex: 1,
     monthIndex: 2,
     dayIndex: 3,
     format: 'YYYY.MM.DD',
   },
   {
-    regex: /^(\d{2})-(0[1-9]|1[0-2])-(\d{4})$/,
+    regex: /^(0[1-9]|[12]\d|3[01])-(0[1-9]|1[0-2])-(\d{4})$/,
     yearIndex: 3,
     monthIndex: 2,
     dayIndex: 1,
     format: 'DD-MM-YYYY',
   },
   {
-    regex: /^(0[1-9]|1[0-2])\/(\d{2})\/(\d{4})$/,
+    regex: /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/(\d{4})$/,
     yearIndex: 3,
     monthIndex: 1,
     dayIndex: 2,
     format: 'MM/DD/YYYY',
   },
   {
-    regex: /^(\d{4})-(0[1-9]|1[0-2])-(\d{2})$/,
+    regex: /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/,
     yearIndex: 1,
     monthIndex: 2,
     dayIndex: 3,
     format: 'YYYY-MM-DD',
   },
   {
-    regex: /^(\d{4})\.\s*(0[1-9]|1[0-2])\.\s*(\d{2})\.\s*$/,
+    regex: /^(\d{4})\.\s*(0[1-9]|1[0-2])\.\s*(0[1-9]|[12]\d|3[01])\.\s*$/,
     yearIndex: 1,
     monthIndex: 2,
     dayIndex: 3,
     format: 'YYYY. MM. DD.',
   },
   {
-    regex: /^(\d{2})\.(0[1-9]|1[0-2])\.(\d{4})$/,
+    regex: /^(0[1-9]|[12]\d|3[01])\.(0[1-9]|1[0-2])\.(\d{4})$/,
     yearIndex: 3,
     monthIndex: 2,
     dayIndex: 1,
     format: 'DD.MM.YYYY',
   },
   {
-    regex: /^(0[1-9]|1[0-2])\.(\d{2})\.(\d{4})$/,
+    regex: /^(0[1-9]|1[0-2])\.(0[1-9]|[12]\d|3[01])\.(\d{4})$/,
     yearIndex: 3,
     monthIndex: 1,
     dayIndex: 2,
@@ -69,7 +69,7 @@ export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
 
   // Timestamp formats
   {
-    regex: /^(\d{4})\/(0[1-9]|1[0-2])\/(\d{2}) (\d{2}):(\d{2}):(\d{2})$/,
+    regex: /^(\d{4})\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]) (\d{2}):(\d{2}):(\d{2})$/,
     yearIndex: 1,
     monthIndex: 2,
     dayIndex: 3,
@@ -79,7 +79,7 @@ export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
     format: 'YYYY/MM/DD HH:MM:SS',
   },
   {
-    regex: /^(\d{2})\/(0[1-9]|1[0-2])\/(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
+    regex: /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
     yearIndex: 3,
     monthIndex: 2,
     dayIndex: 1,
@@ -89,7 +89,7 @@ export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
     format: 'DD/MM/YYYY HH:MM:SS',
   },
   {
-    regex: /^(\d{4})-(0[1-9]|1[0-2])-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/,
+    regex: /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]) (\d{2}):(\d{2}):(\d{2})$/,
     yearIndex: 1,
     monthIndex: 2,
     dayIndex: 3,
@@ -99,7 +99,7 @@ export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
     format: 'YYYY-MM-DD HH:MM:SS',
   },
   {
-    regex: /^(\d{2})-(0[1-9]|1[0-2])-(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
+    regex: /^(0[1-9]|[12]\d|3[01])-(0[1-9]|1[0-2])-(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
     yearIndex: 3,
     monthIndex: 2,
     dayIndex: 1,
@@ -109,7 +109,7 @@ export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
     format: 'DD-MM-YYYY HH:MM:SS',
   },
   {
-    regex: /^(\d{4})\.(0[1-9]|1[0-2])\.(\d{2}) (\d{2}):(\d{2}):(\d{2})$/,
+    regex: /^(\d{4})\.(0[1-9]|1[0-2])\.(0[1-9]|[12]\d|3[01]) (\d{2}):(\d{2}):(\d{2})$/,
     yearIndex: 1,
     monthIndex: 2,
     dayIndex: 3,
@@ -119,7 +119,7 @@ export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
     format: 'YYYY.MM.DD HH:MM:SS',
   },
   {
-    regex: /^(\d{2})\.(0[1-9]|1[0-2])\.(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
+    regex: /^(0[1-9]|[12]\d|3[01])\.(0[1-9]|1[0-2])\.(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
     yearIndex: 3,
     monthIndex: 2,
     dayIndex: 1,
@@ -131,7 +131,7 @@ export const SUPPORTED_DATE_FORMATS: SupportedDateFormats[] = [
 
   // ISO 8601 Timestamp format
   {
-    regex: /^(\d{4})-(0[1-9]|1[0-2])-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/,
+    regex: /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])T(\d{2}):(\d{2}):(\d{2})$/,
     yearIndex: 1,
     monthIndex: 2,
     dayIndex: 3,

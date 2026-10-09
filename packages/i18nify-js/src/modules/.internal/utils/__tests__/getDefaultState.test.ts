@@ -4,7 +4,7 @@ describe('getDefaultState', () => {
   it('returns the default state object', () => {
     const defaultState = {
       locale: '',
-      direction: '',
+      direction: 'ltr',
       country: '',
     };
 

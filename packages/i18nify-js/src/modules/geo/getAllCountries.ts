@@ -15,7 +15,10 @@ const getAllCountries = (): Promise<
   Record<CountryCodeType, CountryMetaType>
 > => {
   return fetch(`${I18NIFY_DATA_SOURCE}/country/metadata/data.json`)
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      return res.json();
+    })
     .then((res) => res.metadata_information)
     .catch((err) => {
       throw new Error(

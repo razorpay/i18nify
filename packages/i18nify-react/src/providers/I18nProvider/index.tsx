@@ -7,7 +7,7 @@ interface ContextValueType {
   setI18nState?: (data: Record<string, unknown>) => void;
 }
 
-const I18nContext = createContext({});
+const I18nContext = createContext<ContextValueType | undefined>(undefined);
 
 /**
  * A simple ReactContext Provider built for React apps that deals with i18nify state APIs.
@@ -43,8 +43,11 @@ export const I18nProvider = ({
    * @param data: new i18nState to set in Context
    */
   const updateI18nState = (data: Record<string, unknown>) => {
-    setI18nState((i18nState) => ({ ...i18nState, ...data }));
-    setState({ ...i18nState, ...data });
+    setI18nState((prevState) => {
+      const newState = { ...prevState, ...data };
+      setState(newState);
+      return newState;
+    });
   };
 
   const contextValue = {
@@ -67,7 +70,7 @@ export const I18nProvider = ({
  */
 export const useI18nContext = (): ContextValueType => {
   const context = useContext(I18nContext);
-  if (!context) {
+  if (context === undefined) {
     throw new Error('useI18nContext must be used within a I18nProvider');
   }
   return context;

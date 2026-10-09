@@ -12,8 +12,9 @@ const formatNumber = (
     intlOptions?: I18nifyNumberFormatOptions;
   } = {},
 ): string => {
-  // Validate the amount parameter to ensure it is a number
-  if (!Number(amount) && Number(amount) !== 0)
+  // Validate the amount parameter to ensure it is a finite number
+  const numericAmount = Number(amount);
+  if (!Number.isFinite(numericAmount))
     throw new Error(
       `Parameter 'amount' is not a valid number. The received value was: ${amount} of type ${typeof amount}. Please ensure you pass a valid number.`,
     );

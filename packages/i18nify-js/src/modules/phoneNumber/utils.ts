@@ -2,6 +2,8 @@ import { CountryCodeType } from '../types';
 import DIAL_CODE_MAPPER from '#/i18nify-data/phone-number/dial-code-to-country/data.json';
 import PHONE_REGEX_MAPPER from './data/phoneRegexMapper.json';
 
+const compiledRegexCache = new Map<string, RegExp>();
+
 /**
  * Determines the country data (countryCode, dialCode) based on the provided phone number.
  * This function employs a multi-step approach to identify the country code:
@@ -83,11 +85,9 @@ export const getPhoneNumberWithoutDialCode = (phoneNumber: string | number) => {
 };
 
 export const cleanPhoneNumber = (phoneNumber: string) => {
-  // Regular expression to match all characters except numbers and + sign at the start
-  const regex = /[^0-9+]|(?!A)\+/g;
-  // Replace matched characters with an empty string
-  const cleanedPhoneNumber = phoneNumber.replace(regex, '');
-  return phoneNumber[0] === '+' ? `+${cleanedPhoneNumber}` : cleanedPhoneNumber;
+  // Strip everything that isn't a digit or '+', then remove any '+' that isn't at the start
+  const cleaned = phoneNumber.replace(/[^0-9+]/g, '').replace(/(?!^)\+/g, '');
+  return cleaned;
 };
 
 /**
@@ -179,5 +179,10 @@ export const alternateMasking = (
 
 export const matchesEntirely = (text: string, regular_expression: string) => {
   text = text || '';
-  return new RegExp('^(?:' + regular_expression + ')$').test(text);
+  let regex = compiledRegexCache.get(regular_expression);
+  if (!regex) {
+    regex = new RegExp('^(?:' + regular_expression + ')$');
+    compiledRegexCache.set(regular_expression, regex);
+  }
+  return regex.test(text);
 };
