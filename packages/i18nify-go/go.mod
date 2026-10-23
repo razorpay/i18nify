@@ -13,7 +13,7 @@ require google.golang.org/protobuf v1.31.0 // indirect
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/razorpay/i18nify/i18nify-data/go/bankcodes v1.0.3
+	github.com/razorpay/i18nify/i18nify-data/go/bankcodes v0.0.0-20261023093558-e817d13064cd
 	github.com/razorpay/i18nify/i18nify-data/go/business_entity v1.0.0
 	github.com/razorpay/i18nify/i18nify-data/go/country/metadata v1.0.6
 	github.com/razorpay/i18nify/i18nify-data/go/country/subdivisions v1.0.10
