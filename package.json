@@ -5,7 +5,8 @@
   ],
   "scripts": {
     "format": "yarn workspace @razorpay/i18nify-js run format && yarn workspace @razorpay/i18nify-react run format",
-    "validate": "yarn workspace @razorpay/i18nify-js run validate && yarn workspace @razorpay/i18nify-react run validate",
+    "validate": "yarn workspace @razorpay/i18nify-js run validate && yarn workspace @razorpay/i18nify-react run validate && yarn workspace @razorpay/i18nify-cli run validate",
+    "build-cli": "yarn workspace @razorpay/i18nify-cli run build",
     "lint-staged": "lint-staged -c .lintstagedrc.json",
     "release": "node ./scripts/generateGitHubRegistryNpmrc.js && changeset publish",
     "publish-npm": "node ./scripts/publishToNpm.js",
