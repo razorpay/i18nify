@@ -1,0 +1,77 @@
+{
+  "country_name": "Hong Kong S.A.R.",
+  "states": {
+    "HCW": {
+      "name": "Central and Western District",
+      "cities": {}
+    },
+    "HEA": {
+      "name": "Eastern",
+      "cities": {}
+    },
+    "NIS": {
+      "name": "Islands District",
+      "cities": {}
+    },
+    "KKC": {
+      "name": "Kowloon City",
+      "cities": {}
+    },
+    "NKT": {
+      "name": "Kwai Tsing",
+      "cities": {}
+    },
+    "KKT": {
+      "name": "Kwun Tong",
+      "cities": {}
+    },
+    "NNO": {
+      "name": "North",
+      "cities": {}
+    },
+    "NSK": {
+      "name": "Sai Kung District",
+      "cities": {}
+    },
+    "NST": {
+      "name": "Sha Tin",
+      "cities": {}
+    },
+    "KSS": {
+      "name": "Sham Shui Po",
+      "cities": {}
+    },
+    "HSO": {
+      "name": "Southern",
+      "cities": {}
+    },
+    "NTP": {
+      "name": "Tai Po District",
+      "cities": {}
+    },
+    "NTW": {
+      "name": "Tsuen Wan District",
+      "cities": {}
+    },
+    "NTM": {
+      "name": "Tuen Mun",
+      "cities": {}
+    },
+    "HWC": {
+      "name": "Wan Chai",
+      "cities": {}
+    },
+    "KWT": {
+      "name": "Wong Tai Sin",
+      "cities": {}
+    },
+    "KYT": {
+      "name": "Yau Tsim Mong",
+      "cities": {}
+    },
+    "NYL": {
+      "name": "Yuen Long District",
+      "cities": {}
+    }
+  }
+}

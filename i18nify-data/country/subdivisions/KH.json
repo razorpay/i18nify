@@ -1,0 +1,97 @@
+{
+  "country_name": "Cambodia",
+  "states": {
+    "1": {
+      "name": "Banteay Meanchey Province",
+      "cities": {}
+    },
+    "2": {
+      "name": "Battambang Province",
+      "cities": {}
+    },
+    "3": {
+      "name": "Kampong Cham Province",
+      "cities": {}
+    },
+    "4": {
+      "name": "Kampong Chhnang Province",
+      "cities": {}
+    },
+    "5": {
+      "name": "Kampong Speu Province",
+      "cities": {}
+    },
+    "7": {
+      "name": "Kampot Province",
+      "cities": {}
+    },
+    "8": {
+      "name": "Kandal Province",
+      "cities": {}
+    },
+    "9": {
+      "name": "Koh Kong Province",
+      "cities": {}
+    },
+    "10": {
+      "name": "Kratié Province",
+      "cities": {}
+    },
+    "11": {
+      "name": "Mondulkiri Province",
+      "cities": {}
+    },
+    "12": {
+      "name": "Phnom Penh",
+      "cities": {}
+    },
+    "13": {
+      "name": "Preah Vihear Province",
+      "cities": {}
+    },
+    "14": {
+      "name": "Prey Veng Province",
+      "cities": {}
+    },
+    "15": {
+      "name": "Pursat Province",
+      "cities": {}
+    },
+    "16": {
+      "name": "Ratanakiri Province",
+      "cities": {}
+    },
+    "17": {
+      "name": "Siem Reap Province",
+      "cities": {}
+    },
+    "18": {
+      "name": "Sihanoukville Province",
+      "cities": {}
+    },
+    "19": {
+      "name": "Stung Treng Province",
+      "cities": {}
+    },
+    "20": {
+      "name": "Svay Rieng Province",
+      "cities": {}
+    },
+    "21": {
+      "name": "Takéo Province",
+      "cities": {}
+    },
+    "22": {
+      "name": "Oddar Meanchey Province",
+      "cities": {}
+    },
+    "23": {
+      "name": "Kep Province",
+      "cities": {}
+    },
+    "24": {
+      "name": "Pailin Province",
+      "cities": {}
+    }
+  }
+}

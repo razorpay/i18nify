@@ -1,0 +1,53 @@
+{
+  "country_name": "Benin",
+  "states": {
+    "AL": {
+      "name": "Alibori Department",
+      "cities": {}
+    },
+    "AK": {
+      "name": "Atakora Department",
+      "cities": {}
+    },
+    "AQ": {
+      "name": "Atlantique Department",
+      "cities": {}
+    },
+    "BO": {
+      "name": "Borgou Department",
+      "cities": {}
+    },
+    "CO": {
+      "name": "Collines Department",
+      "cities": {}
+    },
+    "DO": {
+      "name": "Donga Department",
+      "cities": {}
+    },
+    "KO": {
+      "name": "Kouffo Department",
+      "cities": {}
+    },
+    "LI": {
+      "name": "Littoral Department",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Mono Department",
+      "cities": {}
+    },
+    "OU": {
+      "name": "Ouémé Department",
+      "cities": {}
+    },
+    "PL": {
+      "name": "Plateau Department",
+      "cities": {}
+    },
+    "ZO": {
+      "name": "Zou Department",
+      "cities": {}
+    }
+  }
+}

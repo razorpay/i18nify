@@ -1,0 +1,21 @@
+{
+  "country_name": "Tajikistan",
+  "states": {
+    "RA": {
+      "name": "districts of Republican Subordination",
+      "cities": {}
+    },
+    "GB": {
+      "name": "Gorno-Badakhshan Autonomous Province",
+      "cities": {}
+    },
+    "KT": {
+      "name": "Khatlon Province",
+      "cities": {}
+    },
+    "SU": {
+      "name": "Sughd Province",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "country_name": "Denmark",
+  "states": {
+    "81": {
+      "name": "North Denmark Region",
+      "cities": {}
+    },
+    "82": {
+      "name": "Central Denmark Region",
+      "cities": {}
+    },
+    "83": {
+      "name": "Region of Southern Denmark",
+      "cities": {}
+    },
+    "84": {
+      "name": "Capital Region of Denmark",
+      "cities": {}
+    },
+    "85": {
+      "name": "Region Zealand",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "country_name": "Armenia",
+  "states": {
+    "AG": {
+      "name": "Aragatsotn Region",
+      "cities": {}
+    },
+    "AR": {
+      "name": "Ararat Province",
+      "cities": {}
+    },
+    "AV": {
+      "name": "Armavir Region",
+      "cities": {}
+    },
+    "GR": {
+      "name": "Gegharkunik Province",
+      "cities": {}
+    },
+    "KT": {
+      "name": "Kotayk Region",
+      "cities": {}
+    },
+    "LO": {
+      "name": "Lori Region",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Shirak Region",
+      "cities": {}
+    },
+    "SU": {
+      "name": "Syunik Province",
+      "cities": {}
+    },
+    "TV": {
+      "name": "Tavush Region",
+      "cities": {}
+    },
+    "VD": {
+      "name": "Vayots Dzor Region",
+      "cities": {}
+    },
+    "ER": {
+      "name": "Yerevan",
+      "cities": {}
+    }
+  }
+}

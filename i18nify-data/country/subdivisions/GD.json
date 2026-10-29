@@ -1,0 +1,33 @@
+{
+  "country_name": "Grenada",
+  "states": {
+    "10": {
+      "name": "Carriacou and Petite Martinique",
+      "cities": {}
+    },
+    "01": {
+      "name": "Saint Andrew Parish",
+      "cities": {}
+    },
+    "02": {
+      "name": "Saint David Parish",
+      "cities": {}
+    },
+    "03": {
+      "name": "Saint George Parish",
+      "cities": {}
+    },
+    "04": {
+      "name": "Saint John Parish",
+      "cities": {}
+    },
+    "05": {
+      "name": "Saint Mark Parish",
+      "cities": {}
+    },
+    "06": {
+      "name": "Saint Patrick Parish",
+      "cities": {}
+    }
+  }
+}

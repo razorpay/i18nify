@@ -1,0 +1,41 @@
+{
+  "country_name": "San Marino",
+  "states": {
+    "01": {
+      "name": "Acquaviva",
+      "cities": {}
+    },
+    "06": {
+      "name": "Borgo Maggiore",
+      "cities": {}
+    },
+    "02": {
+      "name": "Chiesanuova",
+      "cities": {}
+    },
+    "03": {
+      "name": "Domagnano",
+      "cities": {}
+    },
+    "04": {
+      "name": "Faetano",
+      "cities": {}
+    },
+    "05": {
+      "name": "Fiorentino",
+      "cities": {}
+    },
+    "08": {
+      "name": "Montegiardino",
+      "cities": {}
+    },
+    "07": {
+      "name": "San Marino",
+      "cities": {}
+    },
+    "09": {
+      "name": "Serravalle",
+      "cities": {}
+    }
+  }
+}

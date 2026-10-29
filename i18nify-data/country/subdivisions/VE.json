@@ -1,0 +1,105 @@
+{
+  "country_name": "Venezuela",
+  "states": {
+    "Z": {
+      "name": "Amazonas",
+      "cities": {}
+    },
+    "B": {
+      "name": "Anzoátegui",
+      "cities": {}
+    },
+    "C": {
+      "name": "Apure",
+      "cities": {}
+    },
+    "D": {
+      "name": "Aragua",
+      "cities": {}
+    },
+    "E": {
+      "name": "Barinas",
+      "cities": {}
+    },
+    "F": {
+      "name": "Bolívar",
+      "cities": {}
+    },
+    "A": {
+      "name": "Capital District",
+      "cities": {}
+    },
+    "G": {
+      "name": "Carabobo",
+      "cities": {}
+    },
+    "H": {
+      "name": "Cojedes",
+      "cities": {}
+    },
+    "Y": {
+      "name": "Delta Amacuro",
+      "cities": {}
+    },
+    "I": {
+      "name": "Falcón",
+      "cities": {}
+    },
+    "W": {
+      "name": "Federal Dependencies of Venezuela",
+      "cities": {}
+    },
+    "J": {
+      "name": "Guárico",
+      "cities": {}
+    },
+    "K": {
+      "name": "Lara",
+      "cities": {}
+    },
+    "L": {
+      "name": "Mérida",
+      "cities": {}
+    },
+    "M": {
+      "name": "Miranda",
+      "cities": {}
+    },
+    "N": {
+      "name": "Monagas",
+      "cities": {}
+    },
+    "O": {
+      "name": "Nueva Esparta",
+      "cities": {}
+    },
+    "P": {
+      "name": "Portuguesa",
+      "cities": {}
+    },
+    "R": {
+      "name": "Sucre",
+      "cities": {}
+    },
+    "S": {
+      "name": "Táchira",
+      "cities": {}
+    },
+    "T": {
+      "name": "Trujillo",
+      "cities": {}
+    },
+    "X": {
+      "name": "Vargas",
+      "cities": {}
+    },
+    "U": {
+      "name": "Yaracuy",
+      "cities": {}
+    },
+    "V": {
+      "name": "Zulia",
+      "cities": {}
+    }
+  }
+}

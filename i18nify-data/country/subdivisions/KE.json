@@ -1,0 +1,221 @@
+{
+  "country_name": "Kenya",
+  "states": {
+    "10": {
+      "name": "Kajiado County",
+      "cities": {}
+    },
+    "11": {
+      "name": "Kakamega County",
+      "cities": {}
+    },
+    "12": {
+      "name": "Kericho County",
+      "cities": {}
+    },
+    "13": {
+      "name": "Kiambu County",
+      "cities": {}
+    },
+    "14": {
+      "name": "Kilifi County",
+      "cities": {}
+    },
+    "15": {
+      "name": "Kirinyaga County",
+      "cities": {}
+    },
+    "16": {
+      "name": "Kisii County",
+      "cities": {}
+    },
+    "17": {
+      "name": "Kisumu County",
+      "cities": {}
+    },
+    "18": {
+      "name": "Kitui County",
+      "cities": {}
+    },
+    "19": {
+      "name": "Kwale County",
+      "cities": {}
+    },
+    "20": {
+      "name": "Laikipia County",
+      "cities": {}
+    },
+    "21": {
+      "name": "Lamu County",
+      "cities": {}
+    },
+    "22": {
+      "name": "Machakos County",
+      "cities": {}
+    },
+    "23": {
+      "name": "Makueni County",
+      "cities": {}
+    },
+    "24": {
+      "name": "Mandera County",
+      "cities": {}
+    },
+    "25": {
+      "name": "Marsabit County",
+      "cities": {}
+    },
+    "26": {
+      "name": "Meru County",
+      "cities": {}
+    },
+    "27": {
+      "name": "Migori County",
+      "cities": {}
+    },
+    "28": {
+      "name": "Mombasa County",
+      "cities": {}
+    },
+    "29": {
+      "name": "Muranga County",
+      "cities": {}
+    },
+    "31": {
+      "name": "Nakuru County",
+      "cities": {}
+    },
+    "32": {
+      "name": "Nandi District",
+      "cities": {}
+    },
+    "33": {
+      "name": "Narok County",
+      "cities": {}
+    },
+    "34": {
+      "name": "Nyamira County",
+      "cities": {}
+    },
+    "35": {
+      "name": "Nyandarua County",
+      "cities": {}
+    },
+    "36": {
+      "name": "Nyeri County",
+      "cities": {}
+    },
+    "37": {
+      "name": "Samburu County",
+      "cities": {}
+    },
+    "38": {
+      "name": "Siaya County",
+      "cities": {}
+    },
+    "39": {
+      "name": "Taita–Taveta County",
+      "cities": {}
+    },
+    "40": {
+      "name": "Tana River County",
+      "cities": {}
+    },
+    "41": {
+      "name": "Tharaka Nithi County",
+      "cities": {}
+    },
+    "42": {
+      "name": "Trans-Nzoia District",
+      "cities": {}
+    },
+    "43": {
+      "name": "Turkana County",
+      "cities": {}
+    },
+    "44": {
+      "name": "Uasin Gishu",
+      "cities": {}
+    },
+    "45": {
+      "name": "Vihiga County",
+      "cities": {}
+    },
+    "46": {
+      "name": "Wajir County",
+      "cities": {}
+    },
+    "47": {
+      "name": "West Pokot County",
+      "cities": {}
+    },
+    "110": {
+      "name": "Nairobi",
+      "cities": {}
+    },
+    "200": {
+      "name": "Central Province",
+      "cities": {}
+    },
+    "300": {
+      "name": "Coast Province",
+      "cities": {}
+    },
+    "400": {
+      "name": "Eastern Province",
+      "cities": {}
+    },
+    "500": {
+      "name": "North Eastern Province",
+      "cities": {}
+    },
+    "600": {
+      "name": "Nyanza Province",
+      "cities": {}
+    },
+    "700": {
+      "name": "Rift Valley Province",
+      "cities": {}
+    },
+    "800": {
+      "name": "Western Province",
+      "cities": {}
+    },
+    "01": {
+      "name": "Baringo County",
+      "cities": {}
+    },
+    "02": {
+      "name": "Bomet County",
+      "cities": {}
+    },
+    "03": {
+      "name": "Bungoma County",
+      "cities": {}
+    },
+    "04": {
+      "name": "Busia County",
+      "cities": {}
+    },
+    "05": {
+      "name": "Elgeyo-Marakwet County",
+      "cities": {}
+    },
+    "06": {
+      "name": "Embu County",
+      "cities": {}
+    },
+    "07": {
+      "name": "Garissa County",
+      "cities": {}
+    },
+    "08": {
+      "name": "Homa Bay County",
+      "cities": {}
+    },
+    "09": {
+      "name": "Isiolo County",
+      "cities": {}
+    }
+  }
+}

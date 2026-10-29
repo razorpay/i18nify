@@ -1,0 +1,117 @@
+{
+  "country_name": "Bulgaria",
+  "states": {
+    "10": {
+      "name": "Kyustendil Province",
+      "cities": {}
+    },
+    "11": {
+      "name": "Lovech Province",
+      "cities": {}
+    },
+    "12": {
+      "name": "Montana Province",
+      "cities": {}
+    },
+    "13": {
+      "name": "Pazardzhik Province",
+      "cities": {}
+    },
+    "14": {
+      "name": "Pernik Province",
+      "cities": {}
+    },
+    "15": {
+      "name": "Pleven Province",
+      "cities": {}
+    },
+    "16": {
+      "name": "Plovdiv Province",
+      "cities": {}
+    },
+    "17": {
+      "name": "Razgrad Province",
+      "cities": {}
+    },
+    "18": {
+      "name": "Ruse Province",
+      "cities": {}
+    },
+    "19": {
+      "name": "Silistra Province",
+      "cities": {}
+    },
+    "20": {
+      "name": "Sliven Province",
+      "cities": {}
+    },
+    "21": {
+      "name": "Smolyan Province",
+      "cities": {}
+    },
+    "22": {
+      "name": "Sofia City Province",
+      "cities": {}
+    },
+    "23": {
+      "name": "Sofia Province",
+      "cities": {}
+    },
+    "24": {
+      "name": "Stara Zagora Province",
+      "cities": {}
+    },
+    "25": {
+      "name": "Targovishte Province",
+      "cities": {}
+    },
+    "26": {
+      "name": "Haskovo Province",
+      "cities": {}
+    },
+    "27": {
+      "name": "Shumen",
+      "cities": {}
+    },
+    "28": {
+      "name": "Yambol Province",
+      "cities": {}
+    },
+    "01": {
+      "name": "Blagoevgrad Province",
+      "cities": {}
+    },
+    "02": {
+      "name": "Burgas Province",
+      "cities": {}
+    },
+    "08": {
+      "name": "Dobrich Province",
+      "cities": {}
+    },
+    "07": {
+      "name": "Gabrovo Province",
+      "cities": {}
+    },
+    "09": {
+      "name": "Kardzhali Province",
+      "cities": {}
+    },
+    "03": {
+      "name": "Varna Province",
+      "cities": {}
+    },
+    "04": {
+      "name": "Veliko Tarnovo Province",
+      "cities": {}
+    },
+    "05": {
+      "name": "Vidin Province",
+      "cities": {}
+    },
+    "06": {
+      "name": "Vratsa Province",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "country_name": "Kuwait",
+  "states": {
+    "AH": {
+      "name": "Al Ahmadi",
+      "cities": {}
+    },
+    "FA": {
+      "name": "Al Farwaniyah",
+      "cities": {}
+    },
+    "JA": {
+      "name": "Al Jahra",
+      "cities": {}
+    },
+    "KU": {
+      "name": "Capital Governorate",
+      "cities": {}
+    },
+    "HA": {
+      "name": "Hawalli",
+      "cities": {}
+    },
+    "MU": {
+      "name": "Mubarak Al-Kabeer",
+      "cities": {}
+    }
+  }
+}

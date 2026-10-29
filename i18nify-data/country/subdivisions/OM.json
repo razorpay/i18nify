@@ -1,0 +1,57 @@
+{
+  "country_name": "Oman",
+  "states": {
+    "DA": {
+      "name": "Ad Dakhiliyah Governorate",
+      "cities": {}
+    },
+    "ZA": {
+      "name": "Ad Dhahirah Governorate",
+      "cities": {}
+    },
+    "BS": {
+      "name": "Al Batinah North Governorate",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Al Batinah Region",
+      "cities": {}
+    },
+    "BJ": {
+      "name": "Al Batinah South Governorate",
+      "cities": {}
+    },
+    "BU": {
+      "name": "Al Buraimi Governorate",
+      "cities": {}
+    },
+    "WU": {
+      "name": "Al Wusta Governorate",
+      "cities": {}
+    },
+    "SS": {
+      "name": "Ash Sharqiyah North Governorate",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Ash Sharqiyah Region",
+      "cities": {}
+    },
+    "SJ": {
+      "name": "Ash Sharqiyah South Governorate",
+      "cities": {}
+    },
+    "ZU": {
+      "name": "Dhofar Governorate",
+      "cities": {}
+    },
+    "MU": {
+      "name": "Musandam Governorate",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Muscat Governorate",
+      "cities": {}
+    }
+  }
+}

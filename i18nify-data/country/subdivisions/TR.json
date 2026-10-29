@@ -1,0 +1,329 @@
+{
+  "country_name": "Turkey",
+  "states": {
+    "10": {
+      "name": "Balıkesir",
+      "cities": {}
+    },
+    "11": {
+      "name": "Bilecik",
+      "cities": {}
+    },
+    "12": {
+      "name": "Bingöl",
+      "cities": {}
+    },
+    "13": {
+      "name": "Bitlis",
+      "cities": {}
+    },
+    "14": {
+      "name": "Bolu",
+      "cities": {}
+    },
+    "15": {
+      "name": "Burdur",
+      "cities": {}
+    },
+    "16": {
+      "name": "Bursa",
+      "cities": {}
+    },
+    "17": {
+      "name": "Çanakkale",
+      "cities": {}
+    },
+    "18": {
+      "name": "Çankırı",
+      "cities": {}
+    },
+    "19": {
+      "name": "Çorum",
+      "cities": {}
+    },
+    "20": {
+      "name": "Denizli",
+      "cities": {}
+    },
+    "21": {
+      "name": "Diyarbakır",
+      "cities": {}
+    },
+    "22": {
+      "name": "Edirne",
+      "cities": {}
+    },
+    "23": {
+      "name": "Elazığ",
+      "cities": {}
+    },
+    "24": {
+      "name": "Erzincan",
+      "cities": {}
+    },
+    "25": {
+      "name": "Erzurum",
+      "cities": {}
+    },
+    "26": {
+      "name": "Eskişehir",
+      "cities": {}
+    },
+    "27": {
+      "name": "Gaziantep",
+      "cities": {}
+    },
+    "28": {
+      "name": "Giresun",
+      "cities": {}
+    },
+    "29": {
+      "name": "Gümüşhane",
+      "cities": {}
+    },
+    "30": {
+      "name": "Hakkâri",
+      "cities": {}
+    },
+    "31": {
+      "name": "Hatay",
+      "cities": {}
+    },
+    "32": {
+      "name": "Isparta",
+      "cities": {}
+    },
+    "33": {
+      "name": "Mersin",
+      "cities": {}
+    },
+    "34": {
+      "name": "Istanbul",
+      "cities": {}
+    },
+    "35": {
+      "name": "İzmir",
+      "cities": {}
+    },
+    "36": {
+      "name": "Kars",
+      "cities": {}
+    },
+    "37": {
+      "name": "Kastamonu",
+      "cities": {}
+    },
+    "38": {
+      "name": "Kayseri",
+      "cities": {}
+    },
+    "39": {
+      "name": "Kırklareli",
+      "cities": {}
+    },
+    "40": {
+      "name": "Kırşehir",
+      "cities": {}
+    },
+    "41": {
+      "name": "Kocaeli",
+      "cities": {}
+    },
+    "42": {
+      "name": "Konya",
+      "cities": {}
+    },
+    "43": {
+      "name": "Kütahya",
+      "cities": {}
+    },
+    "44": {
+      "name": "Malatya",
+      "cities": {}
+    },
+    "45": {
+      "name": "Manisa",
+      "cities": {}
+    },
+    "46": {
+      "name": "Kahramanmaraş",
+      "cities": {}
+    },
+    "47": {
+      "name": "Mardin",
+      "cities": {}
+    },
+    "48": {
+      "name": "Muğla",
+      "cities": {}
+    },
+    "49": {
+      "name": "Muş",
+      "cities": {}
+    },
+    "50": {
+      "name": "Nevşehir",
+      "cities": {}
+    },
+    "51": {
+      "name": "Niğde",
+      "cities": {}
+    },
+    "52": {
+      "name": "Ordu",
+      "cities": {}
+    },
+    "53": {
+      "name": "Rize",
+      "cities": {}
+    },
+    "54": {
+      "name": "Sakarya",
+      "cities": {}
+    },
+    "55": {
+      "name": "Samsun",
+      "cities": {}
+    },
+    "56": {
+      "name": "Siirt",
+      "cities": {}
+    },
+    "57": {
+      "name": "Sinop",
+      "cities": {}
+    },
+    "58": {
+      "name": "Sivas",
+      "cities": {}
+    },
+    "59": {
+      "name": "Tekirdağ",
+      "cities": {}
+    },
+    "60": {
+      "name": "Tokat",
+      "cities": {}
+    },
+    "61": {
+      "name": "Trabzon",
+      "cities": {}
+    },
+    "62": {
+      "name": "Tunceli",
+      "cities": {}
+    },
+    "63": {
+      "name": "Şanlıurfa",
+      "cities": {}
+    },
+    "64": {
+      "name": "Uşak",
+      "cities": {}
+    },
+    "65": {
+      "name": "Van",
+      "cities": {}
+    },
+    "66": {
+      "name": "Yozgat",
+      "cities": {}
+    },
+    "67": {
+      "name": "Zonguldak",
+      "cities": {}
+    },
+    "68": {
+      "name": "Aksaray",
+      "cities": {}
+    },
+    "69": {
+      "name": "Bayburt",
+      "cities": {}
+    },
+    "70": {
+      "name": "Karaman",
+      "cities": {}
+    },
+    "71": {
+      "name": "Kırıkkale",
+      "cities": {}
+    },
+    "72": {
+      "name": "Batman",
+      "cities": {}
+    },
+    "73": {
+      "name": "Şırnak",
+      "cities": {}
+    },
+    "74": {
+      "name": "Bartın",
+      "cities": {}
+    },
+    "75": {
+      "name": "Ardahan",
+      "cities": {}
+    },
+    "76": {
+      "name": "Iğdır",
+      "cities": {}
+    },
+    "77": {
+      "name": "Yalova",
+      "cities": {}
+    },
+    "78": {
+      "name": "Karabük",
+      "cities": {}
+    },
+    "79": {
+      "name": "Kilis",
+      "cities": {}
+    },
+    "80": {
+      "name": "Osmaniye",
+      "cities": {}
+    },
+    "81": {
+      "name": "Düzce",
+      "cities": {}
+    },
+    "01": {
+      "name": "Adana",
+      "cities": {}
+    },
+    "02": {
+      "name": "Adıyaman",
+      "cities": {}
+    },
+    "03": {
+      "name": "Afyonkarahisar",
+      "cities": {}
+    },
+    "04": {
+      "name": "Ağrı",
+      "cities": {}
+    },
+    "05": {
+      "name": "Amasya",
+      "cities": {}
+    },
+    "06": {
+      "name": "Ankara",
+      "cities": {}
+    },
+    "07": {
+      "name": "Antalya",
+      "cities": {}
+    },
+    "08": {
+      "name": "Artvin",
+      "cities": {}
+    },
+    "09": {
+      "name": "Aydın",
+      "cities": {}
+    }
+  }
+}

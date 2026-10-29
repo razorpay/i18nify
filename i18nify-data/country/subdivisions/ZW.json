@@ -1,0 +1,45 @@
+{
+  "country_name": "Zimbabwe",
+  "states": {
+    "BU": {
+      "name": "Bulawayo Province",
+      "cities": {}
+    },
+    "HA": {
+      "name": "Harare Province",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Manicaland",
+      "cities": {}
+    },
+    "MC": {
+      "name": "Mashonaland Central Province",
+      "cities": {}
+    },
+    "ME": {
+      "name": "Mashonaland East Province",
+      "cities": {}
+    },
+    "MW": {
+      "name": "Mashonaland West Province",
+      "cities": {}
+    },
+    "MV": {
+      "name": "Masvingo Province",
+      "cities": {}
+    },
+    "MN": {
+      "name": "Matabeleland North Province",
+      "cities": {}
+    },
+    "MS": {
+      "name": "Matabeleland South Province",
+      "cities": {}
+    },
+    "MI": {
+      "name": "Midlands Province",
+      "cities": {}
+    }
+  }
+}

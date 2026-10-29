@@ -1,0 +1,477 @@
+{
+  "country_name": "Latvia",
+  "states": {
+    "100": {
+      "name": "Vaiņode Municipality",
+      "cities": {}
+    },
+    "101": {
+      "name": "Valka Municipality",
+      "cities": {}
+    },
+    "102": {
+      "name": "Varakļāni Municipality",
+      "cities": {}
+    },
+    "103": {
+      "name": "Vārkava Municipality",
+      "cities": {}
+    },
+    "104": {
+      "name": "Vecpiebalga Municipality",
+      "cities": {}
+    },
+    "105": {
+      "name": "Vecumnieki Municipality",
+      "cities": {}
+    },
+    "106": {
+      "name": "Ventspils Municipality",
+      "cities": {}
+    },
+    "107": {
+      "name": "Viesīte Municipality",
+      "cities": {}
+    },
+    "108": {
+      "name": "Viļaka Municipality",
+      "cities": {}
+    },
+    "109": {
+      "name": "Viļāni Municipality",
+      "cities": {}
+    },
+    "110": {
+      "name": "Zilupe Municipality",
+      "cities": {}
+    },
+    "001": {
+      "name": "Aglona Municipality",
+      "cities": {}
+    },
+    "002": {
+      "name": "Aizkraukle Municipality",
+      "cities": {}
+    },
+    "003": {
+      "name": "Aizpute Municipality",
+      "cities": {}
+    },
+    "004": {
+      "name": "Aknīste Municipality",
+      "cities": {}
+    },
+    "005": {
+      "name": "Aloja Municipality",
+      "cities": {}
+    },
+    "006": {
+      "name": "Alsunga Municipality",
+      "cities": {}
+    },
+    "007": {
+      "name": "Alūksne Municipality",
+      "cities": {}
+    },
+    "008": {
+      "name": "Amata Municipality",
+      "cities": {}
+    },
+    "009": {
+      "name": "Ape Municipality",
+      "cities": {}
+    },
+    "010": {
+      "name": "Auce Municipality",
+      "cities": {}
+    },
+    "012": {
+      "name": "Babīte Municipality",
+      "cities": {}
+    },
+    "013": {
+      "name": "Baldone Municipality",
+      "cities": {}
+    },
+    "014": {
+      "name": "Baltinava Municipality",
+      "cities": {}
+    },
+    "015": {
+      "name": "Balvi Municipality",
+      "cities": {}
+    },
+    "016": {
+      "name": "Bauska Municipality",
+      "cities": {}
+    },
+    "017": {
+      "name": "Beverīna Municipality",
+      "cities": {}
+    },
+    "018": {
+      "name": "Brocēni Municipality",
+      "cities": {}
+    },
+    "019": {
+      "name": "Burtnieki Municipality",
+      "cities": {}
+    },
+    "020": {
+      "name": "Carnikava Municipality",
+      "cities": {}
+    },
+    "022": {
+      "name": "Cēsis Municipality",
+      "cities": {}
+    },
+    "021": {
+      "name": "Cesvaine Municipality",
+      "cities": {}
+    },
+    "023": {
+      "name": "Cibla Municipality",
+      "cities": {}
+    },
+    "024": {
+      "name": "Dagda Municipality",
+      "cities": {}
+    },
+    "DGV": {
+      "name": "Daugavpils",
+      "cities": {}
+    },
+    "025": {
+      "name": "Daugavpils Municipality",
+      "cities": {}
+    },
+    "026": {
+      "name": "Dobele Municipality",
+      "cities": {}
+    },
+    "027": {
+      "name": "Dundaga Municipality",
+      "cities": {}
+    },
+    "028": {
+      "name": "Durbe Municipality",
+      "cities": {}
+    },
+    "029": {
+      "name": "Engure Municipality",
+      "cities": {}
+    },
+    "030": {
+      "name": "Ērgļi Municipality",
+      "cities": {}
+    },
+    "031": {
+      "name": "Garkalne Municipality",
+      "cities": {}
+    },
+    "032": {
+      "name": "Grobiņa Municipality",
+      "cities": {}
+    },
+    "033": {
+      "name": "Gulbene Municipality",
+      "cities": {}
+    },
+    "034": {
+      "name": "Iecava Municipality",
+      "cities": {}
+    },
+    "035": {
+      "name": "Ikšķile Municipality",
+      "cities": {}
+    },
+    "036": {
+      "name": "Ilūkste Municipality",
+      "cities": {}
+    },
+    "037": {
+      "name": "Inčukalns Municipality",
+      "cities": {}
+    },
+    "038": {
+      "name": "Jaunjelgava Municipality",
+      "cities": {}
+    },
+    "039": {
+      "name": "Jaunpiebalga Municipality",
+      "cities": {}
+    },
+    "040": {
+      "name": "Jaunpils Municipality",
+      "cities": {}
+    },
+    "JKB": {
+      "name": "Jēkabpils",
+      "cities": {}
+    },
+    "042": {
+      "name": "Jēkabpils Municipality",
+      "cities": {}
+    },
+    "JEL": {
+      "name": "Jelgava",
+      "cities": {}
+    },
+    "041": {
+      "name": "Jelgava Municipality",
+      "cities": {}
+    },
+    "JUR": {
+      "name": "Jūrmala",
+      "cities": {}
+    },
+    "043": {
+      "name": "Kandava Municipality",
+      "cities": {}
+    },
+    "044": {
+      "name": "Kārsava Municipality",
+      "cities": {}
+    },
+    "051": {
+      "name": "Ķegums Municipality",
+      "cities": {}
+    },
+    "052": {
+      "name": "Ķekava Municipality",
+      "cities": {}
+    },
+    "045": {
+      "name": "Kocēni Municipality",
+      "cities": {}
+    },
+    "046": {
+      "name": "Koknese Municipality",
+      "cities": {}
+    },
+    "047": {
+      "name": "Krāslava Municipality",
+      "cities": {}
+    },
+    "048": {
+      "name": "Krimulda Municipality",
+      "cities": {}
+    },
+    "049": {
+      "name": "Krustpils Municipality",
+      "cities": {}
+    },
+    "050": {
+      "name": "Kuldīga Municipality",
+      "cities": {}
+    },
+    "053": {
+      "name": "Lielvārde Municipality",
+      "cities": {}
+    },
+    "LPX": {
+      "name": "Liepāja",
+      "cities": {}
+    },
+    "055": {
+      "name": "Līgatne Municipality",
+      "cities": {}
+    },
+    "054": {
+      "name": "Limbaži Municipality",
+      "cities": {}
+    },
+    "056": {
+      "name": "Līvāni Municipality",
+      "cities": {}
+    },
+    "057": {
+      "name": "Lubāna Municipality",
+      "cities": {}
+    },
+    "058": {
+      "name": "Ludza Municipality",
+      "cities": {}
+    },
+    "059": {
+      "name": "Madona Municipality",
+      "cities": {}
+    },
+    "061": {
+      "name": "Mālpils Municipality",
+      "cities": {}
+    },
+    "062": {
+      "name": "Mārupe Municipality",
+      "cities": {}
+    },
+    "060": {
+      "name": "Mazsalaca Municipality",
+      "cities": {}
+    },
+    "063": {
+      "name": "Mērsrags Municipality",
+      "cities": {}
+    },
+    "064": {
+      "name": "Naukšēni Municipality",
+      "cities": {}
+    },
+    "065": {
+      "name": "Nereta Municipality",
+      "cities": {}
+    },
+    "066": {
+      "name": "Nīca Municipality",
+      "cities": {}
+    },
+    "067": {
+      "name": "Ogre Municipality",
+      "cities": {}
+    },
+    "068": {
+      "name": "Olaine Municipality",
+      "cities": {}
+    },
+    "069": {
+      "name": "Ozolnieki Municipality",
+      "cities": {}
+    },
+    "070": {
+      "name": "Pārgauja Municipality",
+      "cities": {}
+    },
+    "071": {
+      "name": "Pāvilosta Municipality",
+      "cities": {}
+    },
+    "072": {
+      "name": "Pļaviņas Municipality",
+      "cities": {}
+    },
+    "073": {
+      "name": "Preiļi Municipality",
+      "cities": {}
+    },
+    "074": {
+      "name": "Priekule Municipality",
+      "cities": {}
+    },
+    "075": {
+      "name": "Priekuļi Municipality",
+      "cities": {}
+    },
+    "076": {
+      "name": "Rauna Municipality",
+      "cities": {}
+    },
+    "REZ": {
+      "name": "Rēzekne",
+      "cities": {}
+    },
+    "077": {
+      "name": "Rēzekne Municipality",
+      "cities": {}
+    },
+    "078": {
+      "name": "Riebiņi Municipality",
+      "cities": {}
+    },
+    "RIX": {
+      "name": "Riga",
+      "cities": {}
+    },
+    "079": {
+      "name": "Roja Municipality",
+      "cities": {}
+    },
+    "080": {
+      "name": "Ropaži Municipality",
+      "cities": {}
+    },
+    "081": {
+      "name": "Rucava Municipality",
+      "cities": {}
+    },
+    "082": {
+      "name": "Rugāji Municipality",
+      "cities": {}
+    },
+    "084": {
+      "name": "Rūjiena Municipality",
+      "cities": {}
+    },
+    "083": {
+      "name": "Rundāle Municipality",
+      "cities": {}
+    },
+    "085": {
+      "name": "Sala Municipality",
+      "cities": {}
+    },
+    "086": {
+      "name": "Salacgrīva Municipality",
+      "cities": {}
+    },
+    "087": {
+      "name": "Salaspils Municipality",
+      "cities": {}
+    },
+    "088": {
+      "name": "Saldus Municipality",
+      "cities": {}
+    },
+    "089": {
+      "name": "Saulkrasti Municipality",
+      "cities": {}
+    },
+    "090": {
+      "name": "Sēja Municipality",
+      "cities": {}
+    },
+    "091": {
+      "name": "Sigulda Municipality",
+      "cities": {}
+    },
+    "092": {
+      "name": "Skrīveri Municipality",
+      "cities": {}
+    },
+    "093": {
+      "name": "Skrunda Municipality",
+      "cities": {}
+    },
+    "094": {
+      "name": "Smiltene Municipality",
+      "cities": {}
+    },
+    "095": {
+      "name": "Stopiņi Municipality",
+      "cities": {}
+    },
+    "096": {
+      "name": "Strenči Municipality",
+      "cities": {}
+    },
+    "097": {
+      "name": "Talsi Municipality",
+      "cities": {}
+    },
+    "098": {
+      "name": "Tērvete Municipality",
+      "cities": {}
+    },
+    "099": {
+      "name": "Tukums Municipality",
+      "cities": {}
+    },
+    "VMR": {
+      "name": "Valmiera",
+      "cities": {}
+    },
+    "VEN": {
+      "name": "Ventspils",
+      "cities": {}
+    }
+  }
+}

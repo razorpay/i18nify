@@ -1,0 +1,57 @@
+{
+  "country_name": "Saudi Arabia",
+  "states": {
+    "10": {
+      "name": "Najran",
+      "cities": {}
+    },
+    "11": {
+      "name": "Al Bahah",
+      "cities": {}
+    },
+    "12": {
+      "name": "Al Jawf",
+      "cities": {}
+    },
+    "14": {
+      "name": "'Asir",
+      "cities": {}
+    },
+    "03": {
+      "name": "Al Madinah",
+      "cities": {}
+    },
+    "05": {
+      "name": "Al-Qassim",
+      "cities": {}
+    },
+    "04": {
+      "name": "Eastern Province",
+      "cities": {}
+    },
+    "06": {
+      "name": "Ha'il",
+      "cities": {}
+    },
+    "09": {
+      "name": "Jizan",
+      "cities": {}
+    },
+    "02": {
+      "name": "Makkah",
+      "cities": {}
+    },
+    "08": {
+      "name": "Northern Borders",
+      "cities": {}
+    },
+    "01": {
+      "name": "Riyadh",
+      "cities": {}
+    },
+    "07": {
+      "name": "Tabuk",
+      "cities": {}
+    }
+  }
+}

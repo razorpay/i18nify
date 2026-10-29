@@ -1,0 +1,61 @@
+{
+  "country_name": "Senegal",
+  "states": {
+    "DK": {
+      "name": "Dakar",
+      "cities": {}
+    },
+    "DB": {
+      "name": "Diourbel Region",
+      "cities": {}
+    },
+    "FK": {
+      "name": "Fatick",
+      "cities": {}
+    },
+    "KA": {
+      "name": "Kaffrine",
+      "cities": {}
+    },
+    "KL": {
+      "name": "Kaolack",
+      "cities": {}
+    },
+    "KE": {
+      "name": "Kédougou",
+      "cities": {}
+    },
+    "KD": {
+      "name": "Kolda",
+      "cities": {}
+    },
+    "LG": {
+      "name": "Louga",
+      "cities": {}
+    },
+    "MT": {
+      "name": "Matam",
+      "cities": {}
+    },
+    "SL": {
+      "name": "Saint-Louis",
+      "cities": {}
+    },
+    "SE": {
+      "name": "Sédhiou",
+      "cities": {}
+    },
+    "TC": {
+      "name": "Tambacounda Region",
+      "cities": {}
+    },
+    "TH": {
+      "name": "Thiès Region",
+      "cities": {}
+    },
+    "ZG": {
+      "name": "Ziguinchor",
+      "cities": {}
+    }
+  }
+}

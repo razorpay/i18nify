@@ -1,0 +1,81 @@
+{
+  "country_name": "Nepal",
+  "states": {
+    "1": {
+      "name": "Central Region",
+      "cities": {}
+    },
+    "2": {
+      "name": "Mid-Western Region",
+      "cities": {}
+    },
+    "3": {
+      "name": "Western Region",
+      "cities": {}
+    },
+    "4": {
+      "name": "Eastern Development Region",
+      "cities": {}
+    },
+    "5": {
+      "name": "Far-Western Development Region",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Bagmati Zone",
+      "cities": {}
+    },
+    "BH": {
+      "name": "Bheri Zone",
+      "cities": {}
+    },
+    "DH": {
+      "name": "Dhaulagiri Zone",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Gandaki Zone",
+      "cities": {}
+    },
+    "JA": {
+      "name": "Janakpur Zone",
+      "cities": {}
+    },
+    "KA": {
+      "name": "Karnali Zone",
+      "cities": {}
+    },
+    "KO": {
+      "name": "Kosi Zone",
+      "cities": {}
+    },
+    "LU": {
+      "name": "Lumbini Zone",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Mahakali Zone",
+      "cities": {}
+    },
+    "ME": {
+      "name": "Mechi Zone",
+      "cities": {}
+    },
+    "NA": {
+      "name": "Narayani Zone",
+      "cities": {}
+    },
+    "RA": {
+      "name": "Rapti Zone",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Sagarmatha Zone",
+      "cities": {}
+    },
+    "SE": {
+      "name": "Seti Zone",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "country_name": "Luxembourg",
+  "states": {
+    "CA": {
+      "name": "Canton of Capellen",
+      "cities": {}
+    },
+    "CL": {
+      "name": "Canton of Clervaux",
+      "cities": {}
+    },
+    "DI": {
+      "name": "Canton of Diekirch",
+      "cities": {}
+    },
+    "EC": {
+      "name": "Canton of Echternach",
+      "cities": {}
+    },
+    "ES": {
+      "name": "Canton of Esch-sur-Alzette",
+      "cities": {}
+    },
+    "GR": {
+      "name": "Canton of Grevenmacher",
+      "cities": {}
+    },
+    "LU": {
+      "name": "Canton of Luxembourg",
+      "cities": {}
+    },
+    "ME": {
+      "name": "Canton of Mersch",
+      "cities": {}
+    },
+    "RD": {
+      "name": "Canton of Redange",
+      "cities": {}
+    },
+    "RM": {
+      "name": "Canton of Remich",
+      "cities": {}
+    },
+    "VD": {
+      "name": "Canton of Vianden",
+      "cities": {}
+    },
+    "WI": {
+      "name": "Canton of Wiltz",
+      "cities": {}
+    },
+    "D": {
+      "name": "Diekirch District",
+      "cities": {}
+    },
+    "G": {
+      "name": "Grevenmacher District",
+      "cities": {}
+    },
+    "L": {
+      "name": "Luxembourg District",
+      "cities": {}
+    }
+  }
+}

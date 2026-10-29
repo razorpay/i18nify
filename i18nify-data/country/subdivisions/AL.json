@@ -1,0 +1,193 @@
+{
+  "country_name": "Albania",
+  "states": {
+    "10": {
+      "name": "Shkodër County",
+      "cities": {}
+    },
+    "11": {
+      "name": "Tirana County",
+      "cities": {}
+    },
+    "12": {
+      "name": "Vlorë County",
+      "cities": {}
+    },
+    "01": {
+      "name": "Berat County",
+      "cities": {}
+    },
+    "BR": {
+      "name": "Berat District",
+      "cities": {}
+    },
+    "BU": {
+      "name": "Bulqizë District",
+      "cities": {}
+    },
+    "DL": {
+      "name": "Delvinë District",
+      "cities": {}
+    },
+    "DV": {
+      "name": "Devoll District",
+      "cities": {}
+    },
+    "09": {
+      "name": "Dibër County",
+      "cities": {}
+    },
+    "DI": {
+      "name": "Dibër District",
+      "cities": {}
+    },
+    "02": {
+      "name": "Durrës County",
+      "cities": {}
+    },
+    "DR": {
+      "name": "Durrës District",
+      "cities": {}
+    },
+    "03": {
+      "name": "Elbasan County",
+      "cities": {}
+    },
+    "04": {
+      "name": "Fier County",
+      "cities": {}
+    },
+    "FR": {
+      "name": "Fier District",
+      "cities": {}
+    },
+    "05": {
+      "name": "Gjirokastër County",
+      "cities": {}
+    },
+    "GJ": {
+      "name": "Gjirokastër District",
+      "cities": {}
+    },
+    "GR": {
+      "name": "Gramsh District",
+      "cities": {}
+    },
+    "HA": {
+      "name": "Has District",
+      "cities": {}
+    },
+    "KA": {
+      "name": "Kavajë District",
+      "cities": {}
+    },
+    "ER": {
+      "name": "Kolonjë District",
+      "cities": {}
+    },
+    "06": {
+      "name": "Korçë County",
+      "cities": {}
+    },
+    "KO": {
+      "name": "Korçë District",
+      "cities": {}
+    },
+    "KR": {
+      "name": "Krujë District",
+      "cities": {}
+    },
+    "KC": {
+      "name": "Kuçovë District",
+      "cities": {}
+    },
+    "07": {
+      "name": "Kukës County",
+      "cities": {}
+    },
+    "KU": {
+      "name": "Kukës District",
+      "cities": {}
+    },
+    "KB": {
+      "name": "Kurbin District",
+      "cities": {}
+    },
+    "08": {
+      "name": "Lezhë County",
+      "cities": {}
+    },
+    "LE": {
+      "name": "Lezhë District",
+      "cities": {}
+    },
+    "LB": {
+      "name": "Librazhd District",
+      "cities": {}
+    },
+    "LU": {
+      "name": "Lushnjë District",
+      "cities": {}
+    },
+    "MM": {
+      "name": "Malësi e Madhe District",
+      "cities": {}
+    },
+    "MK": {
+      "name": "Mallakastër District",
+      "cities": {}
+    },
+    "MT": {
+      "name": "Mat District",
+      "cities": {}
+    },
+    "MR": {
+      "name": "Mirditë District",
+      "cities": {}
+    },
+    "PQ": {
+      "name": "Peqin District",
+      "cities": {}
+    },
+    "PR": {
+      "name": "Përmet District",
+      "cities": {}
+    },
+    "PG": {
+      "name": "Pogradec District",
+      "cities": {}
+    },
+    "PU": {
+      "name": "Pukë District",
+      "cities": {}
+    },
+    "SR": {
+      "name": "Sarandë District",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Shkodër District",
+      "cities": {}
+    },
+    "SK": {
+      "name": "Skrapar District",
+      "cities": {}
+    },
+    "TE": {
+      "name": "Tepelenë District",
+      "cities": {}
+    },
+    "TR": {
+      "name": "Tirana District",
+      "cities": {}
+    },
+    "TP": {
+      "name": "Tropojë District",
+      "cities": {}
+    },
+    "VL": {
+      "name": "Vlorë District",
+      "cities": {}
+    }
+  }
+}

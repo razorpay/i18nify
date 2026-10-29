@@ -1,0 +1,129 @@
+{
+  "country_name": "Dominican Republic",
+  "states": {
+    "10": {
+      "name": "Independencia",
+      "cities": {}
+    },
+    "11": {
+      "name": "La Altagracia Province",
+      "cities": {}
+    },
+    "12": {
+      "name": "La Romana Province",
+      "cities": {}
+    },
+    "13": {
+      "name": "La Vega Province",
+      "cities": {}
+    },
+    "14": {
+      "name": "María Trinidad Sánchez Province",
+      "cities": {}
+    },
+    "15": {
+      "name": "Monte Cristi Province",
+      "cities": {}
+    },
+    "16": {
+      "name": "Pedernales Province",
+      "cities": {}
+    },
+    "17": {
+      "name": "Peravia Province",
+      "cities": {}
+    },
+    "18": {
+      "name": "Puerto Plata Province",
+      "cities": {}
+    },
+    "19": {
+      "name": "Hermanas Mirabal Province",
+      "cities": {}
+    },
+    "20": {
+      "name": "Samaná Province",
+      "cities": {}
+    },
+    "21": {
+      "name": "San Cristóbal Province",
+      "cities": {}
+    },
+    "22": {
+      "name": "San Juan Province",
+      "cities": {}
+    },
+    "23": {
+      "name": "San Pedro de Macorís",
+      "cities": {}
+    },
+    "24": {
+      "name": "Sánchez Ramírez Province",
+      "cities": {}
+    },
+    "25": {
+      "name": "Santiago Province",
+      "cities": {}
+    },
+    "26": {
+      "name": "Santiago Rodríguez Province",
+      "cities": {}
+    },
+    "27": {
+      "name": "Valverde Province",
+      "cities": {}
+    },
+    "28": {
+      "name": "Monseñor Nouel Province",
+      "cities": {}
+    },
+    "29": {
+      "name": "Monte Plata Province",
+      "cities": {}
+    },
+    "30": {
+      "name": "Hato Mayor Province",
+      "cities": {}
+    },
+    "31": {
+      "name": "San José de Ocoa Province",
+      "cities": {}
+    },
+    "32": {
+      "name": "Santo Domingo Province",
+      "cities": {}
+    },
+    "02": {
+      "name": "Azua Province",
+      "cities": {}
+    },
+    "03": {
+      "name": "Baoruco Province",
+      "cities": {}
+    },
+    "04": {
+      "name": "Barahona Province",
+      "cities": {}
+    },
+    "05": {
+      "name": "Dajabón Province",
+      "cities": {}
+    },
+    "01": {
+      "name": "Distrito Nacional",
+      "cities": {}
+    },
+    "06": {
+      "name": "Duarte Province",
+      "cities": {}
+    },
+    "08": {
+      "name": "El Seibo Province",
+      "cities": {}
+    },
+    "09": {
+      "name": "Espaillat Province",
+      "cities": {}
+    }
+  }
+}

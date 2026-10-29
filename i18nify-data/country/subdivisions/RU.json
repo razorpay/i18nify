@@ -1,0 +1,341 @@
+{
+  "country_name": "Russia",
+  "states": {
+    "ALT": {
+      "name": "Altai Krai",
+      "cities": {}
+    },
+    "AL": {
+      "name": "Altai Republic",
+      "cities": {}
+    },
+    "AMU": {
+      "name": "Amur Oblast",
+      "cities": {}
+    },
+    "ARK": {
+      "name": "Arkhangelsk",
+      "cities": {}
+    },
+    "AST": {
+      "name": "Astrakhan Oblast",
+      "cities": {}
+    },
+    "BEL": {
+      "name": "Belgorod Oblast",
+      "cities": {}
+    },
+    "BRY": {
+      "name": "Bryansk Oblast",
+      "cities": {}
+    },
+    "CE": {
+      "name": "Chechen Republic",
+      "cities": {}
+    },
+    "CHE": {
+      "name": "Chelyabinsk Oblast",
+      "cities": {}
+    },
+    "CHU": {
+      "name": "Chukotka Autonomous Okrug",
+      "cities": {}
+    },
+    "CU": {
+      "name": "Chuvash Republic",
+      "cities": {}
+    },
+    "IRK": {
+      "name": "Irkutsk",
+      "cities": {}
+    },
+    "IVA": {
+      "name": "Ivanovo Oblast",
+      "cities": {}
+    },
+    "YEV": {
+      "name": "Jewish Autonomous Oblast",
+      "cities": {}
+    },
+    "KB": {
+      "name": "Kabardino-Balkar Republic",
+      "cities": {}
+    },
+    "KGD": {
+      "name": "Kaliningrad",
+      "cities": {}
+    },
+    "KLU": {
+      "name": "Kaluga Oblast",
+      "cities": {}
+    },
+    "KAM": {
+      "name": "Kamchatka Krai",
+      "cities": {}
+    },
+    "KC": {
+      "name": "Karachay-Cherkess Republic",
+      "cities": {}
+    },
+    "KEM": {
+      "name": "Kemerovo Oblast",
+      "cities": {}
+    },
+    "KHA": {
+      "name": "Khabarovsk Krai",
+      "cities": {}
+    },
+    "KHM": {
+      "name": "Khanty-Mansi Autonomous Okrug",
+      "cities": {}
+    },
+    "KIR": {
+      "name": "Kirov Oblast",
+      "cities": {}
+    },
+    "KO": {
+      "name": "Komi Republic",
+      "cities": {}
+    },
+    "KOS": {
+      "name": "Kostroma Oblast",
+      "cities": {}
+    },
+    "KDA": {
+      "name": "Krasnodar Krai",
+      "cities": {}
+    },
+    "KYA": {
+      "name": "Krasnoyarsk Krai",
+      "cities": {}
+    },
+    "KGN": {
+      "name": "Kurgan Oblast",
+      "cities": {}
+    },
+    "KRS": {
+      "name": "Kursk Oblast",
+      "cities": {}
+    },
+    "LEN": {
+      "name": "Leningrad Oblast",
+      "cities": {}
+    },
+    "LIP": {
+      "name": "Lipetsk Oblast",
+      "cities": {}
+    },
+    "MAG": {
+      "name": "Magadan Oblast",
+      "cities": {}
+    },
+    "ME": {
+      "name": "Mari El Republic",
+      "cities": {}
+    },
+    "MOW": {
+      "name": "Moscow",
+      "cities": {}
+    },
+    "MOS": {
+      "name": "Moscow Oblast",
+      "cities": {}
+    },
+    "MUR": {
+      "name": "Murmansk Oblast",
+      "cities": {}
+    },
+    "NEN": {
+      "name": "Nenets Autonomous Okrug",
+      "cities": {}
+    },
+    "NIZ": {
+      "name": "Nizhny Novgorod Oblast",
+      "cities": {}
+    },
+    "NGR": {
+      "name": "Novgorod Oblast",
+      "cities": {}
+    },
+    "NVS": {
+      "name": "Novosibirsk",
+      "cities": {}
+    },
+    "OMS": {
+      "name": "Omsk Oblast",
+      "cities": {}
+    },
+    "ORE": {
+      "name": "Orenburg Oblast",
+      "cities": {}
+    },
+    "ORL": {
+      "name": "Oryol Oblast",
+      "cities": {}
+    },
+    "PNZ": {
+      "name": "Penza Oblast",
+      "cities": {}
+    },
+    "PER": {
+      "name": "Perm Krai",
+      "cities": {}
+    },
+    "PRI": {
+      "name": "Primorsky Krai",
+      "cities": {}
+    },
+    "PSK": {
+      "name": "Pskov Oblast",
+      "cities": {}
+    },
+    "AD": {
+      "name": "Republic of Adygea",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Republic of Bashkortostan",
+      "cities": {}
+    },
+    "BU": {
+      "name": "Republic of Buryatia",
+      "cities": {}
+    },
+    "DA": {
+      "name": "Republic of Dagestan",
+      "cities": {}
+    },
+    "IN": {
+      "name": "Republic of Ingushetia",
+      "cities": {}
+    },
+    "KL": {
+      "name": "Republic of Kalmykia",
+      "cities": {}
+    },
+    "KR": {
+      "name": "Republic of Karelia",
+      "cities": {}
+    },
+    "KK": {
+      "name": "Republic of Khakassia",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Republic of Mordovia",
+      "cities": {}
+    },
+    "SE": {
+      "name": "Republic of North Ossetia-Alania",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Republic of Tatarstan",
+      "cities": {}
+    },
+    "ROS": {
+      "name": "Rostov Oblast",
+      "cities": {}
+    },
+    "RYA": {
+      "name": "Ryazan Oblast",
+      "cities": {}
+    },
+    "SPE": {
+      "name": "Saint Petersburg",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Sakha Republic",
+      "cities": {}
+    },
+    "SAK": {
+      "name": "Sakhalin",
+      "cities": {}
+    },
+    "SAM": {
+      "name": "Samara Oblast",
+      "cities": {}
+    },
+    "SAR": {
+      "name": "Saratov Oblast",
+      "cities": {}
+    },
+    "UA-40": {
+      "name": "Sevastopol",
+      "cities": {}
+    },
+    "SMO": {
+      "name": "Smolensk Oblast",
+      "cities": {}
+    },
+    "STA": {
+      "name": "Stavropol Krai",
+      "cities": {}
+    },
+    "SVE": {
+      "name": "Sverdlovsk",
+      "cities": {}
+    },
+    "TAM": {
+      "name": "Tambov Oblast",
+      "cities": {}
+    },
+    "TOM": {
+      "name": "Tomsk Oblast",
+      "cities": {}
+    },
+    "TUL": {
+      "name": "Tula Oblast",
+      "cities": {}
+    },
+    "TY": {
+      "name": "Tuva Republic",
+      "cities": {}
+    },
+    "TVE": {
+      "name": "Tver Oblast",
+      "cities": {}
+    },
+    "TYU": {
+      "name": "Tyumen Oblast",
+      "cities": {}
+    },
+    "UD": {
+      "name": "Udmurt Republic",
+      "cities": {}
+    },
+    "ULY": {
+      "name": "Ulyanovsk Oblast",
+      "cities": {}
+    },
+    "VLA": {
+      "name": "Vladimir Oblast",
+      "cities": {}
+    },
+    "VGG": {
+      "name": "Volgograd Oblast",
+      "cities": {}
+    },
+    "VLG": {
+      "name": "Vologda Oblast",
+      "cities": {}
+    },
+    "VOR": {
+      "name": "Voronezh Oblast",
+      "cities": {}
+    },
+    "YAN": {
+      "name": "Yamalo-Nenets Autonomous Okrug",
+      "cities": {}
+    },
+    "YAR": {
+      "name": "Yaroslavl Oblast",
+      "cities": {}
+    },
+    "ZAB": {
+      "name": "Zabaykalsky Krai",
+      "cities": {}
+    }
+  }
+}

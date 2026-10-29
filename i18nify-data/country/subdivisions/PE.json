@@ -1,0 +1,105 @@
+{
+  "country_name": "Peru",
+  "states": {
+    "AMA": {
+      "name": "Amazonas",
+      "cities": {}
+    },
+    "ANC": {
+      "name": "Áncash",
+      "cities": {}
+    },
+    "APU": {
+      "name": "Apurímac",
+      "cities": {}
+    },
+    "ARE": {
+      "name": "Arequipa",
+      "cities": {}
+    },
+    "AYA": {
+      "name": "Ayacucho",
+      "cities": {}
+    },
+    "CAJ": {
+      "name": "Cajamarca",
+      "cities": {}
+    },
+    "CAL": {
+      "name": "Callao",
+      "cities": {}
+    },
+    "CUS": {
+      "name": "Cusco",
+      "cities": {}
+    },
+    "HUV": {
+      "name": "Huancavelica",
+      "cities": {}
+    },
+    "HUC": {
+      "name": "Huanuco",
+      "cities": {}
+    },
+    "ICA": {
+      "name": "Ica",
+      "cities": {}
+    },
+    "JUN": {
+      "name": "Junín",
+      "cities": {}
+    },
+    "LAL": {
+      "name": "La Libertad",
+      "cities": {}
+    },
+    "LAM": {
+      "name": "Lambayeque",
+      "cities": {}
+    },
+    "LIM": {
+      "name": "Lima",
+      "cities": {}
+    },
+    "LOR": {
+      "name": "Loreto",
+      "cities": {}
+    },
+    "MDD": {
+      "name": "Madre de Dios",
+      "cities": {}
+    },
+    "MOQ": {
+      "name": "Moquegua",
+      "cities": {}
+    },
+    "PAS": {
+      "name": "Pasco",
+      "cities": {}
+    },
+    "PIU": {
+      "name": "Piura",
+      "cities": {}
+    },
+    "PUN": {
+      "name": "Puno",
+      "cities": {}
+    },
+    "SAM": {
+      "name": "San Martín",
+      "cities": {}
+    },
+    "TAC": {
+      "name": "Tacna",
+      "cities": {}
+    },
+    "TUM": {
+      "name": "Tumbes",
+      "cities": {}
+    },
+    "UCA": {
+      "name": "Ucayali",
+      "cities": {}
+    }
+  }
+}

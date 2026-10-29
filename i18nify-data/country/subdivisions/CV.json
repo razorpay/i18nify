@@ -1,0 +1,97 @@
+{
+  "country_name": "Cape Verde",
+  "states": {
+    "B": {
+      "name": "Barlavento Islands",
+      "cities": {}
+    },
+    "BV": {
+      "name": "Boa Vista",
+      "cities": {}
+    },
+    "BR": {
+      "name": "Brava",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Maio Municipality",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Mosteiros",
+      "cities": {}
+    },
+    "PA": {
+      "name": "Paul",
+      "cities": {}
+    },
+    "PN": {
+      "name": "Porto Novo",
+      "cities": {}
+    },
+    "PR": {
+      "name": "Praia",
+      "cities": {}
+    },
+    "RB": {
+      "name": "Ribeira Brava Municipality",
+      "cities": {}
+    },
+    "RG": {
+      "name": "Ribeira Grande",
+      "cities": {}
+    },
+    "RS": {
+      "name": "Ribeira Grande de Santiago",
+      "cities": {}
+    },
+    "SL": {
+      "name": "Sal",
+      "cities": {}
+    },
+    "CA": {
+      "name": "Santa Catarina",
+      "cities": {}
+    },
+    "CF": {
+      "name": "Santa Catarina do Fogo",
+      "cities": {}
+    },
+    "CR": {
+      "name": "Santa Cruz",
+      "cities": {}
+    },
+    "SD": {
+      "name": "São Domingos",
+      "cities": {}
+    },
+    "SF": {
+      "name": "São Filipe",
+      "cities": {}
+    },
+    "SO": {
+      "name": "São Lourenço dos Órgãos",
+      "cities": {}
+    },
+    "SM": {
+      "name": "São Miguel",
+      "cities": {}
+    },
+    "SV": {
+      "name": "São Vicente",
+      "cities": {}
+    },
+    "S": {
+      "name": "Sotavento Islands",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Tarrafal",
+      "cities": {}
+    },
+    "TS": {
+      "name": "Tarrafal de São Nicolau",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "country_name": "Cuba",
+  "states": {
+    "10": {
+      "name": "Las Tunas Province",
+      "cities": {}
+    },
+    "11": {
+      "name": "Holguín Province",
+      "cities": {}
+    },
+    "12": {
+      "name": "Granma Province",
+      "cities": {}
+    },
+    "13": {
+      "name": "Santiago de Cuba Province",
+      "cities": {}
+    },
+    "14": {
+      "name": "Guantánamo Province",
+      "cities": {}
+    },
+    "15": {
+      "name": "Artemisa Province",
+      "cities": {}
+    },
+    "16": {
+      "name": "Mayabeque Province",
+      "cities": {}
+    },
+    "99": {
+      "name": "Isla de la Juventud",
+      "cities": {}
+    },
+    "09": {
+      "name": "Camagüey Province",
+      "cities": {}
+    },
+    "08": {
+      "name": "Ciego de Ávila Province",
+      "cities": {}
+    },
+    "06": {
+      "name": "Cienfuegos Province",
+      "cities": {}
+    },
+    "03": {
+      "name": "Havana Province",
+      "cities": {}
+    },
+    "04": {
+      "name": "Matanzas Province",
+      "cities": {}
+    },
+    "01": {
+      "name": "Pinar del Río Province",
+      "cities": {}
+    },
+    "07": {
+      "name": "Sancti Spíritus Province",
+      "cities": {}
+    },
+    "05": {
+      "name": "Villa Clara Province",
+      "cities": {}
+    }
+  }
+}

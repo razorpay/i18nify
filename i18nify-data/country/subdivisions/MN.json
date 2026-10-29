@@ -1,0 +1,89 @@
+{
+  "country_name": "Mongolia",
+  "states": {
+    "073": {
+      "name": "Arkhangai Province",
+      "cities": {}
+    },
+    "071": {
+      "name": "Bayan-Ölgii Province",
+      "cities": {}
+    },
+    "069": {
+      "name": "Bayankhongor Province",
+      "cities": {}
+    },
+    "067": {
+      "name": "Bulgan Province",
+      "cities": {}
+    },
+    "037": {
+      "name": "Darkhan-Uul Province",
+      "cities": {}
+    },
+    "061": {
+      "name": "Dornod Province",
+      "cities": {}
+    },
+    "063": {
+      "name": "Dornogovi Province",
+      "cities": {}
+    },
+    "059": {
+      "name": "Dundgovi Province",
+      "cities": {}
+    },
+    "065": {
+      "name": "Govi-Altai Province",
+      "cities": {}
+    },
+    "064": {
+      "name": "Govisümber Province",
+      "cities": {}
+    },
+    "039": {
+      "name": "Khentii Province",
+      "cities": {}
+    },
+    "043": {
+      "name": "Khovd Province",
+      "cities": {}
+    },
+    "041": {
+      "name": "Khövsgöl Province",
+      "cities": {}
+    },
+    "053": {
+      "name": "Ömnögovi Province",
+      "cities": {}
+    },
+    "035": {
+      "name": "Orkhon Province",
+      "cities": {}
+    },
+    "055": {
+      "name": "Övörkhangai Province",
+      "cities": {}
+    },
+    "049": {
+      "name": "Selenge Province",
+      "cities": {}
+    },
+    "051": {
+      "name": "Sükhbaatar Province",
+      "cities": {}
+    },
+    "047": {
+      "name": "Töv Province",
+      "cities": {}
+    },
+    "046": {
+      "name": "Uvs Province",
+      "cities": {}
+    },
+    "057": {
+      "name": "Zavkhan Province",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "country_name": "Brunei",
+  "states": {
+    "BE": {
+      "name": "Belait District",
+      "cities": {}
+    },
+    "BM": {
+      "name": "Brunei-Muara District",
+      "cities": {}
+    },
+    "TE": {
+      "name": "Temburong District",
+      "cities": {}
+    },
+    "TU": {
+      "name": "Tutong District",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "country_name": "Laos",
+  "states": {
+    "AT": {
+      "name": "Attapeu Province",
+      "cities": {}
+    },
+    "BK": {
+      "name": "Bokeo Province",
+      "cities": {}
+    },
+    "BL": {
+      "name": "Bolikhamsai Province",
+      "cities": {}
+    },
+    "CH": {
+      "name": "Champasak Province",
+      "cities": {}
+    },
+    "HO": {
+      "name": "Houaphanh Province",
+      "cities": {}
+    },
+    "KH": {
+      "name": "Khammouane Province",
+      "cities": {}
+    },
+    "LM": {
+      "name": "Luang Namtha Province",
+      "cities": {}
+    },
+    "LP": {
+      "name": "Luang Prabang Province",
+      "cities": {}
+    },
+    "OU": {
+      "name": "Oudomxay Province",
+      "cities": {}
+    },
+    "PH": {
+      "name": "Phongsaly Province",
+      "cities": {}
+    },
+    "XA": {
+      "name": "Sainyabuli Province",
+      "cities": {}
+    },
+    "SL": {
+      "name": "Salavan Province",
+      "cities": {}
+    },
+    "SV": {
+      "name": "Savannakhet Province",
+      "cities": {}
+    },
+    "XE": {
+      "name": "Sekong Province",
+      "cities": {}
+    },
+    "VT": {
+      "name": "Vientiane Prefecture",
+      "cities": {}
+    },
+    "VI": {
+      "name": "Vientiane Province",
+      "cities": {}
+    },
+    "XN": {
+      "name": "Xaisomboun",
+      "cities": {}
+    },
+    "XS": {
+      "name": "Xaisomboun Province",
+      "cities": {}
+    },
+    "XI": {
+      "name": "Xiangkhouang Province",
+      "cities": {}
+    }
+  }
+}

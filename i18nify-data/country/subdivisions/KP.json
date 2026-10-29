@@ -1,0 +1,49 @@
+{
+  "country_name": "North Korea",
+  "states": {
+    "10": {
+      "name": "Ryanggang Province",
+      "cities": {}
+    },
+    "13": {
+      "name": "Rason",
+      "cities": {}
+    },
+    "04": {
+      "name": "Chagang Province",
+      "cities": {}
+    },
+    "07": {
+      "name": "Kangwon Province",
+      "cities": {}
+    },
+    "09": {
+      "name": "North Hamgyong Province",
+      "cities": {}
+    },
+    "06": {
+      "name": "North Hwanghae Province",
+      "cities": {}
+    },
+    "03": {
+      "name": "North Pyongan Province",
+      "cities": {}
+    },
+    "01": {
+      "name": "Pyongyang",
+      "cities": {}
+    },
+    "08": {
+      "name": "South Hamgyong Province",
+      "cities": {}
+    },
+    "05": {
+      "name": "South Hwanghae Province",
+      "cities": {}
+    },
+    "02": {
+      "name": "South Pyongan Province",
+      "cities": {}
+    }
+  }
+}

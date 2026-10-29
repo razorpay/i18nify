@@ -1,0 +1,73 @@
+{
+  "country_name": "Mauritius",
+  "states": {
+    "AG": {
+      "name": "Agaléga",
+      "cities": {}
+    },
+    "BR": {
+      "name": "Beau Bassin-Rose Hill",
+      "cities": {}
+    },
+    "CC": {
+      "name": "Cargados Carajos",
+      "cities": {}
+    },
+    "CU": {
+      "name": "Curepipe",
+      "cities": {}
+    },
+    "FL": {
+      "name": "Flacq District",
+      "cities": {}
+    },
+    "GP": {
+      "name": "Grand Port District",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Moka District",
+      "cities": {}
+    },
+    "PA": {
+      "name": "Pamplemousses District",
+      "cities": {}
+    },
+    "PW": {
+      "name": "Plaines Wilhems District",
+      "cities": {}
+    },
+    "PU": {
+      "name": "Port Louis",
+      "cities": {}
+    },
+    "PL": {
+      "name": "Port Louis District",
+      "cities": {}
+    },
+    "QB": {
+      "name": "Quatre Bornes",
+      "cities": {}
+    },
+    "RR": {
+      "name": "Rivière du Rempart District",
+      "cities": {}
+    },
+    "BL": {
+      "name": "Rivière Noire District",
+      "cities": {}
+    },
+    "RO": {
+      "name": "Rodrigues",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Savanne District",
+      "cities": {}
+    },
+    "VP": {
+      "name": "Vacoas-Phoenix",
+      "cities": {}
+    }
+  }
+}

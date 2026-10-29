@@ -1,0 +1,113 @@
+{
+  "country_name": "Brazil",
+  "states": {
+    "AC": {
+      "name": "Acre",
+      "cities": {}
+    },
+    "AL": {
+      "name": "Alagoas",
+      "cities": {}
+    },
+    "AP": {
+      "name": "Amapá",
+      "cities": {}
+    },
+    "AM": {
+      "name": "Amazonas",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Bahia",
+      "cities": {}
+    },
+    "CE": {
+      "name": "Ceará",
+      "cities": {}
+    },
+    "DF": {
+      "name": "Distrito Federal",
+      "cities": {}
+    },
+    "ES": {
+      "name": "Espírito Santo",
+      "cities": {}
+    },
+    "GO": {
+      "name": "Goiás",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Maranhão",
+      "cities": {}
+    },
+    "MT": {
+      "name": "Mato Grosso",
+      "cities": {}
+    },
+    "MS": {
+      "name": "Mato Grosso do Sul",
+      "cities": {}
+    },
+    "MG": {
+      "name": "Minas Gerais",
+      "cities": {}
+    },
+    "PA": {
+      "name": "Pará",
+      "cities": {}
+    },
+    "PB": {
+      "name": "Paraíba",
+      "cities": {}
+    },
+    "PR": {
+      "name": "Paraná",
+      "cities": {}
+    },
+    "PE": {
+      "name": "Pernambuco",
+      "cities": {}
+    },
+    "PI": {
+      "name": "Piauí",
+      "cities": {}
+    },
+    "RJ": {
+      "name": "Rio de Janeiro",
+      "cities": {}
+    },
+    "RN": {
+      "name": "Rio Grande do Norte",
+      "cities": {}
+    },
+    "RS": {
+      "name": "Rio Grande do Sul",
+      "cities": {}
+    },
+    "RO": {
+      "name": "Rondônia",
+      "cities": {}
+    },
+    "RR": {
+      "name": "Roraima",
+      "cities": {}
+    },
+    "SC": {
+      "name": "Santa Catarina",
+      "cities": {}
+    },
+    "SP": {
+      "name": "São Paulo",
+      "cities": {}
+    },
+    "SE": {
+      "name": "Sergipe",
+      "cities": {}
+    },
+    "TO": {
+      "name": "Tocantins",
+      "cities": {}
+    }
+  }
+}

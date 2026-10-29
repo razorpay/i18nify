@@ -1,0 +1,89 @@
+{
+  "country_name": "Papua new Guinea",
+  "states": {
+    "NSB": {
+      "name": "Bougainville",
+      "cities": {}
+    },
+    "CPM": {
+      "name": "Central Province",
+      "cities": {}
+    },
+    "CPK": {
+      "name": "Chimbu Province",
+      "cities": {}
+    },
+    "EBR": {
+      "name": "East New Britain",
+      "cities": {}
+    },
+    "EHG": {
+      "name": "Eastern Highlands Province",
+      "cities": {}
+    },
+    "EPW": {
+      "name": "Enga Province",
+      "cities": {}
+    },
+    "GPK": {
+      "name": "Gulf",
+      "cities": {}
+    },
+    "HLA": {
+      "name": "Hela",
+      "cities": {}
+    },
+    "JWK": {
+      "name": "Jiwaka Province",
+      "cities": {}
+    },
+    "MPM": {
+      "name": "Madang Province",
+      "cities": {}
+    },
+    "MRL": {
+      "name": "Manus Province",
+      "cities": {}
+    },
+    "MBA": {
+      "name": "Milne Bay Province",
+      "cities": {}
+    },
+    "MPL": {
+      "name": "Morobe Province",
+      "cities": {}
+    },
+    "NIK": {
+      "name": "New Ireland Province",
+      "cities": {}
+    },
+    "NPP": {
+      "name": "Oro Province",
+      "cities": {}
+    },
+    "NCD": {
+      "name": "Port Moresby",
+      "cities": {}
+    },
+    "SAN": {
+      "name": "Sandaun Province",
+      "cities": {}
+    },
+    "SHM": {
+      "name": "Southern Highlands Province",
+      "cities": {}
+    },
+    "WBK": {
+      "name": "West New Britain Province",
+      "cities": {}
+    },
+    "WHM": {
+      "name": "Western Highlands Province",
+      "cities": {}
+    },
+    "WPD": {
+      "name": "Western Province",
+      "cities": {}
+    }
+  }
+}

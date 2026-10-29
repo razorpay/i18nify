@@ -1,0 +1,21 @@
+{
+  "country_name": "Swaziland",
+  "states": {
+    "HH": {
+      "name": "Hhohho District",
+      "cities": {}
+    },
+    "LU": {
+      "name": "Lubombo District",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Manzini District",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Shiselweni District",
+      "cities": {}
+    }
+  }
+}

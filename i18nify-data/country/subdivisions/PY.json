@@ -1,0 +1,73 @@
+{
+  "country_name": "Paraguay",
+  "states": {
+    "1": {
+      "name": "Concepción Department",
+      "cities": {}
+    },
+    "2": {
+      "name": "San Pedro Department",
+      "cities": {}
+    },
+    "3": {
+      "name": "Cordillera Department",
+      "cities": {}
+    },
+    "4": {
+      "name": "Guairá Department",
+      "cities": {}
+    },
+    "5": {
+      "name": "Caaguazú",
+      "cities": {}
+    },
+    "6": {
+      "name": "Caazapá",
+      "cities": {}
+    },
+    "7": {
+      "name": "Itapúa",
+      "cities": {}
+    },
+    "8": {
+      "name": "Misiones Department",
+      "cities": {}
+    },
+    "9": {
+      "name": "Paraguarí Department",
+      "cities": {}
+    },
+    "10": {
+      "name": "Alto Paraná Department",
+      "cities": {}
+    },
+    "11": {
+      "name": "Central Department",
+      "cities": {}
+    },
+    "12": {
+      "name": "Ñeembucú Department",
+      "cities": {}
+    },
+    "13": {
+      "name": "Amambay Department",
+      "cities": {}
+    },
+    "14": {
+      "name": "Canindeyú",
+      "cities": {}
+    },
+    "15": {
+      "name": "Presidente Hayes Department",
+      "cities": {}
+    },
+    "16": {
+      "name": "Alto Paraguay Department",
+      "cities": {}
+    },
+    "19": {
+      "name": "Boquerón Department",
+      "cities": {}
+    }
+  }
+}

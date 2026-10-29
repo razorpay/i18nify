@@ -1,0 +1,45 @@
+{
+  "country_name": "Suriname",
+  "states": {
+    "BR": {
+      "name": "Brokopondo District",
+      "cities": {}
+    },
+    "CM": {
+      "name": "Commewijne District",
+      "cities": {}
+    },
+    "CR": {
+      "name": "Coronie District",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Marowijne District",
+      "cities": {}
+    },
+    "NI": {
+      "name": "Nickerie District",
+      "cities": {}
+    },
+    "PR": {
+      "name": "Para District",
+      "cities": {}
+    },
+    "PM": {
+      "name": "Paramaribo District",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Saramacca District",
+      "cities": {}
+    },
+    "SI": {
+      "name": "Sipaliwini District",
+      "cities": {}
+    },
+    "WA": {
+      "name": "Wanica District",
+      "cities": {}
+    }
+  }
+}

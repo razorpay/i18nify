@@ -1,0 +1,257 @@
+{
+  "country_name": "Vietnam",
+  "states": {
+    "13": {
+      "name": "Quảng Ninh",
+      "cities": {}
+    },
+    "14": {
+      "name": "Hòa Bình",
+      "cities": {}
+    },
+    "18": {
+      "name": "Ninh Bình",
+      "cities": {}
+    },
+    "20": {
+      "name": "Thái Bình",
+      "cities": {}
+    },
+    "21": {
+      "name": "Thanh Hóa",
+      "cities": {}
+    },
+    "22": {
+      "name": "Nghệ An",
+      "cities": {}
+    },
+    "23": {
+      "name": "Hà Tĩnh",
+      "cities": {}
+    },
+    "24": {
+      "name": "Quảng Bình",
+      "cities": {}
+    },
+    "25": {
+      "name": "Quảng Trị",
+      "cities": {}
+    },
+    "26": {
+      "name": "Thừa Thiên-Huế",
+      "cities": {}
+    },
+    "27": {
+      "name": "Quảng Nam",
+      "cities": {}
+    },
+    "28": {
+      "name": "Kon Tum",
+      "cities": {}
+    },
+    "29": {
+      "name": "Quảng Ngãi",
+      "cities": {}
+    },
+    "30": {
+      "name": "Gia Lai",
+      "cities": {}
+    },
+    "31": {
+      "name": "Bình Định",
+      "cities": {}
+    },
+    "32": {
+      "name": "Phú Yên",
+      "cities": {}
+    },
+    "33": {
+      "name": "Đắk Lắk",
+      "cities": {}
+    },
+    "34": {
+      "name": "Khánh Hòa",
+      "cities": {}
+    },
+    "35": {
+      "name": "Lâm Đồng",
+      "cities": {}
+    },
+    "36": {
+      "name": "Ninh Thuận",
+      "cities": {}
+    },
+    "37": {
+      "name": "Tây Ninh",
+      "cities": {}
+    },
+    "39": {
+      "name": "Đồng Nai",
+      "cities": {}
+    },
+    "40": {
+      "name": "Bình Thuận",
+      "cities": {}
+    },
+    "41": {
+      "name": "Long An",
+      "cities": {}
+    },
+    "43": {
+      "name": "Bà Rịa-Vũng Tàu",
+      "cities": {}
+    },
+    "44": {
+      "name": "An Giang",
+      "cities": {}
+    },
+    "45": {
+      "name": "Đồng Tháp",
+      "cities": {}
+    },
+    "46": {
+      "name": "Tiền Giang",
+      "cities": {}
+    },
+    "47": {
+      "name": "Kiên Giang",
+      "cities": {}
+    },
+    "49": {
+      "name": "Vĩnh Long",
+      "cities": {}
+    },
+    "50": {
+      "name": "Bến Tre",
+      "cities": {}
+    },
+    "51": {
+      "name": "Trà Vinh",
+      "cities": {}
+    },
+    "52": {
+      "name": "Sóc Trăng",
+      "cities": {}
+    },
+    "53": {
+      "name": "Bắc Kạn",
+      "cities": {}
+    },
+    "54": {
+      "name": "Bắc Giang",
+      "cities": {}
+    },
+    "55": {
+      "name": "Bạc Liêu",
+      "cities": {}
+    },
+    "56": {
+      "name": "Bắc Ninh",
+      "cities": {}
+    },
+    "57": {
+      "name": "Bình Dương",
+      "cities": {}
+    },
+    "58": {
+      "name": "Bình Phước",
+      "cities": {}
+    },
+    "59": {
+      "name": "Cà Mau",
+      "cities": {}
+    },
+    "61": {
+      "name": "Hải Dương",
+      "cities": {}
+    },
+    "63": {
+      "name": "Hà Nam",
+      "cities": {}
+    },
+    "66": {
+      "name": "Hưng Yên",
+      "cities": {}
+    },
+    "67": {
+      "name": "Nam Định",
+      "cities": {}
+    },
+    "68": {
+      "name": "Phú Thọ",
+      "cities": {}
+    },
+    "69": {
+      "name": "Thái Nguyên",
+      "cities": {}
+    },
+    "70": {
+      "name": "Vĩnh Phúc",
+      "cities": {}
+    },
+    "71": {
+      "name": "Điện Biên",
+      "cities": {}
+    },
+    "72": {
+      "name": "Đắk Nông",
+      "cities": {}
+    },
+    "73": {
+      "name": "Hậu Giang",
+      "cities": {}
+    },
+    "CT": {
+      "name": "Cần Thơ",
+      "cities": {}
+    },
+    "04": {
+      "name": "Cao Bằng",
+      "cities": {}
+    },
+    "DN": {
+      "name": "Đà Nẵng",
+      "cities": {}
+    },
+    "03": {
+      "name": "Hà Giang",
+      "cities": {}
+    },
+    "HN": {
+      "name": "Hà Nội",
+      "cities": {}
+    },
+    "HP": {
+      "name": "Hải Phòng",
+      "cities": {}
+    },
+    "SG": {
+      "name": "Hồ Chí Minh",
+      "cities": {}
+    },
+    "01": {
+      "name": "Lai Châu",
+      "cities": {}
+    },
+    "09": {
+      "name": "Lạng Sơn",
+      "cities": {}
+    },
+    "02": {
+      "name": "Lào Cai",
+      "cities": {}
+    },
+    "05": {
+      "name": "Sơn La",
+      "cities": {}
+    },
+    "07": {
+      "name": "Tuyên Quang",
+      "cities": {}
+    },
+    "06": {
+      "name": "Yên Bái",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "country_name": "Montenegro",
+  "states": {
+    "10": {
+      "name": "Kotor Municipality",
+      "cities": {}
+    },
+    "11": {
+      "name": "Mojkovac Municipality",
+      "cities": {}
+    },
+    "12": {
+      "name": "Nikšić Municipality",
+      "cities": {}
+    },
+    "13": {
+      "name": "Plav Municipality",
+      "cities": {}
+    },
+    "14": {
+      "name": "Pljevlja Municipality",
+      "cities": {}
+    },
+    "15": {
+      "name": "Plužine Municipality",
+      "cities": {}
+    },
+    "16": {
+      "name": "Podgorica Municipality",
+      "cities": {}
+    },
+    "17": {
+      "name": "Rožaje Municipality",
+      "cities": {}
+    },
+    "18": {
+      "name": "Šavnik Municipality",
+      "cities": {}
+    },
+    "19": {
+      "name": "Tivat Municipality",
+      "cities": {}
+    },
+    "20": {
+      "name": "Ulcinj Municipality",
+      "cities": {}
+    },
+    "21": {
+      "name": "Žabljak Municipality",
+      "cities": {}
+    },
+    "22": {
+      "name": "Gusinje Municipality",
+      "cities": {}
+    },
+    "23": {
+      "name": "Petnjica Municipality",
+      "cities": {}
+    },
+    "01": {
+      "name": "Andrijevica Municipality",
+      "cities": {}
+    },
+    "02": {
+      "name": "Bar Municipality",
+      "cities": {}
+    },
+    "03": {
+      "name": "Berane Municipality",
+      "cities": {}
+    },
+    "04": {
+      "name": "Bijelo Polje Municipality",
+      "cities": {}
+    },
+    "05": {
+      "name": "Budva Municipality",
+      "cities": {}
+    },
+    "07": {
+      "name": "Danilovgrad Municipality",
+      "cities": {}
+    },
+    "09": {
+      "name": "Kolašin Municipality",
+      "cities": {}
+    },
+    "06": {
+      "name": "Old Royal Capital Cetinje",
+      "cities": {}
+    }
+  }
+}

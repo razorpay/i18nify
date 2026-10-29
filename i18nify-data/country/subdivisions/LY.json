@@ -1,0 +1,89 @@
+{
+  "country_name": "Libya",
+  "states": {
+    "WA": {
+      "name": "Al Wahat District",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Benghazi",
+      "cities": {}
+    },
+    "DR": {
+      "name": "Derna District",
+      "cities": {}
+    },
+    "GT": {
+      "name": "Ghat District",
+      "cities": {}
+    },
+    "JA": {
+      "name": "Jabal al Akhdar",
+      "cities": {}
+    },
+    "JG": {
+      "name": "Jabal al Gharbi District",
+      "cities": {}
+    },
+    "JI": {
+      "name": "Jafara",
+      "cities": {}
+    },
+    "JU": {
+      "name": "Jufra",
+      "cities": {}
+    },
+    "KF": {
+      "name": "Kufra District",
+      "cities": {}
+    },
+    "MJ": {
+      "name": "Marj District",
+      "cities": {}
+    },
+    "MI": {
+      "name": "Misrata District",
+      "cities": {}
+    },
+    "MB": {
+      "name": "Murqub",
+      "cities": {}
+    },
+    "MQ": {
+      "name": "Murzuq District",
+      "cities": {}
+    },
+    "NL": {
+      "name": "Nalut District",
+      "cities": {}
+    },
+    "NQ": {
+      "name": "Nuqat al Khams",
+      "cities": {}
+    },
+    "SB": {
+      "name": "Sabha District",
+      "cities": {}
+    },
+    "SR": {
+      "name": "Sirte District",
+      "cities": {}
+    },
+    "TB": {
+      "name": "Tripoli District",
+      "cities": {}
+    },
+    "WD": {
+      "name": "Wadi al Hayaa District",
+      "cities": {}
+    },
+    "WS": {
+      "name": "Wadi al Shatii District",
+      "cities": {}
+    },
+    "ZA": {
+      "name": "Zawiya District",
+      "cities": {}
+    }
+  }
+}

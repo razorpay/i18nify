@@ -1,0 +1,61 @@
+{
+  "country_name": "Uzbekistan",
+  "states": {
+    "AN": {
+      "name": "Andijan Region",
+      "cities": {}
+    },
+    "BU": {
+      "name": "Bukhara Region",
+      "cities": {}
+    },
+    "FA": {
+      "name": "Fergana Region",
+      "cities": {}
+    },
+    "JI": {
+      "name": "Jizzakh Region",
+      "cities": {}
+    },
+    "QR": {
+      "name": "Karakalpakstan",
+      "cities": {}
+    },
+    "NG": {
+      "name": "Namangan Region",
+      "cities": {}
+    },
+    "NW": {
+      "name": "Navoiy Region",
+      "cities": {}
+    },
+    "QA": {
+      "name": "Qashqadaryo Region",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Samarqand Region",
+      "cities": {}
+    },
+    "SI": {
+      "name": "Sirdaryo Region",
+      "cities": {}
+    },
+    "SU": {
+      "name": "Surxondaryo Region",
+      "cities": {}
+    },
+    "TK": {
+      "name": "Tashkent",
+      "cities": {}
+    },
+    "TO": {
+      "name": "Tashkent Region",
+      "cities": {}
+    },
+    "XO": {
+      "name": "Xorazm Region",
+      "cities": {}
+    }
+  }
+}

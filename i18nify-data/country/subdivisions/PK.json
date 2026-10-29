@@ -1,0 +1,37 @@
+{
+  "country_name": "Pakistan",
+  "states": {
+    "JK": {
+      "name": "Azad Kashmir",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Balochistan",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Federally Administered Tribal Areas",
+      "cities": {}
+    },
+    "GB": {
+      "name": "Gilgit-Baltistan",
+      "cities": {}
+    },
+    "IS": {
+      "name": "Islamabad Capital Territory",
+      "cities": {}
+    },
+    "KP": {
+      "name": "Khyber Pakhtunkhwa",
+      "cities": {}
+    },
+    "PB": {
+      "name": "Punjab",
+      "cities": {}
+    },
+    "SD": {
+      "name": "Sindh",
+      "cities": {}
+    }
+  }
+}

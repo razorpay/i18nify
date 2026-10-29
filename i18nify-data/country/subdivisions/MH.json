@@ -1,0 +1,13 @@
+{
+  "country_name": "Marshall Islands",
+  "states": {
+    "L": {
+      "name": "Ralik Chain",
+      "cities": {}
+    },
+    "T": {
+      "name": "Ratak Chain",
+      "cities": {}
+    }
+  }
+}

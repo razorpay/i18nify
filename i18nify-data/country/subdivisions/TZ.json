@@ -1,0 +1,129 @@
+{
+  "country_name": "Tanzania",
+  "states": {
+    "10": {
+      "name": "Pemba South",
+      "cities": {}
+    },
+    "11": {
+      "name": "Zanzibar South",
+      "cities": {}
+    },
+    "12": {
+      "name": "Lindi",
+      "cities": {}
+    },
+    "13": {
+      "name": "Mara",
+      "cities": {}
+    },
+    "14": {
+      "name": "Mbeya",
+      "cities": {}
+    },
+    "15": {
+      "name": "Zanzibar West",
+      "cities": {}
+    },
+    "16": {
+      "name": "Morogoro",
+      "cities": {}
+    },
+    "17": {
+      "name": "Mtwara",
+      "cities": {}
+    },
+    "18": {
+      "name": "Mwanza",
+      "cities": {}
+    },
+    "19": {
+      "name": "Pwani",
+      "cities": {}
+    },
+    "20": {
+      "name": "Rukwa",
+      "cities": {}
+    },
+    "21": {
+      "name": "Ruvuma",
+      "cities": {}
+    },
+    "22": {
+      "name": "Shinyanga",
+      "cities": {}
+    },
+    "23": {
+      "name": "Singida",
+      "cities": {}
+    },
+    "24": {
+      "name": "Tabora",
+      "cities": {}
+    },
+    "25": {
+      "name": "Tanga",
+      "cities": {}
+    },
+    "26": {
+      "name": "Manyara",
+      "cities": {}
+    },
+    "27": {
+      "name": "Geita",
+      "cities": {}
+    },
+    "28": {
+      "name": "Katavi",
+      "cities": {}
+    },
+    "29": {
+      "name": "Njombe",
+      "cities": {}
+    },
+    "30": {
+      "name": "Simiyu",
+      "cities": {}
+    },
+    "31": {
+      "name": "Songwe",
+      "cities": {}
+    },
+    "01": {
+      "name": "Arusha",
+      "cities": {}
+    },
+    "02": {
+      "name": "Dar es Salaam",
+      "cities": {}
+    },
+    "03": {
+      "name": "Dodoma",
+      "cities": {}
+    },
+    "04": {
+      "name": "Iringa",
+      "cities": {}
+    },
+    "05": {
+      "name": "Kagera",
+      "cities": {}
+    },
+    "08": {
+      "name": "Kigoma",
+      "cities": {}
+    },
+    "09": {
+      "name": "Kilimanjaro",
+      "cities": {}
+    },
+    "06": {
+      "name": "Pemba North",
+      "cities": {}
+    },
+    "07": {
+      "name": "Zanzibar North",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "country_name": "Sweden",
+  "states": {
+    "K": {
+      "name": "Blekinge",
+      "cities": {}
+    },
+    "W": {
+      "name": "Dalarna County",
+      "cities": {}
+    },
+    "X": {
+      "name": "Gävleborg County",
+      "cities": {}
+    },
+    "I": {
+      "name": "Gotland County",
+      "cities": {}
+    },
+    "N": {
+      "name": "Halland County",
+      "cities": {}
+    },
+    "F": {
+      "name": "Jönköping County",
+      "cities": {}
+    },
+    "H": {
+      "name": "Kalmar County",
+      "cities": {}
+    },
+    "G": {
+      "name": "Kronoberg County",
+      "cities": {}
+    },
+    "BD": {
+      "name": "Norrbotten County",
+      "cities": {}
+    },
+    "T": {
+      "name": "Örebro County",
+      "cities": {}
+    },
+    "E": {
+      "name": "Östergötland County",
+      "cities": {}
+    },
+    "M": {
+      "name": "Skåne County",
+      "cities": {}
+    },
+    "D": {
+      "name": "Södermanland County",
+      "cities": {}
+    },
+    "AB": {
+      "name": "Stockholm County",
+      "cities": {}
+    },
+    "C": {
+      "name": "Uppsala County",
+      "cities": {}
+    },
+    "S": {
+      "name": "Värmland County",
+      "cities": {}
+    },
+    "AC": {
+      "name": "Västerbotten County",
+      "cities": {}
+    },
+    "Y": {
+      "name": "Västernorrland County",
+      "cities": {}
+    },
+    "U": {
+      "name": "Västmanland County",
+      "cities": {}
+    },
+    "O": {
+      "name": "Västra Götaland County",
+      "cities": {}
+    }
+  }
+}

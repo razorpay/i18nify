@@ -1,0 +1,137 @@
+{
+  "country_name": "Afghanistan",
+  "states": {
+    "BDS": {
+      "name": "Badakhshan",
+      "cities": {}
+    },
+    "BDG": {
+      "name": "Badghis",
+      "cities": {}
+    },
+    "BGL": {
+      "name": "Baghlan",
+      "cities": {}
+    },
+    "BAL": {
+      "name": "Balkh",
+      "cities": {}
+    },
+    "BAM": {
+      "name": "Bamyan",
+      "cities": {}
+    },
+    "DAY": {
+      "name": "Daykundi",
+      "cities": {}
+    },
+    "FRA": {
+      "name": "Farah",
+      "cities": {}
+    },
+    "FYB": {
+      "name": "Faryab",
+      "cities": {}
+    },
+    "GHA": {
+      "name": "Ghazni",
+      "cities": {}
+    },
+    "GHO": {
+      "name": "Ghōr",
+      "cities": {}
+    },
+    "HEL": {
+      "name": "Helmand",
+      "cities": {}
+    },
+    "HER": {
+      "name": "Herat",
+      "cities": {}
+    },
+    "JOW": {
+      "name": "Jowzjan",
+      "cities": {}
+    },
+    "KAB": {
+      "name": "Kabul",
+      "cities": {}
+    },
+    "KAN": {
+      "name": "Kandahar",
+      "cities": {}
+    },
+    "KAP": {
+      "name": "Kapisa",
+      "cities": {}
+    },
+    "KHO": {
+      "name": "Khost",
+      "cities": {}
+    },
+    "KNR": {
+      "name": "Kunar",
+      "cities": {}
+    },
+    "KDZ": {
+      "name": "Kunduz Province",
+      "cities": {}
+    },
+    "LAG": {
+      "name": "Laghman",
+      "cities": {}
+    },
+    "LOG": {
+      "name": "Logar",
+      "cities": {}
+    },
+    "NAN": {
+      "name": "Nangarhar",
+      "cities": {}
+    },
+    "NIM": {
+      "name": "Nimruz",
+      "cities": {}
+    },
+    "NUR": {
+      "name": "Nuristan",
+      "cities": {}
+    },
+    "PIA": {
+      "name": "Paktia",
+      "cities": {}
+    },
+    "PKA": {
+      "name": "Paktika",
+      "cities": {}
+    },
+    "PAN": {
+      "name": "Panjshir",
+      "cities": {}
+    },
+    "PAR": {
+      "name": "Parwan",
+      "cities": {}
+    },
+    "SAM": {
+      "name": "Samangan",
+      "cities": {}
+    },
+    "SAR": {
+      "name": "Sar-e Pol",
+      "cities": {}
+    },
+    "TAK": {
+      "name": "Takhar",
+      "cities": {}
+    },
+    "URU": {
+      "name": "Urozgan",
+      "cities": {}
+    },
+    "ZAB": {
+      "name": "Zabul",
+      "cities": {}
+    }
+  }
+}

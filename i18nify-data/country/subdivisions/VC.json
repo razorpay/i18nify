@@ -1,0 +1,29 @@
+{
+  "country_name": "Saint Vincent And The Grenadines",
+  "states": {
+    "01": {
+      "name": "Charlotte Parish",
+      "cities": {}
+    },
+    "06": {
+      "name": "Grenadines Parish",
+      "cities": {}
+    },
+    "02": {
+      "name": "Saint Andrew Parish",
+      "cities": {}
+    },
+    "03": {
+      "name": "Saint David Parish",
+      "cities": {}
+    },
+    "04": {
+      "name": "Saint George Parish",
+      "cities": {}
+    },
+    "05": {
+      "name": "Saint Patrick Parish",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "country_name": "Jordan",
+  "states": {
+    "AJ": {
+      "name": "Ajloun Governorate",
+      "cities": {}
+    },
+    "AM": {
+      "name": "Amman Governorate",
+      "cities": {}
+    },
+    "AQ": {
+      "name": "Aqaba Governorate",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Balqa Governorate",
+      "cities": {}
+    },
+    "IR": {
+      "name": "Irbid Governorate",
+      "cities": {}
+    },
+    "JA": {
+      "name": "Jerash Governorate",
+      "cities": {}
+    },
+    "KA": {
+      "name": "Karak Governorate",
+      "cities": {}
+    },
+    "MN": {
+      "name": "Ma'an Governorate",
+      "cities": {}
+    },
+    "MD": {
+      "name": "Madaba Governorate",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Mafraq Governorate",
+      "cities": {}
+    },
+    "AT": {
+      "name": "Tafilah Governorate",
+      "cities": {}
+    },
+    "AZ": {
+      "name": "Zarqa Governorate",
+      "cities": {}
+    }
+  }
+}

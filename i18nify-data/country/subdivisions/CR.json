@@ -1,0 +1,33 @@
+{
+  "country_name": "Costa Rica",
+  "states": {
+    "A": {
+      "name": "Alajuela Province",
+      "cities": {}
+    },
+    "G": {
+      "name": "Guanacaste Province",
+      "cities": {}
+    },
+    "H": {
+      "name": "Heredia Province",
+      "cities": {}
+    },
+    "L": {
+      "name": "Limón Province",
+      "cities": {}
+    },
+    "C": {
+      "name": "Provincia de Cartago",
+      "cities": {}
+    },
+    "P": {
+      "name": "Puntarenas Province",
+      "cities": {}
+    },
+    "SJ": {
+      "name": "San José Province",
+      "cities": {}
+    }
+  }
+}
