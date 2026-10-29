@@ -1,0 +1,61 @@
+{
+  "country_name": "Georgia",
+  "states": {
+    "29": {
+      "name": "Khelvachauri Municipality",
+      "cities": {}
+    },
+    "50": {
+      "name": "Senaki Municipality",
+      "cities": {}
+    },
+    "AJ": {
+      "name": "Adjara",
+      "cities": {}
+    },
+    "AB": {
+      "name": "Autonomous Republic of Abkhazia",
+      "cities": {}
+    },
+    "GU": {
+      "name": "Guria",
+      "cities": {}
+    },
+    "IM": {
+      "name": "Imereti",
+      "cities": {}
+    },
+    "KA": {
+      "name": "Kakheti",
+      "cities": {}
+    },
+    "KK": {
+      "name": "Kvemo Kartli",
+      "cities": {}
+    },
+    "MM": {
+      "name": "Mtskheta-Mtianeti",
+      "cities": {}
+    },
+    "RL": {
+      "name": "Racha-Lechkhumi and Kvemo Svaneti",
+      "cities": {}
+    },
+    "SZ": {
+      "name": "Samegrelo-Zemo Svaneti",
+      "cities": {}
+    },
+    "SJ": {
+      "name": "Samtskhe-Javakheti",
+      "cities": {}
+    },
+    "SK": {
+      "name": "Shida Kartli",
+      "cities": {}
+    },
+    "TB": {
+      "name": "Tbilisi",
+      "cities": {}
+    }
+  }
+}

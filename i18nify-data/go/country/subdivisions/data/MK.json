@@ -1,0 +1,341 @@
+{
+  "country_name": "Macedonia",
+  "states": {
+    "10": {
+      "name": "Valandovo Municipality",
+      "cities": {}
+    },
+    "11": {
+      "name": "Vasilevo Municipality",
+      "cities": {}
+    },
+    "12": {
+      "name": "Vevčani Municipality",
+      "cities": {}
+    },
+    "13": {
+      "name": "Veles Municipality",
+      "cities": {}
+    },
+    "14": {
+      "name": "Vinica Municipality",
+      "cities": {}
+    },
+    "15": {
+      "name": "Vraneštica Municipality",
+      "cities": {}
+    },
+    "16": {
+      "name": "Vrapčište Municipality",
+      "cities": {}
+    },
+    "17": {
+      "name": "Gazi Baba Municipality",
+      "cities": {}
+    },
+    "18": {
+      "name": "Gevgelija Municipality",
+      "cities": {}
+    },
+    "19": {
+      "name": "Gostivar Municipality",
+      "cities": {}
+    },
+    "20": {
+      "name": "Gradsko Municipality",
+      "cities": {}
+    },
+    "22": {
+      "name": "Debarca Municipality",
+      "cities": {}
+    },
+    "23": {
+      "name": "Delčevo Municipality",
+      "cities": {}
+    },
+    "24": {
+      "name": "Demir Kapija Municipality",
+      "cities": {}
+    },
+    "25": {
+      "name": "Demir Hisar Municipality",
+      "cities": {}
+    },
+    "26": {
+      "name": "Dojran Municipality",
+      "cities": {}
+    },
+    "27": {
+      "name": "Dolneni Municipality",
+      "cities": {}
+    },
+    "28": {
+      "name": "Drugovo Municipality",
+      "cities": {}
+    },
+    "29": {
+      "name": "Gjorče Petrov Municipality",
+      "cities": {}
+    },
+    "30": {
+      "name": "Želino Municipality",
+      "cities": {}
+    },
+    "31": {
+      "name": "Zajas Municipality",
+      "cities": {}
+    },
+    "32": {
+      "name": "Zelenikovo Municipality",
+      "cities": {}
+    },
+    "33": {
+      "name": "Zrnovci Municipality",
+      "cities": {}
+    },
+    "34": {
+      "name": "Ilinden Municipality",
+      "cities": {}
+    },
+    "35": {
+      "name": "Jegunovce Municipality",
+      "cities": {}
+    },
+    "36": {
+      "name": "Kavadarci Municipality",
+      "cities": {}
+    },
+    "37": {
+      "name": "Karbinci",
+      "cities": {}
+    },
+    "38": {
+      "name": "Karpoš Municipality",
+      "cities": {}
+    },
+    "39": {
+      "name": "Kisela Voda Municipality",
+      "cities": {}
+    },
+    "40": {
+      "name": "Kičevo Municipality",
+      "cities": {}
+    },
+    "41": {
+      "name": "Konče Municipality",
+      "cities": {}
+    },
+    "42": {
+      "name": "Kočani Municipality",
+      "cities": {}
+    },
+    "43": {
+      "name": "Kratovo Municipality",
+      "cities": {}
+    },
+    "44": {
+      "name": "Kriva Palanka Municipality",
+      "cities": {}
+    },
+    "45": {
+      "name": "Krivogaštani Municipality",
+      "cities": {}
+    },
+    "46": {
+      "name": "Kruševo Municipality",
+      "cities": {}
+    },
+    "47": {
+      "name": "Kumanovo Municipality",
+      "cities": {}
+    },
+    "48": {
+      "name": "Lipkovo Municipality",
+      "cities": {}
+    },
+    "49": {
+      "name": "Lozovo Municipality",
+      "cities": {}
+    },
+    "50": {
+      "name": "Mavrovo and Rostuša Municipality",
+      "cities": {}
+    },
+    "51": {
+      "name": "Makedonska Kamenica Municipality",
+      "cities": {}
+    },
+    "52": {
+      "name": "Makedonski Brod Municipality",
+      "cities": {}
+    },
+    "53": {
+      "name": "Mogila Municipality",
+      "cities": {}
+    },
+    "54": {
+      "name": "Negotino Municipality",
+      "cities": {}
+    },
+    "55": {
+      "name": "Novaci Municipality",
+      "cities": {}
+    },
+    "56": {
+      "name": "Novo Selo Municipality",
+      "cities": {}
+    },
+    "57": {
+      "name": "Oslomej Municipality",
+      "cities": {}
+    },
+    "58": {
+      "name": "Ohrid Municipality",
+      "cities": {}
+    },
+    "59": {
+      "name": "Petrovec Municipality",
+      "cities": {}
+    },
+    "60": {
+      "name": "Pehčevo Municipality",
+      "cities": {}
+    },
+    "61": {
+      "name": "Plasnica Municipality",
+      "cities": {}
+    },
+    "62": {
+      "name": "Prilep Municipality",
+      "cities": {}
+    },
+    "63": {
+      "name": "Probištip Municipality",
+      "cities": {}
+    },
+    "64": {
+      "name": "Radoviš Municipality",
+      "cities": {}
+    },
+    "65": {
+      "name": "Rankovce Municipality",
+      "cities": {}
+    },
+    "66": {
+      "name": "Resen Municipality",
+      "cities": {}
+    },
+    "67": {
+      "name": "Rosoman Municipality",
+      "cities": {}
+    },
+    "68": {
+      "name": "Saraj Municipality",
+      "cities": {}
+    },
+    "69": {
+      "name": "Sveti Nikole Municipality",
+      "cities": {}
+    },
+    "70": {
+      "name": "Sopište Municipality",
+      "cities": {}
+    },
+    "71": {
+      "name": "Staro Nagoričane Municipality",
+      "cities": {}
+    },
+    "72": {
+      "name": "Struga Municipality",
+      "cities": {}
+    },
+    "73": {
+      "name": "Strumica Municipality",
+      "cities": {}
+    },
+    "74": {
+      "name": "Studeničani Municipality",
+      "cities": {}
+    },
+    "75": {
+      "name": "Tearce Municipality",
+      "cities": {}
+    },
+    "76": {
+      "name": "Tetovo Municipality",
+      "cities": {}
+    },
+    "77": {
+      "name": "Centar Municipality",
+      "cities": {}
+    },
+    "78": {
+      "name": "Centar Župa Municipality",
+      "cities": {}
+    },
+    "79": {
+      "name": "Čair Municipality",
+      "cities": {}
+    },
+    "80": {
+      "name": "Čaška Municipality",
+      "cities": {}
+    },
+    "81": {
+      "name": "Češinovo-Obleševo Municipality",
+      "cities": {}
+    },
+    "82": {
+      "name": "Čučer-Sandevo Municipality",
+      "cities": {}
+    },
+    "83": {
+      "name": "Štip Municipality",
+      "cities": {}
+    },
+    "84": {
+      "name": "Šuto Orizari Municipality",
+      "cities": {}
+    },
+    "85": {
+      "name": "Greater Skopje",
+      "cities": {}
+    },
+    "01": {
+      "name": "Aerodrom Municipality",
+      "cities": {}
+    },
+    "02": {
+      "name": "Aračinovo Municipality",
+      "cities": {}
+    },
+    "03": {
+      "name": "Berovo Municipality",
+      "cities": {}
+    },
+    "04": {
+      "name": "Bitola Municipality",
+      "cities": {}
+    },
+    "05": {
+      "name": "Bogdanci Municipality",
+      "cities": {}
+    },
+    "06": {
+      "name": "Bogovinje Municipality",
+      "cities": {}
+    },
+    "07": {
+      "name": "Bosilovo Municipality",
+      "cities": {}
+    },
+    "08": {
+      "name": "Brvenica Municipality",
+      "cities": {}
+    },
+    "09": {
+      "name": "Butel Municipality",
+      "cities": {}
+    }
+  }
+}

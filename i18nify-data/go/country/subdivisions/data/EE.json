@@ -1,0 +1,65 @@
+{
+  "country_name": "Estonia",
+  "states": {
+    "37": {
+      "name": "Harju County",
+      "cities": {}
+    },
+    "39": {
+      "name": "Hiiu County",
+      "cities": {}
+    },
+    "44": {
+      "name": "Ida-Viru County",
+      "cities": {}
+    },
+    "49": {
+      "name": "Jõgeva County",
+      "cities": {}
+    },
+    "51": {
+      "name": "Järva County",
+      "cities": {}
+    },
+    "57": {
+      "name": "Lääne County",
+      "cities": {}
+    },
+    "59": {
+      "name": "Lääne-Viru County",
+      "cities": {}
+    },
+    "65": {
+      "name": "Põlva County",
+      "cities": {}
+    },
+    "67": {
+      "name": "Pärnu County",
+      "cities": {}
+    },
+    "70": {
+      "name": "Rapla County",
+      "cities": {}
+    },
+    "74": {
+      "name": "Saare County",
+      "cities": {}
+    },
+    "78": {
+      "name": "Tartu County",
+      "cities": {}
+    },
+    "82": {
+      "name": "Valga County",
+      "cities": {}
+    },
+    "84": {
+      "name": "Viljandi County",
+      "cities": {}
+    },
+    "86": {
+      "name": "Võru County",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "country_name": "Nicaragua",
+  "states": {
+    "BO": {
+      "name": "Boaco",
+      "cities": {}
+    },
+    "CA": {
+      "name": "Carazo",
+      "cities": {}
+    },
+    "CI": {
+      "name": "Chinandega",
+      "cities": {}
+    },
+    "CO": {
+      "name": "Chontales",
+      "cities": {}
+    },
+    "ES": {
+      "name": "Estelí",
+      "cities": {}
+    },
+    "GR": {
+      "name": "Granada",
+      "cities": {}
+    },
+    "JI": {
+      "name": "Jinotega",
+      "cities": {}
+    },
+    "LE": {
+      "name": "León",
+      "cities": {}
+    },
+    "MD": {
+      "name": "Madriz",
+      "cities": {}
+    },
+    "MN": {
+      "name": "Managua",
+      "cities": {}
+    },
+    "MS": {
+      "name": "Masaya",
+      "cities": {}
+    },
+    "MT": {
+      "name": "Matagalpa",
+      "cities": {}
+    },
+    "AN": {
+      "name": "North Caribbean Coast",
+      "cities": {}
+    },
+    "NS": {
+      "name": "Nueva Segovia\t",
+      "cities": {}
+    },
+    "SJ": {
+      "name": "Río San Juan",
+      "cities": {}
+    },
+    "RI": {
+      "name": "Rivas",
+      "cities": {}
+    },
+    "AS": {
+      "name": "South Caribbean Coast",
+      "cities": {}
+    }
+  }
+}

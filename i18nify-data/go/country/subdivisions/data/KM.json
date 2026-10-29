@@ -1,0 +1,17 @@
+{
+  "country_name": "Comoros",
+  "states": {
+    "A": {
+      "name": "Anjouan",
+      "cities": {}
+    },
+    "G": {
+      "name": "Grande Comore",
+      "cities": {}
+    },
+    "M": {
+      "name": "Mohéli",
+      "cities": {}
+    }
+  }
+}

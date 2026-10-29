@@ -1,0 +1,41 @@
+{
+  "country_name": "Kyrgyzstan",
+  "states": {
+    "B": {
+      "name": "Batken Region",
+      "cities": {}
+    },
+    "GB": {
+      "name": "Bishkek",
+      "cities": {}
+    },
+    "C": {
+      "name": "Chuy Region",
+      "cities": {}
+    },
+    "Y": {
+      "name": "Issyk-Kul Region",
+      "cities": {}
+    },
+    "J": {
+      "name": "Jalal-Abad Region",
+      "cities": {}
+    },
+    "N": {
+      "name": "Naryn Region",
+      "cities": {}
+    },
+    "GO": {
+      "name": "Osh",
+      "cities": {}
+    },
+    "O": {
+      "name": "Osh Region",
+      "cities": {}
+    },
+    "T": {
+      "name": "Talas Region",
+      "cities": {}
+    }
+  }
+}

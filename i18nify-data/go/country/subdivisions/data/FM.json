@@ -1,0 +1,21 @@
+{
+  "country_name": "Micronesia",
+  "states": {
+    "TRK": {
+      "name": "Chuuk State",
+      "cities": {}
+    },
+    "KSA": {
+      "name": "Kosrae State",
+      "cities": {}
+    },
+    "PNI": {
+      "name": "Pohnpei State",
+      "cities": {}
+    },
+    "YAP": {
+      "name": "Yap State",
+      "cities": {}
+    }
+  }
+}

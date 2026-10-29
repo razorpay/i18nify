@@ -1,0 +1,353 @@
+{
+  "country_name": "Morocco",
+  "states": {
+    "10": {
+      "name": "Guelmim-Oued Noun (EH-partial)",
+      "cities": {}
+    },
+    "11": {
+      "name": "Laâyoune-Sakia El Hamra (EH-partial)",
+      "cities": {}
+    },
+    "12": {
+      "name": "Dakhla-Oued Ed-Dahab (EH)",
+      "cities": {}
+    },
+    "AGD": {
+      "name": "Agadir-Ida-Ou-Tanane",
+      "cities": {}
+    },
+    "HAO": {
+      "name": "Al Haouz",
+      "cities": {}
+    },
+    "HOC": {
+      "name": "Al Hoceïma",
+      "cities": {}
+    },
+    "AOU": {
+      "name": "Aousserd (EH)",
+      "cities": {}
+    },
+    "ASZ": {
+      "name": "Assa-Zag (EH-partial)",
+      "cities": {}
+    },
+    "AZI": {
+      "name": "Azilal",
+      "cities": {}
+    },
+    "BEM": {
+      "name": "Béni Mellal",
+      "cities": {}
+    },
+    "05": {
+      "name": "Béni Mellal-Khénifra",
+      "cities": {}
+    },
+    "BES": {
+      "name": "Benslimane",
+      "cities": {}
+    },
+    "BER": {
+      "name": "Berkane",
+      "cities": {}
+    },
+    "BRR": {
+      "name": "Berrechid",
+      "cities": {}
+    },
+    "BOD": {
+      "name": "Boujdour (EH)",
+      "cities": {}
+    },
+    "BOM": {
+      "name": "Boulemane",
+      "cities": {}
+    },
+    "CAS": {
+      "name": "Casablanca",
+      "cities": {}
+    },
+    "06": {
+      "name": "Casablanca-Settat",
+      "cities": {}
+    },
+    "CHE": {
+      "name": "Chefchaouen",
+      "cities": {}
+    },
+    "CHI": {
+      "name": "Chichaoua",
+      "cities": {}
+    },
+    "CHT": {
+      "name": "Chtouka-Ait Baha",
+      "cities": {}
+    },
+    "08": {
+      "name": "Drâa-Tafilalet",
+      "cities": {}
+    },
+    "DRI": {
+      "name": "Driouch",
+      "cities": {}
+    },
+    "HAJ": {
+      "name": "El Hajeb",
+      "cities": {}
+    },
+    "JDI": {
+      "name": "El Jadida",
+      "cities": {}
+    },
+    "KES": {
+      "name": "El Kelâa des Sraghna",
+      "cities": {}
+    },
+    "ERR": {
+      "name": "Errachidia",
+      "cities": {}
+    },
+    "ESM": {
+      "name": "Es-Semara (EH-partial)",
+      "cities": {}
+    },
+    "ESI": {
+      "name": "Essaouira",
+      "cities": {}
+    },
+    "FAH": {
+      "name": "Fahs-Anjra",
+      "cities": {}
+    },
+    "FES": {
+      "name": "Fès",
+      "cities": {}
+    },
+    "03": {
+      "name": "Fès-Meknès",
+      "cities": {}
+    },
+    "FIG": {
+      "name": "Figuig",
+      "cities": {}
+    },
+    "FQH": {
+      "name": "Fquih Ben Salah",
+      "cities": {}
+    },
+    "GUE": {
+      "name": "Guelmim",
+      "cities": {}
+    },
+    "GUF": {
+      "name": "Guercif",
+      "cities": {}
+    },
+    "IFR": {
+      "name": "Ifrane",
+      "cities": {}
+    },
+    "INE": {
+      "name": "Inezgane-Ait Melloul",
+      "cities": {}
+    },
+    "JRA": {
+      "name": "Jerada",
+      "cities": {}
+    },
+    "KEN": {
+      "name": "Kénitra",
+      "cities": {}
+    },
+    "KHE": {
+      "name": "Khémisset",
+      "cities": {}
+    },
+    "KHN": {
+      "name": "Khénifra",
+      "cities": {}
+    },
+    "KHO": {
+      "name": "Khouribga",
+      "cities": {}
+    },
+    "02": {
+      "name": "L'Oriental",
+      "cities": {}
+    },
+    "LAA": {
+      "name": "Laâyoune (EH)",
+      "cities": {}
+    },
+    "LAR": {
+      "name": "Larache",
+      "cities": {}
+    },
+    "MDF": {
+      "name": "M’diq-Fnideq",
+      "cities": {}
+    },
+    "MAR": {
+      "name": "Marrakech",
+      "cities": {}
+    },
+    "07": {
+      "name": "Marrakesh-Safi",
+      "cities": {}
+    },
+    "MED": {
+      "name": "Médiouna",
+      "cities": {}
+    },
+    "MEK": {
+      "name": "Meknès",
+      "cities": {}
+    },
+    "MID": {
+      "name": "Midelt",
+      "cities": {}
+    },
+    "MOH": {
+      "name": "Mohammadia",
+      "cities": {}
+    },
+    "MOU": {
+      "name": "Moulay Yacoub",
+      "cities": {}
+    },
+    "NAD": {
+      "name": "Nador",
+      "cities": {}
+    },
+    "NOU": {
+      "name": "Nouaceur",
+      "cities": {}
+    },
+    "OUA": {
+      "name": "Ouarzazate",
+      "cities": {}
+    },
+    "OUD": {
+      "name": "Oued Ed-Dahab (EH)",
+      "cities": {}
+    },
+    "OUZ": {
+      "name": "Ouezzane",
+      "cities": {}
+    },
+    "OUJ": {
+      "name": "Oujda-Angad",
+      "cities": {}
+    },
+    "RAB": {
+      "name": "Rabat",
+      "cities": {}
+    },
+    "04": {
+      "name": "Rabat-Salé-Kénitra",
+      "cities": {}
+    },
+    "REH": {
+      "name": "Rehamna",
+      "cities": {}
+    },
+    "SAF": {
+      "name": "Safi",
+      "cities": {}
+    },
+    "SAL": {
+      "name": "Salé",
+      "cities": {}
+    },
+    "SEF": {
+      "name": "Sefrou",
+      "cities": {}
+    },
+    "SET": {
+      "name": "Settat",
+      "cities": {}
+    },
+    "SIB": {
+      "name": "Sidi Bennour",
+      "cities": {}
+    },
+    "SIF": {
+      "name": "Sidi Ifni",
+      "cities": {}
+    },
+    "SIK": {
+      "name": "Sidi Kacem",
+      "cities": {}
+    },
+    "SIL": {
+      "name": "Sidi Slimane",
+      "cities": {}
+    },
+    "SKH": {
+      "name": "Skhirate-Témara",
+      "cities": {}
+    },
+    "09": {
+      "name": "Souss-Massa",
+      "cities": {}
+    },
+    "TNT": {
+      "name": "Tan-Tan (EH-partial)",
+      "cities": {}
+    },
+    "TNG": {
+      "name": "Tanger-Assilah",
+      "cities": {}
+    },
+    "01": {
+      "name": "Tanger-Tétouan-Al Hoceïma",
+      "cities": {}
+    },
+    "TAO": {
+      "name": "Taounate",
+      "cities": {}
+    },
+    "TAI": {
+      "name": "Taourirt",
+      "cities": {}
+    },
+    "TAF": {
+      "name": "Tarfaya (EH-partial)",
+      "cities": {}
+    },
+    "TAR": {
+      "name": "Taroudannt",
+      "cities": {}
+    },
+    "TAT": {
+      "name": "Tata",
+      "cities": {}
+    },
+    "TAZ": {
+      "name": "Taza",
+      "cities": {}
+    },
+    "TET": {
+      "name": "Tétouan",
+      "cities": {}
+    },
+    "TIN": {
+      "name": "Tinghir",
+      "cities": {}
+    },
+    "TIZ": {
+      "name": "Tiznit",
+      "cities": {}
+    },
+    "YUS": {
+      "name": "Youssoufia",
+      "cities": {}
+    },
+    "ZAG": {
+      "name": "Zagora",
+      "cities": {}
+    }
+  }
+}

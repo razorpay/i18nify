@@ -1,0 +1,57 @@
+{
+  "country_name": "Bosnia and Herzegovina",
+  "states": {
+    "10": {
+      "name": "Canton 10",
+      "cities": {}
+    },
+    "05": {
+      "name": "Bosnian Podrinje Canton",
+      "cities": {}
+    },
+    "BRC": {
+      "name": "Brčko District",
+      "cities": {}
+    },
+    "06": {
+      "name": "Central Bosnia Canton",
+      "cities": {}
+    },
+    "BIH": {
+      "name": "Federation of Bosnia and Herzegovina",
+      "cities": {}
+    },
+    "07": {
+      "name": "Herzegovina-Neretva Canton",
+      "cities": {}
+    },
+    "02": {
+      "name": "Posavina Canton",
+      "cities": {}
+    },
+    "SRP": {
+      "name": "Republika Srpska",
+      "cities": {}
+    },
+    "09": {
+      "name": "Sarajevo Canton",
+      "cities": {}
+    },
+    "03": {
+      "name": "Tuzla Canton",
+      "cities": {}
+    },
+    "01": {
+      "name": "Una-Sana Canton",
+      "cities": {}
+    },
+    "08": {
+      "name": "West Herzegovina Canton",
+      "cities": {}
+    },
+    "04": {
+      "name": "Zenica-Doboj Canton",
+      "cities": {}
+    }
+  }
+}

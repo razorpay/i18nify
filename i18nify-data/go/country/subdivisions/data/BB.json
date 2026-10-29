@@ -1,0 +1,49 @@
+{
+  "country_name": "Barbados",
+  "states": {
+    "10": {
+      "name": "Saint Philip",
+      "cities": {}
+    },
+    "11": {
+      "name": "Saint Thomas",
+      "cities": {}
+    },
+    "01": {
+      "name": "Christ Church",
+      "cities": {}
+    },
+    "02": {
+      "name": "Saint Andrew",
+      "cities": {}
+    },
+    "03": {
+      "name": "Saint George",
+      "cities": {}
+    },
+    "04": {
+      "name": "Saint James",
+      "cities": {}
+    },
+    "05": {
+      "name": "Saint John",
+      "cities": {}
+    },
+    "06": {
+      "name": "Saint Joseph",
+      "cities": {}
+    },
+    "07": {
+      "name": "Saint Lucy",
+      "cities": {}
+    },
+    "08": {
+      "name": "Saint Michael",
+      "cities": {}
+    },
+    "09": {
+      "name": "Saint Peter",
+      "cities": {}
+    }
+  }
+}

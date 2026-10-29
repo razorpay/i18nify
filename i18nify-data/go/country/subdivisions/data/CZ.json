@@ -1,0 +1,365 @@
+{
+  "country_name": "Czech Republic",
+  "states": {
+    "10": {
+      "name": "Praha, Hlavní město",
+      "cities": {}
+    },
+    "20": {
+      "name": "Středočeský kraj",
+      "cities": {}
+    },
+    "31": {
+      "name": "Jihočeský kraj",
+      "cities": {}
+    },
+    "32": {
+      "name": "Plzeňský kraj",
+      "cities": {}
+    },
+    "41": {
+      "name": "Karlovarský kraj",
+      "cities": {}
+    },
+    "42": {
+      "name": "Ústecký kraj",
+      "cities": {}
+    },
+    "51": {
+      "name": "Liberecký kraj",
+      "cities": {}
+    },
+    "52": {
+      "name": "Královéhradecký kraj",
+      "cities": {}
+    },
+    "53": {
+      "name": "Pardubický kraj",
+      "cities": {}
+    },
+    "63": {
+      "name": "Kraj Vysočina",
+      "cities": {}
+    },
+    "64": {
+      "name": "Jihomoravský kraj",
+      "cities": {}
+    },
+    "71": {
+      "name": "Olomoucký kraj",
+      "cities": {}
+    },
+    "72": {
+      "name": "Zlínský kraj",
+      "cities": {}
+    },
+    "80": {
+      "name": "Moravskoslezský kraj",
+      "cities": {}
+    },
+    "201": {
+      "name": "Benešov",
+      "cities": {}
+    },
+    "202": {
+      "name": "Beroun",
+      "cities": {}
+    },
+    "203": {
+      "name": "Kladno",
+      "cities": {}
+    },
+    "204": {
+      "name": "Kolín",
+      "cities": {}
+    },
+    "205": {
+      "name": "Kutná Hora",
+      "cities": {}
+    },
+    "206": {
+      "name": "Mělník",
+      "cities": {}
+    },
+    "207": {
+      "name": "Mladá Boleslav",
+      "cities": {}
+    },
+    "208": {
+      "name": "Nymburk",
+      "cities": {}
+    },
+    "209": {
+      "name": "Praha-východ",
+      "cities": {}
+    },
+    "311": {
+      "name": "České Budějovice",
+      "cities": {}
+    },
+    "312": {
+      "name": "Český Krumlov",
+      "cities": {}
+    },
+    "313": {
+      "name": "Jindřichův Hradec",
+      "cities": {}
+    },
+    "314": {
+      "name": "Písek",
+      "cities": {}
+    },
+    "315": {
+      "name": "Prachatice",
+      "cities": {}
+    },
+    "316": {
+      "name": "Strakonice",
+      "cities": {}
+    },
+    "317": {
+      "name": "Tábor",
+      "cities": {}
+    },
+    "321": {
+      "name": "Domažlice",
+      "cities": {}
+    },
+    "322": {
+      "name": "Klatovy",
+      "cities": {}
+    },
+    "323": {
+      "name": "Plzeň-město",
+      "cities": {}
+    },
+    "324": {
+      "name": "Plzeň-jih",
+      "cities": {}
+    },
+    "325": {
+      "name": "Plzeň-sever",
+      "cities": {}
+    },
+    "326": {
+      "name": "Rokycany",
+      "cities": {}
+    },
+    "327": {
+      "name": "Tachov",
+      "cities": {}
+    },
+    "411": {
+      "name": "Cheb",
+      "cities": {}
+    },
+    "412": {
+      "name": "Karlovy Vary",
+      "cities": {}
+    },
+    "413": {
+      "name": "Sokolov",
+      "cities": {}
+    },
+    "421": {
+      "name": "Děčín",
+      "cities": {}
+    },
+    "422": {
+      "name": "Chomutov",
+      "cities": {}
+    },
+    "423": {
+      "name": "Litoměřice",
+      "cities": {}
+    },
+    "424": {
+      "name": "Louny",
+      "cities": {}
+    },
+    "425": {
+      "name": "Most",
+      "cities": {}
+    },
+    "426": {
+      "name": "Teplice",
+      "cities": {}
+    },
+    "427": {
+      "name": "Ústí nad Labem",
+      "cities": {}
+    },
+    "511": {
+      "name": "Česká Lípa",
+      "cities": {}
+    },
+    "512": {
+      "name": "Jablonec nad Nisou",
+      "cities": {}
+    },
+    "513": {
+      "name": "Liberec",
+      "cities": {}
+    },
+    "514": {
+      "name": "Semily",
+      "cities": {}
+    },
+    "521": {
+      "name": "Hradec Králové",
+      "cities": {}
+    },
+    "522": {
+      "name": "Jičín",
+      "cities": {}
+    },
+    "523": {
+      "name": "Náchod",
+      "cities": {}
+    },
+    "524": {
+      "name": "Rychnov nad Kněžnou",
+      "cities": {}
+    },
+    "525": {
+      "name": "Trutnov",
+      "cities": {}
+    },
+    "531": {
+      "name": "Chrudim",
+      "cities": {}
+    },
+    "532": {
+      "name": "Pardubice",
+      "cities": {}
+    },
+    "533": {
+      "name": "Svitavy",
+      "cities": {}
+    },
+    "534": {
+      "name": "Ústí nad Orlicí",
+      "cities": {}
+    },
+    "631": {
+      "name": "Havlíčkův Brod",
+      "cities": {}
+    },
+    "632": {
+      "name": "Jihlava",
+      "cities": {}
+    },
+    "633": {
+      "name": "Pelhřimov",
+      "cities": {}
+    },
+    "634": {
+      "name": "Třebíč",
+      "cities": {}
+    },
+    "635": {
+      "name": "Žďár nad Sázavou",
+      "cities": {}
+    },
+    "641": {
+      "name": "Blansko",
+      "cities": {}
+    },
+    "642": {
+      "name": "Brno-město",
+      "cities": {}
+    },
+    "643": {
+      "name": "Brno-venkov",
+      "cities": {}
+    },
+    "644": {
+      "name": "Břeclav",
+      "cities": {}
+    },
+    "645": {
+      "name": "Hodonín",
+      "cities": {}
+    },
+    "646": {
+      "name": "Vyškov",
+      "cities": {}
+    },
+    "647": {
+      "name": "Znojmo",
+      "cities": {}
+    },
+    "711": {
+      "name": "Jeseník",
+      "cities": {}
+    },
+    "712": {
+      "name": "Olomouc",
+      "cities": {}
+    },
+    "713": {
+      "name": "Prostějov",
+      "cities": {}
+    },
+    "714": {
+      "name": "Přerov",
+      "cities": {}
+    },
+    "715": {
+      "name": "Šumperk",
+      "cities": {}
+    },
+    "721": {
+      "name": "Kroměříž",
+      "cities": {}
+    },
+    "722": {
+      "name": "Uherské Hradiště",
+      "cities": {}
+    },
+    "723": {
+      "name": "Vsetín",
+      "cities": {}
+    },
+    "724": {
+      "name": "Zlín",
+      "cities": {}
+    },
+    "801": {
+      "name": "Bruntál",
+      "cities": {}
+    },
+    "802": {
+      "name": "Frýdek-Místek",
+      "cities": {}
+    },
+    "803": {
+      "name": "Karviná",
+      "cities": {}
+    },
+    "804": {
+      "name": "Nový Jičín",
+      "cities": {}
+    },
+    "805": {
+      "name": "Opava",
+      "cities": {}
+    },
+    "806": {
+      "name": "Ostrava-město",
+      "cities": {}
+    },
+    "20A": {
+      "name": "Praha-západ",
+      "cities": {}
+    },
+    "20B": {
+      "name": "Příbram",
+      "cities": {}
+    },
+    "20C": {
+      "name": "Rakovník",
+      "cities": {}
+    }
+  }
+}

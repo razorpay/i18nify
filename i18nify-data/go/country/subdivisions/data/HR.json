@@ -1,0 +1,85 @@
+{
+  "country_name": "Croatia",
+  "states": {
+    "10": {
+      "name": "Virovitica-Podravina County",
+      "cities": {}
+    },
+    "11": {
+      "name": "Požega-Slavonia County",
+      "cities": {}
+    },
+    "12": {
+      "name": "Brod-Posavina County",
+      "cities": {}
+    },
+    "13": {
+      "name": "Zadar County",
+      "cities": {}
+    },
+    "14": {
+      "name": "Osijek-Baranja County",
+      "cities": {}
+    },
+    "15": {
+      "name": "Šibenik-Knin County",
+      "cities": {}
+    },
+    "16": {
+      "name": "Vukovar-Syrmia County",
+      "cities": {}
+    },
+    "17": {
+      "name": "Split-Dalmatia County",
+      "cities": {}
+    },
+    "18": {
+      "name": "Istria County",
+      "cities": {}
+    },
+    "19": {
+      "name": "Dubrovnik-Neretva County",
+      "cities": {}
+    },
+    "20": {
+      "name": "Međimurje County",
+      "cities": {}
+    },
+    "21": {
+      "name": "Zagreb",
+      "cities": {}
+    },
+    "07": {
+      "name": "Bjelovar-Bilogora County",
+      "cities": {}
+    },
+    "06": {
+      "name": "Koprivnica-Križevci County",
+      "cities": {}
+    },
+    "02": {
+      "name": "Krapina-Zagorje County",
+      "cities": {}
+    },
+    "09": {
+      "name": "Lika-Senj County",
+      "cities": {}
+    },
+    "08": {
+      "name": "Primorje-Gorski Kotar County",
+      "cities": {}
+    },
+    "03": {
+      "name": "Sisak-Moslavina County",
+      "cities": {}
+    },
+    "05": {
+      "name": "Varaždin County",
+      "cities": {}
+    },
+    "01": {
+      "name": "Zagreb County",
+      "cities": {}
+    }
+  }
+}

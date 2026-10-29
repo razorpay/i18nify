@@ -1,0 +1,165 @@
+{
+  "country_name": "Guinea",
+  "states": {
+    "BE": {
+      "name": "Beyla Prefecture",
+      "cities": {}
+    },
+    "BF": {
+      "name": "Boffa Prefecture",
+      "cities": {}
+    },
+    "BK": {
+      "name": "Boké Prefecture",
+      "cities": {}
+    },
+    "B": {
+      "name": "Boké Region",
+      "cities": {}
+    },
+    "C": {
+      "name": "Conakry",
+      "cities": {}
+    },
+    "CO": {
+      "name": "Coyah Prefecture",
+      "cities": {}
+    },
+    "DB": {
+      "name": "Dabola Prefecture",
+      "cities": {}
+    },
+    "DL": {
+      "name": "Dalaba Prefecture",
+      "cities": {}
+    },
+    "DI": {
+      "name": "Dinguiraye Prefecture",
+      "cities": {}
+    },
+    "DU": {
+      "name": "Dubréka Prefecture",
+      "cities": {}
+    },
+    "FA": {
+      "name": "Faranah Prefecture",
+      "cities": {}
+    },
+    "FO": {
+      "name": "Forécariah Prefecture",
+      "cities": {}
+    },
+    "FR": {
+      "name": "Fria Prefecture",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Gaoual Prefecture",
+      "cities": {}
+    },
+    "GU": {
+      "name": "Guéckédou Prefecture",
+      "cities": {}
+    },
+    "KA": {
+      "name": "Kankan Prefecture",
+      "cities": {}
+    },
+    "K": {
+      "name": "Kankan Region",
+      "cities": {}
+    },
+    "KE": {
+      "name": "Kérouané Prefecture",
+      "cities": {}
+    },
+    "KD": {
+      "name": "Kindia Prefecture",
+      "cities": {}
+    },
+    "D": {
+      "name": "Kindia Region",
+      "cities": {}
+    },
+    "KS": {
+      "name": "Kissidougou Prefecture",
+      "cities": {}
+    },
+    "KB": {
+      "name": "Koubia Prefecture",
+      "cities": {}
+    },
+    "KN": {
+      "name": "Koundara Prefecture",
+      "cities": {}
+    },
+    "KO": {
+      "name": "Kouroussa Prefecture",
+      "cities": {}
+    },
+    "LA": {
+      "name": "Labé Prefecture",
+      "cities": {}
+    },
+    "L": {
+      "name": "Labé Region",
+      "cities": {}
+    },
+    "LE": {
+      "name": "Lélouma Prefecture",
+      "cities": {}
+    },
+    "LO": {
+      "name": "Lola Prefecture",
+      "cities": {}
+    },
+    "MC": {
+      "name": "Macenta Prefecture",
+      "cities": {}
+    },
+    "ML": {
+      "name": "Mali Prefecture",
+      "cities": {}
+    },
+    "MM": {
+      "name": "Mamou Prefecture",
+      "cities": {}
+    },
+    "M": {
+      "name": "Mamou Region",
+      "cities": {}
+    },
+    "MD": {
+      "name": "Mandiana Prefecture",
+      "cities": {}
+    },
+    "NZ": {
+      "name": "Nzérékoré Prefecture",
+      "cities": {}
+    },
+    "N": {
+      "name": "Nzérékoré Region",
+      "cities": {}
+    },
+    "PI": {
+      "name": "Pita Prefecture",
+      "cities": {}
+    },
+    "SI": {
+      "name": "Siguiri Prefecture",
+      "cities": {}
+    },
+    "TE": {
+      "name": "Télimélé Prefecture",
+      "cities": {}
+    },
+    "TO": {
+      "name": "Tougué Prefecture",
+      "cities": {}
+    },
+    "YO": {
+      "name": "Yomou Prefecture",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "country_name": "Poland",
+  "states": {
+    "WP": {
+      "name": "Greater Poland Voivodeship",
+      "cities": {}
+    },
+    "KP": {
+      "name": "Kuyavian-Pomeranian Voivodeship",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Lesser Poland Voivodeship",
+      "cities": {}
+    },
+    "DS": {
+      "name": "Lower Silesian Voivodeship",
+      "cities": {}
+    },
+    "LU": {
+      "name": "Lublin Voivodeship",
+      "cities": {}
+    },
+    "LB": {
+      "name": "Lubusz Voivodeship",
+      "cities": {}
+    },
+    "LD": {
+      "name": "Łódź Voivodeship",
+      "cities": {}
+    },
+    "MZ": {
+      "name": "Masovian Voivodeship",
+      "cities": {}
+    },
+    "OP": {
+      "name": "Opole Voivodeship",
+      "cities": {}
+    },
+    "PK": {
+      "name": "Podkarpackie Voivodeship",
+      "cities": {}
+    },
+    "PD": {
+      "name": "Podlaskie Voivodeship",
+      "cities": {}
+    },
+    "PM": {
+      "name": "Pomeranian Voivodeship",
+      "cities": {}
+    },
+    "SL": {
+      "name": "Silesian Voivodeship",
+      "cities": {}
+    },
+    "SK": {
+      "name": "Świętokrzyskie Voivodeship",
+      "cities": {}
+    },
+    "WN": {
+      "name": "Warmian-Masurian Voivodeship",
+      "cities": {}
+    },
+    "ZP": {
+      "name": "West Pomeranian Voivodeship",
+      "cities": {}
+    }
+  }
+}

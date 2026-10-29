@@ -1,0 +1,81 @@
+{
+  "country_name": "Fiji Islands",
+  "states": {
+    "10": {
+      "name": "Namosi",
+      "cities": {}
+    },
+    "11": {
+      "name": "Ra",
+      "cities": {}
+    },
+    "12": {
+      "name": "Rewa",
+      "cities": {}
+    },
+    "13": {
+      "name": "Serua",
+      "cities": {}
+    },
+    "14": {
+      "name": "Tailevu",
+      "cities": {}
+    },
+    "01": {
+      "name": "Ba",
+      "cities": {}
+    },
+    "02": {
+      "name": "Bua",
+      "cities": {}
+    },
+    "03": {
+      "name": "Cakaudrove",
+      "cities": {}
+    },
+    "C": {
+      "name": "Central Division",
+      "cities": {}
+    },
+    "E": {
+      "name": "Eastern Division",
+      "cities": {}
+    },
+    "04": {
+      "name": "Kadavu",
+      "cities": {}
+    },
+    "05": {
+      "name": "Lau",
+      "cities": {}
+    },
+    "06": {
+      "name": "Lomaiviti",
+      "cities": {}
+    },
+    "07": {
+      "name": "Macuata",
+      "cities": {}
+    },
+    "08": {
+      "name": "Nadroga-Navosa",
+      "cities": {}
+    },
+    "09": {
+      "name": "Naitasiri",
+      "cities": {}
+    },
+    "N": {
+      "name": "Northern Division",
+      "cities": {}
+    },
+    "R": {
+      "name": "Rotuma",
+      "cities": {}
+    },
+    "W": {
+      "name": "Western Division",
+      "cities": {}
+    }
+  }
+}

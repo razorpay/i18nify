@@ -1,0 +1,17 @@
+{
+  "country_name": "Monaco",
+  "states": {
+    "CL": {
+      "name": "La Colle",
+      "cities": {}
+    },
+    "CO": {
+      "name": "La Condamine",
+      "cities": {}
+    },
+    "MG": {
+      "name": "Moneghetti",
+      "cities": {}
+    }
+  }
+}

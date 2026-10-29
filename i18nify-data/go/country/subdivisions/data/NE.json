@@ -1,0 +1,33 @@
+{
+  "country_name": "Niger",
+  "states": {
+    "1": {
+      "name": "Agadez Region",
+      "cities": {}
+    },
+    "2": {
+      "name": "Diffa Region",
+      "cities": {}
+    },
+    "3": {
+      "name": "Dosso Region",
+      "cities": {}
+    },
+    "4": {
+      "name": "Maradi Region",
+      "cities": {}
+    },
+    "5": {
+      "name": "Tahoua Region",
+      "cities": {}
+    },
+    "6": {
+      "name": "Tillabéri Region",
+      "cities": {}
+    },
+    "7": {
+      "name": "Zinder Region",
+      "cities": {}
+    }
+  }
+}

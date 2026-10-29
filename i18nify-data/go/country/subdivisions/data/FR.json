@@ -1,0 +1,173 @@
+{
+  "country_name": "France",
+  "states": {
+    "75": {
+      "name": "Paris",
+      "cities": {}
+    },
+    "WF-AL": {
+      "name": "Alo",
+      "cities": {}
+    },
+    "A": {
+      "name": "Alsace",
+      "cities": {}
+    },
+    "B": {
+      "name": "Aquitaine",
+      "cities": {}
+    },
+    "C": {
+      "name": "Auvergne",
+      "cities": {}
+    },
+    "ARA": {
+      "name": "Auvergne-Rhône-Alpes",
+      "cities": {}
+    },
+    "BFC": {
+      "name": "Bourgogne-Franche-Comté",
+      "cities": {}
+    },
+    "BRE": {
+      "name": "Brittany",
+      "cities": {}
+    },
+    "D": {
+      "name": "Burgundy",
+      "cities": {}
+    },
+    "CVL": {
+      "name": "Centre-Val de Loire",
+      "cities": {}
+    },
+    "G": {
+      "name": "Champagne-Ardenne",
+      "cities": {}
+    },
+    "COR": {
+      "name": "Corsica",
+      "cities": {}
+    },
+    "I": {
+      "name": "Franche-Comté",
+      "cities": {}
+    },
+    "GF": {
+      "name": "French Guiana",
+      "cities": {}
+    },
+    "PF": {
+      "name": "French Polynesia",
+      "cities": {}
+    },
+    "GES": {
+      "name": "Grand Est",
+      "cities": {}
+    },
+    "GP": {
+      "name": "Guadeloupe",
+      "cities": {}
+    },
+    "HDF": {
+      "name": "Hauts-de-France",
+      "cities": {}
+    },
+    "IDF": {
+      "name": "Île-de-France",
+      "cities": {}
+    },
+    "K": {
+      "name": "Languedoc-Roussillon",
+      "cities": {}
+    },
+    "L": {
+      "name": "Limousin",
+      "cities": {}
+    },
+    "M": {
+      "name": "Lorraine",
+      "cities": {}
+    },
+    "P": {
+      "name": "Lower Normandy",
+      "cities": {}
+    },
+    "MQ": {
+      "name": "Martinique",
+      "cities": {}
+    },
+    "YT": {
+      "name": "Mayotte",
+      "cities": {}
+    },
+    "O": {
+      "name": "Nord-Pas-de-Calais",
+      "cities": {}
+    },
+    "NOR": {
+      "name": "Normandy",
+      "cities": {}
+    },
+    "NAQ": {
+      "name": "Nouvelle-Aquitaine",
+      "cities": {}
+    },
+    "OCC": {
+      "name": "Occitania",
+      "cities": {}
+    },
+    "PDL": {
+      "name": "Pays de la Loire",
+      "cities": {}
+    },
+    "S": {
+      "name": "Picardy",
+      "cities": {}
+    },
+    "T": {
+      "name": "Poitou-Charentes",
+      "cities": {}
+    },
+    "PAC": {
+      "name": "Provence-Alpes-Côte d'Azur",
+      "cities": {}
+    },
+    "RE": {
+      "name": "Réunion",
+      "cities": {}
+    },
+    "V": {
+      "name": "Rhône-Alpes",
+      "cities": {}
+    },
+    "BL": {
+      "name": "Saint Barthélemy",
+      "cities": {}
+    },
+    "MF": {
+      "name": "Saint Martin",
+      "cities": {}
+    },
+    "PM": {
+      "name": "Saint Pierre and Miquelon",
+      "cities": {}
+    },
+    "WF-SG": {
+      "name": "Sigave",
+      "cities": {}
+    },
+    "Q": {
+      "name": "Upper Normandy",
+      "cities": {}
+    },
+    "WF-UV": {
+      "name": "Uvea",
+      "cities": {}
+    },
+    "WF": {
+      "name": "Wallis and Futuna",
+      "cities": {}
+    }
+  }
+}

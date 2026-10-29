@@ -1,0 +1,317 @@
+{
+  "country_name": "Thailand",
+  "states": {
+    "10": {
+      "name": "Bangkok",
+      "cities": {}
+    },
+    "11": {
+      "name": "Samut Prakan",
+      "cities": {}
+    },
+    "12": {
+      "name": "Nonthaburi",
+      "cities": {}
+    },
+    "13": {
+      "name": "Pathum Thani",
+      "cities": {}
+    },
+    "14": {
+      "name": "Phra Nakhon Si Ayutthaya",
+      "cities": {}
+    },
+    "15": {
+      "name": "Ang Thong",
+      "cities": {}
+    },
+    "16": {
+      "name": "Lop Buri",
+      "cities": {}
+    },
+    "17": {
+      "name": "Sing Buri",
+      "cities": {}
+    },
+    "18": {
+      "name": "Chai Nat",
+      "cities": {}
+    },
+    "19": {
+      "name": "Saraburi",
+      "cities": {}
+    },
+    "20": {
+      "name": "Chon Buri",
+      "cities": {}
+    },
+    "21": {
+      "name": "Rayong",
+      "cities": {}
+    },
+    "22": {
+      "name": "Chanthaburi",
+      "cities": {}
+    },
+    "23": {
+      "name": "Trat",
+      "cities": {}
+    },
+    "24": {
+      "name": "Chachoengsao",
+      "cities": {}
+    },
+    "25": {
+      "name": "Prachin Buri",
+      "cities": {}
+    },
+    "26": {
+      "name": "Nakhon Nayok",
+      "cities": {}
+    },
+    "27": {
+      "name": "Sa Kaeo",
+      "cities": {}
+    },
+    "30": {
+      "name": "Nakhon Ratchasima",
+      "cities": {}
+    },
+    "31": {
+      "name": "Buri Ram",
+      "cities": {}
+    },
+    "32": {
+      "name": "Surin",
+      "cities": {}
+    },
+    "33": {
+      "name": "Si Sa Ket",
+      "cities": {}
+    },
+    "34": {
+      "name": "Ubon Ratchathani",
+      "cities": {}
+    },
+    "35": {
+      "name": "Yasothon",
+      "cities": {}
+    },
+    "36": {
+      "name": "Chaiyaphum",
+      "cities": {}
+    },
+    "37": {
+      "name": "Amnat Charoen",
+      "cities": {}
+    },
+    "38": {
+      "name": "Bueng Kan",
+      "cities": {}
+    },
+    "39": {
+      "name": "Nong Bua Lam Phu",
+      "cities": {}
+    },
+    "40": {
+      "name": "Khon Kaen",
+      "cities": {}
+    },
+    "41": {
+      "name": "Udon Thani",
+      "cities": {}
+    },
+    "42": {
+      "name": "Loei",
+      "cities": {}
+    },
+    "43": {
+      "name": "Nong Khai",
+      "cities": {}
+    },
+    "44": {
+      "name": "Maha Sarakham",
+      "cities": {}
+    },
+    "45": {
+      "name": "Roi Et",
+      "cities": {}
+    },
+    "46": {
+      "name": "Kalasin",
+      "cities": {}
+    },
+    "47": {
+      "name": "Sakon Nakhon",
+      "cities": {}
+    },
+    "48": {
+      "name": "Nakhon Phanom",
+      "cities": {}
+    },
+    "49": {
+      "name": "Mukdahan",
+      "cities": {}
+    },
+    "50": {
+      "name": "Chiang Mai",
+      "cities": {}
+    },
+    "51": {
+      "name": "Lamphun",
+      "cities": {}
+    },
+    "52": {
+      "name": "Lampang",
+      "cities": {}
+    },
+    "53": {
+      "name": "Uttaradit",
+      "cities": {}
+    },
+    "54": {
+      "name": "Phrae",
+      "cities": {}
+    },
+    "55": {
+      "name": "Nan",
+      "cities": {}
+    },
+    "56": {
+      "name": "Phayao",
+      "cities": {}
+    },
+    "57": {
+      "name": "Chiang Rai",
+      "cities": {}
+    },
+    "58": {
+      "name": "Mae Hong Son",
+      "cities": {}
+    },
+    "60": {
+      "name": "Nakhon Sawan",
+      "cities": {}
+    },
+    "61": {
+      "name": "Uthai Thani",
+      "cities": {}
+    },
+    "62": {
+      "name": "Kamphaeng Phet",
+      "cities": {}
+    },
+    "63": {
+      "name": "Tak",
+      "cities": {}
+    },
+    "64": {
+      "name": "Sukhothai",
+      "cities": {}
+    },
+    "65": {
+      "name": "Phitsanulok",
+      "cities": {}
+    },
+    "66": {
+      "name": "Phichit",
+      "cities": {}
+    },
+    "67": {
+      "name": "Phetchabun",
+      "cities": {}
+    },
+    "70": {
+      "name": "Ratchaburi",
+      "cities": {}
+    },
+    "71": {
+      "name": "Kanchanaburi",
+      "cities": {}
+    },
+    "72": {
+      "name": "Suphan Buri",
+      "cities": {}
+    },
+    "73": {
+      "name": "Nakhon Pathom",
+      "cities": {}
+    },
+    "74": {
+      "name": "Samut Sakhon",
+      "cities": {}
+    },
+    "75": {
+      "name": "Samut Songkhram",
+      "cities": {}
+    },
+    "76": {
+      "name": "Phetchaburi",
+      "cities": {}
+    },
+    "77": {
+      "name": "Prachuap Khiri Khan",
+      "cities": {}
+    },
+    "80": {
+      "name": "Nakhon Si Thammarat",
+      "cities": {}
+    },
+    "81": {
+      "name": "Krabi",
+      "cities": {}
+    },
+    "82": {
+      "name": "Phangnga",
+      "cities": {}
+    },
+    "83": {
+      "name": "Phuket",
+      "cities": {}
+    },
+    "84": {
+      "name": "Surat Thani",
+      "cities": {}
+    },
+    "85": {
+      "name": "Ranong",
+      "cities": {}
+    },
+    "86": {
+      "name": "Chumphon",
+      "cities": {}
+    },
+    "90": {
+      "name": "Songkhla",
+      "cities": {}
+    },
+    "91": {
+      "name": "Satun",
+      "cities": {}
+    },
+    "92": {
+      "name": "Trang",
+      "cities": {}
+    },
+    "93": {
+      "name": "Phatthalung",
+      "cities": {}
+    },
+    "94": {
+      "name": "Pattani",
+      "cities": {}
+    },
+    "95": {
+      "name": "Yala",
+      "cities": {}
+    },
+    "96": {
+      "name": "Narathiwat",
+      "cities": {}
+    },
+    "S": {
+      "name": "Pattaya",
+      "cities": {}
+    }
+  }
+}

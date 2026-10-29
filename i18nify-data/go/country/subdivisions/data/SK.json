@@ -1,0 +1,37 @@
+{
+  "country_name": "Slovakia",
+  "states": {
+    "BC": {
+      "name": "Banská Bystrica Region",
+      "cities": {}
+    },
+    "BL": {
+      "name": "Bratislava Region",
+      "cities": {}
+    },
+    "KI": {
+      "name": "Košice Region",
+      "cities": {}
+    },
+    "NI": {
+      "name": "Nitra Region",
+      "cities": {}
+    },
+    "PV": {
+      "name": "Prešov Region",
+      "cities": {}
+    },
+    "TC": {
+      "name": "Trenčín Region",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Trnava Region",
+      "cities": {}
+    },
+    "ZI": {
+      "name": "Žilina Region",
+      "cities": {}
+    }
+  }
+}

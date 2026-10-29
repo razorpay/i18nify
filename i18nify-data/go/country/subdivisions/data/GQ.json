@@ -1,0 +1,41 @@
+{
+  "country_name": "Equatorial Guinea",
+  "states": {
+    "AN": {
+      "name": "Annobón Province",
+      "cities": {}
+    },
+    "BN": {
+      "name": "Bioko Norte Province",
+      "cities": {}
+    },
+    "BS": {
+      "name": "Bioko Sur Province",
+      "cities": {}
+    },
+    "CS": {
+      "name": "Centro Sur Province",
+      "cities": {}
+    },
+    "I": {
+      "name": "Insular Region",
+      "cities": {}
+    },
+    "KN": {
+      "name": "Kié-Ntem Province",
+      "cities": {}
+    },
+    "LI": {
+      "name": "Litoral Province",
+      "cities": {}
+    },
+    "C": {
+      "name": "Río Muni",
+      "cities": {}
+    },
+    "WN": {
+      "name": "Wele-Nzas Province",
+      "cities": {}
+    }
+  }
+}

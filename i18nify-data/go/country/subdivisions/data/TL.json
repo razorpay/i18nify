@@ -1,0 +1,53 @@
+{
+  "country_name": "East Timor",
+  "states": {
+    "AL": {
+      "name": "Aileu municipality",
+      "cities": {}
+    },
+    "AN": {
+      "name": "Ainaro Municipality",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Baucau Municipality",
+      "cities": {}
+    },
+    "BO": {
+      "name": "Bobonaro Municipality",
+      "cities": {}
+    },
+    "CO": {
+      "name": "Cova Lima Municipality",
+      "cities": {}
+    },
+    "DI": {
+      "name": "Dili municipality",
+      "cities": {}
+    },
+    "ER": {
+      "name": "Ermera District",
+      "cities": {}
+    },
+    "LA": {
+      "name": "Lautém Municipality",
+      "cities": {}
+    },
+    "LI": {
+      "name": "Liquiçá Municipality",
+      "cities": {}
+    },
+    "MT": {
+      "name": "Manatuto District",
+      "cities": {}
+    },
+    "MF": {
+      "name": "Manufahi Municipality",
+      "cities": {}
+    },
+    "VI": {
+      "name": "Viqueque Municipality",
+      "cities": {}
+    }
+  }
+}

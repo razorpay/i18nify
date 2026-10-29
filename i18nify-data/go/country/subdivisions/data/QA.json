@@ -1,0 +1,37 @@
+{
+  "country_name": "Qatar",
+  "states": {
+    "ZA": {
+      "name": "Al Daayen",
+      "cities": {}
+    },
+    "KH": {
+      "name": "Al Khor",
+      "cities": {}
+    },
+    "RA": {
+      "name": "Al Rayyan Municipality",
+      "cities": {}
+    },
+    "WA": {
+      "name": "Al Wakrah",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Al-Shahaniya",
+      "cities": {}
+    },
+    "DA": {
+      "name": "Doha",
+      "cities": {}
+    },
+    "MS": {
+      "name": "Madinat ash Shamal",
+      "cities": {}
+    },
+    "US": {
+      "name": "Umm Salal Municipality",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "country_name": "Uruguay",
+  "states": {
+    "AR": {
+      "name": "Artigas Department",
+      "cities": {}
+    },
+    "CA": {
+      "name": "Canelones Department",
+      "cities": {}
+    },
+    "CL": {
+      "name": "Cerro Largo Department",
+      "cities": {}
+    },
+    "CO": {
+      "name": "Colonia Department",
+      "cities": {}
+    },
+    "DU": {
+      "name": "Durazno Department",
+      "cities": {}
+    },
+    "FS": {
+      "name": "Flores Department",
+      "cities": {}
+    },
+    "FD": {
+      "name": "Florida Department",
+      "cities": {}
+    },
+    "LA": {
+      "name": "Lavalleja Department",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Maldonado Department",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Montevideo Department",
+      "cities": {}
+    },
+    "PA": {
+      "name": "Paysandú Department",
+      "cities": {}
+    },
+    "RN": {
+      "name": "Río Negro Department",
+      "cities": {}
+    },
+    "RV": {
+      "name": "Rivera Department",
+      "cities": {}
+    },
+    "RO": {
+      "name": "Rocha Department",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Salto Department",
+      "cities": {}
+    },
+    "SJ": {
+      "name": "San José Department",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Soriano Department",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Tacuarembó Department",
+      "cities": {}
+    },
+    "TT": {
+      "name": "Treinta y Tres Department",
+      "cities": {}
+    }
+  }
+}

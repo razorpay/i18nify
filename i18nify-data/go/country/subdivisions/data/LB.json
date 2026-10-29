@@ -1,0 +1,37 @@
+{
+  "country_name": "Lebanon",
+  "states": {
+    "AK": {
+      "name": "Akkar Governorate",
+      "cities": {}
+    },
+    "BH": {
+      "name": "Baalbek-Hermel Governorate",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Beirut Governorate",
+      "cities": {}
+    },
+    "BI": {
+      "name": "Beqaa Governorate",
+      "cities": {}
+    },
+    "JL": {
+      "name": "Mount Lebanon Governorate",
+      "cities": {}
+    },
+    "NA": {
+      "name": "Nabatieh Governorate",
+      "cities": {}
+    },
+    "AS": {
+      "name": "North Governorate",
+      "cities": {}
+    },
+    "JA": {
+      "name": "South Governorate",
+      "cities": {}
+    }
+  }
+}

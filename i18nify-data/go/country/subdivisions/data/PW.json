@@ -1,0 +1,69 @@
+{
+  "country_name": "Palau",
+  "states": {
+    "100": {
+      "name": "Kayangel",
+      "cities": {}
+    },
+    "150": {
+      "name": "Koror",
+      "cities": {}
+    },
+    "212": {
+      "name": "Melekeok",
+      "cities": {}
+    },
+    "214": {
+      "name": "Ngaraard",
+      "cities": {}
+    },
+    "218": {
+      "name": "Ngarchelong",
+      "cities": {}
+    },
+    "222": {
+      "name": "Ngardmau",
+      "cities": {}
+    },
+    "224": {
+      "name": "Ngatpang",
+      "cities": {}
+    },
+    "226": {
+      "name": "Ngchesar",
+      "cities": {}
+    },
+    "227": {
+      "name": "Ngeremlengui",
+      "cities": {}
+    },
+    "228": {
+      "name": "Ngiwal",
+      "cities": {}
+    },
+    "350": {
+      "name": "Peleliu",
+      "cities": {}
+    },
+    "370": {
+      "name": "Sonsorol",
+      "cities": {}
+    },
+    "002": {
+      "name": "Aimeliik",
+      "cities": {}
+    },
+    "004": {
+      "name": "Airai",
+      "cities": {}
+    },
+    "010": {
+      "name": "Angaur",
+      "cities": {}
+    },
+    "050": {
+      "name": "Hatohobei",
+      "cities": {}
+    }
+  }
+}

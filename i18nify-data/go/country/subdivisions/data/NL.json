@@ -1,0 +1,65 @@
+{
+  "country_name": "Netherlands",
+  "states": {
+    "BQ1": {
+      "name": "Bonaire",
+      "cities": {}
+    },
+    "DR": {
+      "name": "Drenthe",
+      "cities": {}
+    },
+    "FL": {
+      "name": "Flevoland",
+      "cities": {}
+    },
+    "FR": {
+      "name": "Friesland",
+      "cities": {}
+    },
+    "GE": {
+      "name": "Gelderland",
+      "cities": {}
+    },
+    "GR": {
+      "name": "Groningen",
+      "cities": {}
+    },
+    "LI": {
+      "name": "Limburg",
+      "cities": {}
+    },
+    "NB": {
+      "name": "North Brabant",
+      "cities": {}
+    },
+    "NH": {
+      "name": "North Holland",
+      "cities": {}
+    },
+    "OV": {
+      "name": "Overijssel",
+      "cities": {}
+    },
+    "BQ2": {
+      "name": "Saba",
+      "cities": {}
+    },
+    "BQ3": {
+      "name": "Sint Eustatius",
+      "cities": {}
+    },
+    "ZH": {
+      "name": "South Holland",
+      "cities": {}
+    },
+    "UT": {
+      "name": "Utrecht",
+      "cities": {}
+    },
+    "ZE": {
+      "name": "Zeeland",
+      "cities": {}
+    }
+  }
+}

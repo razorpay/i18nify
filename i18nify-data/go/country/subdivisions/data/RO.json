@@ -1,0 +1,173 @@
+{
+  "country_name": "Romania",
+  "states": {
+    "AB": {
+      "name": "Alba",
+      "cities": {}
+    },
+    "AR": {
+      "name": "Arad County",
+      "cities": {}
+    },
+    "AG": {
+      "name": "Arges",
+      "cities": {}
+    },
+    "BC": {
+      "name": "Bacău County",
+      "cities": {}
+    },
+    "BH": {
+      "name": "Bihor County",
+      "cities": {}
+    },
+    "BN": {
+      "name": "Bistrița-Năsăud County",
+      "cities": {}
+    },
+    "BT": {
+      "name": "Botoșani County",
+      "cities": {}
+    },
+    "BR": {
+      "name": "Braila",
+      "cities": {}
+    },
+    "BV": {
+      "name": "Brașov County",
+      "cities": {}
+    },
+    "B": {
+      "name": "Bucharest",
+      "cities": {}
+    },
+    "BZ": {
+      "name": "Buzău County",
+      "cities": {}
+    },
+    "CL": {
+      "name": "Călărași County",
+      "cities": {}
+    },
+    "CS": {
+      "name": "Caraș-Severin County",
+      "cities": {}
+    },
+    "CJ": {
+      "name": "Cluj County",
+      "cities": {}
+    },
+    "CT": {
+      "name": "Constanța County",
+      "cities": {}
+    },
+    "CV": {
+      "name": "Covasna County",
+      "cities": {}
+    },
+    "DB": {
+      "name": "Dâmbovița County",
+      "cities": {}
+    },
+    "DJ": {
+      "name": "Dolj County",
+      "cities": {}
+    },
+    "GL": {
+      "name": "Galați County",
+      "cities": {}
+    },
+    "GR": {
+      "name": "Giurgiu County",
+      "cities": {}
+    },
+    "GJ": {
+      "name": "Gorj County",
+      "cities": {}
+    },
+    "HR": {
+      "name": "Harghita County",
+      "cities": {}
+    },
+    "HD": {
+      "name": "Hunedoara County",
+      "cities": {}
+    },
+    "IL": {
+      "name": "Ialomița County",
+      "cities": {}
+    },
+    "IS": {
+      "name": "Iași County",
+      "cities": {}
+    },
+    "IF": {
+      "name": "Ilfov County",
+      "cities": {}
+    },
+    "MM": {
+      "name": "Maramureș County",
+      "cities": {}
+    },
+    "MH": {
+      "name": "Mehedinți County",
+      "cities": {}
+    },
+    "MS": {
+      "name": "Mureș County",
+      "cities": {}
+    },
+    "NT": {
+      "name": "Neamț County",
+      "cities": {}
+    },
+    "OT": {
+      "name": "Olt County",
+      "cities": {}
+    },
+    "PH": {
+      "name": "Prahova County",
+      "cities": {}
+    },
+    "SJ": {
+      "name": "Sălaj County",
+      "cities": {}
+    },
+    "SM": {
+      "name": "Satu Mare County",
+      "cities": {}
+    },
+    "SB": {
+      "name": "Sibiu County",
+      "cities": {}
+    },
+    "SV": {
+      "name": "Suceava County",
+      "cities": {}
+    },
+    "TR": {
+      "name": "Teleorman County",
+      "cities": {}
+    },
+    "TM": {
+      "name": "Timiș County",
+      "cities": {}
+    },
+    "TL": {
+      "name": "Tulcea County",
+      "cities": {}
+    },
+    "VL": {
+      "name": "Vâlcea County",
+      "cities": {}
+    },
+    "VS": {
+      "name": "Vaslui County",
+      "cities": {}
+    },
+    "VN": {
+      "name": "Vrancea County",
+      "cities": {}
+    }
+  }
+}

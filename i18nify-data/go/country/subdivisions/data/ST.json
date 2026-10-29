@@ -1,0 +1,13 @@
+{
+  "country_name": "Sao Tome and Principe",
+  "states": {
+    "P": {
+      "name": "Príncipe Province",
+      "cities": {}
+    },
+    "S": {
+      "name": "São Tomé Province",
+      "cities": {}
+    }
+  }
+}

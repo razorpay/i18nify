@@ -1,0 +1,41 @@
+{
+  "country_name": "South Africa",
+  "states": {
+    "EC": {
+      "name": "Eastern Cape",
+      "cities": {}
+    },
+    "FS": {
+      "name": "Free State",
+      "cities": {}
+    },
+    "GP": {
+      "name": "Gauteng",
+      "cities": {}
+    },
+    "KZN": {
+      "name": "KwaZulu-Natal",
+      "cities": {}
+    },
+    "LP": {
+      "name": "Limpopo",
+      "cities": {}
+    },
+    "MP": {
+      "name": "Mpumalanga",
+      "cities": {}
+    },
+    "NW": {
+      "name": "North West",
+      "cities": {}
+    },
+    "NC": {
+      "name": "Northern Cape",
+      "cities": {}
+    },
+    "WC": {
+      "name": "Western Cape",
+      "cities": {}
+    }
+  }
+}

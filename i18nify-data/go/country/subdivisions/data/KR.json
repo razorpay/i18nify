@@ -1,0 +1,73 @@
+{
+  "country_name": "South Korea",
+  "states": {
+    "11": {
+      "name": "Seoul",
+      "cities": {}
+    },
+    "26": {
+      "name": "Busan",
+      "cities": {}
+    },
+    "27": {
+      "name": "Daegu",
+      "cities": {}
+    },
+    "28": {
+      "name": "Incheon",
+      "cities": {}
+    },
+    "29": {
+      "name": "Gwangju",
+      "cities": {}
+    },
+    "30": {
+      "name": "Daejeon",
+      "cities": {}
+    },
+    "31": {
+      "name": "Ulsan",
+      "cities": {}
+    },
+    "41": {
+      "name": "Gyeonggi Province",
+      "cities": {}
+    },
+    "42": {
+      "name": "Gangwon Province",
+      "cities": {}
+    },
+    "43": {
+      "name": "North Chungcheong Province",
+      "cities": {}
+    },
+    "44": {
+      "name": "South Chungcheong Province",
+      "cities": {}
+    },
+    "45": {
+      "name": "North Jeolla Province",
+      "cities": {}
+    },
+    "46": {
+      "name": "South Jeolla Province",
+      "cities": {}
+    },
+    "47": {
+      "name": "North Gyeongsang Province",
+      "cities": {}
+    },
+    "48": {
+      "name": "South Gyeongsang Province",
+      "cities": {}
+    },
+    "49": {
+      "name": "Jeju",
+      "cities": {}
+    },
+    "50": {
+      "name": "Sejong City",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "country_name": "Guatemala",
+  "states": {
+    "AV": {
+      "name": "Alta Verapaz Department",
+      "cities": {}
+    },
+    "BV": {
+      "name": "Baja Verapaz Department",
+      "cities": {}
+    },
+    "CM": {
+      "name": "Chimaltenango Department",
+      "cities": {}
+    },
+    "CQ": {
+      "name": "Chiquimula Department",
+      "cities": {}
+    },
+    "PR": {
+      "name": "El Progreso Department",
+      "cities": {}
+    },
+    "ES": {
+      "name": "Escuintla Department",
+      "cities": {}
+    },
+    "GU": {
+      "name": "Guatemala Department",
+      "cities": {}
+    },
+    "HU": {
+      "name": "Huehuetenango Department",
+      "cities": {}
+    },
+    "IZ": {
+      "name": "Izabal Department",
+      "cities": {}
+    },
+    "JA": {
+      "name": "Jalapa Department",
+      "cities": {}
+    },
+    "JU": {
+      "name": "Jutiapa Department",
+      "cities": {}
+    },
+    "PE": {
+      "name": "Petén Department",
+      "cities": {}
+    },
+    "QZ": {
+      "name": "Quetzaltenango Department",
+      "cities": {}
+    },
+    "QC": {
+      "name": "Quiché Department",
+      "cities": {}
+    },
+    "RE": {
+      "name": "Retalhuleu Department",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Sacatepéquez Department",
+      "cities": {}
+    },
+    "SM": {
+      "name": "San Marcos Department",
+      "cities": {}
+    },
+    "SR": {
+      "name": "Santa Rosa Department",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Sololá Department",
+      "cities": {}
+    },
+    "SU": {
+      "name": "Suchitepéquez Department",
+      "cities": {}
+    },
+    "TO": {
+      "name": "Totonicapán Department",
+      "cities": {}
+    }
+  }
+}

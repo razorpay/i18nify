@@ -1,0 +1,85 @@
+{
+  "country_name": "Portugal",
+  "states": {
+    "10": {
+      "name": "Leiria",
+      "cities": {}
+    },
+    "11": {
+      "name": "Lisbon",
+      "cities": {}
+    },
+    "12": {
+      "name": "Portalegre",
+      "cities": {}
+    },
+    "13": {
+      "name": "Porto",
+      "cities": {}
+    },
+    "14": {
+      "name": "Santarém",
+      "cities": {}
+    },
+    "15": {
+      "name": "Setúbal",
+      "cities": {}
+    },
+    "16": {
+      "name": "Viana do Castelo",
+      "cities": {}
+    },
+    "17": {
+      "name": "Vila Real",
+      "cities": {}
+    },
+    "18": {
+      "name": "Viseu",
+      "cities": {}
+    },
+    "20": {
+      "name": "Açores",
+      "cities": {}
+    },
+    "30": {
+      "name": "Madeira",
+      "cities": {}
+    },
+    "01": {
+      "name": "Aveiro",
+      "cities": {}
+    },
+    "02": {
+      "name": "Beja",
+      "cities": {}
+    },
+    "03": {
+      "name": "Braga",
+      "cities": {}
+    },
+    "04": {
+      "name": "Bragança",
+      "cities": {}
+    },
+    "05": {
+      "name": "Castelo Branco",
+      "cities": {}
+    },
+    "06": {
+      "name": "Coimbra",
+      "cities": {}
+    },
+    "07": {
+      "name": "Évora",
+      "cities": {}
+    },
+    "08": {
+      "name": "Faro",
+      "cities": {}
+    },
+    "09": {
+      "name": "Guarda",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "country_name": "Sri Lanka",
+  "states": {
+    "1": {
+      "name": "Western Province",
+      "cities": {}
+    },
+    "2": {
+      "name": "Central Province",
+      "cities": {}
+    },
+    "3": {
+      "name": "Southern Province",
+      "cities": {}
+    },
+    "4": {
+      "name": "Northern Province",
+      "cities": {}
+    },
+    "5": {
+      "name": "Eastern Province",
+      "cities": {}
+    },
+    "6": {
+      "name": "North Western Province",
+      "cities": {}
+    },
+    "7": {
+      "name": "North Central Province",
+      "cities": {}
+    },
+    "8": {
+      "name": "Uva Province",
+      "cities": {}
+    },
+    "9": {
+      "name": "Sabaragamuwa Province",
+      "cities": {}
+    },
+    "11": {
+      "name": "Colombo District",
+      "cities": {}
+    },
+    "12": {
+      "name": "Gampaha District",
+      "cities": {}
+    },
+    "13": {
+      "name": "Kalutara District",
+      "cities": {}
+    },
+    "21": {
+      "name": "Kandy District",
+      "cities": {}
+    },
+    "22": {
+      "name": "Matale District",
+      "cities": {}
+    },
+    "23": {
+      "name": "Nuwara Eliya District",
+      "cities": {}
+    },
+    "31": {
+      "name": "Galle District",
+      "cities": {}
+    },
+    "32": {
+      "name": "Matara District",
+      "cities": {}
+    },
+    "33": {
+      "name": "Hambantota District",
+      "cities": {}
+    },
+    "41": {
+      "name": "Jaffna District",
+      "cities": {}
+    },
+    "42": {
+      "name": "Kilinochchi District",
+      "cities": {}
+    },
+    "43": {
+      "name": "Mannar District",
+      "cities": {}
+    },
+    "44": {
+      "name": "Vavuniya District",
+      "cities": {}
+    },
+    "45": {
+      "name": "Mullaitivu District",
+      "cities": {}
+    },
+    "51": {
+      "name": "Batticaloa District",
+      "cities": {}
+    },
+    "52": {
+      "name": "Ampara District",
+      "cities": {}
+    },
+    "53": {
+      "name": "Trincomalee District",
+      "cities": {}
+    },
+    "62": {
+      "name": "Puttalam District",
+      "cities": {}
+    },
+    "71": {
+      "name": "Anuradhapura District",
+      "cities": {}
+    },
+    "72": {
+      "name": "Polonnaruwa District",
+      "cities": {}
+    },
+    "81": {
+      "name": "Badulla District",
+      "cities": {}
+    },
+    "82": {
+      "name": "Monaragala District",
+      "cities": {}
+    },
+    "91": {
+      "name": "Ratnapura district",
+      "cities": {}
+    },
+    "92": {
+      "name": "Kegalle District",
+      "cities": {}
+    }
+  }
+}

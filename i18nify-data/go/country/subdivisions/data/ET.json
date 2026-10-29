@@ -1,0 +1,49 @@
+{
+  "country_name": "Ethiopia",
+  "states": {
+    "AA": {
+      "name": "Addis Ababa",
+      "cities": {}
+    },
+    "AF": {
+      "name": "Afar Region",
+      "cities": {}
+    },
+    "AM": {
+      "name": "Amhara Region",
+      "cities": {}
+    },
+    "BE": {
+      "name": "Benishangul-Gumuz Region",
+      "cities": {}
+    },
+    "DD": {
+      "name": "Dire Dawa",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Gambela Region",
+      "cities": {}
+    },
+    "HA": {
+      "name": "Harari Region",
+      "cities": {}
+    },
+    "OR": {
+      "name": "Oromia Region",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Somali Region",
+      "cities": {}
+    },
+    "SN": {
+      "name": "Southern Nations, Nationalities, and Peoples' Region",
+      "cities": {}
+    },
+    "TI": {
+      "name": "Tigray Region",
+      "cities": {}
+    }
+  }
+}

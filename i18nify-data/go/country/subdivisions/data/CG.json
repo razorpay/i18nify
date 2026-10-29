@@ -1,0 +1,53 @@
+{
+  "country_name": "Congo",
+  "states": {
+    "2": {
+      "name": "Lékoumou Department",
+      "cities": {}
+    },
+    "5": {
+      "name": "Kouilou Department",
+      "cities": {}
+    },
+    "7": {
+      "name": "Likouala Department",
+      "cities": {}
+    },
+    "8": {
+      "name": "Cuvette Department",
+      "cities": {}
+    },
+    "9": {
+      "name": "Niari Department",
+      "cities": {}
+    },
+    "11": {
+      "name": "Bouenza Department",
+      "cities": {}
+    },
+    "12": {
+      "name": "Pool Department",
+      "cities": {}
+    },
+    "13": {
+      "name": "Sangha Department",
+      "cities": {}
+    },
+    "14": {
+      "name": "Plateaux Department",
+      "cities": {}
+    },
+    "15": {
+      "name": "Cuvette-Ouest Department",
+      "cities": {}
+    },
+    "16": {
+      "name": "Pointe-Noire",
+      "cities": {}
+    },
+    "BZV": {
+      "name": "Brazzaville",
+      "cities": {}
+    }
+  }
+}

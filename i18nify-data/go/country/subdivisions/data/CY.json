@@ -1,0 +1,29 @@
+{
+  "country_name": "Cyprus",
+  "states": {
+    "04": {
+      "name": "Famagusta District (Mağusa)",
+      "cities": {}
+    },
+    "06": {
+      "name": "Kyrenia District (Keryneia)",
+      "cities": {}
+    },
+    "03": {
+      "name": "Larnaca District (Larnaka)",
+      "cities": {}
+    },
+    "02": {
+      "name": "Limassol District (Leymasun)",
+      "cities": {}
+    },
+    "01": {
+      "name": "Nicosia District (Lefkoşa)",
+      "cities": {}
+    },
+    "05": {
+      "name": "Paphos District (Pafos)",
+      "cities": {}
+    }
+  }
+}

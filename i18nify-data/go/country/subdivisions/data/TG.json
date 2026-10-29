@@ -1,0 +1,25 @@
+{
+  "country_name": "Togo",
+  "states": {
+    "C": {
+      "name": "Centrale Region",
+      "cities": {}
+    },
+    "K": {
+      "name": "Kara Region",
+      "cities": {}
+    },
+    "M": {
+      "name": "Maritime",
+      "cities": {}
+    },
+    "P": {
+      "name": "Plateaux Region",
+      "cities": {}
+    },
+    "S": {
+      "name": "Savanes Region",
+      "cities": {}
+    }
+  }
+}

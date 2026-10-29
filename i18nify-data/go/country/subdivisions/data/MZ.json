@@ -1,0 +1,49 @@
+{
+  "country_name": "Mozambique",
+  "states": {
+    "P": {
+      "name": "Cabo Delgado Province",
+      "cities": {}
+    },
+    "G": {
+      "name": "Gaza Province",
+      "cities": {}
+    },
+    "I": {
+      "name": "Inhambane Province",
+      "cities": {}
+    },
+    "B": {
+      "name": "Manica Province",
+      "cities": {}
+    },
+    "MPM": {
+      "name": "Maputo",
+      "cities": {}
+    },
+    "L": {
+      "name": "Maputo Province",
+      "cities": {}
+    },
+    "N": {
+      "name": "Nampula Province",
+      "cities": {}
+    },
+    "A": {
+      "name": "Niassa Province",
+      "cities": {}
+    },
+    "S": {
+      "name": "Sofala Province",
+      "cities": {}
+    },
+    "T": {
+      "name": "Tete Province",
+      "cities": {}
+    },
+    "Q": {
+      "name": "Zambezia Province",
+      "cities": {}
+    }
+  }
+}

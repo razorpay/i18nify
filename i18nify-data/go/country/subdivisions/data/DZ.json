@@ -1,0 +1,237 @@
+{
+  "country_name": "Algeria",
+  "states": {
+    "10": {
+      "name": "Bouïra",
+      "cities": {}
+    },
+    "11": {
+      "name": "Tamanghasset",
+      "cities": {}
+    },
+    "12": {
+      "name": "Tébessa",
+      "cities": {}
+    },
+    "13": {
+      "name": "Tlemcen",
+      "cities": {}
+    },
+    "14": {
+      "name": "Tiaret",
+      "cities": {}
+    },
+    "15": {
+      "name": "Tizi Ouzou",
+      "cities": {}
+    },
+    "16": {
+      "name": "Algiers",
+      "cities": {}
+    },
+    "17": {
+      "name": "Djelfa",
+      "cities": {}
+    },
+    "18": {
+      "name": "Jijel",
+      "cities": {}
+    },
+    "19": {
+      "name": "Sétif",
+      "cities": {}
+    },
+    "20": {
+      "name": "Saïda",
+      "cities": {}
+    },
+    "21": {
+      "name": "Skikda",
+      "cities": {}
+    },
+    "22": {
+      "name": "Sidi Bel Abbès",
+      "cities": {}
+    },
+    "23": {
+      "name": "Annaba",
+      "cities": {}
+    },
+    "24": {
+      "name": "Guelma",
+      "cities": {}
+    },
+    "25": {
+      "name": "Constantine",
+      "cities": {}
+    },
+    "26": {
+      "name": "Médéa",
+      "cities": {}
+    },
+    "27": {
+      "name": "Mostaganem",
+      "cities": {}
+    },
+    "28": {
+      "name": "M'Sila",
+      "cities": {}
+    },
+    "29": {
+      "name": "Mascara",
+      "cities": {}
+    },
+    "30": {
+      "name": "Ouargla",
+      "cities": {}
+    },
+    "31": {
+      "name": "Oran",
+      "cities": {}
+    },
+    "32": {
+      "name": "El Bayadh",
+      "cities": {}
+    },
+    "33": {
+      "name": "Illizi",
+      "cities": {}
+    },
+    "34": {
+      "name": "Bordj Bou Arréridj",
+      "cities": {}
+    },
+    "35": {
+      "name": "Boumerdès",
+      "cities": {}
+    },
+    "36": {
+      "name": "El Tarf",
+      "cities": {}
+    },
+    "37": {
+      "name": "Tindouf",
+      "cities": {}
+    },
+    "38": {
+      "name": "Tissemsilt",
+      "cities": {}
+    },
+    "39": {
+      "name": "El Oued",
+      "cities": {}
+    },
+    "40": {
+      "name": "Khenchela",
+      "cities": {}
+    },
+    "41": {
+      "name": "Souk Ahras",
+      "cities": {}
+    },
+    "42": {
+      "name": "Tipasa",
+      "cities": {}
+    },
+    "43": {
+      "name": "Mila",
+      "cities": {}
+    },
+    "44": {
+      "name": "Aïn Defla",
+      "cities": {}
+    },
+    "45": {
+      "name": "Naama",
+      "cities": {}
+    },
+    "46": {
+      "name": "Aïn Témouchent",
+      "cities": {}
+    },
+    "47": {
+      "name": "Ghardaïa",
+      "cities": {}
+    },
+    "48": {
+      "name": "Relizane",
+      "cities": {}
+    },
+    "49": {
+      "name": "El M'ghair",
+      "cities": {}
+    },
+    "50": {
+      "name": "El Menia",
+      "cities": {}
+    },
+    "51": {
+      "name": "Ouled Djellal",
+      "cities": {}
+    },
+    "52": {
+      "name": "Bordj Baji Mokhtar",
+      "cities": {}
+    },
+    "53": {
+      "name": "Béni Abbès",
+      "cities": {}
+    },
+    "54": {
+      "name": "Timimoun",
+      "cities": {}
+    },
+    "55": {
+      "name": "Touggourt",
+      "cities": {}
+    },
+    "56": {
+      "name": "Djanet",
+      "cities": {}
+    },
+    "57": {
+      "name": "In Salah",
+      "cities": {}
+    },
+    "58": {
+      "name": "In Guezzam",
+      "cities": {}
+    },
+    "01": {
+      "name": "Adrar",
+      "cities": {}
+    },
+    "05": {
+      "name": "Batna",
+      "cities": {}
+    },
+    "08": {
+      "name": "Béchar",
+      "cities": {}
+    },
+    "06": {
+      "name": "Béjaïa",
+      "cities": {}
+    },
+    "07": {
+      "name": "Biskra",
+      "cities": {}
+    },
+    "09": {
+      "name": "Blida",
+      "cities": {}
+    },
+    "02": {
+      "name": "Chlef",
+      "cities": {}
+    },
+    "03": {
+      "name": "Laghouat",
+      "cities": {}
+    },
+    "04": {
+      "name": "Oum El Bouaghi",
+      "cities": {}
+    }
+  }
+}

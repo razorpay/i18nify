@@ -1,0 +1,37 @@
+{
+  "country_name": "Iceland",
+  "states": {
+    "1": {
+      "name": "Capital Region",
+      "cities": {}
+    },
+    "2": {
+      "name": "Southern Peninsula Region",
+      "cities": {}
+    },
+    "3": {
+      "name": "Western Region",
+      "cities": {}
+    },
+    "4": {
+      "name": "Westfjords",
+      "cities": {}
+    },
+    "5": {
+      "name": "Northwestern Region",
+      "cities": {}
+    },
+    "6": {
+      "name": "Northeastern Region",
+      "cities": {}
+    },
+    "7": {
+      "name": "Eastern Region",
+      "cities": {}
+    },
+    "8": {
+      "name": "Southern Region",
+      "cities": {}
+    }
+  }
+}

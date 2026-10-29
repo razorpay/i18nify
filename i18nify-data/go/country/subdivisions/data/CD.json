@@ -1,0 +1,109 @@
+{
+  "country_name": "Democratic Republic of the Congo",
+  "states": {
+    "BU": {
+      "name": "Bas-Uélé",
+      "cities": {}
+    },
+    "EQ": {
+      "name": "Équateur",
+      "cities": {}
+    },
+    "HK": {
+      "name": "Haut-Katanga",
+      "cities": {}
+    },
+    "HL": {
+      "name": "Haut-Lomami",
+      "cities": {}
+    },
+    "HU": {
+      "name": "Haut-Uélé",
+      "cities": {}
+    },
+    "IT": {
+      "name": "Ituri",
+      "cities": {}
+    },
+    "KS": {
+      "name": "Kasaï",
+      "cities": {}
+    },
+    "KC": {
+      "name": "Kasaï Central",
+      "cities": {}
+    },
+    "KE": {
+      "name": "Kasaï Oriental",
+      "cities": {}
+    },
+    "KN": {
+      "name": "Kinshasa",
+      "cities": {}
+    },
+    "BC": {
+      "name": "Kongo Central",
+      "cities": {}
+    },
+    "KG": {
+      "name": "Kwango",
+      "cities": {}
+    },
+    "KL": {
+      "name": "Kwilu",
+      "cities": {}
+    },
+    "LO": {
+      "name": "Lomami",
+      "cities": {}
+    },
+    "LU": {
+      "name": "Lualaba",
+      "cities": {}
+    },
+    "MN": {
+      "name": "Mai-Ndombe",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Maniema",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Mongala",
+      "cities": {}
+    },
+    "NK": {
+      "name": "Nord-Kivu",
+      "cities": {}
+    },
+    "NU": {
+      "name": "Nord-Ubangi",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Sankuru",
+      "cities": {}
+    },
+    "SK": {
+      "name": "Sud-Kivu",
+      "cities": {}
+    },
+    "SU": {
+      "name": "Sud-Ubangi",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Tanganyika",
+      "cities": {}
+    },
+    "TO": {
+      "name": "Tshopo",
+      "cities": {}
+    },
+    "TU": {
+      "name": "Tshuapa",
+      "cities": {}
+    }
+  }
+}

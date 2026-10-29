@@ -1,0 +1,141 @@
+{
+  "country_name": "Indonesia",
+  "states": {
+    "AC": {
+      "name": "Aceh",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Bali",
+      "cities": {}
+    },
+    "BT": {
+      "name": "Banten",
+      "cities": {}
+    },
+    "BE": {
+      "name": "Bengkulu",
+      "cities": {}
+    },
+    "YO": {
+      "name": "DI Yogyakarta",
+      "cities": {}
+    },
+    "JK": {
+      "name": "DKI Jakarta",
+      "cities": {}
+    },
+    "GO": {
+      "name": "Gorontalo",
+      "cities": {}
+    },
+    "JA": {
+      "name": "Jambi",
+      "cities": {}
+    },
+    "JB": {
+      "name": "Jawa Barat",
+      "cities": {}
+    },
+    "JT": {
+      "name": "Jawa Tengah",
+      "cities": {}
+    },
+    "JI": {
+      "name": "Jawa Timur",
+      "cities": {}
+    },
+    "KA": {
+      "name": "Kalimantan Barat",
+      "cities": {}
+    },
+    "KS": {
+      "name": "Kalimantan Selatan",
+      "cities": {}
+    },
+    "KT": {
+      "name": "Kalimantan Tengah",
+      "cities": {}
+    },
+    "KI": {
+      "name": "Kalimantan Timur",
+      "cities": {}
+    },
+    "KU": {
+      "name": "Kalimantan Utara",
+      "cities": {}
+    },
+    "BB": {
+      "name": "Kepulauan Bangka Belitung",
+      "cities": {}
+    },
+    "KR": {
+      "name": "Kepulauan Riau",
+      "cities": {}
+    },
+    "LA": {
+      "name": "Lampung",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Maluku",
+      "cities": {}
+    },
+    "MU": {
+      "name": "Maluku Utara",
+      "cities": {}
+    },
+    "NB": {
+      "name": "Nusa Tenggara Barat",
+      "cities": {}
+    },
+    "NT": {
+      "name": "Nusa Tenggara Timur",
+      "cities": {}
+    },
+    "PA": {
+      "name": "Papua",
+      "cities": {}
+    },
+    "PB": {
+      "name": "Papua Barat",
+      "cities": {}
+    },
+    "RI": {
+      "name": "Riau",
+      "cities": {}
+    },
+    "SR": {
+      "name": "Sulawesi Barat",
+      "cities": {}
+    },
+    "SN": {
+      "name": "Sulawesi Selatan",
+      "cities": {}
+    },
+    "ST": {
+      "name": "Sulawesi Tengah",
+      "cities": {}
+    },
+    "SG": {
+      "name": "Sulawesi Tenggara",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Sulawesi Utara",
+      "cities": {}
+    },
+    "SB": {
+      "name": "Sumatera Barat",
+      "cities": {}
+    },
+    "SS": {
+      "name": "Sumatera Selatan",
+      "cities": {}
+    },
+    "SU": {
+      "name": "Sumatera Utara",
+      "cities": {}
+    }
+  }
+}
