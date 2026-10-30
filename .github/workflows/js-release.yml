@@ -12,7 +12,8 @@ on:
 
 permissions:
   id-token: write  # Required for OIDC
-  contents: read
+  contents: write  # changesets pushes the version-bump commit / changeset-release branch
+  pull-requests: write  # changesets opens/updates the "update version" release PR
 
 env:
   GITHUB_ACCESS_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
@@ -26,6 +27,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          # Use the bot PAT so changesets pushes as CI_BOT_TOKEN (which can write
+          # to protected branches) instead of the default github-actions[bot],
+          # which was getting 403 on `git push ... changeset-release/master`.
+          token: ${{ secrets.CI_BOT_TOKEN }}
       - name: Use Node v20
         uses: actions/setup-node@v3
         with:
