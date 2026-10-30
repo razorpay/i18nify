@@ -1,0 +1,517 @@
+{
+  "country_name": "Italy",
+  "states": {
+    "21": {
+      "name": "Piedmont",
+      "cities": {}
+    },
+    "23": {
+      "name": "Aosta Valley",
+      "cities": {}
+    },
+    "25": {
+      "name": "Lombardy",
+      "cities": {}
+    },
+    "32": {
+      "name": "Trentino-South Tyrol",
+      "cities": {}
+    },
+    "34": {
+      "name": "Veneto",
+      "cities": {}
+    },
+    "36": {
+      "name": "Friuli–Venezia Giulia",
+      "cities": {}
+    },
+    "42": {
+      "name": "Liguria",
+      "cities": {}
+    },
+    "45": {
+      "name": "Emilia-Romagna",
+      "cities": {}
+    },
+    "52": {
+      "name": "Tuscany",
+      "cities": {}
+    },
+    "55": {
+      "name": "Umbria",
+      "cities": {}
+    },
+    "57": {
+      "name": "Marche",
+      "cities": {}
+    },
+    "62": {
+      "name": "Lazio",
+      "cities": {}
+    },
+    "65": {
+      "name": "Abruzzo",
+      "cities": {}
+    },
+    "67": {
+      "name": "Molise",
+      "cities": {}
+    },
+    "72": {
+      "name": "Campania",
+      "cities": {}
+    },
+    "75": {
+      "name": "Apulia",
+      "cities": {}
+    },
+    "77": {
+      "name": "Basilicata",
+      "cities": {}
+    },
+    "78": {
+      "name": "Calabria",
+      "cities": {}
+    },
+    "82": {
+      "name": "Sicily",
+      "cities": {}
+    },
+    "88": {
+      "name": "Sardinia",
+      "cities": {}
+    },
+    "BN": {
+      "name": "Benevento Province",
+      "cities": {}
+    },
+    "AG": {
+      "name": "Libero consorzio comunale di Agrigento",
+      "cities": {}
+    },
+    "CL": {
+      "name": "Libero consorzio comunale di Caltanissetta",
+      "cities": {}
+    },
+    "EN": {
+      "name": "Libero consorzio comunale di Enna",
+      "cities": {}
+    },
+    "RG": {
+      "name": "Libero consorzio comunale di Ragusa",
+      "cities": {}
+    },
+    "SR": {
+      "name": "Libero consorzio comunale di Siracusa",
+      "cities": {}
+    },
+    "TP": {
+      "name": "Libero consorzio comunale di Trapani",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Metropolitan City of Bari",
+      "cities": {}
+    },
+    "BO": {
+      "name": "Metropolitan City of Bologna",
+      "cities": {}
+    },
+    "CA": {
+      "name": "Metropolitan City of Cagliari",
+      "cities": {}
+    },
+    "CT": {
+      "name": "Metropolitan City of Catania",
+      "cities": {}
+    },
+    "FI": {
+      "name": "Metropolitan City of Florence",
+      "cities": {}
+    },
+    "GE": {
+      "name": "Metropolitan City of Genoa",
+      "cities": {}
+    },
+    "ME": {
+      "name": "Metropolitan City of Messina",
+      "cities": {}
+    },
+    "MI": {
+      "name": "Metropolitan City of Milan",
+      "cities": {}
+    },
+    "NA": {
+      "name": "Metropolitan City of Naples",
+      "cities": {}
+    },
+    "PA": {
+      "name": "Metropolitan City of Palermo",
+      "cities": {}
+    },
+    "RC": {
+      "name": "Metropolitan City of Reggio Calabria",
+      "cities": {}
+    },
+    "RM": {
+      "name": "Metropolitan City of Rome",
+      "cities": {}
+    },
+    "TO": {
+      "name": "Metropolitan City of Turin",
+      "cities": {}
+    },
+    "VE": {
+      "name": "Metropolitan City of Venice",
+      "cities": {}
+    },
+    "PU": {
+      "name": "Pesaro and Urbino Province",
+      "cities": {}
+    },
+    "AL": {
+      "name": "Province of Alessandria",
+      "cities": {}
+    },
+    "AN": {
+      "name": "Province of Ancona",
+      "cities": {}
+    },
+    "AP": {
+      "name": "Province of Ascoli Piceno",
+      "cities": {}
+    },
+    "AT": {
+      "name": "Province of Asti",
+      "cities": {}
+    },
+    "AV": {
+      "name": "Province of Avellino",
+      "cities": {}
+    },
+    "BT": {
+      "name": "Province of Barletta-Andria-Trani",
+      "cities": {}
+    },
+    "BL": {
+      "name": "Province of Belluno",
+      "cities": {}
+    },
+    "BG": {
+      "name": "Province of Bergamo",
+      "cities": {}
+    },
+    "BI": {
+      "name": "Province of Biella",
+      "cities": {}
+    },
+    "BS": {
+      "name": "Province of Brescia",
+      "cities": {}
+    },
+    "BR": {
+      "name": "Province of Brindisi",
+      "cities": {}
+    },
+    "CB": {
+      "name": "Province of Campobasso",
+      "cities": {}
+    },
+    "CI": {
+      "name": "Province of Carbonia-Iglesias",
+      "cities": {}
+    },
+    "CE": {
+      "name": "Province of Caserta",
+      "cities": {}
+    },
+    "CZ": {
+      "name": "Province of Catanzaro",
+      "cities": {}
+    },
+    "CH": {
+      "name": "Province of Chieti",
+      "cities": {}
+    },
+    "CO": {
+      "name": "Province of Como",
+      "cities": {}
+    },
+    "CS": {
+      "name": "Province of Cosenza",
+      "cities": {}
+    },
+    "CR": {
+      "name": "Province of Cremona",
+      "cities": {}
+    },
+    "KR": {
+      "name": "Province of Crotone",
+      "cities": {}
+    },
+    "CN": {
+      "name": "Province of Cuneo",
+      "cities": {}
+    },
+    "FM": {
+      "name": "Province of Fermo",
+      "cities": {}
+    },
+    "FE": {
+      "name": "Province of Ferrara",
+      "cities": {}
+    },
+    "FG": {
+      "name": "Province of Foggia",
+      "cities": {}
+    },
+    "FC": {
+      "name": "Province of Forlì-Cesena",
+      "cities": {}
+    },
+    "FR": {
+      "name": "Province of Frosinone",
+      "cities": {}
+    },
+    "GO": {
+      "name": "Province of Gorizia",
+      "cities": {}
+    },
+    "GR": {
+      "name": "Province of Grosseto",
+      "cities": {}
+    },
+    "IM": {
+      "name": "Province of Imperia",
+      "cities": {}
+    },
+    "IS": {
+      "name": "Province of Isernia",
+      "cities": {}
+    },
+    "AQ": {
+      "name": "Province of L'Aquila",
+      "cities": {}
+    },
+    "SP": {
+      "name": "Province of La Spezia",
+      "cities": {}
+    },
+    "LT": {
+      "name": "Province of Latina",
+      "cities": {}
+    },
+    "LE": {
+      "name": "Province of Lecce",
+      "cities": {}
+    },
+    "LC": {
+      "name": "Province of Lecco",
+      "cities": {}
+    },
+    "LI": {
+      "name": "Province of Livorno",
+      "cities": {}
+    },
+    "LO": {
+      "name": "Province of Lodi",
+      "cities": {}
+    },
+    "LU": {
+      "name": "Province of Lucca",
+      "cities": {}
+    },
+    "MC": {
+      "name": "Province of Macerata",
+      "cities": {}
+    },
+    "MN": {
+      "name": "Province of Mantua",
+      "cities": {}
+    },
+    "MS": {
+      "name": "Province of Massa and Carrara",
+      "cities": {}
+    },
+    "MT": {
+      "name": "Province of Matera",
+      "cities": {}
+    },
+    "VS": {
+      "name": "Province of Medio Campidano",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Province of Modena",
+      "cities": {}
+    },
+    "MB": {
+      "name": "Province of Monza and Brianza",
+      "cities": {}
+    },
+    "NO": {
+      "name": "Province of Novara",
+      "cities": {}
+    },
+    "NU": {
+      "name": "Province of Nuoro",
+      "cities": {}
+    },
+    "OG": {
+      "name": "Province of Ogliastra",
+      "cities": {}
+    },
+    "OT": {
+      "name": "Province of Olbia-Tempio",
+      "cities": {}
+    },
+    "OR": {
+      "name": "Province of Oristano",
+      "cities": {}
+    },
+    "PD": {
+      "name": "Province of Padua",
+      "cities": {}
+    },
+    "PR": {
+      "name": "Province of Parma",
+      "cities": {}
+    },
+    "PV": {
+      "name": "Province of Pavia",
+      "cities": {}
+    },
+    "PG": {
+      "name": "Province of Perugia",
+      "cities": {}
+    },
+    "PE": {
+      "name": "Province of Pescara",
+      "cities": {}
+    },
+    "PC": {
+      "name": "Province of Piacenza",
+      "cities": {}
+    },
+    "PI": {
+      "name": "Province of Pisa",
+      "cities": {}
+    },
+    "PT": {
+      "name": "Province of Pistoia",
+      "cities": {}
+    },
+    "PN": {
+      "name": "Province of Pordenone",
+      "cities": {}
+    },
+    "PZ": {
+      "name": "Province of Potenza",
+      "cities": {}
+    },
+    "PO": {
+      "name": "Province of Prato",
+      "cities": {}
+    },
+    "RA": {
+      "name": "Province of Ravenna",
+      "cities": {}
+    },
+    "RE": {
+      "name": "Province of Reggio Emilia",
+      "cities": {}
+    },
+    "RI": {
+      "name": "Province of Rieti",
+      "cities": {}
+    },
+    "RN": {
+      "name": "Province of Rimini",
+      "cities": {}
+    },
+    "RO": {
+      "name": "Province of Rovigo",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Province of Salerno",
+      "cities": {}
+    },
+    "SS": {
+      "name": "Province of Sassari",
+      "cities": {}
+    },
+    "SV": {
+      "name": "Province of Savona",
+      "cities": {}
+    },
+    "SI": {
+      "name": "Province of Siena",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Province of Sondrio",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Province of Taranto",
+      "cities": {}
+    },
+    "TE": {
+      "name": "Province of Teramo",
+      "cities": {}
+    },
+    "TR": {
+      "name": "Province of Terni",
+      "cities": {}
+    },
+    "TV": {
+      "name": "Province of Treviso",
+      "cities": {}
+    },
+    "TS": {
+      "name": "Province of Trieste",
+      "cities": {}
+    },
+    "UD": {
+      "name": "Province of Udine",
+      "cities": {}
+    },
+    "VA": {
+      "name": "Province of Varese",
+      "cities": {}
+    },
+    "VB": {
+      "name": "Province of Verbano-Cusio-Ossola",
+      "cities": {}
+    },
+    "VC": {
+      "name": "Province of Vercelli",
+      "cities": {}
+    },
+    "VR": {
+      "name": "Province of Verona",
+      "cities": {}
+    },
+    "VV": {
+      "name": "Province of Vibo Valentia",
+      "cities": {}
+    },
+    "VI": {
+      "name": "Province of Vicenza",
+      "cities": {}
+    },
+    "VT": {
+      "name": "Province of Viterbo",
+      "cities": {}
+    },
+    "BZ": {
+      "name": "South Tyrol",
+      "cities": {}
+    },
+    "TN": {
+      "name": "Trentino",
+      "cities": {}
+    }
+  }
+}

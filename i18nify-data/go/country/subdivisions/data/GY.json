@@ -1,0 +1,45 @@
+{
+  "country_name": "Guyana",
+  "states": {
+    "BA": {
+      "name": "Barima-Waini",
+      "cities": {}
+    },
+    "CU": {
+      "name": "Cuyuni-Mazaruni",
+      "cities": {}
+    },
+    "DE": {
+      "name": "Demerara-Mahaica",
+      "cities": {}
+    },
+    "EB": {
+      "name": "East Berbice-Corentyne",
+      "cities": {}
+    },
+    "ES": {
+      "name": "Essequibo Islands-West Demerara",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Mahaica-Berbice",
+      "cities": {}
+    },
+    "PM": {
+      "name": "Pomeroon-Supenaam",
+      "cities": {}
+    },
+    "PT": {
+      "name": "Potaro-Siparuni",
+      "cities": {}
+    },
+    "UD": {
+      "name": "Upper Demerara-Berbice",
+      "cities": {}
+    },
+    "UT": {
+      "name": "Upper Takutu-Upper Essequibo",
+      "cities": {}
+    }
+  }
+}

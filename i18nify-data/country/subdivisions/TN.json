@@ -1,0 +1,97 @@
+{
+  "country_name": "Tunisia",
+  "states": {
+    "11": {
+      "name": "Tunis Governorate",
+      "cities": {}
+    },
+    "12": {
+      "name": "Ariana Governorate",
+      "cities": {}
+    },
+    "13": {
+      "name": "Ben Arous Governorate",
+      "cities": {}
+    },
+    "14": {
+      "name": "Manouba Governorate",
+      "cities": {}
+    },
+    "22": {
+      "name": "Zaghouan Governorate",
+      "cities": {}
+    },
+    "23": {
+      "name": "Bizerte Governorate",
+      "cities": {}
+    },
+    "31": {
+      "name": "Kassrine",
+      "cities": {}
+    },
+    "32": {
+      "name": "Jendouba Governorate",
+      "cities": {}
+    },
+    "33": {
+      "name": "Kef Governorate",
+      "cities": {}
+    },
+    "34": {
+      "name": "Siliana Governorate",
+      "cities": {}
+    },
+    "41": {
+      "name": "Kairouan Governorate",
+      "cities": {}
+    },
+    "42": {
+      "name": "Kasserine Governorate",
+      "cities": {}
+    },
+    "43": {
+      "name": "Sidi Bouzid Governorate",
+      "cities": {}
+    },
+    "51": {
+      "name": "Sousse Governorate",
+      "cities": {}
+    },
+    "52": {
+      "name": "Monastir Governorate",
+      "cities": {}
+    },
+    "53": {
+      "name": "Mahdia Governorate",
+      "cities": {}
+    },
+    "61": {
+      "name": "Sfax Governorate",
+      "cities": {}
+    },
+    "71": {
+      "name": "Gafsa Governorate",
+      "cities": {}
+    },
+    "72": {
+      "name": "Tozeur Governorate",
+      "cities": {}
+    },
+    "73": {
+      "name": "Kebili Governorate",
+      "cities": {}
+    },
+    "81": {
+      "name": "Gabès Governorate",
+      "cities": {}
+    },
+    "82": {
+      "name": "Medenine Governorate",
+      "cities": {}
+    },
+    "83": {
+      "name": "Tataouine Governorate",
+      "cities": {}
+    }
+  }
+}

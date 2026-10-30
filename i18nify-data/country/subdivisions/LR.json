@@ -1,0 +1,65 @@
+{
+  "country_name": "Liberia",
+  "states": {
+    "BM": {
+      "name": "Bomi County",
+      "cities": {}
+    },
+    "BG": {
+      "name": "Bong County",
+      "cities": {}
+    },
+    "GP": {
+      "name": "Gbarpolu County",
+      "cities": {}
+    },
+    "GB": {
+      "name": "Grand Bassa County",
+      "cities": {}
+    },
+    "CM": {
+      "name": "Grand Cape Mount County",
+      "cities": {}
+    },
+    "GG": {
+      "name": "Grand Gedeh County",
+      "cities": {}
+    },
+    "GK": {
+      "name": "Grand Kru County",
+      "cities": {}
+    },
+    "LO": {
+      "name": "Lofa County",
+      "cities": {}
+    },
+    "MG": {
+      "name": "Margibi County",
+      "cities": {}
+    },
+    "MY": {
+      "name": "Maryland County",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Montserrado County",
+      "cities": {}
+    },
+    "NI": {
+      "name": "Nimba",
+      "cities": {}
+    },
+    "RI": {
+      "name": "River Cess County",
+      "cities": {}
+    },
+    "RG": {
+      "name": "River Gee County",
+      "cities": {}
+    },
+    "SI": {
+      "name": "Sinoe County",
+      "cities": {}
+    }
+  }
+}

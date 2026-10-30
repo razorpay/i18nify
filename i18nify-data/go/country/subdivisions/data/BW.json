@@ -1,0 +1,45 @@
+{
+  "country_name": "Botswana",
+  "states": {
+    "CE": {
+      "name": "Central District",
+      "cities": {}
+    },
+    "GH": {
+      "name": "Ghanzi District",
+      "cities": {}
+    },
+    "KG": {
+      "name": "Kgalagadi District",
+      "cities": {}
+    },
+    "KL": {
+      "name": "Kgatleng District",
+      "cities": {}
+    },
+    "KW": {
+      "name": "Kweneng District",
+      "cities": {}
+    },
+    "NG": {
+      "name": "Ngamiland",
+      "cities": {}
+    },
+    "NE": {
+      "name": "North-East District",
+      "cities": {}
+    },
+    "NW": {
+      "name": "North-West District",
+      "cities": {}
+    },
+    "SE": {
+      "name": "South-East District",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Southern District",
+      "cities": {}
+    }
+  }
+}

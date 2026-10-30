@@ -1,0 +1,105 @@
+{
+  "country_name": "Ukraine",
+  "states": {
+    "12": {
+      "name": "Dnipropetrovsk Oblast",
+      "cities": {}
+    },
+    "14": {
+      "name": "Donetsk Oblast",
+      "cities": {}
+    },
+    "18": {
+      "name": "Zhytomyr Oblast",
+      "cities": {}
+    },
+    "21": {
+      "name": "Zakarpattia Oblast",
+      "cities": {}
+    },
+    "23": {
+      "name": "Zaporizhzhya Oblast",
+      "cities": {}
+    },
+    "26": {
+      "name": "Ivano-Frankivsk Oblast",
+      "cities": {}
+    },
+    "30": {
+      "name": "Kiev",
+      "cities": {}
+    },
+    "32": {
+      "name": "Kyiv Oblast",
+      "cities": {}
+    },
+    "35": {
+      "name": "Kirovohrad Oblast",
+      "cities": {}
+    },
+    "43": {
+      "name": "Autonomous Republic of Crimea",
+      "cities": {}
+    },
+    "46": {
+      "name": "Lviv Oblast",
+      "cities": {}
+    },
+    "48": {
+      "name": "Mykolaiv Oblast",
+      "cities": {}
+    },
+    "51": {
+      "name": "Odessa Oblast",
+      "cities": {}
+    },
+    "56": {
+      "name": "Rivne Oblast",
+      "cities": {}
+    },
+    "59": {
+      "name": "Sumy Oblast",
+      "cities": {}
+    },
+    "61": {
+      "name": "Ternopil Oblast",
+      "cities": {}
+    },
+    "63": {
+      "name": "Kharkiv Oblast",
+      "cities": {}
+    },
+    "65": {
+      "name": "Kherson Oblast",
+      "cities": {}
+    },
+    "68": {
+      "name": "Khmelnytsky Oblast",
+      "cities": {}
+    },
+    "71": {
+      "name": "Cherkasy Oblast",
+      "cities": {}
+    },
+    "74": {
+      "name": "Chernihiv Oblast",
+      "cities": {}
+    },
+    "77": {
+      "name": "Chernivtsi Oblast",
+      "cities": {}
+    },
+    "09": {
+      "name": "Luhansk Oblast",
+      "cities": {}
+    },
+    "05": {
+      "name": "Vinnytsia Oblast",
+      "cities": {}
+    },
+    "07": {
+      "name": "Volyn Oblast",
+      "cities": {}
+    }
+  }
+}

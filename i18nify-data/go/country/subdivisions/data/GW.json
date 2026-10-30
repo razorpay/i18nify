@@ -1,0 +1,49 @@
+{
+  "country_name": "Guinea-Bissau",
+  "states": {
+    "BA": {
+      "name": "Bafatá",
+      "cities": {}
+    },
+    "BM": {
+      "name": "Biombo Region",
+      "cities": {}
+    },
+    "BL": {
+      "name": "Bolama Region",
+      "cities": {}
+    },
+    "CA": {
+      "name": "Cacheu Region",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Gabú Region",
+      "cities": {}
+    },
+    "L": {
+      "name": "Leste Province",
+      "cities": {}
+    },
+    "N": {
+      "name": "Norte Province",
+      "cities": {}
+    },
+    "OI": {
+      "name": "Oio Region",
+      "cities": {}
+    },
+    "QU": {
+      "name": "Quinara Region",
+      "cities": {}
+    },
+    "S": {
+      "name": "Sul Province",
+      "cities": {}
+    },
+    "TO": {
+      "name": "Tombali Region",
+      "cities": {}
+    }
+  }
+}

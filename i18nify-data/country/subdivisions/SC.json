@@ -1,0 +1,101 @@
+{
+  "country_name": "Seychelles",
+  "states": {
+    "10": {
+      "name": "Bel Ombre",
+      "cities": {}
+    },
+    "11": {
+      "name": "Cascade",
+      "cities": {}
+    },
+    "12": {
+      "name": "Glacis",
+      "cities": {}
+    },
+    "13": {
+      "name": "Grand'Anse Mahé",
+      "cities": {}
+    },
+    "14": {
+      "name": "Grand'Anse Praslin",
+      "cities": {}
+    },
+    "15": {
+      "name": "La Digue",
+      "cities": {}
+    },
+    "16": {
+      "name": "La Rivière Anglaise",
+      "cities": {}
+    },
+    "17": {
+      "name": "Mont Buxton",
+      "cities": {}
+    },
+    "18": {
+      "name": "Mont Fleuri",
+      "cities": {}
+    },
+    "19": {
+      "name": "Plaisance",
+      "cities": {}
+    },
+    "20": {
+      "name": "Pointe La Rue",
+      "cities": {}
+    },
+    "21": {
+      "name": "Port Glaud",
+      "cities": {}
+    },
+    "22": {
+      "name": "Saint Louis",
+      "cities": {}
+    },
+    "23": {
+      "name": "Takamaka",
+      "cities": {}
+    },
+    "24": {
+      "name": "Les Mamelles",
+      "cities": {}
+    },
+    "25": {
+      "name": "Roche Caiman",
+      "cities": {}
+    },
+    "02": {
+      "name": "Anse Boileau",
+      "cities": {}
+    },
+    "05": {
+      "name": "Anse Royale",
+      "cities": {}
+    },
+    "01": {
+      "name": "Anse-aux-Pins",
+      "cities": {}
+    },
+    "04": {
+      "name": "Au Cap",
+      "cities": {}
+    },
+    "06": {
+      "name": "Baie Lazare",
+      "cities": {}
+    },
+    "07": {
+      "name": "Baie Sainte Anne",
+      "cities": {}
+    },
+    "08": {
+      "name": "Beau Vallon",
+      "cities": {}
+    },
+    "09": {
+      "name": "Bel Air",
+      "cities": {}
+    }
+  }
+}

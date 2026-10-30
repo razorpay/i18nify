@@ -1,0 +1,29 @@
+{
+  "country_name": "Vanuatu",
+  "states": {
+    "MAP": {
+      "name": "Malampa",
+      "cities": {}
+    },
+    "PAM": {
+      "name": "Penama",
+      "cities": {}
+    },
+    "SAM": {
+      "name": "Sanma",
+      "cities": {}
+    },
+    "SEE": {
+      "name": "Shefa",
+      "cities": {}
+    },
+    "TAE": {
+      "name": "Tafea",
+      "cities": {}
+    },
+    "TOB": {
+      "name": "Torba",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "country_name": "Spain",
+  "states": {
+    "AN": {
+      "name": "Andalusia",
+      "cities": {}
+    },
+    "AR": {
+      "name": "Aragon",
+      "cities": {}
+    },
+    "AS": {
+      "name": "Asturias",
+      "cities": {}
+    },
+    "AV": {
+      "name": "Ávila",
+      "cities": {}
+    },
+    "PM": {
+      "name": "Balearic Islands",
+      "cities": {}
+    },
+    "PV": {
+      "name": "Basque Country",
+      "cities": {}
+    },
+    "BU": {
+      "name": "Burgos Province",
+      "cities": {}
+    },
+    "CN": {
+      "name": "Canary Islands",
+      "cities": {}
+    },
+    "CB": {
+      "name": "Cantabria",
+      "cities": {}
+    },
+    "CL": {
+      "name": "Castile and León",
+      "cities": {}
+    },
+    "CM": {
+      "name": "Castilla La Mancha",
+      "cities": {}
+    },
+    "CT": {
+      "name": "Catalonia",
+      "cities": {}
+    },
+    "CE": {
+      "name": "Ceuta",
+      "cities": {}
+    },
+    "EX": {
+      "name": "Extremadura",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Galicia",
+      "cities": {}
+    },
+    "RI": {
+      "name": "La Rioja",
+      "cities": {}
+    },
+    "LE": {
+      "name": "Léon",
+      "cities": {}
+    },
+    "MD": {
+      "name": "Madrid",
+      "cities": {}
+    },
+    "ML": {
+      "name": "Melilla",
+      "cities": {}
+    },
+    "MC": {
+      "name": "Murcia",
+      "cities": {}
+    },
+    "NC": {
+      "name": "Navarra",
+      "cities": {}
+    },
+    "P": {
+      "name": "Palencia Province",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Salamanca Province",
+      "cities": {}
+    },
+    "SG": {
+      "name": "Segovia Province",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Soria Province",
+      "cities": {}
+    },
+    "VC": {
+      "name": "Valencia",
+      "cities": {}
+    },
+    "VA": {
+      "name": "Valladolid Province",
+      "cities": {}
+    },
+    "ZA": {
+      "name": "Zamora Province",
+      "cities": {}
+    }
+  }
+}

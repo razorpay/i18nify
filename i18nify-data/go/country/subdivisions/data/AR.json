@@ -1,0 +1,101 @@
+{
+  "country_name": "Argentina",
+  "states": {
+    "C": {
+      "name": "Autonomous City Of Buenos Aires",
+      "cities": {}
+    },
+    "B": {
+      "name": "Buenos Aires Province",
+      "cities": {}
+    },
+    "K": {
+      "name": "Catamarca Province",
+      "cities": {}
+    },
+    "H": {
+      "name": "Chaco Province",
+      "cities": {}
+    },
+    "U": {
+      "name": "Chubut Province",
+      "cities": {}
+    },
+    "X": {
+      "name": "Córdoba Province",
+      "cities": {}
+    },
+    "W": {
+      "name": "Corrientes",
+      "cities": {}
+    },
+    "E": {
+      "name": "Entre Ríos Province",
+      "cities": {}
+    },
+    "P": {
+      "name": "Formosa Province",
+      "cities": {}
+    },
+    "Y": {
+      "name": "Jujuy Province",
+      "cities": {}
+    },
+    "L": {
+      "name": "La Pampa",
+      "cities": {}
+    },
+    "F": {
+      "name": "La Rioja Province",
+      "cities": {}
+    },
+    "M": {
+      "name": "Mendoza",
+      "cities": {}
+    },
+    "N": {
+      "name": "Misiones Province",
+      "cities": {}
+    },
+    "Q": {
+      "name": "Neuquén Province",
+      "cities": {}
+    },
+    "R": {
+      "name": "Río Negro Province",
+      "cities": {}
+    },
+    "A": {
+      "name": "Salta Province",
+      "cities": {}
+    },
+    "J": {
+      "name": "San Juan Province",
+      "cities": {}
+    },
+    "D": {
+      "name": "San Luis Province",
+      "cities": {}
+    },
+    "Z": {
+      "name": "Santa Cruz Province",
+      "cities": {}
+    },
+    "S": {
+      "name": "Santa Fe Province",
+      "cities": {}
+    },
+    "G": {
+      "name": "Santiago del Estero Province",
+      "cities": {}
+    },
+    "V": {
+      "name": "Tierra del Fuego Province",
+      "cities": {}
+    },
+    "T": {
+      "name": "Tucumán Province",
+      "cities": {}
+    }
+  }
+}

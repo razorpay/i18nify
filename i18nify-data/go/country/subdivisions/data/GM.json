@@ -1,0 +1,29 @@
+{
+  "country_name": "Gambia The",
+  "states": {
+    "B": {
+      "name": "Banjul",
+      "cities": {}
+    },
+    "M": {
+      "name": "Central River Division",
+      "cities": {}
+    },
+    "L": {
+      "name": "Lower River Division",
+      "cities": {}
+    },
+    "N": {
+      "name": "North Bank Division",
+      "cities": {}
+    },
+    "U": {
+      "name": "Upper River Division",
+      "cities": {}
+    },
+    "W": {
+      "name": "West Coast Division",
+      "cities": {}
+    }
+  }
+}

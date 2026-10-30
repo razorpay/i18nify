@@ -1,0 +1,109 @@
+{
+  "country_name": "Switzerland",
+  "states": {
+    "AG": {
+      "name": "Aargau",
+      "cities": {}
+    },
+    "AR": {
+      "name": "Appenzell Ausserrhoden",
+      "cities": {}
+    },
+    "AI": {
+      "name": "Appenzell Innerrhoden",
+      "cities": {}
+    },
+    "BL": {
+      "name": "Basel-Land",
+      "cities": {}
+    },
+    "BS": {
+      "name": "Basel-Stadt",
+      "cities": {}
+    },
+    "BE": {
+      "name": "Bern",
+      "cities": {}
+    },
+    "FR": {
+      "name": "Fribourg",
+      "cities": {}
+    },
+    "GE": {
+      "name": "Geneva",
+      "cities": {}
+    },
+    "GL": {
+      "name": "Glarus",
+      "cities": {}
+    },
+    "GR": {
+      "name": "Graubünden",
+      "cities": {}
+    },
+    "JU": {
+      "name": "Jura",
+      "cities": {}
+    },
+    "LU": {
+      "name": "Lucerne",
+      "cities": {}
+    },
+    "NE": {
+      "name": "Neuchâtel",
+      "cities": {}
+    },
+    "NW": {
+      "name": "Nidwalden",
+      "cities": {}
+    },
+    "OW": {
+      "name": "Obwalden",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Schaffhausen",
+      "cities": {}
+    },
+    "SZ": {
+      "name": "Schwyz",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Solothurn",
+      "cities": {}
+    },
+    "SG": {
+      "name": "St. Gallen",
+      "cities": {}
+    },
+    "TG": {
+      "name": "Thurgau",
+      "cities": {}
+    },
+    "TI": {
+      "name": "Ticino",
+      "cities": {}
+    },
+    "UR": {
+      "name": "Uri",
+      "cities": {}
+    },
+    "VS": {
+      "name": "Valais",
+      "cities": {}
+    },
+    "VD": {
+      "name": "Vaud",
+      "cities": {}
+    },
+    "ZG": {
+      "name": "Zug",
+      "cities": {}
+    },
+    "ZH": {
+      "name": "Zürich",
+      "cities": {}
+    }
+  }
+}

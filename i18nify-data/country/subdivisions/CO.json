@@ -1,0 +1,137 @@
+{
+  "country_name": "Colombia",
+  "states": {
+    "AMA": {
+      "name": "Amazonas",
+      "cities": {}
+    },
+    "ANT": {
+      "name": "Antioquia",
+      "cities": {}
+    },
+    "ARA": {
+      "name": "Arauca",
+      "cities": {}
+    },
+    "ATL": {
+      "name": "Atlántico",
+      "cities": {}
+    },
+    "DC": {
+      "name": "Bogotá",
+      "cities": {}
+    },
+    "BOL": {
+      "name": "Bolívar",
+      "cities": {}
+    },
+    "BOY": {
+      "name": "Boyacá",
+      "cities": {}
+    },
+    "CAL": {
+      "name": "Caldas",
+      "cities": {}
+    },
+    "CAQ": {
+      "name": "Caquetá",
+      "cities": {}
+    },
+    "CAS": {
+      "name": "Casanare",
+      "cities": {}
+    },
+    "CAU": {
+      "name": "Cauca",
+      "cities": {}
+    },
+    "CES": {
+      "name": "Cesar",
+      "cities": {}
+    },
+    "CHO": {
+      "name": "Chocó",
+      "cities": {}
+    },
+    "COR": {
+      "name": "Córdoba",
+      "cities": {}
+    },
+    "CUN": {
+      "name": "Cundinamarca",
+      "cities": {}
+    },
+    "GUA": {
+      "name": "Guainía",
+      "cities": {}
+    },
+    "GUV": {
+      "name": "Guaviare",
+      "cities": {}
+    },
+    "HUI": {
+      "name": "Huila",
+      "cities": {}
+    },
+    "LAG": {
+      "name": "La Guajira",
+      "cities": {}
+    },
+    "MAG": {
+      "name": "Magdalena",
+      "cities": {}
+    },
+    "MET": {
+      "name": "Meta",
+      "cities": {}
+    },
+    "NAR": {
+      "name": "Nariño",
+      "cities": {}
+    },
+    "NSA": {
+      "name": "Norte de Santander",
+      "cities": {}
+    },
+    "PUT": {
+      "name": "Putumayo",
+      "cities": {}
+    },
+    "QUI": {
+      "name": "Quindío",
+      "cities": {}
+    },
+    "RIS": {
+      "name": "Risaralda",
+      "cities": {}
+    },
+    "SAP": {
+      "name": "San Andrés, Providencia y Santa Catalina",
+      "cities": {}
+    },
+    "SAN": {
+      "name": "Santander",
+      "cities": {}
+    },
+    "SUC": {
+      "name": "Sucre",
+      "cities": {}
+    },
+    "TOL": {
+      "name": "Tolima",
+      "cities": {}
+    },
+    "VAC": {
+      "name": "Valle del Cauca",
+      "cities": {}
+    },
+    "VAU": {
+      "name": "Vaupés",
+      "cities": {}
+    },
+    "VID": {
+      "name": "Vichada",
+      "cities": {}
+    }
+  }
+}

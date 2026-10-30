@@ -1,0 +1,285 @@
+{
+  "country_name": "Bangladesh",
+  "states": {
+    "10": {
+      "name": "Chittagong District",
+      "cities": {}
+    },
+    "11": {
+      "name": "Cox's Bazar District",
+      "cities": {}
+    },
+    "12": {
+      "name": "Chuadanga District",
+      "cities": {}
+    },
+    "13": {
+      "name": "Dhaka District",
+      "cities": {}
+    },
+    "14": {
+      "name": "Dinajpur District",
+      "cities": {}
+    },
+    "15": {
+      "name": "Faridpur District",
+      "cities": {}
+    },
+    "16": {
+      "name": "Feni District",
+      "cities": {}
+    },
+    "17": {
+      "name": "Gopalganj District",
+      "cities": {}
+    },
+    "18": {
+      "name": "Gazipur District",
+      "cities": {}
+    },
+    "19": {
+      "name": "Gaibandha District",
+      "cities": {}
+    },
+    "20": {
+      "name": "Habiganj District",
+      "cities": {}
+    },
+    "21": {
+      "name": "Jamalpur District",
+      "cities": {}
+    },
+    "22": {
+      "name": "Jessore District",
+      "cities": {}
+    },
+    "23": {
+      "name": "Jhenaidah District",
+      "cities": {}
+    },
+    "24": {
+      "name": "Joypurhat District",
+      "cities": {}
+    },
+    "25": {
+      "name": "Jhalokati District",
+      "cities": {}
+    },
+    "26": {
+      "name": "Kishoreganj District",
+      "cities": {}
+    },
+    "27": {
+      "name": "Khulna District",
+      "cities": {}
+    },
+    "28": {
+      "name": "Kurigram District",
+      "cities": {}
+    },
+    "29": {
+      "name": "Khagrachari District",
+      "cities": {}
+    },
+    "30": {
+      "name": "Kushtia District",
+      "cities": {}
+    },
+    "31": {
+      "name": "Lakshmipur District",
+      "cities": {}
+    },
+    "32": {
+      "name": "Lalmonirhat District",
+      "cities": {}
+    },
+    "33": {
+      "name": "Bahadia",
+      "cities": {}
+    },
+    "34": {
+      "name": "Mymensingh District",
+      "cities": {}
+    },
+    "35": {
+      "name": "Munshiganj District",
+      "cities": {}
+    },
+    "36": {
+      "name": "Madaripur District",
+      "cities": {}
+    },
+    "38": {
+      "name": "Moulvibazar District",
+      "cities": {}
+    },
+    "39": {
+      "name": "Meherpur District",
+      "cities": {}
+    },
+    "40": {
+      "name": "Narayanganj District",
+      "cities": {}
+    },
+    "41": {
+      "name": "Netrokona District",
+      "cities": {}
+    },
+    "43": {
+      "name": "Narail District",
+      "cities": {}
+    },
+    "44": {
+      "name": "Natore District",
+      "cities": {}
+    },
+    "45": {
+      "name": "Chapai Nawabganj District",
+      "cities": {}
+    },
+    "46": {
+      "name": "Nilphamari District",
+      "cities": {}
+    },
+    "47": {
+      "name": "Noakhali District",
+      "cities": {}
+    },
+    "48": {
+      "name": "Naogaon District",
+      "cities": {}
+    },
+    "49": {
+      "name": "Pabna District",
+      "cities": {}
+    },
+    "50": {
+      "name": "Pirojpur District",
+      "cities": {}
+    },
+    "51": {
+      "name": "Patuakhali District",
+      "cities": {}
+    },
+    "52": {
+      "name": "Panchagarh District",
+      "cities": {}
+    },
+    "53": {
+      "name": "Rajbari District",
+      "cities": {}
+    },
+    "54": {
+      "name": "Rajshahi District",
+      "cities": {}
+    },
+    "55": {
+      "name": "Rangpur District",
+      "cities": {}
+    },
+    "56": {
+      "name": "Rangamati Hill District",
+      "cities": {}
+    },
+    "57": {
+      "name": "Sherpur District",
+      "cities": {}
+    },
+    "58": {
+      "name": "Satkhira District",
+      "cities": {}
+    },
+    "59": {
+      "name": "Sirajganj District",
+      "cities": {}
+    },
+    "60": {
+      "name": "Sylhet District",
+      "cities": {}
+    },
+    "61": {
+      "name": "Sunamganj District",
+      "cities": {}
+    },
+    "62": {
+      "name": "Shariatpur District",
+      "cities": {}
+    },
+    "63": {
+      "name": "Tangail District",
+      "cities": {}
+    },
+    "64": {
+      "name": "Thakurgaon District",
+      "cities": {}
+    },
+    "05": {
+      "name": "Bagerhat District",
+      "cities": {}
+    },
+    "01": {
+      "name": "Bandarban District",
+      "cities": {}
+    },
+    "02": {
+      "name": "Barguna District",
+      "cities": {}
+    },
+    "06": {
+      "name": "Barisal District",
+      "cities": {}
+    },
+    "A": {
+      "name": "Barisal Division",
+      "cities": {}
+    },
+    "07": {
+      "name": "Bhola District",
+      "cities": {}
+    },
+    "03": {
+      "name": "Bogra District",
+      "cities": {}
+    },
+    "04": {
+      "name": "Brahmanbaria District",
+      "cities": {}
+    },
+    "09": {
+      "name": "Chandpur District",
+      "cities": {}
+    },
+    "B": {
+      "name": "Chittagong Division",
+      "cities": {}
+    },
+    "08": {
+      "name": "Comilla District",
+      "cities": {}
+    },
+    "C": {
+      "name": "Dhaka Division",
+      "cities": {}
+    },
+    "D": {
+      "name": "Khulna Division",
+      "cities": {}
+    },
+    "H": {
+      "name": "Mymensingh Division",
+      "cities": {}
+    },
+    "E": {
+      "name": "Rajshahi Division",
+      "cities": {}
+    },
+    "F": {
+      "name": "Rangpur Division",
+      "cities": {}
+    },
+    "G": {
+      "name": "Sylhet Division",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "country_name": "Malta",
+  "states": {
+    "10": {
+      "name": "Fontana",
+      "cities": {}
+    },
+    "11": {
+      "name": "Gudja",
+      "cities": {}
+    },
+    "12": {
+      "name": "Gżira",
+      "cities": {}
+    },
+    "13": {
+      "name": "Għajnsielem",
+      "cities": {}
+    },
+    "14": {
+      "name": "Għarb",
+      "cities": {}
+    },
+    "15": {
+      "name": "Għargħur",
+      "cities": {}
+    },
+    "16": {
+      "name": "Għasri",
+      "cities": {}
+    },
+    "17": {
+      "name": "Għaxaq",
+      "cities": {}
+    },
+    "18": {
+      "name": "Ħamrun",
+      "cities": {}
+    },
+    "19": {
+      "name": "Iklin",
+      "cities": {}
+    },
+    "20": {
+      "name": "Senglea",
+      "cities": {}
+    },
+    "21": {
+      "name": "Kalkara",
+      "cities": {}
+    },
+    "22": {
+      "name": "Kerċem",
+      "cities": {}
+    },
+    "23": {
+      "name": "Kirkop",
+      "cities": {}
+    },
+    "24": {
+      "name": "Lija",
+      "cities": {}
+    },
+    "25": {
+      "name": "Luqa",
+      "cities": {}
+    },
+    "26": {
+      "name": "Marsa",
+      "cities": {}
+    },
+    "27": {
+      "name": "Marsaskala",
+      "cities": {}
+    },
+    "28": {
+      "name": "Marsaxlokk",
+      "cities": {}
+    },
+    "29": {
+      "name": "Mdina",
+      "cities": {}
+    },
+    "30": {
+      "name": "Mellieħa",
+      "cities": {}
+    },
+    "31": {
+      "name": "Mġarr",
+      "cities": {}
+    },
+    "32": {
+      "name": "Mosta",
+      "cities": {}
+    },
+    "33": {
+      "name": "Mqabba",
+      "cities": {}
+    },
+    "34": {
+      "name": "Msida",
+      "cities": {}
+    },
+    "35": {
+      "name": "Mtarfa",
+      "cities": {}
+    },
+    "36": {
+      "name": "Munxar",
+      "cities": {}
+    },
+    "37": {
+      "name": "Nadur",
+      "cities": {}
+    },
+    "38": {
+      "name": "Naxxar",
+      "cities": {}
+    },
+    "39": {
+      "name": "Paola",
+      "cities": {}
+    },
+    "40": {
+      "name": "Pembroke",
+      "cities": {}
+    },
+    "41": {
+      "name": "Pietà",
+      "cities": {}
+    },
+    "42": {
+      "name": "Qala",
+      "cities": {}
+    },
+    "43": {
+      "name": "Qormi",
+      "cities": {}
+    },
+    "44": {
+      "name": "Qrendi",
+      "cities": {}
+    },
+    "45": {
+      "name": "Victoria",
+      "cities": {}
+    },
+    "46": {
+      "name": "Rabat",
+      "cities": {}
+    },
+    "48": {
+      "name": "St. Julian's",
+      "cities": {}
+    },
+    "49": {
+      "name": "San Ġwann",
+      "cities": {}
+    },
+    "50": {
+      "name": "Saint Lawrence",
+      "cities": {}
+    },
+    "51": {
+      "name": "St. Paul's Bay",
+      "cities": {}
+    },
+    "52": {
+      "name": "Sannat",
+      "cities": {}
+    },
+    "53": {
+      "name": "Santa Luċija",
+      "cities": {}
+    },
+    "54": {
+      "name": "Santa Venera",
+      "cities": {}
+    },
+    "55": {
+      "name": "Siġġiewi",
+      "cities": {}
+    },
+    "56": {
+      "name": "Sliema",
+      "cities": {}
+    },
+    "57": {
+      "name": "Swieqi",
+      "cities": {}
+    },
+    "58": {
+      "name": "Ta' Xbiex",
+      "cities": {}
+    },
+    "59": {
+      "name": "Tarxien",
+      "cities": {}
+    },
+    "60": {
+      "name": "Valletta",
+      "cities": {}
+    },
+    "61": {
+      "name": "Xagħra",
+      "cities": {}
+    },
+    "62": {
+      "name": "Xewkija",
+      "cities": {}
+    },
+    "63": {
+      "name": "Xgħajra",
+      "cities": {}
+    },
+    "64": {
+      "name": "Żabbar",
+      "cities": {}
+    },
+    "65": {
+      "name": "Żebbuġ Gozo",
+      "cities": {}
+    },
+    "66": {
+      "name": "Żebbuġ Malta",
+      "cities": {}
+    },
+    "67": {
+      "name": "Żejtun",
+      "cities": {}
+    },
+    "68": {
+      "name": "Żurrieq",
+      "cities": {}
+    },
+    "01": {
+      "name": "Attard",
+      "cities": {}
+    },
+    "02": {
+      "name": "Balzan",
+      "cities": {}
+    },
+    "03": {
+      "name": "Birgu",
+      "cities": {}
+    },
+    "04": {
+      "name": "Birkirkara",
+      "cities": {}
+    },
+    "05": {
+      "name": "Birżebbuġa",
+      "cities": {}
+    },
+    "06": {
+      "name": "Cospicua",
+      "cities": {}
+    },
+    "07": {
+      "name": "Dingli",
+      "cities": {}
+    },
+    "08": {
+      "name": "Fgura",
+      "cities": {}
+    },
+    "09": {
+      "name": "Floriana",
+      "cities": {}
+    }
+  }
+}

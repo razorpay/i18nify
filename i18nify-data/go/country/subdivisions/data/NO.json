@@ -1,0 +1,89 @@
+{
+  "country_name": "Norway",
+  "states": {
+    "10": {
+      "name": "Vest-Agder",
+      "cities": {}
+    },
+    "11": {
+      "name": "Rogaland",
+      "cities": {}
+    },
+    "12": {
+      "name": "Hordaland",
+      "cities": {}
+    },
+    "14": {
+      "name": "Sogn og Fjordane",
+      "cities": {}
+    },
+    "15": {
+      "name": "Møre og Romsdal",
+      "cities": {}
+    },
+    "16": {
+      "name": "Sør-Trøndelag",
+      "cities": {}
+    },
+    "17": {
+      "name": "Nord-Trøndelag",
+      "cities": {}
+    },
+    "18": {
+      "name": "Nordland",
+      "cities": {}
+    },
+    "19": {
+      "name": "Troms",
+      "cities": {}
+    },
+    "20": {
+      "name": "Finnmark",
+      "cities": {}
+    },
+    "21": {
+      "name": "Svalbard",
+      "cities": {}
+    },
+    "22": {
+      "name": "Jan Mayen",
+      "cities": {}
+    },
+    "50": {
+      "name": "Trøndelag",
+      "cities": {}
+    },
+    "02": {
+      "name": "Akershus",
+      "cities": {}
+    },
+    "06": {
+      "name": "Buskerud",
+      "cities": {}
+    },
+    "04": {
+      "name": "Hedmark",
+      "cities": {}
+    },
+    "05": {
+      "name": "Oppland",
+      "cities": {}
+    },
+    "03": {
+      "name": "Oslo",
+      "cities": {}
+    },
+    "01": {
+      "name": "Østfold",
+      "cities": {}
+    },
+    "08": {
+      "name": "Telemark",
+      "cities": {}
+    },
+    "07": {
+      "name": "Vestfold",
+      "cities": {}
+    }
+  }
+}

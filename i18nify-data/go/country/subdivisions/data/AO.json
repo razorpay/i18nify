@@ -1,0 +1,73 @@
+{
+  "country_name": "Angola",
+  "states": {
+    "BGO": {
+      "name": "Bengo Province",
+      "cities": {}
+    },
+    "BGU": {
+      "name": "Benguela Province",
+      "cities": {}
+    },
+    "BIE": {
+      "name": "Bié Province",
+      "cities": {}
+    },
+    "CAB": {
+      "name": "Cabinda Province",
+      "cities": {}
+    },
+    "CCU": {
+      "name": "Cuando Cubango Province",
+      "cities": {}
+    },
+    "CNO": {
+      "name": "Cuanza Norte Province",
+      "cities": {}
+    },
+    "CUS": {
+      "name": "Cuanza Sul",
+      "cities": {}
+    },
+    "CNN": {
+      "name": "Cunene Province",
+      "cities": {}
+    },
+    "HUA": {
+      "name": "Huambo Province",
+      "cities": {}
+    },
+    "HUI": {
+      "name": "Huíla Province",
+      "cities": {}
+    },
+    "LUA": {
+      "name": "Luanda Province",
+      "cities": {}
+    },
+    "LNO": {
+      "name": "Lunda Norte Province",
+      "cities": {}
+    },
+    "LSU": {
+      "name": "Lunda Sul Province",
+      "cities": {}
+    },
+    "MAL": {
+      "name": "Malanje Province",
+      "cities": {}
+    },
+    "MOX": {
+      "name": "Moxico Province",
+      "cities": {}
+    },
+    "UIG": {
+      "name": "Uíge Province",
+      "cities": {}
+    },
+    "ZAI": {
+      "name": "Zaire Province",
+      "cities": {}
+    }
+  }
+}

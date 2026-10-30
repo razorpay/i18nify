@@ -1,0 +1,29 @@
+{
+  "country_name": "Madagascar",
+  "states": {
+    "T": {
+      "name": "Antananarivo Province",
+      "cities": {}
+    },
+    "D": {
+      "name": "Antsiranana Province",
+      "cities": {}
+    },
+    "F": {
+      "name": "Fianarantsoa Province",
+      "cities": {}
+    },
+    "M": {
+      "name": "Mahajanga Province",
+      "cities": {}
+    },
+    "A": {
+      "name": "Toamasina Province",
+      "cities": {}
+    },
+    "U": {
+      "name": "Toliara Province",
+      "cities": {}
+    }
+  }
+}

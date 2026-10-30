@@ -1,0 +1,157 @@
+{
+  "country_name": "Greece",
+  "states": {
+    "11": {
+      "name": "Argolis Regional Unit",
+      "cities": {}
+    },
+    "12": {
+      "name": "Arcadia Prefecture",
+      "cities": {}
+    },
+    "13": {
+      "name": "Achaea Regional Unit",
+      "cities": {}
+    },
+    "15": {
+      "name": "Corinthia Regional Unit",
+      "cities": {}
+    },
+    "16": {
+      "name": "Laconia",
+      "cities": {}
+    },
+    "22": {
+      "name": "Corfu Prefecture",
+      "cities": {}
+    },
+    "23": {
+      "name": "Kefalonia Prefecture",
+      "cities": {}
+    },
+    "24": {
+      "name": "Lefkada Regional Unit",
+      "cities": {}
+    },
+    "33": {
+      "name": "Ioannina Regional Unit",
+      "cities": {}
+    },
+    "34": {
+      "name": "Preveza Prefecture",
+      "cities": {}
+    },
+    "41": {
+      "name": "Karditsa Regional Unit",
+      "cities": {}
+    },
+    "42": {
+      "name": "Larissa Prefecture",
+      "cities": {}
+    },
+    "51": {
+      "name": "Grevena Prefecture",
+      "cities": {}
+    },
+    "52": {
+      "name": "Drama Regional Unit",
+      "cities": {}
+    },
+    "53": {
+      "name": "Imathia Regional Unit",
+      "cities": {}
+    },
+    "54": {
+      "name": "Thessaloniki Regional Unit",
+      "cities": {}
+    },
+    "56": {
+      "name": "Kastoria Regional Unit",
+      "cities": {}
+    },
+    "57": {
+      "name": "Kilkis Regional Unit",
+      "cities": {}
+    },
+    "58": {
+      "name": "Kozani Prefecture",
+      "cities": {}
+    },
+    "59": {
+      "name": "Pella Regional Unit",
+      "cities": {}
+    },
+    "62": {
+      "name": "Serres Prefecture",
+      "cities": {}
+    },
+    "94": {
+      "name": "Chania Regional Unit",
+      "cities": {}
+    },
+    "01": {
+      "name": "Aetolia-Acarnania Regional Unit",
+      "cities": {}
+    },
+    "I": {
+      "name": "Attica Region",
+      "cities": {}
+    },
+    "03": {
+      "name": "Boeotia Regional Unit",
+      "cities": {}
+    },
+    "H": {
+      "name": "Central Greece Region",
+      "cities": {}
+    },
+    "B": {
+      "name": "Central Macedonia",
+      "cities": {}
+    },
+    "M": {
+      "name": "Crete Region",
+      "cities": {}
+    },
+    "A2": {
+      "name": "East Attica Regional Unit",
+      "cities": {}
+    },
+    "A": {
+      "name": "East Macedonia and Thrace",
+      "cities": {}
+    },
+    "D": {
+      "name": "Epirus Region",
+      "cities": {}
+    },
+    "04": {
+      "name": "Euboea",
+      "cities": {}
+    },
+    "F": {
+      "name": "Ionian Islands Region",
+      "cities": {}
+    },
+    "J": {
+      "name": "Peloponnese Region",
+      "cities": {}
+    },
+    "06": {
+      "name": "Phthiotis Prefecture",
+      "cities": {}
+    },
+    "L": {
+      "name": "South Aegean",
+      "cities": {}
+    },
+    "G": {
+      "name": "West Greece Region",
+      "cities": {}
+    },
+    "C": {
+      "name": "West Macedonia Region",
+      "cities": {}
+    }
+  }
+}

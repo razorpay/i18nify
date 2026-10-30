@@ -1,0 +1,57 @@
+{
+  "country_name": "Belgium",
+  "states": {
+    "VAN": {
+      "name": "Antwerp",
+      "cities": {}
+    },
+    "BRU": {
+      "name": "Brussels-Capital Region",
+      "cities": {}
+    },
+    "VOV": {
+      "name": "East Flanders",
+      "cities": {}
+    },
+    "VLG": {
+      "name": "Flanders",
+      "cities": {}
+    },
+    "VBR": {
+      "name": "Flemish Brabant",
+      "cities": {}
+    },
+    "WHT": {
+      "name": "Hainaut",
+      "cities": {}
+    },
+    "WLG": {
+      "name": "Liège",
+      "cities": {}
+    },
+    "VLI": {
+      "name": "Limburg",
+      "cities": {}
+    },
+    "WLX": {
+      "name": "Luxembourg",
+      "cities": {}
+    },
+    "WNA": {
+      "name": "Namur",
+      "cities": {}
+    },
+    "WAL": {
+      "name": "Wallonia",
+      "cities": {}
+    },
+    "WBR": {
+      "name": "Walloon Brabant",
+      "cities": {}
+    },
+    "VWV": {
+      "name": "West Flanders",
+      "cities": {}
+    }
+  }
+}

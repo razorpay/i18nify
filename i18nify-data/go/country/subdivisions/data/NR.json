@@ -1,0 +1,61 @@
+{
+  "country_name": "Nauru",
+  "states": {
+    "10": {
+      "name": "Ijuw District",
+      "cities": {}
+    },
+    "11": {
+      "name": "Meneng District",
+      "cities": {}
+    },
+    "12": {
+      "name": "Nibok District",
+      "cities": {}
+    },
+    "13": {
+      "name": "Uaboe District",
+      "cities": {}
+    },
+    "14": {
+      "name": "Yaren District",
+      "cities": {}
+    },
+    "01": {
+      "name": "Aiwo District",
+      "cities": {}
+    },
+    "02": {
+      "name": "Anabar District",
+      "cities": {}
+    },
+    "03": {
+      "name": "Anetan District",
+      "cities": {}
+    },
+    "04": {
+      "name": "Anibare District",
+      "cities": {}
+    },
+    "05": {
+      "name": "Baiti District",
+      "cities": {}
+    },
+    "06": {
+      "name": "Boe District",
+      "cities": {}
+    },
+    "07": {
+      "name": "Buada District",
+      "cities": {}
+    },
+    "08": {
+      "name": "Denigomodu District",
+      "cities": {}
+    },
+    "09": {
+      "name": "Ewa District",
+      "cities": {}
+    }
+  }
+}

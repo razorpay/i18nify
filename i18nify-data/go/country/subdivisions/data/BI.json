@@ -1,0 +1,77 @@
+{
+  "country_name": "Burundi",
+  "states": {
+    "BB": {
+      "name": "Bubanza Province",
+      "cities": {}
+    },
+    "BM": {
+      "name": "Bujumbura Mairie Province",
+      "cities": {}
+    },
+    "BL": {
+      "name": "Bujumbura Rural Province",
+      "cities": {}
+    },
+    "BR": {
+      "name": "Bururi Province",
+      "cities": {}
+    },
+    "CA": {
+      "name": "Cankuzo Province",
+      "cities": {}
+    },
+    "CI": {
+      "name": "Cibitoke Province",
+      "cities": {}
+    },
+    "GI": {
+      "name": "Gitega Province",
+      "cities": {}
+    },
+    "KR": {
+      "name": "Karuzi Province",
+      "cities": {}
+    },
+    "KY": {
+      "name": "Kayanza Province",
+      "cities": {}
+    },
+    "KI": {
+      "name": "Kirundo Province",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Makamba Province",
+      "cities": {}
+    },
+    "MU": {
+      "name": "Muramvya Province",
+      "cities": {}
+    },
+    "MY": {
+      "name": "Muyinga Province",
+      "cities": {}
+    },
+    "MW": {
+      "name": "Mwaro Province",
+      "cities": {}
+    },
+    "NG": {
+      "name": "Ngozi Province",
+      "cities": {}
+    },
+    "RM": {
+      "name": "Rumonge Province",
+      "cities": {}
+    },
+    "RT": {
+      "name": "Rutana Province",
+      "cities": {}
+    },
+    "RY": {
+      "name": "Ruyigi Province",
+      "cities": {}
+    }
+  }
+}

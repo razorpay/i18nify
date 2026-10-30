@@ -1,0 +1,77 @@
+{
+  "country_name": "Honduras",
+  "states": {
+    "AT": {
+      "name": "Atlántida Department",
+      "cities": {}
+    },
+    "IB": {
+      "name": "Bay Islands Department",
+      "cities": {}
+    },
+    "CH": {
+      "name": "Choluteca Department",
+      "cities": {}
+    },
+    "CL": {
+      "name": "Colón Department",
+      "cities": {}
+    },
+    "CM": {
+      "name": "Comayagua Department",
+      "cities": {}
+    },
+    "CP": {
+      "name": "Copán Department",
+      "cities": {}
+    },
+    "CR": {
+      "name": "Cortés Department",
+      "cities": {}
+    },
+    "EP": {
+      "name": "El Paraíso Department",
+      "cities": {}
+    },
+    "FM": {
+      "name": "Francisco Morazán Department",
+      "cities": {}
+    },
+    "GD": {
+      "name": "Gracias a Dios Department",
+      "cities": {}
+    },
+    "IN": {
+      "name": "Intibucá Department",
+      "cities": {}
+    },
+    "LP": {
+      "name": "La Paz Department",
+      "cities": {}
+    },
+    "LE": {
+      "name": "Lempira Department",
+      "cities": {}
+    },
+    "OC": {
+      "name": "Ocotepeque Department",
+      "cities": {}
+    },
+    "OL": {
+      "name": "Olancho Department",
+      "cities": {}
+    },
+    "SB": {
+      "name": "Santa Bárbara Department",
+      "cities": {}
+    },
+    "VA": {
+      "name": "Valle Department",
+      "cities": {}
+    },
+    "YO": {
+      "name": "Yoro Department",
+      "cities": {}
+    }
+  }
+}

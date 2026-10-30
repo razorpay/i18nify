@@ -1,0 +1,41 @@
+{
+  "country_name": "Gabon",
+  "states": {
+    "1": {
+      "name": "Estuaire Province",
+      "cities": {}
+    },
+    "2": {
+      "name": "Haut-Ogooué Province",
+      "cities": {}
+    },
+    "3": {
+      "name": "Moyen-Ogooué Province",
+      "cities": {}
+    },
+    "4": {
+      "name": "Ngounié Province",
+      "cities": {}
+    },
+    "5": {
+      "name": "Nyanga Province",
+      "cities": {}
+    },
+    "6": {
+      "name": "Ogooué-Ivindo Province",
+      "cities": {}
+    },
+    "7": {
+      "name": "Ogooué-Lolo Province",
+      "cities": {}
+    },
+    "8": {
+      "name": "Ogooué-Maritime Province",
+      "cities": {}
+    },
+    "9": {
+      "name": "Woleu-Ntem Province",
+      "cities": {}
+    }
+  }
+}

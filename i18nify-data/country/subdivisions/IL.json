@@ -1,0 +1,29 @@
+{
+  "country_name": "Israel",
+  "states": {
+    "M": {
+      "name": "Central District",
+      "cities": {}
+    },
+    "HA": {
+      "name": "Haifa District",
+      "cities": {}
+    },
+    "JM": {
+      "name": "Jerusalem District",
+      "cities": {}
+    },
+    "Z": {
+      "name": "Northern District",
+      "cities": {}
+    },
+    "D": {
+      "name": "Southern District",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Tel Aviv District",
+      "cities": {}
+    }
+  }
+}

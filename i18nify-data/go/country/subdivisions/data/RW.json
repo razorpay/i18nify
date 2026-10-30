@@ -1,0 +1,25 @@
+{
+  "country_name": "Rwanda",
+  "states": {
+    "02": {
+      "name": "Eastern Province",
+      "cities": {}
+    },
+    "01": {
+      "name": "Kigali district",
+      "cities": {}
+    },
+    "03": {
+      "name": "Northern Province",
+      "cities": {}
+    },
+    "05": {
+      "name": "Southern Province",
+      "cities": {}
+    },
+    "04": {
+      "name": "Western Province",
+      "cities": {}
+    }
+  }
+}

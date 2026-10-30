@@ -1,0 +1,49 @@
+{
+  "country_name": "Bermuda",
+  "states": {
+    "DEV": {
+      "name": "Devonshire Parish",
+      "cities": {}
+    },
+    "HAM": {
+      "name": "Hamilton Municipality",
+      "cities": {}
+    },
+    "HA": {
+      "name": "Hamilton Parish",
+      "cities": {}
+    },
+    "PAG": {
+      "name": "Paget Parish",
+      "cities": {}
+    },
+    "PEM": {
+      "name": "Pembroke Parish",
+      "cities": {}
+    },
+    "SG": {
+      "name": "Saint George's Municipality",
+      "cities": {}
+    },
+    "SGE": {
+      "name": "Saint George's Parish",
+      "cities": {}
+    },
+    "SAN": {
+      "name": "Sandys Parish",
+      "cities": {}
+    },
+    "SMI": {
+      "name": "Smith's Parish,",
+      "cities": {}
+    },
+    "SOU": {
+      "name": "Southampton Parish",
+      "cities": {}
+    },
+    "WAR": {
+      "name": "Warwick Parish",
+      "cities": {}
+    }
+  }
+}

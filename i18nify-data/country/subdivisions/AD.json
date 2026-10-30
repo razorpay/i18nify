@@ -1,0 +1,33 @@
+{
+  "country_name": "Andorra",
+  "states": {
+    "07": {
+      "name": "Andorra la Vella",
+      "cities": {}
+    },
+    "02": {
+      "name": "Canillo",
+      "cities": {}
+    },
+    "03": {
+      "name": "Encamp",
+      "cities": {}
+    },
+    "08": {
+      "name": "Escaldes-Engordany",
+      "cities": {}
+    },
+    "04": {
+      "name": "La Massana",
+      "cities": {}
+    },
+    "05": {
+      "name": "Ordino",
+      "cities": {}
+    },
+    "06": {
+      "name": "Sant Julià de Lòria",
+      "cities": {}
+    }
+  }
+}

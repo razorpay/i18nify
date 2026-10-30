@@ -1,0 +1,69 @@
+{
+  "country_name": "Somalia",
+  "states": {
+    "AW": {
+      "name": "Awdal Region",
+      "cities": {}
+    },
+    "BK": {
+      "name": "Bakool",
+      "cities": {}
+    },
+    "BN": {
+      "name": "Banaadir",
+      "cities": {}
+    },
+    "BR": {
+      "name": "Bari",
+      "cities": {}
+    },
+    "BY": {
+      "name": "Bay",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Galguduud",
+      "cities": {}
+    },
+    "GE": {
+      "name": "Gedo",
+      "cities": {}
+    },
+    "HI": {
+      "name": "Hiran",
+      "cities": {}
+    },
+    "JH": {
+      "name": "Lower Juba",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Lower Shebelle",
+      "cities": {}
+    },
+    "JD": {
+      "name": "Middle Juba",
+      "cities": {}
+    },
+    "SD": {
+      "name": "Middle Shebelle",
+      "cities": {}
+    },
+    "MU": {
+      "name": "Mudug",
+      "cities": {}
+    },
+    "NU": {
+      "name": "Nugal",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Sanaag Region",
+      "cities": {}
+    },
+    "TO": {
+      "name": "Togdheer Region",
+      "cities": {}
+    }
+  }
+}

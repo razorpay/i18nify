@@ -1,0 +1,57 @@
+{
+  "country_name": "Canada",
+  "states": {
+    "AB": {
+      "name": "Alberta",
+      "cities": {}
+    },
+    "BC": {
+      "name": "British Columbia",
+      "cities": {}
+    },
+    "MB": {
+      "name": "Manitoba",
+      "cities": {}
+    },
+    "NB": {
+      "name": "New Brunswick",
+      "cities": {}
+    },
+    "NL": {
+      "name": "Newfoundland and Labrador",
+      "cities": {}
+    },
+    "NT": {
+      "name": "Northwest Territories",
+      "cities": {}
+    },
+    "NS": {
+      "name": "Nova Scotia",
+      "cities": {}
+    },
+    "NU": {
+      "name": "Nunavut",
+      "cities": {}
+    },
+    "ON": {
+      "name": "Ontario",
+      "cities": {}
+    },
+    "PE": {
+      "name": "Prince Edward Island",
+      "cities": {}
+    },
+    "QC": {
+      "name": "Quebec",
+      "cities": {}
+    },
+    "SK": {
+      "name": "Saskatchewan",
+      "cities": {}
+    },
+    "YT": {
+      "name": "Yukon",
+      "cities": {}
+    }
+  }
+}

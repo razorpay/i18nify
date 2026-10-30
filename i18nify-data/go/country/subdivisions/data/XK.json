@@ -1,0 +1,33 @@
+{
+  "country_name": "Kosovo",
+  "states": {
+    "XDG": {
+      "name": "Đakovica District (Gjakove)",
+      "cities": {}
+    },
+    "XGJ": {
+      "name": "Gjilan District",
+      "cities": {}
+    },
+    "XKM": {
+      "name": "Kosovska Mitrovica District",
+      "cities": {}
+    },
+    "XPE": {
+      "name": "Peć District",
+      "cities": {}
+    },
+    "XPI": {
+      "name": "Pristina (Priştine)",
+      "cities": {}
+    },
+    "XPR": {
+      "name": "Prizren District",
+      "cities": {}
+    },
+    "XUF": {
+      "name": "Uroševac District (Ferizaj)",
+      "cities": {}
+    }
+  }
+}

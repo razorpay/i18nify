@@ -1,0 +1,73 @@
+{
+  "country_name": "Central African Republic",
+  "states": {
+    "BB": {
+      "name": "Bamingui-Bangoran Prefecture",
+      "cities": {}
+    },
+    "BGF": {
+      "name": "Bangui",
+      "cities": {}
+    },
+    "BK": {
+      "name": "Basse-Kotto Prefecture",
+      "cities": {}
+    },
+    "HM": {
+      "name": "Haut-Mbomou Prefecture",
+      "cities": {}
+    },
+    "HK": {
+      "name": "Haute-Kotto Prefecture",
+      "cities": {}
+    },
+    "KG": {
+      "name": "Kémo Prefecture",
+      "cities": {}
+    },
+    "LB": {
+      "name": "Lobaye Prefecture",
+      "cities": {}
+    },
+    "HS": {
+      "name": "Mambéré-Kadéï",
+      "cities": {}
+    },
+    "MB": {
+      "name": "Mbomou Prefecture",
+      "cities": {}
+    },
+    "KB": {
+      "name": "Nana-Grébizi Economic Prefecture",
+      "cities": {}
+    },
+    "NM": {
+      "name": "Nana-Mambéré Prefecture",
+      "cities": {}
+    },
+    "MP": {
+      "name": "Ombella-M'Poko Prefecture",
+      "cities": {}
+    },
+    "UK": {
+      "name": "Ouaka Prefecture",
+      "cities": {}
+    },
+    "AC": {
+      "name": "Ouham Prefecture",
+      "cities": {}
+    },
+    "OP": {
+      "name": "Ouham-Pendé Prefecture",
+      "cities": {}
+    },
+    "SE": {
+      "name": "Sangha-Mbaéré",
+      "cities": {}
+    },
+    "VK": {
+      "name": "Vakaga Prefecture",
+      "cities": {}
+    }
+  }
+}

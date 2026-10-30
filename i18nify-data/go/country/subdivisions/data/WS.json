@@ -1,0 +1,49 @@
+{
+  "country_name": "Samoa",
+  "states": {
+    "AA": {
+      "name": "A'ana",
+      "cities": {}
+    },
+    "AL": {
+      "name": "Aiga-i-le-Tai",
+      "cities": {}
+    },
+    "AT": {
+      "name": "Atua",
+      "cities": {}
+    },
+    "FA": {
+      "name": "Fa'asaleleaga",
+      "cities": {}
+    },
+    "GE": {
+      "name": "Gaga'emauga",
+      "cities": {}
+    },
+    "GI": {
+      "name": "Gaga'ifomauga",
+      "cities": {}
+    },
+    "PA": {
+      "name": "Palauli",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Satupa'itea",
+      "cities": {}
+    },
+    "TU": {
+      "name": "Tuamasaga",
+      "cities": {}
+    },
+    "VF": {
+      "name": "Va'a-o-Fonoti",
+      "cities": {}
+    },
+    "VS": {
+      "name": "Vaisigano",
+      "cities": {}
+    }
+  }
+}

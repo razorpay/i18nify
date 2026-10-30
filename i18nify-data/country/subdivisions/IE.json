@@ -1,0 +1,121 @@
+{
+  "country_name": "Ireland",
+  "states": {
+    "C": {
+      "name": "Connacht",
+      "cities": {}
+    },
+    "CW": {
+      "name": "County Carlow",
+      "cities": {}
+    },
+    "CN": {
+      "name": "County Cavan",
+      "cities": {}
+    },
+    "CE": {
+      "name": "County Clare",
+      "cities": {}
+    },
+    "CO": {
+      "name": "County Cork",
+      "cities": {}
+    },
+    "DL": {
+      "name": "County Donegal",
+      "cities": {}
+    },
+    "D": {
+      "name": "County Dublin",
+      "cities": {}
+    },
+    "G": {
+      "name": "County Galway",
+      "cities": {}
+    },
+    "KY": {
+      "name": "County Kerry",
+      "cities": {}
+    },
+    "KE": {
+      "name": "County Kildare",
+      "cities": {}
+    },
+    "KK": {
+      "name": "County Kilkenny",
+      "cities": {}
+    },
+    "LS": {
+      "name": "County Laois",
+      "cities": {}
+    },
+    "LK": {
+      "name": "County Limerick",
+      "cities": {}
+    },
+    "LD": {
+      "name": "County Longford",
+      "cities": {}
+    },
+    "LH": {
+      "name": "County Louth",
+      "cities": {}
+    },
+    "MO": {
+      "name": "County Mayo",
+      "cities": {}
+    },
+    "MH": {
+      "name": "County Meath",
+      "cities": {}
+    },
+    "MN": {
+      "name": "County Monaghan",
+      "cities": {}
+    },
+    "OY": {
+      "name": "County Offaly",
+      "cities": {}
+    },
+    "RN": {
+      "name": "County Roscommon",
+      "cities": {}
+    },
+    "SO": {
+      "name": "County Sligo",
+      "cities": {}
+    },
+    "TA": {
+      "name": "County Tipperary",
+      "cities": {}
+    },
+    "WD": {
+      "name": "County Waterford",
+      "cities": {}
+    },
+    "WH": {
+      "name": "County Westmeath",
+      "cities": {}
+    },
+    "WX": {
+      "name": "County Wexford",
+      "cities": {}
+    },
+    "WW": {
+      "name": "County Wicklow",
+      "cities": {}
+    },
+    "L": {
+      "name": "Leinster",
+      "cities": {}
+    },
+    "M": {
+      "name": "Munster",
+      "cities": {}
+    },
+    "U": {
+      "name": "Ulster",
+      "cities": {}
+    }
+  }
+}

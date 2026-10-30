@@ -1,0 +1,21 @@
+{
+  "country_name": "Sierra Leone",
+  "states": {
+    "E": {
+      "name": "Eastern Province",
+      "cities": {}
+    },
+    "N": {
+      "name": "Northern Province",
+      "cities": {}
+    },
+    "S": {
+      "name": "Southern Province",
+      "cities": {}
+    },
+    "W": {
+      "name": "Western Area",
+      "cities": {}
+    }
+  }
+}

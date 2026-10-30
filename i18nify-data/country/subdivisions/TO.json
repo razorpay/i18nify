@@ -1,0 +1,25 @@
+{
+  "country_name": "Tonga",
+  "states": {
+    "02": {
+      "name": "Haʻapai",
+      "cities": {}
+    },
+    "01": {
+      "name": "ʻEua",
+      "cities": {}
+    },
+    "03": {
+      "name": "Niuas",
+      "cities": {}
+    },
+    "04": {
+      "name": "Tongatapu",
+      "cities": {}
+    },
+    "05": {
+      "name": "Vavaʻu",
+      "cities": {}
+    }
+  }
+}

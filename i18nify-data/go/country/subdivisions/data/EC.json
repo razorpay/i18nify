@@ -1,0 +1,97 @@
+{
+  "country_name": "Ecuador",
+  "states": {
+    "A": {
+      "name": "Azuay Province",
+      "cities": {}
+    },
+    "B": {
+      "name": "Bolívar Province",
+      "cities": {}
+    },
+    "F": {
+      "name": "Cañar Province",
+      "cities": {}
+    },
+    "C": {
+      "name": "Carchi Province",
+      "cities": {}
+    },
+    "H": {
+      "name": "Chimborazo Province",
+      "cities": {}
+    },
+    "X": {
+      "name": "Cotopaxi Province",
+      "cities": {}
+    },
+    "O": {
+      "name": "El Oro Province",
+      "cities": {}
+    },
+    "E": {
+      "name": "Esmeraldas",
+      "cities": {}
+    },
+    "W": {
+      "name": "Galápagos Province",
+      "cities": {}
+    },
+    "G": {
+      "name": "Guayas Province",
+      "cities": {}
+    },
+    "I": {
+      "name": "Imbabura Province",
+      "cities": {}
+    },
+    "R": {
+      "name": "Los Ríos Province",
+      "cities": {}
+    },
+    "M": {
+      "name": "Manabí Province",
+      "cities": {}
+    },
+    "S": {
+      "name": "Morona-Santiago Province",
+      "cities": {}
+    },
+    "N": {
+      "name": "Napo Province",
+      "cities": {}
+    },
+    "D": {
+      "name": "Orellana Province",
+      "cities": {}
+    },
+    "Y": {
+      "name": "Pastaza Province",
+      "cities": {}
+    },
+    "P": {
+      "name": "Pichincha Province",
+      "cities": {}
+    },
+    "SE": {
+      "name": "Santa Elena Province",
+      "cities": {}
+    },
+    "SD": {
+      "name": "Santo Domingo de los Tsáchilas Province",
+      "cities": {}
+    },
+    "U": {
+      "name": "Sucumbíos Province",
+      "cities": {}
+    },
+    "T": {
+      "name": "Tungurahua Province",
+      "cities": {}
+    },
+    "Z": {
+      "name": "Zamora-Chinchipe Province",
+      "cities": {}
+    }
+  }
+}

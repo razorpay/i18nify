@@ -1,0 +1,45 @@
+{
+  "country_name": "Cameroon",
+  "states": {
+    "AD": {
+      "name": "Adamawa",
+      "cities": {}
+    },
+    "CE": {
+      "name": "Centre",
+      "cities": {}
+    },
+    "ES": {
+      "name": "East",
+      "cities": {}
+    },
+    "EN": {
+      "name": "Far North",
+      "cities": {}
+    },
+    "LT": {
+      "name": "Littoral",
+      "cities": {}
+    },
+    "NO": {
+      "name": "North",
+      "cities": {}
+    },
+    "NW": {
+      "name": "Northwest",
+      "cities": {}
+    },
+    "SU": {
+      "name": "South",
+      "cities": {}
+    },
+    "SW": {
+      "name": "Southwest",
+      "cities": {}
+    },
+    "OU": {
+      "name": "West",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "country_name": "Mauritania",
+  "states": {
+    "10": {
+      "name": "Guidimaka Region",
+      "cities": {}
+    },
+    "11": {
+      "name": "Tiris Zemmour Region",
+      "cities": {}
+    },
+    "12": {
+      "name": "Inchiri Region",
+      "cities": {}
+    },
+    "13": {
+      "name": "Nouakchott-Ouest Region",
+      "cities": {}
+    },
+    "14": {
+      "name": "Nouakchott-Nord Region",
+      "cities": {}
+    },
+    "15": {
+      "name": "Nouakchott-Sud Region",
+      "cities": {}
+    },
+    "07": {
+      "name": "Adrar Region",
+      "cities": {}
+    },
+    "03": {
+      "name": "Assaba Region",
+      "cities": {}
+    },
+    "05": {
+      "name": "Brakna Region",
+      "cities": {}
+    },
+    "08": {
+      "name": "Dakhlet Nouadhibou",
+      "cities": {}
+    },
+    "04": {
+      "name": "Gorgol Region",
+      "cities": {}
+    },
+    "01": {
+      "name": "Hodh Ech Chargui Region",
+      "cities": {}
+    },
+    "02": {
+      "name": "Hodh El Gharbi Region",
+      "cities": {}
+    },
+    "09": {
+      "name": "Tagant Region",
+      "cities": {}
+    },
+    "06": {
+      "name": "Trarza Region",
+      "cities": {}
+    }
+  }
+}

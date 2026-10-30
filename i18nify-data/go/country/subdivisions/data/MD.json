@@ -1,0 +1,149 @@
+{
+  "country_name": "Moldova",
+  "states": {
+    "AN": {
+      "name": "Anenii Noi District",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Bălți Municipality",
+      "cities": {}
+    },
+    "BS": {
+      "name": "Basarabeasca District",
+      "cities": {}
+    },
+    "BD": {
+      "name": "Bender Municipality",
+      "cities": {}
+    },
+    "BR": {
+      "name": "Briceni District",
+      "cities": {}
+    },
+    "CA": {
+      "name": "Cahul District",
+      "cities": {}
+    },
+    "CL": {
+      "name": "Călărași District",
+      "cities": {}
+    },
+    "CT": {
+      "name": "Cantemir District",
+      "cities": {}
+    },
+    "CS": {
+      "name": "Căușeni District",
+      "cities": {}
+    },
+    "CU": {
+      "name": "Chișinău Municipality",
+      "cities": {}
+    },
+    "CM": {
+      "name": "Cimișlia District",
+      "cities": {}
+    },
+    "CR": {
+      "name": "Criuleni District",
+      "cities": {}
+    },
+    "DO": {
+      "name": "Dondușeni District",
+      "cities": {}
+    },
+    "DR": {
+      "name": "Drochia District",
+      "cities": {}
+    },
+    "DU": {
+      "name": "Dubăsari District",
+      "cities": {}
+    },
+    "ED": {
+      "name": "Edineț District",
+      "cities": {}
+    },
+    "FA": {
+      "name": "Fălești District",
+      "cities": {}
+    },
+    "FL": {
+      "name": "Florești District",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Gagauzia",
+      "cities": {}
+    },
+    "GL": {
+      "name": "Glodeni District",
+      "cities": {}
+    },
+    "HI": {
+      "name": "Hîncești District",
+      "cities": {}
+    },
+    "IA": {
+      "name": "Ialoveni District",
+      "cities": {}
+    },
+    "NI": {
+      "name": "Nisporeni District",
+      "cities": {}
+    },
+    "OC": {
+      "name": "Ocnița District",
+      "cities": {}
+    },
+    "OR": {
+      "name": "Orhei District",
+      "cities": {}
+    },
+    "RE": {
+      "name": "Rezina District",
+      "cities": {}
+    },
+    "RI": {
+      "name": "Rîșcani District",
+      "cities": {}
+    },
+    "SI": {
+      "name": "Sîngerei District",
+      "cities": {}
+    },
+    "SD": {
+      "name": "Șoldănești District",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Soroca District",
+      "cities": {}
+    },
+    "SV": {
+      "name": "Ștefan Vodă District",
+      "cities": {}
+    },
+    "ST": {
+      "name": "Strășeni District",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Taraclia District",
+      "cities": {}
+    },
+    "TE": {
+      "name": "Telenești District",
+      "cities": {}
+    },
+    "SN": {
+      "name": "Transnistria autonomous territorial unit",
+      "cities": {}
+    },
+    "UN": {
+      "name": "Ungheni District",
+      "cities": {}
+    }
+  }
+}

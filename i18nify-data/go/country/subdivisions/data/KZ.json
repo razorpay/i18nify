@@ -1,0 +1,73 @@
+{
+  "country_name": "Kazakhstan",
+  "states": {
+    "AKM": {
+      "name": "Akmola Region",
+      "cities": {}
+    },
+    "AKT": {
+      "name": "Aktobe Region",
+      "cities": {}
+    },
+    "ALA": {
+      "name": "Almaty",
+      "cities": {}
+    },
+    "ALM": {
+      "name": "Almaty Region",
+      "cities": {}
+    },
+    "ATY": {
+      "name": "Atyrau Region",
+      "cities": {}
+    },
+    "BAY": {
+      "name": "Baikonur",
+      "cities": {}
+    },
+    "VOS": {
+      "name": "East Kazakhstan Region",
+      "cities": {}
+    },
+    "ZHA": {
+      "name": "Jambyl Region",
+      "cities": {}
+    },
+    "KAR": {
+      "name": "Karaganda Region",
+      "cities": {}
+    },
+    "KUS": {
+      "name": "Kostanay Region",
+      "cities": {}
+    },
+    "KZY": {
+      "name": "Kyzylorda Region",
+      "cities": {}
+    },
+    "MAN": {
+      "name": "Mangystau Region",
+      "cities": {}
+    },
+    "SEV": {
+      "name": "North Kazakhstan Region",
+      "cities": {}
+    },
+    "AST": {
+      "name": "Nur-Sultan",
+      "cities": {}
+    },
+    "PAV": {
+      "name": "Pavlodar Region",
+      "cities": {}
+    },
+    "YUZ": {
+      "name": "Turkestan Region",
+      "cities": {}
+    },
+    "ZAP": {
+      "name": "West Kazakhstan Province",
+      "cities": {}
+    }
+  }
+}

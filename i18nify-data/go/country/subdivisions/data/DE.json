@@ -1,0 +1,69 @@
+{
+  "country_name": "Germany",
+  "states": {
+    "BW": {
+      "name": "Baden-Württemberg",
+      "cities": {}
+    },
+    "BY": {
+      "name": "Bavaria",
+      "cities": {}
+    },
+    "BE": {
+      "name": "Berlin",
+      "cities": {}
+    },
+    "BB": {
+      "name": "Brandenburg",
+      "cities": {}
+    },
+    "HB": {
+      "name": "Bremen",
+      "cities": {}
+    },
+    "HH": {
+      "name": "Hamburg",
+      "cities": {}
+    },
+    "HE": {
+      "name": "Hesse",
+      "cities": {}
+    },
+    "NI": {
+      "name": "Lower Saxony",
+      "cities": {}
+    },
+    "MV": {
+      "name": "Mecklenburg-Vorpommern",
+      "cities": {}
+    },
+    "NW": {
+      "name": "North Rhine-Westphalia",
+      "cities": {}
+    },
+    "RP": {
+      "name": "Rhineland-Palatinate",
+      "cities": {}
+    },
+    "SL": {
+      "name": "Saarland",
+      "cities": {}
+    },
+    "SN": {
+      "name": "Saxony",
+      "cities": {}
+    },
+    "ST": {
+      "name": "Saxony-Anhalt",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Schleswig-Holstein",
+      "cities": {}
+    },
+    "TH": {
+      "name": "Thuringia",
+      "cities": {}
+    }
+  }
+}

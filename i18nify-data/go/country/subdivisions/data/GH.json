@@ -1,0 +1,69 @@
+{
+  "country_name": "Ghana",
+  "states": {
+    "AF": {
+      "name": "Ahafo",
+      "cities": {}
+    },
+    "AH": {
+      "name": "Ashanti",
+      "cities": {}
+    },
+    "BO": {
+      "name": "Bono",
+      "cities": {}
+    },
+    "BE": {
+      "name": "Bono East",
+      "cities": {}
+    },
+    "CP": {
+      "name": "Central",
+      "cities": {}
+    },
+    "EP": {
+      "name": "Eastern",
+      "cities": {}
+    },
+    "AA": {
+      "name": "Greater Accra",
+      "cities": {}
+    },
+    "NE": {
+      "name": "North East",
+      "cities": {}
+    },
+    "NP": {
+      "name": "Northern",
+      "cities": {}
+    },
+    "OT": {
+      "name": "Oti",
+      "cities": {}
+    },
+    "SV": {
+      "name": "Savannah",
+      "cities": {}
+    },
+    "UE": {
+      "name": "Upper East",
+      "cities": {}
+    },
+    "UW": {
+      "name": "Upper West",
+      "cities": {}
+    },
+    "TV": {
+      "name": "Volta",
+      "cities": {}
+    },
+    "WP": {
+      "name": "Western",
+      "cities": {}
+    },
+    "WN": {
+      "name": "Western North",
+      "cities": {}
+    }
+  }
+}

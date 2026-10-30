@@ -1,0 +1,141 @@
+{
+  "country_name": "China",
+  "states": {
+    "AH": {
+      "name": "Anhui",
+      "cities": {}
+    },
+    "BJ": {
+      "name": "Beijing",
+      "cities": {}
+    },
+    "CQ": {
+      "name": "Chongqing",
+      "cities": {}
+    },
+    "FJ": {
+      "name": "Fujian",
+      "cities": {}
+    },
+    "GS": {
+      "name": "Gansu",
+      "cities": {}
+    },
+    "GD": {
+      "name": "Guangdong",
+      "cities": {}
+    },
+    "GX": {
+      "name": "Guangxi Zhuang",
+      "cities": {}
+    },
+    "GZ": {
+      "name": "Guizhou",
+      "cities": {}
+    },
+    "HI": {
+      "name": "Hainan",
+      "cities": {}
+    },
+    "HE": {
+      "name": "Hebei",
+      "cities": {}
+    },
+    "HL": {
+      "name": "Heilongjiang",
+      "cities": {}
+    },
+    "HA": {
+      "name": "Henan",
+      "cities": {}
+    },
+    "HK": {
+      "name": "Hong Kong SAR",
+      "cities": {}
+    },
+    "HB": {
+      "name": "Hubei",
+      "cities": {}
+    },
+    "HN": {
+      "name": "Hunan",
+      "cities": {}
+    },
+    "NM": {
+      "name": "Inner Mongolia",
+      "cities": {}
+    },
+    "JS": {
+      "name": "Jiangsu",
+      "cities": {}
+    },
+    "JX": {
+      "name": "Jiangxi",
+      "cities": {}
+    },
+    "JL": {
+      "name": "Jilin",
+      "cities": {}
+    },
+    "LN": {
+      "name": "Liaoning",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Macau SAR",
+      "cities": {}
+    },
+    "NX": {
+      "name": "Ningxia Huizu",
+      "cities": {}
+    },
+    "QH": {
+      "name": "Qinghai",
+      "cities": {}
+    },
+    "SN": {
+      "name": "Shaanxi",
+      "cities": {}
+    },
+    "SD": {
+      "name": "Shandong",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Shanghai",
+      "cities": {}
+    },
+    "SX": {
+      "name": "Shanxi",
+      "cities": {}
+    },
+    "SC": {
+      "name": "Sichuan",
+      "cities": {}
+    },
+    "TW": {
+      "name": "Taiwan",
+      "cities": {}
+    },
+    "TJ": {
+      "name": "Tianjin",
+      "cities": {}
+    },
+    "XJ": {
+      "name": "Xinjiang",
+      "cities": {}
+    },
+    "XZ": {
+      "name": "Xizang",
+      "cities": {}
+    },
+    "YN": {
+      "name": "Yunnan",
+      "cities": {}
+    },
+    "ZJ": {
+      "name": "Zhejiang",
+      "cities": {}
+    }
+  }
+}

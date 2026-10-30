@@ -1,0 +1,61 @@
+{
+  "country_name": "Jamaica",
+  "states": {
+    "10": {
+      "name": "Westmoreland Parish",
+      "cities": {}
+    },
+    "11": {
+      "name": "Saint Elizabeth Parish",
+      "cities": {}
+    },
+    "12": {
+      "name": "Manchester Parish",
+      "cities": {}
+    },
+    "13": {
+      "name": "Clarendon Parish",
+      "cities": {}
+    },
+    "14": {
+      "name": "Saint Catherine Parish",
+      "cities": {}
+    },
+    "09": {
+      "name": "Hanover Parish",
+      "cities": {}
+    },
+    "01": {
+      "name": "Kingston Parish",
+      "cities": {}
+    },
+    "04": {
+      "name": "Portland Parish",
+      "cities": {}
+    },
+    "02": {
+      "name": "Saint Andrew",
+      "cities": {}
+    },
+    "06": {
+      "name": "Saint Ann Parish",
+      "cities": {}
+    },
+    "08": {
+      "name": "Saint James Parish",
+      "cities": {}
+    },
+    "05": {
+      "name": "Saint Mary Parish",
+      "cities": {}
+    },
+    "03": {
+      "name": "Saint Thomas Parish",
+      "cities": {}
+    },
+    "07": {
+      "name": "Trelawny Parish",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "country_name": "Bhutan",
+  "states": {
+    "11": {
+      "name": "Paro District",
+      "cities": {}
+    },
+    "12": {
+      "name": "Chukha District",
+      "cities": {}
+    },
+    "13": {
+      "name": "Haa District",
+      "cities": {}
+    },
+    "14": {
+      "name": "Samtse District",
+      "cities": {}
+    },
+    "15": {
+      "name": "Thimphu District",
+      "cities": {}
+    },
+    "21": {
+      "name": "Tsirang District",
+      "cities": {}
+    },
+    "22": {
+      "name": "Dagana District",
+      "cities": {}
+    },
+    "23": {
+      "name": "Punakha District",
+      "cities": {}
+    },
+    "24": {
+      "name": "Wangdue Phodrang District",
+      "cities": {}
+    },
+    "31": {
+      "name": "Sarpang District",
+      "cities": {}
+    },
+    "32": {
+      "name": "Trongsa District",
+      "cities": {}
+    },
+    "33": {
+      "name": "Bumthang District",
+      "cities": {}
+    },
+    "34": {
+      "name": "Zhemgang District",
+      "cities": {}
+    },
+    "41": {
+      "name": "Trashigang District",
+      "cities": {}
+    },
+    "42": {
+      "name": "Mongar District",
+      "cities": {}
+    },
+    "43": {
+      "name": "Pemagatshel District",
+      "cities": {}
+    },
+    "44": {
+      "name": "Lhuntse District",
+      "cities": {}
+    },
+    "45": {
+      "name": "Samdrup Jongkhar District",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Gasa District",
+      "cities": {}
+    }
+  }
+}

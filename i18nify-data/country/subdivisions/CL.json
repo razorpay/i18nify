@@ -1,0 +1,69 @@
+{
+  "country_name": "Chile",
+  "states": {
+    "AI": {
+      "name": "Aisén del General Carlos Ibañez del Campo",
+      "cities": {}
+    },
+    "AN": {
+      "name": "Antofagasta",
+      "cities": {}
+    },
+    "AP": {
+      "name": "Arica y Parinacota",
+      "cities": {}
+    },
+    "AT": {
+      "name": "Atacama",
+      "cities": {}
+    },
+    "BI": {
+      "name": "Biobío",
+      "cities": {}
+    },
+    "CO": {
+      "name": "Coquimbo",
+      "cities": {}
+    },
+    "AR": {
+      "name": "La Araucanía",
+      "cities": {}
+    },
+    "LI": {
+      "name": "Libertador General Bernardo O'Higgins",
+      "cities": {}
+    },
+    "LL": {
+      "name": "Los Lagos",
+      "cities": {}
+    },
+    "LR": {
+      "name": "Los Ríos",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Magallanes y de la Antártica Chilena",
+      "cities": {}
+    },
+    "ML": {
+      "name": "Maule",
+      "cities": {}
+    },
+    "NB": {
+      "name": "Ñuble",
+      "cities": {}
+    },
+    "RM": {
+      "name": "Región Metropolitana de Santiago",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Tarapacá",
+      "cities": {}
+    },
+    "VS": {
+      "name": "Valparaíso",
+      "cities": {}
+    }
+  }
+}

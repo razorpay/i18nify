@@ -1,0 +1,61 @@
+{
+  "country_name": "El Salvador",
+  "states": {
+    "AH": {
+      "name": "Ahuachapán Department",
+      "cities": {}
+    },
+    "CA": {
+      "name": "Cabañas Department",
+      "cities": {}
+    },
+    "CH": {
+      "name": "Chalatenango Department",
+      "cities": {}
+    },
+    "CU": {
+      "name": "Cuscatlán Department",
+      "cities": {}
+    },
+    "LI": {
+      "name": "La Libertad Department",
+      "cities": {}
+    },
+    "PA": {
+      "name": "La Paz Department",
+      "cities": {}
+    },
+    "UN": {
+      "name": "La Unión Department",
+      "cities": {}
+    },
+    "MO": {
+      "name": "Morazán Department",
+      "cities": {}
+    },
+    "SM": {
+      "name": "San Miguel Department",
+      "cities": {}
+    },
+    "SS": {
+      "name": "San Salvador Department",
+      "cities": {}
+    },
+    "SV": {
+      "name": "San Vicente Department",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Santa Ana Department",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Sonsonate Department",
+      "cities": {}
+    },
+    "US": {
+      "name": "Usulután Department",
+      "cities": {}
+    }
+  }
+}

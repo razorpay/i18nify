@@ -1,0 +1,73 @@
+{
+  "country_name": "New Zealand",
+  "states": {
+    "AUK": {
+      "name": "Auckland Region",
+      "cities": {}
+    },
+    "BOP": {
+      "name": "Bay of Plenty Region",
+      "cities": {}
+    },
+    "CAN": {
+      "name": "Canterbury Region",
+      "cities": {}
+    },
+    "CIT": {
+      "name": "Chatham Islands",
+      "cities": {}
+    },
+    "GIS": {
+      "name": "Gisborne District",
+      "cities": {}
+    },
+    "HKB": {
+      "name": "Hawke's Bay Region",
+      "cities": {}
+    },
+    "MWT": {
+      "name": "Manawatu-Wanganui Region",
+      "cities": {}
+    },
+    "MBH": {
+      "name": "Marlborough Region",
+      "cities": {}
+    },
+    "NSN": {
+      "name": "Nelson Region",
+      "cities": {}
+    },
+    "NTL": {
+      "name": "Northland Region",
+      "cities": {}
+    },
+    "OTA": {
+      "name": "Otago Region",
+      "cities": {}
+    },
+    "STL": {
+      "name": "Southland Region",
+      "cities": {}
+    },
+    "TKI": {
+      "name": "Taranaki Region",
+      "cities": {}
+    },
+    "TAS": {
+      "name": "Tasman District",
+      "cities": {}
+    },
+    "WKO": {
+      "name": "Waikato Region",
+      "cities": {}
+    },
+    "WGN": {
+      "name": "Wellington Region",
+      "cities": {}
+    },
+    "WTC": {
+      "name": "West Coast Region",
+      "cities": {}
+    }
+  }
+}

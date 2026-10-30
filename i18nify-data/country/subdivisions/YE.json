@@ -1,0 +1,89 @@
+{
+  "country_name": "Yemen",
+  "states": {
+    "AD": {
+      "name": "'Adan Governorate",
+      "cities": {}
+    },
+    "AM": {
+      "name": "'Amran Governorate",
+      "cities": {}
+    },
+    "AB": {
+      "name": "Abyan Governorate",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Al Bayda' Governorate",
+      "cities": {}
+    },
+    "HU": {
+      "name": "Al Hudaydah Governorate",
+      "cities": {}
+    },
+    "JA": {
+      "name": "Al Jawf Governorate",
+      "cities": {}
+    },
+    "MR": {
+      "name": "Al Mahrah Governorate",
+      "cities": {}
+    },
+    "MW": {
+      "name": "Al Mahwit Governorate",
+      "cities": {}
+    },
+    "DH": {
+      "name": "Dhamar Governorate",
+      "cities": {}
+    },
+    "HD": {
+      "name": "Hadhramaut Governorate",
+      "cities": {}
+    },
+    "HJ": {
+      "name": "Hajjah Governorate",
+      "cities": {}
+    },
+    "IB": {
+      "name": "Ibb Governorate",
+      "cities": {}
+    },
+    "LA": {
+      "name": "Lahij Governorate",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Ma'rib Governorate",
+      "cities": {}
+    },
+    "RA": {
+      "name": "Raymah Governorate",
+      "cities": {}
+    },
+    "SD": {
+      "name": "Saada Governorate",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Sana'a",
+      "cities": {}
+    },
+    "SN": {
+      "name": "Sana'a Governorate",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Shabwah Governorate",
+      "cities": {}
+    },
+    "SU": {
+      "name": "Socotra Governorate",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Ta'izz Governorate",
+      "cities": {}
+    }
+  }
+}

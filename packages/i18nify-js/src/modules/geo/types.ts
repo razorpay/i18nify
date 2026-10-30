@@ -1,3 +1,5 @@
+import { CountryCodeType } from '../types';
+
 export type CountryMetaType = {
   country_name: string;
   continent_code: string;
@@ -37,7 +39,11 @@ export type CountryDetailType = {
   };
 };
 
-export type I18nifyCountryCodeType = 'IN' | 'MY' | 'SG' | 'US';
+// i18nify-data now ships state-level subdivision files for every ISO-3166
+// country (see I18NIFY_SUBDIVISION_SUPPORTED_COUNTRIES), so getStates accepts
+// any country code rather than the original IN | MY | SG | US set. City/zipcode
+// lookups remain gated to the rich-data countries (I18NIFY_DATA_SUPPORTED_COUNTRIES).
+export type I18nifyCountryCodeType = CountryCodeType;
 
 export type AddressComponents = {
   name?: string;

@@ -1,0 +1,173 @@
+{
+  "country_name": "Bahamas The",
+  "states": {
+    "AK": {
+      "name": "Acklins",
+      "cities": {}
+    },
+    "AC": {
+      "name": "Acklins and Crooked Islands",
+      "cities": {}
+    },
+    "BY": {
+      "name": "Berry Islands",
+      "cities": {}
+    },
+    "BI": {
+      "name": "Bimini",
+      "cities": {}
+    },
+    "BP": {
+      "name": "Black Point",
+      "cities": {}
+    },
+    "CI": {
+      "name": "Cat Island",
+      "cities": {}
+    },
+    "CO": {
+      "name": "Central Abaco",
+      "cities": {}
+    },
+    "CS": {
+      "name": "Central Andros",
+      "cities": {}
+    },
+    "CE": {
+      "name": "Central Eleuthera",
+      "cities": {}
+    },
+    "CK": {
+      "name": "Crooked Island",
+      "cities": {}
+    },
+    "EG": {
+      "name": "East Grand Bahama",
+      "cities": {}
+    },
+    "EX": {
+      "name": "Exuma",
+      "cities": {}
+    },
+    "FP": {
+      "name": "Freeport",
+      "cities": {}
+    },
+    "FC": {
+      "name": "Fresh Creek",
+      "cities": {}
+    },
+    "GH": {
+      "name": "Governor's Harbour",
+      "cities": {}
+    },
+    "GC": {
+      "name": "Grand Cay",
+      "cities": {}
+    },
+    "GT": {
+      "name": "Green Turtle Cay",
+      "cities": {}
+    },
+    "HI": {
+      "name": "Harbour Island",
+      "cities": {}
+    },
+    "HR": {
+      "name": "High Rock",
+      "cities": {}
+    },
+    "HT": {
+      "name": "Hope Town",
+      "cities": {}
+    },
+    "IN": {
+      "name": "Inagua",
+      "cities": {}
+    },
+    "KB": {
+      "name": "Kemps Bay",
+      "cities": {}
+    },
+    "LI": {
+      "name": "Long Island",
+      "cities": {}
+    },
+    "MC": {
+      "name": "Mangrove Cay",
+      "cities": {}
+    },
+    "MH": {
+      "name": "Marsh Harbour",
+      "cities": {}
+    },
+    "MG": {
+      "name": "Mayaguana District",
+      "cities": {}
+    },
+    "NP": {
+      "name": "New Providence",
+      "cities": {}
+    },
+    "NB": {
+      "name": "Nichollstown and Berry Islands",
+      "cities": {}
+    },
+    "NO": {
+      "name": "North Abaco",
+      "cities": {}
+    },
+    "NS": {
+      "name": "North Andros",
+      "cities": {}
+    },
+    "NE": {
+      "name": "North Eleuthera",
+      "cities": {}
+    },
+    "RI": {
+      "name": "Ragged Island",
+      "cities": {}
+    },
+    "RS": {
+      "name": "Rock Sound",
+      "cities": {}
+    },
+    "RC": {
+      "name": "Rum Cay District",
+      "cities": {}
+    },
+    "SR": {
+      "name": "San Salvador and Rum Cay",
+      "cities": {}
+    },
+    "SS": {
+      "name": "San Salvador Island",
+      "cities": {}
+    },
+    "SP": {
+      "name": "Sandy Point",
+      "cities": {}
+    },
+    "SO": {
+      "name": "South Abaco",
+      "cities": {}
+    },
+    "SA": {
+      "name": "South Andros",
+      "cities": {}
+    },
+    "SE": {
+      "name": "South Eleuthera",
+      "cities": {}
+    },
+    "SW": {
+      "name": "Spanish Wells",
+      "cities": {}
+    },
+    "WG": {
+      "name": "West Grand Bahama",
+      "cities": {}
+    }
+  }
+}

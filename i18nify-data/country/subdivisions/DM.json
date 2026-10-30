@@ -1,0 +1,45 @@
+{
+  "country_name": "Dominica",
+  "states": {
+    "10": {
+      "name": "Saint Paul Parish",
+      "cities": {}
+    },
+    "11": {
+      "name": "Saint Peter Parish",
+      "cities": {}
+    },
+    "02": {
+      "name": "Saint Andrew Parish",
+      "cities": {}
+    },
+    "03": {
+      "name": "Saint David Parish",
+      "cities": {}
+    },
+    "04": {
+      "name": "Saint George Parish",
+      "cities": {}
+    },
+    "05": {
+      "name": "Saint John Parish",
+      "cities": {}
+    },
+    "06": {
+      "name": "Saint Joseph Parish",
+      "cities": {}
+    },
+    "07": {
+      "name": "Saint Luke Parish",
+      "cities": {}
+    },
+    "08": {
+      "name": "Saint Mark Parish",
+      "cities": {}
+    },
+    "09": {
+      "name": "Saint Patrick Parish",
+      "cities": {}
+    }
+  }
+}

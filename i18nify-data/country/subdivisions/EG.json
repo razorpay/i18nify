@@ -1,0 +1,109 @@
+{
+  "country_name": "Egypt",
+  "states": {
+    "ALX": {
+      "name": "Alexandria Governorate",
+      "cities": {}
+    },
+    "ASN": {
+      "name": "Aswan Governorate",
+      "cities": {}
+    },
+    "AST": {
+      "name": "Asyut Governorate",
+      "cities": {}
+    },
+    "BH": {
+      "name": "Beheira Governorate",
+      "cities": {}
+    },
+    "BNS": {
+      "name": "Beni Suef Governorate",
+      "cities": {}
+    },
+    "C": {
+      "name": "Cairo Governorate",
+      "cities": {}
+    },
+    "DK": {
+      "name": "Dakahlia Governorate",
+      "cities": {}
+    },
+    "DT": {
+      "name": "Damietta Governorate",
+      "cities": {}
+    },
+    "FYM": {
+      "name": "Faiyum Governorate",
+      "cities": {}
+    },
+    "GH": {
+      "name": "Gharbia Governorate",
+      "cities": {}
+    },
+    "GZ": {
+      "name": "Giza Governorate",
+      "cities": {}
+    },
+    "IS": {
+      "name": "Ismailia Governorate",
+      "cities": {}
+    },
+    "KFS": {
+      "name": "Kafr el-Sheikh Governorate",
+      "cities": {}
+    },
+    "LX": {
+      "name": "Luxor Governorate",
+      "cities": {}
+    },
+    "MT": {
+      "name": "Matrouh Governorate",
+      "cities": {}
+    },
+    "MN": {
+      "name": "Minya Governorate",
+      "cities": {}
+    },
+    "MNF": {
+      "name": "Monufia Governorate",
+      "cities": {}
+    },
+    "WAD": {
+      "name": "New Valley Governorate",
+      "cities": {}
+    },
+    "SIN": {
+      "name": "North Sinai Governorate",
+      "cities": {}
+    },
+    "PTS": {
+      "name": "Port Said Governorate",
+      "cities": {}
+    },
+    "KB": {
+      "name": "Qalyubia Governorate",
+      "cities": {}
+    },
+    "KN": {
+      "name": "Qena Governorate",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Red Sea Governorate",
+      "cities": {}
+    },
+    "SHG": {
+      "name": "Sohag Governorate",
+      "cities": {}
+    },
+    "JS": {
+      "name": "South Sinai Governorate",
+      "cities": {}
+    },
+    "SUZ": {
+      "name": "Suez Governorate",
+      "cities": {}
+    }
+  }
+}

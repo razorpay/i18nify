@@ -1,0 +1,45 @@
+{
+  "country_name": "Lesotho",
+  "states": {
+    "D": {
+      "name": "Berea District",
+      "cities": {}
+    },
+    "B": {
+      "name": "Butha-Buthe District",
+      "cities": {}
+    },
+    "C": {
+      "name": "Leribe District",
+      "cities": {}
+    },
+    "E": {
+      "name": "Mafeteng District",
+      "cities": {}
+    },
+    "A": {
+      "name": "Maseru District",
+      "cities": {}
+    },
+    "F": {
+      "name": "Mohale's Hoek District",
+      "cities": {}
+    },
+    "J": {
+      "name": "Mokhotlong District",
+      "cities": {}
+    },
+    "H": {
+      "name": "Qacha's Nek District",
+      "cities": {}
+    },
+    "G": {
+      "name": "Quthing District",
+      "cities": {}
+    },
+    "K": {
+      "name": "Thaba-Tseka District",
+      "cities": {}
+    }
+  }
+}

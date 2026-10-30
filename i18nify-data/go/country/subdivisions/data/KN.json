@@ -1,0 +1,65 @@
+{
+  "country_name": "Saint Kitts And Nevis",
+  "states": {
+    "10": {
+      "name": "Saint Paul Charlestown Parish",
+      "cities": {}
+    },
+    "11": {
+      "name": "Saint Peter Basseterre Parish",
+      "cities": {}
+    },
+    "12": {
+      "name": "Saint Thomas Lowland Parish",
+      "cities": {}
+    },
+    "13": {
+      "name": "Saint Thomas Middle Island Parish",
+      "cities": {}
+    },
+    "15": {
+      "name": "Trinity Palmetto Point Parish",
+      "cities": {}
+    },
+    "01": {
+      "name": "Christ Church Nichola Town Parish",
+      "cities": {}
+    },
+    "N": {
+      "name": "Nevis",
+      "cities": {}
+    },
+    "02": {
+      "name": "Saint Anne Sandy Point Parish",
+      "cities": {}
+    },
+    "04": {
+      "name": "Saint George Gingerland Parish",
+      "cities": {}
+    },
+    "05": {
+      "name": "Saint James Windward Parish",
+      "cities": {}
+    },
+    "06": {
+      "name": "Saint John Capisterre Parish",
+      "cities": {}
+    },
+    "07": {
+      "name": "Saint John Figtree Parish",
+      "cities": {}
+    },
+    "K": {
+      "name": "Saint Kitts",
+      "cities": {}
+    },
+    "08": {
+      "name": "Saint Mary Cayon Parish",
+      "cities": {}
+    },
+    "09": {
+      "name": "Saint Paul Capisterre Parish",
+      "cities": {}
+    }
+  }
+}

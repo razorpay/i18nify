@@ -1,0 +1,93 @@
+{
+  "country_name": "Taiwan",
+  "states": {
+    "CHA": {
+      "name": "Changhua",
+      "cities": {}
+    },
+    "CYI": {
+      "name": "Chiayi",
+      "cities": {}
+    },
+    "CYQ": {
+      "name": "Chiayi",
+      "cities": {}
+    },
+    "HSQ": {
+      "name": "Hsinchu",
+      "cities": {}
+    },
+    "HSZ": {
+      "name": "Hsinchu",
+      "cities": {}
+    },
+    "HUA": {
+      "name": "Hualien",
+      "cities": {}
+    },
+    "KHH": {
+      "name": "Kaohsiung",
+      "cities": {}
+    },
+    "KEE": {
+      "name": "Keelung",
+      "cities": {}
+    },
+    "KIN": {
+      "name": "Kinmen",
+      "cities": {}
+    },
+    "LIE": {
+      "name": "Lienchiang",
+      "cities": {}
+    },
+    "MIA": {
+      "name": "Miaoli",
+      "cities": {}
+    },
+    "NAN": {
+      "name": "Nantou",
+      "cities": {}
+    },
+    "NWT": {
+      "name": "New Taipei",
+      "cities": {}
+    },
+    "PEN": {
+      "name": "Penghu",
+      "cities": {}
+    },
+    "PIF": {
+      "name": "Pingtung",
+      "cities": {}
+    },
+    "TXG": {
+      "name": "Taichung",
+      "cities": {}
+    },
+    "TNN": {
+      "name": "Tainan",
+      "cities": {}
+    },
+    "TPE": {
+      "name": "Taipei",
+      "cities": {}
+    },
+    "TTT": {
+      "name": "Taitung",
+      "cities": {}
+    },
+    "TAO": {
+      "name": "Taoyuan",
+      "cities": {}
+    },
+    "ILA": {
+      "name": "Yilan",
+      "cities": {}
+    },
+    "YUN": {
+      "name": "Yunlin",
+      "cities": {}
+    }
+  }
+}

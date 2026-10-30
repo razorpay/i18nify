@@ -1,0 +1,233 @@
+{
+  "country_name": "Burkina Faso",
+  "states": {
+    "10": {
+      "name": "Nord Region, Burkina Faso",
+      "cities": {}
+    },
+    "11": {
+      "name": "Plateau-Central Region",
+      "cities": {}
+    },
+    "12": {
+      "name": "Sahel Region",
+      "cities": {}
+    },
+    "13": {
+      "name": "Sud-Ouest Region",
+      "cities": {}
+    },
+    "BAL": {
+      "name": "Balé Province",
+      "cities": {}
+    },
+    "BAM": {
+      "name": "Bam Province",
+      "cities": {}
+    },
+    "BAN": {
+      "name": "Banwa Province",
+      "cities": {}
+    },
+    "BAZ": {
+      "name": "Bazèga Province",
+      "cities": {}
+    },
+    "01": {
+      "name": "Boucle du Mouhoun Region",
+      "cities": {}
+    },
+    "BGR": {
+      "name": "Bougouriba Province",
+      "cities": {}
+    },
+    "BLG": {
+      "name": "Boulgou",
+      "cities": {}
+    },
+    "02": {
+      "name": "Cascades Region",
+      "cities": {}
+    },
+    "03": {
+      "name": "Centre",
+      "cities": {}
+    },
+    "04": {
+      "name": "Centre-Est Region",
+      "cities": {}
+    },
+    "05": {
+      "name": "Centre-Nord Region",
+      "cities": {}
+    },
+    "06": {
+      "name": "Centre-Ouest Region",
+      "cities": {}
+    },
+    "07": {
+      "name": "Centre-Sud Region",
+      "cities": {}
+    },
+    "COM": {
+      "name": "Comoé Province",
+      "cities": {}
+    },
+    "08": {
+      "name": "Est Region",
+      "cities": {}
+    },
+    "GAN": {
+      "name": "Ganzourgou Province",
+      "cities": {}
+    },
+    "GNA": {
+      "name": "Gnagna Province",
+      "cities": {}
+    },
+    "GOU": {
+      "name": "Gourma Province",
+      "cities": {}
+    },
+    "09": {
+      "name": "Hauts-Bassins Region",
+      "cities": {}
+    },
+    "HOU": {
+      "name": "Houet Province",
+      "cities": {}
+    },
+    "IOB": {
+      "name": "Ioba Province",
+      "cities": {}
+    },
+    "KAD": {
+      "name": "Kadiogo Province",
+      "cities": {}
+    },
+    "KEN": {
+      "name": "Kénédougou Province",
+      "cities": {}
+    },
+    "KMD": {
+      "name": "Komondjari Province",
+      "cities": {}
+    },
+    "KMP": {
+      "name": "Kompienga Province",
+      "cities": {}
+    },
+    "KOS": {
+      "name": "Kossi Province",
+      "cities": {}
+    },
+    "KOP": {
+      "name": "Koulpélogo Province",
+      "cities": {}
+    },
+    "KOT": {
+      "name": "Kouritenga Province",
+      "cities": {}
+    },
+    "KOW": {
+      "name": "Kourwéogo Province",
+      "cities": {}
+    },
+    "LER": {
+      "name": "Léraba Province",
+      "cities": {}
+    },
+    "LOR": {
+      "name": "Loroum Province",
+      "cities": {}
+    },
+    "MOU": {
+      "name": "Mouhoun",
+      "cities": {}
+    },
+    "NAO": {
+      "name": "Nahouri Province",
+      "cities": {}
+    },
+    "NAM": {
+      "name": "Namentenga Province",
+      "cities": {}
+    },
+    "NAY": {
+      "name": "Nayala Province",
+      "cities": {}
+    },
+    "NOU": {
+      "name": "Noumbiel Province",
+      "cities": {}
+    },
+    "OUB": {
+      "name": "Oubritenga Province",
+      "cities": {}
+    },
+    "OUD": {
+      "name": "Oudalan Province",
+      "cities": {}
+    },
+    "PAS": {
+      "name": "Passoré Province",
+      "cities": {}
+    },
+    "PON": {
+      "name": "Poni Province",
+      "cities": {}
+    },
+    "SNG": {
+      "name": "Sanguié Province",
+      "cities": {}
+    },
+    "SMT": {
+      "name": "Sanmatenga Province",
+      "cities": {}
+    },
+    "SEN": {
+      "name": "Séno Province",
+      "cities": {}
+    },
+    "SIS": {
+      "name": "Sissili Province",
+      "cities": {}
+    },
+    "SOM": {
+      "name": "Soum Province",
+      "cities": {}
+    },
+    "SOR": {
+      "name": "Sourou Province",
+      "cities": {}
+    },
+    "TAP": {
+      "name": "Tapoa Province",
+      "cities": {}
+    },
+    "TUI": {
+      "name": "Tuy Province",
+      "cities": {}
+    },
+    "YAG": {
+      "name": "Yagha Province",
+      "cities": {}
+    },
+    "YAT": {
+      "name": "Yatenga Province",
+      "cities": {}
+    },
+    "ZIR": {
+      "name": "Ziro Province",
+      "cities": {}
+    },
+    "ZON": {
+      "name": "Zondoma Province",
+      "cities": {}
+    },
+    "ZOU": {
+      "name": "Zoundwéogo Province",
+      "cities": {}
+    }
+  }
+}

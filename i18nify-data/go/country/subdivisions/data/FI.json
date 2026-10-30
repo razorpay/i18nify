@@ -1,0 +1,89 @@
+{
+  "country_name": "Finland",
+  "states": {
+    "11": {
+      "name": "Pirkanmaa",
+      "cities": {}
+    },
+    "12": {
+      "name": "Ostrobothnia",
+      "cities": {}
+    },
+    "13": {
+      "name": "North Karelia",
+      "cities": {}
+    },
+    "14": {
+      "name": "Northern Ostrobothnia",
+      "cities": {}
+    },
+    "15": {
+      "name": "Northern Savonia",
+      "cities": {}
+    },
+    "16": {
+      "name": "Päijänne Tavastia",
+      "cities": {}
+    },
+    "17": {
+      "name": "Satakunta",
+      "cities": {}
+    },
+    "18": {
+      "name": "Uusimaa",
+      "cities": {}
+    },
+    "19": {
+      "name": "Finland Proper",
+      "cities": {}
+    },
+    "01": {
+      "name": "Åland Islands",
+      "cities": {}
+    },
+    "08": {
+      "name": "Central Finland",
+      "cities": {}
+    },
+    "07": {
+      "name": "Central Ostrobothnia",
+      "cities": {}
+    },
+    "IS": {
+      "name": "Eastern Finland Province",
+      "cities": {}
+    },
+    "05": {
+      "name": "Kainuu",
+      "cities": {}
+    },
+    "09": {
+      "name": "Kymenlaakso",
+      "cities": {}
+    },
+    "LL": {
+      "name": "Lapland",
+      "cities": {}
+    },
+    "OL": {
+      "name": "Oulu Province",
+      "cities": {}
+    },
+    "02": {
+      "name": "South Karelia",
+      "cities": {}
+    },
+    "03": {
+      "name": "Southern Ostrobothnia",
+      "cities": {}
+    },
+    "04": {
+      "name": "Southern Savonia",
+      "cities": {}
+    },
+    "06": {
+      "name": "Tavastia Proper",
+      "cities": {}
+    }
+  }
+}

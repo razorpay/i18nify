@@ -1,0 +1,37 @@
+{
+  "country_name": "Australia",
+  "states": {
+    "ACT": {
+      "name": "Australian Capital Territory",
+      "cities": {}
+    },
+    "NSW": {
+      "name": "New South Wales",
+      "cities": {}
+    },
+    "NT": {
+      "name": "Northern Territory",
+      "cities": {}
+    },
+    "QLD": {
+      "name": "Queensland",
+      "cities": {}
+    },
+    "SA": {
+      "name": "South Australia",
+      "cities": {}
+    },
+    "TAS": {
+      "name": "Tasmania",
+      "cities": {}
+    },
+    "VIC": {
+      "name": "Victoria",
+      "cities": {}
+    },
+    "WA": {
+      "name": "Western Australia",
+      "cities": {}
+    }
+  }
+}

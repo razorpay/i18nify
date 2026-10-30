@@ -1,0 +1,129 @@
+{
+  "country_name": "Iran",
+  "states": {
+    "10": {
+      "name": "Isfahan Province",
+      "cities": {}
+    },
+    "11": {
+      "name": "Sistan and Baluchestan",
+      "cities": {}
+    },
+    "12": {
+      "name": "Kurdistan Province",
+      "cities": {}
+    },
+    "13": {
+      "name": "Hamadan Province",
+      "cities": {}
+    },
+    "14": {
+      "name": "Chaharmahal and Bakhtiari Province",
+      "cities": {}
+    },
+    "15": {
+      "name": "Lorestan Province",
+      "cities": {}
+    },
+    "16": {
+      "name": "Ilam Province",
+      "cities": {}
+    },
+    "17": {
+      "name": "Kohgiluyeh and Boyer-Ahmad Province",
+      "cities": {}
+    },
+    "18": {
+      "name": "Bushehr Province",
+      "cities": {}
+    },
+    "19": {
+      "name": "Zanjan Province",
+      "cities": {}
+    },
+    "20": {
+      "name": "Semnan Province",
+      "cities": {}
+    },
+    "21": {
+      "name": "Yazd Province",
+      "cities": {}
+    },
+    "22": {
+      "name": "Hormozgan Province",
+      "cities": {}
+    },
+    "23": {
+      "name": "Tehran Province",
+      "cities": {}
+    },
+    "24": {
+      "name": "Ardabil Province",
+      "cities": {}
+    },
+    "25": {
+      "name": "Qom Province",
+      "cities": {}
+    },
+    "26": {
+      "name": "Qazvin Province",
+      "cities": {}
+    },
+    "27": {
+      "name": "Golestan Province",
+      "cities": {}
+    },
+    "28": {
+      "name": "North Khorasan Province",
+      "cities": {}
+    },
+    "29": {
+      "name": "South Khorasan Province",
+      "cities": {}
+    },
+    "30": {
+      "name": "Alborz Province",
+      "cities": {}
+    },
+    "03": {
+      "name": "East Azerbaijan Province",
+      "cities": {}
+    },
+    "07": {
+      "name": "Fars Province",
+      "cities": {}
+    },
+    "01": {
+      "name": "Gilan Province",
+      "cities": {}
+    },
+    "08": {
+      "name": "Kerman Province",
+      "cities": {}
+    },
+    "05": {
+      "name": "Kermanshah Province",
+      "cities": {}
+    },
+    "06": {
+      "name": "Khuzestan Province",
+      "cities": {}
+    },
+    "00": {
+      "name": "Markazi Province",
+      "cities": {}
+    },
+    "02": {
+      "name": "Mazandaran Province",
+      "cities": {}
+    },
+    "09": {
+      "name": "Razavi Khorasan Province",
+      "cities": {}
+    },
+    "04": {
+      "name": "West Azarbaijan Province",
+      "cities": {}
+    }
+  }
+}

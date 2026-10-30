@@ -1,0 +1,41 @@
+{
+  "country_name": "Austria",
+  "states": {
+    "1": {
+      "name": "Burgenland",
+      "cities": {}
+    },
+    "2": {
+      "name": "Carinthia",
+      "cities": {}
+    },
+    "3": {
+      "name": "Lower Austria",
+      "cities": {}
+    },
+    "4": {
+      "name": "Upper Austria",
+      "cities": {}
+    },
+    "5": {
+      "name": "Salzburg",
+      "cities": {}
+    },
+    "6": {
+      "name": "Styria",
+      "cities": {}
+    },
+    "7": {
+      "name": "Tyrol",
+      "cities": {}
+    },
+    "8": {
+      "name": "Vorarlberg",
+      "cities": {}
+    },
+    "9": {
+      "name": "Vienna",
+      "cities": {}
+    }
+  }
+}

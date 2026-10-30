@@ -1,0 +1,29 @@
+{
+  "country_name": "Eritrea",
+  "states": {
+    "AN": {
+      "name": "Anseba Region",
+      "cities": {}
+    },
+    "DU": {
+      "name": "Debub Region",
+      "cities": {}
+    },
+    "GB": {
+      "name": "Gash-Barka Region",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Maekel Region",
+      "cities": {}
+    },
+    "SK": {
+      "name": "Northern Red Sea Region",
+      "cities": {}
+    },
+    "DK": {
+      "name": "Southern Red Sea Region",
+      "cities": {}
+    }
+  }
+}

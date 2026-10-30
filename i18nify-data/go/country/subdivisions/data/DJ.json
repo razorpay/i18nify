@@ -1,0 +1,29 @@
+{
+  "country_name": "Djibouti",
+  "states": {
+    "AS": {
+      "name": "Ali Sabieh Region",
+      "cities": {}
+    },
+    "AR": {
+      "name": "Arta Region",
+      "cities": {}
+    },
+    "DI": {
+      "name": "Dikhil Region",
+      "cities": {}
+    },
+    "DJ": {
+      "name": "Djibouti",
+      "cities": {}
+    },
+    "OB": {
+      "name": "Obock Region",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Tadjourah Region",
+      "cities": {}
+    }
+  }
+}

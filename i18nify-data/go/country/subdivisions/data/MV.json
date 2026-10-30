@@ -1,0 +1,109 @@
+{
+  "country_name": "Maldives",
+  "states": {
+    "12": {
+      "name": "Meemu Atoll",
+      "cities": {}
+    },
+    "13": {
+      "name": "Raa Atoll",
+      "cities": {}
+    },
+    "14": {
+      "name": "Faafu Atoll",
+      "cities": {}
+    },
+    "17": {
+      "name": "Dhaalu Atoll",
+      "cities": {}
+    },
+    "23": {
+      "name": "Haa Dhaalu Atoll",
+      "cities": {}
+    },
+    "24": {
+      "name": "Shaviyani Atoll",
+      "cities": {}
+    },
+    "25": {
+      "name": "Noonu Atoll",
+      "cities": {}
+    },
+    "26": {
+      "name": "Kaafu Atoll",
+      "cities": {}
+    },
+    "27": {
+      "name": "Gaafu Alif Atoll",
+      "cities": {}
+    },
+    "28": {
+      "name": "Gaafu Dhaalu Atoll",
+      "cities": {}
+    },
+    "29": {
+      "name": "Gnaviyani Atoll",
+      "cities": {}
+    },
+    "01": {
+      "name": "Addu Atoll",
+      "cities": {}
+    },
+    "02": {
+      "name": "Alif Alif Atoll",
+      "cities": {}
+    },
+    "00": {
+      "name": "Alif Dhaal Atoll",
+      "cities": {}
+    },
+    "CE": {
+      "name": "Central Province",
+      "cities": {}
+    },
+    "07": {
+      "name": "Haa Alif Atoll",
+      "cities": {}
+    },
+    "05": {
+      "name": "Laamu Atoll",
+      "cities": {}
+    },
+    "03": {
+      "name": "Lhaviyani Atoll",
+      "cities": {}
+    },
+    "MLE": {
+      "name": "Malé",
+      "cities": {}
+    },
+    "NC": {
+      "name": "North Central Province",
+      "cities": {}
+    },
+    "NO": {
+      "name": "North Province",
+      "cities": {}
+    },
+    "SC": {
+      "name": "South Central Province",
+      "cities": {}
+    },
+    "SU": {
+      "name": "South Province",
+      "cities": {}
+    },
+    "08": {
+      "name": "Thaa Atoll",
+      "cities": {}
+    },
+    "US": {
+      "name": "Upper South Province",
+      "cities": {}
+    },
+    "04": {
+      "name": "Vaavu Atoll",
+      "cities": {}
+    }
+  }
+}

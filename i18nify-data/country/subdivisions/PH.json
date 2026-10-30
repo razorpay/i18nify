@@ -1,0 +1,393 @@
+{
+  "country_name": "Philippines",
+  "states": {
+    "10": {
+      "name": "Northern Mindanao",
+      "cities": {}
+    },
+    "11": {
+      "name": "Davao Region",
+      "cities": {}
+    },
+    "12": {
+      "name": "Soccsksargen",
+      "cities": {}
+    },
+    "13": {
+      "name": "Caraga",
+      "cities": {}
+    },
+    "14": {
+      "name": "Autonomous Region in Muslim Mindanao",
+      "cities": {}
+    },
+    "15": {
+      "name": "Cordillera Administrative Region",
+      "cities": {}
+    },
+    "40": {
+      "name": "Calabarzon",
+      "cities": {}
+    },
+    "41": {
+      "name": "Mimaropa",
+      "cities": {}
+    },
+    "ABR": {
+      "name": "Abra",
+      "cities": {}
+    },
+    "AGN": {
+      "name": "Agusan del Norte",
+      "cities": {}
+    },
+    "AGS": {
+      "name": "Agusan del Sur",
+      "cities": {}
+    },
+    "AKL": {
+      "name": "Aklan",
+      "cities": {}
+    },
+    "ALB": {
+      "name": "Albay",
+      "cities": {}
+    },
+    "ANT": {
+      "name": "Antique",
+      "cities": {}
+    },
+    "APA": {
+      "name": "Apayao",
+      "cities": {}
+    },
+    "AUR": {
+      "name": "Aurora",
+      "cities": {}
+    },
+    "BAS": {
+      "name": "Basilan",
+      "cities": {}
+    },
+    "BAN": {
+      "name": "Bataan",
+      "cities": {}
+    },
+    "BTN": {
+      "name": "Batanes",
+      "cities": {}
+    },
+    "BTG": {
+      "name": "Batangas",
+      "cities": {}
+    },
+    "BEN": {
+      "name": "Benguet",
+      "cities": {}
+    },
+    "05": {
+      "name": "Bicol Region",
+      "cities": {}
+    },
+    "BIL": {
+      "name": "Biliran",
+      "cities": {}
+    },
+    "BOH": {
+      "name": "Bohol",
+      "cities": {}
+    },
+    "BUK": {
+      "name": "Bukidnon",
+      "cities": {}
+    },
+    "BUL": {
+      "name": "Bulacan",
+      "cities": {}
+    },
+    "CAG": {
+      "name": "Cagayan",
+      "cities": {}
+    },
+    "02": {
+      "name": "Cagayan Valley",
+      "cities": {}
+    },
+    "CAN": {
+      "name": "Camarines Norte",
+      "cities": {}
+    },
+    "CAS": {
+      "name": "Camarines Sur",
+      "cities": {}
+    },
+    "CAM": {
+      "name": "Camiguin",
+      "cities": {}
+    },
+    "CAP": {
+      "name": "Capiz",
+      "cities": {}
+    },
+    "CAT": {
+      "name": "Catanduanes",
+      "cities": {}
+    },
+    "CAV": {
+      "name": "Cavite",
+      "cities": {}
+    },
+    "CEB": {
+      "name": "Cebu",
+      "cities": {}
+    },
+    "03": {
+      "name": "Central Luzon",
+      "cities": {}
+    },
+    "07": {
+      "name": "Central Visayas",
+      "cities": {}
+    },
+    "COM": {
+      "name": "Compostela Valley",
+      "cities": {}
+    },
+    "NCO": {
+      "name": "Cotabato",
+      "cities": {}
+    },
+    "DAV": {
+      "name": "Davao del Norte",
+      "cities": {}
+    },
+    "DAS": {
+      "name": "Davao del Sur",
+      "cities": {}
+    },
+    "DVO": {
+      "name": "Davao Occidental",
+      "cities": {}
+    },
+    "DAO": {
+      "name": "Davao Oriental",
+      "cities": {}
+    },
+    "DIN": {
+      "name": "Dinagat Islands",
+      "cities": {}
+    },
+    "EAS": {
+      "name": "Eastern Samar",
+      "cities": {}
+    },
+    "08": {
+      "name": "Eastern Visayas",
+      "cities": {}
+    },
+    "GUI": {
+      "name": "Guimaras",
+      "cities": {}
+    },
+    "IFU": {
+      "name": "Ifugao",
+      "cities": {}
+    },
+    "ILN": {
+      "name": "Ilocos Norte",
+      "cities": {}
+    },
+    "01": {
+      "name": "Ilocos Region",
+      "cities": {}
+    },
+    "ILS": {
+      "name": "Ilocos Sur",
+      "cities": {}
+    },
+    "ILI": {
+      "name": "Iloilo",
+      "cities": {}
+    },
+    "ISA": {
+      "name": "Isabela",
+      "cities": {}
+    },
+    "KAL": {
+      "name": "Kalinga",
+      "cities": {}
+    },
+    "LUN": {
+      "name": "La Union",
+      "cities": {}
+    },
+    "LAG": {
+      "name": "Laguna",
+      "cities": {}
+    },
+    "LAN": {
+      "name": "Lanao del Norte",
+      "cities": {}
+    },
+    "LAS": {
+      "name": "Lanao del Sur",
+      "cities": {}
+    },
+    "LEY": {
+      "name": "Leyte",
+      "cities": {}
+    },
+    "MAG": {
+      "name": "Maguindanao",
+      "cities": {}
+    },
+    "MAD": {
+      "name": "Marinduque",
+      "cities": {}
+    },
+    "MAS": {
+      "name": "Masbate",
+      "cities": {}
+    },
+    "NCR": {
+      "name": "Metro Manila",
+      "cities": {}
+    },
+    "MSC": {
+      "name": "Misamis Occidental",
+      "cities": {}
+    },
+    "MSR": {
+      "name": "Misamis Oriental",
+      "cities": {}
+    },
+    "MOU": {
+      "name": "Mountain Province",
+      "cities": {}
+    },
+    "NEC": {
+      "name": "Negros Occidental",
+      "cities": {}
+    },
+    "NER": {
+      "name": "Negros Oriental",
+      "cities": {}
+    },
+    "NSA": {
+      "name": "Northern Samar",
+      "cities": {}
+    },
+    "NUE": {
+      "name": "Nueva Ecija",
+      "cities": {}
+    },
+    "NUV": {
+      "name": "Nueva Vizcaya",
+      "cities": {}
+    },
+    "MDC": {
+      "name": "Occidental Mindoro",
+      "cities": {}
+    },
+    "MDR": {
+      "name": "Oriental Mindoro",
+      "cities": {}
+    },
+    "PLW": {
+      "name": "Palawan",
+      "cities": {}
+    },
+    "PAM": {
+      "name": "Pampanga",
+      "cities": {}
+    },
+    "PAN": {
+      "name": "Pangasinan",
+      "cities": {}
+    },
+    "QUE": {
+      "name": "Quezon",
+      "cities": {}
+    },
+    "QUI": {
+      "name": "Quirino",
+      "cities": {}
+    },
+    "RIZ": {
+      "name": "Rizal",
+      "cities": {}
+    },
+    "ROM": {
+      "name": "Romblon",
+      "cities": {}
+    },
+    "SAR": {
+      "name": "Sarangani",
+      "cities": {}
+    },
+    "SIG": {
+      "name": "Siquijor",
+      "cities": {}
+    },
+    "SOR": {
+      "name": "Sorsogon",
+      "cities": {}
+    },
+    "SCO": {
+      "name": "South Cotabato",
+      "cities": {}
+    },
+    "SLE": {
+      "name": "Southern Leyte",
+      "cities": {}
+    },
+    "SUK": {
+      "name": "Sultan Kudarat",
+      "cities": {}
+    },
+    "SLU": {
+      "name": "Sulu",
+      "cities": {}
+    },
+    "SUN": {
+      "name": "Surigao del Norte",
+      "cities": {}
+    },
+    "SUR": {
+      "name": "Surigao del Sur",
+      "cities": {}
+    },
+    "TAR": {
+      "name": "Tarlac",
+      "cities": {}
+    },
+    "TAW": {
+      "name": "Tawi-Tawi",
+      "cities": {}
+    },
+    "06": {
+      "name": "Western Visayas",
+      "cities": {}
+    },
+    "ZMB": {
+      "name": "Zambales",
+      "cities": {}
+    },
+    "ZAN": {
+      "name": "Zamboanga del Norte",
+      "cities": {}
+    },
+    "ZAS": {
+      "name": "Zamboanga del Sur",
+      "cities": {}
+    },
+    "09": {
+      "name": "Zamboanga Peninsula",
+      "cities": {}
+    },
+    "ZSI": {
+      "name": "Zamboanga Sibugay",
+      "cities": {}
+    }
+  }
+}

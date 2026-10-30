@@ -1,0 +1,45 @@
+{
+  "country_name": "Haiti",
+  "states": {
+    "AR": {
+      "name": "Artibonite",
+      "cities": {}
+    },
+    "CE": {
+      "name": "Centre",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Grand'Anse",
+      "cities": {}
+    },
+    "NI": {
+      "name": "Nippes",
+      "cities": {}
+    },
+    "ND": {
+      "name": "Nord",
+      "cities": {}
+    },
+    "NE": {
+      "name": "Nord-Est",
+      "cities": {}
+    },
+    "NO": {
+      "name": "Nord-Ouest",
+      "cities": {}
+    },
+    "OU": {
+      "name": "Ouest",
+      "cities": {}
+    },
+    "SD": {
+      "name": "Sud",
+      "cities": {}
+    },
+    "SE": {
+      "name": "Sud-Est",
+      "cities": {}
+    }
+  }
+}

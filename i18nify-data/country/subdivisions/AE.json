@@ -1,0 +1,33 @@
+{
+  "country_name": "United Arab Emirates",
+  "states": {
+    "AZ": {
+      "name": "Abu Dhabi Emirate",
+      "cities": {}
+    },
+    "AJ": {
+      "name": "Ajman Emirate",
+      "cities": {}
+    },
+    "DU": {
+      "name": "Dubai",
+      "cities": {}
+    },
+    "FU": {
+      "name": "Fujairah",
+      "cities": {}
+    },
+    "RK": {
+      "name": "Ras al-Khaimah",
+      "cities": {}
+    },
+    "SH": {
+      "name": "Sharjah Emirate",
+      "cities": {}
+    },
+    "UQ": {
+      "name": "Umm al-Quwain",
+      "cities": {}
+    }
+  }
+}

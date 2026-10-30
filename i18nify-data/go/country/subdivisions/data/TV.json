@@ -1,0 +1,37 @@
+{
+  "country_name": "Tuvalu",
+  "states": {
+    "FUN": {
+      "name": "Funafuti",
+      "cities": {}
+    },
+    "NMG": {
+      "name": "Nanumanga",
+      "cities": {}
+    },
+    "NMA": {
+      "name": "Nanumea",
+      "cities": {}
+    },
+    "NIT": {
+      "name": "Niutao Island Council",
+      "cities": {}
+    },
+    "NUI": {
+      "name": "Nui",
+      "cities": {}
+    },
+    "NKF": {
+      "name": "Nukufetau",
+      "cities": {}
+    },
+    "NKL": {
+      "name": "Nukulaelae",
+      "cities": {}
+    },
+    "VAI": {
+      "name": "Vaitupu",
+      "cities": {}
+    }
+  }
+}

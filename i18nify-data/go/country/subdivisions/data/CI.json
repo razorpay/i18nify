@@ -1,0 +1,129 @@
+{
+  "country_name": "Cote D'Ivoire (Ivory Coast)",
+  "states": {
+    "10": {
+      "name": "Denguélé Region",
+      "cities": {}
+    },
+    "11": {
+      "name": "N'zi-Comoé",
+      "cities": {}
+    },
+    "12": {
+      "name": "Marahoué Region",
+      "cities": {}
+    },
+    "13": {
+      "name": "Sud-Comoé",
+      "cities": {}
+    },
+    "14": {
+      "name": "Worodougou",
+      "cities": {}
+    },
+    "15": {
+      "name": "Sud-Bandama",
+      "cities": {}
+    },
+    "16": {
+      "name": "Agnéby",
+      "cities": {}
+    },
+    "17": {
+      "name": "Bafing Region",
+      "cities": {}
+    },
+    "18": {
+      "name": "Fromager",
+      "cities": {}
+    },
+    "19": {
+      "name": "Moyen-Cavally",
+      "cities": {}
+    },
+    "AB": {
+      "name": "Abidjan",
+      "cities": {}
+    },
+    "BS": {
+      "name": "Bas-Sassandra District",
+      "cities": {}
+    },
+    "09": {
+      "name": "Bas-Sassandra Region",
+      "cities": {}
+    },
+    "CM": {
+      "name": "Comoé District",
+      "cities": {}
+    },
+    "DN": {
+      "name": "Denguélé District",
+      "cities": {}
+    },
+    "06": {
+      "name": "Dix-Huit Montagnes",
+      "cities": {}
+    },
+    "GD": {
+      "name": "Gôh-Djiboua District",
+      "cities": {}
+    },
+    "02": {
+      "name": "Haut-Sassandra",
+      "cities": {}
+    },
+    "LC": {
+      "name": "Lacs District",
+      "cities": {}
+    },
+    "07": {
+      "name": "Lacs Region",
+      "cities": {}
+    },
+    "LG": {
+      "name": "Lagunes District",
+      "cities": {}
+    },
+    "01": {
+      "name": "Lagunes region",
+      "cities": {}
+    },
+    "MG": {
+      "name": "Montagnes District",
+      "cities": {}
+    },
+    "05": {
+      "name": "Moyen-Comoé",
+      "cities": {}
+    },
+    "SM": {
+      "name": "Sassandra-Marahoué District",
+      "cities": {}
+    },
+    "03": {
+      "name": "Savanes Region",
+      "cities": {}
+    },
+    "VB": {
+      "name": "Vallée du Bandama District",
+      "cities": {}
+    },
+    "04": {
+      "name": "Vallée du Bandama Region",
+      "cities": {}
+    },
+    "WR": {
+      "name": "Woroba District",
+      "cities": {}
+    },
+    "YM": {
+      "name": "Yamoussoukro",
+      "cities": {}
+    },
+    "ZZ": {
+      "name": "Zanzan Region",
+      "cities": {}
+    }
+  }
+}

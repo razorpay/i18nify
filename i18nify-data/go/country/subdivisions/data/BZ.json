@@ -1,0 +1,29 @@
+{
+  "country_name": "Belize",
+  "states": {
+    "BZ": {
+      "name": "Belize District",
+      "cities": {}
+    },
+    "CY": {
+      "name": "Cayo District",
+      "cities": {}
+    },
+    "CZL": {
+      "name": "Corozal District",
+      "cities": {}
+    },
+    "OW": {
+      "name": "Orange Walk District",
+      "cities": {}
+    },
+    "SC": {
+      "name": "Stann Creek District",
+      "cities": {}
+    },
+    "TOL": {
+      "name": "Toledo District",
+      "cities": {}
+    }
+  }
+}

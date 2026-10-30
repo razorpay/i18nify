@@ -1,0 +1,109 @@
+{
+  "country_name": "Serbia",
+  "states": {
+    "10": {
+      "name": "Podunavlje District",
+      "cities": {}
+    },
+    "11": {
+      "name": "Braničevo District",
+      "cities": {}
+    },
+    "12": {
+      "name": "Šumadija District",
+      "cities": {}
+    },
+    "13": {
+      "name": "Pomoravlje District",
+      "cities": {}
+    },
+    "14": {
+      "name": "Bor District",
+      "cities": {}
+    },
+    "15": {
+      "name": "Zaječar District",
+      "cities": {}
+    },
+    "16": {
+      "name": "Zlatibor District",
+      "cities": {}
+    },
+    "17": {
+      "name": "Moravica District",
+      "cities": {}
+    },
+    "18": {
+      "name": "Raška District",
+      "cities": {}
+    },
+    "19": {
+      "name": "Rasina District",
+      "cities": {}
+    },
+    "20": {
+      "name": "Nišava District",
+      "cities": {}
+    },
+    "21": {
+      "name": "Toplica District",
+      "cities": {}
+    },
+    "22": {
+      "name": "Pirot District",
+      "cities": {}
+    },
+    "23": {
+      "name": "Jablanica District",
+      "cities": {}
+    },
+    "24": {
+      "name": "Pčinja District",
+      "cities": {}
+    },
+    "00": {
+      "name": "Belgrade",
+      "cities": {}
+    },
+    "02": {
+      "name": "Central Banat District",
+      "cities": {}
+    },
+    "09": {
+      "name": "Kolubara District",
+      "cities": {}
+    },
+    "08": {
+      "name": "Mačva District",
+      "cities": {}
+    },
+    "01": {
+      "name": "North Bačka District",
+      "cities": {}
+    },
+    "03": {
+      "name": "North Banat District",
+      "cities": {}
+    },
+    "06": {
+      "name": "South Bačka District",
+      "cities": {}
+    },
+    "04": {
+      "name": "South Banat District",
+      "cities": {}
+    },
+    "07": {
+      "name": "Srem District",
+      "cities": {}
+    },
+    "VO": {
+      "name": "Vojvodina",
+      "cities": {}
+    },
+    "05": {
+      "name": "West Bačka District",
+      "cities": {}
+    }
+  }
+}

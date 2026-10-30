@@ -1,0 +1,77 @@
+{
+  "country_name": "Iraq",
+  "states": {
+    "AN": {
+      "name": "Al Anbar Governorate",
+      "cities": {}
+    },
+    "MU": {
+      "name": "Al Muthanna Governorate",
+      "cities": {}
+    },
+    "QA": {
+      "name": "Al-Qādisiyyah Governorate",
+      "cities": {}
+    },
+    "BB": {
+      "name": "Babylon Governorate",
+      "cities": {}
+    },
+    "BG": {
+      "name": "Baghdad Governorate",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Basra Governorate",
+      "cities": {}
+    },
+    "DQ": {
+      "name": "Dhi Qar Governorate",
+      "cities": {}
+    },
+    "DI": {
+      "name": "Diyala Governorate",
+      "cities": {}
+    },
+    "DA": {
+      "name": "Dohuk Governorate",
+      "cities": {}
+    },
+    "AR": {
+      "name": "Erbil Governorate",
+      "cities": {}
+    },
+    "KA": {
+      "name": "Karbala Governorate",
+      "cities": {}
+    },
+    "KI": {
+      "name": "Kirkuk Governorate",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Maysan Governorate",
+      "cities": {}
+    },
+    "NA": {
+      "name": "Najaf Governorate",
+      "cities": {}
+    },
+    "NI": {
+      "name": "Nineveh Governorate",
+      "cities": {}
+    },
+    "SD": {
+      "name": "Saladin Governorate",
+      "cities": {}
+    },
+    "SU": {
+      "name": "Sulaymaniyah Governorate",
+      "cities": {}
+    },
+    "WA": {
+      "name": "Wasit Governorate",
+      "cities": {}
+    }
+  }
+}

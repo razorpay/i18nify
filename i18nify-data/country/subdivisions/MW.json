@@ -1,0 +1,125 @@
+{
+  "country_name": "Malawi",
+  "states": {
+    "BA": {
+      "name": "Balaka District",
+      "cities": {}
+    },
+    "BL": {
+      "name": "Blantyre District",
+      "cities": {}
+    },
+    "C": {
+      "name": "Central Region",
+      "cities": {}
+    },
+    "CK": {
+      "name": "Chikwawa District",
+      "cities": {}
+    },
+    "CR": {
+      "name": "Chiradzulu District",
+      "cities": {}
+    },
+    "CT": {
+      "name": "Chitipa district",
+      "cities": {}
+    },
+    "DE": {
+      "name": "Dedza District",
+      "cities": {}
+    },
+    "DO": {
+      "name": "Dowa District",
+      "cities": {}
+    },
+    "KR": {
+      "name": "Karonga District",
+      "cities": {}
+    },
+    "KS": {
+      "name": "Kasungu District",
+      "cities": {}
+    },
+    "LK": {
+      "name": "Likoma District",
+      "cities": {}
+    },
+    "LI": {
+      "name": "Lilongwe District",
+      "cities": {}
+    },
+    "MH": {
+      "name": "Machinga District",
+      "cities": {}
+    },
+    "MG": {
+      "name": "Mangochi District",
+      "cities": {}
+    },
+    "MC": {
+      "name": "Mchinji District",
+      "cities": {}
+    },
+    "MU": {
+      "name": "Mulanje District",
+      "cities": {}
+    },
+    "MW": {
+      "name": "Mwanza District",
+      "cities": {}
+    },
+    "MZ": {
+      "name": "Mzimba District",
+      "cities": {}
+    },
+    "NB": {
+      "name": "Nkhata Bay District",
+      "cities": {}
+    },
+    "NK": {
+      "name": "Nkhotakota District",
+      "cities": {}
+    },
+    "N": {
+      "name": "Northern Region",
+      "cities": {}
+    },
+    "NS": {
+      "name": "Nsanje District",
+      "cities": {}
+    },
+    "NU": {
+      "name": "Ntcheu District",
+      "cities": {}
+    },
+    "NI": {
+      "name": "Ntchisi District",
+      "cities": {}
+    },
+    "PH": {
+      "name": "Phalombe District",
+      "cities": {}
+    },
+    "RU": {
+      "name": "Rumphi District",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Salima District",
+      "cities": {}
+    },
+    "S": {
+      "name": "Southern Region",
+      "cities": {}
+    },
+    "TH": {
+      "name": "Thyolo District",
+      "cities": {}
+    },
+    "ZO": {
+      "name": "Zomba District",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "country_name": "Bahrain",
+  "states": {
+    "13": {
+      "name": "Capital Governorate",
+      "cities": {}
+    },
+    "14": {
+      "name": "Southern Governorate",
+      "cities": {}
+    },
+    "15": {
+      "name": "Muharraq Governorate",
+      "cities": {}
+    },
+    "16": {
+      "name": "Central Governorate",
+      "cities": {}
+    },
+    "17": {
+      "name": "Northern Governorate",
+      "cities": {}
+    }
+  }
+}

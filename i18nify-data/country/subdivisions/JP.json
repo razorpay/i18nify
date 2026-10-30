@@ -1,0 +1,193 @@
+{
+  "country_name": "Japan",
+  "states": {
+    "10": {
+      "name": "Gunma Prefecture",
+      "cities": {}
+    },
+    "11": {
+      "name": "Saitama Prefecture",
+      "cities": {}
+    },
+    "12": {
+      "name": "Chiba Prefecture",
+      "cities": {}
+    },
+    "13": {
+      "name": "Tokyo",
+      "cities": {}
+    },
+    "14": {
+      "name": "Kanagawa Prefecture",
+      "cities": {}
+    },
+    "15": {
+      "name": "Niigata Prefecture",
+      "cities": {}
+    },
+    "16": {
+      "name": "Toyama Prefecture",
+      "cities": {}
+    },
+    "17": {
+      "name": "Ishikawa Prefecture",
+      "cities": {}
+    },
+    "18": {
+      "name": "Fukui Prefecture",
+      "cities": {}
+    },
+    "19": {
+      "name": "Yamanashi Prefecture",
+      "cities": {}
+    },
+    "20": {
+      "name": "Nagano Prefecture",
+      "cities": {}
+    },
+    "21": {
+      "name": "Gifu Prefecture",
+      "cities": {}
+    },
+    "22": {
+      "name": "Shizuoka Prefecture",
+      "cities": {}
+    },
+    "23": {
+      "name": "Aichi Prefecture",
+      "cities": {}
+    },
+    "24": {
+      "name": "Mie Prefecture",
+      "cities": {}
+    },
+    "25": {
+      "name": "Shiga Prefecture",
+      "cities": {}
+    },
+    "26": {
+      "name": "Kyōto Prefecture",
+      "cities": {}
+    },
+    "27": {
+      "name": "Ōsaka Prefecture",
+      "cities": {}
+    },
+    "28": {
+      "name": "Hyōgo Prefecture",
+      "cities": {}
+    },
+    "29": {
+      "name": "Nara Prefecture",
+      "cities": {}
+    },
+    "30": {
+      "name": "Wakayama Prefecture",
+      "cities": {}
+    },
+    "31": {
+      "name": "Tottori Prefecture",
+      "cities": {}
+    },
+    "32": {
+      "name": "Shimane Prefecture",
+      "cities": {}
+    },
+    "33": {
+      "name": "Okayama Prefecture",
+      "cities": {}
+    },
+    "34": {
+      "name": "Hiroshima Prefecture",
+      "cities": {}
+    },
+    "35": {
+      "name": "Yamaguchi Prefecture",
+      "cities": {}
+    },
+    "36": {
+      "name": "Tokushima Prefecture",
+      "cities": {}
+    },
+    "37": {
+      "name": "Kagawa Prefecture",
+      "cities": {}
+    },
+    "38": {
+      "name": "Ehime Prefecture",
+      "cities": {}
+    },
+    "39": {
+      "name": "Kōchi Prefecture",
+      "cities": {}
+    },
+    "40": {
+      "name": "Fukuoka Prefecture",
+      "cities": {}
+    },
+    "41": {
+      "name": "Saga Prefecture",
+      "cities": {}
+    },
+    "42": {
+      "name": "Nagasaki Prefecture",
+      "cities": {}
+    },
+    "43": {
+      "name": "Kumamoto Prefecture",
+      "cities": {}
+    },
+    "44": {
+      "name": "Ōita Prefecture",
+      "cities": {}
+    },
+    "45": {
+      "name": "Miyazaki Prefecture",
+      "cities": {}
+    },
+    "46": {
+      "name": "Kagoshima Prefecture",
+      "cities": {}
+    },
+    "47": {
+      "name": "Okinawa Prefecture",
+      "cities": {}
+    },
+    "05": {
+      "name": "Akita Prefecture",
+      "cities": {}
+    },
+    "02": {
+      "name": "Aomori Prefecture",
+      "cities": {}
+    },
+    "07": {
+      "name": "Fukushima Prefecture",
+      "cities": {}
+    },
+    "01": {
+      "name": "Hokkaidō Prefecture",
+      "cities": {}
+    },
+    "08": {
+      "name": "Ibaraki Prefecture",
+      "cities": {}
+    },
+    "03": {
+      "name": "Iwate Prefecture",
+      "cities": {}
+    },
+    "04": {
+      "name": "Miyagi Prefecture",
+      "cities": {}
+    },
+    "09": {
+      "name": "Tochigi Prefecture",
+      "cities": {}
+    },
+    "06": {
+      "name": "Yamagata Prefecture",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "country_name": "Namibia",
+  "states": {
+    "ER": {
+      "name": "Erongo Region",
+      "cities": {}
+    },
+    "HA": {
+      "name": "Hardap Region",
+      "cities": {}
+    },
+    "KA": {
+      "name": "Karas Region",
+      "cities": {}
+    },
+    "KE": {
+      "name": "Kavango East Region",
+      "cities": {}
+    },
+    "KW": {
+      "name": "Kavango West Region",
+      "cities": {}
+    },
+    "KH": {
+      "name": "Khomas Region",
+      "cities": {}
+    },
+    "KU": {
+      "name": "Kunene Region",
+      "cities": {}
+    },
+    "OW": {
+      "name": "Ohangwena Region",
+      "cities": {}
+    },
+    "OH": {
+      "name": "Omaheke Region",
+      "cities": {}
+    },
+    "OS": {
+      "name": "Omusati Region",
+      "cities": {}
+    },
+    "ON": {
+      "name": "Oshana Region",
+      "cities": {}
+    },
+    "OT": {
+      "name": "Oshikoto Region",
+      "cities": {}
+    },
+    "OD": {
+      "name": "Otjozondjupa Region",
+      "cities": {}
+    },
+    "CA": {
+      "name": "Zambezi Region",
+      "cities": {}
+    }
+  }
+}

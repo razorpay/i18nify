@@ -1,0 +1,993 @@
+{
+  "country_name": "United Kingdom",
+  "states": {
+    "ABE": {
+      "name": "Aberdeen",
+      "cities": {}
+    },
+    "ABD": {
+      "name": "Aberdeenshire",
+      "cities": {}
+    },
+    "ANS": {
+      "name": "Angus",
+      "cities": {}
+    },
+    "ANT": {
+      "name": "Antrim",
+      "cities": {}
+    },
+    "ANN": {
+      "name": "Antrim and Newtownabbey",
+      "cities": {}
+    },
+    "ARD": {
+      "name": "Ards",
+      "cities": {}
+    },
+    "AND": {
+      "name": "Ards and North Down",
+      "cities": {}
+    },
+    "AGB": {
+      "name": "Argyll and Bute",
+      "cities": {}
+    },
+    "ARM": {
+      "name": "Armagh City and District Council",
+      "cities": {}
+    },
+    "ABC": {
+      "name": "Armagh, Banbridge and Craigavon",
+      "cities": {}
+    },
+    "SH-AC": {
+      "name": "Ascension Island",
+      "cities": {}
+    },
+    "BLA": {
+      "name": "Ballymena Borough",
+      "cities": {}
+    },
+    "BLY": {
+      "name": "Ballymoney",
+      "cities": {}
+    },
+    "BNB": {
+      "name": "Banbridge",
+      "cities": {}
+    },
+    "BNS": {
+      "name": "Barnsley",
+      "cities": {}
+    },
+    "BAS": {
+      "name": "Bath and North East Somerset",
+      "cities": {}
+    },
+    "BDF": {
+      "name": "Bedford",
+      "cities": {}
+    },
+    "BFS": {
+      "name": "Belfast district",
+      "cities": {}
+    },
+    "BIR": {
+      "name": "Birmingham",
+      "cities": {}
+    },
+    "BBD": {
+      "name": "Blackburn with Darwen",
+      "cities": {}
+    },
+    "BPL": {
+      "name": "Blackpool",
+      "cities": {}
+    },
+    "BGW": {
+      "name": "Blaenau Gwent County Borough",
+      "cities": {}
+    },
+    "BOL": {
+      "name": "Bolton",
+      "cities": {}
+    },
+    "BMH": {
+      "name": "Bournemouth",
+      "cities": {}
+    },
+    "BRC": {
+      "name": "Bracknell Forest",
+      "cities": {}
+    },
+    "BRD": {
+      "name": "Bradford",
+      "cities": {}
+    },
+    "BGE": {
+      "name": "Bridgend County Borough",
+      "cities": {}
+    },
+    "BNH": {
+      "name": "Brighton and Hove",
+      "cities": {}
+    },
+    "BKM": {
+      "name": "Buckinghamshire",
+      "cities": {}
+    },
+    "BUR": {
+      "name": "Bury",
+      "cities": {}
+    },
+    "CAY": {
+      "name": "Caerphilly County Borough",
+      "cities": {}
+    },
+    "CLD": {
+      "name": "Calderdale",
+      "cities": {}
+    },
+    "CAM": {
+      "name": "Cambridgeshire",
+      "cities": {}
+    },
+    "CMN": {
+      "name": "Carmarthenshire",
+      "cities": {}
+    },
+    "CKF": {
+      "name": "Carrickfergus Borough Council",
+      "cities": {}
+    },
+    "CSR": {
+      "name": "Castlereagh",
+      "cities": {}
+    },
+    "CCG": {
+      "name": "Causeway Coast and Glens",
+      "cities": {}
+    },
+    "CBF": {
+      "name": "Central Bedfordshire",
+      "cities": {}
+    },
+    "CGN": {
+      "name": "Ceredigion",
+      "cities": {}
+    },
+    "CHE": {
+      "name": "Cheshire East",
+      "cities": {}
+    },
+    "CHW": {
+      "name": "Cheshire West and Chester",
+      "cities": {}
+    },
+    "CRF": {
+      "name": "City and County of Cardiff",
+      "cities": {}
+    },
+    "SWA": {
+      "name": "City and County of Swansea",
+      "cities": {}
+    },
+    "BST": {
+      "name": "City of Bristol",
+      "cities": {}
+    },
+    "DER": {
+      "name": "City of Derby",
+      "cities": {}
+    },
+    "KHL": {
+      "name": "City of Kingston upon Hull",
+      "cities": {}
+    },
+    "LCE": {
+      "name": "City of Leicester",
+      "cities": {}
+    },
+    "LND": {
+      "name": "City of London",
+      "cities": {}
+    },
+    "NGM": {
+      "name": "City of Nottingham",
+      "cities": {}
+    },
+    "PTE": {
+      "name": "City of Peterborough",
+      "cities": {}
+    },
+    "PLY": {
+      "name": "City of Plymouth",
+      "cities": {}
+    },
+    "POR": {
+      "name": "City of Portsmouth",
+      "cities": {}
+    },
+    "STH": {
+      "name": "City of Southampton",
+      "cities": {}
+    },
+    "STE": {
+      "name": "City of Stoke-on-Trent",
+      "cities": {}
+    },
+    "SND": {
+      "name": "City of Sunderland",
+      "cities": {}
+    },
+    "WSM": {
+      "name": "City of Westminster",
+      "cities": {}
+    },
+    "WLV": {
+      "name": "City of Wolverhampton",
+      "cities": {}
+    },
+    "YOR": {
+      "name": "City of York",
+      "cities": {}
+    },
+    "CLK": {
+      "name": "Clackmannanshire",
+      "cities": {}
+    },
+    "CLR": {
+      "name": "Coleraine Borough Council",
+      "cities": {}
+    },
+    "CWY": {
+      "name": "Conwy County Borough",
+      "cities": {}
+    },
+    "CKT": {
+      "name": "Cookstown District Council",
+      "cities": {}
+    },
+    "CON": {
+      "name": "Cornwall",
+      "cities": {}
+    },
+    "DUR": {
+      "name": "County Durham",
+      "cities": {}
+    },
+    "COV": {
+      "name": "Coventry",
+      "cities": {}
+    },
+    "CGV": {
+      "name": "Craigavon Borough Council",
+      "cities": {}
+    },
+    "CMA": {
+      "name": "Cumbria",
+      "cities": {}
+    },
+    "DAL": {
+      "name": "Darlington",
+      "cities": {}
+    },
+    "DEN": {
+      "name": "Denbighshire",
+      "cities": {}
+    },
+    "DBY": {
+      "name": "Derbyshire",
+      "cities": {}
+    },
+    "DRS": {
+      "name": "Derry City and Strabane",
+      "cities": {}
+    },
+    "DRY": {
+      "name": "Derry City Council",
+      "cities": {}
+    },
+    "DEV": {
+      "name": "Devon",
+      "cities": {}
+    },
+    "DNC": {
+      "name": "Doncaster",
+      "cities": {}
+    },
+    "DOR": {
+      "name": "Dorset",
+      "cities": {}
+    },
+    "DOW": {
+      "name": "Down District Council",
+      "cities": {}
+    },
+    "DUD": {
+      "name": "Dudley",
+      "cities": {}
+    },
+    "DGY": {
+      "name": "Dumfries and Galloway",
+      "cities": {}
+    },
+    "DND": {
+      "name": "Dundee",
+      "cities": {}
+    },
+    "DGN": {
+      "name": "Dungannon and South Tyrone Borough Council",
+      "cities": {}
+    },
+    "EAY": {
+      "name": "East Ayrshire",
+      "cities": {}
+    },
+    "EDU": {
+      "name": "East Dunbartonshire",
+      "cities": {}
+    },
+    "ELN": {
+      "name": "East Lothian",
+      "cities": {}
+    },
+    "ERW": {
+      "name": "East Renfrewshire",
+      "cities": {}
+    },
+    "ERY": {
+      "name": "East Riding of Yorkshire",
+      "cities": {}
+    },
+    "ESX": {
+      "name": "East Sussex",
+      "cities": {}
+    },
+    "EDH": {
+      "name": "Edinburgh",
+      "cities": {}
+    },
+    "ENG": {
+      "name": "England",
+      "cities": {}
+    },
+    "ESS": {
+      "name": "Essex",
+      "cities": {}
+    },
+    "FAL": {
+      "name": "Falkirk",
+      "cities": {}
+    },
+    "FMO": {
+      "name": "Fermanagh and Omagh",
+      "cities": {}
+    },
+    "FER": {
+      "name": "Fermanagh District Council",
+      "cities": {}
+    },
+    "FIF": {
+      "name": "Fife",
+      "cities": {}
+    },
+    "FLN": {
+      "name": "Flintshire",
+      "cities": {}
+    },
+    "GAT": {
+      "name": "Gateshead",
+      "cities": {}
+    },
+    "GLG": {
+      "name": "Glasgow",
+      "cities": {}
+    },
+    "GLS": {
+      "name": "Gloucestershire",
+      "cities": {}
+    },
+    "GWN": {
+      "name": "Gwynedd",
+      "cities": {}
+    },
+    "HAL": {
+      "name": "Halton",
+      "cities": {}
+    },
+    "HAM": {
+      "name": "Hampshire",
+      "cities": {}
+    },
+    "HPL": {
+      "name": "Hartlepool",
+      "cities": {}
+    },
+    "HEF": {
+      "name": "Herefordshire",
+      "cities": {}
+    },
+    "HRT": {
+      "name": "Hertfordshire",
+      "cities": {}
+    },
+    "HLD": {
+      "name": "Highland",
+      "cities": {}
+    },
+    "IVC": {
+      "name": "Inverclyde",
+      "cities": {}
+    },
+    "IOW": {
+      "name": "Isle of Wight",
+      "cities": {}
+    },
+    "IOS": {
+      "name": "Isles of Scilly",
+      "cities": {}
+    },
+    "KEN": {
+      "name": "Kent",
+      "cities": {}
+    },
+    "KIR": {
+      "name": "Kirklees",
+      "cities": {}
+    },
+    "KWL": {
+      "name": "Knowsley",
+      "cities": {}
+    },
+    "LAN": {
+      "name": "Lancashire",
+      "cities": {}
+    },
+    "LRN": {
+      "name": "Larne Borough Council",
+      "cities": {}
+    },
+    "LDS": {
+      "name": "Leeds",
+      "cities": {}
+    },
+    "LEC": {
+      "name": "Leicestershire",
+      "cities": {}
+    },
+    "LMV": {
+      "name": "Limavady Borough Council",
+      "cities": {}
+    },
+    "LIN": {
+      "name": "Lincolnshire",
+      "cities": {}
+    },
+    "LBC": {
+      "name": "Lisburn and Castlereagh",
+      "cities": {}
+    },
+    "LSB": {
+      "name": "Lisburn City Council",
+      "cities": {}
+    },
+    "LIV": {
+      "name": "Liverpool",
+      "cities": {}
+    },
+    "BDG": {
+      "name": "London Borough of Barking and Dagenham",
+      "cities": {}
+    },
+    "BNE": {
+      "name": "London Borough of Barnet",
+      "cities": {}
+    },
+    "BEX": {
+      "name": "London Borough of Bexley",
+      "cities": {}
+    },
+    "BEN": {
+      "name": "London Borough of Brent",
+      "cities": {}
+    },
+    "BRY": {
+      "name": "London Borough of Bromley",
+      "cities": {}
+    },
+    "CMD": {
+      "name": "London Borough of Camden",
+      "cities": {}
+    },
+    "CRY": {
+      "name": "London Borough of Croydon",
+      "cities": {}
+    },
+    "EAL": {
+      "name": "London Borough of Ealing",
+      "cities": {}
+    },
+    "ENF": {
+      "name": "London Borough of Enfield",
+      "cities": {}
+    },
+    "HCK": {
+      "name": "London Borough of Hackney",
+      "cities": {}
+    },
+    "HMF": {
+      "name": "London Borough of Hammersmith and Fulham",
+      "cities": {}
+    },
+    "HRY": {
+      "name": "London Borough of Haringey",
+      "cities": {}
+    },
+    "HRW": {
+      "name": "London Borough of Harrow",
+      "cities": {}
+    },
+    "HAV": {
+      "name": "London Borough of Havering",
+      "cities": {}
+    },
+    "HIL": {
+      "name": "London Borough of Hillingdon",
+      "cities": {}
+    },
+    "HNS": {
+      "name": "London Borough of Hounslow",
+      "cities": {}
+    },
+    "ISL": {
+      "name": "London Borough of Islington",
+      "cities": {}
+    },
+    "LBH": {
+      "name": "London Borough of Lambeth",
+      "cities": {}
+    },
+    "LEW": {
+      "name": "London Borough of Lewisham",
+      "cities": {}
+    },
+    "MRT": {
+      "name": "London Borough of Merton",
+      "cities": {}
+    },
+    "NWM": {
+      "name": "London Borough of Newham",
+      "cities": {}
+    },
+    "RDB": {
+      "name": "London Borough of Redbridge",
+      "cities": {}
+    },
+    "RIC": {
+      "name": "London Borough of Richmond upon Thames",
+      "cities": {}
+    },
+    "SWK": {
+      "name": "London Borough of Southwark",
+      "cities": {}
+    },
+    "STN": {
+      "name": "London Borough of Sutton",
+      "cities": {}
+    },
+    "TWH": {
+      "name": "London Borough of Tower Hamlets",
+      "cities": {}
+    },
+    "WFT": {
+      "name": "London Borough of Waltham Forest",
+      "cities": {}
+    },
+    "WND": {
+      "name": "London Borough of Wandsworth",
+      "cities": {}
+    },
+    "MFT": {
+      "name": "Magherafelt District Council",
+      "cities": {}
+    },
+    "MAN": {
+      "name": "Manchester",
+      "cities": {}
+    },
+    "MDW": {
+      "name": "Medway",
+      "cities": {}
+    },
+    "MTY": {
+      "name": "Merthyr Tydfil County Borough",
+      "cities": {}
+    },
+    "WGN": {
+      "name": "Metropolitan Borough of Wigan",
+      "cities": {}
+    },
+    "MEA": {
+      "name": "Mid and East Antrim",
+      "cities": {}
+    },
+    "MUL": {
+      "name": "Mid Ulster",
+      "cities": {}
+    },
+    "MDB": {
+      "name": "Middlesbrough",
+      "cities": {}
+    },
+    "MLN": {
+      "name": "Midlothian",
+      "cities": {}
+    },
+    "MIK": {
+      "name": "Milton Keynes",
+      "cities": {}
+    },
+    "MON": {
+      "name": "Monmouthshire",
+      "cities": {}
+    },
+    "MRY": {
+      "name": "Moray",
+      "cities": {}
+    },
+    "MYL": {
+      "name": "Moyle District Council",
+      "cities": {}
+    },
+    "NTL": {
+      "name": "Neath Port Talbot County Borough",
+      "cities": {}
+    },
+    "NET": {
+      "name": "Newcastle upon Tyne",
+      "cities": {}
+    },
+    "NWP": {
+      "name": "Newport",
+      "cities": {}
+    },
+    "NYM": {
+      "name": "Newry and Mourne District Council",
+      "cities": {}
+    },
+    "NMD": {
+      "name": "Newry, Mourne and Down",
+      "cities": {}
+    },
+    "NTA": {
+      "name": "Newtownabbey Borough Council",
+      "cities": {}
+    },
+    "NFK": {
+      "name": "Norfolk",
+      "cities": {}
+    },
+    "NAY": {
+      "name": "North Ayrshire",
+      "cities": {}
+    },
+    "NDN": {
+      "name": "North Down Borough Council",
+      "cities": {}
+    },
+    "NEL": {
+      "name": "North East Lincolnshire",
+      "cities": {}
+    },
+    "NLK": {
+      "name": "North Lanarkshire",
+      "cities": {}
+    },
+    "NLN": {
+      "name": "North Lincolnshire",
+      "cities": {}
+    },
+    "NSM": {
+      "name": "North Somerset",
+      "cities": {}
+    },
+    "NTY": {
+      "name": "North Tyneside",
+      "cities": {}
+    },
+    "NYK": {
+      "name": "North Yorkshire",
+      "cities": {}
+    },
+    "NTH": {
+      "name": "Northamptonshire",
+      "cities": {}
+    },
+    "NIR": {
+      "name": "Northern Ireland",
+      "cities": {}
+    },
+    "NBL": {
+      "name": "Northumberland",
+      "cities": {}
+    },
+    "NTT": {
+      "name": "Nottinghamshire",
+      "cities": {}
+    },
+    "OLD": {
+      "name": "Oldham",
+      "cities": {}
+    },
+    "OMH": {
+      "name": "Omagh District Council",
+      "cities": {}
+    },
+    "ORK": {
+      "name": "Orkney Islands",
+      "cities": {}
+    },
+    "ELS": {
+      "name": "Outer Hebrides",
+      "cities": {}
+    },
+    "OXF": {
+      "name": "Oxfordshire",
+      "cities": {}
+    },
+    "PEM": {
+      "name": "Pembrokeshire",
+      "cities": {}
+    },
+    "PKN": {
+      "name": "Perth and Kinross",
+      "cities": {}
+    },
+    "POL": {
+      "name": "Poole",
+      "cities": {}
+    },
+    "POW": {
+      "name": "Powys",
+      "cities": {}
+    },
+    "RDG": {
+      "name": "Reading",
+      "cities": {}
+    },
+    "RCC": {
+      "name": "Redcar and Cleveland",
+      "cities": {}
+    },
+    "RFW": {
+      "name": "Renfrewshire",
+      "cities": {}
+    },
+    "RCT": {
+      "name": "Rhondda Cynon Taf",
+      "cities": {}
+    },
+    "RCH": {
+      "name": "Rochdale",
+      "cities": {}
+    },
+    "ROT": {
+      "name": "Rotherham",
+      "cities": {}
+    },
+    "GRE": {
+      "name": "Royal Borough of Greenwich",
+      "cities": {}
+    },
+    "KEC": {
+      "name": "Royal Borough of Kensington and Chelsea",
+      "cities": {}
+    },
+    "KTT": {
+      "name": "Royal Borough of Kingston upon Thames",
+      "cities": {}
+    },
+    "RUT": {
+      "name": "Rutland",
+      "cities": {}
+    },
+    "SH-HL": {
+      "name": "Saint Helena",
+      "cities": {}
+    },
+    "SLF": {
+      "name": "Salford",
+      "cities": {}
+    },
+    "SAW": {
+      "name": "Sandwell",
+      "cities": {}
+    },
+    "SCT": {
+      "name": "Scotland",
+      "cities": {}
+    },
+    "SCB": {
+      "name": "Scottish Borders",
+      "cities": {}
+    },
+    "SFT": {
+      "name": "Sefton",
+      "cities": {}
+    },
+    "SHF": {
+      "name": "Sheffield",
+      "cities": {}
+    },
+    "ZET": {
+      "name": "Shetland Islands",
+      "cities": {}
+    },
+    "SHR": {
+      "name": "Shropshire",
+      "cities": {}
+    },
+    "SLG": {
+      "name": "Slough",
+      "cities": {}
+    },
+    "SOL": {
+      "name": "Solihull",
+      "cities": {}
+    },
+    "SOM": {
+      "name": "Somerset",
+      "cities": {}
+    },
+    "SAY": {
+      "name": "South Ayrshire",
+      "cities": {}
+    },
+    "SGC": {
+      "name": "South Gloucestershire",
+      "cities": {}
+    },
+    "SLK": {
+      "name": "South Lanarkshire",
+      "cities": {}
+    },
+    "STY": {
+      "name": "South Tyneside",
+      "cities": {}
+    },
+    "SOS": {
+      "name": "Southend-on-Sea",
+      "cities": {}
+    },
+    "SHN": {
+      "name": "St Helens",
+      "cities": {}
+    },
+    "STS": {
+      "name": "Staffordshire",
+      "cities": {}
+    },
+    "STG": {
+      "name": "Stirling",
+      "cities": {}
+    },
+    "SKP": {
+      "name": "Stockport",
+      "cities": {}
+    },
+    "STT": {
+      "name": "Stockton-on-Tees",
+      "cities": {}
+    },
+    "STB": {
+      "name": "Strabane District Council",
+      "cities": {}
+    },
+    "SFK": {
+      "name": "Suffolk",
+      "cities": {}
+    },
+    "SRY": {
+      "name": "Surrey",
+      "cities": {}
+    },
+    "SWD": {
+      "name": "Swindon",
+      "cities": {}
+    },
+    "TAM": {
+      "name": "Tameside",
+      "cities": {}
+    },
+    "TFW": {
+      "name": "Telford and Wrekin",
+      "cities": {}
+    },
+    "THR": {
+      "name": "Thurrock",
+      "cities": {}
+    },
+    "TOB": {
+      "name": "Torbay",
+      "cities": {}
+    },
+    "TOF": {
+      "name": "Torfaen",
+      "cities": {}
+    },
+    "TRF": {
+      "name": "Trafford",
+      "cities": {}
+    },
+    "UKM": {
+      "name": "United Kingdom",
+      "cities": {}
+    },
+    "VGL": {
+      "name": "Vale of Glamorgan",
+      "cities": {}
+    },
+    "WKF": {
+      "name": "Wakefield",
+      "cities": {}
+    },
+    "WLS": {
+      "name": "Wales",
+      "cities": {}
+    },
+    "WLL": {
+      "name": "Walsall",
+      "cities": {}
+    },
+    "WRT": {
+      "name": "Warrington",
+      "cities": {}
+    },
+    "WAR": {
+      "name": "Warwickshire",
+      "cities": {}
+    },
+    "WBK": {
+      "name": "West Berkshire",
+      "cities": {}
+    },
+    "WDU": {
+      "name": "West Dunbartonshire",
+      "cities": {}
+    },
+    "WLN": {
+      "name": "West Lothian",
+      "cities": {}
+    },
+    "WSX": {
+      "name": "West Sussex",
+      "cities": {}
+    },
+    "WIL": {
+      "name": "Wiltshire",
+      "cities": {}
+    },
+    "WNM": {
+      "name": "Windsor and Maidenhead",
+      "cities": {}
+    },
+    "WRL": {
+      "name": "Wirral",
+      "cities": {}
+    },
+    "WOK": {
+      "name": "Wokingham",
+      "cities": {}
+    },
+    "WOR": {
+      "name": "Worcestershire",
+      "cities": {}
+    },
+    "WRX": {
+      "name": "Wrexham County Borough",
+      "cities": {}
+    }
+  }
+}

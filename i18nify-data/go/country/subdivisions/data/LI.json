@@ -1,0 +1,49 @@
+{
+  "country_name": "Liechtenstein",
+  "states": {
+    "10": {
+      "name": "Triesenberg",
+      "cities": {}
+    },
+    "11": {
+      "name": "Vaduz",
+      "cities": {}
+    },
+    "01": {
+      "name": "Balzers",
+      "cities": {}
+    },
+    "02": {
+      "name": "Eschen",
+      "cities": {}
+    },
+    "03": {
+      "name": "Gamprin",
+      "cities": {}
+    },
+    "04": {
+      "name": "Mauren",
+      "cities": {}
+    },
+    "05": {
+      "name": "Planken",
+      "cities": {}
+    },
+    "06": {
+      "name": "Ruggell",
+      "cities": {}
+    },
+    "07": {
+      "name": "Schaan",
+      "cities": {}
+    },
+    "08": {
+      "name": "Schellenberg",
+      "cities": {}
+    },
+    "09": {
+      "name": "Triesen",
+      "cities": {}
+    }
+  }
+}

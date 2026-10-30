@@ -1,0 +1,45 @@
+{
+  "country_name": "Zambia",
+  "states": {
+    "10": {
+      "name": "Muchinga Province",
+      "cities": {}
+    },
+    "02": {
+      "name": "Central Province",
+      "cities": {}
+    },
+    "08": {
+      "name": "Copperbelt Province",
+      "cities": {}
+    },
+    "03": {
+      "name": "Eastern Province",
+      "cities": {}
+    },
+    "04": {
+      "name": "Luapula Province",
+      "cities": {}
+    },
+    "09": {
+      "name": "Lusaka Province",
+      "cities": {}
+    },
+    "05": {
+      "name": "Northern Province",
+      "cities": {}
+    },
+    "06": {
+      "name": "Northwestern Province",
+      "cities": {}
+    },
+    "07": {
+      "name": "Southern Province",
+      "cities": {}
+    },
+    "01": {
+      "name": "Western Province",
+      "cities": {}
+    }
+  }
+}

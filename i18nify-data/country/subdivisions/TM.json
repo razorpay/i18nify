@@ -1,0 +1,29 @@
+{
+  "country_name": "Turkmenistan",
+  "states": {
+    "A": {
+      "name": "Ahal Region",
+      "cities": {}
+    },
+    "S": {
+      "name": "Ashgabat",
+      "cities": {}
+    },
+    "B": {
+      "name": "Balkan Region",
+      "cities": {}
+    },
+    "D": {
+      "name": "Daşoguz Region",
+      "cities": {}
+    },
+    "L": {
+      "name": "Lebap Region",
+      "cities": {}
+    },
+    "M": {
+      "name": "Mary Region",
+      "cities": {}
+    }
+  }
+}

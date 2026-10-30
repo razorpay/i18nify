@@ -1,0 +1,53 @@
+{
+  "country_name": "Saint Lucia",
+  "states": {
+    "10": {
+      "name": "Soufrière Quarter",
+      "cities": {}
+    },
+    "11": {
+      "name": "Vieux Fort Quarter",
+      "cities": {}
+    },
+    "12": {
+      "name": "Canaries",
+      "cities": {}
+    },
+    "01": {
+      "name": "Anse la Raye Quarter",
+      "cities": {}
+    },
+    "02": {
+      "name": "Castries Quarter",
+      "cities": {}
+    },
+    "03": {
+      "name": "Choiseul Quarter",
+      "cities": {}
+    },
+    "04": {
+      "name": "Dauphin Quarter",
+      "cities": {}
+    },
+    "05": {
+      "name": "Dennery Quarter",
+      "cities": {}
+    },
+    "06": {
+      "name": "Gros Islet Quarter",
+      "cities": {}
+    },
+    "07": {
+      "name": "Laborie Quarter",
+      "cities": {}
+    },
+    "08": {
+      "name": "Micoud Quarter",
+      "cities": {}
+    },
+    "09": {
+      "name": "Praslin Quarter",
+      "cities": {}
+    }
+  }
+}

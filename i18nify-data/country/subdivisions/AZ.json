@@ -1,0 +1,305 @@
+{
+  "country_name": "Azerbaijan",
+  "states": {
+    "ABS": {
+      "name": "Absheron District",
+      "cities": {}
+    },
+    "AGM": {
+      "name": "Agdam District",
+      "cities": {}
+    },
+    "AGS": {
+      "name": "Agdash District",
+      "cities": {}
+    },
+    "AGC": {
+      "name": "Aghjabadi District",
+      "cities": {}
+    },
+    "AGA": {
+      "name": "Agstafa District",
+      "cities": {}
+    },
+    "AGU": {
+      "name": "Agsu District",
+      "cities": {}
+    },
+    "AST": {
+      "name": "Astara District",
+      "cities": {}
+    },
+    "BAB": {
+      "name": "Babek District",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Baku",
+      "cities": {}
+    },
+    "BAL": {
+      "name": "Balakan District",
+      "cities": {}
+    },
+    "BAR": {
+      "name": "Barda District",
+      "cities": {}
+    },
+    "BEY": {
+      "name": "Beylagan District",
+      "cities": {}
+    },
+    "BIL": {
+      "name": "Bilasuvar District",
+      "cities": {}
+    },
+    "DAS": {
+      "name": "Dashkasan District",
+      "cities": {}
+    },
+    "FUZ": {
+      "name": "Fizuli District",
+      "cities": {}
+    },
+    "GA": {
+      "name": "Ganja",
+      "cities": {}
+    },
+    "GAD": {
+      "name": "Gədəbəy",
+      "cities": {}
+    },
+    "QOB": {
+      "name": "Gobustan District",
+      "cities": {}
+    },
+    "GOR": {
+      "name": "Goranboy District",
+      "cities": {}
+    },
+    "GOY": {
+      "name": "Goychay",
+      "cities": {}
+    },
+    "GYG": {
+      "name": "Goygol District",
+      "cities": {}
+    },
+    "HAC": {
+      "name": "Hajigabul District",
+      "cities": {}
+    },
+    "IMI": {
+      "name": "Imishli District",
+      "cities": {}
+    },
+    "ISM": {
+      "name": "Ismailli District",
+      "cities": {}
+    },
+    "CAB": {
+      "name": "Jabrayil District",
+      "cities": {}
+    },
+    "CAL": {
+      "name": "Jalilabad District",
+      "cities": {}
+    },
+    "CUL": {
+      "name": "Julfa District",
+      "cities": {}
+    },
+    "KAL": {
+      "name": "Kalbajar District",
+      "cities": {}
+    },
+    "KAN": {
+      "name": "Kangarli District",
+      "cities": {}
+    },
+    "XAC": {
+      "name": "Khachmaz District",
+      "cities": {}
+    },
+    "XIZ": {
+      "name": "Khizi District",
+      "cities": {}
+    },
+    "XCI": {
+      "name": "Khojali District",
+      "cities": {}
+    },
+    "KUR": {
+      "name": "Kurdamir District",
+      "cities": {}
+    },
+    "LAC": {
+      "name": "Lachin District",
+      "cities": {}
+    },
+    "LAN": {
+      "name": "Lankaran",
+      "cities": {}
+    },
+    "LA": {
+      "name": "Lankaran District",
+      "cities": {}
+    },
+    "LER": {
+      "name": "Lerik District",
+      "cities": {}
+    },
+    "XVD": {
+      "name": "Martuni",
+      "cities": {}
+    },
+    "MAS": {
+      "name": "Masally District",
+      "cities": {}
+    },
+    "MI": {
+      "name": "Mingachevir",
+      "cities": {}
+    },
+    "NX": {
+      "name": "Nakhchivan Autonomous Republic",
+      "cities": {}
+    },
+    "NEF": {
+      "name": "Neftchala District",
+      "cities": {}
+    },
+    "OGU": {
+      "name": "Oghuz District",
+      "cities": {}
+    },
+    "ORD": {
+      "name": "Ordubad District",
+      "cities": {}
+    },
+    "QAB": {
+      "name": "Qabala District",
+      "cities": {}
+    },
+    "QAX": {
+      "name": "Qakh District",
+      "cities": {}
+    },
+    "QAZ": {
+      "name": "Qazakh District",
+      "cities": {}
+    },
+    "QBA": {
+      "name": "Quba District",
+      "cities": {}
+    },
+    "QBI": {
+      "name": "Qubadli District",
+      "cities": {}
+    },
+    "QUS": {
+      "name": "Qusar District",
+      "cities": {}
+    },
+    "SAT": {
+      "name": "Saatly District",
+      "cities": {}
+    },
+    "SAB": {
+      "name": "Sabirabad District",
+      "cities": {}
+    },
+    "SAD": {
+      "name": "Sadarak District",
+      "cities": {}
+    },
+    "SAL": {
+      "name": "Salyan District",
+      "cities": {}
+    },
+    "SMX": {
+      "name": "Samukh District",
+      "cities": {}
+    },
+    "SBN": {
+      "name": "Shabran District",
+      "cities": {}
+    },
+    "SAH": {
+      "name": "Shahbuz District",
+      "cities": {}
+    },
+    "SA": {
+      "name": "Shaki",
+      "cities": {}
+    },
+    "SAK": {
+      "name": "Shaki District",
+      "cities": {}
+    },
+    "SMI": {
+      "name": "Shamakhi District",
+      "cities": {}
+    },
+    "SKR": {
+      "name": "Shamkir District",
+      "cities": {}
+    },
+    "SAR": {
+      "name": "Sharur District",
+      "cities": {}
+    },
+    "SR": {
+      "name": "Shirvan",
+      "cities": {}
+    },
+    "SUS": {
+      "name": "Shusha District",
+      "cities": {}
+    },
+    "SIY": {
+      "name": "Siazan District",
+      "cities": {}
+    },
+    "SM": {
+      "name": "Sumqayit",
+      "cities": {}
+    },
+    "TAR": {
+      "name": "Tartar District",
+      "cities": {}
+    },
+    "TOV": {
+      "name": "Tovuz District",
+      "cities": {}
+    },
+    "UCA": {
+      "name": "Ujar District",
+      "cities": {}
+    },
+    "YAR": {
+      "name": "Yardymli District",
+      "cities": {}
+    },
+    "YE": {
+      "name": "Yevlakh",
+      "cities": {}
+    },
+    "YEV": {
+      "name": "Yevlakh District",
+      "cities": {}
+    },
+    "ZAN": {
+      "name": "Zangilan District",
+      "cities": {}
+    },
+    "ZAQ": {
+      "name": "Zaqatala District",
+      "cities": {}
+    },
+    "ZAR": {
+      "name": "Zardab District",
+      "cities": {}
+    }
+  }
+}

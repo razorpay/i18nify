@@ -1,0 +1,45 @@
+{
+  "country_name": "Solomon Islands",
+  "states": {
+    "CE": {
+      "name": "Central Province",
+      "cities": {}
+    },
+    "CH": {
+      "name": "Choiseul Province",
+      "cities": {}
+    },
+    "GU": {
+      "name": "Guadalcanal Province",
+      "cities": {}
+    },
+    "CT": {
+      "name": "Honiara",
+      "cities": {}
+    },
+    "IS": {
+      "name": "Isabel Province",
+      "cities": {}
+    },
+    "MK": {
+      "name": "Makira-Ulawa Province",
+      "cities": {}
+    },
+    "ML": {
+      "name": "Malaita Province",
+      "cities": {}
+    },
+    "RB": {
+      "name": "Rennell and Bellona Province",
+      "cities": {}
+    },
+    "TE": {
+      "name": "Temotu Province",
+      "cities": {}
+    },
+    "WE": {
+      "name": "Western Province",
+      "cities": {}
+    }
+  }
+}

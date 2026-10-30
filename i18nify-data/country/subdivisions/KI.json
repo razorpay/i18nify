@@ -1,0 +1,17 @@
+{
+  "country_name": "Kiribati",
+  "states": {
+    "G": {
+      "name": "Gilbert Islands",
+      "cities": {}
+    },
+    "L": {
+      "name": "Line Islands",
+      "cities": {}
+    },
+    "P": {
+      "name": "Phoenix Islands",
+      "cities": {}
+    }
+  }
+}

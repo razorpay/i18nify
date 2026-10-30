@@ -1,0 +1,153 @@
+{
+  "country_name": "Nigeria",
+  "states": {
+    "AB": {
+      "name": "Abia",
+      "cities": {}
+    },
+    "FC": {
+      "name": "Abuja Federal Capital Territory",
+      "cities": {}
+    },
+    "AD": {
+      "name": "Adamawa",
+      "cities": {}
+    },
+    "AK": {
+      "name": "Akwa Ibom",
+      "cities": {}
+    },
+    "AN": {
+      "name": "Anambra",
+      "cities": {}
+    },
+    "BA": {
+      "name": "Bauchi",
+      "cities": {}
+    },
+    "BY": {
+      "name": "Bayelsa",
+      "cities": {}
+    },
+    "BE": {
+      "name": "Benue",
+      "cities": {}
+    },
+    "BO": {
+      "name": "Borno",
+      "cities": {}
+    },
+    "CR": {
+      "name": "Cross River",
+      "cities": {}
+    },
+    "DE": {
+      "name": "Delta",
+      "cities": {}
+    },
+    "EB": {
+      "name": "Ebonyi",
+      "cities": {}
+    },
+    "ED": {
+      "name": "Edo",
+      "cities": {}
+    },
+    "EK": {
+      "name": "Ekiti",
+      "cities": {}
+    },
+    "EN": {
+      "name": "Enugu",
+      "cities": {}
+    },
+    "GO": {
+      "name": "Gombe",
+      "cities": {}
+    },
+    "IM": {
+      "name": "Imo",
+      "cities": {}
+    },
+    "JI": {
+      "name": "Jigawa",
+      "cities": {}
+    },
+    "KD": {
+      "name": "Kaduna",
+      "cities": {}
+    },
+    "KN": {
+      "name": "Kano",
+      "cities": {}
+    },
+    "KT": {
+      "name": "Katsina",
+      "cities": {}
+    },
+    "KE": {
+      "name": "Kebbi",
+      "cities": {}
+    },
+    "KO": {
+      "name": "Kogi",
+      "cities": {}
+    },
+    "KW": {
+      "name": "Kwara",
+      "cities": {}
+    },
+    "LA": {
+      "name": "Lagos",
+      "cities": {}
+    },
+    "NA": {
+      "name": "Nasarawa",
+      "cities": {}
+    },
+    "NI": {
+      "name": "Niger",
+      "cities": {}
+    },
+    "OG": {
+      "name": "Ogun",
+      "cities": {}
+    },
+    "ON": {
+      "name": "Ondo",
+      "cities": {}
+    },
+    "OS": {
+      "name": "Osun",
+      "cities": {}
+    },
+    "OY": {
+      "name": "Oyo",
+      "cities": {}
+    },
+    "PL": {
+      "name": "Plateau",
+      "cities": {}
+    },
+    "RI": {
+      "name": "Rivers",
+      "cities": {}
+    },
+    "SO": {
+      "name": "Sokoto",
+      "cities": {}
+    },
+    "TA": {
+      "name": "Taraba",
+      "cities": {}
+    },
+    "YO": {
+      "name": "Yobe",
+      "cities": {}
+    },
+    "ZA": {
+      "name": "Zamfara",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "country_name": "Mexico",
+  "states": {
+    "AGU": {
+      "name": "Aguascalientes",
+      "cities": {}
+    },
+    "BCN": {
+      "name": "Baja California",
+      "cities": {}
+    },
+    "BCS": {
+      "name": "Baja California Sur",
+      "cities": {}
+    },
+    "CAM": {
+      "name": "Campeche",
+      "cities": {}
+    },
+    "CHP": {
+      "name": "Chiapas",
+      "cities": {}
+    },
+    "CHH": {
+      "name": "Chihuahua",
+      "cities": {}
+    },
+    "COA": {
+      "name": "Coahuila",
+      "cities": {}
+    },
+    "COL": {
+      "name": "Colima",
+      "cities": {}
+    },
+    "DUR": {
+      "name": "Durango",
+      "cities": {}
+    },
+    "GUA": {
+      "name": "Guanajuato",
+      "cities": {}
+    },
+    "GRO": {
+      "name": "Guerrero",
+      "cities": {}
+    },
+    "HID": {
+      "name": "Hidalgo",
+      "cities": {}
+    },
+    "JAL": {
+      "name": "Jalisco",
+      "cities": {}
+    },
+    "MEX": {
+      "name": "México",
+      "cities": {}
+    },
+    "CMX": {
+      "name": "Mexico City",
+      "cities": {}
+    },
+    "MIC": {
+      "name": "Michoacán",
+      "cities": {}
+    },
+    "MOR": {
+      "name": "Morelos",
+      "cities": {}
+    },
+    "NAY": {
+      "name": "Nayarit",
+      "cities": {}
+    },
+    "NLE": {
+      "name": "Nuevo León",
+      "cities": {}
+    },
+    "OAX": {
+      "name": "Oaxaca",
+      "cities": {}
+    },
+    "PUE": {
+      "name": "Puebla",
+      "cities": {}
+    },
+    "QUE": {
+      "name": "Querétaro",
+      "cities": {}
+    },
+    "ROO": {
+      "name": "Quintana Roo",
+      "cities": {}
+    },
+    "SLP": {
+      "name": "San Luis Potosí",
+      "cities": {}
+    },
+    "SIN": {
+      "name": "Sinaloa",
+      "cities": {}
+    },
+    "SON": {
+      "name": "Sonora",
+      "cities": {}
+    },
+    "TAB": {
+      "name": "Tabasco",
+      "cities": {}
+    },
+    "TAM": {
+      "name": "Tamaulipas",
+      "cities": {}
+    },
+    "TLA": {
+      "name": "Tlaxcala",
+      "cities": {}
+    },
+    "VER": {
+      "name": "Veracruz",
+      "cities": {}
+    },
+    "YUC": {
+      "name": "Yucatán",
+      "cities": {}
+    },
+    "ZAC": {
+      "name": "Zacatecas",
+      "cities": {}
+    }
+  }
+}

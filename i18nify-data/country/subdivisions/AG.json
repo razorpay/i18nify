@@ -1,0 +1,37 @@
+{
+  "country_name": "Antigua And Barbuda",
+  "states": {
+    "10": {
+      "name": "Barbuda",
+      "cities": {}
+    },
+    "11": {
+      "name": "Redonda",
+      "cities": {}
+    },
+    "03": {
+      "name": "Saint George Parish",
+      "cities": {}
+    },
+    "04": {
+      "name": "Saint John Parish",
+      "cities": {}
+    },
+    "05": {
+      "name": "Saint Mary Parish",
+      "cities": {}
+    },
+    "06": {
+      "name": "Saint Paul Parish",
+      "cities": {}
+    },
+    "07": {
+      "name": "Saint Peter Parish",
+      "cities": {}
+    },
+    "08": {
+      "name": "Saint Philip Parish",
+      "cities": {}
+    }
+  }
+}

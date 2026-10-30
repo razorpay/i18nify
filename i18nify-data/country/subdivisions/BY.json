@@ -1,0 +1,33 @@
+{
+  "country_name": "Belarus",
+  "states": {
+    "BR": {
+      "name": "Brest Region",
+      "cities": {}
+    },
+    "HO": {
+      "name": "Gomel Region",
+      "cities": {}
+    },
+    "HR": {
+      "name": "Grodno Region",
+      "cities": {}
+    },
+    "HM": {
+      "name": "Minsk",
+      "cities": {}
+    },
+    "MI": {
+      "name": "Minsk Region",
+      "cities": {}
+    },
+    "MA": {
+      "name": "Mogilev Region",
+      "cities": {}
+    },
+    "VI": {
+      "name": "Vitebsk Region",
+      "cities": {}
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "country_name": "Bolivia",
+  "states": {
+    "B": {
+      "name": "Beni Department",
+      "cities": {}
+    },
+    "H": {
+      "name": "Chuquisaca Department",
+      "cities": {}
+    },
+    "C": {
+      "name": "Cochabamba Department",
+      "cities": {}
+    },
+    "L": {
+      "name": "La Paz Department",
+      "cities": {}
+    },
+    "O": {
+      "name": "Oruro Department",
+      "cities": {}
+    },
+    "N": {
+      "name": "Pando Department",
+      "cities": {}
+    },
+    "P": {
+      "name": "Potosí Department",
+      "cities": {}
+    },
+    "S": {
+      "name": "Santa Cruz Department",
+      "cities": {}
+    },
+    "T": {
+      "name": "Tarija Department",
+      "cities": {}
+    }
+  }
+}
