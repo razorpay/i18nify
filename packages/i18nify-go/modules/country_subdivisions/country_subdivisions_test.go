@@ -14,12 +14,14 @@ func TestGetCountrySubdivisions(t *testing.T) {
 		countryName     string
 		sampleStateCode string
 		sampleStateName string
+		expectCities    bool
 	}{
-		{countryCode: "IN", countryName: "India", sampleStateCode: "KA", sampleStateName: "Karnataka"},
-		{countryCode: "MY", countryName: "Malaysia", sampleStateCode: "1", sampleStateName: "Johor"},
-		{countryCode: "US", countryName: "United States", sampleStateCode: "TX", sampleStateName: "Texas"},
-		// SG has no administrative subdivisions; omit sampleStateCode
-		{countryCode: "SG", countryName: "Singapore"},
+		{countryCode: "IN", countryName: "India", sampleStateCode: "KA", sampleStateName: "Karnataka", expectCities: true},
+		{countryCode: "MY", countryName: "Malaysia", sampleStateCode: "1", sampleStateName: "Johor", expectCities: true},
+		{countryCode: "US", countryName: "United States", sampleStateCode: "TX", sampleStateName: "Texas", expectCities: true},
+		// SG's subdivisions are the 5 Community Development Councils; state-level
+		// only (no city data in the source), so expectCities is false.
+		{countryCode: "SG", countryName: "Singapore", sampleStateCode: "01", sampleStateName: "Central Singapore Community Development Council", expectCities: false},
 	}
 
 	for _, tt := range tests {
@@ -34,11 +36,15 @@ func TestGetCountrySubdivisions(t *testing.T) {
 				assert.True(t, exists)
 				assert.Equal(t, tt.sampleStateName, state.GetName())
 				assertIsArray(t, state.GetCities())
-				assert.NotEmpty(t, state.GetCities())
+				if tt.expectCities {
+					assert.NotEmpty(t, state.GetCities())
+				}
 			} else {
 				for _, state := range subDivData.GetStates() {
 					assertIsArray(t, state.GetCities())
-					assert.NotEmpty(t, state.GetCities())
+					if tt.expectCities {
+						assert.NotEmpty(t, state.GetCities())
+					}
 					break
 				}
 			}
