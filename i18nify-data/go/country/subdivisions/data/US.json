@@ -2,6 +2,7 @@
   "country_name": "United States",
   "states": {
     "NY": {
+      "name": "New York",
       "cities": {
         "Holtsville": {
           "name": "Holtsville",
@@ -13492,6 +13493,7 @@
       }
     },
     "PR": {
+      "name": "Puerto Rico",
       "cities": {
         "Adjuntas": {
           "name": "Adjuntas",
@@ -14365,6 +14367,7 @@
       }
     },
     "VI": {
+      "name": "United States Virgin Islands",
       "cities": {
         "St Thomas": {
           "name": "St Thomas",
@@ -14420,6 +14423,7 @@
       }
     },
     "MA": {
+      "name": "Massachusetts",
       "cities": {
         "Agawam": {
           "name": "Agawam",
@@ -18746,6 +18750,7 @@
       }
     },
     "RI": {
+      "name": "Rhode Island",
       "cities": {
         "Adamsville": {
           "name": "Adamsville",
@@ -19331,6 +19336,7 @@
       }
     },
     "NH": {
+      "name": "New Hampshire",
       "cities": {
         "Amherst": {
           "name": "Amherst",
@@ -21404,6 +21410,7 @@
       }
     },
     "ME": {
+      "name": "Maine",
       "cities": {
         "Berwick": {
           "name": "Berwick",
@@ -25116,6 +25123,7 @@
       }
     },
     "VT": {
+      "name": "Vermont",
       "cities": {
         "White River Junction": {
           "name": "White River Junction",
@@ -27438,6 +27446,7 @@
       }
     },
     "CT": {
+      "name": "Connecticut",
       "cities": {
         "Avon": {
           "name": "Avon",
@@ -29763,6 +29772,7 @@
       }
     },
     "NJ": {
+      "name": "New Jersey",
       "cities": {
         "Avenel": {
           "name": "Avenel",
@@ -34580,6 +34590,7 @@
       }
     },
     "AE": {
+      "name": "Armed Forces Europe",
       "cities": {
         "Apo": {
           "name": "Apo",
@@ -35126,6 +35137,7 @@
       }
     },
     "PA": {
+      "name": "Pennsylvania",
       "cities": {
         "Aliquippa": {
           "name": "Aliquippa",
@@ -49950,6 +49962,7 @@
       }
     },
     "DE": {
+      "name": "Delaware",
       "cities": {
         "Bear": {
           "name": "Bear",
@@ -50451,6 +50464,7 @@
       }
     },
     "DC": {
+      "name": "District of Columbia",
       "cities": {
         "Washington": {
           "name": "Washington",
@@ -50800,6 +50814,7 @@
       }
     },
     "VA": {
+      "name": "Virginia",
       "cities": {
         "Dulles": {
           "name": "Dulles",
@@ -57925,6 +57940,7 @@
       }
     },
     "MD": {
+      "name": "Maryland",
       "cities": {
         "Dhs": {
           "name": "Dhs",
@@ -61568,6 +61584,7 @@
       }
     },
     "WV": {
+      "name": "West Virginia",
       "cities": {
         "Bluefield": {
           "name": "Bluefield",
@@ -67665,6 +67682,7 @@
       }
     },
     "NC": {
+      "name": "North Carolina",
       "cities": {
         "Advance": {
           "name": "Advance",
@@ -74080,6 +74098,7 @@
       }
     },
     "SC": {
+      "name": "South Carolina",
       "cities": {
         "Alcolu": {
           "name": "Alcolu",
@@ -77270,6 +77289,7 @@
       }
     },
     "GA": {
+      "name": "Georgia",
       "cities": {
         "Avondale Estates": {
           "name": "Avondale Estates",
@@ -82664,6 +82684,7 @@
       }
     },
     "FL": {
+      "name": "Florida",
       "cities": {
         "Fleming Island": {
           "name": "Fleming Island",
@@ -87866,6 +87887,7 @@
       }
     },
     "AA": {
+      "name": "Armed Forces Americas",
       "cities": {
         "Dpo": {
           "name": "Dpo",
@@ -87955,6 +87977,7 @@
       }
     },
     "AL": {
+      "name": "Alabama",
       "cities": {
         "Moody": {
           "name": "Moody",
@@ -92837,6 +92860,7 @@
       }
     },
     "TN": {
+      "name": "Tennessee",
       "cities": {
         "Adams": {
           "name": "Adams",
@@ -97487,6 +97511,7 @@
       }
     },
     "MS": {
+      "name": "Mississippi",
       "cities": {
         "Abbeville": {
           "name": "Abbeville",
@@ -101069,6 +101094,7 @@
       }
     },
     "KY": {
+      "name": "Kentucky",
       "cities": {
         "Bagdad": {
           "name": "Bagdad",
@@ -107646,6 +107672,7 @@
       }
     },
     "OH": {
+      "name": "Ohio",
       "cities": {
         "Alexandria": {
           "name": "Alexandria",
@@ -116580,6 +116607,7 @@
       }
     },
     "IN": {
+      "name": "Indiana",
       "cities": {
         "Alexandria": {
           "name": "Alexandria",
@@ -122734,6 +122762,7 @@
       }
     },
     "MI": {
+      "name": "Michigan",
       "cities": {
         "Algonac": {
           "name": "Algonac",
@@ -130082,6 +130111,7 @@
       }
     },
     "IA": {
+      "name": "Iowa",
       "cities": {
         "Ackworth": {
           "name": "Ackworth",
@@ -137715,6 +137745,7 @@
       }
     },
     "WI": {
+      "name": "Wisconsin",
       "cities": {
         "Adell": {
           "name": "Adell",
@@ -143888,6 +143919,7 @@
       }
     },
     "MN": {
+      "name": "Minnesota",
       "cities": {
         "Afton": {
           "name": "Afton",
@@ -150587,6 +150619,7 @@
       }
     },
     "SD": {
+      "name": "South Dakota",
       "cities": {
         "Alcester": {
           "name": "Alcester",
@@ -153533,6 +153566,7 @@
       }
     },
     "ND": {
+      "name": "North Dakota",
       "cities": {
         "Abercrombie": {
           "name": "Abercrombie",
@@ -156556,6 +156590,7 @@
       }
     },
     "MT": {
+      "name": "Montana",
       "cities": {
         "Absarokee": {
           "name": "Absarokee",
@@ -159485,6 +159520,7 @@
       }
     },
     "IL": {
+      "name": "Illinois",
       "cities": {
         "Alden": {
           "name": "Alden",
@@ -170102,6 +170138,7 @@
       }
     },
     "MO": {
+      "name": "Missouri",
       "cities": {
         "Allenton": {
           "name": "Allenton",
@@ -177860,6 +177897,7 @@
       }
     },
     "KS": {
+      "name": "Kansas",
       "cities": {
         "Atchison": {
           "name": "Atchison",
@@ -183059,6 +183097,7 @@
       }
     },
     "NE": {
+      "name": "Nebraska",
       "cities": {
         "Abie": {
           "name": "Abie",
@@ -187380,6 +187419,7 @@
       }
     },
     "LA": {
+      "name": "Louisiana",
       "cities": {
         "Metairie": {
           "name": "Metairie",
@@ -191462,6 +191502,7 @@
       }
     },
     "AR": {
+      "name": "Arkansas",
       "cities": {
         "Pine Bluff": {
           "name": "Pine Bluff",
@@ -196413,6 +196454,7 @@
       }
     },
     "OK": {
+      "name": "Oklahoma",
       "cities": {
         "Albert": {
           "name": "Albert",
@@ -201274,6 +201316,7 @@
       }
     },
     "TX": {
+      "name": "Texas",
       "cities": {
         "Austin": {
           "name": "Austin",
@@ -214236,6 +214279,7 @@
       }
     },
     "CO": {
+      "name": "Colorado",
       "cities": {
         "Arvada": {
           "name": "Arvada",
@@ -217716,6 +217760,7 @@
       }
     },
     "WY": {
+      "name": "Wyoming",
       "cities": {
         "Cheyenne": {
           "name": "Cheyenne",
@@ -219147,6 +219192,7 @@
       }
     },
     "ID": {
+      "name": "Idaho",
       "cities": {
         "Pocatello": {
           "name": "Pocatello",
@@ -221338,6 +221384,7 @@
       }
     },
     "UT": {
+      "name": "Utah",
       "cities": {
         "Altamont": {
           "name": "Altamont",
@@ -223461,6 +223508,7 @@
       }
     },
     "AZ": {
+      "name": "Arizona",
       "cities": {
         "Phoenix": {
           "name": "Phoenix",
@@ -225882,6 +225930,7 @@
       }
     },
     "NM": {
+      "name": "New Mexico",
       "cities": {
         "Algodones": {
           "name": "Algodones",
@@ -228750,6 +228799,7 @@
       }
     },
     "NV": {
+      "name": "Nevada",
       "cities": {
         "The Lakes": {
           "name": "The Lakes",
@@ -229709,6 +229759,7 @@
       }
     },
     "CA": {
+      "name": "California",
       "cities": {
         "Los Angeles": {
           "name": "Los Angeles",
@@ -241048,6 +241099,7 @@
       }
     },
     "AP": {
+      "name": "Armed Forces Pacific",
       "cities": {
         "Apo": {
           "name": "Apo",
@@ -241279,6 +241331,7 @@
       }
     },
     "HI": {
+      "name": "Hawaii",
       "cities": {
         "Aiea": {
           "name": "Aiea",
@@ -242059,6 +242112,7 @@
       }
     },
     "AS": {
+      "name": "American Samoa",
       "cities": {
         "Pago Pago": {
           "name": "Pago Pago",
@@ -242071,6 +242125,7 @@
       }
     },
     "GU": {
+      "name": "Guam",
       "cities": {
         "Hagatna": {
           "name": "Hagatna",
@@ -242165,6 +242220,7 @@
       }
     },
     "PW": {
+      "name": "Palau",
       "cities": {
         "Ngerulmud": {
           "name": "Ngerulmud",
@@ -242185,6 +242241,7 @@
       }
     },
     "FM": {
+      "name": "Federated States of Micronesia",
       "cities": {
         "Pohnpei": {
           "name": "Pohnpei",
@@ -242221,6 +242278,7 @@
       }
     },
     "MP": {
+      "name": "Northern Mariana Islands",
       "cities": {
         "Saipan": {
           "name": "Saipan",
@@ -242249,6 +242307,7 @@
       }
     },
     "MH": {
+      "name": "Marshall Islands",
       "cities": {
         "Majuro": {
           "name": "Majuro",
@@ -242269,6 +242328,7 @@
       }
     },
     "OR": {
+      "name": "Oregon",
       "cities": {
         "Antelope": {
           "name": "Antelope",
@@ -245411,6 +245471,7 @@
       }
     },
     "WA": {
+      "name": "Washington",
       "cities": {
         "Auburn": {
           "name": "Auburn",
@@ -249599,6 +249660,7 @@
       }
     },
     "AK": {
+      "name": "Alaska",
       "cities": {
         "Anchorage": {
           "name": "Anchorage",
