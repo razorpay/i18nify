@@ -1,6 +1,26 @@
 {
   "country_name": "Singapore",
   "states": {
+    "01": {
+      "name": "Central Singapore Community Development Council",
+      "cities": {}
+    },
+    "02": {
+      "name": "North East Community Development Council",
+      "cities": {}
+    },
+    "03": {
+      "name": "North West Community Development Council",
+      "cities": {}
+    },
+    "04": {
+      "name": "South East Community Development Council",
+      "cities": {}
+    },
+    "05": {
+      "name": "South West Community Development Council",
+      "cities": {}
+    },
     "nan": {
       "name": "nan",
       "cities": {
