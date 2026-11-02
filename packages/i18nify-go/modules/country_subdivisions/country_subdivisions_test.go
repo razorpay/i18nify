@@ -17,8 +17,7 @@ func TestGetCountrySubdivisions(t *testing.T) {
 	}{
 		{countryCode: "IN", countryName: "India", sampleStateCode: "KA", sampleStateName: "Karnataka"},
 		{countryCode: "MY", countryName: "Malaysia", sampleStateCode: "1", sampleStateName: "Johor"},
-		// TX state has no "name" field in source data — master local module had same behaviour
-		{countryCode: "US", countryName: "United States", sampleStateCode: "TX", sampleStateName: ""},
+		{countryCode: "US", countryName: "United States", sampleStateCode: "TX", sampleStateName: "Texas"},
 		// SG has no administrative subdivisions; omit sampleStateCode
 		{countryCode: "SG", countryName: "Singapore"},
 	}
