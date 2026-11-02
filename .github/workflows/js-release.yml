@@ -31,10 +31,14 @@ jobs:
           # to protected branches) instead of the default github-actions[bot],
           # which was getting 403 on `git push ... changeset-release/master`.
           token: ${{ secrets.CI_BOT_TOKEN }}
-      - name: Use Node v20
-        uses: actions/setup-node@v3
+      # npm publishes with OIDC trusted publishing (no NPM_TOKEN secret), which
+      # needs npm >= 11.5.1. Node 20.3.1 shipped npm 9.x, so every publish since
+      # NPM_TOKEN was removed failed with ENEEDAUTH. Node 24 ships npm 11.5.1+.
+      - name: Use Node v24
+        uses: actions/setup-node@v4
         with:
-          node-version: 20.3.1
+          node-version: 24
+          registry-url: https://registry.npmjs.org
       - name: Install dependencies
         run: yarn
       - name: Build core package
