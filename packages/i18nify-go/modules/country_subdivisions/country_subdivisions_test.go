@@ -18,8 +18,10 @@ func TestGetCountrySubdivisions(t *testing.T) {
 		{countryCode: "IN", countryName: "India", sampleStateCode: "KA", sampleStateName: "Karnataka"},
 		{countryCode: "MY", countryName: "Malaysia", sampleStateCode: "1", sampleStateName: "Johor"},
 		{countryCode: "US", countryName: "United States", sampleStateCode: "TX", sampleStateName: "Texas"},
-		// SG has no administrative subdivisions; omit sampleStateCode
-		{countryCode: "SG", countryName: "Singapore"},
+		// SG now carries its 5 CDC districts (state-level, no cities) plus a
+		// preserved "nan" bucket holding the city/zipcode data; sample the "nan"
+		// bucket to assert those cities/zipcodes are kept (getCities/getZipcodes).
+		{countryCode: "SG", countryName: "Singapore", sampleStateCode: "nan", sampleStateName: "nan"},
 	}
 
 	for _, tt := range tests {
