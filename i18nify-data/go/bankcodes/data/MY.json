@@ -11,7 +11,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "PHBMMYKL"
+            "swift_code": "PHBMMYKL",
+            "routing_code": "ABB0233"
           }
         }
       ]
@@ -233,7 +234,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "MFBBMYKL"
+            "swift_code": "MFBBMYKL",
+            "routing_code": "ABMB0212"
           }
         }
       ]
@@ -396,7 +398,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "ARBKMYKL"
+            "swift_code": "ARBKMYKL",
+            "routing_code": "AMBB0209"
           }
         },
         {
@@ -663,7 +666,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "BIMBMYKL"
+            "swift_code": "BIMBMYKL",
+            "routing_code": "BIMB0340"
           }
         }
       ]
@@ -676,7 +680,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "BKRMMYKL"
+            "swift_code": "BKRMMYKL",
+            "routing_code": "BKRM0602"
           }
         }
       ]
@@ -702,7 +707,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "BMMBMYKL"
+            "swift_code": "BMMBMYKL",
+            "routing_code": "BMMB0341"
           }
         },
         {
@@ -783,7 +789,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "BKCHMYKL"
+            "swift_code": "BKCHMYKL",
+            "routing_code": "BOCM01"
           }
         },
         {
@@ -868,7 +875,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "AGOBMYKL"
+            "swift_code": "AGOBMYKL",
+            "routing_code": "AGRO01"
           }
         }
       ]
@@ -881,7 +889,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "BSNAMYK1"
+            "swift_code": "BSNAMYK1",
+            "routing_code": "BSN0601"
           }
         }
       ]
@@ -1239,7 +1248,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "CIBBMYKL"
+            "swift_code": "CIBBMYKL",
+            "routing_code": "BCBB0235"
           }
         },
         {
@@ -1378,7 +1388,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "CITIMYKL"
+            "swift_code": "CITIMYKL",
+            "routing_code": "CIT0219"
           }
         },
         {
@@ -1869,7 +1880,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "HLBBMYKL"
+            "swift_code": "HLBBMYKL",
+            "routing_code": "HLB0224"
           }
         }
       ]
@@ -1980,7 +1992,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "HBMBMYKL"
+            "swift_code": "HBMBMYKL",
+            "routing_code": "HSBC0223"
           }
         }
       ]
@@ -2418,7 +2431,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "KFHOMYKL"
+            "swift_code": "KFHOMYKL",
+            "routing_code": "KFH0346"
           }
         }
       ]
@@ -2558,7 +2572,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "MBBEMYKL"
+            "swift_code": "MBBEMYKL",
+            "routing_code": "MB2U0227"
           }
         },
         {
@@ -3231,7 +3246,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "OCBCMYKL"
+            "swift_code": "OCBCMYKL",
+            "routing_code": "OCBC0229"
           }
         }
       ]
@@ -3598,7 +3614,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "PBBEMYKL"
+            "swift_code": "PBBEMYKL",
+            "routing_code": "PBB0233"
           }
         }
       ]
@@ -3742,7 +3759,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "RHBBMYKL"
+            "swift_code": "RHBBMYKL",
+            "routing_code": "RHB0218"
           }
         }
       ]
@@ -4023,7 +4041,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "SCBLMYKX"
+            "swift_code": "SCBLMYKX",
+            "routing_code": "SCB0216"
           }
         },
         {
@@ -4427,7 +4446,8 @@
           "code": "",
           "city": "KUALA LUMPUR",
           "identifiers": {
-            "swift_code": "UOVBMYKL"
+            "swift_code": "UOVBMYKL",
+            "routing_code": "UOB0226"
           }
         },
         {
