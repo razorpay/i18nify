@@ -56,6 +56,11 @@ jobs:
           title: 'build(i18nify): update version'
       - name: Publish to public npm registry
         if: steps.changesets.outputs.published == 'true' || github.event_name == 'workflow_dispatch' # run when the package is published via changeset or if a release is triggered manually.
+        # On a manual re-sync dispatch the current version may already exist on
+        # public npm (npm rejects republishing it). Don't let that abort the job
+        # before the GitHub Packages publish below. Normal push releases (a new
+        # version via changesets) still fail loudly on a real publish error.
+        continue-on-error: ${{ github.event_name == 'workflow_dispatch' }}
         run: cd packages/i18nify-js; npm publish --registry https://registry.npmjs.org --force
       # Also publish to GitHub Packages. Consumers that install @razorpay/* from
       # npm.pkg.github.com (e.g. razorpay/checkout's .npmrc) were stuck on an old
