@@ -1,5 +1,22 @@
 # @razorpay/i18nify-js
 
+## 1.13.0
+
+### Minor Changes
+
+- 8919e65: Add honorific title metadata to country metadata locales for names utilities.
+- 8259eee: Add business entity utilities for categories, sub-categories, and country
+  entity types.
+- 099ce4b: feat(geo): add configurable address formatting with formatAddressByCountry
+- 610e764: Version bump
+- a3da628: feat(banking): add getBankCode and getBankNameByCode utilities for bidirectional bank name ↔ short code lookup (supported countries: IN, MY, SG, US)
+
+### Patch Changes
+
+- 2d4f07f: feat(dateTime): add country timezone lookup
+- c3b70d7: fix: migrate SLL to SLE currency code for Sierra Leone across JS, Go, and data packages
+- 887d3fe: Add OIDC permissions to release workflow
+
 ## 1.12.7
 
 ### Patch Changes
