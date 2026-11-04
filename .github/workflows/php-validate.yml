@@ -1,0 +1,69 @@
+name: i18nify PHP Validate
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'packages/i18nify-php/**'
+      - 'i18nify-data/currency/**'
+      - 'scripts/php/**'
+      - '.github/workflows/php-validate.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'packages/i18nify-php/**'
+      - 'i18nify-data/currency/**'
+      - 'scripts/php/**'
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest # nosemgrep: non-self-hosted-runner
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.1', '8.3']
+
+    defaults:
+      run:
+        working-directory: packages/i18nify-php
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v4
+
+      - name: Setup PHP ${{ matrix.php }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: intl, json
+          coverage: none
+          tools: composer:v2
+
+      # The package reads i18nify-data/currency/data.json directly and keeps no
+      # copy of it. This asserts the canonical file is valid and that no copy
+      # has crept into the package.
+      - name: Verify canonical dataset
+        working-directory: .
+        run: |
+          chmod +x scripts/php/sync-data.sh
+          scripts/php/sync-data.sh
+
+      - name: Validate composer.json
+        run: composer validate --strict --no-check-lock
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit --colors=always
+
+      # Guards the core promise of the package: PHP output must equal JS output
+      # for the same locale and fraction digits (both are ICU/CLDR under the hood).
+      - name: Cross-SDK parity check (PHP vs JS Intl)
+        if: matrix.php == '8.3'
+        working-directory: .
+        run: |
+          chmod +x scripts/php/parity-check.sh
+          scripts/php/parity-check.sh
