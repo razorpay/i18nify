@@ -21,7 +21,7 @@ const getFlagsForAllCountries = (): {
   };
 
   // Loop through each country code in the list
-  LIST_OF_ALL_COUNTRIES.map((countryCode: CountryCodeType) => {
+  LIST_OF_ALL_COUNTRIES.forEach((countryCode: CountryCodeType) => {
     const lowerCasedCountryCode = countryCode.toLowerCase() as CountryCodeType;
     // Construct the flag image URL and assign it to the corresponding country code in the map
     flagsForAllCountriesMap[countryCode] = {

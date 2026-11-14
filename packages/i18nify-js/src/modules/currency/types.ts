@@ -7,7 +7,7 @@ export type FormattedPartsObject = {
 
 export interface ByParts extends FormattedPartsObject {
   isPrefixSymbol: boolean;
-  rawParts: Array<{ type: string; value: unknown }>;
+  rawParts: Array<{ type: string; value: string }>;
 }
 
 export interface CurrencyType {
