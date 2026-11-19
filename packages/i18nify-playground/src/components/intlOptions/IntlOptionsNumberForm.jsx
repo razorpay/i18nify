@@ -3,6 +3,7 @@ import React from 'react';
 import { NUMBER_FORMAT_INTL_INPUTS } from 'src/constants/number';
 import { useIntlOptionsContext } from 'src/context/intlOptionsContext';
 import RenderContainer from 'src/pages/common/DropdownContainer';
+import IntlOptionWithTooltip from './IntlOptionWithTooltip';
 
 const IntlOptionsNumberForm = () => {
   const { intlOptions, setIntlOptions } = useIntlOptionsContext();
@@ -18,11 +19,13 @@ const IntlOptionsNumberForm = () => {
 
   const renderInput = (input) => {
     return (
-      <RenderContainer
-        input={input}
-        handleInputChange={handleInputChange}
-        intlOptions={intlOptions}
-      />
+      <IntlOptionWithTooltip optionKey={input.key}>
+        <RenderContainer
+          input={input}
+          handleInputChange={handleInputChange}
+          intlOptions={intlOptions}
+        />
+      </IntlOptionWithTooltip>
     );
   };
 
