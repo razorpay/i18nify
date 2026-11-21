@@ -117,8 +117,8 @@
     },
     "BJ": {
       "dial_code": "+229",
-      "format": "xx xx xx xx",
-      "regex": "[24-689]\\d{7}"
+      "format": "xx xx xx xx xx",
+      "regex": "01\\d{8}"
     },
     "BM": {
       "dial_code": "+1",
