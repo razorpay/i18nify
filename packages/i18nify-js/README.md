@@ -128,7 +128,7 @@ console.log(
 ```javascript
 console.log(getCurrencyList()); /* {
   AED: {
-    symbol: 'د.إ',
+    symbol: 'AED',
     name: 'United Arab Emirates Dirham',
     lowerUnitName: 'Fils',
   },
